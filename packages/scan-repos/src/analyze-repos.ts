@@ -9,7 +9,7 @@ async function main() {
 
   if (!repos) {
     console.error(
-      "No repositories found. Run 'pnpm start' first to fetch and clone repositories."
+      "No repositories found. Run 'pnpm start' first to fetch and clone repositories.",
     );
     process.exit(1);
   }

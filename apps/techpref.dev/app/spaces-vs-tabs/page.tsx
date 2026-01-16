@@ -1,6 +1,6 @@
-import { ComparisonPage } from "@/components/comparison"
-import { spacesVsTabsData } from "@/lib/comparisons"
+import { ComparisonPage } from "@/components/comparison";
+import { spacesVsTabsData } from "@/lib/comparisons";
 
 export default function SpacesVsTabsPage() {
-  return <ComparisonPage data={spacesVsTabsData} />
+  return <ComparisonPage data={spacesVsTabsData} />;
 }

@@ -1,4 +1,4 @@
-import type { Influencer } from "./types"
+import type { Influencer } from "./types";
 
 export function InfluencerCard({ influencer }: { influencer: Influencer }) {
   return (
@@ -10,11 +10,15 @@ export function InfluencerCard({ influencer }: { influencer: Influencer }) {
           className="w-10 h-10 rounded-full object-cover border border-border"
         />
         <div>
-          <h4 className="font-semibold text-foreground text-sm">{influencer.name}</h4>
+          <h4 className="font-semibold text-foreground text-sm">
+            {influencer.name}
+          </h4>
           <p className="text-xs text-primary">{influencer.role}</p>
         </div>
       </div>
-      <p className="text-sm text-muted-foreground italic leading-relaxed">"{influencer.quote}"</p>
+      <p className="text-sm text-muted-foreground italic leading-relaxed">
+        "{influencer.quote}"
+      </p>
     </div>
-  )
+  );
 }

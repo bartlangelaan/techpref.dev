@@ -20,7 +20,7 @@ async function main() {
     if (!process.env.GITHUB_TOKEN) {
       console.warn(
         "Warning: GITHUB_TOKEN not set. API rate limits will be very restrictive.\n" +
-          "Set GITHUB_TOKEN environment variable for better performance.\n"
+          "Set GITHUB_TOKEN environment variable for better performance.\n",
       );
     }
 

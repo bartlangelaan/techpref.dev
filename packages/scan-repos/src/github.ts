@@ -35,7 +35,7 @@ export function loadRepositories(): Repository[] | null {
   }
   const data: CachedData = JSON.parse(readFileSync(CACHE_FILE, "utf-8"));
   console.log(
-    `Loaded ${data.repositories.length} repositories from cache (fetched at ${data.fetchedAt})`
+    `Loaded ${data.repositories.length} repositories from cache (fetched at ${data.fetchedAt})`,
   );
   return data.repositories;
 }
@@ -45,7 +45,7 @@ export function loadRepositories(): Repository[] | null {
  * GitHub's search API returns max 1000 results (100 per page, 10 pages max).
  */
 export async function fetchTopTypeScriptRepos(
-  count: number = 1000
+  count: number = 1000,
 ): Promise<Repository[]> {
   const repos: Repository[] = [];
   const perPage = 100;

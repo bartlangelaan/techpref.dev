@@ -1,7 +1,7 @@
-export { ComparisonPage } from "./comparison-page"
-export { ComparisonCard } from "./comparison-card"
-export { CodeBlock } from "./code-block"
-export { ProjectCard } from "./project-card"
-export { InfluencerCard } from "./influencer-card"
-export { StatCard } from "./stat-card"
-export type * from "./types"
+export { ComparisonPage } from "./comparison-page";
+export { ComparisonCard } from "./comparison-card";
+export { CodeBlock } from "./code-block";
+export { ProjectCard } from "./project-card";
+export { InfluencerCard } from "./influencer-card";
+export { StatCard } from "./stat-card";
+export type * from "./types";

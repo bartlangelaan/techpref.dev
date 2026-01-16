@@ -24,9 +24,13 @@ export async function cloneRepository(repo: Repository): Promise<boolean> {
   }
 
   return new Promise((resolve) => {
-    const git = spawn("git", ["clone", "--depth", "1", repo.cloneUrl, repoPath], {
-      stdio: ["ignore", "pipe", "pipe"],
-    });
+    const git = spawn(
+      "git",
+      ["clone", "--depth", "1", repo.cloneUrl, repoPath],
+      {
+        stdio: ["ignore", "pipe", "pipe"],
+      },
+    );
 
     let stderr = "";
     git.stderr.on("data", (data) => {
@@ -55,7 +59,7 @@ export async function cloneRepository(repo: Repository): Promise<boolean> {
  */
 export async function cloneRepositories(
   repos: Repository[],
-  concurrency: number = 5
+  concurrency: number = 5,
 ): Promise<{ success: number; failed: number }> {
   if (!existsSync(REPOS_DIR)) {
     mkdirSync(REPOS_DIR, { recursive: true });

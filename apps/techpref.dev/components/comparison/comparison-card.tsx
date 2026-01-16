@@ -1,25 +1,30 @@
-import { FileCode, Zap, Check, BarChart3, Star, Users } from "lucide-react"
-import { Badge } from "@/components/ui/badge"
-import { CodeBlock } from "./code-block"
-import { ProjectCard } from "./project-card"
-import { InfluencerCard } from "./influencer-card"
-import { StatCard } from "./stat-card"
-import type { ComparisonSide } from "./types"
+import { FileCode, Zap, Check, BarChart3, Star, Users } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { CodeBlock } from "./code-block";
+import { ProjectCard } from "./project-card";
+import { InfluencerCard } from "./influencer-card";
+import { StatCard } from "./stat-card";
+import type { ComparisonSide } from "./types";
 
 export function ComparisonCard({
   side,
   variant,
 }: {
-  side: ComparisonSide
-  variant: "left" | "right"
+  side: ComparisonSide;
+  variant: "left" | "right";
 }) {
   return (
     <div className="flex flex-col h-full p-6 lg:p-8 rounded-2xl border border-border bg-card">
       <div className="mb-6">
-        <Badge variant="outline" className="mb-3 text-primary border-primary/30 bg-primary/5">
+        <Badge
+          variant="outline"
+          className="mb-3 text-primary border-primary/30 bg-primary/5"
+        >
           {side.badge}
         </Badge>
-        <h2 className="text-3xl font-bold text-foreground mb-2 text-balance">{side.title}</h2>
+        <h2 className="text-3xl font-bold text-foreground mb-2 text-balance">
+          {side.title}
+        </h2>
         <p className="text-muted-foreground leading-relaxed">{side.subtitle}</p>
       </div>
 
@@ -41,7 +46,10 @@ export function ComparisonCard({
           </h3>
           <ul className="space-y-2.5">
             {side.features.map((feature, index) => (
-              <li key={index} className="flex items-start gap-3 text-sm text-muted-foreground">
+              <li
+                key={index}
+                className="flex items-start gap-3 text-sm text-muted-foreground"
+              >
                 <Check className="h-4 w-4 text-primary shrink-0 mt-0.5" />
                 <span>{feature}</span>
               </li>
@@ -89,5 +97,5 @@ export function ComparisonCard({
         </div>
       </div>
     </div>
-  )
+  );
 }

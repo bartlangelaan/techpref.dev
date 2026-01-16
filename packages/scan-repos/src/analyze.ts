@@ -13,7 +13,11 @@ import {
 } from "./rules/index.js";
 
 const REPOS_DIR = join(process.cwd(), "repos");
-const RESULTS_FILE = join(process.cwd(), "../..", "apps/techpref.dev/repo-analysis-results.json");
+const RESULTS_FILE = join(
+  process.cwd(),
+  "../..",
+  "apps/techpref.dev/repo-analysis-results.json",
+);
 
 /**
  * Load existing analysis results from file.
@@ -58,7 +62,7 @@ interface RuleCheckResult {
 async function runRuleCheck(
   files: string[],
   ruleCheck: RuleCheck,
-  maxSamples: number = 5
+  maxSamples: number = 5,
 ): Promise<RuleCheckResult> {
   if (files.length === 0) {
     return { count: 0, samples: [] };
@@ -125,9 +129,12 @@ async function runRuleCheck(
       if (samples.length < maxSamples) {
         for (const message of result.messages) {
           if (message.severity === 2 && samples.length < maxSamples) {
-            const relativePath = result.filePath.replace(process.cwd() + "/", "");
+            const relativePath = result.filePath.replace(
+              process.cwd() + "/",
+              "",
+            );
             samples.push(
-              `${relativePath}:${message.line}:${message.column} - ${message.message}`
+              `${relativePath}:${message.line}:${message.column} - ${message.message}`,
             );
           }
         }
@@ -182,9 +189,7 @@ interface RepoWithFileCount {
 /**
  * Main analysis function.
  */
-export async function analyzeRepositories(
-  repos: Repository[]
-): Promise<void> {
+export async function analyzeRepositories(repos: Repository[]): Promise<void> {
   // Load existing results for resume support
   let output = loadExistingResults();
   if (!output) {
@@ -203,7 +208,9 @@ export async function analyzeRepositories(
     return existsSync(repoPath) && !analyzedRepos.has(repo.fullName);
   });
 
-  console.log(`Found ${reposToAnalyzeUnsorted.length} repositories to analyze.`);
+  console.log(
+    `Found ${reposToAnalyzeUnsorted.length} repositories to analyze.`,
+  );
   console.log(`Already analyzed: ${analyzedRepos.size} repositories.`);
   console.log(`\nCounting source files to sort by size (smallest first)...`);
 
@@ -218,12 +225,14 @@ export async function analyzeRepositories(
   // Sort by file count ascending (smallest repos first)
   reposWithCounts.sort((a, b) => a.fileCount - b.fileCount);
 
-  console.log(`Sorted. Smallest: ${reposWithCounts[0]?.fileCount ?? 0} files, Largest: ${reposWithCounts[reposWithCounts.length - 1]?.fileCount ?? 0} files.\n`);
+  console.log(
+    `Sorted. Smallest: ${reposWithCounts[0]?.fileCount ?? 0} files, Largest: ${reposWithCounts[reposWithCounts.length - 1]?.fileCount ?? 0} files.\n`,
+  );
 
   let completed = 0;
   for (const { repo, fileCount } of reposWithCounts) {
     console.log(
-      `[${completed + 1}/${reposWithCounts.length}] Analyzing ${repo.fullName} (${fileCount} files)...`
+      `[${completed + 1}/${reposWithCounts.length}] Analyzing ${repo.fullName} (${fileCount} files)...`,
     );
 
     try {
@@ -262,4 +271,3 @@ export async function analyzeRepositories(
   console.log(`Total repositories analyzed: ${output.results.length}`);
   console.log(`Results saved to: ${RESULTS_FILE}`);
 }
-

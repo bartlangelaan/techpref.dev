@@ -1,4 +1,4 @@
-import type { Stat } from "./types"
+import type { Stat } from "./types";
 
 export function StatCard({ stat }: { stat: Stat }) {
   return (
@@ -9,5 +9,5 @@ export function StatCard({ stat }: { stat: Stat }) {
         <p className="text-xs text-muted-foreground">{stat.label}</p>
       </div>
     </div>
-  )
+  );
 }

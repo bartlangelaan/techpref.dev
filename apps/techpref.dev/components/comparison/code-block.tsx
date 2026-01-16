@@ -15,5 +15,5 @@ export function CodeBlock({ code, label }: { code: string; label: string }) {
         <code className="text-foreground/90">{code}</code>
       </pre>
     </div>
-  )
+  );
 }

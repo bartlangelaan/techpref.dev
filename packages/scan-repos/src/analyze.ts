@@ -174,6 +174,11 @@ async function analyzeRepository(repo: Repository): Promise<AnalyzeResult> {
   };
 }
 
+interface RepoWithFileCount {
+  repo: Repository;
+  fileCount: number;
+}
+
 /**
  * Main analysis function.
  */
@@ -193,18 +198,32 @@ export async function analyzeRepositories(
   const analyzedRepos = new Set(output.results.map((r) => r.repoFullName));
 
   // Filter to repos that exist and haven't been analyzed
-  const reposToAnalyze = repos.filter((repo) => {
+  const reposToAnalyzeUnsorted = repos.filter((repo) => {
     const repoPath = join(REPOS_DIR, repo.fullName);
     return existsSync(repoPath) && !analyzedRepos.has(repo.fullName);
   });
 
-  console.log(`Found ${reposToAnalyze.length} repositories to analyze.`);
-  console.log(`Already analyzed: ${analyzedRepos.size} repositories.\n`);
+  console.log(`Found ${reposToAnalyzeUnsorted.length} repositories to analyze.`);
+  console.log(`Already analyzed: ${analyzedRepos.size} repositories.`);
+  console.log(`\nCounting source files to sort by size (smallest first)...`);
+
+  // Pre-scan to count files and sort by size (smallest first)
+  const reposWithCounts: RepoWithFileCount[] = [];
+  for (const repo of reposToAnalyzeUnsorted) {
+    const repoPath = join(REPOS_DIR, repo.fullName);
+    const files = await findSourceFiles(repoPath);
+    reposWithCounts.push({ repo, fileCount: files.length });
+  }
+
+  // Sort by file count ascending (smallest repos first)
+  reposWithCounts.sort((a, b) => a.fileCount - b.fileCount);
+
+  console.log(`Sorted. Smallest: ${reposWithCounts[0]?.fileCount ?? 0} files, Largest: ${reposWithCounts[reposWithCounts.length - 1]?.fileCount ?? 0} files.\n`);
 
   let completed = 0;
-  for (const repo of reposToAnalyze) {
+  for (const { repo, fileCount } of reposWithCounts) {
     console.log(
-      `[${completed + 1}/${reposToAnalyze.length}] Analyzing ${repo.fullName}...`
+      `[${completed + 1}/${reposWithCounts.length}] Analyzing ${repo.fullName} (${fileCount} files)...`
     );
 
     try {
@@ -243,3 +262,4 @@ export async function analyzeRepositories(
   console.log(`Total repositories analyzed: ${output.results.length}`);
   console.log(`Results saved to: ${RESULTS_FILE}`);
 }
+

@@ -2,21 +2,21 @@ import type { Influencer } from "./types";
 
 export function InfluencerCard({ influencer }: { influencer: Influencer }) {
   return (
-    <div className="p-4 rounded-lg border border-border bg-card/50">
-      <div className="flex items-start gap-3 mb-3">
+    <div className="border-border bg-card/50 rounded-lg border p-4">
+      <div className="mb-3 flex items-start gap-3">
         <img
           src={influencer.avatar || "/placeholder.svg"}
           alt={influencer.name}
-          className="w-10 h-10 rounded-full object-cover border border-border"
+          className="border-border h-10 w-10 rounded-full border object-cover"
         />
         <div>
-          <h4 className="font-semibold text-foreground text-sm">
+          <h4 className="text-foreground text-sm font-semibold">
             {influencer.name}
           </h4>
-          <p className="text-xs text-primary">{influencer.role}</p>
+          <p className="text-primary text-xs">{influencer.role}</p>
         </div>
       </div>
-      <p className="text-sm text-muted-foreground italic leading-relaxed">
+      <p className="text-muted-foreground text-sm leading-relaxed italic">
         "{influencer.quote}"
       </p>
     </div>

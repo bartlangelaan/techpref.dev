@@ -14,25 +14,25 @@ export function ComparisonCard({
   variant: "left" | "right";
 }) {
   return (
-    <div className="flex flex-col h-full p-6 lg:p-8 rounded-2xl border border-border bg-card">
+    <div className="border-border bg-card flex h-full flex-col rounded-2xl border p-6 lg:p-8">
       <div className="mb-6">
         <Badge
           variant="outline"
-          className="mb-3 text-primary border-primary/30 bg-primary/5"
+          className="text-primary border-primary/30 bg-primary/5 mb-3"
         >
           {side.badge}
         </Badge>
-        <h2 className="text-3xl font-bold text-foreground mb-2 text-balance">
+        <h2 className="text-foreground mb-2 text-3xl font-bold text-balance">
           {side.title}
         </h2>
         <p className="text-muted-foreground leading-relaxed">{side.subtitle}</p>
       </div>
 
-      <div className="space-y-8 flex-1">
+      <div className="flex-1 space-y-8">
         {/* Code Example */}
         <div>
-          <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-3 flex items-center gap-2">
-            <FileCode className="h-4 w-4 text-primary" />
+          <h3 className="text-foreground mb-3 flex items-center gap-2 text-sm font-semibold tracking-wider uppercase">
+            <FileCode className="text-primary h-4 w-4" />
             Code Example
           </h3>
           <CodeBlock code={side.code} label={side.codeLabel} />
@@ -40,17 +40,17 @@ export function ComparisonCard({
 
         {/* Features */}
         <div>
-          <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-3 flex items-center gap-2">
-            <Zap className="h-4 w-4 text-primary" />
+          <h3 className="text-foreground mb-3 flex items-center gap-2 text-sm font-semibold tracking-wider uppercase">
+            <Zap className="text-primary h-4 w-4" />
             Key Benefits
           </h3>
           <ul className="space-y-2.5">
             {side.features.map((feature, index) => (
               <li
                 key={index}
-                className="flex items-start gap-3 text-sm text-muted-foreground"
+                className="text-muted-foreground flex items-start gap-3 text-sm"
               >
-                <Check className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                <Check className="text-primary mt-0.5 h-4 w-4 shrink-0" />
                 <span>{feature}</span>
               </li>
             ))}
@@ -59,8 +59,8 @@ export function ComparisonCard({
 
         {/* Statistics */}
         <div>
-          <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-3 flex items-center gap-2">
-            <BarChart3 className="h-4 w-4 text-primary" />
+          <h3 className="text-foreground mb-3 flex items-center gap-2 text-sm font-semibold tracking-wider uppercase">
+            <BarChart3 className="text-primary h-4 w-4" />
             Statistics
           </h3>
           <div className="grid grid-cols-2 gap-3">
@@ -72,8 +72,8 @@ export function ComparisonCard({
 
         {/* Popular Projects */}
         <div>
-          <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-3 flex items-center gap-2">
-            <Star className="h-4 w-4 text-primary" />
+          <h3 className="text-foreground mb-3 flex items-center gap-2 text-sm font-semibold tracking-wider uppercase">
+            <Star className="text-primary h-4 w-4" />
             Popular Projects
           </h3>
           <div className="space-y-3">
@@ -85,8 +85,8 @@ export function ComparisonCard({
 
         {/* Influencers */}
         <div>
-          <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-3 flex items-center gap-2">
-            <Users className="h-4 w-4 text-primary" />
+          <h3 className="text-foreground mb-3 flex items-center gap-2 text-sm font-semibold tracking-wider uppercase">
+            <Users className="text-primary h-4 w-4" />
             Advocates
           </h3>
           <div className="space-y-3">

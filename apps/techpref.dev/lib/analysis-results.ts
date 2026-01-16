@@ -96,6 +96,70 @@ export function getIndentStats() {
 }
 
 /**
+ * Get spaces vs tabs statistics.
+ * Spaces includes both 2-space and 4-space indentation.
+ */
+export function getSpacesVsTabsStats() {
+  const results = getAnalysisResults().results
+
+  let spacesRepos = 0
+  let tabsRepos = 0
+  let mixedRepos = 0
+
+  const spacesProjects: { name: string; url: string }[] = []
+  const tabsProjects: { name: string; url: string }[] = []
+
+  for (const repo of results) {
+    const indent = repo.checks["indent"]
+    if (!indent) continue
+
+    const twoSpaceViolations = indent["2-space"] ?? Infinity
+    const fourSpaceViolations = indent["4-space"] ?? Infinity
+    const tabViolations = indent["tab"] ?? Infinity
+
+    // For spaces vs tabs, we combine 2-space and 4-space
+    // The "spaces" violations = violations when expecting tabs (i.e., tabViolations)
+    // The "tabs" violations = min of 2-space and 4-space violations
+
+    const spacesViolations = Math.min(twoSpaceViolations, fourSpaceViolations)
+
+    const repoUrl = `https://github.com/${repo.repoFullName}`
+    const repoName = repo.repoFullName.split("/")[1] ?? repo.repoFullName
+
+    // Check if there's a clear winner
+    if (spacesViolations === 0 && tabViolations === 0) {
+      mixedRepos++
+    } else if (spacesViolations < tabViolations / 2) {
+      spacesRepos++
+      if (spacesProjects.length < 5) {
+        spacesProjects.push({ name: repoName, url: repoUrl })
+      }
+    } else if (tabViolations < spacesViolations / 2) {
+      tabsRepos++
+      if (tabsProjects.length < 5) {
+        tabsProjects.push({ name: repoName, url: repoUrl })
+      }
+    } else {
+      mixedRepos++
+    }
+  }
+
+  const totalRepos = spacesRepos + tabsRepos + mixedRepos
+  const definiteRepos = spacesRepos + tabsRepos
+
+  return {
+    totalRepos,
+    spacesRepos,
+    tabsRepos,
+    mixedRepos,
+    spacesPercent: definiteRepos > 0 ? Math.round((spacesRepos / definiteRepos) * 100) : 0,
+    tabsPercent: definiteRepos > 0 ? Math.round((tabsRepos / definiteRepos) * 100) : 0,
+    spacesProjects,
+    tabsProjects,
+  }
+}
+
+/**
  * Get function style statistics (declaration vs expression/arrow)
  */
 export function getFuncStyleStats() {

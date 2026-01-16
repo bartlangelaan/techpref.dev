@@ -1,5 +1,6 @@
 import { ESLint, type Linter } from "eslint";
 import globals from "globals";
+import tseslint from "typescript-eslint";
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { glob } from "glob";
@@ -67,9 +68,32 @@ async function runRuleCheck(
     overrideConfigFile: true,
     overrideConfig: [
       {
+        files: ["**/*.{js,jsx}"],
         languageOptions: {
           ecmaVersion: "latest",
           sourceType: "module",
+          parserOptions: {
+            ecmaFeatures: {
+              jsx: true,
+            },
+          },
+          globals: {
+            ...globals.es2022,
+            ...globals.node,
+            ...globals.browser,
+          },
+        },
+        linterOptions: {
+          noInlineConfig: true,
+        },
+        rules: ruleCheck.eslintConfig as Linter.RulesRecord,
+      },
+      {
+        files: ["**/*.{ts,tsx}"],
+        languageOptions: {
+          ecmaVersion: "latest",
+          sourceType: "module",
+          parser: tseslint.parser,
           parserOptions: {
             ecmaFeatures: {
               jsx: true,

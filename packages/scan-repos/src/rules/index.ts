@@ -1,4 +1,5 @@
 import { funcStyleChecks } from "./func-style.js";
+import { indentChecks } from "./indent.js";
 
 /**
  * Defines a single ESLint rule check variant.
@@ -37,4 +38,4 @@ export interface AnalysisOutput {
 /**
  * All rule checks to run during analysis.
  */
-export const allRuleChecks: RuleCheck[] = [...funcStyleChecks];
+export const allRuleChecks: RuleCheck[] = [...funcStyleChecks, ...indentChecks];

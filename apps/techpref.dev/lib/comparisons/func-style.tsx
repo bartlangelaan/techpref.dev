@@ -1,15 +1,14 @@
-import {
-  TrendingUp,
-  Code2,
-  Zap,
-  Eye,
-  FileCode,
-  Users,
-  Clock,
-  BarChart3,
-} from "lucide-react";
 import type { ComparisonData } from "@/components/comparison";
 import { getFuncStyleStats } from "@/lib/analysis-results";
+import {
+  BarChart3,
+  Clock,
+  Code2,
+  FileCode,
+  TrendingUp,
+  Users,
+  Zap,
+} from "lucide-react";
 
 export function getFuncStyleData(): ComparisonData {
   const stats = getFuncStyleStats();

@@ -1,5 +1,5 @@
-import { loadRepositories } from "./github.js";
 import { analyzeRepositories } from "./analyze.js";
+import { loadRepositories } from "./github.js";
 
 async function main() {
   console.log("=== TechPref Repository Analyzer ===\n");

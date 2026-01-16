@@ -1,8 +1,8 @@
-import { FileCode, Zap, Check, BarChart3, Star, Users } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { BarChart3, Check, FileCode, Star, Users, Zap } from "lucide-react";
 import { CodeBlock } from "./code-block";
-import { ProjectCard } from "./project-card";
 import { InfluencerCard } from "./influencer-card";
+import { ProjectCard } from "./project-card";
 import { StatCard } from "./stat-card";
 import type { ComparisonSide } from "./types";
 

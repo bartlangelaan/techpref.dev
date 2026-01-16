@@ -1,15 +1,14 @@
-import {
-  TrendingUp,
-  Code2,
-  Zap,
-  Eye,
-  FileCode,
-  Users,
-  Monitor,
-  BarChart3,
-} from "lucide-react";
 import type { ComparisonData } from "@/components/comparison";
 import { getIndentStats } from "@/lib/analysis-results";
+import {
+  BarChart3,
+  Eye,
+  FileCode,
+  Monitor,
+  TrendingUp,
+  Users,
+  Zap,
+} from "lucide-react";
 
 export function getTwoVsFourSpacesData(): ComparisonData {
   const stats = getIndentStats();

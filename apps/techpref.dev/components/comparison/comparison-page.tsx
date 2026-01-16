@@ -1,5 +1,5 @@
-import { Minus } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { Minus } from "lucide-react";
 import { ComparisonCard } from "./comparison-card";
 import type { ComparisonData } from "./types";
 

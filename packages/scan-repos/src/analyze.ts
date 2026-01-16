@@ -1,9 +1,9 @@
 import { ESLint, type Linter } from "eslint";
+import { glob } from "glob";
 import globals from "globals";
-import tseslint from "typescript-eslint";
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
-import { glob } from "glob";
+import tseslint from "typescript-eslint";
 import type { Repository } from "./github.js";
 import {
   allRuleChecks,

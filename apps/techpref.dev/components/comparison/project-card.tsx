@@ -1,5 +1,5 @@
+import { ExternalLink, Star } from "lucide-react";
 import Link from "next/link";
-import { Star, ExternalLink } from "lucide-react";
 import type { Project } from "./types";
 
 export function ProjectCard({ project }: { project: Project }) {

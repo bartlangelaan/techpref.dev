@@ -1,15 +1,14 @@
-import {
-  TrendingUp,
-  Code2,
-  Clock,
-  Eye,
-  FileCode,
-  Users,
-  Zap,
-  BarChart3,
-} from "lucide-react";
 import type { ComparisonData } from "@/components/comparison";
 import { getSpacesVsTabsStats } from "@/lib/analysis-results";
+import {
+  BarChart3,
+  Code2,
+  Eye,
+  FileCode,
+  TrendingUp,
+  Users,
+  Zap,
+} from "lucide-react";
 
 export function getSpacesVsTabsData(): ComparisonData {
   const stats = getSpacesVsTabsStats();

@@ -1,9 +1,9 @@
+import { cloneRepositories } from "./clone.js";
 import {
   fetchTopTypeScriptRepos,
   loadRepositories,
   saveRepositories,
 } from "./github.js";
-import { cloneRepositories } from "./clone.js";
 
 const REPO_COUNT = 1000;
 const CLONE_CONCURRENCY = 5;

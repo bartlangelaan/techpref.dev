@@ -1,4 +1,8 @@
-import { fetchTopTypeScriptRepos } from "./github.js";
+import {
+  fetchTopTypeScriptRepos,
+  loadRepositories,
+  saveRepositories,
+} from "./github.js";
 import { cloneRepositories } from "./clone.js";
 
 const REPO_COUNT = 1000;
@@ -7,15 +11,25 @@ const CLONE_CONCURRENCY = 5;
 async function main() {
   console.log("=== TechPref Repository Scanner ===\n");
 
-  if (!process.env.GITHUB_TOKEN) {
-    console.warn(
-      "Warning: GITHUB_TOKEN not set. API rate limits will be very restrictive.\n" +
-        "Set GITHUB_TOKEN environment variable for better performance.\n"
-    );
-  }
+  // Try to load from cache first
+  let repos = loadRepositories();
 
-  // Fetch top repositories
-  const repos = await fetchTopTypeScriptRepos(REPO_COUNT);
+  if (repos) {
+    console.log("Using cached repository list.\n");
+  } else {
+    if (!process.env.GITHUB_TOKEN) {
+      console.warn(
+        "Warning: GITHUB_TOKEN not set. API rate limits will be very restrictive.\n" +
+          "Set GITHUB_TOKEN environment variable for better performance.\n"
+      );
+    }
+
+    // Fetch top repositories from GitHub
+    repos = await fetchTopTypeScriptRepos(REPO_COUNT);
+
+    // Save to cache for future runs
+    saveRepositories(repos);
+  }
 
   console.log(`\nTop 5 repositories by stars:`);
   for (const repo of repos.slice(0, 5)) {

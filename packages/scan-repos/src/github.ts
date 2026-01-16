@@ -1,4 +1,6 @@
 import { Octokit } from "@octokit/rest";
+import { existsSync, readFileSync, writeFileSync } from "node:fs";
+import { join } from "node:path";
 
 export interface Repository {
   fullName: string;
@@ -7,9 +9,36 @@ export interface Repository {
   description: string | null;
 }
 
+interface CachedData {
+  fetchedAt: string;
+  repositories: Repository[];
+}
+
 const octokit = new Octokit({
   auth: process.env.GITHUB_TOKEN,
 });
+
+const CACHE_FILE = join(process.cwd(), "repositories.json");
+
+export function saveRepositories(repos: Repository[]): void {
+  const data: CachedData = {
+    fetchedAt: new Date().toISOString(),
+    repositories: repos,
+  };
+  writeFileSync(CACHE_FILE, JSON.stringify(data, null, 2));
+  console.log(`Saved ${repos.length} repositories to ${CACHE_FILE}`);
+}
+
+export function loadRepositories(): Repository[] | null {
+  if (!existsSync(CACHE_FILE)) {
+    return null;
+  }
+  const data: CachedData = JSON.parse(readFileSync(CACHE_FILE, "utf-8"));
+  console.log(
+    `Loaded ${data.repositories.length} repositories from cache (fetched at ${data.fetchedAt})`
+  );
+  return data.repositories;
+}
 
 /**
  * Fetches the top TypeScript repositories from GitHub sorted by stars.

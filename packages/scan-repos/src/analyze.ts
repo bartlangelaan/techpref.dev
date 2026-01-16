@@ -1,4 +1,5 @@
 import { ESLint, type Linter } from "eslint";
+import globals from "globals";
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { glob } from "glob";
@@ -63,23 +64,29 @@ async function runRuleCheck(
   }
 
   const eslint = new ESLint({
-    useEslintrc: false,
-    overrideConfig: {
-      env: {
-        es2022: true,
-        node: true,
-        browser: true,
-      },
-      parserOptions: {
-        ecmaVersion: "latest",
-        sourceType: "module",
-        ecmaFeatures: {
-          jsx: true,
+    overrideConfigFile: true,
+    overrideConfig: [
+      {
+        languageOptions: {
+          ecmaVersion: "latest",
+          sourceType: "module",
+          parserOptions: {
+            ecmaFeatures: {
+              jsx: true,
+            },
+          },
+          globals: {
+            ...globals.es2022,
+            ...globals.node,
+            ...globals.browser,
+          },
         },
+        linterOptions: {
+          noInlineConfig: true,
+        },
+        rules: ruleCheck.eslintConfig as Linter.RulesRecord,
       },
-      noInlineConfig: true,
-      rules: ruleCheck.eslintConfig as Linter.RulesRecord,
-    },
+    ],
   });
 
   try {

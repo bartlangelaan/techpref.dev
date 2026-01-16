@@ -45,15 +45,21 @@ async function findSourceFiles(repoPath: string): Promise<string[]> {
   });
 }
 
+interface RuleCheckResult {
+  count: number;
+  samples: string[];
+}
+
 /**
  * Run a single ESLint rule check and count violations.
  */
 async function runRuleCheck(
   files: string[],
-  ruleCheck: RuleCheck
-): Promise<number> {
+  ruleCheck: RuleCheck,
+  maxSamples: number = 5
+): Promise<RuleCheckResult> {
   if (files.length === 0) {
-    return 0;
+    return { count: 0, samples: [] };
   }
 
   const eslint = new ESLint({
@@ -78,39 +84,61 @@ async function runRuleCheck(
   try {
     const results = await eslint.lintFiles(files);
     let violationCount = 0;
+    const samples: string[] = [];
+
     for (const result of results) {
       violationCount += result.errorCount;
+
+      // Collect sample violations
+      if (samples.length < maxSamples) {
+        for (const message of result.messages) {
+          if (message.severity === 2 && samples.length < maxSamples) {
+            const relativePath = result.filePath.replace(process.cwd() + "/", "");
+            samples.push(
+              `${relativePath}:${message.line}:${message.column} - ${message.message}`
+            );
+          }
+        }
+      }
     }
-    return violationCount;
+    return { count: violationCount, samples };
   } catch {
     // If ESLint fails (e.g., parsing errors), return 0
-    return 0;
+    return { count: 0, samples: [] };
   }
+}
+
+interface AnalyzeResult {
+  result: RepoAnalysisResult;
+  samplesByVariant: Map<string, string[]>;
 }
 
 /**
  * Analyze a single repository with all rule checks.
  */
-async function analyzeRepository(
-  repo: Repository
-): Promise<RepoAnalysisResult> {
+async function analyzeRepository(repo: Repository): Promise<AnalyzeResult> {
   const repoPath = join(REPOS_DIR, repo.fullName);
   const files = await findSourceFiles(repoPath);
 
   const checks: RepoAnalysisResult["checks"] = {};
+  const samplesByVariant = new Map<string, string[]>();
 
   for (const ruleCheck of allRuleChecks) {
     if (!checks[ruleCheck.ruleId]) {
       checks[ruleCheck.ruleId] = {};
     }
-    const count = await runRuleCheck(files, ruleCheck);
+    const { count, samples } = await runRuleCheck(files, ruleCheck);
     checks[ruleCheck.ruleId][ruleCheck.variant] = count;
+    samplesByVariant.set(`${ruleCheck.ruleId}/${ruleCheck.variant}`, samples);
   }
 
   return {
-    repoFullName: repo.fullName,
-    analyzedAt: new Date().toISOString(),
-    checks,
+    result: {
+      repoFullName: repo.fullName,
+      analyzedAt: new Date().toISOString(),
+      checks,
+    },
+    samplesByVariant,
   };
 }
 
@@ -148,7 +176,7 @@ export async function analyzeRepositories(
     );
 
     try {
-      const result = await analyzeRepository(repo);
+      const { result, samplesByVariant } = await analyzeRepository(repo);
       output.results.push(result);
       saveResults(output);
 
@@ -158,6 +186,19 @@ export async function analyzeRepositories(
           .map(([v, count]) => `${v}=${count}`)
           .join(", ");
         console.log(`  ${ruleId}: ${variantSummary}`);
+
+        // Print sample violations for each variant
+        for (const [variant, count] of Object.entries(variants)) {
+          if (count > 0) {
+            const samples = samplesByVariant.get(`${ruleId}/${variant}`) || [];
+            if (samples.length > 0) {
+              console.log(`    ${variant} samples:`);
+              for (const sample of samples) {
+                console.log(`      - ${sample}`);
+              }
+            }
+          }
+        }
       }
     } catch (error) {
       console.error(`  Error analyzing ${repo.fullName}:`, error);

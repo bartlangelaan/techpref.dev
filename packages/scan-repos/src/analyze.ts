@@ -13,7 +13,7 @@ import {
 } from "./rules/index.js";
 
 const REPOS_DIR = join(process.cwd(), "repos");
-const RESULTS_FILE = join(process.cwd(), "analysis-results.json");
+const RESULTS_FILE = join(process.cwd(), "../..", "apps/techpref.dev/repo-analysis-results.json");
 
 /**
  * Load existing analysis results from file.

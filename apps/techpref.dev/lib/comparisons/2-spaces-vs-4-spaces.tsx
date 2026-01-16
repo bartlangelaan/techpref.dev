@@ -44,35 +44,12 @@ export function getTwoVsFourSpacesData(): ComparisonData {
         "Reduces horizontal scrolling",
         "Default in Prettier for JavaScript",
       ],
-      projects:
-        stats.twoSpaceProjects.length > 0
-          ? stats.twoSpaceProjects.slice(0, 3).map((p) => ({
-              name: p.name,
-              stars: "",
-              url: p.url,
-              description: `Uses 2-space indentation`,
-            }))
-          : [
-              {
-                name: "React",
-                stars: "225k",
-                url: "https://github.com/facebook/react",
-                description:
-                  "A declarative, efficient, and flexible JavaScript library for building user interfaces.",
-              },
-              {
-                name: "Node.js",
-                stars: "106k",
-                url: "https://github.com/nodejs/node",
-                description: "Node.js JavaScript runtime",
-              },
-              {
-                name: "Airbnb JavaScript Style Guide",
-                stars: "144k",
-                url: "https://github.com/airbnb/javascript",
-                description: "JavaScript Style Guide",
-              },
-            ],
+      projects: stats.twoSpaceProjects.slice(0, 3).map((p) => ({
+        name: p.name,
+        stars: "",
+        url: p.url,
+        description: `Uses 2-space indentation`,
+      })),
       influencers: [
         {
           name: "Addy Osmani",
@@ -137,35 +114,12 @@ export function getTwoVsFourSpacesData(): ComparisonData {
         "Preferred in enterprise environments",
         "More accessible for developers with vision issues",
       ],
-      projects:
-        stats.fourSpaceProjects.length > 0
-          ? stats.fourSpaceProjects.slice(0, 3).map((p) => ({
-              name: p.name,
-              stars: "",
-              url: p.url,
-              description: `Uses 4-space indentation`,
-            }))
-          : [
-              {
-                name: "TypeScript",
-                stars: "100k",
-                url: "https://github.com/microsoft/TypeScript",
-                description:
-                  "TypeScript is a superset of JavaScript that compiles to clean JavaScript output.",
-              },
-              {
-                name: "VS Code",
-                stars: "162k",
-                url: "https://github.com/microsoft/vscode",
-                description: "Visual Studio Code - Code editing. Redefined.",
-              },
-              {
-                name: "Angular",
-                stars: "96k",
-                url: "https://github.com/angular/angular",
-                description: "The modern web developer's platform.",
-              },
-            ],
+      projects: stats.fourSpaceProjects.slice(0, 3).map((p) => ({
+        name: p.name,
+        stars: "",
+        url: p.url,
+        description: `Uses 4-space indentation`,
+      })),
       influencers: [
         {
           name: "Anders Hejlsberg",

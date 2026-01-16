@@ -40,35 +40,12 @@ export function getSpacesVsTabsData(): ComparisonData {
         "Recommended by Prettier and ESLint defaults",
         "Easier code review with predictable spacing",
       ],
-      projects:
-        stats.spacesProjects.length > 0
-          ? stats.spacesProjects.slice(0, 3).map((p) => ({
-              name: p.name,
-              stars: "",
-              url: p.url,
-              description: "Uses spaces for indentation",
-            }))
-          : [
-              {
-                name: "React",
-                stars: "225k",
-                url: "https://github.com/facebook/react",
-                description:
-                  "A declarative, efficient, and flexible JavaScript library for building user interfaces.",
-              },
-              {
-                name: "Angular",
-                stars: "96k",
-                url: "https://github.com/angular/angular",
-                description: "The modern web developer's platform.",
-              },
-              {
-                name: "Airbnb JavaScript Style Guide",
-                stars: "144k",
-                url: "https://github.com/airbnb/javascript",
-                description: "JavaScript Style Guide",
-              },
-            ],
+      projects: stats.spacesProjects.slice(0, 3).map((p) => ({
+        name: p.name,
+        stars: "",
+        url: p.url,
+        description: "Uses spaces for indentation",
+      })),
       influencers: [
         {
           name: "Dan Abramov",
@@ -128,34 +105,12 @@ export function getSpacesVsTabsData(): ComparisonData {
         "Faster navigation with keyboard shortcuts",
         "Respects individual workspace settings",
       ],
-      projects:
-        stats.tabsProjects.length > 0
-          ? stats.tabsProjects.slice(0, 3).map((p) => ({
-              name: p.name,
-              stars: "",
-              url: p.url,
-              description: "Uses tabs for indentation",
-            }))
-          : [
-              {
-                name: "jQuery",
-                stars: "59k",
-                url: "https://github.com/jquery/jquery",
-                description: "jQuery JavaScript Library",
-              },
-              {
-                name: "WordPress Gutenberg",
-                stars: "10k",
-                url: "https://github.com/WordPress/gutenberg",
-                description: "The Block Editor project for WordPress",
-              },
-              {
-                name: "Go",
-                stars: "123k",
-                url: "https://github.com/golang/go",
-                description: "The Go programming language",
-              },
-            ],
+      projects: stats.tabsProjects.slice(0, 3).map((p) => ({
+        name: p.name,
+        stars: "",
+        url: p.url,
+        description: "Uses tabs for indentation",
+      })),
       influencers: [
         {
           name: "Ryan Dahl",

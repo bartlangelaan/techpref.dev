@@ -42,37 +42,12 @@ function handleClick() {
         "More explicit and readable for some developers",
         "Required for generator functions",
       ],
-      projects:
-        stats.declarationProjects.length > 0
-          ? stats.declarationProjects.slice(0, 3).map((p) => ({
-              name: p.name,
-              stars: "",
-              url: p.url,
-              description: "Prefers function declarations",
-            }))
-          : [
-              {
-                name: "Lodash",
-                stars: "59k",
-                url: "https://github.com/lodash/lodash",
-                description:
-                  "A modern JavaScript utility library delivering modularity, performance, & extras.",
-              },
-              {
-                name: "Express",
-                stars: "64k",
-                url: "https://github.com/expressjs/express",
-                description:
-                  "Fast, unopinionated, minimalist web framework for Node.js",
-              },
-              {
-                name: "Moment.js",
-                stars: "48k",
-                url: "https://github.com/moment/moment",
-                description:
-                  "Parse, validate, manipulate, and display dates in JavaScript.",
-              },
-            ],
+      projects: stats.declarationProjects.slice(0, 3).map((p) => ({
+        name: p.name,
+        stars: "",
+        url: p.url,
+        description: "Prefers function declarations",
+      })),
       influencers: [
         {
           name: "Kyle Simpson",
@@ -132,35 +107,12 @@ const handleClick = () => {
         "Cannot be used as constructors",
         "Ideal for functional programming patterns",
       ],
-      projects:
-        stats.expressionProjects.length > 0
-          ? stats.expressionProjects.slice(0, 3).map((p) => ({
-              name: p.name,
-              stars: "",
-              url: p.url,
-              description: "Prefers arrow functions",
-            }))
-          : [
-              {
-                name: "React",
-                stars: "225k",
-                url: "https://github.com/facebook/react",
-                description:
-                  "A declarative, efficient, and flexible JavaScript library for building user interfaces.",
-              },
-              {
-                name: "Vue.js",
-                stars: "207k",
-                url: "https://github.com/vuejs/vue",
-                description: "The Progressive JavaScript Framework.",
-              },
-              {
-                name: "Next.js",
-                stars: "124k",
-                url: "https://github.com/vercel/next.js",
-                description: "The React Framework for the Web",
-              },
-            ],
+      projects: stats.expressionProjects.slice(0, 3).map((p) => ({
+        name: p.name,
+        stars: "",
+        url: p.url,
+        description: "Prefers arrow functions",
+      })),
       influencers: [
         {
           name: "Dan Abramov",

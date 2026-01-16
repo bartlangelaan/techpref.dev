@@ -77,6 +77,7 @@ async function runRuleCheck(
           jsx: true,
         },
       },
+      noInlineConfig: true,
       rules: ruleCheck.eslintConfig as Linter.RulesRecord,
     },
   });

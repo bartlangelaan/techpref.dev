@@ -36,6 +36,7 @@ export function getTwoVsFourSpacesData(): ComparisonData {
   }
   return [];
 }`,
+      showWhitespace: true,
       features: [
         "More code visible on screen at once",
         "Preferred by Google, Airbnb, and npm",
@@ -106,6 +107,7 @@ export function getTwoVsFourSpacesData(): ComparisonData {
     }
     return [];
 }`,
+      showWhitespace: true,
       features: [
         "Clearer visual hierarchy at a glance",
         "Standard in Python, C#, and Java",

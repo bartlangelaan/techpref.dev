@@ -35,7 +35,11 @@ export function ComparisonCard({
             <FileCode className="text-primary h-4 w-4" />
             Code Example
           </h3>
-          <CodeBlock code={side.code} label={side.codeLabel} />
+          <CodeBlock
+            code={side.code}
+            label={side.codeLabel}
+            showWhitespace={side.showWhitespace}
+          />
         </div>
 
         {/* Features */}

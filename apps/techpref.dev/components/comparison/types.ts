@@ -27,6 +27,7 @@ export interface ComparisonSide {
   features: string[];
   code: string;
   codeLabel: string;
+  showWhitespace?: boolean;
   projects: Project[];
   influencers: Influencer[];
   stats: Stat[];

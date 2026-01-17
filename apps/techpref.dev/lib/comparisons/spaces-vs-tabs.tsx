@@ -32,6 +32,7 @@ export function getSpacesVsTabsData(): ComparisonData {
       return sum + item.price;
     }, 0);
 }`,
+      showWhitespace: true,
       features: [
         "Consistent appearance across all editors and platforms",
         "Precise control over alignment and formatting",
@@ -97,6 +98,7 @@ export function getSpacesVsTabsData(): ComparisonData {
 			return sum + item.price;
 		}, 0);
 }`,
+      showWhitespace: true,
       features: [
         "Semantic meaning: one indent = one tab character",
         "Customizable display width per developer preference",

@@ -65,19 +65,18 @@ export function getIndentStats() {
       styles[1].violations / styles[0].violations < 1.5;
 
     const repoUrl = `https://github.com/${repo.repoFullName}`;
-    const repoName = repo.repoFullName.split("/")[1] ?? repo.repoFullName;
 
     if (isMixed) {
       mixedRepos++;
     } else if (minViolations === twoSpaceViolations) {
       twoSpaceRepos++;
       if (twoSpaceProjects.length < 5) {
-        twoSpaceProjects.push({ name: repoName, url: repoUrl });
+        twoSpaceProjects.push({ name: repo.repoFullName, url: repoUrl });
       }
     } else if (minViolations === fourSpaceViolations) {
       fourSpaceRepos++;
       if (fourSpaceProjects.length < 5) {
-        fourSpaceProjects.push({ name: repoName, url: repoUrl });
+        fourSpaceProjects.push({ name: repo.repoFullName, url: repoUrl });
       }
     } else {
       tabRepos++;
@@ -131,7 +130,6 @@ export function getSpacesVsTabsStats() {
     const spacesViolations = Math.min(twoSpaceViolations, fourSpaceViolations);
 
     const repoUrl = `https://github.com/${repo.repoFullName}`;
-    const repoName = repo.repoFullName.split("/")[1] ?? repo.repoFullName;
 
     // Check if there's a clear winner
     if (spacesViolations === 0 && tabViolations === 0) {
@@ -139,12 +137,12 @@ export function getSpacesVsTabsStats() {
     } else if (spacesViolations < tabViolations / 2) {
       spacesRepos++;
       if (spacesProjects.length < 5) {
-        spacesProjects.push({ name: repoName, url: repoUrl });
+        spacesProjects.push({ name: repo.repoFullName, url: repoUrl });
       }
     } else if (tabViolations < spacesViolations / 2) {
       tabsRepos++;
       if (tabsProjects.length < 5) {
-        tabsProjects.push({ name: repoName, url: repoUrl });
+        tabsProjects.push({ name: repo.repoFullName, url: repoUrl });
       }
     } else {
       mixedRepos++;
@@ -189,7 +187,6 @@ export function getFuncStyleStats() {
     const declarationViolations = funcStyle["declaration"] ?? 0;
 
     const repoUrl = `https://github.com/${repo.repoFullName}`;
-    const repoName = repo.repoFullName.split("/")[1] ?? repo.repoFullName;
 
     // If expression violations are high, they prefer declarations
     // If declaration violations are high, they prefer expressions/arrows
@@ -198,12 +195,12 @@ export function getFuncStyleStats() {
     } else if (expressionViolations > declarationViolations * 2) {
       declarationRepos++;
       if (declarationProjects.length < 5) {
-        declarationProjects.push({ name: repoName, url: repoUrl });
+        declarationProjects.push({ name: repo.repoFullName, url: repoUrl });
       }
     } else if (declarationViolations > expressionViolations * 2) {
       expressionRepos++;
       if (expressionProjects.length < 5) {
-        expressionProjects.push({ name: repoName, url: repoUrl });
+        expressionProjects.push({ name: repo.repoFullName, url: repoUrl });
       }
     } else {
       mixedRepos++;

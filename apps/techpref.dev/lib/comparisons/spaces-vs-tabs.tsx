@@ -1,14 +1,6 @@
 import type { ComparisonData } from "@/components/comparison";
 import { getSpacesVsTabsStats } from "@/lib/analysis-results";
-import {
-  BarChart3,
-  Code2,
-  Eye,
-  FileCode,
-  TrendingUp,
-  Users,
-  Zap,
-} from "lucide-react";
+import { BarChart3, TrendingUp, Users } from "lucide-react";
 
 export function getSpacesVsTabsData(): ComparisonData {
   const stats = getSpacesVsTabsStats();
@@ -47,21 +39,6 @@ export function getSpacesVsTabsData(): ComparisonData {
         url: p.url,
         description: "Uses spaces for indentation",
       })),
-      influencers: [
-        {
-          name: "Dan Abramov",
-          role: "React Core Team",
-          quote:
-            "Spaces provide consistent formatting across different editors and environments.",
-          avatar: "/developer-portrait-dan.jpg",
-        },
-        {
-          name: "Addy Osmani",
-          role: "Chrome DevRel Lead",
-          quote: "Two spaces keep code compact while maintaining readability.",
-          avatar: "/developer-portrait-addy.jpg",
-        },
-      ],
       stats: [
         {
           icon: <TrendingUp className="h-5 w-5" />,
@@ -72,16 +49,6 @@ export function getSpacesVsTabsData(): ComparisonData {
           icon: <BarChart3 className="h-5 w-5" />,
           value: `${stats.spacesRepos}`,
           label: "repositories",
-        },
-        {
-          icon: <Code2 className="h-5 w-5" />,
-          value: "2",
-          label: "Most common indent size",
-        },
-        {
-          icon: <Eye className="h-5 w-5" />,
-          value: "+23%",
-          label: "Readability improvement",
         },
       ],
     },
@@ -113,21 +80,6 @@ export function getSpacesVsTabsData(): ComparisonData {
         url: p.url,
         description: "Uses tabs for indentation",
       })),
-      influencers: [
-        {
-          name: "Ryan Dahl",
-          role: "Creator of Node.js & Deno",
-          quote:
-            "Tabs respect individual developer preferences for indentation width.",
-          avatar: "/developer-portrait-ryan.jpg",
-        },
-        {
-          name: "Rich Harris",
-          role: "Creator of Svelte",
-          quote: "Tabs are more accessible and reduce file size.",
-          avatar: "/developer-portrait-rich.jpg",
-        },
-      ],
       stats: [
         {
           icon: <TrendingUp className="h-5 w-5" />,
@@ -138,16 +90,6 @@ export function getSpacesVsTabsData(): ComparisonData {
           icon: <BarChart3 className="h-5 w-5" />,
           value: `${stats.tabsRepos}`,
           label: "repositories",
-        },
-        {
-          icon: <Code2 className="h-5 w-5" />,
-          value: "1",
-          label: "Character per indent",
-        },
-        {
-          icon: <Users className="h-5 w-5" />,
-          value: "100%",
-          label: "Accessibility friendly",
         },
       ],
     },
@@ -161,16 +103,6 @@ export function getSpacesVsTabsData(): ComparisonData {
         icon: <Users className="h-6 w-6" />,
         value: `${stats.mixedRepos}`,
         label: "use mixed styles",
-      },
-      {
-        icon: <FileCode className="h-6 w-6" />,
-        value: "2.1x",
-        label: "more bytes with 4-space indent",
-      },
-      {
-        icon: <Zap className="h-6 w-6" />,
-        value: "0",
-        label: "performance impact",
       },
     ],
     conclusion: {

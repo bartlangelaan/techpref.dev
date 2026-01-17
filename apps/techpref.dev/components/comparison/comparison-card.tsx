@@ -62,17 +62,19 @@ export function ComparisonCard({
         </div>
 
         {/* Statistics */}
-        <div>
-          <h3 className="text-foreground mb-3 flex items-center gap-2 text-sm font-semibold tracking-wider uppercase">
-            <BarChart3 className="text-primary h-4 w-4" />
-            Statistics
-          </h3>
-          <div className="grid grid-cols-2 gap-3">
-            {side.stats.map((stat, index) => (
-              <StatCard key={index} stat={stat} />
-            ))}
+        {side.stats && side.stats.length > 0 && (
+          <div>
+            <h3 className="text-foreground mb-3 flex items-center gap-2 text-sm font-semibold tracking-wider uppercase">
+              <BarChart3 className="text-primary h-4 w-4" />
+              Statistics
+            </h3>
+            <div className="grid grid-cols-2 gap-3">
+              {side.stats.map((stat, index) => (
+                <StatCard key={index} stat={stat} />
+              ))}
+            </div>
           </div>
-        </div>
+        )}
 
         {/* Popular Projects */}
         <div>
@@ -88,17 +90,19 @@ export function ComparisonCard({
         </div>
 
         {/* Influencers */}
-        <div>
-          <h3 className="text-foreground mb-3 flex items-center gap-2 text-sm font-semibold tracking-wider uppercase">
-            <Users className="text-primary h-4 w-4" />
-            Advocates
-          </h3>
-          <div className="space-y-3">
-            {side.influencers.map((influencer, index) => (
-              <InfluencerCard key={index} influencer={influencer} />
-            ))}
+        {side.influencers && side.influencers.length > 0 && (
+          <div>
+            <h3 className="text-foreground mb-3 flex items-center gap-2 text-sm font-semibold tracking-wider uppercase">
+              <Users className="text-primary h-4 w-4" />
+              Advocates
+            </h3>
+            <div className="space-y-3">
+              {side.influencers.map((influencer, index) => (
+                <InfluencerCard key={index} influencer={influencer} />
+              ))}
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </div>
   );

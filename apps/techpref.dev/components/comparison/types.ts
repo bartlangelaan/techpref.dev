@@ -29,8 +29,8 @@ export interface ComparisonSide {
   codeLabel: string;
   showWhitespace?: boolean;
   projects: Project[];
-  influencers: Influencer[];
-  stats: Stat[];
+  influencers?: Influencer[];
+  stats?: Stat[];
 }
 
 export interface ComparisonData {
@@ -40,7 +40,7 @@ export interface ComparisonData {
   badgeText: string;
   leftSide: ComparisonSide;
   rightSide: ComparisonSide;
-  bottomStats: {
+  bottomStats?: {
     icon: React.ReactNode;
     value: string;
     label: string;

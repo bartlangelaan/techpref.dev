@@ -23,25 +23,27 @@ export function ComparisonPage({ data }: { data: ComparisonData }) {
             {data.description}
           </p>
 
-          <div className="mt-10 flex items-center justify-center gap-8">
-            <div className="text-center">
-              <p className="text-primary text-3xl font-bold">
-                {data.leftSide.stats[0]?.value}
-              </p>
-              <p className="text-muted-foreground text-sm">
-                Use {data.leftSide.title.replace("Team ", "")}
-              </p>
+          {data.leftSide.stats?.[0] && data.rightSide.stats?.[0] && (
+            <div className="mt-10 flex items-center justify-center gap-8">
+              <div className="text-center">
+                <p className="text-primary text-3xl font-bold">
+                  {data.leftSide.stats[0].value}
+                </p>
+                <p className="text-muted-foreground text-sm">
+                  Use {data.leftSide.title.replace("Team ", "")}
+                </p>
+              </div>
+              <div className="bg-border h-12 w-px" />
+              <div className="text-center">
+                <p className="text-foreground text-3xl font-bold">
+                  {data.rightSide.stats[0].value}
+                </p>
+                <p className="text-muted-foreground text-sm">
+                  Use {data.rightSide.title.replace("Team ", "")}
+                </p>
+              </div>
             </div>
-            <div className="bg-border h-12 w-px" />
-            <div className="text-center">
-              <p className="text-foreground text-3xl font-bold">
-                {data.rightSide.stats[0]?.value}
-              </p>
-              <p className="text-muted-foreground text-sm">
-                Use {data.rightSide.title.replace("Team ", "")}
-              </p>
-            </div>
-          </div>
+          )}
         </div>
       </div>
 
@@ -53,7 +55,7 @@ export function ComparisonPage({ data }: { data: ComparisonData }) {
         </div>
 
         {/* Bottom Stats Section */}
-        {data.bottomStats.length > 0 && (
+        {data.bottomStats && data.bottomStats.length > 0 && (
           <div className="mt-16 lg:mt-24">
             <div className="mb-10 text-center">
               <h2 className="text-foreground mb-3 text-2xl font-bold sm:text-3xl">

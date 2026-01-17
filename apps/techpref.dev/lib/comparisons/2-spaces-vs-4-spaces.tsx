@@ -1,14 +1,6 @@
 import type { ComparisonData } from "@/components/comparison";
 import { getIndentStats } from "@/lib/analysis-results";
-import {
-  BarChart3,
-  Eye,
-  FileCode,
-  Monitor,
-  TrendingUp,
-  Users,
-  Zap,
-} from "lucide-react";
+import { BarChart3, FileCode, TrendingUp, Users } from "lucide-react";
 
 export function getTwoVsFourSpacesData(): ComparisonData {
   const stats = getIndentStats();
@@ -51,22 +43,6 @@ export function getTwoVsFourSpacesData(): ComparisonData {
         url: p.url,
         description: `Uses 2-space indentation`,
       })),
-      influencers: [
-        {
-          name: "Addy Osmani",
-          role: "Chrome DevRel Lead",
-          quote:
-            "2 spaces strike the perfect balance between readability and code density.",
-          avatar: "/developer-portrait-addy.jpg",
-        },
-        {
-          name: "Sindre Sorhus",
-          role: "Open Source Developer",
-          quote:
-            "With modern editors, 2 spaces provide enough visual distinction.",
-          avatar: "/developer-portrait-sindre.jpg",
-        },
-      ],
       stats: [
         {
           icon: <TrendingUp className="h-5 w-5" />,
@@ -77,16 +53,6 @@ export function getTwoVsFourSpacesData(): ComparisonData {
           icon: <BarChart3 className="h-5 w-5" />,
           value: `${stats.twoSpaceRepos}`,
           label: "repositories",
-        },
-        {
-          icon: <Monitor className="h-5 w-5" />,
-          value: "80col",
-          label: "Fits in standard width",
-        },
-        {
-          icon: <Eye className="h-5 w-5" />,
-          value: "+25%",
-          label: "More code on screen",
         },
       ],
     },
@@ -122,22 +88,6 @@ export function getTwoVsFourSpacesData(): ComparisonData {
         url: p.url,
         description: `Uses 4-space indentation`,
       })),
-      influencers: [
-        {
-          name: "Anders Hejlsberg",
-          role: "Creator of TypeScript",
-          quote:
-            "4 spaces provide clear visual boundaries that help prevent nesting errors.",
-          avatar: "/developer-portrait-anders.jpg",
-        },
-        {
-          name: "Martin Fowler",
-          role: "Software Development Author",
-          quote:
-            "Generous whitespace improves code comprehension significantly.",
-          avatar: "/developer-portrait-martin.jpg",
-        },
-      ],
       stats: [
         {
           icon: <TrendingUp className="h-5 w-5" />,
@@ -148,16 +98,6 @@ export function getTwoVsFourSpacesData(): ComparisonData {
           icon: <BarChart3 className="h-5 w-5" />,
           value: `${stats.fourSpaceRepos}`,
           label: "repositories",
-        },
-        {
-          icon: <FileCode className="h-5 w-5" />,
-          value: "2x",
-          label: "Indent visibility",
-        },
-        {
-          icon: <Users className="h-5 w-5" />,
-          value: "+18%",
-          label: "Easier nesting detection",
         },
       ],
     },
@@ -176,11 +116,6 @@ export function getTwoVsFourSpacesData(): ComparisonData {
         icon: <Users className="h-6 w-6" />,
         value: `${stats.mixedRepos}`,
         label: "use mixed styles",
-      },
-      {
-        icon: <Zap className="h-6 w-6" />,
-        value: "0",
-        label: "performance impact",
       },
     ],
     conclusion: {

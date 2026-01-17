@@ -1,14 +1,6 @@
 import type { ComparisonData } from "@/components/comparison";
 import { getFuncStyleStats } from "@/lib/analysis-results";
-import {
-  BarChart3,
-  Clock,
-  Code2,
-  FileCode,
-  TrendingUp,
-  Users,
-  Zap,
-} from "lucide-react";
+import { BarChart3, TrendingUp, Users } from "lucide-react";
 
 export function getFuncStyleData(): ComparisonData {
   const stats = getFuncStyleStats();
@@ -48,22 +40,6 @@ function handleClick() {
         url: p.url,
         description: "Prefers function declarations",
       })),
-      influencers: [
-        {
-          name: "Kyle Simpson",
-          role: "Author of You Don't Know JS",
-          quote:
-            "Function declarations are more explicit about their intent and behavior.",
-          avatar: "/developer-portrait-kyle.jpg",
-        },
-        {
-          name: "Douglas Crockford",
-          role: "Creator of JSON",
-          quote:
-            "Named functions make debugging easier with clear stack traces.",
-          avatar: "/developer-portrait-douglas.jpg",
-        },
-      ],
       stats: [
         {
           icon: <TrendingUp className="h-5 w-5" />,
@@ -74,16 +50,6 @@ function handleClick() {
           icon: <BarChart3 className="h-5 w-5" />,
           value: `${stats.declarationRepos}`,
           label: "repositories",
-        },
-        {
-          icon: <Code2 className="h-5 w-5" />,
-          value: "100%",
-          label: "Browser support",
-        },
-        {
-          icon: <Clock className="h-5 w-5" />,
-          value: "1995",
-          label: "Available since",
         },
       ],
     },
@@ -113,22 +79,6 @@ const handleClick = () => {
         url: p.url,
         description: "Prefers arrow functions",
       })),
-      influencers: [
-        {
-          name: "Dan Abramov",
-          role: "React Core Team",
-          quote:
-            "Arrow functions make React components cleaner and avoid 'this' confusion.",
-          avatar: "/developer-portrait-dan.jpg",
-        },
-        {
-          name: "Wes Bos",
-          role: "JavaScript Educator",
-          quote:
-            "Arrow functions are perfect for callbacks - concise and no 'this' surprises.",
-          avatar: "/developer-portrait-wes.jpg",
-        },
-      ],
       stats: [
         {
           icon: <TrendingUp className="h-5 w-5" />,
@@ -139,16 +89,6 @@ const handleClick = () => {
           icon: <BarChart3 className="h-5 w-5" />,
           value: `${stats.expressionRepos}`,
           label: "repositories",
-        },
-        {
-          icon: <Code2 className="h-5 w-5" />,
-          value: "-40%",
-          label: "Less boilerplate",
-        },
-        {
-          icon: <FileCode className="h-5 w-5" />,
-          value: "ES6+",
-          label: "Available since",
         },
       ],
     },
@@ -162,16 +102,6 @@ const handleClick = () => {
         icon: <Users className="h-6 w-6" />,
         value: `${stats.mixedRepos}`,
         label: "use mixed styles",
-      },
-      {
-        icon: <FileCode className="h-6 w-6" />,
-        value: "func-style",
-        label: "ESLint rule used",
-      },
-      {
-        icon: <Zap className="h-6 w-6" />,
-        value: "0ms",
-        label: "performance difference",
       },
     ],
     conclusion: {

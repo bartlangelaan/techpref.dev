@@ -69,29 +69,31 @@ export default function Home() {
                 {comparison.description}
               </p>
 
-              <div className="flex items-center gap-4 text-sm">
-                <div className="flex items-center gap-2">
-                  <span className="text-primary font-semibold">
-                    {comparison.leftSide.stats[0]?.value}
-                  </span>
-                  <span className="text-muted-foreground">
-                    {comparison.leftSide.title
-                      .replace("Team ", "")
-                      .replace("Function ", "")}
-                  </span>
+              {comparison.leftSide.stats?.[0] && comparison.rightSide.stats?.[0] && (
+                <div className="flex items-center gap-4 text-sm">
+                  <div className="flex items-center gap-2">
+                    <span className="text-primary font-semibold">
+                      {comparison.leftSide.stats[0].value}
+                    </span>
+                    <span className="text-muted-foreground">
+                      {comparison.leftSide.title
+                        .replace("Team ", "")
+                        .replace("Function ", "")}
+                    </span>
+                  </div>
+                  <div className="bg-border h-4 w-px" />
+                  <div className="flex items-center gap-2">
+                    <span className="text-foreground font-semibold">
+                      {comparison.rightSide.stats[0].value}
+                    </span>
+                    <span className="text-muted-foreground">
+                      {comparison.rightSide.title
+                        .replace("Team ", "")
+                        .replace("Arrow ", "")}
+                    </span>
+                  </div>
                 </div>
-                <div className="bg-border h-4 w-px" />
-                <div className="flex items-center gap-2">
-                  <span className="text-foreground font-semibold">
-                    {comparison.rightSide.stats[0]?.value}
-                  </span>
-                  <span className="text-muted-foreground">
-                    {comparison.rightSide.title
-                      .replace("Team ", "")
-                      .replace("Arrow ", "")}
-                  </span>
-                </div>
-              </div>
+              )}
             </Link>
           ))}
         </div>

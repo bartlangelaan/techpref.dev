@@ -1,0 +1,122 @@
+import type { ComparisonData } from "@/components/comparison";
+import { getSemicolonStats } from "@/lib/analysis-results";
+import { BarChart3, TrendingUp, Users } from "lucide-react";
+
+export function getSemicolonsData(): ComparisonData {
+  const stats = getSemicolonStats();
+
+  return {
+    slug: "semicolons",
+    title: "Semicolons vs No Semicolons",
+    description:
+      "To semicolon or not to semicolon? Explore the JavaScript style war with real-world data from popular open source projects.",
+    badgeText: "JavaScript / TypeScript Styleguide",
+    leftSide: {
+      title: "Team Semicolons",
+      subtitle:
+        "Explicit, traditional, and leaves nothing to chance with JavaScript's automatic semicolon insertion.",
+      badge: "Traditional Style",
+      codeLabel: "example.js (with semicolons)",
+      code: `function greet(name) {
+  const message = \`Hello, \${name}!\`;
+  console.log(message);
+  return message;
+}
+
+const users = ["Alice", "Bob"];
+users.forEach((user) => {
+  greet(user);
+});`,
+      features: [
+        "Explicit statement termination",
+        "Avoids ASI edge cases and gotchas",
+        "Traditional C-family syntax style",
+        "Clear visual separation of statements",
+        "Safer for minification and bundling",
+        "Preferred by TypeScript and Java developers",
+      ],
+      projects: stats.semicolonProjects.slice(0, 3).map((p) => ({
+        name: p.name,
+        stars: "",
+        url: p.url,
+        description: "Uses semicolons",
+      })),
+      stats: [
+        {
+          icon: <TrendingUp className="h-5 w-5" />,
+          value: `${stats.semicolonPercent}%`,
+          label: "of analyzed repos",
+        },
+        {
+          icon: <BarChart3 className="h-5 w-5" />,
+          value: `${stats.semicolonRepos}`,
+          label: "repositories",
+        },
+      ],
+    },
+    rightSide: {
+      title: "Team No Semicolons",
+      subtitle:
+        "Clean, minimal, and trusts JavaScript's automatic semicolon insertion to do the right thing.",
+      badge: "Modern Style",
+      codeLabel: "example.js (no semicolons)",
+      code: `function greet(name) {
+  const message = \`Hello, \${name}!\`
+  console.log(message)
+  return message
+}
+
+const users = ["Alice", "Bob"]
+users.forEach((user) => {
+  greet(user)
+})`,
+      features: [
+        "Cleaner, less cluttered code",
+        "Fewer keystrokes and characters",
+        "JavaScript handles it automatically",
+        "Popular in modern frameworks",
+        "Enforced by StandardJS style",
+        "Common in Vue.js and other ecosystems",
+      ],
+      projects: stats.noSemicolonProjects.slice(0, 3).map((p) => ({
+        name: p.name,
+        stars: "",
+        url: p.url,
+        description: "No semicolons",
+      })),
+      stats: [
+        {
+          icon: <TrendingUp className="h-5 w-5" />,
+          value: `${stats.noSemicolonPercent}%`,
+          label: "of analyzed repos",
+        },
+        {
+          icon: <BarChart3 className="h-5 w-5" />,
+          value: `${stats.noSemicolonRepos}`,
+          label: "repositories",
+        },
+      ],
+    },
+    bottomStats: [
+      {
+        icon: <BarChart3 className="h-6 w-6" />,
+        value: `${stats.totalRepos}`,
+        label: "repositories analyzed",
+      },
+      {
+        icon: <Users className="h-6 w-6" />,
+        value: `${stats.mixedRepos}`,
+        label: "use mixed styles",
+      },
+    ],
+    conclusion: {
+      title: "The Real Answer?",
+      description:
+        "Both styles are valid. Pick one, configure your formatter to enforce it, and focus on what matters: writing great code.",
+      tools: ["Prettier", "ESLint", "StandardJS", "Biome"],
+    },
+  };
+}
+
+// Keep backward compatibility with static export
+export const semicolonsData = getSemicolonsData();

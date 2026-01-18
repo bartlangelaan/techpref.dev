@@ -279,3 +279,65 @@ export function getFuncStyleStats() {
     expressionProjects,
   };
 }
+
+/**
+ * Get semicolon usage statistics (always vs never)
+ */
+export function getSemicolonStats() {
+  const results = getAnalysisResults().results;
+
+  let semicolonRepos = 0;
+  let noSemicolonRepos = 0;
+  let mixedRepos = 0;
+
+  const semicolonProjects: { name: string; url: string }[] = [];
+  const noSemicolonProjects: { name: string; url: string }[] = [];
+
+  for (const repo of results) {
+    const semi = repo.checks["semi"];
+    if (!semi) continue;
+
+    const alwaysViolations = semi["always"] ?? 0;
+    const neverViolations = semi["never"] ?? 0;
+
+    const repoUrl = `https://github.com/${repo.repoFullName}`;
+
+    // If "always" violations are high, they don't use semicolons
+    // If "never" violations are high, they use semicolons
+    if (alwaysViolations === 0 && neverViolations === 0) {
+      mixedRepos++;
+    } else if (neverViolations > alwaysViolations * 2) {
+      semicolonRepos++;
+      if (semicolonProjects.length < 5) {
+        semicolonProjects.push({ name: repo.repoFullName, url: repoUrl });
+      }
+    } else if (alwaysViolations > neverViolations * 2) {
+      noSemicolonRepos++;
+      if (noSemicolonProjects.length < 5) {
+        noSemicolonProjects.push({ name: repo.repoFullName, url: repoUrl });
+      }
+    } else {
+      mixedRepos++;
+    }
+  }
+
+  const totalRepos = semicolonRepos + noSemicolonRepos + mixedRepos;
+  const definiteRepos = semicolonRepos + noSemicolonRepos;
+
+  return {
+    totalRepos,
+    semicolonRepos,
+    noSemicolonRepos,
+    mixedRepos,
+    semicolonPercent:
+      definiteRepos > 0
+        ? Math.round((semicolonRepos / definiteRepos) * 100)
+        : 0,
+    noSemicolonPercent:
+      definiteRepos > 0
+        ? Math.round((noSemicolonRepos / definiteRepos) * 100)
+        : 0,
+    semicolonProjects,
+    noSemicolonProjects,
+  };
+}

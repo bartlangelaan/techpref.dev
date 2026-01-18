@@ -1,7 +1,10 @@
+"use client";
+
+import { VerdictDialog } from "./verdict-dialog";
 import type { Stat } from "./types";
 
 export function StatCard({ stat }: { stat: Stat }) {
-  return (
+  const content = (
     <div className="bg-muted/30 border-border/50 flex items-center gap-3 rounded-lg border p-3">
       <div className="text-primary">{stat.icon}</div>
       <div>
@@ -10,4 +13,20 @@ export function StatCard({ stat }: { stat: Stat }) {
       </div>
     </div>
   );
+
+  if (stat.verdicts && stat.verdicts.length > 0) {
+    return (
+      <VerdictDialog
+        title={stat.verdictTitle || `${stat.value} ${stat.label}`}
+        description={stat.verdictDescription || `Repositories in this category`}
+        verdicts={stat.verdicts}
+      >
+        <button className="w-full text-left hover:opacity-80 transition-opacity cursor-pointer">
+          {content}
+        </button>
+      </VerdictDialog>
+    );
+  }
+
+  return content;
 }

@@ -1,3 +1,4 @@
+import type { RepoVerdict } from "@/lib/analysis-results";
 import type React from "react";
 
 export interface Project {
@@ -18,6 +19,9 @@ export interface Stat {
   icon: React.ReactNode;
   value: string;
   label: string;
+  verdicts?: RepoVerdict[];
+  verdictTitle?: string;
+  verdictDescription?: string;
 }
 
 export interface ComparisonSide {
@@ -33,6 +37,15 @@ export interface ComparisonSide {
   stats?: Stat[];
 }
 
+export interface BottomStat {
+  icon: React.ReactNode;
+  value: string;
+  label: string;
+  verdicts?: RepoVerdict[];
+  verdictTitle?: string;
+  verdictDescription?: string;
+}
+
 export interface ComparisonData {
   slug: string;
   title: string;
@@ -40,11 +53,7 @@ export interface ComparisonData {
   badgeText: string;
   leftSide: ComparisonSide;
   rightSide: ComparisonSide;
-  bottomStats?: {
-    icon: React.ReactNode;
-    value: string;
-    label: string;
-  }[];
+  bottomStats?: BottomStat[];
   conclusion: {
     title: string;
     description: string;

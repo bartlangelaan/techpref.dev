@@ -10,6 +10,8 @@ import {
   saveData,
   type AnalysisResult,
   type RepositoryData,
+  type VariantResult,
+  type ViolationSample,
 } from "./data.js";
 import { allRuleChecks, type RuleCheck } from "./rules/index.js";
 
@@ -24,19 +26,15 @@ async function findSourceFiles(repoPath: string): Promise<string[]> {
   });
 }
 
-interface RuleCheckResult {
-  count: number;
-  samples: string[];
-}
-
 /**
  * Run a single ESLint rule check and count violations.
  */
 async function runRuleCheck(
   files: string[],
   ruleCheck: RuleCheck,
-  maxSamples: number = 5,
-): Promise<RuleCheckResult> {
+  repoPath: string,
+  maxSamples: number = 10,
+): Promise<VariantResult> {
   if (files.length === 0) {
     return { count: 0, samples: [] };
   }
@@ -93,7 +91,7 @@ async function runRuleCheck(
   try {
     const results = await eslint.lintFiles(files);
     let violationCount = 0;
-    const samples: string[] = [];
+    const samples: ViolationSample[] = [];
 
     for (const result of results) {
       violationCount += result.errorCount;
@@ -102,13 +100,14 @@ async function runRuleCheck(
       if (samples.length < maxSamples) {
         for (const message of result.messages) {
           if (message.severity === 2 && samples.length < maxSamples) {
-            const relativePath = result.filePath.replace(
-              process.cwd() + "/",
-              "",
-            );
-            samples.push(
-              `${relativePath}:${message.line}:${message.column} - ${message.message}`,
-            );
+            // Get path relative to repo root
+            const relativePath = result.filePath.replace(repoPath + "/", "");
+            samples.push({
+              file: relativePath,
+              line: message.line,
+              column: message.column,
+              message: message.message,
+            });
           }
         }
       }
@@ -120,36 +119,26 @@ async function runRuleCheck(
   }
 }
 
-interface AnalyzeResult {
-  result: AnalysisResult;
-  samplesByVariant: Map<string, string[]>;
-}
-
 /**
  * Analyze a single repository with all rule checks.
  */
-async function analyzeRepository(repo: RepositoryData): Promise<AnalyzeResult> {
+async function analyzeRepository(repo: RepositoryData): Promise<AnalysisResult> {
   const repoPath = join(REPOS_DIR, repo.fullName);
   const files = await findSourceFiles(repoPath);
 
   const checks: AnalysisResult["checks"] = {};
-  const samplesByVariant = new Map<string, string[]>();
 
   for (const ruleCheck of allRuleChecks) {
     if (!checks[ruleCheck.ruleId]) {
       checks[ruleCheck.ruleId] = {};
     }
-    const { count, samples } = await runRuleCheck(files, ruleCheck);
-    checks[ruleCheck.ruleId][ruleCheck.variant] = count;
-    samplesByVariant.set(`${ruleCheck.ruleId}/${ruleCheck.variant}`, samples);
+    const variantResult = await runRuleCheck(files, ruleCheck, repoPath);
+    checks[ruleCheck.ruleId][ruleCheck.variant] = variantResult;
   }
 
   return {
-    result: {
-      analyzedAt: new Date().toISOString(),
-      checks,
-    },
-    samplesByVariant,
+    analyzedAt: new Date().toISOString(),
+    checks,
   };
 }
 
@@ -213,7 +202,7 @@ async function main() {
     );
 
     try {
-      const { result, samplesByVariant } = await analyzeRepository(repo);
+      const result = await analyzeRepository(repo);
 
       // Update the repository's analysis
       repo.analysis = result;
@@ -224,19 +213,16 @@ async function main() {
       // Print summary for this repo
       for (const [ruleId, variants] of Object.entries(result.checks)) {
         const variantSummary = Object.entries(variants)
-          .map(([v, count]) => `${v}=${count}`)
+          .map(([v, vr]) => `${v}=${vr.count}`)
           .join(", ");
         console.log(`  ${ruleId}: ${variantSummary}`);
 
         // Print sample violations for each variant
-        for (const [variant, count] of Object.entries(variants)) {
-          if (count > 0) {
-            const samples = samplesByVariant.get(`${ruleId}/${variant}`) || [];
-            if (samples.length > 0) {
-              console.log(`    ${variant} samples:`);
-              for (const sample of samples) {
-                console.log(`      - ${sample}`);
-              }
+        for (const [variant, variantResult] of Object.entries(variants)) {
+          if (variantResult.count > 0 && variantResult.samples.length > 0) {
+            console.log(`    ${variant} samples:`);
+            for (const sample of variantResult.samples.slice(0, 3)) {
+              console.log(`      - ${sample.file}:${sample.line} - ${sample.message}`);
             }
           }
         }

@@ -1,7 +1,10 @@
+"use client";
+
 import { Badge } from "@/components/ui/badge";
 import { Minus } from "lucide-react";
 import { ComparisonCard } from "./comparison-card";
 import type { ComparisonData } from "./types";
+import { VerdictDialog } from "./verdict-dialog";
 
 export function ComparisonPage({ data }: { data: ComparisonData }) {
   return (
@@ -68,20 +71,36 @@ export function ComparisonPage({ data }: { data: ComparisonData }) {
             </div>
 
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {data.bottomStats.map((stat, index) => (
-                <div
-                  key={index}
-                  className="border-border bg-card rounded-xl border p-6 text-center"
-                >
-                  <div className="bg-primary/10 text-primary mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full">
-                    {stat.icon}
+              {data.bottomStats.map((stat, index) => {
+                const content = (
+                  <div className="border-border bg-card rounded-xl border p-6 text-center">
+                    <div className="bg-primary/10 text-primary mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full">
+                      {stat.icon}
+                    </div>
+                    <p className="text-foreground mb-1 text-3xl font-bold">
+                      {stat.value}
+                    </p>
+                    <p className="text-muted-foreground text-sm">{stat.label}</p>
                   </div>
-                  <p className="text-foreground mb-1 text-3xl font-bold">
-                    {stat.value}
-                  </p>
-                  <p className="text-muted-foreground text-sm">{stat.label}</p>
-                </div>
-              ))}
+                );
+
+                if (stat.verdicts && stat.verdicts.length > 0) {
+                  return (
+                    <VerdictDialog
+                      key={index}
+                      title={stat.verdictTitle || `${stat.value} ${stat.label}`}
+                      description={stat.verdictDescription || "Repositories in this category"}
+                      verdicts={stat.verdicts}
+                    >
+                      <button className="w-full hover:opacity-80 transition-opacity cursor-pointer">
+                        {content}
+                      </button>
+                    </VerdictDialog>
+                  );
+                }
+
+                return <div key={index}>{content}</div>;
+              })}
             </div>
           </div>
         )}

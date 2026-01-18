@@ -2,13 +2,31 @@ import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
 /**
+ * A sample violation from a specific file.
+ */
+export interface ViolationSample {
+  file: string;
+  line: number;
+  column: number;
+  message: string;
+}
+
+/**
+ * Detailed check result for a variant.
+ */
+export interface VariantResult {
+  count: number;
+  samples: ViolationSample[];
+}
+
+/**
  * Analysis result for a single repository.
  */
 export interface AnalysisResult {
   analyzedAt: string;
   checks: {
     [ruleId: string]: {
-      [variant: string]: number;
+      [variant: string]: VariantResult;
     };
   };
 }

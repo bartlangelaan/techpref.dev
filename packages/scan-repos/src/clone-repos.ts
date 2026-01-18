@@ -1,19 +1,19 @@
 import { spawn } from "node:child_process";
 import { existsSync, mkdirSync } from "node:fs";
 import { join } from "node:path";
-import type { Repository } from "./github.js";
+import { loadData, REPOS_DIR, saveData, type RepositoryData } from "./data.js";
 
-const REPOS_DIR = join(process.cwd(), "repos");
+const CLONE_CONCURRENCY = 5;
 
 /**
  * Clones a repository to the local repos directory.
  * Uses shallow clone (depth=1) to save disk space and time.
  */
-export async function cloneRepository(repo: Repository): Promise<boolean> {
+async function cloneRepository(repo: RepositoryData): Promise<boolean> {
   const repoPath = join(REPOS_DIR, repo.fullName);
 
   if (existsSync(repoPath)) {
-    console.log(`Skipping ${repo.fullName} (already exists)`);
+    console.log(`Skipping ${repo.fullName} (already exists on disk)`);
     return true;
   }
 
@@ -54,15 +54,34 @@ export async function cloneRepository(repo: Repository): Promise<boolean> {
   });
 }
 
-/**
- * Clones multiple repositories with concurrency control.
- */
-export async function cloneRepositories(
-  repos: Repository[],
-  concurrency: number = 5,
-): Promise<{ success: number; failed: number }> {
+async function main() {
+  console.log("=== TechPref Repository Cloner ===\n");
+
+  // Load data
+  const loadedData = loadData();
+  if (!loadedData) {
+    console.error(
+      "No repositories found. Run 'pnpm fetch-repos' first to fetch the repository list.",
+    );
+    process.exit(1);
+  }
+  const data = loadedData;
+
+  // Ensure repos directory exists
   if (!existsSync(REPOS_DIR)) {
     mkdirSync(REPOS_DIR, { recursive: true });
+  }
+
+  // Filter repos that need cloning (clonedAt is null)
+  const reposToClone = data.repositories.filter((r) => r.clonedAt === null);
+
+  console.log(`Total repositories: ${data.repositories.length}`);
+  console.log(`Already cloned: ${data.repositories.length - reposToClone.length}`);
+  console.log(`To clone: ${reposToClone.length}\n`);
+
+  if (reposToClone.length === 0) {
+    console.log("All repositories are already cloned.");
+    return;
   }
 
   let success = 0;
@@ -70,10 +89,14 @@ export async function cloneRepositories(
   let index = 0;
 
   async function worker(): Promise<void> {
-    while (index < repos.length) {
-      const repo = repos[index++];
+    while (index < reposToClone.length) {
+      const repo = reposToClone[index++];
       const result = await cloneRepository(repo);
       if (result) {
+        // Update clonedAt timestamp
+        repo.clonedAt = new Date().toISOString();
+        // Save after each successful clone to preserve progress
+        saveData(data);
         success++;
       } else {
         failed++;
@@ -82,8 +105,15 @@ export async function cloneRepositories(
   }
 
   // Start workers
-  const workers = Array.from({ length: concurrency }, () => worker());
+  const workers = Array.from({ length: CLONE_CONCURRENCY }, () => worker());
   await Promise.all(workers);
 
-  return { success, failed };
+  console.log(`\n=== Summary ===`);
+  console.log(`Successfully cloned: ${success}`);
+  console.log(`Failed: ${failed}`);
 }
+
+main().catch((error) => {
+  console.error("Fatal error:", error);
+  process.exit(1);
+});

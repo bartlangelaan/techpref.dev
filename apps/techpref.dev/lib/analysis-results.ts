@@ -1,5 +1,40 @@
-import analysisData from "../repo-analysis-results.json";
+import repositoriesData from "../repositories.json";
 
+/**
+ * Analysis result for a single repository.
+ */
+export interface AnalysisResult {
+  analyzedAt: string;
+  checks: {
+    [ruleId: string]: {
+      [variant: string]: number;
+    };
+  };
+}
+
+/**
+ * Repository data including metadata, clone status, and analysis results.
+ */
+export interface RepositoryData {
+  fullName: string;
+  cloneUrl: string;
+  stars: number;
+  description: string | null;
+  clonedAt: string | null;
+  analysis: AnalysisResult | null;
+}
+
+/**
+ * Unified data structure for the repositories JSON file.
+ */
+export interface UnifiedData {
+  fetchedAt: string;
+  repositories: RepositoryData[];
+}
+
+/**
+ * Legacy interface for backward compatibility with existing functions.
+ */
 export interface RepoAnalysisResult {
   repoFullName: string;
   analyzedAt: string;
@@ -16,7 +51,21 @@ export interface AnalysisOutput {
 }
 
 export function getAnalysisResults(): AnalysisOutput {
-  return analysisData as AnalysisOutput;
+  const data = repositoriesData as UnifiedData;
+
+  // Convert unified data to legacy format for backward compatibility
+  const results: RepoAnalysisResult[] = data.repositories
+    .filter((repo): repo is RepositoryData & { analysis: AnalysisResult } => repo.analysis !== null)
+    .map((repo) => ({
+      repoFullName: repo.fullName,
+      analyzedAt: repo.analysis.analyzedAt,
+      checks: repo.analysis.checks,
+    }));
+
+  return {
+    startedAt: data.fetchedAt,
+    results,
+  };
 }
 
 /**

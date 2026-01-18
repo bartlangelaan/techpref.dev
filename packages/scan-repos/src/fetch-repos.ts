@@ -7,14 +7,45 @@ import {
 } from "./data.js";
 
 const REPO_COUNT = 1000;
+const MAX_RETRIES = 5;
+const INITIAL_RETRY_DELAY_MS = 60_000; // Start with 1 minute
 
 const octokit = new Octokit({
   auth: process.env.GITHUB_TOKEN,
 });
 
 /**
+ * Sleep for a given number of milliseconds.
+ */
+function sleep(ms: number): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+/**
+ * Check if an error is a rate limit error.
+ */
+function isRateLimitError(error: unknown): boolean {
+  if (
+    error &&
+    typeof error === "object" &&
+    "status" in error &&
+    "message" in error
+  ) {
+    const status = error.status;
+    const message = String(error.message);
+    return (
+      status === 403 ||
+      status === 429 ||
+      message.toLowerCase().includes("rate limit")
+    );
+  }
+  return false;
+}
+
+/**
  * Fetches the top TypeScript repositories from GitHub sorted by stars.
  * GitHub's search API returns max 1000 results (100 per page, 10 pages max).
+ * Includes retry logic for rate limit errors.
  */
 async function fetchTopTypeScriptRepos(
   count: number = 1000,
@@ -28,13 +59,33 @@ async function fetchTopTypeScriptRepos(
   for (let page = 1; page <= totalPages; page++) {
     console.log(`Fetching page ${page}/${totalPages}...`);
 
-    const response = await octokit.search.repos({
-      q: "language:typescript",
-      sort: "stars",
-      order: "desc",
-      per_page: perPage,
-      page,
-    });
+    let response;
+    let retries = 0;
+
+    while (true) {
+      try {
+        response = await octokit.search.repos({
+          q: "language:typescript",
+          sort: "stars",
+          order: "desc",
+          per_page: perPage,
+          page,
+        });
+        break; // Success, exit retry loop
+      } catch (error) {
+        if (isRateLimitError(error) && retries < MAX_RETRIES) {
+          retries++;
+          const delayMs = INITIAL_RETRY_DELAY_MS * Math.pow(2, retries - 1);
+          const delayMinutes = Math.round(delayMs / 60_000);
+          console.log(
+            `Rate limit hit. Waiting ${delayMinutes} minute(s) before retry ${retries}/${MAX_RETRIES}...`,
+          );
+          await sleep(delayMs);
+        } else {
+          throw error;
+        }
+      }
+    }
 
     for (const repo of response.data.items) {
       repos.push({
@@ -53,7 +104,7 @@ async function fetchTopTypeScriptRepos(
 
     // Respect rate limiting - wait between requests
     if (page < totalPages) {
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      await sleep(2000); // Increased to 2 seconds between requests
     }
   }
 

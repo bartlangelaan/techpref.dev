@@ -1,6 +1,29 @@
 # AGENTS.md
 
-This file provides guidance to agentic coding assistants working in the TechPref repository. TechPref analyzes coding styles across popular TypeScript repositories to identify common patterns.
+This file provides guidance to AI coding assistants working in the TechPref repository. TechPref analyzes coding styles across popular TypeScript repositories to identify common patterns.
+
+## Project Structure
+
+```
+techpref.dev/
+├── app/                  # Next.js App Router pages
+├── components/           # React components
+│   ├── comparison/       # Comparison page components
+│   └── ui/               # Base UI components (Radix UI)
+├── lib/                  # Shared utilities and data processing
+│   ├── types.ts          # Shared TypeScript types
+│   ├── analysis-results.ts  # Statistics calculations
+│   ├── comparisons/      # Comparison data definitions
+│   └── utils.ts          # Utility functions
+├── scripts/              # Data collection scripts
+│   ├── fetch-repos.ts    # Fetch top repos from GitHub
+│   ├── clone-repos.ts    # Clone repositories locally
+│   ├── analyze-repos.ts  # Run ESLint analysis
+│   └── rules/            # ESLint rule definitions
+├── data/                 # Generated analysis data
+│   └── repositories.json # Repository metadata and analysis results
+└── repos/                # Cloned repositories (gitignored)
+```
 
 ## Build Commands
 
@@ -10,131 +33,101 @@ This file provides guidance to agentic coding assistants working in the TechPref
 pnpm install
 ```
 
-### Repository Scanner
+### Development
 
 ```bash
-# Run full repository scanner (fetch top 1000 TS repos from GitHub and clone them)
+pnpm dev          # Start Next.js development server
+pnpm build        # Build for production
+pnpm start        # Start production server
+```
+
+### Linting & Formatting
+
+```bash
+pnpm lint         # Run ESLint
+pnpm format       # Format code with Prettier
+pnpm format:check # Check code formatting
+```
+
+### Data Collection Scripts
+
+```bash
+# Run full pipeline: fetch, clone, and analyze
 pnpm scan-repos
 
-# Individual scanner commands
-pnpm --filter scan-repos exec tsx src/fetch-repos.ts
-pnpm --filter scan-repos exec tsx src/clone-repos.ts
-pnpm --filter scan-repos exec tsx src/analyze-repos.ts
-```
-
-### Type Checking & Linting
-
-```bash
-# Type check scan-repos package
-pnpm --filter scan-repos exec tsc --noEmit
-
-# Build scan-repos package
-pnpm --filter scan-repos exec tsc
-
-# Lint Next.js app
-pnpm --filter techpref.dev exec eslint .
-
-# Format all code
-pnpm format
-pnpm format:check
-```
-
-### Next.js Development
-
-```bash
-# Development server
-pnpm --filter techpref.dev exec dev
-
-# Production build
-pnpm --filter techpref.dev exec build
-
-# Start production server
-pnpm --filter techpref.dev exec start
+# Or run individual steps:
+pnpm fetch-repos   # Fetch top 1000 TypeScript repos from GitHub API
+pnpm clone-repos   # Clone repositories locally (shallow clones)
+pnpm analyze-repos # Run ESLint analysis on all cloned repos
 ```
 
 ## Code Style Guidelines
 
-### TypeScript Configuration
+### TypeScript
 
 - Use strict TypeScript with `"strict": true`
-- Target ES2022 with NodeNext modules
-- Use ES module imports (`import/export`)
-- Always provide type annotations for function parameters and return types
+- Target ES2022 with bundler module resolution
 - Use `interface` for object shapes, `type` for unions/primitives
+- Always provide type annotations for function parameters
 
 ### Imports
 
-- Use explicit `.js` extensions for relative imports in Node.js modules (scan-repos package)
+- Use `@/` path alias for imports (e.g., `@/lib/types`)
 - Organize imports automatically via Prettier plugin
-- Group imports: external libraries → internal modules → relative modules
-- Use named exports preferred over default exports
+- Prefer named exports over default exports
 
 ### Formatting
 
 - Prettier with organize-imports, packagejson, and tailwindcss plugins
-- 2-space indentation for consistency
-- Use semicolons consistently
-- Maximum line length: default Prettier settings
+- 2-space indentation
+- Semicolons required
 - Trailing commas where permitted
 
 ### Naming Conventions
 
 - **Files**: kebab-case (`fetch-repos.ts`, `verdict-dialog.tsx`)
 - **Variables/Functions**: camelCase (`cloneRepository`, `repoData`)
-- **Classes/Interfaces**: PascalCase (`RepositoryData`, `RuleCheck`)
-- **Constants**: UPPER_SNAKE_CASE for top-level constants (`REPO_COUNT`, `MAX_RETRIES`)
-- **Types**: PascalCase with descriptive suffixes where appropriate (`ViolationSample`, `VariantResult`)
+- **Interfaces/Types**: PascalCase (`RepositoryData`, `RuleCheck`)
+- **Constants**: UPPER_SNAKE_CASE (`REPO_COUNT`, `MAX_RETRIES`)
 
 ### Error Handling
 
 - Use try-catch blocks for async operations
-- Provide meaningful error messages with context
 - Use `unknown` type for caught errors, then type guard before accessing properties
-- Return boolean success status from utility functions where appropriate
 - Log errors with relevant context (repo name, operation type)
 
-### File Organization
-
-- **scan-repos package**:
-  - `src/data.ts`: Shared data types and utilities
-  - `src/fetch-repos.ts`: GitHub API integration
-  - `src/clone-repos.ts`: Git operations
-  - `src/analyze-repos.ts`: Analysis logic
-  - `src/rules/`: Individual style rule implementations
-- **Next.js app**:
-  - `app/`: Next.js App Router pages
-  - `components/`: Reusable UI components
-  - `lib/`: Utility functions and data processing
-  - `components/ui/`: Base UI components
-
-### Concurrency & Performance
-
-- Use concurrency control for external operations (CLONE_CONCURRENCY = 5)
-- Implement exponential backoff for API rate limiting
-- Use shallow Git clones (`--depth 1`) to save disk space
-- Cache API responses to `repositories.json`
-- Process repositories in batches to avoid memory issues
-
-### React/Next.js Specific
+### React/Next.js
 
 - Use TypeScript with proper props typing
 - Use Radix UI components with proper composition
 - Apply Tailwind classes via `cn()` utility for conditional styling
-- Use Server Components where appropriate, Client Components only when needed
+- Use Server Components by default, Client Components only when needed
 - Follow Next.js 16 App Router patterns
 
-### Testing
+## Data Flow
 
-- Currently no test framework configured - check for additions in package.json scripts
-- When adding tests, follow existing TypeScript patterns and use conventional test locations
+1. **Fetch** (`pnpm fetch-repos`): Queries GitHub API for top 1000 TypeScript repos
+2. **Clone** (`pnpm clone-repos`): Shallow clones each repository to `repos/`
+3. **Analyze** (`pnpm analyze-repos`): Runs ESLint rules to detect coding patterns
+4. **Display**: Next.js app reads `data/repositories.json` and displays comparisons
+
+## Adding New Style Rules
+
+1. Create rule file in `scripts/rules/` (e.g., `quotes.ts`)
+2. Export `RuleCheck[]` with ESLint configurations
+3. Add to `allRuleChecks` in `scripts/rules/index.ts`
+4. Add statistics function in `lib/analysis-results.ts`
+5. Create comparison component in `lib/comparisons/`
 
 ## Environment Variables
 
-- `GITHUB_TOKEN`: Required for higher GitHub API rate limits during repository scanning
+| Variable       | Description                                             |
+| -------------- | ------------------------------------------------------- |
+| `GITHUB_TOKEN` | GitHub personal access token for higher API rate limits |
 
-## Architecture Notes
+## Performance Notes
 
-- pnpm monorepo with packages in `packages/` and apps in `apps/`
-- scan-repos package handles data collection and analysis
-- Next.js app displays results and comparisons
-- Data flows: GitHub API → cache → local clones → analysis → web display
+- Clone concurrency is limited to 5 parallel operations
+- Exponential backoff is used for GitHub API rate limiting
+- Shallow clones (`--depth 1`) are used to save disk space
+- Analysis results are saved after each repository to preserve progress

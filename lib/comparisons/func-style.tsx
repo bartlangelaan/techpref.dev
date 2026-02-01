@@ -1,9 +1,9 @@
 import type { ComparisonData } from "@/components/comparison";
-import { getFuncStyleStats } from "@/lib/analysis-results";
+import { getBasicStats } from "@/lib/analysis-results";
 import { BarChart3, TrendingUp, Users } from "lucide-react";
 
 export function getFuncStyleData(): ComparisonData {
-  const stats = getFuncStyleStats();
+  const stats = getBasicStats<'declaration' | 'expression'>('func-style');
 
   return {
     slug: "func-style",
@@ -34,7 +34,7 @@ function handleClick() {
         "More explicit and readable for some developers",
         "Required for generator functions",
       ],
-      projects: stats.declarationProjects.slice(0, 3).map((p) => ({
+      projects: stats.verdictRepositories.declaration.slice(0, 3).map((p) => ({
         name: p.name,
         stars: "",
         url: p.url,
@@ -43,18 +43,18 @@ function handleClick() {
       stats: [
         {
           icon: <TrendingUp className="h-5 w-5" />,
-          value: `${stats.declarationPercent}%`,
+          value: `${stats.verdictPercentages.declaration}%`,
           label: "of analyzed repos",
-          verdicts: stats.declarationVerdicts,
+          verdicts: stats.verdicts.declaration,
           verdictTitle: "Repositories using Function Declarations",
           verdictDescription:
             "These repositories prefer function declarations over arrow functions",
         },
         {
           icon: <BarChart3 className="h-5 w-5" />,
-          value: `${stats.declarationRepos}`,
+          value: `${stats.verdicts.declaration.length}`,
           label: "repositories",
-          verdicts: stats.declarationVerdicts,
+          verdicts: stats.verdicts.declaration,
           verdictTitle: "Repositories using Function Declarations",
           verdictDescription:
             "These repositories prefer function declarations over arrow functions",
@@ -81,7 +81,7 @@ const handleClick = () => {
         "Cannot be used as constructors",
         "Ideal for functional programming patterns",
       ],
-      projects: stats.expressionProjects.slice(0, 3).map((p) => ({
+      projects: stats.verdictRepositories.expression.slice(0, 3).map((p) => ({
         name: p.name,
         stars: "",
         url: p.url,
@@ -90,18 +90,18 @@ const handleClick = () => {
       stats: [
         {
           icon: <TrendingUp className="h-5 w-5" />,
-          value: `${stats.expressionPercent}%`,
+          value: `${stats.verdictPercentages.expression}%`,
           label: "of analyzed repos",
-          verdicts: stats.expressionVerdicts,
+          verdicts: stats.verdicts.expression,
           verdictTitle: "Repositories using Arrow Functions",
           verdictDescription:
             "These repositories prefer arrow functions/expressions over declarations",
         },
         {
           icon: <BarChart3 className="h-5 w-5" />,
-          value: `${stats.expressionRepos}`,
+          value: `${stats.verdicts.expression.length}`,
           label: "repositories",
-          verdicts: stats.expressionVerdicts,
+          verdicts: stats.verdicts.expression,
           verdictTitle: "Repositories using Arrow Functions",
           verdictDescription:
             "These repositories prefer arrow functions/expressions over declarations",
@@ -111,14 +111,14 @@ const handleClick = () => {
     bottomStats: [
       {
         icon: <BarChart3 className="h-6 w-6" />,
-        value: `${stats.totalRepos}`,
+        value: `${stats.allVerdicts.length}`,
         label: "repositories analyzed",
       },
       {
         icon: <Users className="h-6 w-6" />,
-        value: `${stats.mixedRepos}`,
+        value: `${stats.verdicts.mixed.length}`,
         label: "use mixed styles",
-        verdicts: stats.mixedVerdicts,
+        verdicts: stats.verdicts.mixed,
         verdictTitle: "Repositories with Mixed Styles",
         verdictDescription:
           "These repositories use both function declarations and arrow functions without a clear preference",

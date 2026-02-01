@@ -1,9 +1,9 @@
 import type { ComparisonData } from "@/components/comparison";
-import { getSemicolonStats } from "@/lib/analysis-results";
+import { getBasicStats } from "@/lib/analysis-results";
 import { BarChart3, TrendingUp, Users } from "lucide-react";
 
 export function getSemicolonsData(): ComparisonData {
-  const stats = getSemicolonStats();
+  const stats = getBasicStats<'always' | 'never'>('semi');
 
   return {
     slug: "semicolons",
@@ -35,7 +35,7 @@ users.forEach((user) => {
         "Safer for minification and bundling",
         "Preferred by TypeScript and Java developers",
       ],
-      projects: stats.semicolonProjects.slice(0, 3).map((p) => ({
+      projects: stats.verdictRepositories.always.slice(0, 3).map((p) => ({
         name: p.name,
         stars: "",
         url: p.url,
@@ -44,18 +44,18 @@ users.forEach((user) => {
       stats: [
         {
           icon: <TrendingUp className="h-5 w-5" />,
-          value: `${stats.semicolonPercent}%`,
+          value: `${stats.verdictPercentages.always}%`,
           label: "of analyzed repos",
-          verdicts: stats.semicolonVerdicts,
+          verdicts: stats.verdicts.always,
           verdictTitle: "Repositories using Semicolons",
           verdictDescription:
             "These repositories consistently use semicolons at the end of statements",
         },
         {
           icon: <BarChart3 className="h-5 w-5" />,
-          value: `${stats.semicolonRepos}`,
+          value: `${stats.verdicts.always.length}`,
           label: "repositories",
-          verdicts: stats.semicolonVerdicts,
+          verdicts: stats.verdicts.always,
           verdictTitle: "Repositories using Semicolons",
           verdictDescription:
             "These repositories consistently use semicolons at the end of statements",
@@ -86,7 +86,7 @@ users.forEach((user) => {
         "Enforced by StandardJS style",
         "Common in Vue.js and other ecosystems",
       ],
-      projects: stats.noSemicolonProjects.slice(0, 3).map((p) => ({
+      projects: stats.verdictRepositories.never.slice(0, 3).map((p) => ({
         name: p.name,
         stars: "",
         url: p.url,
@@ -95,18 +95,18 @@ users.forEach((user) => {
       stats: [
         {
           icon: <TrendingUp className="h-5 w-5" />,
-          value: `${stats.noSemicolonPercent}%`,
+          value: `${stats.verdictPercentages.never}%`,
           label: "of analyzed repos",
-          verdicts: stats.noSemicolonVerdicts,
+          verdicts: stats.verdicts.never,
           verdictTitle: "Repositories without Semicolons",
           verdictDescription:
             "These repositories omit semicolons, relying on ASI",
         },
         {
           icon: <BarChart3 className="h-5 w-5" />,
-          value: `${stats.noSemicolonRepos}`,
+          value: `${stats.verdicts.never.length}`,
           label: "repositories",
-          verdicts: stats.noSemicolonVerdicts,
+          verdicts: stats.verdicts.never,
           verdictTitle: "Repositories without Semicolons",
           verdictDescription:
             "These repositories omit semicolons, relying on ASI",
@@ -116,14 +116,14 @@ users.forEach((user) => {
     bottomStats: [
       {
         icon: <BarChart3 className="h-6 w-6" />,
-        value: `${stats.totalRepos}`,
+        value: `${stats.allVerdicts.length}`,
         label: "repositories analyzed",
       },
       {
         icon: <Users className="h-6 w-6" />,
-        value: `${stats.mixedRepos}`,
+        value: `${stats.verdicts.mixed.length}`,
         label: "use mixed styles",
-        verdicts: stats.mixedVerdicts,
+        verdicts: stats.verdicts.mixed,
         verdictTitle: "Repositories with Mixed Styles",
         verdictDescription:
           "These repositories have inconsistent semicolon usage",

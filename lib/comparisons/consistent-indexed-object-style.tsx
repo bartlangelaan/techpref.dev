@@ -1,9 +1,9 @@
 import type { ComparisonData } from "@/components/comparison";
-import { getConsistentIndexedObjectStyleStats } from "@/lib/analysis-results";
+import { getBasicStats } from "@/lib/analysis-results";
 import { BarChart3, TrendingUp, Users } from "lucide-react";
 
 export function getConsistentIndexedObjectStyleData(): ComparisonData {
-  const stats = getConsistentIndexedObjectStyleStats();
+  const stats = getBasicStats<'record' | 'index-signature'>('consistent-indexed-object-style');
 
   return {
     slug: "consistent-indexed-object-style",
@@ -32,7 +32,7 @@ interface Config {
         "Modern TypeScript approach",
         "Better for complex key types",
       ],
-      projects: stats.recordProjects.slice(0, 3).map((p) => ({
+      projects: stats.verdictRepositories.record.slice(0, 3).map((p) => ({
         name: p.name,
         stars: "",
         url: p.url,
@@ -41,18 +41,18 @@ interface Config {
       stats: [
         {
           icon: <TrendingUp className="h-5 w-5" />,
-          value: `${stats.recordPercent}%`,
+          value: `${stats.verdictPercentages.record}%`,
           label: "of analyzed repos",
-          verdicts: stats.recordVerdicts,
+          verdicts: stats.verdicts.record,
           verdictTitle: "Repositories using Record<K, V>",
           verdictDescription:
             "These repositories prefer the Record utility type for indexed objects",
         },
         {
           icon: <BarChart3 className="h-5 w-5" />,
-          value: `${stats.recordRepos}`,
+          value: `${stats.verdicts.record.length}`,
           label: "repositories",
-          verdicts: stats.recordVerdicts,
+          verdicts: stats.verdicts.record,
           verdictTitle: "Repositories using Record<K, V>",
           verdictDescription:
             "These repositories prefer the Record utility type for indexed objects",
@@ -85,7 +85,7 @@ interface Config {
         "Better for object-like structures",
         "Clearer when extending properties",
       ],
-      projects: stats.indexSignatureProjects.slice(0, 3).map((p) => ({
+      projects: stats.verdictRepositories['index-signature'].slice(0, 3).map((p) => ({
         name: p.name,
         stars: "",
         url: p.url,
@@ -94,18 +94,18 @@ interface Config {
       stats: [
         {
           icon: <TrendingUp className="h-5 w-5" />,
-          value: `${stats.indexSignaturePercent}%`,
+          value: `${stats.verdictPercentages['index-signature']}%`,
           label: "of analyzed repos",
-          verdicts: stats.indexSignatureVerdicts,
+          verdicts: stats.verdicts['index-signature'],
           verdictTitle: "Repositories using Index Signatures",
           verdictDescription:
             "These repositories prefer index signature syntax for indexed objects",
         },
         {
           icon: <BarChart3 className="h-5 w-5" />,
-          value: `${stats.indexSignatureRepos}`,
+          value: `${stats.verdicts['index-signature'].length}`,
           label: "repositories",
-          verdicts: stats.indexSignatureVerdicts,
+          verdicts: stats.verdicts['index-signature'],
           verdictTitle: "Repositories using Index Signatures",
           verdictDescription:
             "These repositories prefer index signature syntax for indexed objects",
@@ -115,14 +115,14 @@ interface Config {
     bottomStats: [
       {
         icon: <BarChart3 className="h-6 w-6" />,
-        value: `${stats.totalRepos}`,
+        value: `${stats.allVerdicts.length}`,
         label: "repositories analyzed",
       },
       {
         icon: <Users className="h-6 w-6" />,
-        value: `${stats.mixedRepos}`,
+        value: `${stats.verdicts.mixed.length}`,
         label: "use mixed styles",
-        verdicts: stats.mixedVerdicts,
+        verdicts: stats.verdicts.mixed,
         verdictTitle: "Repositories with Mixed Indexed Object Styles",
         verdictDescription:
           "These repositories use both Record<K, V> and index signatures without a clear preference",

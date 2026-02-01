@@ -1,9 +1,9 @@
 import type { ComparisonData } from "@/components/comparison";
-import { getConsistentTypeDefinitionsStats } from "@/lib/analysis-results";
+import { getBasicStats } from "@/lib/analysis-results";
 import { BarChart3, TrendingUp, Users } from "lucide-react";
 
 export function getConsistentTypeDefinitionsData(): ComparisonData {
-  const stats = getConsistentTypeDefinitionsStats();
+  const stats = getBasicStats<'interface' | 'type'>('consistent-type-definitions');
 
   return {
     slug: "consistent-type-definitions",
@@ -35,7 +35,7 @@ interface Admin extends User {
         "Supports 'extends' inheritance",
         "Structural typing built-in",
       ],
-      projects: stats.interfaceProjects.slice(0, 3).map((p) => ({
+      projects: stats.verdictRepositories.interface.slice(0, 3).map((p) => ({
         name: p.name,
         stars: "",
         url: p.url,
@@ -44,18 +44,18 @@ interface Admin extends User {
       stats: [
         {
           icon: <TrendingUp className="h-5 w-5" />,
-          value: `${stats.interfacePercent}%`,
+          value: `${stats.verdictPercentages.interface}%`,
           label: "of analyzed repos",
-          verdicts: stats.interfaceVerdicts,
+          verdicts: stats.verdicts.interface,
           verdictTitle: "Repositories using Interfaces",
           verdictDescription:
             "These repositories prefer interfaces for object type definitions",
         },
         {
           icon: <BarChart3 className="h-5 w-5" />,
-          value: `${stats.interfaceRepos}`,
+          value: `${stats.verdicts.interface.length}`,
           label: "repositories",
-          verdicts: stats.interfaceVerdicts,
+          verdicts: stats.verdicts.interface,
           verdictTitle: "Repositories using Interfaces",
           verdictDescription:
             "These repositories prefer interfaces for object type definitions",
@@ -86,7 +86,7 @@ type Admin = User & {
         "No declaration merging",
         "Modern alternative to interfaces",
       ],
-      projects: stats.typeProjects.slice(0, 3).map((p) => ({
+      projects: stats.verdictRepositories.type.slice(0, 3).map((p) => ({
         name: p.name,
         stars: "",
         url: p.url,
@@ -95,18 +95,18 @@ type Admin = User & {
       stats: [
         {
           icon: <TrendingUp className="h-5 w-5" />,
-          value: `${stats.typePercent}%`,
+          value: `${stats.verdictPercentages.type}%`,
           label: "of analyzed repos",
-          verdicts: stats.typeVerdicts,
+          verdicts: stats.verdicts.type,
           verdictTitle: "Repositories using Type Aliases",
           verdictDescription:
             "These repositories prefer type aliases for type definitions",
         },
         {
           icon: <BarChart3 className="h-5 w-5" />,
-          value: `${stats.typeRepos}`,
+          value: `${stats.verdicts.type.length}`,
           label: "repositories",
-          verdicts: stats.typeVerdicts,
+          verdicts: stats.verdicts.type,
           verdictTitle: "Repositories using Type Aliases",
           verdictDescription:
             "These repositories prefer type aliases for type definitions",
@@ -116,14 +116,14 @@ type Admin = User & {
     bottomStats: [
       {
         icon: <BarChart3 className="h-6 w-6" />,
-        value: `${stats.totalRepos}`,
+        value: `${stats.allVerdicts.length}`,
         label: "repositories analyzed",
       },
       {
         icon: <Users className="h-6 w-6" />,
-        value: `${stats.mixedRepos}`,
+        value: `${stats.verdicts.mixed.length}`,
         label: "use mixed definitions",
-        verdicts: stats.mixedVerdicts,
+        verdicts: stats.verdicts.mixed,
         verdictTitle: "Repositories with Mixed Type Definitions",
         verdictDescription:
           "These repositories use both interfaces and type aliases without a clear preference",

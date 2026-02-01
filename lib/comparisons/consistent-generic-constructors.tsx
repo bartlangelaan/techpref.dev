@@ -1,9 +1,9 @@
 import type { ComparisonData } from "@/components/comparison";
-import { getConsistentGenericConstructorsStats } from "@/lib/analysis-results";
+import { getBasicStats } from "@/lib/analysis-results";
 import { BarChart3, TrendingUp, Users } from "lucide-react";
 
 export function getConsistentGenericConstructorsData(): ComparisonData {
-  const stats = getConsistentGenericConstructorsStats();
+  const stats = getBasicStats<'constructor' | 'type-annotation'>('consistent-generic-constructors');
 
   return {
     slug: "consistent-generic-constructors",
@@ -32,7 +32,7 @@ const regex = new RegExp<string>(/pattern/);`,
         "Commonly used in popular libraries",
         "More control over type resolution",
       ],
-      projects: stats.constructorProjects.slice(0, 3).map((p) => ({
+      projects: stats.verdictRepositories.constructor.slice(0, 3).map((p) => ({
         name: p.name,
         stars: "",
         url: p.url,
@@ -41,18 +41,18 @@ const regex = new RegExp<string>(/pattern/);`,
       stats: [
         {
           icon: <TrendingUp className="h-5 w-5" />,
-          value: `${stats.constructorPercent}%`,
+          value: `${stats.verdictPercentages.constructor}%`,
           label: "of analyzed repos",
-          verdicts: stats.constructorVerdicts,
+          verdicts: stats.verdicts.constructor,
           verdictTitle: "Repositories using Constructor Generics",
           verdictDescription:
             "These repositories specify generic parameters on constructor calls",
         },
         {
           icon: <BarChart3 className="h-5 w-5" />,
-          value: `${stats.constructorRepos}`,
+          value: `${stats.verdicts.constructor.length}`,
           label: "repositories",
-          verdicts: stats.constructorVerdicts,
+          verdicts: stats.verdicts.constructor,
           verdictTitle: "Repositories using Constructor Generics",
           verdictDescription:
             "These repositories specify generic parameters on constructor calls",
@@ -80,7 +80,7 @@ const regex: RegExp = new RegExp(/pattern/);`,
         "More formal type annotation style",
         "Works well when type is on line above",
       ],
-      projects: stats.typeAnnotationProjects.slice(0, 3).map((p) => ({
+      projects: stats.verdictRepositories['type-annotation'].slice(0, 3).map((p) => ({
         name: p.name,
         stars: "",
         url: p.url,
@@ -89,18 +89,18 @@ const regex: RegExp = new RegExp(/pattern/);`,
       stats: [
         {
           icon: <TrendingUp className="h-5 w-5" />,
-          value: `${stats.typeAnnotationPercent}%`,
+          value: `${stats.verdictPercentages['type-annotation']}%`,
           label: "of analyzed repos",
-          verdicts: stats.typeAnnotationVerdicts,
+          verdicts: stats.verdicts['type-annotation'],
           verdictTitle: "Repositories using Type Annotation Generics",
           verdictDescription:
             "These repositories specify generic parameters on type annotations",
         },
         {
           icon: <BarChart3 className="h-5 w-5" />,
-          value: `${stats.typeAnnotationRepos}`,
+          value: `${stats.verdicts['type-annotation'].length}`,
           label: "repositories",
-          verdicts: stats.typeAnnotationVerdicts,
+          verdicts: stats.verdicts['type-annotation'],
           verdictTitle: "Repositories using Type Annotation Generics",
           verdictDescription:
             "These repositories specify generic parameters on type annotations",
@@ -110,14 +110,14 @@ const regex: RegExp = new RegExp(/pattern/);`,
     bottomStats: [
       {
         icon: <BarChart3 className="h-6 w-6" />,
-        value: `${stats.totalRepos}`,
+        value: `${stats.allVerdicts.length}`,
         label: "repositories analyzed",
       },
       {
         icon: <Users className="h-6 w-6" />,
-        value: `${stats.mixedRepos}`,
+        value: `${stats.verdicts.mixed.length}`,
         label: "use mixed approaches",
-        verdicts: stats.mixedVerdicts,
+        verdicts: stats.verdicts.mixed,
         verdictTitle: "Repositories with Mixed Generic Constructor Approaches",
         verdictDescription:
           "These repositories mix both constructor and type annotation generic styles",

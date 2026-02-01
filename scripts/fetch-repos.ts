@@ -88,29 +88,34 @@ async function fetchTopTypeScriptRepos(
       `Removed ${repos.length - deduped.length} duplicate repositories from fetched results.`,
     );
   }
-  return deduped;
+  // Sort by stars in descending order
+  return deduped.sort((a, b) => b.stars - a.stars);
 }
 /**
  * Merge freshly fetched repos with existing data, preserving clone and analysis state.
+ * Also preserves old repositories that are no longer in the top results from GitHub.
+ * Final list is sorted by stars in descending order.
  */
 function mergeRepos(
   freshRepos: RepositoryData[],
   existingData: UnifiedData | null,
 ): RepositoryData[] {
   if (!existingData) {
-    return freshRepos;
+    return freshRepos.sort((a, b) => b.stars - a.stars);
   }
 
-  // Create a map of existing repos by fullName for fast lookup
-  const existingMap = new Map<string, RepositoryData>();
-  for (const repo of existingData.repositories) {
-    existingMap.set(repo.fullName, repo);
+  // Create a map of fresh repos by fullName for fast lookup
+  const freshMap = new Map<string, RepositoryData>();
+  for (const repo of freshRepos) {
+    freshMap.set(repo.fullName, repo);
   }
 
-  // Merge: use fresh data but preserve clonedAt and analysis from existing
+  // Merge: update fresh repos with existing clone/analysis state, keep old repos not in fresh results
   const merged: RepositoryData[] = [];
+  
+  // First, add all fresh repos with preserved clone/analysis state
   for (const fresh of freshRepos) {
-    const existing = existingMap.get(fresh.fullName);
+    const existing = existingData.repositories.find(r => r.fullName === fresh.fullName);
     if (existing) {
       merged.push({
         ...fresh,
@@ -122,6 +127,13 @@ function mergeRepos(
     }
   }
 
+  // Then, add old repos that are no longer in fresh results
+  for (const old of existingData.repositories) {
+    if (!freshMap.has(old.fullName)) {
+      merged.push(old);
+    }
+  }
+
   // Ensure final list has no duplicates (in case existing data had duplicates)
   const final = uniqBy(merged, r => r.fullName);
   if (final.length !== merged.length) {
@@ -130,7 +142,8 @@ function mergeRepos(
     );
   }
 
-  return final;
+  // Sort by stars in descending order
+  return final.sort((a, b) => b.stars - a.stars);
 }
 
 async function main() {

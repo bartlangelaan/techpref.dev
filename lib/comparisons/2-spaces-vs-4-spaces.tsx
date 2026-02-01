@@ -1,9 +1,14 @@
 import type { ComparisonData } from "@/components/comparison";
-import { getIndentStats } from "@/lib/analysis-results";
+import { getBasicStats } from "@/lib/analysis-results";
 import { BarChart3, FileCode, TrendingUp, Users } from "lucide-react";
 
 export function getTwoVsFourSpacesData(): ComparisonData {
-  const stats = getIndentStats();
+  const stats = getBasicStats<'2-space' | '4-space' | 'tab'>('indent');
+  
+  // Calculate totals and percentages for 2-space vs 4-space (excluding tab)
+  const spacesOnly = stats.verdicts['2-space'].length + stats.verdicts['4-space'].length;
+  const twoSpacePercent = spacesOnly > 0 ? Math.round((stats.verdicts['2-space'].length / spacesOnly) * 100) : 0;
+  const fourSpacePercent = spacesOnly > 0 ? Math.round((stats.verdicts['4-space'].length / spacesOnly) * 100) : 0;
 
   return {
     slug: "2-spaces-vs-4-spaces",
@@ -37,7 +42,7 @@ export function getTwoVsFourSpacesData(): ComparisonData {
         "Reduces horizontal scrolling",
         "Default in Prettier for JavaScript",
       ],
-      projects: stats.twoSpaceProjects.slice(0, 3).map((p) => ({
+      projects: stats.verdictRepositories['2-space'].slice(0, 3).map((p) => ({
         name: p.name,
         stars: "",
         url: p.url,
@@ -46,17 +51,17 @@ export function getTwoVsFourSpacesData(): ComparisonData {
       stats: [
         {
           icon: <TrendingUp className="h-5 w-5" />,
-          value: `${stats.twoSpacePercent}%`,
+          value: `${twoSpacePercent}%`,
           label: "of analyzed repos",
-          verdicts: stats.twoSpaceVerdicts,
+          verdicts: stats.verdicts['2-space'],
           verdictTitle: "Repositories using 2-Space Indentation",
           verdictDescription: "These repositories use 2-space indentation",
         },
         {
           icon: <BarChart3 className="h-5 w-5" />,
-          value: `${stats.twoSpaceRepos}`,
+          value: `${stats.verdicts['2-space'].length}`,
           label: "repositories",
-          verdicts: stats.twoSpaceVerdicts,
+          verdicts: stats.verdicts['2-space'],
           verdictTitle: "Repositories using 2-Space Indentation",
           verdictDescription: "These repositories use 2-space indentation",
         },
@@ -88,7 +93,7 @@ export function getTwoVsFourSpacesData(): ComparisonData {
         "Preferred in enterprise environments",
         "More accessible for developers with vision issues",
       ],
-      projects: stats.fourSpaceProjects.slice(0, 3).map((p) => ({
+      projects: stats.verdictRepositories['4-space'].slice(0, 3).map((p) => ({
         name: p.name,
         stars: "",
         url: p.url,
@@ -97,17 +102,17 @@ export function getTwoVsFourSpacesData(): ComparisonData {
       stats: [
         {
           icon: <TrendingUp className="h-5 w-5" />,
-          value: `${stats.fourSpacePercent}%`,
+          value: `${fourSpacePercent}%`,
           label: "of analyzed repos",
-          verdicts: stats.fourSpaceVerdicts,
+          verdicts: stats.verdicts['4-space'],
           verdictTitle: "Repositories using 4-Space Indentation",
           verdictDescription: "These repositories use 4-space indentation",
         },
         {
           icon: <BarChart3 className="h-5 w-5" />,
-          value: `${stats.fourSpaceRepos}`,
+          value: `${stats.verdicts['4-space'].length}`,
           label: "repositories",
-          verdicts: stats.fourSpaceVerdicts,
+          verdicts: stats.verdicts['4-space'],
           verdictTitle: "Repositories using 4-Space Indentation",
           verdictDescription: "These repositories use 4-space indentation",
         },
@@ -116,19 +121,19 @@ export function getTwoVsFourSpacesData(): ComparisonData {
     bottomStats: [
       {
         icon: <BarChart3 className="h-6 w-6" />,
-        value: `${stats.totalRepos}`,
+        value: `${stats.allVerdicts.length}`,
         label: "repositories analyzed",
       },
       {
         icon: <FileCode className="h-6 w-6" />,
-        value: `${stats.tabRepos}`,
+        value: `${stats.verdicts.tab.length}`,
         label: "use tabs instead",
       },
       {
         icon: <Users className="h-6 w-6" />,
-        value: `${stats.mixedRepos}`,
+        value: `${stats.verdicts.mixed.length}`,
         label: "use mixed styles",
-        verdicts: stats.mixedVerdicts,
+        verdicts: stats.verdicts.mixed,
         verdictTitle: "Repositories with Mixed Styles",
         verdictDescription: "These repositories have inconsistent indentation",
       },

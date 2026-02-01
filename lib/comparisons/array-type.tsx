@@ -4,9 +4,6 @@ import { BarChart3, TrendingUp, Users } from "lucide-react";
 
 export function getArrayTypeData(): ComparisonData {
   const stats = getBasicStats<'array' | 'generic'>('array-type');
-  const totalVerdicts = stats.allVerdicts.length - stats.verdicts.mixed.length;
-  const arrayPercent = totalVerdicts > 0 ? ((stats.verdicts.array.length / totalVerdicts) * 100).toFixed(0) : "0";
-  const genericPercent = totalVerdicts > 0 ? ((stats.verdicts.generic.length / totalVerdicts) * 100).toFixed(0) : "0";
 
   return {
     slug: "array-type",
@@ -41,7 +38,7 @@ const union: (string | number)[] = [];`,
       stats: [
         {
           icon: <TrendingUp className="h-5 w-5" />,
-          value: `${arrayPercent}%`,
+          value: `${stats.verdictPercentages.array}%`,
           label: "of analyzed repos",
           verdicts: stats.verdicts.array,
           verdictTitle: "Repositories using T[] Notation",
@@ -87,7 +84,7 @@ const union: Array<string | number> = [];`,
       stats: [
         {
           icon: <TrendingUp className="h-5 w-5" />,
-          value: `${genericPercent}%`,
+          value: `${stats.verdictPercentages.generic}%`,
           label: "of analyzed repos",
           verdicts: stats.verdicts.generic,
           verdictTitle: "Repositories using Array<T> Syntax",

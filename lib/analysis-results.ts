@@ -289,11 +289,10 @@ export function getBasicStats<V extends string>(ruleId: string) {
   const repos = data.repositories.filter((r) => r.analysis !== null);
 
   type PV = V | 'mixed';
-
-  const possibleVerdicts = Object.keys(repos[0].analysis!.checks[ruleId]) as (PV)[];
+const variants = Object.keys(repos[0].analysis!.checks[ruleId]) as (V)[];
+  const possibleVerdicts = [...variants, 'mixed'] as PV[];
 
   const verdictRepositories = Object.fromEntries(possibleVerdicts.map((v) => [v, [] as { name: string; url: string }[]])) as Record<PV, { name: string; url: string }[]>;
-  verdictRepositories.mixed = [];
 
   const allVerdicts = repos
     .map<RepoVerdict | null>((repo) => {
@@ -331,13 +330,19 @@ export function getBasicStats<V extends string>(ruleId: string) {
     .filter(isNotNil);
 
   const verdicts: Record<PV, RepoVerdict[]> = groupBy(allVerdicts, (v) => v.verdict);
-  // make sure each verdict has an array
   for (const key of possibleVerdicts) {
     verdicts[key] ??= [];
   }
 
+  const verdictPercentages: Record<V, string> = {} as Record<V, number>;
+  const totalVerdicts = allVerdicts.length - verdicts.mixed.length;
+  for (const key of variants) {
+    verdictPercentages[key] = totalVerdicts > 0 ? Math.round((verdicts[key].length / totalVerdicts) * 100).toFixed(0) : '0';
+  }
+  
 
-  return { allVerdicts, verdicts, verdictRepositories };
+
+  return { allVerdicts, verdicts, verdictRepositories, verdictPercentages };
 }
 
 /**

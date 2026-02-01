@@ -36,9 +36,7 @@ users.forEach((user) => {
         "Preferred by TypeScript and Java developers",
       ],
       projects: stats.verdictRepositories.always.slice(0, 3).map((p) => ({
-        name: p.name,
-        stars: "",
-        url: p.url,
+        ...p,
         description: "Uses semicolons",
       })),
       stats: [
@@ -87,9 +85,7 @@ users.forEach((user) => {
         "Common in Vue.js and other ecosystems",
       ],
       projects: stats.verdictRepositories.never.slice(0, 3).map((p) => ({
-        name: p.name,
-        stars: "",
-        url: p.url,
+        ...p,
         description: "No semicolons",
       })),
       stats: [

@@ -35,9 +35,7 @@ function handleClick() {
         "Required for generator functions",
       ],
       projects: stats.verdictRepositories.declaration.slice(0, 3).map((p) => ({
-        name: p.name,
-        stars: "",
-        url: p.url,
+        ...p,
         description: "Prefers function declarations",
       })),
       stats: [
@@ -82,9 +80,7 @@ const handleClick = () => {
         "Ideal for functional programming patterns",
       ],
       projects: stats.verdictRepositories.expression.slice(0, 3).map((p) => ({
-        name: p.name,
-        stars: "",
-        url: p.url,
+        ...p,
         description: "Prefers arrow functions",
       })),
       stats: [

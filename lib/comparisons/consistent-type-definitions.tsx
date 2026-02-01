@@ -36,9 +36,7 @@ interface Admin extends User {
         "Structural typing built-in",
       ],
       projects: stats.verdictRepositories.interface.slice(0, 3).map((p) => ({
-        name: p.name,
-        stars: "",
-        url: p.url,
+        ...p,
         description: "Prefers interfaces",
       })),
       stats: [
@@ -87,9 +85,7 @@ type Admin = User & {
         "Modern alternative to interfaces",
       ],
       projects: stats.verdictRepositories.type.slice(0, 3).map((p) => ({
-        name: p.name,
-        stars: "",
-        url: p.url,
+        ...p,
         description: "Prefers type aliases",
       })),
       stats: [

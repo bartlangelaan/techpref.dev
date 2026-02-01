@@ -43,9 +43,7 @@ export function getTwoVsFourSpacesData(): ComparisonData {
         "Default in Prettier for JavaScript",
       ],
       projects: stats.verdictRepositories['2-space'].slice(0, 3).map((p) => ({
-        name: p.name,
-        stars: "",
-        url: p.url,
+        ...p,
         description: `Uses 2-space indentation`,
       })),
       stats: [
@@ -94,9 +92,7 @@ export function getTwoVsFourSpacesData(): ComparisonData {
         "More accessible for developers with vision issues",
       ],
       projects: stats.verdictRepositories['4-space'].slice(0, 3).map((p) => ({
-        name: p.name,
-        stars: "",
-        url: p.url,
+        ...p,
         description: `Uses 4-space indentation`,
       })),
       stats: [

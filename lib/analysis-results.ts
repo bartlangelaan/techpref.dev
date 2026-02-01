@@ -70,7 +70,7 @@ export function getBasicStats<V extends string>(ruleId: string) {
 const variants = Object.keys(repos[0].analysis!.checks[ruleId]) as (V)[];
   const possibleVerdicts = [...variants, 'mixed'] as PV[];
 
-  const verdictRepositories = Object.fromEntries(possibleVerdicts.map((v) => [v, [] as { name: string; url: string }[]])) as Record<PV, { name: string; url: string }[]>;
+  const verdictRepositories = Object.fromEntries(possibleVerdicts.map((v) => [v, [] as { name: string; url: string; stars: number }[]])) as Record<PV, { name: string; url: string; stars: number }[]>;
 
   const allVerdicts = repos
     .map<RepoVerdict | null>((repo) => {
@@ -93,7 +93,7 @@ const variants = Object.keys(repos[0].analysis!.checks[ruleId]) as (V)[];
     const repoUrl = `https://github.com/${repo.fullName}`;
       
       if (verdictRepositories[verdict].length < 5) {
-        verdictRepositories[verdict].push({ name: repo.fullName, url: repoUrl });
+        verdictRepositories[verdict].push({ name: repo.fullName, url: repoUrl, stars: repo.stars });
       }
 
       return {

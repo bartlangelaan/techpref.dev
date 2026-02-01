@@ -34,9 +34,7 @@ const user: User = { id: 1 };`,
         "Modern TypeScript best practice",
       ],
       projects: stats.verdictRepositories['type-imports'].slice(0, 3).map((p) => ({
-        name: p.name,
-        stars: "",
-        url: p.url,
+        ...p,
         description: "Uses type imports",
       })),
       stats: [
@@ -81,9 +79,7 @@ const user: User = { id: 1 };`,
         "Works fine with most projects",
       ],
       projects: stats.verdictRepositories['no-type-imports'].slice(0, 3).map((p) => ({
-        name: p.name,
-        stars: "",
-        url: p.url,
+        ...p,
         description: "Mixes types and values",
       })),
       stats: [

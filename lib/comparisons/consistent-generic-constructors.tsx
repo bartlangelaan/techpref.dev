@@ -33,9 +33,7 @@ const regex = new RegExp<string>(/pattern/);`,
         "More control over type resolution",
       ],
       projects: stats.verdictRepositories.constructor.slice(0, 3).map((p) => ({
-        name: p.name,
-        stars: "",
-        url: p.url,
+        ...p,
         description: "Uses constructor generics",
       })),
       stats: [
@@ -81,9 +79,7 @@ const regex: RegExp = new RegExp(/pattern/);`,
         "Works well when type is on line above",
       ],
       projects: stats.verdictRepositories['type-annotation'].slice(0, 3).map((p) => ({
-        name: p.name,
-        stars: "",
-        url: p.url,
+        ...p,
         description: "Uses type annotation generics",
       })),
       stats: [

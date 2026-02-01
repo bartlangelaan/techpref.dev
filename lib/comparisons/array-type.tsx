@@ -30,9 +30,7 @@ const union: (string | number)[] = [];`,
         "Less verbose than generic syntax",
       ],
       projects: stats.verdictRepositories.array.slice(0, 3).map((p) => ({
-        name: p.name,
-        stars: "",
-        url: p.url,
+        ...p,
         description: "Uses array bracket notation",
       })),
       stats: [
@@ -76,9 +74,7 @@ const union: Array<string | number> = [];`,
         "More verbose but potentially clearer",
       ],
       projects: stats.verdictRepositories.generic.slice(0, 3).map((p) => ({
-        name: p.name,
-        stars: "",
-        url: p.url,
+        ...p,
         description: "Uses Array<T> syntax",
       })),
       stats: [

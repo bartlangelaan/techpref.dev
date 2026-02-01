@@ -33,9 +33,7 @@ interface Config {
         "Better for complex key types",
       ],
       projects: stats.verdictRepositories.record.slice(0, 3).map((p) => ({
-        name: p.name,
-        stars: "",
-        url: p.url,
+        ...p,
         description: "Uses Record<K, V>",
       })),
       stats: [
@@ -86,9 +84,7 @@ interface Config {
         "Clearer when extending properties",
       ],
       projects: stats.verdictRepositories['index-signature'].slice(0, 3).map((p) => ({
-        name: p.name,
-        stars: "",
-        url: p.url,
+        ...p,
         description: "Uses index signatures",
       })),
       stats: [

@@ -49,9 +49,7 @@ export function getSpacesVsTabsData(): ComparisonData {
         "Easier code review with predictable spacing",
       ],
       projects: spacesRepos.slice(0, 3).map((p) => ({
-        name: p.name,
-        stars: "",
-        url: p.url,
+        ...p,
         description: "Uses spaces for indentation",
       })),
       stats: [
@@ -98,9 +96,7 @@ export function getSpacesVsTabsData(): ComparisonData {
         "Respects individual workspace settings",
       ],
       projects: stats.verdictRepositories.tab.slice(0, 3).map((p) => ({
-        name: p.name,
-        stars: "",
-        url: p.url,
+        ...p,
         description: "Uses tabs for indentation",
       })),
       stats: [

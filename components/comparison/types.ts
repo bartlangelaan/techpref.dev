@@ -3,7 +3,7 @@ import type React from "react";
 
 export interface Project {
   name: string;
-  stars: string;
+  stars: number;
   url: string;
   description: string;
 }

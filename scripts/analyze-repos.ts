@@ -122,7 +122,7 @@ async function runOxlintCheck(
     await writeFile(configPath, JSON.stringify(config));
 
     // Run oxlint with all default plugins disabled to only check our rule
-    const { stdout } = await execFileAsync(
+    const { stdout, stderr } = await execFileAsync(
       "npx",
       [
         "oxlint",
@@ -138,9 +138,6 @@ async function runOxlintCheck(
         "**/build/**",
         "--ignore-pattern",
         "**/*.d.ts",
-        "--disable-oxc-plugin",
-        "--disable-unicorn-plugin",
-        "--disable-typescript-plugin",
         ".",
       ],
       {
@@ -148,6 +145,10 @@ async function runOxlintCheck(
         maxBuffer: 50 * 1024 * 1024, // 50MB buffer for large repos
       },
     );
+    if (stderr.trim().length > 0) {
+      // Oxlint may output warnings to stderr, but we can still parse stdout
+      console.warn(`Oxlint warnings for ${repoPath}: ${stderr}`);
+    }
 
     return parseOxlintOutput(stdout, repoPath, maxSamples);
   } catch (error: unknown) {

@@ -22,7 +22,6 @@ const octokit = new MyOctokit({
       );
       return true;
     },
-    fallbackSecondaryRateRetryAfter: 10,
   },
 });
 
@@ -32,27 +31,6 @@ const octokit = new MyOctokit({
  */
 function sleep(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
-}
-
-/**
- * Check if an error is a rate limit error.
- */
-function isRateLimitError(error: unknown): boolean {
-  if (
-    error &&
-    typeof error === "object" &&
-    "status" in error &&
-    "message" in error
-  ) {
-    const status = error.status;
-    const message = String(error.message);
-    return (
-      status === 403 ||
-      status === 429 ||
-      message.toLowerCase().includes("rate limit")
-    );
-  }
-  return false;
 }
 
 /**

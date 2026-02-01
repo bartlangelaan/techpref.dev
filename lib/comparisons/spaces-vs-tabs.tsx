@@ -16,9 +16,9 @@ export function getSpacesVsTabsData(): ComparisonData {
   ];
   
   // Calculate totals and percentages for spaces vs tabs
-  const definiteRepos = spacesVerdicts.length + stats.verdicts.tab.length;
-  const spacesPercent = definiteRepos > 0 ? Math.round((spacesVerdicts.length / definiteRepos) * 100) : 0;
-  const tabsPercent = definiteRepos > 0 ? Math.round((stats.verdictRepositories.tab.length / definiteRepos) * 100) : 0;
+  const definiteVerdicts = spacesVerdicts.length + stats.verdicts.tab.length;
+  const spacesPercent = definiteVerdicts > 0 ? Math.round((spacesVerdicts.length / definiteVerdicts) * 100) : 0;
+  const tabsPercent = definiteVerdicts > 0 ? Math.round((stats.verdicts.tab.length / definiteVerdicts) * 100) : 0;
 
   return {
     slug: "spaces-vs-tabs",

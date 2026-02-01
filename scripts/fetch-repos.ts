@@ -1,6 +1,7 @@
 import type { RepositoryData, UnifiedData } from "@/lib/types";
 import { loadData, saveData } from "@/lib/types";
 import { Octokit } from "@octokit/rest";
+import { uniqBy } from "es-toolkit";
 
 const REPO_COUNT = 1000;
 const MAX_RETRIES = 5;
@@ -105,9 +106,15 @@ async function fetchTopTypeScriptRepos(
   }
 
   console.log(`Fetched ${repos.length} repositories.`);
-  return repos;
+  // Deduplicate by fullName in case of unexpected duplicates from the API
+  const deduped = uniqBy(repos, r => r.fullName);
+  if (deduped.length !== repos.length) {
+    console.log(
+      `Removed ${repos.length - deduped.length} duplicate repositories from fetched results.`,
+    );
+  }
+  return deduped;
 }
-
 /**
  * Merge freshly fetched repos with existing data, preserving clone and analysis state.
  */
@@ -126,17 +133,29 @@ function mergeRepos(
   }
 
   // Merge: use fresh data but preserve clonedAt and analysis from existing
-  return freshRepos.map((fresh) => {
+  const merged: RepositoryData[] = [];
+  for (const fresh of freshRepos) {
     const existing = existingMap.get(fresh.fullName);
     if (existing) {
-      return {
+      merged.push({
         ...fresh,
         clonedAt: existing.clonedAt,
         analysis: existing.analysis,
-      };
+      });
+    } else {
+      merged.push(fresh);
     }
-    return fresh;
-  });
+  }
+
+  // Ensure final list has no duplicates (in case existing data had duplicates)
+  const final = uniqBy(merged, r => r.fullName);
+  if (final.length !== merged.length) {
+    console.log(
+      `Removed ${merged.length - final.length} duplicate repositories during merge.`,
+    );
+  }
+
+  return final;
 }
 
 async function main() {

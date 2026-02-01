@@ -8,10 +8,46 @@ import { loadData, REPOS_DIR, saveData } from "@/lib/types";
 import { ESLint, type Linter } from "eslint";
 import { glob } from "glob";
 import globals from "globals";
+import { execFile } from "node:child_process";
 import { existsSync } from "node:fs";
+import { mkdir, rm, writeFile } from "node:fs/promises";
+import { tmpdir } from "node:os";
 import { join } from "node:path";
+import { promisify } from "node:util";
 import tseslint from "typescript-eslint";
-import { allRuleChecks, type RuleCheck } from "./rules";
+import {
+  allRuleChecks,
+  type EslintRuleCheck,
+  type OxlintRuleCheck,
+  type RuleCheck,
+} from "./rules";
+
+const execFileAsync = promisify(execFile);
+
+/**
+ * Oxlint JSON output diagnostic format.
+ */
+interface OxlintDiagnostic {
+  message: string;
+  code: string;
+  severity: string;
+  filename: string;
+  labels: Array<{
+    span: {
+      offset: number;
+      length: number;
+      line: number;
+      column: number;
+    };
+  }>;
+}
+
+/**
+ * Oxlint JSON output format.
+ */
+interface OxlintOutput {
+  diagnostics: OxlintDiagnostic[];
+}
 
 /**
  * Find all TypeScript/JavaScript files in a repository.
@@ -25,11 +61,135 @@ async function findSourceFiles(repoPath: string): Promise<string[]> {
 }
 
 /**
+ * Run an Oxlint rule check using CLI with temp config file.
+ */
+async function runOxlintCheck(
+  repoPath: string,
+  ruleCheck: OxlintRuleCheck,
+  maxSamples: number = 10,
+): Promise<VariantResult> {
+  // Create unique temp directory for this check
+  const tempDir = join(
+    tmpdir(),
+    `oxlint-${Date.now()}-${Math.random().toString(36).slice(2)}`,
+  );
+  const configPath = join(tempDir, ".oxlintrc.json");
+
+  try {
+    await mkdir(tempDir, { recursive: true });
+
+    // Write Oxlint config with all default categories disabled
+    // and only the specific rule enabled
+    const config = {
+      categories: {
+        correctness: "off",
+        suspicious: "off",
+        pedantic: "off",
+        perf: "off",
+        style: "off",
+        restriction: "off",
+        nursery: "off",
+      },
+      rules: {
+        [ruleCheck.oxlintConfig.rule]: ruleCheck.oxlintConfig.config,
+      },
+    };
+    await writeFile(configPath, JSON.stringify(config));
+
+    // Run oxlint with all default plugins disabled to only check our rule
+    const { stdout } = await execFileAsync(
+      "npx",
+      [
+        "oxlint",
+        "-c",
+        configPath,
+        "--format",
+        "json",
+        "--ignore-pattern",
+        "**/node_modules/**",
+        "--ignore-pattern",
+        "**/dist/**",
+        "--ignore-pattern",
+        "**/build/**",
+        "--ignore-pattern",
+        "**/*.d.ts",
+        "--disable-oxc-plugin",
+        "--disable-unicorn-plugin",
+        "--disable-typescript-plugin",
+        ".",
+      ],
+      {
+        cwd: repoPath,
+        maxBuffer: 50 * 1024 * 1024, // 50MB buffer for large repos
+      },
+    );
+
+    return parseOxlintOutput(stdout, repoPath, maxSamples);
+  } catch (error: unknown) {
+    // Oxlint exits with non-zero if there are errors, but still outputs JSON to stdout
+    if (
+      error &&
+      typeof error === "object" &&
+      "stdout" in error &&
+      typeof error.stdout === "string" &&
+      error.stdout.length > 0
+    ) {
+      try {
+        return parseOxlintOutput(error.stdout, repoPath, maxSamples);
+      } catch {
+        // JSON parsing failed, return empty result
+        return { count: 0, samples: [] };
+      }
+    }
+    // Complete failure (e.g., oxlint not found, or other error)
+    return { count: 0, samples: [] };
+  } finally {
+    // Cleanup temp directory
+    await rm(tempDir, { recursive: true, force: true }).catch(() => {
+      // Ignore cleanup errors
+    });
+  }
+}
+
+/**
+ * Parse Oxlint JSON output into VariantResult.
+ */
+function parseOxlintOutput(
+  stdout: string,
+  repoPath: string,
+  maxSamples: number,
+): VariantResult {
+  const output: OxlintOutput = JSON.parse(stdout);
+  const samples: ViolationSample[] = [];
+
+  for (const diag of output.diagnostics) {
+    if (samples.length >= maxSamples) break;
+
+    // Get path relative to repo root
+    const relativePath = diag.filename.startsWith(repoPath)
+      ? diag.filename.slice(repoPath.length + 1)
+      : diag.filename;
+
+    samples.push({
+      file: relativePath,
+      line: diag.labels[0]?.span.line ?? 0,
+      column: diag.labels[0]?.span.column ?? 0,
+      message: diag.message,
+    });
+  }
+
+  return {
+    count: output.diagnostics.length,
+    samples,
+  };
+}
+
+/**
  * Run a single ESLint rule check and count violations.
  */
-async function runRuleCheck(
+async function runEslintCheck(
   files: string[],
-  ruleCheck: RuleCheck,
+  ruleCheck: EslintRuleCheck,
   repoPath: string,
   maxSamples: number = 10,
 ): Promise<VariantResult> {
@@ -118,22 +278,54 @@ async function runRuleCheck(
 }
 
 /**
+ * Type guard to check if a rule check uses Oxlint.
+ */
+function isOxlintRuleCheck(ruleCheck: RuleCheck): ruleCheck is OxlintRuleCheck {
+  return "oxlintConfig" in ruleCheck && ruleCheck.oxlintConfig !== undefined;
+}
+
+/**
  * Analyze a single repository with all rule checks.
+ * Uses Oxlint for rules that support it (faster), ESLint for others.
  */
 async function analyzeRepository(
   repo: RepositoryData,
 ): Promise<AnalysisResult> {
   const repoPath = join(REPOS_DIR, repo.fullName);
-  const files = await findSourceFiles(repoPath);
+
+  // Separate rules by linter type
+  const oxlintRules = allRuleChecks.filter(isOxlintRuleCheck);
+  const eslintRules = allRuleChecks.filter(
+    (r): r is EslintRuleCheck => !isOxlintRuleCheck(r),
+  );
 
   const checks: AnalysisResult["checks"] = {};
 
-  for (const ruleCheck of allRuleChecks) {
+  // Run Oxlint checks (one per variant due to different rule configs)
+  for (const ruleCheck of oxlintRules) {
     if (!checks[ruleCheck.ruleId]) {
       checks[ruleCheck.ruleId] = {};
     }
-    const variantResult = await runRuleCheck(files, ruleCheck, repoPath);
-    checks[ruleCheck.ruleId][ruleCheck.variant] = variantResult;
+    checks[ruleCheck.ruleId][ruleCheck.variant] = await runOxlintCheck(
+      repoPath,
+      ruleCheck,
+    );
+  }
+
+  // Run ESLint checks (need files list for ESLint API)
+  if (eslintRules.length > 0) {
+    const files = await findSourceFiles(repoPath);
+
+    for (const ruleCheck of eslintRules) {
+      if (!checks[ruleCheck.ruleId]) {
+        checks[ruleCheck.ruleId] = {};
+      }
+      checks[ruleCheck.ruleId][ruleCheck.variant] = await runEslintCheck(
+        files,
+        ruleCheck,
+        repoPath,
+      );
+    }
   }
 
   return {
@@ -149,6 +341,21 @@ interface RepoWithFileCount {
 
 async function main() {
   console.log("=== TechPref Repository Analyzer ===\n");
+
+  // Log which linter is used for each rule
+  const oxlintRuleIds = allRuleChecks
+    .filter(isOxlintRuleCheck)
+    .map((r) => r.ruleId);
+  const eslintRuleIds = allRuleChecks
+    .filter((r) => !isOxlintRuleCheck(r))
+    .map((r) => r.ruleId);
+
+  const uniqueOxlintRules = [...new Set(oxlintRuleIds)];
+  const uniqueEslintRules = [...new Set(eslintRuleIds)];
+
+  console.log(`Using Oxlint for: ${uniqueOxlintRules.join(", ") || "(none)"}`);
+  console.log(`Using ESLint for: ${uniqueEslintRules.join(", ") || "(none)"}`);
+  console.log();
 
   // Load data
   const data = loadData();

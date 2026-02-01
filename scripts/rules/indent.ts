@@ -1,14 +1,14 @@
-import type { RuleCheck } from "./index";
+import type { EslintRuleCheck } from "./index";
 
 /**
- * indent rule checks.
+ * indent rule checks (using ESLint - not available in Oxlint).
  * This rule enforces consistent indentation style.
  *
  * - "2-space" variant: Reports violations when indentation is not 2 spaces
  * - "4-space" variant: Reports violations when indentation is not 4 spaces
  * - "tab" variant: Reports violations when indentation is not tabs
  */
-export const indentChecks: RuleCheck[] = [
+export const indentChecks: EslintRuleCheck[] = [
   {
     ruleId: "indent",
     variant: "2-space",

@@ -18,8 +18,8 @@ techpref.dev/
 ├── scripts/              # Data collection scripts
 │   ├── fetch-repos.ts    # Fetch top repos from GitHub
 │   ├── clone-repos.ts    # Clone repositories locally
-│   ├── analyze-repos.ts  # Run ESLint analysis
-│   └── rules/            # ESLint rule definitions
+│   ├── analyze-repos.ts  # Run Oxlint/ESLint analysis
+│   └── rules/            # Linter rule definitions (Oxlint or ESLint)
 ├── data/                 # Generated analysis data
 │   └── repositories.json # Repository metadata and analysis results
 └── repos/                # Cloned repositories (gitignored)
@@ -58,7 +58,7 @@ pnpm scan-repos
 # Or run individual steps:
 pnpm fetch-repos   # Fetch top 1000 TypeScript repos from GitHub API
 pnpm clone-repos   # Clone repositories locally (shallow clones)
-pnpm analyze-repos # Run ESLint analysis on all cloned repos
+pnpm analyze-repos # Run Oxlint/ESLint analysis on all cloned repos
 ```
 
 ## Code Style Guidelines
@@ -108,16 +108,20 @@ pnpm analyze-repos # Run ESLint analysis on all cloned repos
 
 1. **Fetch** (`pnpm fetch-repos`): Queries GitHub API for top 1000 TypeScript repos
 2. **Clone** (`pnpm clone-repos`): Shallow clones each repository to `repos/`
-3. **Analyze** (`pnpm analyze-repos`): Runs ESLint rules to detect coding patterns
+3. **Analyze** (`pnpm analyze-repos`): Runs Oxlint/ESLint rules to detect coding patterns
 4. **Display**: Next.js app reads `data/repositories.json` and displays comparisons
 
 ## Adding New Style Rules
 
 1. Create rule file in `scripts/rules/` (e.g., `quotes.ts`)
-2. Export `RuleCheck[]` with ESLint configurations
+2. Export rule checks using the appropriate type:
+   - `OxlintRuleCheck[]` if Oxlint supports the rule (faster)
+   - `EslintRuleCheck[]` if only ESLint supports the rule
 3. Add to `allRuleChecks` in `scripts/rules/index.ts`
 4. Add statistics function in `lib/analysis-results.ts`
 5. Create comparison component in `lib/comparisons/`
+
+The analyzer automatically uses the correct linter based on the rule configuration.
 
 ## Environment Variables
 

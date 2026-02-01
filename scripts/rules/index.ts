@@ -1,3 +1,8 @@
+import { arrayTypeChecks } from "./array-type";
+import { consistentGenericConstructorsChecks } from "./consistent-generic-constructors";
+import { consistentIndexedObjectStyleChecks } from "./consistent-indexed-object-style";
+import { consistentTypeDefinitionsChecks } from "./consistent-type-definitions";
+import { consistentTypeImportsChecks } from "./consistent-type-imports";
 import { funcStyleChecks } from "./func-style";
 import { indentChecks } from "./indent";
 import { semiChecks } from "./semi";
@@ -44,6 +49,11 @@ export type RuleCheck = EslintRuleCheck | OxlintRuleCheck;
  * All rule checks to run during analysis.
  */
 export const allRuleChecks: RuleCheck[] = [
+  ...arrayTypeChecks,
+  ...consistentGenericConstructorsChecks,
+  ...consistentIndexedObjectStyleChecks,
+  ...consistentTypeDefinitionsChecks,
+  ...consistentTypeImportsChecks,
   ...funcStyleChecks,
   ...indentChecks,
   ...semiChecks,

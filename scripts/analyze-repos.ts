@@ -8,6 +8,7 @@ import { loadData, REPOS_DIR, saveData } from "@/lib/types";
 import { ESLint, type Linter } from "eslint";
 import { glob } from "glob";
 import globals from "globals";
+import { createHash } from "node:crypto";
 import { execFile } from "node:child_process";
 import { existsSync } from "node:fs";
 import { mkdir, rm, writeFile } from "node:fs/promises";
@@ -23,6 +24,30 @@ import {
 } from "./rules";
 
 const execFileAsync = promisify(execFile);
+
+/**
+ * Get the current git commit hash from a repository.
+ * If repoPath is not provided, uses the current working directory.
+ */
+async function getCurrentCommit(repoPath?: string): Promise<string> {
+  try {
+    const { stdout } = await execFileAsync("git", ["rev-parse", "HEAD"], {
+      cwd: repoPath,
+    });
+    return stdout.trim();
+  } catch {
+    return "unknown";
+  }
+}
+
+/**
+ * Generate a hash of the allRuleChecks object.
+ */
+function getAnalyzedVersion(): string {
+  const hash = createHash("sha256");
+  hash.update(JSON.stringify(allRuleChecks));
+  return hash.digest("hex").slice(0, 12);
+}
 
 /**
  * Oxlint JSON output diagnostic format.
@@ -290,8 +315,10 @@ function isOxlintRuleCheck(ruleCheck: RuleCheck): ruleCheck is OxlintRuleCheck {
  */
 async function analyzeRepository(
   repo: RepositoryData,
+  analyzedVersion: string,
 ): Promise<AnalysisResult> {
   const repoPath = join(REPOS_DIR, repo.fullName);
+  const analyzedCommit = await getCurrentCommit(repoPath);
 
   // Separate rules by linter type
   const oxlintRules = allRuleChecks.filter(isOxlintRuleCheck);
@@ -329,7 +356,8 @@ async function analyzeRepository(
   }
 
   return {
-    analyzedAt: new Date().toISOString(),
+    analyzedVersion,
+    analyzedCommit,
     checks,
   };
 }
@@ -341,6 +369,11 @@ interface RepoWithFileCount {
 
 async function main() {
   console.log("=== TechPref Repository Analyzer ===\n");
+
+  // Get analyzed version (commit is fetched per-repository)
+  const currentVersion = getAnalyzedVersion();
+
+  console.log(`Current rule version: ${currentVersion}\n`);
 
   // Log which linter is used for each rule
   const oxlintRuleIds = allRuleChecks
@@ -366,16 +399,22 @@ async function main() {
     process.exit(1);
   }
 
-  // Filter repos that need analysis (clonedAt is set but analysis is null)
+  // Filter repos that need analysis (clonedAt is set but analysis is null or version mismatch)
   const reposToAnalyzeUnsorted = data.repositories.filter((repo) => {
     const repoPath = join(REPOS_DIR, repo.fullName);
+    if (repo.clonedAt === null || !existsSync(repoPath)) {
+      return false;
+    }
+    // Re-analyze if analysis doesn't exist or if rule version changed
     return (
-      repo.clonedAt !== null && repo.analysis === null && existsSync(repoPath)
+      repo.analysis === null ||
+      repo.analysis.analyzedVersion !== currentVersion
     );
   });
 
+  // Count only repos with current analysis (matching rule version)
   const alreadyAnalyzed = data.repositories.filter(
-    (r) => r.analysis !== null,
+    (r) => r.analysis !== null && r.analysis.analyzedVersion === currentVersion,
   ).length;
   const notCloned = data.repositories.filter((r) => r.clonedAt === null).length;
 
@@ -413,7 +452,10 @@ async function main() {
     );
 
     try {
-      const result = await analyzeRepository(repo);
+      const result = await analyzeRepository(
+        repo,
+        currentVersion,
+      );
 
       // Update the repository's analysis
       repo.analysis = result;

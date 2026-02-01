@@ -493,3 +493,425 @@ export function getSemicolonStats() {
     mixedVerdicts,
   };
 }
+
+/**
+ * Get array-type statistics with detailed verdicts.
+ */
+export function getArrayTypeStats() {
+  const data = getUnifiedData();
+  const repos = data.repositories.filter((r) => r.analysis !== null);
+
+  let arrayRepos = 0;
+  let genericRepos = 0;
+  let mixedRepos = 0;
+
+  const arrayProjects: { name: string; url: string }[] = [];
+  const genericProjects: { name: string; url: string }[] = [];
+
+  const arrayVerdicts: RepoVerdict[] = [];
+  const genericVerdicts: RepoVerdict[] = [];
+  const mixedVerdicts: RepoVerdict[] = [];
+
+  for (const repo of repos) {
+    const arrayType = repo.analysis!.checks["array-type"];
+    if (!arrayType) continue;
+
+    const arrayCount = getCount(arrayType["array"]);
+    const genericCount = getCount(arrayType["generic"]);
+
+    const repoUrl = `https://github.com/${repo.fullName}`;
+    const baseVerdict = {
+      repoFullName: repo.fullName,
+      repoUrl,
+      stars: repo.stars,
+    };
+
+    if (arrayCount > genericCount * 2) {
+      arrayRepos++;
+      arrayVerdicts.push({
+        ...baseVerdict,
+        verdict: "array",
+        reason: `${arrayCount} 'array' violations (Array<T> used) vs ${genericCount} 'generic' violations`,
+      });
+      if (arrayProjects.length < 5) {
+        arrayProjects.push({ name: repo.fullName, url: repoUrl });
+      }
+    } else if (genericCount > arrayCount * 2) {
+      genericRepos++;
+      genericVerdicts.push({
+        ...baseVerdict,
+        verdict: "generic",
+        reason: `${genericCount} 'generic' violations (T[] used) vs ${arrayCount} 'array' violations`,
+      });
+      if (genericProjects.length < 5) {
+        genericProjects.push({ name: repo.fullName, url: repoUrl });
+      }
+    } else {
+      mixedRepos++;
+      mixedVerdicts.push({
+        ...baseVerdict,
+        verdict: "mixed",
+        reason: `Close violations: array=${arrayCount}, generic=${genericCount}`,
+      });
+    }
+  }
+
+  const totalRepos = arrayRepos + genericRepos + mixedRepos;
+  const definiteRepos = arrayRepos + genericRepos;
+
+  return {
+    totalRepos,
+    arrayRepos,
+    genericRepos,
+    mixedRepos,
+    arrayPercent:
+      definiteRepos > 0 ? Math.round((arrayRepos / definiteRepos) * 100) : 0,
+    genericPercent:
+      definiteRepos > 0 ? Math.round((genericRepos / definiteRepos) * 100) : 0,
+    arrayProjects,
+    genericProjects,
+    arrayVerdicts,
+    genericVerdicts,
+    mixedVerdicts,
+  };
+}
+
+/**
+ * Get consistent-type-definitions statistics with detailed verdicts.
+ */
+export function getConsistentTypeDefinitionsStats() {
+  const data = getUnifiedData();
+  const repos = data.repositories.filter((r) => r.analysis !== null);
+
+  let interfaceRepos = 0;
+  let typeRepos = 0;
+  let mixedRepos = 0;
+
+  const interfaceProjects: { name: string; url: string }[] = [];
+  const typeProjects: { name: string; url: string }[] = [];
+
+  const interfaceVerdicts: RepoVerdict[] = [];
+  const typeVerdicts: RepoVerdict[] = [];
+  const mixedVerdicts: RepoVerdict[] = [];
+
+  for (const repo of repos) {
+    const typeDefinitions = repo.analysis!.checks["consistent-type-definitions"];
+    if (!typeDefinitions) continue;
+
+    const interfaceCount = getCount(typeDefinitions["interface"]);
+    const typeCount = getCount(typeDefinitions["type"]);
+
+    const repoUrl = `https://github.com/${repo.fullName}`;
+    const baseVerdict = {
+      repoFullName: repo.fullName,
+      repoUrl,
+      stars: repo.stars,
+    };
+
+    if (interfaceCount > typeCount * 2) {
+      interfaceRepos++;
+      interfaceVerdicts.push({
+        ...baseVerdict,
+        verdict: "interface",
+        reason: `${interfaceCount} 'interface' violations (type keyword used) vs ${typeCount} 'type' violations`,
+      });
+      if (interfaceProjects.length < 5) {
+        interfaceProjects.push({ name: repo.fullName, url: repoUrl });
+      }
+    } else if (typeCount > interfaceCount * 2) {
+      typeRepos++;
+      typeVerdicts.push({
+        ...baseVerdict,
+        verdict: "type",
+        reason: `${typeCount} 'type' violations (interface keyword used) vs ${interfaceCount} 'interface' violations`,
+      });
+      if (typeProjects.length < 5) {
+        typeProjects.push({ name: repo.fullName, url: repoUrl });
+      }
+    } else {
+      mixedRepos++;
+      mixedVerdicts.push({
+        ...baseVerdict,
+        verdict: "mixed",
+        reason: `Close violations: interface=${interfaceCount}, type=${typeCount}`,
+      });
+    }
+  }
+
+  const totalRepos = interfaceRepos + typeRepos + mixedRepos;
+  const definiteRepos = interfaceRepos + typeRepos;
+
+  return {
+    totalRepos,
+    interfaceRepos,
+    typeRepos,
+    mixedRepos,
+    interfacePercent:
+      definiteRepos > 0
+        ? Math.round((interfaceRepos / definiteRepos) * 100)
+        : 0,
+    typePercent:
+      definiteRepos > 0 ? Math.round((typeRepos / definiteRepos) * 100) : 0,
+    interfaceProjects,
+    typeProjects,
+    interfaceVerdicts,
+    typeVerdicts,
+    mixedVerdicts,
+  };
+}
+
+/**
+ * Get consistent-type-imports statistics with detailed verdicts.
+ */
+export function getConsistentTypeImportsStats() {
+  const data = getUnifiedData();
+  const repos = data.repositories.filter((r) => r.analysis !== null);
+
+  let typeImportsRepos = 0;
+  let noTypeImportsRepos = 0;
+  let mixedRepos = 0;
+
+  const typeImportsProjects: { name: string; url: string }[] = [];
+  const noTypeImportsProjects: { name: string; url: string }[] = [];
+
+  const typeImportsVerdicts: RepoVerdict[] = [];
+  const noTypeImportsVerdicts: RepoVerdict[] = [];
+  const mixedVerdicts: RepoVerdict[] = [];
+
+  for (const repo of repos) {
+    const typeImports = repo.analysis!.checks["consistent-type-imports"];
+    if (!typeImports) continue;
+
+    const typeImportsCount = getCount(typeImports["type-imports"]);
+    const noTypeImportsCount = getCount(typeImports["no-type-imports"]);
+
+    const repoUrl = `https://github.com/${repo.fullName}`;
+    const baseVerdict = {
+      repoFullName: repo.fullName,
+      repoUrl,
+      stars: repo.stars,
+    };
+
+    if (typeImportsCount > noTypeImportsCount * 2) {
+      typeImportsRepos++;
+      typeImportsVerdicts.push({
+        ...baseVerdict,
+        verdict: "type-imports",
+        reason: `${typeImportsCount} 'type-imports' violations vs ${noTypeImportsCount} 'no-type-imports' violations`,
+      });
+      if (typeImportsProjects.length < 5) {
+        typeImportsProjects.push({ name: repo.fullName, url: repoUrl });
+      }
+    } else if (noTypeImportsCount > typeImportsCount * 2) {
+      noTypeImportsRepos++;
+      noTypeImportsVerdicts.push({
+        ...baseVerdict,
+        verdict: "no-type-imports",
+        reason: `${noTypeImportsCount} 'no-type-imports' violations vs ${typeImportsCount} 'type-imports' violations`,
+      });
+      if (noTypeImportsProjects.length < 5) {
+        noTypeImportsProjects.push({ name: repo.fullName, url: repoUrl });
+      }
+    } else {
+      mixedRepos++;
+      mixedVerdicts.push({
+        ...baseVerdict,
+        verdict: "mixed",
+        reason: `Close violations: type-imports=${typeImportsCount}, no-type-imports=${noTypeImportsCount}`,
+      });
+    }
+  }
+
+  const totalRepos = typeImportsRepos + noTypeImportsRepos + mixedRepos;
+  const definiteRepos = typeImportsRepos + noTypeImportsRepos;
+
+  return {
+    totalRepos,
+    typeImportsRepos,
+    noTypeImportsRepos,
+    mixedRepos,
+    typeImportsPercent:
+      definiteRepos > 0
+        ? Math.round((typeImportsRepos / definiteRepos) * 100)
+        : 0,
+    noTypeImportsPercent:
+      definiteRepos > 0
+        ? Math.round((noTypeImportsRepos / definiteRepos) * 100)
+        : 0,
+    typeImportsProjects,
+    noTypeImportsProjects,
+    typeImportsVerdicts,
+    noTypeImportsVerdicts,
+    mixedVerdicts,
+  };
+}
+
+/**
+ * Get consistent-indexed-object-style statistics with detailed verdicts.
+ */
+export function getConsistentIndexedObjectStyleStats() {
+  const data = getUnifiedData();
+  const repos = data.repositories.filter((r) => r.analysis !== null);
+
+  let recordRepos = 0;
+  let indexSignatureRepos = 0;
+  let mixedRepos = 0;
+
+  const recordProjects: { name: string; url: string }[] = [];
+  const indexSignatureProjects: { name: string; url: string }[] = [];
+
+  const recordVerdicts: RepoVerdict[] = [];
+  const indexSignatureVerdicts: RepoVerdict[] = [];
+  const mixedVerdicts: RepoVerdict[] = [];
+
+  for (const repo of repos) {
+    const indexedObjectStyle = repo.analysis!.checks["consistent-indexed-object-style"];
+    if (!indexedObjectStyle) continue;
+
+    const recordCount = getCount(indexedObjectStyle["record"]);
+    const indexSignatureCount = getCount(indexedObjectStyle["index-signature"]);
+
+    const repoUrl = `https://github.com/${repo.fullName}`;
+    const baseVerdict = {
+      repoFullName: repo.fullName,
+      repoUrl,
+      stars: repo.stars,
+    };
+
+    if (recordCount > indexSignatureCount * 2) {
+      recordRepos++;
+      recordVerdicts.push({
+        ...baseVerdict,
+        verdict: "record",
+        reason: `${recordCount} 'record' violations vs ${indexSignatureCount} 'index-signature' violations`,
+      });
+      if (recordProjects.length < 5) {
+        recordProjects.push({ name: repo.fullName, url: repoUrl });
+      }
+    } else if (indexSignatureCount > recordCount * 2) {
+      indexSignatureRepos++;
+      indexSignatureVerdicts.push({
+        ...baseVerdict,
+        verdict: "index-signature",
+        reason: `${indexSignatureCount} 'index-signature' violations vs ${recordCount} 'record' violations`,
+      });
+      if (indexSignatureProjects.length < 5) {
+        indexSignatureProjects.push({ name: repo.fullName, url: repoUrl });
+      }
+    } else {
+      mixedRepos++;
+      mixedVerdicts.push({
+        ...baseVerdict,
+        verdict: "mixed",
+        reason: `Close violations: record=${recordCount}, index-signature=${indexSignatureCount}`,
+      });
+    }
+  }
+
+  const totalRepos = recordRepos + indexSignatureRepos + mixedRepos;
+  const definiteRepos = recordRepos + indexSignatureRepos;
+
+  return {
+    totalRepos,
+    recordRepos,
+    indexSignatureRepos,
+    mixedRepos,
+    recordPercent:
+      definiteRepos > 0 ? Math.round((recordRepos / definiteRepos) * 100) : 0,
+    indexSignaturePercent:
+      definiteRepos > 0
+        ? Math.round((indexSignatureRepos / definiteRepos) * 100)
+        : 0,
+    recordProjects,
+    indexSignatureProjects,
+    recordVerdicts,
+    indexSignatureVerdicts,
+    mixedVerdicts,
+  };
+}
+
+/**
+ * Get consistent-generic-constructors statistics with detailed verdicts.
+ */
+export function getConsistentGenericConstructorsStats() {
+  const data = getUnifiedData();
+  const repos = data.repositories.filter((r) => r.analysis !== null);
+
+  let constructorRepos = 0;
+  let typeAnnotationRepos = 0;
+  let mixedRepos = 0;
+
+  const constructorProjects: { name: string; url: string }[] = [];
+  const typeAnnotationProjects: { name: string; url: string }[] = [];
+
+  const constructorVerdicts: RepoVerdict[] = [];
+  const typeAnnotationVerdicts: RepoVerdict[] = [];
+  const mixedVerdicts: RepoVerdict[] = [];
+
+  for (const repo of repos) {
+    const genericConstructors = repo.analysis!.checks["consistent-generic-constructors"];
+    if (!genericConstructors) continue;
+
+    const constructorCount = getCount(genericConstructors["constructor"]);
+    const typeAnnotationCount = getCount(genericConstructors["type-annotation"]);
+
+    const repoUrl = `https://github.com/${repo.fullName}`;
+    const baseVerdict = {
+      repoFullName: repo.fullName,
+      repoUrl,
+      stars: repo.stars,
+    };
+
+    if (constructorCount > typeAnnotationCount * 2) {
+      constructorRepos++;
+      constructorVerdicts.push({
+        ...baseVerdict,
+        verdict: "constructor",
+        reason: `${constructorCount} 'constructor' violations vs ${typeAnnotationCount} 'type-annotation' violations`,
+      });
+      if (constructorProjects.length < 5) {
+        constructorProjects.push({ name: repo.fullName, url: repoUrl });
+      }
+    } else if (typeAnnotationCount > constructorCount * 2) {
+      typeAnnotationRepos++;
+      typeAnnotationVerdicts.push({
+        ...baseVerdict,
+        verdict: "type-annotation",
+        reason: `${typeAnnotationCount} 'type-annotation' violations vs ${constructorCount} 'constructor' violations`,
+      });
+      if (typeAnnotationProjects.length < 5) {
+        typeAnnotationProjects.push({ name: repo.fullName, url: repoUrl });
+      }
+    } else {
+      mixedRepos++;
+      mixedVerdicts.push({
+        ...baseVerdict,
+        verdict: "mixed",
+        reason: `Close violations: constructor=${constructorCount}, type-annotation=${typeAnnotationCount}`,
+      });
+    }
+  }
+
+  const totalRepos = constructorRepos + typeAnnotationRepos + mixedRepos;
+  const definiteRepos = constructorRepos + typeAnnotationRepos;
+
+  return {
+    totalRepos,
+    constructorRepos,
+    typeAnnotationRepos,
+    mixedRepos,
+    constructorPercent:
+      definiteRepos > 0
+        ? Math.round((constructorRepos / definiteRepos) * 100)
+        : 0,
+    typeAnnotationPercent:
+      definiteRepos > 0
+        ? Math.round((typeAnnotationRepos / definiteRepos) * 100)
+        : 0,
+    constructorProjects,
+    typeAnnotationProjects,
+    constructorVerdicts,
+    typeAnnotationVerdicts,
+    mixedVerdicts,
+  };
+}

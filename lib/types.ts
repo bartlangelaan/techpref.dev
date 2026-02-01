@@ -23,7 +23,8 @@ export interface VariantResult {
  * Analysis result for a single repository.
  */
 export interface AnalysisResult {
-  analyzedAt: string;
+  analyzedVersion: string;
+  analyzedCommit: string;
   checks: {
     [ruleId: string]: {
       [variant: string]: VariantResult;

@@ -1,9 +1,12 @@
 import type { ComparisonData } from "@/components/comparison";
-import { getArrayTypeStats } from "@/lib/analysis-results";
+import { getBasicStats } from "@/lib/analysis-results";
 import { BarChart3, TrendingUp, Users } from "lucide-react";
 
 export function getArrayTypeData(): ComparisonData {
-  const stats = getArrayTypeStats();
+  const stats = getBasicStats<'array' | 'generic'>('array-type');
+  const totalVerdicts = stats.allVerdicts.length - stats.verdicts.mixed.length;
+  const arrayPercent = totalVerdicts > 0 ? ((stats.verdicts.array.length / totalVerdicts) * 100).toFixed(0) : "0";
+  const genericPercent = totalVerdicts > 0 ? ((stats.verdicts.generic.length / totalVerdicts) * 100).toFixed(0) : "0";
 
   return {
     slug: "array-type",
@@ -29,7 +32,7 @@ const union: (string | number)[] = [];`,
         "Commonly preferred in popular projects",
         "Less verbose than generic syntax",
       ],
-      projects: stats.arrayProjects.slice(0, 3).map((p) => ({
+      projects: stats.verdictRepositories.array.slice(0, 3).map((p) => ({
         name: p.name,
         stars: "",
         url: p.url,
@@ -38,18 +41,18 @@ const union: (string | number)[] = [];`,
       stats: [
         {
           icon: <TrendingUp className="h-5 w-5" />,
-          value: `${stats.arrayPercent}%`,
+          value: `${arrayPercent}%`,
           label: "of analyzed repos",
-          verdicts: stats.arrayVerdicts,
+          verdicts: stats.verdicts.array,
           verdictTitle: "Repositories using T[] Notation",
           verdictDescription:
             "These repositories prefer the array bracket notation",
         },
         {
           icon: <BarChart3 className="h-5 w-5" />,
-          value: `${stats.arrayRepos}`,
+          value: `${stats.verdicts.array.length}`,
           label: "repositories",
-          verdicts: stats.arrayVerdicts,
+          verdicts: stats.verdicts.array,
           verdictTitle: "Repositories using T[] Notation",
           verdictDescription:
             "These repositories prefer the array bracket notation",
@@ -75,7 +78,7 @@ const union: Array<string | number> = [];`,
         "Familiar to developers from other languages",
         "More verbose but potentially clearer",
       ],
-      projects: stats.genericProjects.slice(0, 3).map((p) => ({
+      projects: stats.verdictRepositories.generic.slice(0, 3).map((p) => ({
         name: p.name,
         stars: "",
         url: p.url,
@@ -84,18 +87,18 @@ const union: Array<string | number> = [];`,
       stats: [
         {
           icon: <TrendingUp className="h-5 w-5" />,
-          value: `${stats.genericPercent}%`,
+          value: `${genericPercent}%`,
           label: "of analyzed repos",
-          verdicts: stats.genericVerdicts,
+          verdicts: stats.verdicts.generic,
           verdictTitle: "Repositories using Array<T> Syntax",
           verdictDescription:
             "These repositories prefer the generic Array<T> syntax",
         },
         {
           icon: <BarChart3 className="h-5 w-5" />,
-          value: `${stats.genericRepos}`,
+          value: `${stats.verdicts.generic.length}`,
           label: "repositories",
-          verdicts: stats.genericVerdicts,
+          verdicts: stats.verdicts.generic,
           verdictTitle: "Repositories using Array<T> Syntax",
           verdictDescription:
             "These repositories prefer the generic Array<T> syntax",
@@ -105,14 +108,14 @@ const union: Array<string | number> = [];`,
     bottomStats: [
       {
         icon: <BarChart3 className="h-6 w-6" />,
-        value: `${stats.totalRepos}`,
+        value: `${stats.allVerdicts.length}`,
         label: "repositories analyzed",
       },
       {
         icon: <Users className="h-6 w-6" />,
-        value: `${stats.mixedRepos}`,
+        value: `${stats.verdicts.mixed.length}`,
         label: "use mixed styles",
-        verdicts: stats.mixedVerdicts,
+        verdicts: stats.verdicts.mixed,
         verdictTitle: "Repositories with Mixed Array Type Syntax",
         verdictDescription:
           "These repositories use both T[] and Array<T> without a clear preference",

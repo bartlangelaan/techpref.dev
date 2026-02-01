@@ -1,3 +1,4 @@
+import { groupBy, isNotNil, sortBy, zipObject } from "es-toolkit";
 import repositoriesData from "../data/repositories.json";
 import type {
   AnalysisResult,
@@ -282,6 +283,63 @@ export function getIndentStats() {
   };
 }
 
+/** Get basic statistics */
+export function getBasicStats<V extends string>(ruleId: string) {
+  const data = getUnifiedData();
+  const repos = data.repositories.filter((r) => r.analysis !== null);
+
+  type PV = V | 'mixed';
+
+  const possibleVerdicts = Object.keys(repos[0].analysis!.checks[ruleId]) as (PV)[];
+
+  const verdictRepositories = Object.fromEntries(possibleVerdicts.map((v) => [v, [] as { name: string; url: string }[]])) as Record<PV, { name: string; url: string }[]>;
+  verdictRepositories.mixed = [];
+
+  const allVerdicts = repos
+    .map<RepoVerdict | null>((repo) => {
+      const rule = repo.analysis!.checks[ruleId];
+      if (!rule) return null;
+
+      const variants = Object.entries(rule).map(([name, result]) => ({
+        name: name as V,
+        count: getCount(result),
+        samples: getSamples(result),
+      }));
+
+      const variantsByViolations = sortBy(variants, [(v) => v.count]);
+
+      const verdict = variantsByViolations[0].count * 2 < variantsByViolations[1].count
+        ? variantsByViolations[0].name
+        : "mixed";
+      
+      
+    const repoUrl = `https://github.com/${repo.fullName}`;
+      
+      if (verdictRepositories[verdict].length < 5) {
+        verdictRepositories[verdict].push({ name: repo.fullName, url: repoUrl });
+      }
+
+      return {
+        repoFullName: repo.fullName,
+        repoUrl,
+        stars: repo.stars,
+        variants: variants,
+        verdict,
+        reason: `Violations: ${variants.map((v) => `${v.name}=${v.count}`).join(", ")}`,
+      };
+    })
+    .filter(isNotNil);
+
+  const verdicts: Record<PV, RepoVerdict[]> = groupBy(allVerdicts, (v) => v.verdict);
+  // make sure each verdict has an array
+  for (const key of possibleVerdicts) {
+    verdicts[key] ??= [];
+  }
+
+
+  return { allVerdicts, verdicts, verdictRepositories };
+}
+
 /**
  * Get function style statistics with detailed verdicts.
  */
@@ -495,88 +553,6 @@ export function getSemicolonStats() {
 }
 
 /**
- * Get array-type statistics with detailed verdicts.
- */
-export function getArrayTypeStats() {
-  const data = getUnifiedData();
-  const repos = data.repositories.filter((r) => r.analysis !== null);
-
-  let arrayRepos = 0;
-  let genericRepos = 0;
-  let mixedRepos = 0;
-
-  const arrayProjects: { name: string; url: string }[] = [];
-  const genericProjects: { name: string; url: string }[] = [];
-
-  const arrayVerdicts: RepoVerdict[] = [];
-  const genericVerdicts: RepoVerdict[] = [];
-  const mixedVerdicts: RepoVerdict[] = [];
-
-  for (const repo of repos) {
-    const arrayType = repo.analysis!.checks["array-type"];
-    if (!arrayType) continue;
-
-    const arrayCount = getCount(arrayType["array"]);
-    const genericCount = getCount(arrayType["generic"]);
-
-    const repoUrl = `https://github.com/${repo.fullName}`;
-    const baseVerdict = {
-      repoFullName: repo.fullName,
-      repoUrl,
-      stars: repo.stars,
-    };
-
-    if (arrayCount > genericCount * 2) {
-      arrayRepos++;
-      arrayVerdicts.push({
-        ...baseVerdict,
-        verdict: "array",
-        reason: `${arrayCount} 'array' violations (Array<T> used) vs ${genericCount} 'generic' violations`,
-      });
-      if (arrayProjects.length < 5) {
-        arrayProjects.push({ name: repo.fullName, url: repoUrl });
-      }
-    } else if (genericCount > arrayCount * 2) {
-      genericRepos++;
-      genericVerdicts.push({
-        ...baseVerdict,
-        verdict: "generic",
-        reason: `${genericCount} 'generic' violations (T[] used) vs ${arrayCount} 'array' violations`,
-      });
-      if (genericProjects.length < 5) {
-        genericProjects.push({ name: repo.fullName, url: repoUrl });
-      }
-    } else {
-      mixedRepos++;
-      mixedVerdicts.push({
-        ...baseVerdict,
-        verdict: "mixed",
-        reason: `Close violations: array=${arrayCount}, generic=${genericCount}`,
-      });
-    }
-  }
-
-  const totalRepos = arrayRepos + genericRepos + mixedRepos;
-  const definiteRepos = arrayRepos + genericRepos;
-
-  return {
-    totalRepos,
-    arrayRepos,
-    genericRepos,
-    mixedRepos,
-    arrayPercent:
-      definiteRepos > 0 ? Math.round((arrayRepos / definiteRepos) * 100) : 0,
-    genericPercent:
-      definiteRepos > 0 ? Math.round((genericRepos / definiteRepos) * 100) : 0,
-    arrayProjects,
-    genericProjects,
-    arrayVerdicts,
-    genericVerdicts,
-    mixedVerdicts,
-  };
-}
-
-/**
  * Get consistent-type-definitions statistics with detailed verdicts.
  */
 export function getConsistentTypeDefinitionsStats() {
@@ -595,7 +571,8 @@ export function getConsistentTypeDefinitionsStats() {
   const mixedVerdicts: RepoVerdict[] = [];
 
   for (const repo of repos) {
-    const typeDefinitions = repo.analysis!.checks["consistent-type-definitions"];
+    const typeDefinitions =
+      repo.analysis!.checks["consistent-type-definitions"];
     if (!typeDefinitions) continue;
 
     const interfaceCount = getCount(typeDefinitions["interface"]);
@@ -765,7 +742,8 @@ export function getConsistentIndexedObjectStyleStats() {
   const mixedVerdicts: RepoVerdict[] = [];
 
   for (const repo of repos) {
-    const indexedObjectStyle = repo.analysis!.checks["consistent-indexed-object-style"];
+    const indexedObjectStyle =
+      repo.analysis!.checks["consistent-indexed-object-style"];
     if (!indexedObjectStyle) continue;
 
     const recordCount = getCount(indexedObjectStyle["record"]);
@@ -849,11 +827,14 @@ export function getConsistentGenericConstructorsStats() {
   const mixedVerdicts: RepoVerdict[] = [];
 
   for (const repo of repos) {
-    const genericConstructors = repo.analysis!.checks["consistent-generic-constructors"];
+    const genericConstructors =
+      repo.analysis!.checks["consistent-generic-constructors"];
     if (!genericConstructors) continue;
 
     const constructorCount = getCount(genericConstructors["constructor"]);
-    const typeAnnotationCount = getCount(genericConstructors["type-annotation"]);
+    const typeAnnotationCount = getCount(
+      genericConstructors["type-annotation"],
+    );
 
     const repoUrl = `https://github.com/${repo.fullName}`;
     const baseVerdict = {

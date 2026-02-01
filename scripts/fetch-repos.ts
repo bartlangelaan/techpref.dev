@@ -2,14 +2,30 @@ import type { RepositoryData, UnifiedData } from "@/lib/types";
 import { loadData, saveData } from "@/lib/types";
 import { Octokit } from "@octokit/rest";
 import { uniqBy } from "es-toolkit";
+import { throttling } from "@octokit/plugin-throttling";
 
 const REPO_COUNT = 1000;
-const MAX_RETRIES = 5;
-const INITIAL_RETRY_DELAY_MS = 60_000; // Start with 1 minute
 
-const octokit = new Octokit({
+const MyOctokit = Octokit.plugin(throttling);
+const octokit = new MyOctokit({
   auth: process.env.GITHUB_TOKEN,
+  throttle: {
+    onRateLimit: (retryAfter, options, octokit, retryCount) => {
+      octokit.log.warn(
+        `Request quota exhausted for request ${options.method} ${options.url} - waiting ${retryAfter} seconds before retrying... (Retry count: ${retryCount})`,
+      );
+      return true;
+    },
+    onSecondaryRateLimit: (retryAfter, options, octokit) => {
+       octokit.log.warn(
+        `SecondaryRateLimit detected for request ${options.method} ${options.url} - waiting ${retryAfter} seconds before retrying...`,
+      );
+      return true;
+    },
+    fallbackSecondaryRateRetryAfter: 10,
+  },
 });
+
 
 /**
  * Sleep for a given number of milliseconds.
@@ -56,33 +72,14 @@ async function fetchTopTypeScriptRepos(
   for (let page = 1; page <= totalPages; page++) {
     console.log(`Fetching page ${page}/${totalPages}...`);
 
-    let response;
-    let retries = 0;
-
-    while (true) {
-      try {
-        response = await octokit.search.repos({
+    const response = await octokit.search.repos({
           q: "language:typescript",
           sort: "stars",
           order: "desc",
           per_page: perPage,
           page,
         });
-        break; // Success, exit retry loop
-      } catch (error) {
-        if (isRateLimitError(error) && retries < MAX_RETRIES) {
-          retries++;
-          const delayMs = INITIAL_RETRY_DELAY_MS * Math.pow(2, retries - 1);
-          const delayMinutes = Math.round(delayMs / 60_000);
-          console.log(
-            `Rate limit hit. Waiting ${delayMinutes} minute(s) before retry ${retries}/${MAX_RETRIES}...`,
-          );
-          await sleep(delayMs);
-        } else {
-          throw error;
-        }
-      }
-    }
+
 
     for (const repo of response.data.items) {
       repos.push({

@@ -4,7 +4,9 @@ import { consistentIndexedObjectStyleChecks } from "./consistent-indexed-object-
 import { consistentTypeDefinitionsChecks } from "./consistent-type-definitions";
 import { consistentTypeImportsChecks } from "./consistent-type-imports";
 import { funcStyleChecks } from "./func-style";
+import { importExportPreferenceChecks } from "./import-export-preference";
 import { indentChecks } from "./indent";
+import { quotesChecks } from "./quotes";
 import { semiChecks } from "./semi";
 
 /**
@@ -36,6 +38,8 @@ export interface OxlintRuleCheck extends RuleCheckBase {
     rule: string;
     /** Rule configuration array (e.g., ["error", "expression"]) */
     config: [string, ...unknown[]];
+    /** Plugins to enable */
+    plugins: string[];
   };
   eslintConfig?: never;
 }
@@ -55,6 +59,8 @@ export const allRuleChecks: RuleCheck[] = [
   ...consistentTypeDefinitionsChecks,
   ...consistentTypeImportsChecks,
   ...funcStyleChecks,
+  ...importExportPreferenceChecks,
   ...indentChecks,
+  ...quotesChecks,
   ...semiChecks,
 ];

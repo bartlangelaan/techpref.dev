@@ -118,6 +118,7 @@ async function runOxlintCheck(
       rules: {
         [ruleCheck.oxlintConfig.rule]: ruleCheck.oxlintConfig.config,
       },
+      plugins: ruleCheck.oxlintConfig.plugins,
     };
     await writeFile(configPath, JSON.stringify(config));
 

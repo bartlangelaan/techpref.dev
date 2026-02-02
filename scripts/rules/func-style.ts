@@ -14,6 +14,7 @@ export const funcStyleChecks: OxlintRuleCheck[] = [
     oxlintConfig: {
       rule: "eslint/func-style",
       config: ["error", "expression"],
+      plugins: ["eslint"],
     },
   },
   {
@@ -22,6 +23,7 @@ export const funcStyleChecks: OxlintRuleCheck[] = [
     oxlintConfig: {
       rule: "eslint/func-style",
       config: ["error", "declaration"],
+      plugins: ["eslint"],
     },
   },
 ];

@@ -14,6 +14,7 @@ export const consistentTypeDefinitionsChecks: OxlintRuleCheck[] = [
     oxlintConfig: {
       rule: "typescript/consistent-type-definitions",
       config: ["error", "interface"],
+      plugins: ["typescript"],
     },
   },
   {
@@ -22,6 +23,7 @@ export const consistentTypeDefinitionsChecks: OxlintRuleCheck[] = [
     oxlintConfig: {
       rule: "typescript/consistent-type-definitions",
       config: ["error", "type"],
+      plugins: ["typescript"],
     },
   },
 ];

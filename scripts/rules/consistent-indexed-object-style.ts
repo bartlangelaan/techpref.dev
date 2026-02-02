@@ -14,6 +14,7 @@ export const consistentIndexedObjectStyleChecks: OxlintRuleCheck[] = [
     oxlintConfig: {
       rule: "typescript/consistent-indexed-object-style",
       config: ["error", "record"],
+      plugins: ["typescript"],
     },
   },
   {
@@ -22,6 +23,7 @@ export const consistentIndexedObjectStyleChecks: OxlintRuleCheck[] = [
     oxlintConfig: {
       rule: "typescript/consistent-indexed-object-style",
       config: ["error", "index-signature"],
+      plugins: ["typescript"],
     },
   },
 ];

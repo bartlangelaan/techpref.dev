@@ -14,6 +14,7 @@ export const arrayTypeChecks: OxlintRuleCheck[] = [
     oxlintConfig: {
       rule: "typescript/array-type",
       config: ["error", { default: "array" }],
+      plugins: ["typescript"],
     },
   },
   {
@@ -22,6 +23,7 @@ export const arrayTypeChecks: OxlintRuleCheck[] = [
     oxlintConfig: {
       rule: "typescript/array-type",
       config: ["error", { default: "generic" }],
+      plugins: ["typescript"],
     },
   },
 ];

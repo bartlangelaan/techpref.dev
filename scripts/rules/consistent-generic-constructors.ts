@@ -14,6 +14,7 @@ export const consistentGenericConstructorsChecks: OxlintRuleCheck[] = [
     oxlintConfig: {
       rule: "typescript/consistent-generic-constructors",
       config: ["error", "constructor"],
+      plugins: ["typescript"],
     },
   },
   {
@@ -22,6 +23,7 @@ export const consistentGenericConstructorsChecks: OxlintRuleCheck[] = [
     oxlintConfig: {
       rule: "typescript/consistent-generic-constructors",
       config: ["error", "type-annotation"],
+      plugins: ["typescript"],
     },
   },
 ];

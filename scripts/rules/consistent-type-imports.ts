@@ -14,6 +14,7 @@ export const consistentTypeImportsChecks: OxlintRuleCheck[] = [
     oxlintConfig: {
       rule: "typescript/consistent-type-imports",
       config: ["error", { prefer: "type-imports" }],
+      plugins: ["typescript"],
     },
   },
   {
@@ -22,6 +23,7 @@ export const consistentTypeImportsChecks: OxlintRuleCheck[] = [
     oxlintConfig: {
       rule: "typescript/consistent-type-imports",
       config: ["error", { prefer: "no-type-imports" }],
+      plugins: ["typescript"],
     },
   },
 ];

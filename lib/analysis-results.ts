@@ -67,14 +67,21 @@ export function getBasicStats<V extends string>(ruleId: string) {
   const repos = data.repositories.filter((r) => r.analysis !== null);
 
   type PV = V | 'mixed';
-const variants = Object.keys(repos[0].analysis!.checks[ruleId]) as (V)[];
+  const variants: V[] = [];
+  for (const repo of repos) {
+    const rule = repo.analysis?.checks[ruleId];
+    if (rule) {
+      variants.push(...Object.keys(rule) as V[]);
+      break;
+    }
+  }
   const possibleVerdicts = [...variants, 'mixed'] as PV[];
 
   const verdictRepositories = Object.fromEntries(possibleVerdicts.map((v) => [v, [] as { name: string; url: string; stars: number }[]])) as Record<PV, { name: string; url: string; stars: number }[]>;
 
   const allVerdicts = repos
     .map<RepoVerdict | null>((repo) => {
-      const rule = repo.analysis!.checks[ruleId];
+      const rule = repo.analysis?.checks[ruleId];
       if (!rule) return null;
 
       const variants = Object.entries(rule).map(([name, result]) => ({

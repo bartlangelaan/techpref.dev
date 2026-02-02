@@ -312,6 +312,22 @@ function isOxlintRuleCheck(ruleCheck: RuleCheck): ruleCheck is OxlintRuleCheck {
 }
 
 /**
+ * Log the results of a single rule check.
+ */
+function logRuleCheckResult(
+  ruleId: string,
+  variant: string,
+  result: VariantResult,
+): void {
+  console.log(`  ${ruleId}: ${variant}=${result.count}`);
+  for (const sample of result.samples.slice(0, 3)) {
+    console.log(
+      `    - ${sample.file}:${sample.line} - ${sample.message}`,
+    );
+  }
+}
+
+/**
  * Analyze a single repository with all rule checks.
  * Uses Oxlint for rules that support it (faster), ESLint for others.
  */
@@ -335,10 +351,9 @@ async function analyzeRepository(
     if (!checks[ruleCheck.ruleId]) {
       checks[ruleCheck.ruleId] = {};
     }
-    checks[ruleCheck.ruleId][ruleCheck.variant] = await runOxlintCheck(
-      repoPath,
-      ruleCheck,
-    );
+    const result = await runOxlintCheck(repoPath, ruleCheck);
+    checks[ruleCheck.ruleId][ruleCheck.variant] = result;
+    logRuleCheckResult(ruleCheck.ruleId, ruleCheck.variant, result);
   }
 
   // Run ESLint checks (need files list for ESLint API)
@@ -349,11 +364,9 @@ async function analyzeRepository(
       if (!checks[ruleCheck.ruleId]) {
         checks[ruleCheck.ruleId] = {};
       }
-      checks[ruleCheck.ruleId][ruleCheck.variant] = await runEslintCheck(
-        files,
-        ruleCheck,
-        repoPath,
-      );
+      const result = await runEslintCheck(files, ruleCheck, repoPath);
+      checks[ruleCheck.ruleId][ruleCheck.variant] = result;
+      logRuleCheckResult(ruleCheck.ruleId, ruleCheck.variant, result);
     }
   }
 
@@ -464,26 +477,6 @@ async function main() {
 
       // Save after each analysis to preserve progress
       saveData(data);
-
-      // Print summary for this repo
-      for (const [ruleId, variants] of Object.entries(result.checks)) {
-        const variantSummary = Object.entries(variants)
-          .map(([v, vr]) => `${v}=${vr.count}`)
-          .join(", ");
-        console.log(`  ${ruleId}: ${variantSummary}`);
-
-        // Print sample violations for each variant
-        for (const [variant, variantResult] of Object.entries(variants)) {
-          if (variantResult.count > 0 && variantResult.samples.length > 0) {
-            console.log(`    ${variant} samples:`);
-            for (const sample of variantResult.samples.slice(0, 3)) {
-              console.log(
-                `      - ${sample.file}:${sample.line} - ${sample.message}`,
-              );
-            }
-          }
-        }
-      }
     } catch (error) {
       console.error(`  Error analyzing ${repo.fullName}:`, error);
     }

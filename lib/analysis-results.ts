@@ -23,6 +23,7 @@ export type {
 export interface RepoVerdict {
   repoFullName: string;
   repoUrl: string;
+  analyzedCommit: string;
   stars: number;
   verdict: string;
   reason: string;
@@ -106,6 +107,7 @@ export function getBasicStats<V extends string>(ruleId: string) {
       return {
         repoFullName: repo.fullName,
         repoUrl,
+        analyzedCommit: repo.analysis!.analyzedCommit,
         stars: repo.stars,
         variants: variants,
         verdict,

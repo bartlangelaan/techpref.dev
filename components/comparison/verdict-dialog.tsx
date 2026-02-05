@@ -26,7 +26,15 @@ interface VerdictDialogProps {
   children: React.ReactNode;
 }
 
-function SamplesList({ samples }: { samples: ViolationSample[] }) {
+function SamplesList({
+  samples,
+  repoUrl,
+  commit,
+}: {
+  samples: ViolationSample[];
+  repoUrl: string;
+  commit: string;
+}) {
   if (samples.length === 0) {
     return (
       <span className="text-muted-foreground text-xs">
@@ -38,9 +46,19 @@ function SamplesList({ samples }: { samples: ViolationSample[] }) {
   return (
     <ul className="space-y-1 text-xs">
       {samples.map((sample, i) => (
-        <li key={i} className="text-muted-foreground font-mono">
-          <span className="text-foreground">{sample.file}</span>
-          <span className="text-muted-foreground">:{sample.line}</span>
+        <li key={i} className="font-mono">
+          <a
+            href={`${repoUrl}/blob/${commit}/${sample.file}#L${sample.line}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-muted-foreground hover:text-primary flex items-center gap-1"
+          >
+            <span className="text-foreground min-w-0 truncate">
+              {sample.file}
+            </span>
+            <span className="shrink-0">:{sample.line}</span>
+            <ExternalLink className="h-3 w-3 shrink-0 opacity-50" />
+          </a>
         </li>
       ))}
     </ul>
@@ -91,7 +109,7 @@ function RepoVerdictCard({ verdict }: { verdict: RepoVerdict }) {
             <FileCode className="h-3 w-3" />
             ESLint Rule Violations
           </div>
-          <div className="grid gap-3 sm:grid-cols-2">
+          <div className="space-y-3">
             {verdict.variants.map((variant) => (
               <div key={variant.name} className="bg-muted/30 rounded p-2">
                 <div className="flex items-center justify-between">
@@ -103,7 +121,7 @@ function RepoVerdictCard({ verdict }: { verdict: RepoVerdict }) {
                   </Badge>
                 </div>
                 <div className="mt-2">
-                  <SamplesList samples={variant.samples} />
+                  <SamplesList samples={variant.samples} repoUrl={verdict.repoUrl} commit={verdict.analyzedCommit} />
                 </div>
               </div>
             ))}

@@ -130,29 +130,10 @@ export function loadDataWithAnalysis(): UnifiedData | null {
     return null;
   }
 
-  // Load all analysis files into a map for efficient lookup
-  const analysisMap = new Map<string, AnalysisResult>();
-  if (existsSync(ANALYSIS_DIR)) {
-    const files = readdirSync(ANALYSIS_DIR);
-    for (const file of files) {
-      if (!file.endsWith(".json")) continue;
-      const filePath = join(ANALYSIS_DIR, file);
-      try {
-        const analysis: AnalysisResult = JSON.parse(
-          readFileSync(filePath, "utf-8"),
-        );
-        // Convert filename back to fullName: "owner-repo.json" -> "owner/repo"
-        const fullName = file.slice(0, -5).replace("-", "/");
-        analysisMap.set(fullName, analysis);
-      } catch {
-        // Skip invalid files
-      }
-    }
-  }
-
-  // Merge analysis into repositories
+  // Load analysis for each repository by computing the expected filename
+  // This avoids the ambiguity of parsing filenames with hyphens back to fullName
   for (const repo of data.repositories) {
-    const analysis = analysisMap.get(repo.fullName);
+    const analysis = loadAnalysis(repo.fullName);
     if (analysis) {
       repo.analysis = analysis;
     }

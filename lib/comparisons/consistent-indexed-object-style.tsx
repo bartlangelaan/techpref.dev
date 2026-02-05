@@ -46,7 +46,7 @@ interface Config {
       })),
       stats: [
         {
-          icon: <TrendingUp className="h-5 w-5" />,
+          icon: <TrendingUp className="size-5 " />,
           value: `${stats.verdictPercentages.record}%`,
           label: "of analyzed repos",
           verdicts: stats.verdicts.record,
@@ -55,7 +55,7 @@ interface Config {
             "These repositories prefer the Record utility type for indexed objects",
         },
         {
-          icon: <BarChart3 className="h-5 w-5" />,
+          icon: <BarChart3 className="size-5 " />,
           value: `${stats.verdicts.record.length}`,
           label: "repositories",
           verdicts: stats.verdicts.record,
@@ -98,7 +98,7 @@ interface Config {
         })),
       stats: [
         {
-          icon: <TrendingUp className="h-5 w-5" />,
+          icon: <TrendingUp className="size-5 " />,
           value: `${stats.verdictPercentages["index-signature"]}%`,
           label: "of analyzed repos",
           verdicts: stats.verdicts["index-signature"],
@@ -107,7 +107,7 @@ interface Config {
             "These repositories prefer index signature syntax for indexed objects",
         },
         {
-          icon: <BarChart3 className="h-5 w-5" />,
+          icon: <BarChart3 className="size-5 " />,
           value: `${stats.verdicts["index-signature"].length}`,
           label: "repositories",
           verdicts: stats.verdicts["index-signature"],

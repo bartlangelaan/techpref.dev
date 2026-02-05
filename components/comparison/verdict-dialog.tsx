@@ -52,6 +52,7 @@ function SamplesList({
             target="_blank"
             rel="noopener noreferrer"
             className="text-muted-foreground hover:text-primary flex items-center gap-1"
+            onClick={(e) => e.stopPropagation()}
           >
             <span className="text-foreground min-w-0 truncate">
               {sample.file}
@@ -69,7 +70,10 @@ function RepoVerdictCard({ verdict }: { verdict: RepoVerdict }) {
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <div className="border-border rounded-lg border p-3">
+    <div
+      className="border-border hover:border-muted-foreground/50 cursor-pointer rounded-lg border p-3 transition-colors"
+      onClick={() => setExpanded(!expanded)}
+    >
       <div className="flex items-start justify-between gap-2">
         <div className="min-w-0 flex-1">
           <div className="flex items-center gap-2">
@@ -77,6 +81,7 @@ function RepoVerdictCard({ verdict }: { verdict: RepoVerdict }) {
               href={verdict.repoUrl}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
               className="text-foreground hover:text-primary flex items-center gap-1 truncate font-medium"
             >
               {verdict.repoFullName}
@@ -88,17 +93,13 @@ function RepoVerdictCard({ verdict }: { verdict: RepoVerdict }) {
             {verdict.stars.toLocaleString()}
           </div>
         </div>
-        <button
-          onClick={() => setExpanded(!expanded)}
-          className="text-muted-foreground hover:text-foreground flex items-center gap-1 text-xs"
-        >
+        <div className="text-muted-foreground flex items-center gap-1 text-xs">
           {expanded ? (
             <ChevronDown className="h-4 w-4" />
           ) : (
             <ChevronRight className="h-4 w-4" />
           )}
-          Details
-        </button>
+        </div>
       </div>
 
       <p className="text-muted-foreground mt-2 text-xs">{verdict.reason}</p>

@@ -1,5 +1,5 @@
 import { spawn } from "node:child_process";
-import { existsSync, mkdirSync } from "node:fs";
+import { existsSync, mkdirSync, rmdirSync, rmSync } from "node:fs";
 import { join } from "node:path";
 import type { AnalysisResult, RepositoryData } from "@/lib/types";
 import { octokit } from "@/lib/octokit";
@@ -15,8 +15,8 @@ async function cloneRepository(repo: RepositoryData): Promise<boolean> {
   const repoPath = join(REPOS_DIR, repo.fullName);
 
   if (existsSync(repoPath)) {
-    console.log(`Skipping ${repo.fullName} (already exists on disk)`);
-    return true;
+    rmSync(repoPath, { recursive: true, force: true });
+    console.log(`Removed existing directory for ${repo.fullName}`);
   }
 
   // Ensure parent directory exists
@@ -136,7 +136,7 @@ async function main() {
     mkdirSync(REPOS_DIR, { recursive: true });
   }
 
-  let reposToClone: RepositoryData[];
+  let reposToClone: RepositoryData[] = [];
 
   if (oldestAnalyzedLimit !== null) {
     // Load analysis data for each repo
@@ -161,19 +161,18 @@ async function main() {
     console.log(`Using --oldestAnalyzed=${oldestAnalyzedLimit}`);
     console.log(`Checking repos for new commits (oldest analyzed first)...\n`);
 
-    const selectedRepos: RepositoryData[] = [];
     let checkedCount = 0;
     let upToDateCount = 0;
 
     for (const { repo, analysis } of reposWithAnalysis) {
-      if (selectedRepos.length >= oldestAnalyzedLimit) {
+      if (reposToClone.length >= oldestAnalyzedLimit) {
         break;
       }
       checkedCount++;
       if (await hasNewCommits(repo.fullName, analysis)) {
-        selectedRepos.push(repo);
+        reposToClone.push(repo);
         console.log(
-          `  [${selectedRepos.length}/${oldestAnalyzedLimit}] ${repo.fullName} - has new commits`,
+          `  [${reposToClone.length}/${oldestAnalyzedLimit}] ${repo.fullName} - has new commits`,
         );
       } else {
         upToDateCount++;
@@ -181,14 +180,9 @@ async function main() {
       }
     }
 
-    reposToClone = selectedRepos.filter(
-      (r) => !existsSync(join(REPOS_DIR, r.fullName)),
-    );
-
     console.log(`\nChecked ${checkedCount} repos`);
     console.log(`Repos already up-to-date: ${upToDateCount}`);
-    console.log(`Selected ${selectedRepos.length} repos with new commits`);
-    console.log(`Of those, ${reposToClone.length} need cloning\n`);
+    console.log(`Selected ${reposToClone.length} repos with new commits`);
   } else {
     // Default behavior: filter repos that need cloning (not yet on filesystem)
     reposToClone = data.repositories.filter(

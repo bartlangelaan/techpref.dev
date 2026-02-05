@@ -15,7 +15,6 @@ export function getConsistentGenericConstructorsData(): ComparisonData {
       title: "Constructor Generics",
       subtitle:
         "Specifying generic parameters directly on the constructor call.",
-      badge: "Constructor",
       codeLabel: "example.ts (constructor generic)",
       code: `const map = new Map<string, number>();
 const set = new Set<User>();
@@ -61,7 +60,6 @@ const regex = new RegExp<string>(/pattern/);`,
       title: "Type Annotation Generics",
       subtitle:
         "Specifying generic parameters on the variable type annotation.",
-      badge: "Type Annotation",
       codeLabel: "example.ts (type annotation generic)",
       code: `const map: Map<string, number> = new Map();
 const set: Set<User> = new Set();

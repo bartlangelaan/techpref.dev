@@ -15,7 +15,6 @@ export function getFuncStyleData(): ComparisonData {
       title: "Function Declarations",
       subtitle:
         "Traditional, hoisted, and with their own 'this' binding. The classic way to define functions.",
-      badge: "Traditional",
       codeLabel: "example.js (function declaration)",
       code: `function calculateTotal(items) {
   return items.reduce(function(sum, item) {
@@ -63,7 +62,6 @@ function handleClick() {
       title: "Arrow Functions",
       subtitle:
         "Concise, lexically-scoped 'this', and perfect for callbacks and functional programming.",
-      badge: "Modern",
       codeLabel: "example.js (arrow functions)",
       code: `const calculateTotal = (items) =>
   items.reduce((sum, item) => sum + item.price, 0);

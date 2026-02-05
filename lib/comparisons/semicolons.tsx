@@ -15,7 +15,6 @@ export function getSemicolonsData(): ComparisonData {
       title: "Team Semicolons",
       subtitle:
         "Explicit, traditional, and leaves nothing to chance with JavaScript's automatic semicolon insertion.",
-      badge: "Traditional Style",
       codeLabel: "example.js (with semicolons)",
       code: `function greet(name) {
   const message = \`Hello, \${name}!\`;
@@ -64,7 +63,6 @@ users.forEach((user) => {
       title: "Team No Semicolons",
       subtitle:
         "Clean, minimal, and trusts JavaScript's automatic semicolon insertion to do the right thing.",
-      badge: "Modern Style",
       codeLabel: "example.js (no semicolons)",
       code: `function greet(name) {
   const message = \`Hello, \${name}!\`

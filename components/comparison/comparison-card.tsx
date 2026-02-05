@@ -16,12 +16,6 @@ export function ComparisonCard({
   return (
     <div className="border-border bg-card flex h-full flex-col rounded-2xl border p-6 lg:p-8">
       <div className="mb-6">
-        <Badge
-          variant="outline"
-          className="text-primary border-primary/30 bg-primary/5 mb-3"
-        >
-          {side.badge}
-        </Badge>
         <h2 className="text-foreground mb-2 text-3xl font-bold text-balance">
           {side.title}
         </h2>

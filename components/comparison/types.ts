@@ -27,7 +27,6 @@ export interface Stat {
 export interface ComparisonSide {
   title: string;
   subtitle: string;
-  badge: string;
   features: string[];
   code: string;
   codeLabel: string;

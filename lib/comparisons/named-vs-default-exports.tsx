@@ -15,7 +15,6 @@ export function getNamedVsDefaultExportsData(): ComparisonData {
       title: "Team Named Exports",
       subtitle:
         "Explicit, discoverable, and enables better tree-shaking and tooling support.",
-      badge: "Explicit & Scalable",
       codeLabel: "module.ts (named exports)",
       code: `export interface User {
   id: string;
@@ -68,7 +67,6 @@ export const getUserById = (id: string): User | null => {
       title: "Team Default Exports",
       subtitle:
         "Simple, familiar, and provides a clear single entry point for a module.",
-      badge: "Simple & Focused",
       codeLabel: "module.ts (default export)",
       code: `interface User {
   id: string;

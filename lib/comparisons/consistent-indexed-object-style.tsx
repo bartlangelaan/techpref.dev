@@ -15,7 +15,6 @@ export function getConsistentIndexedObjectStyleData(): ComparisonData {
       title: "Record Utility Type",
       subtitle:
         "Using the Record<K, V> utility type to define indexed object properties.",
-      badge: "Utility",
       codeLabel: "example.ts (Record<K, V>)",
       code: `type UserRoles = Record<'admin' | 'user' | 'guest', Role>;
 type ConfigMap = Record<string, string | number>;
@@ -61,7 +60,6 @@ interface Config {
       title: "Index Signature",
       subtitle:
         "Using index signatures to define dynamically keyed object properties.",
-      badge: "Traditional",
       codeLabel: "example.ts (index signature)",
       code: `interface UserRoles {
   [role: string]: Role;

@@ -15,7 +15,6 @@ export function getSingleVsDoubleQuotesData(): ComparisonData {
       title: "Team Single Quotes",
       subtitle:
         "Minimal visual noise and the de facto standard in modern JavaScript ecosystems.",
-      badge: "Modern Standard",
       codeLabel: "example.ts (single quotes)",
       code: `const greeting = 'Hello, World!';
 const user = {
@@ -62,7 +61,6 @@ const message = \`User: \${user.name}\`;`,
       title: "Team Double Quotes",
       subtitle:
         "Traditional, familiar to backend developers, and emphasizes string values clearly.",
-      badge: "Traditional Style",
       codeLabel: "example.ts (double quotes)",
       code: `const greeting = "Hello, World!";
 const user = {

@@ -30,7 +30,6 @@ export function getSpacesVsTabsData(): ComparisonData {
       title: "Team Spaces",
       subtitle:
         "Precise, consistent, and universally rendered the same way across all environments and editors.",
-      badge: "Industry Standard",
       codeLabel: "example.js (2 spaces)",
       code: `function calculateTotal(items) {
   return items
@@ -77,7 +76,6 @@ export function getSpacesVsTabsData(): ComparisonData {
       title: "Team Tabs",
       subtitle:
         "Semantic, accessible, and respects individual developer preferences for display width.",
-      badge: "Developer Choice",
       codeLabel: "example.js (tabs)",
       code: `function calculateTotal(items) {
 	return items

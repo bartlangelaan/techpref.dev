@@ -20,7 +20,6 @@ export function getTwoVsFourSpacesData(): ComparisonData {
       title: "2 Spaces",
       subtitle:
         "Compact, allowing more code on screen while maintaining clear visual hierarchy.",
-      badge: "Compact",
       codeLabel: "example.js (2 spaces)",
       code: `function processOrder(order) {
   if (order.items.length > 0) {
@@ -69,7 +68,6 @@ export function getTwoVsFourSpacesData(): ComparisonData {
       title: "4 Spaces",
       subtitle:
         "Clear visual separation with generous indentation for maximum readability.",
-      badge: "Readable",
       codeLabel: "example.js (4 spaces)",
       code: `function processOrder(order) {
     if (order.items.length > 0) {

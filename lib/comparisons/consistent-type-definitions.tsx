@@ -15,7 +15,6 @@ export function getConsistentTypeDefinitionsData(): ComparisonData {
       title: "Interface",
       subtitle:
         "TypeScript's dedicated keyword for object contracts with structural subtyping support.",
-      badge: "Structural",
       codeLabel: "example.ts (interface)",
       code: `interface User {
   id: number;
@@ -64,7 +63,6 @@ interface Admin extends User {
       title: "Type Alias",
       subtitle:
         "Flexible type aliases that can represent any type, including objects, unions, and tuples.",
-      badge: "Flexible",
       codeLabel: "example.ts (type)",
       code: `type User = {
   id: number;

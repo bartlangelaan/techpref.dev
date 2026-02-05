@@ -14,7 +14,6 @@ export function getArrayTypeData(): ComparisonData {
     leftSide: {
       title: "Array Bracket Notation",
       subtitle: "The modern, concise way to define array types using T[] syntax.",
-      badge: "Modern",
       codeLabel: "example.ts (T[] syntax)",
       code: `const numbers: number[] = [1, 2, 3];
 const users: User[] = [];
@@ -58,7 +57,6 @@ const union: (string | number)[] = [];`,
       title: "Generic Array<T> Syntax",
       subtitle:
         "The formal, generic way to define array types using Array<T> syntax.",
-      badge: "Formal",
       codeLabel: "example.ts (Array<T> syntax)",
       code: `const numbers: Array<number> = [1, 2, 3];
 const users: Array<User> = [];

@@ -15,7 +15,6 @@ export function getConsistentTypeImportsData(): ComparisonData {
       title: "Type Imports",
       subtitle:
         "Explicitly mark type-only imports with the 'type' keyword for clarity and better tree-shaking.",
-      badge: "Explicit",
       codeLabel: "example.ts (with type keyword)",
       code: `import type { User, Config } from '@/types';
 import type React from 'react';
@@ -62,7 +61,6 @@ const user: User = { id: 1 };`,
       title: "Mixed Imports",
       subtitle:
         "Mix types and values in regular imports without explicit 'type' keyword.",
-      badge: "Traditional",
       codeLabel: "example.ts (mixed imports)",
       code: `import { User, Config, getUser } from '@/types';
 import React, { useState } from 'react';

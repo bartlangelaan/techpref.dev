@@ -25,6 +25,7 @@ export interface VariantResult {
 export interface AnalysisResult {
   analyzedVersion: string;
   analyzedCommit: string;
+  analyzedCommitDate: string;
   checks: {
     [ruleId: string]: {
       [variant: string]: VariantResult;

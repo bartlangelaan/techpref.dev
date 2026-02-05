@@ -42,6 +42,26 @@ async function getCurrentCommit(repoPath?: string): Promise<string> {
 }
 
 /**
+ * Get the commit date of the current HEAD commit as an ISO 8601 UTC string.
+ * If repoPath is not provided, uses the current working directory.
+ */
+async function getCommitDate(repoPath?: string): Promise<string> {
+  try {
+    const { stdout } = await execFileAsync(
+      "git",
+      ["log", "-1", "--format=%cI"],
+      {
+        cwd: repoPath,
+      },
+    );
+    // Parse and convert to UTC with Z suffix
+    return new Date(stdout.trim()).toISOString();
+  } catch {
+    return "unknown";
+  }
+}
+
+/**
  * Generate a hash of the allRuleChecks object.
  */
 function getAnalyzedVersion(): string {
@@ -329,7 +349,10 @@ async function analyzeRepository(
   analyzedVersion: string,
 ): Promise<AnalysisResult> {
   const repoPath = join(REPOS_DIR, repo.fullName);
-  const analyzedCommit = await getCurrentCommit(repoPath);
+  const [analyzedCommit, analyzedCommitDate] = await Promise.all([
+    getCurrentCommit(repoPath),
+    getCommitDate(repoPath),
+  ]);
 
   // Separate rules by linter type
   const oxlintRules = allRuleChecks.filter(isOxlintRuleCheck);
@@ -366,6 +389,7 @@ async function analyzeRepository(
   return {
     analyzedVersion,
     analyzedCommit,
+    analyzedCommitDate,
     checks,
   };
 }

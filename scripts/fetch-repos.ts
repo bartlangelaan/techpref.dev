@@ -1,29 +1,9 @@
-import { throttling } from "@octokit/plugin-throttling";
-import { Octokit } from "@octokit/rest";
 import { uniqBy } from "es-toolkit";
 import type { RepositoryData, UnifiedData } from "@/lib/types";
+import { octokit } from "@/lib/octokit";
 import { loadData, saveData } from "@/lib/types";
 
 const REPO_COUNT = 1000;
-
-const MyOctokit = Octokit.plugin(throttling);
-const octokit = new MyOctokit({
-  auth: process.env.GITHUB_TOKEN,
-  throttle: {
-    onRateLimit: (retryAfter, options, octokit, retryCount) => {
-      octokit.log.warn(
-        `Request quota exhausted for request ${options.method} ${options.url} - waiting ${retryAfter} seconds before retrying... (Retry count: ${retryCount})`,
-      );
-      return true;
-    },
-    onSecondaryRateLimit: (retryAfter, options, octokit) => {
-      octokit.log.warn(
-        `SecondaryRateLimit detected for request ${options.method} ${options.url} - waiting ${retryAfter} seconds before retrying...`,
-      );
-      return true;
-    },
-  },
-});
 
 /**
  * Sleep for a given number of milliseconds.

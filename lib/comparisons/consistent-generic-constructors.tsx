@@ -5,8 +5,11 @@ import { BarChart3, TrendingUp, Users } from "lucide-react";
 export function getConsistentGenericConstructorsData(): ComparisonData {
   const stats = getBasicStats<'constructor' | 'type-annotation'>('consistent-generic-constructors');
 
+  const winningSide = stats.verdictPercentages.constructor >= stats.verdictPercentages['type-annotation'] ? 'left' : 'right';
+
   return {
     slug: "consistent-generic-constructors",
+    winningSide,
     title: "Generic Constructors: Type vs Constructor Parameters",
     description:
       "Two ways to specify generic parameters for constructors in TypeScript. Explore whether generics belong on the type annotation or the constructor call.",

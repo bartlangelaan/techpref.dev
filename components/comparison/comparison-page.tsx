@@ -29,7 +29,9 @@ export function ComparisonPage({ data }: { data: ComparisonData }) {
           {data.leftSide.stats?.[0] && data.rightSide.stats?.[0] && (
             <div className="mt-10 flex items-center justify-center gap-8">
               <div className="text-center">
-                <p className="text-primary text-3xl font-bold">
+                <p
+                  className={`text-3xl font-bold ${data.winningSide === "left" ? "text-primary" : "text-foreground"}`}
+                >
                   {data.leftSide.stats[0].value}
                 </p>
                 <p className="text-muted-foreground text-sm">
@@ -38,7 +40,9 @@ export function ComparisonPage({ data }: { data: ComparisonData }) {
               </div>
               <div className="bg-border h-12 w-px" />
               <div className="text-center">
-                <p className="text-foreground text-3xl font-bold">
+                <p
+                  className={`text-3xl font-bold ${data.winningSide === "right" ? "text-primary" : "text-foreground"}`}
+                >
                   {data.rightSide.stats[0].value}
                 </p>
                 <p className="text-muted-foreground text-sm">
@@ -70,7 +74,7 @@ export function ComparisonPage({ data }: { data: ComparisonData }) {
               </p>
             </div>
 
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="flex flex-wrap justify-center gap-4">
               {data.bottomStats.map((stat, index) => {
                 const content = (
                   <div className="border-border bg-card rounded-xl border p-6 text-center">
@@ -97,14 +101,18 @@ export function ComparisonPage({ data }: { data: ComparisonData }) {
                       }
                       verdicts={stat.verdicts}
                     >
-                      <button className="w-full cursor-pointer transition-opacity hover:opacity-80">
+                      <button className="w-full sm:w-64 cursor-pointer transition-opacity hover:opacity-80">
                         {content}
                       </button>
                     </VerdictDialog>
                   );
                 }
 
-                return <div key={index}>{content}</div>;
+                return (
+                  <div key={index} className="w-full sm:w-64">
+                    {content}
+                  </div>
+                );
               })}
             </div>
           </div>

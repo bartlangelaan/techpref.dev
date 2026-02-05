@@ -5,8 +5,11 @@ import { BarChart3, TrendingUp, Users } from "lucide-react";
 export function getConsistentTypeImportsData(): ComparisonData {
   const stats = getBasicStats<'type-imports' | 'no-type-imports'>('consistent-type-imports');
 
+  const winningSide = stats.verdictPercentages['type-imports'] >= stats.verdictPercentages['no-type-imports'] ? 'left' : 'right';
+
   return {
     slug: "consistent-type-imports",
+    winningSide,
     title: "Type Imports: 'type' Keyword vs Mixed Imports",
     description:
       "Two approaches to importing types in TypeScript. Explore whether to use the 'type' keyword for type-only imports or mix them with value imports.",

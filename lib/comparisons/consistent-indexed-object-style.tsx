@@ -5,8 +5,11 @@ import { BarChart3, TrendingUp, Users } from "lucide-react";
 export function getConsistentIndexedObjectStyleData(): ComparisonData {
   const stats = getBasicStats<'record' | 'index-signature'>('consistent-indexed-object-style');
 
+  const winningSide = stats.verdictPercentages.record >= stats.verdictPercentages['index-signature'] ? 'left' : 'right';
+
   return {
     slug: "consistent-indexed-object-style",
+    winningSide,
     title: "Indexed Objects: Record<K, V> vs Index Signatures",
     description:
       "Two ways to define indexed object types in TypeScript. Explore the differences between Record<K, V> utility type and index signature syntax.",

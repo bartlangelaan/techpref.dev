@@ -5,8 +5,11 @@ import { BarChart3, TrendingUp, Users } from "lucide-react";
 export function getConsistentTypeDefinitionsData(): ComparisonData {
   const stats = getBasicStats<'interface' | 'type'>('consistent-type-definitions');
 
+  const winningSide = stats.verdictPercentages.interface >= stats.verdictPercentages.type ? 'left' : 'right';
+
   return {
     slug: "consistent-type-definitions",
+    winningSide,
     title: "Interface vs Type for Object Definitions",
     description:
       "Two ways to define object types in TypeScript. Explore the differences between interfaces and type aliases for type definitions.",

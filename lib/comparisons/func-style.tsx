@@ -5,8 +5,11 @@ import { BarChart3, TrendingUp, Users } from "lucide-react";
 export function getFuncStyleData(): ComparisonData {
   const stats = getBasicStats<'declaration' | 'expression'>('func-style');
 
+  const winningSide = stats.verdictPercentages.declaration >= stats.verdictPercentages.expression ? 'left' : 'right';
+
   return {
     slug: "func-style",
+    winningSide,
     title: "Function Declarations vs Arrow Functions",
     description:
       "Two ways to define functions in JavaScript. Explore the tradeoffs between traditional function declarations and modern arrow functions.",

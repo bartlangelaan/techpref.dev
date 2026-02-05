@@ -52,6 +52,7 @@ export interface ComparisonData {
   badgeText: string;
   leftSide: ComparisonSide;
   rightSide: ComparisonSide;
+  winningSide: "left" | "right";
   bottomStats?: BottomStat[];
   conclusion: {
     title: string;

@@ -5,8 +5,11 @@ import { BarChart3, TrendingUp, Users } from "lucide-react";
 export function getSingleVsDoubleQuotesData(): ComparisonData {
   const stats = getBasicStats<'single' | 'double'>('quotes');
 
+  const winningSide = stats.verdictPercentages.single >= stats.verdictPercentages.double ? 'left' : 'right';
+
   return {
     slug: "single-vs-double-quotes",
+    winningSide,
     title: "Single Quotes vs Double Quotes",
     description:
       "String delimiters matter. Explore the quote preferences across popular TypeScript projects with real-world data.",

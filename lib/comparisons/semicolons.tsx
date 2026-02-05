@@ -5,8 +5,11 @@ import { BarChart3, TrendingUp, Users } from "lucide-react";
 export function getSemicolonsData(): ComparisonData {
   const stats = getBasicStats<'always' | 'never'>('semi');
 
+  const winningSide = stats.verdictPercentages.always >= stats.verdictPercentages.never ? 'left' : 'right';
+
   return {
     slug: "semicolons",
+    winningSide,
     title: "Semicolons vs No Semicolons",
     description:
       "To semicolon or not to semicolon? Explore the JavaScript style war with real-world data from popular open source projects.",

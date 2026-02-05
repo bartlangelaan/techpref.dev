@@ -5,8 +5,11 @@ import { BarChart3, TrendingUp, Users } from "lucide-react";
 export function getArrayTypeData(): ComparisonData {
   const stats = getBasicStats<'array' | 'generic'>('array-type');
 
+  const winningSide = stats.verdictPercentages.array >= stats.verdictPercentages.generic ? 'left' : 'right';
+
   return {
     slug: "array-type",
+    winningSide,
     title: "Array Types: T[] vs Array<T>",
     description:
       "Two syntaxes for defining array types in TypeScript. Explore the differences between the simple bracket notation and the generic Array type.",

@@ -10,8 +10,11 @@ export function getTwoVsFourSpacesData(): ComparisonData {
   const twoSpacePercent = spacesOnly > 0 ? Math.round((stats.verdicts['2-space'].length / spacesOnly) * 100) : 0;
   const fourSpacePercent = spacesOnly > 0 ? Math.round((stats.verdicts['4-space'].length / spacesOnly) * 100) : 0;
 
+  const winningSide = twoSpacePercent >= fourSpacePercent ? 'left' : 'right';
+
   return {
     slug: "2-spaces-vs-4-spaces",
+    winningSide,
     title: "2 Spaces vs 4 Spaces",
     description:
       "The indent width debate. Does more space mean better readability, or is compact code easier to scan?",

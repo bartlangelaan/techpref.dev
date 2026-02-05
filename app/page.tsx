@@ -73,7 +73,9 @@ export default function Home() {
                 comparison.rightSide.stats?.[0] && (
                   <div className="flex items-center gap-4 text-sm">
                     <div className="flex items-center gap-2">
-                      <span className="text-primary font-semibold">
+                      <span
+                        className={`font-semibold ${comparison.winningSide === "left" ? "text-primary" : "text-foreground"}`}
+                      >
                         {comparison.leftSide.stats[0].value}
                       </span>
                       <span className="text-muted-foreground">
@@ -84,7 +86,9 @@ export default function Home() {
                     </div>
                     <div className="bg-border h-4 w-px" />
                     <div className="flex items-center gap-2">
-                      <span className="text-foreground font-semibold">
+                      <span
+                        className={`font-semibold ${comparison.winningSide === "right" ? "text-primary" : "text-foreground"}`}
+                      >
                         {comparison.rightSide.stats[0].value}
                       </span>
                       <span className="text-muted-foreground">

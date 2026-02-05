@@ -5,8 +5,11 @@ import { BarChart3, TrendingUp, Users } from "lucide-react";
 export function getNamedVsDefaultExportsData(): ComparisonData {
   const stats = getBasicStats<'named' | 'default'>('import-export-preference');
 
+  const winningSide = stats.verdictPercentages.named >= stats.verdictPercentages.default ? 'left' : 'right';
+
   return {
     slug: "named-vs-default-exports",
+    winningSide,
     title: "Named Exports vs Default Exports",
     description:
       "Debate: Should modules export one thing by default or require explicit naming? Analyze real-world patterns from top TypeScript projects.",

@@ -20,8 +20,11 @@ export function getSpacesVsTabsData(): ComparisonData {
   const spacesPercent = definiteVerdicts > 0 ? Math.round((spacesVerdicts.length / definiteVerdicts) * 100) : 0;
   const tabsPercent = definiteVerdicts > 0 ? Math.round((stats.verdicts.tab.length / definiteVerdicts) * 100) : 0;
 
+  const winningSide = spacesPercent >= tabsPercent ? 'left' : 'right';
+
   return {
     slug: "spaces-vs-tabs",
+    winningSide,
     title: "Spaces vs Tabs",
     description:
       "The eternal debate in code formatting. Explore both sides with real-world data, popular project preferences, and expert opinions.",

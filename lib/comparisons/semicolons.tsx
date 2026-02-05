@@ -46,7 +46,7 @@ users.forEach((user) => {
       })),
       stats: [
         {
-          icon: <TrendingUp className="h-5 w-5" />,
+          icon: <TrendingUp className="size-5 " />,
           value: `${stats.verdictPercentages.always}%`,
           label: "of analyzed repos",
           verdicts: stats.verdicts.always,
@@ -55,7 +55,7 @@ users.forEach((user) => {
             "These repositories consistently use semicolons at the end of statements",
         },
         {
-          icon: <BarChart3 className="h-5 w-5" />,
+          icon: <BarChart3 className="size-5 " />,
           value: `${stats.verdicts.always.length}`,
           label: "repositories",
           verdicts: stats.verdicts.always,
@@ -94,7 +94,7 @@ users.forEach((user) => {
       })),
       stats: [
         {
-          icon: <TrendingUp className="h-5 w-5" />,
+          icon: <TrendingUp className="size-5 " />,
           value: `${stats.verdictPercentages.never}%`,
           label: "of analyzed repos",
           verdicts: stats.verdicts.never,
@@ -103,7 +103,7 @@ users.forEach((user) => {
             "These repositories omit semicolons, relying on ASI",
         },
         {
-          icon: <BarChart3 className="h-5 w-5" />,
+          icon: <BarChart3 className="size-5 " />,
           value: `${stats.verdicts.never.length}`,
           label: "repositories",
           verdicts: stats.verdicts.never,

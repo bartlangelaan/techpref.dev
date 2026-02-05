@@ -62,7 +62,7 @@ export function getSpacesVsTabsData(): ComparisonData {
       })),
       stats: [
         {
-          icon: <TrendingUp className="h-5 w-5" />,
+          icon: <TrendingUp className="size-5 " />,
           value: `${spacesPercent}%`,
           label: "of analyzed repos",
           verdicts: spacesVerdicts,
@@ -71,7 +71,7 @@ export function getSpacesVsTabsData(): ComparisonData {
             "These repositories use space-based indentation (2 or 4 spaces)",
         },
         {
-          icon: <BarChart3 className="h-5 w-5" />,
+          icon: <BarChart3 className="size-5 " />,
           value: `${spacesVerdicts.length}`,
           label: "repositories",
           verdicts: spacesVerdicts,
@@ -108,7 +108,7 @@ export function getSpacesVsTabsData(): ComparisonData {
       })),
       stats: [
         {
-          icon: <TrendingUp className="h-5 w-5" />,
+          icon: <TrendingUp className="size-5 " />,
           value: `${tabsPercent}%`,
           label: "of analyzed repos",
           verdicts: stats.verdicts.tab,
@@ -116,7 +116,7 @@ export function getSpacesVsTabsData(): ComparisonData {
           verdictDescription: "These repositories use tab-based indentation",
         },
         {
-          icon: <BarChart3 className="h-5 w-5" />,
+          icon: <BarChart3 className="size-5 " />,
           value: `${stats.verdicts.tab.length}`,
           label: "repositories",
           verdicts: stats.verdicts.tab,

@@ -14,7 +14,7 @@ export function ProjectCard({ project }: { project: Project }) {
           <h4 className="text-foreground group-hover:text-primary font-semibold transition-colors">
             {project.name}
           </h4>
-          <ExternalLink className="text-muted-foreground h-3.5 w-3.5 opacity-0 transition-opacity group-hover:opacity-100" />
+          <ExternalLink className="text-muted-foreground size-3.5  opacity-0 transition-opacity group-hover:opacity-100" />
         </div>
         <p className="text-muted-foreground line-clamp-1 text-sm">
           {project.description}

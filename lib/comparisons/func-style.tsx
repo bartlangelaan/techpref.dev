@@ -45,7 +45,7 @@ function handleClick() {
       })),
       stats: [
         {
-          icon: <TrendingUp className="h-5 w-5" />,
+          icon: <TrendingUp className="size-5 " />,
           value: `${stats.verdictPercentages.declaration}%`,
           label: "of analyzed repos",
           verdicts: stats.verdicts.declaration,
@@ -54,7 +54,7 @@ function handleClick() {
             "These repositories prefer function declarations over arrow functions",
         },
         {
-          icon: <BarChart3 className="h-5 w-5" />,
+          icon: <BarChart3 className="size-5 " />,
           value: `${stats.verdicts.declaration.length}`,
           label: "repositories",
           verdicts: stats.verdicts.declaration,
@@ -89,7 +89,7 @@ const handleClick = () => {
       })),
       stats: [
         {
-          icon: <TrendingUp className="h-5 w-5" />,
+          icon: <TrendingUp className="size-5 " />,
           value: `${stats.verdictPercentages.expression}%`,
           label: "of analyzed repos",
           verdicts: stats.verdicts.expression,
@@ -98,7 +98,7 @@ const handleClick = () => {
             "These repositories prefer arrow functions/expressions over declarations",
         },
         {
-          icon: <BarChart3 className="h-5 w-5" />,
+          icon: <BarChart3 className="size-5 " />,
           value: `${stats.verdicts.expression.length}`,
           label: "repositories",
           verdicts: stats.verdicts.expression,

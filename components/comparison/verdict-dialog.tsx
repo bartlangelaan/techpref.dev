@@ -58,7 +58,7 @@ function SamplesList({
               {sample.file}
             </span>
             <span className="shrink-0">:{sample.line}</span>
-            <ExternalLink className="h-3 w-3 shrink-0 opacity-50" />
+            <ExternalLink className="size-3  shrink-0 opacity-50" />
           </a>
         </li>
       ))}
@@ -85,19 +85,19 @@ function RepoVerdictCard({ verdict }: { verdict: RepoVerdict }) {
               className="text-foreground hover:text-primary flex items-center gap-1 truncate font-medium"
             >
               {verdict.repoFullName}
-              <ExternalLink className="h-3 w-3 shrink-0" />
+              <ExternalLink className="size-3  shrink-0" />
             </a>
           </div>
           <div className="text-muted-foreground mt-1 flex items-center gap-2 text-xs">
-            <Star className="h-3 w-3" />
+            <Star className="size-3 " />
             {verdict.stars.toLocaleString()}
           </div>
         </div>
         <div className="text-muted-foreground flex items-center gap-1 text-xs">
           {expanded ? (
-            <ChevronDown className="h-4 w-4" />
+            <ChevronDown className="size-4 " />
           ) : (
-            <ChevronRight className="h-4 w-4" />
+            <ChevronRight className="size-4 " />
           )}
         </div>
       </div>
@@ -107,7 +107,7 @@ function RepoVerdictCard({ verdict }: { verdict: RepoVerdict }) {
       {expanded && (
         <div className="border-border mt-3 space-y-3 border-t pt-3">
           <div className="text-foreground flex items-center gap-1 text-xs font-medium">
-            <FileCode className="h-3 w-3" />
+            <FileCode className="size-3 " />
             ESLint Rule Violations
           </div>
           <div className="space-y-3">

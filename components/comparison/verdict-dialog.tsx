@@ -37,17 +37,12 @@ function SamplesList({ samples }: { samples: ViolationSample[] }) {
 
   return (
     <ul className="space-y-1 text-xs">
-      {samples.slice(0, 5).map((sample, i) => (
+      {samples.map((sample, i) => (
         <li key={i} className="text-muted-foreground font-mono">
           <span className="text-foreground">{sample.file}</span>
           <span className="text-muted-foreground">:{sample.line}</span>
         </li>
       ))}
-      {samples.length > 5 && (
-        <li className="text-muted-foreground">
-          ...and {samples.length - 5} more
-        </li>
-      )}
     </ul>
   );
 }

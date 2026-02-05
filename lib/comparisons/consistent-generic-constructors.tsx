@@ -120,12 +120,6 @@ const regex: RegExp = new RegExp(/pattern/);`,
           "These repositories mix both constructor and type annotation generic styles",
       },
     ],
-    conclusion: {
-      title: "The Real Answer?",
-      description:
-        "Use constructor generics for consistency with how methods are called. Type annotations are useful when the constructor call is complex or when you want to separate type concerns from instantiation.",
-      tools: ["TypeScript ESLint", "@typescript-eslint/eslint-plugin"],
-    },
   };
 }
 

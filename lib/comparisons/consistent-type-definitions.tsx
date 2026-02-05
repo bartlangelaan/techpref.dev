@@ -126,12 +126,6 @@ type Admin = User & {
           "These repositories use both interfaces and type aliases without a clear preference",
       },
     ],
-    conclusion: {
-      title: "The Real Answer?",
-      description:
-        "Use interface for object contracts and public APIs. Use type for everything else. Many projects standardize on one for consistency—popular libraries often prefer type for flexibility.",
-      tools: ["TypeScript ESLint", "@typescript-eslint/eslint-plugin"],
-    },
   };
 }
 

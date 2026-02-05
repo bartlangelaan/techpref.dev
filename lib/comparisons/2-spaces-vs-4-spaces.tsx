@@ -135,12 +135,6 @@ export function getTwoVsFourSpacesData(): ComparisonData {
         verdictDescription: "These repositories have inconsistent indentation",
       },
     ],
-    conclusion: {
-      title: "The Real Answer?",
-      description:
-        "Follow your project's existing convention. If starting fresh, 2 spaces is the JavaScript community standard, but 4 spaces is fine too.",
-      tools: ["Prettier", "ESLint", "EditorConfig", ".editorconfig"],
-    },
   };
 }
 

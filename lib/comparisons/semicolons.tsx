@@ -126,12 +126,6 @@ users.forEach((user) => {
           "These repositories have inconsistent semicolon usage",
       },
     ],
-    conclusion: {
-      title: "The Real Answer?",
-      description:
-        "Both styles are valid. Pick one, configure your formatter to enforce it, and focus on what matters: writing great code.",
-      tools: ["Prettier", "ESLint", "StandardJS", "Biome"],
-    },
   };
 }
 

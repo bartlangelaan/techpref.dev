@@ -115,12 +115,6 @@ const union: Array<string | number> = [];`,
           "These repositories use both T[] and Array<T> without a clear preference",
       },
     ],
-    conclusion: {
-      title: "The Real Answer?",
-      description:
-        "Most modern TypeScript projects use T[] for its brevity and readability. Array<T> is typically chosen for consistency with other generic syntax in formal or library contexts.",
-      tools: ["TypeScript ESLint", "@typescript-eslint/eslint-plugin"],
-    },
   };
 }
 

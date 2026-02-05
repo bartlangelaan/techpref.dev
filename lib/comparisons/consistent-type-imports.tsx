@@ -120,12 +120,6 @@ const user: User = { id: 1 };`,
           "These repositories mix both type-specific and traditional import styles",
       },
     ],
-    conclusion: {
-      title: "The Real Answer?",
-      description:
-        "Use explicit 'type' imports for better tree-shaking and clarity, especially in modern projects. Most large projects are moving toward this pattern for better bundle optimization.",
-      tools: ["TypeScript ESLint", "@typescript-eslint/eslint-plugin", "Vite"],
-    },
   };
 }
 

@@ -125,12 +125,6 @@ interface Config {
           "These repositories use both Record<K, V> and index signatures without a clear preference",
       },
     ],
-    conclusion: {
-      title: "The Real Answer?",
-      description:
-        "Use Record<K, V> for modern TypeScript code—it's clearer and more explicit. Use index signatures when you need maximum flexibility or when defining interfaces that extend multiple properties.",
-      tools: ["TypeScript ESLint", "@typescript-eslint/eslint-plugin"],
-    },
   };
 }
 

@@ -117,30 +117,6 @@ export function ComparisonPage({ data }: { data: ComparisonData }) {
             </div>
           </div>
         )}
-
-        {/* Call to Action */}
-        <div className="mt-16 text-center lg:mt-24">
-          <div className="border-border bg-card inline-flex flex-col items-center rounded-2xl border p-8">
-            <Minus className="text-primary mb-4 h-8 w-8 rotate-90" />
-            <h3 className="text-foreground mb-2 text-xl font-bold">
-              {data.conclusion.title}
-            </h3>
-            <p className="text-muted-foreground mb-6 max-w-md">
-              {data.conclusion.description}
-            </p>
-            <div className="flex flex-wrap justify-center gap-3">
-              {data.conclusion.tools.map((tool, index) => (
-                <Badge
-                  key={index}
-                  variant="secondary"
-                  className="px-3 py-1 text-sm"
-                >
-                  {tool}
-                </Badge>
-              ))}
-            </div>
-          </div>
-        </div>
       </div>
     </main>
   );

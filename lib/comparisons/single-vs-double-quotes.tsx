@@ -122,12 +122,6 @@ const message = \`User: \${user.name}\`;`,
           "These repositories have inconsistent quote usage",
       },
     ],
-    conclusion: {
-      title: "It's a Style Choice",
-      description:
-        "Both are functionally identical. The choice between single and double quotes comes down to team preference and ecosystem conventions. Use a formatter like Prettier to enforce consistency automatically.",
-      tools: ["Prettier", "ESLint", "StandardJS", "Biome"],
-    },
   };
 }
 

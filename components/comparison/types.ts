@@ -54,9 +54,4 @@ export interface ComparisonData {
   rightSide: ComparisonSide;
   winningSide: "left" | "right";
   bottomStats?: BottomStat[];
-  conclusion: {
-    title: string;
-    description: string;
-    tools: string[];
-  };
 }

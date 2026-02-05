@@ -135,12 +135,6 @@ export function getSpacesVsTabsData(): ComparisonData {
           "These repositories have inconsistent indentation or no clear preference",
       },
     ],
-    conclusion: {
-      title: "The Real Answer?",
-      description:
-        "Pick one, configure your formatter, and never think about it again. Consistency within your codebase matters more than the choice itself.",
-      tools: ["Prettier", "ESLint", "EditorConfig", "Biome"],
-    },
   };
 }
 

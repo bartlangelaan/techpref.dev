@@ -121,12 +121,6 @@ const handleClick = () => {
           "These repositories use both function declarations and arrow functions without a clear preference",
       },
     ],
-    conclusion: {
-      title: "The Real Answer?",
-      description:
-        "Use arrow functions for callbacks and short functions. Use declarations for top-level functions and when you need hoisting or 'this' binding.",
-      tools: ["ESLint", "TypeScript", "Prettier", "Biome"],
-    },
   };
 }
 

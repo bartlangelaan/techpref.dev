@@ -139,12 +139,6 @@ export default {
           "These repositories use both named and default exports inconsistently",
       },
     ],
-    conclusion: {
-      title: "Best Practice?",
-      description:
-        "Most modern tooling and frameworks recommend named exports for better scalability and tree-shaking. However, default exports have their place for main module behaviors.",
-      tools: ["ESLint", "TypeScript", "Rollup", "Webpack"],
-    },
   };
 }
 

@@ -48,7 +48,7 @@ interface Admin extends User {
       })),
       stats: [
         {
-          icon: <TrendingUp className="h-5 w-5" />,
+          icon: <TrendingUp className="size-5 " />,
           value: `${stats.verdictPercentages.interface}%`,
           label: "of analyzed repos",
           verdicts: stats.verdicts.interface,
@@ -57,7 +57,7 @@ interface Admin extends User {
             "These repositories prefer interfaces for object type definitions",
         },
         {
-          icon: <BarChart3 className="h-5 w-5" />,
+          icon: <BarChart3 className="size-5 " />,
           value: `${stats.verdicts.interface.length}`,
           label: "repositories",
           verdicts: stats.verdicts.interface,
@@ -96,7 +96,7 @@ type Admin = User & {
       })),
       stats: [
         {
-          icon: <TrendingUp className="h-5 w-5" />,
+          icon: <TrendingUp className="size-5 " />,
           value: `${stats.verdictPercentages.type}%`,
           label: "of analyzed repos",
           verdicts: stats.verdicts.type,
@@ -105,7 +105,7 @@ type Admin = User & {
             "These repositories prefer type aliases for type definitions",
         },
         {
-          icon: <BarChart3 className="h-5 w-5" />,
+          icon: <BarChart3 className="size-5 " />,
           value: `${stats.verdicts.type.length}`,
           label: "repositories",
           verdicts: stats.verdicts.type,
@@ -117,12 +117,12 @@ type Admin = User & {
     },
     bottomStats: [
       {
-        icon: <BarChart3 className="h-6 w-6" />,
+        icon: <BarChart3 className="size-6 " />,
         value: `${stats.allVerdicts.length}`,
         label: "repositories analyzed",
       },
       {
-        icon: <Users className="h-6 w-6" />,
+        icon: <Users className="size-6 " />,
         value: `${stats.verdicts.mixed.length}`,
         label: "use mixed definitions",
         verdicts: stats.verdicts.mixed,

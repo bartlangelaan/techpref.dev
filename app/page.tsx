@@ -8,19 +8,19 @@ export default function Home() {
     <main className="bg-background min-h-screen">
       {/* Hero Section */}
       <div className="border-border relative overflow-hidden border-b">
-        <div className="from-primary/10 absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] via-transparent to-transparent" />
+        <div className="from-primary/10 absolute inset-0 bg-[radial-gradient(ellipse_at_top,var(--tw-gradient-stops))] via-transparent to-transparent" />
         <div className="relative mx-auto max-w-7xl px-4 py-20 text-center sm:px-6 lg:px-8 lg:py-32">
           <Badge
             variant="outline"
             className="text-primary border-primary/30 bg-primary/5 mb-4"
           >
-            <Sparkles className="mr-1 h-3 w-3" />
+            <Sparkles className="mr-1 size-3 " />
             JavaScript / TypeScript Styleguides
           </Badge>
           <h1 className="text-foreground mb-6 text-4xl font-bold text-balance sm:text-5xl lg:text-6xl">
             TechPref
           </h1>
-          <p className="text-muted-foreground mx-auto max-w-2xl text-lg leading-relaxed text-pretty sm:text-xl">
+          <p className="text-muted-foreground mx-auto max-w-2xl text-lg/relaxed  text-pretty sm:text-xl">
             Explore the most debated coding style preferences with real-world
             data from popular open source projects.
           </p>

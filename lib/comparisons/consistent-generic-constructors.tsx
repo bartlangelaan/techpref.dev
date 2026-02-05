@@ -114,12 +114,12 @@ const regex: RegExp = new RegExp(/pattern/);`,
     },
     bottomStats: [
       {
-        icon: <BarChart3 className="h-6 w-6" />,
+        icon: <BarChart3 className="size-6 " />,
         value: `${stats.allVerdicts.length}`,
         label: "repositories analyzed",
       },
       {
-        icon: <Users className="h-6 w-6" />,
+        icon: <Users className="size-6 " />,
         value: `${stats.verdicts.mixed.length}`,
         label: "use mixed approaches",
         verdicts: stats.verdicts.mixed,

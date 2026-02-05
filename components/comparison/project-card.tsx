@@ -21,7 +21,7 @@ export function ProjectCard({ project }: { project: Project }) {
         </p>
       </div>
       <div className="text-muted-foreground flex shrink-0 items-center gap-1.5 text-sm">
-        <Star className="h-4 w-4 fill-yellow-500/80 text-yellow-500/80" />
+        <Star className="size-4  fill-yellow-500/80 text-yellow-500/80" />
         <span className="font-medium">{project.stars}</span>
       </div>
     </Link>

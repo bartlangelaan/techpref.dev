@@ -127,12 +127,12 @@ export function getSpacesVsTabsData(): ComparisonData {
     },
     bottomStats: [
       {
-        icon: <BarChart3 className="h-6 w-6" />,
+        icon: <BarChart3 className="size-6 " />,
         value: `${stats.allVerdicts.length}`,
         label: "repositories analyzed",
       },
       {
-        icon: <Users className="h-6 w-6" />,
+        icon: <Users className="size-6 " />,
         value: `${stats.verdicts.mixed.length}`,
         label: "use mixed styles",
         verdicts: stats.verdicts.mixed,

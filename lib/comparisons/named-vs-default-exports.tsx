@@ -50,7 +50,7 @@ export const getUserById = (id: string): User | null => {
       })),
       stats: [
         {
-          icon: <TrendingUp className="h-5 w-5" />,
+          icon: <TrendingUp className="size-5 " />,
           value: `${stats.verdictPercentages.named}%`,
           label: "of analyzed repos",
           verdicts: stats.verdicts.named,
@@ -59,7 +59,7 @@ export const getUserById = (id: string): User | null => {
             "These repositories consistently prefer named exports",
         },
         {
-          icon: <BarChart3 className="h-5 w-5" />,
+          icon: <BarChart3 className="size-5 " />,
           value: `${stats.verdicts.named.length}`,
           label: "repositories",
           verdicts: stats.verdicts.named,
@@ -107,7 +107,7 @@ export default {
       })),
       stats: [
         {
-          icon: <TrendingUp className="h-5 w-5" />,
+          icon: <TrendingUp className="size-5 " />,
           value: `${stats.verdictPercentages.default}%`,
           label: "of analyzed repos",
           verdicts: stats.verdicts.default,
@@ -116,7 +116,7 @@ export default {
             "These repositories consistently prefer default exports",
         },
         {
-          icon: <BarChart3 className="h-5 w-5" />,
+          icon: <BarChart3 className="size-5 " />,
           value: `${stats.verdicts.default.length}`,
           label: "repositories",
           verdicts: stats.verdicts.default,
@@ -128,12 +128,12 @@ export default {
     },
     bottomStats: [
       {
-        icon: <BarChart3 className="h-6 w-6" />,
+        icon: <BarChart3 className="size-6 " />,
         value: `${stats.allVerdicts.length}`,
         label: "repositories analyzed",
       },
       {
-        icon: <Users className="h-6 w-6" />,
+        icon: <Users className="size-6 " />,
         value: `${stats.verdicts.mixed.length}`,
         label: "use mixed styles",
         verdicts: stats.verdicts.mixed,

@@ -8,7 +8,7 @@ export function InfluencerCard({ influencer }: { influencer: Influencer }) {
         <img
           src={influencer.avatar || "/placeholder.svg"}
           alt={influencer.name}
-          className="border-border h-10 w-10 rounded-full border object-cover"
+          className="border-border size-10  rounded-full border object-cover"
         />
         <div>
           <h4 className="text-foreground text-sm font-semibold">
@@ -17,7 +17,7 @@ export function InfluencerCard({ influencer }: { influencer: Influencer }) {
           <p className="text-primary text-xs">{influencer.role}</p>
         </div>
       </div>
-      <p className="text-muted-foreground text-sm leading-relaxed italic">
+      <p className="text-muted-foreground text-sm/relaxed  italic">
         "{influencer.quote}"
       </p>
     </div>

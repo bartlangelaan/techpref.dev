@@ -10,7 +10,7 @@ export function ComparisonPage({ data }: { data: ComparisonData }) {
     <main className="bg-background min-h-screen">
       {/* Hero Section */}
       <div className="border-border relative overflow-hidden border-b">
-        <div className="from-primary/10 absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] via-transparent to-transparent" />
+        <div className="from-primary/10 absolute inset-0 bg-[radial-gradient(ellipse_at_top,var(--tw-gradient-stops))] via-transparent to-transparent" />
         <div className="relative mx-auto max-w-7xl px-4 py-16 text-center sm:px-6 lg:px-8 lg:py-24">
           <Badge
             variant="outline"
@@ -21,7 +21,7 @@ export function ComparisonPage({ data }: { data: ComparisonData }) {
           <h1 className="text-foreground mb-4 text-4xl font-bold text-balance sm:text-5xl lg:text-6xl">
             {data.title}
           </h1>
-          <p className="text-muted-foreground mx-auto max-w-2xl text-lg leading-relaxed text-pretty sm:text-xl">
+          <p className="text-muted-foreground mx-auto max-w-2xl text-lg/relaxed  text-pretty sm:text-xl">
             {data.description}
           </p>
 

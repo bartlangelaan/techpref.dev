@@ -57,7 +57,7 @@ export function getTwoVsFourSpacesData(): ComparisonData {
       })),
       stats: [
         {
-          icon: <TrendingUp className="h-5 w-5" />,
+          icon: <TrendingUp className="size-5 " />,
           value: `${twoSpacePercent}%`,
           label: "of analyzed repos",
           verdicts: stats.verdicts["2-space"],
@@ -65,7 +65,7 @@ export function getTwoVsFourSpacesData(): ComparisonData {
           verdictDescription: "These repositories use 2-space indentation",
         },
         {
-          icon: <BarChart3 className="h-5 w-5" />,
+          icon: <BarChart3 className="size-5 " />,
           value: `${stats.verdicts["2-space"].length}`,
           label: "repositories",
           verdicts: stats.verdicts["2-space"],
@@ -105,7 +105,7 @@ export function getTwoVsFourSpacesData(): ComparisonData {
       })),
       stats: [
         {
-          icon: <TrendingUp className="h-5 w-5" />,
+          icon: <TrendingUp className="size-5 " />,
           value: `${fourSpacePercent}%`,
           label: "of analyzed repos",
           verdicts: stats.verdicts["4-space"],
@@ -113,7 +113,7 @@ export function getTwoVsFourSpacesData(): ComparisonData {
           verdictDescription: "These repositories use 4-space indentation",
         },
         {
-          icon: <BarChart3 className="h-5 w-5" />,
+          icon: <BarChart3 className="size-5 " />,
           value: `${stats.verdicts["4-space"].length}`,
           label: "repositories",
           verdicts: stats.verdicts["4-space"],

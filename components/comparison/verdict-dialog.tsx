@@ -47,7 +47,6 @@ function SamplesList({
     <ul className="space-y-1 text-xs">
       {samples.map((sample, i) => (
         <li key={i} className="font-mono">
-          {/* oxlint-disable-next-line nextjs/no-html-link-for-pages */}
           <a
             href={`${repoUrl}/blob/${commit}/${sample.file}#L${sample.line}`}
             target="_blank"
@@ -78,7 +77,6 @@ function RepoVerdictCard({ verdict }: { verdict: RepoVerdict }) {
       <div className="flex items-start justify-between gap-2">
         <div className="min-w-0 flex-1">
           <div className="flex items-center gap-2">
-            {/* oxlint-disable-next-line nextjs/no-html-link-for-pages */}
             <a
               href={verdict.repoUrl}
               target="_blank"

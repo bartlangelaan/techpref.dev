@@ -41,6 +41,13 @@ pnpm build        # Build for production
 pnpm start        # Start production server
 ```
 
+The development server runs at **http://localhost:3000**. Example pages:
+- http://localhost:3000/ (homepage with all comparisons)
+- http://localhost:3000/spaces-vs-tabs (individual comparison page)
+- http://localhost:3000/func-style (function declarations vs arrow functions)
+
+**Note:** Next.js uses React Fast Refresh, so after editing code the browser will automatically update without needing a manual refresh or navigation.
+
 ### Linting & Formatting
 
 ```bash

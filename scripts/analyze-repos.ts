@@ -15,12 +15,7 @@ import type {
   VariantResult,
   ViolationSample,
 } from "@/lib/types";
-import {
-  loadAnalysis,
-  loadData,
-  REPOS_DIR,
-  saveAnalysis,
-} from "@/lib/types";
+import { loadAnalysis, loadData, REPOS_DIR, saveAnalysis } from "@/lib/types";
 import {
   allRuleChecks,
   type EslintRuleCheck,
@@ -417,25 +412,39 @@ async function main() {
     process.exit(1);
   }
 
-  // Filter repos that need analysis (clonedAt is set but analysis is null or version mismatch)
-  const reposToAnalyzeUnsorted = data.repositories.filter((repo) => {
+  // Filter repos that need analysis (clonedAt is set but analysis is null, version mismatch, or commit mismatch)
+  const reposToAnalyzeUnsorted: RepositoryData[] = [];
+  let alreadyAnalyzed = 0;
+  let notCloned = 0;
+
+  for (const repo of data.repositories) {
     const repoPath = join(REPOS_DIR, repo.fullName);
     if (repo.clonedAt === null || !existsSync(repoPath)) {
-      return false;
+      notCloned++;
+      continue;
     }
     // Load analysis from separate file
     const analysis = loadAnalysis(repo.fullName);
-    // Re-analyze if analysis doesn't exist or if rule version changed
-    return analysis === null || analysis.analyzedVersion !== currentVersion;
-  });
-
-  // Count only repos with current analysis (matching rule version)
-  const alreadyAnalyzed = data.repositories.filter((r) => {
-    if (r.clonedAt === null) return false;
-    const analysis = loadAnalysis(r.fullName);
-    return analysis !== null && analysis.analyzedVersion === currentVersion;
-  }).length;
-  const notCloned = data.repositories.filter((r) => r.clonedAt === null).length;
+    if (analysis === null) {
+      // No analysis exists, needs to be analyzed
+      reposToAnalyzeUnsorted.push(repo);
+      continue;
+    }
+    if (analysis.analyzedVersion !== currentVersion) {
+      // Rule version changed, needs to be re-analyzed
+      reposToAnalyzeUnsorted.push(repo);
+      continue;
+    }
+    // Check if the commit has changed
+    const currentCommit = await getCurrentCommit(repoPath);
+    if (analysis.analyzedCommit !== currentCommit) {
+      // Repository was updated, needs to be re-analyzed
+      reposToAnalyzeUnsorted.push(repo);
+      continue;
+    }
+    // Analysis is up to date
+    alreadyAnalyzed++;
+  }
 
   console.log(`Total repositories: ${data.repositories.length}`);
   console.log(`Already analyzed: ${alreadyAnalyzed}`);

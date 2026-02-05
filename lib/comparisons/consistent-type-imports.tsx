@@ -1,11 +1,17 @@
+import { BarChart3, TrendingUp, Users } from "lucide-react";
 import type { ComparisonData } from "@/components/comparison";
 import { getBasicStats } from "@/lib/analysis-results";
-import { BarChart3, TrendingUp, Users } from "lucide-react";
 
 export function getConsistentTypeImportsData(): ComparisonData {
-  const stats = getBasicStats<'type-imports' | 'no-type-imports'>('consistent-type-imports');
+  const stats = getBasicStats<"type-imports" | "no-type-imports">(
+    "consistent-type-imports",
+  );
 
-  const winningSide = stats.verdictPercentages['type-imports'] >= stats.verdictPercentages['no-type-imports'] ? 'left' : 'right';
+  const winningSide =
+    stats.verdictPercentages["type-imports"] >=
+    stats.verdictPercentages["no-type-imports"]
+      ? "left"
+      : "right";
 
   return {
     slug: "consistent-type-imports",
@@ -35,25 +41,27 @@ const user: User = { id: 1 };`,
         "Works well with isolatedModules",
         "Modern TypeScript best practice",
       ],
-      projects: stats.verdictRepositories['type-imports'].slice(0, 3).map((p) => ({
-        ...p,
-        description: "Uses type imports",
-      })),
+      projects: stats.verdictRepositories["type-imports"]
+        .slice(0, 3)
+        .map((p) => ({
+          ...p,
+          description: "Uses type imports",
+        })),
       stats: [
         {
           icon: <TrendingUp className="h-5 w-5" />,
-          value: `${stats.verdictPercentages['type-imports']}%`,
+          value: `${stats.verdictPercentages["type-imports"]}%`,
           label: "of analyzed repos",
-          verdicts: stats.verdicts['type-imports'],
+          verdicts: stats.verdicts["type-imports"],
           verdictTitle: "Repositories using Type Imports",
           verdictDescription:
             "These repositories explicitly mark type-only imports",
         },
         {
           icon: <BarChart3 className="h-5 w-5" />,
-          value: `${stats.verdicts['type-imports'].length}`,
+          value: `${stats.verdicts["type-imports"].length}`,
           label: "repositories",
-          verdicts: stats.verdicts['type-imports'],
+          verdicts: stats.verdicts["type-imports"],
           verdictTitle: "Repositories using Type Imports",
           verdictDescription:
             "These repositories explicitly mark type-only imports",
@@ -79,25 +87,27 @@ const user: User = { id: 1 };`,
         "Traditional approach before TypeScript 4.5",
         "Works fine with most projects",
       ],
-      projects: stats.verdictRepositories['no-type-imports'].slice(0, 3).map((p) => ({
-        ...p,
-        description: "Mixes types and values",
-      })),
+      projects: stats.verdictRepositories["no-type-imports"]
+        .slice(0, 3)
+        .map((p) => ({
+          ...p,
+          description: "Mixes types and values",
+        })),
       stats: [
         {
           icon: <TrendingUp className="h-5 w-5" />,
-          value: `${stats.verdictPercentages['no-type-imports']}%`,
+          value: `${stats.verdictPercentages["no-type-imports"]}%`,
           label: "of analyzed repos",
-          verdicts: stats.verdicts['no-type-imports'],
+          verdicts: stats.verdicts["no-type-imports"],
           verdictTitle: "Repositories with Mixed Imports",
           verdictDescription:
             "These repositories don't distinguish type-only imports",
         },
         {
           icon: <BarChart3 className="h-5 w-5" />,
-          value: `${stats.verdicts['no-type-imports'].length}`,
+          value: `${stats.verdicts["no-type-imports"].length}`,
           label: "repositories",
-          verdicts: stats.verdicts['no-type-imports'],
+          verdicts: stats.verdicts["no-type-imports"],
           verdictTitle: "Repositories with Mixed Imports",
           verdictDescription:
             "These repositories don't distinguish type-only imports",

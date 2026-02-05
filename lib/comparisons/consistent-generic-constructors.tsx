@@ -1,11 +1,17 @@
+import { BarChart3, TrendingUp, Users } from "lucide-react";
 import type { ComparisonData } from "@/components/comparison";
 import { getBasicStats } from "@/lib/analysis-results";
-import { BarChart3, TrendingUp, Users } from "lucide-react";
 
 export function getConsistentGenericConstructorsData(): ComparisonData {
-  const stats = getBasicStats<'constructor' | 'type-annotation'>('consistent-generic-constructors');
+  const stats = getBasicStats<"constructor" | "type-annotation">(
+    "consistent-generic-constructors",
+  );
 
-  const winningSide = stats.verdictPercentages.constructor >= stats.verdictPercentages['type-annotation'] ? 'left' : 'right';
+  const winningSide =
+    stats.verdictPercentages.constructor >=
+    stats.verdictPercentages["type-annotation"]
+      ? "left"
+      : "right";
 
   return {
     slug: "consistent-generic-constructors",
@@ -79,25 +85,27 @@ const regex: RegExp = new RegExp(/pattern/);`,
         "More formal type annotation style",
         "Works well when type is on line above",
       ],
-      projects: stats.verdictRepositories['type-annotation'].slice(0, 3).map((p) => ({
-        ...p,
-        description: "Uses type annotation generics",
-      })),
+      projects: stats.verdictRepositories["type-annotation"]
+        .slice(0, 3)
+        .map((p) => ({
+          ...p,
+          description: "Uses type annotation generics",
+        })),
       stats: [
         {
           icon: <TrendingUp className="h-5 w-5" />,
-          value: `${stats.verdictPercentages['type-annotation']}%`,
+          value: `${stats.verdictPercentages["type-annotation"]}%`,
           label: "of analyzed repos",
-          verdicts: stats.verdicts['type-annotation'],
+          verdicts: stats.verdicts["type-annotation"],
           verdictTitle: "Repositories using Type Annotation Generics",
           verdictDescription:
             "These repositories specify generic parameters on type annotations",
         },
         {
           icon: <BarChart3 className="h-5 w-5" />,
-          value: `${stats.verdicts['type-annotation'].length}`,
+          value: `${stats.verdicts["type-annotation"].length}`,
           label: "repositories",
-          verdicts: stats.verdicts['type-annotation'],
+          verdicts: stats.verdicts["type-annotation"],
           verdictTitle: "Repositories using Type Annotation Generics",
           verdictDescription:
             "These repositories specify generic parameters on type annotations",
@@ -123,4 +131,5 @@ const regex: RegExp = new RegExp(/pattern/);`,
   };
 }
 
-export const consistentGenericConstructorsData = getConsistentGenericConstructorsData();
+export const consistentGenericConstructorsData =
+  getConsistentGenericConstructorsData();

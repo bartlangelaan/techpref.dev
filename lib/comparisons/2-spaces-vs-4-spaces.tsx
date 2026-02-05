@@ -1,16 +1,23 @@
+import { BarChart3, FileCode, TrendingUp, Users } from "lucide-react";
 import type { ComparisonData } from "@/components/comparison";
 import { getBasicStats } from "@/lib/analysis-results";
-import { BarChart3, FileCode, TrendingUp, Users } from "lucide-react";
 
 export function getTwoVsFourSpacesData(): ComparisonData {
-  const stats = getBasicStats<'2-space' | '4-space' | 'tab'>('indent');
-  
-  // Calculate totals and percentages for 2-space vs 4-space (excluding tab)
-  const spacesOnly = stats.verdicts['2-space'].length + stats.verdicts['4-space'].length;
-  const twoSpacePercent = spacesOnly > 0 ? Math.round((stats.verdicts['2-space'].length / spacesOnly) * 100) : 0;
-  const fourSpacePercent = spacesOnly > 0 ? Math.round((stats.verdicts['4-space'].length / spacesOnly) * 100) : 0;
+  const stats = getBasicStats<"2-space" | "4-space" | "tab">("indent");
 
-  const winningSide = twoSpacePercent >= fourSpacePercent ? 'left' : 'right';
+  // Calculate totals and percentages for 2-space vs 4-space (excluding tab)
+  const spacesOnly =
+    stats.verdicts["2-space"].length + stats.verdicts["4-space"].length;
+  const twoSpacePercent =
+    spacesOnly > 0
+      ? Math.round((stats.verdicts["2-space"].length / spacesOnly) * 100)
+      : 0;
+  const fourSpacePercent =
+    spacesOnly > 0
+      ? Math.round((stats.verdicts["4-space"].length / spacesOnly) * 100)
+      : 0;
+
+  const winningSide = twoSpacePercent >= fourSpacePercent ? "left" : "right";
 
   return {
     slug: "2-spaces-vs-4-spaces",
@@ -44,7 +51,7 @@ export function getTwoVsFourSpacesData(): ComparisonData {
         "Reduces horizontal scrolling",
         "Default in Prettier for JavaScript",
       ],
-      projects: stats.verdictRepositories['2-space'].slice(0, 3).map((p) => ({
+      projects: stats.verdictRepositories["2-space"].slice(0, 3).map((p) => ({
         ...p,
         description: `Uses 2-space indentation`,
       })),
@@ -53,15 +60,15 @@ export function getTwoVsFourSpacesData(): ComparisonData {
           icon: <TrendingUp className="h-5 w-5" />,
           value: `${twoSpacePercent}%`,
           label: "of analyzed repos",
-          verdicts: stats.verdicts['2-space'],
+          verdicts: stats.verdicts["2-space"],
           verdictTitle: "Repositories using 2-Space Indentation",
           verdictDescription: "These repositories use 2-space indentation",
         },
         {
           icon: <BarChart3 className="h-5 w-5" />,
-          value: `${stats.verdicts['2-space'].length}`,
+          value: `${stats.verdicts["2-space"].length}`,
           label: "repositories",
-          verdicts: stats.verdicts['2-space'],
+          verdicts: stats.verdicts["2-space"],
           verdictTitle: "Repositories using 2-Space Indentation",
           verdictDescription: "These repositories use 2-space indentation",
         },
@@ -92,7 +99,7 @@ export function getTwoVsFourSpacesData(): ComparisonData {
         "Preferred in enterprise environments",
         "More accessible for developers with vision issues",
       ],
-      projects: stats.verdictRepositories['4-space'].slice(0, 3).map((p) => ({
+      projects: stats.verdictRepositories["4-space"].slice(0, 3).map((p) => ({
         ...p,
         description: `Uses 4-space indentation`,
       })),
@@ -101,15 +108,15 @@ export function getTwoVsFourSpacesData(): ComparisonData {
           icon: <TrendingUp className="h-5 w-5" />,
           value: `${fourSpacePercent}%`,
           label: "of analyzed repos",
-          verdicts: stats.verdicts['4-space'],
+          verdicts: stats.verdicts["4-space"],
           verdictTitle: "Repositories using 4-Space Indentation",
           verdictDescription: "These repositories use 4-space indentation",
         },
         {
           icon: <BarChart3 className="h-5 w-5" />,
-          value: `${stats.verdicts['4-space'].length}`,
+          value: `${stats.verdicts["4-space"].length}`,
           label: "repositories",
-          verdicts: stats.verdicts['4-space'],
+          verdicts: stats.verdicts["4-space"],
           verdictTitle: "Repositories using 4-Space Indentation",
           verdictDescription: "These repositories use 4-space indentation",
         },

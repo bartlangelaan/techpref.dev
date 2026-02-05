@@ -1,7 +1,7 @@
-import { Badge } from "@/components/ui/badge";
-import { allComparisons } from "@/lib/comparisons";
 import { ArrowRight, Code2, Sparkles } from "lucide-react";
 import Link from "next/link";
+import { Badge } from "@/components/ui/badge";
+import { allComparisons } from "@/lib/comparisons";
 
 export default function Home() {
   return (

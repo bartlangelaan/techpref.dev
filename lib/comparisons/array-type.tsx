@@ -1,11 +1,14 @@
+import { BarChart3, TrendingUp, Users } from "lucide-react";
 import type { ComparisonData } from "@/components/comparison";
 import { getBasicStats } from "@/lib/analysis-results";
-import { BarChart3, TrendingUp, Users } from "lucide-react";
 
 export function getArrayTypeData(): ComparisonData {
-  const stats = getBasicStats<'array' | 'generic'>('array-type');
+  const stats = getBasicStats<"array" | "generic">("array-type");
 
-  const winningSide = stats.verdictPercentages.array >= stats.verdictPercentages.generic ? 'left' : 'right';
+  const winningSide =
+    stats.verdictPercentages.array >= stats.verdictPercentages.generic
+      ? "left"
+      : "right";
 
   return {
     slug: "array-type",
@@ -16,7 +19,8 @@ export function getArrayTypeData(): ComparisonData {
     badgeText: "TypeScript Styleguide",
     leftSide: {
       title: "Array Bracket Notation",
-      subtitle: "The modern, concise way to define array types using T[] syntax.",
+      subtitle:
+        "The modern, concise way to define array types using T[] syntax.",
       codeLabel: "example.ts (T[] syntax)",
       code: `const numbers: number[] = [1, 2, 3];
 const users: User[] = [];

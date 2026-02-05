@@ -1,9 +1,8 @@
 "use client";
 
 import { Badge } from "@/components/ui/badge";
-import { Minus } from "lucide-react";
-import { ComparisonCard } from "./comparison-card";
 import type { ComparisonData } from "./types";
+import { ComparisonCard } from "./comparison-card";
 import { VerdictDialog } from "./verdict-dialog";
 
 export function ComparisonPage({ data }: { data: ComparisonData }) {
@@ -57,8 +56,8 @@ export function ComparisonPage({ data }: { data: ComparisonData }) {
       {/* Comparison Grid */}
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-20">
         <div className="grid gap-6 lg:grid-cols-2 lg:gap-8">
-          <ComparisonCard side={data.leftSide} variant="left" />
-          <ComparisonCard side={data.rightSide} variant="right" />
+          <ComparisonCard side={data.leftSide} />
+          <ComparisonCard side={data.rightSide} />
         </div>
 
         {/* Bottom Stats Section */}
@@ -101,7 +100,7 @@ export function ComparisonPage({ data }: { data: ComparisonData }) {
                       }
                       verdicts={stat.verdicts}
                     >
-                      <button className="w-full sm:w-64 cursor-pointer transition-opacity hover:opacity-80">
+                      <button className="w-full cursor-pointer transition-opacity hover:opacity-80 sm:w-64">
                         {content}
                       </button>
                     </VerdictDialog>

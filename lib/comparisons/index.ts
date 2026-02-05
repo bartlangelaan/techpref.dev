@@ -10,12 +10,12 @@ export { semicolonsData } from "./semicolons";
 export { singleVsDoubleQuotesData } from "./single-vs-double-quotes";
 export { spacesVsTabsData } from "./spaces-vs-tabs";
 
+import { twoVsFourSpacesData } from "./2-spaces-vs-4-spaces";
 import { arrayTypeData } from "./array-type";
 import { consistentGenericConstructorsData } from "./consistent-generic-constructors";
 import { consistentIndexedObjectStyleData } from "./consistent-indexed-object-style";
 import { consistentTypeDefinitionsData } from "./consistent-type-definitions";
 import { consistentTypeImportsData } from "./consistent-type-imports";
-import { twoVsFourSpacesData } from "./2-spaces-vs-4-spaces";
 import { funcStyleData } from "./func-style";
 import { namedVsDefaultExportsData } from "./named-vs-default-exports";
 import { semicolonsData } from "./semicolons";

@@ -1,11 +1,14 @@
+import { BarChart3, TrendingUp, Users } from "lucide-react";
 import type { ComparisonData } from "@/components/comparison";
 import { getBasicStats } from "@/lib/analysis-results";
-import { BarChart3, TrendingUp, Users } from "lucide-react";
 
 export function getFuncStyleData(): ComparisonData {
-  const stats = getBasicStats<'declaration' | 'expression'>('func-style');
+  const stats = getBasicStats<"declaration" | "expression">("func-style");
 
-  const winningSide = stats.verdictPercentages.declaration >= stats.verdictPercentages.expression ? 'left' : 'right';
+  const winningSide =
+    stats.verdictPercentages.declaration >= stats.verdictPercentages.expression
+      ? "left"
+      : "right";
 
   return {
     slug: "func-style",

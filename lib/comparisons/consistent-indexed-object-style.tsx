@@ -1,11 +1,17 @@
+import { BarChart3, TrendingUp, Users } from "lucide-react";
 import type { ComparisonData } from "@/components/comparison";
 import { getBasicStats } from "@/lib/analysis-results";
-import { BarChart3, TrendingUp, Users } from "lucide-react";
 
 export function getConsistentIndexedObjectStyleData(): ComparisonData {
-  const stats = getBasicStats<'record' | 'index-signature'>('consistent-indexed-object-style');
+  const stats = getBasicStats<"record" | "index-signature">(
+    "consistent-indexed-object-style",
+  );
 
-  const winningSide = stats.verdictPercentages.record >= stats.verdictPercentages['index-signature'] ? 'left' : 'right';
+  const winningSide =
+    stats.verdictPercentages.record >=
+    stats.verdictPercentages["index-signature"]
+      ? "left"
+      : "right";
 
   return {
     slug: "consistent-indexed-object-style",
@@ -84,25 +90,27 @@ interface Config {
         "Better for object-like structures",
         "Clearer when extending properties",
       ],
-      projects: stats.verdictRepositories['index-signature'].slice(0, 3).map((p) => ({
-        ...p,
-        description: "Uses index signatures",
-      })),
+      projects: stats.verdictRepositories["index-signature"]
+        .slice(0, 3)
+        .map((p) => ({
+          ...p,
+          description: "Uses index signatures",
+        })),
       stats: [
         {
           icon: <TrendingUp className="h-5 w-5" />,
-          value: `${stats.verdictPercentages['index-signature']}%`,
+          value: `${stats.verdictPercentages["index-signature"]}%`,
           label: "of analyzed repos",
-          verdicts: stats.verdicts['index-signature'],
+          verdicts: stats.verdicts["index-signature"],
           verdictTitle: "Repositories using Index Signatures",
           verdictDescription:
             "These repositories prefer index signature syntax for indexed objects",
         },
         {
           icon: <BarChart3 className="h-5 w-5" />,
-          value: `${stats.verdicts['index-signature'].length}`,
+          value: `${stats.verdicts["index-signature"].length}`,
           label: "repositories",
-          verdicts: stats.verdicts['index-signature'],
+          verdicts: stats.verdicts["index-signature"],
           verdictTitle: "Repositories using Index Signatures",
           verdictDescription:
             "These repositories prefer index signature syntax for indexed objects",
@@ -128,4 +136,5 @@ interface Config {
   };
 }
 
-export const consistentIndexedObjectStyleData = getConsistentIndexedObjectStyleData();
+export const consistentIndexedObjectStyleData =
+  getConsistentIndexedObjectStyleData();

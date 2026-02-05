@@ -1,11 +1,14 @@
+import { BarChart3, TrendingUp, Users } from "lucide-react";
 import type { ComparisonData } from "@/components/comparison";
 import { getBasicStats } from "@/lib/analysis-results";
-import { BarChart3, TrendingUp, Users } from "lucide-react";
 
 export function getSingleVsDoubleQuotesData(): ComparisonData {
-  const stats = getBasicStats<'single' | 'double'>('quotes');
+  const stats = getBasicStats<"single" | "double">("quotes");
 
-  const winningSide = stats.verdictPercentages.single >= stats.verdictPercentages.double ? 'left' : 'right';
+  const winningSide =
+    stats.verdictPercentages.single >= stats.verdictPercentages.double
+      ? "left"
+      : "right";
 
   return {
     slug: "single-vs-double-quotes",
@@ -118,8 +121,7 @@ const message = \`User: \${user.name}\`;`,
         label: "use mixed styles",
         verdicts: stats.verdicts.mixed,
         verdictTitle: "Repositories with Mixed Styles",
-        verdictDescription:
-          "These repositories have inconsistent quote usage",
+        verdictDescription: "These repositories have inconsistent quote usage",
       },
     ],
   };

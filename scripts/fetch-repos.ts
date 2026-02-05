@@ -1,8 +1,8 @@
-import type { RepositoryData, UnifiedData } from "@/lib/types";
-import { loadData, saveData } from "@/lib/types";
+import { throttling } from "@octokit/plugin-throttling";
 import { Octokit } from "@octokit/rest";
 import { uniqBy } from "es-toolkit";
-import { throttling } from "@octokit/plugin-throttling";
+import type { RepositoryData, UnifiedData } from "@/lib/types";
+import { loadData, saveData } from "@/lib/types";
 
 const REPO_COUNT = 1000;
 
@@ -17,14 +17,13 @@ const octokit = new MyOctokit({
       return true;
     },
     onSecondaryRateLimit: (retryAfter, options, octokit) => {
-       octokit.log.warn(
+      octokit.log.warn(
         `SecondaryRateLimit detected for request ${options.method} ${options.url} - waiting ${retryAfter} seconds before retrying...`,
       );
       return true;
     },
   },
 });
-
 
 /**
  * Sleep for a given number of milliseconds.
@@ -51,13 +50,12 @@ async function fetchTopTypeScriptRepos(
     console.log(`Fetching page ${page}/${totalPages}...`);
 
     const response = await octokit.search.repos({
-          q: "language:typescript",
-          sort: "stars",
-          order: "desc",
-          per_page: perPage,
-          page,
-        });
-
+      q: "language:typescript",
+      sort: "stars",
+      order: "desc",
+      per_page: perPage,
+      page,
+    });
 
     for (const repo of response.data.items) {
       repos.push({
@@ -82,7 +80,7 @@ async function fetchTopTypeScriptRepos(
 
   console.log(`Fetched ${repos.length} repositories.`);
   // Deduplicate by fullName in case of unexpected duplicates from the API
-  const deduped = uniqBy(repos, r => r.fullName);
+  const deduped = uniqBy(repos, (r) => r.fullName);
   if (deduped.length !== repos.length) {
     console.log(
       `Removed ${repos.length - deduped.length} duplicate repositories from fetched results.`,
@@ -112,10 +110,12 @@ function mergeRepos(
 
   // Merge: update fresh repos with existing clone/analysis state, keep old repos not in fresh results
   const merged: RepositoryData[] = [];
-  
+
   // First, add all fresh repos with preserved clone/analysis state
   for (const fresh of freshRepos) {
-    const existing = existingData.repositories.find(r => r.fullName === fresh.fullName);
+    const existing = existingData.repositories.find(
+      (r) => r.fullName === fresh.fullName,
+    );
     if (existing) {
       merged.push({
         ...fresh,
@@ -135,7 +135,7 @@ function mergeRepos(
   }
 
   // Ensure final list has no duplicates (in case existing data had duplicates)
-  const final = uniqBy(merged, r => r.fullName);
+  const final = uniqBy(merged, (r) => r.fullName);
   if (final.length !== merged.length) {
     console.log(
       `Removed ${merged.length - final.length} duplicate repositories during merge.`,

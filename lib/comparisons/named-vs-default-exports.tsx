@@ -1,11 +1,14 @@
+import { BarChart3, TrendingUp, Users } from "lucide-react";
 import type { ComparisonData } from "@/components/comparison";
 import { getBasicStats } from "@/lib/analysis-results";
-import { BarChart3, TrendingUp, Users } from "lucide-react";
 
 export function getNamedVsDefaultExportsData(): ComparisonData {
-  const stats = getBasicStats<'named' | 'default'>('import-export-preference');
+  const stats = getBasicStats<"named" | "default">("import-export-preference");
 
-  const winningSide = stats.verdictPercentages.named >= stats.verdictPercentages.default ? 'left' : 'right';
+  const winningSide =
+    stats.verdictPercentages.named >= stats.verdictPercentages.default
+      ? "left"
+      : "right";
 
   return {
     slug: "named-vs-default-exports",

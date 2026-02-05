@@ -1,5 +1,5 @@
-import type { RepoVerdict } from "@/lib/analysis-results";
 import type React from "react";
+import type { RepoVerdict } from "@/lib/analysis-results";
 
 export interface Project {
   name: string;

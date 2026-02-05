@@ -1,11 +1,16 @@
+import { BarChart3, TrendingUp, Users } from "lucide-react";
 import type { ComparisonData } from "@/components/comparison";
 import { getBasicStats } from "@/lib/analysis-results";
-import { BarChart3, TrendingUp, Users } from "lucide-react";
 
 export function getConsistentTypeDefinitionsData(): ComparisonData {
-  const stats = getBasicStats<'interface' | 'type'>('consistent-type-definitions');
+  const stats = getBasicStats<"interface" | "type">(
+    "consistent-type-definitions",
+  );
 
-  const winningSide = stats.verdictPercentages.interface >= stats.verdictPercentages.type ? 'left' : 'right';
+  const winningSide =
+    stats.verdictPercentages.interface >= stats.verdictPercentages.type
+      ? "left"
+      : "right";
 
   return {
     slug: "consistent-type-definitions",

@@ -1,5 +1,4 @@
 import { groupBy, isNotNil, sortBy } from "es-toolkit";
-import repositoriesData from "../data/repositories.json";
 import type {
   AnalysisResult,
   RepositoryData,
@@ -7,6 +6,7 @@ import type {
   VariantResult,
   ViolationSample,
 } from "./types";
+import repositoriesData from "../data/repositories.json";
 
 // Re-export types for convenience
 export type {
@@ -67,18 +67,23 @@ export function getBasicStats<V extends string>(ruleId: string) {
   const data = getUnifiedData();
   const repos = data.repositories.filter((r) => r.analysis !== null);
 
-  type PV = V | 'mixed';
+  type PV = V | "mixed";
   const variants: V[] = [];
   for (const repo of repos) {
     const rule = repo.analysis?.checks[ruleId];
     if (rule) {
-      variants.push(...Object.keys(rule) as V[]);
+      variants.push(...(Object.keys(rule) as V[]));
       break;
     }
   }
-  const possibleVerdicts = [...variants, 'mixed'] as PV[];
+  const possibleVerdicts = [...variants, "mixed"] as PV[];
 
-  const verdictRepositories = Object.fromEntries(possibleVerdicts.map((v) => [v, [] as { name: string; url: string; stars: number }[]])) as Record<PV, { name: string; url: string; stars: number }[]>;
+  const verdictRepositories = Object.fromEntries(
+    possibleVerdicts.map((v) => [
+      v,
+      [] as { name: string; url: string; stars: number }[],
+    ]),
+  ) as Record<PV, { name: string; url: string; stars: number }[]>;
 
   const allVerdicts = repos
     .map<RepoVerdict | null>((repo) => {
@@ -93,15 +98,19 @@ export function getBasicStats<V extends string>(ruleId: string) {
 
       const variantsByViolations = sortBy(variants, [(v) => v.count]);
 
-      const verdict = variantsByViolations[0].count * 2 < variantsByViolations[1].count
-        ? variantsByViolations[0].name
-        : "mixed";
-      
-      
-    const repoUrl = `https://github.com/${repo.fullName}`;
-      
+      const verdict =
+        variantsByViolations[0].count * 2 < variantsByViolations[1].count
+          ? variantsByViolations[0].name
+          : "mixed";
+
+      const repoUrl = `https://github.com/${repo.fullName}`;
+
       if (verdictRepositories[verdict].length < 5) {
-        verdictRepositories[verdict].push({ name: repo.fullName, url: repoUrl, stars: repo.stars });
+        verdictRepositories[verdict].push({
+          name: repo.fullName,
+          url: repoUrl,
+          stars: repo.stars,
+        });
       }
 
       return {
@@ -116,7 +125,10 @@ export function getBasicStats<V extends string>(ruleId: string) {
     })
     .filter(isNotNil);
 
-  const verdicts: Record<PV, RepoVerdict[]> = groupBy(allVerdicts, (v) => v.verdict);
+  const verdicts: Record<PV, RepoVerdict[]> = groupBy(
+    allVerdicts,
+    (v) => v.verdict,
+  );
   for (const key of possibleVerdicts) {
     verdicts[key] ??= [];
   }
@@ -124,10 +136,11 @@ export function getBasicStats<V extends string>(ruleId: string) {
   const verdictPercentages: Record<V, string> = {} as Record<V, string>;
   const totalVerdicts = allVerdicts.length - verdicts.mixed.length;
   for (const key of variants) {
-    verdictPercentages[key] = totalVerdicts > 0 ? Math.round((verdicts[key].length / totalVerdicts) * 100).toFixed(0) : '0';
+    verdictPercentages[key] =
+      totalVerdicts > 0
+        ? Math.round((verdicts[key].length / totalVerdicts) * 100).toFixed(0)
+        : "0";
   }
-  
-
 
   return { allVerdicts, verdicts, verdictRepositories, verdictPercentages };
 }

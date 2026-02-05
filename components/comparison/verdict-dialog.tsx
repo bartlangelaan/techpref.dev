@@ -1,5 +1,14 @@
 "use client";
 
+import {
+  ChevronDown,
+  ChevronRight,
+  ExternalLink,
+  FileCode,
+  Star,
+} from "lucide-react";
+import { useState } from "react";
+import type { RepoVerdict, ViolationSample } from "@/lib/analysis-results";
 import { Badge } from "@/components/ui/badge";
 import {
   Dialog,
@@ -9,15 +18,6 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import type { RepoVerdict, ViolationSample } from "@/lib/analysis-results";
-import {
-  ChevronDown,
-  ChevronRight,
-  ExternalLink,
-  FileCode,
-  Star,
-} from "lucide-react";
-import { useState } from "react";
 
 interface VerdictDialogProps {
   title: string;
@@ -47,6 +47,7 @@ function SamplesList({
     <ul className="space-y-1 text-xs">
       {samples.map((sample, i) => (
         <li key={i} className="font-mono">
+          {/* oxlint-disable-next-line nextjs/no-html-link-for-pages */}
           <a
             href={`${repoUrl}/blob/${commit}/${sample.file}#L${sample.line}`}
             target="_blank"
@@ -77,6 +78,7 @@ function RepoVerdictCard({ verdict }: { verdict: RepoVerdict }) {
       <div className="flex items-start justify-between gap-2">
         <div className="min-w-0 flex-1">
           <div className="flex items-center gap-2">
+            {/* oxlint-disable-next-line nextjs/no-html-link-for-pages */}
             <a
               href={verdict.repoUrl}
               target="_blank"
@@ -122,7 +124,11 @@ function RepoVerdictCard({ verdict }: { verdict: RepoVerdict }) {
                   </Badge>
                 </div>
                 <div className="mt-2">
-                  <SamplesList samples={variant.samples} repoUrl={verdict.repoUrl} commit={verdict.analyzedCommit} />
+                  <SamplesList
+                    samples={variant.samples}
+                    repoUrl={verdict.repoUrl}
+                    commit={verdict.analyzedCommit}
+                  />
                 </div>
               </div>
             ))}

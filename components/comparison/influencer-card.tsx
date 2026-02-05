@@ -4,6 +4,7 @@ export function InfluencerCard({ influencer }: { influencer: Influencer }) {
   return (
     <div className="border-border bg-card/50 rounded-lg border p-4">
       <div className="mb-3 flex items-start gap-3">
+        {/* oxlint-disable-next-line nextjs/no-img-element */}
         <img
           src={influencer.avatar || "/placeholder.svg"}
           alt={influencer.name}

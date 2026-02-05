@@ -1,6 +1,6 @@
+import { notFound } from "next/navigation";
 import { ComparisonPage } from "@/components/comparison";
 import { allComparisons } from "@/lib/comparisons";
-import { notFound } from "next/navigation";
 
 export function generateStaticParams() {
   return allComparisons.map((comparison) => ({

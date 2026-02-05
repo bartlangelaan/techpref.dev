@@ -1,11 +1,14 @@
+import { BarChart3, TrendingUp, Users } from "lucide-react";
 import type { ComparisonData } from "@/components/comparison";
 import { getBasicStats } from "@/lib/analysis-results";
-import { BarChart3, TrendingUp, Users } from "lucide-react";
 
 export function getSemicolonsData(): ComparisonData {
-  const stats = getBasicStats<'always' | 'never'>('semi');
+  const stats = getBasicStats<"always" | "never">("semi");
 
-  const winningSide = stats.verdictPercentages.always >= stats.verdictPercentages.never ? 'left' : 'right';
+  const winningSide =
+    stats.verdictPercentages.always >= stats.verdictPercentages.never
+      ? "left"
+      : "right";
 
   return {
     slug: "semicolons",

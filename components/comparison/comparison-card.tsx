@@ -1,18 +1,11 @@
-import { Badge } from "@/components/ui/badge";
 import { BarChart3, Check, FileCode, Star, Users, Zap } from "lucide-react";
+import type { ComparisonSide } from "./types";
 import { CodeBlock } from "./code-block";
 import { InfluencerCard } from "./influencer-card";
 import { ProjectCard } from "./project-card";
 import { StatCard } from "./stat-card";
-import type { ComparisonSide } from "./types";
 
-export function ComparisonCard({
-  side,
-  variant,
-}: {
-  side: ComparisonSide;
-  variant: "left" | "right";
-}) {
+export function ComparisonCard({ side }: { side: ComparisonSide }) {
   return (
     <div className="border-border bg-card flex h-full flex-col rounded-2xl border p-6 lg:p-8">
       <div className="mb-6">

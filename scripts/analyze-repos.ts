@@ -1,3 +1,14 @@
+import { ESLint, type Linter } from "eslint";
+import { glob } from "glob";
+import globals from "globals";
+import { execFile } from "node:child_process";
+import { createHash } from "node:crypto";
+import { existsSync } from "node:fs";
+import { mkdir, rm, writeFile } from "node:fs/promises";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
+import { promisify } from "node:util";
+import tseslint from "typescript-eslint";
 import type {
   AnalysisResult,
   RepositoryData,
@@ -5,17 +16,6 @@ import type {
   ViolationSample,
 } from "@/lib/types";
 import { loadData, REPOS_DIR, saveData } from "@/lib/types";
-import { ESLint, type Linter } from "eslint";
-import { glob } from "glob";
-import globals from "globals";
-import { createHash } from "node:crypto";
-import { execFile } from "node:child_process";
-import { existsSync } from "node:fs";
-import { mkdir, rm, writeFile } from "node:fs/promises";
-import { tmpdir } from "node:os";
-import { join } from "node:path";
-import { promisify } from "node:util";
-import tseslint from "typescript-eslint";
 import {
   allRuleChecks,
   type EslintRuleCheck,
@@ -321,9 +321,7 @@ function logRuleCheckResult(
 ): void {
   console.log(`  ${ruleId}: ${variant}=${result.count}`);
   for (const sample of result.samples.slice(0, 3)) {
-    console.log(
-      `    - ${sample.file}:${sample.line} - ${sample.message}`,
-    );
+    console.log(`    - ${sample.file}:${sample.line} - ${sample.message}`);
   }
 }
 
@@ -422,8 +420,7 @@ async function main() {
     }
     // Re-analyze if analysis doesn't exist or if rule version changed
     return (
-      repo.analysis === null ||
-      repo.analysis.analyzedVersion !== currentVersion
+      repo.analysis === null || repo.analysis.analyzedVersion !== currentVersion
     );
   });
 
@@ -467,10 +464,7 @@ async function main() {
     );
 
     try {
-      const result = await analyzeRepository(
-        repo,
-        currentVersion,
-      );
+      const result = await analyzeRepository(repo, currentVersion);
 
       // Update the repository's analysis
       repo.analysis = result;

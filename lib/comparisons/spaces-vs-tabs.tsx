@@ -1,26 +1,32 @@
+import { BarChart3, TrendingUp, Users } from "lucide-react";
 import type { ComparisonData } from "@/components/comparison";
 import { getBasicStats } from "@/lib/analysis-results";
-import { BarChart3, TrendingUp, Users } from "lucide-react";
 
 export function getSpacesVsTabsData(): ComparisonData {
-  const stats = getBasicStats<'2-space' | '4-space' | 'tab'>('indent');
+  const stats = getBasicStats<"2-space" | "4-space" | "tab">("indent");
 
   const spacesVerdicts = [
-    ...stats.verdicts['2-space'],
-    ...stats.verdicts['4-space'],
+    ...stats.verdicts["2-space"],
+    ...stats.verdicts["4-space"],
   ];
 
   const spacesRepos = [
-    ...stats.verdictRepositories['2-space'],
-    ...stats.verdictRepositories['4-space'],
+    ...stats.verdictRepositories["2-space"],
+    ...stats.verdictRepositories["4-space"],
   ];
-  
+
   // Calculate totals and percentages for spaces vs tabs
   const definiteVerdicts = spacesVerdicts.length + stats.verdicts.tab.length;
-  const spacesPercent = definiteVerdicts > 0 ? Math.round((spacesVerdicts.length / definiteVerdicts) * 100) : 0;
-  const tabsPercent = definiteVerdicts > 0 ? Math.round((stats.verdicts.tab.length / definiteVerdicts) * 100) : 0;
+  const spacesPercent =
+    definiteVerdicts > 0
+      ? Math.round((spacesVerdicts.length / definiteVerdicts) * 100)
+      : 0;
+  const tabsPercent =
+    definiteVerdicts > 0
+      ? Math.round((stats.verdicts.tab.length / definiteVerdicts) * 100)
+      : 0;
 
-  const winningSide = spacesPercent >= tabsPercent ? 'left' : 'right';
+  const winningSide = spacesPercent >= tabsPercent ? "left" : "right";
 
   return {
     slug: "spaces-vs-tabs",

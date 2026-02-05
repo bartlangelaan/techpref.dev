@@ -15,7 +15,12 @@ import type {
   VariantResult,
   ViolationSample,
 } from "@/lib/types";
-import { loadData, REPOS_DIR, saveData } from "@/lib/types";
+import {
+  loadAnalysis,
+  loadData,
+  REPOS_DIR,
+  saveAnalysis,
+} from "@/lib/types";
 import {
   allRuleChecks,
   type EslintRuleCheck,
@@ -418,16 +423,18 @@ async function main() {
     if (repo.clonedAt === null || !existsSync(repoPath)) {
       return false;
     }
+    // Load analysis from separate file
+    const analysis = loadAnalysis(repo.fullName);
     // Re-analyze if analysis doesn't exist or if rule version changed
-    return (
-      repo.analysis === null || repo.analysis.analyzedVersion !== currentVersion
-    );
+    return analysis === null || analysis.analyzedVersion !== currentVersion;
   });
 
   // Count only repos with current analysis (matching rule version)
-  const alreadyAnalyzed = data.repositories.filter(
-    (r) => r.analysis !== null && r.analysis.analyzedVersion === currentVersion,
-  ).length;
+  const alreadyAnalyzed = data.repositories.filter((r) => {
+    if (r.clonedAt === null) return false;
+    const analysis = loadAnalysis(r.fullName);
+    return analysis !== null && analysis.analyzedVersion === currentVersion;
+  }).length;
   const notCloned = data.repositories.filter((r) => r.clonedAt === null).length;
 
   console.log(`Total repositories: ${data.repositories.length}`);
@@ -466,11 +473,11 @@ async function main() {
     try {
       const result = await analyzeRepository(repo, currentVersion);
 
-      // Update the repository's analysis
-      repo.analysis = result;
-
-      // Save after each analysis to preserve progress
-      saveData(data);
+      // Save analysis to separate file
+      saveAnalysis(repo.fullName, result);
+      console.log(
+        `  Saved analysis to data/analysis/${repo.fullName.replace("/", "-")}.json`,
+      );
     } catch (error) {
       console.error(`  Error analyzing ${repo.fullName}:`, error);
     }
@@ -479,7 +486,7 @@ async function main() {
   }
 
   const totalAnalyzed = data.repositories.filter(
-    (r) => r.analysis !== null,
+    (r) => loadAnalysis(r.fullName) !== null,
   ).length;
   console.log(`\n=== Analysis Complete ===`);
   console.log(`Total repositories analyzed: ${totalAnalyzed}`);

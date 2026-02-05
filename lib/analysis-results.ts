@@ -6,7 +6,7 @@ import type {
   VariantResult,
   ViolationSample,
 } from "./types";
-import repositoriesData from "../data/repositories.json";
+import { loadDataWithAnalysis } from "./types";
 
 // Re-export types for convenience
 export type {
@@ -34,11 +34,20 @@ export interface RepoVerdict {
   }[];
 }
 
+// Cache the unified data to avoid re-reading files on every call
+let cachedData: UnifiedData | null = null;
+
 /**
- * Get the raw unified data.
+ * Get the raw unified data with analysis merged in.
  */
 export function getUnifiedData(): UnifiedData {
-  return repositoriesData as UnifiedData;
+  if (!cachedData) {
+    cachedData = loadDataWithAnalysis();
+    if (!cachedData) {
+      throw new Error("Failed to load repositories data");
+    }
+  }
+  return cachedData;
 }
 
 /**

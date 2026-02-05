@@ -16,6 +16,7 @@ import type {
   ViolationSample,
 } from "@/lib/types";
 import { loadAnalysis, loadData, REPOS_DIR, saveAnalysis } from "@/lib/types";
+import { distributedSample } from "@/lib/utils";
 import {
   allRuleChecks,
   type EslintRuleCheck,
@@ -187,23 +188,22 @@ function parseOxlintOutput(
   maxSamples: number,
 ): VariantResult {
   const output: OxlintOutput = JSON.parse(stdout);
-  const samples: ViolationSample[] = [];
 
-  for (const diag of output.diagnostics) {
-    if (samples.length >= maxSamples) break;
-
+  const samples = distributedSample(
+    output.diagnostics,
+    maxSamples,
+  ).map<ViolationSample>((diag) => {
     // Get path relative to repo root
     const relativePath = diag.filename.startsWith(repoPath)
       ? diag.filename.slice(repoPath.length + 1)
       : diag.filename;
-
-    samples.push({
+    return {
       file: relativePath,
       line: diag.labels[0]?.span.line ?? 0,
       column: diag.labels[0]?.span.column ?? 0,
       message: diag.message,
-    });
-  }
+    };
+  });
 
   return {
     count: output.diagnostics.length,
@@ -275,29 +275,24 @@ async function runEslintCheck(
 
   try {
     const results = await eslint.lintFiles(files);
-    let violationCount = 0;
-    const samples: ViolationSample[] = [];
 
-    for (const result of results) {
-      violationCount += result.errorCount;
+    const violations = results.flatMap((result) =>
+      result.messages.flatMap<ViolationSample>((message) =>
+        message.severity === 2
+          ? [
+              {
+                file: result.filePath.replace(repoPath + "/", ""),
+                line: message.line,
+                column: message.column,
+                message: message.message,
+              },
+            ]
+          : [],
+      ),
+    );
+    const samples = distributedSample(violations, maxSamples);
 
-      // Collect sample violations
-      if (samples.length < maxSamples) {
-        for (const message of result.messages) {
-          if (message.severity === 2 && samples.length < maxSamples) {
-            // Get path relative to repo root
-            const relativePath = result.filePath.replace(repoPath + "/", "");
-            samples.push({
-              file: relativePath,
-              line: message.line,
-              column: message.column,
-              message: message.message,
-            });
-          }
-        }
-      }
-    }
-    return { count: violationCount, samples };
+    return { count: violations.length, samples };
   } catch {
     // If ESLint fails (e.g., parsing errors), return 0
     return { count: 0, samples: [] };

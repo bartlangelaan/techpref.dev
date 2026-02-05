@@ -2,7 +2,7 @@ import { spawn } from "node:child_process";
 import { existsSync, mkdirSync } from "node:fs";
 import { join } from "node:path";
 import type { RepositoryData } from "@/lib/types";
-import { loadData, REPOS_DIR, saveData } from "@/lib/types";
+import { loadData, REPOS_DIR } from "@/lib/types";
 
 const CLONE_CONCURRENCY = 5;
 
@@ -73,8 +73,10 @@ async function main() {
     mkdirSync(REPOS_DIR, { recursive: true });
   }
 
-  // Filter repos that need cloning (clonedAt is null)
-  const reposToClone = data.repositories.filter((r) => r.clonedAt === null);
+  // Filter repos that need cloning (not yet on filesystem)
+  const reposToClone = data.repositories.filter(
+    (r) => !existsSync(join(REPOS_DIR, r.fullName)),
+  );
 
   console.log(`Total repositories: ${data.repositories.length}`);
   console.log(
@@ -96,10 +98,6 @@ async function main() {
       const repo = reposToClone[index++];
       const result = await cloneRepository(repo);
       if (result) {
-        // Update clonedAt timestamp
-        repo.clonedAt = new Date().toISOString();
-        // Save after each successful clone to preserve progress
-        saveData(data);
         success++;
       } else {
         failed++;

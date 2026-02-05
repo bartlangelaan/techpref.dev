@@ -63,8 +63,6 @@ async function fetchTopTypeScriptRepos(
         cloneUrl: repo.clone_url,
         stars: repo.stargazers_count,
         description: repo.description,
-        clonedAt: null,
-        analysis: null,
       });
 
       if (repos.length >= count) {
@@ -113,18 +111,7 @@ function mergeRepos(
 
   // First, add all fresh repos with preserved clone/analysis state
   for (const fresh of freshRepos) {
-    const existing = existingData.repositories.find(
-      (r) => r.fullName === fresh.fullName,
-    );
-    if (existing) {
-      merged.push({
-        ...fresh,
-        clonedAt: existing.clonedAt,
-        analysis: existing.analysis,
-      });
-    } else {
-      merged.push(fresh);
-    }
+    merged.push(fresh);
   }
 
   // Then, add old repos that are no longer in fresh results
@@ -170,14 +157,8 @@ async function main() {
   // Merge with existing data
   const mergedRepos = mergeRepos(freshRepos, existingData);
 
-  // Count preserved states
-  const clonedCount = mergedRepos.filter((r) => r.clonedAt).length;
-  const analyzedCount = mergedRepos.filter((r) => r.analysis).length;
-
   console.log(`\nMerged data:`);
   console.log(`  Total repositories: ${mergedRepos.length}`);
-  console.log(`  Already cloned: ${clonedCount}`);
-  console.log(`  Already analyzed: ${analyzedCount}`);
 
   // Save unified data
   const data: UnifiedData = {

@@ -1,4 +1,4 @@
-import { existsSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
+import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
 /**
@@ -33,15 +33,14 @@ export interface AnalysisResult {
 }
 
 /**
- * Repository data including metadata, clone status, and analysis results.
+ * Repository data including metadata and analysis results.
  */
 export interface RepositoryData {
   fullName: string;
   cloneUrl: string;
   stars: number;
   description: string | null;
-  clonedAt: string | null;
-  analysis: AnalysisResult | null;
+  analysis?: AnalysisResult;
 }
 
 /**

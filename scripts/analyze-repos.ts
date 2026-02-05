@@ -412,14 +412,14 @@ async function main() {
     process.exit(1);
   }
 
-  // Filter repos that need analysis (clonedAt is set but analysis is null, version mismatch, or commit mismatch)
+  // Filter repos that need analysis (exists on filesystem but analysis is null, version mismatch, or commit mismatch)
   const reposToAnalyzeUnsorted: RepositoryData[] = [];
   let alreadyAnalyzed = 0;
   let notCloned = 0;
 
   for (const repo of data.repositories) {
     const repoPath = join(REPOS_DIR, repo.fullName);
-    if (repo.clonedAt === null || !existsSync(repoPath)) {
+    if (!existsSync(repoPath)) {
       notCloned++;
       continue;
     }

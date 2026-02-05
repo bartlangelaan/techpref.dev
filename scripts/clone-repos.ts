@@ -1,5 +1,5 @@
 import { spawn } from "node:child_process";
-import { existsSync, mkdirSync, rmdirSync, rmSync } from "node:fs";
+import { existsSync, mkdirSync, rmSync } from "node:fs";
 import { join } from "node:path";
 import type { AnalysisResult, RepositoryData } from "@/lib/types";
 import { octokit } from "@/lib/octokit";

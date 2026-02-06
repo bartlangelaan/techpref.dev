@@ -335,7 +335,7 @@ function logRuleCheckResult(
   result: VariantResult,
 ): void {
   console.log(`  ${ruleId}: ${variant}=${result.count}`);
-  for (const sample of result.samples.slice(0, 3)) {
+  for (const sample of distributedSample(result.samples, 3)) {
     console.log(`    - ${sample.file}:${sample.line} - ${sample.message}`);
   }
 }

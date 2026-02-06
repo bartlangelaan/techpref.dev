@@ -32,8 +32,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Analyze repositories
-        run: pnpm analyze-repos
+      - name: Analyze repositories (30 min timeout)
+        run: timeout 1800 pnpm analyze-repos || true
 
       - name: Commit and push changes
         run: |

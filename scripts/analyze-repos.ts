@@ -1,14 +1,15 @@
-import { ESLint, type Linter } from "eslint";
 import { glob } from "glob";
-import globals from "globals";
 import { execFile } from "node:child_process";
 import { createHash } from "node:crypto";
 import { existsSync } from "node:fs";
 import { mkdir, rm, writeFile } from "node:fs/promises";
+import { createRequire } from "node:module";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { promisify } from "node:util";
-import tseslint from "typescript-eslint";
+import { OxlintConfig } from "oxlint";
+
+const require = createRequire(import.meta.url);
 import type {
   AnalysisResult,
   RepositoryData,
@@ -17,12 +18,7 @@ import type {
 } from "@/lib/types";
 import { loadAnalysis, loadData, REPOS_DIR, saveAnalysis } from "@/lib/types";
 import { distributedSample } from "@/lib/utils";
-import {
-  allRuleChecks,
-  type EslintRuleCheck,
-  type OxlintRuleCheck,
-  type RuleCheck,
-} from "./rules";
+import { allRuleChecks, type OxlintRuleCheck } from "./rules";
 
 const execFileAsync = promisify(execFile);
 
@@ -126,7 +122,7 @@ async function runOxlintCheck(
 
     // Write Oxlint config with all default categories disabled
     // and only the specific rule enabled
-    const config = {
+    const config: OxlintConfig = {
       categories: {
         correctness: "off",
         suspicious: "off",
@@ -141,6 +137,13 @@ async function runOxlintCheck(
       },
       plugins: ruleCheck.oxlintConfig.plugins,
     };
+    // Add JS plugins if specified (for ESLint plugin compatibility)
+    // Resolve to absolute paths since config is in temp directory
+    if (ruleCheck.oxlintConfig.jsPlugins?.length) {
+      config.jsPlugins = ruleCheck.oxlintConfig.jsPlugins.map((plugin) =>
+        require.resolve(plugin),
+      );
+    }
     await writeFile(configPath, JSON.stringify(config));
 
     // Run oxlint with all default plugins disabled to only check our rule
@@ -232,101 +235,6 @@ function parseOxlintOutput(
 }
 
 /**
- * Run a single ESLint rule check and count violations.
- */
-async function runEslintCheck(
-  files: string[],
-  ruleCheck: EslintRuleCheck,
-  repoPath: string,
-  maxSamples: number = 10,
-): Promise<VariantResult> {
-  if (files.length === 0) {
-    return { count: 0, samples: [] };
-  }
-
-  const eslint = new ESLint({
-    overrideConfigFile: true,
-    overrideConfig: [
-      {
-        files: ["**/*.{js,jsx}"],
-        languageOptions: {
-          ecmaVersion: "latest",
-          sourceType: "module",
-          parserOptions: {
-            ecmaFeatures: {
-              jsx: true,
-            },
-          },
-          globals: {
-            ...globals.es2022,
-            ...globals.node,
-            ...globals.browser,
-          },
-        },
-        linterOptions: {
-          noInlineConfig: true,
-        },
-        rules: ruleCheck.eslintConfig as Linter.RulesRecord,
-      },
-      {
-        files: ["**/*.{ts,tsx}"],
-        languageOptions: {
-          ecmaVersion: "latest",
-          sourceType: "module",
-          parser: tseslint.parser,
-          parserOptions: {
-            ecmaFeatures: {
-              jsx: true,
-            },
-          },
-          globals: {
-            ...globals.es2022,
-            ...globals.node,
-            ...globals.browser,
-          },
-        },
-        linterOptions: {
-          noInlineConfig: true,
-        },
-        rules: ruleCheck.eslintConfig as Linter.RulesRecord,
-      },
-    ],
-  });
-
-  try {
-    const results = await eslint.lintFiles(files);
-
-    const violations = results.flatMap((result) =>
-      result.messages.flatMap<ViolationSample>((message) =>
-        message.severity === 2
-          ? [
-              {
-                file: result.filePath.replace(repoPath + "/", ""),
-                line: message.line,
-                column: message.column,
-                message: message.message,
-              },
-            ]
-          : [],
-      ),
-    );
-    const samples = distributedSample(violations, maxSamples);
-
-    return { count: violations.length, samples };
-  } catch {
-    // If ESLint fails (e.g., parsing errors), return 0
-    return { count: 0, samples: [] };
-  }
-}
-
-/**
- * Type guard to check if a rule check uses Oxlint.
- */
-function isOxlintRuleCheck(ruleCheck: RuleCheck): ruleCheck is OxlintRuleCheck {
-  return "oxlintConfig" in ruleCheck && ruleCheck.oxlintConfig !== undefined;
-}
-
-/**
  * Log the results of a single rule check.
  */
 function logRuleCheckResult(
@@ -341,8 +249,7 @@ function logRuleCheckResult(
 }
 
 /**
- * Analyze a single repository with all rule checks.
- * Uses Oxlint for rules that support it (faster), ESLint for others.
+ * Analyze a single repository with all rule checks using Oxlint.
  */
 async function analyzeRepository(
   repo: RepositoryData,
@@ -354,36 +261,16 @@ async function analyzeRepository(
     getCommitDate(repoPath),
   ]);
 
-  // Separate rules by linter type
-  const oxlintRules = allRuleChecks.filter(isOxlintRuleCheck);
-  const eslintRules = allRuleChecks.filter(
-    (r): r is EslintRuleCheck => !isOxlintRuleCheck(r),
-  );
-
   const checks: AnalysisResult["checks"] = {};
 
-  // Run Oxlint checks (one per variant due to different rule configs)
-  for (const ruleCheck of oxlintRules) {
+  // Run all Oxlint checks (one per variant due to different rule configs)
+  for (const ruleCheck of allRuleChecks) {
     if (!checks[ruleCheck.ruleId]) {
       checks[ruleCheck.ruleId] = {};
     }
     const result = await runOxlintCheck(repoPath, ruleCheck);
     checks[ruleCheck.ruleId][ruleCheck.variant] = result;
     logRuleCheckResult(ruleCheck.ruleId, ruleCheck.variant, result);
-  }
-
-  // Run ESLint checks (need files list for ESLint API)
-  if (eslintRules.length > 0) {
-    const files = await findSourceFiles(repoPath);
-
-    for (const ruleCheck of eslintRules) {
-      if (!checks[ruleCheck.ruleId]) {
-        checks[ruleCheck.ruleId] = {};
-      }
-      const result = await runEslintCheck(files, ruleCheck, repoPath);
-      checks[ruleCheck.ruleId][ruleCheck.variant] = result;
-      logRuleCheckResult(ruleCheck.ruleId, ruleCheck.variant, result);
-    }
   }
 
   return {
@@ -407,20 +294,9 @@ async function main() {
 
   console.log(`Current rule version: ${currentVersion}\n`);
 
-  // Log which linter is used for each rule
-  const oxlintRuleIds = allRuleChecks
-    .filter(isOxlintRuleCheck)
-    .map((r) => r.ruleId);
-  const eslintRuleIds = allRuleChecks
-    .filter((r) => !isOxlintRuleCheck(r))
-    .map((r) => r.ruleId);
-
-  const uniqueOxlintRules = [...new Set(oxlintRuleIds)];
-  const uniqueEslintRules = [...new Set(eslintRuleIds)];
-
-  console.log(`Using Oxlint for: ${uniqueOxlintRules.join(", ") || "(none)"}`);
-  console.log(`Using ESLint for: ${uniqueEslintRules.join(", ") || "(none)"}`);
-  console.log();
+  // Log all rules being checked
+  const uniqueRuleIds = [...new Set(allRuleChecks.map((r) => r.ruleId))];
+  console.log(`Rules: ${uniqueRuleIds.join(", ")}\n`);
 
   // Load data
   const data = loadData();

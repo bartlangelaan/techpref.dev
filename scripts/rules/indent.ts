@@ -1,33 +1,42 @@
-import type { EslintRuleCheck } from "./index";
+import type { OxlintRuleCheck } from "./index";
 
 /**
- * indent rule checks (using ESLint - not available in Oxlint).
+ * indent rule checks (using Oxlint with @stylistic/eslint-plugin).
  * This rule enforces consistent indentation style.
  *
  * - "2-space" variant: Reports violations when indentation is not 2 spaces
  * - "4-space" variant: Reports violations when indentation is not 4 spaces
  * - "tab" variant: Reports violations when indentation is not tabs
  */
-export const indentChecks: EslintRuleCheck[] = [
+export const indentChecks: OxlintRuleCheck[] = [
   {
     ruleId: "indent",
     variant: "2-space",
-    eslintConfig: {
-      indent: ["error", 2],
+    oxlintConfig: {
+      rule: "@stylistic/indent",
+      config: ["error", 2],
+      plugins: [],
+      jsPlugins: ["@stylistic/eslint-plugin"],
     },
   },
   {
     ruleId: "indent",
     variant: "4-space",
-    eslintConfig: {
-      indent: ["error", 4],
+    oxlintConfig: {
+      rule: "@stylistic/indent",
+      config: ["error", 4],
+      plugins: [],
+      jsPlugins: ["@stylistic/eslint-plugin"],
     },
   },
   {
     ruleId: "indent",
     variant: "tab",
-    eslintConfig: {
-      indent: ["error", "tab"],
+    oxlintConfig: {
+      rule: "@stylistic/indent",
+      config: ["error", "tab"],
+      plugins: [],
+      jsPlugins: ["@stylistic/eslint-plugin"],
     },
   },
 ];

@@ -13,7 +13,7 @@ export const importExportPreferenceChecks: OxlintRuleCheck[] = [
     variant: "named",
     oxlintConfig: {
       rule: "import/no-default-export",
-      config: ["error", { target: "single" }],
+      config: ["error"],
       plugins: ["import"],
     },
   },
@@ -22,7 +22,7 @@ export const importExportPreferenceChecks: OxlintRuleCheck[] = [
     variant: "default",
     oxlintConfig: {
       rule: "import/prefer-default-export",
-      config: ["error"],
+      config: ["error", { target: "single" }],
       plugins: ["import"],
     },
   },

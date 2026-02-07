@@ -1,8 +1,9 @@
+import { execa } from "execa";
 import { glob } from "glob";
 import { execFile } from "node:child_process";
 import { createHash } from "node:crypto";
 import { existsSync } from "node:fs";
-import { mkdir, rm, writeFile } from "node:fs/promises";
+import { mkdir, rm, writeFile, readFile } from "node:fs/promises";
 import { createRequire } from "node:module";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
@@ -116,84 +117,77 @@ async function runOxlintCheck(
     `oxlint-${Date.now()}-${Math.random().toString(36).slice(2)}`,
   );
   const configPath = join(tempDir, ".oxlintrc.json");
+  const outputPath = join(tempDir, "lint-result.json");
+
+  await mkdir(tempDir, { recursive: true });
+
+  // Write Oxlint config with all default categories disabled
+  // and only the specific rule enabled
+  const config: OxlintConfig = {
+    categories: {
+      correctness: "off",
+      suspicious: "off",
+      pedantic: "off",
+      perf: "off",
+      style: "off",
+      restriction: "off",
+      nursery: "off",
+    },
+    rules: {
+      [ruleCheck.oxlintConfig.rule]: ruleCheck.oxlintConfig.config,
+    },
+    plugins: ruleCheck.oxlintConfig.plugins,
+  };
+  // Add JS plugins if specified (for ESLint plugin compatibility)
+  // Resolve to absolute paths since config is in temp directory
+  if (ruleCheck.oxlintConfig.jsPlugins?.length) {
+    config.jsPlugins = ruleCheck.oxlintConfig.jsPlugins.map((plugin) =>
+      require.resolve(plugin),
+    );
+  }
+  await writeFile(configPath, JSON.stringify(config));
+
+  // We need to pass the stdout to a file because oxlint fails if it is not a
+  // TTY and stdout is too large.
+  // See: https://github.com/oxc-project/oxc/issues/19124
+  const $ = execa({
+    preferLocal: true,
+    cwd: repoPath,
+    reject: false,
+    shell: true,
+  });
+
+  // Run oxlint with all default plugins disabled to only check our rule
+  const { stderr } = await $("oxlint", [
+    "-c",
+    configPath,
+    "--format",
+    "json",
+    "--ignore-pattern",
+    "**/node_modules/**",
+    "--ignore-pattern",
+    "**/dist/**",
+    "--ignore-pattern",
+    "**/build/**",
+    "--ignore-pattern",
+    "**/*.d.ts",
+    ".",
+    ">",
+    outputPath,
+  ]);
+  if (stderr) {
+    // Oxlint may output warnings to stderr, but we can still parse stdout
+    console.warn(`Oxlint warnings for ${repoPath}:\n${stderr}`);
+  }
+
+  const stdout = await readFile(outputPath, "utf-8");
 
   try {
-    await mkdir(tempDir, { recursive: true });
-
-    // Write Oxlint config with all default categories disabled
-    // and only the specific rule enabled
-    const config: OxlintConfig = {
-      categories: {
-        correctness: "off",
-        suspicious: "off",
-        pedantic: "off",
-        perf: "off",
-        style: "off",
-        restriction: "off",
-        nursery: "off",
-      },
-      rules: {
-        [ruleCheck.oxlintConfig.rule]: ruleCheck.oxlintConfig.config,
-      },
-      plugins: ruleCheck.oxlintConfig.plugins,
-    };
-    // Add JS plugins if specified (for ESLint plugin compatibility)
-    // Resolve to absolute paths since config is in temp directory
-    if (ruleCheck.oxlintConfig.jsPlugins?.length) {
-      config.jsPlugins = ruleCheck.oxlintConfig.jsPlugins.map((plugin) =>
-        require.resolve(plugin),
-      );
-    }
-    await writeFile(configPath, JSON.stringify(config));
-
-    // Run oxlint with all default plugins disabled to only check our rule
-    const { stdout, stderr } = await execFileAsync(
-      "npx",
-      [
-        "oxlint",
-        "-c",
-        configPath,
-        "--format",
-        "json",
-        "--ignore-pattern",
-        "**/node_modules/**",
-        "--ignore-pattern",
-        "**/dist/**",
-        "--ignore-pattern",
-        "**/build/**",
-        "--ignore-pattern",
-        "**/*.d.ts",
-        ".",
-      ],
-      {
-        cwd: repoPath,
-        maxBuffer: 50 * 1024 * 1024, // 50MB buffer for large repos
-      },
-    );
-    if (stderr.trim().length > 0) {
-      // Oxlint may output warnings to stderr, but we can still parse stdout
-      console.warn(`Oxlint warnings for ${repoPath}: ${stderr}`);
-    }
-
     return parseOxlintOutput(stdout, repoPath, maxSamples);
-  } catch (error: unknown) {
-    // Oxlint exits with non-zero if there are errors, but still outputs JSON to stdout
-    if (
-      error &&
-      typeof error === "object" &&
-      "stdout" in error &&
-      typeof error.stdout === "string" &&
-      error.stdout.length > 0
-    ) {
-      try {
-        return parseOxlintOutput(error.stdout, repoPath, maxSamples);
-      } catch {
-        // JSON parsing failed, return empty result
-        return { count: 0, samples: [] };
-      }
-    }
-    // Complete failure (e.g., oxlint not found, or other error)
-    return { count: 0, samples: [] };
+  } catch (error) {
+    console.warn(`\n\nCould not parse oxlint output: ${repoPath}:\n${stdout}`);
+
+    throw error;
   } finally {
     // Cleanup temp directory
     await rm(tempDir, { recursive: true, force: true }).catch(() => {

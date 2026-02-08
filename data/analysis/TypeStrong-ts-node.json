@@ -1,22 +1,23 @@
 {
-  "analyzedVersion": "4f44ab98c263",
+  "analyzedVersion": "8d56277528fc",
   "analyzedCommit": "ddb05ef23be92a90c3ecac5a0220435c65ebbd2a",
+  "analyzedCommitDate": "2023-12-12T07:46:59.000Z",
   "checks": {
     "array-type": {
       "array": {
         "count": 14,
         "samples": [
           {
-            "file": "src/test/helpers/misc.ts",
-            "line": 16,
-            "column": 60,
-            "message": "Array type using 'ReadonlyArray<V>' is forbidden. Use 'readonly V[]' instead."
-          },
-          {
             "file": "src/cjs-resolve-hooks.ts",
             "line": 18,
             "column": 11,
             "message": "Array type using 'Array<string>' is forbidden. Use 'string[]' instead."
+          },
+          {
+            "file": "src/configuration.ts",
+            "line": 131,
+            "column": 22,
+            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
             "file": "src/index.ts",
@@ -32,12 +33,6 @@
           },
           {
             "file": "src/index.ts",
-            "line": 438,
-            "column": 17,
-            "message": "Array type using 'ReadonlyArray<_ts.Diagnostic>' is forbidden. Use 'readonly _ts.Diagnostic[]' instead."
-          },
-          {
-            "file": "src/index.ts",
             "line": 443,
             "column": 18,
             "message": "Array type using 'ReadonlyArray<_ts.Diagnostic>' is forbidden. Use 'readonly _ts.Diagnostic[]' instead."
@@ -49,22 +44,28 @@
             "message": "Array type using 'Array<DiagnosticFilter>' is forbidden. Use 'DiagnosticFilter[]' instead."
           },
           {
-            "file": "src/index.ts",
-            "line": 728,
-            "column": 39,
-            "message": "Array type using 'ReadonlyArray<_ts.Diagnostic>' is forbidden. Use 'readonly _ts.Diagnostic[]' instead."
-          },
-          {
-            "file": "src/configuration.ts",
-            "line": 131,
-            "column": 22,
+            "file": "src/repl.ts",
+            "line": 584,
+            "column": 17,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
-            "file": "src/configuration.ts",
-            "line": 164,
-            "column": 21,
-            "message": "Array type using 'Array<_ts.Diagnostic>' is forbidden. Use '_ts.Diagnostic[]' instead."
+            "file": "src/test/helpers/misc.ts",
+            "line": 16,
+            "column": 60,
+            "message": "Array type using 'ReadonlyArray<V>' is forbidden. Use 'readonly V[]' instead."
+          },
+          {
+            "file": "src/test/resolver.spec.ts",
+            "line": 242,
+            "column": 18,
+            "message": "Array type using 'Array<Target>' is forbidden. Use 'Target[]' instead."
+          },
+          {
+            "file": "src/util.ts",
+            "line": 27,
+            "column": 71,
+            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           }
         ]
       },
@@ -72,21 +73,9 @@
         "count": 60,
         "samples": [
           {
-            "file": "src/util.ts",
-            "line": 142,
-            "column": 43,
-            "message": "Array type using 'any[]' is forbidden. Use 'Array<any>' instead."
-          },
-          {
-            "file": "src/cjs-resolve-hooks.ts",
-            "line": 11,
-            "column": 14,
-            "message": "Array type using 'any[]' is forbidden. Use 'Array<any>' instead."
-          },
-          {
-            "file": "src/cjs-resolve-hooks.ts",
-            "line": 13,
-            "column": 30,
+            "file": "src/bin.ts",
+            "line": 45,
+            "column": 28,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
@@ -96,40 +85,52 @@
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
-            "file": "src/test/helpers/reset-node-environment.ts",
-            "line": 50,
-            "column": 56,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
-          },
-          {
-            "file": "src/test/helpers/reset-node-environment.ts",
+            "file": "src/file-extensions.ts",
             "line": 65,
-            "column": 25,
+            "column": 30,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
-            "file": "src/test/helpers/reset-node-environment.ts",
-            "line": 67,
-            "column": 27,
+            "file": "src/index.ts",
+            "line": 1305,
+            "column": 15,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
-            "file": "src/child/child-require.ts",
-            "line": 18,
-            "column": 56,
+            "file": "src/resolver-functions.ts",
+            "line": 145,
+            "column": 6,
+            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
+          },
+          {
+            "file": "src/test/module-node/module-node.spec.ts",
+            "line": 76,
+            "column": 19,
+            "message": "Array type using 'Extension[]' is forbidden. Use 'Array<Extension>' instead."
+          },
+          {
+            "file": "src/test/repl/node-repl-tla.ts",
+            "line": 256,
+            "column": 19,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+          },
+          {
+            "file": "src/ts-compiler-types.ts",
+            "line": 81,
+            "column": 10,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+          },
+          {
+            "file": "src/ts-internals.ts",
+            "line": 317,
+            "column": 36,
+            "message": "Array type using 'readonly T[]' is forbidden. Use 'ReadonlyArray<T>' instead."
+          },
+          {
+            "file": "tests/throw error react tsx.tsx",
+            "line": 95,
+            "column": 42,
             "message": "Array type using 'any[]' is forbidden. Use 'Array<any>' instead."
-          },
-          {
-            "file": "src/tsconfigs.ts",
-            "line": 34,
-            "column": 12,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
-          },
-          {
-            "file": "src/tsconfigs.ts",
-            "line": 56,
-            "column": 17,
-            "message": "Array type using 'readonly string[]' is forbidden. Use 'ReadonlyArray<string>' instead."
           }
         ]
       }
@@ -162,9 +163,15 @@
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "src/transpilers/swc.ts",
-            "line": 72,
-            "column": 37,
+            "file": "src/index.ts",
+            "line": 635,
+            "column": 30,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "src/index.ts",
+            "line": 796,
+            "column": 33,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
@@ -180,15 +187,9 @@
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "src/index.ts",
-            "line": 635,
-            "column": 30,
-            "message": "The generic type arguments should be specified as part of the type annotation."
-          },
-          {
-            "file": "src/index.ts",
-            "line": 796,
-            "column": 33,
+            "file": "src/transpilers/swc.ts",
+            "line": 72,
+            "column": 37,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
@@ -208,24 +209,6 @@
       "index-signature": {
         "count": 7,
         "samples": [
-          {
-            "file": "src/module-type-classifier.ts",
-            "line": 40,
-            "column": 26,
-            "message": "An index signature is preferred over a record."
-          },
-          {
-            "file": "src/test/helpers/exec.ts",
-            "line": 103,
-            "column": 9,
-            "message": "An index signature is preferred over a record."
-          },
-          {
-            "file": "src/index.ts",
-            "line": 349,
-            "column": 27,
-            "message": "An index signature is preferred over a record."
-          },
           {
             "file": "src/bin.ts",
             "line": 45,
@@ -249,6 +232,24 @@
             "line": 2,
             "column": 12,
             "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "src/index.ts",
+            "line": 349,
+            "column": 27,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "src/module-type-classifier.ts",
+            "line": 40,
+            "column": 26,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "src/test/helpers/exec.ts",
+            "line": 103,
+            "column": 9,
+            "message": "An index signature is preferred over a record."
           }
         ]
       }
@@ -262,14 +263,50 @@
         "count": 52,
         "samples": [
           {
-            "file": "tests/legacy-source-map-support-interop/index.ts",
-            "line": 9,
+            "file": "src/bin.ts",
+            "line": 62,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "src/esm.ts",
+            "line": 74,
+            "column": 10,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "src/index.ts",
+            "line": 353,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "src/module-type-classifier.ts",
+            "line": 15,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "src/test/helpers/exec.ts",
+            "line": 7,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "src/test/module-node/module-node.spec.ts",
+            "line": 151,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "src/ts-compiler-types.ts",
-            "line": 12,
+            "file": "src/test/resolver.spec.ts",
+            "line": 91,
+            "column": 1,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "src/transpilers/types.ts",
+            "line": 21,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
@@ -280,44 +317,8 @@
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "src/ts-compiler-types.ts",
-            "line": 72,
-            "column": 8,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "src/ts-compiler-types.ts",
-            "line": 119,
-            "column": 10,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "src/ts-compiler-types.ts",
-            "line": 124,
-            "column": 10,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "src/test/helpers/exec.ts",
-            "line": 7,
-            "column": 8,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "src/test/helpers/exec.ts",
-            "line": 47,
-            "column": 8,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "src/test/helpers/exec.ts",
-            "line": 100,
-            "column": 8,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "src/test/helpers/ctx-ts-node.ts",
-            "line": 27,
+            "file": "tests/legacy-source-map-support-interop/index.ts",
+            "line": 9,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           }
@@ -329,52 +330,34 @@
         "count": 33,
         "samples": [
           {
-            "file": "tests/maxnodemodulesjsdepth-scoped/other.ts",
-            "line": 4,
-            "column": 1,
-            "message": "Imports b_bar are only used as type."
-          },
-          {
-            "file": "src/test/register.spec.ts",
-            "line": 2,
-            "column": 1,
-            "message": "Imports tsNodeTypes are only used as type."
-          },
-          {
             "file": "src/bin.ts",
             "line": 6,
             "column": 17,
             "message": "`import()` type annotations are forbidden."
           },
           {
-            "file": "src/bin.ts",
-            "line": 8,
+            "file": "src/child/child-entrypoint.ts",
+            "line": 1,
             "column": 1,
-            "message": "Imports ReplService and EvalAwarePartialHost are only used as type."
+            "message": "Imports BootstrapState are only used as type."
           },
           {
-            "file": "src/bin.ts",
-            "line": 20,
+            "file": "src/esm.ts",
+            "line": 2,
             "column": 1,
-            "message": "Imports ExperimentalSpecifierResolution are only used as type."
+            "message": "Imports UrlWithStringQuery are only used as type."
           },
           {
-            "file": "src/bin.ts",
-            "line": 526,
-            "column": 48,
+            "file": "src/index.ts",
+            "line": 33,
+            "column": 1,
+            "message": "Imports Extensions are only used as type."
+          },
+          {
+            "file": "src/index.ts",
+            "line": 504,
+            "column": 45,
             "message": "`import()` type annotations are forbidden."
-          },
-          {
-            "file": "src/test/helpers/ctx-ts-node.ts",
-            "line": 9,
-            "column": 1,
-            "message": "Imports tsNodeTypes are only used as type."
-          },
-          {
-            "file": "src/test/module-node/module-node.spec.ts",
-            "line": 12,
-            "column": 1,
-            "message": "Imports ProjectAPI and StringFile are only used as type."
           },
           {
             "file": "src/test/esm-loader.spec.ts",
@@ -387,6 +370,24 @@
             "line": 11,
             "column": 59,
             "message": "`import()` type annotations are forbidden."
+          },
+          {
+            "file": "src/test/regression.spec.ts",
+            "line": 8,
+            "column": 1,
+            "message": "Imports ExecutionContext are only used as type."
+          },
+          {
+            "file": "src/test/resolver.spec.ts",
+            "line": 10,
+            "column": 1,
+            "message": "Imports FsProject are only used as type."
+          },
+          {
+            "file": "tests/maxnodemodulesjsdepth-scoped/other.ts",
+            "line": 4,
+            "column": 1,
+            "message": "Imports b_bar are only used as type."
           }
         ]
       },
@@ -394,46 +395,34 @@
         "count": 66,
         "samples": [
           {
-            "file": "website/src/theme/DocBreadcrumbs/index.tsx",
-            "line": 3,
+            "file": "src/bin.ts",
+            "line": 6,
             "column": 17,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "src/test/esm-loader.spec.ts",
-            "line": 26,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "src/test/helpers/misc.ts",
-            "line": 2,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "src/test/helpers/misc.ts",
-            "line": 11,
-            "column": 59,
             "message": "`import()` type annotations are forbidden."
           },
           {
-            "file": "src/cjs-resolve-hooks.ts",
-            "line": 2,
+            "file": "src/configuration.ts",
+            "line": 4,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/test/transpilers.spec.ts",
+            "file": "src/index.ts",
             "line": 27,
-            "column": 17,
-            "message": "`import()` type annotations are forbidden."
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/test/transpilers.spec.ts",
-            "line": 30,
-            "column": 56,
-            "message": "`import()` type annotations are forbidden."
+            "file": "src/module-type-classifier.ts",
+            "line": 1,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "src/resolver-functions.ts",
+            "line": 3,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "src/test/helpers/exec.ts",
@@ -442,15 +431,27 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/configuration.ts",
-            "line": 2,
+            "file": "src/test/repl/helpers/macros.ts",
+            "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/configuration.ts",
-            "line": 4,
+            "file": "src/transpilers/swc.ts",
+            "line": 3,
             "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "src/ts-internals.ts",
+            "line": 3,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "website/src/theme/DocBreadcrumbs/index.tsx",
+            "line": 3,
+            "column": 17,
             "message": "Use an `import` instead of an `import type`."
           }
         ]
@@ -461,62 +462,62 @@
         "count": 514,
         "samples": [
           {
-            "file": "src/node-module-type-classifier.ts",
-            "line": 16,
-            "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/tsconfigs.ts",
-            "line": 9,
-            "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/tsconfigs.ts",
-            "line": 32,
+            "file": "ava.config.cjs",
+            "line": 61,
             "column": 3,
             "message": "Expected a function expression."
           },
           {
-            "file": "tests/allow-js/run.js",
-            "line": 1,
-            "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/module-type-classifier.ts",
-            "line": 31,
-            "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/module-type-classifier.ts",
-            "line": 54,
-            "column": 3,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/module-type-classifier.ts",
-            "line": 62,
-            "column": 3,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/module-type-classifier.ts",
-            "line": 71,
+            "file": "dist-raw/node-internal-modules-package_json_reader.js",
+            "line": 18,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/module-type-classifier.ts",
-            "line": 76,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/configuration.ts",
+            "file": "raw/node-internal-modules-cjs-helpers-v17.0.1-stripped.js",
             "line": 29,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "raw/node-internal-modules-cjs-loader-v17.0.1-stripped.js",
+            "line": 94,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "raw/node-internal-modules-esm-resolve-v13.12.0.js",
+            "line": 592,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "raw/node-internal-modules-esm-resolve-v15.3.0.js",
+            "line": 707,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "src/index.ts",
+            "line": 575,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "src/test/helpers/ctx-ts-node.ts",
+            "line": 35,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "src/ts-internals.ts",
+            "line": 180,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "website/src/theme/DocBreadcrumbs/index.tsx",
+            "line": 33,
             "column": 1,
             "message": "Expected a function expression."
           }
@@ -526,26 +527,26 @@
         "count": 29,
         "samples": [
           {
-            "file": "raw/node-internal-modules-cjs-helpers-v17.0.1.js",
-            "line": 168,
+            "file": "dist-raw/node-internal-modules-cjs-helpers.js",
+            "line": 57,
             "column": 11,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "raw/node-internal-errors-2d5d77306f6dff9110c1f77fefab25f973415770.js",
+            "line": 57,
+            "column": 7,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "raw/node-internal-errors-b533fb3508009e5f567cc776daba8fbf665386a6.js",
+            "line": 82,
+            "column": 7,
             "message": "Expected a function declaration."
           },
           {
             "file": "src/esm.ts",
             "line": 146,
-            "column": 11,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "src/esm.ts",
-            "line": 237,
-            "column": 15,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "src/esm.ts",
-            "line": 255,
             "column": 11,
             "message": "Expected a function declaration."
           },
@@ -557,32 +558,32 @@
           },
           {
             "file": "src/index.ts",
-            "line": 805,
-            "column": 13,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "src/index.ts",
-            "line": 877,
-            "column": 13,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "src/index.ts",
-            "line": 1004,
-            "column": 13,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "src/index.ts",
             "line": 1227,
             "column": 9,
             "message": "Expected a function declaration."
           },
           {
-            "file": "src/index.ts",
-            "line": 1228,
+            "file": "src/resolver-functions.ts",
+            "line": 53,
             "column": 9,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "src/resolver-functions.ts",
+            "line": 139,
+            "column": 9,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "tests/jsx-react.tsx",
+            "line": 3,
+            "column": 7,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "tests/transpile-only-swc/index.ts",
+            "line": 2,
+            "column": 7,
             "message": "Expected a function declaration."
           }
         ]
@@ -593,8 +594,8 @@
         "count": 3,
         "samples": [
           {
-            "file": "website/src/theme/DocBreadcrumbs/index.tsx",
-            "line": 42,
+            "file": "tests/jsx-react.tsx",
+            "line": 7,
             "column": 8,
             "message": "Prefer named exports"
           },
@@ -605,8 +606,8 @@
             "message": "Prefer named exports"
           },
           {
-            "file": "tests/jsx-react.tsx",
-            "line": 7,
+            "file": "website/src/theme/DocBreadcrumbs/index.tsx",
+            "line": 42,
             "column": 8,
             "message": "Prefer named exports"
           }
@@ -616,50 +617,14 @@
         "count": 36,
         "samples": [
           {
-            "file": "tests/module-types/override-to-cjs/src/cjs-subdir/esm-exception.ts",
-            "line": 2,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "tests/module-types/override-to-esm/src/esm-subdir/cjs-exception.ts",
-            "line": 2,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "tests/module-types/override-to-cjs/src/cjs-subdir/index.ts",
-            "line": 2,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "tests/module-types/override-to-esm/src/esm-subdir/index.ts",
-            "line": 2,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "tests/module-types/override-to-cjs/webpack.config.ts",
+            "file": "esm-usage-example/bar.ts",
             "line": 1,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "scripts/create-merged-schema.ts",
-            "line": 72,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "src/test/helpers/reset-node-environment.ts",
-            "line": 21,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "src/ts-transpile-module.ts",
-            "line": 21,
+            "file": "src/resolver-functions.ts",
+            "line": 11,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -670,8 +635,44 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/resolver-functions.ts",
-            "line": 11,
+            "file": "tests/complex/index.ts",
+            "line": 3,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "tests/esm-node-resolver/biff.jsx",
+            "line": 1,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "tests/esm/baz.js",
+            "line": 1,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "tests/module-types/override-to-cjs/src/cjs-subdir/index.ts",
+            "line": 2,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "tests/module.ts",
+            "line": 1,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "tests/scope/c/config/index.ts",
+            "line": 1,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "tests/ts45-ext/ext-mts/index.mts",
+            "line": 1,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           }
@@ -680,286 +681,274 @@
     },
     "indent": {
       "2-space": {
-        "count": 1427,
+        "count": 1282,
         "samples": [
           {
-            "file": "raw/node-internal-repl-await-v17.0.0.js",
-            "line": 101,
+            "file": "dist-raw/node-internal-modules-cjs-loader.js",
+            "line": 146,
+            "column": 1,
+            "message": "Expected indentation of 2 spaces but found 0."
+          },
+          {
+            "file": "dist-raw/node-internal-modules-cjs-loader.js",
+            "line": 311,
+            "column": 1,
+            "message": "Expected indentation of 6 spaces but found 4."
+          },
+          {
+            "file": "dist-raw/node-internal-modules-cjs-loader.js",
+            "line": 495,
+            "column": 1,
+            "message": "Expected indentation of 4 spaces but found 2."
+          },
+          {
+            "file": "dist-raw/node-internal-modules-esm-resolve.js",
+            "line": 149,
+            "column": 1,
+            "message": "Expected indentation of 4 spaces but found 2."
+          },
+          {
+            "file": "dist-raw/node-internal-modules-esm-resolve.js",
+            "line": 312,
+            "column": 1,
+            "message": "Expected indentation of 6 spaces but found 4."
+          },
+          {
+            "file": "dist-raw/node-internal-modules-esm-resolve.js",
+            "line": 481,
+            "column": 1,
+            "message": "Expected indentation of 10 spaces but found 8."
+          },
+          {
+            "file": "dist-raw/node-internal-modules-esm-resolve.js",
+            "line": 653,
+            "column": 1,
+            "message": "Expected indentation of 16 spaces but found 14."
+          },
+          {
+            "file": "dist-raw/node-internal-modules-esm-resolve.js",
+            "line": 836,
+            "column": 1,
+            "message": "Expected indentation of 8 spaces but found 6."
+          },
+          {
+            "file": "raw/node-internal-errors-b533fb3508009e5f567cc776daba8fbf665386a6.js",
+            "line": 1435,
+            "column": 1,
+            "message": "Expected indentation of 0 spaces but found 2."
+          },
+          {
+            "file": "src/transpilers/swc.ts",
+            "line": 220,
             "column": 1,
             "message": "Expected indentation of 8 spaces but found 10."
-          },
-          {
-            "file": "raw/node-internal-repl-await-v17.0.0.js",
-            "line": 102,
-            "column": 1,
-            "message": "Expected indentation of 10 spaces but found 12."
-          },
-          {
-            "file": "raw/node-internal-repl-await-v17.0.0.js",
-            "line": 103,
-            "column": 1,
-            "message": "Expected indentation of 12 spaces but found 14."
-          },
-          {
-            "file": "raw/node-internal-repl-await-v17.0.0.js",
-            "line": 104,
-            "column": 1,
-            "message": "Expected indentation of 12 spaces but found 14."
-          },
-          {
-            "file": "raw/node-internal-repl-await-v17.0.0.js",
-            "line": 105,
-            "column": 1,
-            "message": "Expected indentation of 10 spaces but found 12."
-          },
-          {
-            "file": "raw/node-internal-repl-await-v17.0.0.js",
-            "line": 106,
-            "column": 1,
-            "message": "Expected indentation of 10 spaces but found 12."
-          },
-          {
-            "file": "raw/node-internal-repl-await-v17.0.0.js",
-            "line": 107,
-            "column": 1,
-            "message": "Expected indentation of 8 spaces but found 10."
-          },
-          {
-            "file": "raw/node-internal-repl-await-v17.0.0.js",
-            "line": 108,
-            "column": 1,
-            "message": "Expected indentation of 10 spaces but found 12."
-          },
-          {
-            "file": "raw/node-internal-repl-await-v17.0.0.js",
-            "line": 109,
-            "column": 1,
-            "message": "Expected indentation of 12 spaces but found 14."
-          },
-          {
-            "file": "raw/node-internal-repl-await-v17.0.0.js",
-            "line": 110,
-            "column": 1,
-            "message": "Expected indentation of 10 spaces but found 12."
           }
         ]
       },
       "4-space": {
-        "count": 16608,
+        "count": 17570,
         "samples": [
           {
-            "file": "nyc.config.js",
-            "line": 2,
-            "column": 1,
-            "message": "Expected indentation of 4 spaces but found 2."
-          },
-          {
-            "file": "nyc.config.js",
-            "line": 3,
-            "column": 1,
-            "message": "Expected indentation of 4 spaces but found 2."
-          },
-          {
-            "file": "nyc.config.js",
+            "file": ".yarn/plugins/@yarnpkg/plugin-compat.cjs",
             "line": 4,
             "column": 1,
             "message": "Expected indentation of 4 spaces but found 2."
           },
           {
-            "file": "nyc.config.js",
-            "line": 5,
+            "file": "raw/node-internal-errors-2d5d77306f6dff9110c1f77fefab25f973415770.js",
+            "line": 177,
+            "column": 1,
+            "message": "Expected indentation of 12 spaces but found 6."
+          },
+          {
+            "file": "raw/node-internal-modules-cjs-loader-2d5d77306f6dff9110c1f77fefab25f973415770.js",
+            "line": 41,
             "column": 1,
             "message": "Expected indentation of 4 spaces but found 2."
           },
           {
-            "file": "nyc.config.js",
+            "file": "raw/node-internal-modules-cjs-loader-v17.0.1-stripped.js",
+            "line": 262,
+            "column": 1,
+            "message": "Expected indentation of 4 spaces but found 2."
+          },
+          {
+            "file": "raw/node-internal-modules-esm-resolve-v15.3.0-stripped.js",
+            "line": 431,
+            "column": 1,
+            "message": "Expected indentation of 12 spaces but found 6."
+          },
+          {
+            "file": "src/bin.ts",
+            "line": 554,
+            "column": 1,
+            "message": "Expected indentation of 8 spaces but found 4."
+          },
+          {
+            "file": "src/repl.ts",
+            "line": 179,
+            "column": 1,
+            "message": "Expected indentation of 8 spaces but found 4."
+          },
+          {
+            "file": "src/test/module-node/module-node.spec.ts",
+            "line": 108,
+            "column": 1,
+            "message": "Expected indentation of 4 spaces but found 2."
+          },
+          {
+            "file": "src/test/resolver.spec.ts",
+            "line": 526,
+            "column": 1,
+            "message": "Expected indentation of 12 spaces but found 6."
+          },
+          {
+            "file": "website/types/lib_greeter.ts",
             "line": 6,
             "column": 1,
             "message": "Expected indentation of 4 spaces but found 2."
-          },
-          {
-            "file": "nyc.config.js",
-            "line": 7,
-            "column": 1,
-            "message": "Expected indentation of 4 spaces but found 2."
-          },
-          {
-            "file": "nyc.config.js",
-            "line": 8,
-            "column": 1,
-            "message": "Expected indentation of 4 spaces but found 2."
-          },
-          {
-            "file": "nyc.config.js",
-            "line": 9,
-            "column": 1,
-            "message": "Expected indentation of 4 spaces but found 2."
-          },
-          {
-            "file": "website/sidebars.js",
-            "line": 2,
-            "column": 1,
-            "message": "Expected indentation of 4 spaces but found 2."
-          },
-          {
-            "file": "website/sidebars.js",
-            "line": 3,
-            "column": 1,
-            "message": "Expected indentation of 8 spaces but found 4."
           }
         ]
       },
       "tab": {
-        "count": 16761,
+        "count": 17725,
         "samples": [
           {
-            "file": "nyc.config.js",
-            "line": 2,
-            "column": 1,
-            "message": "Expected indentation of 1 tab but found 2 spaces."
-          },
-          {
-            "file": "nyc.config.js",
-            "line": 3,
-            "column": 1,
-            "message": "Expected indentation of 1 tab but found 2 spaces."
-          },
-          {
-            "file": "nyc.config.js",
+            "file": ".yarn/plugins/@yarnpkg/plugin-compat.cjs",
             "line": 4,
             "column": 1,
             "message": "Expected indentation of 1 tab but found 2 spaces."
           },
           {
-            "file": "nyc.config.js",
-            "line": 5,
+            "file": "raw/node-internal-errors-2d5d77306f6dff9110c1f77fefab25f973415770.js",
+            "line": 177,
+            "column": 1,
+            "message": "Expected indentation of 3 tabs but found 6 spaces."
+          },
+          {
+            "file": "raw/node-internal-modules-cjs-loader-2d5d77306f6dff9110c1f77fefab25f973415770.js",
+            "line": 65,
             "column": 1,
             "message": "Expected indentation of 1 tab but found 2 spaces."
           },
           {
-            "file": "nyc.config.js",
+            "file": "raw/node-internal-modules-cjs-loader-v17.0.1-stripped.js",
+            "line": 255,
+            "column": 1,
+            "message": "Expected indentation of 1 tab but found 2 spaces."
+          },
+          {
+            "file": "raw/node-internal-modules-esm-resolve-v15.3.0-stripped.js",
+            "line": 425,
+            "column": 1,
+            "message": "Expected indentation of 3 tabs but found 6 spaces."
+          },
+          {
+            "file": "src/bin.ts",
+            "line": 538,
+            "column": 1,
+            "message": "Expected indentation of 2 tabs but found 4 spaces."
+          },
+          {
+            "file": "src/repl.ts",
+            "line": 161,
+            "column": 1,
+            "message": "Expected indentation of 1 tab but found 2 spaces."
+          },
+          {
+            "file": "src/test/module-node/module-node.spec.ts",
+            "line": 98,
+            "column": 1,
+            "message": "Expected indentation of 2 tabs but found 4 spaces."
+          },
+          {
+            "file": "src/test/resolver.spec.ts",
+            "line": 518,
+            "column": 1,
+            "message": "Expected indentation of 3 tabs but found 6 spaces."
+          },
+          {
+            "file": "website/types/lib_greeter.ts",
             "line": 6,
             "column": 1,
             "message": "Expected indentation of 1 tab but found 2 spaces."
-          },
-          {
-            "file": "nyc.config.js",
-            "line": 7,
-            "column": 1,
-            "message": "Expected indentation of 1 tab but found 2 spaces."
-          },
-          {
-            "file": "nyc.config.js",
-            "line": 8,
-            "column": 1,
-            "message": "Expected indentation of 1 tab but found 2 spaces."
-          },
-          {
-            "file": "nyc.config.js",
-            "line": 9,
-            "column": 1,
-            "message": "Expected indentation of 1 tab but found 2 spaces."
-          },
-          {
-            "file": "website/sidebars.js",
-            "line": 2,
-            "column": 1,
-            "message": "Expected indentation of 1 tab but found 2 spaces."
-          },
-          {
-            "file": "website/sidebars.js",
-            "line": 3,
-            "column": 1,
-            "message": "Expected indentation of 2 tabs but found 4 spaces."
           }
         ]
       }
     },
     "quotes": {
       "double": {
-        "count": 5459,
+        "count": 5597,
         "samples": [
           {
-            "file": "nyc.config.js",
-            "line": 3,
-            "column": 13,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "nyc.config.js",
+            "file": ".yarn/plugins/@yarnpkg/plugin-compat.cjs",
             "line": 4,
-            "column": 13,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "nyc.config.js",
-            "line": 4,
-            "column": 26,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "nyc.config.js",
-            "line": 7,
-            "column": 15,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "website/sidebars.js",
-            "line": 4,
-            "column": 13,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "website/sidebars.js",
-            "line": 5,
-            "column": 14,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "website/sidebars.js",
-            "line": 8,
             "column": 9,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "website/sidebars.js",
-            "line": 9,
-            "column": 9,
+            "file": "raw/node-internal-errors-2d5d77306f6dff9110c1f77fefab25f973415770.js",
+            "line": 844,
+            "column": 3,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "website/sidebars.js",
-            "line": 10,
-            "column": 9,
+            "file": "raw/node-internal-errors-b533fb3508009e5f567cc776daba8fbf665386a6.js",
+            "line": 900,
+            "column": 31,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "website/sidebars.js",
+            "file": "raw/node-internal-modules-cjs-loader-v15.3.0.js",
+            "line": 249,
+            "column": 5,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "raw/node-internal-modules-esm-resolve-v15.3.0-stripped.js",
+            "line": 507,
+            "column": 31,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "src/file-extensions.ts",
+            "line": 39,
+            "column": 51,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "src/test/helpers/version-checks.ts",
+            "line": 24,
+            "column": 103,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "src/test/repl/repl-environment.spec.ts",
             "line": 11,
-            "column": 9,
+            "column": 25,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "src/test/tsconfig-bases.spec.ts",
+            "line": 32,
+            "column": 43,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "website/types/lib_greeter.ts",
+            "line": 1,
+            "column": 16,
             "message": "Strings must use doublequote."
           }
         ]
       },
       "single": {
-        "count": 140,
+        "count": 143,
         "samples": [
           {
-            "file": "raw/node-internal-repl-await-v17.0.0.js",
-            "line": 188,
-            "column": 18,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "raw/node-internal-repl-await-v17.0.0.js",
-            "line": 191,
+            "file": ".yarn/plugins/@yarnpkg/plugin-compat.cjs",
+            "line": 4,
             "column": 9,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "raw/node-internal-repl-await-88799930794045795e8abac874730f9eba7e2300.js",
-            "line": 189,
-            "column": 18,
             "message": "Strings must use singlequote."
           },
           {
@@ -969,39 +958,51 @@
             "message": "Strings must use singlequote."
           },
           {
-            "file": "raw/node-internal-errors-b533fb3508009e5f567cc776daba8fbf665386a6.js",
-            "line": 758,
-            "column": 3,
+            "file": "src/test/esm-loader.spec.ts",
+            "line": 128,
+            "column": 18,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "raw/node-internal-errors-b533fb3508009e5f567cc776daba8fbf665386a6.js",
-            "line": 951,
-            "column": 38,
+            "file": "src/test/index.spec.ts",
+            "line": 161,
+            "column": 20,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "raw/node-internal-errors-b533fb3508009e5f567cc776daba8fbf665386a6.js",
-            "line": 1324,
-            "column": 10,
+            "file": "src/test/module-node/module-node.spec.ts",
+            "line": 295,
+            "column": 25,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "raw/node-internal-errors-b533fb3508009e5f567cc776daba8fbf665386a6.js",
-            "line": 1407,
-            "column": 33,
+            "file": "src/test/repl/repl-environment.spec.ts",
+            "line": 261,
+            "column": 40,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "raw/node-internal-errors-2d5d77306f6dff9110c1f77fefab25f973415770.js",
-            "line": 758,
-            "column": 3,
+            "file": "src/test/repl/repl.spec.ts",
+            "line": 67,
+            "column": 43,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "raw/node-internal-errors-2d5d77306f6dff9110c1f77fefab25f973415770.js",
-            "line": 948,
-            "column": 38,
+            "file": "src/test/repl/repl.spec.ts",
+            "line": 438,
+            "column": 22,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "src/test/resolver.spec.ts",
+            "line": 639,
+            "column": 30,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "tests/module-types/override-to-esm/test.mjs",
+            "line": 11,
+            "column": 13,
             "message": "Strings must use singlequote."
           }
         ]
@@ -1009,18 +1010,54 @@
     },
     "semi": {
       "always": {
-        "count": 30,
+        "count": 31,
         "samples": [
           {
-            "file": "transpilers/swc.js",
-            "line": 1,
-            "column": 52,
+            "file": "ava.config.cjs",
+            "line": 50,
+            "column": 25,
             "message": "Missing semicolon."
           },
           {
-            "file": "transpilers/swc-experimental.js",
-            "line": 1,
-            "column": 52,
+            "file": "dist-raw/node-internal-errors.js",
+            "line": 13,
+            "column": 65,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "dist-raw/node-internal-errors.js",
+            "line": 31,
+            "column": 42,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "dist-raw/node-internal-errors.js",
+            "line": 49,
+            "column": 33,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "dist-raw/node-internal-errors.js",
+            "line": 57,
+            "column": 18,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "dist-raw/node-internal-modules-cjs-loader.js",
+            "line": 551,
+            "column": 2,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "dist-raw/node-internalBinding-fs.js",
+            "line": 15,
+            "column": 39,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "dist-raw/node-internalBinding-fs.js",
+            "line": 22,
+            "column": 32,
             "message": "Missing semicolon."
           },
           {
@@ -1030,110 +1067,74 @@
             "message": "Missing semicolon."
           },
           {
-            "file": "esm-usage-example/index.js",
-            "line": 5,
-            "column": 7,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "dist-raw/runmain-hack.js",
-            "line": 9,
-            "column": 2,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "dist-raw/node-options.js",
-            "line": 23,
-            "column": 6,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "dist-raw/node-nativemodule.js",
-            "line": 6,
-            "column": 53,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "dist-raw/node-internalBinding-fs.js",
-            "line": 11,
-            "column": 13,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "dist-raw/node-internalBinding-fs.js",
-            "line": 13,
-            "column": 43,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "dist-raw/node-internalBinding-fs.js",
-            "line": 15,
-            "column": 39,
+            "file": "transpilers/swc.js",
+            "line": 1,
+            "column": 52,
             "message": "Missing semicolon."
           }
         ]
       },
       "never": {
-        "count": 8128,
+        "count": 8382,
         "samples": [
           {
-            "file": "nyc.config.js",
-            "line": 10,
+            "file": ".yarn/plugins/@yarnpkg/plugin-compat.cjs",
+            "line": 6,
             "column": 2,
             "message": "Extra semicolon."
           },
           {
-            "file": "website/sidebars.js",
-            "line": 50,
+            "file": "raw/node-internal-errors-2d5d77306f6dff9110c1f77fefab25f973415770.js",
+            "line": 511,
+            "column": 17,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "raw/node-internal-errors-b533fb3508009e5f567cc776daba8fbf665386a6.js",
+            "line": 1275,
+            "column": 51,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "raw/node-internal-modules-cjs-loader-v15.3.0.js",
+            "line": 650,
+            "column": 17,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "raw/node-internal-modules-esm-resolve-v13.12.0.js",
+            "line": 110,
+            "column": 25,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "raw/node-internal-repl-await-v17.0.0.js",
+            "line": 158,
+            "column": 45,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "src/repl.ts",
+            "line": 233,
+            "column": 59,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "src/test/module-node/1778.spec.ts",
+            "line": 24,
             "column": 2,
             "message": "Extra semicolon."
           },
           {
-            "file": "website/docusaurus.config.js",
-            "line": 195,
-            "column": 2,
+            "file": "src/test/transpilers.spec.ts",
+            "line": 16,
+            "column": 54,
             "message": "Extra semicolon."
           },
           {
-            "file": "website/babel.config.js",
-            "line": 3,
-            "column": 2,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "scripts/update-schemastore-schema-with-compiler-options.ts",
-            "line": 26,
-            "column": 37,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "scripts/update-schemastore-schema-with-compiler-options.ts",
-            "line": 27,
-            "column": 33,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "scripts/update-schemastore-schema-with-compiler-options.ts",
-            "line": 28,
-            "column": 62,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "scripts/update-schemastore-schema-with-compiler-options.ts",
-            "line": 34,
-            "column": 57,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "scripts/update-schemastore-schema-with-compiler-options.ts",
-            "line": 35,
-            "column": 120,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "scripts/update-schemastore-schema-with-compiler-options.ts",
-            "line": 49,
-            "column": 4,
+            "file": "website/types/lib_greeter.ts",
+            "line": 5,
+            "column": 23,
             "message": "Extra semicolon."
           }
         ]

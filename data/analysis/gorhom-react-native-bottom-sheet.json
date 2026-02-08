@@ -1,16 +1,23 @@
 {
-  "analyzedVersion": "4f44ab98c263",
+  "analyzedVersion": "8d56277528fc",
   "analyzedCommit": "b378f29ce9616e54c7a7855cd28d809e0f34f0b3",
+  "analyzedCommitDate": "2025-12-04T22:56:20.000Z",
   "checks": {
     "array-type": {
       "array": {
-        "count": 2,
+        "count": 3,
         "samples": [
           {
             "file": "example/src/screens/index.ts",
             "line": 4,
             "column": 16,
             "message": "Array type using 'Array<object>' is forbidden. Use 'object[]' instead."
+          },
+          {
+            "file": "src/components/bottomSheet/types.d.ts",
+            "line": 50,
+            "column": 53,
+            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
             "file": "src/utilities/snapPoint.ts",
@@ -21,38 +28,8 @@
         ]
       },
       "generic": {
-        "count": 9,
+        "count": 10,
         "samples": [
-          {
-            "file": "src/components/bottomSheetModalProvider/BottomSheetModalProvider.tsx",
-            "line": 35,
-            "column": 33,
-            "message": "Array type using 'BottomSheetModalRef[]' is forbidden. Use 'Array<BottomSheetModalRef>' instead."
-          },
-          {
-            "file": "src/utilities/logger.ts",
-            "line": 13,
-            "column": 44,
-            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
-          },
-          {
-            "file": "example/src/utilities/createMockData.ts",
-            "line": 7,
-            "column": 64,
-            "message": "Array type using 'Contact[]' is forbidden. Use 'Array<Contact>' instead."
-          },
-          {
-            "file": "example/src/utilities/createMockData.ts",
-            "line": 26,
-            "column": 65,
-            "message": "Array type using 'Location[]' is forbidden. Use 'Array<Location>' instead."
-          },
-          {
-            "file": "src/hooks/useAnimatedDetents.ts",
-            "line": 50,
-            "column": 10,
-            "message": "Array type using 'number[]' is forbidden. Use 'Array<number>' instead."
-          },
           {
             "file": "example/src/components/contactList/ContactList.tsx",
             "line": 35,
@@ -72,10 +49,46 @@
             "message": "Array type using 'Tweet[]' is forbidden. Use 'Array<Tweet>' instead."
           },
           {
+            "file": "example/src/types.d.ts",
+            "line": 11,
+            "column": 11,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+          },
+          {
+            "file": "example/src/utilities/createMockData.ts",
+            "line": 7,
+            "column": 64,
+            "message": "Array type using 'Contact[]' is forbidden. Use 'Array<Contact>' instead."
+          },
+          {
+            "file": "example/src/utilities/createMockData.ts",
+            "line": 26,
+            "column": 65,
+            "message": "Array type using 'Location[]' is forbidden. Use 'Array<Location>' instead."
+          },
+          {
             "file": "src/components/bottomSheetHandle/BottomSheetHandleContainer.tsx",
             "line": 42,
             "column": 40,
             "message": "Array type using 'unknown[]' is forbidden. Use 'Array<unknown>' instead."
+          },
+          {
+            "file": "src/components/bottomSheetModalProvider/BottomSheetModalProvider.tsx",
+            "line": 35,
+            "column": 33,
+            "message": "Array type using 'BottomSheetModalRef[]' is forbidden. Use 'Array<BottomSheetModalRef>' instead."
+          },
+          {
+            "file": "src/hooks/useAnimatedDetents.ts",
+            "line": 50,
+            "column": 10,
+            "message": "Array type using 'number[]' is forbidden. Use 'Array<number>' instead."
+          },
+          {
+            "file": "src/utilities/logger.ts",
+            "line": 13,
+            "column": 44,
+            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           }
         ]
       }
@@ -92,22 +105,29 @@
     },
     "consistent-indexed-object-style": {
       "record": {
-        "count": 0,
-        "samples": []
+        "count": 1,
+        "samples": [
+          {
+            "file": "src/components/bottomSheetScrollable/types.d.ts",
+            "line": 133,
+            "column": 29,
+            "message": "A record is preferred over an index signature."
+          }
+        ]
       },
       "index-signature": {
         "count": 2,
         "samples": [
           {
-            "file": "src/utilities/logger.ts",
-            "line": 5,
-            "column": 12,
-            "message": "An index signature is preferred over a record."
-          },
-          {
             "file": "src/components/bottomSheetDebugView/BottomSheetDebugView.tsx",
             "line": 8,
             "column": 11,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "src/utilities/logger.ts",
+            "line": 5,
+            "column": 12,
             "message": "An index signature is preferred over a record."
           }
         ]
@@ -115,29 +135,35 @@
     },
     "consistent-type-definitions": {
       "interface": {
-        "count": 6,
+        "count": 9,
         "samples": [
           {
-            "file": "src/hooks/useScrollHandler.web.ts",
-            "line": 8,
+            "file": "example/src/types.d.ts",
+            "line": 1,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "src/hooks/useGestureEventsHandlersDefault.web.tsx",
-            "line": 16,
+            "file": "example/src/types.d.ts",
+            "line": 7,
+            "column": 8,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "src/components/bottomSheet/BottomSheetBody.tsx",
+            "line": 8,
             "column": 1,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "src/components/bottomSheet/types.d.ts",
+            "line": 347,
+            "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
             "file": "src/hooks/useBoundingClientRect.ts",
             "line": 5,
-            "column": 8,
-            "message": "Use `interface` instead of `type`."
-          },
-          {
-            "file": "src/hooks/useScrollEventsHandlersDefault.ts",
-            "line": 11,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
@@ -148,32 +174,44 @@
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "src/components/bottomSheet/BottomSheetBody.tsx",
-            "line": 8,
+            "file": "src/hooks/useGestureEventsHandlersDefault.web.tsx",
+            "line": 16,
             "column": 1,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "src/hooks/useScrollEventsHandlersDefault.ts",
+            "line": 11,
+            "column": 8,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "src/hooks/useScrollHandler.web.ts",
+            "line": 8,
+            "column": 8,
             "message": "Use `interface` instead of `type`."
           }
         ]
       },
       "type": {
-        "count": 39,
+        "count": 61,
         "samples": [
           {
-            "file": "example/src/components/customBackground/CustomBackground.tsx",
-            "line": 9,
+            "file": "example/src/components/button/Button.tsx",
+            "line": 5,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "example/src/screens/integrations/map/LocationDetails.tsx",
-            "line": 15,
+            "file": "example/src/components/searchHandle/SearchHandle.tsx",
+            "line": 18,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "src/utilities/logger.ts",
-            "line": 1,
-            "column": 1,
+            "file": "example/src/screens/integrations/flashlist/models/Tweet.ts",
+            "line": 3,
+            "column": 16,
             "message": "Use `type` instead of `interface`."
           },
           {
@@ -183,39 +221,39 @@
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "example/src/components/contactList/ContactList.tsx",
+            "file": "src/components/bottomSheetBackground/types.d.ts",
+            "line": 4,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "src/components/bottomSheetFooter/types.d.ts",
+            "line": 40,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "src/components/bottomSheetModalProvider/types.d.ts",
+            "line": 4,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "src/components/bottomSheetScrollable/types.d.ts",
             "line": 22,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "example/src/screens/integrations/map/LocationItem.tsx",
-            "line": 5,
-            "column": 1,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "example/src/screens/integrations/map/Weather.tsx",
-            "line": 12,
-            "column": 1,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "example/src/components/contactItem/ContactItem.tsx",
-            "line": 5,
-            "column": 1,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "example/src/screens/integrations/map/LocationDetailsBottomSheet.tsx",
-            "line": 17,
-            "column": 1,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "example/src/screens/integrations/map/LocationDetailsBottomSheet.tsx",
-            "line": 22,
+            "file": "src/components/bottomSheetView/types.d.ts",
+            "line": 4,
             "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "src/utilities/logger.ts",
+            "line": 1,
+            "column": 1,
             "message": "Use `type` instead of `interface`."
           }
         ]
@@ -226,38 +264,32 @@
         "count": 16,
         "samples": [
           {
-            "file": "example/src/screens/integrations/map/LocationDetailsBottomSheet.tsx",
-            "line": 11,
+            "file": "example/src/components/button/Button.tsx",
+            "line": 2,
+            "column": 1,
+            "message": "All imports in the declaration are only used as types. Use `import type`."
+          },
+          {
+            "file": "example/src/components/customBackground/CustomBackground.tsx",
+            "line": 3,
+            "column": 1,
+            "message": "All imports in the declaration are only used as types. Use `import type`."
+          },
+          {
+            "file": "example/src/components/customFooter/CustomFooter.tsx",
+            "line": 3,
+            "column": 1,
+            "message": "Imports BottomSheetFooterProps are only used as type."
+          },
+          {
+            "file": "example/src/screens/integrations/map/LocationDetails.tsx",
+            "line": 8,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
             "file": "example/src/screens/integrations/map/LocationDetailsBottomSheet.tsx",
             "line": 15,
-            "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
-          {
-            "file": "example/src/screens/integrations/map/MapExample.tsx",
-            "line": 5,
-            "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
-          {
-            "file": "example/src/screens/integrations/map/MapExample.tsx",
-            "line": 9,
-            "column": 1,
-            "message": "Imports LocationDetailsBottomSheetMethods are only used as type."
-          },
-          {
-            "file": "example/src/screens/integrations/map/LocationDetails.tsx",
-            "line": 2,
-            "column": 1,
-            "message": "Imports ViewProps are only used as type."
-          },
-          {
-            "file": "example/src/screens/integrations/map/LocationDetails.tsx",
-            "line": 8,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
@@ -269,85 +301,91 @@
           },
           {
             "file": "example/src/screens/integrations/map/LocationListBottomSheet.tsx",
-            "line": 12,
-            "column": 1,
-            "message": "Imports SharedValue are only used as type."
-          },
-          {
-            "file": "example/src/screens/integrations/map/LocationListBottomSheet.tsx",
             "line": 17,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
+          },
+          {
+            "file": "example/src/screens/integrations/map/MapExample.tsx",
+            "line": 9,
+            "column": 1,
+            "message": "Imports LocationDetailsBottomSheetMethods are only used as type."
           },
           {
             "file": "example/src/screens/integrations/map/Weather.tsx",
             "line": 2,
             "column": 1,
             "message": "Imports LayoutChangeEvent are only used as type."
+          },
+          {
+            "file": "example/src/screens/withGestureHandlerRoot.tsx",
+            "line": 1,
+            "column": 1,
+            "message": "Imports FC are only used as type."
           }
         ]
       },
       "no-type-imports": {
-        "count": 178,
+        "count": 228,
         "samples": [
           {
-            "file": "src/utilities/findNodeHandle.web.ts",
-            "line": 2,
+            "file": "example/src/Dev.tsx",
+            "line": 8,
             "column": 3,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/components/bottomSheetScrollable/BottomSheetDraggableScrollable.tsx",
-            "line": 4,
+            "file": "example/src/screens/integrations/navigation/NavigatorExample.tsx",
+            "line": 7,
             "column": 3,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/utilities/getRefNativeTag.web.ts",
-            "line": 1,
+            "file": "src/components/bottomSheet/types.d.ts",
+            "line": 18,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/components/bottomSheetRefreshControl/BottomSheetRefreshControl.android.tsx",
-            "line": 2,
-            "column": 26,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "src/components/bottomSheetRefreshControl/BottomSheetRefreshControl.android.tsx",
-            "line": 6,
-            "column": 3,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "src/hooks/useBoundingClientRect.ts",
-            "line": 1,
-            "column": 10,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "src/hooks/useBoundingClientRect.ts",
+            "file": "src/components/bottomSheetFooter/BottomSheetFooter.tsx",
             "line": 2,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/components/bottomSheetScrollable/BottomSheetFlatList.tsx",
-            "line": 1,
-            "column": 10,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "src/components/bottomSheetScrollable/BottomSheetFlatList.tsx",
-            "line": 6,
+            "file": "src/components/bottomSheetHostingContainer/BottomSheetHostingContainer.tsx",
+            "line": 12,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/utilities/animate.ts",
+            "file": "src/components/bottomSheetScrollable/BottomSheetFlashList.tsx",
             "line": 2,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "src/components/bottomSheetTextInput/BottomSheetTextInput.tsx",
+            "line": 9,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "src/hooks/useAnimatedKeyboard.ts",
+            "line": 5,
             "column": 3,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "src/hooks/useReactiveSharedValue.ts",
+            "line": 2,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "website/versioned_docs/version-4/sidebars.ts",
+            "line": 1,
+            "column": 1,
             "message": "Use an `import` instead of an `import type`."
           }
         ]
@@ -358,26 +396,50 @@
         "count": 24,
         "samples": [
           {
-            "file": "src/hooks/useScrollHandler.web.ts",
-            "line": 42,
-            "column": 5,
+            "file": "src/components/bottomSheet/BottomSheetBody.tsx",
+            "line": 13,
+            "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/hooks/useScrollHandler.web.ts",
-            "line": 52,
-            "column": 5,
+            "file": "src/components/bottomSheetHandle/BottomSheetHandle.tsx",
+            "line": 12,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "src/components/bottomSheetHostingContainer/BottomSheetHostingContainer.tsx",
+            "line": 14,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "src/components/bottomSheetScrollable/BottomSheetDraggableScrollable.tsx",
+            "line": 12,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "src/components/bottomSheetScrollable/useBottomSheetContentSizeSetter.ts",
+            "line": 8,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "src/hooks/useBottomSheetContentContainerStyle.ts",
+            "line": 11,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "src/hooks/useBoundingClientRect.ts",
+            "line": 44,
+            "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "src/hooks/useScrollHandler.web.ts",
             "line": 74,
-            "column": 5,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/hooks/useScrollHandler.web.ts",
-            "line": 89,
             "column": 5,
             "message": "Expected a function expression."
           },
@@ -388,33 +450,9 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "src/hooks/useAnimatedLayout.ts",
-            "line": 34,
+            "file": "src/utilities/isFabricInstalled.ts",
+            "line": 6,
             "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/components/bottomSheetView/BottomSheetView.tsx",
-            "line": 12,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/components/bottomSheet/BottomSheetBody.tsx",
-            "line": 13,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/hooks/useBoundingClientRect.ts",
-            "line": 44,
-            "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/components/bottomSheet/BottomSheetContent.tsx",
-            "line": 33,
-            "column": 1,
             "message": "Expected a function expression."
           }
         ]
@@ -423,20 +461,8 @@
         "count": 114,
         "samples": [
           {
-            "file": "example/src/screens/advanced/KeyboardHandlingExample.tsx",
-            "line": 11,
-            "column": 7,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "example/src/screens/advanced/FooterExample.tsx",
-            "line": 9,
-            "column": 7,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "example/src/components/headerHandle/HeaderHandle.tsx",
-            "line": 10,
+            "file": "example/src/Dev.tsx",
+            "line": 26,
             "column": 7,
             "message": "Expected a function declaration."
           },
@@ -447,21 +473,39 @@
             "message": "Expected a function declaration."
           },
           {
-            "file": "example/src/screens/advanced/ShadowExample.tsx",
-            "line": 9,
+            "file": "example/src/screens/integrations/ViewPagerExample.tsx",
+            "line": 25,
             "column": 7,
             "message": "Expected a function declaration."
           },
           {
-            "file": "example/src/screens/advanced/DynamicSizingExample.tsx",
+            "file": "example/src/screens/integrations/legendlist/renderItem.tsx",
+            "line": 67,
+            "column": 14,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "example/src/screens/modal/DetachedExample.tsx",
+            "line": 20,
+            "column": 7,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "mock.js",
+            "line": 72,
+            "column": 7,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "src/components/bottomSheetDebugView/ReText.webx.tsx",
             "line": 17,
             "column": 7,
             "message": "Expected a function declaration."
           },
           {
-            "file": "example/src/screens/advanced/CustomHandleExample.tsx",
-            "line": 8,
-            "column": 7,
+            "file": "src/hooks/useBottomSheetSpringConfigs.ts",
+            "line": 7,
+            "column": 14,
             "message": "Expected a function declaration."
           },
           {
@@ -471,15 +515,9 @@
             "message": "Expected a function declaration."
           },
           {
-            "file": "src/hooks/useScrollableSetter.ts",
-            "line": 9,
+            "file": "src/utilities/validateSnapPoint.ts",
+            "line": 3,
             "column": 14,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "example/src/components/searchHandle/SearchHandle.tsx",
-            "line": 23,
-            "column": 7,
             "message": "Expected a function declaration."
           }
         ]
@@ -490,44 +528,44 @@
         "count": 68,
         "samples": [
           {
-            "file": "src/components/bottomSheetRefreshControl/BottomSheetRefreshControl.tsx",
-            "line": 1,
+            "file": "example/App.tsx",
+            "line": 13,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "src/components/bottomSheetGestureHandlersProvider/BottomSheetGestureHandlersProvider.tsx",
-            "line": 69,
+            "file": "example/src/screens/advanced/DynamicSizingExample.tsx",
+            "line": 152,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "src/components/bottomSheetRefreshControl/BottomSheetRefreshControl.android.tsx",
-            "line": 84,
+            "file": "example/src/screens/integrations/flashlist/TweetContent.tsx",
+            "line": 180,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "src/components/bottomSheetScrollable/BottomSheetFlashList.web.tsx",
-            "line": 1,
+            "file": "example/src/screens/integrations/map/BlurredBackground.tsx",
+            "line": 31,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "example/src/screens/integrations/legendlist/LegendListExample.tsx",
-            "line": 82,
+            "file": "example/src/screens/modal/DynamicSizingExample.tsx",
+            "line": 153,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "src/components/bottomSheetScrollable/BottomSheetSectionList.tsx",
-            "line": 27,
+            "file": "src/components/bottomSheetDebugView/ReText.webx.tsx",
+            "line": 55,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "src/components/bottomSheetScrollable/BottomSheetVirtualizedList.tsx",
-            "line": 25,
+            "file": "src/components/bottomSheetModal/BottomSheetModal.tsx",
+            "line": 482,
             "column": 8,
             "message": "Prefer named exports"
           },
@@ -538,14 +576,14 @@
             "message": "Prefer named exports"
           },
           {
-            "file": "src/components/bottomSheetScrollable/BottomSheetScrollView.tsx",
-            "line": 25,
+            "file": "src/components/bottomSheetView/BottomSheetView.tsx",
+            "line": 93,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "src/components/bottomSheetHandle/BottomSheetHandleContainer.tsx",
-            "line": 187,
+            "file": "website/versioned_docs/version-4/sidebars.ts",
+            "line": 97,
             "column": 8,
             "message": "Prefer named exports"
           }
@@ -555,50 +593,20 @@
         "count": 76,
         "samples": [
           {
-            "file": "src/components/bottomSheetScrollable/BottomSheetDraggableScrollable.tsx",
-            "line": 12,
+            "file": "example/src/components/button/Button.tsx",
+            "line": 23,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/components/bottomSheetHostingContainer/styles.web.ts",
-            "line": 3,
+            "file": "example/src/components/customFooter/CustomFooter.tsx",
+            "line": 110,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/components/bottomSheetScrollable/ScrollableContainer.android.tsx",
-            "line": 22,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "src/components/bottomSheetScrollable/useBottomSheetContentSizeSetter.ts",
-            "line": 8,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "src/components/bottomSheetFooter/BottomSheetFooterContainer.tsx",
-            "line": 40,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "src/components/bottomSheetBackground/BottomSheetBackgroundContainer.tsx",
-            "line": 32,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "src/components/bottomSheetScrollable/ScrollableContainer.tsx",
-            "line": 11,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "example/src/components/customBackground/CustomBackground.tsx",
-            "line": 37,
+            "file": "example/src/screens/modal/withModalProvider.tsx",
+            "line": 4,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -609,8 +617,38 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/components/bottomSheetScrollable/createBottomSheetScrollableComponent.tsx",
-            "line": 25,
+            "file": "src/components/bottomSheetHandle/styles.ts",
+            "line": 5,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "src/components/bottomSheetScrollable/styles.ts",
+            "line": 3,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "src/hooks/useBottomSheetGestureHandlers.ts",
+            "line": 4,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "src/hooks/usePropsValidator.ts",
+            "line": 11,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "src/utilities/findNodeHandle.ts",
+            "line": 1,
+            "column": 10,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "src/utilities/validateSnapPoint.ts",
+            "line": 3,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           }
@@ -619,263 +657,263 @@
     },
     "indent": {
       "2-space": {
-        "count": 254,
+        "count": 185,
         "samples": [
           {
-            "file": "src/utilities/getKeyboardAnimationConfigs.ts",
-            "line": 10,
+            "file": "src/components/bottomSheet/BottomSheet.tsx",
+            "line": 386,
             "column": 1,
-            "message": "Expected indentation of 2 spaces but found 4."
+            "message": "Expected indentation of 10 spaces but found 12."
           },
           {
-            "file": "src/utilities/getKeyboardAnimationConfigs.ts",
-            "line": 11,
+            "file": "src/components/bottomSheetRefreshControl/BottomSheetRefreshControl.android.tsx",
+            "line": 51,
             "column": 1,
-            "message": "Expected indentation of 4 spaces but found 6."
+            "message": "Expected indentation of 12 spaces but found 14."
           },
           {
-            "file": "src/utilities/getKeyboardAnimationConfigs.ts",
-            "line": 12,
+            "file": "src/hooks/useScrollHandler.web.ts",
+            "line": 155,
             "column": 1,
-            "message": "Expected indentation of 6 spaces but found 8."
+            "message": "Expected indentation of 10 spaces but found 12."
           },
           {
-            "file": "src/utilities/getKeyboardAnimationConfigs.ts",
-            "line": 13,
+            "file": "website/versioned_docs/version-2/sidebars.ts",
+            "line": 33,
             "column": 1,
-            "message": "Expected indentation of 6 spaces but found 8."
+            "message": "Expected indentation of 4 spaces but found 2 tabs."
           },
           {
-            "file": "src/utilities/getKeyboardAnimationConfigs.ts",
-            "line": 14,
+            "file": "website/versioned_docs/version-2/sidebars.ts",
+            "line": 54,
             "column": 1,
-            "message": "Expected indentation of 4 spaces but found 6."
+            "message": "Expected indentation of 6 spaces but found 3 tabs."
           },
           {
-            "file": "src/utilities/getKeyboardAnimationConfigs.ts",
-            "line": 16,
+            "file": "website/versioned_docs/version-2/sidebars.ts",
+            "line": 74,
             "column": 1,
-            "message": "Expected indentation of 2 spaces but found 4."
+            "message": "Expected indentation of 6 spaces but found 3 tabs."
           },
           {
-            "file": "src/utilities/getKeyboardAnimationConfigs.ts",
-            "line": 17,
+            "file": "website/versioned_docs/version-4/sidebars.ts",
+            "line": 33,
             "column": 1,
-            "message": "Expected indentation of 4 spaces but found 6."
+            "message": "Expected indentation of 10 spaces but found 5 tabs."
           },
           {
-            "file": "src/utilities/getKeyboardAnimationConfigs.ts",
-            "line": 18,
+            "file": "website/versioned_docs/version-4/sidebars.ts",
+            "line": 53,
             "column": 1,
-            "message": "Expected indentation of 6 spaces but found 8."
+            "message": "Expected indentation of 4 spaces but found 2 tabs."
           },
           {
-            "file": "src/utilities/getKeyboardAnimationConfigs.ts",
-            "line": 19,
+            "file": "website/versioned_docs/version-4/sidebars.ts",
+            "line": 74,
             "column": 1,
-            "message": "Expected indentation of 6 spaces but found 8."
+            "message": "Expected indentation of 8 spaces but found 4 tabs."
           },
           {
-            "file": "src/utilities/getKeyboardAnimationConfigs.ts",
-            "line": 20,
+            "file": "website/versioned_docs/version-4/sidebars.ts",
+            "line": 94,
             "column": 1,
-            "message": "Expected indentation of 4 spaces but found 6."
+            "message": "Expected indentation of 2 spaces but found 1 tab."
           }
         ]
       },
       "4-space": {
-        "count": 11097,
+        "count": 11779,
         "samples": [
           {
-            "file": "mock.js",
-            "line": 18,
+            "file": "babel.config.js",
+            "line": 2,
             "column": 1,
             "message": "Expected indentation of 4 spaces but found 2."
           },
           {
-            "file": "mock.js",
-            "line": 24,
-            "column": 1,
-            "message": "Expected indentation of 4 spaces but found 2."
-          },
-          {
-            "file": "mock.js",
-            "line": 28,
-            "column": 1,
-            "message": "Expected indentation of 4 spaces but found 2."
-          },
-          {
-            "file": "mock.js",
-            "line": 29,
-            "column": 1,
-            "message": "Expected indentation of 4 spaces but found 2."
-          },
-          {
-            "file": "mock.js",
-            "line": 31,
-            "column": 1,
-            "message": "Expected indentation of 4 spaces but found 2."
-          },
-          {
-            "file": "mock.js",
-            "line": 32,
-            "column": 1,
-            "message": "Expected indentation of 4 spaces but found 2."
-          },
-          {
-            "file": "mock.js",
+            "file": "example/src/screens/advanced/ShadowExample.tsx",
             "line": 33,
             "column": 1,
             "message": "Expected indentation of 4 spaces but found 2."
           },
           {
-            "file": "mock.js",
-            "line": 34,
-            "column": 1,
-            "message": "Expected indentation of 4 spaces but found 2."
-          },
-          {
-            "file": "mock.js",
-            "line": 35,
-            "column": 1,
-            "message": "Expected indentation of 4 spaces but found 2."
-          },
-          {
-            "file": "mock.js",
-            "line": 36,
+            "file": "example/src/screens/integrations/flashlist/data/tweets.ts",
+            "line": 731,
             "column": 1,
             "message": "Expected indentation of 8 spaces but found 4."
+          },
+          {
+            "file": "example/src/screens/integrations/map/BlurredHandle.tsx",
+            "line": 8,
+            "column": 1,
+            "message": "Expected indentation of 4 spaces but found 2."
+          },
+          {
+            "file": "example/webpack.config.js",
+            "line": 35,
+            "column": 1,
+            "message": "Expected indentation of 8 spaces but found 4."
+          },
+          {
+            "file": "src/components/bottomSheet/BottomSheet.tsx",
+            "line": 1518,
+            "column": 1,
+            "message": "Expected indentation of 8 spaces but found 4."
+          },
+          {
+            "file": "src/components/bottomSheetHandle/BottomSheetHandleContainer.tsx",
+            "line": 41,
+            "column": 1,
+            "message": "Expected indentation of 4 spaces but found 2."
+          },
+          {
+            "file": "src/components/bottomSheetScrollable/types.d.ts",
+            "line": 67,
+            "column": 1,
+            "message": "Expected indentation of 4 spaces but found 2."
+          },
+          {
+            "file": "src/hooks/useGestureEventsHandlersDefault.web.tsx",
+            "line": 192,
+            "column": 1,
+            "message": "Expected indentation of 16 spaces but found 8."
+          },
+          {
+            "file": "website/versioned_docs/version-4/sidebars.ts",
+            "line": 94,
+            "column": 1,
+            "message": "Expected indentation of 4 spaces but found 1 tab."
           }
         ]
       },
       "tab": {
-        "count": 10983,
+        "count": 11672,
         "samples": [
           {
-            "file": "mock.js",
-            "line": 18,
+            "file": "babel.config.js",
+            "line": 2,
             "column": 1,
             "message": "Expected indentation of 1 tab but found 2 spaces."
           },
           {
-            "file": "mock.js",
-            "line": 24,
-            "column": 1,
-            "message": "Expected indentation of 1 tab but found 2 spaces."
-          },
-          {
-            "file": "mock.js",
-            "line": 28,
-            "column": 1,
-            "message": "Expected indentation of 1 tab but found 2 spaces."
-          },
-          {
-            "file": "mock.js",
-            "line": 29,
-            "column": 1,
-            "message": "Expected indentation of 1 tab but found 2 spaces."
-          },
-          {
-            "file": "mock.js",
-            "line": 31,
-            "column": 1,
-            "message": "Expected indentation of 1 tab but found 2 spaces."
-          },
-          {
-            "file": "mock.js",
-            "line": 32,
-            "column": 1,
-            "message": "Expected indentation of 1 tab but found 2 spaces."
-          },
-          {
-            "file": "mock.js",
-            "line": 33,
-            "column": 1,
-            "message": "Expected indentation of 1 tab but found 2 spaces."
-          },
-          {
-            "file": "mock.js",
-            "line": 34,
-            "column": 1,
-            "message": "Expected indentation of 1 tab but found 2 spaces."
-          },
-          {
-            "file": "mock.js",
-            "line": 35,
-            "column": 1,
-            "message": "Expected indentation of 1 tab but found 2 spaces."
-          },
-          {
-            "file": "mock.js",
-            "line": 36,
+            "file": "example/src/screens/advanced/ShadowExample.tsx",
+            "line": 19,
             "column": 1,
             "message": "Expected indentation of 2 tabs but found 4 spaces."
+          },
+          {
+            "file": "example/src/screens/integrations/flashlist/data/tweets.ts",
+            "line": 702,
+            "column": 1,
+            "message": "Expected indentation of 1 tab but found 2 spaces."
+          },
+          {
+            "file": "example/src/screens/integrations/legendlist/renderItem.tsx",
+            "line": 120,
+            "column": 1,
+            "message": "Expected indentation of 1 tab but found 2 spaces."
+          },
+          {
+            "file": "example/src/utilities/createMockData.ts",
+            "line": 30,
+            "column": 1,
+            "message": "Expected indentation of 3 tabs but found 6 spaces."
+          },
+          {
+            "file": "src/components/bottomSheet/BottomSheet.tsx",
+            "line": 1452,
+            "column": 1,
+            "message": "Expected indentation of 4 tabs but found 8 spaces."
+          },
+          {
+            "file": "src/components/bottomSheetGestureHandlersProvider/BottomSheetGestureHandlersProvider.tsx",
+            "line": 46,
+            "column": 1,
+            "message": "Expected indentation of 2 tabs but found 4 spaces."
+          },
+          {
+            "file": "src/components/bottomSheetScrollable/createBottomSheetScrollableComponent.tsx",
+            "line": 72,
+            "column": 1,
+            "message": "Expected indentation of 2 tabs but found 4 spaces."
+          },
+          {
+            "file": "src/hooks/useGestureEventsHandlersDefault.tsx",
+            "line": 435,
+            "column": 1,
+            "message": "Expected indentation of 2 tabs but found 4 spaces."
+          },
+          {
+            "file": "website/sidebars.ts",
+            "line": 87,
+            "column": 1,
+            "message": "Expected indentation of 1 tab but found 2 spaces."
           }
         ]
       }
     },
     "quotes": {
       "double": {
-        "count": 2312,
+        "count": 2417,
         "samples": [
           {
-            "file": "mock.js",
-            "line": 11,
-            "column": 23,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "mock.js",
-            "line": 12,
-            "column": 29,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "mock.js",
-            "line": 53,
-            "column": 31,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "lint-staged.config.js",
+            "file": "babel.config.js",
             "line": 2,
-            "column": 3,
+            "column": 13,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "lint-staged.config.js",
+            "file": "example/src/screens/basic/BasicExamples.tsx",
             "line": 3,
-            "column": 5,
+            "column": 58,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "lint-staged.config.js",
-            "line": 4,
-            "column": 5,
+            "file": "example/src/screens/integrations/flashlist/data/tweets.ts",
+            "line": 218,
+            "column": 9,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "lint-staged.config.js",
+            "file": "example/src/screens/integrations/flashlist/data/tweets.ts",
+            "line": 1004,
+            "column": 7,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "example/src/screens/integrations/flashlist/data/tweets.ts",
+            "line": 1789,
+            "column": 13,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "example/src/screens/modal/DetachedExample.tsx",
+            "line": 14,
+            "column": 30,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "src/components/bottomSheetBackground/BottomSheetBackground.tsx",
+            "line": 3,
+            "column": 24,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "src/components/bottomSheetScrollable/BottomSheetScrollView.tsx",
             "line": 5,
-            "column": 5,
+            "column": 8,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "lint-staged.config.js",
-            "line": 6,
-            "column": 5,
+            "file": "src/hooks/useGestureHandler.ts",
+            "line": 71,
+            "column": 7,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "lint-staged.config.js",
-            "line": 7,
+            "file": "website/sidebars.ts",
+            "line": 86,
             "column": 5,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "lint-staged.config.js",
-            "line": 9,
-            "column": 3,
             "message": "Strings must use doublequote."
           }
         ]
@@ -884,63 +922,63 @@
         "count": 134,
         "samples": [
           {
+            "file": "example/src/screens/integrations/flashlist/FlashListExample.tsx",
+            "line": 117,
+            "column": 5,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "example/src/screens/integrations/flashlist/data/tweets.ts",
+            "line": 935,
+            "column": 7,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "src/components/bottomSheetScrollable/createBottomSheetScrollableComponent.tsx",
+            "line": 73,
+            "column": 13,
+            "message": "Strings must use singlequote."
+          },
+          {
             "file": "website/sidebars.ts",
             "line": 51,
             "column": 14,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "website/sidebars.ts",
-            "line": 65,
-            "column": 14,
+            "file": "website/versioned_docs/version-2/sidebars.ts",
+            "line": 40,
+            "column": 10,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/hooks/useScrollableSetter.ts",
-            "line": 38,
-            "column": 20,
+            "file": "website/versioned_docs/version-2/sidebars.ts",
+            "line": 60,
+            "column": 5,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/hooks/usePropsValidator.ts",
-            "line": 38,
+            "file": "website/versioned_docs/version-4/sidebars.ts",
+            "line": 27,
+            "column": 5,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "website/versioned_docs/version-4/sidebars.ts",
+            "line": 43,
             "column": 7,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/hooks/usePropsValidator.ts",
-            "line": 55,
-            "column": 7,
+            "file": "website/versioned_docs/version-4/sidebars.ts",
+            "line": 71,
+            "column": 5,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/hooks/usePropsValidator.ts",
-            "line": 62,
-            "column": 7,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "src/hooks/usePropsValidator.ts",
-            "line": 79,
-            "column": 7,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "src/hooks/usePropsValidator.ts",
-            "line": 83,
-            "column": 7,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "src/hooks/usePropsValidator.ts",
-            "line": 90,
-            "column": 7,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "src/hooks/usePropsValidator.ts",
-            "line": 95,
-            "column": 7,
+            "file": "website/versioned_docs/version-4/sidebars.ts",
+            "line": 92,
+            "column": 10,
             "message": "Strings must use singlequote."
           }
         ]
@@ -948,83 +986,70 @@
     },
     "semi": {
       "always": {
-        "count": 2,
-        "samples": [
-          {
-            "file": "example/src/screens/integrations/flashlist/models/Tweet.ts",
-            "line": 10,
-            "column": 2,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "example/src/screens/integrations/flashlist/models/Author.ts",
-            "line": 5,
-            "column": 2,
-            "message": "Missing semicolon."
-          }
-        ]
+        "count": 0,
+        "samples": []
       },
       "never": {
-        "count": 2857,
+        "count": 2940,
         "samples": [
           {
-            "file": "mock.js",
-            "line": 11,
-            "column": 31,
+            "file": "babel.config.js",
+            "line": 4,
+            "column": 2,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "example/src/screens/advanced/KeyboardHandlingExample.tsx",
+            "line": 9,
+            "column": 39,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "example/src/screens/integrations/map/LocationListBottomSheet.tsx",
+            "line": 17,
+            "column": 42,
             "message": "Extra semicolon."
           },
           {
             "file": "mock.js",
-            "line": 12,
-            "column": 44,
+            "line": 128,
+            "column": 2,
             "message": "Extra semicolon."
           },
           {
-            "file": "mock.js",
-            "line": 14,
-            "column": 22,
+            "file": "src/components/bottomSheet/BottomSheetContent.tsx",
+            "line": 13,
+            "column": 53,
             "message": "Extra semicolon."
           },
           {
-            "file": "mock.js",
-            "line": 15,
-            "column": 57,
+            "file": "src/components/bottomSheetGestureHandlersProvider/index.ts",
+            "line": 1,
+            "column": 63,
             "message": "Extra semicolon."
           },
           {
-            "file": "mock.js",
-            "line": 18,
-            "column": 18,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "mock.js",
+            "file": "src/components/bottomSheetScrollable/BottomSheetDraggableScrollable.tsx",
             "line": 19,
-            "column": 2,
+            "column": 6,
             "message": "Extra semicolon."
           },
           {
-            "file": "mock.js",
-            "line": 21,
-            "column": 33,
+            "file": "src/hooks/useAnimatedKeyboard.ts",
+            "line": 104,
+            "column": 4,
             "message": "Extra semicolon."
           },
           {
-            "file": "mock.js",
-            "line": 24,
+            "file": "src/hooks/usePropsValidator.ts",
+            "line": 45,
+            "column": 60,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "website/versioned_docs/version-4/sidebars.ts",
+            "line": 97,
             "column": 24,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "mock.js",
-            "line": 25,
-            "column": 2,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "mock.js",
-            "line": 29,
-            "column": 14,
             "message": "Extra semicolon."
           }
         ]

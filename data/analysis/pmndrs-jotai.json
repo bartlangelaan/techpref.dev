@@ -1,7 +1,7 @@
 {
-  "analyzedVersion": "290e0cf85c01",
-  "analyzedCommit": "4555cdfb469d05b0a91c053dfbad12808f895bc6",
-  "analyzedCommitDate": "2026-02-04T03:03:29.000Z",
+  "analyzedVersion": "8d56277528fc",
+  "analyzedCommit": "af5f6ce6bee8dc5b446f0012235def4955a7eb93",
+  "analyzedCommitDate": "2026-02-01T03:14:40.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -19,39 +19,57 @@
         "count": 78,
         "samples": [
           {
-            "file": "src/vanilla/typeUtils.ts",
-            "line": 5,
-            "column": 25,
+            "file": "examples/hacker_news/src/App.tsx",
+            "line": 10,
+            "column": 10,
+            "message": "Array type using 'number[]' is forbidden. Use 'Array<number>' instead."
+          },
+          {
+            "file": "src/react/useSetAtom.ts",
+            "line": 18,
+            "column": 42,
+            "message": "Array type using 'never[]' is forbidden. Use 'Array<never>' instead."
+          },
+          {
+            "file": "src/vanilla/internals.ts",
+            "line": 836,
+            "column": 35,
             "message": "Array type using 'unknown[]' is forbidden. Use 'Array<unknown>' instead."
           },
           {
             "file": "src/vanilla/utils/splitAtom.ts",
-            "line": 52,
-            "column": 56,
+            "line": 47,
+            "column": 17,
             "message": "Array type using 'Item[]' is forbidden. Use 'Array<Item>' instead."
           },
           {
             "file": "src/vanilla/utils/splitAtom.ts",
-            "line": 71,
-            "column": 24,
-            "message": "Array type using 'Key[]' is forbidden. Use 'Array<Key>' instead."
+            "line": 64,
+            "column": 32,
+            "message": "Array type using 'Item[]' is forbidden. Use 'Array<Item>' instead."
           },
           {
-            "file": "src/vanilla/utils/freezeAtom.ts",
-            "line": 64,
-            "column": 21,
+            "file": "src/vanilla/utils/unwrap.ts",
+            "line": 122,
+            "column": 45,
             "message": "Array type using 'unknown[]' is forbidden. Use 'Array<unknown>' instead."
           },
           {
-            "file": "examples/todos/src/App.tsx",
-            "line": 15,
-            "column": 27,
-            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
+            "file": "tests/react/onmount.test.tsx",
+            "line": 214,
+            "column": 20,
+            "message": "Array type using 'number[]' is forbidden. Use 'Array<number>' instead."
           },
           {
-            "file": "src/vanilla/internals.ts",
-            "line": 470,
-            "column": 28,
+            "file": "tests/react/vanilla-utils/splitAtom.test.tsx",
+            "line": 350,
+            "column": 26,
+            "message": "Array type using 'TodoItem[]' is forbidden. Use 'Array<TodoItem>' instead."
+          },
+          {
+            "file": "tests/vanilla/dependency.test.tsx",
+            "line": 189,
+            "column": 18,
             "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           },
           {
@@ -59,24 +77,6 @@
             "line": 174,
             "column": 20,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
-          },
-          {
-            "file": "tests/react/vanilla-utils/splitAtom.test.tsx",
-            "line": 247,
-            "column": 26,
-            "message": "Array type using 'TodoItem[]' is forbidden. Use 'Array<TodoItem>' instead."
-          },
-          {
-            "file": "tests/react/vanilla-utils/atomWithObservable.test.tsx",
-            "line": 32,
-            "column": 35,
-            "message": "Array type using 'unknown[]' is forbidden. Use 'Array<unknown>' instead."
-          },
-          {
-            "file": "tests/react/async.test.tsx",
-            "line": 24,
-            "column": 20,
-            "message": "Array type using 'number[]' is forbidden. Use 'Array<number>' instead."
           }
         ]
       }
@@ -85,12 +85,6 @@
       "constructor": {
         "count": 3,
         "samples": [
-          {
-            "file": "src/vanilla/utils/atomFamily.ts",
-            "line": 76,
-            "column": 14,
-            "message": "The generic type arguments should be specified as part of the constructor type arguments."
-          },
           {
             "file": "src/react/utils/useHydrateAtoms.ts",
             "line": 24,
@@ -102,6 +96,12 @@
             "line": 241,
             "column": 22,
             "message": "The generic type arguments should be specified as part of the constructor type arguments."
+          },
+          {
+            "file": "src/vanilla/utils/atomFamily.ts",
+            "line": 76,
+            "column": 14,
+            "message": "The generic type arguments should be specified as part of the constructor type arguments."
           }
         ]
       },
@@ -109,33 +109,27 @@
         "count": 41,
         "samples": [
           {
-            "file": "src/vanilla/utils/atomFamily.ts",
-            "line": 77,
-            "column": 28,
+            "file": "benchmarks/subscribe-write.ts",
+            "line": 14,
+            "column": 27,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "src/vanilla/internals.ts",
+            "line": 349,
+            "column": 32,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "src/vanilla/internals.ts",
+            "line": 969,
+            "column": 37,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
             "file": "src/vanilla/utils/unwrap.ts",
             "line": 45,
             "column": 44,
-            "message": "The generic type arguments should be specified as part of the type annotation."
-          },
-          {
-            "file": "tests/vanilla/derive.test.tsx",
-            "line": 135,
-            "column": 32,
-            "message": "The generic type arguments should be specified as part of the type annotation."
-          },
-          {
-            "file": "src/vanilla/internals.ts",
-            "line": 437,
-            "column": 30,
-            "message": "The generic type arguments should be specified as part of the type annotation."
-          },
-          {
-            "file": "tests/vanilla/store.test.tsx",
-            "line": 40,
-            "column": 36,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
@@ -146,8 +140,8 @@
           },
           {
             "file": "tests/react/vanilla-utils/atomWithObservable.test.tsx",
-            "line": 253,
-            "column": 36,
+            "line": 251,
+            "column": 30,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
@@ -158,14 +152,20 @@
           },
           {
             "file": "tests/react/vanilla-utils/atomWithObservable.test.tsx",
-            "line": 703,
+            "line": 632,
             "column": 36,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "tests/react/async.test.tsx",
-            "line": 622,
-            "column": 28,
+            "file": "tests/vanilla/derive.test.tsx",
+            "line": 135,
+            "column": 32,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "tests/vanilla/storedev.test.tsx",
+            "line": 42,
+            "column": 36,
             "message": "The generic type arguments should be specified as part of the type annotation."
           }
         ]
@@ -204,15 +204,15 @@
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "src/vanilla/utils/atomWithObservable.ts",
-            "line": 80,
-            "column": 29,
-            "message": "An index signature is preferred over a record."
-          },
-          {
             "file": "examples/todos_with_atomFamily/src/App.tsx",
             "line": 109,
             "column": 20,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "src/vanilla/utils/atomWithObservable.ts",
+            "line": 80,
+            "column": 29,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -253,39 +253,9 @@
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "tests/react/vanilla-utils/loadable.test.tsx",
-            "line": 293,
-            "column": 1,
-            "message": "Use `interface` instead of `type`."
-          },
-          {
-            "file": "examples/todos/src/App.tsx",
-            "line": 8,
-            "column": 1,
-            "message": "Use `interface` instead of `type`."
-          },
-          {
-            "file": "src/vanilla/utils/atomWithObservable.ts",
-            "line": 14,
-            "column": 1,
-            "message": "Use `interface` instead of `type`."
-          },
-          {
-            "file": "tests/vanilla/utils/atomFamily.test.ts",
-            "line": 65,
-            "column": 3,
-            "message": "Use `interface` instead of `type`."
-          },
-          {
-            "file": "src/react/Provider.ts",
-            "line": 12,
-            "column": 1,
-            "message": "Use `interface` instead of `type`."
-          },
-          {
-            "file": "tests/react/items.test.tsx",
+            "file": "examples/todos_with_atomFamily/src/App.tsx",
             "line": 9,
-            "column": 3,
+            "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
@@ -296,7 +266,7 @@
           },
           {
             "file": "src/vanilla/internals.ts",
-            "line": 67,
+            "line": 142,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
@@ -305,12 +275,48 @@
             "line": 322,
             "column": 1,
             "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "src/vanilla/utils/atomWithObservable.ts",
+            "line": 40,
+            "column": 1,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "src/vanilla/utils/splitAtom.ts",
+            "line": 58,
+            "column": 7,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "tests/react/vanilla-utils/loadable.test.tsx",
+            "line": 293,
+            "column": 1,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "tests/vanilla/effect.test.ts",
+            "line": 19,
+            "column": 1,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "tests/vanilla/utils/atomFamily.test.ts",
+            "line": 65,
+            "column": 3,
+            "message": "Use `interface` instead of `type`."
           }
         ]
       },
       "type": {
         "count": 8,
         "samples": [
+          {
+            "file": "src/babel/utils.ts",
+            "line": 3,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
           {
             "file": "src/vanilla/atom.ts",
             "line": 42,
@@ -326,12 +332,6 @@
           {
             "file": "src/vanilla/utils/atomFamily.ts",
             "line": 30,
-            "column": 8,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "src/babel/utils.ts",
-            "line": 3,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
@@ -367,18 +367,6 @@
         "count": 4,
         "samples": [
           {
-            "file": "src/babel/preset.ts",
-            "line": 1,
-            "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
-          {
-            "file": "src/babel/utils.ts",
-            "line": 1,
-            "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
-          {
             "file": "src/babel/plugin-debug-label.ts",
             "line": 1,
             "column": 1,
@@ -389,6 +377,18 @@
             "line": 1,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
+          },
+          {
+            "file": "src/babel/preset.ts",
+            "line": 1,
+            "column": 1,
+            "message": "All imports in the declaration are only used as types. Use `import type`."
+          },
+          {
+            "file": "src/babel/utils.ts",
+            "line": 1,
+            "column": 1,
+            "message": "All imports in the declaration are only used as types. Use `import type`."
           }
         ]
       },
@@ -396,62 +396,62 @@
         "count": 62,
         "samples": [
           {
-            "file": "src/babel/plugin-react-refresh.ts",
-            "line": 2,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "examples/mega-form/src/useAtomSlice.ts",
-            "line": 3,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "src/react/useSetAtom.ts",
-            "line": 2,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "tests/react/vanilla-utils/atomWithStorage.test.tsx",
-            "line": 21,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "benchmarks/simple-write.ts",
+            "file": "benchmarks/simple-read.ts",
             "line": 9,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "examples/todos/src/App.tsx",
-            "line": 6,
+            "file": "examples/todos_with_atomFamily/src/App.tsx",
+            "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/vanilla/utils/atomWithObservable.ts",
-            "line": 2,
+            "file": "src/react/useAtom.ts",
+            "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "tests/react/items.test.tsx",
-            "line": 6,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "src/vanilla/utils/atomWithRefresh.ts",
-            "line": 2,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "src/vanilla/internals.ts",
+            "file": "src/react/utils/useResetAtom.ts",
             "line": 4,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "src/vanilla/utils/atomWithLazy.ts",
+            "line": 2,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "src/vanilla/utils/loadable.ts",
+            "line": 2,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "tests/react/error.test.tsx",
+            "line": 9,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "tests/react/vanilla-utils/atomWithObservable.test.tsx",
+            "line": 2,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "tests/vanilla/memoryleaks.test.ts",
+            "line": 4,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "tests/vanilla/utils/types.test.tsx",
+            "line": 3,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           }
@@ -463,15 +463,33 @@
         "count": 67,
         "samples": [
           {
-            "file": "src/react/Provider.ts",
-            "line": 16,
+            "file": "examples/hacker_news/src/App.tsx",
+            "line": 30,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "rollup.config.mjs",
+            "line": 47,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "src/react/utils/useAtomCallback.ts",
+            "line": 8,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "tests/test-utils.ts",
-            "line": 3,
-            "column": 8,
+            "file": "src/vanilla/internals.ts",
+            "line": 227,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "src/vanilla/internals.ts",
+            "line": 375,
+            "column": 1,
             "message": "Expected a function expression."
           },
           {
@@ -481,45 +499,27 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "tests/vanilla/internals.test.tsx",
-            "line": 72,
-            "column": 5,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "tests/vanilla/effect.test.ts",
-            "line": 254,
-            "column": 5,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "tests/vanilla/store.test.tsx",
-            "line": 1030,
-            "column": 5,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/vanilla/internals.ts",
-            "line": 250,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/vanilla/internals.ts",
-            "line": 577,
+            "file": "tests/react/types.test.tsx",
+            "line": 53,
             "column": 3,
             "message": "Expected a function expression."
           },
           {
-            "file": "rollup.config.mjs",
-            "line": 23,
+            "file": "tests/react/vanilla-utils/splitAtom.test.tsx",
+            "line": 408,
+            "column": 3,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "tests/vanilla/effect.test.ts",
+            "line": 95,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "rollup.config.mjs",
-            "line": 148,
-            "column": 1,
+            "file": "tests/vanilla/store.test.tsx",
+            "line": 1149,
+            "column": 3,
             "message": "Expected a function expression."
           }
         ]
@@ -528,21 +528,39 @@
         "count": 523,
         "samples": [
           {
-            "file": "website/gatsby-config.js",
-            "line": 5,
+            "file": "benchmarks/simple-read.ts",
+            "line": 14,
             "column": 7,
             "message": "Expected a function declaration."
           },
           {
-            "file": "website/src/utils/index.js",
-            "line": 8,
+            "file": "src/vanilla/internals.ts",
+            "line": 460,
             "column": 7,
             "message": "Expected a function declaration."
           },
           {
-            "file": "examples/mega-form/src/useAtomSlice.ts",
-            "line": 6,
+            "file": "tests/react/async.test.tsx",
+            "line": 26,
+            "column": 9,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "tests/react/basic.test.tsx",
+            "line": 27,
             "column": 7,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "tests/react/dependency.test.tsx",
+            "line": 592,
+            "column": 9,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "tests/react/onmount.test.tsx",
+            "line": 248,
+            "column": 9,
             "message": "Expected a function declaration."
           },
           {
@@ -552,39 +570,21 @@
             "message": "Expected a function declaration."
           },
           {
-            "file": "tests/react/dependency.test.tsx",
-            "line": 535,
-            "column": 9,
+            "file": "tests/react/vanilla-utils/atomWithStorage.test.tsx",
+            "line": 165,
+            "column": 11,
             "message": "Expected a function declaration."
           },
           {
-            "file": "tests/react/items.test.tsx",
-            "line": 136,
-            "column": 9,
+            "file": "website/src/components/client-only.js",
+            "line": 3,
+            "column": 14,
             "message": "Expected a function declaration."
           },
           {
-            "file": "benchmarks/subscribe-write.ts",
-            "line": 15,
+            "file": "website/src/utils/index.js",
+            "line": 8,
             "column": 7,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "examples/todos_with_atomFamily/src/App.tsx",
-            "line": 131,
-            "column": 7,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "tests/react/vanilla-utils/atomWithObservable.test.tsx",
-            "line": 210,
-            "column": 9,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "src/react/useAtomValue.ts",
-            "line": 78,
-            "column": 13,
             "message": "Expected a function declaration."
           }
         ]
@@ -592,27 +592,112 @@
     },
     "import-export-preference": {
       "named": {
-        "count": 0,
-        "samples": []
+        "count": 27,
+        "samples": [
+          {
+            "file": "babel.config.mjs",
+            "line": 1,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "examples/hacker_news/vite.config.ts",
+            "line": 4,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "examples/mega-form/src/App.tsx",
+            "line": 153,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "examples/mega-form/vite.config.ts",
+            "line": 4,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "examples/text_length/vite.config.ts",
+            "line": 4,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "examples/todos/vite.config.ts",
+            "line": 4,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "rollup.config.mjs",
+            "line": 170,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "src/babel/preset.ts",
+            "line": 6,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "website/src/api/contact.js",
+            "line": 5,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "website/src/pages/index.js",
+            "line": 13,
+            "column": 8,
+            "message": "Prefer named exports"
+          }
+        ]
       },
       "default": {
         "count": 42,
         "samples": [
           {
-            "file": "website/src/components/search-button.js",
-            "line": 5,
+            "file": "src/react/utils/useAtomCallback.ts",
+            "line": 8,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "website/src/components/search-modal.js",
-            "line": 23,
+            "file": "src/vanilla/utils/constants.ts",
+            "line": 1,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "website/src/components/client-only.js",
+            "file": "website/src/components/code.js",
             "line": 3,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "website/src/components/external-link.js",
+            "line": 1,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "website/src/components/inline-code.js",
+            "line": 3,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "website/src/components/logo.js",
+            "line": 1,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "website/src/components/modal.js",
+            "line": 4,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -623,37 +708,13 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "website/src/components/meta.js",
-            "line": 3,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "website/src/components/headline.js",
-            "line": 3,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "src/vanilla/utils/atomWithLazy.ts",
-            "line": 4,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "website/src/components/intro.js",
-            "line": 4,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "website/src/components/main.js",
-            "line": 1,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
             "file": "website/src/components/toc.js",
+            "line": 4,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "website/src/utils/index.js",
             "line": 4,
             "column": 1,
             "message": "Prefer default export on a file with single export."
@@ -666,142 +727,325 @@
         "count": 106,
         "samples": [
           {
-            "file": "vitest.config.mts",
-            "line": 18,
+            "file": "rollup.config.mjs",
+            "line": 75,
             "column": 1,
             "message": "Expected indentation of 12 spaces but found 14."
           },
           {
             "file": "src/vanilla/utils/atomWithObservable.ts",
-            "line": 29,
+            "line": 94,
             "column": 1,
-            "message": "Expected indentation of 4 spaces but found 6."
+            "message": "Expected indentation of 10 spaces but found 12."
+          },
+          {
+            "file": "src/vanilla/utils/atomWithStorage.ts",
+            "line": 116,
+            "column": 1,
+            "message": "Expected indentation of 6 spaces but found 4."
+          },
+          {
+            "file": "src/vanilla/utils/atomWithStorage.ts",
+            "line": 252,
+            "column": 1,
+            "message": "Expected indentation of 12 spaces but found 14."
           },
           {
             "file": "src/vanilla/utils/splitAtom.ts",
-            "line": 38,
+            "line": 154,
             "column": 1,
-            "message": "Expected indentation of 4 spaces but found 6."
+            "message": "Expected indentation of 10 spaces but found 12."
           },
           {
             "file": "src/vanilla/utils/splitAtom.ts",
-            "line": 164,
-            "column": 1,
-            "message": "Expected indentation of 18 spaces but found 20."
-          },
-          {
-            "file": "src/vanilla/utils/splitAtom.ts",
-            "line": 176,
-            "column": 1,
-            "message": "Expected indentation of 20 spaces but found 22."
-          },
-          {
-            "file": "src/vanilla/utils/splitAtom.ts",
-            "line": 187,
+            "line": 165,
             "column": 1,
             "message": "Expected indentation of 16 spaces but found 18."
           },
           {
             "file": "src/vanilla/utils/splitAtom.ts",
-            "line": 199,
+            "line": 177,
+            "column": 1,
+            "message": "Expected indentation of 20 spaces but found 22."
+          },
+          {
+            "file": "src/vanilla/utils/splitAtom.ts",
+            "line": 189,
+            "column": 1,
+            "message": "Expected indentation of 18 spaces but found 20."
+          },
+          {
+            "file": "src/vanilla/utils/splitAtom.ts",
+            "line": 200,
             "column": 1,
             "message": "Expected indentation of 22 spaces but found 24."
           },
           {
-            "file": "src/vanilla/utils/atomWithStorage.ts",
-            "line": 108,
-            "column": 1,
-            "message": "Expected indentation of 8 spaces but found 6."
-          },
-          {
-            "file": "src/vanilla/utils/atomWithStorage.ts",
-            "line": 154,
-            "column": 1,
-            "message": "Expected indentation of 8 spaces but found 6."
-          },
-          {
-            "file": "src/vanilla/utils/atomWithStorage.ts",
-            "line": 255,
+            "file": "vitest.config.mts",
+            "line": 20,
             "column": 1,
             "message": "Expected indentation of 10 spaces but found 12."
           }
         ]
       },
       "4-space": {
-        "count": 0,
-        "samples": []
+        "count": 16403,
+        "samples": [
+          {
+            "file": "babel.config.mjs",
+            "line": 2,
+            "column": 1,
+            "message": "Expected indentation of 4 spaces but found 2."
+          },
+          {
+            "file": "src/vanilla/internals.ts",
+            "line": 651,
+            "column": 1,
+            "message": "Expected indentation of 4 spaces but found 2."
+          },
+          {
+            "file": "tests/react/async.test.tsx",
+            "line": 305,
+            "column": 1,
+            "message": "Expected indentation of 4 spaces but found 2."
+          },
+          {
+            "file": "tests/react/basic.test.tsx",
+            "line": 1002,
+            "column": 1,
+            "message": "Expected indentation of 16 spaces but found 8."
+          },
+          {
+            "file": "tests/react/onmount.test.tsx",
+            "line": 445,
+            "column": 1,
+            "message": "Expected indentation of 16 spaces but found 8."
+          },
+          {
+            "file": "tests/react/vanilla-utils/atomWithObservable.test.tsx",
+            "line": 65,
+            "column": 1,
+            "message": "Expected indentation of 8 spaces but found 4."
+          },
+          {
+            "file": "tests/react/vanilla-utils/loadable.test.tsx",
+            "line": 260,
+            "column": 1,
+            "message": "Expected indentation of 4 spaces but found 2."
+          },
+          {
+            "file": "tests/vanilla/store.test.tsx",
+            "line": 182,
+            "column": 1,
+            "message": "Expected indentation of 4 spaces but found 2."
+          },
+          {
+            "file": "website/gatsby-node.js",
+            "line": 153,
+            "column": 1,
+            "message": "Expected indentation of 8 spaces but found 4."
+          },
+          {
+            "file": "website/tailwind.config.js",
+            "line": 53,
+            "column": 1,
+            "message": "Expected indentation of 4 spaces but found 2."
+          }
+        ]
       },
       "tab": {
-        "count": 0,
-        "samples": []
+        "count": 16441,
+        "samples": [
+          {
+            "file": "babel.config.mjs",
+            "line": 2,
+            "column": 1,
+            "message": "Expected indentation of 1 tab but found 2 spaces."
+          },
+          {
+            "file": "src/vanilla/internals.ts",
+            "line": 653,
+            "column": 1,
+            "message": "Expected indentation of 1 tab but found 2 spaces."
+          },
+          {
+            "file": "tests/react/async.test.tsx",
+            "line": 291,
+            "column": 1,
+            "message": "Expected indentation of 1 tab but found 2 spaces."
+          },
+          {
+            "file": "tests/react/basic.test.tsx",
+            "line": 996,
+            "column": 1,
+            "message": "Expected indentation of 2 tabs but found 4 spaces."
+          },
+          {
+            "file": "tests/react/onmount.test.tsx",
+            "line": 441,
+            "column": 1,
+            "message": "Expected indentation of 2 tabs but found 4 spaces."
+          },
+          {
+            "file": "tests/react/vanilla-utils/atomWithObservable.test.tsx",
+            "line": 52,
+            "column": 1,
+            "message": "Expected indentation of 1 tab but found 2 spaces."
+          },
+          {
+            "file": "tests/react/vanilla-utils/loadable.test.tsx",
+            "line": 246,
+            "column": 1,
+            "message": "Expected indentation of 1 tab but found 2 spaces."
+          },
+          {
+            "file": "tests/vanilla/store.test.tsx",
+            "line": 174,
+            "column": 1,
+            "message": "Expected indentation of 1 tab but found 2 spaces."
+          },
+          {
+            "file": "website/gatsby-node.js",
+            "line": 147,
+            "column": 1,
+            "message": "Expected indentation of 2 tabs but found 4 spaces."
+          },
+          {
+            "file": "website/tailwind.config.js",
+            "line": 53,
+            "column": 1,
+            "message": "Expected indentation of 1 tab but found 2 spaces."
+          }
+        ]
       }
     },
     "quotes": {
       "double": {
-        "count": 0,
-        "samples": []
-      },
-      "single": {
-        "count": 128,
+        "count": 3285,
         "samples": [
           {
+            "file": "babel.config.mjs",
+            "line": 3,
+            "column": 29,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "rollup.config.mjs",
+            "line": 193,
+            "column": 7,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "tests/react/abortable.test.tsx",
+            "line": 88,
+            "column": 34,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "tests/react/basic.test.tsx",
+            "line": 822,
+            "column": 36,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "tests/react/optimization.test.tsx",
+            "line": 57,
+            "column": 27,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "tests/react/vanilla-utils/atomFamily.test.tsx",
+            "line": 188,
+            "column": 27,
+            "message": "Strings must use doublequote."
+          },
+          {
             "file": "tests/react/vanilla-utils/atomWithStorage.test.tsx",
-            "line": 553,
-            "column": 6,
-            "message": "Strings must use singlequote."
+            "line": 703,
+            "column": 7,
+            "message": "Strings must use doublequote."
           },
           {
-            "file": "website/gatsby-config.js",
-            "line": 111,
-            "column": 22,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "website/gatsby-node.js",
-            "line": 27,
-            "column": 15,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "website/gatsby-node.js",
-            "line": 68,
-            "column": 15,
-            "message": "Strings must use singlequote."
+            "file": "tests/vanilla/memoryleaks.test.ts",
+            "line": 4,
+            "column": 27,
+            "message": "Strings must use doublequote."
           },
           {
             "file": "website/gatsby-node.js",
             "line": 110,
             "column": 15,
-            "message": "Strings must use singlequote."
+            "message": "Strings must use doublequote."
           },
           {
-            "file": "website/gatsby-node.js",
-            "line": 153,
-            "column": 13,
-            "message": "Strings must use singlequote."
-          },
+            "file": "website/tailwind.config.js",
+            "line": 50,
+            "column": 21,
+            "message": "Strings must use doublequote."
+          }
+        ]
+      },
+      "single": {
+        "count": 128,
+        "samples": [
           {
-            "file": "website/gatsby-node.js",
-            "line": 195,
-            "column": 13,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "website/gatsby-node.js",
-            "line": 237,
-            "column": 13,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "tests/babel/plugin-debug-label.test.ts",
-            "line": 25,
+            "file": "rollup.config.mjs",
+            "line": 27,
             "column": 20,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/babel/plugin-react-refresh.ts",
-            "line": 68,
+            "file": "tests/babel/preset.test.ts",
+            "line": 89,
+            "column": 20,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "website/gatsby-config.js",
+            "line": 95,
+            "column": 18,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "website/gatsby-node.js",
+            "line": 8,
+            "column": 33,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "website/gatsby-node.js",
+            "line": 51,
             "column": 13,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "website/gatsby-node.js",
+            "line": 98,
+            "column": 15,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "website/gatsby-node.js",
+            "line": 140,
+            "column": 15,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "website/gatsby-node.js",
+            "line": 182,
+            "column": 15,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "website/gatsby-node.js",
+            "line": 224,
+            "column": 15,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "website/src/utils/index.js",
+            "line": 5,
+            "column": 67,
             "message": "Strings must use singlequote."
           }
         ]
@@ -809,8 +1053,69 @@
     },
     "semi": {
       "always": {
-        "count": 0,
-        "samples": []
+        "count": 8819,
+        "samples": [
+          {
+            "file": "babel.config.mjs",
+            "line": 28,
+            "column": 2,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "src/vanilla/internals.ts",
+            "line": 943,
+            "column": 55,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "tests/react/async.test.tsx",
+            "line": 664,
+            "column": 74,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "tests/react/dependency.test.tsx",
+            "line": 232,
+            "column": 4,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "tests/react/optimization.test.tsx",
+            "line": 118,
+            "column": 27,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "tests/react/vanilla-utils/atomWithObservable.test.tsx",
+            "line": 160,
+            "column": 40,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "tests/react/vanilla-utils/selectAtom.test.tsx",
+            "line": 46,
+            "column": 49,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "tests/vanilla/memoryleaks.test.ts",
+            "line": 27,
+            "column": 52,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "tests/vanilla/storedev.test.tsx",
+            "line": 96,
+            "column": 41,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "website/tailwind.config.js",
+            "line": 54,
+            "column": 2,
+            "message": "Missing semicolon."
+          }
+        ]
       },
       "never": {
         "count": 0,

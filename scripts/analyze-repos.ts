@@ -1,9 +1,8 @@
-import { sortBy } from "es-toolkit";
+import { last, sortBy } from "es-toolkit";
 import { execa } from "execa";
 import { glob } from "glob";
 import { createHash } from "node:crypto";
-import { existsSync } from "node:fs";
-import { mkdir, rm, writeFile, readFile } from "node:fs/promises";
+import { mkdir, rm, writeFile, readFile, access } from "node:fs/promises";
 import { createRequire } from "node:module";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
@@ -89,7 +88,7 @@ interface OxlintOutput {
  * Find all TypeScript/JavaScript files in a repository.
  */
 async function findSourceFiles(repoPath: string): Promise<string[]> {
-  return glob("**/*.{ts,tsx,js,jsx}", {
+  return glob("**/*.{ts,tsx,js,jsx,cjs,mjs,cjsx,mjsx,cts,mts,ctsx,mtsx}", {
     cwd: repoPath,
     absolute: true,
     ignore: ["**/node_modules/**", "**/dist/**", "**/build/**", "**/*.d.ts"],
@@ -291,11 +290,6 @@ async function analyzeRepository(
   };
 }
 
-interface RepoWithFileCount {
-  repo: RepositoryData;
-  fileCount: number;
-}
-
 async function main() {
   console.log("=== TechPref Repository Analyzer ===\n");
 
@@ -303,10 +297,6 @@ async function main() {
   const currentVersion = getAnalyzedVersion();
 
   console.log(`Current rule version: ${currentVersion}\n`);
-
-  // Log all rules being checked
-  const uniqueRuleIds = [...new Set(allRuleChecks.map((r) => r.ruleId))];
-  console.log(`Rules: ${uniqueRuleIds.join(", ")}\n`);
 
   // Load data
   const data = loadData();
@@ -317,71 +307,99 @@ async function main() {
     process.exit(1);
   }
 
-  // Filter repos that need analysis (exists on filesystem but analysis is null, version mismatch, or commit mismatch)
-  const reposToAnalyzeUnsorted: RepositoryData[] = [];
-  let alreadyAnalyzed = 0;
-  let notCloned = 0;
-
-  for (const repo of data.repositories) {
-    const repoPath = join(REPOS_DIR, repo.fullName);
-    if (!existsSync(repoPath)) {
-      notCloned++;
-      continue;
-    }
-    // Load analysis from separate file
-    const analysis = loadAnalysis(repo.fullName);
-    if (analysis === null) {
-      // No analysis exists, needs to be analyzed
-      reposToAnalyzeUnsorted.push(repo);
-      continue;
-    }
-    if (analysis.analyzedVersion !== currentVersion) {
-      // Rule version changed, needs to be re-analyzed
-      reposToAnalyzeUnsorted.push(repo);
-      continue;
-    }
-    // Check if the commit has changed
-    const currentCommit = await getCurrentCommit(repoPath);
-    if (analysis.analyzedCommit !== currentCommit) {
-      // Repository was updated, needs to be re-analyzed
-      reposToAnalyzeUnsorted.push(repo);
-      continue;
-    }
-    // Analysis is up to date
-    alreadyAnalyzed++;
-  }
-
   console.log(`Total repositories: ${data.repositories.length}`);
-  console.log(`Already analyzed: ${alreadyAnalyzed}`);
-  console.log(`Not yet cloned: ${notCloned}`);
-  console.log(`To analyze: ${reposToAnalyzeUnsorted.length}`);
 
-  if (reposToAnalyzeUnsorted.length === 0) {
+  let repoAnalyzeInfo = await Promise.all(
+    data.repositories.map(async (repo) => {
+      const repoPath = join(REPOS_DIR, repo.fullName);
+      const isCloned = await access(repoPath)
+        .then(() => true)
+        .catch(() => false);
+
+      let analyseReason:
+        | "no-analysis"
+        | "version-mismatch"
+        | "commit-mismatch"
+        | false = false;
+
+      if (isCloned) {
+        const analysis = loadAnalysis(repo.fullName);
+        if (!analysis) {
+          analyseReason = "no-analysis";
+        } else if (analysis.analyzedVersion !== currentVersion) {
+          analyseReason = "version-mismatch";
+        } else if (
+          (await getCurrentCommit(repoPath)) !== analysis.analyzedCommit
+        ) {
+          analyseReason = "commit-mismatch";
+        }
+      }
+
+      return {
+        repo,
+        isCloned,
+        analyseReason,
+        fileCount: 0, // Placeholder, will be filled later
+      };
+    }),
+  );
+
+  let prevCount = data.repositories.length;
+  repoAnalyzeInfo = repoAnalyzeInfo.filter((i) => i.isCloned);
+  console.log(`Not yet cloned: ${prevCount - repoAnalyzeInfo.length}`);
+
+  prevCount = data.repositories.length;
+  repoAnalyzeInfo = repoAnalyzeInfo.filter((i) => i.analyseReason);
+  console.log(
+    `Completely up-to-date analysis: ${prevCount - repoAnalyzeInfo.length}`,
+  );
+
+  if (repoAnalyzeInfo.length === 0) {
     console.log("\nNo repositories to analyze.");
     return;
   }
 
-  console.log(`\nCounting source files to sort by size (smallest first)...`);
+  console.log(`To analyze: ${repoAnalyzeInfo.length}`);
+  console.log(
+    `  - No analysis: ${repoAnalyzeInfo.filter((i) => i.analyseReason === "no-analysis").length}`,
+  );
+  console.log(
+    `  - Version mismatch: ${repoAnalyzeInfo.filter((i) => i.analyseReason === "version-mismatch").length}`,
+  );
+  console.log(
+    `  - Commit mismatch: ${repoAnalyzeInfo.filter((i) => i.analyseReason === "commit-mismatch").length}`,
+  );
 
-  // Pre-scan to count files and sort by size (smallest first)
-  const reposWithCounts: RepoWithFileCount[] = [];
-  for (const repo of reposToAnalyzeUnsorted) {
-    const repoPath = join(REPOS_DIR, repo.fullName);
-    const files = await findSourceFiles(repoPath);
-    reposWithCounts.push({ repo, fileCount: files.length });
-  }
+  console.log("Counting source files...");
 
-  // Sort by file count ascending (smallest repos first)
-  reposWithCounts.sort((a, b) => a.fileCount - b.fileCount);
+  await Promise.all(
+    repoAnalyzeInfo.map(async (info) => {
+      const repoPath = join(REPOS_DIR, info.repo.fullName);
+      const files = await findSourceFiles(repoPath);
+      info.fileCount = files.length;
+    }),
+  );
+
+  console.log("Done counting source files, now sorting...");
+
+  repoAnalyzeInfo = sortBy(repoAnalyzeInfo, [
+    (i) =>
+      i.analyseReason === "no-analysis"
+        ? 0
+        : i.analyseReason === "version-mismatch"
+          ? 1
+          : 2,
+    (i) => i.fileCount,
+  ]);
 
   console.log(
-    `Sorted. Smallest: ${reposWithCounts[0]?.fileCount ?? 0} files, Largest: ${reposWithCounts[reposWithCounts.length - 1]?.fileCount ?? 0} files.\n`,
+    `Sorted. Smallest: ${repoAnalyzeInfo[0]?.fileCount ?? 0} files, Largest: ${last(repoAnalyzeInfo)?.fileCount ?? 0} files.\n`,
   );
 
   let completed = 0;
-  for (const { repo, fileCount } of reposWithCounts) {
+  for (const { repo, fileCount } of repoAnalyzeInfo) {
     console.log(
-      `[${completed + 1}/${reposWithCounts.length}] Analyzing ${repo.fullName} (${fileCount} files)...`,
+      `[${completed + 1}/${repoAnalyzeInfo.length}] Analyzing ${repo.fullName} (${fileCount} files)...`,
     );
 
     try {

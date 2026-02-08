@@ -37,8 +37,6 @@ pnpm install
 
 ```bash
 pnpm dev          # Start Next.js development server
-pnpm build        # Build for production
-pnpm start        # Start production server
 ```
 
 The development server runs at **http://localhost:3000**. Example pages:
@@ -56,6 +54,8 @@ pnpm lint         # Run ESLint
 pnpm format       # Format code with Prettier
 pnpm format:check # Check code formatting
 ```
+
+**Validation:** Run `pnpm lint` to verify your changes work correctly. Avoid using `pnpm build` as it is resource-heavy.
 
 ### Data Collection Scripts
 

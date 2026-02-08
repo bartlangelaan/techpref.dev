@@ -118,76 +118,96 @@ async function runOxlintCheck(
   );
   const configPath = join(tempDir, ".oxlintrc.json");
   const outputPath = join(tempDir, "lint-result.json");
-
-  await mkdir(tempDir, { recursive: true });
-
-  // Write Oxlint config with all default categories disabled
-  // and only the specific rule enabled
-  const config: OxlintConfig = {
-    categories: {
-      correctness: "off",
-      suspicious: "off",
-      pedantic: "off",
-      perf: "off",
-      style: "off",
-      restriction: "off",
-      nursery: "off",
-    },
-    rules: {
-      [ruleCheck.oxlintConfig.rule]: ruleCheck.oxlintConfig.config,
-    },
-    plugins: ruleCheck.oxlintConfig.plugins,
-  };
-  // Add JS plugins if specified (for ESLint plugin compatibility)
-  // Resolve to absolute paths since config is in temp directory
-  if (ruleCheck.oxlintConfig.jsPlugins?.length) {
-    config.jsPlugins = ruleCheck.oxlintConfig.jsPlugins.map((plugin) =>
-      require.resolve(plugin),
-    );
-  }
-  await writeFile(configPath, JSON.stringify(config));
-
-  // We need to pass the stdout to a file because oxlint fails if it is not a
-  // TTY and stdout is too large.
-  // See: https://github.com/oxc-project/oxc/issues/19124
-  const $ = execa({
-    preferLocal: true,
-    cwd: repoPath,
-    reject: false,
-    shell: true,
-  });
-
-  // Run oxlint with all default plugins disabled to only check our rule
-  const { stderr } = await $("oxlint", [
-    "-c",
-    configPath,
-    "--format",
-    "json",
-    "--ignore-pattern",
-    "**/node_modules/**",
-    "--ignore-pattern",
-    "**/dist/**",
-    "--ignore-pattern",
-    "**/build/**",
-    "--ignore-pattern",
-    "**/*.d.ts",
-    ".",
-    ">",
-    outputPath,
-  ]);
-  if (stderr) {
-    // Oxlint may output warnings to stderr, but we can still parse stdout
-    console.warn(`Oxlint warnings for ${repoPath}:\n${stderr}`);
-  }
-
-  const stdout = await readFile(outputPath, "utf-8");
-
   try {
-    return parseOxlintOutput(stdout, repoPath, maxSamples);
-  } catch (error) {
-    console.warn(`\n\nCould not parse oxlint output: ${repoPath}:\n${stdout}`);
+    await mkdir(tempDir, { recursive: true });
 
-    throw error;
+    // Write Oxlint config with all default categories disabled
+    // and only the specific rule enabled
+    const config: OxlintConfig = {
+      categories: {
+        correctness: "off",
+        suspicious: "off",
+        pedantic: "off",
+        perf: "off",
+        style: "off",
+        restriction: "off",
+        nursery: "off",
+      },
+      rules: {
+        [ruleCheck.oxlintConfig.rule]: ruleCheck.oxlintConfig.config,
+      },
+      plugins: ruleCheck.oxlintConfig.plugins,
+    };
+    // Add JS plugins if specified (for ESLint plugin compatibility)
+    // Resolve to absolute paths since config is in temp directory
+    if (ruleCheck.oxlintConfig.jsPlugins?.length) {
+      config.jsPlugins = ruleCheck.oxlintConfig.jsPlugins.map((plugin) =>
+        require.resolve(plugin),
+      );
+    }
+    await writeFile(configPath, JSON.stringify(config));
+
+    const timeout = 60 * 1000; // 1 minute timeout per check
+
+    // We need to pass the stdout to a file because oxlint fails if it is not a
+    // TTY and stdout is too large.
+    // See: https://github.com/oxc-project/oxc/issues/19124
+    const $ = execa({
+      preferLocal: true,
+      cwd: repoPath,
+      reject: false,
+      shell: true,
+      timeout,
+    });
+
+    // Somehow, the timeout option in execa does not seem to work reliably with
+    // oxlint, so we implement our own timeout logic as a fallback.
+    const timeoutPromise = Promise.withResolvers<never>();
+    const timeoutId = setTimeout(
+      timeoutPromise.reject,
+      timeout,
+      "Oxlint timed out",
+    );
+
+    const subprocess = $("oxlint", [
+      "-c",
+      configPath,
+      "--format",
+      "json",
+      "--ignore-pattern",
+      "**/node_modules/**",
+      "--ignore-pattern",
+      "**/dist/**",
+      "--ignore-pattern",
+      "**/build/**",
+      "--ignore-pattern",
+      "**/*.d.ts",
+      ".",
+      ">",
+      outputPath,
+    ]);
+
+    const { stderr } = await Promise.race([subprocess, timeoutPromise.promise]);
+
+    clearTimeout(timeoutId);
+
+    console.log(`  Oxlint completed with exit code ${subprocess.exitCode}`);
+    if (stderr) {
+      // Oxlint may output warnings to stderr, but we can still parse stdout
+      console.warn(`Oxlint warnings for ${repoPath}:\n${stderr}`);
+    }
+
+    const stdout = await readFile(outputPath, "utf-8");
+
+    try {
+      return parseOxlintOutput(stdout, repoPath, maxSamples);
+    } catch (error) {
+      console.warn(
+        `\n\nCould not parse oxlint output: ${repoPath}:\n${stdout}`,
+      );
+
+      throw error;
+    }
   } finally {
     // Cleanup temp directory
     await rm(tempDir, { recursive: true, force: true }).catch(() => {

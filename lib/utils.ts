@@ -1,5 +1,4 @@
 import { clsx, type ClassValue } from "clsx";
-import { access } from "node:fs/promises";
 import { twMerge } from "tailwind-merge";
 
 export function cn(...inputs: ClassValue[]) {
@@ -25,10 +24,4 @@ export function distributedSample<T>(array: T[], maxSize: number) {
   }
 
   return result;
-}
-
-export function pathExists(path: string) {
-  return access(path)
-    .then(() => true)
-    .catch(() => false);
 }

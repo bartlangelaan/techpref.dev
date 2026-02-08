@@ -1,8 +1,8 @@
 import { execa } from "execa";
 import { mkdir } from "node:fs/promises";
 import { join } from "node:path";
+import { pathExists } from "./fs";
 import { REPOS_DIR, RepositoryData } from "./types";
-import { pathExists } from "./utils";
 
 /**
  * Get the default branch name and latest commit SHA from the remote repository.
@@ -22,6 +22,16 @@ export async function getRemoteRepoInfo(cloneUrl: string) {
   }
 
   return { defaultBranch: match[1], latestCommit: match[2] };
+}
+
+/**
+ * Get the current git commit hash from a repository.
+ */
+export async function getCheckoutCommit(repoPath: string): Promise<string> {
+  const { stdout } = await execa("git", ["rev-parse", "HEAD"], {
+    cwd: repoPath,
+  });
+  return stdout;
 }
 
 /**
@@ -46,7 +56,14 @@ export async function checkoutRepository(
     return;
   }
 
+  const checkoutCommitPromise = getCheckoutCommit(repoPath);
+
   remoteRepoInfo ??= await getRemoteRepoInfo(repo.cloneUrl);
+
+  if ((await checkoutCommitPromise) === remoteRepoInfo.latestCommit) {
+    // Already up to date, no need to fetch
+    return;
+  }
 
   await execa(
     "git",

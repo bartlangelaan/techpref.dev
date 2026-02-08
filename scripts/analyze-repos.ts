@@ -13,26 +13,12 @@ import type {
   VariantResult,
   ViolationSample,
 } from "@/lib/types";
+import { getCheckoutCommit } from "@/lib/git";
 import { loadAnalysis, loadData, REPOS_DIR, saveAnalysis } from "@/lib/types";
 import { distributedSample } from "@/lib/utils";
 import { allRuleChecks, type OxlintRuleCheck } from "./rules";
 
 const require = createRequire(import.meta.url);
-
-/**
- * Get the current git commit hash from a repository.
- * If repoPath is not provided, uses the current working directory.
- */
-async function getCurrentCommit(repoPath?: string): Promise<string> {
-  try {
-    const { stdout } = await execa("git", ["rev-parse", "HEAD"], {
-      cwd: repoPath,
-    });
-    return stdout.trim();
-  } catch {
-    return "unknown";
-  }
-}
 
 /**
  * Get the commit date of the current HEAD commit as an ISO 8601 UTC string.
@@ -267,7 +253,7 @@ async function analyzeRepository(
 ): Promise<AnalysisResult> {
   const repoPath = join(REPOS_DIR, repo.fullName);
   const [analyzedCommit, analyzedCommitDate] = await Promise.all([
-    getCurrentCommit(repoPath),
+    getCheckoutCommit(repoPath),
     getCommitDate(repoPath),
   ]);
 
@@ -330,7 +316,7 @@ async function main() {
         } else if (analysis.analyzedVersion !== currentVersion) {
           analyseReason = "version-mismatch";
         } else if (
-          (await getCurrentCommit(repoPath)) !== analysis.analyzedCommit
+          (await getCheckoutCommit(repoPath)) !== analysis.analyzedCommit
         ) {
           analyseReason = "commit-mismatch";
         }

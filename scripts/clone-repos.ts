@@ -1,4 +1,4 @@
-import { spawn } from "node:child_process";
+import { execa } from "execa";
 import { existsSync, mkdirSync, rmSync } from "node:fs";
 import { join } from "node:path";
 import type { AnalysisResult, RepositoryData } from "@/lib/types";
@@ -25,35 +25,16 @@ async function cloneRepository(repo: RepositoryData): Promise<boolean> {
     mkdirSync(parentDir, { recursive: true });
   }
 
-  return new Promise((resolve) => {
-    const git = spawn(
-      "git",
-      ["clone", "--depth", "1", repo.cloneUrl, repoPath],
-      {
-        stdio: ["ignore", "pipe", "pipe"],
-      },
-    );
-
-    let stderr = "";
-    git.stderr.on("data", (data) => {
-      stderr += data.toString();
-    });
-
-    git.on("close", (code) => {
-      if (code === 0) {
-        console.log(`Cloned ${repo.fullName}`);
-        resolve(true);
-      } else {
-        console.error(`Failed to clone ${repo.fullName}: ${stderr.trim()}`);
-        resolve(false);
-      }
-    });
-
-    git.on("error", (err) => {
-      console.error(`Failed to clone ${repo.fullName}: ${err.message}`);
-      resolve(false);
-    });
-  });
+  try {
+    await execa("git", ["clone", "--depth", "1", repo.cloneUrl, repoPath]);
+    console.log(`Cloned ${repo.fullName}`);
+    return true;
+  } catch (error) {
+    const message =
+      error instanceof Error ? error.message : "Unknown error occurred";
+    console.error(`Failed to clone ${repo.fullName}: ${message}`);
+    return false;
+  }
 }
 
 /**

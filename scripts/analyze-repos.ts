@@ -1,14 +1,12 @@
 import { sortBy } from "es-toolkit";
 import { execa } from "execa";
 import { glob } from "glob";
-import { execFile } from "node:child_process";
 import { createHash } from "node:crypto";
 import { existsSync } from "node:fs";
 import { mkdir, rm, writeFile, readFile } from "node:fs/promises";
 import { createRequire } from "node:module";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import { promisify } from "node:util";
 import { OxlintConfig } from "oxlint";
 import type {
   AnalysisResult,
@@ -22,15 +20,13 @@ import { allRuleChecks, type OxlintRuleCheck } from "./rules";
 
 const require = createRequire(import.meta.url);
 
-const execFileAsync = promisify(execFile);
-
 /**
  * Get the current git commit hash from a repository.
  * If repoPath is not provided, uses the current working directory.
  */
 async function getCurrentCommit(repoPath?: string): Promise<string> {
   try {
-    const { stdout } = await execFileAsync("git", ["rev-parse", "HEAD"], {
+    const { stdout } = await execa("git", ["rev-parse", "HEAD"], {
       cwd: repoPath,
     });
     return stdout.trim();
@@ -45,13 +41,9 @@ async function getCurrentCommit(repoPath?: string): Promise<string> {
  */
 async function getCommitDate(repoPath?: string): Promise<string> {
   try {
-    const { stdout } = await execFileAsync(
-      "git",
-      ["log", "-1", "--format=%cI"],
-      {
-        cwd: repoPath,
-      },
-    );
+    const { stdout } = await execa("git", ["log", "-1", "--format=%cI"], {
+      cwd: repoPath,
+    });
     // Parse and convert to UTC with Z suffix
     return new Date(stdout.trim()).toISOString();
   } catch {

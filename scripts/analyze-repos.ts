@@ -103,6 +103,7 @@ async function runOxlintCheck(
   ruleCheck: OxlintRuleCheck,
   maxSamples: number = 10,
 ): Promise<VariantResult> {
+  console.log(`  Running check: ${ruleCheck.ruleId} (${ruleCheck.variant})...`);
   // Create unique temp directory for this check
   const tempDir = join(
     tmpdir(),
@@ -251,7 +252,7 @@ function logRuleCheckResult(
   variant: string,
   result: VariantResult,
 ): void {
-  console.log(`  ${ruleId}: ${variant}=${result.count}`);
+  console.log(`  Found ${result.count} violations`);
   for (const sample of distributedSample(result.samples, 3)) {
     console.log(`    - ${sample.file}:${sample.line} - ${sample.message}`);
   }

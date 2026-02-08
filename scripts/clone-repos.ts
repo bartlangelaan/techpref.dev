@@ -1,87 +1,11 @@
-import { execa } from "execa";
-import { existsSync, mkdirSync, rmSync } from "node:fs";
-import { join } from "node:path";
+import { existsSync, mkdirSync } from "node:fs";
+import PQueue from "p-queue";
 import type { AnalysisResult, RepositoryData } from "@/lib/types";
-import { getRemoteRepoInfo } from "@/lib/git";
+import { checkoutRepository } from "@/lib/git";
 import { octokit } from "@/lib/octokit";
 import { loadAnalysis, loadData, REPOS_DIR } from "@/lib/types";
 
 const CLONE_CONCURRENCY = 5;
-
-async function getRemoteDefaultBranch(cloneUrl: string): Promise<string> {
-  return (await getRemoteRepoInfo(cloneUrl)).defaultBranch;
-}
-
-/**
- * Updates an existing repository to the latest commit on the default branch.
- * Handles cases where the default branch has changed on the remote.
- */
-async function updateRepository(repo: RepositoryData): Promise<boolean> {
-  const repoPath = join(REPOS_DIR, repo.fullName);
-
-  try {
-    // Get the current default branch from the remote
-    const defaultBranch = await getRemoteDefaultBranch(repo.cloneUrl);
-
-    // Fetch the latest from the default branch (shallow fetch to FETCH_HEAD)
-    await execa("git", ["fetch", "--depth", "1", "origin", defaultBranch], {
-      cwd: repoPath,
-    });
-
-    // Reset to the fetched commit (FETCH_HEAD)
-    await execa("git", ["reset", "--hard", "FETCH_HEAD"], {
-      cwd: repoPath,
-    });
-
-    console.log(`Updated ${repo.fullName} (branch: ${defaultBranch})`);
-    return true;
-  } catch (error) {
-    const message =
-      error instanceof Error ? error.message : "Unknown error occurred";
-    console.error(`Failed to update ${repo.fullName}: ${message}`);
-    // If update fails, try a fresh clone
-    console.log(`Attempting fresh clone of ${repo.fullName}...`);
-    rmSync(repoPath, { recursive: true, force: true });
-    return cloneRepository(repo);
-  }
-}
-
-/**
- * Clones a repository to the local repos directory.
- * Uses shallow clone (depth=1) to save disk space and time.
- */
-async function cloneRepository(repo: RepositoryData): Promise<boolean> {
-  const repoPath = join(REPOS_DIR, repo.fullName);
-
-  // Ensure parent directory exists
-  const parentDir = join(REPOS_DIR, repo.fullName.split("/")[0]);
-  if (!existsSync(parentDir)) {
-    mkdirSync(parentDir, { recursive: true });
-  }
-
-  try {
-    await execa("git", ["clone", "--depth", "1", repo.cloneUrl, repoPath]);
-    console.log(`Cloned ${repo.fullName}`);
-    return true;
-  } catch (error) {
-    const message =
-      error instanceof Error ? error.message : "Unknown error occurred";
-    console.error(`Failed to clone ${repo.fullName}: ${message}`);
-    return false;
-  }
-}
-
-/**
- * Clones or updates a repository depending on whether it already exists.
- */
-async function cloneOrUpdateRepository(repo: RepositoryData): Promise<boolean> {
-  const repoPath = join(REPOS_DIR, repo.fullName);
-
-  if (existsSync(repoPath)) {
-    return updateRepository(repo);
-  }
-  return cloneRepository(repo);
-}
 
 /**
  * Get the latest commit SHA on the default branch from GitHub.
@@ -223,29 +147,22 @@ async function main() {
     return;
   }
 
-  let success = 0;
-  let failed = 0;
-  let index = 0;
+  const queue = new PQueue({ concurrency: CLONE_CONCURRENCY });
 
-  async function worker(): Promise<void> {
-    while (index < repositoriesToCloneOrUpdate.length) {
-      const repo = repositoriesToCloneOrUpdate[index++];
-      const result = await cloneOrUpdateRepository(repo);
-      if (result) {
-        success++;
-      } else {
-        failed++;
-      }
-    }
-  }
+  let count = 0;
+  await Promise.all(
+    repositoriesToCloneOrUpdate.map((repo) =>
+      queue.add(async () => {
+        await checkoutRepository(repo);
+        count += 1;
+        console.log(
+          `[${count}/${repositoriesToCloneOrUpdate.length}] Done: ${repo.fullName}`,
+        );
+      }),
+    ),
+  );
 
-  // Start workers
-  const workers = Array.from({ length: CLONE_CONCURRENCY }, () => worker());
-  await Promise.all(workers);
-
-  console.log(`\n=== Summary ===`);
-  console.log(`Successfully cloned/updated: ${success}`);
-  console.log(`Failed: ${failed}`);
+  console.log(`Done.`);
 }
 
 main().catch((error) => {

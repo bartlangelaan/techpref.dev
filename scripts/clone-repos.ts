@@ -2,28 +2,14 @@ import { execa } from "execa";
 import { existsSync, mkdirSync, rmSync } from "node:fs";
 import { join } from "node:path";
 import type { AnalysisResult, RepositoryData } from "@/lib/types";
+import { getRemoteRepoInfo } from "@/lib/git";
 import { octokit } from "@/lib/octokit";
 import { loadAnalysis, loadData, REPOS_DIR } from "@/lib/types";
 
 const CLONE_CONCURRENCY = 5;
 
-/**
- * Get the default branch name from the remote repository.
- * Uses ls-remote to check what HEAD points to on the remote.
- */
 async function getRemoteDefaultBranch(cloneUrl: string): Promise<string> {
-  const { stdout } = await execa("git", [
-    "ls-remote",
-    "--symref",
-    cloneUrl,
-    "HEAD",
-  ]);
-  // Output format: "ref: refs/heads/main\tHEAD\n<sha>\tHEAD"
-  const match = stdout.match(/ref: refs\/heads\/(\S+)/);
-  if (!match) {
-    throw new Error(`Failed to determine default branch for ${cloneUrl}`);
-  }
-  return match[1];
+  return (await getRemoteRepoInfo(cloneUrl)).defaultBranch;
 }
 
 /**

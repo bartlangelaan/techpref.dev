@@ -1,3 +1,4 @@
+import { sortBy } from "es-toolkit";
 import { execa } from "execa";
 import { glob } from "glob";
 import { execFile } from "node:child_process";
@@ -9,9 +10,6 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { promisify } from "node:util";
 import { OxlintConfig } from "oxlint";
-
-const require = createRequire(import.meta.url);
-import { sortBy } from "es-toolkit";
 import type {
   AnalysisResult,
   RepositoryData,
@@ -21,6 +19,8 @@ import type {
 import { loadAnalysis, loadData, REPOS_DIR, saveAnalysis } from "@/lib/types";
 import { distributedSample } from "@/lib/utils";
 import { allRuleChecks, type OxlintRuleCheck } from "./rules";
+
+const require = createRequire(import.meta.url);
 
 const execFileAsync = promisify(execFile);
 

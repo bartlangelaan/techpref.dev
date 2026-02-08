@@ -191,7 +191,6 @@ async function runOxlintCheck(
 
     clearTimeout(timeoutId);
 
-    console.log(`  Oxlint completed with exit code ${subprocess.exitCode}`);
     if (stderr) {
       // Oxlint may output warnings to stderr, but we can still parse stdout
       console.warn(`Oxlint warnings for ${repoPath}:\n${stderr}`);

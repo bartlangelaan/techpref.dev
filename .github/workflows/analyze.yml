@@ -27,11 +27,6 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Clone repositories
-        run: pnpm clone-repos --oldestAnalyzed=10
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Analyze repositories (30 min timeout)
         run: timeout 1800 pnpm analyze-repos || true
 

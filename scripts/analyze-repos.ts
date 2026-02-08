@@ -2,7 +2,7 @@ import { last, sortBy } from "es-toolkit";
 import { execa } from "execa";
 import { glob } from "glob";
 import { createHash } from "node:crypto";
-import { mkdir, rm, writeFile, readFile, access } from "node:fs/promises";
+import { mkdir, rm, writeFile, readFile } from "node:fs/promises";
 import { createRequire } from "node:module";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
@@ -13,7 +13,11 @@ import type {
   VariantResult,
   ViolationSample,
 } from "@/lib/types";
-import { getCheckoutCommit } from "@/lib/git";
+import {
+  checkoutRepository,
+  getCheckoutCommit,
+  getRemoteRepoInfo,
+} from "@/lib/git";
 import { loadAnalysis, loadData, REPOS_DIR, saveAnalysis } from "@/lib/types";
 import { distributedSample } from "@/lib/utils";
 import { allRuleChecks, type OxlintRuleCheck } from "./rules";
@@ -298,33 +302,26 @@ async function main() {
 
   let repoAnalyzeInfo = await Promise.all(
     data.repositories.map(async (repo) => {
-      const repoPath = join(REPOS_DIR, repo.fullName);
-      const isCloned = await access(repoPath)
-        .then(() => true)
-        .catch(() => false);
-
       let analyseReason:
         | "no-analysis"
         | "version-mismatch"
         | "commit-mismatch"
         | false = false;
 
-      if (isCloned) {
-        const analysis = loadAnalysis(repo.fullName);
-        if (!analysis) {
-          analyseReason = "no-analysis";
-        } else if (analysis.analyzedVersion !== currentVersion) {
-          analyseReason = "version-mismatch";
-        } else if (
-          (await getCheckoutCommit(repoPath)) !== analysis.analyzedCommit
-        ) {
-          analyseReason = "commit-mismatch";
-        }
+      const analysis = loadAnalysis(repo.fullName);
+      if (!analysis) {
+        analyseReason = "no-analysis";
+      } else if (analysis.analyzedVersion !== currentVersion) {
+        analyseReason = "version-mismatch";
+      } else if (
+        (await getRemoteRepoInfo(repo.cloneUrl)).latestCommit !==
+        analysis.analyzedCommit
+      ) {
+        analyseReason = "commit-mismatch";
       }
 
       return {
         repo,
-        isCloned,
         analyseReason,
         fileCount: 0, // Placeholder, will be filled later
       };
@@ -332,10 +329,6 @@ async function main() {
   );
 
   let prevCount = data.repositories.length;
-  repoAnalyzeInfo = repoAnalyzeInfo.filter((i) => i.isCloned);
-  console.log(`Not yet cloned: ${prevCount - repoAnalyzeInfo.length}`);
-
-  prevCount = data.repositories.length;
   repoAnalyzeInfo = repoAnalyzeInfo.filter((i) => i.analyseReason);
   console.log(
     `Completely up-to-date analysis: ${prevCount - repoAnalyzeInfo.length}`,
@@ -390,6 +383,8 @@ async function main() {
     );
 
     try {
+      console.log("  Checking out repository...");
+      await checkoutRepository(repo);
       const result = await analyzeRepository(repo, currentVersion);
 
       // Save analysis to separate file

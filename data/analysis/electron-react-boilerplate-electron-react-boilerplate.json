@@ -1,6 +1,7 @@
 {
-  "analyzedVersion": "4f44ab98c263",
+  "analyzedVersion": "8d56277528fc",
   "analyzedCommit": "f3465eae52f3683f1f1bcb2dd841b6a63da9e1cf",
+  "analyzedCommitDate": "2025-06-05T18:16:29.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -10,12 +11,6 @@
       "generic": {
         "count": 6,
         "samples": [
-          {
-            "file": "src/main/menu.ts",
-            "line": 55,
-            "column": 26,
-            "message": "Array type using 'MenuItemConstructorOptions[]' is forbidden. Use 'Array<MenuItemConstructorOptions>' instead."
-          },
           {
             "file": "src/main/preload.ts",
             "line": 9,
@@ -45,6 +40,12 @@
             "line": 68,
             "column": 35,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+          },
+          {
+            "file": "src/main/menu.ts",
+            "line": 55,
+            "column": 26,
+            "message": "Array type using 'MenuItemConstructorOptions[]' is forbidden. Use 'Array<MenuItemConstructorOptions>' instead."
           }
         ]
       }
@@ -75,8 +76,14 @@
         "samples": []
       },
       "type": {
-        "count": 1,
+        "count": 2,
         "samples": [
+          {
+            "file": "src/renderer/preload.d.ts",
+            "line": 5,
+            "column": 3,
+            "message": "Use `type` instead of `interface`."
+          },
           {
             "file": "src/main/menu.ts",
             "line": 9,
@@ -88,8 +95,14 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 2,
+        "count": 3,
         "samples": [
+          {
+            "file": "src/renderer/preload.d.ts",
+            "line": 1,
+            "column": 1,
+            "message": "All imports in the declaration are only used as types. Use `import type`."
+          },
           {
             "file": "src/main/preload.ts",
             "line": 3,
@@ -165,8 +178,69 @@
     },
     "import-export-preference": {
       "named": {
-        "count": 0,
-        "samples": []
+        "count": 13,
+        "samples": [
+          {
+            "file": ".erb/configs/webpack.config.main.prod.ts",
+            "line": 83,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": ".erb/configs/webpack.config.preload.dev.ts",
+            "line": 71,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "src/renderer/App.tsx",
+            "line": 42,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": ".erb/scripts/delete-source-maps.js",
+            "line": 6,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": ".erb/configs/webpack.config.base.ts",
+            "line": 54,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": ".erb/configs/webpack.config.renderer.prod.ts",
+            "line": 141,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": ".erb/mocks/fileMock.js",
+            "line": 1,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": ".erb/configs/webpack.paths.ts",
+            "line": 26,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": ".erb/configs/webpack.config.main.dev.ts",
+            "line": 63,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": ".erb/scripts/check-node-env.js",
+            "line": 3,
+            "column": 8,
+            "message": "Prefer named exports"
+          }
+        ]
       },
       "default": {
         "count": 1,
@@ -182,7 +256,7 @@
     },
     "indent": {
       "2-space": {
-        "count": 34,
+        "count": 46,
         "samples": [
           {
             "file": "src/main/menu.ts",
@@ -192,62 +266,62 @@
           },
           {
             "file": "src/main/menu.ts",
-            "line": 220,
-            "column": 1,
-            "message": "Expected indentation of 16 spaces but found 18."
-          },
-          {
-            "file": "src/main/menu.ts",
-            "line": 221,
-            "column": 1,
-            "message": "Expected indentation of 16 spaces but found 18."
-          },
-          {
-            "file": "src/main/menu.ts",
-            "line": 222,
-            "column": 1,
-            "message": "Expected indentation of 16 spaces but found 18."
-          },
-          {
-            "file": "src/main/menu.ts",
-            "line": 223,
-            "column": 1,
-            "message": "Expected indentation of 18 spaces but found 20."
-          },
-          {
-            "file": "src/main/menu.ts",
             "line": 224,
             "column": 1,
             "message": "Expected indentation of 16 spaces but found 18."
           },
           {
             "file": "src/main/menu.ts",
-            "line": 225,
-            "column": 1,
-            "message": "Expected indentation of 14 spaces but found 16."
-          },
-          {
-            "file": "src/main/menu.ts",
-            "line": 226,
-            "column": 1,
-            "message": "Expected indentation of 14 spaces but found 16."
-          },
-          {
-            "file": "src/main/menu.ts",
-            "line": 227,
+            "line": 229,
             "column": 1,
             "message": "Expected indentation of 16 spaces but found 18."
           },
           {
             "file": "src/main/menu.ts",
-            "line": 228,
+            "line": 234,
+            "column": 1,
+            "message": "Expected indentation of 14 spaces but found 16."
+          },
+          {
+            "file": "src/main/menu.ts",
+            "line": 239,
+            "column": 1,
+            "message": "Expected indentation of 18 spaces but found 20."
+          },
+          {
+            "file": "src/main/menu.ts",
+            "line": 245,
             "column": 1,
             "message": "Expected indentation of 16 spaces but found 18."
+          },
+          {
+            "file": "src/main/menu.ts",
+            "line": 250,
+            "column": 1,
+            "message": "Expected indentation of 18 spaces but found 20."
+          },
+          {
+            "file": ".erb/configs/webpack.config.renderer.dev.ts",
+            "line": 122,
+            "column": 1,
+            "message": "Expected indentation of 10 spaces but found 12."
+          },
+          {
+            "file": ".erb/scripts/check-native-dep.js",
+            "line": 29,
+            "column": 1,
+            "message": "Expected indentation of 4 spaces but found 3."
+          },
+          {
+            "file": ".erb/scripts/check-native-dep.js",
+            "line": 38,
+            "column": 1,
+            "message": "Expected indentation of 2 spaces but found 1."
           }
         ]
       },
       "4-space": {
-        "count": 404,
+        "count": 1008,
         "samples": [
           {
             "file": "src/renderer/index.tsx",
@@ -256,87 +330,93 @@
             "message": "Expected indentation of 4 spaces but found 2."
           },
           {
-            "file": "src/renderer/index.tsx",
-            "line": 11,
+            "file": "src/main/main.ts",
+            "line": 35,
             "column": 1,
             "message": "Expected indentation of 4 spaces but found 2."
           },
           {
-            "file": "src/renderer/App.tsx",
-            "line": 6,
+            "file": ".erb/configs/webpack.config.renderer.dev.ts",
+            "line": 79,
+            "column": 1,
+            "message": "Expected indentation of 16 spaces but found 8."
+          },
+          {
+            "file": ".erb/configs/webpack.config.renderer.dev.ts",
+            "line": 210,
             "column": 1,
             "message": "Expected indentation of 4 spaces but found 2."
           },
           {
+            "file": "src/main/menu.ts",
+            "line": 97,
+            "column": 1,
+            "message": "Expected indentation of 20 spaces but found 10."
+          },
+          {
+            "file": "src/main/menu.ts",
+            "line": 212,
+            "column": 1,
+            "message": "Expected indentation of 12 spaces but found 6."
+          },
+          {
             "file": "src/renderer/App.tsx",
-            "line": 7,
+            "line": 48,
             "column": 1,
             "message": "Expected indentation of 8 spaces but found 4."
           },
           {
-            "file": "src/renderer/App.tsx",
-            "line": 8,
+            "file": ".erb/configs/webpack.config.main.prod.ts",
+            "line": 63,
             "column": 1,
             "message": "Expected indentation of 12 spaces but found 6."
           },
           {
-            "file": "src/renderer/App.tsx",
-            "line": 9,
+            "file": ".eslintrc.js",
+            "line": 25,
             "column": 1,
             "message": "Expected indentation of 16 spaces but found 8."
           },
           {
-            "file": "src/renderer/App.tsx",
-            "line": 10,
-            "column": 1,
-            "message": "Expected indentation of 12 spaces but found 6."
-          },
-          {
-            "file": "src/renderer/App.tsx",
-            "line": 11,
-            "column": 1,
-            "message": "Expected indentation of 12 spaces but found 6."
-          },
-          {
-            "file": "src/renderer/App.tsx",
+            "file": ".erb/scripts/clean.js",
             "line": 12,
             "column": 1,
-            "message": "Expected indentation of 12 spaces but found 6."
-          },
-          {
-            "file": "src/renderer/App.tsx",
-            "line": 13,
-            "column": 1,
-            "message": "Expected indentation of 16 spaces but found 8."
+            "message": "Expected indentation of 4 spaces but found 2."
           }
         ]
       },
       "tab": {
-        "count": 406,
+        "count": 1017,
         "samples": [
           {
-            "file": "src/renderer/index.tsx",
-            "line": 10,
+            "file": ".erb/scripts/link-modules.ts",
+            "line": 5,
             "column": 1,
             "message": "Expected indentation of 1 tab but found 2 spaces."
           },
           {
-            "file": "src/renderer/index.tsx",
-            "line": 11,
-            "column": 1,
-            "message": "Expected indentation of 1 tab but found 2 spaces."
-          },
-          {
-            "file": "src/renderer/App.tsx",
-            "line": 6,
-            "column": 1,
-            "message": "Expected indentation of 1 tab but found 2 spaces."
-          },
-          {
-            "file": "src/renderer/App.tsx",
-            "line": 7,
+            "file": ".erb/scripts/check-node-env.js",
+            "line": 9,
             "column": 1,
             "message": "Expected indentation of 2 tabs but found 4 spaces."
+          },
+          {
+            "file": "src/main/menu.ts",
+            "line": 46,
+            "column": 1,
+            "message": "Expected indentation of 5 tabs but found 10 spaces."
+          },
+          {
+            "file": "src/main/menu.ts",
+            "line": 160,
+            "column": 1,
+            "message": "Expected indentation of 6 tabs but found 12 spaces."
+          },
+          {
+            "file": "src/main/menu.ts",
+            "line": 279,
+            "column": 1,
+            "message": "Expected indentation of 6 tabs but found 12 spaces."
           },
           {
             "file": "src/renderer/App.tsx",
@@ -345,100 +425,94 @@
             "message": "Expected indentation of 3 tabs but found 6 spaces."
           },
           {
-            "file": "src/renderer/App.tsx",
-            "line": 9,
+            "file": ".erb/configs/webpack.config.renderer.prod.ts",
+            "line": 116,
+            "column": 1,
+            "message": "Expected indentation of 2 tabs but found 4 spaces."
+          },
+          {
+            "file": ".erb/configs/webpack.config.renderer.dev.ts",
+            "line": 65,
+            "column": 1,
+            "message": "Expected indentation of 3 tabs but found 6 spaces."
+          },
+          {
+            "file": ".erb/configs/webpack.config.renderer.dev.ts",
+            "line": 197,
             "column": 1,
             "message": "Expected indentation of 4 tabs but found 8 spaces."
           },
           {
-            "file": "src/renderer/App.tsx",
-            "line": 10,
+            "file": ".eslintrc.js",
+            "line": 36,
             "column": 1,
-            "message": "Expected indentation of 3 tabs but found 6 spaces."
-          },
-          {
-            "file": "src/renderer/App.tsx",
-            "line": 11,
-            "column": 1,
-            "message": "Expected indentation of 3 tabs but found 6 spaces."
-          },
-          {
-            "file": "src/renderer/App.tsx",
-            "line": 12,
-            "column": 1,
-            "message": "Expected indentation of 3 tabs but found 6 spaces."
-          },
-          {
-            "file": "src/renderer/App.tsx",
-            "line": 13,
-            "column": 1,
-            "message": "Expected indentation of 4 tabs but found 8 spaces."
+            "message": "Expected indentation of 1 tab but found 2 spaces."
           }
         ]
       }
     },
     "quotes": {
       "double": {
-        "count": 150,
+        "count": 465,
         "samples": [
-          {
-            "file": "src/renderer/index.tsx",
-            "line": 1,
-            "column": 28,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "src/renderer/index.tsx",
-            "line": 2,
-            "column": 17,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "src/renderer/index.tsx",
-            "line": 4,
-            "column": 43,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "src/renderer/index.tsx",
-            "line": 9,
-            "column": 35,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "src/renderer/index.tsx",
-            "line": 13,
-            "column": 42,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "src/renderer/index.tsx",
-            "line": 13,
-            "column": 58,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "src/renderer/App.tsx",
-            "line": 1,
-            "column": 55,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "src/renderer/App.tsx",
-            "line": 2,
-            "column": 18,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "src/renderer/App.tsx",
-            "line": 3,
-            "column": 8,
-            "message": "Strings must use doublequote."
-          },
           {
             "file": "src/main/util.ts",
             "line": 2,
             "column": 21,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "src/main/menu.ts",
+            "line": 30,
+            "column": 28,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "src/main/menu.ts",
+            "line": 145,
+            "column": 18,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "src/main/main.ts",
+            "line": 28,
+            "column": 12,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": ".erb/configs/webpack.config.renderer.dev.dll.ts",
+            "line": 20,
+            "column": 12,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": ".erb/configs/webpack.config.renderer.dev.ts",
+            "line": 21,
+            "column": 53,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": ".erb/scripts/delete-source-maps.js",
+            "line": 8,
+            "column": 53,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": ".erb/configs/webpack.config.main.prod.ts",
+            "line": 23,
+            "column": 11,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": ".erb/configs/webpack.config.renderer.prod.ts",
+            "line": 35,
+            "column": 13,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": ".eslintrc.js",
+            "line": 34,
+            "column": 44,
             "message": "Strings must use doublequote."
           }
         ]
@@ -454,66 +528,66 @@
         "samples": []
       },
       "never": {
-        "count": 123,
+        "count": 312,
         "samples": [
           {
-            "file": "src/renderer/index.tsx",
+            "file": ".erb/configs/webpack.paths.ts",
             "line": 1,
-            "column": 46,
+            "column": 29,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/renderer/index.tsx",
-            "line": 2,
+            "file": "src/main/main.ts",
+            "line": 14,
+            "column": 31,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "src/main/main.ts",
+            "line": 102,
+            "column": 26,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": ".erb/configs/webpack.config.renderer.dev.dll.ts",
+            "line": 10,
+            "column": 50,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": ".erb/scripts/check-port-in-use.js",
+            "line": 14,
+            "column": 20,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "src/main/menu.ts",
+            "line": 82,
+            "column": 23,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": ".erb/configs/webpack.config.renderer.prod.ts",
+            "line": 12,
+            "column": 49,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": ".erb/configs/webpack.config.renderer.dev.ts",
+            "line": 7,
+            "column": 38,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": ".erb/configs/webpack.config.main.dev.ts",
+            "line": 5,
             "column": 24,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/renderer/index.tsx",
-            "line": 4,
-            "column": 65,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "src/renderer/index.tsx",
-            "line": 5,
-            "column": 35,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "src/renderer/index.tsx",
-            "line": 6,
-            "column": 21,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "src/renderer/index.tsx",
-            "line": 11,
-            "column": 19,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "src/renderer/index.tsx",
-            "line": 12,
-            "column": 3,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "src/renderer/index.tsx",
-            "line": 13,
-            "column": 66,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "src/renderer/App.tsx",
-            "line": 1,
-            "column": 73,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "src/renderer/App.tsx",
-            "line": 2,
-            "column": 41,
+            "file": ".eslintrc.js",
+            "line": 37,
+            "column": 2,
             "message": "Extra semicolon."
           }
         ]

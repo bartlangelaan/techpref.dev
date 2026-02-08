@@ -8,16 +8,64 @@ import { loadAnalysis, loadData, REPOS_DIR } from "@/lib/types";
 const CLONE_CONCURRENCY = 5;
 
 /**
+ * Get the default branch name from the remote repository.
+ * Uses ls-remote to check what HEAD points to on the remote.
+ */
+async function getRemoteDefaultBranch(cloneUrl: string): Promise<string> {
+  const { stdout } = await execa("git", [
+    "ls-remote",
+    "--symref",
+    cloneUrl,
+    "HEAD",
+  ]);
+  // Output format: "ref: refs/heads/main\tHEAD\n<sha>\tHEAD"
+  const match = stdout.match(/ref: refs\/heads\/(\S+)/);
+  if (!match) {
+    throw new Error(`Failed to determine default branch for ${cloneUrl}`);
+  }
+  return match[1];
+}
+
+/**
+ * Updates an existing repository to the latest commit on the default branch.
+ * Handles cases where the default branch has changed on the remote.
+ */
+async function updateRepository(repo: RepositoryData): Promise<boolean> {
+  const repoPath = join(REPOS_DIR, repo.fullName);
+
+  try {
+    // Get the current default branch from the remote
+    const defaultBranch = await getRemoteDefaultBranch(repo.cloneUrl);
+
+    // Fetch the latest from the default branch (shallow fetch to FETCH_HEAD)
+    await execa("git", ["fetch", "--depth", "1", "origin", defaultBranch], {
+      cwd: repoPath,
+    });
+
+    // Reset to the fetched commit (FETCH_HEAD)
+    await execa("git", ["reset", "--hard", "FETCH_HEAD"], {
+      cwd: repoPath,
+    });
+
+    console.log(`Updated ${repo.fullName} (branch: ${defaultBranch})`);
+    return true;
+  } catch (error) {
+    const message =
+      error instanceof Error ? error.message : "Unknown error occurred";
+    console.error(`Failed to update ${repo.fullName}: ${message}`);
+    // If update fails, try a fresh clone
+    console.log(`Attempting fresh clone of ${repo.fullName}...`);
+    rmSync(repoPath, { recursive: true, force: true });
+    return cloneRepository(repo);
+  }
+}
+
+/**
  * Clones a repository to the local repos directory.
  * Uses shallow clone (depth=1) to save disk space and time.
  */
 async function cloneRepository(repo: RepositoryData): Promise<boolean> {
   const repoPath = join(REPOS_DIR, repo.fullName);
-
-  if (existsSync(repoPath)) {
-    rmSync(repoPath, { recursive: true, force: true });
-    console.log(`Removed existing directory for ${repo.fullName}`);
-  }
 
   // Ensure parent directory exists
   const parentDir = join(REPOS_DIR, repo.fullName.split("/")[0]);
@@ -35,6 +83,18 @@ async function cloneRepository(repo: RepositoryData): Promise<boolean> {
     console.error(`Failed to clone ${repo.fullName}: ${message}`);
     return false;
   }
+}
+
+/**
+ * Clones or updates a repository depending on whether it already exists.
+ */
+async function cloneOrUpdateRepository(repo: RepositoryData): Promise<boolean> {
+  const repoPath = join(REPOS_DIR, repo.fullName);
+
+  if (existsSync(repoPath)) {
+    return updateRepository(repo);
+  }
+  return cloneRepository(repo);
 }
 
 /**
@@ -117,7 +177,7 @@ async function main() {
     mkdirSync(REPOS_DIR, { recursive: true });
   }
 
-  let reposToClone: RepositoryData[] = [];
+  let repositoriesToCloneOrUpdate: RepositoryData[] = [];
 
   if (oldestAnalyzedLimit !== null) {
     // Load analysis data for each repo
@@ -146,14 +206,14 @@ async function main() {
     let upToDateCount = 0;
 
     for (const { repo, analysis } of reposWithAnalysis) {
-      if (reposToClone.length >= oldestAnalyzedLimit) {
+      if (repositoriesToCloneOrUpdate.length >= oldestAnalyzedLimit) {
         break;
       }
       checkedCount++;
       if (await hasNewCommits(repo.fullName, analysis)) {
-        reposToClone.push(repo);
+        repositoriesToCloneOrUpdate.push(repo);
         console.log(
-          `  [${reposToClone.length}/${oldestAnalyzedLimit}] ${repo.fullName} - has new commits`,
+          `  [${repositoriesToCloneOrUpdate.length}/${oldestAnalyzedLimit}] ${repo.fullName} - has new commits`,
         );
       } else {
         upToDateCount++;
@@ -163,21 +223,16 @@ async function main() {
 
     console.log(`\nChecked ${checkedCount} repos`);
     console.log(`Repos already up-to-date: ${upToDateCount}`);
-    console.log(`Selected ${reposToClone.length} repos with new commits`);
-  } else {
-    // Default behavior: filter repos that need cloning (not yet on filesystem)
-    reposToClone = data.repositories.filter(
-      (r) => !existsSync(join(REPOS_DIR, r.fullName)),
+    console.log(
+      `Selected ${repositoriesToCloneOrUpdate.length} repos with new commits`,
     );
+  } else {
+    repositoriesToCloneOrUpdate = data.repositories;
 
     console.log(`Total repositories: ${data.repositories.length}`);
-    console.log(
-      `Already cloned: ${data.repositories.length - reposToClone.length}`,
-    );
-    console.log(`To clone: ${reposToClone.length}\n`);
   }
 
-  if (reposToClone.length === 0) {
+  if (repositoriesToCloneOrUpdate.length === 0) {
     console.log("All repositories are already cloned.");
     return;
   }
@@ -187,9 +242,9 @@ async function main() {
   let index = 0;
 
   async function worker(): Promise<void> {
-    while (index < reposToClone.length) {
-      const repo = reposToClone[index++];
-      const result = await cloneRepository(repo);
+    while (index < repositoriesToCloneOrUpdate.length) {
+      const repo = repositoriesToCloneOrUpdate[index++];
+      const result = await cloneOrUpdateRepository(repo);
       if (result) {
         success++;
       } else {
@@ -203,7 +258,7 @@ async function main() {
   await Promise.all(workers);
 
   console.log(`\n=== Summary ===`);
-  console.log(`Successfully cloned: ${success}`);
+  console.log(`Successfully cloned/updated: ${success}`);
   console.log(`Failed: ${failed}`);
 }
 

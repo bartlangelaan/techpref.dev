@@ -1,6 +1,7 @@
 {
-  "analyzedVersion": "4f44ab98c263",
+  "analyzedVersion": "8d56277528fc",
   "analyzedCommit": "1329142fc7d4b965bf9819ffa27ac2248f07ab20",
+  "analyzedCommitDate": "2025-12-31T18:25:47.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -8,43 +9,37 @@
         "samples": []
       },
       "generic": {
-        "count": 38,
+        "count": 70,
         "samples": [
           {
-            "file": "test/container.test.ts",
-            "line": 45,
-            "column": 16,
-            "message": "Array type using 'number[]' is forbidden. Use 'Array<number>' instead."
+            "file": "lib/result.d.ts",
+            "line": 111,
+            "column": 13,
+            "message": "Array type using 'Result.Message[]' is forbidden. Use 'Array<Result.Message>' instead."
           },
           {
-            "file": "test/container.test.ts",
-            "line": 136,
-            "column": 16,
-            "message": "Array type using 'number[]' is forbidden. Use 'Array<number>' instead."
+            "file": "lib/container.d.ts",
+            "line": 26,
+            "column": 13,
+            "message": "Array type using 'readonly string[]' is forbidden. Use 'ReadonlyArray<string>' instead."
           },
           {
-            "file": "test/container.test.ts",
-            "line": 149,
-            "column": 14,
+            "file": "lib/container.d.ts",
+            "line": 323,
+            "column": 52,
+            "message": "Array type using 'Child[]' is forbidden. Use 'Array<Child>' instead."
+          },
+          {
+            "file": "lib/list.d.ts",
+            "line": 17,
+            "column": 25,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
-            "file": "test/container.test.ts",
-            "line": 162,
-            "column": 14,
+            "file": "lib/rule.d.ts",
+            "line": 115,
+            "column": 25,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
-          },
-          {
-            "file": "test/container.test.ts",
-            "line": 163,
-            "column": 16,
-            "message": "Array type using 'number[]' is forbidden. Use 'Array<number>' instead."
-          },
-          {
-            "file": "test/container.test.ts",
-            "line": 191,
-            "column": 16,
-            "message": "Array type using 'number[]' is forbidden. Use 'Array<number>' instead."
           },
           {
             "file": "test/container.test.ts",
@@ -54,20 +49,26 @@
           },
           {
             "file": "test/container.test.ts",
-            "line": 224,
+            "line": 363,
             "column": 16,
             "message": "Array type using 'number[]' is forbidden. Use 'Array<number>' instead."
           },
           {
-            "file": "test/container.test.ts",
-            "line": 246,
-            "column": 16,
-            "message": "Array type using 'number[]' is forbidden. Use 'Array<number>' instead."
+            "file": "test/visitor.test.ts",
+            "line": 27,
+            "column": 36,
+            "message": "Array type using 'any[]' is forbidden. Use 'Array<any>' instead."
           },
           {
-            "file": "test/container.test.ts",
-            "line": 305,
-            "column": 14,
+            "file": "test/visitor.test.ts",
+            "line": 1196,
+            "column": 21,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+          },
+          {
+            "file": "test/visitor.test.ts",
+            "line": 1252,
+            "column": 24,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           }
         ]
@@ -85,87 +86,187 @@
     },
     "consistent-indexed-object-style": {
       "record": {
-        "count": 0,
-        "samples": []
+        "count": 4,
+        "samples": [
+          {
+            "file": "lib/postcss.d.ts",
+            "line": 58,
+            "column": 14,
+            "message": "A record is preferred over an index signature."
+          },
+          {
+            "file": "lib/postcss.d.ts",
+            "line": 65,
+            "column": 18,
+            "message": "A record is preferred over an index signature."
+          },
+          {
+            "file": "lib/postcss.d.ts",
+            "line": 88,
+            "column": 19,
+            "message": "A record is preferred over an index signature."
+          },
+          {
+            "file": "lib/postcss.d.ts",
+            "line": 96,
+            "column": 9,
+            "message": "A record is preferred over an index signature."
+          }
+        ]
       },
       "index-signature": {
-        "count": 0,
-        "samples": []
+        "count": 1,
+        "samples": [
+          {
+            "file": "lib/document.d.ts",
+            "line": 16,
+            "column": 12,
+            "message": "An index signature is preferred over a record."
+          }
+        ]
       }
     },
     "consistent-type-definitions": {
       "interface": {
-        "count": 0,
-        "samples": []
+        "count": 1,
+        "samples": [
+          {
+            "file": "lib/list.d.ts",
+            "line": 2,
+            "column": 3,
+            "message": "Use `interface` instead of `type`."
+          }
+        ]
       },
       "type": {
-        "count": 0,
-        "samples": []
+        "count": 36,
+        "samples": [
+          {
+            "file": "lib/node.d.ts",
+            "line": 32,
+            "column": 10,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "lib/node.d.ts",
+            "line": 107,
+            "column": 10,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "lib/css-syntax-error.d.ts",
+            "line": 7,
+            "column": 10,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "lib/comment.d.ts",
+            "line": 22,
+            "column": 10,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "lib/input.d.ts",
+            "line": 5,
+            "column": 10,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "lib/container.d.ts",
+            "line": 29,
+            "column": 10,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "lib/postcss.d.ts",
+            "line": 195,
+            "column": 10,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "lib/postcss.d.ts",
+            "line": 214,
+            "column": 10,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "lib/postcss.d.ts",
+            "line": 244,
+            "column": 10,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "lib/rule.d.ts",
+            "line": 7,
+            "column": 10,
+            "message": "Use `type` instead of `interface`."
+          }
+        ]
       }
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 14,
+        "count": 76,
         "samples": [
           {
-            "file": "test/result.test.ts",
-            "line": 4,
+            "file": "lib/stringify.d.ts",
+            "line": 1,
             "column": 1,
-            "message": "Imports Plugin are only used as type."
+            "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "test/css-syntax-error.test.ts",
+            "file": "lib/node.d.ts",
             "line": 9,
             "column": 1,
-            "message": "Imports Plugin, ProcessOptions, and Rule are only used as type."
+            "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "test/types.ts",
-            "line": 1,
-            "column": 1,
-            "message": "Imports PluginCreator are only used as type."
-          },
-          {
-            "file": "test/types.ts",
-            "line": 2,
+            "file": "lib/no-work-result.d.ts",
+            "line": 5,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "test/node.test.ts",
-            "line": 5,
+            "file": "lib/document.d.ts",
+            "line": 1,
             "column": 1,
-            "message": "Imports AnyNode, Plugin, and Result are only used as type."
+            "message": "Imports ContainerProps are only used as type."
           },
           {
-            "file": "test/parse.test.ts",
-            "line": 7,
-            "column": 1,
-            "message": "Imports AtRule, Declaration, and Rule are only used as type."
-          },
-          {
-            "file": "test/fromJSON.test.ts",
-            "line": 5,
-            "column": 1,
-            "message": "Imports Root and Rule are only used as type."
-          },
-          {
-            "file": "test/errors.ts",
+            "file": "lib/container.d.ts",
             "line": 1,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "test/location.test.ts",
-            "line": 4,
+            "file": "lib/root.d.ts",
+            "line": 1,
             "column": 1,
-            "message": "Imports AtRule, Comment, Declaration, Node, and Rule are only used as type."
+            "message": "Imports ContainerProps are only used as type."
           },
           {
-            "file": "test/postcss.test.ts",
+            "file": "lib/warning.d.ts",
+            "line": 1,
+            "column": 1,
+            "message": "All imports in the declaration are only used as types. Use `import type`."
+          },
+          {
+            "file": "lib/result.d.ts",
+            "line": 12,
+            "column": 1,
+            "message": "All imports in the declaration are only used as types. Use `import type`."
+          },
+          {
+            "file": "test/processor.test.ts",
+            "line": 10,
+            "column": 1,
+            "message": "Imports Node, Parser, Plugin, PluginCreator, and Stringifier are only used as type."
+          },
+          {
+            "file": "test/visitor.test.ts",
             "line": 6,
             "column": 1,
-            "message": "Imports PluginCreator and Root are only used as type."
+            "message": "Imports AnyNode, AtRule, Container, Declaration, Helpers, Plugin, PluginCreator, Root, and Rule are only used as type."
           }
         ]
       },
@@ -179,14 +280,32 @@
         "count": 51,
         "samples": [
           {
-            "file": "test/css-syntax-error.test.ts",
-            "line": 16,
+            "file": "lib/terminal-highlight.js",
+            "line": 9,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "test/css-syntax-error.test.ts",
-            "line": 20,
+            "file": "lib/node.js",
+            "line": 35,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "lib/postcss.js",
+            "line": 22,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "lib/tokenize.js",
+            "line": 40,
+            "column": 3,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "test/tokenize.test.js",
+            "line": 7,
             "column": 1,
             "message": "Expected a function expression."
           },
@@ -197,45 +316,27 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "test/css-syntax-error.test.ts",
-            "line": 282,
+            "file": "test/processor.test.ts",
+            "line": 32,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "test/types.ts",
+            "line": 34,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "test/node.test.ts",
+            "line": 18,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "test/visitor.test.ts",
+            "line": 665,
             "column": 3,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "test/css-syntax-error.test.ts",
-            "line": 316,
-            "column": 3,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "lib/lazy-result.js",
-            "line": 49,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "lib/lazy-result.js",
-            "line": 53,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "lib/lazy-result.js",
-            "line": 79,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "lib/lazy-result.js",
-            "line": 99,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "lib/fromJSON.js",
-            "line": 11,
-            "column": 1,
             "message": "Expected a function expression."
           }
         ]
@@ -244,6 +345,48 @@
         "count": 40,
         "samples": [
           {
+            "file": "lib/css-syntax-error.js",
+            "line": 56,
+            "column": 9,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "test/errors.ts",
+            "line": 3,
+            "column": 7,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "test/processor.test.ts",
+            "line": 72,
+            "column": 7,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "test/processor.test.ts",
+            "line": 97,
+            "column": 7,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "test/processor.test.ts",
+            "line": 250,
+            "column": 7,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "test/processor.test.ts",
+            "line": 340,
+            "column": 7,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "test/processor.test.ts",
+            "line": 571,
+            "column": 7,
+            "message": "Expected a function declaration."
+          },
+          {
             "file": "test/postcss.test.ts",
             "line": 24,
             "column": 7,
@@ -251,49 +394,7 @@
           },
           {
             "file": "test/postcss.test.ts",
-            "line": 25,
-            "column": 7,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "test/postcss.test.ts",
-            "line": 30,
-            "column": 7,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "test/postcss.test.ts",
-            "line": 31,
-            "column": 7,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "test/postcss.test.ts",
-            "line": 36,
-            "column": 7,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "test/postcss.test.ts",
             "line": 37,
-            "column": 7,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "test/postcss.test.ts",
-            "line": 38,
-            "column": 7,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "test/postcss.test.ts",
-            "line": 44,
-            "column": 7,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "test/postcss.test.ts",
-            "line": 45,
             "column": 7,
             "message": "Expected a function declaration."
           },
@@ -308,8 +409,39 @@
     },
     "import-export-preference": {
       "named": {
-        "count": 0,
-        "samples": []
+        "count": 5,
+        "samples": [
+          {
+            "file": "eslint.config.mjs",
+            "line": 3,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "lib/postcss.mjs",
+            "line": 3,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "lib/postcss.d.mts",
+            "line": 22,
+            "column": 3,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "test/errors.ts",
+            "line": 22,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "test/types.ts",
+            "line": 64,
+            "column": 8,
+            "message": "Prefer named exports"
+          }
+        ]
       },
       "default": {
         "count": 0,
@@ -318,195 +450,195 @@
     },
     "indent": {
       "2-space": {
-        "count": 205,
+        "count": 33,
         "samples": [
           {
-            "file": "test/types.ts",
-            "line": 41,
+            "file": "lib/node.js",
+            "line": 267,
             "column": 1,
-            "message": "Expected indentation of 2 spaces but found 4."
+            "message": "Expected indentation of 8 spaces but found 10."
           },
           {
-            "file": "test/types.ts",
-            "line": 42,
+            "file": "lib/node.js",
+            "line": 274,
             "column": 1,
-            "message": "Expected indentation of 4 spaces but found 6."
+            "message": "Expected indentation of 12 spaces but found 16."
           },
           {
-            "file": "test/types.ts",
-            "line": 43,
-            "column": 1,
-            "message": "Expected indentation of 4 spaces but found 6."
-          },
-          {
-            "file": "test/types.ts",
-            "line": 44,
-            "column": 1,
-            "message": "Expected indentation of 2 spaces but found 4."
-          },
-          {
-            "file": "test/types.ts",
-            "line": 45,
-            "column": 1,
-            "message": "Expected indentation of 4 spaces but found 6."
-          },
-          {
-            "file": "test/types.ts",
-            "line": 46,
-            "column": 1,
-            "message": "Expected indentation of 4 spaces but found 6."
-          },
-          {
-            "file": "test/types.ts",
-            "line": 47,
-            "column": 1,
-            "message": "Expected indentation of 2 spaces but found 4."
-          },
-          {
-            "file": "test/types.ts",
-            "line": 48,
-            "column": 1,
-            "message": "Expected indentation of 4 spaces but found 6."
-          },
-          {
-            "file": "test/types.ts",
-            "line": 49,
+            "file": "lib/node.js",
+            "line": 277,
             "column": 1,
             "message": "Expected indentation of 6 spaces but found 8."
           },
           {
-            "file": "test/types.ts",
-            "line": 50,
+            "file": "lib/node.js",
+            "line": 282,
+            "column": 1,
+            "message": "Expected indentation of 6 spaces but found 8."
+          },
+          {
+            "file": "lib/input.d.ts",
+            "line": 151,
+            "column": 1,
+            "message": "Expected indentation of 8 spaces but found 10."
+          },
+          {
+            "file": "lib/input.d.ts",
+            "line": 156,
+            "column": 1,
+            "message": "Expected indentation of 6 spaces but found 8."
+          },
+          {
+            "file": "lib/input.d.ts",
+            "line": 161,
+            "column": 1,
+            "message": "Expected indentation of 6 spaces but found 8."
+          },
+          {
+            "file": "lib/rule.d.ts",
+            "line": 48,
+            "column": 1,
+            "message": "Expected indentation of 8 spaces but found 10."
+          },
+          {
+            "file": "lib/rule.d.ts",
+            "line": 51,
+            "column": 1,
+            "message": "Expected indentation of 6 spaces but found 8."
+          },
+          {
+            "file": "lib/rule.d.ts",
+            "line": 56,
             "column": 1,
             "message": "Expected indentation of 6 spaces but found 8."
           }
         ]
       },
       "4-space": {
-        "count": 8573,
+        "count": 9589,
         "samples": [
           {
-            "file": "test/warning.test.ts",
-            "line": 8,
+            "file": "lib/comment.js",
+            "line": 6,
+            "column": 1,
+            "message": "Expected indentation of 4 spaces but found 2."
+          },
+          {
+            "file": "lib/parser.js",
+            "line": 508,
+            "column": 1,
+            "message": "Expected indentation of 16 spaces but found 8."
+          },
+          {
+            "file": "lib/fromJSON.js",
+            "line": 12,
+            "column": 1,
+            "message": "Expected indentation of 4 spaces but found 2."
+          },
+          {
+            "file": "test/tokenize.test.js",
+            "line": 254,
+            "column": 1,
+            "message": "Expected indentation of 8 spaces but found 4."
+          },
+          {
+            "file": "test/css-syntax-error.test.ts",
+            "line": 358,
             "column": 1,
             "message": "Expected indentation of 4 spaces but found 2."
           },
           {
             "file": "test/warning.test.ts",
-            "line": 9,
+            "line": 37,
+            "column": 1,
+            "message": "Expected indentation of 8 spaces but found 4."
+          },
+          {
+            "file": "lib/stringifier.js",
+            "line": 277,
+            "column": 1,
+            "message": "Expected indentation of 8 spaces but found 4."
+          },
+          {
+            "file": "test/visitor.test.ts",
+            "line": 1043,
+            "column": 1,
+            "message": "Expected indentation of 16 spaces but found 8."
+          },
+          {
+            "file": "test/node.test.ts",
+            "line": 603,
             "column": 1,
             "message": "Expected indentation of 4 spaces but found 2."
           },
           {
-            "file": "test/warning.test.ts",
-            "line": 13,
-            "column": 1,
-            "message": "Expected indentation of 4 spaces but found 2."
-          },
-          {
-            "file": "test/warning.test.ts",
-            "line": 14,
-            "column": 1,
-            "message": "Expected indentation of 4 spaces but found 2."
-          },
-          {
-            "file": "test/warning.test.ts",
-            "line": 18,
-            "column": 1,
-            "message": "Expected indentation of 4 spaces but found 2."
-          },
-          {
-            "file": "test/warning.test.ts",
-            "line": 19,
-            "column": 1,
-            "message": "Expected indentation of 4 spaces but found 2."
-          },
-          {
-            "file": "test/warning.test.ts",
-            "line": 20,
-            "column": 1,
-            "message": "Expected indentation of 4 spaces but found 2."
-          },
-          {
-            "file": "test/warning.test.ts",
-            "line": 24,
-            "column": 1,
-            "message": "Expected indentation of 4 spaces but found 2."
-          },
-          {
-            "file": "test/warning.test.ts",
-            "line": 25,
-            "column": 1,
-            "message": "Expected indentation of 4 spaces but found 2."
-          },
-          {
-            "file": "test/warning.test.ts",
-            "line": 26,
+            "file": "test/map.test.ts",
+            "line": 777,
             "column": 1,
             "message": "Expected indentation of 4 spaces but found 2."
           }
         ]
       },
       "tab": {
-        "count": 8594,
+        "count": 9638,
         "samples": [
           {
-            "file": "test/warning.test.ts",
-            "line": 8,
+            "file": "lib/no-work-result.js",
+            "line": 10,
             "column": 1,
             "message": "Expected indentation of 1 tab but found 2 spaces."
           },
           {
-            "file": "test/warning.test.ts",
-            "line": 9,
+            "file": "lib/parser.js",
+            "line": 553,
             "column": 1,
             "message": "Expected indentation of 1 tab but found 2 spaces."
           },
           {
-            "file": "test/warning.test.ts",
-            "line": 13,
+            "file": "lib/container.js",
+            "line": 221,
             "column": 1,
-            "message": "Expected indentation of 1 tab but found 2 spaces."
+            "message": "Expected indentation of 2 tabs but found 4 spaces."
           },
           {
-            "file": "test/warning.test.ts",
-            "line": 14,
+            "file": "lib/tokenize.js",
+            "line": 167,
             "column": 1,
-            "message": "Expected indentation of 1 tab but found 2 spaces."
+            "message": "Expected indentation of 4 tabs but found 8 spaces."
           },
           {
-            "file": "test/warning.test.ts",
-            "line": 18,
-            "column": 1,
-            "message": "Expected indentation of 1 tab but found 2 spaces."
-          },
-          {
-            "file": "test/warning.test.ts",
-            "line": 19,
-            "column": 1,
-            "message": "Expected indentation of 1 tab but found 2 spaces."
-          },
-          {
-            "file": "test/warning.test.ts",
+            "file": "test/root.test.ts",
             "line": 20,
             "column": 1,
             "message": "Expected indentation of 1 tab but found 2 spaces."
           },
           {
-            "file": "test/warning.test.ts",
-            "line": 24,
+            "file": "test/visitor.test.ts",
+            "line": 40,
+            "column": 1,
+            "message": "Expected indentation of 3 tabs but found 6 spaces."
+          },
+          {
+            "file": "test/visitor.test.ts",
+            "line": 1466,
+            "column": 1,
+            "message": "Expected indentation of 2 tabs but found 4 spaces."
+          },
+          {
+            "file": "test/node.test.ts",
+            "line": 583,
             "column": 1,
             "message": "Expected indentation of 1 tab but found 2 spaces."
           },
           {
-            "file": "test/warning.test.ts",
-            "line": 25,
+            "file": "lib/map-generator.js",
+            "line": 331,
             "column": 1,
-            "message": "Expected indentation of 1 tab but found 2 spaces."
+            "message": "Expected indentation of 3 tabs but found 6 spaces."
           },
           {
-            "file": "test/warning.test.ts",
-            "line": 26,
+            "file": "test/types.ts",
+            "line": 60,
             "column": 1,
             "message": "Expected indentation of 1 tab but found 2 spaces."
           }
@@ -515,66 +647,66 @@
     },
     "quotes": {
       "double": {
-        "count": 4252,
+        "count": 4427,
         "samples": [
           {
-            "file": "test/warning.test.ts",
+            "file": "lib/terminal-highlight.js",
             "line": 1,
-            "column": 25,
+            "column": 1,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "test/warning.test.ts",
-            "line": 2,
-            "column": 22,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "test/warning.test.ts",
-            "line": 3,
-            "column": 26,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "test/warning.test.ts",
-            "line": 5,
-            "column": 38,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "test/warning.test.ts",
-            "line": 7,
+            "file": "test/tokenize.test.js",
+            "line": 208,
             "column": 6,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "test/warning.test.ts",
-            "line": 8,
-            "column": 29,
+            "file": "test/container.test.ts",
+            "line": 765,
+            "column": 19,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "test/warning.test.ts",
-            "line": 9,
+            "file": "test/fromJSON.test.ts",
+            "line": 44,
+            "column": 28,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "test/postcss.test.ts",
+            "line": 100,
+            "column": 5,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "test/node.test.ts",
+            "line": 372,
             "column": 26,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "test/warning.test.ts",
-            "line": 12,
-            "column": 6,
+            "file": "test/stringifier.test.js",
+            "line": 55,
+            "column": 31,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "test/warning.test.ts",
-            "line": 13,
-            "column": 29,
+            "file": "test/previous-map.test.ts",
+            "line": 108,
+            "column": 5,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "test/warning.test.ts",
-            "line": 13,
-            "column": 47,
+            "file": "test/visitor.test.ts",
+            "line": 925,
+            "column": 10,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "test/types.ts",
+            "line": 53,
+            "column": 10,
             "message": "Strings must use doublequote."
           }
         ]
@@ -583,33 +715,9 @@
         "count": 16,
         "samples": [
           {
-            "file": "test/visitor.test.ts",
-            "line": 1229,
-            "column": 7,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "test/visitor.test.ts",
-            "line": 1285,
-            "column": 11,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "test/visitor.test.ts",
-            "line": 1593,
-            "column": 7,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "test/visitor.test.ts",
-            "line": 1594,
-            "column": 9,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "test/tokenize.test.js",
-            "line": 110,
-            "column": 16,
+            "file": "lib/list.js",
+            "line": 32,
+            "column": 47,
             "message": "Strings must use singlequote."
           },
           {
@@ -625,15 +733,39 @@
             "message": "Strings must use singlequote."
           },
           {
-            "file": "test/rule.test.ts",
-            "line": 23,
-            "column": 15,
+            "file": "test/list.test.ts",
+            "line": 40,
+            "column": 52,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "lib/tokenize.js",
+            "line": 3,
+            "column": 22,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "lib/tokenize.js",
+            "line": 147,
+            "column": 41,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "test/visitor.test.ts",
+            "line": 1285,
+            "column": 11,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "test/visitor.test.ts",
+            "line": 1594,
+            "column": 9,
             "message": "Strings must use singlequote."
           },
           {
             "file": "test/rule.test.ts",
-            "line": 25,
-            "column": 26,
+            "line": 23,
+            "column": 15,
             "message": "Strings must use singlequote."
           },
           {
@@ -647,66 +779,66 @@
     },
     "semi": {
       "always": {
-        "count": 5422,
+        "count": 5840,
         "samples": [
           {
-            "file": "test/warning.test.ts",
+            "file": "lib/declaration.js",
             "line": 1,
-            "column": 31,
+            "column": 13,
             "message": "Missing semicolon."
           },
           {
-            "file": "test/warning.test.ts",
-            "line": 2,
-            "column": 27,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "test/warning.test.ts",
-            "line": 3,
-            "column": 38,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "test/warning.test.ts",
-            "line": 5,
-            "column": 57,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "test/warning.test.ts",
-            "line": 8,
-            "column": 36,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "test/warning.test.ts",
-            "line": 9,
-            "column": 33,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "test/warning.test.ts",
-            "line": 10,
-            "column": 3,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "test/warning.test.ts",
-            "line": 13,
-            "column": 58,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "test/warning.test.ts",
-            "line": 14,
+            "file": "test/node.test.ts",
+            "line": 337,
             "column": 41,
             "message": "Missing semicolon."
           },
           {
-            "file": "test/warning.test.ts",
-            "line": 15,
-            "column": 3,
+            "file": "lib/stringifier.js",
+            "line": 100,
+            "column": 45,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "lib/parser.js",
+            "line": 464,
+            "column": 29,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "lib/parse.js",
+            "line": 4,
+            "column": 31,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "test/container.test.ts",
+            "line": 471,
+            "column": 14,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "test/stringifier.test.js",
+            "line": 216,
+            "column": 43,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "test/parse.test.ts",
+            "line": 65,
+            "column": 27,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "test/visitor.test.ts",
+            "line": 1238,
+            "column": 36,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "test/declaration.test.ts",
+            "line": 48,
+            "column": 11,
             "message": "Missing semicolon."
           }
         ]
@@ -716,14 +848,14 @@
         "samples": [
           {
             "file": "test/at-rule.test.ts",
-            "line": 52,
-            "column": 38,
+            "line": 55,
+            "column": 3,
             "message": "Extra semicolon."
           },
           {
             "file": "test/at-rule.test.ts",
-            "line": 55,
-            "column": 3,
+            "line": 52,
+            "column": 38,
             "message": "Extra semicolon."
           }
         ]

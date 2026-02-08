@@ -1,7 +1,7 @@
 {
-  "analyzedVersion": "290e0cf85c01",
-  "analyzedCommit": "e39e83bb130069a36b14a1e9274315e724f82ab3",
-  "analyzedCommitDate": "2026-02-06T01:11:02.000Z",
+  "analyzedVersion": "8d56277528fc",
+  "analyzedCommit": "de6776f318da35bfd205d0f44e0a92b5bc840711",
+  "analyzedCommitDate": "2026-02-03T23:59:09.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -12,9 +12,27 @@
         "count": 15,
         "samples": [
           {
+            "file": "packages/extension/src/background.ts",
+            "line": 203,
+            "column": 37,
+            "message": "Array type using 'chrome.tabs.Tab[]' is forbidden. Use 'Array<chrome.tabs.Tab>' instead."
+          },
+          {
+            "file": "packages/extension/src/ui/connect.tsx",
+            "line": 33,
+            "column": 36,
+            "message": "Array type using 'TabInfo[]' is forbidden. Use 'Array<TabInfo>' instead."
+          },
+          {
+            "file": "packages/playwright-cli/tests/integration.spec.ts",
+            "line": 27,
+            "column": 32,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+          },
+          {
             "file": "packages/extension/tests/extension.spec.ts",
-            "line": 42,
-            "column": 18,
+            "line": 101,
+            "column": 31,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
@@ -24,28 +42,10 @@
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
-            "file": "packages/extension/src/ui/connect.tsx",
-            "line": 33,
-            "column": 36,
-            "message": "Array type using 'TabInfo[]' is forbidden. Use 'Array<TabInfo>' instead."
-          },
-          {
             "file": "packages/playwright-mcp/tests/testserver/index.ts",
             "line": 147,
             "column": 21,
             "message": "Array type using 'Buffer[]' is forbidden. Use 'Array<Buffer>' instead."
-          },
-          {
-            "file": "packages/extension/src/relayConnection.ts",
-            "line": 17,
-            "column": 35,
-            "message": "Array type using 'unknown[]' is forbidden. Use 'Array<unknown>' instead."
-          },
-          {
-            "file": "packages/extension/src/background.ts",
-            "line": 203,
-            "column": 37,
-            "message": "Array type using 'chrome.tabs.Tab[]' is forbidden. Use 'Array<chrome.tabs.Tab>' instead."
           },
           {
             "file": "packages/playwright-mcp/tests/fixtures.ts",
@@ -83,6 +83,12 @@
         "count": 6,
         "samples": [
           {
+            "file": "packages/extension/src/background.ts",
+            "line": 38,
+            "column": 41,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
             "file": "packages/playwright-mcp/tests/fixtures.ts",
             "line": 282,
             "column": 27,
@@ -110,12 +116,6 @@
             "file": "packages/playwright-mcp/tests/testserver/index.ts",
             "line": 33,
             "column": 40,
-            "message": "The generic type arguments should be specified as part of the type annotation."
-          },
-          {
-            "file": "packages/extension/src/background.ts",
-            "line": 38,
-            "column": 41,
             "message": "The generic type arguments should be specified as part of the type annotation."
           }
         ]
@@ -149,14 +149,26 @@
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "packages/extension/tests/extension.spec.ts",
-            "line": 27,
+            "file": "packages/extension/src/relayConnection.ts",
+            "line": 25,
+            "column": 1,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "packages/extension/src/relayConnection.ts",
+            "line": 31,
+            "column": 1,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "packages/playwright-cli/tests/integration.spec.ts",
+            "line": 21,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
             "file": "packages/extension/tests/extension.spec.ts",
-            "line": 32,
+            "line": 27,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
@@ -167,9 +179,9 @@
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "packages/playwright-cli/tests/integration.spec.ts",
-            "line": 21,
-            "column": 1,
+            "file": "packages/playwright-mcp/tests/fixtures.ts",
+            "line": 32,
+            "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
@@ -187,18 +199,6 @@
           {
             "file": "packages/playwright-mcp/tests/fixtures.ts",
             "line": 63,
-            "column": 1,
-            "message": "Use `interface` instead of `type`."
-          },
-          {
-            "file": "packages/extension/src/relayConnection.ts",
-            "line": 25,
-            "column": 1,
-            "message": "Use `interface` instead of `type`."
-          },
-          {
-            "file": "packages/extension/src/relayConnection.ts",
-            "line": 31,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           }
@@ -237,31 +237,7 @@
         "count": 11,
         "samples": [
           {
-            "file": "packages/extension/src/ui/status.tsx",
-            "line": 21,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "packages/extension/tests/extension.spec.ts",
-            "line": 23,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "packages/extension/tests/extension.spec.ts",
-            "line": 24,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "packages/extension/tests/extension.spec.ts",
-            "line": 25,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "packages/extension/playwright.config.ts",
+            "file": "packages/playwright-mcp/playwright.config.ts",
             "line": 19,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
@@ -291,8 +267,32 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/playwright-mcp/playwright.config.ts",
+            "file": "packages/extension/playwright.config.ts",
             "line": 19,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "packages/extension/tests/extension.spec.ts",
+            "line": 23,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "packages/extension/tests/extension.spec.ts",
+            "line": 24,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "packages/extension/tests/extension.spec.ts",
+            "line": 25,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "packages/extension/src/ui/status.tsx",
+            "line": 21,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           }
@@ -304,8 +304,32 @@
         "count": 18,
         "samples": [
           {
-            "file": "packages/extension/tests/extension.spec.ts",
-            "line": 113,
+            "file": "packages/extension/src/relayConnection.ts",
+            "line": 17,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "packages/playwright-mcp/update-readme.js",
+            "line": 87,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "packages/playwright-mcp/update-readme.js",
+            "line": 129,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "packages/playwright-mcp/update-readme.js",
+            "line": 211,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "packages/playwright-cli/tests/integration.spec.ts",
+            "line": 27,
             "column": 1,
             "message": "Expected a function expression."
           },
@@ -322,44 +346,20 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "packages/playwright-mcp/tests/fixtures.ts",
-            "line": 185,
+            "file": "packages/extension/tests/extension.spec.ts",
+            "line": 165,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "packages/playwright-mcp/tests/fixtures.ts",
-            "line": 249,
-            "column": 1,
+            "line": 245,
+            "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "packages/playwright-mcp/tests/fixtures.ts",
             "line": 281,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "packages/playwright-mcp/update-readme.js",
-            "line": 51,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "packages/playwright-mcp/update-readme.js",
-            "line": 106,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "packages/playwright-mcp/update-readme.js",
-            "line": 187,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "packages/playwright-mcp/update-readme.js",
-            "line": 216,
             "column": 1,
             "message": "Expected a function expression."
           }
@@ -387,6 +387,12 @@
             "message": "Expected a function declaration."
           },
           {
+            "file": "packages/extension/src/ui/authToken.tsx",
+            "line": 111,
+            "column": 14,
+            "message": "Expected a function declaration."
+          },
+          {
             "file": "packages/extension/src/ui/tabItem.tsx",
             "line": 46,
             "column": 14,
@@ -401,12 +407,6 @@
           {
             "file": "packages/extension/src/ui/icons.tsx",
             "line": 39,
-            "column": 14,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "packages/extension/src/ui/authToken.tsx",
-            "line": 22,
             "column": 14,
             "message": "Expected a function declaration."
           },
@@ -433,21 +433,52 @@
     },
     "import-export-preference": {
       "named": {
-        "count": 0,
-        "samples": []
+        "count": 5,
+        "samples": [
+          {
+            "file": "packages/extension/vite.sw.config.mts",
+            "line": 20,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "packages/playwright-cli/playwright.config.ts",
+            "line": 19,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "packages/extension/vite.config.mts",
+            "line": 23,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "packages/extension/playwright.config.ts",
+            "line": 21,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "packages/playwright-mcp/playwright.config.ts",
+            "line": 21,
+            "column": 8,
+            "message": "Prefer named exports"
+          }
+        ]
       },
       "default": {
         "count": 2,
         "samples": [
           {
-            "file": "packages/playwright-mcp/tests/testserver/index.ts",
-            "line": 27,
+            "file": "packages/extension/src/ui/copyToClipboard.tsx",
+            "line": 28,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "packages/extension/src/ui/copyToClipboard.tsx",
-            "line": 28,
+            "file": "packages/playwright-mcp/tests/testserver/index.ts",
+            "line": 27,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           }
@@ -459,28 +490,28 @@
         "count": 19,
         "samples": [
           {
-            "file": "packages/extension/src/ui/authToken.tsx",
-            "line": 101,
+            "file": "packages/extension/src/background.ts",
+            "line": 53,
             "column": 1,
-            "message": "Expected indentation of 4 spaces but found 6."
+            "message": "Expected indentation of 10 spaces but found 12."
           },
           {
-            "file": "packages/extension/src/ui/authToken.tsx",
-            "line": 103,
+            "file": "packages/extension/src/background.ts",
+            "line": 58,
             "column": 1,
-            "message": "Expected indentation of 8 spaces but found 10."
+            "message": "Expected indentation of 10 spaces but found 12."
           },
           {
-            "file": "packages/extension/src/ui/authToken.tsx",
-            "line": 105,
+            "file": "packages/extension/src/background.ts",
+            "line": 65,
             "column": 1,
-            "message": "Expected indentation of 8 spaces but found 10."
+            "message": "Expected indentation of 10 spaces but found 12."
           },
           {
-            "file": "packages/extension/src/ui/authToken.tsx",
-            "line": 107,
+            "file": "packages/extension/src/background.ts",
+            "line": 75,
             "column": 1,
-            "message": "Expected indentation of 6 spaces but found 8."
+            "message": "Expected indentation of 10 spaces but found 12."
           },
           {
             "file": "packages/extension/src/relayConnection.ts",
@@ -495,102 +526,224 @@
             "message": "Expected indentation of 8 spaces but found 10."
           },
           {
-            "file": "packages/extension/src/background.ts",
-            "line": 54,
+            "file": "packages/extension/src/ui/authToken.tsx",
+            "line": 102,
             "column": 1,
-            "message": "Expected indentation of 10 spaces but found 12."
+            "message": "Expected indentation of 6 spaces but found 8."
           },
           {
-            "file": "packages/extension/src/background.ts",
-            "line": 59,
+            "file": "packages/extension/src/ui/authToken.tsx",
+            "line": 104,
             "column": 1,
-            "message": "Expected indentation of 10 spaces but found 12."
+            "message": "Expected indentation of 8 spaces but found 10."
           },
           {
-            "file": "packages/extension/src/background.ts",
-            "line": 66,
+            "file": "packages/extension/src/ui/authToken.tsx",
+            "line": 106,
             "column": 1,
-            "message": "Expected indentation of 10 spaces but found 12."
+            "message": "Expected indentation of 8 spaces but found 10."
           },
           {
-            "file": "packages/extension/src/background.ts",
-            "line": 76,
+            "file": "packages/extension/src/ui/authToken.tsx",
+            "line": 108,
             "column": 1,
-            "message": "Expected indentation of 10 spaces but found 12."
+            "message": "Expected indentation of 4 spaces but found 6."
           }
         ]
       },
       "4-space": {
-        "count": 0,
-        "samples": []
+        "count": 1648,
+        "samples": [
+          {
+            "file": "packages/extension/vite.config.mts",
+            "line": 24,
+            "column": 1,
+            "message": "Expected indentation of 4 spaces but found 2."
+          },
+          {
+            "file": "packages/playwright-mcp/tests/fixtures.ts",
+            "line": 104,
+            "column": 1,
+            "message": "Expected indentation of 16 spaces but found 8."
+          },
+          {
+            "file": "packages/extension/src/ui/connect.tsx",
+            "line": 57,
+            "column": 1,
+            "message": "Expected indentation of 12 spaces but found 6."
+          },
+          {
+            "file": "packages/extension/src/relayConnection.ts",
+            "line": 36,
+            "column": 1,
+            "message": "Expected indentation of 4 spaces but found 2."
+          },
+          {
+            "file": "packages/extension/src/background.ts",
+            "line": 88,
+            "column": 1,
+            "message": "Expected indentation of 16 spaces but found 8."
+          },
+          {
+            "file": "packages/playwright-mcp/update-readme.js",
+            "line": 131,
+            "column": 1,
+            "message": "Expected indentation of 4 spaces but found 2."
+          },
+          {
+            "file": "packages/extension/tests/extension.spec.ts",
+            "line": 87,
+            "column": 1,
+            "message": "Expected indentation of 8 spaces but found 4."
+          },
+          {
+            "file": "packages/extension/tests/extension.spec.ts",
+            "line": 346,
+            "column": 1,
+            "message": "Expected indentation of 8 spaces but found 4."
+          },
+          {
+            "file": "packages/playwright-mcp/playwright.config.ts",
+            "line": 31,
+            "column": 1,
+            "message": "Expected indentation of 12 spaces but found 6."
+          },
+          {
+            "file": "packages/playwright-mcp/tests/testserver/index.ts",
+            "line": 167,
+            "column": 1,
+            "message": "Expected indentation of 4 spaces but found 2."
+          }
+        ]
       },
       "tab": {
-        "count": 0,
-        "samples": []
+        "count": 1652,
+        "samples": [
+          {
+            "file": "packages/playwright-mcp/tests/core.spec.ts",
+            "line": 20,
+            "column": 1,
+            "message": "Expected indentation of 1 tab but found 2 spaces."
+          },
+          {
+            "file": "packages/extension/src/background.ts",
+            "line": 69,
+            "column": 1,
+            "message": "Expected indentation of 4 tabs but found 8 spaces."
+          },
+          {
+            "file": "packages/playwright-mcp/tests/capabilities.spec.ts",
+            "line": 57,
+            "column": 1,
+            "message": "Expected indentation of 1 tab but found 2 spaces."
+          },
+          {
+            "file": "packages/extension/src/relayConnection.ts",
+            "line": 131,
+            "column": 1,
+            "message": "Expected indentation of 3 tabs but found 6 spaces."
+          },
+          {
+            "file": "packages/extension/src/ui/connect.tsx",
+            "line": 183,
+            "column": 1,
+            "message": "Expected indentation of 7 tabs but found 14 spaces."
+          },
+          {
+            "file": "packages/playwright-mcp/tests/fixtures.ts",
+            "line": 194,
+            "column": 1,
+            "message": "Expected indentation of 2 tabs but found 4 spaces."
+          },
+          {
+            "file": "packages/playwright-mcp/tests/testserver/index.ts",
+            "line": 57,
+            "column": 1,
+            "message": "Expected indentation of 3 tabs but found 6 spaces."
+          },
+          {
+            "file": "packages/extension/src/ui/authToken.tsx",
+            "line": 99,
+            "column": 1,
+            "message": "Expected indentation of 1 tab but found 2 spaces."
+          },
+          {
+            "file": "packages/extension/tests/extension.spec.ts",
+            "line": 174,
+            "column": 1,
+            "message": "Expected indentation of 1 tab but found 2 spaces."
+          },
+          {
+            "file": "packages/extension/playwright.config.ts",
+            "line": 30,
+            "column": 1,
+            "message": "Expected indentation of 1 tab but found 2 spaces."
+          }
+        ]
       }
     },
     "quotes": {
       "double": {
-        "count": 542,
+        "count": 541,
         "samples": [
           {
-            "file": "packages/playwright-mcp/index.js",
-            "line": 18,
-            "column": 38,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "packages/extension/tests/extension.spec.ts",
-            "line": 197,
-            "column": 63,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "packages/extension/tests/extension.spec.ts",
-            "line": 411,
+            "file": "packages/playwright-mcp/playwright.config.ts",
+            "line": 17,
             "column": 30,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/extension/src/ui/tabItem.tsx",
-            "line": 17,
-            "column": 19,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "packages/playwright-mcp/tests/testserver/index.ts",
-            "line": 25,
-            "column": 29,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "packages/playwright-mcp/update-readme.js",
-            "line": 70,
-            "column": 67,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "packages/extension/src/ui/connect.tsx",
-            "line": 26,
-            "column": 13,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "packages/playwright-mcp/tests/fixtures.ts",
-            "line": 85,
-            "column": 19,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "packages/extension/src/relayConnection.ts",
-            "line": 149,
+            "file": "packages/extension/src/ui/copyToClipboard.tsx",
+            "line": 29,
             "column": 28,
             "message": "Strings must use doublequote."
           },
           {
             "file": "packages/extension/src/background.ts",
-            "line": 216,
-            "column": 35,
+            "line": 25,
+            "column": 9,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "packages/extension/tests/extension.spec.ts",
+            "line": 25,
+            "column": 34,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "packages/extension/tests/extension.spec.ts",
+            "line": 306,
+            "column": 63,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "packages/playwright-mcp/tests/capabilities.spec.ts",
+            "line": 56,
+            "column": 6,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "packages/playwright-mcp/update-readme.js",
+            "line": 19,
+            "column": 20,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "packages/playwright-mcp/update-readme.js",
+            "line": 172,
+            "column": 23,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "packages/playwright-mcp/tests/fixtures.ts",
+            "line": 129,
+            "column": 37,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "packages/extension/src/ui/tabItem.tsx",
+            "line": 60,
+            "column": 25,
             "message": "Strings must use doublequote."
           }
         ]
@@ -599,9 +752,33 @@
         "count": 40,
         "samples": [
           {
-            "file": "packages/extension/tests/extension.spec.ts",
-            "line": 167,
-            "column": 12,
+            "file": "packages/playwright-mcp/tests/core.spec.ts",
+            "line": 25,
+            "column": 39,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "packages/playwright-mcp/update-readme.js",
+            "line": 116,
+            "column": 25,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "packages/playwright-mcp/update-readme.js",
+            "line": 168,
+            "column": 19,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "packages/playwright-mcp/update-readme.js",
+            "line": 200,
+            "column": 21,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "packages/playwright-mcp/tests/fixtures.ts",
+            "line": 240,
+            "column": 22,
             "message": "Strings must use singlequote."
           },
           {
@@ -612,14 +789,14 @@
           },
           {
             "file": "packages/extension/tests/extension.spec.ts",
-            "line": 316,
-            "column": 74,
+            "line": 297,
+            "column": 6,
             "message": "Strings must use singlequote."
           },
           {
             "file": "packages/extension/tests/extension.spec.ts",
-            "line": 361,
-            "column": 12,
+            "line": 352,
+            "column": 6,
             "message": "Strings must use singlequote."
           },
           {
@@ -629,33 +806,9 @@
             "message": "Strings must use singlequote."
           },
           {
-            "file": "packages/playwright-mcp/tests/core.spec.ts",
-            "line": 25,
-            "column": 39,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "packages/playwright-mcp/update-readme.js",
-            "line": 73,
-            "column": 16,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "packages/playwright-mcp/update-readme.js",
-            "line": 159,
-            "column": 14,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "packages/playwright-mcp/update-readme.js",
-            "line": 179,
-            "column": 21,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "packages/extension/src/background.ts",
-            "line": 134,
-            "column": 16,
+            "file": "packages/playwright-mcp/tests/testserver/index.ts",
+            "line": 131,
+            "column": 26,
             "message": "Strings must use singlequote."
           }
         ]
@@ -665,18 +818,6 @@
       "always": {
         "count": 4,
         "samples": [
-          {
-            "file": "packages/playwright-mcp/cli.js",
-            "line": 23,
-            "column": 40,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "packages/extension/src/ui/authToken.tsx",
-            "line": 118,
-            "column": 2,
-            "message": "Missing semicolon."
-          },
           {
             "file": "packages/playwright-mcp/update-readme.js",
             "line": 19,
@@ -688,12 +829,85 @@
             "line": 20,
             "column": 29,
             "message": "Missing semicolon."
+          },
+          {
+            "file": "packages/extension/src/ui/authToken.tsx",
+            "line": 118,
+            "column": 2,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "packages/playwright-mcp/cli.js",
+            "line": 23,
+            "column": 40,
+            "message": "Missing semicolon."
           }
         ]
       },
       "never": {
-        "count": 0,
-        "samples": []
+        "count": 838,
+        "samples": [
+          {
+            "file": "packages/extension/vite.config.mts",
+            "line": 17,
+            "column": 31,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "packages/extension/src/relayConnection.ts",
+            "line": 122,
+            "column": 43,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "packages/extension/src/ui/connect.tsx",
+            "line": 173,
+            "column": 6,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "packages/playwright-mcp/update-readme.js",
+            "line": 162,
+            "column": 80,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "packages/extension/src/background.ts",
+            "line": 148,
+            "column": 106,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "packages/playwright-mcp/tests/fixtures.ts",
+            "line": 180,
+            "column": 39,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "packages/extension/tests/extension.spec.ts",
+            "line": 179,
+            "column": 58,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "packages/extension/src/ui/authToken.tsx",
+            "line": 17,
+            "column": 53,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "packages/playwright-mcp/tests/click.spec.ts",
+            "line": 48,
+            "column": 5,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "packages/playwright-mcp/tests/testserver/index.ts",
+            "line": 165,
+            "column": 21,
+            "message": "Extra semicolon."
+          }
+        ]
       }
     }
   }

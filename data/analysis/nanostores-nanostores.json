@@ -1,6 +1,7 @@
 {
-  "analyzedVersion": "4f44ab98c263",
+  "analyzedVersion": "8d56277528fc",
   "analyzedCommit": "c3e81fe08b320fa2d103dc0f255ae04cc7d67e21",
+  "analyzedCommitDate": "2025-12-19T12:37:24.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -15,8 +16,56 @@
         ]
       },
       "generic": {
-        "count": 95,
+        "count": 105,
         "samples": [
+          {
+            "file": "keep-mount/index.test.ts",
+            "line": 7,
+            "column": 15,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+          },
+          {
+            "file": "map/index.test.ts",
+            "line": 277,
+            "column": 15,
+            "message": "Array type using 'boolean[]' is forbidden. Use 'Array<boolean>' instead."
+          },
+          {
+            "file": "map/index.d.ts",
+            "line": 41,
+            "column": 35,
+            "message": "Array type using 'any[]' is forbidden. Use 'Array<any>' instead."
+          },
+          {
+            "file": "atom/index.test.ts",
+            "line": 338,
+            "column": 15,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+          },
+          {
+            "file": "deep-map/path.test.ts",
+            "line": 44,
+            "column": 10,
+            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
+          },
+          {
+            "file": "deep-map/index.test.ts",
+            "line": 247,
+            "column": 16,
+            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
+          },
+          {
+            "file": "computed/index.test.ts",
+            "line": 101,
+            "column": 15,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+          },
+          {
+            "file": "computed/index.test.ts",
+            "line": 532,
+            "column": 15,
+            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
+          },
           {
             "file": "lifecycle/index.test.ts",
             "line": 17,
@@ -25,57 +74,9 @@
           },
           {
             "file": "lifecycle/index.test.ts",
-            "line": 47,
+            "line": 368,
             "column": 15,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
-          },
-          {
-            "file": "lifecycle/index.test.ts",
-            "line": 61,
-            "column": 15,
-            "message": "Array type using 'object[]' is forbidden. Use 'Array<object>' instead."
-          },
-          {
-            "file": "lifecycle/index.test.ts",
-            "line": 77,
-            "column": 15,
-            "message": "Array type using 'object[]' is forbidden. Use 'Array<object>' instead."
-          },
-          {
-            "file": "lifecycle/index.test.ts",
-            "line": 94,
-            "column": 15,
-            "message": "Array type using 'object[]' is forbidden. Use 'Array<object>' instead."
-          },
-          {
-            "file": "lifecycle/index.test.ts",
-            "line": 110,
-            "column": 15,
-            "message": "Array type using 'object[]' is forbidden. Use 'Array<object>' instead."
-          },
-          {
-            "file": "lifecycle/index.test.ts",
-            "line": 130,
-            "column": 15,
-            "message": "Array type using 'object[]' is forbidden. Use 'Array<object>' instead."
-          },
-          {
-            "file": "lifecycle/index.test.ts",
-            "line": 150,
-            "column": 15,
-            "message": "Array type using 'object[]' is forbidden. Use 'Array<object>' instead."
-          },
-          {
-            "file": "lifecycle/index.test.ts",
-            "line": 170,
-            "column": 15,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
-          },
-          {
-            "file": "lifecycle/index.test.ts",
-            "line": 224,
-            "column": 15,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           }
         ]
       }
@@ -92,11 +93,24 @@
     },
     "consistent-indexed-object-style": {
       "record": {
-        "count": 0,
-        "samples": []
+        "count": 2,
+        "samples": [
+          {
+            "file": "map/index.d.ts",
+            "line": 10,
+            "column": 47,
+            "message": "A record is preferred over an index signature."
+          },
+          {
+            "file": "map-creator/index.d.ts",
+            "line": 10,
+            "column": 5,
+            "message": "A record is preferred over an index signature."
+          }
+        ]
       },
       "index-signature": {
-        "count": 7,
+        "count": 10,
         "samples": [
           {
             "file": "map/errors.ts",
@@ -105,9 +119,15 @@
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "deep-map/path.test.ts",
-            "line": 122,
-            "column": 12,
+            "file": "map-creator/index.d.ts",
+            "line": 22,
+            "column": 14,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "deep-map/index.d.ts",
+            "line": 130,
+            "column": 13,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -139,14 +159,44 @@
             "line": 48,
             "column": 36,
             "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "deep-map/path.test.ts",
+            "line": 122,
+            "column": 12,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "deep-map/path.d.ts",
+            "line": 104,
+            "column": 27,
+            "message": "An index signature is preferred over a record."
           }
         ]
       }
     },
     "consistent-type-definitions": {
       "interface": {
-        "count": 8,
+        "count": 11,
         "samples": [
+          {
+            "file": "map/index.d.ts",
+            "line": 25,
+            "column": 8,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "lifecycle/index.d.ts",
+            "line": 3,
+            "column": 1,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "lifecycle/index.d.ts",
+            "line": 19,
+            "column": 1,
+            "message": "Use `interface` instead of `type`."
+          },
           {
             "file": "deep-map/errors.ts",
             "line": 40,
@@ -154,8 +204,8 @@
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "deep-map/path.test.ts",
-            "line": 28,
+            "file": "deep-map/index.test.ts",
+            "line": 328,
             "column": 3,
             "message": "Use `interface` instead of `type`."
           },
@@ -188,18 +238,55 @@
             "line": 92,
             "column": 3,
             "message": "Use `interface` instead of `type`."
-          },
-          {
-            "file": "deep-map/index.test.ts",
-            "line": 328,
-            "column": 3,
-            "message": "Use `interface` instead of `type`."
           }
         ]
       },
       "type": {
-        "count": 0,
-        "samples": []
+        "count": 7,
+        "samples": [
+          {
+            "file": "computed/index.d.ts",
+            "line": 14,
+            "column": 1,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "computed/index.d.ts",
+            "line": 61,
+            "column": 1,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "map/index.d.ts",
+            "line": 46,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "map/index.d.ts",
+            "line": 135,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "task/index.d.ts",
+            "line": 1,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "effect/index.d.ts",
+            "line": 4,
+            "column": 1,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "map-creator/index.d.ts",
+            "line": 3,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
+          }
+        ]
       }
     },
     "consistent-type-imports": {
@@ -221,11 +308,17 @@
         ]
       },
       "no-type-imports": {
-        "count": 5,
+        "count": 22,
         "samples": [
           {
-            "file": "effect/index.test.ts",
-            "line": 2,
+            "file": "clean-stores/index.d.ts",
+            "line": 1,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "listen-keys/index.d.ts",
+            "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -236,20 +329,44 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "clean-stores/index.test.ts",
-            "line": 9,
-            "column": 3,
+            "file": "computed/index.d.ts",
+            "line": 2,
+            "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "clean-stores/index.test.ts",
-            "line": 10,
-            "column": 3,
+            "file": "keep-mount/index.d.ts",
+            "line": 1,
+            "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "computed/index.test.ts",
             "line": 13,
+            "column": 3,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "effect/index.d.ts",
+            "line": 1,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "deep-map/path.d.ts",
+            "line": 1,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "deep-map/index.d.ts",
+            "line": 3,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "clean-stores/index.test.ts",
+            "line": 10,
             "column": 3,
             "message": "Use an `import` instead of an `import type`."
           }
@@ -267,9 +384,21 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "listen-keys/index.js",
-            "line": 10,
+            "file": "task/index.js",
+            "line": 16,
             "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "map/index.test.ts",
+            "line": 108,
+            "column": 3,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "deep-map/index.js",
+            "line": 8,
+            "column": 1,
             "message": "Expected a function expression."
           },
           {
@@ -279,44 +408,32 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "task/index.js",
-            "line": 4,
+            "file": "test/benchmark.js",
+            "line": 58,
+            "column": 5,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "deep-map/path.js",
+            "line": 17,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "task/index.js",
-            "line": 16,
-            "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "task/index.js",
-            "line": 23,
-            "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "task/index.js",
-            "line": 33,
-            "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "effect/index.test.ts",
-            "line": 9,
+            "file": "deep-map/path.js",
+            "line": 52,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "effect/index.test.ts",
+            "file": "clean-stores/index.test.ts",
             "line": 26,
-            "column": 3,
+            "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "task/index.test.ts",
-            "line": 13,
+            "file": "deep-map/index.test.ts",
+            "line": 108,
             "column": 3,
             "message": "Expected a function expression."
           }
@@ -326,9 +443,21 @@
         "count": 27,
         "samples": [
           {
-            "file": "keep-mount/index.js",
+            "file": "effect/index.js",
             "line": 1,
             "column": 12,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "atom/index.test.ts",
+            "line": 373,
+            "column": 7,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "computed/index.js",
+            "line": 56,
+            "column": 14,
             "message": "Expected a function declaration."
           },
           {
@@ -338,20 +467,14 @@
             "message": "Expected a function declaration."
           },
           {
+            "file": "computed/index.test.ts",
+            "line": 69,
+            "column": 5,
+            "message": "Expected a function declaration."
+          },
+          {
             "file": "lifecycle/index.js",
             "line": 11,
-            "column": 12,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "lifecycle/index.js",
-            "line": 36,
-            "column": 12,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "lifecycle/index.js",
-            "line": 52,
             "column": 12,
             "message": "Expected a function declaration."
           },
@@ -363,26 +486,20 @@
           },
           {
             "file": "lifecycle/index.js",
-            "line": 71,
-            "column": 13,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "lifecycle/index.js",
-            "line": 85,
-            "column": 11,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "lifecycle/index.js",
             "line": 98,
             "column": 12,
             "message": "Expected a function declaration."
           },
           {
             "file": "lifecycle/index.js",
-            "line": 103,
-            "column": 11,
+            "line": 118,
+            "column": 7,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "clean-stores/index.test.ts",
+            "line": 29,
+            "column": 7,
             "message": "Expected a function declaration."
           }
         ]
@@ -401,11 +518,11 @@
         ]
       },
       "default": {
-        "count": 5,
+        "count": 7,
         "samples": [
           {
-            "file": "map/index.js",
-            "line": 4,
+            "file": "keep-mount/index.d.ts",
+            "line": 17,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -422,8 +539,8 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "effect/index.js",
-            "line": 1,
+            "file": "effect/index.d.ts",
+            "line": 34,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -432,25 +549,49 @@
             "line": 5,
             "column": 1,
             "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "effect/index.js",
+            "line": 1,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "map/index.js",
+            "line": 4,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
           }
         ]
       }
     },
     "indent": {
       "2-space": {
-        "count": 7,
+        "count": 29,
         "samples": [
           {
-            "file": "computed/index.test.ts",
-            "line": 71,
+            "file": "lifecycle/index.d.ts",
+            "line": 12,
             "column": 1,
-            "message": "Expected indentation of 4 spaces but found 2."
+            "message": "Expected indentation of 4 spaces but found 6."
           },
           {
-            "file": "computed/index.test.ts",
-            "line": 72,
+            "file": "lifecycle/index.d.ts",
+            "line": 15,
             "column": 1,
-            "message": "Expected indentation of 6 spaces but found 4."
+            "message": "Expected indentation of 4 spaces but found 6."
+          },
+          {
+            "file": "lifecycle/index.d.ts",
+            "line": 29,
+            "column": 1,
+            "message": "Expected indentation of 4 spaces but found 6."
+          },
+          {
+            "file": "lifecycle/index.d.ts",
+            "line": 32,
+            "column": 1,
+            "message": "Expected indentation of 2 spaces but found 4."
           },
           {
             "file": "computed/index.test.ts",
@@ -459,156 +600,162 @@
             "message": "Expected indentation of 6 spaces but found 4."
           },
           {
-            "file": "computed/index.test.ts",
-            "line": 154,
-            "column": 1,
-            "message": "Expected indentation of 8 spaces but found 6."
-          },
-          {
-            "file": "computed/index.js",
-            "line": 39,
-            "column": 1,
-            "message": "Expected indentation of 6 spaces but found 8."
-          },
-          {
-            "file": "computed/index.js",
-            "line": 40,
-            "column": 1,
-            "message": "Expected indentation of 6 spaces but found 8."
-          },
-          {
             "file": "computed/index.js",
             "line": 41,
             "column": 1,
             "message": "Expected indentation of 4 spaces but found 6."
+          },
+          {
+            "file": "deep-map/path.d.ts",
+            "line": 34,
+            "column": 1,
+            "message": "Expected indentation of 6 spaces but found 4."
+          },
+          {
+            "file": "deep-map/path.d.ts",
+            "line": 71,
+            "column": 1,
+            "message": "Expected indentation of 4 spaces but found 6."
+          },
+          {
+            "file": "deep-map/path.d.ts",
+            "line": 77,
+            "column": 1,
+            "message": "Expected indentation of 8 spaces but found 6."
+          },
+          {
+            "file": "deep-map/path.d.ts",
+            "line": 80,
+            "column": 1,
+            "message": "Expected indentation of 10 spaces but found 6."
           }
         ]
       },
       "4-space": {
-        "count": 2521,
+        "count": 2889,
         "samples": [
           {
-            "file": "index.js",
-            "line": 5,
-            "column": 1,
-            "message": "Expected indentation of 4 spaces but found 2."
-          },
-          {
-            "file": "index.js",
-            "line": 6,
-            "column": 1,
-            "message": "Expected indentation of 4 spaces but found 2."
-          },
-          {
-            "file": "index.js",
+            "file": "keep-mount/index.test.ts",
             "line": 7,
             "column": 1,
             "message": "Expected indentation of 4 spaces but found 2."
           },
           {
-            "file": "index.js",
-            "line": 8,
+            "file": "atom/index.test.ts",
+            "line": 57,
             "column": 1,
             "message": "Expected indentation of 4 spaces but found 2."
           },
           {
-            "file": "index.js",
-            "line": 9,
+            "file": "lifecycle/index.d.ts",
+            "line": 150,
             "column": 1,
             "message": "Expected indentation of 4 spaces but found 2."
           },
           {
-            "file": "index.js",
-            "line": 14,
+            "file": "deep-map/index.test.ts",
+            "line": 378,
             "column": 1,
             "message": "Expected indentation of 4 spaces but found 2."
           },
           {
-            "file": "index.js",
-            "line": 15,
+            "file": "effect/index.test.ts",
+            "line": 30,
             "column": 1,
             "message": "Expected indentation of 4 spaces but found 2."
           },
           {
-            "file": "index.js",
-            "line": 16,
+            "file": "map/index.test.ts",
+            "line": 342,
             "column": 1,
             "message": "Expected indentation of 4 spaces but found 2."
           },
           {
-            "file": "index.js",
+            "file": "lifecycle/index.test.ts",
+            "line": 262,
+            "column": 1,
+            "message": "Expected indentation of 4 spaces but found 2."
+          },
+          {
+            "file": "map/index.js",
             "line": 17,
             "column": 1,
+            "message": "Expected indentation of 12 spaces but found 6."
+          },
+          {
+            "file": "computed/index.test.ts",
+            "line": 374,
+            "column": 1,
             "message": "Expected indentation of 4 spaces but found 2."
           },
           {
-            "file": "index.js",
-            "line": 18,
+            "file": "deep-map/path.js",
+            "line": 63,
             "column": 1,
             "message": "Expected indentation of 4 spaces but found 2."
           }
         ]
       },
       "tab": {
-        "count": 2521,
+        "count": 2898,
         "samples": [
           {
-            "file": "index.js",
-            "line": 5,
+            "file": "clean-stores/index.d.ts",
+            "line": 23,
             "column": 1,
             "message": "Expected indentation of 1 tab but found 2 spaces."
           },
           {
-            "file": "index.js",
-            "line": 6,
+            "file": "map/index.test.ts",
+            "line": 179,
             "column": 1,
             "message": "Expected indentation of 1 tab but found 2 spaces."
           },
           {
-            "file": "index.js",
-            "line": 7,
+            "file": "atom/index.test.ts",
+            "line": 301,
             "column": 1,
             "message": "Expected indentation of 1 tab but found 2 spaces."
           },
           {
-            "file": "index.js",
-            "line": 8,
+            "file": "eslint.config.js",
+            "line": 12,
+            "column": 1,
+            "message": "Expected indentation of 3 tabs but found 6 spaces."
+          },
+          {
+            "file": "computed/index.test.ts",
+            "line": 168,
             "column": 1,
             "message": "Expected indentation of 1 tab but found 2 spaces."
           },
           {
-            "file": "index.js",
-            "line": 9,
+            "file": "computed/index.test.ts",
+            "line": 599,
             "column": 1,
             "message": "Expected indentation of 1 tab but found 2 spaces."
           },
           {
-            "file": "index.js",
-            "line": 14,
+            "file": "deep-map/path.test.ts",
+            "line": 75,
             "column": 1,
             "message": "Expected indentation of 1 tab but found 2 spaces."
           },
           {
-            "file": "index.js",
-            "line": 15,
+            "file": "lifecycle/index.test.ts",
+            "line": 311,
+            "column": 1,
+            "message": "Expected indentation of 2 tabs but found 4 spaces."
+          },
+          {
+            "file": "deep-map/index.test.ts",
+            "line": 293,
             "column": 1,
             "message": "Expected indentation of 1 tab but found 2 spaces."
           },
           {
-            "file": "index.js",
-            "line": 16,
-            "column": 1,
-            "message": "Expected indentation of 1 tab but found 2 spaces."
-          },
-          {
-            "file": "index.js",
-            "line": 17,
-            "column": 1,
-            "message": "Expected indentation of 1 tab but found 2 spaces."
-          },
-          {
-            "file": "index.js",
-            "line": 18,
+            "file": "deep-map/path.d.ts",
+            "line": 168,
             "column": 1,
             "message": "Expected indentation of 1 tab but found 2 spaces."
           }
@@ -617,66 +764,66 @@
     },
     "quotes": {
       "double": {
-        "count": 1057,
+        "count": 1095,
         "samples": [
           {
-            "file": "index.js",
+            "file": "clean-stores/index.d.ts",
             "line": 1,
-            "column": 36,
+            "column": 33,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "index.js",
-            "line": 2,
-            "column": 36,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "index.js",
+            "file": "effect/index.test.ts",
             "line": 3,
-            "column": 35,
+            "column": 22,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "index.js",
-            "line": 10,
-            "column": 8,
+            "file": "atom/index.test.ts",
+            "line": 355,
+            "column": 34,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "index.js",
-            "line": 11,
-            "column": 24,
+            "file": "computed/index.test.ts",
+            "line": 188,
+            "column": 5,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "index.js",
-            "line": 12,
-            "column": 27,
+            "file": "lifecycle/index.test.ts",
+            "line": 38,
+            "column": 54,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "index.js",
-            "line": 20,
-            "column": 8,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "index.js",
-            "line": 21,
-            "column": 43,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "index.js",
-            "line": 22,
+            "file": "listen-keys/index.test.ts",
+            "line": 40,
             "column": 28,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "index.js",
-            "line": 23,
-            "column": 21,
+            "file": "map-creator/index.test.ts",
+            "line": 57,
+            "column": 49,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "deep-map/errors.ts",
+            "line": 38,
+            "column": 18,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "deep-map/index.test.ts",
+            "line": 230,
+            "column": 36,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "clean-stores/index.test.ts",
+            "line": 185,
+            "column": 28,
             "message": "Strings must use doublequote."
           }
         ]
@@ -688,66 +835,66 @@
     },
     "semi": {
       "always": {
-        "count": 2154,
+        "count": 2253,
         "samples": [
           {
-            "file": "index.js",
+            "file": "keep-mount/index.test.ts",
             "line": 1,
-            "column": 53,
+            "column": 46,
             "message": "Missing semicolon."
           },
           {
-            "file": "index.js",
-            "line": 2,
-            "column": 61,
+            "file": "atom/index.test.ts",
+            "line": 219,
+            "column": 3,
             "message": "Missing semicolon."
           },
           {
-            "file": "index.js",
-            "line": 3,
+            "file": "task/index.test.ts",
+            "line": 48,
+            "column": 3,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "deep-map/index.test.ts",
+            "line": 86,
+            "column": 28,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "test/benchmark.js",
+            "line": 78,
+            "column": 14,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "deep-map/path.js",
+            "line": 46,
             "column": 56,
             "message": "Missing semicolon."
           },
           {
-            "file": "index.js",
-            "line": 10,
-            "column": 29,
+            "file": "lifecycle/index.test.ts",
+            "line": 110,
+            "column": 28,
             "message": "Missing semicolon."
           },
           {
-            "file": "index.js",
-            "line": 11,
-            "column": 43,
+            "file": "map/production.test.js",
+            "line": 1,
+            "column": 35,
             "message": "Missing semicolon."
           },
           {
-            "file": "index.js",
-            "line": 12,
-            "column": 50,
+            "file": "computed/index.test.ts",
+            "line": 340,
+            "column": 16,
             "message": "Missing semicolon."
           },
           {
-            "file": "index.js",
-            "line": 20,
-            "column": 30,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "index.js",
-            "line": 21,
-            "column": 67,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "index.js",
-            "line": 22,
-            "column": 52,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "index.js",
-            "line": 23,
-            "column": 37,
+            "file": "effect/index.d.ts",
+            "line": 34,
+            "column": 28,
             "message": "Missing semicolon."
           }
         ]

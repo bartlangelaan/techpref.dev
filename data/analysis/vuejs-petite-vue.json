@@ -1,6 +1,7 @@
 {
-  "analyzedVersion": "4f44ab98c263",
+  "analyzedVersion": "8d56277528fc",
   "analyzedCommit": "9ff3b98b844033b935143c221176c81244aae32e",
+  "analyzedCommitDate": "2022-01-27T10:28:30.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -11,16 +12,22 @@
         "count": 13,
         "samples": [
           {
-            "file": "src/scheduler.ts",
-            "line": 2,
-            "column": 14,
-            "message": "Array type using 'Function[]' is forbidden. Use 'Array<Function>' instead."
-          },
-          {
             "file": "src/directives/if.ts",
             "line": 20,
             "column": 19,
             "message": "Array type using 'Branch[]' is forbidden. Use 'Array<Branch>' instead."
+          },
+          {
+            "file": "src/app.ts",
+            "line": 33,
+            "column": 19,
+            "message": "Array type using 'Block[]' is forbidden. Use 'Array<Block>' instead."
+          },
+          {
+            "file": "src/scheduler.ts",
+            "line": 2,
+            "column": 14,
+            "message": "Array type using 'Function[]' is forbidden. Use 'Array<Function>' instead."
           },
           {
             "file": "src/context.ts",
@@ -35,22 +42,16 @@
             "message": "Array type using 'ReactiveEffectRunner[]' is forbidden. Use 'Array<ReactiveEffectRunner>' instead."
           },
           {
-            "file": "src/context.ts",
-            "line": 17,
-            "column": 13,
+            "file": "src/walk.ts",
+            "line": 64,
+            "column": 21,
             "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           },
           {
-            "file": "src/app.ts",
-            "line": 33,
-            "column": 19,
-            "message": "Array type using 'Block[]' is forbidden. Use 'Array<Block>' instead."
-          },
-          {
-            "file": "src/app.ts",
-            "line": 56,
-            "column": 18,
-            "message": "Array type using 'Element[]' is forbidden. Use 'Array<Element>' instead."
+            "file": "src/walk.ts",
+            "line": 89,
+            "column": 21,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
             "file": "src/directives/for.ts",
@@ -60,15 +61,15 @@
           },
           {
             "file": "src/directives/for.ts",
-            "line": 60,
-            "column": 18,
+            "line": 65,
+            "column": 17,
             "message": "Array type using 'Context[]' is forbidden. Use 'Array<Context>' instead."
           },
           {
             "file": "src/directives/for.ts",
-            "line": 65,
-            "column": 17,
-            "message": "Array type using 'Context[]' is forbidden. Use 'Array<Context>' instead."
+            "line": 133,
+            "column": 25,
+            "message": "Array type using 'Block[]' is forbidden. Use 'Array<Block>' instead."
           }
         ]
       }
@@ -91,24 +92,6 @@
       "index-signature": {
         "count": 10,
         "samples": [
-          {
-            "file": "src/eval.ts",
-            "line": 1,
-            "column": 18,
-            "message": "An index signature is preferred over a record."
-          },
-          {
-            "file": "src/directives/on.ts",
-            "line": 14,
-            "column": 23,
-            "message": "An index signature is preferred over a record."
-          },
-          {
-            "file": "src/directives/on.ts",
-            "line": 16,
-            "column": 25,
-            "message": "An index signature is preferred over a record."
-          },
           {
             "file": "src/directives/index.ts",
             "line": 21,
@@ -150,6 +133,24 @@
             "line": 158,
             "column": 15,
             "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "src/eval.ts",
+            "line": 1,
+            "column": 18,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "src/directives/on.ts",
+            "line": 14,
+            "column": 23,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "src/directives/on.ts",
+            "line": 16,
+            "column": 25,
+            "message": "An index signature is preferred over a record."
           }
         ]
       }
@@ -162,12 +163,6 @@
       "type": {
         "count": 4,
         "samples": [
-          {
-            "file": "src/directives/if.ts",
-            "line": 6,
-            "column": 1,
-            "message": "Use `type` instead of `interface`."
-          },
           {
             "file": "src/directives/index.ts",
             "line": 11,
@@ -185,6 +180,12 @@
             "line": 10,
             "column": 8,
             "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "src/directives/if.ts",
+            "line": 6,
+            "column": 1,
+            "message": "Use `type` instead of `interface`."
           }
         ]
       }
@@ -194,13 +195,25 @@
         "count": 19,
         "samples": [
           {
-            "file": "src/directives/text.ts",
-            "line": 2,
+            "file": "src/block.ts",
+            "line": 1,
+            "column": 1,
+            "message": "Imports Context are only used as type."
+          },
+          {
+            "file": "src/directives/show.ts",
+            "line": 1,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "src/directives/show.ts",
+            "file": "src/directives/index.ts",
+            "line": 1,
+            "column": 1,
+            "message": "All imports in the declaration are only used as types. Use `import type`."
+          },
+          {
+            "file": "src/directives/html.ts",
             "line": 1,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
@@ -212,16 +225,10 @@
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "src/directives/index.ts",
-            "line": 1,
+            "file": "src/directives/for.ts",
+            "line": 4,
             "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
-          {
-            "file": "src/directives/index.ts",
-            "line": 2,
-            "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
+            "message": "Imports Context are only used as type."
           },
           {
             "file": "src/directives/if.ts",
@@ -230,28 +237,22 @@
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "src/directives/html.ts",
+            "file": "src/walk.ts",
             "line": 1,
             "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
-          {
-            "file": "src/directives/effect.ts",
-            "line": 1,
-            "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
-          {
-            "file": "src/app.ts",
-            "line": 3,
-            "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
+            "message": "Imports Directive are only used as type."
           },
           {
             "file": "src/context.ts",
             "line": 1,
             "column": 1,
             "message": "Imports ReactiveEffectRunner are only used as type."
+          },
+          {
+            "file": "src/context.ts",
+            "line": 7,
+            "column": 1,
+            "message": "All imports in the declaration are only used as types. Use `import type`."
           }
         ]
       },
@@ -288,32 +289,8 @@
             "message": "Expected a function declaration."
           },
           {
-            "file": "src/utils.ts",
-            "line": 7,
-            "column": 14,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "src/scheduler.ts",
-            "line": 5,
-            "column": 14,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "src/scheduler.ts",
-            "line": 7,
-            "column": 14,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "src/scheduler.ts",
-            "line": 15,
-            "column": 7,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "src/directives/if.ts",
-            "line": 11,
+            "file": "src/directives/bind.ts",
+            "line": 13,
             "column": 14,
             "message": "Expected a function declaration."
           },
@@ -324,20 +301,44 @@
             "message": "Expected a function declaration."
           },
           {
-            "file": "src/eval.ts",
-            "line": 3,
-            "column": 14,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "src/eval.ts",
-            "line": 6,
-            "column": 14,
+            "file": "scripts/release.js",
+            "line": 12,
+            "column": 7,
             "message": "Expected a function declaration."
           },
           {
             "file": "src/eval.ts",
             "line": 18,
+            "column": 7,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "src/app.ts",
+            "line": 11,
+            "column": 14,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "src/scheduler.ts",
+            "line": 5,
+            "column": 14,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "src/directives/model.ts",
+            "line": 126,
+            "column": 7,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "src/walk.ts",
+            "line": 17,
+            "column": 14,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "src/walk.ts",
+            "line": 175,
             "column": 7,
             "message": "Expected a function declaration."
           }
@@ -360,25 +361,13 @@
         "count": 11,
         "samples": [
           {
-            "file": "src/directives/effect.ts",
-            "line": 5,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "src/directives/html.ts",
+            "file": "src/directives/ref.ts",
             "line": 3,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/block.ts",
-            "line": 6,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "src/directives/model.ts",
+            "file": "src/directives/effect.ts",
             "line": 5,
             "column": 1,
             "message": "Prefer default export on a file with single export."
@@ -390,20 +379,32 @@
             "message": "Prefer default export on a file with single export."
           },
           {
+            "file": "src/directives/for.ts",
+            "line": 13,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "src/directives/if.ts",
+            "line": 11,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "src/block.ts",
+            "line": 6,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
             "file": "src/directives/show.ts",
             "line": 3,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/directives/ref.ts",
+            "file": "src/directives/html.ts",
             "line": 3,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "src/directives/for.ts",
-            "line": 13,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -414,8 +415,8 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/directives/if.ts",
-            "line": 11,
+            "file": "src/directives/model.ts",
+            "line": 5,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           }
@@ -441,132 +442,132 @@
         ]
       },
       "4-space": {
-        "count": 978,
+        "count": 1003,
         "samples": [
           {
-            "file": "vite.config.ts",
-            "line": 5,
+            "file": "src/utils.ts",
+            "line": 2,
             "column": 1,
             "message": "Expected indentation of 4 spaces but found 2."
           },
           {
-            "file": "vite.config.ts",
-            "line": 6,
+            "file": "src/directives/if.ts",
+            "line": 60,
             "column": 1,
-            "message": "Expected indentation of 8 spaces but found 4."
+            "message": "Expected indentation of 12 spaces but found 6."
           },
           {
-            "file": "vite.config.ts",
-            "line": 7,
+            "file": "src/directives/bind.ts",
+            "line": 25,
             "column": 1,
             "message": "Expected indentation of 4 spaces but found 2."
           },
           {
-            "file": "vite.config.ts",
-            "line": 8,
+            "file": "src/walk.ts",
+            "line": 46,
+            "column": 1,
+            "message": "Expected indentation of 12 spaces but found 6."
+          },
+          {
+            "file": "src/walk.ts",
+            "line": 179,
+            "column": 1,
+            "message": "Expected indentation of 12 spaces but found 6."
+          },
+          {
+            "file": "src/directives/model.ts",
+            "line": 117,
+            "column": 1,
+            "message": "Expected indentation of 16 spaces but found 8."
+          },
+          {
+            "file": "scripts/release.js",
+            "line": 23,
+            "column": 1,
+            "message": "Expected indentation of 8 spaces but found 4."
+          },
+          {
+            "file": "src/directives/for.ts",
+            "line": 71,
+            "column": 1,
+            "message": "Expected indentation of 8 spaces but found 4."
+          },
+          {
+            "file": "src/block.ts",
+            "line": 34,
+            "column": 1,
+            "message": "Expected indentation of 12 spaces but found 6."
+          },
+          {
+            "file": "src/directives/index.ts",
+            "line": 32,
             "column": 1,
             "message": "Expected indentation of 4 spaces but found 2."
-          },
-          {
-            "file": "vite.config.ts",
-            "line": 9,
-            "column": 1,
-            "message": "Expected indentation of 8 spaces but found 4."
-          },
-          {
-            "file": "vite.config.ts",
-            "line": 10,
-            "column": 1,
-            "message": "Expected indentation of 8 spaces but found 4."
-          },
-          {
-            "file": "vite.config.ts",
-            "line": 11,
-            "column": 1,
-            "message": "Expected indentation of 8 spaces but found 4."
-          },
-          {
-            "file": "vite.config.ts",
-            "line": 12,
-            "column": 1,
-            "message": "Expected indentation of 12 spaces but found 6."
-          },
-          {
-            "file": "vite.config.ts",
-            "line": 13,
-            "column": 1,
-            "message": "Expected indentation of 12 spaces but found 6."
-          },
-          {
-            "file": "vite.config.ts",
-            "line": 14,
-            "column": 1,
-            "message": "Expected indentation of 12 spaces but found 6."
           }
         ]
       },
       "tab": {
-        "count": 987,
+        "count": 1012,
         "samples": [
           {
-            "file": "vite.config.ts",
-            "line": 5,
+            "file": "src/utils.ts",
+            "line": 2,
             "column": 1,
             "message": "Expected indentation of 1 tab but found 2 spaces."
           },
           {
-            "file": "vite.config.ts",
-            "line": 6,
+            "file": "src/walk.ts",
+            "line": 35,
             "column": 1,
             "message": "Expected indentation of 2 tabs but found 4 spaces."
           },
           {
-            "file": "vite.config.ts",
-            "line": 7,
-            "column": 1,
-            "message": "Expected indentation of 1 tab but found 2 spaces."
-          },
-          {
-            "file": "vite.config.ts",
-            "line": 8,
-            "column": 1,
-            "message": "Expected indentation of 1 tab but found 2 spaces."
-          },
-          {
-            "file": "vite.config.ts",
-            "line": 9,
+            "file": "src/walk.ts",
+            "line": 167,
             "column": 1,
             "message": "Expected indentation of 2 tabs but found 4 spaces."
           },
           {
-            "file": "vite.config.ts",
-            "line": 10,
+            "file": "src/directives/on.ts",
+            "line": 37,
             "column": 1,
             "message": "Expected indentation of 2 tabs but found 4 spaces."
           },
           {
-            "file": "vite.config.ts",
-            "line": 11,
-            "column": 1,
-            "message": "Expected indentation of 2 tabs but found 4 spaces."
-          },
-          {
-            "file": "vite.config.ts",
-            "line": 12,
-            "column": 1,
-            "message": "Expected indentation of 3 tabs but found 6 spaces."
-          },
-          {
-            "file": "vite.config.ts",
+            "file": "src/directives/if.ts",
             "line": 13,
             "column": 1,
-            "message": "Expected indentation of 3 tabs but found 6 spaces."
+            "message": "Expected indentation of 2 tabs but found 4 spaces."
+          },
+          {
+            "file": "src/directives/for.ts",
+            "line": 63,
+            "column": 1,
+            "message": "Expected indentation of 1 tab but found 2 spaces."
           },
           {
             "file": "vite.config.ts",
-            "line": 14,
+            "line": 19,
             "column": 1,
-            "message": "Expected indentation of 3 tabs but found 6 spaces."
+            "message": "Expected indentation of 5 tabs but found 10 spaces."
+          },
+          {
+            "file": "src/directives/bind.ts",
+            "line": 40,
+            "column": 1,
+            "message": "Expected indentation of 5 tabs but found 10 spaces."
+          },
+          {
+            "file": "src/directives/model.ts",
+            "line": 39,
+            "column": 1,
+            "message": "Expected indentation of 4 tabs but found 8 spaces."
+          },
+          {
+            "file": "src/directives/ref.ts",
+            "line": 22,
+            "column": 1,
+            "message": "Expected indentation of 1 tab but found 2 spaces."
           }
         ]
       }
@@ -576,51 +577,33 @@
         "count": 240,
         "samples": [
           {
-            "file": "vite.config.ts",
+            "file": "src/index.ts",
             "line": 1,
-            "column": 30,
+            "column": 27,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "vite.config.ts",
+            "file": "src/block.ts",
             "line": 2,
-            "column": 25,
+            "column": 22,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "vite.config.ts",
-            "line": 9,
-            "column": 13,
+            "file": "src/walk.ts",
+            "line": 67,
+            "column": 22,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "vite.config.ts",
-            "line": 10,
-            "column": 13,
+            "file": "src/context.ts",
+            "line": 74,
+            "column": 31,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "vite.config.ts",
-            "line": 12,
-            "column": 33,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "vite.config.ts",
-            "line": 13,
-            "column": 13,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "vite.config.ts",
-            "line": 14,
-            "column": 17,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "vite.config.ts",
-            "line": 14,
-            "column": 23,
+            "file": "src/directives/if.ts",
+            "line": 17,
+            "column": 30,
             "message": "Strings must use doublequote."
           },
           {
@@ -630,9 +613,27 @@
             "message": "Strings must use doublequote."
           },
           {
-            "file": "vite.config.ts",
-            "line": 19,
-            "column": 17,
+            "file": "scripts/release.js",
+            "line": 2,
+            "column": 22,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "scripts/release.js",
+            "line": 64,
+            "column": 13,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "scripts/release.js",
+            "line": 94,
+            "column": 29,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "src/directives/ref.ts",
+            "line": 1,
+            "column": 27,
             "message": "Strings must use doublequote."
           }
         ]
@@ -641,6 +642,18 @@
         "count": 16,
         "samples": [
           {
+            "file": "src/directives/if.ts",
+            "line": 13,
+            "column": 18,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "src/directives/on.ts",
+            "line": 47,
+            "column": 7,
+            "message": "Strings must use singlequote."
+          },
+          {
             "file": "vite.config.ts",
             "line": 23,
             "column": 26,
@@ -648,20 +661,8 @@
           },
           {
             "file": "vite.config.ts",
-            "line": 23,
-            "column": 56,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "vite.config.ts",
             "line": 24,
             "column": 26,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "vite.config.ts",
-            "line": 24,
-            "column": 57,
             "message": "Strings must use singlequote."
           },
           {
@@ -678,20 +679,8 @@
           },
           {
             "file": "src/app.ts",
-            "line": 60,
-            "column": 41,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "src/app.ts",
             "line": 61,
             "column": 35,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "src/app.ts",
-            "line": 74,
-            "column": 11,
             "message": "Strings must use singlequote."
           },
           {
@@ -699,72 +688,84 @@
             "line": 75,
             "column": 13,
             "message": "Strings must use singlequote."
+          },
+          {
+            "file": "src/app.ts",
+            "line": 76,
+            "column": 13,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "scripts/release.js",
+            "line": 69,
+            "column": 14,
+            "message": "Strings must use singlequote."
           }
         ]
       }
     },
     "semi": {
       "always": {
-        "count": 552,
+        "count": 554,
         "samples": [
           {
-            "file": "vite.config.ts",
+            "file": "src/index.ts",
             "line": 1,
-            "column": 36,
+            "column": 34,
             "message": "Missing semicolon."
           },
           {
-            "file": "vite.config.ts",
-            "line": 2,
-            "column": 31,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "vite.config.ts",
-            "line": 24,
-            "column": 65,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "vite.config.ts",
-            "line": 31,
-            "column": 3,
+            "file": "src/directives/if.ts",
+            "line": 16,
+            "column": 35,
             "message": "Missing semicolon."
           },
           {
             "file": "src/walk.ts",
-            "line": 1,
-            "column": 60,
+            "line": 83,
+            "column": 21,
             "message": "Missing semicolon."
           },
           {
-            "file": "src/walk.ts",
-            "line": 2,
-            "column": 38,
+            "file": "src/directives/bind.ts",
+            "line": 63,
+            "column": 34,
             "message": "Missing semicolon."
           },
           {
-            "file": "src/walk.ts",
-            "line": 3,
-            "column": 40,
+            "file": "src/block.ts",
+            "line": 49,
+            "column": 43,
             "message": "Missing semicolon."
           },
           {
-            "file": "src/walk.ts",
-            "line": 4,
-            "column": 41,
+            "file": "src/directives/for.ts",
+            "line": 59,
+            "column": 22,
             "message": "Missing semicolon."
           },
           {
-            "file": "src/walk.ts",
-            "line": 5,
-            "column": 37,
+            "file": "src/eval.ts",
+            "line": 7,
+            "column": 66,
             "message": "Missing semicolon."
           },
           {
-            "file": "src/walk.ts",
-            "line": 6,
-            "column": 41,
+            "file": "src/directives/model.ts",
+            "line": 107,
+            "column": 9,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "src/app.ts",
+            "line": 50,
+            "column": 69,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "src/directives/index.ts",
+            "line": 33,
+            "column": 2,
             "message": "Missing semicolon."
           }
         ]

@@ -1,6 +1,7 @@
 {
-  "analyzedVersion": "4f44ab98c263",
+  "analyzedVersion": "8d56277528fc",
   "analyzedCommit": "c3cbcf94e0c2f964fc9a709a8192625e57ce5206",
+  "analyzedCommitDate": "2026-01-02T00:12:02.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -17,28 +18,10 @@
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
-            "file": "source/tray.ts",
-            "line": 42,
-            "column": 25,
-            "message": "Array type using 'MenuItemConstructorOptions[]' is forbidden. Use 'Array<MenuItemConstructorOptions>' instead."
-          },
-          {
-            "file": "source/spell-checker.ts",
-            "line": 60,
-            "column": 38,
-            "message": "Array type using 'MenuItemConstructorOptions[]' is forbidden. Use 'Array<MenuItemConstructorOptions>' instead."
-          },
-          {
             "file": "source/spell-checker.ts",
             "line": 62,
             "column": 22,
             "message": "Array type using 'MenuItemConstructorOptions[]' is forbidden. Use 'Array<MenuItemConstructorOptions>' instead."
-          },
-          {
-            "file": "source/touch-bar.ts",
-            "line": 15,
-            "column": 29,
-            "message": "Array type using 'Electron.TouchBarButton[]' is forbidden. Use 'Array<Electron.TouchBarButton>' instead."
           },
           {
             "file": "source/touch-bar.ts",
@@ -47,28 +30,46 @@
             "message": "Array type using 'Conversation[]' is forbidden. Use 'Array<Conversation>' instead."
           },
           {
-            "file": "source/autoplay.ts",
-            "line": 27,
-            "column": 21,
-            "message": "Array type using 'HTMLVideoElement[]' is forbidden. Use 'Array<HTMLVideoElement>' instead."
-          },
-          {
-            "file": "source/emoji.ts",
-            "line": 343,
-            "column": 12,
-            "message": "Array type using 'MenuItemConstructorOptions[]' is forbidden. Use 'Array<MenuItemConstructorOptions>' instead."
-          },
-          {
-            "file": "source/emoji.ts",
-            "line": 343,
-            "column": 12,
-            "message": "Array type using 'MenuItemConstructorOptions[]' is forbidden. Use 'Array<MenuItemConstructorOptions>' instead."
+            "file": "source/browser/conversation-list.ts",
+            "line": 157,
+            "column": 56,
+            "message": "Array type using 'HTMLElement[]' is forbidden. Use 'Array<HTMLElement>' instead."
           },
           {
             "file": "source/browser/conversation-list.ts",
-            "line": 112,
-            "column": 16,
-            "message": "Array type using 'HTMLElement[]' is forbidden. Use 'Array<HTMLElement>' instead."
+            "line": 191,
+            "column": 24,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+          },
+          {
+            "file": "source/menu.ts",
+            "line": 110,
+            "column": 22,
+            "message": "Array type using 'MenuItemConstructorOptions[]' is forbidden. Use 'Array<MenuItemConstructorOptions>' instead."
+          },
+          {
+            "file": "source/menu.ts",
+            "line": 238,
+            "column": 28,
+            "message": "Array type using 'MenuItemConstructorOptions[]' is forbidden. Use 'Array<MenuItemConstructorOptions>' instead."
+          },
+          {
+            "file": "source/menu.ts",
+            "line": 721,
+            "column": 22,
+            "message": "Array type using 'MenuItemConstructorOptions[]' is forbidden. Use 'Array<MenuItemConstructorOptions>' instead."
+          },
+          {
+            "file": "source/browser.ts",
+            "line": 342,
+            "column": 53,
+            "message": "Array type using 'MutationRecord[]' is forbidden. Use 'Array<MutationRecord>' instead."
+          },
+          {
+            "file": "source/browser.ts",
+            "line": 746,
+            "column": 19,
+            "message": "Array type using 'MutationRecord[]' is forbidden. Use 'Array<MutationRecord>' instead."
           }
         ]
       }
@@ -82,12 +83,6 @@
         "count": 4,
         "samples": [
           {
-            "file": "source/notifications-isolated.ts",
-            "line": 2,
-            "column": 31,
-            "message": "The generic type arguments should be specified as part of the type annotation."
-          },
-          {
             "file": "source/config.ts",
             "line": 276,
             "column": 24,
@@ -96,6 +91,12 @@
           {
             "file": "source/spell-checker.ts",
             "line": 4,
+            "column": 31,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "source/notifications-isolated.ts",
+            "line": 2,
             "column": 31,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
@@ -133,12 +134,24 @@
     },
     "consistent-type-definitions": {
       "interface": {
-        "count": 5,
+        "count": 7,
         "samples": [
           {
             "file": "source/config.ts",
             "line": 5,
             "column": 8,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "source/notifications.d.ts",
+            "line": 1,
+            "column": 1,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "source/notification-event.d.ts",
+            "line": 1,
+            "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
@@ -177,10 +190,16 @@
         "count": 10,
         "samples": [
           {
-            "file": "source/tray.ts",
-            "line": 2,
+            "file": "source/config.ts",
+            "line": 3,
             "column": 1,
-            "message": "Imports BrowserWindow and MenuItemConstructorOptions are only used as type."
+            "message": "All imports in the declaration are only used as types. Use `import type`."
+          },
+          {
+            "file": "source/spell-checker.ts",
+            "line": 1,
+            "column": 1,
+            "message": "Imports MenuItemConstructorOptions are only used as type."
           },
           {
             "file": "source/emoji.ts",
@@ -189,22 +208,16 @@
             "message": "Imports NativeImage, MenuItemConstructorOptions, CallbackResponse, and Menu are only used as type."
           },
           {
-            "file": "source/config.ts",
-            "line": 3,
+            "file": "source/tray.ts",
+            "line": 2,
             "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
+            "message": "Imports BrowserWindow and MenuItemConstructorOptions are only used as type."
           },
           {
             "file": "source/util.ts",
             "line": 1,
             "column": 1,
             "message": "Imports Menu are only used as type."
-          },
-          {
-            "file": "source/spell-checker.ts",
-            "line": 1,
-            "column": 1,
-            "message": "Imports MenuItemConstructorOptions are only used as type."
           },
           {
             "file": "source/menu-bar-mode.ts",
@@ -248,62 +261,62 @@
         "count": 91,
         "samples": [
           {
-            "file": "source/ensure-online.ts",
-            "line": 5,
+            "file": "source/util.ts",
+            "line": 12,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "source/autoplay.ts",
+            "line": 128,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "source/tray.ts",
-            "line": 24,
-            "column": 3,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "source/tray.ts",
-            "line": 142,
+            "file": "source/touch-bar.ts",
+            "line": 15,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "source/tray.ts",
-            "line": 156,
+            "file": "source/menu-bar-mode.ts",
+            "line": 13,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "source/browser/conversation-list.ts",
+            "line": 167,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "source/index.ts",
+            "line": 261,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "source/tray.ts",
-            "line": 164,
+            "file": "source/browser.ts",
+            "line": 233,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "source/tray.ts",
-            "line": 168,
+            "file": "source/browser.ts",
+            "line": 520,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "source/config.ts",
-            "line": 223,
+            "file": "source/browser.ts",
+            "line": 616,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "source/config.ts",
-            "line": 237,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "source/config.ts",
-            "line": 247,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "source/config.ts",
-            "line": 270,
+            "file": "source/browser.ts",
+            "line": 929,
             "column": 1,
             "message": "Expected a function expression."
           }
@@ -316,6 +329,12 @@
             "file": "source/tray.ts",
             "line": 102,
             "column": 9,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "source/emoji.ts",
+            "line": 344,
+            "column": 8,
             "message": "Expected a function declaration."
           },
           {
@@ -334,12 +353,6 @@
             "file": "source/util.ts",
             "line": 95,
             "column": 7,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "source/emoji.ts",
-            "line": 344,
-            "column": 8,
             "message": "Expected a function declaration."
           },
           {
@@ -380,14 +393,8 @@
         "count": 6,
         "samples": [
           {
-            "file": "source/ensure-online.ts",
-            "line": 22,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "source/spell-checker.ts",
-            "line": 111,
+            "file": "source/browser/selectors.ts",
+            "line": 1,
             "column": 8,
             "message": "Prefer named exports"
           },
@@ -398,20 +405,26 @@
             "message": "Prefer named exports"
           },
           {
-            "file": "source/browser/selectors.ts",
-            "line": 1,
+            "file": "source/config.ts",
+            "line": 279,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "source/spell-checker.ts",
+            "line": 111,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "source/ensure-online.ts",
+            "line": 22,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
             "file": "source/menu.ts",
             "line": 31,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "source/config.ts",
-            "line": 279,
             "column": 8,
             "message": "Prefer named exports"
           }
@@ -443,263 +456,202 @@
     },
     "indent": {
       "2-space": {
-        "count": 3044,
+        "count": 3137,
         "samples": [
           {
-            "file": "source/util.ts",
-            "line": 2,
+            "file": "source/touch-bar.ts",
+            "line": 10,
             "column": 1,
             "message": "Expected indentation of 2 spaces but found 1 tab."
           },
           {
-            "file": "source/util.ts",
-            "line": 3,
+            "file": "source/config.ts",
+            "line": 105,
             "column": 1,
             "message": "Expected indentation of 2 spaces but found 1 tab."
           },
           {
-            "file": "source/util.ts",
-            "line": 4,
+            "file": "source/index.ts",
+            "line": 178,
             "column": 1,
             "message": "Expected indentation of 2 spaces but found 1 tab."
           },
           {
-            "file": "source/util.ts",
-            "line": 5,
+            "file": "source/index.ts",
+            "line": 630,
+            "column": 1,
+            "message": "Expected indentation of 6 spaces but found 3 tabs."
+          },
+          {
+            "file": "source/browser.ts",
+            "line": 243,
             "column": 1,
             "message": "Expected indentation of 2 spaces but found 1 tab."
           },
           {
-            "file": "source/util.ts",
-            "line": 13,
+            "file": "source/browser.ts",
+            "line": 833,
             "column": 1,
             "message": "Expected indentation of 2 spaces but found 1 tab."
           },
           {
-            "file": "source/util.ts",
-            "line": 14,
+            "file": "source/emoji.ts",
+            "line": 186,
             "column": 1,
             "message": "Expected indentation of 2 spaces but found 1 tab."
           },
           {
-            "file": "source/util.ts",
-            "line": 18,
+            "file": "source/menu.ts",
+            "line": 151,
             "column": 1,
-            "message": "Expected indentation of 2 spaces but found 1 tab."
+            "message": "Expected indentation of 8 spaces but found 4 tabs."
           },
           {
-            "file": "source/util.ts",
-            "line": 20,
+            "file": "source/menu.ts",
+            "line": 516,
             "column": 1,
-            "message": "Expected indentation of 2 spaces but found 1 tab."
+            "message": "Expected indentation of 10 spaces but found 5 tabs."
           },
           {
-            "file": "source/util.ts",
-            "line": 21,
-            "column": 1,
-            "message": "Expected indentation of 4 spaces but found 2 tabs."
-          },
-          {
-            "file": "source/util.ts",
-            "line": 22,
+            "file": "source/menu.ts",
+            "line": 884,
             "column": 1,
             "message": "Expected indentation of 2 spaces but found 1 tab."
           }
         ]
       },
       "4-space": {
-        "count": 3044,
+        "count": 3137,
         "samples": [
           {
-            "file": "source/util.ts",
+            "file": "source/browser/selectors.ts",
             "line": 2,
             "column": 1,
             "message": "Expected indentation of 4 spaces but found 1 tab."
           },
           {
-            "file": "source/util.ts",
-            "line": 3,
+            "file": "source/config.ts",
+            "line": 259,
             "column": 1,
             "message": "Expected indentation of 4 spaces but found 1 tab."
           },
           {
-            "file": "source/util.ts",
-            "line": 4,
+            "file": "source/emoji.ts",
+            "line": 63,
             "column": 1,
             "message": "Expected indentation of 4 spaces but found 1 tab."
           },
           {
-            "file": "source/util.ts",
-            "line": 5,
+            "file": "source/browser.ts",
+            "line": 27,
             "column": 1,
             "message": "Expected indentation of 4 spaces but found 1 tab."
           },
           {
-            "file": "source/util.ts",
-            "line": 13,
+            "file": "source/browser.ts",
+            "line": 647,
             "column": 1,
             "message": "Expected indentation of 4 spaces but found 1 tab."
           },
           {
-            "file": "source/util.ts",
-            "line": 14,
+            "file": "source/browser/conversation-list.ts",
+            "line": 263,
             "column": 1,
             "message": "Expected indentation of 4 spaces but found 1 tab."
           },
           {
-            "file": "source/util.ts",
-            "line": 18,
+            "file": "source/menu.ts",
+            "line": 291,
             "column": 1,
-            "message": "Expected indentation of 4 spaces but found 1 tab."
+            "message": "Expected indentation of 12 spaces but found 3 tabs."
           },
           {
-            "file": "source/util.ts",
-            "line": 20,
+            "file": "source/menu.ts",
+            "line": 647,
             "column": 1,
-            "message": "Expected indentation of 4 spaces but found 1 tab."
+            "message": "Expected indentation of 16 spaces but found 4 tabs."
           },
           {
-            "file": "source/util.ts",
-            "line": 21,
+            "file": "source/index.ts",
+            "line": 222,
             "column": 1,
             "message": "Expected indentation of 8 spaces but found 2 tabs."
           },
           {
-            "file": "source/util.ts",
-            "line": 22,
+            "file": "source/browser-call.ts",
+            "line": 8,
             "column": 1,
             "message": "Expected indentation of 4 spaces but found 1 tab."
           }
         ]
       },
       "tab": {
-        "count": 31,
-        "samples": [
-          {
-            "file": "source/emoji.ts",
-            "line": 222,
-            "column": 1,
-            "message": "Expected indentation of 1 tab but found 2."
-          },
-          {
-            "file": "source/emoji.ts",
-            "line": 223,
-            "column": 1,
-            "message": "Expected indentation of 2 tabs but found 3."
-          },
-          {
-            "file": "source/emoji.ts",
-            "line": 224,
-            "column": 1,
-            "message": "Expected indentation of 1 tab but found 2."
-          },
-          {
-            "file": "source/emoji.ts",
-            "line": 226,
-            "column": 1,
-            "message": "Expected indentation of 1 tab but found 2."
-          },
-          {
-            "file": "source/emoji.ts",
-            "line": 227,
-            "column": 1,
-            "message": "Expected indentation of 2 tabs but found 3."
-          },
-          {
-            "file": "source/emoji.ts",
-            "line": 228,
-            "column": 1,
-            "message": "Expected indentation of 1 tab but found 2."
-          },
-          {
-            "file": "source/emoji.ts",
-            "line": 230,
-            "column": 1,
-            "message": "Expected indentation of 1 tab but found 2."
-          },
-          {
-            "file": "source/emoji.ts",
-            "line": 231,
-            "column": 1,
-            "message": "Expected indentation of 2 tabs but found 3."
-          },
-          {
-            "file": "source/emoji.ts",
-            "line": 232,
-            "column": 1,
-            "message": "Expected indentation of 1 tab but found 2."
-          },
-          {
-            "file": "source/browser.ts",
-            "line": 384,
-            "column": 1,
-            "message": "Expected indentation of 1 tab but found 2."
-          }
-        ]
+        "count": 0,
+        "samples": []
       }
     },
     "quotes": {
       "double": {
-        "count": 1374,
+        "count": 1375,
         "samples": [
           {
-            "file": "source/util.ts",
-            "line": 6,
-            "column": 8,
+            "file": "source/do-not-disturb.d.ts",
+            "line": 1,
+            "column": 16,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "source/util.ts",
+            "file": "source/spell-checker.ts",
             "line": 7,
-            "column": 23,
+            "column": 3,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "source/util.ts",
-            "line": 8,
-            "column": 18,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "source/util.ts",
-            "line": 9,
-            "column": 20,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "source/util.ts",
-            "line": 10,
-            "column": 18,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "source/util.ts",
-            "line": 36,
+            "file": "source/ensure-online.ts",
+            "line": 7,
             "column": 12,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "source/util.ts",
-            "line": 38,
-            "column": 5,
+            "file": "source/index.ts",
+            "line": 594,
+            "column": 90,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "source/util.ts",
-            "line": 39,
-            "column": 5,
+            "file": "source/browser.ts",
+            "line": 418,
+            "column": 8,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "source/util.ts",
-            "line": 52,
-            "column": 43,
+            "file": "source/emoji.ts",
+            "line": 23,
+            "column": 2,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "source/util.ts",
-            "line": 52,
-            "column": 60,
+            "file": "source/emoji.ts",
+            "line": 176,
+            "column": 2,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "source/menu.ts",
+            "line": 114,
+            "column": 37,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "source/menu.ts",
+            "line": 422,
+            "column": 16,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "source/menu.ts",
+            "line": 876,
+            "column": 11,
             "message": "Strings must use doublequote."
           }
         ]
@@ -715,66 +667,66 @@
         "samples": []
       },
       "never": {
-        "count": 1162,
+        "count": 1172,
         "samples": [
           {
-            "file": "source/util.ts",
-            "line": 6,
-            "column": 18,
+            "file": "source/constants.ts",
+            "line": 1,
+            "column": 34,
             "message": "Extra semicolon."
           },
           {
-            "file": "source/util.ts",
-            "line": 7,
-            "column": 44,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "source/util.ts",
-            "line": 8,
+            "file": "source/notifications-isolated.ts",
+            "line": 15,
             "column": 33,
             "message": "Extra semicolon."
           },
           {
-            "file": "source/util.ts",
-            "line": 9,
-            "column": 30,
+            "file": "source/browser.ts",
+            "line": 1,
+            "column": 35,
             "message": "Extra semicolon."
           },
           {
-            "file": "source/util.ts",
-            "line": 10,
-            "column": 26,
+            "file": "source/browser.ts",
+            "line": 317,
+            "column": 72,
             "message": "Extra semicolon."
           },
           {
-            "file": "source/util.ts",
-            "line": 13,
-            "column": 45,
+            "file": "source/browser.ts",
+            "line": 653,
+            "column": 4,
             "message": "Extra semicolon."
           },
           {
-            "file": "source/util.ts",
-            "line": 14,
-            "column": 12,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "source/util.ts",
-            "line": 18,
-            "column": 25,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "source/util.ts",
-            "line": 21,
+            "file": "source/index.ts",
+            "line": 33,
             "column": 16,
             "message": "Extra semicolon."
           },
           {
-            "file": "source/util.ts",
-            "line": 24,
-            "column": 47,
+            "file": "source/index.ts",
+            "line": 439,
+            "column": 117,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "source/browser/conversation-list.ts",
+            "line": 85,
+            "column": 67,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "source/menu.ts",
+            "line": 93,
+            "column": 38,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "source/browser-call.ts",
+            "line": 8,
+            "column": 25,
             "message": "Extra semicolon."
           }
         ]

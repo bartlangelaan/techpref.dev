@@ -1,7 +1,7 @@
 {
-  "analyzedVersion": "4f44ab98c263",
-  "analyzedCommit": "6b585065fc501a78af47be7666d8d42f188a6d48",
-  "analyzedCommitDate": "2026-02-06T05:03:58.000Z",
+  "analyzedVersion": "8d56277528fc",
+  "analyzedCommit": "820f1db68e0500f6b77e4118390764bb60059423",
+  "analyzedCommitDate": "2026-01-27T07:15:30.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -19,10 +19,16 @@
         "count": 47,
         "samples": [
           {
-            "file": "src/Parser.ts",
-            "line": 26,
-            "column": 72,
-            "message": "Array type using 'Token[]' is forbidden. Use 'Array<Token>' instead."
+            "file": "src/MarkedOptions.ts",
+            "line": 21,
+            "column": 17,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+          },
+          {
+            "file": "src/MarkedOptions.ts",
+            "line": 148,
+            "column": 18,
+            "message": "Array type using 'TokenizerStartFunction[]' is forbidden. Use 'Array<TokenizerStartFunction>' instead."
           },
           {
             "file": "src/Lexer.ts",
@@ -44,38 +50,32 @@
           },
           {
             "file": "src/Instance.ts",
-            "line": 220,
-            "column": 42,
-            "message": "Array type using 'unknown[]' is forbidden. Use 'Array<unknown>' instead."
-          },
-          {
-            "file": "src/MarkedOptions.ts",
-            "line": 143,
+            "line": 247,
             "column": 23,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+            "message": "Array type using 'MaybePromise[]' is forbidden. Use 'Array<MaybePromise>' instead."
           },
           {
             "file": "src/Tokens.ts",
-            "line": 37,
+            "line": 85,
             "column": 13,
             "message": "Array type using 'Token[]' is forbidden. Use 'Array<Token>' instead."
           },
           {
             "file": "src/Tokens.ts",
-            "line": 129,
-            "column": 13,
-            "message": "Array type using 'Token[]' is forbidden. Use 'Array<Token>' instead."
+            "line": 147,
+            "column": 12,
+            "message": "Array type using 'ListItem[]' is forbidden. Use 'Array<ListItem>' instead."
           },
           {
             "file": "src/Tokens.ts",
-            "line": 177,
-            "column": 13,
-            "message": "Array type using 'Token[]' is forbidden. Use 'Array<Token>' instead."
+            "line": 185,
+            "column": 11,
+            "message": "Array type using 'TableCell[][]' is forbidden. Use 'Array<TableCell[]>' instead."
           },
           {
-            "file": "src/Tokens.ts",
-            "line": 212,
-            "column": 14,
+            "file": "src/Tokenizer.ts",
+            "line": 152,
+            "column": 21,
             "message": "Array type using 'Token[]' is forbidden. Use 'Array<Token>' instead."
           }
         ]
@@ -121,12 +121,6 @@
         "count": 3,
         "samples": [
           {
-            "file": "src/helpers.ts",
-            "line": 6,
-            "column": 29,
-            "message": "A record is preferred over an index signature."
-          },
-          {
             "file": "src/MarkedOptions.ts",
             "line": 140,
             "column": 7,
@@ -137,12 +131,24 @@
             "line": 143,
             "column": 7,
             "message": "A record is preferred over an index signature."
+          },
+          {
+            "file": "src/helpers.ts",
+            "line": 6,
+            "column": 29,
+            "message": "A record is preferred over an index signature."
           }
         ]
       },
       "index-signature": {
         "count": 8,
         "samples": [
+          {
+            "file": "src/Tokens.ts",
+            "line": 217,
+            "column": 21,
+            "message": "An index signature is preferred over a record."
+          },
           {
             "file": "src/rules.ts",
             "line": 210,
@@ -184,12 +190,6 @@
             "line": 474,
             "column": 11,
             "message": "An index signature is preferred over a record."
-          },
-          {
-            "file": "src/Tokens.ts",
-            "line": 217,
-            "column": 21,
-            "message": "An index signature is preferred over a record."
           }
         ]
       }
@@ -209,18 +209,6 @@
       "type": {
         "count": 32,
         "samples": [
-          {
-            "file": "src/rules.ts",
-            "line": 471,
-            "column": 8,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "src/MarkedOptions.ts",
-            "line": 24,
-            "column": 8,
-            "message": "Use `type` instead of `interface`."
-          },
           {
             "file": "src/Tokens.ts",
             "line": 33,
@@ -268,6 +256,18 @@
             "line": 208,
             "column": 10,
             "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "src/MarkedOptions.ts",
+            "line": 30,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "src/rules.ts",
+            "line": 471,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
           }
         ]
       }
@@ -281,26 +281,8 @@
         "count": 26,
         "samples": [
           {
-            "file": "src/marked.ts",
-            "line": 13,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "src/Tokenizer.ts",
-            "line": 7,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "src/Tokenizer.ts",
-            "line": 10,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "src/Parser.ts",
-            "line": 5,
+            "file": "src/Hooks.ts",
+            "line": 4,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -317,14 +299,8 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/Renderer.ts",
-            "line": 8,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "src/TextRenderer.ts",
-            "line": 1,
+            "file": "src/Parser.ts",
+            "line": 4,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -335,7 +311,31 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/Instance.ts",
+            "file": "src/marked.ts",
+            "line": 14,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "src/Renderer.ts",
+            "line": 7,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "src/Renderer.ts",
+            "line": 9,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "src/Tokenizer.ts",
+            "line": 7,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "src/Tokenizer.ts",
             "line": 10,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
@@ -354,56 +354,56 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "src/helpers.ts",
-            "line": 102,
-            "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "test/bench.js",
-            "line": 206,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
             "file": "docs/js/index.js",
-            "line": 172,
+            "line": 48,
             "column": 3,
             "message": "Expected a function expression."
           },
           {
             "file": "bin/main.js",
-            "line": 266,
+            "line": 59,
             "column": 3,
             "message": "Expected a function expression."
           },
           {
-            "file": "docs/demo/demo.js",
-            "line": 67,
+            "file": "test/bench.js",
+            "line": 119,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "test/update-specs.js",
+            "line": 39,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "docs/demo/demo.js",
-            "line": 255,
+            "line": 218,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "docs/demo/demo.js",
-            "line": 350,
+            "line": 327,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "docs/demo/demo.js",
-            "line": 554,
+            "line": 485,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "test/unit/Parser.test.js",
-            "line": 6,
+            "file": "docs/demo/worker.js",
+            "line": 113,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "test/unit/Lexer.test.js",
+            "line": 20,
             "column": 1,
             "message": "Expected a function expression."
           }
@@ -419,6 +419,12 @@
             "message": "Expected a function declaration."
           },
           {
+            "file": "docs/js/index.js",
+            "line": 108,
+            "column": 11,
+            "message": "Expected a function declaration."
+          },
+          {
             "file": "docs/build.js",
             "line": 19,
             "column": 7,
@@ -431,9 +437,9 @@
             "message": "Expected a function declaration."
           },
           {
-            "file": "docs/js/index.js",
-            "line": 108,
-            "column": 11,
+            "file": "docs/demo/demo.js",
+            "line": 171,
+            "column": 9,
             "message": "Expected a function declaration."
           },
           {
@@ -447,24 +453,55 @@
             "line": 202,
             "column": 13,
             "message": "Expected a function declaration."
-          },
-          {
-            "file": "docs/demo/demo.js",
-            "line": 171,
-            "column": 9,
-            "message": "Expected a function declaration."
           }
         ]
       }
     },
     "import-export-preference": {
       "named": {
-        "count": 0,
-        "samples": []
+        "count": 4,
+        "samples": [
+          {
+            "file": "test/unit/fixtures/bin-config.js",
+            "line": 1,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "test/bench.js",
+            "line": 196,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "eslint.config.js",
+            "line": 3,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "api/dingus.js",
+            "line": 7,
+            "column": 8,
+            "message": "Prefer named exports"
+          }
+        ]
       },
       "default": {
         "count": 8,
         "samples": [
+          {
+            "file": "src/Hooks.ts",
+            "line": 7,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "src/TextRenderer.ts",
+            "line": 7,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
           {
             "file": "test/unit/utils.js",
             "line": 1,
@@ -472,14 +509,8 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "bin/main.js",
-            "line": 21,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "src/Hooks.ts",
-            "line": 7,
+            "file": "src/Parser.ts",
+            "line": 10,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -490,14 +521,8 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/Parser.ts",
-            "line": 10,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "src/Lexer.ts",
-            "line": 10,
+            "file": "bin/main.js",
+            "line": 21,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -508,8 +533,8 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/TextRenderer.ts",
-            "line": 7,
+            "file": "src/Lexer.ts",
+            "line": 10,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           }
@@ -518,7 +543,7 @@
     },
     "indent": {
       "2-space": {
-        "count": 248,
+        "count": 5,
         "samples": [
           {
             "file": "src/rules.ts",
@@ -527,117 +552,87 @@
             "message": "Expected indentation of 2 spaces but found 0."
           },
           {
-            "file": "src/Parser.ts",
-            "line": 83,
+            "file": "src/rules.ts",
+            "line": 22,
             "column": 1,
-            "message": "Expected indentation of 8 spaces but found 10."
+            "message": "Expected indentation of 4 spaces but found 2."
           },
           {
-            "file": "src/Parser.ts",
-            "line": 112,
-            "column": 1,
-            "message": "Expected indentation of 8 spaces but found 10."
-          },
-          {
-            "file": "src/Parser.ts",
-            "line": 166,
-            "column": 1,
-            "message": "Expected indentation of 6 spaces but found 8."
-          },
-          {
-            "file": "src/Parser.ts",
-            "line": 194,
-            "column": 1,
-            "message": "Expected indentation of 10 spaces but found 12."
-          },
-          {
-            "file": "src/Instance.ts",
-            "line": 65,
-            "column": 1,
-            "message": "Expected indentation of 12 spaces but found 14."
-          },
-          {
-            "file": "bin/main.js",
-            "line": 124,
-            "column": 1,
-            "message": "Expected indentation of 8 spaces but found 10."
-          },
-          {
-            "file": "test/types/marked.ts",
-            "line": 256,
+            "file": "src/rules.ts",
+            "line": 23,
             "column": 1,
             "message": "Expected indentation of 2 spaces but found 0."
           },
           {
-            "file": "docs/demo/worker.js",
-            "line": 67,
+            "file": "src/rules.ts",
+            "line": 26,
             "column": 1,
-            "message": "Expected indentation of 4 spaces but found 6."
+            "message": "Expected indentation of 4 spaces but found 2."
           },
           {
-            "file": "docs/demo/demo.js",
-            "line": 509,
+            "file": "src/rules.ts",
+            "line": 27,
             "column": 1,
-            "message": "Expected indentation of 6 spaces but found 8."
+            "message": "Expected indentation of 2 spaces but found 0."
           }
         ]
       },
       "4-space": {
-        "count": 7363,
+        "count": 7394,
         "samples": [
           {
-            "file": "eslint.config.js",
-            "line": 4,
+            "file": "api/dingus.js",
+            "line": 8,
             "column": 1,
             "message": "Expected indentation of 4 spaces but found 2."
           },
           {
-            "file": "src/Tokenizer.ts",
-            "line": 129,
-            "column": 1,
-            "message": "Expected indentation of 16 spaces but found 8."
-          },
-          {
-            "file": "src/Renderer.ts",
-            "line": 153,
+            "file": "test/unit/Hooks.test.js",
+            "line": 143,
             "column": 1,
             "message": "Expected indentation of 8 spaces but found 4."
           },
           {
-            "file": "src/Instance.ts",
-            "line": 251,
+            "file": "test/update-specs.js",
+            "line": 23,
             "column": 1,
-            "message": "Expected indentation of 20 spaces but found 10."
+            "message": "Expected indentation of 8 spaces but found 4."
           },
           {
             "file": "test/unit/marked.test.js",
-            "line": 419,
+            "line": 464,
             "column": 1,
-            "message": "Expected indentation of 20 spaces but found 10."
+            "message": "Expected indentation of 32 spaces but found 16."
           },
           {
             "file": "test/unit/Parser.test.js",
-            "line": 69,
-            "column": 1,
-            "message": "Expected indentation of 8 spaces but found 4."
-          },
-          {
-            "file": "test/unit/Lexer.test.js",
-            "line": 503,
-            "column": 1,
-            "message": "Expected indentation of 20 spaces but found 10."
-          },
-          {
-            "file": "test/unit/Lexer.test.js",
-            "line": 1377,
+            "line": 64,
             "column": 1,
             "message": "Expected indentation of 24 spaces but found 12."
           },
           {
-            "file": "test/types/marked.ts",
-            "line": 188,
+            "file": "src/Parser.ts",
+            "line": 39,
             "column": 1,
             "message": "Expected indentation of 4 spaces but found 2."
+          },
+          {
+            "file": "test/unit/Lexer.test.js",
+            "line": 751,
+            "column": 1,
+            "message": "Expected indentation of 24 spaces but found 12."
+          },
+          {
+            "file": "test/unit/Lexer.test.js",
+            "line": 1627,
+            "column": 1,
+            "message": "Expected indentation of 28 spaces but found 14."
+          },
+          {
+            "file": "src/Tokenizer.ts",
+            "line": 721,
+            "column": 1,
+            "message": "Expected indentation of 8 spaces but found 4."
           },
           {
             "file": "test/unit/fixtures/bin-config.js",
@@ -648,65 +643,65 @@
         ]
       },
       "tab": {
-        "count": 7374,
+        "count": 7401,
         "samples": [
           {
-            "file": "eslint.config.js",
-            "line": 4,
-            "column": 1,
-            "message": "Expected indentation of 1 tab but found 2 spaces."
-          },
-          {
-            "file": "src/Tokenizer.ts",
-            "line": 129,
-            "column": 1,
-            "message": "Expected indentation of 4 tabs but found 8 spaces."
-          },
-          {
-            "file": "src/Renderer.ts",
-            "line": 154,
+            "file": "test/umd-test.js",
+            "line": 5,
             "column": 1,
             "message": "Expected indentation of 1 tab but found 2 spaces."
           },
           {
             "file": "src/Instance.ts",
-            "line": 252,
+            "line": 107,
             "column": 1,
             "message": "Expected indentation of 5 tabs but found 10 spaces."
+          },
+          {
+            "file": "src/Tokenizer.ts",
+            "line": 685,
+            "column": 1,
+            "message": "Expected indentation of 4 tabs but found 8 spaces."
+          },
+          {
+            "file": "src/Renderer.ts",
+            "line": 131,
+            "column": 1,
+            "message": "Expected indentation of 2 tabs but found 4 spaces."
           },
           {
             "file": "test/unit/marked.test.js",
-            "line": 421,
-            "column": 1,
-            "message": "Expected indentation of 6 tabs but found 12 spaces."
-          },
-          {
-            "file": "test/unit/Parser.test.js",
-            "line": 73,
+            "line": 748,
             "column": 1,
             "message": "Expected indentation of 4 tabs but found 8 spaces."
           },
           {
-            "file": "test/unit/Lexer.test.js",
-            "line": 507,
+            "file": "src/rules.ts",
+            "line": 156,
             "column": 1,
-            "message": "Expected indentation of 6 tabs but found 12 spaces."
+            "message": "Expected indentation of 1 tab but found 2 spaces."
           },
           {
             "file": "test/unit/Lexer.test.js",
-            "line": 1383,
+            "line": 715,
             "column": 1,
-            "message": "Expected indentation of 5 tabs but found 10 spaces."
+            "message": "Expected indentation of 11 tabs but found 22 spaces."
           },
           {
-            "file": "test/types/marked.ts",
-            "line": 195,
+            "file": "test/unit/Lexer.test.js",
+            "line": 1590,
             "column": 1,
-            "message": "Expected indentation of 4 tabs but found 8 spaces."
+            "message": "Expected indentation of 7 tabs but found 14 spaces."
           },
           {
-            "file": "test/unit/fixtures/bin-config.js",
-            "line": 2,
+            "file": "docs/build.js",
+            "line": 111,
+            "column": 1,
+            "message": "Expected indentation of 3 tabs but found 6 spaces."
+          },
+          {
+            "file": "docs/demo/worker.js",
+            "line": 159,
             "column": 1,
             "message": "Expected indentation of 1 tab but found 2 spaces."
           }
@@ -715,79 +710,73 @@
     },
     "quotes": {
       "double": {
-        "count": 2735,
+        "count": 2699,
         "samples": [
           {
-            "file": "eslint.config.js",
+            "file": "test/umd-test.js",
             "line": 1,
-            "column": 32,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "src/helpers.ts",
-            "line": 7,
             "column": 8,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/MarkedOptions.ts",
-            "line": 5,
-            "column": 33,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "test/unit/marked.test.js",
-            "line": 126,
-            "column": 33,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "test/unit/marked.test.js",
-            "line": 1049,
-            "column": 18,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "test/unit/Parser.test.js",
-            "line": 456,
-            "column": 15,
+            "file": "test/unit/Lexer.test.js",
+            "line": 303,
+            "column": 32,
             "message": "Strings must use doublequote."
           },
           {
             "file": "test/unit/Lexer.test.js",
-            "line": 570,
-            "column": 27,
+            "line": 1045,
+            "column": 31,
             "message": "Strings must use doublequote."
           },
           {
             "file": "test/unit/Lexer.test.js",
-            "line": 1378,
-            "column": 36,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "test/types/marked.ts",
-            "line": 2,
-            "column": 24,
+            "line": 1690,
+            "column": 56,
             "message": "Strings must use doublequote."
           },
           {
             "file": "docs/demo/demo.js",
-            "line": 562,
-            "column": 11,
+            "line": 352,
+            "column": 48,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "test/unit/marked.test.js",
+            "line": 1001,
+            "column": 19,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "src/Tokenizer.ts",
+            "line": 117,
+            "column": 37,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "test/unit/Parser.test.js",
+            "line": 8,
+            "column": 34,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "test/unit/Hooks.test.js",
+            "line": 271,
+            "column": 30,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "src/rules.ts",
+            "line": 450,
+            "column": 25,
             "message": "Strings must use doublequote."
           }
         ]
       },
       "single": {
-        "count": 3,
+        "count": 2,
         "samples": [
-          {
-            "file": "src/helpers.ts",
-            "line": 11,
-            "column": 3,
-            "message": "Strings must use singlequote."
-          },
           {
             "file": "src/Instance.ts",
             "line": 109,
@@ -795,9 +784,9 @@
             "message": "Strings must use singlequote."
           },
           {
-            "file": "test/types/marked.ts",
-            "line": 82,
-            "column": 10,
+            "file": "src/helpers.ts",
+            "line": 11,
+            "column": 3,
             "message": "Strings must use singlequote."
           }
         ]
@@ -809,60 +798,60 @@
         "samples": []
       },
       "never": {
-        "count": 2762,
+        "count": 2645,
         "samples": [
           {
-            "file": "eslint.config.js",
-            "line": 1,
-            "column": 57,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "src/marked.ts",
-            "line": 103,
-            "column": 38,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "src/Tokenizer.ts",
-            "line": 738,
-            "column": 117,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "src/Lexer.ts",
-            "line": 217,
-            "column": 46,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "docs/build.js",
-            "line": 42,
-            "column": 37,
+            "file": "test/specs/redos/quadratic_underscores.cjs",
+            "line": 4,
+            "column": 2,
             "message": "Extra semicolon."
           },
           {
             "file": "test/unit/marked.test.js",
-            "line": 358,
-            "column": 45,
+            "line": 202,
+            "column": 114,
             "message": "Extra semicolon."
           },
           {
-            "file": "test/unit/bin.test.js",
-            "line": 3,
-            "column": 45,
+            "file": "test/unit/Lexer.test.js",
+            "line": 7,
+            "column": 31,
             "message": "Extra semicolon."
           },
           {
-            "file": "test/unit/Hooks.test.js",
-            "line": 154,
-            "column": 48,
+            "file": "src/Lexer.ts",
+            "line": 106,
+            "column": 92,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "src/Instance.ts",
+            "line": 122,
+            "column": 54,
             "message": "Extra semicolon."
           },
           {
             "file": "docs/js/index.js",
-            "line": 181,
-            "column": 63,
+            "line": 77,
+            "column": 60,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "test/unit/Parser.test.js",
+            "line": 395,
+            "column": 9,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "src/Tokenizer.ts",
+            "line": 862,
+            "column": 12,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "docs/demo/demo.js",
+            "line": 250,
+            "column": 43,
             "message": "Extra semicolon."
           },
           {

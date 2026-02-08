@@ -140,7 +140,7 @@ async function runOxlintCheck(
     }
     await writeFile(configPath, JSON.stringify(config));
 
-    const timeout = 60 * 1000; // 1 minute timeout per check
+    const timeout = 5 * 60 * 1000; // 5 minute timeout per check
 
     // We need to pass the stdout to a file because oxlint fails if it is not a
     // TTY and stdout is too large.

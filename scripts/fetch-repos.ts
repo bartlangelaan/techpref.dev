@@ -1,16 +1,9 @@
 import { uniqBy } from "es-toolkit";
 import type { RepositoryData, UnifiedData } from "@/lib/types";
 import { octokit } from "@/lib/octokit";
-import { loadData, saveData } from "@/lib/types";
+import { saveData } from "@/lib/types";
 
 const REPO_COUNT = 1000;
-
-/**
- * Sleep for a given number of milliseconds.
- */
-function sleep(ms: number): Promise<void> {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
 
 /**
  * Fetches the top TypeScript repositories from GitHub sorted by stars.
@@ -18,7 +11,7 @@ function sleep(ms: number): Promise<void> {
  * Includes retry logic for rate limit errors.
  */
 async function fetchTopTypeScriptRepos(
-  count: number = 1000,
+  count: number,
 ): Promise<RepositoryData[]> {
   const repos: RepositoryData[] = [];
   const perPage = 100;
@@ -29,8 +22,10 @@ async function fetchTopTypeScriptRepos(
   for (let page = 1; page <= totalPages; page++) {
     console.log(`Fetching page ${page}/${totalPages}...`);
 
+    // We use the same query as the typescript bot.
+    // See: https://github.com/microsoft/typescript-error-deltas/blob/4d2e0801127c2a9140cb579e79c153d85c486a32/src/utils/gitUtils.ts#L42
     const response = await octokit.search.repos({
-      q: "language:typescript",
+      q: "language:typescript+stars:>100 archived:no",
       sort: "stars",
       order: "desc",
       per_page: perPage,
@@ -49,11 +44,6 @@ async function fetchTopTypeScriptRepos(
         break;
       }
     }
-
-    // Respect rate limiting - wait between requests
-    if (page < totalPages) {
-      await sleep(2000); // Increased to 2 seconds between requests
-    }
   }
 
   console.log(`Fetched ${repos.length} repositories.`);
@@ -67,51 +57,6 @@ async function fetchTopTypeScriptRepos(
   // Sort by stars in descending order
   return deduped.sort((a, b) => b.stars - a.stars);
 }
-/**
- * Merge freshly fetched repos with existing data, preserving clone and analysis state.
- * Also preserves old repositories that are no longer in the top results from GitHub.
- * Final list is sorted by stars in descending order.
- */
-function mergeRepos(
-  freshRepos: RepositoryData[],
-  existingData: UnifiedData | null,
-): RepositoryData[] {
-  if (!existingData) {
-    return freshRepos.sort((a, b) => b.stars - a.stars);
-  }
-
-  // Create a map of fresh repos by fullName for fast lookup
-  const freshMap = new Map<string, RepositoryData>();
-  for (const repo of freshRepos) {
-    freshMap.set(repo.fullName, repo);
-  }
-
-  // Merge: update fresh repos with existing clone/analysis state, keep old repos not in fresh results
-  const merged: RepositoryData[] = [];
-
-  // First, add all fresh repos with preserved clone/analysis state
-  for (const fresh of freshRepos) {
-    merged.push(fresh);
-  }
-
-  // Then, add old repos that are no longer in fresh results
-  for (const old of existingData.repositories) {
-    if (!freshMap.has(old.fullName)) {
-      merged.push(old);
-    }
-  }
-
-  // Ensure final list has no duplicates (in case existing data had duplicates)
-  const final = uniqBy(merged, (r) => r.fullName);
-  if (final.length !== merged.length) {
-    console.log(
-      `Removed ${merged.length - final.length} duplicate repositories during merge.`,
-    );
-  }
-
-  // Sort by stars in descending order
-  return final.sort((a, b) => b.stars - a.stars);
-}
 
 async function main() {
   console.log("=== TechPref Repository Fetcher ===\n");
@@ -123,32 +68,20 @@ async function main() {
     );
   }
 
-  // Load existing data to preserve clone/analysis state
-  const existingData = loadData();
-  if (existingData) {
-    console.log(
-      `Found existing data with ${existingData.repositories.length} repositories.`,
-    );
-  }
-
   // Fetch fresh data from GitHub
-  const freshRepos = await fetchTopTypeScriptRepos(REPO_COUNT);
+  const repositories = await fetchTopTypeScriptRepos(REPO_COUNT);
 
-  // Merge with existing data
-  const mergedRepos = mergeRepos(freshRepos, existingData);
-
-  console.log(`\nMerged data:`);
-  console.log(`  Total repositories: ${mergedRepos.length}`);
+  console.log(`Total repositories: ${repositories.length}`);
 
   // Save unified data
   const data: UnifiedData = {
     fetchedAt: new Date().toISOString(),
-    repositories: mergedRepos,
+    repositories: repositories,
   };
   saveData(data);
 
   console.log(`\nTop 5 repositories by stars:`);
-  for (const repo of mergedRepos.slice(0, 5)) {
+  for (const repo of repositories.slice(0, 5)) {
     console.log(`  ${repo.fullName} (${repo.stars.toLocaleString()} stars)`);
   }
 }

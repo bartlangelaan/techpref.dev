@@ -11,6 +11,7 @@ import { promisify } from "node:util";
 import { OxlintConfig } from "oxlint";
 
 const require = createRequire(import.meta.url);
+import { sortBy } from "es-toolkit";
 import type {
   AnalysisResult,
   RepositoryData,
@@ -225,8 +226,12 @@ function parseOxlintOutput(
 ): VariantResult {
   const output: OxlintOutput = JSON.parse(stdout);
 
+  const sortedDiagnostics = sortBy(output.diagnostics, [
+    (diag) => diag.filename,
+  ]);
+
   const samples = distributedSample(
-    output.diagnostics,
+    sortedDiagnostics,
     maxSamples,
   ).map<ViolationSample>((diag) => {
     // Get path relative to repo root

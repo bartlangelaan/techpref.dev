@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "8d56277528fc",
-  "analyzedCommit": "4a226a363a55c53d2dca306caf2abda4aedf07be",
-  "analyzedCommitDate": "2026-01-29T11:28:24.000Z",
+  "analyzedCommit": "747190ecf0bb27d461cf1100f6cb3468c6c914ed",
+  "analyzedCommitDate": "2026-02-05T16:51:29.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -11,6 +11,12 @@
       "generic": {
         "count": 6,
         "samples": [
+          {
+            "file": "apps/api/server/models/article.model.ts",
+            "line": 8,
+            "column": 13,
+            "message": "Array type using 'Comment[]' is forbidden. Use 'Array<Comment>' instead."
+          },
           {
             "file": "apps/api/server/models/user.model.ts",
             "line": 11,
@@ -38,12 +44,6 @@
           {
             "file": "apps/api/server/models/user.model.ts",
             "line": 15,
-            "column": 13,
-            "message": "Array type using 'Comment[]' is forbidden. Use 'Array<Comment>' instead."
-          },
-          {
-            "file": "apps/api/server/models/article.model.ts",
-            "line": 8,
             "column": 13,
             "message": "Array type using 'Comment[]' is forbidden. Use 'Array<Comment>' instead."
           }
@@ -79,7 +79,19 @@
         "count": 6,
         "samples": [
           {
+            "file": "apps/api/server/auth-event-handler.ts",
+            "line": 3,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
             "file": "apps/api/server/models/article.model.ts",
+            "line": 3,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "apps/api/server/models/comment.model.ts",
             "line": 3,
             "column": 8,
             "message": "Use `type` instead of `interface`."
@@ -91,26 +103,14 @@
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "apps/api/server/auth-event-handler.ts",
-            "line": 3,
+            "file": "apps/api/server/models/tag.model.ts",
+            "line": 1,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "apps/api/server/models/user.model.ts",
             "line": 4,
-            "column": 8,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "apps/api/server/models/comment.model.ts",
-            "line": 3,
-            "column": 8,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "apps/api/server/models/tag.model.ts",
-            "line": 1,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           }
@@ -134,38 +134,26 @@
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
+            "file": "apps/api/server/models/comment.model.ts",
+            "line": 1,
+            "column": 1,
+            "message": "All imports in the declaration are only used as types. Use `import type`."
+          },
+          {
+            "file": "apps/api/server/models/user.model.ts",
+            "line": 2,
+            "column": 1,
+            "message": "All imports in the declaration are only used as types. Use `import type`."
+          },
+          {
             "file": "apps/api/server/routes/api/articles/[slug]/favorite/index.delete.ts",
             "line": 2,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "apps/api/server/models/user.model.ts",
-            "line": 1,
-            "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
-          {
-            "file": "apps/api/server/models/user.model.ts",
+            "file": "apps/api/server/routes/api/articles/[slug]/favorite/index.post.ts",
             "line": 2,
-            "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
-          {
-            "file": "apps/api/server/utils/profile.utils.ts",
-            "line": 1,
-            "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
-          {
-            "file": "apps/api/server/utils/profile.utils.ts",
-            "line": 2,
-            "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
-          {
-            "file": "apps/api/server/models/comment.model.ts",
-            "line": 1,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
@@ -176,7 +164,19 @@
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "apps/api/server/routes/api/articles/[slug]/favorite/index.post.ts",
+            "file": "apps/api/server/utils/author.mapper.ts",
+            "line": 1,
+            "column": 1,
+            "message": "All imports in the declaration are only used as types. Use `import type`."
+          },
+          {
+            "file": "apps/api/server/utils/profile.utils.ts",
+            "line": 1,
+            "column": 1,
+            "message": "All imports in the declaration are only used as types. Use `import type`."
+          },
+          {
+            "file": "apps/api/server/utils/profile.utils.ts",
             "line": 2,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
@@ -210,24 +210,6 @@
         "count": 16,
         "samples": [
           {
-            "file": "apps/api/server/utils/generate-token.ts",
-            "line": 3,
-            "column": 14,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "apps/api/server/utils/hash-password.ts",
-            "line": 7,
-            "column": 14,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "apps/api/server/utils/foo.ts",
-            "line": 1,
-            "column": 14,
-            "message": "Expected a function declaration."
-          },
-          {
             "file": "apps/api/prisma/seed.ts",
             "line": 17,
             "column": 14,
@@ -246,12 +228,6 @@
             "message": "Expected a function declaration."
           },
           {
-            "file": "apps/api/server/utils/author.mapper.ts",
-            "line": 3,
-            "column": 7,
-            "message": "Expected a function declaration."
-          },
-          {
             "file": "apps/api/server/routes/api/articles/index.get.ts",
             "line": 55,
             "column": 7,
@@ -264,8 +240,32 @@
             "message": "Expected a function declaration."
           },
           {
-            "file": "apps/api/server/routes/api/users/index.post.ts",
-            "line": 54,
+            "file": "apps/api/server/utils/auth.ts",
+            "line": 3,
+            "column": 14,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "apps/api/server/utils/foo.ts",
+            "line": 1,
+            "column": 14,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "apps/api/server/utils/hash-password.ts",
+            "line": 3,
+            "column": 14,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "apps/api/server/utils/hash-password.ts",
+            "line": 7,
+            "column": 14,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "apps/api/server/utils/profile.utils.ts",
+            "line": 4,
             "column": 7,
             "message": "Expected a function declaration."
           }
@@ -277,44 +277,8 @@
         "count": 31,
         "samples": [
           {
-            "file": "apps/api/server/routes/api/profiles/[username]/follow/index.delete.ts",
-            "line": 4,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "apps/api/server/routes/api/articles/[slug]/index.get.ts",
-            "line": 5,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "apps/api/server/routes/api/articles/[slug]/favorite/index.delete.ts",
-            "line": 5,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "apps/api/server/routes/api/articles/index.post.ts",
-            "line": 6,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "apps/api/server/routes/api/articles/index.get.ts",
-            "line": 4,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "apps/api/server/routes/api/articles/feed.get.ts",
-            "line": 4,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "apps/api/server/routes/api/[...].options.ts",
-            "line": 1,
+            "file": "apps/api/nitro.config.ts",
+            "line": 2,
             "column": 8,
             "message": "Prefer named exports"
           },
@@ -325,14 +289,50 @@
             "message": "Prefer named exports"
           },
           {
-            "file": "apps/api/server/routes/api/v2/auth/login.post.ts",
-            "line": 9,
+            "file": "apps/api/server/routes/api/articles/[slug]/favorite/index.post.ts",
+            "line": 5,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "apps/api/server/routes/api/v2/profile/[id].put.ts",
-            "line": 8,
+            "file": "apps/api/server/routes/api/articles/[slug]/index.put.ts",
+            "line": 6,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "apps/api/server/routes/api/articles/index.post.ts",
+            "line": 6,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "apps/api/server/routes/api/tags/index.get.ts",
+            "line": 4,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "apps/api/server/routes/api/users/index.post.ts",
+            "line": 4,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "apps/api/server/routes/api/v2/auth/logout.post.ts",
+            "line": 1,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "apps/api/server/utils/article.mapper.ts",
+            "line": 16,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "apps/documentation/astro.config.mjs",
+            "line": 56,
             "column": 8,
             "message": "Prefer named exports"
           }
@@ -342,20 +342,8 @@
         "count": 5,
         "samples": [
           {
-            "file": "apps/api/server/utils/generate-token.ts",
+            "file": "apps/api/server/utils/auth.ts",
             "line": 3,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "apps/documentation/src/content/config.ts",
-            "line": 4,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "apps/api/server/utils/prisma.ts",
-            "line": 5,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -366,8 +354,20 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "apps/api/server/utils/auth.ts",
+            "file": "apps/api/server/utils/generate-token.ts",
             "line": 3,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "apps/api/server/utils/prisma.ts",
+            "line": 5,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "apps/documentation/src/content/config.ts",
+            "line": 4,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           }
@@ -379,64 +379,64 @@
         "count": 1131,
         "samples": [
           {
-            "file": "apps/api/server/routes/api/articles/[slug]/comments/index.get.ts",
-            "line": 4,
-            "column": 1,
-            "message": "Expected indentation of 2 spaces but found 4."
-          },
-          {
             "file": "apps/api/server/auth-event-handler.ts",
             "line": 4,
             "column": 1,
             "message": "Expected indentation of 2 spaces but found 4."
           },
           {
-            "file": "apps/api/server/routes/api/articles/index.get.ts",
-            "line": 32,
-            "column": 1,
-            "message": "Expected indentation of 6 spaces but found 12."
-          },
-          {
-            "file": "apps/documentation/astro.config.mjs",
-            "line": 104,
-            "column": 1,
-            "message": "Expected indentation of 16 spaces but found 32."
-          },
-          {
-            "file": "apps/api/server/routes/api/v2/auth/login.post.ts",
-            "line": 28,
+            "file": "apps/api/server/routes/api/articles/[slug]/comments/index.post.ts",
+            "line": 9,
             "column": 1,
             "message": "Expected indentation of 4 spaces but found 8."
           },
           {
-            "file": "apps/api/server/utils/auth.ts",
-            "line": 5,
-            "column": 1,
-            "message": "Expected indentation of 2 spaces but found 4."
-          },
-          {
-            "file": "apps/api/server/routes/api/articles/[slug]/favorite/index.delete.ts",
-            "line": 40,
-            "column": 1,
-            "message": "Expected indentation of 2 spaces but found 4."
-          },
-          {
-            "file": "apps/api/server/routes/api/users/index.post.ts",
-            "line": 9,
+            "file": "apps/api/server/routes/api/articles/[slug]/favorite/index.post.ts",
+            "line": 42,
             "column": 1,
             "message": "Expected indentation of 2 spaces but found 4."
           },
           {
             "file": "apps/api/server/routes/api/articles/[slug]/index.put.ts",
-            "line": 36,
+            "line": 77,
+            "column": 1,
+            "message": "Expected indentation of 6 spaces but found 12."
+          },
+          {
+            "file": "apps/api/server/routes/api/articles/index.get.ts",
+            "line": 49,
             "column": 1,
             "message": "Expected indentation of 2 spaces but found 4."
           },
           {
-            "file": "apps/api/server/routes/api/v2/auth/signup.post.ts",
-            "line": 56,
+            "file": "apps/api/server/routes/api/profiles/[username]/follow/index.delete.ts",
+            "line": 9,
+            "column": 1,
+            "message": "Expected indentation of 6 spaces but found 12."
+          },
+          {
+            "file": "apps/api/server/routes/api/users/index.post.ts",
+            "line": 8,
             "column": 1,
             "message": "Expected indentation of 2 spaces but found 4."
+          },
+          {
+            "file": "apps/api/server/routes/api/v2/auth/login.post.ts",
+            "line": 36,
+            "column": 1,
+            "message": "Expected indentation of 8 spaces but found 16."
+          },
+          {
+            "file": "apps/documentation/astro.config.mjs",
+            "line": 50,
+            "column": 1,
+            "message": "Expected indentation of 6 spaces but found 12."
+          },
+          {
+            "file": "apps/documentation/src/content/config.ts",
+            "line": 5,
+            "column": 1,
+            "message": "Expected indentation of 2 spaces but found 1 tab."
           }
         ]
       },
@@ -444,64 +444,64 @@
         "count": 112,
         "samples": [
           {
-            "file": "apps/documentation/src/content/config.ts",
-            "line": 5,
+            "file": "apps/api/nitro.config.ts",
+            "line": 3,
             "column": 1,
-            "message": "Expected indentation of 4 spaces but found 1 tab."
+            "message": "Expected indentation of 4 spaces but found 2."
           },
           {
             "file": "apps/api/prisma/seed.ts",
+            "line": 18,
+            "column": 1,
+            "message": "Expected indentation of 4 spaces but found 2."
+          },
+          {
+            "file": "apps/api/prisma/seed.ts",
+            "line": 33,
+            "column": 1,
+            "message": "Expected indentation of 8 spaces but found 4."
+          },
+          {
+            "file": "apps/api/prisma/seed.ts",
+            "line": 51,
+            "column": 1,
+            "message": "Expected indentation of 8 spaces but found 4."
+          },
+          {
+            "file": "apps/api/server/models/article.model.ts",
             "line": 6,
             "column": 1,
             "message": "Expected indentation of 4 spaces but found 2."
           },
           {
-            "file": "apps/api/prisma/seed.ts",
-            "line": 30,
-            "column": 1,
-            "message": "Expected indentation of 12 spaces but found 6."
-          },
-          {
-            "file": "apps/api/prisma/seed.ts",
-            "line": 48,
-            "column": 1,
-            "message": "Expected indentation of 8 spaces but found 4."
-          },
-          {
-            "file": "apps/api/prisma/seed.ts",
-            "line": 63,
-            "column": 1,
-            "message": "Expected indentation of 4 spaces but found 2."
-          },
-          {
-            "file": "apps/api/server/utils/article.mapper.ts",
-            "line": 10,
-            "column": 1,
-            "message": "Expected indentation of 4 spaces but found 2."
-          },
-          {
             "file": "apps/api/server/models/http-exception.model.ts",
-            "line": 8,
+            "line": 6,
             "column": 1,
-            "message": "Expected indentation of 8 spaces but found 4."
+            "message": "Expected indentation of 4 spaces but found 2."
           },
           {
             "file": "apps/api/server/models/user.model.ts",
-            "line": 9,
+            "line": 8,
             "column": 1,
             "message": "Expected indentation of 4 spaces but found 2."
           },
           {
-            "file": "apps/api/server/utils/author.mapper.ts",
-            "line": 9,
-            "column": 1,
-            "message": "Expected indentation of 8 spaces but found 4."
-          },
-          {
-            "file": "apps/api/server/routes/api/articles/[slug]/index.put.ts",
-            "line": 7,
+            "file": "apps/api/server/routes/api/profiles/[username]/follow/index.delete.ts",
+            "line": 5,
             "column": 1,
             "message": "Expected indentation of 4 spaces but found 0."
+          },
+          {
+            "file": "apps/api/server/utils/author.mapper.ts",
+            "line": 5,
+            "column": 1,
+            "message": "Expected indentation of 4 spaces but found 2."
+          },
+          {
+            "file": "apps/documentation/src/content/config.ts",
+            "line": 5,
+            "column": 1,
+            "message": "Expected indentation of 4 spaces but found 1 tab."
           }
         ]
       },
@@ -509,16 +509,52 @@
         "count": 1235,
         "samples": [
           {
-            "file": "apps/api/server/models/http-exception.model.ts",
-            "line": 2,
+            "file": "apps/api/nitro.config.ts",
+            "line": 3,
             "column": 1,
             "message": "Expected indentation of 1 tab but found 2 spaces."
           },
           {
-            "file": "apps/documentation/astro.config.mjs",
-            "line": 52,
+            "file": "apps/api/server/routes/api/articles/[slug]/comments/[id].delete.ts",
+            "line": 17,
             "column": 1,
-            "message": "Expected indentation of 1 tab but found 4 spaces."
+            "message": "Expected indentation of 5 tabs but found 20 spaces."
+          },
+          {
+            "file": "apps/api/server/routes/api/articles/[slug]/favorite/index.delete.ts",
+            "line": 23,
+            "column": 1,
+            "message": "Expected indentation of 4 tabs but found 16 spaces."
+          },
+          {
+            "file": "apps/api/server/routes/api/articles/[slug]/index.put.ts",
+            "line": 20,
+            "column": 1,
+            "message": "Expected indentation of 5 tabs but found 20 spaces."
+          },
+          {
+            "file": "apps/api/server/routes/api/articles/index.get.ts",
+            "line": 10,
+            "column": 1,
+            "message": "Expected indentation of 3 tabs but found 12 spaces."
+          },
+          {
+            "file": "apps/api/server/routes/api/articles/index.post.ts",
+            "line": 62,
+            "column": 1,
+            "message": "Expected indentation of 3 tabs but found 12 spaces."
+          },
+          {
+            "file": "apps/api/server/routes/api/user/index.put.ts",
+            "line": 28,
+            "column": 1,
+            "message": "Expected indentation of 3 tabs but found 12 spaces."
+          },
+          {
+            "file": "apps/api/server/routes/api/v2/auth/login.post.ts",
+            "line": 33,
+            "column": 1,
+            "message": "Expected indentation of 3 tabs but found 12 spaces."
           },
           {
             "file": "apps/api/server/utils/profile.utils.ts",
@@ -527,44 +563,8 @@
             "message": "Expected indentation of 1 tab but found 2 spaces."
           },
           {
-            "file": "apps/api/server/routes/api/profiles/[username]/index.get.ts",
-            "line": 11,
-            "column": 1,
-            "message": "Expected indentation of 2 tabs but found 8 spaces."
-          },
-          {
-            "file": "apps/api/server/routes/api/articles/[slug]/favorite/index.post.ts",
-            "line": 31,
-            "column": 1,
-            "message": "Expected indentation of 4 tabs but found 16 spaces."
-          },
-          {
-            "file": "apps/api/server/routes/api/articles/[slug]/comments/[id].delete.ts",
-            "line": 15,
-            "column": 1,
-            "message": "Expected indentation of 3 tabs but found 12 spaces."
-          },
-          {
-            "file": "apps/api/server/routes/api/articles/[slug]/favorite/index.delete.ts",
-            "line": 38,
-            "column": 1,
-            "message": "Expected indentation of 3 tabs but found 12 spaces."
-          },
-          {
-            "file": "apps/api/server/routes/api/v2/auth/login.post.ts",
-            "line": 6,
-            "column": 1,
-            "message": "Expected indentation of 1 tab but found 4 spaces."
-          },
-          {
-            "file": "apps/api/server/routes/api/articles/[slug]/index.get.ts",
-            "line": 39,
-            "column": 1,
-            "message": "Expected indentation of 1 tab but found 4 spaces."
-          },
-          {
-            "file": "apps/api/server/routes/api/[...].options.ts",
-            "line": 3,
+            "file": "apps/documentation/astro.config.mjs",
+            "line": 180,
             "column": 1,
             "message": "Expected indentation of 1 tab but found 4 spaces."
           }
@@ -576,63 +576,63 @@
         "count": 143,
         "samples": [
           {
-            "file": "apps/api/server/routes/api/articles/[slug]/index.delete.ts",
-            "line": 5,
-            "column": 36,
+            "file": "apps/api/nitro.config.ts",
+            "line": 4,
+            "column": 11,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "apps/api/server/routes/api/articles/feed.get.ts",
+            "file": "apps/api/server/auth-event-handler.ts",
             "line": 22,
-            "column": 24,
+            "column": 34,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "apps/api/server/routes/api/articles/[slug]/index.get.ts",
+            "line": 36,
+            "column": 60,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "apps/api/server/routes/api/profiles/[username]/index.get.ts",
+            "line": 6,
+            "column": 44,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "apps/api/server/routes/api/v2/profile/[id].put.ts",
+            "line": 11,
+            "column": 38,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "apps/api/server/utils/foo.ts",
+            "line": 2,
+            "column": 17,
             "message": "Strings must use doublequote."
           },
           {
             "file": "apps/documentation/astro.config.mjs",
-            "line": 44,
-            "column": 15,
+            "line": 63,
+            "column": 23,
             "message": "Strings must use doublequote."
           },
           {
             "file": "apps/documentation/astro.config.mjs",
-            "line": 83,
-            "column": 31,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "apps/documentation/astro.config.mjs",
-            "line": 124,
+            "line": 103,
             "column": 40,
             "message": "Strings must use doublequote."
           },
           {
             "file": "apps/documentation/astro.config.mjs",
-            "line": 161,
-            "column": 31,
+            "line": 137,
+            "column": 39,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "apps/api/server/models/user.model.ts",
+            "file": "apps/documentation/src/content/config.ts",
             "line": 2,
-            "column": 25,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "apps/api/prisma/seed.ts",
-            "line": 13,
-            "column": 43,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "apps/api/server/auth-event-handler.ts",
-            "line": 28,
-            "column": 32,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "apps/api/server/utils/auth.ts",
-            "line": 31,
-            "column": 26,
+            "column": 28,
             "message": "Strings must use doublequote."
           }
         ]
@@ -641,15 +641,45 @@
         "count": 64,
         "samples": [
           {
-            "file": "apps/api/server/routes/api/articles/index.post.ts",
+            "file": "apps/api/nitro.config.ts",
+            "line": 3,
+            "column": 11,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "apps/api/server/routes/api/articles/[slug]/comments/index.post.ts",
+            "line": 2,
+            "column": 41,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "apps/api/server/routes/api/articles/[slug]/favorite/index.post.ts",
+            "line": 2,
+            "column": 19,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "apps/api/server/routes/api/articles/[slug]/index.get.ts",
+            "line": 3,
+            "column": 41,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "apps/api/server/routes/api/articles/index.get.ts",
+            "line": 2,
+            "column": 41,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "apps/api/server/routes/api/profiles/[username]/follow/index.delete.ts",
             "line": 1,
             "column": 27,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "apps/api/server/routes/api/articles/feed.get.ts",
-            "line": 2,
-            "column": 41,
+            "file": "apps/api/server/routes/api/tags/index.get.ts",
+            "line": 1,
+            "column": 19,
             "message": "Strings must use singlequote."
           },
           {
@@ -659,45 +689,15 @@
             "message": "Strings must use singlequote."
           },
           {
-            "file": "apps/api/nitro.config.ts",
-            "line": 3,
-            "column": 11,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "apps/api/server/routes/api/articles/[slug]/index.get.ts",
-            "line": 1,
-            "column": 27,
+            "file": "apps/api/server/routes/api/v2/auth/login.post.ts",
+            "line": 5,
+            "column": 29,
             "message": "Strings must use singlequote."
           },
           {
             "file": "apps/documentation/astro.config.mjs",
             "line": 3,
             "column": 25,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "apps/api/server/routes/api/tags/index.get.ts",
-            "line": 2,
-            "column": 41,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "apps/api/server/routes/api/articles/[slug]/favorite/index.delete.ts",
-            "line": 3,
-            "column": 41,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "apps/api/server/routes/api/v2/auth/logout.post.ts",
-            "line": 4,
-            "column": 12,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "apps/api/server/routes/api/articles/index.get.ts",
-            "line": 2,
-            "column": 41,
             "message": "Strings must use singlequote."
           }
         ]
@@ -708,9 +708,9 @@
         "count": 11,
         "samples": [
           {
-            "file": "apps/api/server/routes/api/v2/auth/signup.post.ts",
-            "line": 56,
-            "column": 6,
+            "file": "apps/api/prisma/seed.ts",
+            "line": 60,
+            "column": 21,
             "message": "Missing semicolon."
           },
           {
@@ -732,15 +732,21 @@
             "message": "Missing semicolon."
           },
           {
+            "file": "apps/api/server/routes/api/v2/auth/signup.post.ts",
+            "line": 56,
+            "column": 6,
+            "message": "Missing semicolon."
+          },
+          {
             "file": "apps/api/server/utils/foo.ts",
             "line": 3,
             "column": 2,
             "message": "Missing semicolon."
           },
           {
-            "file": "apps/api/server/utils/prisma.ts",
-            "line": 10,
-            "column": 2,
+            "file": "apps/api/server/utils/foo.ts",
+            "line": 2,
+            "column": 24,
             "message": "Missing semicolon."
           },
           {
@@ -756,15 +762,9 @@
             "message": "Missing semicolon."
           },
           {
-            "file": "apps/api/server/routes/api/v2/profile/[id].get.ts",
-            "line": 14,
-            "column": 7,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "apps/api/prisma/seed.ts",
-            "line": 60,
-            "column": 21,
+            "file": "apps/api/server/utils/prisma.ts",
+            "line": 10,
+            "column": 2,
             "message": "Missing semicolon."
           }
         ]
@@ -773,63 +773,63 @@
         "count": 301,
         "samples": [
           {
-            "file": "apps/documentation/src/content/config.ts",
-            "line": 1,
-            "column": 49,
+            "file": "apps/api/nitro.config.ts",
+            "line": 8,
+            "column": 3,
             "message": "Extra semicolon."
           },
           {
-            "file": "apps/api/server/utils/profile.utils.ts",
-            "line": 11,
+            "file": "apps/api/server/models/user.model.ts",
+            "line": 2,
+            "column": 42,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "apps/api/server/routes/api/articles/[slug]/favorite/index.delete.ts",
+            "line": 6,
+            "column": 47,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "apps/api/server/routes/api/articles/[slug]/index.put.ts",
+            "line": 7,
+            "column": 40,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "apps/api/server/routes/api/articles/index.get.ts",
+            "line": 58,
+            "column": 30,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "apps/api/server/routes/api/profiles/[username]/follow/index.post.ts",
+            "line": 5,
+            "column": 51,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "apps/api/server/routes/api/users/index.post.ts",
+            "line": 1,
+            "column": 58,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "apps/api/server/routes/api/v2/auth/login.post.ts",
+            "line": 7,
             "column": 3,
             "message": "Extra semicolon."
           },
           {
             "file": "apps/api/server/utils/auth.ts",
-            "line": 12,
-            "column": 37,
+            "line": 37,
+            "column": 2,
             "message": "Extra semicolon."
           },
           {
-            "file": "apps/api/server/routes/api/v2/auth/login.post.ts",
-            "line": 26,
-            "column": 64,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "apps/api/server/routes/api/articles/[slug]/favorite/index.delete.ts",
-            "line": 51,
-            "column": 3,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "apps/api/server/routes/api/v2/auth/logout.post.ts",
-            "line": 5,
-            "column": 3,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "apps/api/server/routes/api/articles/[slug]/index.get.ts",
-            "line": 36,
-            "column": 77,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "apps/api/server/routes/api/tags/index.get.ts",
+            "file": "apps/documentation/src/content/config.ts",
             "line": 6,
-            "column": 31,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "apps/api/server/routes/api/articles/[slug]/comments/[id].delete.ts",
-            "line": 39,
-            "column": 3,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "apps/api/server/routes/api/articles/index.get.ts",
-            "line": 113,
-            "column": 19,
+            "column": 2,
             "message": "Extra semicolon."
           }
         ]

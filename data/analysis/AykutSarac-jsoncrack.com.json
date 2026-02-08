@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "8d56277528fc",
-  "analyzedCommit": "60643bcbc20235033b990abec2dea96f83720607",
-  "analyzedCommitDate": "2026-02-04T22:21:56.000Z",
+  "analyzedCommit": "cc935eecbdefd1fd85a1161d343ccae83c68bfb1",
+  "analyzedCommitDate": "2026-02-05T20:58:53.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -19,16 +19,22 @@
         "count": 27,
         "samples": [
           {
-            "file": "src/features/modals/modalTypes.ts",
-            "line": 4,
-            "column": 70,
-            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
+            "file": "src/features/editor/views/GraphView/lib/jsonParser.ts",
+            "line": 11,
+            "column": 10,
+            "message": "Array type using 'NodeData[]' is forbidden. Use 'Array<NodeData>' instead."
+          },
+          {
+            "file": "src/features/editor/views/GraphView/lib/jsonParser.ts",
+            "line": 20,
+            "column": 16,
+            "message": "Array type using 'EdgeData[]' is forbidden. Use 'Array<EdgeData>' instead."
           },
           {
             "file": "src/features/editor/views/GraphView/lib/utils/getChildrenEdges.ts",
             "line": 3,
-            "column": 73,
-            "message": "Array type using 'EdgeData[]' is forbidden. Use 'Array<EdgeData>' instead."
+            "column": 41,
+            "message": "Array type using 'NodeData[]' is forbidden. Use 'Array<NodeData>' instead."
           },
           {
             "file": "src/features/editor/views/GraphView/lib/utils/getOutgoers.ts",
@@ -43,40 +49,34 @@
             "message": "Array type using 'NodeData[]' is forbidden. Use 'Array<NodeData>' instead."
           },
           {
-            "file": "src/features/editor/views/GraphView/lib/jsonParser.ts",
-            "line": 11,
-            "column": 10,
-            "message": "Array type using 'NodeData[]' is forbidden. Use 'Array<NodeData>' instead."
-          },
-          {
-            "file": "src/features/editor/views/GraphView/lib/jsonParser.ts",
-            "line": 19,
-            "column": 16,
-            "message": "Array type using 'NodeData[]' is forbidden. Use 'Array<NodeData>' instead."
-          },
-          {
-            "file": "src/features/editor/views/GraphView/lib/jsonParser.ts",
-            "line": 72,
-            "column": 26,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
-          },
-          {
             "file": "src/features/editor/views/GraphView/stores/useGraph.ts",
-            "line": 15,
+            "line": 14,
             "column": 10,
-            "message": "Array type using 'EdgeData[]' is forbidden. Use 'Array<EdgeData>' instead."
+            "message": "Array type using 'NodeData[]' is forbidden. Use 'Array<NodeData>' instead."
+          },
+          {
+            "file": "src/features/modals/modalTypes.ts",
+            "line": 4,
+            "column": 70,
+            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
+          },
+          {
+            "file": "src/layout/Landing/Features.tsx",
+            "line": 26,
+            "column": 17,
+            "message": "Array type using 'FeatureItem[]' is forbidden. Use 'Array<FeatureItem>' instead."
           },
           {
             "file": "src/layout/TypeLayout/PageLinks.tsx",
-            "line": 8,
-            "column": 23,
+            "line": 13,
+            "column": 25,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
-            "file": "src/lib/utils/jsonAdapter.ts",
-            "line": 11,
-            "column": 23,
-            "message": "Array type using 'ParseError[]' is forbidden. Use 'Array<ParseError>' instead."
+            "file": "src/types/graph.ts",
+            "line": 8,
+            "column": 8,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           }
         ]
       }
@@ -114,15 +114,15 @@
         "count": 2,
         "samples": [
           {
-            "file": "src/store/useModal.ts",
-            "line": 8,
-            "column": 19,
-            "message": "An index signature is preferred over a record."
-          },
-          {
             "file": "src/layout/ConverterLayout/PageLinks.tsx",
             "line": 9,
             "column": 46,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "src/store/useModal.ts",
+            "line": 8,
+            "column": 19,
             "message": "An index signature is preferred over a record."
           }
         ]
@@ -132,6 +132,30 @@
       "interface": {
         "count": 8,
         "samples": [
+          {
+            "file": "src/features/editor/views/GraphView/CustomNode/ObjectNode.tsx",
+            "line": 8,
+            "column": 1,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "src/features/editor/views/GraphView/CustomNode/styles.tsx",
+            "line": 6,
+            "column": 1,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "src/features/editor/views/GraphView/lib/jsonParser.ts",
+            "line": 10,
+            "column": 8,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "src/features/editor/views/GraphView/lib/utils/calculateNodeSize.ts",
+            "line": 5,
+            "column": 1,
+            "message": "Use `interface` instead of `type`."
+          },
           {
             "file": "src/features/editor/views/TreeView/Value.tsx",
             "line": 6,
@@ -155,30 +179,6 @@
             "line": 39,
             "column": 8,
             "message": "Use `interface` instead of `type`."
-          },
-          {
-            "file": "src/features/editor/views/GraphView/lib/jsonParser.ts",
-            "line": 10,
-            "column": 8,
-            "message": "Use `interface` instead of `type`."
-          },
-          {
-            "file": "src/features/editor/views/GraphView/CustomNode/ObjectNode.tsx",
-            "line": 8,
-            "column": 1,
-            "message": "Use `interface` instead of `type`."
-          },
-          {
-            "file": "src/features/editor/views/GraphView/lib/utils/calculateNodeSize.ts",
-            "line": 5,
-            "column": 1,
-            "message": "Use `interface` instead of `type`."
-          },
-          {
-            "file": "src/features/editor/views/GraphView/CustomNode/styles.tsx",
-            "line": 6,
-            "column": 1,
-            "message": "Use `interface` instead of `type`."
           }
         ]
       },
@@ -186,26 +186,26 @@
         "count": 19,
         "samples": [
           {
-            "file": "src/types/graph.ts",
-            "line": 3,
+            "file": "src/features/editor/views/GraphView/CustomNode/index.tsx",
+            "line": 11,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "src/types/graph.ts",
-            "line": 19,
+            "file": "src/features/editor/views/GraphView/stores/useGraph.ts",
+            "line": 9,
             "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "src/features/editor/views/TreeView/Label.tsx",
+            "line": 6,
+            "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "src/layout/ConverterLayout/ToolPage.tsx",
             "line": 14,
-            "column": 1,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "src/layout/JsonCrackLogo.tsx",
-            "line": 32,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
@@ -216,8 +216,14 @@
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "src/features/editor/views/GraphView/stores/useGraph.ts",
-            "line": 9,
+            "file": "src/lib/utils/mantineColorScheme.ts",
+            "line": 3,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "src/store/useConfig.ts",
+            "line": 13,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
@@ -228,20 +234,14 @@
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "src/store/useConfig.ts",
-            "line": 13,
+            "file": "src/types/graph.ts",
+            "line": 3,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "src/store/useFile.ts",
-            "line": 24,
-            "column": 1,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "src/lib/utils/mantineColorScheme.ts",
-            "line": 3,
+            "file": "src/types/graph.ts",
+            "line": 19,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           }
@@ -257,21 +257,45 @@
         "count": 48,
         "samples": [
           {
-            "file": "src/features/editor/views/TreeView/Label.tsx",
-            "line": 2,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "src/lib/utils/jsonAdapter.ts",
+            "file": "src/constants/seo.ts",
             "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/features/editor/views/GraphView/lib/jsonParser.ts",
-            "line": 6,
-            "column": 34,
+            "file": "src/features/editor/views/GraphView/CustomNode/ObjectNode.tsx",
+            "line": 4,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "src/features/editor/views/GraphView/OptionsMenu.tsx",
+            "line": 11,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "src/features/editor/views/GraphView/stores/useGraph.ts",
+            "line": 1,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "src/features/editor/views/TreeView/Value.tsx",
+            "line": 2,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "src/features/modals/JQModal/index.tsx",
+            "line": 2,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "src/features/modals/TypeModal/index.tsx",
+            "line": 2,
+            "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
@@ -281,38 +305,14 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/features/editor/views/GraphView/CustomNode/TextNode.tsx",
-            "line": 3,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "src/lib/utils/mantineColorScheme.ts",
-            "line": 1,
-            "column": 35,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "src/features/modals/NodeModal/index.tsx",
-            "line": 2,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "src/constants/seo.ts",
+            "file": "src/pages/_document.tsx",
             "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/features/modals/JPathModal/index.tsx",
-            "line": 2,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "src/features/editor/views/GraphView/stores/useGraph.ts",
-            "line": 6,
+            "file": "src/types/graph.ts",
+            "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           }
@@ -324,62 +324,62 @@
         "count": 33,
         "samples": [
           {
-            "file": "src/features/editor/views/TreeView/Label.tsx",
+            "file": "src/features/editor/Toolbar/index.tsx",
+            "line": 34,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "src/features/editor/views/GraphView/CustomNode/styles.tsx",
+            "line": 12,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "src/features/editor/views/TreeView/Value.tsx",
             "line": 11,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
+            "file": "src/lib/utils/helpers.ts",
+            "line": 1,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "src/lib/utils/json2go.js",
+            "line": 136,
+            "column": 3,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "src/lib/utils/json2go.js",
+            "line": 215,
+            "column": 3,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "src/lib/utils/json2go.js",
+            "line": 252,
+            "column": 3,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "src/lib/utils/json2go.js",
+            "line": 365,
+            "column": 3,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "src/lib/utils/json2go.js",
+            "line": 395,
+            "column": 3,
+            "message": "Expected a function expression."
+          },
+          {
             "file": "src/pages/_app.tsx",
             "line": 70,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/features/editor/views/GraphView/CustomNode/ObjectNode.tsx",
-            "line": 52,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/layout/ConverterLayout/PageLinks.tsx",
-            "line": 9,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/lib/utils/json2go.js",
-            "line": 41,
-            "column": 3,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/lib/utils/json2go.js",
-            "line": 211,
-            "column": 3,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/lib/utils/json2go.js",
-            "line": 238,
-            "column": 3,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/lib/utils/json2go.js",
-            "line": 305,
-            "column": 3,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/lib/utils/json2go.js",
-            "line": 387,
-            "column": 3,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/features/editor/Toolbar/index.tsx",
-            "line": 34,
             "column": 1,
             "message": "Expected a function expression."
           }
@@ -389,45 +389,45 @@
         "count": 140,
         "samples": [
           {
-            "file": "src/features/editor/Toolbar/SearchInput.tsx",
-            "line": 8,
-            "column": 14,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "src/features/editor/Toolbar/FileMenu.tsx",
-            "line": 14,
-            "column": 9,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "src/layout/Landing/Features.tsx",
-            "line": 82,
-            "column": 14,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "src/hooks/useJsonQuery.ts",
-            "line": 14,
-            "column": 9,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "src/lib/utils/search.ts",
-            "line": 13,
-            "column": 14,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "src/pages/type/xml-to-rust.tsx",
-            "line": 5,
+            "file": "next.config.js",
+            "line": 35,
             "column": 7,
             "message": "Expected a function declaration."
           },
           {
-            "file": "src/features/editor/views/GraphView/lib/jsonParser.ts",
-            "line": 133,
-            "column": 13,
+            "file": "src/features/editor/Toolbar/ToolsMenu.tsx",
+            "line": 10,
+            "column": 14,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "src/features/editor/views/GraphView/OptionsMenu.tsx",
+            "line": 25,
+            "column": 7,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "src/features/editor/views/GraphView/lib/utils/getOutgoers.ts",
+            "line": 5,
+            "column": 14,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "src/features/modals/ModalController.tsx",
+            "line": 6,
+            "column": 7,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "src/layout/ConverterLayout/PageLinks.tsx",
+            "line": 27,
+            "column": 14,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "src/lib/utils/jsonAdapter.ts",
+            "line": 4,
+            "column": 14,
             "message": "Expected a function declaration."
           },
           {
@@ -437,15 +437,15 @@
             "message": "Expected a function declaration."
           },
           {
-            "file": "src/pages/widget.tsx",
-            "line": 35,
+            "file": "src/pages/type/csv-to-typescript.tsx",
+            "line": 5,
             "column": 7,
             "message": "Expected a function declaration."
           },
           {
-            "file": "src/features/editor/views/GraphView/OptionsMenu.tsx",
-            "line": 44,
-            "column": 9,
+            "file": "src/store/useFile.ts",
+            "line": 62,
+            "column": 7,
             "message": "Expected a function declaration."
           }
         ]
@@ -456,43 +456,25 @@
         "count": 52,
         "samples": [
           {
-            "file": "src/pages/converter/json-to-yaml.tsx",
-            "line": 9,
+            "file": "eslint.config.mjs",
+            "line": 18,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "src/store/useConfig.ts",
-            "line": 40,
+            "file": "src/features/editor/views/GraphView/stores/useGraph.ts",
+            "line": 106,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "src/constants/theme.ts",
-            "line": 114,
+            "file": "src/pages/_app.tsx",
+            "line": 123,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "src/pages/converter/xml-to-yaml.tsx",
-            "line": 9,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "src/pages/type/yaml-to-kotlin.tsx",
-            "line": 9,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "src/features/editor/TextEditor.tsx",
-            "line": 94,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "src/pages/type/csv-to-rust.tsx",
+            "file": "src/pages/converter/json-to-csv.tsx",
             "line": 9,
             "column": 8,
             "message": "Prefer named exports"
@@ -504,14 +486,32 @@
             "message": "Prefer named exports"
           },
           {
-            "file": "src/pages/editor.tsx",
-            "line": 125,
+            "file": "src/pages/index.tsx",
+            "line": 30,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "src/pages/_app.tsx",
-            "line": 123,
+            "file": "src/pages/type/csv-to-rust.tsx",
+            "line": 9,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "src/pages/type/xml-to-go.tsx",
+            "line": 9,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "src/pages/type/yaml-to-kotlin.tsx",
+            "line": 9,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "src/store/useJson.ts",
+            "line": 30,
             "column": 8,
             "message": "Prefer named exports"
           }
@@ -521,20 +521,8 @@
         "count": 51,
         "samples": [
           {
-            "file": "src/features/editor/views/GraphView/lib/utils/getOutgoers.ts",
-            "line": 5,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "src/features/editor/views/TreeView/index.tsx",
-            "line": 8,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "src/features/editor/Toolbar/ViewMenu.tsx",
-            "line": 8,
+            "file": "src/constants/seo.ts",
+            "line": 3,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -545,20 +533,38 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/features/modals/NodeModal/index.tsx",
-            "line": 29,
+            "file": "src/features/editor/views/GraphView/CustomEdge/index.tsx",
+            "line": 41,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/layout/ConverterLayout/ToolPage.tsx",
-            "line": 19,
+            "file": "src/features/editor/views/GraphView/SecureInfo.tsx",
+            "line": 5,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/layout/TypeLayout/TypegenWrapper.tsx",
-            "line": 19,
+            "file": "src/features/editor/views/TreeView/Label.tsx",
+            "line": 26,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "src/features/modals/JQModal/index.tsx",
+            "line": 7,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "src/layout/ConverterLayout/PageLinks.tsx",
+            "line": 27,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "src/layout/Landing/HeroPreview.tsx",
+            "line": 4,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -569,14 +575,8 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/features/editor/BottomBar.tsx",
-            "line": 77,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "src/layout/Landing/FAQ.tsx",
-            "line": 5,
+            "file": "src/store/useModal.ts",
+            "line": 15,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           }
@@ -589,130 +589,130 @@
         "samples": []
       },
       "4-space": {
-        "count": 4823,
+        "count": 4822,
         "samples": [
           {
-            "file": "src/pages/converter/csv-to-json.tsx",
-            "line": 6,
+            "file": "eslint.config.mjs",
+            "line": 13,
             "column": 1,
             "message": "Expected indentation of 4 spaces but found 2."
           },
           {
-            "file": "src/lib/utils/json2go.js",
-            "line": 122,
+            "file": "src/features/editor/ExternalMode.tsx",
+            "line": 123,
             "column": 1,
-            "message": "Expected indentation of 24 spaces but found 12."
+            "message": "Expected indentation of 32 spaces but found 16."
           },
           {
-            "file": "src/layout/PageLayout/Navbar.tsx",
-            "line": 106,
-            "column": 1,
-            "message": "Expected indentation of 24 spaces but found 12."
-          },
-          {
-            "file": "src/features/editor/views/GraphView/lib/jsonParser.ts",
-            "line": 34,
+            "file": "src/features/editor/views/GraphView/NotSupported.tsx",
+            "line": 74,
             "column": 1,
             "message": "Expected indentation of 16 spaces but found 8."
           },
           {
-            "file": "src/features/editor/views/GraphView/CustomEdge/index.tsx",
-            "line": 21,
-            "column": 1,
-            "message": "Expected indentation of 12 spaces but found 6."
-          },
-          {
-            "file": "eslint.config.mjs",
-            "line": 59,
+            "file": "src/features/editor/views/GraphView/lib/jsonParser.ts",
+            "line": 181,
             "column": 1,
             "message": "Expected indentation of 20 spaces but found 10."
           },
           {
-            "file": "src/constants/theme.ts",
-            "line": 110,
-            "column": 1,
-            "message": "Expected indentation of 4 spaces but found 2."
+            "file": "src/features/modals/NodeModal/index.tsx",
+            "line": 52,
+            "column": 32,
+            "message": "Expected indentation of 12 spaces but found 10."
           },
           {
-            "file": "src/layout/TypeLayout/TypegenWrapper.tsx",
+            "file": "src/layout/Landing/Features.tsx",
+            "line": 39,
+            "column": 1,
+            "message": "Expected indentation of 8 spaces but found 4."
+          },
+          {
+            "file": "src/layout/PageLayout/Footer.tsx",
+            "line": 82,
+            "column": 1,
+            "message": "Expected indentation of 32 spaces but found 16."
+          },
+          {
+            "file": "src/lib/utils/json2go.js",
+            "line": 262,
+            "column": 1,
+            "message": "Expected indentation of 16 spaces but found 8."
+          },
+          {
+            "file": "src/pages/docs.tsx",
+            "line": 96,
+            "column": 1,
+            "message": "Expected indentation of 32 spaces but found 16."
+          },
+          {
+            "file": "src/types/graph.ts",
             "line": 23,
-            "column": 1,
-            "message": "Expected indentation of 4 spaces but found 2."
-          },
-          {
-            "file": "src/layout/Landing/HeroSection.tsx",
-            "line": 127,
-            "column": 27,
-            "message": "Expected indentation of 14 spaces but found 12."
-          },
-          {
-            "file": "src/features/editor/Toolbar/ToolsMenu.tsx",
-            "line": 62,
             "column": 1,
             "message": "Expected indentation of 4 spaces but found 2."
           }
         ]
       },
       "tab": {
-        "count": 4826,
+        "count": 4825,
         "samples": [
           {
-            "file": "src/layout/PageLayout/index.tsx",
-            "line": 9,
+            "file": "eslint.config.mjs",
+            "line": 13,
             "column": 1,
             "message": "Expected indentation of 1 tab but found 2 spaces."
           },
           {
-            "file": "eslint.config.mjs",
-            "line": 48,
+            "file": "src/features/editor/ExternalMode.tsx",
+            "line": 123,
             "column": 1,
-            "message": "Expected indentation of 4 tabs but found 8 spaces."
+            "message": "Expected indentation of 8 tabs but found 16 spaces."
           },
           {
-            "file": "src/features/editor/LiveEditor.tsx",
-            "line": 45,
-            "column": 1,
-            "message": "Expected indentation of 3 tabs but found 6 spaces."
-          },
-          {
-            "file": "src/pages/index.tsx",
-            "line": 47,
-            "column": 1,
-            "message": "Expected indentation of 2 tabs but found 4 spaces."
-          },
-          {
-            "file": "src/lib/utils/json2go.js",
-            "line": 115,
+            "file": "src/features/editor/views/GraphView/NotSupported.tsx",
+            "line": 76,
             "column": 1,
             "message": "Expected indentation of 5 tabs but found 10 spaces."
           },
           {
-            "file": "src/features/editor/views/GraphView/CustomEdge/index.tsx",
-            "line": 34,
+            "file": "src/features/editor/views/GraphView/lib/jsonParser.ts",
+            "line": 182,
             "column": 1,
-            "message": "Expected indentation of 4 tabs but found 8 spaces."
+            "message": "Expected indentation of 5 tabs but found 10 spaces."
+          },
+          {
+            "file": "src/features/modals/NodeModal/index.tsx",
+            "line": 10,
+            "column": 1,
+            "message": "Expected indentation of 1 tab but found 2 spaces."
           },
           {
             "file": "src/layout/Landing/Features.tsx",
-            "line": 128,
+            "line": 40,
             "column": 1,
-            "message": "Expected indentation of 4 tabs but found 8 spaces."
+            "message": "Expected indentation of 1 tab but found 2 spaces."
           },
           {
-            "file": "src/lib/utils/jsonAdapter.ts",
-            "line": 13,
-            "column": 1,
-            "message": "Expected indentation of 4 tabs but found 8 spaces."
-          },
-          {
-            "file": "src/features/editor/TextEditor.tsx",
+            "file": "src/layout/PageLayout/Footer.tsx",
             "line": 83,
             "column": 1,
-            "message": "Expected indentation of 5 tabs but found 10 spaces."
+            "message": "Expected indentation of 8 tabs but found 16 spaces."
           },
           {
-            "file": "next-sitemap.config.js",
-            "line": 6,
+            "file": "src/lib/utils/json2go.js",
+            "line": 262,
+            "column": 1,
+            "message": "Expected indentation of 4 tabs but found 8 spaces."
+          },
+          {
+            "file": "src/pages/docs.tsx",
+            "line": 96,
+            "column": 1,
+            "message": "Expected indentation of 8 tabs but found 16 spaces."
+          },
+          {
+            "file": "src/types/graph.ts",
+            "line": 23,
             "column": 1,
             "message": "Expected indentation of 1 tab but found 2 spaces."
           }
@@ -771,63 +771,63 @@
         "count": 1435,
         "samples": [
           {
-            "file": "src/layout/PageLayout/index.tsx",
+            "file": "eslint.config.mjs",
+            "line": 1,
+            "column": 28,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "src/enums/file.enum.ts",
+            "line": 12,
+            "column": 35,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "src/features/editor/Toolbar/ViewMenu.tsx",
+            "line": 2,
+            "column": 35,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "src/features/editor/views/GraphView/ZoomControl.tsx",
             "line": 1,
             "column": 19,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/features/editor/views/GraphView/ZoomControl.tsx",
-            "line": 78,
-            "column": 23,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "src/store/useConfig.ts",
-            "line": 3,
+            "file": "src/features/modals/DownloadModal/index.tsx",
+            "line": 73,
             "column": 22,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/enums/file.enum.ts",
-            "line": 41,
-            "column": 12,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "src/features/modals/ImportModal/index.tsx",
+            "file": "src/hooks/useJsonQuery.ts",
             "line": 23,
-            "column": 15,
+            "column": 19,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "next.config.js",
-            "line": 9,
-            "column": 11,
+            "file": "src/layout/TypeLayout/PageLinks.tsx",
+            "line": 5,
+            "column": 52,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/constants/theme.ts",
-            "line": 74,
-            "column": 31,
+            "file": "src/pages/404.tsx",
+            "line": 4,
+            "column": 44,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/lib/utils/json2go.js",
-            "line": 323,
-            "column": 7,
+            "file": "src/pages/legal/privacy.tsx",
+            "line": 1,
+            "column": 19,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/layout/PageLayout/Navbar.tsx",
-            "line": 6,
-            "column": 31,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "src/features/modals/DownloadModal/index.tsx",
-            "line": 177,
-            "column": 42,
+            "file": "src/types/graph.ts",
+            "line": 26,
+            "column": 59,
             "message": "Strings must use singlequote."
           }
         ]
@@ -842,63 +842,63 @@
         "count": 1875,
         "samples": [
           {
-            "file": "src/layout/Landing/Section3.tsx",
+            "file": "eslint.config.mjs",
             "line": 1,
-            "column": 26,
+            "column": 46,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/store/useFile.ts",
-            "line": 98,
-            "column": 20,
+            "file": "src/features/editor/Toolbar/ThemeToggle.tsx",
+            "line": 1,
+            "column": 48,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/pages/converter/xml-to-csv.tsx",
-            "line": 9,
-            "column": 20,
+            "file": "src/features/editor/views/GraphView/OptionsMenu.tsx",
+            "line": 38,
+            "column": 76,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/pages/index.tsx",
-            "line": 47,
-            "column": 6,
+            "file": "src/features/editor/views/GraphView/lib/utils/calculateNodeSize.ts",
+            "line": 73,
+            "column": 34,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "src/features/modals/ModalController.tsx",
+            "line": 11,
+            "column": 88,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "src/layout/Landing/FAQ.tsx",
+            "line": 51,
+            "column": 4,
             "message": "Extra semicolon."
           },
           {
             "file": "src/lib/utils/json2go.js",
-            "line": 138,
-            "column": 41,
+            "line": 172,
+            "column": 25,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/features/editor/views/GraphView/CustomNode/TextRenderer.tsx",
-            "line": 31,
-            "column": 2,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "src/features/editor/views/GraphView/CustomNode/TextNode.tsx",
-            "line": 64,
-            "column": 82,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "src/pages/editor.tsx",
-            "line": 21,
-            "column": 84,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "src/features/editor/Toolbar/ToolsMenu.tsx",
-            "line": 6,
-            "column": 77,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "src/features/modals/modalTypes.ts",
+            "file": "src/pages/converter/csv-to-json.tsx",
             "line": 9,
-            "column": 48,
+            "column": 20,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "src/pages/type/csv-to-rust.tsx",
+            "line": 9,
+            "column": 24,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "src/types/graph.ts",
+            "line": 26,
+            "column": 63,
             "message": "Extra semicolon."
           }
         ]

@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "8d56277528fc",
-  "analyzedCommit": "0bd9333c8e04aefac9e3811370e3800ce658ecbd",
-  "analyzedCommitDate": "2025-04-06T08:21:48.000Z",
+  "analyzedCommit": "b45bef66b40c63b6f57c15ee8cd090682238df4c",
+  "analyzedCommitDate": "2026-02-08T15:11:26.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -11,6 +11,24 @@
       "generic": {
         "count": 8,
         "samples": [
+          {
+            "file": "app/blog/[...slug]/page.tsx",
+            "line": 25,
+            "column": 27,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+          },
+          {
+            "file": "app/blog/[...slug]/page.tsx",
+            "line": 80,
+            "column": 69,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+          },
+          {
+            "file": "data/projectsData.ts",
+            "line": 8,
+            "column": 21,
+            "message": "Array type using 'Project[]' is forbidden. Use 'Array<Project>' instead."
+          },
           {
             "file": "layouts/ListLayout.tsx",
             "line": 17,
@@ -22,18 +40,6 @@
             "line": 19,
             "column": 25,
             "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
-          },
-          {
-            "file": "layouts/PostLayout.tsx",
-            "line": 26,
-            "column": 18,
-            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
-          },
-          {
-            "file": "data/projectsData.ts",
-            "line": 8,
-            "column": 21,
-            "message": "Array type using 'Project[]' is forbidden. Use 'Array<Project>' instead."
           },
           {
             "file": "layouts/ListLayoutWithTags.tsx",
@@ -48,16 +54,10 @@
             "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           },
           {
-            "file": "app/blog/[...slug]/page.tsx",
-            "line": 25,
-            "column": 27,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
-          },
-          {
-            "file": "app/blog/[...slug]/page.tsx",
-            "line": 80,
-            "column": 69,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+            "file": "layouts/PostLayout.tsx",
+            "line": 26,
+            "column": 18,
+            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           }
         ]
       }
@@ -81,20 +81,8 @@
         "count": 5,
         "samples": [
           {
-            "file": "app/tags/page.tsx",
-            "line": 10,
-            "column": 32,
-            "message": "An index signature is preferred over a record."
-          },
-          {
             "file": "app/tags/[tag]/page.tsx",
             "line": 30,
-            "column": 32,
-            "message": "An index signature is preferred over a record."
-          },
-          {
-            "file": "layouts/ListLayoutWithTags.tsx",
-            "line": 76,
             "column": 32,
             "message": "An index signature is preferred over a record."
           },
@@ -105,9 +93,21 @@
             "message": "An index signature is preferred over a record."
           },
           {
+            "file": "app/tags/page.tsx",
+            "line": 10,
+            "column": 32,
+            "message": "An index signature is preferred over a record."
+          },
+          {
             "file": "contentlayer.config.ts",
             "line": 66,
             "column": 19,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "layouts/ListLayoutWithTags.tsx",
+            "line": 76,
+            "column": 32,
             "message": "An index signature is preferred over a record."
           }
         ]
@@ -129,14 +129,26 @@
         "count": 14,
         "samples": [
           {
-            "file": "layouts/ListLayout.tsx",
-            "line": 12,
+            "file": "app/seo.tsx",
+            "line": 4,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "layouts/ListLayout.tsx",
-            "line": 16,
+            "file": "components/LayoutWrapper.tsx",
+            "line": 7,
+            "column": 1,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "components/SectionContainer.tsx",
+            "line": 3,
+            "column": 1,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "components/Tag.tsx",
+            "line": 3,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
@@ -147,7 +159,7 @@
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "layouts/PostSimple.tsx",
+            "file": "layouts/ListLayout.tsx",
             "line": 12,
             "column": 1,
             "message": "Use `type` instead of `interface`."
@@ -165,26 +177,14 @@
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "app/seo.tsx",
-            "line": 4,
+            "file": "layouts/PostLayout.tsx",
+            "line": 24,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "components/LayoutWrapper.tsx",
-            "line": 7,
-            "column": 1,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "components/PageTitle.tsx",
-            "line": 3,
-            "column": 1,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "components/Tag.tsx",
-            "line": 3,
+            "file": "layouts/PostSimple.tsx",
+            "line": 12,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           }
@@ -202,26 +202,32 @@
             "message": "Imports Authors are only used as type."
           },
           {
-            "file": "layouts/ListLayoutWithTags.tsx",
-            "line": 6,
+            "file": "app/layout.tsx",
+            "line": 7,
             "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
+            "message": "Imports SearchConfig are only used as type."
           },
           {
-            "file": "components/Image.tsx",
+            "file": "app/robots.ts",
             "line": 1,
             "column": 1,
-            "message": "Imports ImageProps are only used as type."
+            "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "layouts/PostLayout.tsx",
-            "line": 2,
+            "file": "app/tags/[tag]/page.tsx",
+            "line": 8,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "layouts/PostSimple.tsx",
-            "line": 3,
+            "file": "components/Link.tsx",
+            "line": 4,
+            "column": 1,
+            "message": "All imports in the declaration are only used as types. Use `import type`."
+          },
+          {
+            "file": "components/SectionContainer.tsx",
+            "line": 1,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
@@ -232,26 +238,20 @@
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "app/layout.tsx",
-            "line": 7,
-            "column": 1,
-            "message": "Imports SearchConfig are only used as type."
-          },
-          {
             "file": "layouts/PostBanner.tsx",
             "line": 1,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "app/robots.ts",
+            "file": "layouts/PostLayout.tsx",
             "line": 1,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "app/blog/[...slug]/page.tsx",
-            "line": 13,
+            "file": "layouts/PostSimple.tsx",
+            "line": 3,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           }
@@ -261,20 +261,8 @@
         "count": 9,
         "samples": [
           {
-            "file": "layouts/PostBanner.tsx",
-            "line": 5,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "components/MDXComponents.tsx",
-            "line": 4,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "layouts/ListLayoutWithTags.tsx",
-            "line": 7,
+            "file": "app/blog/[...slug]/page.tsx",
+            "line": 9,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -285,8 +273,8 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "layouts/PostLayout.tsx",
-            "line": 3,
+            "file": "components/MDXComponents.tsx",
+            "line": 4,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -303,14 +291,26 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "layouts/PostSimple.tsx",
-            "line": 4,
+            "file": "layouts/ListLayoutWithTags.tsx",
+            "line": 7,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "app/blog/[...slug]/page.tsx",
-            "line": 9,
+            "file": "layouts/PostBanner.tsx",
+            "line": 5,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "layouts/PostLayout.tsx",
+            "line": 3,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "layouts/PostSimple.tsx",
+            "line": 4,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           }
@@ -322,15 +322,15 @@
         "count": 22,
         "samples": [
           {
-            "file": "app/tags/[tag]/page.tsx",
-            "line": 12,
+            "file": "app/blog/[...slug]/page.tsx",
+            "line": 24,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "layouts/ListLayoutWithTags.tsx",
-            "line": 24,
-            "column": 1,
+            "file": "app/tags/[tag]/page.tsx",
+            "line": 12,
+            "column": 8,
             "message": "Expected a function expression."
           },
           {
@@ -370,14 +370,14 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "app/seo.tsx",
-            "line": 12,
-            "column": 8,
+            "file": "layouts/ListLayoutWithTags.tsx",
+            "line": 24,
+            "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "scripts/postbuild.mjs",
-            "line": 3,
+            "file": "scripts/rss.mjs",
+            "line": 40,
             "column": 1,
             "message": "Expected a function expression."
           }
@@ -387,33 +387,15 @@
         "count": 29,
         "samples": [
           {
-            "file": "components/LayoutWrapper.tsx",
-            "line": 15,
-            "column": 7,
+            "file": "app/blog/[...slug]/page.tsx",
+            "line": 76,
+            "column": 14,
             "message": "Expected a function declaration."
           },
           {
-            "file": "components/social-icons/index.tsx",
-            "line": 37,
-            "column": 7,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "scripts/rss.mjs",
-            "line": 59,
-            "column": 7,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "components/ScrollTopAndComment.tsx",
-            "line": 19,
-            "column": 9,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "components/MobileNav.tsx",
-            "line": 13,
-            "column": 9,
+            "file": "app/tags/[tag]/page/[page]/page.tsx",
+            "line": 10,
+            "column": 14,
             "message": "Expected a function declaration."
           },
           {
@@ -423,14 +405,20 @@
             "message": "Expected a function declaration."
           },
           {
-            "file": "app/blog/page/[page]/page.tsx",
-            "line": 8,
-            "column": 14,
+            "file": "components/MobileNav.tsx",
+            "line": 9,
+            "column": 7,
             "message": "Expected a function declaration."
           },
           {
-            "file": "layouts/PostLayout.tsx",
-            "line": 13,
+            "file": "components/ScrollTopAndComment.tsx",
+            "line": 10,
+            "column": 11,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "components/TableWrapper.tsx",
+            "line": 1,
             "column": 7,
             "message": "Expected a function declaration."
           },
@@ -445,6 +433,18 @@
             "line": 57,
             "column": 7,
             "message": "Expected a function declaration."
+          },
+          {
+            "file": "layouts/PostLayout.tsx",
+            "line": 14,
+            "column": 7,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "scripts/rss.mjs",
+            "line": 59,
+            "column": 7,
+            "message": "Expected a function declaration."
           }
         ]
       }
@@ -454,62 +454,62 @@
         "count": 41,
         "samples": [
           {
-            "file": "components/TableWrapper.tsx",
+            "file": "app/Main.tsx",
             "line": 9,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "components/Comments.tsx",
-            "line": 7,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "components/SearchButton.tsx",
-            "line": 34,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "layouts/ListLayout.tsx",
-            "line": 68,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "data/projectsData.ts",
-            "line": 27,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "components/Card.tsx",
-            "line": 56,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "components/LayoutWrapper.tsx",
-            "line": 27,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "eslint.config.mjs",
+            "file": "app/blog/page/[page]/page.tsx",
             "line": 15,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "app/sitemap.ts",
+            "file": "app/robots.ts",
+            "line": 6,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "app/tags/page.tsx",
+            "line": 9,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "components/Image.tsx",
+            "line": 9,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "components/PageTitle.tsx",
             "line": 7,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "app/page.tsx",
-            "line": 5,
+            "file": "components/Tag.tsx",
+            "line": 18,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "data/headerNavLinks.ts",
+            "line": 9,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "layouts/ListLayoutWithTags.tsx",
+            "line": 69,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "scripts/rss.mjs",
+            "line": 63,
             "column": 8,
             "message": "Prefer named exports"
           }
@@ -519,8 +519,8 @@
         "count": 3,
         "samples": [
           {
-            "file": "components/MDXComponents.tsx",
-            "line": 9,
+            "file": "app/seo.tsx",
+            "line": 12,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -531,8 +531,8 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "app/seo.tsx",
-            "line": 12,
+            "file": "components/MDXComponents.tsx",
+            "line": 9,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           }
@@ -545,130 +545,130 @@
         "samples": []
       },
       "4-space": {
-        "count": 2050,
+        "count": 2056,
         "samples": [
           {
-            "file": "components/SectionContainer.tsx",
-            "line": 4,
+            "file": "app/Main.tsx",
+            "line": 14,
+            "column": 161,
+            "message": "Expected indentation of 14 spaces but found 12."
+          },
+          {
+            "file": "app/layout.tsx",
+            "line": 26,
             "column": 1,
             "message": "Expected indentation of 4 spaces but found 2."
           },
           {
-            "file": "scripts/postbuild.mjs",
-            "line": 4,
+            "file": "app/tags/[tag]/page/[page]/page.tsx",
+            "line": 29,
             "column": 1,
             "message": "Expected indentation of 4 spaces but found 2."
           },
           {
-            "file": "components/SearchButton.tsx",
-            "line": 20,
+            "file": "components/MobileNav.tsx",
+            "line": 22,
             "column": 1,
-            "message": "Expected indentation of 20 spaces but found 10."
+            "message": "Expected indentation of 8 spaces but found 4."
           },
           {
-            "file": "layouts/ListLayoutWithTags.tsx",
-            "line": 165,
-            "column": 1,
-            "message": "Expected indentation of 16 spaces but found 8."
-          },
-          {
-            "file": "layouts/ListLayout.tsx",
-            "line": 144,
-            "column": 1,
-            "message": "Expected indentation of 40 spaces but found 20."
-          },
-          {
-            "file": "layouts/PostLayout.tsx",
-            "line": 88,
-            "column": 1,
-            "message": "Expected indentation of 52 spaces but found 26."
-          },
-          {
-            "file": "components/Card.tsx",
-            "line": 42,
+            "file": "components/ThemeSwitch.tsx",
+            "line": 67,
             "column": 1,
             "message": "Expected indentation of 16 spaces but found 8."
           },
           {
             "file": "contentlayer.config.ts",
-            "line": 15,
+            "line": 97,
             "column": 1,
             "message": "Expected indentation of 4 spaces but found 2."
           },
           {
-            "file": "next.config.js",
-            "line": 46,
+            "file": "layouts/AuthorLayout.tsx",
+            "line": 14,
             "column": 1,
             "message": "Expected indentation of 4 spaces but found 2."
           },
           {
-            "file": "app/blog/page.tsx",
-            "line": 27,
+            "file": "layouts/ListLayoutWithTags.tsx",
+            "line": 85,
+            "column": 1,
+            "message": "Expected indentation of 16 spaces but found 8."
+          },
+          {
+            "file": "layouts/PostLayout.tsx",
+            "line": 106,
+            "column": 1,
+            "message": "Expected indentation of 32 spaces but found 16."
+          },
+          {
+            "file": "scripts/rss.mjs",
+            "line": 61,
             "column": 1,
             "message": "Expected indentation of 4 spaces but found 2."
           }
         ]
       },
       "tab": {
-        "count": 2079,
+        "count": 2085,
         "samples": [
           {
-            "file": "app/not-found.tsx",
-            "line": 7,
-            "column": 155,
+            "file": "app/Main.tsx",
+            "line": 14,
+            "column": 161,
             "message": "Expected indentation of 1 tab but found 0."
           },
           {
-            "file": "layouts/ListLayout.tsx",
-            "line": 19,
-            "column": 1,
-            "message": "Expected indentation of 1 tab but found 2 spaces."
-          },
-          {
-            "file": "layouts/ListLayoutWithTags.tsx",
-            "line": 92,
-            "column": 1,
-            "message": "Expected indentation of 6 tabs but found 12 spaces."
-          },
-          {
-            "file": "next.config.js",
-            "line": 38,
+            "file": "app/layout.tsx",
+            "line": 30,
             "column": 1,
             "message": "Expected indentation of 2 tabs but found 4 spaces."
           },
           {
-            "file": "layouts/PostLayout.tsx",
-            "line": 94,
-            "column": 1,
-            "message": "Expected indentation of 7 tabs but found 14 spaces."
-          },
-          {
-            "file": "app/seo.tsx",
-            "line": 25,
-            "column": 1,
-            "message": "Expected indentation of 2 tabs but found 4 spaces."
-          },
-          {
-            "file": "components/ScrollTopAndComment.tsx",
-            "line": 44,
-            "column": 1,
-            "message": "Expected indentation of 3 tabs but found 6 spaces."
-          },
-          {
-            "file": "app/tags/page.tsx",
-            "line": 11,
+            "file": "app/tags/[tag]/page/[page]/page.tsx",
+            "line": 36,
             "column": 1,
             "message": "Expected indentation of 1 tab but found 2 spaces."
           },
           {
             "file": "components/MobileNav.tsx",
-            "line": 46,
+            "line": 34,
+            "column": 1,
+            "message": "Expected indentation of 5 tabs but found 10 spaces."
+          },
+          {
+            "file": "components/ThemeSwitch.tsx",
+            "line": 80,
             "column": 1,
             "message": "Expected indentation of 4 tabs but found 8 spaces."
           },
           {
-            "file": "app/theme-providers.tsx",
-            "line": 11,
+            "file": "contentlayer.config.ts",
+            "line": 113,
+            "column": 1,
+            "message": "Expected indentation of 1 tab but found 2 spaces."
+          },
+          {
+            "file": "eslint.config.mjs",
+            "line": 64,
+            "column": 1,
+            "message": "Expected indentation of 3 tabs but found 6 spaces."
+          },
+          {
+            "file": "layouts/ListLayoutWithTags.tsx",
+            "line": 77,
+            "column": 1,
+            "message": "Expected indentation of 1 tab but found 2 spaces."
+          },
+          {
+            "file": "layouts/PostLayout.tsx",
+            "line": 102,
+            "column": 1,
+            "message": "Expected indentation of 8 tabs but found 16 spaces."
+          },
+          {
+            "file": "scripts/rss.mjs",
+            "line": 61,
             "column": 1,
             "message": "Expected indentation of 1 tab but found 2 spaces."
           }
@@ -677,65 +677,65 @@
     },
     "quotes": {
       "double": {
-        "count": 515,
+        "count": 516,
         "samples": [
           {
-            "file": "app/tags/page.tsx",
+            "file": "app/Main.tsx",
             "line": 1,
             "column": 18,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "layouts/ListLayout.tsx",
-            "line": 29,
+            "file": "app/layout.tsx",
+            "line": 5,
+            "column": 31,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "app/tags/[tag]/page.tsx",
+            "line": 7,
             "column": 33,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "app/Main.tsx",
-            "line": 2,
-            "column": 17,
+            "file": "components/Link.tsx",
+            "line": 4,
+            "column": 38,
             "message": "Strings must use doublequote."
           },
           {
             "file": "contentlayer.config.ts",
-            "line": 108,
+            "line": 9,
+            "column": 24,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "contentlayer.config.ts",
+            "line": 145,
+            "column": 21,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "eslint.config.mjs",
+            "line": 3,
             "column": 22,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "data/headerNavLinks.ts",
-            "line": 2,
-            "column": 23,
+            "file": "layouts/ListLayout.tsx",
+            "line": 74,
+            "column": 50,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "app/tags/[tag]/page/[page]/page.tsx",
-            "line": 6,
-            "column": 26,
+            "file": "layouts/PostSimple.tsx",
+            "line": 5,
+            "column": 22,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "data/siteMetadata.js",
-            "line": 21,
-            "column": 12,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "components/Link.tsx",
-            "line": 8,
-            "column": 48,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "app/seo.tsx",
-            "line": 23,
-            "column": 13,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "next.config.js",
-            "line": 95,
+            "file": "scripts/rss.mjs",
+            "line": 61,
             "column": 15,
             "message": "Strings must use doublequote."
           }
@@ -744,18 +744,6 @@
       "single": {
         "count": 4,
         "samples": [
-          {
-            "file": "layouts/ListLayoutWithTags.tsx",
-            "line": 97,
-            "column": 25,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "layouts/PostLayout.tsx",
-            "line": 102,
-            "column": 18,
-            "message": "Strings must use singlequote."
-          },
           {
             "file": "components/Footer.tsx",
             "line": 24,
@@ -767,6 +755,18 @@
             "line": 26,
             "column": 17,
             "message": "Strings must use singlequote."
+          },
+          {
+            "file": "layouts/ListLayoutWithTags.tsx",
+            "line": 97,
+            "column": 25,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "layouts/PostLayout.tsx",
+            "line": 102,
+            "column": 18,
+            "message": "Strings must use singlequote."
           }
         ]
       }
@@ -776,63 +776,63 @@
         "count": 554,
         "samples": [
           {
-            "file": "scripts/postbuild.mjs",
+            "file": "app/Main.tsx",
             "line": 1,
-            "column": 28,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "components/social-icons/icons.tsx",
-            "line": 111,
-            "column": 4,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "components/MobileNav.tsx",
-            "line": 105,
-            "column": 4,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "components/Footer.tsx",
-            "line": 36,
-            "column": 4,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "components/ThemeSwitch.tsx",
-            "line": 55,
-            "column": 48,
+            "column": 37,
             "message": "Missing semicolon."
           },
           {
             "file": "app/blog/[...slug]/page.tsx",
-            "line": 1,
-            "column": 23,
+            "line": 87,
+            "column": 22,
             "message": "Missing semicolon."
           },
           {
-            "file": "app/tags/[tag]/page.tsx",
-            "line": 10,
-            "column": 25,
+            "file": "app/page.tsx",
+            "line": 2,
+            "column": 50,
             "message": "Missing semicolon."
           },
           {
-            "file": "app/theme-providers.tsx",
-            "line": 11,
-            "column": 4,
+            "file": "app/tags/[tag]/page/[page]/page.tsx",
+            "line": 18,
+            "column": 8,
             "message": "Missing semicolon."
           },
           {
             "file": "components/LayoutWrapper.tsx",
-            "line": 25,
-            "column": 2,
+            "line": 13,
+            "column": 3,
             "message": "Missing semicolon."
           },
           {
-            "file": "components/Link.tsx",
-            "line": 23,
-            "column": 26,
+            "file": "components/SearchButton.tsx",
+            "line": 3,
+            "column": 47,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "contentlayer.config.ts",
+            "line": 20,
+            "column": 39,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "layouts/ListLayout.tsx",
+            "line": 25,
+            "column": 39,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "layouts/PostLayout.tsx",
+            "line": 9,
+            "column": 35,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "scripts/rss.mjs",
+            "line": 63,
+            "column": 19,
             "message": "Missing semicolon."
           }
         ]

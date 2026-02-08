@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "8d56277528fc",
-  "analyzedCommit": "288e73a0f5c7ed70ef85029bf6cd14c922a42baa",
-  "analyzedCommitDate": "2026-02-01T10:33:12.000Z",
+  "analyzedCommit": "0844587ae708b5a2af7b44fec34b906a1c5b7dd7",
+  "analyzedCommitDate": "2026-02-07T18:18:39.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -18,10 +18,28 @@
             "message": "Array type using 'unknown[]' is forbidden. Use 'Array<unknown>' instead."
           },
           {
+            "file": "apps/vscode-extension/src/diagnostics.ts",
+            "line": 47,
+            "column": 26,
+            "message": "Array type using 'FormattedDiagnostic[]' is forbidden. Use 'Array<FormattedDiagnostic>' instead."
+          },
+          {
+            "file": "apps/vscode-extension/src/formattedDiagnosticsStore.ts",
+            "line": 17,
+            "column": 3,
+            "message": "Array type using 'FormattedDiagnostic[]' is forbidden. Use 'Array<FormattedDiagnostic>' instead."
+          },
+          {
             "file": "apps/vscode-extension/src/logger.ts",
             "line": 42,
             "column": 33,
             "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
+          },
+          {
+            "file": "apps/vscode-extension/src/provider/markdownWebviewProvider.ts",
+            "line": 155,
+            "column": 16,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
             "file": "examples/errors.vue",
@@ -43,12 +61,6 @@
           },
           {
             "file": "packages/utils/src/index.ts",
-            "line": 5,
-            "column": 4,
-            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
-          },
-          {
-            "file": "packages/utils/src/index.ts",
             "line": 6,
             "column": 30,
             "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
@@ -58,18 +70,6 @@
             "line": 37,
             "column": 10,
             "message": "Array type using 'unknown[]' is forbidden. Use 'Array<unknown>' instead."
-          },
-          {
-            "file": "apps/vscode-extension/src/formattedDiagnosticsStore.ts",
-            "line": 17,
-            "column": 3,
-            "message": "Array type using 'FormattedDiagnostic[]' is forbidden. Use 'Array<FormattedDiagnostic>' instead."
-          },
-          {
-            "file": "apps/vscode-extension/src/provider/markdownWebviewProvider.ts",
-            "line": 155,
-            "column": 16,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           }
         ]
       }
@@ -82,6 +82,18 @@
       "type-annotation": {
         "count": 5,
         "samples": [
+          {
+            "file": "apps/vscode-extension/src/diagnostics.ts",
+            "line": 84,
+            "column": 22,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "apps/vscode-extension/src/diagnostics.ts",
+            "line": 124,
+            "column": 36,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
           {
             "file": "apps/vscode-extension/src/formattedDiagnosticsStore.ts",
             "line": 15,
@@ -98,18 +110,6 @@
             "file": "apps/vscode-extension/src/provider/webviewViewProvider.ts",
             "line": 38,
             "column": 41,
-            "message": "The generic type arguments should be specified as part of the type annotation."
-          },
-          {
-            "file": "apps/vscode-extension/src/diagnostics.ts",
-            "line": 84,
-            "column": 22,
-            "message": "The generic type arguments should be specified as part of the type annotation."
-          },
-          {
-            "file": "apps/vscode-extension/src/diagnostics.ts",
-            "line": 124,
-            "column": 36,
             "message": "The generic type arguments should be specified as part of the type annotation."
           }
         ]
@@ -137,6 +137,12 @@
         "count": 3,
         "samples": [
           {
+            "file": "apps/vscode-extension/src/logger.ts",
+            "line": 41,
+            "column": 27,
+            "message": "An index signature is preferred over a record."
+          },
+          {
             "file": "packages/utils/src/index.ts",
             "line": 3,
             "column": 38,
@@ -147,12 +153,6 @@
             "line": 9,
             "column": 34,
             "message": "An index signature is preferred over a record."
-          },
-          {
-            "file": "apps/vscode-extension/src/logger.ts",
-            "line": 41,
-            "column": 27,
-            "message": "An index signature is preferred over a record."
           }
         ]
       }
@@ -161,12 +161,6 @@
       "interface": {
         "count": 3,
         "samples": [
-          {
-            "file": "examples/errors.ts",
-            "line": 46,
-            "column": 1,
-            "message": "Use `interface` instead of `type`."
-          },
           {
             "file": "apps/vscode-extension/src/commands/validate.ts",
             "line": 55,
@@ -178,12 +172,24 @@
             "line": 68,
             "column": 1,
             "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "examples/errors.ts",
+            "line": 46,
+            "column": 1,
+            "message": "Use `interface` instead of `type`."
           }
         ]
       },
       "type": {
         "count": 4,
         "samples": [
+          {
+            "file": "apps/vscode-extension/src/formattedDiagnosticsStore.ts",
+            "line": 5,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
           {
             "file": "examples/errors.ts",
             "line": 1,
@@ -194,12 +200,6 @@
             "file": "examples/errors.ts",
             "line": 35,
             "column": 1,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "apps/vscode-extension/src/formattedDiagnosticsStore.ts",
-            "line": 5,
-            "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
@@ -216,34 +216,28 @@
         "count": 13,
         "samples": [
           {
-            "file": "apps/vscode-extension/src/provider/hoverProvider.ts",
+            "file": "apps/vscode-extension/src/commands/revealSelection.ts",
             "line": 1,
             "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
+            "message": "Imports Uri are only used as type."
           },
           {
-            "file": "apps/vscode-extension/src/extension.ts",
-            "line": 1,
-            "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
-          {
-            "file": "apps/vscode-extension/src/provider/markdownWebviewProvider.ts",
+            "file": "apps/vscode-extension/src/diagnostics.ts",
             "line": 3,
             "column": 1,
-            "message": "Imports HighlighterCore are only used as type."
+            "message": "Imports ExtensionContext and Uri are only used as type."
           },
           {
-            "file": "apps/vscode-extension/src/provider/textDocumentContentProvider.ts",
+            "file": "apps/vscode-extension/src/formattedDiagnosticsStore.ts",
             "line": 1,
             "column": 1,
-            "message": "Imports ExtensionContext are only used as type."
+            "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "packages/vscode-formatter/src/format/formatDiagnostic.ts",
-            "line": 2,
+            "file": "apps/vscode-extension/src/logger.ts",
+            "line": 1,
             "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
+            "message": "Imports LogOutputChannel are only used as type."
           },
           {
             "file": "apps/vscode-extension/src/logger.ts",
@@ -252,14 +246,20 @@
             "message": "`import()` type annotations are forbidden."
           },
           {
-            "file": "packages/vscode-formatter/src/components/title.ts",
-            "line": 2,
+            "file": "apps/vscode-extension/src/provider/markdownWebviewProvider.ts",
+            "line": 3,
             "column": 1,
-            "message": "Imports Diagnostic are only used as type."
+            "message": "Imports HighlighterCore are only used as type."
           },
           {
             "file": "apps/vscode-extension/src/provider/selectedTextHoverProvider.ts",
             "line": 3,
+            "column": 1,
+            "message": "Imports ExtensionContext are only used as type."
+          },
+          {
+            "file": "apps/vscode-extension/src/provider/textDocumentContentProvider.ts",
+            "line": 1,
             "column": 1,
             "message": "Imports ExtensionContext are only used as type."
           },
@@ -270,10 +270,10 @@
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "apps/vscode-extension/src/diagnostics.ts",
-            "line": 3,
+            "file": "packages/vscode-formatter/src/format/formatDiagnostic.ts",
+            "line": 2,
             "column": 1,
-            "message": "Imports ExtensionContext and Uri are only used as type."
+            "message": "All imports in the declaration are only used as types. Use `import type`."
           }
         ]
       },
@@ -288,12 +288,42 @@
           },
           {
             "file": "apps/vscode-extension/src/commands/revealSelection.ts",
+            "line": 2,
+            "column": 3,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "apps/vscode-extension/src/commands/revealSelection.ts",
             "line": 3,
             "column": 3,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "apps/vscode-extension/src/commands/openMarkdownPreview.ts",
+            "file": "apps/vscode-extension/src/diagnostics.ts",
+            "line": 13,
+            "column": 3,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "apps/vscode-extension/src/diagnostics.ts",
+            "line": 18,
+            "column": 3,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "apps/vscode-extension/src/logger.ts",
+            "line": 56,
+            "column": 28,
+            "message": "`import()` type annotations are forbidden."
+          },
+          {
+            "file": "apps/vscode-extension/src/provider/markdownWebviewProvider.ts",
+            "line": 5,
+            "column": 30,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "apps/vscode-extension/src/provider/webviewViewProvider.ts",
             "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
@@ -305,39 +335,9 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "apps/vscode-extension/src/logger.ts",
-            "line": 5,
-            "column": 3,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "apps/vscode-extension/src/provider/textDocumentContentProvider.ts",
-            "line": 5,
-            "column": 3,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "apps/vscode-extension/src/diagnostics.ts",
-            "line": 9,
-            "column": 3,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "apps/vscode-extension/src/diagnostics.ts",
-            "line": 18,
-            "column": 3,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "apps/vscode-extension/src/provider/markdownWebviewProvider.ts",
-            "line": 5,
-            "column": 30,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "packages/vscode-formatter/src/components/title.ts",
-            "line": 2,
-            "column": 22,
+            "file": "packages/vscode-formatter/src/format/formatDiagnostic.ts",
+            "line": 3,
+            "column": 1,
             "message": "Use an `import` instead of an `import type`."
           }
         ]
@@ -348,63 +348,63 @@
         "count": 50,
         "samples": [
           {
-            "file": "examples/errors.js",
-            "line": 49,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
             "file": "apps/vscode-extension/scripts/build.js",
             "line": 9,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "apps/vscode-extension/src/provider/selectedTextHoverProvider.ts",
-            "line": 17,
-            "column": 8,
+            "file": "apps/vscode-extension/src/commands/revealSelection.ts",
+            "line": 55,
+            "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "apps/vscode-extension/src/commands/validate.ts",
-            "line": 3,
-            "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "apps/vscode-extension/src/commands/openMarkdownPreview.ts",
-            "line": 9,
-            "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "apps/vscode-extension/src/diagnostics.ts",
-            "line": 33,
-            "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "apps/vscode-extension/src/commands/revealSelection.ts",
-            "line": 84,
+            "line": 57,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "apps/vscode-extension/src/logger.ts",
+            "file": "apps/vscode-extension/src/extension.ts",
             "line": 11,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "apps/vscode-extension/src/logger.ts",
+            "line": 32,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "apps/vscode-extension/src/logger.ts",
-            "line": 64,
+            "line": 105,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "apps/vscode-extension/src/logger.ts",
-            "line": 121,
+            "file": "apps/vscode-extension/src/provider/textDocumentContentProvider.ts",
+            "line": 73,
             "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "apps/vscode-extension/webview/index.js",
+            "line": 72,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "packages/formatter/src/formatTypeBlock.ts",
+            "line": 34,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "packages/vscode-formatter/src/format/formatDiagnostic.ts",
+            "line": 14,
+            "column": 8,
             "message": "Expected a function expression."
           }
         ]
@@ -416,6 +416,18 @@
             "file": "examples/errors.js",
             "line": 30,
             "column": 7,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "packages/formatter/src/formatDiagnosticMessage.ts",
+            "line": 3,
+            "column": 14,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "packages/formatter/src/formatDiagnosticMessage.ts",
+            "line": 13,
+            "column": 9,
             "message": "Expected a function declaration."
           },
           {
@@ -431,45 +443,33 @@
             "message": "Expected a function declaration."
           },
           {
-            "file": "packages/vscode-formatter/src/components/spanBreak.ts",
-            "line": 8,
-            "column": 14,
-            "message": "Expected a function declaration."
-          },
-          {
             "file": "packages/vscode-formatter/src/components/codeBlock.ts",
             "line": 22,
             "column": 14,
             "message": "Expected a function declaration."
           },
           {
-            "file": "packages/formatter/src/formatDiagnosticMessage.ts",
+            "file": "packages/vscode-formatter/src/components/plainCodeBlock.ts",
             "line": 7,
-            "column": 9,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "packages/formatter/src/formatDiagnosticMessage.ts",
-            "line": 13,
-            "column": 9,
+            "column": 14,
             "message": "Expected a function declaration."
           },
           {
             "file": "packages/vscode-formatter/src/components/title.ts",
-            "line": 34,
-            "column": 7,
+            "line": 9,
+            "column": 14,
             "message": "Expected a function declaration."
           },
           {
             "file": "packages/vscode-formatter/src/components/title.ts",
-            "line": 73,
+            "line": 53,
             "column": 7,
             "message": "Expected a function declaration."
           },
           {
-            "file": "packages/formatter/test/formatter.vitest.ts",
-            "line": 23,
-            "column": 9,
+            "file": "packages/vscode-formatter/src/format/identSentences.ts",
+            "line": 3,
+            "column": 14,
             "message": "Expected a function declaration."
           }
         ]
@@ -480,8 +480,8 @@
         "count": 3,
         "samples": [
           {
-            "file": "tsdown.config.mjs",
-            "line": 3,
+            "file": "eslint.config.mjs",
+            "line": 7,
             "column": 8,
             "message": "Prefer named exports"
           },
@@ -492,8 +492,8 @@
             "message": "Prefer named exports"
           },
           {
-            "file": "eslint.config.mjs",
-            "line": 7,
+            "file": "tsdown.config.mjs",
+            "line": 3,
             "column": 8,
             "message": "Prefer named exports"
           }
@@ -502,24 +502,6 @@
       "default": {
         "count": 25,
         "samples": [
-          {
-            "file": "packages/vscode-formatter/src/components/anyCodeBlock.ts",
-            "line": 4,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "packages/vscode-formatter/src/components/miniLine.ts",
-            "line": 4,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "apps/vscode-extension/src/provider/selectedTextHoverProvider.ts",
-            "line": 17,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
           {
             "file": "apps/vscode-extension/scripts/process-shim.js",
             "line": 5,
@@ -533,20 +515,44 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "packages/formatter/src/index.ts",
-            "line": 1,
-            "column": 10,
+            "file": "apps/vscode-extension/src/diagnostics.ts",
+            "line": 33,
+            "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "packages/formatter/src/prettify.ts",
+            "file": "apps/vscode-extension/src/provider/markdownWebviewProvider.ts",
+            "line": 36,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "apps/vscode-extension/src/test/suite/index.ts",
+            "line": 5,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "packages/formatter/src/formatDiagnosticMessage.ts",
+            "line": 3,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "packages/vscode-formatter/src/components/anyCodeBlock.ts",
             "line": 4,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "packages/vscode-formatter/src/format/identSentences.ts",
-            "line": 3,
+            "file": "packages/vscode-formatter/src/components/spanBreak.ts",
+            "line": 8,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "packages/vscode-formatter/src/format/embedSymbolLinks.ts",
+            "line": 4,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -554,12 +560,6 @@
             "file": "packages/vscode-formatter/src/index.ts",
             "line": 1,
             "column": 10,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "apps/vscode-extension/src/logger.ts",
-            "line": 134,
-            "column": 1,
             "message": "Prefer default export on a file with single export."
           }
         ]
@@ -569,30 +569,6 @@
       "2-space": {
         "count": 9,
         "samples": [
-          {
-            "file": "tsdown.config.mjs",
-            "line": 4,
-            "column": 1,
-            "message": "Expected indentation of 2 spaces but found 4."
-          },
-          {
-            "file": "packages/vscode-formatter/src/components/title.ts",
-            "line": 20,
-            "column": 1,
-            "message": "Expected indentation of 18 spaces but found 20."
-          },
-          {
-            "file": "packages/vscode-formatter/src/components/title.ts",
-            "line": 21,
-            "column": 1,
-            "message": "Expected indentation of 18 spaces but found 20."
-          },
-          {
-            "file": "packages/vscode-formatter/src/components/title.ts",
-            "line": 22,
-            "column": 1,
-            "message": "Expected indentation of 16 spaces but found 18."
-          },
           {
             "file": "apps/vscode-extension/webview/index.js",
             "line": 11,
@@ -622,6 +598,30 @@
             "line": 17,
             "column": 1,
             "message": "Expected indentation of 6 spaces but found 8."
+          },
+          {
+            "file": "packages/vscode-formatter/src/components/title.ts",
+            "line": 20,
+            "column": 1,
+            "message": "Expected indentation of 18 spaces but found 20."
+          },
+          {
+            "file": "packages/vscode-formatter/src/components/title.ts",
+            "line": 21,
+            "column": 1,
+            "message": "Expected indentation of 18 spaces but found 20."
+          },
+          {
+            "file": "packages/vscode-formatter/src/components/title.ts",
+            "line": 22,
+            "column": 1,
+            "message": "Expected indentation of 16 spaces but found 18."
+          },
+          {
+            "file": "tsdown.config.mjs",
+            "line": 4,
+            "column": 1,
+            "message": "Expected indentation of 2 spaces but found 4."
           }
         ]
       },
@@ -629,58 +629,58 @@
         "count": 1374,
         "samples": [
           {
-            "file": "packages/vscode-formatter/src/components/anyCodeBlock.ts",
-            "line": 5,
+            "file": "apps/vscode-extension/scripts/build.js",
+            "line": 10,
             "column": 1,
             "message": "Expected indentation of 4 spaces but found 2."
           },
           {
-            "file": "apps/vscode-extension/src/provider/selectedTextHoverProvider.ts",
-            "line": 34,
-            "column": 1,
-            "message": "Expected indentation of 24 spaces but found 12."
-          },
-          {
-            "file": "apps/vscode-extension/src/commands/validate.ts",
-            "line": 14,
+            "file": "apps/vscode-extension/src/commands/revealSelection.ts",
+            "line": 74,
             "column": 1,
             "message": "Expected indentation of 8 spaces but found 4."
           },
           {
-            "file": "eslint.config.mjs",
-            "line": 16,
+            "file": "apps/vscode-extension/src/logger.ts",
+            "line": 2,
             "column": 1,
-            "message": "Expected indentation of 12 spaces but found 6."
+            "message": "Expected indentation of 4 spaces but found 2."
           },
           {
             "file": "apps/vscode-extension/src/provider/markdownWebviewProvider.ts",
-            "line": 78,
+            "line": 82,
             "column": 1,
-            "message": "Expected indentation of 12 spaces but found 6."
+            "message": "Expected indentation of 4 spaces but found 2."
           },
           {
             "file": "apps/vscode-extension/src/provider/markdownWebviewProvider.ts",
-            "line": 246,
+            "line": 249,
             "column": 1,
-            "message": "Expected indentation of 20 spaces but found 10."
+            "message": "Expected indentation of 28 spaces but found 14."
           },
           {
-            "file": "apps/vscode-extension/src/diagnostics.ts",
-            "line": 136,
-            "column": 1,
-            "message": "Expected indentation of 8 spaces but found 4."
-          },
-          {
-            "file": "packages/formatter/src/formatDiagnosticMessage.ts",
-            "line": 100,
+            "file": "apps/vscode-extension/src/provider/webviewViewProvider.ts",
+            "line": 63,
             "column": 1,
             "message": "Expected indentation of 16 spaces but found 8."
           },
           {
-            "file": "examples/errors.ts",
-            "line": 24,
+            "file": "eslint.config.mjs",
+            "line": 23,
             "column": 1,
-            "message": "Expected indentation of 8 spaces but found 4."
+            "message": "Expected indentation of 12 spaces but found 6."
+          },
+          {
+            "file": "packages/formatter/src/formatDiagnosticMessage.ts",
+            "line": 55,
+            "column": 1,
+            "message": "Expected indentation of 8 spaces but found 6."
+          },
+          {
+            "file": "packages/formatter/test/formatter.vitest.ts",
+            "line": 48,
+            "column": 1,
+            "message": "Expected indentation of 12 spaces but found 6."
           },
           {
             "file": "packages/vscode-formatter/src/format/identSentences.ts",
@@ -694,64 +694,64 @@
         "count": 1397,
         "samples": [
           {
-            "file": "packages/vscode-formatter/src/components/anyCodeBlock.ts",
-            "line": 5,
+            "file": "apps/vscode-extension/scripts/build.js",
+            "line": 10,
             "column": 1,
             "message": "Expected indentation of 1 tab but found 2 spaces."
           },
           {
-            "file": "apps/vscode-extension/webview/index.js",
-            "line": 73,
+            "file": "apps/vscode-extension/src/commands/revealSelection.ts",
+            "line": 76,
+            "column": 1,
+            "message": "Expected indentation of 2 tabs but found 4 spaces."
+          },
+          {
+            "file": "apps/vscode-extension/src/logger.ts",
+            "line": 3,
             "column": 1,
             "message": "Expected indentation of 1 tab but found 2 spaces."
           },
           {
-            "file": "apps/vscode-extension/src/commands/execute.ts",
-            "line": 11,
+            "file": "apps/vscode-extension/src/provider/markdownWebviewProvider.ts",
+            "line": 84,
             "column": 1,
             "message": "Expected indentation of 1 tab but found 2 spaces."
+          },
+          {
+            "file": "apps/vscode-extension/src/provider/markdownWebviewProvider.ts",
+            "line": 251,
+            "column": 1,
+            "message": "Expected indentation of 5 tabs but found 10 spaces."
+          },
+          {
+            "file": "apps/vscode-extension/src/provider/webviewViewProvider.ts",
+            "line": 68,
+            "column": 1,
+            "message": "Expected indentation of 4 tabs but found 8 spaces."
+          },
+          {
+            "file": "eslint.config.mjs",
+            "line": 28,
+            "column": 1,
+            "message": "Expected indentation of 3 tabs but found 6 spaces."
           },
           {
             "file": "packages/formatter/src/formatDiagnosticMessage.ts",
-            "line": 69,
+            "line": 61,
             "column": 1,
             "message": "Expected indentation of 7 tabs but found 14 spaces."
           },
           {
             "file": "packages/formatter/test/formatter.vitest.ts",
-            "line": 7,
+            "line": 54,
             "column": 1,
             "message": "Expected indentation of 1 tab but found 2 spaces."
           },
           {
-            "file": "examples/errors.js",
-            "line": 61,
+            "file": "tsdown.config.mjs",
+            "line": 4,
             "column": 1,
-            "message": "Expected indentation of 1 tab but found 2 spaces."
-          },
-          {
-            "file": "apps/vscode-extension/src/commands/openMarkdownPreview.ts",
-            "line": 15,
-            "column": 1,
-            "message": "Expected indentation of 4 tabs but found 8 spaces."
-          },
-          {
-            "file": "apps/vscode-extension/src/provider/markdownWebviewProvider.ts",
-            "line": 157,
-            "column": 1,
-            "message": "Expected indentation of 2 tabs but found 4 spaces."
-          },
-          {
-            "file": "apps/vscode-extension/src/provider/textDocumentContentProvider.ts",
-            "line": 59,
-            "column": 1,
-            "message": "Expected indentation of 2 tabs but found 4 spaces."
-          },
-          {
-            "file": "apps/vscode-extension/src/test/runTest.ts",
-            "line": 25,
-            "column": 1,
-            "message": "Expected indentation of 1 tab but found 2 spaces."
+            "message": "Expected indentation of 1 tab but found 4 spaces."
           }
         ]
       }
@@ -767,9 +767,15 @@
             "message": "Strings must use doublequote."
           },
           {
+            "file": "apps/vscode-extension/src/provider/markdownWebviewProvider.ts",
+            "line": 161,
+            "column": 7,
+            "message": "Strings must use doublequote."
+          },
+          {
             "file": "apps/vscode-extension/webview/index.js",
-            "line": 29,
-            "column": 48,
+            "line": 15,
+            "column": 25,
             "message": "Strings must use doublequote."
           },
           {
@@ -786,19 +792,13 @@
           },
           {
             "file": "apps/vscode-extension/webview/index.js",
-            "line": 60,
-            "column": 37,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "apps/vscode-extension/src/logger.ts",
-            "line": 127,
-            "column": 9,
+            "line": 59,
+            "column": 38,
             "message": "Strings must use doublequote."
           },
           {
             "file": "packages/formatter/test/formatter.vitest.ts",
-            "line": 49,
+            "line": 39,
             "column": 25,
             "message": "Strings must use doublequote."
           },
@@ -826,63 +826,63 @@
         "count": 386,
         "samples": [
           {
+            "file": "apps/vscode-extension/scripts/build.js",
+            "line": 1,
+            "column": 25,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "apps/vscode-extension/src/commands/revealSelection.ts",
+            "line": 11,
+            "column": 41,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "apps/vscode-extension/src/formattedDiagnosticsStore.ts",
+            "line": 1,
+            "column": 44,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "apps/vscode-extension/src/provider/markdownWebviewProvider.ts",
+            "line": 87,
+            "column": 9,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "apps/vscode-extension/src/provider/textDocumentContentProvider.ts",
+            "line": 74,
+            "column": 36,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "apps/vscode-extension/webview/index.js",
+            "line": 74,
+            "column": 14,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "packages/formatter/src/addMissingParentheses.ts",
+            "line": 48,
+            "column": 26,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "packages/formatter/test/errorMessageMocks.ts",
+            "line": 7,
+            "column": 19,
+            "message": "Strings must use singlequote."
+          },
+          {
             "file": "packages/vscode-formatter/src/components/anyCodeBlock.ts",
             "line": 1,
             "column": 53,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "apps/vscode-extension/src/diagnostics.ts",
-            "line": 14,
-            "column": 8,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "apps/vscode-extension/src/provider/webviewViewProvider.ts",
-            "line": 17,
-            "column": 3,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "apps/vscode-extension/src/logger.ts",
-            "line": 40,
-            "column": 26,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "apps/vscode-extension/src/provider/markdownWebviewProvider.ts",
-            "line": 62,
-            "column": 42,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "packages/formatter/test/formatter.vitest.ts",
-            "line": 17,
+            "file": "packages/vscode-formatter/src/index.ts",
+            "line": 1,
             "column": 34,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "eslint.config.mjs",
-            "line": 46,
-            "column": 13,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "packages/vscode-formatter/src/format/formatDiagnostic.ts",
-            "line": 5,
-            "column": 30,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "packages/formatter/src/formatDiagnosticMessage.ts",
-            "line": 117,
-            "column": 71,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "examples/errors.vue",
-            "line": 4,
-            "column": 21,
             "message": "Strings must use singlequote."
           }
         ]
@@ -916,57 +916,57 @@
         "count": 584,
         "samples": [
           {
-            "file": "packages/vscode-formatter/src/components/codeBlock.ts",
+            "file": "apps/vscode-extension/scripts/build.js",
             "line": 1,
-            "column": 44,
+            "column": 40,
             "message": "Extra semicolon."
           },
           {
-            "file": "apps/vscode-extension/src/commands/execute.ts",
-            "line": 12,
-            "column": 24,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "apps/vscode-extension/webview/index.js",
-            "line": 15,
-            "column": 46,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "apps/vscode-extension/src/provider/textDocumentContentProvider.ts",
-            "line": 76,
-            "column": 62,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "packages/formatter/test/errorMessageMocks.ts",
-            "line": 15,
-            "column": 2,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "apps/vscode-extension/src/logger.ts",
-            "line": 42,
-            "column": 53,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "apps/vscode-extension/src/provider/webviewViewProvider.ts",
-            "line": 105,
-            "column": 8,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "apps/vscode-extension/src/provider/markdownWebviewProvider.ts",
-            "line": 191,
-            "column": 72,
+            "file": "apps/vscode-extension/src/commands/revealSelection.ts",
+            "line": 57,
+            "column": 29,
             "message": "Extra semicolon."
           },
           {
             "file": "apps/vscode-extension/src/extension.ts",
-            "line": 8,
-            "column": 86,
+            "line": 2,
+            "column": 63,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "apps/vscode-extension/src/provider/hoverProvider.ts",
+            "line": 18,
+            "column": 33,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "apps/vscode-extension/src/provider/markdownWebviewProvider.ts",
+            "line": 222,
+            "column": 16,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "apps/vscode-extension/src/provider/webviewViewProvider.ts",
+            "line": 38,
+            "column": 80,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "apps/vscode-extension/webview/index.js",
+            "line": 59,
+            "column": 44,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "packages/formatter/src/formatTypeBlock.ts",
+            "line": 60,
+            "column": 44,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "packages/vscode-formatter/src/components/codeBlock.ts",
+            "line": 1,
+            "column": 44,
             "message": "Extra semicolon."
           },
           {

@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "8d56277528fc",
-  "analyzedCommit": "be310dd9726f5c0199981630903cc0d38e4e3018",
-  "analyzedCommitDate": "2026-02-02T03:19:05.000Z",
+  "analyzedCommit": "2e2c0ad3daca19b3457163ad5d587ce0dc2cc2f2",
+  "analyzedCommitDate": "2026-02-08T11:26:58.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -31,21 +31,27 @@
         "count": 27,
         "samples": [
           {
-            "file": "src/tarballs/bin.ts",
-            "line": 18,
-            "column": 16,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+            "file": "src/commands/manifest.ts",
+            "line": 39,
+            "column": 29,
+            "message": "Array type using 'Interfaces.Manifest[]' is forbidden. Use 'Array<Interfaces.Manifest>' instead."
+          },
+          {
+            "file": "src/log.ts",
+            "line": 9,
+            "column": 46,
+            "message": "Array type using 'unknown[]' is forbidden. Use 'Array<unknown>' instead."
+          },
+          {
+            "file": "src/readme-generator.ts",
+            "line": 134,
+            "column": 15,
+            "message": "Array type using 'Command.Cached[]' is forbidden. Use 'Array<Command.Cached>' instead."
           },
           {
             "file": "src/tarballs/config.ts",
-            "line": 66,
-            "column": 37,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
-          },
-          {
-            "file": "src/commands/manifest.ts",
-            "line": 114,
-            "column": 44,
+            "line": 45,
+            "column": 12,
             "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           },
           {
@@ -56,8 +62,8 @@
           },
           {
             "file": "src/util.ts",
-            "line": 23,
-            "column": 31,
+            "line": 16,
+            "column": 63,
             "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           },
           {
@@ -79,16 +85,10 @@
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
-            "file": "src/readme-generator.ts",
-            "line": 67,
-            "column": 38,
-            "message": "Array type using 'Command.Cached[]' is forbidden. Use 'Array<Command.Cached>' instead."
-          },
-          {
-            "file": "src/commands/pack/win.ts",
-            "line": 17,
-            "column": 74,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+            "file": "test/helpers/helper.ts",
+            "line": 31,
+            "column": 77,
+            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           }
         ]
       }
@@ -108,14 +108,14 @@
         "count": 2,
         "samples": [
           {
-            "file": "src/version-indexes.ts",
-            "line": 12,
+            "file": "src/util.ts",
+            "line": 55,
             "column": 3,
             "message": "A record is preferred over an index signature."
           },
           {
-            "file": "src/util.ts",
-            "line": 55,
+            "file": "src/version-indexes.ts",
+            "line": 12,
             "column": 3,
             "message": "A record is preferred over an index signature."
           }
@@ -124,6 +124,18 @@
       "index-signature": {
         "count": 11,
         "samples": [
+          {
+            "file": "src/commands/generate.ts",
+            "line": 92,
+            "column": 13,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "src/commands/init.ts",
+            "line": 43,
+            "column": 13,
+            "message": "An index signature is preferred over a record."
+          },
           {
             "file": "src/generator.ts",
             "line": 20,
@@ -144,14 +156,20 @@
           },
           {
             "file": "src/generator.ts",
-            "line": 82,
-            "column": 37,
+            "line": 99,
+            "column": 32,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "src/generator.ts",
-            "line": 99,
-            "column": 32,
+            "line": 195,
+            "column": 69,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "src/util.ts",
+            "line": 109,
+            "column": 30,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -165,24 +183,6 @@
             "line": 24,
             "column": 46,
             "message": "An index signature is preferred over a record."
-          },
-          {
-            "file": "src/util.ts",
-            "line": 109,
-            "column": 30,
-            "message": "An index signature is preferred over a record."
-          },
-          {
-            "file": "src/commands/init.ts",
-            "line": 43,
-            "column": 13,
-            "message": "An index signature is preferred over a record."
-          },
-          {
-            "file": "src/commands/generate.ts",
-            "line": 92,
-            "column": 13,
-            "message": "An index signature is preferred over a record."
           }
         ]
       }
@@ -191,24 +191,6 @@
       "interface": {
         "count": 6,
         "samples": [
-          {
-            "file": "src/readme-generator.ts",
-            "line": 20,
-            "column": 1,
-            "message": "Use `interface` instead of `type`."
-          },
-          {
-            "file": "src/tarballs/node.ts",
-            "line": 18,
-            "column": 1,
-            "message": "Use `interface` instead of `type`."
-          },
-          {
-            "file": "src/tarballs/config.ts",
-            "line": 36,
-            "column": 8,
-            "message": "Use `interface` instead of `type`."
-          },
           {
             "file": "src/generator.ts",
             "line": 14,
@@ -222,8 +204,26 @@
             "message": "Use `interface` instead of `type`."
           },
           {
+            "file": "src/readme-generator.ts",
+            "line": 20,
+            "column": 1,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
             "file": "src/tarballs/build.ts",
             "line": 82,
+            "column": 1,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "src/tarballs/config.ts",
+            "line": 36,
+            "column": 8,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "src/tarballs/node.ts",
+            "line": 18,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           }
@@ -239,6 +239,12 @@
             "message": "Use `type` instead of `interface`."
           },
           {
+            "file": "src/readme-generator.ts",
+            "line": 16,
+            "column": 1,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
             "file": "src/util.ts",
             "line": 54,
             "column": 1,
@@ -247,12 +253,6 @@
           {
             "file": "src/version-indexes.ts",
             "line": 11,
-            "column": 1,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "src/readme-generator.ts",
-            "line": 16,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           }
@@ -264,25 +264,25 @@
         "count": 38,
         "samples": [
           {
-            "file": "test/fixtures/cli-with-old-school-custom-help/src/help.ts",
+            "file": "src/aws.ts",
             "line": 1,
             "column": 1,
-            "message": "Imports Command are only used as type."
+            "message": "Imports CloudFrontClient, CreateInvalidationCommandOutput, and CreateInvalidationRequest are only used as type."
           },
           {
-            "file": "src/help-compatibility.ts",
+            "file": "src/commands/manifest.ts",
             "line": 1,
             "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
+            "message": "Imports Interfaces are only used as type."
           },
           {
-            "file": "src/tarballs/node.ts",
+            "file": "src/commands/pack/win.ts",
             "line": 1,
             "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
+            "message": "Imports Interfaces are only used as type."
           },
           {
-            "file": "src/commands/upload/macos.ts",
+            "file": "src/commands/upload/tarballs.ts",
             "line": 1,
             "column": 1,
             "message": "Imports Interfaces are only used as type."
@@ -294,32 +294,32 @@
             "message": "Imports Command, Config, HelpBase, and Interfaces are only used as type."
           },
           {
-            "file": "test/fixtures/cli-with-custom-help/src/help.ts",
-            "line": 1,
-            "column": 1,
-            "message": "Imports Command are only used as type."
-          },
-          {
-            "file": "test/integration/sf.test.ts",
-            "line": 1,
-            "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
-          {
-            "file": "test/integration/publish.test.ts",
-            "line": 1,
-            "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
-          {
             "file": "src/tarballs/config.ts",
             "line": 2,
             "column": 1,
             "message": "Imports Interfaces are only used as type."
           },
           {
-            "file": "src/tarballs/build.ts",
-            "line": 14,
+            "file": "src/version-indexes.ts",
+            "line": 7,
+            "column": 1,
+            "message": "All imports in the declaration are only used as types. Use `import type`."
+          },
+          {
+            "file": "test/fixtures/cli-with-jit-plugin/src/help.ts",
+            "line": 1,
+            "column": 1,
+            "message": "Imports Command are only used as type."
+          },
+          {
+            "file": "test/helpers/helper.ts",
+            "line": 1,
+            "column": 1,
+            "message": "All imports in the declaration are only used as types. Use `import type`."
+          },
+          {
+            "file": "test/unit/manifest.test.ts",
+            "line": 1,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           }
@@ -335,30 +335,6 @@
         "count": 47,
         "samples": [
           {
-            "file": "test/integration/util.ts",
-            "line": 4,
-            "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "test/integration/cli.test.ts",
-            "line": 39,
-            "column": 3,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/upload-util.ts",
-            "line": 61,
-            "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/generator.ts",
-            "line": 50,
-            "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
             "file": "src/commands/generate.ts",
             "line": 15,
             "column": 1,
@@ -366,32 +342,56 @@
           },
           {
             "file": "src/commands/init.ts",
-            "line": 15,
+            "line": 19,
             "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "src/generator.ts",
+            "line": 67,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "src/tarballs/bin.ts",
+            "line": 10,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "src/tarballs/node.ts",
+            "line": 26,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "src/util.ts",
+            "line": 11,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "src/util.ts",
+            "line": 50,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "src/util.ts",
+            "line": 121,
+            "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "test/integration/init.test.ts",
-            "line": 54,
+            "line": 8,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/util.ts",
-            "line": 16,
+            "file": "test/integration/util.ts",
+            "line": 4,
             "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/util.ts",
-            "line": 99,
-            "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/readme-generator.ts",
-            "line": 32,
-            "column": 1,
             "message": "Expected a function expression."
           }
         ]
@@ -400,26 +400,32 @@
         "count": 49,
         "samples": [
           {
+            "file": "src/commands/generate.ts",
+            "line": 277,
+            "column": 7,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "src/commands/promote.ts",
+            "line": 61,
+            "column": 11,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "src/commands/promote.ts",
+            "line": 240,
+            "column": 11,
+            "message": "Expected a function declaration."
+          },
+          {
             "file": "src/commands/upload/tarballs.ts",
             "line": 53,
             "column": 11,
             "message": "Expected a function declaration."
           },
           {
-            "file": "test/helpers/helper.ts",
-            "line": 13,
-            "column": 14,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "src/tarballs/node.ts",
-            "line": 42,
-            "column": 9,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "src/commands/upload/deb.ts",
-            "line": 52,
+            "file": "src/readme-generator.ts",
+            "line": 309,
             "column": 11,
             "message": "Expected a function declaration."
           },
@@ -431,8 +437,14 @@
           },
           {
             "file": "src/tarballs/build.ts",
-            "line": 198,
+            "line": 163,
             "column": 7,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "src/tarballs/node.ts",
+            "line": 61,
+            "column": 9,
             "message": "Expected a function declaration."
           },
           {
@@ -442,21 +454,9 @@
             "message": "Expected a function declaration."
           },
           {
-            "file": "src/commands/promote.ts",
-            "line": 59,
-            "column": 11,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "src/commands/promote.ts",
-            "line": 202,
-            "column": 11,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "src/readme-generator.ts",
-            "line": 309,
-            "column": 11,
+            "file": "test/integration/sf.test.ts",
+            "line": 8,
+            "column": 7,
             "message": "Expected a function declaration."
           }
         ]
@@ -467,50 +467,20 @@
         "count": 35,
         "samples": [
           {
-            "file": "test/fixtures/cli-with-nested-topics-with-space-separator/src/commands/roottopic/subtopic2/hello.ts",
-            "line": 3,
+            "file": "eslint.config.mjs",
+            "line": 9,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "test/fixtures/cli-with-nested-topics-with-space-separator/src/commands/roottopic/subtopic1/hello.ts",
-            "line": 3,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "test/fixtures/cli-with-custom-help/src/help.ts",
-            "line": 3,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "test/fixtures/cli-with-old-school-custom-help/src/help.ts",
-            "line": 3,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "src/commands/pack/tarballs.ts",
-            "line": 5,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "src/commands/upload/deb.ts",
+            "file": "src/commands/generate/hook.ts",
             "line": 10,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "test/fixtures/cli-with-nested-topics/src/commands/roottopic/subtopic2/hello.ts",
-            "line": 3,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "src/commands/lock.ts",
-            "line": 13,
+            "file": "src/commands/pack/deb.ts",
+            "line": 55,
             "column": 8,
             "message": "Prefer named exports"
           },
@@ -521,8 +491,38 @@
             "message": "Prefer named exports"
           },
           {
-            "file": "src/commands/promote.ts",
-            "line": 11,
+            "file": "src/commands/upload/macos.ts",
+            "line": 10,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "test/fixtures/cli-command-with-alias/src/commands/hello.ts",
+            "line": 3,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "test/fixtures/cli-with-custom-help/src/commands/hello.ts",
+            "line": 3,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "test/fixtures/cli-with-jit-plugin/src/help.ts",
+            "line": 3,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "test/fixtures/cli-with-nested-topics/src/commands/roottopic/subtopic1/hello.ts",
+            "line": 3,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "test/fixtures/cli-with-old-school-custom-help/src/help.ts",
+            "line": 3,
             "column": 8,
             "message": "Prefer named exports"
           }
@@ -531,6 +531,42 @@
       "default": {
         "count": 9,
         "samples": [
+          {
+            "file": "src/help-compatibility.ts",
+            "line": 13,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "src/index.ts",
+            "line": 1,
+            "column": 9,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "src/tarballs/bin.ts",
+            "line": 10,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "src/tarballs/build.ts",
+            "line": 90,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "src/tarballs/node.ts",
+            "line": 26,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "src/version-indexes.ts",
+            "line": 41,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
           {
             "file": "test/fixtures/cli-with-nested-topics-with-space-separator/src/index.ts",
             "line": 1,
@@ -544,44 +580,8 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/help-compatibility.ts",
-            "line": 13,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
             "file": "test/integration/util.ts",
             "line": 4,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "src/tarballs/bin.ts",
-            "line": 10,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "src/tarballs/node.ts",
-            "line": 26,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "src/tarballs/build.ts",
-            "line": 90,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "src/index.ts",
-            "line": 1,
-            "column": 9,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "src/version-indexes.ts",
-            "line": 41,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           }
@@ -593,40 +593,34 @@
         "count": 83,
         "samples": [
           {
-            "file": "src/commands/pack/macos.ts",
-            "line": 29,
+            "file": "src/commands/generate.ts",
+            "line": 279,
             "column": 1,
-            "message": "Expected indentation of 6 spaces but found 8."
+            "message": "Expected indentation of 4 spaces but found 2."
           },
           {
             "file": "src/commands/generate.ts",
-            "line": 286,
+            "line": 288,
             "column": 1,
-            "message": "Expected indentation of 12 spaces but found 10."
+            "message": "Expected indentation of 10 spaces but found 8."
           },
           {
             "file": "src/commands/generate.ts",
-            "line": 296,
+            "line": 298,
             "column": 1,
             "message": "Expected indentation of 12 spaces but found 10."
-          },
-          {
-            "file": "src/upload-util.ts",
-            "line": 23,
-            "column": 1,
-            "message": "Expected indentation of 4 spaces but found 6."
           },
           {
             "file": "src/commands/pack/win.ts",
-            "line": 107,
+            "line": 22,
             "column": 1,
             "message": "Expected indentation of 0 spaces but found 2."
           },
           {
             "file": "src/commands/pack/win.ts",
-            "line": 330,
+            "line": 324,
             "column": 1,
-            "message": "Expected indentation of 16 spaces but found 18."
+            "message": "Expected indentation of 12 spaces but found 14."
           },
           {
             "file": "src/commands/promote.ts",
@@ -651,6 +645,12 @@
             "line": 232,
             "column": 1,
             "message": "Expected indentation of 14 spaces but found 16."
+          },
+          {
+            "file": "src/upload-util.ts",
+            "line": 28,
+            "column": 1,
+            "message": "Expected indentation of 2 spaces but found 4."
           }
         ]
       },
@@ -658,62 +658,62 @@
         "count": 3858,
         "samples": [
           {
-            "file": "test/fixtures/cli-with-nested-topics/src/commands/roottopic/subtopic1/hello.ts",
-            "line": 4,
+            "file": "bin/dev.js",
+            "line": 5,
             "column": 1,
             "message": "Expected indentation of 4 spaces but found 2."
           },
           {
-            "file": "test/integration/win.test.ts",
-            "line": 56,
+            "file": "src/commands/generate.ts",
+            "line": 288,
+            "column": 1,
+            "message": "Expected indentation of 20 spaces but found 8."
+          },
+          {
+            "file": "src/commands/pack/deb.ts",
+            "line": 114,
+            "column": 1,
+            "message": "Expected indentation of 20 spaces but found 10."
+          },
+          {
+            "file": "src/commands/promote.ts",
+            "line": 59,
             "column": 1,
             "message": "Expected indentation of 8 spaces but found 4."
           },
           {
-            "file": "src/tarballs/build.ts",
-            "line": 266,
+            "file": "src/commands/upload/macos.ts",
+            "line": 36,
+            "column": 1,
+            "message": "Expected indentation of 12 spaces but found 6."
+          },
+          {
+            "file": "src/readme-generator.ts",
+            "line": 125,
             "column": 1,
             "message": "Expected indentation of 8 spaces but found 4."
           },
           {
             "file": "src/tarballs/config.ts",
-            "line": 46,
+            "line": 59,
             "column": 1,
             "message": "Expected indentation of 4 spaces but found 2."
           },
           {
-            "file": "src/commands/init.ts",
-            "line": 68,
-            "column": 1,
-            "message": "Expected indentation of 12 spaces but found 6."
-          },
-          {
-            "file": "src/version-indexes.ts",
-            "line": 72,
+            "file": "test/helpers/helper.ts",
+            "line": 14,
             "column": 1,
             "message": "Expected indentation of 4 spaces but found 2."
           },
           {
-            "file": "src/generator.ts",
-            "line": 189,
-            "column": 1,
-            "message": "Expected indentation of 8 spaces but found 4."
-          },
-          {
-            "file": "src/commands/pack/deb.ts",
-            "line": 38,
+            "file": "test/integration/win.test.ts",
+            "line": 21,
             "column": 1,
             "message": "Expected indentation of 4 spaces but found 2."
           },
           {
-            "file": "src/commands/promote.ts",
-            "line": 57,
-            "column": 1,
-            "message": "Expected indentation of 12 spaces but found 6."
-          },
-          {
-            "file": "src/commands/generate/command.ts",
-            "line": 45,
+            "file": "test/unit/util.test.ts",
+            "line": 32,
             "column": 1,
             "message": "Expected indentation of 4 spaces but found 2."
           }
@@ -723,62 +723,62 @@
         "count": 3871,
         "samples": [
           {
-            "file": "test/fixtures/cli-with-nested-topics/src/commands/roottopic/subtopic2/hello.ts",
-            "line": 4,
+            "file": "bin/dev.js",
+            "line": 5,
             "column": 1,
             "message": "Expected indentation of 1 tab but found 2 spaces."
+          },
+          {
+            "file": "src/commands/generate.ts",
+            "line": 289,
+            "column": 1,
+            "message": "Expected indentation of 5 tabs but found 8 spaces."
+          },
+          {
+            "file": "src/commands/pack/deb.ts",
+            "line": 116,
+            "column": 1,
+            "message": "Expected indentation of 5 tabs but found 10 spaces."
           },
           {
             "file": "src/commands/promote.ts",
-            "line": 280,
-            "column": 1,
-            "message": "Expected indentation of 8 tabs but found 16 spaces."
-          },
-          {
-            "file": "src/commands/pack/macos.ts",
-            "line": 229,
-            "column": 1,
-            "message": "Expected indentation of 4 tabs but found 8 spaces."
-          },
-          {
-            "file": "test/integration/init.test.ts",
-            "line": 45,
+            "line": 60,
             "column": 1,
             "message": "Expected indentation of 3 tabs but found 6 spaces."
           },
           {
-            "file": "test/integration/sf.test.ts",
-            "line": 28,
-            "column": 1,
-            "message": "Expected indentation of 3 tabs but found 6 spaces."
-          },
-          {
-            "file": "src/commands/pack/win.ts",
-            "line": 291,
-            "column": 1,
-            "message": "Expected indentation of 3 tabs but found 6 spaces."
-          },
-          {
-            "file": "src/tarballs/build.ts",
-            "line": 242,
-            "column": 1,
-            "message": "Expected indentation of 2 tabs but found 4 spaces."
-          },
-          {
-            "file": "src/tarballs/node.ts",
-            "line": 23,
-            "column": 1,
-            "message": "Expected indentation of 1 tab but found 2 spaces."
-          },
-          {
-            "file": "src/commands/init.ts",
-            "line": 167,
+            "file": "src/commands/upload/macos.ts",
+            "line": 39,
             "column": 1,
             "message": "Expected indentation of 4 tabs but found 8 spaces."
           },
           {
             "file": "src/readme-generator.ts",
-            "line": 335,
+            "line": 131,
+            "column": 1,
+            "message": "Expected indentation of 1 tab but found 2 spaces."
+          },
+          {
+            "file": "src/tarballs/config.ts",
+            "line": 68,
+            "column": 1,
+            "message": "Expected indentation of 1 tab but found 2 spaces."
+          },
+          {
+            "file": "test/helpers/helper.test.ts",
+            "line": 7,
+            "column": 1,
+            "message": "Expected indentation of 2 tabs but found 4 spaces."
+          },
+          {
+            "file": "test/integration/win.test.ts",
+            "line": 20,
+            "column": 1,
+            "message": "Expected indentation of 1 tab but found 2 spaces."
+          },
+          {
+            "file": "test/unit/util.test.ts",
+            "line": 32,
             "column": 1,
             "message": "Expected indentation of 1 tab but found 2 spaces."
           }
@@ -790,63 +790,63 @@
         "count": 1836,
         "samples": [
           {
-            "file": "test/fixtures/cli-with-old-school-custom-help/src/commands/hello.ts",
-            "line": 1,
-            "column": 36,
+            "file": "bin/dev.js",
+            "line": 5,
+            "column": 30,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/upload-util.ts",
-            "line": 24,
-            "column": 13,
+            "file": "src/commands/generate/command.ts",
+            "line": 38,
+            "column": 49,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/tarballs/node.ts",
-            "line": 63,
-            "column": 36,
+            "file": "src/commands/pack/deb.ts",
+            "line": 90,
+            "column": 17,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/commands/promote.ts",
-            "line": 9,
-            "column": 29,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "src/tarballs/build.ts",
-            "line": 6,
-            "column": 34,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "test/unit/upload-util.test.ts",
-            "line": 49,
-            "column": 34,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "src/commands/readme.ts",
-            "line": 81,
-            "column": 24,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "src/commands/generate.ts",
-            "line": 126,
+            "file": "src/commands/pack/win.ts",
+            "line": 395,
             "column": 5,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "test/unit/readme-generator.test.ts",
-            "line": 266,
-            "column": 12,
+            "file": "src/commands/upload/tarballs.ts",
+            "line": 5,
+            "column": 19,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "test/integration/win.test.ts",
-            "line": 52,
-            "column": 41,
+            "file": "src/tarballs/bin.ts",
+            "line": 50,
+            "column": 42,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "src/upload-util.ts",
+            "line": 57,
+            "column": 32,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "test/integration/deb.test.ts",
+            "line": 20,
+            "column": 56,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "test/unit/aws-checksum.test.ts",
+            "line": 35,
+            "column": 22,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "test/unit/util.test.ts",
+            "line": 28,
+            "column": 6,
             "message": "Strings must use doublequote."
           }
         ]
@@ -854,6 +854,12 @@
       "single": {
         "count": 4,
         "samples": [
+          {
+            "file": "src/commands/pack/win.ts",
+            "line": 252,
+            "column": 16,
+            "message": "Strings must use singlequote."
+          },
           {
             "file": "src/commands/promote.ts",
             "line": 37,
@@ -864,12 +870,6 @@
             "file": "src/generator.ts",
             "line": 12,
             "column": 25,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "src/commands/pack/win.ts",
-            "line": 252,
-            "column": 16,
             "message": "Strings must use singlequote."
           },
           {
@@ -886,63 +886,63 @@
         "count": 1910,
         "samples": [
           {
-            "file": "src/index.ts",
-            "line": 1,
-            "column": 32,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "src/commands/pack/win.ts",
-            "line": 279,
-            "column": 46,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "test/helpers/helper.ts",
-            "line": 27,
-            "column": 57,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "test/integration/init.test.ts",
-            "line": 164,
-            "column": 36,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "test/integration/macos.test.ts",
-            "line": 8,
-            "column": 29,
+            "file": "bin/dev.js",
+            "line": 7,
+            "column": 5,
             "message": "Missing semicolon."
           },
           {
             "file": "src/commands/init.ts",
-            "line": 133,
-            "column": 49,
+            "line": 86,
+            "column": 85,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "src/commands/pack/tarballs.ts",
+            "line": 24,
+            "column": 4,
             "message": "Missing semicolon."
           },
           {
             "file": "src/commands/upload/tarballs.ts",
-            "line": 29,
-            "column": 53,
+            "line": 78,
+            "column": 10,
             "message": "Missing semicolon."
           },
           {
-            "file": "src/commands/generate/hook.ts",
-            "line": 55,
-            "column": 6,
+            "file": "src/readme-generator.ts",
+            "line": 291,
+            "column": 18,
             "message": "Missing semicolon."
           },
           {
-            "file": "src/commands/promote.ts",
-            "line": 139,
-            "column": 72,
+            "file": "src/tarballs/config.ts",
+            "line": 111,
+            "column": 55,
             "message": "Missing semicolon."
           },
           {
-            "file": "test/fixtures/cli-command-with-alias/src/commands/hello.ts",
-            "line": 9,
-            "column": 28,
+            "file": "test/fixtures/cli-with-nested-topics-with-space-separator/src/commands/roottopic/subtopic1/hello.ts",
+            "line": 1,
+            "column": 36,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "test/integration/init.test.ts",
+            "line": 2,
+            "column": 64,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "test/integration/win.test.ts",
+            "line": 3,
+            "column": 45,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "test/unit/util.test.ts",
+            "line": 30,
+            "column": 67,
             "message": "Missing semicolon."
           }
         ]

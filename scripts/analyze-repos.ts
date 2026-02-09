@@ -24,6 +24,7 @@ import { allRuleChecks, type OxlintRuleCheck } from "./rules";
 
 const require = createRequire(import.meta.url);
 
+const skipRepos = new Set(["microsoft/TypeScript"]);
 /**
  * Get the commit date of the current HEAD commit as an ISO 8601 UTC string.
  * If repoPath is not provided, uses the current working directory.
@@ -301,31 +302,33 @@ async function main() {
   console.log(`Total repositories: ${data.repositories.length}`);
 
   let repoAnalyzeInfo = await Promise.all(
-    data.repositories.map(async (repo) => {
-      let analyseReason:
-        | "no-analysis"
-        | "version-mismatch"
-        | "commit-mismatch"
-        | false = false;
+    data.repositories
+      .filter((repo) => !skipRepos.has(repo.fullName))
+      .map(async (repo) => {
+        let analyseReason:
+          | "no-analysis"
+          | "version-mismatch"
+          | "commit-mismatch"
+          | false = false;
 
-      const analysis = loadAnalysis(repo.fullName);
-      if (!analysis) {
-        analyseReason = "no-analysis";
-      } else if (analysis.analyzedVersion !== currentVersion) {
-        analyseReason = "version-mismatch";
-      } else if (
-        (await getRemoteRepoInfo(repo.cloneUrl)).latestCommit !==
-        analysis.analyzedCommit
-      ) {
-        analyseReason = "commit-mismatch";
-      }
+        const analysis = loadAnalysis(repo.fullName);
+        if (!analysis) {
+          analyseReason = "no-analysis";
+        } else if (analysis.analyzedVersion !== currentVersion) {
+          analyseReason = "version-mismatch";
+        } else if (
+          (await getRemoteRepoInfo(repo.cloneUrl)).latestCommit !==
+          analysis.analyzedCommit
+        ) {
+          analyseReason = "commit-mismatch";
+        }
 
-      return {
-        repo,
-        analyseReason,
-        fileCount: 0, // Placeholder, will be filled later
-      };
-    }),
+        return {
+          repo,
+          analyseReason,
+          fileCount: 0, // Placeholder, will be filled later
+        };
+      }),
   );
 
   let prevCount = data.repositories.length;

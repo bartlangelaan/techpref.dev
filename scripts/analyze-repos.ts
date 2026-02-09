@@ -18,13 +18,20 @@ import {
   getCheckoutCommit,
   getRemoteRepoInfo,
 } from "@/lib/git";
-import { loadAnalysis, loadData, REPOS_DIR, saveAnalysis } from "@/lib/types";
+import {
+  loadAnalysis,
+  loadData,
+  loadFailingInfo,
+  removeFailingInfo,
+  REPOS_DIR,
+  saveAnalysis,
+  saveFailingInfo,
+} from "@/lib/types";
 import { distributedSample } from "@/lib/utils";
 import { allRuleChecks, type OxlintRuleCheck } from "./rules";
 
 const require = createRequire(import.meta.url);
 
-const skipRepos = new Set(["microsoft/TypeScript"]);
 /**
  * Get the commit date of the current HEAD commit as an ISO 8601 UTC string.
  * If repoPath is not provided, uses the current working directory.
@@ -302,33 +309,41 @@ async function main() {
   console.log(`Total repositories: ${data.repositories.length}`);
 
   let repoAnalyzeInfo = await Promise.all(
-    data.repositories
-      .filter((repo) => !skipRepos.has(repo.fullName))
-      .map(async (repo) => {
-        let analyseReason:
-          | "no-analysis"
-          | "version-mismatch"
-          | "commit-mismatch"
-          | false = false;
+    data.repositories.map(async (repo) => {
+      const analysis = loadAnalysis(repo.fullName);
 
-        const analysis = loadAnalysis(repo.fullName);
-        if (!analysis) {
-          analyseReason = "no-analysis";
-        } else if (analysis.analyzedVersion !== currentVersion) {
-          analyseReason = "version-mismatch";
-        } else if (
-          (await getRemoteRepoInfo(repo.cloneUrl)).latestCommit !==
-          analysis.analyzedCommit
-        ) {
-          analyseReason = "commit-mismatch";
-        }
+      const remoteInfo = await getRemoteRepoInfo(repo.cloneUrl);
 
-        return {
-          repo,
-          analyseReason,
-          fileCount: 0, // Placeholder, will be filled later
-        };
-      }),
+      let analyseReason:
+        | "no-analysis"
+        | "version-mismatch"
+        | "commit-mismatch"
+        | false = false;
+
+      if (!analysis) {
+        analyseReason = "no-analysis";
+      } else if (analysis.analyzedVersion !== currentVersion) {
+        analyseReason = "version-mismatch";
+      } else if (remoteInfo.latestCommit !== analysis.analyzedCommit) {
+        analyseReason = "commit-mismatch";
+      }
+
+      const failingInfo = loadFailingInfo(repo.fullName);
+      const failing = !failingInfo
+        ? false
+        : failingInfo.failedCommit === remoteInfo.latestCommit
+          ? ("current-commit" as const)
+          : ("older-commit" as const);
+
+      return {
+        repo,
+        analyseReason,
+        remoteInfo,
+        failing,
+        commit: remoteInfo.latestCommit,
+        fileCount: 0, // Placeholder, will be filled later
+      };
+    }),
   );
 
   let prevCount = data.repositories.length;
@@ -366,6 +381,8 @@ async function main() {
   console.log("Done counting source files, now sorting...");
 
   repoAnalyzeInfo = sortBy(repoAnalyzeInfo, [
+    // Run failing repos last, especially if current commit matches failed commit
+    (i) => (!i.failing ? 0 : i.failing === "older-commit" ? 1 : 2),
     (i) =>
       i.analyseReason === "no-analysis"
         ? 0
@@ -380,7 +397,7 @@ async function main() {
   );
 
   let completed = 0;
-  for (const { repo, fileCount } of repoAnalyzeInfo) {
+  for (const { repo, fileCount, commit } of repoAnalyzeInfo) {
     console.log(
       `[${completed + 1}/${repoAnalyzeInfo.length}] Analyzing ${repo.fullName}${fileCount > 0 ? ` (${fileCount} files)` : ""}...`,
     );
@@ -395,8 +412,16 @@ async function main() {
       console.log(
         `  Saved analysis to data/analysis/${repo.fullName.replace("/", "-")}.json`,
       );
+
+      // Remove failing info if analysis succeeds
+      removeFailingInfo(repo.fullName);
     } catch (error) {
       console.error(`  Error analyzing ${repo.fullName}:`, error);
+
+      // Save failing info so we deprioritize this repo in future runs
+      saveFailingInfo(repo.fullName, {
+        failedCommit: commit,
+      });
     }
 
     completed++;

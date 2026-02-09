@@ -1,4 +1,10 @@
-import { existsSync, readFileSync, writeFileSync } from "node:fs";
+import {
+  existsSync,
+  mkdirSync,
+  readFileSync,
+  unlinkSync,
+  writeFileSync,
+} from "node:fs";
 import { join } from "node:path";
 
 /**
@@ -63,9 +69,21 @@ const DATA_FILE = join(process.cwd(), "data/repositories.json");
 export const ANALYSIS_DIR = join(process.cwd(), "data/analysis");
 
 /**
+ * Path to the failing analysis files directory.
+ */
+export const FAILING_DIR = join(process.cwd(), "data/analysis/failing");
+
+/**
  * Path to the cloned repositories directory.
  */
 export const REPOS_DIR = join(process.cwd(), "repos");
+
+/**
+ * Information about a failed analysis attempt.
+ */
+export interface FailingAnalysisInfo {
+  failedCommit: string;
+}
 
 /**
  * Convert a repository fullName to its analysis file name.
@@ -103,6 +121,54 @@ export function loadAnalysis(fullName: string): AnalysisResult | null {
 export function saveAnalysis(fullName: string, analysis: AnalysisResult): void {
   const filePath = getAnalysisFilePath(fullName);
   writeFileSync(filePath, JSON.stringify(analysis, null, 2));
+}
+
+/**
+ * Get the full path to a repository's failing analysis file.
+ */
+export function getFailingFilePath(fullName: string): string {
+  return join(FAILING_DIR, getAnalysisFileName(fullName));
+}
+
+/**
+ * Load failing analysis info for a specific repository.
+ * Returns null if the file doesn't exist.
+ */
+export function loadFailingInfo(fullName: string): FailingAnalysisInfo | null {
+  const filePath = getFailingFilePath(fullName);
+  if (!existsSync(filePath)) {
+    return null;
+  }
+  try {
+    return JSON.parse(readFileSync(filePath, "utf-8"));
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Save failing analysis info for a specific repository.
+ */
+export function saveFailingInfo(
+  fullName: string,
+  info: FailingAnalysisInfo,
+): void {
+  const filePath = getFailingFilePath(fullName);
+  const dir = join(filePath, "..");
+  if (!existsSync(dir)) {
+    mkdirSync(dir, { recursive: true });
+  }
+  writeFileSync(filePath, JSON.stringify(info, null, 2));
+}
+
+/**
+ * Remove failing analysis info for a specific repository.
+ */
+export function removeFailingInfo(fullName: string): void {
+  const filePath = getFailingFilePath(fullName);
+  if (existsSync(filePath)) {
+    unlinkSync(filePath);
+  }
 }
 
 /**

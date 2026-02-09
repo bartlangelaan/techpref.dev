@@ -62,9 +62,9 @@ function getAnalyzedVersion(): string {
  */
 interface OxlintDiagnostic {
   message: string;
-  code: string;
+  code?: string;
   severity: string;
-  filename: string;
+  filename?: string;
   labels: Array<{
     span: {
       offset: number;
@@ -216,18 +216,19 @@ function parseOxlintOutput(
 ): VariantResult {
   const output: OxlintOutput = JSON.parse(stdout);
 
-  const sortedDiagnostics = sortBy(output.diagnostics, [
-    (diag) => diag.filename,
-  ]);
+  const sortedDiagnostics = sortBy(
+    output.diagnostics.filter((d) => d.filename),
+    [(diag) => diag.filename],
+  );
 
   const samples = distributedSample(
     sortedDiagnostics,
     maxSamples,
   ).map<ViolationSample>((diag) => {
     // Get path relative to repo root
-    const relativePath = diag.filename.startsWith(repoPath)
-      ? diag.filename.slice(repoPath.length + 1)
-      : diag.filename;
+    const relativePath = diag.filename!.startsWith(repoPath)
+      ? diag.filename!.slice(repoPath.length + 1)
+      : diag.filename!;
     return {
       file: relativePath,
       line: diag.labels[0]?.span.line ?? 0,

@@ -82,6 +82,19 @@ interface OxlintOutput {
   diagnostics: OxlintDiagnostic[];
 }
 
+const ignorePatterns = [
+  "**/node_modules/**",
+  "**/dist/**",
+  "**/build/**",
+  "**/*.d.ts",
+  // Ignore intentionally bad code in babel/babel
+  "**/packages/babel-*/test/**",
+
+  // Ignore intentionally bad code in microsoft/TypeScript
+  "**/tests/cases/**",
+  "**/tests/baselines/**",
+];
+
 /**
  * Find all TypeScript/JavaScript files in a repository.
  */
@@ -89,7 +102,7 @@ async function findSourceFiles(repoPath: string): Promise<string[]> {
   return glob("**/*.{ts,tsx,js,jsx,cjs,mjs,cjsx,mjsx,cts,mts,ctsx,mtsx}", {
     cwd: repoPath,
     absolute: true,
-    ignore: ["**/node_modules/**", "**/dist/**", "**/build/**", "**/*.d.ts"],
+    ignore: ignorePatterns,
   });
 }
 
@@ -165,14 +178,7 @@ async function runOxlintCheck(
       configPath,
       "--format",
       "json",
-      "--ignore-pattern",
-      "**/node_modules/**",
-      "--ignore-pattern",
-      "**/dist/**",
-      "--ignore-pattern",
-      "**/build/**",
-      "--ignore-pattern",
-      "**/*.d.ts",
+      ...ignorePatterns.flatMap((pattern) => ["--ignore-pattern", pattern]),
       ".",
       ">",
       outputPath,

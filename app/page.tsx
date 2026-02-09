@@ -1,5 +1,6 @@
 import { ArrowRight, Code2, Sparkles } from "lucide-react";
 import Link from "next/link";
+import { ViewTransition } from "react";
 import { Badge } from "@/components/ui/badge";
 import { allComparisons } from "@/lib/comparisons";
 
@@ -18,7 +19,9 @@ export default function Home() {
             JavaScript / TypeScript Styleguides
           </Badge>
           <h1 className="text-foreground mb-6 text-4xl font-bold text-balance sm:text-5xl lg:text-6xl">
-            TechPref
+            <ViewTransition name="site-title">
+              <span>TechPref</span>
+            </ViewTransition>
           </h1>
           <p className="text-muted-foreground mx-auto max-w-2xl text-lg/relaxed  text-pretty sm:text-xl">
             Explore the most debated coding style preferences with real-world
@@ -54,30 +57,38 @@ export default function Home() {
                 <div className="bg-primary/10 text-primary rounded-lg p-2">
                   <Code2 className="h-5 w-5" />
                 </div>
-                <Badge
-                  variant="outline"
-                  className="text-muted-foreground border-border text-xs"
-                >
-                  {comparison.badgeText}
-                </Badge>
+                <ViewTransition name={`badge-${comparison.slug}`}>
+                  <Badge
+                    variant="outline"
+                    className="text-muted-foreground border-border text-xs"
+                  >
+                    {comparison.badgeText}
+                  </Badge>
+                </ViewTransition>
               </div>
 
               <h3 className="text-foreground group-hover:text-primary mb-2 text-xl font-semibold transition-colors">
-                {comparison.title}
+                <ViewTransition name={`title-${comparison.slug}`}>
+                  <span>{comparison.title}</span>
+                </ViewTransition>
               </h3>
               <p className="text-muted-foreground mb-4 line-clamp-2 text-sm">
-                {comparison.description}
+                <ViewTransition name={`description-${comparison.slug}`}>
+                  <span>{comparison.description}</span>
+                </ViewTransition>
               </p>
 
               {comparison.leftSide.stats?.[0] &&
                 comparison.rightSide.stats?.[0] && (
                   <div className="flex items-center gap-4 text-sm">
                     <div className="flex items-center gap-2">
-                      <span
-                        className={`font-semibold ${comparison.winningSide === "left" ? "text-primary" : "text-foreground"}`}
-                      >
-                        {comparison.leftSide.stats[0].value}
-                      </span>
+                      <ViewTransition name={`stats-${comparison.slug}-left`}>
+                        <span
+                          className={`font-semibold ${comparison.winningSide === "left" ? "text-primary" : "text-foreground"}`}
+                        >
+                          {comparison.leftSide.stats[0].value}
+                        </span>
+                      </ViewTransition>
                       <span className="text-muted-foreground">
                         {comparison.leftSide.title
                           .replace("Team ", "")
@@ -86,11 +97,13 @@ export default function Home() {
                     </div>
                     <div className="bg-border h-4 w-px" />
                     <div className="flex items-center gap-2">
-                      <span
-                        className={`font-semibold ${comparison.winningSide === "right" ? "text-primary" : "text-foreground"}`}
-                      >
-                        {comparison.rightSide.stats[0].value}
-                      </span>
+                      <ViewTransition name={`stats-${comparison.slug}-right`}>
+                        <span
+                          className={`font-semibold ${comparison.winningSide === "right" ? "text-primary" : "text-foreground"}`}
+                        >
+                          {comparison.rightSide.stats[0].value}
+                        </span>
+                      </ViewTransition>
                       <span className="text-muted-foreground">
                         {comparison.rightSide.title
                           .replace("Team ", "")

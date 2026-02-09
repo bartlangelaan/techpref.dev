@@ -390,6 +390,7 @@ async function main() {
           ? 1
           : 2,
     (i) => i.fileCount,
+    () => Math.random(), // Add some randomness to avoid always analyzing in the same order
   ]);
 
   console.log(

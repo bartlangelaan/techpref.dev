@@ -379,7 +379,7 @@ async function main() {
   let completed = 0;
   for (const { repo, fileCount } of repoAnalyzeInfo) {
     console.log(
-      `[${completed + 1}/${repoAnalyzeInfo.length}] Analyzing ${repo.fullName} (${fileCount} files)...`,
+      `[${completed + 1}/${repoAnalyzeInfo.length}] Analyzing ${repo.fullName}${fileCount > 0 ? ` (${fileCount} files)` : ""}...`,
     );
 
     try {

@@ -1,4 +1,4 @@
-import { existsSync, mkdirSync } from "node:fs";
+import { ensureDirSync } from "fs-extra/esm";
 import PQueue from "p-queue";
 import type { AnalysisResult, RepositoryData } from "@/lib/types";
 import { checkoutRepository } from "@/lib/git";
@@ -83,9 +83,7 @@ async function main() {
   const data = loadedData;
 
   // Ensure repos directory exists
-  if (!existsSync(REPOS_DIR)) {
-    mkdirSync(REPOS_DIR, { recursive: true });
-  }
+  ensureDirSync(REPOS_DIR);
 
   let repositoriesToCloneOrUpdate: RepositoryData[] = [];
 

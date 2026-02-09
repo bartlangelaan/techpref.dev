@@ -1,10 +1,9 @@
 import {
-  existsSync,
-  mkdirSync,
-  readFileSync,
-  unlinkSync,
-  writeFileSync,
-} from "node:fs";
+  outputJsonSync,
+  pathExistsSync,
+  readJsonSync,
+  removeSync,
+} from "fs-extra/esm";
 import { join } from "node:path";
 
 /**
@@ -105,11 +104,9 @@ export function getAnalysisFilePath(fullName: string): string {
  */
 export function loadAnalysis(fullName: string): AnalysisResult | null {
   const filePath = getAnalysisFilePath(fullName);
-  if (!existsSync(filePath)) {
-    return null;
-  }
+
   try {
-    return JSON.parse(readFileSync(filePath, "utf-8"));
+    return readJsonSync(filePath) as AnalysisResult;
   } catch {
     return null;
   }
@@ -120,7 +117,7 @@ export function loadAnalysis(fullName: string): AnalysisResult | null {
  */
 export function saveAnalysis(fullName: string, analysis: AnalysisResult): void {
   const filePath = getAnalysisFilePath(fullName);
-  writeFileSync(filePath, JSON.stringify(analysis, null, 2));
+  outputJsonSync(filePath, analysis, { spaces: 2 });
 }
 
 /**
@@ -136,11 +133,11 @@ export function getFailingFilePath(fullName: string): string {
  */
 export function loadFailingInfo(fullName: string): FailingAnalysisInfo | null {
   const filePath = getFailingFilePath(fullName);
-  if (!existsSync(filePath)) {
+  if (!pathExistsSync(filePath)) {
     return null;
   }
   try {
-    return JSON.parse(readFileSync(filePath, "utf-8"));
+    return readJsonSync(filePath) as FailingAnalysisInfo;
   } catch {
     return null;
   }
@@ -154,11 +151,7 @@ export function saveFailingInfo(
   info: FailingAnalysisInfo,
 ): void {
   const filePath = getFailingFilePath(fullName);
-  const dir = join(filePath, "..");
-  if (!existsSync(dir)) {
-    mkdirSync(dir, { recursive: true });
-  }
-  writeFileSync(filePath, JSON.stringify(info, null, 2));
+  outputJsonSync(filePath, info, { spaces: 2 });
 }
 
 /**
@@ -166,9 +159,7 @@ export function saveFailingInfo(
  */
 export function removeFailingInfo(fullName: string): void {
   const filePath = getFailingFilePath(fullName);
-  if (existsSync(filePath)) {
-    unlinkSync(filePath);
-  }
+  removeSync(filePath);
 }
 
 /**
@@ -176,11 +167,8 @@ export function removeFailingInfo(fullName: string): void {
  * Returns null if the file doesn't exist.
  */
 export function loadData(): UnifiedData | null {
-  if (!existsSync(DATA_FILE)) {
-    return null;
-  }
   try {
-    return JSON.parse(readFileSync(DATA_FILE, "utf-8"));
+    return readJsonSync(DATA_FILE) as UnifiedData;
   } catch {
     return null;
   }
@@ -212,6 +200,6 @@ export function loadDataWithAnalysis(): UnifiedData | null {
  * Save unified data to the JSON file.
  */
 export function saveData(data: UnifiedData): void {
-  writeFileSync(DATA_FILE, JSON.stringify(data, null, 2));
+  outputJsonSync(DATA_FILE, data, { spaces: 2 });
   console.log(`Saved ${data.repositories.length} repositories to ${DATA_FILE}`);
 }

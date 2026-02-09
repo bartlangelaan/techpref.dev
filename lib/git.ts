@@ -1,7 +1,6 @@
 import { execa } from "execa";
-import { mkdir } from "node:fs/promises";
+import { ensureDir, pathExists } from "fs-extra/esm";
 import { join } from "node:path";
-import { pathExists } from "./fs";
 import { REPOS_DIR, RepositoryData } from "./types";
 
 /**
@@ -47,11 +46,7 @@ export async function checkoutRepository(
   const exists = await pathExists(repoPath);
 
   if (!exists) {
-    const parentDir = join(repoPath, "..");
-    if (!(await pathExists(parentDir))) {
-      await mkdir(parentDir, { recursive: true });
-    }
-
+    await ensureDir(join(repoPath, ".."));
     await execa("git", ["clone", "--depth", "1", repo.cloneUrl, repoPath]);
     return;
   }

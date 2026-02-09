@@ -1,4 +1,5 @@
-import { readdir, readFile, unlink } from "fs/promises";
+import { readJson, remove } from "fs-extra/esm";
+import { readdir } from "fs/promises";
 import path from "path";
 import { fileURLToPath } from "url";
 
@@ -14,10 +15,10 @@ for (const file of files) {
   const filePath = path.join(TARGET_DIR, file);
 
   try {
-    const content = JSON.parse(await readFile(filePath, "utf8"));
+    const content = await readJson(filePath);
 
     if (content.analyzedVersion !== "8d56277528fc") {
-      await unlink(filePath);
+      await remove(filePath);
       console.log("Deleted:", file);
     }
   } catch (err) {

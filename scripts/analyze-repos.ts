@@ -1,8 +1,9 @@
 import { last, sortBy } from "es-toolkit";
 import { execa } from "execa";
+import { ensureDir, outputJson, remove } from "fs-extra/esm";
 import { glob } from "glob";
 import { createHash } from "node:crypto";
-import { mkdir, rm, writeFile, readFile } from "node:fs/promises";
+import { readFile } from "node:fs/promises";
 import { createRequire } from "node:module";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
@@ -123,7 +124,7 @@ async function runOxlintCheck(
   const configPath = join(tempDir, ".oxlintrc.json");
   const outputPath = join(tempDir, "lint-result.json");
   try {
-    await mkdir(tempDir, { recursive: true });
+    await ensureDir(tempDir);
 
     // Write Oxlint config with all default categories disabled
     // and only the specific rule enabled
@@ -149,7 +150,7 @@ async function runOxlintCheck(
         require.resolve(plugin),
       );
     }
-    await writeFile(configPath, JSON.stringify(config));
+    await outputJson(configPath, config);
 
     const timeout = 5 * 60 * 1000; // 5 minute timeout per check
 
@@ -206,7 +207,7 @@ async function runOxlintCheck(
     }
   } finally {
     // Cleanup temp directory
-    await rm(tempDir, { recursive: true, force: true }).catch(() => {
+    await remove(tempDir).catch(() => {
       // Ignore cleanup errors
     });
   }

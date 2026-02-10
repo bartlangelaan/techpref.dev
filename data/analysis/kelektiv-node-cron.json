@@ -1,7 +1,7 @@
 {
-  "analyzedVersion": "8d56277528fc",
-  "analyzedCommit": "e60e68a8f38682d18ac324bd50244303b0a7d840",
-  "analyzedCommitDate": "2026-01-26T02:05:49.000Z",
+  "analyzedVersion": "e88a060848ee",
+  "analyzedCommit": "96b904ec3fb36f03e30ba929e381d1d8dc9e6876",
+  "analyzedCommitDate": "2026-02-10T01:32:26.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -69,15 +69,15 @@
         "count": 2,
         "samples": [
           {
-            "file": "src/utils.ts",
-            "line": 4,
-            "column": 18,
-            "message": "An index signature is preferred over a record."
-          },
-          {
             "file": "src/types/cron.types.ts",
             "line": 67,
             "column": 2,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "src/utils.ts",
+            "line": 4,
+            "column": 18,
             "message": "An index signature is preferred over a record."
           }
         ]
@@ -111,14 +111,26 @@
         "count": 10,
         "samples": [
           {
-            "file": "src/utils.ts",
+            "file": "src/index.ts",
             "line": 1,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "src/index.ts",
+            "file": "src/job.ts",
+            "line": 4,
+            "column": 1,
+            "message": "All imports in the declaration are only used as types. Use `import type`."
+          },
+          {
+            "file": "src/time.ts",
             "line": 1,
+            "column": 1,
+            "message": "Imports Zone are only used as type."
+          },
+          {
+            "file": "src/time.ts",
+            "line": 15,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
@@ -153,20 +165,8 @@
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "src/time.ts",
+            "file": "src/utils.ts",
             "line": 1,
-            "column": 1,
-            "message": "Imports Zone are only used as type."
-          },
-          {
-            "file": "src/time.ts",
-            "line": 15,
-            "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
-          {
-            "file": "src/job.ts",
-            "line": 4,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           }
@@ -229,6 +229,12 @@
         "count": 3,
         "samples": [
           {
+            "file": "src/job.ts",
+            "line": 14,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
             "file": "src/time.ts",
             "line": 31,
             "column": 1,
@@ -239,209 +245,149 @@
             "line": 3,
             "column": 1,
             "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "src/job.ts",
-            "line": 14,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
           }
         ]
       }
     },
     "indent": {
       "2-space": {
-        "count": 3222,
+        "count": 29,
         "samples": [
-          {
-            "file": "src/utils.ts",
-            "line": 4,
-            "column": 1,
-            "message": "Expected indentation of 2 spaces but found 1 tab."
-          },
-          {
-            "file": "src/time.ts",
-            "line": 325,
-            "column": 1,
-            "message": "Expected indentation of 8 spaces but found 4 tabs."
-          },
-          {
-            "file": "src/job.ts",
-            "line": 211,
-            "column": 1,
-            "message": "Expected indentation of 10 spaces but found 5 tabs."
-          },
           {
             "file": "eslint.config.mjs",
-            "line": 79,
+            "line": 10,
             "column": 1,
-            "message": "Expected indentation of 6 spaces but found 3 tabs."
+            "message": "Expected spaces for indentation, but found tabs."
           },
           {
-            "file": "tests/crontime.test.ts",
-            "line": 128,
+            "file": "examples/basic.mjs",
+            "line": 5,
             "column": 1,
-            "message": "Expected indentation of 6 spaces but found 3 tabs."
+            "message": "Expected spaces for indentation, but found tabs."
           },
           {
-            "file": "tests/crontime.test.ts",
-            "line": 532,
+            "file": "examples/every_30_minutes_between_9_and_5.mjs",
+            "line": 5,
             "column": 1,
-            "message": "Expected indentation of 6 spaces but found 3 tabs."
+            "message": "Expected spaces for indentation, but found tabs."
           },
           {
-            "file": "tests/cron.test.ts",
-            "line": 218,
+            "file": "examples/is_job_running.mjs",
+            "line": 5,
             "column": 1,
-            "message": "Expected indentation of 8 spaces but found 4 tabs."
+            "message": "Expected spaces for indentation, but found tabs."
           },
           {
-            "file": "tests/cron.test.ts",
-            "line": 636,
+            "file": "examples/multiple_jobs.mjs",
+            "line": 5,
             "column": 1,
-            "message": "Expected indentation of 8 spaces but found 4 tabs."
+            "message": "Expected spaces for indentation, but found tabs."
           },
-          {
-            "file": "tests/cron.test.ts",
-            "line": 1091,
-            "column": 1,
-            "message": "Expected indentation of 2 spaces but found 1 tab."
-          },
-          {
-            "file": "tests/cron.test.ts",
-            "line": 1505,
-            "column": 1,
-            "message": "Expected indentation of 2 spaces but found 1 tab."
-          }
-        ]
-      },
-      "4-space": {
-        "count": 3222,
-        "samples": [
           {
             "file": "examples/utc_offset_syntax.mjs",
             "line": 5,
             "column": 1,
-            "message": "Expected indentation of 4 spaces but found 1 tab."
+            "message": "Expected spaces for indentation, but found tabs."
           },
           {
-            "file": "src/time.ts",
-            "line": 375,
+            "file": "src/index.ts",
+            "line": 8,
             "column": 1,
-            "message": "Expected indentation of 8 spaces but found 2 tabs."
-          },
-          {
-            "file": "src/job.ts",
-            "line": 141,
-            "column": 1,
-            "message": "Expected indentation of 8 spaces but found 2 tabs."
-          },
-          {
-            "file": "examples/long_running_on_tick.mjs",
-            "line": 13,
-            "column": 1,
-            "message": "Expected indentation of 12 spaces but found 3 tabs."
-          },
-          {
-            "file": "tests/cron.test.ts",
-            "line": 404,
-            "column": 1,
-            "message": "Expected indentation of 16 spaces but found 4 tabs."
-          },
-          {
-            "file": "tests/cron.test.ts",
-            "line": 843,
-            "column": 1,
-            "message": "Expected indentation of 8 spaces but found 2 tabs."
-          },
-          {
-            "file": "tests/cron.test.ts",
-            "line": 1281,
-            "column": 1,
-            "message": "Expected indentation of 8 spaces but found 2 tabs."
-          },
-          {
-            "file": "tests/crontime.test.ts",
-            "line": 206,
-            "column": 1,
-            "message": "Expected indentation of 8 spaces but found 2 tabs."
-          },
-          {
-            "file": "tests/crontime.test.ts",
-            "line": 600,
-            "column": 1,
-            "message": "Expected indentation of 12 spaces but found 3 tabs."
+            "message": "Expected spaces for indentation, but found tabs."
           },
           {
             "file": "src/types/cron.types.ts",
-            "line": 101,
+            "line": 8,
             "column": 1,
-            "message": "Expected indentation of 4 spaces but found 1 tab."
+            "message": "Expected spaces for indentation, but found tabs."
+          },
+          {
+            "file": "tests/cron.fuzz.ts",
+            "line": 14,
+            "column": 1,
+            "message": "Expected spaces for indentation, but found tabs."
+          },
+          {
+            "file": "tests/threshold.test.ts",
+            "line": 5,
+            "column": 1,
+            "message": "Expected spaces for indentation, but found tabs."
+          }
+        ]
+      },
+      "4-space": {
+        "count": 29,
+        "samples": [
+          {
+            "file": "eslint.config.mjs",
+            "line": 10,
+            "column": 1,
+            "message": "Expected spaces for indentation, but found tabs."
+          },
+          {
+            "file": "examples/basic.mjs",
+            "line": 5,
+            "column": 1,
+            "message": "Expected spaces for indentation, but found tabs."
+          },
+          {
+            "file": "examples/every_30_minutes_between_9_and_5.mjs",
+            "line": 5,
+            "column": 1,
+            "message": "Expected spaces for indentation, but found tabs."
+          },
+          {
+            "file": "examples/is_job_running.mjs",
+            "line": 5,
+            "column": 1,
+            "message": "Expected spaces for indentation, but found tabs."
+          },
+          {
+            "file": "examples/multiple_jobs.mjs",
+            "line": 5,
+            "column": 1,
+            "message": "Expected spaces for indentation, but found tabs."
+          },
+          {
+            "file": "examples/utc_offset_syntax.mjs",
+            "line": 5,
+            "column": 1,
+            "message": "Expected spaces for indentation, but found tabs."
+          },
+          {
+            "file": "src/index.ts",
+            "line": 8,
+            "column": 1,
+            "message": "Expected spaces for indentation, but found tabs."
+          },
+          {
+            "file": "src/types/cron.types.ts",
+            "line": 8,
+            "column": 1,
+            "message": "Expected spaces for indentation, but found tabs."
+          },
+          {
+            "file": "tests/cron.fuzz.ts",
+            "line": 14,
+            "column": 1,
+            "message": "Expected spaces for indentation, but found tabs."
+          },
+          {
+            "file": "tests/threshold.test.ts",
+            "line": 5,
+            "column": 1,
+            "message": "Expected spaces for indentation, but found tabs."
           }
         ]
       },
       "tab": {
-        "count": 10,
+        "count": 1,
         "samples": [
-          {
-            "file": "src/types/cron.types.ts",
-            "line": 30,
-            "column": 1,
-            "message": "Expected indentation of 3 tabs but found 4."
-          },
-          {
-            "file": "src/types/cron.types.ts",
-            "line": 31,
-            "column": 1,
-            "message": "Expected indentation of 3 tabs but found 4."
-          },
           {
             "file": "src/types/cron.types.ts",
             "line": 32,
             "column": 1,
-            "message": "Expected indentation of 2 tabs but found 2 spaces."
-          },
-          {
-            "file": "src/types/cron.types.ts",
-            "line": 34,
-            "column": 1,
-            "message": "Expected indentation of 3 tabs but found 4."
-          },
-          {
-            "file": "src/types/cron.types.ts",
-            "line": 35,
-            "column": 1,
-            "message": "Expected indentation of 3 tabs but found 4."
-          },
-          {
-            "file": "src/types/cron.types.ts",
-            "line": 36,
-            "column": 1,
-            "message": "Expected indentation of 2 tabs but found 2 spaces."
-          },
-          {
-            "file": "src/types/cron.types.ts",
-            "line": 51,
-            "column": 1,
-            "message": "Expected indentation of 2 tabs but found 3."
-          },
-          {
-            "file": "src/types/cron.types.ts",
-            "line": 52,
-            "column": 1,
-            "message": "Expected indentation of 2 tabs but found 3."
-          },
-          {
-            "file": "src/types/cron.types.ts",
-            "line": 53,
-            "column": 1,
-            "message": "Expected indentation of 2 tabs but found 3."
-          },
-          {
-            "file": "src/types/cron.types.ts",
-            "line": 54,
-            "column": 1,
-            "message": "Expected indentation of 1 tab but found 2 spaces."
+            "message": "Expected tabs for indentation, but found spaces."
           }
         ]
       }
@@ -451,63 +397,63 @@
         "count": 827,
         "samples": [
           {
-            "file": "examples/get_next_runs.mjs",
-            "line": 1,
-            "column": 25,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "src/time.ts",
-            "line": 27,
-            "column": 38,
-            "message": "Strings must use doublequote."
-          },
-          {
             "file": "eslint.config.mjs",
-            "line": 89,
-            "column": 19,
+            "line": 1,
+            "column": 45,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "tests/cron.test.ts",
-            "line": 583,
-            "column": 16,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "tests/cron.test.ts",
-            "line": 1180,
-            "column": 15,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "src/job.ts",
-            "line": 79,
-            "column": 36,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "examples/run_at_specific_date.mjs",
-            "line": 10,
+            "file": "examples/in_the_past.mjs",
+            "line": 7,
             "column": 13,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "tests/crontime.test.ts",
-            "line": 172,
+            "file": "src/constants.ts",
+            "line": 64,
+            "column": 15,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "src/time.ts",
+            "line": 142,
+            "column": 25,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "tests/cron.test.ts",
+            "line": 292,
+            "column": 4,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "tests/cron.test.ts",
+            "line": 1027,
             "column": 6,
             "message": "Strings must use doublequote."
           },
           {
             "file": "tests/crontime.test.ts",
-            "line": 435,
-            "column": 33,
+            "line": 60,
+            "column": 5,
             "message": "Strings must use doublequote."
           },
           {
             "file": "tests/crontime.test.ts",
-            "line": 712,
-            "column": 4,
+            "line": 341,
+            "column": 34,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "tests/crontime.test.ts",
+            "line": 599,
+            "column": 38,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "tests/threshold.test.ts",
+            "line": 245,
+            "column": 29,
             "message": "Strings must use doublequote."
           }
         ]
@@ -539,63 +485,63 @@
         "count": 1671,
         "samples": [
           {
-            "file": "src/constants.ts",
-            "line": 8,
-            "column": 12,
+            "file": "eslint.config.mjs",
+            "line": 1,
+            "column": 81,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "src/job.ts",
+            "line": 105,
+            "column": 36,
             "message": "Extra semicolon."
           },
           {
             "file": "src/time.ts",
-            "line": 25,
-            "column": 2,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "examples/in_the_past.mjs",
-            "line": 5,
-            "column": 43,
+            "line": 438,
+            "column": 32,
             "message": "Extra semicolon."
           },
           {
             "file": "tests/cron.test.ts",
-            "line": 3,
-            "column": 43,
+            "line": 184,
+            "column": 39,
             "message": "Extra semicolon."
           },
           {
             "file": "tests/cron.test.ts",
-            "line": 356,
-            "column": 50,
+            "line": 575,
+            "column": 45,
             "message": "Extra semicolon."
           },
           {
             "file": "tests/cron.test.ts",
-            "line": 775,
-            "column": 28,
+            "line": 973,
+            "column": 45,
             "message": "Extra semicolon."
           },
           {
             "file": "tests/cron.test.ts",
-            "line": 1136,
-            "column": 38,
+            "line": 1328,
+            "column": 44,
             "message": "Extra semicolon."
           },
           {
             "file": "tests/crontime.test.ts",
-            "line": 22,
-            "column": 4,
+            "line": 222,
+            "column": 15,
             "message": "Extra semicolon."
           },
           {
             "file": "tests/crontime.test.ts",
-            "line": 367,
-            "column": 5,
+            "line": 564,
+            "column": 75,
             "message": "Extra semicolon."
           },
           {
-            "file": "tests/crontime.test.ts",
-            "line": 718,
-            "column": 54,
+            "file": "tests/threshold.test.ts",
+            "line": 247,
+            "column": 13,
             "message": "Extra semicolon."
           }
         ]

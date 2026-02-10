@@ -2,7 +2,7 @@ name: Analyze Repositories
 
 on:
   schedule:
-    - cron: "27,57 * * * *" # 2x per hour
+    - cron: "42 * * * *" # 1x per hour
   workflow_dispatch: # Allow manual trigger
   push:
     branches:
@@ -35,5 +35,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Analyze repositories (30 min timeout)
+      - name: Analyze repositories
         run: pnpm analyze-repos --gh-action

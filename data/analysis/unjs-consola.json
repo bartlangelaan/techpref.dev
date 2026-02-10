@@ -1,5 +1,5 @@
 {
-  "analyzedVersion": "8d56277528fc",
+  "analyzedVersion": "e88a060848ee",
   "analyzedCommit": "512d570b3f99a27b6766a885cae2730aa3dc0ed4",
   "analyzedCommitDate": "2025-07-02T01:08:09.000Z",
   "checks": {
@@ -12,34 +12,28 @@
         "count": 22,
         "samples": [
           {
-            "file": "src/consola.ts",
-            "line": 13,
-            "column": 14,
+            "file": "build.config.ts",
+            "line": 9,
+            "column": 46,
             "message": "Array type using 'any[]' is forbidden. Use 'Array<any>' instead."
           },
           {
             "file": "src/consola.ts",
-            "line": 344,
-            "column": 22,
-            "message": "Array type using 'any[]' is forbidden. Use 'Array<any>' instead."
+            "line": 211,
+            "column": 27,
+            "message": "Array type using 'ConsolaReporter[]' is forbidden. Use 'Array<ConsolaReporter>' instead."
           },
           {
             "file": "src/consola.ts",
-            "line": 479,
-            "column": 18,
+            "line": 478,
+            "column": 44,
             "message": "Array type using 'any[]' is forbidden. Use 'Array<any>' instead."
           },
           {
-            "file": "src/reporters/basic.ts",
-            "line": 49,
-            "column": 22,
-            "message": "Array type using 'any[]' is forbidden. Use 'Array<any>' instead."
-          },
-          {
-            "file": "test/consola.test.ts",
-            "line": 38,
-            "column": 17,
-            "message": "Array type using 'LogObject[]' is forbidden. Use 'Array<LogObject>' instead."
+            "file": "src/prompt.ts",
+            "line": 81,
+            "column": 12,
+            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           },
           {
             "file": "src/prompt.ts",
@@ -61,8 +55,8 @@
           },
           {
             "file": "src/utils/tree.ts",
-            "line": 75,
-            "column": 28,
+            "line": 60,
+            "column": 35,
             "message": "Array type using 'TreeItem[]' is forbidden. Use 'Array<TreeItem>' instead."
           },
           {
@@ -70,6 +64,12 @@
             "line": 76,
             "column": 17,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+          },
+          {
+            "file": "test/consola.test.ts",
+            "line": 38,
+            "column": 17,
+            "message": "Array type using 'LogObject[]' is forbidden. Use 'Array<LogObject>' instead."
           }
         ]
       }
@@ -112,12 +112,6 @@
         "count": 8,
         "samples": [
           {
-            "file": "src/utils/box.ts",
-            "line": 49,
-            "column": 24,
-            "message": "An index signature is preferred over a record."
-          },
-          {
             "file": "src/consola.ts",
             "line": 481,
             "column": 41,
@@ -136,18 +130,6 @@
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "src/utils/color.ts",
-            "line": 141,
-            "column": 41,
-            "message": "An index signature is preferred over a record."
-          },
-          {
-            "file": "src/types.ts",
-            "line": 13,
-            "column": 10,
-            "message": "An index signature is preferred over a record."
-          },
-          {
             "file": "src/reporters/browser.ts",
             "line": 6,
             "column": 18,
@@ -157,6 +139,24 @@
             "file": "src/reporters/browser.ts",
             "line": 7,
             "column": 17,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "src/types.ts",
+            "line": 13,
+            "column": 10,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "src/utils/box.ts",
+            "line": 49,
+            "column": 24,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "src/utils/color.ts",
+            "line": 141,
+            "column": 41,
             "message": "An index signature is preferred over a record."
           }
         ]
@@ -263,34 +263,10 @@
             "message": "Imports TreeItem are only used as type."
           },
           {
-            "file": "src/constants.ts",
-            "line": 1,
-            "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
-          {
             "file": "examples/utils/index.ts",
             "line": 1,
             "column": 1,
             "message": "Imports ConsolaOptions are only used as type."
-          },
-          {
-            "file": "src/types.ts",
-            "line": 57,
-            "column": 19,
-            "message": "`import()` type annotations are forbidden."
-          },
-          {
-            "file": "src/reporters/fancy.ts",
-            "line": 6,
-            "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
-          {
-            "file": "src/reporters/fancy.ts",
-            "line": 7,
-            "column": 1,
-            "message": "Imports BoxOpts are only used as type."
           },
           {
             "file": "src/basic.ts",
@@ -299,10 +275,10 @@
             "message": "Imports ConsolaInstance are only used as type."
           },
           {
-            "file": "test/consola.test.ts",
+            "file": "src/consola.ts",
             "line": 2,
             "column": 1,
-            "message": "Imports ConsolaReporter and LogObject are only used as type."
+            "message": "Imports LogType and LogLevel are only used as type."
           },
           {
             "file": "src/index.ts",
@@ -315,12 +291,48 @@
             "line": 6,
             "column": 1,
             "message": "Imports ConsolaInstance are only used as type."
+          },
+          {
+            "file": "src/reporters/fancy.ts",
+            "line": 5,
+            "column": 1,
+            "message": "All imports in the declaration are only used as types. Use `import type`."
+          },
+          {
+            "file": "src/reporters/fancy.ts",
+            "line": 6,
+            "column": 1,
+            "message": "All imports in the declaration are only used as types. Use `import type`."
+          },
+          {
+            "file": "src/types.ts",
+            "line": 57,
+            "column": 19,
+            "message": "`import()` type annotations are forbidden."
+          },
+          {
+            "file": "test/consola.test.ts",
+            "line": 2,
+            "column": 1,
+            "message": "Imports ConsolaReporter and LogObject are only used as type."
           }
         ]
       },
       "no-type-imports": {
         "count": 9,
         "samples": [
+          {
+            "file": "src/basic.ts",
+            "line": 2,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "src/browser.ts",
+            "line": 3,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
           {
             "file": "src/consola.ts",
             "line": 4,
@@ -332,24 +344,6 @@
             "line": 10,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "src/basic.ts",
-            "line": 2,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "src/types.ts",
-            "line": 1,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "src/types.ts",
-            "line": 57,
-            "column": 19,
-            "message": "`import()` type annotations are forbidden."
           },
           {
             "file": "src/index.ts",
@@ -364,10 +358,16 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/browser.ts",
-            "line": 3,
+            "file": "src/types.ts",
+            "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "src/types.ts",
+            "line": 57,
+            "column": 19,
+            "message": "`import()` type annotations are forbidden."
           },
           {
             "file": "src/utils/tree.ts",
@@ -383,15 +383,9 @@
         "count": 49,
         "samples": [
           {
-            "file": "src/browser.ts",
-            "line": 15,
-            "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/utils/format.ts",
-            "line": 22,
-            "column": 8,
+            "file": "examples/box.ts",
+            "line": 4,
+            "column": 1,
             "message": "Expected a function expression."
           },
           {
@@ -401,45 +395,51 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "examples/tree.ts",
-            "line": 4,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/index.ts",
-            "line": 17,
-            "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/utils/string.ts",
-            "line": 14,
-            "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "examples/spinner.ts",
+            "file": "examples/wrap-all.ts",
             "line": 3,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/utils/error.ts",
-            "line": 8,
+            "file": "src/basic.ts",
+            "line": 14,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/utils/color.ts",
-            "line": 45,
+            "file": "src/index.ts",
+            "line": 44,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/utils/color.ts",
-            "line": 162,
+            "file": "src/utils/box.ts",
+            "line": 222,
             "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "src/utils/color.ts",
+            "line": 132,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "src/utils/format.ts",
+            "line": 45,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "src/utils/string.ts",
+            "line": 50,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "test/consola.test.ts",
+            "line": 61,
+            "column": 1,
             "message": "Expected a function expression."
           }
         ]
@@ -473,8 +473,8 @@
         "count": 5,
         "samples": [
           {
-            "file": "src/basic.ts",
-            "line": 44,
+            "file": "build.config.ts",
+            "line": 3,
             "column": 8,
             "message": "Prefer named exports"
           },
@@ -485,20 +485,20 @@
             "message": "Prefer named exports"
           },
           {
-            "file": "build.config.ts",
-            "line": 3,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "src/index.ts",
-            "line": 62,
+            "file": "src/basic.ts",
+            "line": 44,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
             "file": "src/browser.ts",
             "line": 37,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "src/index.ts",
+            "line": 62,
             "column": 8,
             "message": "Prefer named exports"
           }
@@ -510,12 +510,6 @@
           {
             "file": "examples/utils/sentence.ts",
             "line": 35,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "src/utils/error.ts",
-            "line": 8,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -532,6 +526,12 @@
             "message": "Prefer default export on a file with single export."
           },
           {
+            "file": "src/utils/error.ts",
+            "line": 8,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
             "file": "src/utils/stream.ts",
             "line": 14,
             "column": 1,
@@ -542,191 +542,136 @@
     },
     "indent": {
       "2-space": {
-        "count": 9,
-        "samples": [
-          {
-            "file": "src/utils/box.ts",
-            "line": 242,
-            "column": 1,
-            "message": "Expected indentation of 8 spaces but found 10."
-          },
-          {
-            "file": "src/utils/box.ts",
-            "line": 243,
-            "column": 1,
-            "message": "Expected indentation of 6 spaces but found 8."
-          },
-          {
-            "file": "src/utils/color.ts",
-            "line": 66,
-            "column": 1,
-            "message": "Expected indentation of 8 spaces but found 10."
-          },
-          {
-            "file": "src/utils/color.ts",
-            "line": 67,
-            "column": 1,
-            "message": "Expected indentation of 8 spaces but found 10."
-          },
-          {
-            "file": "src/utils/color.ts",
-            "line": 68,
-            "column": 1,
-            "message": "Expected indentation of 8 spaces but found 10."
-          },
-          {
-            "file": "src/utils/color.ts",
-            "line": 69,
-            "column": 1,
-            "message": "Expected indentation of 8 spaces but found 10."
-          },
-          {
-            "file": "src/utils/color.ts",
-            "line": 70,
-            "column": 1,
-            "message": "Expected indentation of 8 spaces but found 10."
-          },
-          {
-            "file": "src/utils/color.ts",
-            "line": 71,
-            "column": 1,
-            "message": "Expected indentation of 6 spaces but found 8."
-          },
-          {
-            "file": "src/utils/tree.ts",
-            "line": 88,
-            "column": 1,
-            "message": "Expected indentation of 10 spaces but found 12."
-          }
-        ]
+        "count": 0,
+        "samples": []
       },
       "4-space": {
-        "count": 1759,
+        "count": 44,
         "samples": [
           {
-            "file": "examples/wrap-console.ts",
+            "file": "build.config.ts",
             "line": 4,
             "column": 1,
-            "message": "Expected indentation of 4 spaces but found 2."
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "examples/tree.ts",
-            "line": 138,
+            "file": "examples/fancy.ts",
+            "line": 4,
             "column": 1,
-            "message": "Expected indentation of 20 spaces but found 10."
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/prompt.ts",
-            "line": 224,
+            "file": "examples/prompt.mjs",
+            "line": 6,
             "column": 1,
-            "message": "Expected indentation of 12 spaces but found 6."
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/utils/box.ts",
-            "line": 254,
+            "file": "examples/special.ts",
+            "line": 4,
             "column": 1,
-            "message": "Expected indentation of 4 spaces but found 2."
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/consola.ts",
-            "line": 218,
+            "file": "examples/wrap-all.ts",
+            "line": 4,
             "column": 1,
-            "message": "Expected indentation of 8 spaces but found 4."
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/consola.ts",
-            "line": 467,
+            "file": "src/browser.ts",
+            "line": 16,
             "column": 1,
-            "message": "Expected indentation of 4 spaces but found 2."
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/utils/color.ts",
-            "line": 66,
+            "file": "src/reporters/basic.ts",
+            "line": 3,
             "column": 1,
-            "message": "Expected indentation of 16 spaces but found 10."
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
             "file": "src/types.ts",
-            "line": 13,
+            "line": 7,
             "column": 1,
-            "message": "Expected indentation of 4 spaces but found 2."
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/utils/error.ts",
-            "line": 9,
+            "file": "src/utils/format.ts",
+            "line": 5,
             "column": 1,
-            "message": "Expected indentation of 4 spaces but found 2."
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "examples/no-width.ts",
-            "line": 9,
+            "file": "test/consola.test.ts",
+            "line": 5,
             "column": 1,
-            "message": "Expected indentation of 4 spaces but found 2."
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
           }
         ]
       },
       "tab": {
-        "count": 1760,
+        "count": 44,
         "samples": [
           {
-            "file": "src/constants.ts",
-            "line": 17,
+            "file": "build.config.ts",
+            "line": 4,
             "column": 1,
-            "message": "Expected indentation of 1 tab but found 2 spaces."
+            "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "examples/tree.ts",
-            "line": 127,
+            "file": "examples/fancy.ts",
+            "line": 4,
             "column": 1,
-            "message": "Expected indentation of 1 tab but found 2 spaces."
+            "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/consola.ts",
-            "line": 253,
-            "column": 1,
-            "message": "Expected indentation of 1 tab but found 2 spaces."
-          },
-          {
-            "file": "src/utils/box.ts",
-            "line": 40,
-            "column": 1,
-            "message": "Expected indentation of 1 tab but found 2 spaces."
-          },
-          {
-            "file": "src/reporters/browser.ts",
+            "file": "examples/prompt.mjs",
             "line": 6,
             "column": 1,
-            "message": "Expected indentation of 1 tab but found 2 spaces."
+            "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "examples/box.ts",
-            "line": 20,
+            "file": "examples/special.ts",
+            "line": 4,
             "column": 1,
-            "message": "Expected indentation of 3 tabs but found 6 spaces."
+            "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/utils/color.ts",
-            "line": 54,
+            "file": "examples/wrap-all.ts",
+            "line": 4,
             "column": 1,
-            "message": "Expected indentation of 2 tabs but found 4 spaces."
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "src/browser.ts",
+            "line": 16,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "src/reporters/basic.ts",
+            "line": 3,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "src/types.ts",
+            "line": 7,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
           },
           {
             "file": "src/utils/format.ts",
-            "line": 9,
+            "line": 5,
             "column": 1,
-            "message": "Expected indentation of 1 tab but found 2 spaces."
+            "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/prompt.ts",
-            "line": 215,
+            "file": "test/consola.test.ts",
+            "line": 5,
             "column": 1,
-            "message": "Expected indentation of 1 tab but found 2 spaces."
-          },
-          {
-            "file": "examples/sample.ts",
-            "line": 11,
-            "column": 1,
-            "message": "Expected indentation of 1 tab but found 2 spaces."
+            "message": "Expected tabs for indentation, but found spaces."
           }
         ]
       }
@@ -735,6 +680,42 @@
       "double": {
         "count": 13,
         "samples": [
+          {
+            "file": "build.config.ts",
+            "line": 22,
+            "column": 42,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "build.config.ts",
+            "line": 23,
+            "column": 42,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "build.config.ts",
+            "line": 25,
+            "column": 42,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "build.config.ts",
+            "line": 26,
+            "column": 42,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "build.config.ts",
+            "line": 27,
+            "column": 42,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "eslint.config.mjs",
+            "line": 16,
+            "column": 7,
+            "message": "Strings must use doublequote."
+          },
           {
             "file": "examples/box.ts",
             "line": 5,
@@ -758,42 +739,6 @@
             "line": 7,
             "column": 13,
             "message": "Strings must use doublequote."
-          },
-          {
-            "file": "eslint.config.mjs",
-            "line": 16,
-            "column": 7,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "build.config.ts",
-            "line": 23,
-            "column": 42,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "build.config.ts",
-            "line": 24,
-            "column": 42,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "build.config.ts",
-            "line": 25,
-            "column": 42,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "build.config.ts",
-            "line": 27,
-            "column": 42,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "build.config.ts",
-            "line": 28,
-            "column": 47,
-            "message": "Strings must use doublequote."
           }
         ]
       },
@@ -801,51 +746,33 @@
         "count": 616,
         "samples": [
           {
-            "file": "src/browser.ts",
+            "file": "build.config.ts",
             "line": 1,
-            "column": 33,
+            "column": 35,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "examples/prompt.mjs",
+            "line": 8,
+            "column": 11,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "examples/special.ts",
+            "line": 13,
+            "column": 13,
             "message": "Strings must use singlequote."
           },
           {
             "file": "examples/tree.ts",
-            "line": 109,
-            "column": 25,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "src/utils/box.ts",
-            "line": 83,
-            "column": 9,
+            "line": 152,
+            "column": 30,
             "message": "Strings must use singlequote."
           },
           {
             "file": "src/consola.ts",
-            "line": 233,
-            "column": 26,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "src/utils/color.ts",
-            "line": 23,
-            "column": 53,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "src/reporters/fancy.ts",
-            "line": 35,
-            "column": 18,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "examples/prompt.ts",
-            "line": 17,
-            "column": 7,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "src/reporters/basic.ts",
-            "line": 27,
-            "column": 9,
+            "line": 10,
+            "column": 36,
             "message": "Strings must use singlequote."
           },
           {
@@ -855,9 +782,27 @@
             "message": "Strings must use singlequote."
           },
           {
-            "file": "build.config.ts",
-            "line": 46,
-            "column": 15,
+            "file": "src/reporters/fancy.ts",
+            "line": 29,
+            "column": 19,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "src/utils/box.ts",
+            "line": 68,
+            "column": 9,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "src/utils/box.ts",
+            "line": 332,
+            "column": 24,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "test/consola.test.ts",
+            "line": 57,
+            "column": 48,
             "message": "Strings must use singlequote."
           }
         ]
@@ -872,39 +817,9 @@
         "count": 588,
         "samples": [
           {
-            "file": "src/shared.ts",
+            "file": "build.config.ts",
             "line": 1,
-            "column": 50,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "src/utils/tree.ts",
-            "line": 107,
-            "column": 11,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "src/consola.ts",
-            "line": 141,
-            "column": 20,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "src/consola.ts",
-            "line": 431,
-            "column": 49,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "src/utils/string.ts",
-            "line": 51,
-            "column": 32,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "src/utils/color.ts",
-            "line": 18,
-            "column": 43,
+            "column": 44,
             "message": "Extra semicolon."
           },
           {
@@ -914,21 +829,51 @@
             "message": "Extra semicolon."
           },
           {
-            "file": "src/index.ts",
-            "line": 1,
-            "column": 48,
+            "file": "examples/utils/index.ts",
+            "line": 2,
+            "column": 44,
             "message": "Extra semicolon."
           },
           {
-            "file": "examples/sample.ts",
-            "line": 4,
-            "column": 63,
+            "file": "src/consola.ts",
+            "line": 9,
+            "column": 17,
             "message": "Extra semicolon."
           },
           {
-            "file": "examples/json.ts",
-            "line": 13,
-            "column": 23,
+            "file": "src/consola.ts",
+            "line": 376,
+            "column": 28,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "src/prompt.ts",
+            "line": 51,
+            "column": 2,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "src/reporters/browser.ts",
+            "line": 67,
+            "column": 49,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "src/utils/box.ts",
+            "line": 250,
+            "column": 8,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "src/utils/string.ts",
+            "line": 32,
+            "column": 40,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "test/consola.test.ts",
+            "line": 63,
+            "column": 31,
             "message": "Extra semicolon."
           }
         ]

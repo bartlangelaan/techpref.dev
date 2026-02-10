@@ -1,5 +1,5 @@
 {
-  "analyzedVersion": "8d56277528fc",
+  "analyzedVersion": "e88a060848ee",
   "analyzedCommit": "b03ed27d149ba31f665a2fe041cb7c7bcf4233b0",
   "analyzedCommitDate": "2025-10-23T07:50:50.000Z",
   "checks": {
@@ -31,16 +31,22 @@
         "count": 36,
         "samples": [
           {
-            "file": "src/vnode.ts",
-            "line": 33,
-            "column": 10,
-            "message": "Array type using 'any[]' is forbidden. Use 'Array<any>' instead."
+            "file": "src/h.ts",
+            "line": 4,
+            "column": 22,
+            "message": "Array type using 'VNode[]' is forbidden. Use 'Array<VNode>' instead."
           },
           {
-            "file": "src/thunk.ts",
-            "line": 14,
-            "column": 52,
-            "message": "Array type using 'any[]' is forbidden. Use 'Array<any>' instead."
+            "file": "src/init.ts",
+            "line": 216,
+            "column": 13,
+            "message": "Array type using 'VNode[]' is forbidden. Use 'Array<VNode>' instead."
+          },
+          {
+            "file": "src/init.ts",
+            "line": 286,
+            "column": 12,
+            "message": "Array type using 'VNode[]' is forbidden. Use 'Array<VNode>' instead."
           },
           {
             "file": "src/jsx.ts",
@@ -55,40 +61,34 @@
             "message": "Array type using 'JsxVNodeChildren[]' is forbidden. Use 'Array<JsxVNodeChildren>' instead."
           },
           {
+            "file": "src/thunk.ts",
+            "line": 14,
+            "column": 31,
+            "message": "Array type using 'any[]' is forbidden. Use 'Array<any>' instead."
+          },
+          {
+            "file": "src/tovnode.ts",
+            "line": 29,
+            "column": 21,
+            "message": "Array type using 'VNode[]' is forbidden. Use 'Array<VNode>' instead."
+          },
+          {
+            "file": "test/unit/core.ts",
+            "line": 50,
+            "column": 29,
+            "message": "Array type using 'any[]' is forbidden. Use 'Array<any>' instead."
+          },
+          {
+            "file": "test/unit/core.ts",
+            "line": 1336,
+            "column": 29,
+            "message": "Array type using 'VNode[]' is forbidden. Use 'Array<VNode>' instead."
+          },
+          {
             "file": "test/unit/eventlisteners.ts",
-            "line": 57,
+            "line": 95,
             "column": 19,
-            "message": "Array type using 'Event[]' is forbidden. Use 'Array<Event>' instead."
-          },
-          {
-            "file": "src/init.ts",
-            "line": 52,
-            "column": 13,
             "message": "Array type using 'VNode[]' is forbidden. Use 'Array<VNode>' instead."
-          },
-          {
-            "file": "src/init.ts",
-            "line": 271,
-            "column": 28,
-            "message": "Array type using 'VNode[]' is forbidden. Use 'Array<VNode>' instead."
-          },
-          {
-            "file": "src/init.ts",
-            "line": 412,
-            "column": 34,
-            "message": "Array type using 'VNode[]' is forbidden. Use 'Array<VNode>' instead."
-          },
-          {
-            "file": "test/unit/core.ts",
-            "line": 925,
-            "column": 26,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
-          },
-          {
-            "file": "test/unit/core.ts",
-            "line": 1472,
-            "column": 23,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           }
         ]
       }
@@ -107,18 +107,6 @@
       "record": {
         "count": 8,
         "samples": [
-          {
-            "file": "src/modules/style.ts",
-            "line": 7,
-            "column": 3,
-            "message": "A record is preferred over an index signature."
-          },
-          {
-            "file": "src/modules/eventlisteners.ts",
-            "line": 11,
-            "column": 3,
-            "message": "A record is preferred over an index signature."
-          },
           {
             "file": "src/init.ts",
             "line": 43,
@@ -150,6 +138,18 @@
             "message": "A record is preferred over an index signature."
           },
           {
+            "file": "src/modules/eventlisteners.ts",
+            "line": 11,
+            "column": 3,
+            "message": "A record is preferred over an index signature."
+          },
+          {
+            "file": "src/modules/style.ts",
+            "line": 7,
+            "column": 3,
+            "message": "A record is preferred over an index signature."
+          },
+          {
             "file": "test/unit/core.ts",
             "line": 47,
             "column": 18,
@@ -167,12 +167,6 @@
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "src/modules/props.ts",
-            "line": 4,
-            "column": 21,
-            "message": "An index signature is preferred over a record."
-          },
-          {
             "file": "src/modules/class.ts",
             "line": 4,
             "column": 23,
@@ -182,6 +176,12 @@
             "file": "src/modules/dataset.ts",
             "line": 4,
             "column": 23,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "src/modules/props.ts",
+            "line": 4,
+            "column": 21,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -233,12 +233,6 @@
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "src/jsx.ts",
-            "line": 140,
-            "column": 10,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
             "file": "src/hooks.ts",
             "line": 14,
             "column": 8,
@@ -246,8 +240,14 @@
           },
           {
             "file": "src/htmldomapi.ts",
-            "line": 1,
+            "line": 7,
             "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "src/jsx.ts",
+            "line": 140,
+            "column": 10,
             "message": "Use `type` instead of `interface`."
           },
           {
@@ -288,20 +288,20 @@
         "count": 37,
         "samples": [
           {
-            "file": "src/modules/module.ts",
+            "file": "src/h.ts",
             "line": 1,
             "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
+            "message": "Imports VNode and VNodeData are only used as type."
           },
           {
-            "file": "src/vnode.ts",
+            "file": "src/init.ts",
             "line": 2,
             "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
+            "message": "Imports Key and VNode are only used as type."
           },
           {
-            "file": "src/vnode.ts",
-            "line": 6,
+            "file": "src/jsx.ts",
+            "line": 4,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
@@ -313,39 +313,39 @@
           },
           {
             "file": "src/modules/eventlisteners.ts",
+            "line": 2,
+            "column": 1,
+            "message": "All imports in the declaration are only used as types. Use `import type`."
+          },
+          {
+            "file": "src/modules/style.ts",
             "line": 1,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "src/jsx.ts",
-            "line": 2,
+            "file": "src/tovnode.ts",
+            "line": 3,
             "column": 1,
-            "message": "Imports Key, VNode, and VNodeData are only used as type."
+            "message": "Imports DOMAPI are only used as type."
           },
           {
-            "file": "src/tovnode.ts",
-            "line": 2,
+            "file": "src/vnode.ts",
+            "line": 4,
+            "column": 1,
+            "message": "All imports in the declaration are only used as types. Use `import type`."
+          },
+          {
+            "file": "src/vnode.ts",
+            "line": 8,
+            "column": 1,
+            "message": "All imports in the declaration are only used as types. Use `import type`."
+          },
+          {
+            "file": "test/unit/thunk.ts",
+            "line": 3,
             "column": 1,
             "message": "Imports VNode are only used as type."
-          },
-          {
-            "file": "src/init.ts",
-            "line": 2,
-            "column": 1,
-            "message": "Imports Key and VNode are only used as type."
-          },
-          {
-            "file": "test/unit/attachto.ts",
-            "line": 3,
-            "column": 1,
-            "message": "Imports RemoveHook are only used as type."
-          },
-          {
-            "file": "test/unit/core.ts",
-            "line": 3,
-            "column": 1,
-            "message": "Imports VNode, CreateHook, InsertHook, PrePatchHook, RemoveHook, InitHook, DestroyHook, UpdateHook, Key, and DOMAPI are only used as type."
           }
         ]
       },
@@ -359,30 +359,6 @@
         "count": 116,
         "samples": [
           {
-            "file": "src/modules/attributes.ts",
-            "line": 13,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/htmldomapi.ts",
-            "line": 139,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "examples/hero/index.js",
-            "line": 81,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "test/unit/thunk.ts",
-            "line": 66,
-            "column": 5,
-            "message": "Expected a function expression."
-          },
-          {
             "file": "examples/carousel-svg/index.js",
             "line": 17,
             "column": 1,
@@ -395,27 +371,51 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "examples/reorder-animation/index.js",
-            "line": 178,
+            "file": "src/helpers/attachto.ts",
+            "line": 27,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "src/htmldomapi.ts",
+            "line": 106,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "src/init.ts",
-            "line": 229,
-            "column": 3,
+            "line": 36,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "src/jsx.ts",
+            "line": 21,
+            "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "src/modules/style.ts",
-            "line": 35,
+            "line": 87,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "test/unit/core.ts",
-            "line": 1606,
-            "column": 7,
+            "line": 928,
+            "column": 9,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "test/unit/thunk.ts",
+            "line": 49,
+            "column": 5,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "test/unit/thunk.ts",
+            "line": 193,
+            "column": 5,
             "message": "Expected a function expression."
           }
         ]
@@ -430,33 +430,27 @@
             "message": "Expected a function declaration."
           },
           {
-            "file": "examples/hero/index.js",
-            "line": 91,
-            "column": 7,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "examples/hero/index.js",
-            "line": 221,
-            "column": 7,
-            "message": "Expected a function declaration."
-          },
-          {
             "file": "examples/hero/hero.js",
             "line": 4,
             "column": 7,
             "message": "Expected a function declaration."
           },
           {
-            "file": "test/unit/jsx.tsx",
-            "line": 193,
-            "column": 13,
+            "file": "examples/hero/index.js",
+            "line": 161,
+            "column": 7,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "src/modules/style.ts",
+            "line": 22,
+            "column": 7,
             "message": "Expected a function declaration."
           },
           {
             "file": "test/unit/core.ts",
-            "line": 1243,
-            "column": 15,
+            "line": 363,
+            "column": 13,
             "message": "Expected a function declaration."
           },
           {
@@ -482,6 +476,12 @@
             "line": 1593,
             "column": 13,
             "message": "Expected a function declaration."
+          },
+          {
+            "file": "test/unit/jsx.tsx",
+            "line": 462,
+            "column": 13,
+            "message": "Expected a function declaration."
           }
         ]
       }
@@ -491,8 +491,8 @@
         "count": 3,
         "samples": [
           {
-            "file": "web-test-runner.config.js",
-            "line": 15,
+            "file": "browserstack-browsers.js",
+            "line": 1,
             "column": 8,
             "message": "Prefer named exports"
           },
@@ -503,8 +503,8 @@
             "message": "Prefer named exports"
           },
           {
-            "file": "browserstack-browsers.js",
-            "line": 1,
+            "file": "web-test-runner.config.js",
+            "line": 15,
             "column": 8,
             "message": "Prefer named exports"
           }
@@ -514,14 +514,14 @@
         "count": 2,
         "samples": [
           {
-            "file": "src/tovnode.ts",
-            "line": 17,
+            "file": "examples/hero/hero.js",
+            "line": 206,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "examples/hero/hero.js",
-            "line": 206,
+            "file": "src/tovnode.ts",
+            "line": 17,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           }
@@ -530,179 +530,136 @@
     },
     "indent": {
       "2-space": {
-        "count": 7,
-        "samples": [
-          {
-            "file": "web-test-runner.config.js",
-            "line": 22,
-            "column": 1,
-            "message": "Expected indentation of 6 spaces but found 8."
-          },
-          {
-            "file": "web-test-runner.config.js",
-            "line": 23,
-            "column": 1,
-            "message": "Expected indentation of 8 spaces but found 10."
-          },
-          {
-            "file": "web-test-runner.config.js",
-            "line": 24,
-            "column": 1,
-            "message": "Expected indentation of 10 spaces but found 12."
-          },
-          {
-            "file": "web-test-runner.config.js",
-            "line": 25,
-            "column": 1,
-            "message": "Expected indentation of 10 spaces but found 12."
-          },
-          {
-            "file": "web-test-runner.config.js",
-            "line": 26,
-            "column": 1,
-            "message": "Expected indentation of 8 spaces but found 10."
-          },
-          {
-            "file": "web-test-runner.config.js",
-            "line": 27,
-            "column": 1,
-            "message": "Expected indentation of 6 spaces but found 8."
-          },
-          {
-            "file": "web-test-runner.config.js",
-            "line": 28,
-            "column": 1,
-            "message": "Expected indentation of 4 spaces but found 6."
-          }
-        ]
+        "count": 0,
+        "samples": []
       },
       "4-space": {
-        "count": 4822,
+        "count": 35,
         "samples": [
           {
-            "file": "src/index.ts",
-            "line": 20,
+            "file": "browserstack-browsers.js",
+            "line": 3,
             "column": 1,
-            "message": "Expected indentation of 4 spaces but found 2."
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/init.ts",
-            "line": 120,
+            "file": "examples/hero/index.js",
+            "line": 2,
             "column": 1,
-            "message": "Expected indentation of 12 spaces but found 6."
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
-          {
-            "file": "test/unit/attributes.ts",
-            "line": 110,
-            "column": 1,
-            "message": "Expected indentation of 12 spaces but found 6."
-          },
-          {
-            "file": "examples/reorder-animation/index.js",
-            "line": 206,
-            "column": 1,
-            "message": "Expected indentation of 20 spaces but found 10."
-          },
-          {
-            "file": "test/unit/attachto.ts",
-            "line": 11,
-            "column": 1,
-            "message": "Expected indentation of 8 spaces but found 4."
-          },
-          {
-            "file": "test/unit/core.ts",
-            "line": 489,
-            "column": 1,
-            "message": "Expected indentation of 16 spaces but found 8."
-          },
-          {
-            "file": "test/unit/core.ts",
-            "line": 1026,
-            "column": 1,
-            "message": "Expected indentation of 8 spaces but found 4."
-          },
-          {
-            "file": "test/unit/core.ts",
-            "line": 1568,
-            "column": 1,
-            "message": "Expected indentation of 24 spaces but found 12."
-          },
-          {
-            "file": "test/unit/jsx.tsx",
-            "line": 509,
-            "column": 1,
-            "message": "Expected indentation of 24 spaces but found 12."
-          },
-          {
-            "file": "web-test-runner.config.js",
-            "line": 32,
-            "column": 1,
-            "message": "Expected indentation of 4 spaces but found 2."
-          }
-        ]
-      },
-      "tab": {
-        "count": 4830,
-        "samples": [
           {
             "file": "src/helpers/attachto.ts",
             "line": 4,
             "column": 1,
-            "message": "Expected indentation of 1 tab but found 2 spaces."
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/init.ts",
-            "line": 121,
+            "file": "src/index.ts",
+            "line": 20,
             "column": 1,
-            "message": "Expected indentation of 2 tabs but found 4 spaces."
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/modules/style.ts",
-            "line": 49,
+            "file": "src/modules/attributes.ts",
+            "line": 14,
             "column": 1,
-            "message": "Expected indentation of 2 tabs but found 4 spaces."
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "test/unit/core.ts",
-            "line": 436,
+            "file": "src/modules/module.ts",
+            "line": 2,
             "column": 1,
-            "message": "Expected indentation of 6 tabs but found 12 spaces."
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "test/unit/core.ts",
-            "line": 976,
+            "file": "src/tovnode.ts",
+            "line": 12,
             "column": 1,
-            "message": "Expected indentation of 5 tabs but found 10 spaces."
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "test/unit/core.ts",
-            "line": 1519,
+            "file": "test/unit/attributes.ts",
+            "line": 8,
             "column": 1,
-            "message": "Expected indentation of 6 tabs but found 12 spaces."
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "examples/reorder-animation/index.js",
-            "line": 144,
+            "file": "test/unit/htmldomapi.ts",
+            "line": 8,
             "column": 1,
-            "message": "Expected indentation of 3 tabs but found 6 spaces."
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "test/unit/jsx.tsx",
-            "line": 481,
+            "file": "web-test-runner.config.js",
+            "line": 8,
             "column": 1,
-            "message": "Expected indentation of 6 tabs but found 12 spaces."
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          }
+        ]
+      },
+      "tab": {
+        "count": 35,
+        "samples": [
+          {
+            "file": "browserstack-browsers.js",
+            "line": 3,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "examples/carousel-svg/index.js",
-            "line": 72,
+            "file": "examples/hero/index.js",
+            "line": 2,
             "column": 1,
-            "message": "Expected indentation of 6 tabs but found 12 spaces."
+            "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "test/unit/eventlisteners.ts",
-            "line": 124,
+            "file": "src/helpers/attachto.ts",
+            "line": 4,
             "column": 1,
-            "message": "Expected indentation of 1 tab but found 2 spaces."
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "src/index.ts",
+            "line": 20,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "src/modules/attributes.ts",
+            "line": 14,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "src/modules/module.ts",
+            "line": 2,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "src/tovnode.ts",
+            "line": 12,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "test/unit/attributes.ts",
+            "line": 8,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "test/unit/htmldomapi.ts",
+            "line": 8,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "web-test-runner.config.js",
+            "line": 8,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
           }
         ]
       }
@@ -735,57 +692,57 @@
         "count": 2098,
         "samples": [
           {
-            "file": "src/modules/module.ts",
-            "line": 8,
-            "column": 8,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "examples/hero/index.js",
-            "line": 181,
-            "column": 13,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "test/unit/core.ts",
-            "line": 295,
-            "column": 12,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "test/unit/core.ts",
-            "line": 656,
-            "column": 28,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "test/unit/core.ts",
-            "line": 1038,
-            "column": 52,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "test/unit/core.ts",
-            "line": 1271,
-            "column": 15,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "test/unit/jsx.tsx",
-            "line": 284,
-            "column": 15,
+            "file": "browserstack-browsers.js",
+            "line": 4,
+            "column": 18,
             "message": "Strings must use singlequote."
           },
           {
             "file": "examples/reorder-animation/index.js",
-            "line": 33,
-            "column": 11,
+            "line": 224,
+            "column": 7,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "examples/svg/index.js",
-            "line": 6,
-            "column": 45,
+            "file": "test/unit/attributes.ts",
+            "line": 14,
+            "column": 22,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "test/unit/core.ts",
+            "line": 270,
+            "column": 56,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "test/unit/core.ts",
+            "line": 624,
+            "column": 63,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "test/unit/core.ts",
+            "line": 1028,
+            "column": 10,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "test/unit/core.ts",
+            "line": 1230,
+            "column": 31,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "test/unit/eventlisteners.ts",
+            "line": 13,
+            "column": 6,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "test/unit/style.ts",
+            "line": 73,
+            "column": 55,
             "message": "Strings must use singlequote."
           },
           {
@@ -806,15 +763,51 @@
         "count": 2423,
         "samples": [
           {
-            "file": "eslint.config.mjs",
-            "line": 1,
-            "column": 60,
+            "file": "browserstack-browsers.js",
+            "line": 39,
+            "column": 2,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/modules/eventlisteners.ts",
-            "line": 85,
-            "column": 54,
+            "file": "src/htmldomapi.ts",
+            "line": 119,
+            "column": 41,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "src/modules/class.ts",
+            "line": 7,
+            "column": 15,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "test/unit/attributes.ts",
+            "line": 40,
+            "column": 7,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "test/unit/core.ts",
+            "line": 342,
+            "column": 30,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "test/unit/core.ts",
+            "line": 704,
+            "column": 70,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "test/unit/core.ts",
+            "line": 1078,
+            "column": 74,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "test/unit/core.ts",
+            "line": 1556,
+            "column": 11,
             "message": "Extra semicolon."
           },
           {
@@ -824,45 +817,9 @@
             "message": "Extra semicolon."
           },
           {
-            "file": "test/unit/core.ts",
-            "line": 172,
-            "column": 50,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "test/unit/core.ts",
-            "line": 547,
-            "column": 53,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "test/unit/core.ts",
-            "line": 883,
-            "column": 42,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "test/unit/core.ts",
-            "line": 1334,
-            "column": 36,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "test/unit/thunk.ts",
-            "line": 57,
-            "column": 26,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "test/unit/eventlisteners.ts",
-            "line": 103,
-            "column": 36,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "test/unit/htmldomapi.ts",
-            "line": 48,
-            "column": 71,
+            "file": "web-test-runner.config.js",
+            "line": 33,
+            "column": 2,
             "message": "Extra semicolon."
           }
         ]

@@ -1,11 +1,11 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "302d6bb0581440762d8f032b0ed3b7c4b240d66d",
-  "analyzedCommitDate": "2026-02-10T01:25:45.000Z",
+  "analyzedCommit": "79ea302463b5bc9496e3fb514d80d5bcc4bdd69c",
+  "analyzedCommitDate": "2026-02-10T22:19:02.000Z",
   "checks": {
     "array-type": {
       "array": {
-        "count": 380,
+        "count": 381,
         "samples": [
           {
             "file": "backend/src/db/migrations/20250718133527_project-unify-revert.ts",
@@ -22,8 +22,8 @@
           {
             "file": "backend/src/lib/knex/permission-filter-utils.ts",
             "line": 15,
-            "column": 37,
-            "message": "Array type using 'Array<PermissionFilterConfig>' is forbidden. Use 'PermissionFilterConfig[]' instead."
+            "column": 16,
+            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
             "file": "backend/src/services/enrollment-config/api-enrollment-config-dal.ts",
@@ -39,13 +39,13 @@
           },
           {
             "file": "backend/src/services/pki-sync/azure-key-vault/azure-key-vault-pki-sync-fns.ts",
-            "line": 659,
-            "column": 29,
+            "line": 658,
+            "column": 24,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
             "file": "backend/src/services/secret-v2-bridge/secret-v2-bridge-fns.ts",
-            "line": 855,
+            "line": 687,
             "column": 45,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
@@ -70,7 +70,7 @@
         ]
       },
       "generic": {
-        "count": 3698,
+        "count": 3704,
         "samples": [
           {
             "file": "backend/e2e-test/mocks/keystore.ts",
@@ -79,21 +79,21 @@
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
-            "file": "backend/src/ee/services/project-events/project-events-types.ts",
-            "line": 27,
-            "column": 15,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+            "file": "backend/src/ee/services/project-template/project-template-fns.ts",
+            "line": 22,
+            "column": 35,
+            "message": "Array type using 'TUnpackedPermission[]' is forbidden. Use 'Array<TUnpackedPermission>' instead."
           },
           {
             "file": "backend/src/server/routes/v1/identity-gcp-auth-router.ts",
-            "line": 237,
+            "line": 150,
             "column": 77,
             "message": "Array type using 'TIdentityTrustedIp[]' is forbidden. Use 'Array<TIdentityTrustedIp>' instead."
           },
           {
             "file": "backend/src/services/certificate-policy/certificate-policy-service.ts",
-            "line": 39,
-            "column": 6,
+            "line": 38,
+            "column": 17,
             "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           },
           {
@@ -122,9 +122,9 @@
           },
           {
             "file": "frontend/src/pages/cert-manager/IntegrationsListPage/components/PkiSyncsTab/PkiSyncTable/PkiSyncsTable.tsx",
-            "line": 65,
-            "column": 17,
-            "message": "Array type using 'PkiSync[]' is forbidden. Use 'Array<PkiSync>' instead."
+            "line": 84,
+            "column": 13,
+            "message": "Array type using 'TPkiSync[]' is forbidden. Use 'Array<TPkiSync>' instead."
           },
           {
             "file": "frontend/src/views/PkiAlertsV2Page/components/CreatePkiAlertV2Modal.tsx",
@@ -202,7 +202,7 @@
         ]
       },
       "type-annotation": {
-        "count": 108,
+        "count": 111,
         "samples": [
           {
             "file": "backend/src/db/migrations/20250602155451_fix-secret-versions.ts",
@@ -211,39 +211,39 @@
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "backend/src/ee/services/permission/default-roles.ts",
-            "line": 40,
-            "column": 44,
-            "message": "The generic type arguments should be specified as part of the type annotation."
-          },
-          {
-            "file": "backend/src/ee/services/secret-replication/secret-replication-service.ts",
-            "line": 184,
-            "column": 27,
-            "message": "The generic type arguments should be specified as part of the type annotation."
-          },
-          {
-            "file": "backend/src/services/external-migration/external-migration-fns/import.ts",
-            "line": 35,
+            "file": "backend/src/ee/services/pam-resource/pam-resource-service.ts",
+            "line": 366,
             "column": 41,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "backend/src/services/folder-commit/folder-commit-service.ts",
-            "line": 1618,
+            "file": "backend/src/ee/services/secret-replication/secret-replication-service.ts",
+            "line": 147,
+            "column": 27,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "backend/src/services/external-migration/external-migration-fns/envkey.ts",
+            "line": 80,
+            "column": 31,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "backend/src/services/folder-commit/folder-commit-queue.ts",
+            "line": 87,
             "column": 32,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
             "file": "backend/src/services/pki-sync/aws-certificate-manager/aws-certificate-manager-pki-sync-fns.ts",
-            "line": 406,
-            "column": 40,
+            "line": 398,
+            "column": 41,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
             "file": "backend/src/services/pki-sync/azure-key-vault/azure-key-vault-pki-sync-fns.ts",
-            "line": 376,
-            "column": 46,
+            "line": 351,
+            "column": 44,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
@@ -334,7 +334,7 @@
         ]
       },
       "index-signature": {
-        "count": 836,
+        "count": 843,
         "samples": [
           {
             "file": "backend/e2e-test/mocks/keystore.ts",
@@ -343,50 +343,50 @@
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "backend/src/ee/services/project-events/project-events-sse-service.ts",
-            "line": 35,
-            "column": 29,
+            "file": "backend/src/ee/services/permission/permission-fns.ts",
+            "line": 154,
+            "column": 17,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "backend/src/lib/knex/join.ts",
-            "line": 43,
+            "line": 12,
             "column": 13,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "backend/src/services/app-connection/vercel/vercel-connection-fns.ts",
-            "line": 277,
-            "column": 18,
+            "file": "backend/src/services/approval-policy/approval-policy-dal.ts",
+            "line": 29,
+            "column": 50,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "backend/src/services/identity-oidc-auth/identity-oidc-auth-types.ts",
-            "line": 26,
+            "file": "backend/src/services/identity-oidc-auth/identity-oidc-auth-validators.ts",
+            "line": 16,
             "column": 26,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "backend/src/services/pki-alert-v2/pki-alert-v2-dal.ts",
-            "line": 252,
-            "column": 15,
+            "file": "backend/src/services/pki-sync/aws-certificate-manager/aws-certificate-manager-pki-sync-fns.ts",
+            "line": 352,
+            "column": 16,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "backend/src/services/secret-v2-bridge/secret-version-dal.ts",
-            "line": 381,
-            "column": 29,
+            "file": "backend/src/services/secret/secret-fns.ts",
+            "line": 222,
+            "column": 37,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "frontend/src/hooks/api/ca/constants.tsx",
-            "line": 23,
-            "column": 52,
+            "file": "frontend/src/hooks/api/certificateProfiles/types.ts",
+            "line": 25,
+            "column": 21,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "frontend/src/pages/organization/RoleByIDPage/components/OrgRoleModifySection.utils.ts",
-            "line": 182,
+            "file": "frontend/src/pages/pam/PamAccountsPage/components/PamAccountForm/PamAccountForm.tsx",
+            "line": 48,
             "column": 18,
             "message": "An index signature is preferred over a record."
           },
@@ -401,7 +401,7 @@
     },
     "consistent-type-definitions": {
       "interface": {
-        "count": 2946,
+        "count": 2956,
         "samples": [
           {
             "file": "backend/e2e-test/routes/v3/secret-rotations.spec.ts",
@@ -410,43 +410,43 @@
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "backend/src/lib/types/index.ts",
-            "line": 16,
-            "column": 8,
+            "file": "backend/src/lib/template/validate-handlebars.ts",
+            "line": 6,
+            "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "backend/src/services/identity-ua/identity-ua-service.ts",
-            "line": 67,
+            "file": "backend/src/services/identity-token-auth/identity-token-auth-service.ts",
+            "line": 49,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
             "file": "backend/src/services/secret/secret-types.ts",
-            "line": 391,
+            "line": 356,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
             "file": "frontend/src/hooks/api/aiMcpServers/types.ts",
-            "line": 138,
+            "line": 134,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
             "file": "frontend/src/hooks/api/identityProjectAdditionalPrivilege/types.tsx",
-            "line": 59,
+            "line": 64,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
             "file": "frontend/src/hooks/api/secretSharing/types.ts",
-            "line": 71,
+            "line": 64,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "frontend/src/pages/organization/AppConnections/AppConnectionsPage/components/AppConnectionForm/AzureAppConfigurationConnectionForm.tsx",
+            "file": "frontend/src/pages/organization/AppConnections/AppConnectionsPage/components/AppConnectionForm/AzureADCSConnectionForm.tsx",
             "line": 30,
             "column": 1,
             "message": "Use `interface` instead of `type`."
@@ -466,29 +466,29 @@
         ]
       },
       "type": {
-        "count": 969,
+        "count": 971,
         "samples": [
           {
-            "file": "backend/src/db/utils.ts",
-            "line": 5,
+            "file": "backend/src/db/migrations/20260203141935_durable-queue.ts",
+            "line": 9,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "backend/src/ee/services/audit-log/audit-log-types.ts",
-            "line": 1534,
+            "line": 1528,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "backend/src/ee/services/audit-log/audit-log-types.ts",
-            "line": 2580,
+            "line": 2581,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "backend/src/ee/services/audit-log/audit-log-types.ts",
-            "line": 3517,
+            "line": 3508,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
@@ -499,9 +499,9 @@
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "backend/src/lib/gateway/types.ts",
-            "line": 18,
-            "column": 8,
+            "file": "backend/src/lib/gateway-v2/gateway-v2.ts",
+            "line": 15,
+            "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
@@ -511,8 +511,8 @@
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "frontend/src/components/utilities/certificateDisplayUtils.tsx",
-            "line": 5,
+            "file": "frontend/src/components/utilities/attemptLogin.ts",
+            "line": 16,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
@@ -533,7 +533,7 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 7548,
+        "count": 7583,
         "samples": [
           {
             "file": "backend/e2e-test/mocks/keystore.ts",
@@ -543,31 +543,31 @@
           },
           {
             "file": "backend/src/ee/services/audit-log/audit-log-types.ts",
-            "line": 38,
+            "line": 36,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "backend/src/ee/services/secret-rotation-v2/databricks-service-principal-secret/databricks-service-principal-secret-rotation-types.ts",
+            "file": "backend/src/ee/services/secret-rotation-v2/aws-iam-user-secret/aws-iam-user-secret-rotation-types.ts",
             "line": 5,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "backend/src/services/app-connection/dbt/dbt-connection-types.ts",
+            "file": "backend/src/services/app-connection/databricks/databricks-connection-service.ts",
             "line": 3,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "backend/src/services/group-project/group-project-service.ts",
-            "line": 9,
+            "file": "backend/src/services/folder-tree-checkpoint/folder-tree-checkpoint-dal.ts",
+            "line": 3,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
             "file": "backend/src/services/project/project-service.ts",
-            "line": 64,
+            "line": 60,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
@@ -584,8 +584,8 @@
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "frontend/src/pages/cert-manager/PkiSyncDetailsByIDPage/components/PkiSyncDestinationSection/AwsElasticLoadBalancerPkiSyncDestinationSection.tsx",
-            "line": 2,
+            "file": "frontend/src/pages/cert-manager/PkiSyncDetailsByIDPage/components/PkiSyncDestinationSection/AwsSecretsManagerPkiSyncDestinationSection.tsx",
+            "line": 1,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
@@ -598,7 +598,7 @@
         ]
       },
       "no-type-imports": {
-        "count": 67,
+        "count": 71,
         "samples": [
           {
             "file": "backend/src/db/auditlog-knexfile.ts",
@@ -607,20 +607,20 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "backend/src/server/app.ts",
-            "line": 4,
+            "file": "backend/src/lib/knex/permission-filter-utils.ts",
+            "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "backend/src/server/routes/v1/user-router.ts",
+            "file": "backend/src/server/routes/bdd/bdd-nock-router.dev.ts",
             "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "backend/src/services/certificate-profile/certificate-profile-service.test.ts",
-            "line": 13,
+            "line": 12,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -637,21 +637,21 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "frontend/src/components/v3/generic/Alert/Alert.tsx",
-            "line": 4,
-            "column": 15,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "frontend/src/components/v3/generic/Checkbox/Checkbox.stories.tsx",
+            "file": "frontend/src/components/v3/generic/Badge/Badge.stories.tsx",
             "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "frontend/src/components/v3/platform/DocumentationLinkBadge/DocumentationLinkBadge.stories.tsx",
-            "line": 1,
-            "column": 1,
+            "file": "frontend/src/components/v3/generic/Calendar/Calendar.tsx",
+            "line": 6,
+            "column": 59,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "frontend/src/components/v3/generic/Toast/Toast.tsx",
+            "line": 8,
+            "column": 29,
             "message": "Use an `import` instead of an `import type`."
           },
           {
@@ -665,7 +665,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 939,
+        "count": 957,
         "samples": [
           {
             "file": "backend/scripts/rename-mjs.ts",
@@ -674,50 +674,50 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "backend/src/db/migrations/20240423023203_ldap-config-groups.ts",
-            "line": 6,
+            "file": "backend/src/db/migrations/20240424235842_user-search-filter.ts",
+            "line": 5,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "backend/src/db/migrations/20240718170955_add-access-secret-sharing.ts",
-            "line": 7,
+            "file": "backend/src/db/migrations/20240724101056_access-request-groups.ts",
+            "line": 5,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "backend/src/db/migrations/20250205045509_increase-gcp-auth-limit.ts",
-            "line": 22,
+            "file": "backend/src/db/migrations/20250210101840_webhook-to-kms.ts",
+            "line": 132,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "backend/src/db/migrations/20250508160957_pki-subscriber.ts",
-            "line": 36,
+            "file": "backend/src/db/migrations/20250515164622_select-org-products.ts",
+            "line": 30,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "backend/src/db/migrations/20250813020335_access-request-edit-cols.ts",
-            "line": 23,
+            "file": "backend/src/db/migrations/20250824192801_backfill-secret-read-compat-flag.ts",
+            "line": 26,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "backend/src/db/migrations/20251128120000_add-pki-profile-external-configs.ts",
-            "line": 14,
+            "file": "backend/src/db/migrations/20251210113242_add-skip-dns-ownership-verification-to-acme-config.ts",
+            "line": 15,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "backend/src/lib/casl/permission-filter-utils.ts",
-            "line": 195,
+            "file": "backend/src/services/app-connection/checkly/checkly-connection-public-client.ts",
+            "line": 27,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "frontend/src/components/v3/generic/Dropdown/Dropdown.tsx",
-            "line": 9,
+            "line": 149,
             "column": 1,
             "message": "Expected a function expression."
           },
@@ -730,7 +730,7 @@
         ]
       },
       "declaration": {
-        "count": 9266,
+        "count": 9295,
         "samples": [
           {
             "file": "backend/e2e-test/mocks/keystore.ts",
@@ -739,51 +739,51 @@
             "message": "Expected a function declaration."
           },
           {
-            "file": "backend/src/ee/services/pam-resource/ssh/ssh-resource-factory.ts",
-            "line": 256,
-            "column": 9,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "backend/src/server/routes/v1/deprecated-secret-folder-router.ts",
-            "line": 14,
+            "file": "backend/src/ee/services/pam-resource/windows-server/windows-server-resource-factory.ts",
+            "line": 59,
             "column": 14,
             "message": "Expected a function declaration."
           },
           {
-            "file": "backend/src/services/external-migration/external-migration-fns/vault.ts",
-            "line": 183,
-            "column": 9,
+            "file": "backend/src/server/routes/v1/certificate-router.ts",
+            "line": 94,
+            "column": 7,
             "message": "Expected a function declaration."
           },
           {
-            "file": "backend/src/services/project/project-dal.ts",
-            "line": 433,
-            "column": 9,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "frontend/src/components/secret-rotations-v2/forms/SecretRotationV2ConnectionField.tsx",
-            "line": 28,
-            "column": 14,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "frontend/src/hooks/api/projectUserAdditionalPrivilege/queries.tsx",
+            "file": "backend/src/services/external-group-org-role-mapping/external-group-org-role-mapping-service.ts",
             "line": 23,
             "column": 14,
             "message": "Expected a function declaration."
           },
           {
-            "file": "frontend/src/pages/kms/OverviewPage/components/CmekSignModal.tsx",
-            "line": 168,
+            "file": "backend/src/services/project/project-dal.ts",
+            "line": 23,
+            "column": 14,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "frontend/src/components/secret-rotations-v2/ViewSecretRotationV2GeneratedCredentials/ViewSecretRotationV2GeneratedCredentials.tsx",
+            "line": 43,
+            "column": 7,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "frontend/src/hooks/api/projectTemplates/mutations.tsx",
+            "line": 27,
+            "column": 14,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "frontend/src/pages/kms/OverviewPage/components/CmekModal.tsx",
+            "line": 230,
             "column": 14,
             "message": "Expected a function declaration."
           },
           {
             "file": "frontend/src/pages/public/ViewSharedSecretByIDPage/ViewSharedSecretByIDPage.tsx",
-            "line": 55,
-            "column": 7,
+            "line": 35,
+            "column": 14,
             "message": "Expected a function declaration."
           },
           {
@@ -801,7 +801,7 @@
         "samples": [
           {
             "file": "backend/e2e-test/vitest-environment-knex.ts",
-            "line": 27,
+            "line": 28,
             "column": 8,
             "message": "Prefer named exports"
           },
@@ -862,7 +862,7 @@
         ]
       },
       "default": {
-        "count": 2670,
+        "count": 2675,
         "samples": [
           {
             "file": "backend/e2e-test/mocks/keystore.ts",
@@ -871,32 +871,32 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "backend/src/server/routes/v1/account-recovery-router.ts",
+            "file": "backend/src/server/routes/index.ts",
+            "line": 428,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "backend/src/services/identity-kubernetes-auth/identity-kubernetes-auth-fns.ts",
             "line": 7,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "backend/src/services/identity-v2/identity-fns.ts",
-            "line": 3,
+            "file": "frontend/src/components/secret-scanning/forms/SecretScanningDataSourceForm.tsx",
+            "line": 40,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "frontend/src/components/secret-scanning/forms/SecretScanningDataSourceReviewFields/GitHubDataSourceReviewFields.tsx",
-            "line": 9,
-            "column": 1,
+            "file": "frontend/src/layouts/KmsLayout/index.tsx",
+            "line": 1,
+            "column": 10,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "frontend/src/layouts/OrganizationLayout/components/AuditLogBanner/AuditLogBanner.tsx",
-            "line": 5,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "frontend/src/pages/kms/KmipPage/components/DeleteKmipClientModal.tsx",
-            "line": 12,
+            "file": "frontend/src/pages/kms/KmipPage/KmipPage.tsx",
+            "line": 11,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -976,7 +976,7 @@
         ]
       },
       "4-space": {
-        "count": 4937,
+        "count": 4957,
         "samples": [
           {
             "file": "backend/.eslintrc.js",
@@ -985,50 +985,50 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "backend/src/db/schemas/secret-approval-request-secret-tags.ts",
+            "file": "backend/src/db/schemas/secret-approval-request-secret-tags-v2.ts",
             "line": 11,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "backend/src/ee/services/secret-scanning-v2/secret-scanning-v2-enums.ts",
-            "line": 2,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "backend/src/services/app-connection/mysql/mysql-connection-fns.ts",
+            "file": "backend/src/ee/services/secret-scanning-v2/gitlab/gitlab-secret-scanning-constants.ts",
             "line": 6,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "backend/src/services/secret-sync/github/github-sync-fns.ts",
+            "file": "backend/src/services/app-connection/mongodb/mongodb-connection-types.ts",
+            "line": 7,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "backend/src/services/secret-sync/gcp/gcp-sync-schemas.ts",
             "line": 6,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "frontend/src/components/utilities/attemptCliLogin.ts",
-            "line": 16,
+            "file": "frontend/src/components/utilities/SecurityClient.ts",
+            "line": 7,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "frontend/src/hooks/api/secretImports/index.ts",
-            "line": 2,
+            "file": "frontend/src/hooks/api/secretApprovalRequest/mutation.tsx",
+            "line": 7,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "frontend/src/pages/organization/AppConnections/AppConnectionsPage/components/AppConnectionForm/GitHubRadarConnectionForm.tsx",
-            "line": 10,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "frontend/src/pages/secret-manager/IntegrationsListPage/IntegrationsListPage.tsx",
+            "file": "frontend/src/pages/organization/AppConnections/AppConnectionsPage/components/AppConnectionForm/GcpConnectionForm.tsx",
             "line": 9,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "frontend/src/pages/secret-manager/IntegrationsDetailsByIDPage/components/OctopusDeployScopeValues.tsx",
+            "line": 4,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -1041,7 +1041,7 @@
         ]
       },
       "tab": {
-        "count": 4938,
+        "count": 4958,
         "samples": [
           {
             "file": "backend/.eslintrc.js",
@@ -1050,50 +1050,50 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "backend/src/db/schemas/secret-approval-requests-reviewers.ts",
+            "file": "backend/src/db/schemas/secret-approval-request-secret-tags-v2.ts",
             "line": 11,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "backend/src/ee/services/secret-scanning-v2/secret-scanning-v2-enums.ts",
+            "file": "backend/src/ee/services/secret-scanning-v2/gitlab/gitlab-secret-scanning-enums.ts",
             "line": 2,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "backend/src/services/app-connection/mysql/mysql-connection-schemas.ts",
-            "line": 5,
+            "file": "backend/src/services/app-connection/mongodb/mongodb-connection-types.ts",
+            "line": 7,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "backend/src/services/secret-sync/github/github-sync-fns.ts",
+            "file": "backend/src/services/secret-sync/gcp/gcp-sync-schemas.ts",
             "line": 6,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "frontend/src/components/utilities/attemptCliLogin.ts",
-            "line": 16,
+            "file": "frontend/src/components/utilities/SecurityClient.ts",
+            "line": 7,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "frontend/src/hooks/api/secretFolders/types.ts",
+            "file": "frontend/src/hooks/api/secretApprovalRequest/mutation.tsx",
+            "line": 7,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "frontend/src/pages/organization/AppConnections/AppConnectionsPage/components/AppConnectionForm/FlyioConnectionForm.tsx",
+            "line": 6,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "frontend/src/pages/secret-manager/IntegrationsDetailsByIDPage/components/OctopusDeployScopeValues.tsx",
             "line": 4,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "frontend/src/pages/organization/AppConnections/AppConnectionsPage/components/AppConnectionForm/GitHubRadarConnectionForm.tsx",
-            "line": 10,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "frontend/src/pages/secret-manager/IntegrationsDetailsByIDPage/route.tsx",
-            "line": 8,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -1108,7 +1108,7 @@
     },
     "quotes": {
       "double": {
-        "count": 624,
+        "count": 628,
         "samples": [
           {
             "file": "backend/e2e-test/routes/v1/secret-approval-policy.spec.ts",
@@ -1117,32 +1117,32 @@
             "message": "Strings must use doublequote."
           },
           {
-            "file": "backend/src/db/migrations/20260116175537_encrypted-resource-metadata.ts",
-            "line": 18,
-            "column": 11,
+            "file": "backend/src/db/migrations/20260202042111_add-pki-alert-history-composite-index.ts",
+            "line": 13,
+            "column": 42,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "backend/src/ee/services/pki-acme/pki-acme-challenge-dal.ts",
-            "line": 33,
-            "column": 60,
+            "file": "backend/src/ee/services/permission/permission-service.ts",
+            "line": 223,
+            "column": 50,
             "message": "Strings must use doublequote."
           },
           {
             "file": "backend/src/lib/api-docs/constants.ts",
-            "line": 2418,
-            "column": 27,
+            "line": 2411,
+            "column": 16,
             "message": "Strings must use doublequote."
           },
           {
             "file": "backend/src/server/routes/v1/app-connection-routers/cloudflare-connection-router.ts",
-            "line": 56,
+            "line": 27,
             "column": 10,
             "message": "Strings must use doublequote."
           },
           {
             "file": "backend/src/services/app-connection/azure-client-secrets/azure-client-secrets-connection-fns.ts",
-            "line": 239,
+            "line": 198,
             "column": 18,
             "message": "Strings must use doublequote."
           },
@@ -1173,7 +1173,7 @@
         ]
       },
       "single": {
-        "count": 105336,
+        "count": 105736,
         "samples": [
           {
             "file": "backend/.eslintrc.js",
@@ -1182,51 +1182,51 @@
             "message": "Strings must use singlequote."
           },
           {
-            "file": "backend/src/ee/routes/v1/secret-approval-request-router.ts",
-            "line": 233,
-            "column": 13,
+            "file": "backend/src/ee/routes/v1/scim-router.ts",
+            "line": 114,
+            "column": 10,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "backend/src/ee/services/ssh-certificate-template/ssh-certificate-template-dal.ts",
-            "line": 1,
-            "column": 22,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "backend/src/services/app-connection/app-connection-types.ts",
-            "line": 36,
-            "column": 8,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "backend/src/services/identity/identity-org-dal.ts",
-            "line": 122,
+            "file": "backend/src/ee/services/secret-snapshot/snapshot-dal.ts",
+            "line": 824,
             "column": 18,
             "message": "Strings must use singlequote."
           },
           {
+            "file": "backend/src/services/app-connection/app-connection-service.ts",
+            "line": 57,
+            "column": 56,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "backend/src/services/identity-v2/org/org-identity-factory.ts",
+            "line": 17,
+            "column": 21,
+            "message": "Strings must use singlequote."
+          },
+          {
             "file": "backend/src/services/user/user-service.ts",
-            "line": 344,
-            "column": 95,
+            "line": 207,
+            "column": 88,
             "message": "Strings must use singlequote."
           },
           {
             "file": "frontend/src/hooks/api/auditLogs/enums.tsx",
-            "line": 120,
-            "column": 24,
+            "line": 49,
+            "column": 33,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "frontend/src/pages/organization/AccessManagementPage/components/OrgMembersTab/components/OrgMembersSection/OrgMembersTable.tsx",
-            "line": 131,
-            "column": 28,
+            "file": "frontend/src/pages/organization/AccessManagementPage/components/OrgMembersTab/components/OrgMembersSection/OrgMembersSection.tsx",
+            "line": 281,
+            "column": 51,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "frontend/src/pages/secret-manager/IntegrationsDetailsByIDPage/components/IntegrationConnectionSection.tsx",
-            "line": 87,
-            "column": 14,
+            "file": "frontend/src/pages/secret-manager/IntegrationsDetailsByIDPage/components/IntegrationDetailsSection.tsx",
+            "line": 38,
+            "column": 43,
             "message": "Strings must use singlequote."
           },
           {
@@ -1269,7 +1269,7 @@
         ]
       },
       "never": {
-        "count": 138367,
+        "count": 139009,
         "samples": [
           {
             "file": "backend/.eslintrc.js",
@@ -1279,50 +1279,50 @@
           },
           {
             "file": "backend/src/ee/services/ai-mcp-endpoint/ai-mcp-endpoint-service.ts",
-            "line": 537,
-            "column": 6,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "backend/src/ee/services/secret-scanning-v2/secret-scanning-v2-queue.ts",
-            "line": 430,
+            "line": 300,
             "column": 11,
             "message": "Extra semicolon."
           },
           {
-            "file": "backend/src/services/app-connection/github/github-connection-fns.ts",
-            "line": 665,
-            "column": 9,
+            "file": "backend/src/ee/services/secret-scanning-v2/secret-scanning-v2-fns.ts",
+            "line": 205,
+            "column": 63,
             "message": "Extra semicolon."
           },
           {
-            "file": "backend/src/services/integration-auth/integration-auth-service.ts",
-            "line": 337,
-            "column": 65,
+            "file": "backend/src/services/app-connection/github-radar/github-radar-connection-service.ts",
+            "line": 19,
+            "column": 4,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "backend/src/services/integration-auth/integration-app-list.ts",
+            "line": 1156,
+            "column": 68,
             "message": "Extra semicolon."
           },
           {
             "file": "backend/src/services/secret-v2-bridge/secret-v2-bridge-service.ts",
-            "line": 1161,
-            "column": 61,
+            "line": 579,
+            "column": 59,
             "message": "Extra semicolon."
           },
           {
-            "file": "frontend/src/hooks/api/certificates/mutations.tsx",
-            "line": 194,
-            "column": 64,
+            "file": "frontend/src/hooks/api/certificates/constants.tsx",
+            "line": 40,
+            "column": 2,
             "message": "Extra semicolon."
           },
           {
             "file": "frontend/src/pages/organization/AccessManagementPage/components/OrgIdentityTab/components/IdentitySection/IdentityKubernetesAuthForm.tsx",
-            "line": 119,
-            "column": 37,
+            "line": 26,
+            "column": 82,
             "message": "Extra semicolon."
           },
           {
-            "file": "frontend/src/pages/secret-manager/CommitsPage/route.tsx",
-            "line": 73,
-            "column": 3,
+            "file": "frontend/src/pages/secret-manager/IPAllowlistPage/IPAllowlistPage.tsx",
+            "line": 35,
+            "column": 2,
             "message": "Extra semicolon."
           },
           {

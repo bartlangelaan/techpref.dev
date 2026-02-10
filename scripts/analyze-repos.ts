@@ -292,153 +292,146 @@ async function analyzeRepository(
   };
 }
 
-async function main() {
-  console.log("=== TechPref Repository Analyzer ===\n");
+console.log("=== TechPref Repository Analyzer ===\n");
 
-  // Get analyzed version (commit is fetched per-repository)
-  const currentVersion = getAnalyzedVersion();
+// Get analyzed version (commit is fetched per-repository)
+const currentVersion = getAnalyzedVersion();
 
-  console.log(`Current rule version: ${currentVersion}\n`);
+console.log(`Current rule version: ${currentVersion}\n`);
 
-  // Load data
-  const data = loadData();
-  if (!data) {
-    console.error(
-      "No repositories found. Run 'pnpm fetch-repos' first to fetch the repository list.",
-    );
-    process.exit(1);
-  }
-
-  console.log(`Total repositories: ${data.repositories.length}`);
-
-  let repoAnalyzeInfo = await Promise.all(
-    data.repositories.map(async (repo) => {
-      const analysis = loadAnalysis(repo.fullName);
-
-      const remoteInfo = await getRemoteRepoInfo(repo.cloneUrl);
-
-      let analyseReason:
-        | "no-analysis"
-        | "version-mismatch"
-        | "commit-mismatch"
-        | false = false;
-
-      if (!analysis) {
-        analyseReason = "no-analysis";
-      } else if (analysis.analyzedVersion !== currentVersion) {
-        analyseReason = "version-mismatch";
-      } else if (remoteInfo.latestCommit !== analysis.analyzedCommit) {
-        analyseReason = "commit-mismatch";
-      }
-
-      const failingInfo = loadFailingInfo(repo.fullName);
-      const failing = !failingInfo
-        ? false
-        : failingInfo.failedCommit === remoteInfo.latestCommit
-          ? ("current-commit" as const)
-          : ("older-commit" as const);
-
-      return {
-        repo,
-        analyseReason,
-        remoteInfo,
-        failing,
-        commit: remoteInfo.latestCommit,
-        fileCount: 0, // Placeholder, will be filled later
-      };
-    }),
+// Load data
+const data = loadData();
+if (!data) {
+  console.error(
+    "No repositories found. Run 'pnpm fetch-repos' first to fetch the repository list.",
   );
-
-  let prevCount = data.repositories.length;
-  repoAnalyzeInfo = repoAnalyzeInfo.filter((i) => i.analyseReason);
-  console.log(
-    `Completely up-to-date analysis: ${prevCount - repoAnalyzeInfo.length}`,
-  );
-
-  if (repoAnalyzeInfo.length === 0) {
-    console.log("\nNo repositories to analyze.");
-    return;
-  }
-
-  console.log(`To analyze: ${repoAnalyzeInfo.length}`);
-  console.log(
-    `  - No analysis: ${repoAnalyzeInfo.filter((i) => i.analyseReason === "no-analysis").length}`,
-  );
-  console.log(
-    `  - Version mismatch: ${repoAnalyzeInfo.filter((i) => i.analyseReason === "version-mismatch").length}`,
-  );
-  console.log(
-    `  - Commit mismatch: ${repoAnalyzeInfo.filter((i) => i.analyseReason === "commit-mismatch").length}`,
-  );
-
-  console.log("Counting source files...");
-
-  await Promise.all(
-    repoAnalyzeInfo.map(async (info) => {
-      const repoPath = join(REPOS_DIR, info.repo.fullName);
-      const files = await findSourceFiles(repoPath);
-      info.fileCount = files.length;
-    }),
-  );
-
-  console.log("Done counting source files, now sorting...");
-
-  repoAnalyzeInfo = sortBy(repoAnalyzeInfo, [
-    // Run failing repos last, especially if current commit matches failed commit
-    (i) => (!i.failing ? 0 : i.failing === "older-commit" ? 1 : 2),
-    (i) =>
-      i.analyseReason === "no-analysis"
-        ? 0
-        : i.analyseReason === "version-mismatch"
-          ? 1
-          : 2,
-    (i) => i.fileCount,
-    () => Math.random(), // Add some randomness to avoid always analyzing in the same order
-  ]);
-
-  console.log(
-    `Sorted. Smallest: ${repoAnalyzeInfo[0]?.fileCount ?? 0} files, Largest: ${last(repoAnalyzeInfo)?.fileCount ?? 0} files.\n`,
-  );
-
-  let completed = 0;
-  for (const { repo, fileCount, commit } of repoAnalyzeInfo) {
-    console.log(
-      `[${completed + 1}/${repoAnalyzeInfo.length}] Analyzing ${repo.fullName}${fileCount > 0 ? ` (${fileCount} files)` : ""}...`,
-    );
-
-    try {
-      console.log("  Checking out repository...");
-      await checkoutRepository(repo);
-      const result = await analyzeRepository(repo, currentVersion);
-
-      // Save analysis to separate file
-      saveAnalysis(repo.fullName, result);
-      console.log(
-        `  Saved analysis to data/analysis/${repo.fullName.replace("/", "-")}.json`,
-      );
-
-      // Remove failing info if analysis succeeds
-      removeFailingInfo(repo.fullName);
-    } catch (error) {
-      console.error(`  Error analyzing ${repo.fullName}:`, error);
-
-      // Save failing info so we deprioritize this repo in future runs
-      saveFailingInfo(repo.fullName, {
-        failedCommit: commit,
-      });
-    }
-
-    completed++;
-  }
-
-  const totalAnalyzed = data.repositories.filter(
-    (r) => loadAnalysis(r.fullName) !== null,
-  ).length;
-  console.log(`\n=== Analysis Complete ===`);
-  console.log(`Total repositories analyzed: ${totalAnalyzed}`);
+  process.exit(1);
 }
 
-main().catch((error) => {
-  console.error("Fatal error:", error);
-  process.exit(1);
-});
+console.log(`Total repositories: ${data.repositories.length}`);
+
+let repoAnalyzeInfo = await Promise.all(
+  data.repositories.map(async (repo) => {
+    const analysis = loadAnalysis(repo.fullName);
+
+    const remoteInfo = await getRemoteRepoInfo(repo.cloneUrl);
+
+    let analyseReason:
+      | "no-analysis"
+      | "version-mismatch"
+      | "commit-mismatch"
+      | false = false;
+
+    if (!analysis) {
+      analyseReason = "no-analysis";
+    } else if (analysis.analyzedVersion !== currentVersion) {
+      analyseReason = "version-mismatch";
+    } else if (remoteInfo.latestCommit !== analysis.analyzedCommit) {
+      analyseReason = "commit-mismatch";
+    }
+
+    const failingInfo = loadFailingInfo(repo.fullName);
+    const failing = !failingInfo
+      ? false
+      : failingInfo.failedCommit === remoteInfo.latestCommit
+        ? ("current-commit" as const)
+        : ("older-commit" as const);
+
+    return {
+      repo,
+      analyseReason,
+      remoteInfo,
+      failing,
+      commit: remoteInfo.latestCommit,
+      fileCount: 0, // Placeholder, will be filled later
+    };
+  }),
+);
+
+let prevCount = data.repositories.length;
+repoAnalyzeInfo = repoAnalyzeInfo.filter((i) => i.analyseReason);
+console.log(
+  `Completely up-to-date analysis: ${prevCount - repoAnalyzeInfo.length}`,
+);
+
+if (repoAnalyzeInfo.length === 0) {
+  console.log("\nNo repositories to analyze.");
+  process.exit(0);
+}
+
+console.log(`To analyze: ${repoAnalyzeInfo.length}`);
+console.log(
+  `  - No analysis: ${repoAnalyzeInfo.filter((i) => i.analyseReason === "no-analysis").length}`,
+);
+console.log(
+  `  - Version mismatch: ${repoAnalyzeInfo.filter((i) => i.analyseReason === "version-mismatch").length}`,
+);
+console.log(
+  `  - Commit mismatch: ${repoAnalyzeInfo.filter((i) => i.analyseReason === "commit-mismatch").length}`,
+);
+
+console.log("Counting source files...");
+
+await Promise.all(
+  repoAnalyzeInfo.map(async (info) => {
+    const repoPath = join(REPOS_DIR, info.repo.fullName);
+    const files = await findSourceFiles(repoPath);
+    info.fileCount = files.length;
+  }),
+);
+
+console.log("Done counting source files, now sorting...");
+
+repoAnalyzeInfo = sortBy(repoAnalyzeInfo, [
+  // Run failing repos last, especially if current commit matches failed commit
+  (i) => (!i.failing ? 0 : i.failing === "older-commit" ? 1 : 2),
+  (i) =>
+    i.analyseReason === "no-analysis"
+      ? 0
+      : i.analyseReason === "version-mismatch"
+        ? 1
+        : 2,
+  (i) => i.fileCount,
+  () => Math.random(), // Add some randomness to avoid always analyzing in the same order
+]);
+
+console.log(
+  `Sorted. Smallest: ${repoAnalyzeInfo[0]?.fileCount ?? 0} files, Largest: ${last(repoAnalyzeInfo)?.fileCount ?? 0} files.\n`,
+);
+
+let completed = 0;
+for (const { repo, fileCount, commit } of repoAnalyzeInfo) {
+  console.log(
+    `[${completed + 1}/${repoAnalyzeInfo.length}] Analyzing ${repo.fullName}${fileCount > 0 ? ` (${fileCount} files)` : ""}...`,
+  );
+
+  try {
+    console.log("  Checking out repository...");
+    await checkoutRepository(repo);
+    const result = await analyzeRepository(repo, currentVersion);
+
+    // Save analysis to separate file
+    saveAnalysis(repo.fullName, result);
+    console.log(
+      `  Saved analysis to data/analysis/${repo.fullName.replace("/", "-")}.json`,
+    );
+
+    // Remove failing info if analysis succeeds
+    removeFailingInfo(repo.fullName);
+  } catch (error) {
+    console.error(`  Error analyzing ${repo.fullName}:`, error);
+
+    // Save failing info so we deprioritize this repo in future runs
+    saveFailingInfo(repo.fullName, {
+      failedCommit: commit,
+    });
+  }
+
+  completed++;
+}
+
+const totalAnalyzed = data.repositories.filter(
+  (r) => loadAnalysis(r.fullName) !== null,
+).length;
+console.log(`\n=== Analysis Complete ===`);
+console.log(`Total repositories analyzed: ${totalAnalyzed}`);

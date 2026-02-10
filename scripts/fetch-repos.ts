@@ -58,35 +58,28 @@ async function fetchTopTypeScriptRepos(
   return deduped.sort((a, b) => b.stars - a.stars);
 }
 
-async function main() {
-  console.log("=== TechPref Repository Fetcher ===\n");
+console.log("=== TechPref Repository Fetcher ===\n");
 
-  if (!process.env.GITHUB_TOKEN) {
-    console.warn(
-      "Warning: GITHUB_TOKEN not set. API rate limits will be very restrictive.\n" +
-        "Set GITHUB_TOKEN environment variable for better performance.\n",
-    );
-  }
-
-  // Fetch fresh data from GitHub
-  const repositories = await fetchTopTypeScriptRepos(REPO_COUNT);
-
-  console.log(`Total repositories: ${repositories.length}`);
-
-  // Save unified data
-  const data: UnifiedData = {
-    fetchedAt: new Date().toISOString(),
-    repositories: repositories,
-  };
-  saveData(data);
-
-  console.log(`\nTop 5 repositories by stars:`);
-  for (const repo of repositories.slice(0, 5)) {
-    console.log(`  ${repo.fullName} (${repo.stars.toLocaleString()} stars)`);
-  }
+if (!process.env.GITHUB_TOKEN) {
+  console.warn(
+    "Warning: GITHUB_TOKEN not set. API rate limits will be very restrictive.\n" +
+      "Set GITHUB_TOKEN environment variable for better performance.\n",
+  );
 }
 
-main().catch((error) => {
-  console.error("Fatal error:", error);
-  process.exit(1);
-});
+// Fetch fresh data from GitHub
+const repositories = await fetchTopTypeScriptRepos(REPO_COUNT);
+
+console.log(`Total repositories: ${repositories.length}`);
+
+// Save unified data
+const data: UnifiedData = {
+  fetchedAt: new Date().toISOString(),
+  repositories: repositories,
+};
+saveData(data);
+
+console.log(`\nTop 5 repositories by stars:`);
+for (const repo of repositories.slice(0, 5)) {
+  console.log(`  ${repo.fullName} (${repo.stars.toLocaleString()} stars)`);
+}

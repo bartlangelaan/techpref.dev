@@ -67,103 +67,96 @@ function parseOldestAnalyzedArg(): number | null {
   return value;
 }
 
-async function main() {
-  console.log("=== TechPref Repository Cloner ===\n");
+console.log("=== TechPref Repository Cloner ===\n");
 
-  const oldestAnalyzedLimit = parseOldestAnalyzedArg();
+const oldestAnalyzedLimit = parseOldestAnalyzedArg();
 
-  // Load data
-  const loadedData = loadData();
-  if (!loadedData) {
-    console.error(
-      "No repositories found. Run 'pnpm fetch-repos' first to fetch the repository list.",
-    );
-    process.exit(1);
-  }
-  const data = loadedData;
-
-  // Ensure repos directory exists
-  ensureDirSync(REPOS_DIR);
-
-  let repositoriesToCloneOrUpdate: RepositoryData[] = [];
-
-  if (oldestAnalyzedLimit !== null) {
-    // Load analysis data for each repo
-    const reposWithAnalysis = data.repositories.map((repo) => ({
-      repo,
-      analysis: loadAnalysis(repo.fullName),
-    }));
-
-    // Sort by analyzedCommitDate: null (not analyzed) first, then oldest
-    reposWithAnalysis.sort((a, b) => {
-      const dateA = a.analysis?.analyzedCommitDate ?? null;
-      const dateB = b.analysis?.analyzedCommitDate ?? null;
-      // Repos without analysis come first
-      if (dateA === null && dateB === null) return 0;
-      if (dateA === null) return -1;
-      if (dateB === null) return 1;
-      // Then sort by oldest analyzedCommitDate
-      return new Date(dateA).getTime() - new Date(dateB).getTime();
-    });
-
-    // Check repos in order until we find N that have new commits
-    console.log(`Using --oldestAnalyzed=${oldestAnalyzedLimit}`);
-    console.log(`Checking repos for new commits (oldest analyzed first)...\n`);
-
-    let checkedCount = 0;
-    let upToDateCount = 0;
-
-    for (const { repo, analysis } of reposWithAnalysis) {
-      if (repositoriesToCloneOrUpdate.length >= oldestAnalyzedLimit) {
-        break;
-      }
-      checkedCount++;
-      if (await hasNewCommits(repo.fullName, analysis)) {
-        repositoriesToCloneOrUpdate.push(repo);
-        console.log(
-          `  [${repositoriesToCloneOrUpdate.length}/${oldestAnalyzedLimit}] ${repo.fullName} - has new commits`,
-        );
-      } else {
-        upToDateCount++;
-        console.log(`  [skip] ${repo.fullName} - already up-to-date`);
-      }
-    }
-
-    console.log(`\nChecked ${checkedCount} repos`);
-    console.log(`Repos already up-to-date: ${upToDateCount}`);
-    console.log(
-      `Selected ${repositoriesToCloneOrUpdate.length} repos with new commits`,
-    );
-  } else {
-    repositoriesToCloneOrUpdate = data.repositories;
-
-    console.log(`Total repositories: ${data.repositories.length}`);
-  }
-
-  if (repositoriesToCloneOrUpdate.length === 0) {
-    console.log("All repositories are already cloned.");
-    return;
-  }
-
-  const queue = new PQueue({ concurrency: CLONE_CONCURRENCY });
-
-  let count = 0;
-  await Promise.all(
-    repositoriesToCloneOrUpdate.map((repo) =>
-      queue.add(async () => {
-        await checkoutRepository(repo);
-        count += 1;
-        console.log(
-          `[${count}/${repositoriesToCloneOrUpdate.length}] Done: ${repo.fullName}`,
-        );
-      }),
-    ),
+// Load data
+const loadedData = loadData();
+if (!loadedData) {
+  console.error(
+    "No repositories found. Run 'pnpm fetch-repos' first to fetch the repository list.",
   );
+  process.exit(1);
+}
+const data = loadedData;
 
-  console.log(`Done.`);
+// Ensure repos directory exists
+ensureDirSync(REPOS_DIR);
+
+let repositoriesToCloneOrUpdate: RepositoryData[] = [];
+
+if (oldestAnalyzedLimit !== null) {
+  // Load analysis data for each repo
+  const reposWithAnalysis = data.repositories.map((repo) => ({
+    repo,
+    analysis: loadAnalysis(repo.fullName),
+  }));
+
+  // Sort by analyzedCommitDate: null (not analyzed) first, then oldest
+  reposWithAnalysis.sort((a, b) => {
+    const dateA = a.analysis?.analyzedCommitDate ?? null;
+    const dateB = b.analysis?.analyzedCommitDate ?? null;
+    // Repos without analysis come first
+    if (dateA === null && dateB === null) return 0;
+    if (dateA === null) return -1;
+    if (dateB === null) return 1;
+    // Then sort by oldest analyzedCommitDate
+    return new Date(dateA).getTime() - new Date(dateB).getTime();
+  });
+
+  // Check repos in order until we find N that have new commits
+  console.log(`Using --oldestAnalyzed=${oldestAnalyzedLimit}`);
+  console.log(`Checking repos for new commits (oldest analyzed first)...\n`);
+
+  let checkedCount = 0;
+  let upToDateCount = 0;
+
+  for (const { repo, analysis } of reposWithAnalysis) {
+    if (repositoriesToCloneOrUpdate.length >= oldestAnalyzedLimit) {
+      break;
+    }
+    checkedCount++;
+    if (await hasNewCommits(repo.fullName, analysis)) {
+      repositoriesToCloneOrUpdate.push(repo);
+      console.log(
+        `  [${repositoriesToCloneOrUpdate.length}/${oldestAnalyzedLimit}] ${repo.fullName} - has new commits`,
+      );
+    } else {
+      upToDateCount++;
+      console.log(`  [skip] ${repo.fullName} - already up-to-date`);
+    }
+  }
+
+  console.log(`\nChecked ${checkedCount} repos`);
+  console.log(`Repos already up-to-date: ${upToDateCount}`);
+  console.log(
+    `Selected ${repositoriesToCloneOrUpdate.length} repos with new commits`,
+  );
+} else {
+  repositoriesToCloneOrUpdate = data.repositories;
+
+  console.log(`Total repositories: ${data.repositories.length}`);
 }
 
-main().catch((error) => {
-  console.error("Fatal error:", error);
-  process.exit(1);
-});
+if (repositoriesToCloneOrUpdate.length === 0) {
+  console.log("All repositories are already cloned.");
+  process.exit(0);
+}
+
+const queue = new PQueue({ concurrency: CLONE_CONCURRENCY });
+
+let count = 0;
+await Promise.all(
+  repositoriesToCloneOrUpdate.map((repo) =>
+    queue.add(async () => {
+      await checkoutRepository(repo);
+      count += 1;
+      console.log(
+        `[${count}/${repositoriesToCloneOrUpdate.length}] Done: ${repo.fullName}`,
+      );
+    }),
+  ),
+);
+
+console.log(`Done.`);

@@ -1,5 +1,5 @@
 {
-  "analyzedVersion": "8d56277528fc",
+  "analyzedVersion": "e88a060848ee",
   "analyzedCommit": "3258673e790145ba86637114a35388165a651ff3",
   "analyzedCommitDate": "2026-01-31T21:48:51.000Z",
   "checks": {
@@ -7,12 +7,6 @@
       "array": {
         "count": 4,
         "samples": [
-          {
-            "file": "src/utils/download.ts",
-            "line": 38,
-            "column": 10,
-            "message": "Array type using 'Array<DownloadFileStream>' is forbidden. Use 'DownloadFileStream[]' instead."
-          },
           {
             "file": "src/hooks/useUploaderConnections.ts",
             "line": 43,
@@ -30,6 +24,12 @@
             "line": 52,
             "column": 28,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
+          },
+          {
+            "file": "src/utils/download.ts",
+            "line": 38,
+            "column": 10,
+            "message": "Array type using 'Array<DownloadFileStream>' is forbidden. Use 'DownloadFileStream[]' instead."
           }
         ]
       },
@@ -37,22 +37,10 @@
         "count": 41,
         "samples": [
           {
-            "file": "src/components/Uploader.tsx",
-            "line": 23,
-            "column": 10,
-            "message": "Array type using 'UploadedFile[]' is forbidden. Use 'Array<UploadedFile>' instead."
-          },
-          {
-            "file": "src/slugs.ts",
-            "line": 15,
-            "column": 12,
+            "file": "src/app/download/[...slug]/page.tsx",
+            "line": 21,
+            "column": 27,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
-          },
-          {
-            "file": "src/components/AddFilesButton.tsx",
-            "line": 18,
-            "column": 45,
-            "message": "Array type using 'UploadedFile[]' is forbidden. Use 'Array<UploadedFile>' instead."
           },
           {
             "file": "src/app/page.tsx",
@@ -61,34 +49,46 @@
             "message": "Array type using 'UploadedFile[]' is forbidden. Use 'Array<UploadedFile>' instead."
           },
           {
-            "file": "tests/e2e/file-transfer.test.ts",
-            "line": 24,
+            "file": "src/components/AddFilesButton.tsx",
+            "line": 7,
             "column": 18,
-            "message": "Array type using 'TestCase[]' is forbidden. Use 'Array<TestCase>' instead."
+            "message": "Array type using 'UploadedFile[]' is forbidden. Use 'Array<UploadedFile>' instead."
+          },
+          {
+            "file": "src/components/Downloader.tsx",
+            "line": 146,
+            "column": 14,
+            "message": "Array type using 'FileInfo[]' is forbidden. Use 'Array<FileInfo>' instead."
           },
           {
             "file": "src/fs.ts",
-            "line": 18,
-            "column": 56,
+            "line": 11,
+            "column": 53,
+            "message": "Array type using 'any[]' is forbidden. Use 'Array<any>' instead."
+          },
+          {
+            "file": "src/fs.ts",
+            "line": 42,
+            "column": 12,
             "message": "Array type using 'File[]' is forbidden. Use 'Array<File>' instead."
           },
           {
             "file": "src/fs.ts",
-            "line": 48,
-            "column": 24,
-            "message": "Array type using 'File[]' is forbidden. Use 'Array<File>' instead."
+            "line": 49,
+            "column": 16,
+            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
+          },
+          {
+            "file": "src/slugs.ts",
+            "line": 15,
+            "column": 12,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
             "file": "tests/e2e/helpers.ts",
             "line": 203,
             "column": 19,
             "message": "Array type using 'ChunkProgressLog[]' is forbidden. Use 'Array<ChunkProgressLog>' instead."
-          },
-          {
-            "file": "src/components/Downloader.tsx",
-            "line": 119,
-            "column": 14,
-            "message": "Array type using 'FileInfo[]' is forbidden. Use 'Array<FileInfo>' instead."
           },
           {
             "file": "tests/unit/Uploader.test.tsx",
@@ -121,15 +121,15 @@
         "count": 2,
         "samples": [
           {
-            "file": "src/hooks/useRotatingSpinner.ts",
-            "line": 6,
-            "column": 26,
-            "message": "The generic type arguments should be specified as part of the type annotation."
-          },
-          {
             "file": "src/hooks/useDownloader.ts",
             "line": 177,
             "column": 40,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "src/hooks/useRotatingSpinner.ts",
+            "line": 6,
+            "column": 26,
             "message": "The generic type arguments should be specified as part of the type annotation."
           }
         ]
@@ -175,9 +175,9 @@
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "src/types.ts",
-            "line": 16,
-            "column": 8,
+            "file": "src/components/UploadFileList.tsx",
+            "line": 4,
+            "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
@@ -187,14 +187,14 @@
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "src/utils/download.ts",
-            "line": 13,
-            "column": 1,
+            "file": "src/types.ts",
+            "line": 16,
+            "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "src/components/UploadFileList.tsx",
-            "line": 4,
+            "file": "src/utils/download.ts",
+            "line": 13,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           }
@@ -253,25 +253,49 @@
         "count": 48,
         "samples": [
           {
-            "file": "src/components/CancelButton.tsx",
+            "file": "src/app/api/destroy/route.ts",
             "line": 1,
             "column": 1,
-            "message": "Imports JSX are only used as type."
+            "message": "Imports NextRequest are only used as type."
           },
           {
-            "file": "src/components/DropZone.tsx",
-            "line": 1,
+            "file": "src/app/page.tsx",
+            "line": 3,
             "column": 1,
             "message": "Imports JSX are only used as type."
           },
           {
             "file": "src/components/AddFilesButton.tsx",
+            "line": 2,
+            "column": 1,
+            "message": "All imports in the declaration are only used as types. Use `import type`."
+          },
+          {
+            "file": "src/components/Downloader.tsx",
+            "line": 3,
+            "column": 1,
+            "message": "Imports JSX are only used as type."
+          },
+          {
+            "file": "src/components/Loading.tsx",
             "line": 1,
             "column": 1,
             "message": "Imports JSX are only used as type."
           },
           {
-            "file": "src/app/download/[...slug]/page.tsx",
+            "file": "src/components/ReturnHome.tsx",
+            "line": 2,
+            "column": 1,
+            "message": "All imports in the declaration are only used as types. Use `import type`."
+          },
+          {
+            "file": "src/components/TypeBadge.tsx",
+            "line": 1,
+            "column": 1,
+            "message": "Imports JSX are only used as type."
+          },
+          {
+            "file": "src/components/Wordmark.tsx",
             "line": 1,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
@@ -281,30 +305,6 @@
             "line": 2,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
-          {
-            "file": "src/app/page.tsx",
-            "line": 10,
-            "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
-          {
-            "file": "src/app/reported/page.tsx",
-            "line": 1,
-            "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
-          {
-            "file": "src/hooks/useDownloader.ts",
-            "line": 3,
-            "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
-          {
-            "file": "src/components/InputLabel.tsx",
-            "line": 1,
-            "column": 1,
-            "message": "Imports JSX are only used as type."
           },
           {
             "file": "tests/e2e/helpers.ts",
@@ -331,20 +331,20 @@
         "count": 72,
         "samples": [
           {
-            "file": "src/app/api/destroy/route.ts",
-            "line": 4,
-            "column": 8,
+            "file": "public/sw.js",
+            "line": 55,
+            "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/components/Downloader.tsx",
-            "line": 88,
-            "column": 8,
+            "file": "src/app/page.tsx",
+            "line": 57,
+            "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/redisClient.ts",
-            "line": 7,
+            "file": "src/channel.ts",
+            "line": 289,
             "column": 8,
             "message": "Expected a function expression."
           },
@@ -355,39 +355,39 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "src/components/ModeToggle.tsx",
-            "line": 43,
-            "column": 8,
+            "file": "src/components/TypeBadge.tsx",
+            "line": 3,
+            "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "src/hooks/useRotatingSpinner.ts",
-            "line": 25,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/channel.ts",
-            "line": 69,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "tests/e2e/helpers.ts",
-            "line": 142,
+            "line": 17,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/zip-stream.ts",
-            "line": 74,
-            "column": 3,
+            "file": "src/hooks/useUploaderConnections.ts",
+            "line": 39,
+            "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "src/utils/download.ts",
             "line": 37,
             "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "tests/e2e/helpers.ts",
+            "line": 69,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "tests/unit/DropZone.test.tsx",
+            "line": 7,
+            "column": 1,
             "message": "Expected a function expression."
           }
         ]
@@ -396,21 +396,9 @@
         "count": 34,
         "samples": [
           {
-            "file": "src/components/ConnectionListItem.tsx",
+            "file": "src/app/download/[...slug]/page.tsx",
             "line": 10,
-            "column": 9,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "src/slugs.ts",
-            "line": 60,
-            "column": 14,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "src/hooks/useUploaderChannel.ts",
-            "line": 113,
-            "column": 11,
+            "column": 7,
             "message": "Expected a function declaration."
           },
           {
@@ -421,20 +409,38 @@
           },
           {
             "file": "src/fs.ts",
-            "line": 71,
+            "line": 40,
             "column": 14,
             "message": "Expected a function declaration."
           },
           {
-            "file": "src/zip-stream.ts",
-            "line": 53,
+            "file": "src/hooks/useDownloader.ts",
+            "line": 19,
             "column": 7,
             "message": "Expected a function declaration."
           },
           {
+            "file": "src/hooks/useDownloader.ts",
+            "line": 110,
+            "column": 11,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "src/hooks/useRotatingSpinner.ts",
+            "line": 33,
+            "column": 11,
+            "message": "Expected a function declaration."
+          },
+          {
             "file": "src/hooks/useUploaderConnections.ts",
-            "line": 239,
-            "column": 21,
+            "line": 88,
+            "column": 13,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "src/slugs.ts",
+            "line": 27,
+            "column": 11,
             "message": "Expected a function declaration."
           },
           {
@@ -444,15 +450,9 @@
             "message": "Expected a function declaration."
           },
           {
-            "file": "src/hooks/useDownloader.ts",
-            "line": 64,
-            "column": 11,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "src/hooks/useDownloader.ts",
-            "line": 190,
-            "column": 11,
+            "file": "tests/unit/WebRTCProvider.test.tsx",
+            "line": 13,
+            "column": 7,
             "message": "Expected a function declaration."
           }
         ]
@@ -463,14 +463,14 @@
         "count": 36,
         "samples": [
           {
-            "file": "src/components/ReportTermsViolationButton.tsx",
-            "line": 9,
+            "file": "eslint.config.mjs",
+            "line": 6,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "src/components/ReturnHome.tsx",
-            "line": 4,
+            "file": "src/app/not-found.tsx",
+            "line": 12,
             "column": 8,
             "message": "Prefer named exports"
           },
@@ -481,7 +481,31 @@
             "message": "Prefer named exports"
           },
           {
-            "file": "src/components/StartButton.tsx",
+            "file": "src/components/Footer.tsx",
+            "line": 70,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "src/components/ProgressBar.tsx",
+            "line": 3,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "src/components/ReturnHome.tsx",
+            "line": 4,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "src/components/SubtitleText.tsx",
+            "line": 3,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "src/components/UnlockButton.tsx",
             "line": 3,
             "column": 8,
             "message": "Prefer named exports"
@@ -493,32 +517,8 @@
             "message": "Prefer named exports"
           },
           {
-            "file": "src/components/TypeBadge.tsx",
-            "line": 15,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "src/components/TitleText.tsx",
-            "line": 3,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "src/components/Uploader.tsx",
-            "line": 18,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "src/app/page.tsx",
-            "line": 118,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "src/app/not-found.tsx",
-            "line": 12,
+            "file": "vitest.config.ts",
+            "line": 4,
             "column": 8,
             "message": "Prefer named exports"
           }
@@ -528,44 +528,8 @@
         "count": 13,
         "samples": [
           {
-            "file": "src/components/ConnectionListItem.tsx",
-            "line": 5,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "src/components/CopyableInput.tsx",
-            "line": 5,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "src/hooks/useUploaderChannel.ts",
-            "line": 13,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "src/utils/pluralize.ts",
-            "line": 1,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "src/components/ModeToggle.tsx",
-            "line": 43,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "src/zip-stream.ts",
-            "line": 63,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "src/coturn.ts",
-            "line": 13,
+            "file": "src/app/api/create/route.ts",
+            "line": 4,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -582,8 +546,44 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/app/api/create/route.ts",
-            "line": 4,
+            "file": "src/components/ConnectionListItem.tsx",
+            "line": 5,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "src/components/CopyableInput.tsx",
+            "line": 5,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "src/components/ModeToggle.tsx",
+            "line": 43,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "src/coturn.ts",
+            "line": 13,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "src/hooks/useDownloader.ts",
+            "line": 26,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "src/utils/pluralize.ts",
+            "line": 1,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "src/zip-stream.ts",
+            "line": 63,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           }
@@ -592,161 +592,136 @@
     },
     "indent": {
       "2-space": {
-        "count": 4,
-        "samples": [
-          {
-            "file": "src/components/ConnectionListItem.tsx",
-            "line": 56,
-            "column": 1,
-            "message": "Expected indentation of 12 spaces but found 14."
-          },
-          {
-            "file": "src/components/ConnectionListItem.tsx",
-            "line": 58,
-            "column": 1,
-            "message": "Expected indentation of 12 spaces but found 14."
-          },
-          {
-            "file": "src/components/ConnectionListItem.tsx",
-            "line": 59,
-            "column": 1,
-            "message": "Expected indentation of 10 spaces but found 12."
-          },
-          {
-            "file": "tests/unit/Spinner.test.tsx",
-            "line": 13,
-            "column": 1,
-            "message": "Expected indentation of 4 spaces but found 0."
-          }
-        ]
+        "count": 0,
+        "samples": []
       },
       "4-space": {
-        "count": 5408,
+        "count": 98,
         "samples": [
           {
-            "file": "src/components/ErrorMessage.tsx",
+            "file": ".prettierrc.js",
             "line": 4,
             "column": 1,
-            "message": "Expected indentation of 4 spaces but found 2."
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/channel.ts",
-            "line": 223,
+            "file": "src/app/download/[...slug]/page.tsx",
+            "line": 11,
             "column": 1,
-            "message": "Expected indentation of 12 spaces but found 6."
-          },
-          {
-            "file": "src/toppings.ts",
-            "line": 28,
-            "column": 1,
-            "message": "Expected indentation of 4 spaces but found 2."
-          },
-          {
-            "file": "src/hooks/useUploaderConnections.ts",
-            "line": 292,
-            "column": 1,
-            "message": "Expected indentation of 32 spaces but found 16."
-          },
-          {
-            "file": "src/components/Spinner.tsx",
-            "line": 489,
-            "column": 1,
-            "message": "Expected indentation of 16 spaces but found 8."
-          },
-          {
-            "file": "src/components/Spinner.tsx",
-            "line": 1090,
-            "column": 1,
-            "message": "Expected indentation of 16 spaces but found 8."
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
             "file": "src/components/Downloader.tsx",
-            "line": 51,
-            "column": 14,
-            "message": "Expected indentation of 14 spaces but found 12."
+            "line": 18,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/app/layout.tsx",
-            "line": 48,
+            "file": "src/components/ReportTermsViolationButton.tsx",
+            "line": 10,
             "column": 1,
-            "message": "Expected indentation of 4 spaces but found 2."
-          },
-          {
-            "file": "src/routes.ts",
-            "line": 19,
-            "column": 1,
-            "message": "Expected indentation of 12 spaces but found 6."
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
             "file": "src/components/Uploader.tsx",
-            "line": 76,
+            "line": 19,
             "column": 1,
-            "message": "Expected indentation of 4 spaces but found 2."
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "src/messages.ts",
+            "line": 4,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "tests/e2e/file-transfer.test.ts",
+            "line": 4,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "tests/unit/InputLabel.test.tsx",
+            "line": 8,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "tests/unit/TermsAcceptance.test.tsx",
+            "line": 8,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "vitest.config.ts",
+            "line": 5,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
           }
         ]
       },
       "tab": {
-        "count": 5416,
+        "count": 98,
         "samples": [
           {
-            "file": "tests/unit/useRotatingSpinner.test.ts",
-            "line": 3,
+            "file": ".prettierrc.js",
+            "line": 4,
             "column": 1,
-            "message": "Expected indentation of 1 tab but found 2 spaces."
+            "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/app/page.tsx",
-            "line": 70,
+            "file": "src/app/download/[...slug]/page.tsx",
+            "line": 11,
             "column": 1,
-            "message": "Expected indentation of 1 tab but found 2 spaces."
+            "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/hooks/useUploaderConnections.ts",
-            "line": 424,
+            "file": "src/components/Downloader.tsx",
+            "line": 18,
             "column": 1,
-            "message": "Expected indentation of 3 tabs but found 6 spaces."
+            "message": "Expected tabs for indentation, but found spaces."
           },
           {
             "file": "src/components/ReportTermsViolationButton.tsx",
-            "line": 127,
+            "line": 10,
             "column": 1,
-            "message": "Expected indentation of 7 tabs but found 14 spaces."
+            "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/components/Spinner.tsx",
-            "line": 312,
+            "file": "src/components/Uploader.tsx",
+            "line": 19,
             "column": 1,
-            "message": "Expected indentation of 4 tabs but found 8 spaces."
+            "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/components/Spinner.tsx",
-            "line": 913,
+            "file": "src/messages.ts",
+            "line": 4,
             "column": 1,
-            "message": "Expected indentation of 4 tabs but found 8 spaces."
+            "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/components/Spinner.tsx",
-            "line": 1515,
+            "file": "tests/e2e/file-transfer.test.ts",
+            "line": 4,
             "column": 1,
-            "message": "Expected indentation of 3 tabs but found 6 spaces."
+            "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/channel.ts",
-            "line": 54,
+            "file": "tests/unit/InputLabel.test.tsx",
+            "line": 8,
             "column": 1,
-            "message": "Expected indentation of 1 tab but found 2 spaces."
+            "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/components/PasswordField.tsx",
-            "line": 20,
+            "file": "tests/unit/TermsAcceptance.test.tsx",
+            "line": 8,
             "column": 1,
-            "message": "Expected indentation of 1 tab but found 2 spaces."
+            "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/hooks/useClipboard.ts",
-            "line": 60,
+            "file": "vitest.config.ts",
+            "line": 5,
             "column": 1,
-            "message": "Expected indentation of 1 tab but found 2 spaces."
+            "message": "Expected tabs for indentation, but found spaces."
           }
         ]
       }
@@ -756,63 +731,63 @@
         "count": 988,
         "samples": [
           {
-            "file": "src/components/ThemeProvider.tsx",
+            "file": ".prettierrc.js",
             "line": 1,
             "column": 1,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "tests/unit/CopyableInput.test.tsx",
-            "line": 5,
+            "file": "src/app/layout.tsx",
+            "line": 6,
             "column": 42,
             "message": "Strings must use doublequote."
           },
           {
+            "file": "src/components/DropZone.tsx",
+            "line": 71,
+            "column": 29,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "src/components/Uploader.tsx",
+            "line": 6,
+            "column": 20,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "src/hooks/useUploaderChannel.ts",
+            "line": 44,
+            "column": 19,
+            "message": "Strings must use doublequote."
+          },
+          {
             "file": "src/toppings.ts",
-            "line": 98,
+            "line": 21,
             "column": 3,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/components/DropZone.tsx",
-            "line": 78,
-            "column": 34,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "tests/unit/TermsAcceptance.test.tsx",
-            "line": 10,
-            "column": 31,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "public/sw.js",
-            "line": 9,
-            "column": 23,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "tests/unit/ErrorMessage.test.tsx",
-            "line": 10,
-            "column": 22,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "src/zip-stream.ts",
-            "line": 108,
-            "column": 53,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "src/app/page.tsx",
+            "file": "tests/e2e/basic.test.ts",
             "line": 5,
-            "column": 22,
+            "column": 19,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/components/PasswordField.tsx",
-            "line": 36,
-            "column": 15,
+            "file": "tests/unit/Downloader.subcomponents.test.tsx",
+            "line": 55,
+            "column": 26,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "tests/unit/StartButton.test.tsx",
+            "line": 5,
+            "column": 25,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "vitest.setup.ts",
+            "line": 1,
+            "column": 8,
             "message": "Strings must use doublequote."
           }
         ]
@@ -820,24 +795,6 @@
       "single": {
         "count": 10,
         "samples": [
-          {
-            "file": "src/components/UploadFileList.tsx",
-            "line": 19,
-            "column": 18,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "src/components/ReportTermsViolationButton.tsx",
-            "line": 22,
-            "column": 36,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "src/components/ReportTermsViolationButton.tsx",
-            "line": 131,
-            "column": 28,
-            "message": "Strings must use singlequote."
-          },
           {
             "file": "public/sw.js",
             "line": 102,
@@ -863,9 +820,21 @@
             "message": "Strings must use singlequote."
           },
           {
-            "file": "tests/unit/ThemeProvider.test.tsx",
-            "line": 2,
-            "column": 31,
+            "file": "src/components/ReportTermsViolationButton.tsx",
+            "line": 22,
+            "column": 36,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "src/components/ReportTermsViolationButton.tsx",
+            "line": 131,
+            "column": 28,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "src/components/UploadFileList.tsx",
+            "line": 19,
+            "column": 18,
             "message": "Strings must use singlequote."
           },
           {
@@ -879,6 +848,12 @@
             "line": 3,
             "column": 20,
             "message": "Strings must use singlequote."
+          },
+          {
+            "file": "tests/unit/ThemeProvider.test.tsx",
+            "line": 2,
+            "column": 31,
+            "message": "Strings must use singlequote."
           }
         ]
       }
@@ -888,63 +863,63 @@
         "count": 1616,
         "samples": [
           {
-            "file": "src/config.ts",
-            "line": 1,
-            "column": 34,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "src/components/ThemeProvider.tsx",
-            "line": 1,
-            "column": 13,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "src/app/download/[...slug]/page.tsx",
-            "line": 43,
-            "column": 4,
+            "file": "bin/peerjs.js",
+            "line": 2,
+            "column": 35,
             "message": "Missing semicolon."
           },
           {
             "file": "src/channel.ts",
-            "line": 73,
+            "line": 3,
             "column": 54,
             "message": "Missing semicolon."
           },
           {
-            "file": "tests/unit/Uploader.test.tsx",
-            "line": 35,
-            "column": 3,
+            "file": "src/components/DropZone.tsx",
+            "line": 32,
+            "column": 25,
             "message": "Missing semicolon."
           },
           {
-            "file": "tests/unit/StopButton.test.tsx",
-            "line": 16,
-            "column": 46,
+            "file": "src/components/WebRTCProvider.tsx",
+            "line": 65,
+            "column": 20,
             "message": "Missing semicolon."
           },
           {
-            "file": "tests/unit/ThemeProvider.test.tsx",
-            "line": 15,
+            "file": "src/hooks/useDownloader.ts",
+            "line": 175,
+            "column": 63,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "src/hooks/useUploaderConnections.ts",
+            "line": 235,
+            "column": 16,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "src/zip-stream.ts",
+            "line": 57,
+            "column": 34,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "tests/e2e/helpers.ts",
+            "line": 181,
             "column": 51,
             "message": "Missing semicolon."
           },
           {
-            "file": "src/fs.ts",
-            "line": 73,
-            "column": 21,
+            "file": "tests/unit/QueryClientProvider.test.tsx",
+            "line": 16,
+            "column": 3,
             "message": "Missing semicolon."
           },
           {
-            "file": "src/app/page.tsx",
-            "line": 176,
-            "column": 4,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "tests/unit/ProgressBar.test.tsx",
-            "line": 10,
-            "column": 58,
+            "file": "vitest.setup.ts",
+            "line": 1,
+            "column": 35,
             "message": "Missing semicolon."
           }
         ]
@@ -965,6 +940,18 @@
             "message": "Extra semicolon."
           },
           {
+            "file": "bin/peerjs.js",
+            "line": 5,
+            "column": 22,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "bin/peerjs.js",
+            "line": 6,
+            "column": 32,
+            "message": "Extra semicolon."
+          },
+          {
             "file": "eslint.config.mjs",
             "line": 3,
             "column": 32,
@@ -980,18 +967,6 @@
             "file": "eslint.config.mjs",
             "line": 33,
             "column": 3,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "bin/peerjs.js",
-            "line": 5,
-            "column": 22,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "bin/peerjs.js",
-            "line": 6,
-            "column": 32,
             "message": "Extra semicolon."
           }
         ]

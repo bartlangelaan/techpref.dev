@@ -101,7 +101,6 @@ pnpm analyze-repos # Run Oxlint/ESLint analysis on all cloned repos
 ### Error Handling
 
 - Use try-catch blocks for async operations
-- Use `unknown` type for caught errors, then type guard before accessing properties
 - Log errors with relevant context (repo name, operation type)
 
 ### React/Next.js

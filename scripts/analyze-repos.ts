@@ -35,18 +35,13 @@ const require = createRequire(import.meta.url);
 
 /**
  * Get the commit date of the current HEAD commit as an ISO 8601 UTC string.
- * If repoPath is not provided, uses the current working directory.
  */
-async function getCommitDate(repoPath?: string): Promise<string> {
-  try {
-    const { stdout } = await execa("git", ["log", "-1", "--format=%cI"], {
-      cwd: repoPath,
-    });
-    // Parse and convert to UTC with Z suffix
-    return new Date(stdout.trim()).toISOString();
-  } catch {
-    return "unknown";
-  }
+async function getCommitDate(repoPath: string): Promise<string> {
+  const { stdout } = await execa("git", ["log", "-1", "--format=%cI"], {
+    cwd: repoPath,
+  });
+  // Parse and convert to UTC with Z suffix
+  return new Date(stdout).toISOString();
 }
 
 /**

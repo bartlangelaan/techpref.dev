@@ -2,8 +2,11 @@ name: Analyze Repositories
 
 on:
   schedule:
-    - cron: "*/12 * * * *" # 5x per hour
+    - cron: "27,57 * * * *" # 2x per hour
   workflow_dispatch: # Allow manual trigger
+  push:
+    branches:
+      - main
 
 jobs:
   analyze:

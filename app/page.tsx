@@ -121,7 +121,10 @@ export default function Home() {
       <div className="border-border border-t">
         <div className="mx-auto max-w-7xl px-4 py-8 text-center sm:px-6 lg:px-8">
           <p className="text-muted-foreground text-sm">
-            Data sourced from analysis of top TypeScript repositories on GitHub.
+            Data sourced from analysis of top TypeScript repositories on GitHub.{" "}
+            <Link href="/repositories" className="text-primary hover:underline">
+              View all repositories
+            </Link>
           </p>
         </div>
       </div>

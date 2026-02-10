@@ -1,7 +1,64 @@
 import { execa } from "execa";
-import { ensureDir, pathExists } from "fs-extra/esm";
+import { ensureDir, pathExists, remove } from "fs-extra/esm";
 import { join } from "node:path";
 import { REPOS_DIR, RepositoryData } from "./types";
+
+/**
+ * Check if there are any uncommitted changes in the repository.
+ */
+export async function hasUncommittedChanges(
+  repoPath: string,
+): Promise<boolean> {
+  const { stdout } = await execa("git", ["status", "--porcelain"], {
+    cwd: repoPath,
+  });
+  return !!stdout.length;
+}
+
+/**
+ * Pull with rebase to get latest changes from remote.
+ * If the rebase fails due to conflicts, it will abort the rebase.
+ */
+export async function pullRebase(repoPath: string): Promise<void> {
+  try {
+    await execa("git", ["pull", "--rebase"], {
+      cwd: repoPath,
+    });
+  } catch (error) {
+    // If rebase fails, abort it and throw
+    await execa("git", ["rebase", "--abort"], {
+      cwd: repoPath,
+      reject: false,
+    });
+    throw error;
+  }
+}
+
+/**
+ * Stage all changes, commit with a message, and push.
+ * Uses rebase before pushing to handle concurrent updates.
+ * Returns true if changes were committed and pushed, false if there were no changes.
+ */
+export async function commitAndPush(repoPath: string, message: string) {
+  // Check if there are changes to commit
+  if (!(await hasUncommittedChanges(repoPath))) {
+    return false;
+  }
+
+  await execa("git", ["add", "-A"], {
+    cwd: repoPath,
+  });
+
+  await execa("git", ["commit", "-m", message], {
+    cwd: repoPath,
+    env: { HUSKY: "0" },
+  });
+
+  await execa("git", ["push"], {
+    cwd: repoPath,
+    verbose: "full",
+  });
+}
 
 /**
  * Get the default branch name and latest commit SHA from the remote repository.
@@ -72,4 +129,12 @@ export async function checkoutRepository(
   await execa("git", ["reset", "--hard", "FETCH_HEAD"], {
     cwd: repoPath,
   });
+}
+
+/**
+ * Remove a cloned repository from the repos directory.
+ */
+export async function removeRepository(fullName: string): Promise<void> {
+  const repoPath = join(REPOS_DIR, fullName);
+  await remove(repoPath);
 }

@@ -7,6 +7,7 @@ import { readFile } from "node:fs/promises";
 import { createRequire } from "node:module";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
+import { parseArgs } from "node:util";
 import { OxlintConfig } from "oxlint";
 import type {
   AnalysisResult,
@@ -16,8 +17,11 @@ import type {
 } from "@/lib/types";
 import {
   checkoutRepository,
+  commitAndPush,
   getCheckoutCommit,
   getRemoteRepoInfo,
+  pullRebase,
+  removeRepository,
 } from "@/lib/git";
 import {
   loadAnalysis,
@@ -292,6 +296,18 @@ async function analyzeRepository(
   };
 }
 
+// Parse command line arguments
+const { values: args } = parseArgs({
+  options: {
+    "gh-action": {
+      type: "boolean",
+      default: false,
+    },
+  },
+});
+
+const ghAction = args["gh-action"];
+
 console.log("=== TechPref Repository Analyzer ===\n");
 
 // Get analyzed version (commit is fetched per-repository)
@@ -410,6 +426,9 @@ for (const { repo, fileCount, commit } of repoAnalyzeInfo) {
     await checkoutRepository(repo);
     const result = await analyzeRepository(repo, currentVersion);
 
+    // Pull before saving anything.
+    if (ghAction) await pullRebase(process.cwd());
+
     // Save analysis to separate file
     saveAnalysis(repo.fullName, result);
     console.log(
@@ -421,10 +440,21 @@ for (const { repo, fileCount, commit } of repoAnalyzeInfo) {
   } catch (error) {
     console.error(`  Error analyzing ${repo.fullName}:`, error);
 
+    // Pull before saving anything.
+    if (ghAction) await pullRebase(process.cwd());
+
     // Save failing info so we deprioritize this repo in future runs
     saveFailingInfo(repo.fullName, {
       failedCommit: commit,
     });
+  }
+
+  // In gh-action mode, commit and push after each repo
+  if (ghAction) {
+    await commitAndPush(process.cwd(), `Update analysis for ${repo.fullName}`);
+
+    // Remove repository from local storage to save space
+    await removeRepository(repo.fullName);
   }
 
   completed++;

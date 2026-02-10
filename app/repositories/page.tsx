@@ -41,7 +41,9 @@ function getRepositoriesWithStatus(): RepositoryWithStatus[] {
     return {
       ...repo,
       status,
-      analysis,
+      analyzedCommitDate: analysis
+        ? new Date(analysis.analyzedCommitDate)
+        : undefined,
     };
   });
 }

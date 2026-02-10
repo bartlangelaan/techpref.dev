@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
-import type { AnalysisResult, RepositoryData } from "@/lib/types";
+import type { RepositoryData } from "@/lib/types";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 
@@ -22,7 +22,7 @@ export type RepositoryStatus =
 
 export interface RepositoryWithStatus extends RepositoryData {
   status: RepositoryStatus;
-  analysis: AnalysisResult | null;
+  analyzedCommitDate?: Date;
 }
 
 function formatStars(stars: number): string {
@@ -32,7 +32,7 @@ function formatStars(stars: number): string {
   return stars.toString();
 }
 
-function formatDate(dateString: string): string {
+function formatDate(dateString: string | Date): string {
   return new Date(dateString).toLocaleDateString("en-US", {
     year: "numeric",
     month: "short",
@@ -232,9 +232,9 @@ export function RepositoryList({
             {/* Right side info */}
             <div className="flex flex-wrap items-center gap-3 sm:flex-nowrap">
               {/* Analysis date */}
-              {repo.analysis && (
+              {repo.analyzedCommitDate && (
                 <span className="text-muted-foreground whitespace-nowrap text-xs">
-                  {formatDate(repo.analysis.analyzedCommitDate)}
+                  {formatDate(repo.analyzedCommitDate)}
                 </span>
               )}
 

@@ -1,15 +1,76 @@
 {
-  "analyzedVersion": "8d56277528fc",
-  "analyzedCommit": "b0566d3c6fc0e2a993c8606acc128a68c4e27247",
-  "analyzedCommitDate": "2026-01-29T18:01:30.000Z",
+  "analyzedVersion": "e88a060848ee",
+  "analyzedCommit": "b4c01349d19c65c60b189c735a3e3f7e9ab8f9f0",
+  "analyzedCommitDate": "2026-02-05T05:44:07.000Z",
   "checks": {
     "array-type": {
       "array": {
-        "count": 0,
-        "samples": []
+        "count": 48,
+        "samples": [
+          {
+            "file": "server/lib/certificates.ts",
+            "line": 4,
+            "column": 5,
+            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
+          },
+          {
+            "file": "server/private/lib/certificates.ts",
+            "line": 48,
+            "column": 12,
+            "message": "Array type using 'Array<CertificateResult>' is forbidden. Use 'CertificateResult[]' instead."
+          },
+          {
+            "file": "server/private/routers/billing/getOrgSubscriptions.ts",
+            "line": 110,
+            "column": 35,
+            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
+          },
+          {
+            "file": "server/routers/billing/types.ts",
+            "line": 4,
+            "column": 20,
+            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
+          },
+          {
+            "file": "server/routers/olm/listUserOlms.ts",
+            "line": 48,
+            "column": 11,
+            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
+          },
+          {
+            "file": "server/setup/scriptsSqlite/1.10.0.ts",
+            "line": 21,
+            "column": 23,
+            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
+          },
+          {
+            "file": "server/setup/scriptsSqlite/1.9.0.ts",
+            "line": 129,
+            "column": 41,
+            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
+          },
+          {
+            "file": "src/app/[orgId]/settings/sites/create/page.tsx",
+            "line": 157,
+            "column": 9,
+            "message": "Array type using 'ReadonlyArray<TunnelTypeOption>' is forbidden. Use 'readonly TunnelTypeOption[]' instead."
+          },
+          {
+            "file": "src/components/LoginOrgSelector.tsx",
+            "line": 37,
+            "column": 19,
+            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
+          },
+          {
+            "file": "src/hooks/useToast.ts",
+            "line": 129,
+            "column": 18,
+            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
+          }
+        ]
       },
       "generic": {
-        "count": 2,
+        "count": 528,
         "samples": [
           {
             "file": "cli/commands/rotateServerSecret.ts",
@@ -18,44 +79,330 @@
             "message": "Array type using 'IdpUpdate[]' is forbidden. Use 'Array<IdpUpdate>' instead."
           },
           {
-            "file": "cli/commands/rotateServerSecret.ts",
-            "line": 153,
+            "file": "server/lib/rebuildClientAssociations.ts",
+            "line": 635,
+            "column": 31,
+            "message": "Array type using 'number[]' is forbidden. Use 'Array<number>' instead."
+          },
+          {
+            "file": "server/routers/auditLogs/types.ts",
+            "line": 17,
+            "column": 17,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+          },
+          {
+            "file": "server/routers/newt/buildConfiguration.ts",
+            "line": 26,
+            "column": 21,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+          },
+          {
+            "file": "server/setup/scriptsPg/1.10.0.ts",
+            "line": 53,
+            "column": 28,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+          },
+          {
+            "file": "src/app/[orgId]/settings/logs/access/page.tsx",
+            "line": 33,
             "column": 38,
-            "message": "Array type using 'LicenseKeyUpdate[]' is forbidden. Use 'Array<LicenseKeyUpdate>' instead."
+            "message": "Array type using 'any[]' is forbidden. Use 'Array<any>' instead."
+          },
+          {
+            "file": "src/app/navigation.tsx",
+            "line": 35,
+            "column": 34,
+            "message": "Array type using 'SidebarNavItem[]' is forbidden. Use 'Array<SidebarNavItem>' instead."
+          },
+          {
+            "file": "src/components/InvitationsTable.tsx",
+            "line": 34,
+            "column": 18,
+            "message": "Array type using 'InvitationRow[]' is forbidden. Use 'Array<InvitationRow>' instead."
+          },
+          {
+            "file": "src/components/SitesTable.tsx",
+            "line": 63,
+            "column": 38,
+            "message": "Array type using 'SiteRow[]' is forbidden. Use 'Array<SiteRow>' instead."
+          },
+          {
+            "file": "src/lib/queries.ts",
+            "line": 374,
+            "column": 48,
+            "message": "Array type using 'ApprovalItem[]' is forbidden. Use 'Array<ApprovalItem>' instead."
           }
         ]
       }
     },
     "consistent-generic-constructors": {
       "constructor": {
-        "count": 0,
-        "samples": []
+        "count": 10,
+        "samples": [
+          {
+            "file": "server/lib/billing/usageService.ts",
+            "line": 50,
+            "column": 27,
+            "message": "The generic type arguments should be specified as part of the constructor type arguments."
+          },
+          {
+            "file": "server/lib/traefik/TraefikConfigManager.ts",
+            "line": 298,
+            "column": 22,
+            "message": "The generic type arguments should be specified as part of the constructor type arguments."
+          },
+          {
+            "file": "server/private/lib/rateLimit.ts",
+            "line": 42,
+            "column": 34,
+            "message": "The generic type arguments should be specified as part of the constructor type arguments."
+          },
+          {
+            "file": "server/private/lib/rateLimit.ts",
+            "line": 43,
+            "column": 45,
+            "message": "The generic type arguments should be specified as part of the constructor type arguments."
+          },
+          {
+            "file": "server/private/lib/redis.ts",
+            "line": 38,
+            "column": 24,
+            "message": "The generic type arguments should be specified as part of the constructor type arguments."
+          },
+          {
+            "file": "server/private/lib/redis.ts",
+            "line": 42,
+            "column": 34,
+            "message": "The generic type arguments should be specified as part of the constructor type arguments."
+          },
+          {
+            "file": "server/private/routers/ws/ws.ts",
+            "line": 183,
+            "column": 23,
+            "message": "The generic type arguments should be specified as part of the constructor type arguments."
+          },
+          {
+            "file": "server/private/routers/ws/ws.ts",
+            "line": 186,
+            "column": 27,
+            "message": "The generic type arguments should be specified as part of the constructor type arguments."
+          },
+          {
+            "file": "server/routers/ws/ws.ts",
+            "line": 37,
+            "column": 23,
+            "message": "The generic type arguments should be specified as part of the constructor type arguments."
+          },
+          {
+            "file": "server/routers/ws/ws.ts",
+            "line": 39,
+            "column": 27,
+            "message": "The generic type arguments should be specified as part of the constructor type arguments."
+          }
+        ]
       },
       "type-annotation": {
-        "count": 0,
-        "samples": []
+        "count": 32,
+        "samples": [
+          {
+            "file": "server/lib/blueprints/types.ts",
+            "line": 435,
+            "column": 38,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "server/lib/rebuildClientAssociations.ts",
+            "line": 414,
+            "column": 37,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "server/lib/traefik/TraefikConfigManager.ts",
+            "line": 21,
+            "column": 39,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "server/lib/traefik/TraefikConfigManager.ts",
+            "line": 244,
+            "column": 48,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "server/private/lib/certificates.ts",
+            "line": 52,
+            "column": 35,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "server/private/lib/certificates.ts",
+            "line": 117,
+            "column": 36,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "server/routers/auth/lookupUser.ts",
+            "line": 157,
+            "column": 39,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "server/routers/gerbil/receiveBandwidth.ts",
+            "line": 117,
+            "column": 33,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "server/setup/scriptsSqlite/1.9.0.ts",
+            "line": 13,
+            "column": 36,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "src/hooks/useToast.ts",
+            "line": 56,
+            "column": 30,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          }
+        ]
       }
     },
     "consistent-indexed-object-style": {
       "record": {
-        "count": 0,
-        "samples": []
+        "count": 36,
+        "samples": [
+          {
+            "file": "server/lib/billing/features.ts",
+            "line": 46,
+            "column": 31,
+            "message": "A record is preferred over an index signature."
+          },
+          {
+            "file": "server/lib/blueprints/parseDockerContainers.ts",
+            "line": 5,
+            "column": 5,
+            "message": "A record is preferred over an index signature."
+          },
+          {
+            "file": "server/lib/blueprints/parseDockerContainers.ts",
+            "line": 56,
+            "column": 27,
+            "message": "A record is preferred over an index signature."
+          },
+          {
+            "file": "server/lib/blueprints/parseDockerContainers.ts",
+            "line": 62,
+            "column": 37,
+            "message": "A record is preferred over an index signature."
+          },
+          {
+            "file": "server/lib/traefik/getTraefikConfig.ts",
+            "line": 366,
+            "column": 37,
+            "message": "A record is preferred over an index signature."
+          },
+          {
+            "file": "server/private/lib/traefik/getTraefikConfig.ts",
+            "line": 589,
+            "column": 37,
+            "message": "A record is preferred over an index signature."
+          },
+          {
+            "file": "server/routers/newt/targets.ts",
+            "line": 59,
+            "column": 32,
+            "message": "A record is preferred over an index signature."
+          },
+          {
+            "file": "server/routers/traefik/configSchema.ts",
+            "line": 47,
+            "column": 5,
+            "message": "A record is preferred over an index signature."
+          },
+          {
+            "file": "src/app/auth/verify-email/page.tsx",
+            "line": 11,
+            "column": 29,
+            "message": "A record is preferred over an index signature."
+          },
+          {
+            "file": "src/lib/themeColors.ts",
+            "line": 70,
+            "column": 9,
+            "message": "A record is preferred over an index signature."
+          }
+        ]
       },
       "index-signature": {
-        "count": 0,
-        "samples": []
+        "count": 79,
+        "samples": [
+          {
+            "file": "server/db/names.ts",
+            "line": 30,
+            "column": 18,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "server/private/lib/exitNodes/exitNodeComms.ts",
+            "line": 27,
+            "column": 19,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "server/routers/client/listClients.ts",
+            "line": 310,
+            "column": 19,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "src/actions/server.ts",
+            "line": 85,
+            "column": 20,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "src/app/[orgId]/settings/sites/create/page.tsx",
+            "line": 88,
+            "column": 14,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "src/components/ClientsDataTable.tsx",
+            "line": 18,
+            "column": 24,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "src/components/PermissionsSelectBox.tsx",
+            "line": 24,
+            "column": 45,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "src/components/olm-install-commands.tsx",
+            "line": 41,
+            "column": 24,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "src/components/ui/data-table.tsx",
+            "line": 260,
+            "column": 28,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "src/lib/themeColors.ts",
+            "line": 61,
+            "column": 15,
+            "message": "An index signature is preferred over a record."
+          }
+        ]
       }
     },
     "consistent-type-definitions": {
       "interface": {
-        "count": 8,
+        "count": 407,
         "samples": [
-          {
-            "file": "cli/commands/deleteClient.ts",
-            "line": 5,
-            "column": 1,
-            "message": "Use `interface` instead of `type`."
-          },
           {
             "file": "cli/commands/clearExitNodes.ts",
             "line": 5,
@@ -63,58 +410,131 @@
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "cli/commands/resetUserSecurityKeys.ts",
-            "line": 5,
+            "file": "server/routers/auditLogs/types.ts",
+            "line": 1,
+            "column": 8,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "server/routers/idp/listIdpOrgPolicies.ts",
+            "line": 42,
+            "column": 8,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "server/routers/siteResource/listSiteResourceClients.ts",
+            "line": 34,
+            "column": 8,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "src/actions/server.ts",
+            "line": 377,
+            "column": 8,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "src/components/AdminUsersTable.tsx",
+            "line": 49,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "cli/commands/setAdminCredentials.ts",
-            "line": 12,
+            "file": "src/components/EditInternalResourceDialog.tsx",
+            "line": 156,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "cli/commands/rotateServerSecret.ts",
+            "file": "src/components/OrgSignInLink.tsx",
             "line": 9,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "cli/commands/rotateServerSecret.ts",
-            "line": 139,
-            "column": 13,
+            "file": "src/components/UsersTable.tsx",
+            "line": 28,
+            "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "cli/commands/rotateServerSecret.ts",
-            "line": 145,
-            "column": 13,
-            "message": "Use `interface` instead of `type`."
-          },
-          {
-            "file": "cli/commands/clearLicenseKeys.ts",
-            "line": 5,
+            "file": "src/providers/ThemeDataProvider.tsx",
+            "line": 7,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           }
         ]
       },
       "type": {
-        "count": 0,
-        "samples": []
+        "count": 162,
+        "samples": [
+          {
+            "file": "server/emails/templates/NotifyResetPassword.tsx",
+            "line": 14,
+            "column": 1,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "server/private/routers/generatedLicense/generateNewLicense.ts",
+            "line": 22,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "server/routers/ws/types.ts",
+            "line": 51,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "src/app/[orgId]/settings/blueprints/create/page.tsx",
+            "line": 10,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "src/app/admin/layout.tsx",
+            "line": 23,
+            "column": 1,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "src/components/DataTablePagination.tsx",
+            "line": 19,
+            "column": 1,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "src/components/OrganizationLanding.tsx",
+            "line": 22,
+            "column": 1,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "src/components/UsersDataTable.tsx",
+            "line": 7,
+            "column": 1,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "src/contexts/orgContext.ts",
+            "line": 4,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "src/providers/UserProvider.tsx",
+            "line": 8,
+            "column": 1,
+            "message": "Use `type` instead of `interface`."
+          }
+        ]
       }
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 7,
+        "count": 944,
         "samples": [
-          {
-            "file": "cli/commands/resetUserSecurityKeys.ts",
-            "line": 1,
-            "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
           {
             "file": "cli/commands/clearExitNodes.ts",
             "line": 1,
@@ -122,43 +542,121 @@
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "cli/commands/clearLicenseKeys.ts",
+            "file": "server/middlewares/verifyTargetAccess.ts",
             "line": 1,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "cli/commands/deleteClient.ts",
+            "file": "server/private/routers/loginPage/upsertLoginPageBranding.ts",
+            "line": 14,
+            "column": 1,
+            "message": "All imports in the declaration are only used as types. Use `import type`."
+          },
+          {
+            "file": "server/routers/client/blockClient.ts",
             "line": 1,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "cli/commands/rotateServerSecret.ts",
-            "line": 1,
+            "file": "server/routers/org/listUserOrgs.ts",
+            "line": 4,
+            "column": 1,
+            "message": "Imports Org are only used as type."
+          },
+          {
+            "file": "server/routers/user/addUserRole.ts",
+            "line": 3,
+            "column": 1,
+            "message": "Imports UserOrg are only used as type."
+          },
+          {
+            "file": "src/app/[orgId]/settings/clients/machine/[niceId]/layout.tsx",
+            "line": 8,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "cli/commands/setAdminCredentials.ts",
-            "line": 1,
+            "file": "src/app/auth/org/[orgId]/page.tsx",
+            "line": 2,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "cli/commands/setAdminCredentials.ts",
-            "line": 10,
+            "file": "src/components/NewPricingLicenseForm.tsx",
+            "line": 37,
             "column": 1,
-            "message": "Imports RandomReader are only used as type."
+            "message": "Imports StrategyOption are only used as type."
+          },
+          {
+            "file": "src/services/locale.ts",
+            "line": 4,
+            "column": 1,
+            "message": "Imports Locale are only used as type."
           }
         ]
       },
       "no-type-imports": {
-        "count": 1,
+        "count": 111,
         "samples": [
           {
             "file": "next.config.ts",
             "line": 1,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "server/routers/blueprints/applyYAMLBlueprint.ts",
+            "line": 10,
+            "column": 10,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "src/app/[orgId]/settings/clients/user/page.tsx",
+            "line": 7,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "src/app/[orgId]/settings/resources/proxy/[niceId]/proxy/page.tsx",
+            "line": 66,
+            "column": 10,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "src/components/ApprovalFeed.tsx",
+            "line": 11,
+            "column": 5,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "src/components/LogAnalyticsData.tsx",
+            "line": 42,
+            "column": 5,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "src/components/tags/tag-input.tsx",
+            "line": 6,
+            "column": 10,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "src/components/ui/toast.tsx",
+            "line": 5,
+            "column": 15,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "src/lib/api/getCachedSubscription.ts",
+            "line": 4,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "src/lib/queries.ts",
+            "line": 20,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           }
@@ -167,32 +665,8 @@
     },
     "func-style": {
       "expression": {
-        "count": 6,
+        "count": 1198,
         "samples": [
-          {
-            "file": "esbuild.mjs",
-            "line": 46,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "esbuild.mjs",
-            "line": 58,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "esbuild.mjs",
-            "line": 119,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "esbuild.mjs",
-            "line": 180,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
           {
             "file": "cli/commands/setAdminCredentials.ts",
             "line": 115,
@@ -200,28 +674,131 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "cli/commands/setAdminCredentials.ts",
-            "line": 141,
+            "file": "server/lib/exitNodes/exitNodeComms.ts",
+            "line": 19,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "server/private/lib/rateLimit.test.ts",
+            "line": 23,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "server/routers/auditLogs/queryRequestAuditLog.ts",
+            "line": 109,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "server/routers/idp/listIdps.ts",
+            "line": 68,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "server/routers/siteResource/deleteSiteResource.ts",
+            "line": 33,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "src/app/[orgId]/settings/general/security/page.tsx",
+            "line": 451,
+            "column": 5,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "src/components/InviteStatusCard.tsx",
+            "line": 120,
+            "column": 5,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "src/components/ui/chart.tsx",
+            "line": 26,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "test/assert.ts",
+            "line": 36,
             "column": 8,
             "message": "Expected a function expression."
           }
         ]
       },
       "declaration": {
-        "count": 0,
-        "samples": []
+        "count": 481,
+        "samples": [
+          {
+            "file": "server/db/pg/migrate.ts",
+            "line": 7,
+            "column": 7,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "server/private/routers/ws/ws.ts",
+            "line": 911,
+            "column": 7,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "src/app/[orgId]/settings/api-keys/create/page.tsx",
+            "line": 167,
+            "column": 11,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "src/app/[orgId]/settings/resources/proxy/create/page.tsx",
+            "line": 337,
+            "column": 11,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "src/components/CreateInternalResourceDialog.tsx",
+            "line": 66,
+            "column": 7,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "src/components/GenerateLicenseKeyForm.tsx",
+            "line": 303,
+            "column": 11,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "src/components/PathMatchRenameModal.tsx",
+            "line": 53,
+            "column": 11,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "src/components/TwoFactorSetupForm.tsx",
+            "line": 108,
+            "column": 15,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "src/components/ui/data-table.tsx",
+            "line": 84,
+            "column": 7,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "src/providers/UserProvider.tsx",
+            "line": 18,
+            "column": 11,
+            "message": "Expected a function declaration."
+          }
+        ]
       }
     },
     "import-export-preference": {
       "named": {
-        "count": 5,
+        "count": 366,
         "samples": [
-          {
-            "file": "eslint.config.js",
-            "line": 3,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
           {
             "file": "drizzle.pg.config.ts",
             "line": 6,
@@ -229,34 +806,64 @@
             "message": "Prefer named exports"
           },
           {
-            "file": "drizzle.sqlite.config.ts",
+            "file": "server/routers/auth/requestEmailVerificationCode.ts",
+            "line": 72,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "server/setup/scriptsSqlite/1.8.0.ts",
             "line": 7,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "postcss.config.mjs",
-            "line": 8,
+            "file": "src/app/[orgId]/settings/clients/layout.tsx",
+            "line": 11,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "next.config.ts",
-            "line": 17,
+            "file": "src/app/[orgId]/settings/sites/[niceId]/layout.tsx",
+            "line": 18,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "src/app/maintenance-screen/page.tsx",
+            "line": 22,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "src/components/DismissableBanner.tsx",
+            "line": 104,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "src/components/PlaceHolderLoader.tsx",
+            "line": 21,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "src/components/UserProfileCard.tsx",
+            "line": 13,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "src/providers/UserProvider.tsx",
+            "line": 40,
             "column": 8,
             "message": "Prefer named exports"
           }
         ]
       },
       "default": {
-        "count": 5,
+        "count": 341,
         "samples": [
-          {
-            "file": "cli/commands/rotateServerSecret.ts",
-            "line": 15,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
           {
             "file": "cli/commands/clearExitNodes.ts",
             "line": 7,
@@ -264,20 +871,56 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "cli/commands/resetUserSecurityKeys.ts",
-            "line": 9,
+            "file": "server/lib/getEnvOrYaml.ts",
+            "line": 1,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "cli/commands/clearLicenseKeys.ts",
+            "file": "server/middlewares/verifySession.ts",
+            "line": 6,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "server/private/routers/billing/hooks/handleSubscriptionCreated.ts",
+            "line": 35,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "server/routers/accessToken/deleteAccessToken.ts",
+            "line": 28,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "server/routers/olm/sync.ts",
+            "line": 8,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "server/routers/siteResource/removeRoleFromSiteResource.ts",
+            "line": 47,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "src/components/DataTablePagination.tsx",
+            "line": 31,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "src/hooks/useDomainContext.ts",
+            "line": 4,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "src/providers/ThemeProvider.tsx",
             "line": 7,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "cli/commands/deleteClient.ts",
-            "line": 10,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           }
@@ -286,280 +929,316 @@
     },
     "indent": {
       "2-space": {
-        "count": 830,
+        "count": 8,
         "samples": [
           {
-            "file": "drizzle.pg.config.ts",
-            "line": 7,
+            "file": "server/setup/scriptsPg/1.15.0.ts",
+            "line": 15,
             "column": 1,
-            "message": "Expected indentation of 2 spaces but found 4."
+            "message": "Expected spaces for indentation, but found tabs."
           },
           {
-            "file": "cli/commands/setAdminCredentials.ts",
-            "line": 102,
+            "file": "server/setup/scriptsPg/1.9.0.ts",
+            "line": 38,
             "column": 1,
-            "message": "Expected indentation of 10 spaces but found 20."
+            "message": "Expected spaces for indentation, but found tabs."
           },
           {
-            "file": "cli/commands/clearExitNodes.ts",
-            "line": 26,
+            "file": "server/setup/scriptsSqlite/1.0.0-beta15.ts",
+            "line": 75,
             "column": 1,
-            "message": "Expected indentation of 8 spaces but found 16."
+            "message": "Expected spaces for indentation, but found tabs."
           },
           {
-            "file": "esbuild.mjs",
-            "line": 125,
+            "file": "server/setup/scriptsSqlite/1.1.0.ts",
+            "line": 12,
             "column": 1,
-            "message": "Expected indentation of 6 spaces but found 12."
+            "message": "Expected spaces for indentation, but found tabs."
           },
           {
-            "file": "esbuild.mjs",
-            "line": 234,
+            "file": "server/setup/scriptsSqlite/1.13.0.ts",
+            "line": 300,
             "column": 1,
-            "message": "Expected indentation of 8 spaces but found 16."
+            "message": "Expected 2-space indentation, but file uses 17-space indentation."
           },
           {
-            "file": "cli/commands/resetUserSecurityKeys.ts",
-            "line": 39,
+            "file": "server/setup/scriptsSqlite/1.15.0.ts",
+            "line": 20,
             "column": 1,
-            "message": "Expected indentation of 6 spaces but found 12."
+            "message": "Expected spaces for indentation, but found tabs."
           },
           {
-            "file": "cli/commands/rotateServerSecret.ts",
-            "line": 90,
+            "file": "server/setup/scriptsSqlite/1.5.0.ts",
+            "line": 19,
             "column": 1,
-            "message": "Expected indentation of 12 spaces but found 24."
+            "message": "Expected 2-space indentation, but file uses 15-space indentation."
           },
           {
-            "file": "cli/commands/rotateServerSecret.ts",
-            "line": 196,
+            "file": "server/setup/scriptsSqlite/1.9.0.ts",
+            "line": 42,
             "column": 1,
-            "message": "Expected indentation of 12 spaces but found 24."
-          },
-          {
-            "file": "cli/commands/deleteClient.ts",
-            "line": 24,
-            "column": 1,
-            "message": "Expected indentation of 8 spaces but found 16."
-          },
-          {
-            "file": "drizzle.sqlite.config.ts",
-            "line": 14,
-            "column": 1,
-            "message": "Expected indentation of 2 spaces but found 4."
+            "message": "Expected spaces for indentation, but found tabs."
           }
         ]
       },
       "4-space": {
-        "count": 2,
+        "count": 93,
         "samples": [
           {
             "file": "cli/commands/rotateServerSecret.ts",
             "line": 54,
             "column": 1,
-            "message": "Expected indentation of 20 spaces but found 18."
+            "message": "Expected 4-space indentation, but file uses 18-space indentation."
           },
           {
-            "file": "cli/commands/rotateServerSecret.ts",
-            "line": 55,
+            "file": "server/private/lib/certificates.ts",
+            "line": 106,
             "column": 1,
-            "message": "Expected indentation of 20 spaces but found 18."
+            "message": "Expected 4-space indentation, but file uses 30-space indentation."
+          },
+          {
+            "file": "server/routers/gerbil/getResolvedHostname.ts",
+            "line": 44,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 22-space indentation."
+          },
+          {
+            "file": "server/setup/scriptsSqlite/1.9.0.ts",
+            "line": 42,
+            "column": 1,
+            "message": "Expected spaces for indentation, but found tabs."
+          },
+          {
+            "file": "src/app/[orgId]/settings/resources/proxy/[niceId]/authentication/page.tsx",
+            "line": 749,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 50-space indentation."
+          },
+          {
+            "file": "src/app/auth/idp/[idpId]/oidc/callback/page.tsx",
+            "line": 69,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 14-space indentation."
+          },
+          {
+            "file": "src/components/CreateInternalResourceDialog.tsx",
+            "line": 544,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 70-space indentation."
+          },
+          {
+            "file": "src/components/OrgLoginPage.tsx",
+            "line": 82,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 34-space indentation."
+          },
+          {
+            "file": "src/components/ValidateOidcToken.tsx",
+            "line": 200,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 46-space indentation."
+          },
+          {
+            "file": "src/lib/wireguard.ts",
+            "line": 46,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 10-space indentation."
           }
         ]
       },
       "tab": {
-        "count": 830,
+        "count": 1012,
         "samples": [
           {
-            "file": "drizzle.pg.config.ts",
+            "file": "cli/commands/clearExitNodes.ts",
+            "line": 8,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "server/lib/s3.ts",
+            "line": 4,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "server/private/routers/billing/hooks/handleSubscriptionCreated.ts",
+            "line": 16,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "server/routers/client/getClient.ts",
+            "line": 18,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "server/routers/resource/setResourceRoles.ts",
+            "line": 14,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "server/setup/scriptsSqlite/1.1.0.ts",
             "line": 7,
             "column": 1,
-            "message": "Expected indentation of 1 tab but found 4 spaces."
+            "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "cli/commands/deleteClient.ts",
-            "line": 38,
+            "file": "src/app/admin/idp/[idpId]/page.tsx",
+            "line": 4,
             "column": 1,
-            "message": "Expected indentation of 4 tabs but found 16 spaces."
+            "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "drizzle.sqlite.config.ts",
+            "file": "src/components/LicenseKeysDataTable.tsx",
+            "line": 15,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "src/components/ui/button.tsx",
+            "line": 8,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "test/assert.ts",
             "line": 9,
             "column": 1,
-            "message": "Expected indentation of 1 tab but found 4 spaces."
-          },
-          {
-            "file": "cli/commands/setAdminCredentials.ts",
-            "line": 56,
-            "column": 1,
-            "message": "Expected indentation of 5 tabs but found 20 spaces."
-          },
-          {
-            "file": "esbuild.mjs",
-            "line": 43,
-            "column": 1,
-            "message": "Expected indentation of 1 tab but found 4 spaces."
-          },
-          {
-            "file": "esbuild.mjs",
-            "line": 160,
-            "column": 1,
-            "message": "Expected indentation of 7 tabs but found 28 spaces."
-          },
-          {
-            "file": "esbuild.mjs",
-            "line": 268,
-            "column": 1,
-            "message": "Expected indentation of 2 tabs but found 8 spaces."
-          },
-          {
-            "file": "cli/commands/rotateServerSecret.ts",
-            "line": 77,
-            "column": 1,
-            "message": "Expected indentation of 3 tabs but found 12 spaces."
-          },
-          {
-            "file": "cli/commands/rotateServerSecret.ts",
-            "line": 182,
-            "column": 1,
-            "message": "Expected indentation of 5 tabs but found 20 spaces."
-          },
-          {
-            "file": "postcss.config.mjs",
-            "line": 5,
-            "column": 1,
-            "message": "Expected indentation of 1 tab but found 4 spaces."
+            "message": "Expected tabs for indentation, but found spaces."
           }
         ]
       }
     },
     "quotes": {
       "double": {
-        "count": 11,
+        "count": 377,
         "samples": [
           {
-            "file": "cli/commands/clearLicenseKeys.ts",
+            "file": "cli/commands/clearExitNodes.ts",
             "line": 21,
             "column": 25,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "cli/commands/deleteClient.ts",
-            "line": 112,
-            "column": 25,
+            "file": "server/routers/auditLogs/generateCSV.ts",
+            "line": 11,
+            "column": 47,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "cli/commands/deleteClient.ts",
-            "line": 113,
-            "column": 25,
+            "file": "server/routers/external.ts",
+            "line": 986,
+            "column": 5,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "cli/commands/deleteClient.ts",
-            "line": 114,
-            "column": 25,
+            "file": "server/routers/role/deleteRole.ts",
+            "line": 96,
+            "column": 21,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "cli/commands/deleteClient.ts",
-            "line": 115,
-            "column": 25,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "esbuild.mjs",
-            "line": 81,
-            "column": 33,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "esbuild.mjs",
-            "line": 142,
-            "column": 33,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "esbuild.mjs",
-            "line": 220,
-            "column": 29,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "cli/commands/rotateServerSecret.ts",
-            "line": 270,
-            "column": 25,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "cli/commands/rotateServerSecret.ts",
-            "line": 274,
+            "file": "server/setup/scriptsSqlite/1.0.0-beta9.ts",
+            "line": 223,
             "column": 17,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "server/setup/scriptsSqlite/1.12.0.ts",
+            "line": 206,
+            "column": 24,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "server/setup/scriptsSqlite/1.13.0.ts",
+            "line": 340,
+            "column": 17,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "server/setup/scriptsSqlite/1.7.0.ts",
+            "line": 153,
+            "column": 21,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "src/app/auth/login/page.tsx",
+            "line": 177,
+            "column": 35,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "src/components/tags/tag.tsx",
+            "line": 147,
+            "column": 21,
             "message": "Strings must use doublequote."
           }
         ]
       },
       "single": {
-        "count": 212,
+        "count": 28252,
         "samples": [
           {
-            "file": "drizzle.sqlite.config.ts",
-            "line": 1,
-            "column": 26,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "next.config.ts",
-            "line": 14,
-            "column": 13,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "cli/commands/rotateServerSecret.ts",
-            "line": 11,
-            "column": 5,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "cli/commands/rotateServerSecret.ts",
-            "line": 87,
-            "column": 25,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "cli/commands/resetUserSecurityKeys.ts",
-            "line": 15,
-            "column": 9,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "cli/commands/setAdminCredentials.ts",
+            "file": "cli/commands/clearExitNodes.ts",
             "line": 1,
             "column": 31,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "cli/commands/setAdminCredentials.ts",
-            "line": 131,
-            "column": 21,
+            "file": "server/lib/billing/features.ts",
+            "line": 21,
+            "column": 24,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "esbuild.mjs",
-            "line": 39,
-            "column": 34,
+            "file": "server/middlewares/verifyOlmAccess.ts",
+            "line": 18,
+            "column": 56,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "esbuild.mjs",
-            "line": 250,
-            "column": 33,
+            "file": "server/routers/auth/setServerAdmin.ts",
+            "line": 9,
+            "column": 32,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "cli/commands/clearExitNodes.ts",
-            "line": 32,
+            "file": "server/routers/resource/setResourcePincode.ts",
+            "line": 31,
+            "column": 9,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "src/app/[orgId]/settings/(private)/idp/create/page.tsx",
+            "line": 678,
+            "column": 44,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "src/app/admin/idp/create/page.tsx",
+            "line": 454,
+            "column": 61,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "src/components/ExitNodesTable.tsx",
+            "line": 3,
             "column": 27,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "src/components/SitePriceCalculator.tsx",
+            "line": 49,
+            "column": 17,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "src/services/locale.ts",
+            "line": 25,
+            "column": 42,
             "message": "Strings must use singlequote."
           }
         ]
@@ -567,70 +1246,77 @@
     },
     "semi": {
       "always": {
-        "count": 0,
-        "samples": []
-      },
-      "never": {
-        "count": 327,
+        "count": 1,
         "samples": [
           {
-            "file": "next.config.ts",
+            "file": "server/private/routers/generatedLicense/generateNewEnterpriseLicense.ts",
+            "line": 116,
+            "column": 53,
+            "message": "Missing semicolon."
+          }
+        ]
+      },
+      "never": {
+        "count": 33861,
+        "samples": [
+          {
+            "file": "cli/commands/clearExitNodes.ts",
             "line": 1,
-            "column": 39,
+            "column": 38,
             "message": "Extra semicolon."
           },
           {
-            "file": "cli/commands/resetUserSecurityKeys.ts",
-            "line": 38,
-            "column": 32,
+            "file": "server/lib/traefik/traefikConfig.test.ts",
+            "line": 55,
+            "column": 6,
             "message": "Extra semicolon."
           },
           {
-            "file": "cli/commands/deleteClient.ts",
-            "line": 8,
+            "file": "server/private/routers/external.ts",
+            "line": 131,
             "column": 2,
             "message": "Extra semicolon."
           },
           {
-            "file": "eslint.config.js",
+            "file": "server/routers/blueprints/applyJSONBlueprint.ts",
             "line": 1,
-            "column": 41,
+            "column": 58,
             "message": "Extra semicolon."
           },
           {
-            "file": "cli/commands/setAdminCredentials.ts",
-            "line": 106,
-            "column": 66,
+            "file": "server/routers/resource/authWithPincode.ts",
+            "line": 3,
+            "column": 62,
             "message": "Extra semicolon."
           },
           {
-            "file": "esbuild.mjs",
-            "line": 113,
-            "column": 15,
+            "file": "server/setup/migrationsSqlite.ts",
+            "line": 105,
+            "column": 60,
             "message": "Extra semicolon."
           },
           {
-            "file": "esbuild.mjs",
-            "line": 209,
-            "column": 57,
+            "file": "src/app/[orgId]/settings/logs/request/page.tsx",
+            "line": 349,
+            "column": 6,
             "message": "Extra semicolon."
           },
           {
-            "file": "cli/commands/rotateServerSecret.ts",
-            "line": 42,
-            "column": 15,
+            "file": "src/components/CreateDomainForm.tsx",
+            "line": 39,
+            "column": 62,
             "message": "Extra semicolon."
           },
           {
-            "file": "cli/commands/rotateServerSecret.ts",
-            "line": 153,
-            "column": 61,
+            "file": "src/components/SecurityKeyForm.tsx",
+            "line": 31,
+            "column": 34,
             "message": "Extra semicolon."
           },
           {
-            "file": "cli/commands/rotateServerSecret.ts",
-            "line": 280,
-            "column": 28,
+            "file": "test/assert.ts",
+            "line": 52,
+            "column": 14,
             "message": "Extra semicolon."
           }
         ]

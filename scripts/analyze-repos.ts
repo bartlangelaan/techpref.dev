@@ -17,10 +17,11 @@ import type {
 } from "@/lib/types";
 import {
   checkoutRepository,
-  commitAndPush,
+  commit,
   getCheckoutCommit,
   getRemoteRepoInfo,
   pullRebase,
+  push,
   removeRepository,
 } from "@/lib/git";
 import {
@@ -415,8 +416,24 @@ console.log(
   `Sorted. Smallest: ${repoAnalyzeInfo[0]?.fileCount ?? 0} files, Largest: ${last(repoAnalyzeInfo)?.fileCount ?? 0} files.\n`,
 );
 
+const startTime = new Date().getTime();
+let timeSinceLastPush = new Date().getTime();
+
 let completed = 0;
-for (const { repo, fileCount, commit } of repoAnalyzeInfo) {
+for (const { repo, fileCount, commit: repoCommit } of repoAnalyzeInfo) {
+  if (ghAction && new Date().getTime() - startTime > 25 * 60 * 1000) {
+    console.log(
+      `Passed the 25 minute mark, stopping analysis. Completed ${completed}/${repoAnalyzeInfo.length} repositories.`,
+    );
+    break;
+  }
+
+  if (ghAction && new Date().getTime() - timeSinceLastPush > 5 * 60 * 1000) {
+    console.log(`Pushing changes after 5 minutes to avoid losing progress.`);
+    await push(process.cwd());
+    timeSinceLastPush = new Date().getTime();
+  }
+
   console.log(
     `[${completed + 1}/${repoAnalyzeInfo.length}] Analyzing ${repo.fullName}${fileCount > 0 ? ` (${fileCount} files)` : ""}...`,
   );
@@ -445,13 +462,13 @@ for (const { repo, fileCount, commit } of repoAnalyzeInfo) {
 
     // Save failing info so we deprioritize this repo in future runs
     saveFailingInfo(repo.fullName, {
-      failedCommit: commit,
+      failedCommit: repoCommit,
     });
   }
 
   // In gh-action mode, commit and push after each repo
   if (ghAction) {
-    await commitAndPush(process.cwd(), `Update analysis for ${repo.fullName}`);
+    await commit(process.cwd(), `Update analysis for ${repo.fullName}`);
 
     // Remove repository from local storage to save space
     await removeRepository(repo.fullName);
@@ -460,8 +477,5 @@ for (const { repo, fileCount, commit } of repoAnalyzeInfo) {
   completed++;
 }
 
-const totalAnalyzed = data.repositories.filter(
-  (r) => loadAnalysis(r.fullName) !== null,
-).length;
+await push(process.cwd());
 console.log(`\n=== Analysis Complete ===`);
-console.log(`Total repositories analyzed: ${totalAnalyzed}`);

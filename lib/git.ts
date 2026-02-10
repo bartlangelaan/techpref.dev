@@ -39,7 +39,7 @@ export async function pullRebase(repoPath: string): Promise<void> {
  * Uses rebase before pushing to handle concurrent updates.
  * Returns true if changes were committed and pushed, false if there were no changes.
  */
-export async function commitAndPush(repoPath: string, message: string) {
+export async function commit(repoPath: string, message: string) {
   // Check if there are changes to commit
   if (!(await hasUncommittedChanges(repoPath))) {
     return false;
@@ -53,6 +53,10 @@ export async function commitAndPush(repoPath: string, message: string) {
     cwd: repoPath,
     env: { HUSKY: "0" },
   });
+}
+
+export async function push(repoPath: string) {
+  await pullRebase(repoPath);
 
   await execa("git", ["push"], {
     cwd: repoPath,

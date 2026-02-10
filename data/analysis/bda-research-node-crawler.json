@@ -1,5 +1,5 @@
 {
-  "analyzedVersion": "8d56277528fc",
+  "analyzedVersion": "e88a060848ee",
   "analyzedCommit": "5f6219c02925299953918de9d39954895e17b187",
   "analyzedCommitDate": "2025-05-28T07:19:56.000Z",
   "checks": {
@@ -16,12 +16,6 @@
             "line": 4,
             "column": 24,
             "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
-          },
-          {
-            "file": "src/rateLimiter/cluster.ts",
-            "line": 101,
-            "column": 23,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
             "file": "src/lib/utils.ts",
@@ -46,6 +40,12 @@
             "line": 59,
             "column": 76,
             "message": "Array type using 'K[]' is forbidden. Use 'Array<K>' instead."
+          },
+          {
+            "file": "src/rateLimiter/cluster.ts",
+            "line": 101,
+            "column": 23,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
             "file": "src/types/crawler.ts",
@@ -75,39 +75,21 @@
         "count": 17,
         "samples": [
           {
-            "file": "src/rateLimiter/cluster.ts",
-            "line": 8,
-            "column": 28,
-            "message": "An index signature is preferred over a record."
-          },
-          {
-            "file": "src/types/crawler.ts",
-            "line": 118,
-            "column": 15,
-            "message": "An index signature is preferred over a record."
-          },
-          {
-            "file": "src/types/crawler.ts",
-            "line": 142,
-            "column": 20,
-            "message": "An index signature is preferred over a record."
-          },
-          {
-            "file": "src/types/crawler.ts",
-            "line": 180,
-            "column": 21,
+            "file": "src/crawler.ts",
+            "line": 84,
+            "column": 46,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "src/lib/utils.ts",
             "line": 20,
-            "column": 37,
+            "column": 70,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "src/lib/utils.ts",
             "line": 76,
-            "column": 34,
+            "column": 60,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -119,19 +101,37 @@
           {
             "file": "src/lib/utils.ts",
             "line": 94,
-            "column": 38,
+            "column": 64,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "src/lib/utils.ts",
-            "line": 95,
-            "column": 19,
+            "file": "src/logger.ts",
+            "line": 3,
+            "column": 23,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "src/crawler.ts",
-            "line": 84,
-            "column": 46,
+            "file": "src/rateLimiter/cluster.ts",
+            "line": 8,
+            "column": 28,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "src/types/crawler.ts",
+            "line": 117,
+            "column": 21,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "src/types/crawler.ts",
+            "line": 141,
+            "column": 10,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "src/types/crawler.ts",
+            "line": 180,
+            "column": 21,
             "message": "An index signature is preferred over a record."
           }
         ]
@@ -190,10 +190,10 @@
         "count": 5,
         "samples": [
           {
-            "file": "src/rateLimiter/cluster.ts",
-            "line": 1,
+            "file": "src/crawler.ts",
+            "line": 10,
             "column": 1,
-            "message": "Imports RateLimiterOptions and TaskWrapper are only used as type."
+            "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
             "file": "src/options.ts",
@@ -208,14 +208,14 @@
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "src/rateLimiter/rateLimiter.ts",
-            "line": 2,
+            "file": "src/rateLimiter/cluster.ts",
+            "line": 1,
             "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
+            "message": "Imports RateLimiterOptions and TaskWrapper are only used as type."
           },
           {
-            "file": "src/crawler.ts",
-            "line": 10,
+            "file": "src/rateLimiter/rateLimiter.ts",
+            "line": 2,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           }
@@ -238,6 +238,12 @@
         "count": 4,
         "samples": [
           {
+            "file": "src/crawler.ts",
+            "line": 17,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
             "file": "src/lib/utils.ts",
             "line": 47,
             "column": 8,
@@ -247,12 +253,6 @@
             "file": "src/lib/utils.ts",
             "line": 59,
             "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/crawler.ts",
-            "line": 17,
-            "column": 1,
             "message": "Expected a function expression."
           },
           {
@@ -297,20 +297,20 @@
             "message": "Expected a function declaration."
           },
           {
-            "file": "src/options.ts",
-            "line": 51,
-            "column": 14,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "src/options.ts",
-            "line": 80,
-            "column": 14,
-            "message": "Expected a function declaration."
-          },
-          {
             "file": "src/logger.ts",
             "line": 37,
+            "column": 14,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "src/options.ts",
+            "line": 63,
+            "column": 14,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "src/options.ts",
+            "line": 101,
             "column": 14,
             "message": "Expected a function declaration."
           },
@@ -340,24 +340,6 @@
             "message": "Prefer named exports"
           },
           {
-            "file": "src/lib/multiPriorityQueue.ts",
-            "line": 44,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "src/rateLimiter/rateLimiter.ts",
-            "line": 110,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "src/rateLimiter/cluster.ts",
-            "line": 136,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
             "file": "src/crawler.ts",
             "line": 352,
             "column": 8,
@@ -370,8 +352,26 @@
             "message": "Prefer named exports"
           },
           {
+            "file": "src/lib/multiPriorityQueue.ts",
+            "line": 44,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
             "file": "src/lib/queue.ts",
             "line": 132,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "src/rateLimiter/cluster.ts",
+            "line": 136,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "src/rateLimiter/rateLimiter.ts",
+            "line": 110,
             "column": 8,
             "message": "Prefer named exports"
           }
@@ -384,197 +384,88 @@
     },
     "indent": {
       "2-space": {
-        "count": 1772,
-        "samples": [
-          {
-            "file": "test/examples.js",
-            "line": 8,
-            "column": 1,
-            "message": "Expected indentation of 2 spaces but found 4."
-          },
-          {
-            "file": "src/lib/multiPriorityQueue.ts",
-            "line": 37,
-            "column": 1,
-            "message": "Expected indentation of 8 spaces but found 16."
-          },
-          {
-            "file": "src/options.ts",
-            "line": 137,
-            "column": 1,
-            "message": "Expected indentation of 2 spaces but found 4."
-          },
-          {
-            "file": "src/rateLimiter/cluster.ts",
-            "line": 119,
-            "column": 1,
-            "message": "Expected indentation of 2 spaces but found 4."
-          },
-          {
-            "file": "src/crawler.ts",
-            "line": 227,
-            "column": 1,
-            "message": "Expected indentation of 4 spaces but found 8."
-          },
-          {
-            "file": "src/types/crawler.ts",
-            "line": 154,
-            "column": 1,
-            "message": "Expected indentation of 2 spaces but found 4."
-          },
-          {
-            "file": "eslint.config.js",
-            "line": 9,
-            "column": 1,
-            "message": "Expected indentation of 2 spaces but found 4."
-          },
-          {
-            "file": "test/limiter.js",
-            "line": 39,
-            "column": 1,
-            "message": "Expected indentation of 2 spaces but found 4."
-          },
-          {
-            "file": "test/direct.js",
-            "line": 97,
-            "column": 1,
-            "message": "Expected indentation of 4 spaces but found 8."
-          },
-          {
-            "file": "test/http2ErrorHanding.js",
-            "line": 39,
-            "column": 1,
-            "message": "Expected indentation of 2 spaces but found 4."
-          }
-        ]
+        "count": 0,
+        "samples": []
       },
       "4-space": {
-        "count": 26,
+        "count": 2,
         "samples": [
           {
             "file": "src/crawler.ts",
             "line": 18,
             "column": 1,
-            "message": "Expected indentation of 4 spaces but found 2."
-          },
-          {
-            "file": "src/crawler.ts",
-            "line": 21,
-            "column": 1,
-            "message": "Expected indentation of 4 spaces but found 2."
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
             "file": "test/binaryDataStream.test.js",
-            "line": 11,
+            "line": 10,
             "column": 1,
-            "message": "Expected indentation of 8 spaces but found 4."
-          },
-          {
-            "file": "test/binaryDataStream.test.js",
-            "line": 13,
-            "column": 1,
-            "message": "Expected indentation of 12 spaces but found 6."
-          },
-          {
-            "file": "test/binaryDataStream.test.js",
-            "line": 17,
-            "column": 1,
-            "message": "Expected indentation of 8 spaces but found 4."
-          },
-          {
-            "file": "test/binaryDataStream.test.js",
-            "line": 20,
-            "column": 1,
-            "message": "Expected indentation of 16 spaces but found 8."
-          },
-          {
-            "file": "test/binaryDataStream.test.js",
-            "line": 24,
-            "column": 1,
-            "message": "Expected indentation of 12 spaces but found 6."
-          },
-          {
-            "file": "test/binaryDataStream.test.js",
-            "line": 26,
-            "column": 1,
-            "message": "Expected indentation of 12 spaces but found 6."
-          },
-          {
-            "file": "test/binaryDataStream.test.js",
-            "line": 29,
-            "column": 1,
-            "message": "Expected indentation of 16 spaces but found 8."
-          },
-          {
-            "file": "test/binaryDataStream.test.js",
-            "line": 32,
-            "column": 1,
-            "message": "Expected indentation of 4 spaces but found 2."
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
           }
         ]
       },
       "tab": {
-        "count": 1800,
+        "count": 29,
         "samples": [
+          {
+            "file": "eslint.config.js",
+            "line": 7,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
           {
             "file": "src/lib/multiPriorityQueue.ts",
             "line": 4,
             "column": 1,
-            "message": "Expected indentation of 1 tab but found 4 spaces."
+            "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "test/lib/avaTestCb.js",
+            "file": "src/logger.ts",
             "line": 4,
             "column": 1,
-            "message": "Expected indentation of 3 tabs but found 12 spaces."
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "src/rateLimiter/rateLimiter.ts",
+            "line": 5,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "test/cacheOptions.js",
+            "line": 7,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
           },
           {
             "file": "test/encoding.js",
-            "line": 20,
+            "line": 15,
             "column": 1,
-            "message": "Expected indentation of 1 tab but found 4 spaces."
+            "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/crawler.ts",
-            "line": 30,
+            "file": "test/http2ErrorHanding.js",
+            "line": 6,
             "column": 1,
-            "message": "Expected indentation of 1 tab but found 4 spaces."
+            "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/crawler.ts",
-            "line": 263,
+            "file": "test/limiter.js",
+            "line": 7,
             "column": 1,
-            "message": "Expected indentation of 3 tabs but found 12 spaces."
+            "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "test/cookieJar.js",
-            "line": 13,
+            "file": "test/rateLimit.js",
+            "line": 7,
             "column": 1,
-            "message": "Expected indentation of 5 tabs but found 20 spaces."
+            "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "test/http2Response.js",
-            "line": 49,
+            "file": "test/userAgent.js",
+            "line": 7,
             "column": 1,
-            "message": "Expected indentation of 1 tab but found 4 spaces."
-          },
-          {
-            "file": "test/examples.js",
-            "line": 50,
-            "column": 1,
-            "message": "Expected indentation of 1 tab but found 4 spaces."
-          },
-          {
-            "file": "test/preRequest.js",
-            "line": 106,
-            "column": 1,
-            "message": "Expected indentation of 2 tabs but found 8 spaces."
-          },
-          {
-            "file": "test/urlOptions.js",
-            "line": 51,
-            "column": 1,
-            "message": "Expected indentation of 1 tab but found 4 spaces."
+            "message": "Expected tabs for indentation, but found spaces."
           }
         ]
       }
@@ -584,45 +475,45 @@
         "count": 54,
         "samples": [
           {
+            "file": "test/binaryDataStream.test.js",
+            "line": 1,
+            "column": 18,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "test/binaryDataStream.test.js",
+            "line": 11,
+            "column": 10,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "test/binaryDataStream.test.js",
+            "line": 28,
+            "column": 50,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "test/priority.js",
+            "line": 16,
+            "column": 14,
+            "message": "Strings must use doublequote."
+          },
+          {
             "file": "test/rateLimit.js",
-            "line": 20,
-            "column": 20,
+            "line": 30,
+            "column": 53,
             "message": "Strings must use doublequote."
           },
           {
             "file": "test/rateLimit.js",
             "line": 47,
-            "column": 10,
+            "column": 53,
             "message": "Strings must use doublequote."
           },
           {
             "file": "test/rateLimit.js",
-            "line": 62,
-            "column": 84,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "test/binaryDataStream.test.js",
-            "line": 7,
-            "column": 32,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "test/binaryDataStream.test.js",
-            "line": 25,
-            "column": 19,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "test/binaryDataStream.test.js",
-            "line": 38,
-            "column": 14,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "test/priority.js",
-            "line": 32,
-            "column": 14,
+            "line": 63,
+            "column": 31,
             "message": "Strings must use doublequote."
           },
           {
@@ -649,50 +540,38 @@
         "count": 513,
         "samples": [
           {
-            "file": "src/rateLimiter/cluster.ts",
-            "line": 1,
-            "column": 62,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "src/options.ts",
-            "line": 117,
-            "column": 34,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "src/logger.ts",
-            "line": 20,
-            "column": 20,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "src/crawler.ts",
-            "line": 228,
-            "column": 35,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "test/rateLimit.js",
-            "line": 29,
-            "column": 14,
-            "message": "Strings must use singlequote."
-          },
-          {
             "file": "eslint.config.js",
-            "line": 27,
+            "line": 1,
             "column": 21,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "test/preRequest.js",
-            "line": 105,
-            "column": 28,
+            "file": "src/crawler.ts",
+            "line": 137,
+            "column": 61,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "src/logger.ts",
+            "line": 27,
+            "column": 44,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "src/options.ts",
+            "line": 125,
+            "column": 72,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "test/callback.js",
+            "line": 34,
+            "column": 37,
             "message": "Strings must use singlequote."
           },
           {
             "file": "test/direct.js",
-            "line": 76,
+            "line": 81,
             "column": 17,
             "message": "Strings must use singlequote."
           },
@@ -703,9 +582,21 @@
             "message": "Strings must use singlequote."
           },
           {
-            "file": "test/urlOptions.js",
-            "line": 41,
-            "column": 14,
+            "file": "test/limiter.js",
+            "line": 4,
+            "column": 21,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "test/priority.js",
+            "line": 47,
+            "column": 26,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "test/userAgent.js",
+            "line": 40,
+            "column": 13,
             "message": "Strings must use singlequote."
           }
         ]
@@ -715,12 +606,6 @@
       "always": {
         "count": 5,
         "samples": [
-          {
-            "file": "test/userAgent.js",
-            "line": 33,
-            "column": 7,
-            "message": "Missing semicolon."
-          },
           {
             "file": "test/priority.js",
             "line": 22,
@@ -744,6 +629,12 @@
             "line": 46,
             "column": 8,
             "message": "Missing semicolon."
+          },
+          {
+            "file": "test/userAgent.js",
+            "line": 33,
+            "column": 7,
+            "message": "Missing semicolon."
           }
         ]
       },
@@ -751,57 +642,57 @@
         "count": 1017,
         "samples": [
           {
-            "file": "src/lib/index.ts",
+            "file": "eslint.config.js",
             "line": 1,
-            "column": 57,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "src/lib/queue.ts",
-            "line": 62,
-            "column": 23,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "src/rateLimiter/cluster.ts",
-            "line": 19,
-            "column": 41,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "test/cacheOptions.js",
-            "line": 63,
-            "column": 14,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "test/limiter.js",
-            "line": 44,
-            "column": 66,
+            "column": 30,
             "message": "Extra semicolon."
           },
           {
             "file": "src/crawler.ts",
-            "line": 81,
-            "column": 11,
+            "line": 242,
+            "column": 24,
             "message": "Extra semicolon."
           },
           {
             "file": "src/lib/utils.ts",
-            "line": 23,
-            "column": 38,
+            "line": 60,
+            "column": 36,
             "message": "Extra semicolon."
           },
           {
-            "file": "test/http2ErrorHanding.js",
-            "line": 40,
-            "column": 3,
+            "file": "src/rateLimiter/rateLimiter.ts",
+            "line": 19,
+            "column": 2,
             "message": "Extra semicolon."
           },
           {
-            "file": "test/direct.js",
-            "line": 92,
-            "column": 3,
+            "file": "test/callback.js",
+            "line": 1,
+            "column": 23,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "test/encoding.js",
+            "line": 8,
+            "column": 33,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "test/examples.js",
+            "line": 52,
+            "column": 16,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "test/limiter.js",
+            "line": 85,
+            "column": 19,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "test/rateLimit.js",
+            "line": 47,
+            "column": 90,
             "message": "Extra semicolon."
           },
           {

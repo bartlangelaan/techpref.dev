@@ -1,5 +1,5 @@
 {
-  "analyzedVersion": "8d56277528fc",
+  "analyzedVersion": "e88a060848ee",
   "analyzedCommit": "b6a326b4348e80c3f9de9687d217cb117414d3fd",
   "analyzedCommitDate": "2025-11-04T16:23:01.000Z",
   "checks": {
@@ -11,12 +11,6 @@
       "generic": {
         "count": 4,
         "samples": [
-          {
-            "file": "extensions/chrome/src/lib/utils.ts",
-            "line": 4,
-            "column": 31,
-            "message": "Array type using 'ClassValue[]' is forbidden. Use 'Array<ClassValue>' instead."
-          },
           {
             "file": "extensions/chrome/src/hooks/use-model-instructions.ts",
             "line": 18,
@@ -34,6 +28,12 @@
             "line": 42,
             "column": 32,
             "message": "Array type using 'ModelInstruction[]' is forbidden. Use 'Array<ModelInstruction>' instead."
+          },
+          {
+            "file": "extensions/chrome/src/lib/utils.ts",
+            "line": 4,
+            "column": 31,
+            "message": "Array type using 'ClassValue[]' is forbidden. Use 'Array<ClassValue>' instead."
           }
         ]
       }
@@ -100,15 +100,15 @@
         "count": 13,
         "samples": [
           {
-            "file": "extensions/chrome/src/content/v3/features/instruction-selector/handle-content-change.ts",
+            "file": "extensions/chrome/scripts/check-version-sync.ts",
             "line": 6,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "extensions/chrome/src/types/index.ts",
-            "line": 6,
-            "column": 8,
+            "file": "extensions/chrome/scripts/check-version-sync.ts",
+            "line": 11,
+            "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
@@ -118,8 +118,8 @@
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "extensions/chrome/src/__tests__/sample.test.ts",
-            "line": 3,
+            "file": "extensions/chrome/src/components/instruction-selector/instruction-description.tsx",
+            "line": 5,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
@@ -127,6 +127,12 @@
             "file": "extensions/chrome/src/components/ui/badge.tsx",
             "line": 27,
             "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "extensions/chrome/src/content/v3/features/instruction-selector/handle-content-change.ts",
+            "line": 6,
+            "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
@@ -142,21 +148,15 @@
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "extensions/chrome/src/components/ui/button.tsx",
-            "line": 38,
+            "file": "extensions/chrome/src/services/mutation-observer.ts",
+            "line": 3,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "extensions/chrome/scripts/check-version-sync.ts",
+            "file": "extensions/chrome/src/types/index.ts",
             "line": 6,
-            "column": 1,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "extensions/chrome/scripts/check-version-sync.ts",
-            "line": 11,
-            "column": 1,
+            "column": 8,
             "message": "Use `type` instead of `interface`."
           }
         ]
@@ -167,6 +167,12 @@
         "count": 7,
         "samples": [
           {
+            "file": "extensions/chrome/src/content/v3/features/base-feature.ts",
+            "line": 1,
+            "column": 1,
+            "message": "All imports in the declaration are only used as types. Use `import type`."
+          },
+          {
             "file": "extensions/chrome/src/content/v3/features/instruction-selector/handle-content-change.ts",
             "line": 3,
             "column": 1,
@@ -174,18 +180,6 @@
           },
           {
             "file": "extensions/chrome/src/content/v3/managers/feature-manager.ts",
-            "line": 1,
-            "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
-          {
-            "file": "extensions/chrome/src/types/index.ts",
-            "line": 1,
-            "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
-          {
-            "file": "extensions/chrome/src/content/v3/features/base-feature.ts",
             "line": 1,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
@@ -207,6 +201,12 @@
             "line": 8,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
+          },
+          {
+            "file": "extensions/chrome/src/types/index.ts",
+            "line": 1,
+            "column": 1,
+            "message": "All imports in the declaration are only used as types. Use `import type`."
           }
         ]
       },
@@ -214,27 +214,9 @@
         "count": 7,
         "samples": [
           {
-            "file": "extensions/chrome/src/components/ui/badge.tsx",
-            "line": 3,
-            "column": 15,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "extensions/chrome/src/lib/utils.ts",
-            "line": 1,
-            "column": 16,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
             "file": "extensions/chrome/src/__tests__/sample.test.ts",
             "line": 1,
             "column": 48,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "extensions/chrome/src/content/v3/features/thinking-block/index.ts",
-            "line": 1,
-            "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
@@ -244,15 +226,33 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "extensions/chrome/src/content/v3/features/instruction-selector/index.ts",
-            "line": 1,
-            "column": 1,
+            "file": "extensions/chrome/src/components/ui/badge.tsx",
+            "line": 3,
+            "column": 15,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "extensions/chrome/src/components/ui/button.tsx",
             "line": 4,
             "column": 15,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "extensions/chrome/src/content/v3/features/instruction-selector/index.ts",
+            "line": 1,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "extensions/chrome/src/content/v3/features/thinking-block/index.ts",
+            "line": 1,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "extensions/chrome/src/lib/utils.ts",
+            "line": 1,
+            "column": 16,
             "message": "Use an `import` instead of an `import type`."
           }
         ]
@@ -263,14 +263,20 @@
         "count": 16,
         "samples": [
           {
-            "file": "extensions/chrome/src/lib/utils.ts",
-            "line": 4,
-            "column": 8,
+            "file": "extensions/chrome/src/background/index.ts",
+            "line": 11,
+            "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "extensions/chrome/src/content/v3/features/instruction-selector/handle-content-change.ts",
-            "line": 20,
+            "file": "extensions/chrome/src/components/ui/badge.tsx",
+            "line": 31,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "extensions/chrome/src/components/ui/skeleton.tsx",
+            "line": 3,
             "column": 1,
             "message": "Expected a function expression."
           },
@@ -281,14 +287,14 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "extensions/chrome/src/components/ui/badge.tsx",
-            "line": 31,
-            "column": 1,
+            "file": "extensions/chrome/src/content/v3/features/instruction-selector/handle-select-component.ts",
+            "line": 42,
+            "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "extensions/chrome/src/content/v3/features/instruction-selector/handle-select-component.ts",
-            "line": 42,
+            "file": "extensions/chrome/src/content/v3/features/instruction-selector/process-input-container.ts",
+            "line": 6,
             "column": 8,
             "message": "Expected a function expression."
           },
@@ -306,20 +312,14 @@
           },
           {
             "file": "extensions/chrome/src/content/v3/features/thinking-block/setup-controls.ts",
-            "line": 46,
+            "line": 34,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "extensions/chrome/src/content/v3/features/instruction-selector/process-input-container.ts",
-            "line": 6,
+            "file": "extensions/chrome/src/lib/utils.ts",
+            "line": 4,
             "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "extensions/chrome/src/background/index.ts",
-            "line": 11,
-            "column": 1,
             "message": "Expected a function expression."
           }
         ]
@@ -327,6 +327,30 @@
       "declaration": {
         "count": 24,
         "samples": [
+          {
+            "file": "extensions/chrome/src/__tests__/sample.test.ts",
+            "line": 63,
+            "column": 11,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "extensions/chrome/src/components/instruction-selector/index.tsx",
+            "line": 70,
+            "column": 9,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "extensions/chrome/src/components/instruction-selector/instruction-description.tsx",
+            "line": 17,
+            "column": 14,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "extensions/chrome/src/hooks/use-content-sync.ts",
+            "line": 25,
+            "column": 14,
+            "message": "Expected a function declaration."
+          },
           {
             "file": "extensions/chrome/src/hooks/use-model-instructions.ts",
             "line": 17,
@@ -340,33 +364,9 @@
             "message": "Expected a function declaration."
           },
           {
-            "file": "extensions/chrome/src/components/instruction-selector/instruction-item.tsx",
-            "line": 7,
+            "file": "extensions/chrome/src/utils/extract-description.ts",
+            "line": 1,
             "column": 14,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "extensions/chrome/src/utils/url-utils.ts",
-            "line": 5,
-            "column": 14,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "extensions/chrome/src/content/v3/features/instruction-selector/select-root.tsx",
-            "line": 10,
-            "column": 14,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "extensions/chrome/src/components/instruction-selector/index.tsx",
-            "line": 70,
-            "column": 9,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "extensions/chrome/src/utils/insert-text.ts",
-            "line": 9,
-            "column": 9,
             "message": "Expected a function declaration."
           },
           {
@@ -376,15 +376,15 @@
             "message": "Expected a function declaration."
           },
           {
-            "file": "extensions/chrome/src/components/instruction-selector/instruction-description.tsx",
-            "line": 17,
-            "column": 14,
+            "file": "extensions/chrome/src/utils/insert-text.ts",
+            "line": 9,
+            "column": 9,
             "message": "Expected a function declaration."
           },
           {
-            "file": "extensions/chrome/src/__tests__/sample.test.ts",
-            "line": 63,
-            "column": 11,
+            "file": "extensions/chrome/src/utils/url-utils.ts",
+            "line": 9,
+            "column": 14,
             "message": "Expected a function declaration."
           }
         ]
@@ -395,14 +395,14 @@
         "count": 4,
         "samples": [
           {
-            "file": "extensions/chrome/webpack/webpack.common.js",
-            "line": 10,
+            "file": "extensions/chrome/vitest.config.ts",
+            "line": 4,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "extensions/chrome/webpack/webpack.prod.js",
-            "line": 5,
+            "file": "extensions/chrome/webpack/webpack.common.js",
+            "line": 10,
             "column": 8,
             "message": "Prefer named exports"
           },
@@ -413,8 +413,8 @@
             "message": "Prefer named exports"
           },
           {
-            "file": "extensions/chrome/vitest.config.ts",
-            "line": 4,
+            "file": "extensions/chrome/webpack/webpack.prod.js",
+            "line": 5,
             "column": 8,
             "message": "Prefer named exports"
           }
@@ -430,38 +430,8 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "extensions/chrome/src/content/v3/features/instruction-selector/index.ts",
-            "line": 13,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "extensions/chrome/src/content/v3/managers/extension-manager.ts",
-            "line": 10,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "extensions/chrome/src/content/v3/features/base-feature.ts",
-            "line": 7,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "extensions/chrome/src/selectors/thinking-block.ts",
-            "line": 1,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "extensions/chrome/src/hooks/use-content-sync.ts",
-            "line": 25,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "extensions/chrome/src/hooks/use-model-instructions.ts",
-            "line": 17,
+            "file": "extensions/chrome/src/components/ui/skeleton.tsx",
+            "line": 15,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -472,14 +442,44 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "extensions/chrome/src/utils/insert-text.ts",
+            "file": "extensions/chrome/src/content/v3/features/instruction-selector/select-root.tsx",
+            "line": 10,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "extensions/chrome/src/content/v3/features/thinking-block/process-thinking-block.ts",
+            "line": 5,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "extensions/chrome/src/content/v3/features/thinking-block/setup-controls.ts",
+            "line": 1,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "extensions/chrome/src/content/v3/managers/feature-manager.ts",
             "line": 3,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "extensions/chrome/src/lib/utils.ts",
-            "line": 4,
+            "file": "extensions/chrome/src/hooks/use-model-instructions.ts",
+            "line": 17,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "extensions/chrome/src/selectors/thinking-block.ts",
+            "line": 1,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "extensions/chrome/src/utils/insert-text.ts",
+            "line": 3,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           }
@@ -488,173 +488,136 @@
     },
     "indent": {
       "2-space": {
-        "count": 6,
-        "samples": [
-          {
-            "file": "extensions/chrome/src/components/ui/badge.tsx",
-            "line": 29,
-            "column": 1,
-            "message": "Expected indentation of 2 spaces but found 4."
-          },
-          {
-            "file": "extensions/chrome/src/components/ui/button.tsx",
-            "line": 40,
-            "column": 1,
-            "message": "Expected indentation of 2 spaces but found 4."
-          },
-          {
-            "file": "extensions/firefox/content.js",
-            "line": 143,
-            "column": 1,
-            "message": "Expected indentation of 8 spaces but found 6."
-          },
-          {
-            "file": "extensions/firefox/content.js",
-            "line": 144,
-            "column": 1,
-            "message": "Expected indentation of 6 spaces but found 4."
-          },
-          {
-            "file": "extensions/chrome_v0/content.js",
-            "line": 143,
-            "column": 1,
-            "message": "Expected indentation of 8 spaces but found 6."
-          },
-          {
-            "file": "extensions/chrome_v0/content.js",
-            "line": 144,
-            "column": 1,
-            "message": "Expected indentation of 6 spaces but found 4."
-          }
-        ]
+        "count": 0,
+        "samples": []
       },
       "4-space": {
-        "count": 2036,
+        "count": 47,
         "samples": [
+          {
+            "file": "extensions/chrome/eslint.config.cjs",
+            "line": 3,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "extensions/chrome/src/background/index.ts",
+            "line": 3,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "extensions/chrome/src/components/ui/badge.tsx",
+            "line": 8,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
           {
             "file": "extensions/chrome/src/components/ui/tooltip.tsx",
             "line": 14,
             "column": 1,
-            "message": "Expected indentation of 4 spaces but found 2."
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
             "file": "extensions/chrome/src/content/v3/features/instruction-selector/handle-select-component.ts",
-            "line": 35,
+            "line": 9,
             "column": 1,
-            "message": "Expected indentation of 16 spaces but found 8."
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "extensions/chrome_v0/content.js",
-            "line": 296,
+            "file": "extensions/chrome/src/content/v3/features/thinking-block/setup-controls.ts",
+            "line": 2,
             "column": 1,
-            "message": "Expected indentation of 4 spaces but found 2."
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "extensions/chrome/src/lib/utils.ts",
+            "line": 5,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "extensions/chrome/src/utils/extract-description.ts",
+            "line": 3,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "extensions/chrome/vitest.config.ts",
+            "line": 5,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
             "file": "extensions/firefox/content.js",
-            "line": 50,
+            "line": 2,
             "column": 1,
-            "message": "Expected indentation of 8 spaces but found 4."
-          },
-          {
-            "file": "extensions/firefox/content.js",
-            "line": 338,
-            "column": 1,
-            "message": "Expected indentation of 12 spaces but found 6."
-          },
-          {
-            "file": "extensions/chrome/src/services/mutation-observer.ts",
-            "line": 71,
-            "column": 1,
-            "message": "Expected indentation of 4 spaces but found 2."
-          },
-          {
-            "file": "extensions/chrome/src/hooks/use-model-instructions.ts",
-            "line": 88,
-            "column": 1,
-            "message": "Expected indentation of 12 spaces but found 6."
-          },
-          {
-            "file": "extensions/chrome/eslint.config.cjs",
-            "line": 95,
-            "column": 1,
-            "message": "Expected indentation of 4 spaces but found 2."
-          },
-          {
-            "file": "extensions/chrome/src/components/ui/select.tsx",
-            "line": 124,
-            "column": 1,
-            "message": "Expected indentation of 4 spaces but found 2."
-          },
-          {
-            "file": "extensions/chrome/src/content/v3/managers/feature-manager.ts",
-            "line": 55,
-            "column": 1,
-            "message": "Expected indentation of 4 spaces but found 2."
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
           }
         ]
       },
       "tab": {
-        "count": 2043,
+        "count": 47,
         "samples": [
           {
-            "file": "extensions/chrome/src/content/v3/features/thinking-block/process-thinking-block.ts",
-            "line": 6,
-            "column": 1,
-            "message": "Expected indentation of 1 tab but found 2 spaces."
-          },
-          {
-            "file": "extensions/chrome/src/content/v3/features/thinking-block/index.ts",
-            "line": 16,
-            "column": 1,
-            "message": "Expected indentation of 2 tabs but found 4 spaces."
-          },
-          {
             "file": "extensions/chrome/eslint.config.cjs",
-            "line": 72,
+            "line": 3,
             "column": 1,
-            "message": "Expected indentation of 1 tab but found 2 spaces."
+            "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "extensions/chrome_v0/content.js",
-            "line": 136,
+            "file": "extensions/chrome/src/background/index.ts",
+            "line": 3,
             "column": 1,
-            "message": "Expected indentation of 3 tabs but found 6 spaces."
-          },
-          {
-            "file": "extensions/firefox/content.js",
-            "line": 92,
-            "column": 1,
-            "message": "Expected indentation of 3 tabs but found 6 spaces."
-          },
-          {
-            "file": "extensions/chrome/src/components/instruction-selector/index.tsx",
-            "line": 35,
-            "column": 1,
-            "message": "Expected indentation of 3 tabs but found 6 spaces."
+            "message": "Expected tabs for indentation, but found spaces."
           },
           {
             "file": "extensions/chrome/src/components/ui/badge.tsx",
-            "line": 16,
+            "line": 8,
             "column": 1,
-            "message": "Expected indentation of 4 tabs but found 8 spaces."
+            "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "extensions/chrome/src/content/v3/managers/feature-manager.ts",
-            "line": 16,
+            "file": "extensions/chrome/src/components/ui/tooltip.tsx",
+            "line": 14,
             "column": 1,
-            "message": "Expected indentation of 2 tabs but found 4 spaces."
+            "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "extensions/chrome/src/content/v3/managers/extension-manager.ts",
-            "line": 58,
+            "file": "extensions/chrome/src/content/v3/features/instruction-selector/handle-select-component.ts",
+            "line": 9,
             "column": 1,
-            "message": "Expected indentation of 3 tabs but found 6 spaces."
+            "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "extensions/chrome/src/content/index.ts",
-            "line": 18,
+            "file": "extensions/chrome/src/content/v3/features/thinking-block/setup-controls.ts",
+            "line": 2,
             "column": 1,
-            "message": "Expected indentation of 1 tab but found 2 spaces."
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "extensions/chrome/src/lib/utils.ts",
+            "line": 5,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "extensions/chrome/src/utils/extract-description.ts",
+            "line": 3,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "extensions/chrome/vitest.config.ts",
+            "line": 5,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "extensions/firefox/content.js",
+            "line": 2,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
           }
         ]
       }
@@ -664,36 +627,18 @@
         "count": 10,
         "samples": [
           {
+            "file": "extensions/chrome/src/content/v3/features/thinking-block/setup-controls.ts",
+            "line": 57,
+            "column": 5,
+            "message": "Strings must use doublequote."
+          },
+          {
             "file": "extensions/chrome/src/selectors/input-selectors.ts",
             "line": 8,
             "column": 3,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "extensions/firefox/content.js",
-            "line": 48,
-            "column": 11,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "extensions/firefox/content.js",
-            "line": 49,
-            "column": 11,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "extensions/firefox/content.js",
-            "line": 50,
-            "column": 12,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "extensions/firefox/content.js",
-            "line": 219,
-            "column": 37,
-            "message": "Strings must use doublequote."
-          },
-          {
             "file": "extensions/chrome_v0/content.js",
             "line": 48,
             "column": 11,
@@ -718,9 +663,27 @@
             "message": "Strings must use doublequote."
           },
           {
-            "file": "extensions/chrome/src/content/v3/features/thinking-block/setup-controls.ts",
-            "line": 57,
-            "column": 5,
+            "file": "extensions/firefox/content.js",
+            "line": 48,
+            "column": 11,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "extensions/firefox/content.js",
+            "line": 49,
+            "column": 11,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "extensions/firefox/content.js",
+            "line": 50,
+            "column": 12,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "extensions/firefox/content.js",
+            "line": 219,
+            "column": 37,
             "message": "Strings must use doublequote."
           }
         ]
@@ -729,63 +692,63 @@
         "count": 599,
         "samples": [
           {
-            "file": "extensions/chrome/src/selectors/input-selectors.ts",
-            "line": 1,
-            "column": 39,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "extensions/chrome/src/hooks/use-model-instructions.ts",
-            "line": 37,
-            "column": 33,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "extensions/chrome/src/utils/insert-text.ts",
-            "line": 75,
-            "column": 39,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "extensions/chrome/tailwind.config.cjs",
-            "line": 47,
-            "column": 20,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "extensions/chrome_v0/content.js",
-            "line": 50,
-            "column": 12,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "extensions/chrome/src/components/ui/select.tsx",
-            "line": 21,
+            "file": "extensions/chrome/eslint.config.cjs",
+            "line": 5,
             "column": 7,
             "message": "Strings must use singlequote."
           },
           {
             "file": "extensions/chrome/eslint.config.cjs",
-            "line": 43,
-            "column": 22,
+            "line": 92,
+            "column": 7,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "extensions/chrome/webpack/webpack.common.js",
-            "line": 36,
-            "column": 21,
+            "file": "extensions/chrome/src/components/instruction-selector/index.tsx",
+            "line": 35,
+            "column": 7,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "extensions/chrome/src/components/ui/select.tsx",
+            "line": 6,
+            "column": 20,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "extensions/chrome/src/content/v3/features/thinking-block/process-thinking-block.ts",
+            "line": 14,
+            "column": 28,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "extensions/chrome/src/selectors/thinking-block.ts",
+            "line": 2,
+            "column": 3,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "extensions/chrome/tailwind.config.cjs",
+            "line": 106,
+            "column": 11,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "extensions/chrome/webpack/webpack.dev.js",
+            "line": 9,
+            "column": 13,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "extensions/chrome_v0/content.js",
+            "line": 340,
+            "column": 40,
             "message": "Strings must use singlequote."
           },
           {
             "file": "extensions/firefox/content.js",
-            "line": 66,
-            "column": 29,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "extensions/chrome/scripts/check-version-sync.ts",
-            "line": 52,
-            "column": 5,
+            "line": 358,
+            "column": 27,
             "message": "Strings must use singlequote."
           }
         ]
@@ -796,63 +759,63 @@
         "count": 527,
         "samples": [
           {
+            "file": "extensions/chrome/eslint.config.cjs",
+            "line": 97,
+            "column": 2,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "extensions/chrome/src/components/instruction-selector/index.tsx",
+            "line": 20,
+            "column": 62,
+            "message": "Missing semicolon."
+          },
+          {
             "file": "extensions/chrome/src/components/ui/collapsible.tsx",
-            "line": 1,
-            "column": 68,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "extensions/chrome/src/__tests__/sample.test.ts",
-            "line": 40,
-            "column": 23,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "extensions/chrome/src/content/v3/features/thinking-block/setup-controls.ts",
-            "line": 60,
-            "column": 40,
+            "line": 5,
+            "column": 67,
             "message": "Missing semicolon."
           },
           {
             "file": "extensions/chrome/src/content/v3/features/base-feature.ts",
-            "line": 14,
-            "column": 45,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "extensions/chrome/src/services/mutation-observer.ts",
-            "line": 14,
+            "line": 26,
             "column": 70,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "extensions/chrome/src/content/v3/managers/feature-manager.ts",
-            "line": 5,
-            "column": 59,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "extensions/chrome/src/content/v3/managers/extension-manager.ts",
-            "line": 50,
-            "column": 32,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "extensions/chrome/src/hooks/use-model-instructions.ts",
-            "line": 139,
-            "column": 11,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "extensions/chrome/src/content/v3/features/instruction-selector/handle-content-change.ts",
-            "line": 45,
-            "column": 28,
             "message": "Missing semicolon."
           },
           {
             "file": "extensions/chrome/src/content/v3/features/instruction-selector/process-input-container.ts",
             "line": 28,
             "column": 68,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "extensions/chrome/src/content/v3/features/thinking-block/setup-controls.ts",
+            "line": 62,
+            "column": 11,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "extensions/chrome/src/hooks/use-content-sync.ts",
+            "line": 56,
+            "column": 14,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "extensions/chrome/src/hooks/use-model-instructions.ts",
+            "line": 131,
+            "column": 57,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "extensions/chrome/src/utils/format.ts",
+            "line": 12,
+            "column": 2,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "extensions/chrome/webpack/webpack.prod.js",
+            "line": 8,
+            "column": 3,
             "message": "Missing semicolon."
           }
         ]

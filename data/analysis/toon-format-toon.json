@@ -1,5 +1,5 @@
 {
-  "analyzedVersion": "8d56277528fc",
+  "analyzedVersion": "e88a060848ee",
   "analyzedCommit": "b1413925b7111663497f6fd2948c2cf7e3e766f7",
   "analyzedCommitDate": "2026-01-23T07:17:45.000Z",
   "checks": {
@@ -8,9 +8,15 @@
         "count": 6,
         "samples": [
           {
-            "file": "benchmarks/src/questions/tabular.ts",
+            "file": "benchmarks/src/questions/analytics.ts",
             "line": 13,
-            "column": 26,
+            "column": 32,
+            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
+          },
+          {
+            "file": "benchmarks/src/questions/event-logs.ts",
+            "line": 13,
+            "column": 29,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
@@ -32,15 +38,9 @@
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
-            "file": "benchmarks/src/questions/analytics.ts",
+            "file": "benchmarks/src/questions/tabular.ts",
             "line": 13,
-            "column": 32,
-            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
-          },
-          {
-            "file": "benchmarks/src/questions/event-logs.ts",
-            "line": 13,
-            "column": 29,
+            "column": 26,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           }
         ]
@@ -49,16 +49,46 @@
         "count": 181,
         "samples": [
           {
-            "file": "packages/toon/test/encode.test.ts",
+            "file": "benchmarks/scripts/accuracy-benchmark.ts",
             "line": 25,
-            "column": 6,
-            "message": "Array type using 'Fixtures[]' is forbidden. Use 'Array<Fixtures>' instead."
+            "column": 45,
+            "message": "Array type using 'Question[]' is forbidden. Use 'Array<Question>' instead."
           },
           {
-            "file": "packages/toon/src/encode/replacer.ts",
-            "line": 103,
-            "column": 9,
-            "message": "Array type using 'readonly T[]' is forbidden. Use 'ReadonlyArray<T>' instead."
+            "file": "benchmarks/src/datasets.ts",
+            "line": 126,
+            "column": 15,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+          },
+          {
+            "file": "benchmarks/src/questions/event-logs.ts",
+            "line": 9,
+            "column": 84,
+            "message": "Array type using 'Question[]' is forbidden. Use 'Array<Question>' instead."
+          },
+          {
+            "file": "benchmarks/src/questions/structure.ts",
+            "line": 14,
+            "column": 14,
+            "message": "Array type using 'Employee[]' is forbidden. Use 'Array<Employee>' instead."
+          },
+          {
+            "file": "benchmarks/src/report.ts",
+            "line": 205,
+            "column": 18,
+            "message": "Array type using 'FormatResult[]' is forbidden. Use 'Array<FormatResult>' instead."
+          },
+          {
+            "file": "benchmarks/src/storage.ts",
+            "line": 25,
+            "column": 66,
+            "message": "Array type using 'EvaluationResult[]' is forbidden. Use 'Array<EvaluationResult>' instead."
+          },
+          {
+            "file": "packages/cli/test/json-from-events.test.ts",
+            "line": 418,
+            "column": 17,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
             "file": "packages/toon/src/encode/encoders.ts",
@@ -67,46 +97,16 @@
             "message": "Array type using 'readonly string[]' is forbidden. Use 'ReadonlyArray<string>' instead."
           },
           {
-            "file": "packages/cli/test/index.test.ts",
-            "line": 566,
-            "column": 26,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+            "file": "packages/toon/src/encode/replacer.ts",
+            "line": 105,
+            "column": 17,
+            "message": "Array type using 'JsonValue[]' is forbidden. Use 'Array<JsonValue>' instead."
           },
           {
-            "file": "benchmarks/src/questions/event-logs.ts",
-            "line": 10,
-            "column": 20,
-            "message": "Array type using 'Question[]' is forbidden. Use 'Array<Question>' instead."
-          },
-          {
-            "file": "benchmarks/src/datasets.ts",
-            "line": 107,
-            "column": 15,
-            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
-          },
-          {
-            "file": "benchmarks/src/questions/index.ts",
-            "line": 34,
-            "column": 84,
-            "message": "Array type using 'Order[]' is forbidden. Use 'Array<Order>' instead."
-          },
-          {
-            "file": "benchmarks/scripts/fetch-github-repos.ts",
-            "line": 34,
-            "column": 45,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
-          },
-          {
-            "file": "benchmarks/src/report.ts",
-            "line": 109,
-            "column": 43,
-            "message": "Array type using 'Dataset[]' is forbidden. Use 'Array<Dataset>' instead."
-          },
-          {
-            "file": "benchmarks/src/report.ts",
-            "line": 589,
-            "column": 15,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+            "file": "packages/toon/test/types.ts",
+            "line": 30,
+            "column": 10,
+            "message": "Array type using 'TestCase[]' is forbidden. Use 'Array<TestCase>' instead."
           }
         ]
       }
@@ -156,15 +156,33 @@
         "count": 33,
         "samples": [
           {
-            "file": "benchmarks/src/evaluate.ts",
-            "line": 26,
-            "column": 23,
+            "file": "benchmarks/scripts/accuracy-benchmark.ts",
+            "line": 46,
+            "column": 31,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "packages/cli/src/json-stringify-stream.ts",
-            "line": 61,
-            "column": 37,
+            "file": "benchmarks/scripts/token-efficiency-benchmark.ts",
+            "line": 164,
+            "column": 25,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "benchmarks/src/constants.ts",
+            "line": 45,
+            "column": 39,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "benchmarks/src/datasets.ts",
+            "line": 136,
+            "column": 12,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "benchmarks/src/evaluate.ts",
+            "line": 26,
+            "column": 23,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -175,44 +193,26 @@
           },
           {
             "file": "benchmarks/src/report.ts",
-            "line": 208,
+            "line": 79,
             "column": 16,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "packages/toon/src/encode/normalize.ts",
-            "line": 115,
-            "column": 57,
-            "message": "An index signature is preferred over a record."
-          },
-          {
-            "file": "packages/cli/test/json-stringify-stream.test.ts",
-            "line": 224,
-            "column": 20,
-            "message": "An index signature is preferred over a record."
-          },
-          {
-            "file": "benchmarks/scripts/token-efficiency-benchmark.ts",
-            "line": 293,
-            "column": 87,
-            "message": "An index signature is preferred over a record."
-          },
-          {
             "file": "benchmarks/src/storage.ts",
-            "line": 29,
-            "column": 53,
+            "line": 31,
+            "column": 18,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "benchmarks/src/datasets.ts",
-            "line": 119,
-            "column": 15,
+            "file": "packages/cli/src/json-stringify-stream.ts",
+            "line": 114,
+            "column": 8,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "benchmarks/src/datasets.ts",
-            "line": 167,
-            "column": 9,
+            "file": "packages/toon/src/encode/replacer.ts",
+            "line": 70,
+            "column": 17,
             "message": "An index signature is preferred over a record."
           }
         ]
@@ -227,38 +227,32 @@
         "count": 34,
         "samples": [
           {
-            "file": "packages/toon/src/decode/scanner.ts",
-            "line": 6,
-            "column": 8,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "packages/toon/src/encode/folding.ts",
+            "file": "benchmarks/scripts/token-efficiency-benchmark.ts",
             "line": 11,
-            "column": 8,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "packages/cli/test/utils.ts",
-            "line": 9,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "packages/toon/src/types.ts",
-            "line": 92,
+            "file": "benchmarks/src/datasets.ts",
+            "line": 49,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "packages/toon/src/types.ts",
-            "line": 160,
+            "file": "benchmarks/src/datasets.ts",
+            "line": 95,
             "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "benchmarks/src/normalize.ts",
+            "line": 48,
+            "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "benchmarks/src/types.ts",
-            "line": 21,
+            "line": 38,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
@@ -269,20 +263,26 @@
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "benchmarks/src/datasets.ts",
-            "line": 61,
+            "file": "packages/toon/src/decode/event-builder.ts",
+            "line": 10,
+            "column": 1,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "packages/toon/src/types.ts",
+            "line": 52,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "benchmarks/src/datasets.ts",
-            "line": 150,
+            "file": "packages/toon/src/types.ts",
+            "line": 145,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "packages/toon/src/decode/expand.ts",
-            "line": 17,
+            "file": "packages/toon/test/types.ts",
+            "line": 26,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           }
@@ -305,61 +305,61 @@
         "count": 67,
         "samples": [
           {
-            "file": "docs/.vitepress/theme/index.ts",
+            "file": "automd.config.ts",
             "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/toon/src/decode/validation.ts",
+            "file": "benchmarks/src/questions/analytics.ts",
             "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/cli/src/index.ts",
-            "line": 3,
+            "file": "benchmarks/src/questions/nested-config.ts",
+            "line": 1,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "benchmarks/src/questions/tabular.ts",
+            "line": 1,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "benchmarks/src/types.ts",
+            "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "packages/cli/src/conversion.ts",
-            "line": 2,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "packages/toon/src/decode/decoders.ts",
             "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/cli/test/json-from-events.test.ts",
+            "file": "packages/cli/src/utils.ts",
             "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/toon/src/encode/encoders.ts",
+            "file": "packages/toon/src/decode/parser.ts",
             "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "benchmarks/src/evaluate.ts",
-            "line": 2,
+            "file": "packages/toon/src/index.ts",
+            "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "benchmarks/src/questions/structure.ts",
-            "line": 2,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "benchmarks/src/report.ts",
+            "file": "packages/toon/tsdown.config.ts",
             "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
@@ -372,62 +372,62 @@
         "count": 205,
         "samples": [
           {
-            "file": "packages/cli/src/conversion.ts",
-            "line": 14,
-            "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "packages/toon/src/encode/normalize.ts",
-            "line": 115,
-            "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "docs/.vitepress/config.ts",
-            "line": 110,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "benchmarks/src/storage.ts",
+            "file": "benchmarks/scripts/accuracy-benchmark.ts",
             "line": 25,
-            "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "packages/toon/src/encode/folding.ts",
-            "line": 133,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "packages/toon/src/decode/expand.ts",
-            "line": 123,
+            "file": "benchmarks/src/normalize.ts",
+            "line": 93,
             "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "packages/toon/src/index.ts",
-            "line": 48,
-            "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "packages/toon/src/encode/primitives.ts",
-            "line": 56,
-            "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "benchmarks/src/report.ts",
-            "line": 354,
+            "line": 17,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "docs/.vitepress/theme/components/PlaygroundLayout.vue",
+            "line": 215,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "packages/cli/test/json-stringify-stream.test.ts",
+            "line": 243,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "packages/toon/src/decode/decoders.ts",
-            "line": 887,
+            "line": 653,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "packages/toon/src/decode/parser.ts",
+            "line": 311,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "packages/toon/src/encode/encoders.ts",
+            "line": 364,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "packages/toon/src/encode/replacer.ts",
+            "line": 65,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "packages/toon/test/encode.test.ts",
+            "line": 46,
             "column": 1,
             "message": "Expected a function expression."
           }
@@ -437,15 +437,15 @@
         "count": 33,
         "samples": [
           {
-            "file": "commitlint.config.ts",
-            "line": 13,
-            "column": 7,
-            "message": "Expected a function declaration."
-          },
-          {
             "file": "benchmarks/src/questions/index.ts",
             "line": 30,
             "column": 9,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "packages/toon/test/normalization.test.ts",
+            "line": 253,
+            "column": 13,
             "message": "Expected a function declaration."
           },
           {
@@ -504,32 +504,8 @@
         "count": 8,
         "samples": [
           {
-            "file": "packages/toon/tsdown.config.ts",
-            "line": 9,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "docs/.vitepress/theme/index.ts",
-            "line": 23,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
             "file": "automd.config.ts",
             "line": 7,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "docs/.vitepress/config.ts",
-            "line": 7,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "eslint.config.mjs",
-            "line": 4,
             "column": 8,
             "message": "Prefer named exports"
           },
@@ -540,14 +516,38 @@
             "message": "Prefer named exports"
           },
           {
-            "file": "packages/cli/tsdown.config.ts",
-            "line": 11,
+            "file": "docs/.vitepress/config.ts",
+            "line": 7,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "docs/.vitepress/theme/index.ts",
+            "line": 23,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
             "file": "docs/uno.config.ts",
             "line": 14,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "eslint.config.mjs",
+            "line": 4,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "packages/cli/tsdown.config.ts",
+            "line": 11,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "packages/toon/tsdown.config.ts",
+            "line": 9,
             "column": 8,
             "message": "Prefer named exports"
           }
@@ -557,8 +557,20 @@
         "count": 13,
         "samples": [
           {
-            "file": "benchmarks/src/questions/structural-validation.ts",
-            "line": 15,
+            "file": "benchmarks/src/questions/analytics.ts",
+            "line": 9,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "benchmarks/src/questions/event-logs.ts",
+            "line": 9,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "benchmarks/src/questions/index.ts",
+            "line": 27,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -569,25 +581,7 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "packages/cli/src/json-stringify-stream.ts",
-            "line": 19,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "benchmarks/src/questions/analytics.ts",
-            "line": 9,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "packages/toon/src/encode/replacer.ts",
-            "line": 16,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "benchmarks/src/questions/tabular.ts",
+            "file": "benchmarks/src/questions/nested.ts",
             "line": 9,
             "column": 1,
             "message": "Prefer default export on a file with single export."
@@ -599,13 +593,7 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "benchmarks/src/questions/index.ts",
-            "line": 27,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "benchmarks/src/questions/github.ts",
+            "file": "benchmarks/src/questions/tabular.ts",
             "line": 9,
             "column": 1,
             "message": "Prefer default export on a file with single export."
@@ -613,6 +601,18 @@
           {
             "file": "packages/cli/src/index.ts",
             "line": 13,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "packages/cli/src/json-stringify-stream.ts",
+            "line": 19,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "packages/toon/src/encode/replacer.ts",
+            "line": 16,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           }
@@ -625,132 +625,132 @@
         "samples": []
       },
       "4-space": {
-        "count": 8646,
+        "count": 67,
         "samples": [
           {
-            "file": "packages/cli/tsdown.config.ts",
-            "line": 5,
+            "file": "automd.config.ts",
+            "line": 4,
             "column": 1,
-            "message": "Expected indentation of 4 spaces but found 2."
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/cli/test/json-stringify-stream.test.ts",
-            "line": 60,
+            "file": "benchmarks/src/formatters.ts",
+            "line": 16,
             "column": 1,
-            "message": "Expected indentation of 8 spaces but found 4."
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "benchmarks/src/questions/structural-validation.ts",
+            "line": 16,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
             "file": "benchmarks/src/utils.ts",
-            "line": 26,
+            "line": 21,
             "column": 1,
-            "message": "Expected indentation of 4 spaces but found 2."
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/cli/test/index.test.ts",
-            "line": 33,
+            "file": "eslint.config.mjs",
+            "line": 5,
             "column": 1,
-            "message": "Expected indentation of 16 spaces but found 8."
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "benchmarks/src/storage.ts",
-            "line": 38,
+            "file": "packages/cli/test/json-from-events.test.ts",
+            "line": 6,
             "column": 1,
-            "message": "Expected indentation of 8 spaces but found 4."
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/toon/src/decode/event-builder.ts",
-            "line": 121,
+            "file": "packages/toon/src/decode/expand.ts",
+            "line": 18,
             "column": 1,
-            "message": "Expected indentation of 16 spaces but found 8."
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "benchmarks/src/constants.ts",
-            "line": 102,
+            "file": "packages/toon/src/encode/primitives.ts",
+            "line": 9,
             "column": 1,
-            "message": "Expected indentation of 4 spaces but found 2."
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "benchmarks/src/normalize.ts",
-            "line": 157,
+            "file": "packages/toon/test/decodeStream.test.ts",
+            "line": 6,
             "column": 1,
-            "message": "Expected indentation of 4 spaces but found 2."
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "benchmarks/src/datasets.ts",
-            "line": 655,
+            "file": "packages/toon/tsdown.config.ts",
+            "line": 5,
             "column": 1,
-            "message": "Expected indentation of 8 spaces but found 4."
-          },
-          {
-            "file": "benchmarks/src/questions/structure.ts",
-            "line": 348,
-            "column": 1,
-            "message": "Expected indentation of 4 spaces but found 2."
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
           }
         ]
       },
       "tab": {
-        "count": 8679,
+        "count": 67,
         "samples": [
           {
-            "file": "docs/uno.config.ts",
+            "file": "automd.config.ts",
+            "line": 4,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "benchmarks/src/formatters.ts",
+            "line": 16,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "benchmarks/src/questions/structural-validation.ts",
+            "line": 16,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "benchmarks/src/utils.ts",
+            "line": 21,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "eslint.config.mjs",
             "line": 5,
             "column": 1,
-            "message": "Expected indentation of 1 tab but found 2 spaces."
+            "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "docs/.vitepress/config.ts",
-            "line": 85,
+            "file": "packages/cli/test/json-from-events.test.ts",
+            "line": 6,
             "column": 1,
-            "message": "Expected indentation of 3 tabs but found 6 spaces."
+            "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/toon/src/decode/decoders.ts",
-            "line": 186,
+            "file": "packages/toon/src/decode/expand.ts",
+            "line": 18,
             "column": 1,
-            "message": "Expected indentation of 1 tab but found 2 spaces."
+            "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "benchmarks/src/questions/analytics.ts",
-            "line": 182,
+            "file": "packages/toon/src/encode/primitives.ts",
+            "line": 9,
             "column": 1,
-            "message": "Expected indentation of 4 tabs but found 8 spaces."
+            "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/cli/test/json-stringify-stream.test.ts",
-            "line": 49,
+            "file": "packages/toon/test/decodeStream.test.ts",
+            "line": 6,
             "column": 1,
-            "message": "Expected indentation of 1 tab but found 2 spaces."
+            "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/toon/src/index.ts",
-            "line": 103,
+            "file": "packages/toon/tsdown.config.ts",
+            "line": 5,
             "column": 1,
-            "message": "Expected indentation of 1 tab but found 2 spaces."
-          },
-          {
-            "file": "packages/toon/test/replacer.test.ts",
-            "line": 366,
-            "column": 1,
-            "message": "Expected indentation of 4 tabs but found 8 spaces."
-          },
-          {
-            "file": "benchmarks/src/questions/nested.ts",
-            "line": 149,
-            "column": 1,
-            "message": "Expected indentation of 2 tabs but found 4 spaces."
-          },
-          {
-            "file": "benchmarks/src/questions/utils.ts",
-            "line": 41,
-            "column": 1,
-            "message": "Expected indentation of 1 tab but found 2 spaces."
-          },
-          {
-            "file": "benchmarks/src/types.ts",
-            "line": 63,
-            "column": 1,
-            "message": "Expected indentation of 1 tab but found 2 spaces."
+            "message": "Expected tabs for indentation, but found spaces."
           }
         ]
       }
@@ -760,63 +760,63 @@
         "count": 2961,
         "samples": [
           {
-            "file": "eslint.config.mjs",
-            "line": 2,
-            "column": 19,
+            "file": "automd.config.ts",
+            "line": 1,
+            "column": 29,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/toon/test/normalization.test.ts",
-            "line": 113,
-            "column": 27,
+            "file": "benchmarks/src/evaluate.ts",
+            "line": 29,
+            "column": 3,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "docs/.vitepress/config.ts",
-            "line": 51,
-            "column": 15,
+            "file": "benchmarks/src/questions/nested-config.ts",
+            "line": 217,
+            "column": 16,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "benchmarks/src/questions/structure.ts",
-            "line": 56,
-            "column": 13,
+            "file": "benchmarks/src/report.ts",
+            "line": 607,
+            "column": 20,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/toon/test/decodeStream.test.ts",
-            "line": 230,
-            "column": 21,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "benchmarks/src/datasets.ts",
-            "line": 371,
-            "column": 77,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "benchmarks/scripts/token-efficiency-benchmark.ts",
-            "line": 222,
-            "column": 46,
+            "file": "packages/cli/src/index.ts",
+            "line": 107,
+            "column": 20,
             "message": "Strings must use doublequote."
           },
           {
             "file": "packages/cli/test/index.test.ts",
-            "line": 351,
-            "column": 89,
+            "line": 606,
+            "column": 27,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/cli/test/json-from-events.test.ts",
-            "line": 279,
-            "column": 17,
+            "file": "packages/cli/test/json-stringify-stream.test.ts",
+            "line": 4,
+            "column": 10,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/cli/src/json-from-events.ts",
-            "line": 215,
+            "file": "packages/toon/src/types.ts",
+            "line": 138,
+            "column": 15,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "packages/toon/test/decodeStreamAsync.test.ts",
+            "line": 142,
             "column": 21,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "packages/toon/tsdown.config.ts",
+            "line": 5,
+            "column": 10,
             "message": "Strings must use doublequote."
           }
         ]
@@ -844,63 +844,63 @@
         "count": 3507,
         "samples": [
           {
-            "file": "packages/cli/bin/toon.mjs",
-            "line": 2,
-            "column": 13,
+            "file": "automd.config.ts",
+            "line": 1,
+            "column": 37,
             "message": "Missing semicolon."
           },
           {
-            "file": "packages/cli/test/index.test.ts",
-            "line": 240,
-            "column": 39,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "packages/toon/test/decodeStream.test.ts",
-            "line": 100,
-            "column": 34,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "packages/cli/test/json-from-events.test.ts",
-            "line": 12,
-            "column": 107,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "packages/toon/src/decode/decoders.ts",
-            "line": 302,
-            "column": 19,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "packages/toon/test/normalization.test.ts",
-            "line": 15,
-            "column": 46,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "packages/cli/src/json-from-events.ts",
-            "line": 91,
-            "column": 40,
+            "file": "benchmarks/src/normalize.ts",
+            "line": 85,
+            "column": 26,
             "message": "Missing semicolon."
           },
           {
             "file": "benchmarks/src/report.ts",
-            "line": 605,
-            "column": 25,
+            "line": 146,
+            "column": 60,
             "message": "Missing semicolon."
           },
           {
-            "file": "packages/toon/test/replacer.test.ts",
-            "line": 390,
-            "column": 8,
+            "file": "packages/cli/src/index.ts",
+            "line": 157,
+            "column": 41,
             "message": "Missing semicolon."
           },
           {
-            "file": "benchmarks/scripts/fetch-github-repos.ts",
-            "line": 87,
-            "column": 58,
+            "file": "packages/cli/test/index.test.ts",
+            "line": 503,
+            "column": 75,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "packages/cli/test/utils.ts",
+            "line": 36,
+            "column": 38,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "packages/toon/src/decode/event-builder.ts",
+            "line": 86,
+            "column": 54,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "packages/toon/src/encode/primitives.ts",
+            "line": 21,
+            "column": 47,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "packages/toon/test/encodeLines.test.ts",
+            "line": 10,
+            "column": 39,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "packages/toon/tsdown.config.ts",
+            "line": 9,
+            "column": 22,
             "message": "Missing semicolon."
           }
         ]

@@ -46,13 +46,12 @@ export interface RepositoryData {
   cloneUrl: string;
   stars: number;
   description: string | null;
-  analysis?: AnalysisResult;
 }
 
 /**
  * Unified data structure for the repositories JSON file.
  */
-export interface UnifiedData {
+export interface RepositoriesJSON {
   fetchedAt: string;
   repositories: RepositoryData[];
 }
@@ -166,9 +165,9 @@ export function removeFailingInfo(fullName: string): void {
  * Load unified data from the JSON file.
  * Returns null if the file doesn't exist.
  */
-export function loadData(): UnifiedData | null {
+export function loadData(): RepositoriesJSON | null {
   try {
-    return readJsonSync(DATA_FILE) as UnifiedData;
+    return readJsonSync(DATA_FILE) as RepositoriesJSON;
   } catch {
     return null;
   }
@@ -178,28 +177,24 @@ export function loadData(): UnifiedData | null {
  * Load unified data with analysis merged in from separate files.
  * This is used by the web app to get the full data structure.
  */
-export function loadDataWithAnalysis(): UnifiedData | null {
+export function loadDataWithAnalysis() {
   const data = loadData();
-  if (!data) {
-    return null;
-  }
 
-  // Load analysis for each repository by computing the expected filename
-  // This avoids the ambiguity of parsing filenames with hyphens back to fullName
-  for (const repo of data.repositories) {
-    const analysis = loadAnalysis(repo.fullName);
-    if (analysis) {
-      repo.analysis = analysis;
+  return (
+    data && {
+      ...data,
+      repositories: data.repositories.map((repo) => ({
+        ...repo,
+        analysis: loadAnalysis(repo.fullName),
+      })),
     }
-  }
-
-  return data;
+  );
 }
 
 /**
  * Save unified data to the JSON file.
  */
-export function saveData(data: UnifiedData): void {
+export function saveData(data: RepositoriesJSON): void {
   outputJsonSync(DATA_FILE, data, { spaces: 2 });
   console.log(`Saved ${data.repositories.length} repositories to ${DATA_FILE}`);
 }

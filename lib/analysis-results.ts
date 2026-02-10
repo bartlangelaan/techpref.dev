@@ -1,21 +1,6 @@
-import { groupBy, isNotNil, sortBy } from "es-toolkit";
-import type {
-  AnalysisResult,
-  RepositoryData,
-  UnifiedData,
-  VariantResult,
-  ViolationSample,
-} from "./types";
+import { groupBy, isNotNil, once, sortBy } from "es-toolkit";
+import type { VariantResult, ViolationSample } from "./types";
 import { loadDataWithAnalysis } from "./types";
-
-// Re-export types for convenience
-export type {
-  AnalysisResult,
-  RepositoryData,
-  UnifiedData,
-  VariantResult,
-  ViolationSample,
-};
 
 /**
  * Detailed verdict for a repository.
@@ -35,20 +20,14 @@ export interface RepoVerdict {
 }
 
 // Cache the unified data to avoid re-reading files on every call
-let cachedData: UnifiedData | null = null;
 
-/**
- * Get the raw unified data with analysis merged in.
- */
-export function getUnifiedData(): UnifiedData {
-  if (!cachedData) {
-    cachedData = loadDataWithAnalysis();
-    if (!cachedData) {
-      throw new Error("Failed to load repositories data");
-    }
+export const getDataWithAnalysis = once(() => {
+  const data = loadDataWithAnalysis();
+  if (!data) {
+    throw new Error("Failed to load repositories data");
   }
-  return cachedData;
-}
+  return data;
+});
 
 /**
  * Helper to get violation count from a variant result.
@@ -73,7 +52,7 @@ function getSamples(
 
 /** Get basic statistics */
 export function getBasicStats<V extends string>(ruleId: string) {
-  const data = getUnifiedData();
+  const data = getDataWithAnalysis();
   const repos = data.repositories.filter((r) => r.analysis !== null);
 
   type PV = V | "mixed";

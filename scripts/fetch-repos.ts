@@ -1,5 +1,5 @@
 import { uniqBy } from "es-toolkit";
-import type { RepositoryData, UnifiedData } from "@/lib/types";
+import type { RepositoryData, RepositoriesJSON } from "@/lib/types";
 import { octokit } from "@/lib/octokit";
 import { saveData } from "@/lib/types";
 
@@ -73,7 +73,7 @@ const repositories = await fetchTopTypeScriptRepos(REPO_COUNT);
 console.log(`Total repositories: ${repositories.length}`);
 
 // Save unified data
-const data: UnifiedData = {
+const data: RepositoriesJSON = {
   fetchedAt: new Date().toISOString(),
   repositories: repositories,
 };

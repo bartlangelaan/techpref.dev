@@ -8,7 +8,7 @@ import {
   Star,
 } from "lucide-react";
 import { useState } from "react";
-import type { RepoVerdict, ViolationSample } from "@/lib/analysis-results";
+import type { RepoVerdict } from "@/lib/analysis-results";
 import { Badge } from "@/components/ui/badge";
 import {
   Dialog,
@@ -18,6 +18,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { ViolationSample } from "@/lib/types";
 
 interface VerdictDialogProps {
   title: string;

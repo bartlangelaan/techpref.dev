@@ -1,11 +1,11 @@
 {
-  "analyzedVersion": "8d56277528fc",
-  "analyzedCommit": "104c0831f374db390ba5262cb72b1de967da062b",
-  "analyzedCommitDate": "2026-02-07T22:05:49.000Z",
+  "analyzedVersion": "e88a060848ee",
+  "analyzedCommit": "2e2a7cb2ad9c6369e2851454410d3c4b2370f6b3",
+  "analyzedCommitDate": "2026-02-10T05:12:44.000Z",
   "checks": {
     "array-type": {
       "array": {
-        "count": 195,
+        "count": 196,
         "samples": [
           {
             "file": "examples/huggingface-dataset-factuality/dataset_loader.ts",
@@ -33,7 +33,7 @@
           },
           {
             "file": "src/providers/google/types.ts",
-            "line": 389,
+            "line": 410,
             "column": 12,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
@@ -45,20 +45,20 @@
           },
           {
             "file": "src/redteam/providers/custom/index.ts",
-            "line": 177,
-            "column": 30,
+            "line": 317,
+            "column": 27,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
-            "file": "src/redteam/riskScoring.ts",
-            "line": 394,
-            "column": 4,
+            "file": "src/redteam/strategies/layer.ts",
+            "line": 48,
+            "column": 16,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
-            "file": "test/cacheMigration.test.ts",
-            "line": 37,
-            "column": 41,
+            "file": "test/codeScans/config/loader.test.ts",
+            "line": 54,
+            "column": 24,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
@@ -70,7 +70,7 @@
         ]
       },
       "generic": {
-        "count": 3026,
+        "count": 3044,
         "samples": [
           {
             "file": "code-scan-action/src/github.ts",
@@ -79,52 +79,52 @@
             "message": "Array type using 'FileChange[]' is forbidden. Use 'Array<FileChange>' instead."
           },
           {
-            "file": "src/app/src/pages/eval/components/TruncatedText.tsx",
-            "line": 74,
-            "column": 20,
-            "message": "Array type using 'React.ReactNode[]' is forbidden. Use 'Array<React.ReactNode>' instead."
+            "file": "src/app/src/pages/eval/components/hooks.ts",
+            "line": 52,
+            "column": 34,
+            "message": "Array type using 'MetricValue[]' is forbidden. Use 'Array<MetricValue>' instead."
           },
           {
             "file": "src/app/src/pages/redteam/setup/components/verticalSuites.tsx",
-            "line": 85,
-            "column": 70,
+            "line": 118,
+            "column": 73,
             "message": "Array type using 'Plugin[]' is forbidden. Use 'Array<Plugin>' instead."
           },
           {
             "file": "src/models/eval.ts",
-            "line": 1136,
-            "column": 29,
-            "message": "Array type using 'EvalResult[]' is forbidden. Use 'Array<EvalResult>' instead."
+            "line": 1479,
+            "column": 12,
+            "message": "Array type using 'EvalSummary[]' is forbidden. Use 'Array<EvalSummary>' instead."
           },
           {
-            "file": "src/providers/mcp/transform.ts",
-            "line": 69,
-            "column": 53,
-            "message": "Array type using 'MCPTool[]' is forbidden. Use 'Array<MCPTool>' instead."
+            "file": "src/providers/mcp/types.ts",
+            "line": 8,
+            "column": 10,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
-            "file": "src/redteam/plugins/imageDatasetPluginBase.ts",
-            "line": 84,
-            "column": 65,
-            "message": "Array type using 'TestCase[]' is forbidden. Use 'Array<TestCase>' instead."
+            "file": "src/redteam/plugins/imageDatasetUtils.ts",
+            "line": 238,
+            "column": 76,
+            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           },
           {
-            "file": "src/redteam/strategies/promptInjections/index.ts",
-            "line": 6,
-            "column": 14,
-            "message": "Array type using 'TestCase[]' is forbidden. Use 'Array<TestCase>' instead."
-          },
-          {
-            "file": "src/util/testCaseReader.ts",
-            "line": 317,
+            "file": "src/redteam/strategies/retry.ts",
+            "line": 188,
             "column": 12,
             "message": "Array type using 'TestCase[]' is forbidden. Use 'Array<TestCase>' instead."
           },
           {
-            "file": "test/redteam/plugins/toxicChat.test.ts",
-            "line": 176,
-            "column": 17,
+            "file": "src/util/testCaseReader.ts",
+            "line": 413,
+            "column": 12,
             "message": "Array type using 'TestCase[]' is forbidden. Use 'Array<TestCase>' instead."
+          },
+          {
+            "file": "test/redteam/providers/bestOfN.test.ts",
+            "line": 9,
+            "column": 29,
+            "message": "Array type using 'unknown[]' is forbidden. Use 'Array<unknown>' instead."
           },
           {
             "file": "test/util/xlsx.test.ts",
@@ -137,7 +137,7 @@
     },
     "consistent-generic-constructors": {
       "constructor": {
-        "count": 31,
+        "count": 33,
         "samples": [
           {
             "file": "src/app/src/pages/redteam/report/components/FrameworkComplianceUtils.test.ts",
@@ -147,14 +147,14 @@
           },
           {
             "file": "src/evaluator.ts",
-            "line": 1152,
+            "line": 1160,
             "column": 19,
             "message": "The generic type arguments should be specified as part of the constructor type arguments."
           },
           {
-            "file": "src/providers/http.ts",
-            "line": 1461,
-            "column": 26,
+            "file": "src/providers/browser.ts",
+            "line": 81,
+            "column": 27,
             "message": "The generic type arguments should be specified as part of the constructor type arguments."
           },
           {
@@ -182,9 +182,9 @@
             "message": "The generic type arguments should be specified as part of the constructor type arguments."
           },
           {
-            "file": "src/redteam/plugins/vlguard.ts",
-            "line": 154,
-            "column": 21,
+            "file": "src/redteam/providers/crescendo/index.ts",
+            "line": 121,
+            "column": 24,
             "message": "The generic type arguments should be specified as part of the constructor type arguments."
           },
           {
@@ -202,7 +202,7 @@
         ]
       },
       "type-annotation": {
-        "count": 129,
+        "count": 130,
         "samples": [
           {
             "file": "src/app/src/components/traces/TraceTimeline.tsx",
@@ -217,9 +217,9 @@
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "src/app/src/pages/redteam/setup/components/VerticalSuiteCard.test.tsx",
-            "line": 262,
-            "column": 38,
+            "file": "src/assertions/bleu.ts",
+            "line": 75,
+            "column": 43,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
@@ -229,9 +229,9 @@
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "src/models/evalResult.ts",
-            "line": 271,
-            "column": 24,
+            "file": "src/models/evalPerformance.ts",
+            "line": 26,
+            "column": 35,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
@@ -247,9 +247,9 @@
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "src/util/config/load.ts",
-            "line": 340,
-            "column": 32,
+            "file": "src/util/config/default.ts",
+            "line": 10,
+            "column": 35,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
@@ -321,7 +321,7 @@
           },
           {
             "file": "src/types/index.ts",
-            "line": 113,
+            "line": 115,
             "column": 3,
             "message": "A record is preferred over an index signature."
           },
@@ -334,7 +334,7 @@
         ]
       },
       "index-signature": {
-        "count": 1300,
+        "count": 1298,
         "samples": [
           {
             "file": "code-scan-action/src/github.ts",
@@ -350,38 +350,38 @@
           },
           {
             "file": "src/esm.ts",
-            "line": 21,
-            "column": 24,
+            "line": 30,
+            "column": 32,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "src/providers/claude-agent-sdk.ts",
-            "line": 348,
-            "column": 16,
+            "line": 462,
+            "column": 13,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "src/providers/mcp/util.ts",
-            "line": 185,
-            "column": 4,
+            "line": 236,
+            "column": 62,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "src/redteam/constants/frameworks.ts",
-            "line": 6,
-            "column": 31,
+            "line": 73,
+            "column": 40,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "src/redteam/providers/iterativeImage.ts",
-            "line": 246,
-            "column": 12,
+            "line": 310,
+            "column": 28,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "src/server/services/redteamTestCaseGenerationService.ts",
-            "line": 115,
-            "column": 28,
+            "line": 195,
+            "column": 48,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -417,7 +417,7 @@
           },
           {
             "file": "src/cache.ts",
-            "line": 114,
+            "line": 116,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
@@ -466,7 +466,7 @@
         ]
       },
       "type": {
-        "count": 1176,
+        "count": 1184,
         "samples": [
           {
             "file": "code-scan-action/src/parser.ts",
@@ -482,13 +482,13 @@
           },
           {
             "file": "src/app/src/pages/eval/components/store.ts",
-            "line": 216,
+            "line": 268,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "src/app/src/pages/redteam/setup/components/VerticalSuiteCard.tsx",
-            "line": 45,
+            "file": "src/app/src/pages/redteam/setup/components/strategies/HeroStrategiesSection.tsx",
+            "line": 46,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
@@ -506,20 +506,20 @@
           },
           {
             "file": "src/providers/openai/agents-types.ts",
-            "line": 130,
+            "line": 172,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "src/redteam/plugins/imageDatasetPluginBase.ts",
-            "line": 11,
-            "column": 8,
+            "file": "src/redteam/plugins/index.ts",
+            "line": 131,
+            "column": 3,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "src/tracing/otlpReceiver.ts",
-            "line": 23,
-            "column": 1,
+            "file": "src/tracing/protobuf.ts",
+            "line": 83,
+            "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
@@ -598,7 +598,7 @@
         ]
       },
       "no-type-imports": {
-        "count": 2097,
+        "count": 2101,
         "samples": [
           {
             "file": "code-scan-action/src/config.ts",
@@ -613,31 +613,31 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/assertions/factuality.ts",
-            "line": 4,
+            "file": "src/assertions/functionToolCall.ts",
+            "line": 8,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/microsoftSharepoint.ts",
-            "line": 7,
+            "file": "src/models/eval.ts",
+            "line": 24,
+            "column": 3,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "src/providers/google/gemini-image.ts",
+            "line": 15,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/providers/google/base.ts",
-            "line": 33,
+            "file": "src/providers/xai/responses.ts",
+            "line": 13,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/providers/xai/chat.ts",
-            "line": 7,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "src/redteam/strategies/leetspeak.ts",
+            "file": "src/redteam/strategies/otherEncodings.ts",
             "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
@@ -665,7 +665,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 2359,
+        "count": 2371,
         "samples": [
           {
             "file": "code-scan-action/src/auth.ts",
@@ -675,49 +675,49 @@
           },
           {
             "file": "site/src/plugins/docusaurus-plugin-og-image/index.js",
-            "line": 1657,
+            "line": 1667,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/app/src/pages/redteam/setup/components/EmailVerificationDialog.tsx",
-            "line": 25,
+            "file": "src/app/src/pages/redteam/setup/components/SetupSection.tsx",
+            "line": 28,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "src/blobs/extractor.ts",
-            "line": 228,
+            "line": 393,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "src/esm.ts",
-            "line": 312,
-            "column": 8,
+            "line": 336,
+            "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "src/providers/elevenlabs/tts/pronunciation.ts",
-            "line": 35,
+            "line": 139,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/redteam/commands/init.ts",
-            "line": 208,
+            "file": "src/redteam/commands/poison.ts",
+            "line": 57,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "src/scheduler/headerParser.ts",
-            "line": 122,
-            "column": 8,
+            "line": 244,
+            "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "src/util/fetch/index.ts",
-            "line": 219,
+            "line": 292,
             "column": 8,
             "message": "Expected a function expression."
           },
@@ -730,7 +730,7 @@
         ]
       },
       "declaration": {
-        "count": 1254,
+        "count": 1253,
         "samples": [
           {
             "file": "examples/assertion-scoring-override/override.js",
@@ -752,14 +752,14 @@
           },
           {
             "file": "src/app/src/pages/eval/components/DownloadMenu.tsx",
-            "line": 165,
+            "line": 130,
             "column": 9,
             "message": "Expected a function declaration."
           },
           {
-            "file": "src/app/src/pages/model-audit-latest/ModelAuditResultLatestPage.tsx",
-            "line": 27,
-            "column": 11,
+            "file": "src/app/src/pages/model-audit-latest/ModelAuditResultLatestPage.test.tsx",
+            "line": 54,
+            "column": 9,
             "message": "Expected a function declaration."
           },
           {
@@ -776,7 +776,7 @@
           },
           {
             "file": "src/codeScan/scanner/request.ts",
-            "line": 106,
+            "line": 91,
             "column": 11,
             "message": "Expected a function declaration."
           },
@@ -862,7 +862,7 @@
         ]
       },
       "default": {
-        "count": 373,
+        "count": 375,
         "samples": [
           {
             "file": "code-scan-action/src/auth.ts",
@@ -871,8 +871,8 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/app/src/contexts/ShiftKeyContextDef.ts",
-            "line": 3,
+            "file": "src/app/src/contexts/ToastContext.tsx",
+            "line": 70,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -907,7 +907,7 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/redteam/plugins/medical/medicalPrioritizationError.ts",
+            "file": "src/redteam/plugins/medical/medicalSycophancy.ts",
             "line": 4,
             "column": 1,
             "message": "Prefer default export on a file with single export."
@@ -929,204 +929,204 @@
     },
     "indent": {
       "2-space": {
-        "count": 2219,
+        "count": 28,
         "samples": [
           {
-            "file": "code-scan-action/src/main.ts",
-            "line": 263,
+            "file": "examples/ts-config/promptfooconfig-with-schema.ts",
+            "line": 85,
             "column": 1,
-            "message": "Expected indentation of 18 spaces but found 20."
+            "message": "Expected 2-space indentation, but file uses 19-space indentation."
           },
           {
-            "file": "site/static/js/scripts.js",
-            "line": 52,
+            "file": "src/assertions/synthesis.ts",
+            "line": 216,
             "column": 1,
-            "message": "Expected indentation of 8 spaces but found 10."
+            "message": "Expected 2-space indentation, but file uses 5-space indentation."
           },
           {
-            "file": "src/app/src/pages/redteam/report/components/FrameworkCard.tsx",
-            "line": 175,
+            "file": "src/redteam/plugins/competitors.ts",
+            "line": 31,
             "column": 1,
-            "message": "Expected indentation of 20 spaces but found 18."
+            "message": "Expected 2-space indentation, but file uses 5-space indentation."
           },
           {
-            "file": "src/app/src/pages/redteam/setup/components/Review.tsx",
-            "line": 986,
+            "file": "src/redteam/plugins/ecommerce/ecommerceOrderFraud.ts",
+            "line": 105,
             "column": 1,
-            "message": "Expected indentation of 18 spaces but found 20."
+            "message": "Expected 2-space indentation, but file uses 7-space indentation."
           },
           {
-            "file": "src/app/src/pages/redteam/setup/components/Targets/tabs/DigitalSignatureAuthTab.tsx",
-            "line": 230,
+            "file": "src/redteam/plugins/overreliance.ts",
+            "line": 119,
             "column": 1,
-            "message": "Expected indentation of 24 spaces but found 26."
+            "message": "Expected 2-space indentation, but file uses 9-space indentation."
           },
           {
-            "file": "src/app/src/polyfills/scroll-timeline.js",
-            "line": 1479,
+            "file": "src/redteam/plugins/rbac.ts",
+            "line": 88,
             "column": 1,
-            "message": "Expected indentation of 20 spaces but found 22."
+            "message": "Expected 2-space indentation, but file uses 5-space indentation."
           },
           {
-            "file": "src/commands/list.ts",
-            "line": 337,
+            "file": "src/redteam/providers/prompts.ts",
+            "line": 108,
             "column": 1,
-            "message": "Expected indentation of 14 spaces but found 16."
+            "message": "Expected 2-space indentation, but file uses 3-space indentation."
           },
           {
-            "file": "src/providers/google/ai.studio.ts",
-            "line": 339,
+            "file": "test/code-scan-action/github.test.ts",
+            "line": 41,
             "column": 1,
-            "message": "Expected indentation of 10 spaces but found 12."
+            "message": "Expected 2-space indentation, but file uses 1-space indentation."
           },
           {
-            "file": "src/redteam/providers/custom/index.ts",
-            "line": 350,
+            "file": "test/codeScans/util/diffLineRanges.test.ts",
+            "line": 18,
             "column": 1,
-            "message": "Expected indentation of 14 spaces but found 16."
+            "message": "Expected 2-space indentation, but file uses 3-space indentation."
           },
           {
-            "file": "test/types/index.test.ts",
-            "line": 783,
+            "file": "test/scripts/validate-changelog.test.ts",
+            "line": 120,
             "column": 1,
-            "message": "Expected indentation of 8 spaces but found 10."
+            "message": "Expected 2-space indentation, but file uses 1-space indentation."
           }
         ]
       },
       "4-space": {
-        "count": 492964,
+        "count": 2191,
         "samples": [
           {
             "file": "code-scan-action/src/auth.ts",
             "line": 15,
             "column": 1,
-            "message": "Expected indentation of 4 spaces but found 2."
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/app/src/hooks/useCloudConfig.test.ts",
-            "line": 137,
+            "file": "src/app/src/components/ErrorBoundary.test.tsx",
+            "line": 6,
             "column": 1,
-            "message": "Expected indentation of 16 spaces but found 8."
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/app/src/pages/redteam/report/components/RiskCategoryDrawer.test.tsx",
-            "line": 210,
+            "file": "src/app/src/pages/eval/components/EvalIdChip.tsx",
+            "line": 8,
             "column": 1,
-            "message": "Expected indentation of 12 spaces but found 6."
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/codeScan/scanner/index.ts",
-            "line": 128,
+            "file": "src/app/src/pages/redteam/setup/components/Targets/TargetTypeSelection.tsx",
+            "line": 17,
             "column": 1,
-            "message": "Expected indentation of 4 spaces but found 2."
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/providers/openai/image.ts",
-            "line": 441,
+            "file": "src/globalConfig/accounts.ts",
+            "line": 8,
             "column": 1,
-            "message": "Expected indentation of 12 spaces but found 6."
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/validators/redteam.ts",
-            "line": 290,
+            "file": "src/redteam/graders.ts",
+            "line": 37,
             "column": 1,
-            "message": "Expected indentation of 12 spaces but found 6."
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "test/matchers/token-tracking.test.ts",
-            "line": 48,
+            "file": "src/ui/render.ts",
+            "line": 18,
             "column": 1,
-            "message": "Expected indentation of 12 spaces but found 6."
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "test/providers/mcp/client.test.ts",
-            "line": 363,
+            "file": "test/matchers/max-score.test.ts",
+            "line": 8,
             "column": 1,
-            "message": "Expected indentation of 8 spaces but found 4."
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "test/redteam/providers/custom/index.test.ts",
-            "line": 423,
+            "file": "test/redteam/plugins/harmful/common.test.ts",
+            "line": 4,
             "column": 1,
-            "message": "Expected indentation of 8 spaces but found 4."
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
             "file": "vitest.smoke.config.ts",
-            "line": 30,
+            "line": 4,
             "column": 1,
-            "message": "Expected indentation of 4 spaces but found 2."
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
           }
         ]
       },
       "tab": {
-        "count": 494395,
+        "count": 2191,
         "samples": [
           {
             "file": "code-scan-action/src/auth.ts",
             "line": 15,
             "column": 1,
-            "message": "Expected indentation of 1 tab but found 2 spaces."
+            "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/app/src/hooks/useCloudConfig.test.ts",
-            "line": 180,
+            "file": "src/app/src/components/ErrorBoundary.test.tsx",
+            "line": 6,
             "column": 1,
-            "message": "Expected indentation of 3 tabs but found 6 spaces."
+            "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/app/src/pages/redteam/report/components/RiskCategoryDrawer.tsx",
-            "line": 93,
+            "file": "src/app/src/pages/eval/components/EvalIdChip.tsx",
+            "line": 8,
             "column": 1,
-            "message": "Expected indentation of 1 tab but found 2 spaces."
+            "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/codeScan/scanner/index.ts",
-            "line": 272,
+            "file": "src/app/src/pages/redteam/setup/components/Targets/TargetTypeSelection.tsx",
+            "line": 17,
             "column": 1,
-            "message": "Expected indentation of 2 tabs but found 4 spaces."
+            "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/providers/openai/image.ts",
-            "line": 378,
+            "file": "src/globalConfig/accounts.ts",
+            "line": 8,
             "column": 1,
-            "message": "Expected indentation of 4 tabs but found 8 spaces."
+            "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/validators/redteam.ts",
-            "line": 19,
+            "file": "src/redteam/graders.ts",
+            "line": 37,
             "column": 1,
-            "message": "Expected indentation of 1 tab but found 2 spaces."
+            "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "test/matchers/similarity.test.ts",
-            "line": 148,
+            "file": "src/ui/render.ts",
+            "line": 18,
             "column": 1,
-            "message": "Expected indentation of 4 tabs but found 8 spaces."
+            "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "test/providers/mcp/client.test.ts",
-            "line": 238,
+            "file": "test/matchers/max-score.test.ts",
+            "line": 8,
             "column": 1,
-            "message": "Expected indentation of 3 tabs but found 6 spaces."
+            "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "test/redteam/providers/custom/index.test.ts",
-            "line": 392,
+            "file": "test/redteam/plugins/harmful/common.test.ts",
+            "line": 4,
             "column": 1,
-            "message": "Expected indentation of 3 tabs but found 6 spaces."
+            "message": "Expected tabs for indentation, but found spaces."
           },
           {
             "file": "vitest.smoke.config.ts",
-            "line": 30,
+            "line": 4,
             "column": 1,
-            "message": "Expected indentation of 1 tab but found 2 spaces."
+            "message": "Expected tabs for indentation, but found spaces."
           }
         ]
       }
     },
     "quotes": {
       "double": {
-        "count": 156193,
+        "count": 156757,
         "samples": [
           {
             "file": "code-scan-action/src/auth.ts",
@@ -1135,33 +1135,33 @@
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/app/src/pages/eval-creator/components/PromptsSection.test.tsx",
-            "line": 151,
-            "column": 29,
+            "file": "src/app/src/pages/eval-creator/components/ProviderConfigDialog.tsx",
+            "line": 34,
+            "column": 56,
             "message": "Strings must use doublequote."
           },
           {
             "file": "src/app/src/pages/redteam/setup/components/StrategyConfigDialog.test.tsx",
-            "line": 835,
-            "column": 15,
+            "line": 1122,
+            "column": 68,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/providers/elevenlabs/agents/index.ts",
-            "line": 11,
-            "column": 29,
+            "file": "src/providers/elevenlabs/agents/types.ts",
+            "line": 140,
+            "column": 39,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/validators/testProvider.ts",
-            "line": 464,
-            "column": 57,
+            "file": "test/app/model-audit-critical-fix.test.ts",
+            "line": 22,
+            "column": 21,
             "message": "Strings must use doublequote."
           },
           {
             "file": "test/integration/envPath.test.ts",
-            "line": 269,
-            "column": 43,
+            "line": 188,
+            "column": 44,
             "message": "Strings must use doublequote."
           },
           {
@@ -1172,14 +1172,14 @@
           },
           {
             "file": "test/providers/websocket.test.ts",
-            "line": 299,
-            "column": 42,
+            "line": 377,
+            "column": 40,
             "message": "Strings must use doublequote."
           },
           {
             "file": "test/redteam/util.test.ts",
-            "line": 99,
-            "column": 27,
+            "line": 299,
+            "column": 54,
             "message": "Strings must use doublequote."
           },
           {
@@ -1262,7 +1262,7 @@
         "samples": []
       },
       "never": {
-        "count": 170441,
+        "count": 171018,
         "samples": [
           {
             "file": "code-scan-action/src/auth.ts",
@@ -1271,51 +1271,51 @@
             "message": "Extra semicolon."
           },
           {
-            "file": "src/app/src/pages/eval/components/EvaluationPanel.tsx",
-            "line": 180,
-            "column": 65,
+            "file": "src/app/src/pages/eval/components/FilterChips.test.tsx",
+            "line": 90,
+            "column": 60,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/app/src/pages/redteam/setup/components/Targets/CustomPoliciesSection.test.tsx",
-            "line": 350,
-            "column": 54,
+            "file": "src/app/src/pages/redteam/setup/components/Targets/CustomPoliciesSection.tsx",
+            "line": 221,
+            "column": 45,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/providers/azure/defaults.ts",
-            "line": 12,
-            "column": 57,
+            "file": "src/providers/azure/foundry-agent.ts",
+            "line": 568,
+            "column": 19,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/redteam/providers/shared.ts",
-            "line": 178,
+            "file": "src/redteam/providers/voiceCrescendo/index.ts",
+            "line": 500,
             "column": 96,
             "message": "Extra semicolon."
           },
           {
             "file": "test/commands/modelScan.test.ts",
-            "line": 859,
-            "column": 32,
+            "line": 971,
+            "column": 42,
             "message": "Extra semicolon."
           },
           {
             "file": "test/providers/browser.test.ts",
-            "line": 301,
-            "column": 5,
+            "line": 375,
+            "column": 40,
             "message": "Extra semicolon."
           },
           {
-            "file": "test/providers/replicate.test.ts",
-            "line": 464,
-            "column": 7,
+            "file": "test/providers/responses/processor.test.ts",
+            "line": 93,
+            "column": 56,
             "message": "Extra semicolon."
           },
           {
-            "file": "test/redteam/strategies/retry.test.ts",
-            "line": 308,
-            "column": 47,
+            "file": "test/redteam/strategies/simpleAudio.test.ts",
+            "line": 107,
+            "column": 36,
             "message": "Extra semicolon."
           },
           {

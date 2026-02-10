@@ -2,7 +2,6 @@ import { last, sortBy } from "es-toolkit";
 import { execa } from "execa";
 import { ensureDir, outputJson, remove } from "fs-extra/esm";
 import { glob } from "glob";
-import { createHash } from "node:crypto";
 import { readFile } from "node:fs/promises";
 import { createRequire } from "node:module";
 import { tmpdir } from "node:os";
@@ -15,6 +14,7 @@ import type {
   VariantResult,
   ViolationSample,
 } from "@/lib/types";
+import { getAnalyzedVersion } from "@/lib/analysis-version";
 import {
   checkoutRepository,
   commit,
@@ -47,15 +47,6 @@ async function getCommitDate(repoPath: string): Promise<string> {
   });
   // Parse and convert to UTC with Z suffix
   return new Date(stdout).toISOString();
-}
-
-/**
- * Generate a hash of the allRuleChecks object.
- */
-function getAnalyzedVersion(): string {
-  const hash = createHash("sha256");
-  hash.update(JSON.stringify(allRuleChecks));
-  return hash.digest("hex").slice(0, 12);
 }
 
 /**

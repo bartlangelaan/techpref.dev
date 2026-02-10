@@ -1,5 +1,5 @@
 {
-  "analyzedVersion": "8d56277528fc",
+  "analyzedVersion": "e88a060848ee",
   "analyzedCommit": "b906f86102c02f1ef66ebd4a3f7ff50bdc07af65",
   "analyzedCommitDate": "2025-11-12T21:21:57.000Z",
   "checks": {
@@ -8,9 +8,9 @@
         "count": 3,
         "samples": [
           {
-            "file": "src/rollup/ts-resolve.ts",
-            "line": 24,
-            "column": 17,
+            "file": "src/esbuild/index.ts",
+            "line": 121,
+            "column": 25,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
@@ -20,9 +20,9 @@
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
-            "file": "src/esbuild/index.ts",
-            "line": 121,
-            "column": 25,
+            "file": "src/rollup/ts-resolve.ts",
+            "line": 24,
+            "column": 17,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           }
         ]
@@ -31,34 +31,16 @@
         "count": 45,
         "samples": [
           {
-            "file": "src/lib/report-size.ts",
-            "line": 11,
-            "column": 44,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
-          },
-          {
-            "file": "src/cli-main.ts",
-            "line": 112,
-            "column": 53,
-            "message": "Array type using 'Format[]' is forbidden. Use 'Array<Format>' instead."
-          },
-          {
-            "file": "src/options.ts",
-            "line": 233,
-            "column": 13,
-            "message": "Array type using 'Plugin[]' is forbidden. Use 'Array<Plugin>' instead."
-          },
-          {
-            "file": "src/utils.ts",
-            "line": 213,
-            "column": 46,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
-          },
-          {
             "file": "src/api-extractor.ts",
             "line": 88,
             "column": 12,
             "message": "Array type using 'ExportDeclaration[]' is forbidden. Use 'Array<ExportDeclaration>' instead."
+          },
+          {
+            "file": "src/esbuild/external.ts",
+            "line": 13,
+            "column": 14,
+            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           },
           {
             "file": "src/esbuild/swc.ts",
@@ -67,28 +49,46 @@
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
-            "file": "test/dts.test.ts",
-            "line": 327,
-            "column": 20,
+            "file": "src/log.ts",
+            "line": 56,
+            "column": 34,
+            "message": "Array type using 'any[]' is forbidden. Use 'Array<any>' instead."
+          },
+          {
+            "file": "src/options.ts",
+            "line": 150,
+            "column": 14,
+            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
+          },
+          {
+            "file": "src/options.ts",
+            "line": 275,
+            "column": 40,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
-            "file": "src/log.ts",
-            "line": 71,
-            "column": 16,
-            "message": "Array type using 'unknown[]' is forbidden. Use 'Array<unknown>' instead."
+            "file": "src/plugin.ts",
+            "line": 95,
+            "column": 24,
+            "message": "Array type using 'Plugin[]' is forbidden. Use 'Array<Plugin>' instead."
           },
           {
-            "file": "src/plugin.ts",
-            "line": 28,
+            "file": "src/run.ts",
+            "line": 3,
+            "column": 61,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+          },
+          {
+            "file": "src/utils.ts",
+            "line": 74,
+            "column": 45,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+          },
+          {
+            "file": "test/utils.ts",
+            "line": 31,
             "column": 13,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
-          },
-          {
-            "file": "src/plugin.ts",
-            "line": 151,
-            "column": 25,
-            "message": "Array type using 'WrittenFile[]' is forbidden. Use 'Array<WrittenFile>' instead."
           }
         ]
       }
@@ -134,6 +134,18 @@
         "count": 6,
         "samples": [
           {
+            "file": "src/esbuild/index.ts",
+            "line": 87,
+            "column": 16,
+            "message": "A record is preferred over an index signature."
+          },
+          {
+            "file": "src/lib/report-size.ts",
+            "line": 24,
+            "column": 12,
+            "message": "A record is preferred over an index signature."
+          },
+          {
             "file": "src/options.ts",
             "line": 139,
             "column": 5,
@@ -156,24 +168,24 @@
             "line": 28,
             "column": 12,
             "message": "A record is preferred over an index signature."
-          },
-          {
-            "file": "src/lib/report-size.ts",
-            "line": 24,
-            "column": 12,
-            "message": "A record is preferred over an index signature."
-          },
-          {
-            "file": "src/esbuild/index.ts",
-            "line": 87,
-            "column": 16,
-            "message": "A record is preferred over an index signature."
           }
         ]
       },
       "index-signature": {
         "count": 7,
         "samples": [
+          {
+            "file": "src/cli-main.ts",
+            "line": 141,
+            "column": 23,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "src/esbuild/external.ts",
+            "line": 16,
+            "column": 26,
+            "message": "An index signature is preferred over a record."
+          },
           {
             "file": "src/options.ts",
             "line": 97,
@@ -193,26 +205,14 @@
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "src/cli-main.ts",
-            "line": 141,
-            "column": 23,
-            "message": "An index signature is preferred over a record."
-          },
-          {
-            "file": "src/esbuild/external.ts",
-            "line": 16,
-            "column": 26,
+            "file": "src/utils.ts",
+            "line": 209,
+            "column": 11,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "test/utils.ts",
             "line": 32,
-            "column": 11,
-            "message": "An index signature is preferred over a record."
-          },
-          {
-            "file": "src/utils.ts",
-            "line": 209,
             "column": 11,
             "message": "An index signature is preferred over a record."
           }
@@ -248,20 +248,14 @@
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "src/rollup/ts-resolve.ts",
-            "line": 23,
+            "file": "src/plugin.ts",
+            "line": 18,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "src/rollup.ts",
-            "line": 33,
-            "column": 1,
-            "message": "Use `interface` instead of `type`."
-          },
-          {
             "file": "src/plugin.ts",
-            "line": 18,
+            "line": 32,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
@@ -273,13 +267,19 @@
           },
           {
             "file": "src/plugin.ts",
-            "line": 75,
+            "line": 82,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "src/plugin.ts",
-            "line": 82,
+            "file": "src/rollup.ts",
+            "line": 33,
+            "column": 1,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "src/rollup/ts-resolve.ts",
+            "line": 23,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           }
@@ -314,24 +314,6 @@
         "count": 8,
         "samples": [
           {
-            "file": "src/plugins/terser.ts",
-            "line": 28,
-            "column": 28,
-            "message": "`import()` type annotations are forbidden."
-          },
-          {
-            "file": "src/utils.ts",
-            "line": 51,
-            "column": 53,
-            "message": "`import()` type annotations are forbidden."
-          },
-          {
-            "file": "src/utils.ts",
-            "line": 56,
-            "column": 10,
-            "message": "`import()` type annotations are forbidden."
-          },
-          {
             "file": "src/esbuild/svelte.ts",
             "line": 18,
             "column": 26,
@@ -356,9 +338,27 @@
             "message": "`import()` type annotations are forbidden."
           },
           {
+            "file": "src/plugins/terser.ts",
+            "line": 28,
+            "column": 28,
+            "message": "`import()` type annotations are forbidden."
+          },
+          {
             "file": "src/rollup.ts",
             "line": 31,
             "column": 25,
+            "message": "`import()` type annotations are forbidden."
+          },
+          {
+            "file": "src/utils.ts",
+            "line": 51,
+            "column": 53,
+            "message": "`import()` type annotations are forbidden."
+          },
+          {
+            "file": "src/utils.ts",
+            "line": 56,
+            "column": 10,
             "message": "`import()` type annotations are forbidden."
           }
         ]
@@ -367,21 +367,15 @@
         "count": 70,
         "samples": [
           {
-            "file": "src/esbuild/native-node-module.ts",
-            "line": 2,
-            "column": 1,
+            "file": "src/api-extractor.ts",
+            "line": 4,
+            "column": 3,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "test/shims.test.ts",
-            "line": 2,
+            "file": "src/esbuild/index.ts",
+            "line": 19,
             "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "src/esbuild/swc.test.ts",
-            "line": 2,
-            "column": 21,
             "message": "Use an `import` instead of an `import type`."
           },
           {
@@ -391,40 +385,46 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/rollup.ts",
-            "line": 13,
+            "file": "src/esbuild/swc.ts",
+            "line": 17,
+            "column": 25,
+            "message": "`import()` type annotations are forbidden."
+          },
+          {
+            "file": "src/options.ts",
+            "line": 3,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "src/plugin.ts",
-            "line": 15,
-            "column": 17,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "src/plugins/terser.ts",
-            "line": 4,
+            "line": 13,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/esbuild/index.ts",
-            "line": 20,
+            "file": "src/plugins/swc-target.ts",
+            "line": 3,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/api-extractor.ts",
-            "line": 18,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "src/utils.ts",
-            "line": 56,
+            "file": "src/plugins/tree-shaking.ts",
+            "line": 2,
             "column": 10,
-            "message": "`import()` type annotations are forbidden."
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "src/rollup/ts-resolve.ts",
+            "line": 6,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "test/shims.test.ts",
+            "line": 2,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
           }
         ]
       }
@@ -434,51 +434,33 @@
         "count": 47,
         "samples": [
           {
-            "file": "src/fs.ts",
-            "line": 13,
+            "file": "src/api-extractor.ts",
+            "line": 27,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "src/cli-main.ts",
+            "line": 11,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/utils.ts",
-            "line": 55,
+            "file": "src/exports.ts",
+            "line": 70,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/utils.ts",
-            "line": 116,
-            "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/utils.ts",
-            "line": 236,
-            "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "test/utils.ts",
-            "line": 26,
-            "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/log.ts",
-            "line": 36,
+            "file": "src/load.ts",
+            "line": 82,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "src/rollup.ts",
-            "line": 193,
+            "line": 161,
             "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/run.ts",
-            "line": 3,
-            "column": 8,
             "message": "Expected a function expression."
           },
           {
@@ -488,9 +470,27 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "src/load.ts",
-            "line": 112,
+            "file": "src/utils.ts",
+            "line": 61,
             "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "src/utils.ts",
+            "line": 128,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "src/utils.ts",
+            "line": 244,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "test/utils.ts",
+            "line": 82,
+            "column": 1,
             "message": "Expected a function expression."
           }
         ]
@@ -499,63 +499,63 @@
         "count": 65,
         "samples": [
           {
-            "file": "src/plugins/shebang.ts",
-            "line": 3,
-            "column": 14,
-            "message": "Expected a function declaration."
-          },
-          {
             "file": "assets/cjs_shims.js",
             "line": 6,
             "column": 7,
             "message": "Expected a function declaration."
           },
           {
-            "file": "src/esbuild/postcss.ts",
+            "file": "src/esbuild/native-node-module.ts",
+            "line": 5,
+            "column": 14,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "src/esbuild/swc.test.ts",
+            "line": 7,
+            "column": 7,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "src/index.ts",
+            "line": 197,
+            "column": 15,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "src/lib/public-dir.ts",
+            "line": 5,
+            "column": 14,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "src/log.ts",
+            "line": 21,
+            "column": 14,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "src/plugins/cjs-splitting.ts",
             "line": 6,
             "column": 14,
             "message": "Expected a function declaration."
           },
           {
-            "file": "src/api-extractor.ts",
-            "line": 184,
-            "column": 11,
-            "message": "Expected a function declaration."
-          },
-          {
             "file": "src/rollup.ts",
-            "line": 216,
+            "line": 38,
             "column": 7,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "src/esbuild/svelte.ts",
-            "line": 43,
-            "column": 15,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "src/index.ts",
-            "line": 217,
-            "column": 21,
             "message": "Expected a function declaration."
           },
           {
             "file": "src/utils.ts",
-            "line": 213,
-            "column": 7,
+            "line": 189,
+            "column": 14,
             "message": "Expected a function declaration."
           },
           {
             "file": "test/index.test.ts",
-            "line": 264,
+            "line": 269,
             "column": 11,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "src/plugins/size-reporter.ts",
-            "line": 4,
-            "column": 14,
             "message": "Expected a function declaration."
           }
         ]
@@ -589,38 +589,14 @@
         "count": 18,
         "samples": [
           {
-            "file": "src/esbuild/node-protocol.ts",
-            "line": 7,
+            "file": "assets/cjs_shims.js",
+            "line": 13,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/plugins/size-reporter.ts",
-            "line": 4,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "src/lib/report-size.ts",
-            "line": 21,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "src/plugins/shebang.ts",
-            "line": 3,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "src/plugins/swc-target.ts",
-            "line": 8,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "src/plugins/cjs-interop.ts",
-            "line": 3,
+            "file": "src/cli-main.ts",
+            "line": 11,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -631,20 +607,44 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "assets/cjs_shims.js",
-            "line": 13,
+            "file": "src/esbuild/node-protocol.ts",
+            "line": 7,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/run.ts",
-            "line": 3,
+            "file": "src/esbuild/svelte.ts",
+            "line": 9,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/cli-main.ts",
-            "line": 11,
+            "file": "src/lib/report-size.ts",
+            "line": 21,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "src/plugins/cjs-splitting.ts",
+            "line": 6,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "src/plugins/size-reporter.ts",
+            "line": 4,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "src/plugins/terser.ts",
+            "line": 8,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "src/tsc.ts",
+            "line": 204,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           }
@@ -653,197 +653,143 @@
     },
     "indent": {
       "2-space": {
-        "count": 62,
+        "count": 1,
         "samples": [
           {
-            "file": "src/options.ts",
-            "line": 54,
+            "file": "test/dts.test.ts",
+            "line": 272,
             "column": 1,
-            "message": "Expected indentation of 4 spaces but found 6."
-          },
-          {
-            "file": "src/esbuild/svelte.ts",
-            "line": 74,
-            "column": 1,
-            "message": "Expected indentation of 18 spaces but found 20."
-          },
-          {
-            "file": "src/esbuild/svelte.ts",
-            "line": 83,
-            "column": 1,
-            "message": "Expected indentation of 20 spaces but found 22."
-          },
-          {
-            "file": "src/esbuild/svelte.ts",
-            "line": 89,
-            "column": 1,
-            "message": "Expected indentation of 20 spaces but found 22."
-          },
-          {
-            "file": "src/esbuild/svelte.ts",
-            "line": 96,
-            "column": 1,
-            "message": "Expected indentation of 16 spaces but found 18."
-          },
-          {
-            "file": "src/load.ts",
-            "line": 47,
-            "column": 1,
-            "message": "Expected indentation of 8 spaces but found 10."
-          },
-          {
-            "file": "src/plugins/swc-target.ts",
-            "line": 51,
-            "column": 1,
-            "message": "Expected indentation of 16 spaces but found 18."
-          },
-          {
-            "file": "src/plugin.ts",
-            "line": 44,
-            "column": 1,
-            "message": "Expected indentation of 4 spaces but found 6."
-          },
-          {
-            "file": "src/index.ts",
-            "line": 43,
-            "column": 1,
-            "message": "Expected indentation of 4 spaces but found 6."
-          },
-          {
-            "file": "src/esbuild/postcss.ts",
-            "line": 130,
-            "column": 1,
-            "message": "Expected indentation of 14 spaces but found 16."
+            "message": "Expected 2-space indentation, but file uses 9-space indentation."
           }
         ]
       },
       "4-space": {
-        "count": 4367,
+        "count": 47,
         "samples": [
           {
-            "file": "src/cli-node.ts",
-            "line": 6,
+            "file": "assets/cjs_shims.js",
+            "line": 7,
             "column": 1,
-            "message": "Expected indentation of 4 spaces but found 2."
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/options.ts",
-            "line": 168,
+            "file": "src/esbuild/external.ts",
+            "line": 8,
             "column": 1,
-            "message": "Expected indentation of 4 spaces but found 2."
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/rollup/ts-resolve.ts",
-            "line": 72,
+            "file": "src/esbuild/svelte.ts",
+            "line": 7,
             "column": 1,
-            "message": "Expected indentation of 16 spaces but found 8."
-          },
-          {
-            "file": "src/exports.ts",
-            "line": 63,
-            "column": 1,
-            "message": "Expected indentation of 12 spaces but found 6."
-          },
-          {
-            "file": "src/plugin.ts",
-            "line": 200,
-            "column": 1,
-            "message": "Expected indentation of 24 spaces but found 12."
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
             "file": "src/index.ts",
-            "line": 351,
+            "line": 12,
             "column": 1,
-            "message": "Expected indentation of 28 spaces but found 14."
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "test/index.test.ts",
-            "line": 116,
+            "file": "src/options.ts",
+            "line": 14,
             "column": 1,
-            "message": "Expected indentation of 4 spaces but found 2."
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "src/plugins/swc-target.ts",
+            "line": 9,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "src/run.ts",
+            "line": 4,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "test/example.test.ts",
+            "line": 5,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
             "file": "test/svelte.test.ts",
-            "line": 25,
+            "line": 5,
             "column": 1,
-            "message": "Expected indentation of 12 spaces but found 6."
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "test/experimental-dts.test.ts",
-            "line": 126,
+            "file": "vitest.config.mts",
+            "line": 4,
             "column": 1,
-            "message": "Expected indentation of 16 spaces but found 8."
-          },
-          {
-            "file": "test/utils.ts",
-            "line": 83,
-            "column": 1,
-            "message": "Expected indentation of 4 spaces but found 2."
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
           }
         ]
       },
       "tab": {
-        "count": 4382,
+        "count": 47,
         "samples": [
           {
-            "file": "src/cli-node.ts",
-            "line": 6,
+            "file": "assets/cjs_shims.js",
+            "line": 7,
             "column": 1,
-            "message": "Expected indentation of 1 tab but found 2 spaces."
+            "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/plugins/tree-shaking.ts",
-            "line": 58,
+            "file": "src/esbuild/external.ts",
+            "line": 8,
             "column": 1,
-            "message": "Expected indentation of 4 tabs but found 8 spaces."
+            "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/esbuild/index.ts",
-            "line": 63,
+            "file": "src/esbuild/svelte.ts",
+            "line": 7,
             "column": 1,
-            "message": "Expected indentation of 1 tab but found 2 spaces."
-          },
-          {
-            "file": "src/utils.ts",
-            "line": 9,
-            "column": 1,
-            "message": "Expected indentation of 1 tab but found 2 spaces."
+            "message": "Expected tabs for indentation, but found spaces."
           },
           {
             "file": "src/index.ts",
-            "line": 346,
+            "line": 12,
             "column": 1,
-            "message": "Expected indentation of 8 tabs but found 16 spaces."
+            "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/load.ts",
-            "line": 56,
+            "file": "src/options.ts",
+            "line": 14,
             "column": 1,
-            "message": "Expected indentation of 1 tab but found 2 spaces."
+            "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "test/experimental-dts.test.ts",
-            "line": 77,
+            "file": "src/plugins/swc-target.ts",
+            "line": 9,
             "column": 1,
-            "message": "Expected indentation of 3 tabs but found 6 spaces."
+            "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/esbuild/swc.test.ts",
-            "line": 63,
+            "file": "src/run.ts",
+            "line": 4,
             "column": 1,
-            "message": "Expected indentation of 4 tabs but found 8 spaces."
+            "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "test/index.test.ts",
-            "line": 443,
+            "file": "test/example.test.ts",
+            "line": 5,
             "column": 1,
-            "message": "Expected indentation of 1 tab but found 2 spaces."
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "test/svelte.test.ts",
+            "line": 5,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
           },
           {
             "file": "vitest.config.mts",
-            "line": 8,
+            "line": 4,
             "column": 1,
-            "message": "Expected indentation of 1 tab but found 2 spaces."
+            "message": "Expected tabs for indentation, but found spaces."
           }
         ]
       }
@@ -853,63 +799,63 @@
         "count": 1786,
         "samples": [
           {
-            "file": "src/esbuild/swc.ts",
-            "line": 4,
-            "column": 18,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "src/plugins/size-reporter.ts",
-            "line": 6,
-            "column": 11,
+            "file": "assets/cjs_shims.js",
+            "line": 9,
+            "column": 83,
             "message": "Strings must use doublequote."
           },
           {
             "file": "src/esbuild/index.ts",
-            "line": 45,
-            "column": 25,
+            "line": 188,
+            "column": 9,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "test/dts.test.ts",
-            "line": 4,
-            "column": 34,
+            "file": "src/index.ts",
+            "line": 227,
+            "column": 52,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "src/plugins/swc-target.ts",
+            "line": 17,
+            "column": 35,
             "message": "Strings must use doublequote."
           },
           {
             "file": "src/utils.ts",
-            "line": 201,
-            "column": 28,
+            "line": 345,
+            "column": 27,
             "message": "Strings must use doublequote."
           },
           {
             "file": "test/experimental-dts.test.ts",
-            "line": 269,
-            "column": 17,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "test/tsconfig.test.ts",
-            "line": 2,
-            "column": 34,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "test/index.test.ts",
-            "line": 363,
+            "line": 7,
             "column": 23,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "test/index.test.ts",
-            "line": 902,
-            "column": 7,
+            "file": "test/experimental-dts.test.ts",
+            "line": 448,
+            "column": 5,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "test/shims.test.ts",
-            "line": 133,
-            "column": 31,
+            "file": "test/index.test.ts",
+            "line": 202,
+            "column": 15,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "test/index.test.ts",
+            "line": 759,
+            "column": 15,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "vitest.config.mts",
+            "line": 6,
+            "column": 18,
             "message": "Strings must use doublequote."
           }
         ]
@@ -918,57 +864,57 @@
         "count": 172,
         "samples": [
           {
-            "file": "src/esbuild/swc.ts",
-            "line": 22,
-            "column": 11,
+            "file": "assets/cjs_shims.js",
+            "line": 7,
+            "column": 23,
             "message": "Strings must use singlequote."
           },
           {
             "file": "test/dts.test.ts",
-            "line": 11,
-            "column": 19,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "test/index.test.ts",
-            "line": 11,
-            "column": 15,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "test/index.test.ts",
-            "line": 167,
-            "column": 38,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "test/index.test.ts",
-            "line": 338,
-            "column": 19,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "test/index.test.ts",
-            "line": 749,
-            "column": 19,
+            "line": 13,
+            "column": 40,
             "message": "Strings must use singlequote."
           },
           {
             "file": "test/experimental-dts.test.ts",
-            "line": 96,
+            "line": 73,
+            "column": 7,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "test/experimental-dts.test.ts",
+            "line": 254,
             "column": 23,
             "message": "Strings must use singlequote."
           },
           {
             "file": "test/experimental-dts.test.ts",
-            "line": 313,
-            "column": 7,
+            "line": 521,
+            "column": 5,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "test/experimental-dts.test.ts",
-            "line": 530,
-            "column": 7,
+            "file": "test/index.test.ts",
+            "line": 115,
+            "column": 17,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "test/index.test.ts",
+            "line": 178,
+            "column": 32,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "test/index.test.ts",
+            "line": 375,
+            "column": 19,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "test/index.test.ts",
+            "line": 784,
+            "column": 5,
             "message": "Strings must use singlequote."
           },
           {
@@ -985,45 +931,51 @@
         "count": 1500,
         "samples": [
           {
-            "file": "tsup.config.ts",
-            "line": 1,
-            "column": 36,
+            "file": "assets/cjs_shims.js",
+            "line": 13,
+            "column": 64,
             "message": "Missing semicolon."
           },
           {
-            "file": "src/api-extractor.ts",
-            "line": 33,
-            "column": 61,
+            "file": "src/esbuild/index.ts",
+            "line": 159,
+            "column": 23,
             "message": "Missing semicolon."
           },
           {
-            "file": "test/dts.test.ts",
-            "line": 345,
-            "column": 4,
+            "file": "src/exports.ts",
+            "line": 100,
+            "column": 23,
             "message": "Missing semicolon."
           },
           {
-            "file": "src/rollup/ts-resolve.ts",
-            "line": 19,
-            "column": 27,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "src/utils.ts",
-            "line": 69,
-            "column": 20,
+            "file": "src/lib/public-dir.ts",
+            "line": 3,
+            "column": 33,
             "message": "Missing semicolon."
           },
           {
             "file": "src/plugin.ts",
-            "line": 80,
-            "column": 2,
+            "line": 235,
+            "column": 22,
             "message": "Missing semicolon."
           },
           {
-            "file": "src/esbuild/postcss.ts",
-            "line": 142,
-            "column": 9,
+            "file": "src/rollup/ts-resolve.ts",
+            "line": 17,
+            "column": 65,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "src/utils.ts",
+            "line": 177,
+            "column": 45,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "test/experimental-dts.test.ts",
+            "line": 309,
+            "column": 81,
             "message": "Missing semicolon."
           },
           {
@@ -1033,15 +985,9 @@
             "message": "Missing semicolon."
           },
           {
-            "file": "src/index.ts",
-            "line": 252,
-            "column": 40,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "test/utils.ts",
-            "line": 83,
-            "column": 45,
+            "file": "vitest.config.mts",
+            "line": 9,
+            "column": 3,
             "message": "Missing semicolon."
           }
         ]

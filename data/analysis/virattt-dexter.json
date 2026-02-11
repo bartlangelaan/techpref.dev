@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "9cc7bf03a3d605dd8eab21abd96b6df53de6f63b",
-  "analyzedCommitDate": "2026-02-10T18:05:34.000Z",
+  "analyzedCommit": "51b64bf1a1cd2556c1b2380d85d2a7b565c9b6d8",
+  "analyzedCommitDate": "2026-02-11T20:45:11.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -32,7 +32,7 @@
         "samples": [
           {
             "file": "src/agent/agent.ts",
-            "line": 25,
+            "line": 24,
             "column": 27,
             "message": "Array type using 'StructuredToolInterface[]' is forbidden. Use 'Array<StructuredToolInterface>' instead."
           },
@@ -174,15 +174,15 @@
         "count": 55,
         "samples": [
           {
-            "file": "src/agent/agent.ts",
-            "line": 200,
-            "column": 41,
+            "file": "src/agent/scratchpad.ts",
+            "line": 10,
+            "column": 9,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "src/agent/scratchpad.ts",
-            "line": 113,
-            "column": 11,
+            "file": "src/agent/tool-executor.ts",
+            "line": 122,
+            "column": 38,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -255,35 +255,35 @@
         ]
       },
       "type": {
-        "count": 82,
+        "count": 83,
         "samples": [
           {
-            "file": "src/agent/scratchpad.ts",
-            "line": 8,
+            "file": "src/agent/run-context.ts",
+            "line": 7,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "src/agent/types.ts",
-            "line": 47,
+            "line": 38,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "src/components/AgentEventView.tsx",
-            "line": 133,
+            "line": 114,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "src/components/AnswerBox.tsx",
-            "line": 6,
+            "file": "src/components/AgentEventView.tsx",
+            "line": 421,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "src/components/Intro.tsx",
-            "line": 8,
+            "file": "src/components/Input.tsx",
+            "line": 9,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
@@ -322,7 +322,7 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 18,
+        "count": 21,
         "samples": [
           {
             "file": "src/agent/agent.ts",
@@ -332,7 +332,13 @@
           },
           {
             "file": "src/agent/agent.ts",
-            "line": 8,
+            "line": 7,
+            "column": 1,
+            "message": "All imports in the declaration are only used as types. Use `import type`."
+          },
+          {
+            "file": "src/agent/tool-executor.ts",
+            "line": 1,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
@@ -355,16 +361,10 @@
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "src/tools/browser/browser.ts",
-            "line": 2,
-            "column": 1,
-            "message": "Imports Browser and Page are only used as type."
-          },
-          {
             "file": "src/tools/finance/financial-metrics.ts",
-            "line": 3,
+            "line": 1,
             "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
+            "message": "Imports StructuredToolInterface are only used as type."
           },
           {
             "file": "src/tools/finance/financial-search.ts",
@@ -387,17 +387,23 @@
         ]
       },
       "no-type-imports": {
-        "count": 23,
+        "count": 26,
         "samples": [
           {
             "file": "src/agent/agent.ts",
-            "line": 4,
-            "column": 22,
+            "line": 9,
+            "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "src/agent/token-counter.ts",
             "line": 1,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "src/components/AgentEventView.tsx",
+            "line": 5,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -408,37 +414,31 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/evals/components/EvalApp.tsx",
-            "line": 7,
-            "column": 29,
+            "file": "src/evals/run.ts",
+            "line": 13,
+            "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "src/hooks/useAgentRunner.ts",
-            "line": 4,
+            "line": 5,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/hooks/useDebugLogs.ts",
-            "line": 2,
+            "file": "src/model/llm.ts",
+            "line": 13,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/skills/loader.ts",
-            "line": 3,
+            "file": "src/skills/registry.ts",
+            "line": 5,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/tools/fetch/web-fetch.ts",
-            "line": 22,
-            "column": 3,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "src/tools/finance/financial-search.ts",
+            "file": "src/tools/finance/financial-metrics.ts",
             "line": 2,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
@@ -454,54 +454,54 @@
     },
     "func-style": {
       "expression": {
-        "count": 173,
+        "count": 176,
         "samples": [
           {
-            "file": "src/agent/prompts.ts",
-            "line": 11,
+            "file": "src/agent/final-answer-context.ts",
+            "line": 9,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "src/components/AgentEventView.tsx",
-            "line": 292,
-            "column": 1,
+            "line": 224,
+            "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "src/components/ModelSelector.tsx",
-            "line": 86,
+            "line": 60,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "src/evals/run.ts",
-            "line": 218,
+            "line": 144,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "src/skills/loader.ts",
-            "line": 56,
+            "line": 43,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "src/tools/fetch/external-content.ts",
-            "line": 103,
-            "column": 1,
+            "line": 30,
+            "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "src/tools/fetch/web-fetch.ts",
-            "line": 231,
+            "line": 177,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/tools/types.ts",
-            "line": 6,
-            "column": 8,
+            "file": "src/tools/search/tavily.ts",
+            "line": 10,
+            "column": 1,
             "message": "Expected a function expression."
           },
           {
@@ -579,7 +579,7 @@
         ]
       },
       "default": {
-        "count": 33,
+        "count": 35,
         "samples": [
           {
             "file": "src/agent/agent.ts",
@@ -588,31 +588,31 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/components/DebugPanel.tsx",
-            "line": 19,
+            "file": "src/cli.tsx",
+            "line": 25,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/evals/components/EvalCurrentQuestion.tsx",
-            "line": 29,
+            "file": "src/components/Intro.tsx",
+            "line": 13,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/tools/browser/browser.ts",
-            "line": 153,
+            "file": "src/evals/components/EvalStats.tsx",
+            "line": 30,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/tools/descriptions/financial-metrics.ts",
+            "file": "src/tools/descriptions/browser.ts",
             "line": 5,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/tools/descriptions/web-search.ts",
+            "file": "src/tools/descriptions/web-fetch.ts",
             "line": 5,
             "column": 1,
             "message": "Prefer default export on a file with single export."
@@ -624,8 +624,8 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/tools/finance/insider_trades.ts",
-            "line": 36,
+            "file": "src/tools/finance/financial-search.ts",
+            "line": 97,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -675,7 +675,7 @@
         ]
       },
       "4-space": {
-        "count": 79,
+        "count": 82,
         "samples": [
           {
             "file": "jest.config.js",
@@ -684,44 +684,44 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/components/AnswerBox.tsx",
-            "line": 7,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "src/components/WorkingIndicator.tsx",
-            "line": 11,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "src/hooks/useInputHistory.ts",
+            "file": "src/agent/types.ts",
             "line": 6,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/theme.ts",
-            "line": 2,
+            "file": "src/components/Intro.tsx",
+            "line": 9,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/tools/finance/company_facts.ts",
+            "file": "src/hooks/useAgentRunner.ts",
+            "line": 12,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "src/skills/registry.ts",
+            "line": 16,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "src/tools/finance/api.ts",
             "line": 7,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/tools/finance/news.ts",
+            "file": "src/tools/finance/key-ratios.ts",
             "line": 7,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/tools/types.ts",
-            "line": 2,
+            "file": "src/tools/skill.ts",
+            "line": 37,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -740,7 +740,7 @@
         ]
       },
       "tab": {
-        "count": 79,
+        "count": 82,
         "samples": [
           {
             "file": "jest.config.js",
@@ -749,44 +749,44 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/components/AnswerBox.tsx",
-            "line": 7,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "src/components/WorkingIndicator.tsx",
-            "line": 11,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "src/hooks/useInputHistory.ts",
+            "file": "src/agent/types.ts",
             "line": 6,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/theme.ts",
-            "line": 2,
+            "file": "src/components/Intro.tsx",
+            "line": 9,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/tools/finance/company_facts.ts",
+            "file": "src/hooks/useAgentRunner.ts",
+            "line": 12,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "src/skills/registry.ts",
+            "line": 16,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "src/tools/finance/api.ts",
             "line": 7,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/tools/finance/news.ts",
+            "file": "src/tools/finance/key-ratios.ts",
             "line": 7,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/tools/types.ts",
-            "line": 2,
+            "file": "src/tools/skill.ts",
+            "line": 37,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -807,7 +807,7 @@
     },
     "quotes": {
       "double": {
-        "count": 1449,
+        "count": 1452,
         "samples": [
           {
             "file": "jest.config.js",
@@ -817,38 +817,38 @@
           },
           {
             "file": "src/cli.tsx",
-            "line": 74,
-            "column": 23,
+            "line": 20,
+            "column": 33,
             "message": "Strings must use doublequote."
           },
           {
             "file": "src/components/ModelSelector.tsx",
-            "line": 21,
-            "column": 35,
+            "line": 20,
+            "column": 11,
             "message": "Strings must use doublequote."
           },
           {
             "file": "src/evals/run.ts",
-            "line": 110,
-            "column": 23,
+            "line": 96,
+            "column": 29,
             "message": "Strings must use doublequote."
           },
           {
             "file": "src/model/llm.ts",
-            "line": 233,
-            "column": 74,
+            "line": 224,
+            "column": 16,
             "message": "Strings must use doublequote."
           },
           {
             "file": "src/tools/descriptions/index.ts",
-            "line": 7,
-            "column": 40,
+            "line": 6,
+            "column": 47,
             "message": "Strings must use doublequote."
           },
           {
             "file": "src/tools/finance/index.ts",
-            "line": 4,
-            "column": 52,
+            "line": 3,
+            "column": 45,
             "message": "Strings must use doublequote."
           },
           {

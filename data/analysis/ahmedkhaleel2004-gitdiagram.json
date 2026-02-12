@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "5d20d55391c4332918571b3d912247300f974877",
-  "analyzedCommitDate": "2026-02-12T05:17:08.000Z",
+  "analyzedCommit": "6dec3bf917081af7aa4add988b11d47f1f9387d5",
+  "analyzedCommitDate": "2026-02-12T12:12:15.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -9,7 +9,7 @@
         "samples": []
       },
       "generic": {
-        "count": 3,
+        "count": 9,
         "samples": [
           {
             "file": "src/features/diagram/sse.ts",
@@ -24,10 +24,46 @@
             "message": "Array type using 'DiagramStreamMessage[]' is forbidden. Use 'Array<DiagramStreamMessage>' instead."
           },
           {
+            "file": "src/features/diagram/sse.ts",
+            "line": 23,
+            "column": 13,
+            "message": "Array type using 'DiagramStreamMessage[]' is forbidden. Use 'Array<DiagramStreamMessage>' instead."
+          },
+          {
+            "file": "src/features/diagram/sse.ts",
+            "line": 26,
+            "column": 19,
+            "message": "Array type using 'DiagramStreamMessage[]' is forbidden. Use 'Array<DiagramStreamMessage>' instead."
+          },
+          {
             "file": "src/lib/utils.ts",
             "line": 4,
             "column": 31,
             "message": "Array type using 'ClassValue[]' is forbidden. Use 'Array<ClassValue>' instead."
+          },
+          {
+            "file": "src/server/generate/github.ts",
+            "line": 10,
+            "column": 10,
+            "message": "Array type using 'GitHubTreeItem[]' is forbidden. Use 'Array<GitHubTreeItem>' instead."
+          },
+          {
+            "file": "src/server/generate/mermaid.ts",
+            "line": 14,
+            "column": 23,
+            "message": "Array type using 'unknown[]' is forbidden. Use 'Array<unknown>' instead."
+          },
+          {
+            "file": "src/server/generate/mermaid.ts",
+            "line": 74,
+            "column": 14,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+          },
+          {
+            "file": "src/server/generate/mermaid.ts",
+            "line": 86,
+            "column": 14,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           }
         ]
       }
@@ -38,8 +74,15 @@
         "samples": []
       },
       "type-annotation": {
-        "count": 0,
-        "samples": []
+        "count": 1,
+        "samples": [
+          {
+            "file": "src/app/api/generate/stream/route.ts",
+            "line": 75,
+            "column": 36,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          }
+        ]
       }
     },
     "consistent-indexed-object-style": {
@@ -48,8 +91,33 @@
         "samples": []
       },
       "index-signature": {
-        "count": 0,
-        "samples": []
+        "count": 4,
+        "samples": [
+          {
+            "file": "src/app/api/generate/stream/route.ts",
+            "line": 77,
+            "column": 30,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "src/server/generate/format.ts",
+            "line": 1,
+            "column": 21,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "src/server/generate/pricing.ts",
+            "line": 8,
+            "column": 22,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "src/server/generate/types.ts",
+            "line": 12,
+            "column": 37,
+            "message": "An index signature is preferred over a record."
+          }
+        ]
       }
     },
     "consistent-type-definitions": {
@@ -58,7 +126,7 @@
         "samples": []
       },
       "type": {
-        "count": 18,
+        "count": 30,
         "samples": [
           {
             "file": "src/app/_actions/github.ts",
@@ -67,14 +135,8 @@
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "src/components/api-key-button.tsx",
-            "line": 4,
-            "column": 1,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "src/components/copy-button.tsx",
-            "line": 11,
+            "file": "src/components/api-key-dialog.tsx",
+            "line": 9,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
@@ -85,39 +147,45 @@
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "src/components/mermaid-diagram.tsx",
-            "line": 8,
-            "column": 1,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "src/components/private-repos-dialog.tsx",
-            "line": 9,
-            "column": 1,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "src/features/diagram/api.ts",
-            "line": 8,
-            "column": 1,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "src/features/diagram/types.ts",
-            "line": 16,
+            "file": "src/components/ui/button.tsx",
+            "line": 36,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "src/features/diagram/types.ts",
-            "line": 37,
+            "line": 20,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "src/hooks/diagram/useDiagramStream.ts",
-            "line": 9,
+            "file": "src/features/diagram/types.ts",
+            "line": 55,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "src/server/generate/github.ts",
+            "line": 5,
             "column": 1,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "src/server/generate/mermaid.ts",
+            "line": 11,
+            "column": 1,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "src/server/generate/mermaid.ts",
+            "line": 81,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "src/server/generate/pricing.ts",
+            "line": 1,
+            "column": 8,
             "message": "Use `type` instead of `interface`."
           }
         ]
@@ -129,7 +197,7 @@
         "samples": []
       },
       "no-type-imports": {
-        "count": 13,
+        "count": 14,
         "samples": [
           {
             "file": "drizzle.config.ts",
@@ -156,8 +224,8 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/features/diagram/api.ts",
-            "line": 2,
+            "file": "src/features/diagram/sse.ts",
+            "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -168,12 +236,6 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/hooks/useDiagram.ts",
-            "line": 9,
-            "column": 10,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
             "file": "src/lib/utils.ts",
             "line": 1,
             "column": 16,
@@ -181,7 +243,13 @@
           },
           {
             "file": "src/server/db/index.ts",
-            "line": 8,
+            "line": 7,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "src/server/generate/mermaid.ts",
+            "line": 4,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -196,7 +264,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 26,
+        "count": 61,
         "samples": [
           {
             "file": "src/app/_actions/cache.ts",
@@ -205,104 +273,104 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "src/app/_actions/cache.ts",
-            "line": 73,
-            "column": 8,
+            "file": "src/app/api/generate/stream/route.ts",
+            "line": 31,
+            "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/components/action-button.tsx",
-            "line": 18,
-            "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/components/api-key-dialog.tsx",
-            "line": 15,
-            "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/components/footer.tsx",
-            "line": 4,
+            "file": "src/components/api-key-button.tsx",
+            "line": 8,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "src/features/diagram/api.ts",
-            "line": 17,
+            "line": 28,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/features/diagram/github-url.ts",
-            "line": 9,
+            "file": "src/hooks/diagram/useDiagramStream.ts",
+            "line": 16,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/hooks/diagram/useDiagramExport.ts",
-            "line": 5,
+            "file": "src/server/generate/format.ts",
+            "line": 3,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/hooks/useStarReminder.tsx",
-            "line": 6,
+            "file": "src/server/generate/github.ts",
+            "line": 97,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "src/server/generate/mermaid.ts",
+            "line": 56,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "src/server/generate/openai.ts",
+            "line": 15,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/lib/utils.ts",
-            "line": 4,
+            "file": "src/server/generate/types.ts",
+            "line": 12,
             "column": 8,
             "message": "Expected a function expression."
           }
         ]
       },
       "declaration": {
-        "count": 28,
+        "count": 30,
         "samples": [
           {
+            "file": "src/app/api/generate/stream/route.ts",
+            "line": 77,
+            "column": 13,
+            "message": "Expected a function declaration."
+          },
+          {
             "file": "src/components/api-key-dialog.tsx",
-            "line": 25,
+            "line": 31,
             "column": 9,
             "message": "Expected a function declaration."
           },
           {
             "file": "src/components/header.tsx",
-            "line": 20,
+            "line": 28,
             "column": 9,
             "message": "Expected a function declaration."
           },
           {
-            "file": "src/components/hero.tsx",
-            "line": 3,
+            "file": "src/components/loading.tsx",
+            "line": 39,
             "column": 7,
             "message": "Expected a function declaration."
           },
           {
             "file": "src/components/loading.tsx",
-            "line": 41,
-            "column": 7,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "src/components/loading.tsx",
-            "line": 115,
+            "line": 113,
             "column": 9,
             "message": "Expected a function declaration."
           },
           {
             "file": "src/components/main-card.tsx",
-            "line": 76,
+            "line": 60,
             "column": 9,
             "message": "Expected a function declaration."
           },
           {
             "file": "src/components/mermaid-diagram.tsx",
-            "line": 42,
-            "column": 11,
+            "line": 13,
+            "column": 7,
             "message": "Expected a function declaration."
           },
           {
@@ -319,7 +387,7 @@
           },
           {
             "file": "src/hooks/useDiagram.ts",
-            "line": 170,
+            "line": 174,
             "column": 9,
             "message": "Expected a function declaration."
           }
@@ -438,20 +506,20 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/hooks/diagram/useDiagramExport.ts",
-            "line": 5,
+            "file": "src/hooks/diagram/useDiagramStream.ts",
+            "line": 16,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/hooks/useDiagram.ts",
-            "line": 14,
+            "file": "src/hooks/useStarReminder.tsx",
+            "line": 6,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/server/db/index.ts",
-            "line": 31,
+            "file": "src/server/generate/model-config.ts",
+            "line": 8,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           }
@@ -460,11 +528,18 @@
     },
     "indent": {
       "2-space": {
-        "count": 0,
-        "samples": []
+        "count": 1,
+        "samples": [
+          {
+            "file": "src/server/generate/prompts.ts",
+            "line": 11,
+            "column": 1,
+            "message": "Expected 2-space indentation, but file uses 3-space indentation."
+          }
+        ]
       },
       "4-space": {
-        "count": 54,
+        "count": 66,
         "samples": [
           {
             "file": "drizzle.config.ts",
@@ -473,50 +548,50 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/app/_actions/cache.ts",
-            "line": 9,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "src/components/action-button.tsx",
+            "file": "src/app/_actions/github.ts",
             "line": 4,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/components/header.tsx",
-            "line": 11,
+            "file": "src/app/providers.tsx",
+            "line": 8,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/components/mermaid-diagram.tsx",
-            "line": 9,
+            "file": "src/components/hero.tsx",
+            "line": 4,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/components/ui/input.tsx",
+            "file": "src/components/ui/button.tsx",
+            "line": 8,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "src/components/ui/textarea.tsx",
             "line": 6,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/env.js",
-            "line": 9,
+            "file": "src/features/diagram/sse.test.ts",
+            "line": 6,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/features/diagram/sse.ts",
-            "line": 4,
+            "file": "src/lib/exampleRepos.ts",
+            "line": 2,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/hooks/useStarReminder.tsx",
-            "line": 7,
+            "file": "src/server/generate/mermaid.ts",
+            "line": 12,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -529,7 +604,7 @@
         ]
       },
       "tab": {
-        "count": 54,
+        "count": 66,
         "samples": [
           {
             "file": "drizzle.config.ts",
@@ -538,50 +613,50 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/app/_actions/cache.ts",
-            "line": 9,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "src/components/action-button.tsx",
+            "file": "src/app/_actions/github.ts",
             "line": 4,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/components/header.tsx",
-            "line": 11,
+            "file": "src/app/providers.tsx",
+            "line": 8,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/components/mermaid-diagram.tsx",
-            "line": 9,
+            "file": "src/components/hero.tsx",
+            "line": 4,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/components/ui/input.tsx",
+            "file": "src/components/ui/button.tsx",
+            "line": 8,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "src/components/ui/textarea.tsx",
             "line": 6,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/env.js",
-            "line": 9,
+            "file": "src/features/diagram/sse.test.ts",
+            "line": 6,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/features/diagram/sse.ts",
-            "line": 4,
+            "file": "src/lib/exampleRepos.ts",
+            "line": 2,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/hooks/useStarReminder.tsx",
-            "line": 7,
+            "file": "src/server/generate/mermaid.ts",
+            "line": 12,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -596,7 +671,7 @@
     },
     "quotes": {
       "double": {
-        "count": 3,
+        "count": 5,
         "samples": [
           {
             "file": "src/features/diagram/sse.test.ts",
@@ -615,11 +690,23 @@
             "line": 22,
             "column": 7,
             "message": "Strings must use doublequote."
+          },
+          {
+            "file": "src/features/diagram/sse.test.ts",
+            "line": 31,
+            "column": 23,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "src/features/diagram/sse.test.ts",
+            "line": 32,
+            "column": 24,
+            "message": "Strings must use doublequote."
           }
         ]
       },
       "single": {
-        "count": 653,
+        "count": 894,
         "samples": [
           {
             "file": "drizzle.config.ts",
@@ -628,51 +715,51 @@
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/app/_actions/github.ts",
-            "line": 1,
-            "column": 23,
+            "file": "src/app/api/generate/stream/route.ts",
+            "line": 12,
+            "column": 8,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/components/api-key-dialog.tsx",
-            "line": 3,
-            "column": 66,
+            "file": "src/app/layout.tsx",
+            "line": 41,
+            "column": 5,
             "message": "Strings must use singlequote."
           },
           {
             "file": "src/components/loading.tsx",
-            "line": 118,
-            "column": 12,
+            "line": 130,
+            "column": 33,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/components/mermaid-diagram.tsx",
-            "line": 89,
-            "column": 28,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "src/components/ui/sonner.tsx",
-            "line": 1,
-            "column": 1,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "src/features/diagram/sse.test.ts",
-            "line": 21,
-            "column": 7,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "src/hooks/useDiagram.ts",
-            "line": 11,
-            "column": 34,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "tailwind.config.ts",
-            "line": 11,
+            "file": "src/components/private-repos-dialog.tsx",
+            "line": 23,
             "column": 44,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "src/features/diagram/api.ts",
+            "line": 6,
+            "column": 8,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "src/hooks/diagram/useDiagramStream.ts",
+            "line": 52,
+            "column": 14,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "src/server/generate/format.ts",
+            "line": 5,
+            "column": 45,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "src/server/generate/pricing.ts",
+            "line": 19,
+            "column": 3,
             "message": "Strings must use singlequote."
           },
           {
@@ -709,7 +796,7 @@
         ]
       },
       "never": {
-        "count": 653,
+        "count": 927,
         "samples": [
           {
             "file": "drizzle.config.ts",
@@ -718,51 +805,51 @@
             "message": "Extra semicolon."
           },
           {
-            "file": "src/app/layout.tsx",
-            "line": 73,
-            "column": 2,
+            "file": "src/app/api/generate/stream/route.ts",
+            "line": 32,
+            "column": 59,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/components/header.tsx",
-            "line": 30,
-            "column": 44,
+            "file": "src/components/api-key-dialog.tsx",
+            "line": 21,
+            "column": 27,
             "message": "Extra semicolon."
           },
           {
             "file": "src/components/main-card.tsx",
-            "line": 43,
-            "column": 78,
+            "line": 1,
+            "column": 13,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/components/private-repos-dialog.tsx",
-            "line": 36,
-            "column": 42,
+            "file": "src/components/ui/card.tsx",
+            "line": 17,
+            "column": 3,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/components/ui/switch.tsx",
-            "line": 3,
-            "column": 31,
+            "file": "src/features/diagram/api.ts",
+            "line": 95,
+            "column": 54,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/features/diagram/github-url.test.ts",
-            "line": 10,
+            "file": "src/hooks/diagram/useDiagramStream.test.ts",
+            "line": 14,
             "column": 7,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/hooks/diagram/useDiagramStream.ts",
-            "line": 60,
-            "column": 16,
+            "file": "src/hooks/useDiagram.ts",
+            "line": 120,
+            "column": 17,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/hooks/useDiagram.ts",
-            "line": 142,
-            "column": 38,
+            "file": "src/server/generate/github.ts",
+            "line": 175,
+            "column": 4,
             "message": "Extra semicolon."
           },
           {

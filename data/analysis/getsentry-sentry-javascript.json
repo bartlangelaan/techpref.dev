@@ -1,11 +1,11 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "337f53839102275cba0e511408fb055429715b21",
-  "analyzedCommitDate": "2026-02-13T12:53:58.000Z",
+  "analyzedCommit": "6fb1ee139a92a6055b52b0bbf5136fa0e5a9353f",
+  "analyzedCommitDate": "2026-02-13T16:23:14.000Z",
   "checks": {
     "array-type": {
       "array": {
-        "count": 166,
+        "count": 165,
         "samples": [
           {
             "file": "dev-packages/browser-integration-tests/suites/integrations/featureFlags/growthbook/onSpan/test.ts",
@@ -20,9 +20,9 @@
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
-            "file": "packages/browser-utils/src/metrics/browserMetrics.ts",
-            "line": 307,
-            "column": 24,
+            "file": "dev-packages/test-utils/src/server.ts",
+            "line": 46,
+            "column": 15,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
@@ -39,15 +39,15 @@
           },
           {
             "file": "packages/core/src/tracing/openai/types.ts",
-            "line": 98,
-            "column": 20,
-            "message": "Array type using 'Array<unknown>' is forbidden. Use 'unknown[]' instead."
+            "line": 95,
+            "column": 14,
+            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
-            "file": "packages/core/src/utils/string.ts",
-            "line": 136,
-            "column": 13,
-            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
+            "file": "packages/core/src/utils/stacktrace.ts",
+            "line": 83,
+            "column": 52,
+            "message": "Array type using 'ReadonlyArray<StackFrame>' is forbidden. Use 'readonly StackFrame[]' instead."
           },
           {
             "file": "packages/nextjs/test/config/turbopack/constructTurbopackConfig.test.ts",
@@ -57,8 +57,8 @@
           },
           {
             "file": "packages/remix/test/integration/test/client/utils/helpers.ts",
-            "line": 188,
-            "column": 50,
+            "line": 184,
+            "column": 74,
             "message": "Array type using 'Array<Event>' is forbidden. Use 'Event[]' instead."
           },
           {
@@ -70,7 +70,7 @@
         ]
       },
       "generic": {
-        "count": 1643,
+        "count": 1642,
         "samples": [
           {
             "file": "dev-packages/browser-integration-tests/loader-suites/loader/onLoad/sentryOnLoadError/test.ts",
@@ -98,8 +98,8 @@
           },
           {
             "file": "packages/core/test/lib/integration.test.ts",
-            "line": 130,
-            "column": 78,
+            "line": 120,
+            "column": 72,
             "message": "Array type using 'Integration[]' is forbidden. Use 'Array<Integration>' instead."
           },
           {
@@ -109,21 +109,21 @@
             "message": "Array type using 'TurbopackMatcherWithRule[]' is forbidden. Use 'Array<TurbopackMatcherWithRule>' instead."
           },
           {
-            "file": "packages/node/src/integrations/tracing/langgraph/instrumentation.ts",
-            "line": 20,
-            "column": 39,
+            "file": "packages/node/src/integrations/tracing/langchain/instrumentation.ts",
+            "line": 239,
+            "column": 31,
             "message": "Array type using 'unknown[]' is forbidden. Use 'Array<unknown>' instead."
           },
           {
             "file": "packages/react/src/reactrouter-compat-utils/instrumentation.tsx",
-            "line": 1190,
-            "column": 82,
-            "message": "Array type using 'RouteMatch[]' is forbidden. Use 'Array<RouteMatch>' instead."
+            "line": 1176,
+            "column": 11,
+            "message": "Array type using 'RouteObject[]' is forbidden. Use 'Array<RouteObject>' instead."
           },
           {
             "file": "packages/remix/test/utils/utils.test.ts",
-            "line": 64,
-            "column": 30,
+            "line": 49,
+            "column": 31,
             "message": "Array type using 'AgnosticRouteObject[]' is forbidden. Use 'Array<AgnosticRouteObject>' instead."
           },
           {
@@ -137,7 +137,7 @@
     },
     "consistent-generic-constructors": {
       "constructor": {
-        "count": 25,
+        "count": 24,
         "samples": [
           {
             "file": "dev-packages/browser-integration-tests/utils/helpers.ts",
@@ -164,9 +164,9 @@
             "message": "The generic type arguments should be specified as part of the constructor type arguments."
           },
           {
-            "file": "packages/cloudflare/src/opentelemetry/tracer.ts",
-            "line": 14,
-            "column": 28,
+            "file": "packages/cloudflare/src/client.ts",
+            "line": 15,
+            "column": 24,
             "message": "The generic type arguments should be specified as part of the constructor type arguments."
           },
           {
@@ -176,28 +176,28 @@
             "message": "The generic type arguments should be specified as part of the constructor type arguments."
           },
           {
-            "file": "packages/nextjs/src/client/routing/parameterization.ts",
+            "file": "packages/deno/src/opentelemetry/tracer.ts",
+            "line": 19,
+            "column": 28,
+            "message": "The generic type arguments should be specified as part of the constructor type arguments."
+          },
+          {
+            "file": "packages/node-core/src/integrations/local-variables/local-variables-sync.ts",
+            "line": 233,
+            "column": 21,
+            "message": "The generic type arguments should be specified as part of the constructor type arguments."
+          },
+          {
+            "file": "packages/remix/src/client/remixRouteParameterization.ts",
             "line": 12,
             "column": 25,
             "message": "The generic type arguments should be specified as part of the constructor type arguments."
           },
           {
-            "file": "packages/react/src/reactrouter-compat-utils/instrumentation.tsx",
-            "line": 1063,
-            "column": 65,
-            "message": "The generic type arguments should be specified as part of the constructor type arguments."
-          },
-          {
-            "file": "packages/remix/src/client/remixRouteParameterization.ts",
-            "line": 13,
+            "file": "packages/replay-canvas/src/canvas.ts",
+            "line": 82,
             "column": 23,
             "message": "The generic type arguments should be specified as part of the constructor type arguments."
-          },
-          {
-            "file": "packages/sveltekit/test/server-common/serverRoute.test.ts",
-            "line": 2,
-            "column": 29,
-            "message": "The 'type' modifier cannot be used on a named import when 'import type' is used on its import statement."
           }
         ]
       },
@@ -218,44 +218,44 @@
           },
           {
             "file": "packages/browser-utils/src/metrics/inp.ts",
-            "line": 34,
-            "column": 43,
+            "line": 31,
+            "column": 38,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
             "file": "packages/core/src/integrations/mcp-server/correlation.ts",
-            "line": 31,
-            "column": 37,
+            "line": 25,
+            "column": 33,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
             "file": "packages/core/test/lib/utils/lru.test.ts",
-            "line": 31,
+            "line": 17,
             "column": 27,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "packages/google-cloud-serverless/src/integrations/google-cloud-grpc.ts",
-            "line": 32,
-            "column": 34,
+            "file": "packages/ember/tests/dummy/app/controllers/index.ts",
+            "line": 53,
+            "column": 32,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "packages/node-core/src/integrations/contextlines.ts",
-            "line": 7,
-            "column": 43,
+            "file": "packages/node-core/src/integrations/anr/worker.ts",
+            "line": 213,
+            "column": 26,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "packages/nuxt/src/runtime/plugins/sentry-cloudflare.server.ts",
-            "line": 47,
+            "file": "packages/nuxt/src/runtime/plugins/database.server.ts",
+            "line": 27,
             "column": 37,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
             "file": "packages/react/src/reactrouter-compat-utils/instrumentation.tsx",
-            "line": 265,
-            "column": 38,
+            "line": 77,
+            "column": 47,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
@@ -269,7 +269,7 @@
     },
     "consistent-indexed-object-style": {
       "record": {
-        "count": 106,
+        "count": 105,
         "samples": [
           {
             "file": "dev-packages/e2e-tests/lib/getTestMatrix.ts",
@@ -297,8 +297,8 @@
           },
           {
             "file": "packages/core/src/types-hoist/polymorphics.ts",
-            "line": 76,
-            "column": 5,
+            "line": 61,
+            "column": 21,
             "message": "A record is preferred over an index signature."
           },
           {
@@ -308,21 +308,21 @@
             "message": "A record is preferred over an index signature."
           },
           {
-            "file": "packages/nextjs/src/common/pages-router-instrumentation/wrapGetStaticPropsWithSentry.ts",
+            "file": "packages/google-cloud-serverless/test/gcpfunction/http.test.ts",
+            "line": 51,
+            "column": 20,
+            "message": "A record is preferred over an index signature."
+          },
+          {
+            "file": "packages/node-core/src/integrations/pino.ts",
+            "line": 18,
+            "column": 13,
+            "message": "A record is preferred over an index signature."
+          },
+          {
+            "file": "packages/nuxt/src/runtime/utils/database-span-data.ts",
             "line": 5,
-            "column": 16,
-            "message": "A record is preferred over an index signature."
-          },
-          {
-            "file": "packages/node-native/src/common.ts",
-            "line": 21,
-            "column": 17,
-            "message": "A record is preferred over an index signature."
-          },
-          {
-            "file": "packages/opentelemetry/test/propagator.test.ts",
-            "line": 21,
-            "column": 18,
+            "column": 3,
             "message": "A record is preferred over an index signature."
           },
           {
@@ -344,50 +344,50 @@
           },
           {
             "file": "dev-packages/node-core-integration-tests/suites/tracing/dsc-txn-name-update/test.ts",
-            "line": 43,
+            "line": 31,
             "column": 33,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "packages/browser/src/tracing/utils.ts",
-            "line": 39,
-            "column": 46,
+            "file": "packages/browser/src/tracing/request.ts",
+            "line": 320,
+            "column": 10,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "packages/core/src/integrations/requestdata.ts",
-            "line": 113,
-            "column": 28,
+            "file": "packages/core/src/integrations/mcp-server/validation.ts",
+            "line": 84,
+            "column": 60,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "packages/core/src/tracing/langchain/types.ts",
-            "line": 184,
-            "column": 16,
+            "line": 180,
+            "column": 13,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "packages/core/src/types-hoist/profiling.ts",
-            "line": 85,
-            "column": 18,
-            "message": "An index signature is preferred over a record."
-          },
-          {
-            "file": "packages/nextjs/src/common/utils/urls.ts",
-            "line": 4,
+            "line": 73,
             "column": 20,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "packages/node/src/integrations/tracing/postgresjs.ts",
-            "line": 329,
-            "column": 48,
+            "file": "packages/nextjs/src/common/utils/urls.ts",
+            "line": 3,
+            "column": 29,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "packages/react/test/reactrouterv3.test.tsx",
-            "line": 61,
-            "column": 43,
+            "file": "packages/node/src/integrations/tracing/postgresjs.ts",
+            "line": 310,
+            "column": 17,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "packages/react/test/profiler.test.tsx",
+            "line": 22,
+            "column": 17,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -401,7 +401,7 @@
     },
     "consistent-type-definitions": {
       "interface": {
-        "count": 293,
+        "count": 292,
         "samples": [
           {
             "file": "dev-packages/browser-integration-tests/utils/fixtures.ts",
@@ -428,8 +428,8 @@
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "packages/core/src/types-hoist/metric.ts",
-            "line": 79,
+            "file": "packages/core/src/types-hoist/log.ts",
+            "line": 66,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
@@ -440,20 +440,20 @@
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "packages/node-core/src/integrations/anr/index.ts",
-            "line": 64,
+            "file": "packages/node-core/src/cron/cron.ts",
+            "line": 27,
+            "column": 8,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "packages/nuxt/src/common/types.ts",
+            "line": 25,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "packages/nuxt/src/runtime/plugins/sentry.client.ts",
-            "line": 10,
-            "column": 1,
-            "message": "Use `interface` instead of `type`."
-          },
-          {
-            "file": "packages/replay-internal/test/test.setup.ts",
-            "line": 12,
+            "file": "packages/replay-internal/test/mocks/mockRrweb.ts",
+            "line": 34,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
@@ -466,7 +466,7 @@
         ]
       },
       "type": {
-        "count": 786,
+        "count": 785,
         "samples": [
           {
             "file": "dev-packages/browser-integration-tests/suites/profiling/test-utils.ts",
@@ -487,14 +487,14 @@
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "packages/core/src/tracing/vercel-ai/vercel-ai-attributes.ts",
-            "line": 824,
+            "file": "packages/core/src/tracing/vercel-ai/types.ts",
+            "line": 1,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "packages/core/src/types-hoist/options.ts",
-            "line": 619,
+            "line": 129,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
@@ -512,13 +512,13 @@
           },
           {
             "file": "packages/node/src/types.ts",
-            "line": 80,
+            "line": 74,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "packages/replay-internal/src/types/replay.ts",
-            "line": 281,
+            "line": 95,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
@@ -533,7 +533,7 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 182,
+        "count": 185,
         "samples": [
           {
             "file": "dev-packages/e2e-tests/test-applications/angular-17/src/app/app.config.ts",
@@ -548,57 +548,57 @@
             "message": "Imports Observable are only used as type."
           },
           {
-            "file": "dev-packages/e2e-tests/test-applications/create-remix-app-express/app/routes/loader-error.tsx",
+            "file": "dev-packages/e2e-tests/test-applications/create-remix-app-express/app/routes/navigate.tsx",
             "line": 1,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "dev-packages/e2e-tests/test-applications/nestjs-8/src/app.controller.ts",
-            "line": 3,
+            "file": "dev-packages/e2e-tests/test-applications/nestjs-8/src/app.module.ts",
+            "line": 1,
             "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
+            "message": "Imports MiddlewareConsumer are only used as type."
           },
           {
-            "file": "dev-packages/e2e-tests/test-applications/nestjs-basic/src/example-global.filter.ts",
+            "file": "dev-packages/e2e-tests/test-applications/nestjs-basic/src/example-local.filter.ts",
             "line": 1,
             "column": 1,
             "message": "Imports ArgumentsHost, BadRequestException, and ExceptionFilter are only used as type."
           },
           {
-            "file": "dev-packages/e2e-tests/test-applications/nestjs-fastify/src/example.guard.ts",
+            "file": "dev-packages/e2e-tests/test-applications/nestjs-fastify/src/example.middleware.ts",
             "line": 1,
             "column": 1,
-            "message": "Imports CanActivate and ExecutionContext are only used as type."
+            "message": "Imports NestMiddleware are only used as type."
           },
           {
-            "file": "dev-packages/e2e-tests/test-applications/nestjs-with-submodules/src/example-specific.filter.ts",
+            "file": "dev-packages/e2e-tests/test-applications/nextjs-13/pages/_app.tsx",
             "line": 1,
             "column": 1,
-            "message": "Imports ArgumentsHost, BadRequestException, and ExceptionFilter are only used as type."
+            "message": "Imports AppContext and AppProps are only used as type."
           },
           {
-            "file": "dev-packages/e2e-tests/test-applications/nextjs-16/app/(nested-layout)/nested-layout/layout.tsx",
+            "file": "dev-packages/e2e-tests/test-applications/nextjs-16/app/(nested-layout)/layout.tsx",
             "line": 1,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "dev-packages/e2e-tests/test-applications/react-router-7-lazy-routes/src/index.tsx",
-            "line": 4,
+            "file": "dev-packages/e2e-tests/test-applications/nuxt-3/server/plugins/customNitroErrorHandler.ts",
+            "line": 1,
             "column": 1,
-            "message": "Imports PatchRoutesOnNavigationFunction are only used as type."
+            "message": "Imports Context are only used as type."
           },
           {
-            "file": "packages/sveltekit/test/server-common/serverRoute.test.ts",
+            "file": "packages/remix/test/integration/vite.config.ts",
             "line": 2,
-            "column": 29,
-            "message": "The 'type' modifier cannot be used on a named import when 'import type' is used on its import statement."
+            "column": 1,
+            "message": "Imports Plugin are only used as type."
           }
         ]
       },
       "no-type-imports": {
-        "count": 2620,
+        "count": 2622,
         "samples": [
           {
             "file": "dev-packages/browser-integration-tests/playwright.browser.config.ts",
@@ -613,33 +613,33 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/browser-utils/src/metrics/web-vitals/onFCP.ts",
-            "line": 23,
+            "file": "packages/browser-utils/src/metrics/web-vitals/lib/bindReporter.ts",
+            "line": 17,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/core/src/integrations/mcp-server/sessionExtraction.ts",
-            "line": 24,
+            "file": "packages/core/src/integrations/mcp-server/piiFiltering.ts",
+            "line": 8,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "packages/core/src/utils/is.ts",
+            "line": 3,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "packages/google-cloud-serverless/src/integrations/google-cloud-http.ts",
+            "line": 2,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "packages/node-core/test/sdk/init.test.ts",
             "line": 4,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "packages/google-cloud-serverless/src/sdk.ts",
-            "line": 1,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "packages/node-core/test/transports/http.test.ts",
-            "line": 1,
-            "column": 1,
+            "column": 55,
             "message": "Use an `import` instead of an `import type`."
           },
           {
@@ -665,7 +665,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 3669,
+        "count": 3681,
         "samples": [
           {
             "file": ".size-limit.js",
@@ -674,51 +674,51 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "dev-packages/e2e-tests/test-applications/react-router-6/server/app.js",
-            "line": 14,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "dev-packages/node-integration-tests/suites/tracing/requests/http-sampled-no-active-span/scenario.mjs",
-            "line": 4,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "packages/browser/src/tracing/linkedTraces.ts",
-            "line": 211,
+            "file": "dev-packages/e2e-tests/test-applications/nuxt-3-min/tests/tracing.cached-html.test.ts",
+            "line": 128,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "packages/core/src/tracing/anthropic-ai/index.ts",
-            "line": 125,
+            "file": "dev-packages/node-integration-tests/suites/tracing/requests/fetch-unsampled/scenario.mjs",
+            "line": 3,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "packages/core/src/utils/spanUtils.ts",
-            "line": 279,
-            "column": 3,
+            "file": "packages/browser/src/tracing/browserTracingIntegration.ts",
+            "line": 771,
+            "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "packages/nextjs/src/config/withSentryConfig/getFinalConfigObjectUtils.ts",
-            "line": 21,
+            "file": "packages/core/src/tracing/ai/utils.ts",
+            "line": 47,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "packages/core/src/utils/spanUtils.ts",
+            "line": 190,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "packages/nextjs/src/config/withSentryConfig/getFinalConfigObjectBundlerUtils.ts",
+            "line": 108,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "packages/nuxt/src/runtime/plugins/storage.server.ts",
-            "line": 273,
+            "line": 195,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "packages/replay-internal/src/coreHandlers/handleBeforeSendEvent.ts",
-            "line": 13,
-            "column": 8,
+            "file": "packages/replay-internal/src/coreHandlers/handleAfterSendEvent.ts",
+            "line": 34,
+            "column": 1,
             "message": "Expected a function expression."
           },
           {
@@ -730,7 +730,7 @@
         ]
       },
       "declaration": {
-        "count": 795,
+        "count": 796,
         "samples": [
           {
             "file": "dev-packages/browser-integration-tests/suites/integrations/browserApiErrors/init.js",
@@ -751,15 +751,15 @@
             "message": "Expected a function declaration."
           },
           {
-            "file": "dev-packages/e2e-tests/test-applications/sveltekit-2/src/routes/server-load-error/+page.server.ts",
-            "line": 1,
+            "file": "dev-packages/e2e-tests/test-applications/sveltekit-2/src/routes/redirect2/+page.ts",
+            "line": 3,
             "column": 14,
             "message": "Expected a function declaration."
           },
           {
             "file": "packages/browser-utils/src/metrics/web-vitals/lib/getVisibilityWatcher.ts",
-            "line": 64,
-            "column": 14,
+            "line": 33,
+            "column": 7,
             "message": "Expected a function declaration."
           },
           {
@@ -775,8 +775,8 @@
             "message": "Expected a function declaration."
           },
           {
-            "file": "packages/react/test/reactrouter-cross-usage.test.tsx",
-            "line": 124,
+            "file": "packages/react/test/reactrouter-compat-utils/lazy-routes.test.ts",
+            "line": 302,
             "column": 13,
             "message": "Expected a function declaration."
           },
@@ -797,7 +797,7 @@
     },
     "import-export-preference": {
       "named": {
-        "count": 865,
+        "count": 882,
         "samples": [
           {
             "file": "dev-packages/browser-integration-tests/playwright.browser.config.ts",
@@ -806,49 +806,49 @@
             "message": "Prefer named exports"
           },
           {
-            "file": "dev-packages/e2e-tests/test-applications/ember-embroider/app/routes/index.ts",
-            "line": 3,
+            "file": "dev-packages/e2e-tests/test-applications/ember-embroider/app/routes/slow-loading-route/index.ts",
+            "line": 30,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "dev-packages/e2e-tests/test-applications/nextjs-15/app/pageload-tracing/page.tsx",
-            "line": 3,
+            "file": "dev-packages/e2e-tests/test-applications/nextjs-15/app/parameterized/static/page.tsx",
+            "line": 1,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "dev-packages/e2e-tests/test-applications/nextjs-16/app/streaming-rsc-error/[param]/page.tsx",
-            "line": 6,
+            "file": "dev-packages/e2e-tests/test-applications/nextjs-16/app/non-isr-test/[item]/page.tsx",
+            "line": 2,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "dev-packages/e2e-tests/test-applications/node-fastify-3/playwright.config.mjs",
+            "file": "dev-packages/e2e-tests/test-applications/node-core-express-otel-v2/playwright.config.mjs",
             "line": 7,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "dev-packages/e2e-tests/test-applications/react-router-6-use-routes/src/pages/Index.tsx",
-            "line": 24,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "dev-packages/e2e-tests/test-applications/react-router-7-framework/app/routes/errors/server-action.tsx",
+            "file": "dev-packages/e2e-tests/test-applications/react-create-memory-router/playwright.config.mjs",
             "line": 7,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "dev-packages/e2e-tests/test-applications/supabase-nextjs/pages/api/create-test-user.ts",
-            "line": 11,
+            "file": "dev-packages/e2e-tests/test-applications/react-router-7-framework/app/entry.server.tsx",
+            "line": 16,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "packages/integration-shims/rollup.npm.config.mjs",
+            "file": "dev-packages/e2e-tests/test-applications/supabase-nextjs/components/TodoList.tsx",
+            "line": 7,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "packages/google-cloud-serverless/vite.config.ts",
             "line": 3,
             "column": 8,
             "message": "Prefer named exports"
@@ -862,7 +862,7 @@
         ]
       },
       "default": {
-        "count": 798,
+        "count": 801,
         "samples": [
           {
             "file": "dev-packages/browser-integration-tests/suites/tracing/ai-providers/anthropic/mocks.js",
@@ -877,44 +877,44 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "dev-packages/e2e-tests/test-applications/nestjs-with-submodules/src/example-module-local-filter/example.controller.ts",
-            "line": 7,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "dev-packages/e2e-tests/test-applications/sveltekit-2-kit-tracing/src/routes/users/+page.server.ts",
+            "file": "dev-packages/e2e-tests/test-applications/nestjs-with-submodules/src/example-module-local-filter/example.exception.ts",
             "line": 1,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "packages/aws-serverless/src/debug-build.ts",
-            "line": 8,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "packages/core/src/feedback.ts",
-            "line": 8,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "packages/google-cloud-serverless/src/debug-build.ts",
-            "line": 8,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "packages/node/rollup.anr-worker.config.mjs",
+            "file": "dev-packages/e2e-tests/test-applications/sveltekit-2-kit-tracing/src/routes/universal-load-error/+page.ts",
             "line": 3,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "packages/replay-internal/src/eventBuffer/WorkerHandler.ts",
-            "line": 9,
+            "file": "packages/astro/src/integration/middleware/index.ts",
+            "line": 13,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "packages/core/src/client.ts",
+            "line": 188,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "packages/feedback/src/util/setAttributesNS.ts",
+            "line": 4,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "packages/node-core/test/helpers/error.ts",
+            "line": 2,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "packages/replay-internal/src/eventBuffer/EventBufferProxy.ts",
+            "line": 13,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -929,19 +929,13 @@
     },
     "indent": {
       "2-space": {
-        "count": 3,
+        "count": 2,
         "samples": [
           {
             "file": "dev-packages/e2e-tests/test-applications/svelte-5/src/lib/Counter.svelte",
             "line": 2,
             "column": 1,
             "message": "Expected spaces for indentation, but found tabs."
-          },
-          {
-            "file": "packages/sveltekit/test/server-common/serverRoute.test.ts",
-            "line": 2,
-            "column": 29,
-            "message": "The 'type' modifier cannot be used on a named import when 'import type' is used on its import statement."
           },
           {
             "file": "packages/sveltekit/test/vite/autoInstrument.test.ts",
@@ -952,7 +946,7 @@
         ]
       },
       "4-space": {
-        "count": 5523,
+        "count": 5562,
         "samples": [
           {
             "file": ".eslintrc.js",
@@ -961,50 +955,50 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "dev-packages/browser-integration-tests/suites/replay/throttleBreadcrumbs/init.js",
-            "line": 5,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "dev-packages/e2e-tests/test-applications/default-browser/src/index.js",
+            "file": "dev-packages/browser-integration-tests/suites/replay/unicode/compressed/test.ts",
             "line": 4,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "dev-packages/e2e-tests/test-applications/nextjs-app-dir/app/server-component/layout.tsx",
+            "file": "dev-packages/e2e-tests/test-applications/ember-classic/app/controllers/slow-loading-route/index.ts",
+            "line": 4,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "dev-packages/e2e-tests/test-applications/nextjs-app-dir/app/client-component/parameter/[parameter]/layout.tsx",
+            "line": 4,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "dev-packages/e2e-tests/test-applications/react-router-7-framework/app/routes/errors/server-loader.tsx",
+            "line": 4,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "dev-packages/node-core-integration-tests/suites/tracing/meta-tags-twp-errors/server.js",
             "line": 2,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "dev-packages/e2e-tests/test-applications/react-router-7-lazy-routes/playwright.config.mjs",
-            "line": 4,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "dev-packages/node-core-integration-tests/suites/tracing/requests/fetch-unsampled/instrument.mjs",
-            "line": 6,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "dev-packages/node-integration-tests/suites/tracing/sample-rate-propagation/tracesSampler/test.ts",
+            "file": "dev-packages/node-integration-tests/suites/tracing/requests/traceparent/instrument.mjs",
             "line": 5,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/core/test/lib/integrations/zoderrrors.test.ts",
-            "line": 4,
+            "file": "packages/core/test/lib/integrations/mcp-server/mcpServerErrorCapture.test.ts",
+            "line": 9,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/nuxt/src/server/sdk.ts",
-            "line": 4,
+            "file": "packages/nuxt/src/runtime/utils.ts",
+            "line": 13,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -1017,7 +1011,7 @@
         ]
       },
       "tab": {
-        "count": 5523,
+        "count": 5562,
         "samples": [
           {
             "file": ".eslintrc.js",
@@ -1026,50 +1020,50 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "dev-packages/browser-integration-tests/suites/replay/throttleBreadcrumbs/init.js",
-            "line": 5,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "dev-packages/e2e-tests/test-applications/default-browser/src/index.js",
+            "file": "dev-packages/browser-integration-tests/suites/replay/unicode/compressed/test.ts",
             "line": 4,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "dev-packages/e2e-tests/test-applications/nextjs-app-dir/app/server-component/layout.tsx",
+            "file": "dev-packages/e2e-tests/test-applications/ember-classic/app/controllers/slow-loading-route/index.ts",
+            "line": 4,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "dev-packages/e2e-tests/test-applications/nextjs-app-dir/app/client-component/parameter/[parameter]/layout.tsx",
+            "line": 4,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "dev-packages/e2e-tests/test-applications/react-router-7-framework/app/routes/errors/server-loader.tsx",
+            "line": 4,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "dev-packages/node-core-integration-tests/suites/tracing/meta-tags-twp-errors/server.js",
             "line": 2,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "dev-packages/e2e-tests/test-applications/react-router-7-lazy-routes/playwright.config.mjs",
-            "line": 4,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "dev-packages/node-core-integration-tests/suites/tracing/requests/fetch-unsampled/instrument.mjs",
-            "line": 6,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "dev-packages/node-integration-tests/suites/tracing/sample-rate-propagation/tracesSampler/test.ts",
+            "file": "dev-packages/node-integration-tests/suites/tracing/requests/traceparent/instrument.mjs",
             "line": 5,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/core/test/lib/integrations/zoderrrors.test.ts",
-            "line": 4,
+            "file": "packages/core/test/lib/integrations/mcp-server/mcpServerErrorCapture.test.ts",
+            "line": 9,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/nuxt/src/server/sdk.ts",
-            "line": 4,
+            "file": "packages/nuxt/src/runtime/utils.ts",
+            "line": 13,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -1084,7 +1078,7 @@
     },
     "quotes": {
       "double": {
-        "count": 116968,
+        "count": 117291,
         "samples": [
           {
             "file": ".eslintrc.js",
@@ -1093,51 +1087,51 @@
             "message": "Strings must use doublequote."
           },
           {
-            "file": "dev-packages/e2e-tests/test-applications/angular-18/tests/errors.test.ts",
-            "line": 22,
-            "column": 19,
+            "file": "dev-packages/e2e-tests/test-applications/angular-18/tests/performance.test.ts",
+            "line": 83,
+            "column": 18,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "dev-packages/e2e-tests/test-applications/node-express/tests/mcp.test.ts",
-            "line": 213,
-            "column": 12,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "dev-packages/e2e-tests/test-applications/tsx-express/src/mcp.ts",
-            "line": 106,
-            "column": 25,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "dev-packages/node-integration-tests/suites/tracing/meta-tags-twp-errors/no-server.js",
-            "line": 1,
-            "column": 38,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "packages/browser/test/tracekit/firefox.test.ts",
-            "line": 232,
+            "file": "dev-packages/e2e-tests/test-applications/node-express-v5/tests/trpc.test.ts",
+            "line": 62,
             "column": 9,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/core/test/lib/tracing/dynamicSamplingContext.test.ts",
-            "line": 188,
-            "column": 20,
+            "file": "dev-packages/e2e-tests/test-applications/tanstackstart-react/tests/errors.test.ts",
+            "line": 73,
+            "column": 22,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "dev-packages/node-integration-tests/suites/tracing/langgraph/test.ts",
+            "line": 241,
+            "column": 17,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "packages/browser/test/tracekit/firefox.test.ts",
+            "line": 20,
+            "column": 9,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "packages/core/test/lib/tracing/ai-message-truncation.test.ts",
+            "line": 155,
+            "column": 8,
             "message": "Strings must use doublequote."
           },
           {
             "file": "packages/nextjs/test/config/util.test.ts",
-            "line": 259,
-            "column": 10,
+            "line": 224,
+            "column": 20,
             "message": "Strings must use doublequote."
           },
           {
             "file": "packages/react-router/test/server/wrapSentryHandleRequest.test.ts",
-            "line": 81,
-            "column": 38,
+            "line": 40,
+            "column": 55,
             "message": "Strings must use doublequote."
           },
           {
@@ -1149,7 +1143,7 @@
         ]
       },
       "single": {
-        "count": 1196,
+        "count": 1193,
         "samples": [
           {
             "file": "dev-packages/browser-integration-tests/fixtures/loader.js",
@@ -1158,51 +1152,51 @@
             "message": "Strings must use singlequote."
           },
           {
-            "file": "dev-packages/e2e-tests/test-applications/angular-20/playwright.config.mjs",
-            "line": 4,
-            "column": 17,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "dev-packages/e2e-tests/test-applications/nextjs-14/tests/parameterized-routes.test.ts",
-            "line": 59,
-            "column": 19,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "dev-packages/e2e-tests/test-applications/node-fastify-4/tests/propagation.test.ts",
-            "line": 371,
-            "column": 67,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "dev-packages/e2e-tests/test-applications/react-19/playwright.config.mjs",
-            "line": 4,
-            "column": 17,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "dev-packages/e2e-tests/test-applications/solidstart-top-level-import/tests/errors.client.test.ts",
-            "line": 10,
+            "file": "dev-packages/e2e-tests/test-applications/angular-20/tests/performance.test.ts",
+            "line": 167,
             "column": 21,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "dev-packages/node-integration-tests/suites/public-api/onUnhandledRejectionIntegration/test.ts",
-            "line": 190,
-            "column": 29,
+            "file": "dev-packages/e2e-tests/test-applications/nextjs-15-t3/sentry.edge.config.ts",
+            "line": 11,
+            "column": 11,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "dev-packages/e2e-tests/test-applications/node-fastify-5/tests/propagation.test.ts",
+            "line": 273,
+            "column": 67,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "dev-packages/e2e-tests/test-applications/react-create-memory-router/playwright.config.mjs",
+            "line": 4,
+            "column": 17,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "dev-packages/e2e-tests/test-applications/solidstart-top-level-import/tests/performance.client.test.ts",
+            "line": 31,
+            "column": 19,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "dev-packages/node-integration-tests/suites/public-api/startSpan/basic-usage/test.ts",
+            "line": 28,
+            "column": 6,
             "message": "Strings must use singlequote."
           },
           {
             "file": "packages/core/test/lib/integrations/captureconsole.test.ts",
-            "line": 332,
+            "line": 380,
             "column": 8,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "packages/nuxt/test/vite/sourceMaps.test.ts",
-            "line": 462,
-            "column": 8,
+            "file": "packages/opentelemetry/test/utils/parseSpanDescription.test.ts",
+            "line": 482,
+            "column": 7,
             "message": "Strings must use singlequote."
           },
           {
@@ -1216,7 +1210,7 @@
     },
     "semi": {
       "always": {
-        "count": 46,
+        "count": 45,
         "samples": [
           {
             "file": "dev-packages/browser-integration-tests/fixtures/loader.js",
@@ -1251,37 +1245,37 @@
           {
             "file": "dev-packages/browser-integration-tests/fixtures/loader.js",
             "line": 1,
-            "column": 2407,
+            "column": 2217,
             "message": "Missing semicolon."
           },
           {
             "file": "dev-packages/e2e-tests/test-applications/svelte-5/src/App.svelte",
-            "line": 4,
-            "column": 45,
+            "line": 3,
+            "column": 35,
             "message": "Missing semicolon."
           },
           {
-            "file": "dev-packages/e2e-tests/test-applications/sveltekit-2-kit-tracing/src/routes/universal-load-error/+page.svelte",
+            "file": "dev-packages/e2e-tests/test-applications/sveltekit-2-kit-tracing/src/routes/server-load-error/+page.svelte",
             "line": 2,
             "column": 18,
             "message": "Missing semicolon."
           },
           {
-            "file": "dev-packages/e2e-tests/test-applications/sveltekit-2/src/routes/building/+page.svelte",
-            "line": 12,
-            "column": 7,
+            "file": "dev-packages/e2e-tests/test-applications/sveltekit-2-svelte-5/src/routes/universal-load-error/+page.svelte",
+            "line": 2,
+            "column": 18,
             "message": "Missing semicolon."
           },
           {
-            "file": "packages/sveltekit/test/server-common/serverRoute.test.ts",
+            "file": "dev-packages/e2e-tests/test-applications/sveltekit-2/src/routes/universal-load-error/+page.svelte",
             "line": 2,
-            "column": 29,
-            "message": "The 'type' modifier cannot be used on a named import when 'import type' is used on its import statement."
+            "column": 18,
+            "message": "Missing semicolon."
           }
         ]
       },
       "never": {
-        "count": 127908,
+        "count": 128239,
         "samples": [
           {
             "file": ".eslintrc.js",
@@ -1291,50 +1285,50 @@
           },
           {
             "file": "dev-packages/bundler-tests/tests/bundling.test.ts",
-            "line": 2,
-            "column": 34,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "dev-packages/e2e-tests/test-applications/nuxt-3-dynamic-import/tests/errors.server.test.ts",
-            "line": 2,
-            "column": 59,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "dev-packages/node-integration-tests/suites/express/tracing/scenario.mjs",
-            "line": 1,
-            "column": 39,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "packages/browser/test/index.bundle.tracing.replay.test.ts",
-            "line": 9,
-            "column": 87,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "packages/core/test/lib/hint.test.ts",
-            "line": 1,
-            "column": 75,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "packages/google-cloud-serverless/test/integrations/google-cloud-grpc.test.ts",
-            "line": 80,
+            "line": 96,
             "column": 5,
             "message": "Extra semicolon."
           },
           {
-            "file": "packages/node/test/integration/scope.test.ts",
-            "line": 477,
-            "column": 33,
+            "file": "dev-packages/e2e-tests/test-applications/node-otel-without-tracing/tests/transactions.test.ts",
+            "line": 174,
+            "column": 38,
             "message": "Extra semicolon."
           },
           {
-            "file": "packages/remix/src/utils/utils.ts",
-            "line": 108,
-            "column": 81,
+            "file": "dev-packages/node-integration-tests/suites/express/sentry-trace/baggage-property-values/server.ts",
+            "line": 20,
+            "column": 22,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "packages/browser/test/helpers.test.ts",
+            "line": 168,
+            "column": 94,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "packages/core/test/lib/fetch.test.ts",
+            "line": 163,
+            "column": 11,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "packages/google-cloud-serverless/test/gcpfunction/http.test.ts",
+            "line": 110,
+            "column": 20,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "packages/node/test/integration/scope.test.ts",
+            "line": 415,
+            "column": 49,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "packages/remix/src/utils/vendor/response.ts",
+            "line": 17,
+            "column": 59,
             "message": "Extra semicolon."
           },
           {

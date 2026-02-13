@@ -9,6 +9,8 @@ import {
   type RepositoryWithStatus,
 } from "./repository-list";
 
+export const dynamic = "error";
+
 export const metadata: Metadata = {
   title: "Repositories",
   description:

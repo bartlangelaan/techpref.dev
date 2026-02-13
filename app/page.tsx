@@ -4,6 +4,8 @@ import { ViewTransition } from "react";
 import { Badge } from "@/components/ui/badge";
 import { allComparisons } from "@/lib/comparisons";
 
+export const dynamic = "error";
+
 export default function Home() {
   return (
     <main className="bg-background min-h-screen">

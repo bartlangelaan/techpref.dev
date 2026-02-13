@@ -3,6 +3,9 @@ import { notFound } from "next/navigation";
 import { ComparisonPage } from "@/components/comparison";
 import { allComparisons } from "@/lib/comparisons";
 
+export const dynamic = "error";
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return allComparisons.map((comparison) => ({
     comparison: comparison.slug,

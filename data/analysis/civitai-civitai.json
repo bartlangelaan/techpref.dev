@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "9eb0d7900327c98485a3c718c214963fa0ee5bf7",
-  "analyzedCommitDate": "2026-02-12T22:51:01.000Z",
+  "analyzedCommit": "768bb181367cc024b0e0a5348869ba220921021b",
+  "analyzedCommitDate": "2026-02-13T17:06:32.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -70,7 +70,7 @@
         ]
       },
       "generic": {
-        "count": 2634,
+        "count": 2636,
         "samples": [
           {
             "file": "prisma/seed.ts",
@@ -86,8 +86,8 @@
           },
           {
             "file": "src/components/Search/parsers/image.parser.ts",
-            "line": 64,
-            "column": 42,
+            "line": 65,
+            "column": 38,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
@@ -98,15 +98,15 @@
           },
           {
             "file": "src/server/db/db-helpers.ts",
-            "line": 171,
-            "column": 58,
+            "line": 172,
+            "column": 19,
             "message": "Array type using 'any[]' is forbidden. Use 'Array<any>' instead."
           },
           {
-            "file": "src/server/notifications/utils.notifications.ts",
-            "line": 78,
-            "column": 28,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+            "file": "src/server/notifications/notification-cache.ts",
+            "line": 30,
+            "column": 48,
+            "message": "Array type using 'NotificationCategoryCount[]' is forbidden. Use 'Array<NotificationCategoryCount>' instead."
           },
           {
             "file": "src/server/services/collection.service.ts",
@@ -116,9 +116,9 @@
           },
           {
             "file": "src/server/services/image.service.ts",
-            "line": 5887,
-            "column": 29,
-            "message": "Array type using 'ContestCollectionItem[]' is forbidden. Use 'Array<ContestCollectionItem>' instead."
+            "line": 5879,
+            "column": 11,
+            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           },
           {
             "file": "src/server/utils/chat.ts",
@@ -154,7 +154,7 @@
         ]
       },
       "type-annotation": {
-        "count": 100,
+        "count": 102,
         "samples": [
           {
             "file": "scripts/oneoffs/reindex-missing-images.ts",
@@ -182,7 +182,7 @@
           },
           {
             "file": "src/server/jobs/daily-challenge-processing.ts",
-            "line": 731,
+            "line": 746,
             "column": 33,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
@@ -193,9 +193,9 @@
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "src/server/services/image-scan-result.service.ts",
-            "line": 80,
-            "column": 30,
+            "file": "src/server/services/games/new-order.service.ts",
+            "line": 1407,
+            "column": 31,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
@@ -286,7 +286,7 @@
         ]
       },
       "index-signature": {
-        "count": 657,
+        "count": 660,
         "samples": [
           {
             "file": "scripts/metric-migration/backfill-metrics.ts",
@@ -308,26 +308,26 @@
           },
           {
             "file": "src/components/VerifiedShield/VerifiedShield.tsx",
-            "line": 16,
-            "column": 21,
+            "line": 22,
+            "column": 19,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "src/pages/moderator/challenges/events.tsx",
-            "line": 43,
-            "column": 27,
+            "file": "src/pages/moderator/image-tags.tsx",
+            "line": 138,
+            "column": 13,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "src/server/jobs/prepare-leaderboard.ts",
-            "line": 314,
-            "column": 45,
+            "file": "src/server/jobs/search-index-sync.ts",
+            "line": 19,
+            "column": 20,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "src/server/redis/client.ts",
-            "line": 506,
-            "column": 28,
+            "file": "src/server/redis/entity-metric-populate.ts",
+            "line": 96,
+            "column": 46,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -485,13 +485,19 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 8,
+        "count": 10,
         "samples": [
           {
             "file": "prisma/seed.ts",
             "line": 1,
             "column": 1,
             "message": "Imports ReviewReactions are only used as type."
+          },
+          {
+            "file": "src/server/games/daily-challenge/challenge-helpers.ts",
+            "line": 5,
+            "column": 1,
+            "message": "Imports PoolTrigger are only used as type."
           },
           {
             "file": "src/server/services/csam.service-new.ts",
@@ -503,6 +509,12 @@
             "file": "src/server/services/csam.service.ts",
             "line": 652,
             "column": 44,
+            "message": "`import()` type annotations are forbidden."
+          },
+          {
+            "file": "src/server/services/feature-flags.service.ts",
+            "line": 245,
+            "column": 27,
             "message": "`import()` type annotations are forbidden."
           },
           {
@@ -538,7 +550,7 @@
         ]
       },
       "no-type-imports": {
-        "count": 2851,
+        "count": 2852,
         "samples": [
           {
             "file": ".ladle/components.tsx",
@@ -553,8 +565,8 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/components/HideModelButton/HideModelButton.tsx",
-            "line": 5,
+            "file": "src/components/HideUserButton/BlockUserButton.tsx",
+            "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -572,13 +584,13 @@
           },
           {
             "file": "src/pages/api/admin/test.ts",
-            "line": 1,
+            "line": 5,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/providers/AppProvider.tsx",
-            "line": 4,
+            "file": "src/providers/BrowserSettingsProvider.tsx",
+            "line": 11,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -605,7 +617,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 3340,
+        "count": 3346,
         "samples": [
           {
             "file": "prisma/seed.ts",
@@ -614,50 +626,50 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "src/components/Collections/AddUserContentModal.tsx",
-            "line": 230,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/components/Image/hooks/useReportTosViolation.ts",
-            "line": 7,
+            "file": "src/components/Collections/Collection.tsx",
+            "line": 470,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/components/Profile/Sections/ShowcaseGrid.tsx",
-            "line": 15,
+            "file": "src/components/Image/hooks/useRescanImage.ts",
+            "line": 4,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/pages/api/admin/migrate-metrics.ts",
-            "line": 59,
+            "file": "src/components/ProfileImageUpload/ProfileImageUpload.tsx",
+            "line": 24,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "src/pages/api/admin/migrate-model-metrics.ts",
+            "line": 153,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "src/server/events/base.event.ts",
-            "line": 34,
+            "line": 53,
             "column": 3,
             "message": "Expected a function expression."
           },
           {
             "file": "src/server/services/buzz.service.ts",
-            "line": 185,
+            "line": 192,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "src/server/services/nsfwLevels.service.ts",
-            "line": 383,
+            "line": 332,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "src/shared/orchestrator/ImageGen/ImageGenConfig.ts",
-            "line": 47,
+            "line": 34,
             "column": 3,
             "message": "Expected a function expression."
           },
@@ -802,7 +814,7 @@
         ]
       },
       "default": {
-        "count": 1103,
+        "count": 1104,
         "samples": [
           {
             "file": ".ladle/components.tsx",
@@ -811,8 +823,8 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/components/Cards/FeedCard.tsx",
-            "line": 38,
+            "file": "src/components/Cards/GenericImageCard.tsx",
+            "line": 13,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -823,8 +835,8 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/components/Image/Infinite/UserMediaInfinite.tsx",
-            "line": 25,
+            "file": "src/components/Image/JudgeScoreBadge/JudgeScoreBadge.tsx",
+            "line": 32,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -835,8 +847,8 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/components/RunStrategy/GenerateButton.tsx",
-            "line": 17,
+            "file": "src/components/RunStrategy/RunButton.tsx",
+            "line": 12,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -853,8 +865,8 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/server/routers/orchestrator.router.ts",
-            "line": 116,
+            "file": "src/server/routers/nowpayments.router.ts",
+            "line": 13,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -869,7 +881,7 @@
     },
     "indent": {
       "2-space": {
-        "count": 32,
+        "count": 33,
         "samples": [
           {
             "file": "src/components/Logo/Logo.tsx",
@@ -878,10 +890,10 @@
             "message": "Expected spaces for indentation, but found tabs."
           },
           {
-            "file": "src/pages/api/admin/temp/migrate-img-metrics.ts",
-            "line": 91,
+            "file": "src/pages/testing/kono-voting.tsx",
+            "line": 670,
             "column": 1,
-            "message": "Expected 2-space indentation, but file uses 9-space indentation."
+            "message": "Expected 2-space indentation, but file uses 3-space indentation."
           },
           {
             "file": "src/server/email/templates/bounties/bountyExpiredReminder.email.ts",
@@ -896,10 +908,10 @@
             "message": "Expected 2-space indentation, but file uses 13-space indentation."
           },
           {
-            "file": "src/server/metrics/model.metrics.ts",
-            "line": 252,
+            "file": "src/server/jobs/push-discord-metadata.ts",
+            "line": 79,
             "column": 1,
-            "message": "Expected 2-space indentation, but file uses 13-space indentation."
+            "message": "Expected 2-space indentation, but file uses 5-space indentation."
           },
           {
             "file": "src/server/notifications/cosmetic-shop.notifications.ts",
@@ -908,10 +920,10 @@
             "message": "Expected spaces for indentation, but found tabs."
           },
           {
-            "file": "src/server/search-index/images.search-index.ts",
-            "line": 411,
+            "file": "src/server/redis/caches.ts",
+            "line": 342,
             "column": 1,
-            "message": "Expected 2-space indentation, but file uses 19-space indentation."
+            "message": "Expected 2-space indentation, but file uses 11-space indentation."
           },
           {
             "file": "src/server/services/buzz.service.ts",
@@ -920,10 +932,10 @@
             "message": "Expected spaces for indentation, but found tabs."
           },
           {
-            "file": "src/server/services/post.service.ts",
-            "line": 389,
+            "file": "src/server/services/orchestrator/training/training.orch.ts",
+            "line": 42,
             "column": 1,
-            "message": "Expected 2-space indentation, but file uses 13-space indentation."
+            "message": "Expected 2-space indentation, but file uses 11-space indentation."
           },
           {
             "file": "src/server/services/user.service.ts",
@@ -934,7 +946,7 @@
         ]
       },
       "4-space": {
-        "count": 2400,
+        "count": 2402,
         "samples": [
           {
             "file": ".ladle/components.tsx",
@@ -949,7 +961,7 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/components/Image/ContextMenu/ImageContextMenu.tsx",
+            "file": "src/components/Image/ContextMenu/ImageContextMenuProvider.tsx",
             "line": 5,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
@@ -961,26 +973,26 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/components/VerifiedShield/VerifiedShield.tsx",
+            "file": "src/components/VerifiedText/VerifiedText.tsx",
             "line": 9,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/pages/api/v1/creators.ts",
-            "line": 10,
+            "file": "src/pages/api/v1/enums.ts",
+            "line": 7,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/server/controllers/commentv2.controller.ts",
+            "file": "src/server/controllers/csam.controller.ts",
+            "line": 13,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "src/server/rewards/active/generatorFeedback.reward.ts",
             "line": 4,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "src/server/rewards/active/refereeCreated.reward.ts",
-            "line": 5,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -999,7 +1011,7 @@
         ]
       },
       "tab": {
-        "count": 2400,
+        "count": 2402,
         "samples": [
           {
             "file": ".ladle/components.tsx",
@@ -1014,7 +1026,7 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/components/Image/ContextMenu/ImageContextMenu.tsx",
+            "file": "src/components/Image/ContextMenu/ImageContextMenuProvider.tsx",
             "line": 5,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
@@ -1026,26 +1038,26 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/components/VerifiedShield/VerifiedShield.tsx",
+            "file": "src/components/VerifiedText/VerifiedText.tsx",
             "line": 9,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/pages/api/v1/creators.ts",
-            "line": 10,
+            "file": "src/pages/api/v1/enums.ts",
+            "line": 7,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/server/controllers/commentv2.controller.ts",
+            "file": "src/server/controllers/csam.controller.ts",
+            "line": 13,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "src/server/rewards/active/generatorFeedback.reward.ts",
             "line": 4,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "src/server/rewards/active/refereeCreated.reward.ts",
-            "line": 5,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -1066,7 +1078,7 @@
     },
     "quotes": {
       "double": {
-        "count": 58068,
+        "count": 58145,
         "samples": [
           {
             "file": ".ladle/components.tsx",
@@ -1076,50 +1088,50 @@
           },
           {
             "file": "src/components/CivitaiLink/CivitaiLinkProvider.tsx",
-            "line": 117,
-            "column": 24,
+            "line": 37,
+            "column": 3,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/components/ImageGeneration/GenerationForm/BaseModelSelect.tsx",
-            "line": 5,
-            "column": 42,
+            "file": "src/components/ImageGeneration/GenerationDetails.tsx",
+            "line": 6,
+            "column": 43,
             "message": "Strings must use doublequote."
           },
           {
             "file": "src/components/Profile/UserContextMenu.tsx",
-            "line": 3,
-            "column": 34,
+            "line": 1,
+            "column": 46,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/libs/form/components/CollectionSelectInput.tsx",
-            "line": 6,
-            "column": 34,
+            "file": "src/libs/form/components/CosmeticSelect.tsx",
+            "line": 11,
+            "column": 8,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/pages/moderator/challenges/events.tsx",
-            "line": 221,
-            "column": 42,
+            "file": "src/pages/moderator/code-gifts.tsx",
+            "line": 5,
+            "column": 34,
             "message": "Strings must use doublequote."
           },
           {
             "file": "src/server/http/nowpayments/nowpayments.caller.ts",
-            "line": 44,
-            "column": 29,
+            "line": 25,
+            "column": 39,
             "message": "Strings must use doublequote."
           },
           {
             "file": "src/server/schema/resourceReview.schema.ts",
             "line": 85,
-            "column": 26,
+            "column": 41,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/server/trpc.ts",
-            "line": 8,
-            "column": 33,
+            "file": "src/server/services/vault.service.ts",
+            "line": 514,
+            "column": 32,
             "message": "Strings must use doublequote."
           },
           {
@@ -1202,7 +1214,7 @@
         "samples": []
       },
       "never": {
-        "count": 84424,
+        "count": 84561,
         "samples": [
           {
             "file": ".ladle/components.tsx",
@@ -1212,50 +1224,50 @@
           },
           {
             "file": "src/components/Club/ClubTierItem.tsx",
-            "line": 3,
-            "column": 55,
+            "line": 1,
+            "column": 89,
             "message": "Extra semicolon."
           },
           {
             "file": "src/components/ImageGeneration/GenerationForm/GenerationFormProvider.tsx",
-            "line": 448,
-            "column": 87,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "src/components/Resource/Forms/TrainingSelectFile.tsx",
-            "line": 42,
-            "column": 34,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "src/pages/api/admin/permission.ts",
-            "line": 28,
+            "line": 469,
             "column": 41,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/pages/moderator/prompt-audit-test.tsx",
-            "line": 322,
-            "column": 15,
+            "file": "src/components/Resource/Forms/TrainingSelectFile.tsx",
+            "line": 248,
+            "column": 9,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/server/jobs/apply-voted-tags.ts",
-            "line": 65,
+            "file": "src/pages/api/admin/send-discount.ts",
+            "line": 12,
+            "column": 33,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "src/pages/moderator/reports.tsx",
+            "line": 213,
             "column": 4,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/server/search-index/tools.search-index.ts",
-            "line": 3,
-            "column": 63,
+            "file": "src/server/jobs/apply-voted-tags.ts",
+            "line": 12,
+            "column": 33,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/server/services/orchestrator/promptAuditing.ts",
-            "line": 38,
-            "column": 75,
+            "file": "src/server/search-index/tools.search-index.ts",
+            "line": 7,
+            "column": 91,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "src/server/services/orchestrator/orchestrator.service.ts",
+            "line": 326,
+            "column": 7,
             "message": "Extra semicolon."
           },
           {

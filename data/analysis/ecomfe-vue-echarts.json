@@ -1,22 +1,16 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "96e720a67cde8777bf3c817042f89e1ea9241016",
-  "analyzedCommitDate": "2026-02-11T10:25:57.000Z",
+  "analyzedCommit": "394bbdcdb597f4bb9030c6c2c6846e274361dd0b",
+  "analyzedCommitDate": "2026-02-14T18:37:29.000Z",
   "checks": {
     "array-type": {
       "array": {
-        "count": 10,
+        "count": 16,
         "samples": [
           {
             "file": "demo/data/connect.ts",
             "line": 7,
             "column": 31,
-            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
-          },
-          {
-            "file": "demo/data/connect.ts",
-            "line": 18,
-            "column": 29,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
@@ -32,21 +26,9 @@
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
-            "file": "demo/examples/LineChart.vue",
-            "line": 122,
-            "column": 20,
-            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
-          },
-          {
             "file": "demo/examples/ManualChart.vue",
             "line": 24,
             "column": 13,
-            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
-          },
-          {
-            "file": "demo/examples/ManualChart.vue",
-            "line": 25,
-            "column": 11,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
@@ -56,9 +38,27 @@
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
+            "file": "src/graphic/props-shape.ts",
+            "line": 36,
+            "column": 29,
+            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
+          },
+          {
             "file": "tests/autoresize.browser.test.ts",
-            "line": 173,
+            "line": 243,
             "column": 22,
+            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
+          },
+          {
+            "file": "tests/graphic-extension.node.test.ts",
+            "line": 271,
+            "column": 62,
+            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
+          },
+          {
+            "file": "tests/helpers/graphic-slot.ts",
+            "line": 36,
+            "column": 67,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
@@ -70,7 +70,7 @@
         ]
       },
       "generic": {
-        "count": 85,
+        "count": 140,
         "samples": [
           {
             "file": "demo/CodeGen.vue",
@@ -79,21 +79,15 @@
             "message": "Array type using 'readonly AnalyzerIssue[]' is forbidden. Use 'ReadonlyArray<AnalyzerIssue>' instead."
           },
           {
-            "file": "demo/data/radar.ts",
-            "line": 13,
-            "column": 22,
-            "message": "Array type using 'Score[]' is forbidden. Use 'Array<Score>' instead."
+            "file": "demo/examples/LineChart.vue",
+            "line": 106,
+            "column": 42,
+            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           },
           {
             "file": "demo/utils/codegen.ts",
-            "line": 111,
-            "column": 17,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
-          },
-          {
-            "file": "demo/utils/codegen.ts",
-            "line": 332,
-            "column": 28,
+            "line": 140,
+            "column": 29,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
@@ -104,27 +98,33 @@
           },
           {
             "file": "demo/workers/option.worker.ts",
-            "line": 64,
-            "column": 19,
-            "message": "Array type using 'StrategySpec[]' is forbidden. Use 'Array<StrategySpec>' instead."
+            "line": 385,
+            "column": 17,
+            "message": "Array type using 'AnalysisIssue[]' is forbidden. Use 'Array<AnalysisIssue>' instead."
           },
           {
-            "file": "src/ECharts.ts",
-            "line": 197,
-            "column": 31,
-            "message": "Array type using 'any[]' is forbidden. Use 'Array<any>' instead."
+            "file": "src/graphic/build.ts",
+            "line": 11,
+            "column": 42,
+            "message": "Array type using 'readonly string[]' is forbidden. Use 'ReadonlyArray<string>' instead."
           },
           {
             "file": "src/update.ts",
-            "line": 59,
-            "column": 18,
+            "line": 27,
+            "column": 12,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
-            "file": "tests/api.node.test.ts",
-            "line": 52,
-            "column": 51,
+            "file": "tests/core-events.node.test.ts",
+            "line": 7,
+            "column": 31,
             "message": "Array type using 'unknown[]' is forbidden. Use 'Array<unknown>' instead."
+          },
+          {
+            "file": "tests/graphic-slot-edge.browser.test.ts",
+            "line": 382,
+            "column": 20,
+            "message": "Array type using 'any[]' is forbidden. Use 'Array<any>' instead."
           },
           {
             "file": "tests/style.browser.test.ts",
@@ -137,41 +137,64 @@
     },
     "consistent-generic-constructors": {
       "constructor": {
-        "count": 1,
-        "samples": [
-          {
-            "file": "src/ECharts.ts",
-            "line": 89,
-            "column": 20,
-            "message": "The generic type arguments should be specified as part of the constructor type arguments."
-          }
-        ]
+        "count": 0,
+        "samples": []
       },
       "type-annotation": {
-        "count": 5,
+        "count": 17,
         "samples": [
           {
             "file": "src/composables/slot.ts",
-            "line": 65,
+            "line": 67,
             "column": 37,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "src/update.ts",
-            "line": 71,
-            "column": 26,
+            "file": "src/core/events.ts",
+            "line": 120,
+            "column": 25,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "src/graphic/collector.ts",
+            "line": 29,
+            "column": 24,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "src/graphic/collector.ts",
+            "line": 30,
+            "column": 29,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "src/graphic/mount.ts",
+            "line": 34,
+            "column": 31,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
             "file": "src/update.ts",
-            "line": 172,
-            "column": 26,
-            "message": "The generic type arguments should be specified as part of the type annotation."
-          },
-          {
-            "file": "src/update.ts",
-            "line": 173,
+            "line": 180,
             "column": 28,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "tests/graphic-behavior.browser.test.ts",
+            "line": 31,
+            "column": 22,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "tests/graphic-order.node.test.ts",
+            "line": 33,
+            "column": 29,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "tests/graphic-order.node.test.ts",
+            "line": 52,
+            "column": 29,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
@@ -185,8 +208,14 @@
     },
     "consistent-indexed-object-style": {
       "record": {
-        "count": 3,
+        "count": 4,
         "samples": [
+          {
+            "file": "src/graphic/types.ts",
+            "line": 7,
+            "column": 28,
+            "message": "A record is preferred over an index signature."
+          },
           {
             "file": "src/types.ts",
             "line": 98,
@@ -208,7 +237,7 @@
         ]
       },
       "index-signature": {
-        "count": 46,
+        "count": 111,
         "samples": [
           {
             "file": "demo/data/map.ts",
@@ -217,27 +246,9 @@
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "demo/services/monaco.ts",
-            "line": 54,
-            "column": 21,
-            "message": "An index signature is preferred over a record."
-          },
-          {
             "file": "demo/utils/codegen.ts",
-            "line": 96,
-            "column": 22,
-            "message": "An index signature is preferred over a record."
-          },
-          {
-            "file": "demo/utils/codegen.ts",
-            "line": 151,
-            "column": 21,
-            "message": "An index signature is preferred over a record."
-          },
-          {
-            "file": "demo/workers/option.worker.ts",
-            "line": 245,
-            "column": 26,
+            "line": 123,
+            "column": 23,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -247,21 +258,39 @@
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "src/composables/slot.ts",
-            "line": 178,
-            "column": 5,
+            "file": "src/graphic/build.ts",
+            "line": 48,
+            "column": 10,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "src/graphic/component-factory.ts",
+            "line": 52,
+            "column": 27,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "src/graphic/props-common.ts",
+            "line": 128,
+            "column": 38,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "src/utils.ts",
-            "line": 47,
-            "column": 49,
+            "line": 3,
+            "column": 23,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "tests/echarts.browser.test.ts",
-            "line": 56,
-            "column": 15,
+            "line": 520,
+            "column": 67,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "tests/graphic-slot-manual.browser.test.ts",
+            "line": 219,
+            "column": 70,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -275,7 +304,7 @@
     },
     "consistent-type-definitions": {
       "interface": {
-        "count": 9,
+        "count": 24,
         "samples": [
           {
             "file": "demo/data/map.ts",
@@ -284,9 +313,15 @@
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "demo/data/scatter.ts",
-            "line": 9,
-            "column": 1,
+            "file": "demo/examples/graphic-overlay/types.ts",
+            "line": 29,
+            "column": 8,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "demo/examples/graphic-overlay/types.ts",
+            "line": 44,
+            "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
@@ -296,32 +331,32 @@
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "scripts/utils.ts",
+            "file": "src/core/events.ts",
             "line": 9,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "src/types.ts",
-            "line": 29,
+            "file": "src/graphic/collector.ts",
+            "line": 13,
             "column": 8,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "src/graphic/runtime.ts",
+            "line": 13,
+            "column": 8,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "tests/core-events.node.test.ts",
+            "line": 9,
+            "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
             "file": "tests/helpers/mock.ts",
             "line": 10,
-            "column": 1,
-            "message": "Use `interface` instead of `type`."
-          },
-          {
-            "file": "tests/helpers/mock.ts",
-            "line": 26,
-            "column": 1,
-            "message": "Use `interface` instead of `type`."
-          },
-          {
-            "file": "tests/option.worker.node.test.ts",
-            "line": 3,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
@@ -334,7 +369,7 @@
         ]
       },
       "type": {
-        "count": 36,
+        "count": 38,
         "samples": [
           {
             "file": "demo/CodeGen.vue",
@@ -367,21 +402,21 @@
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "demo/services/monaco.ts",
-            "line": 85,
+            "file": "demo/utils/codegen.ts",
+            "line": 576,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "demo/workers/option.worker.ts",
-            "line": 17,
+            "line": 42,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "demo/workers/option.worker.ts",
-            "line": 57,
-            "column": 1,
+            "file": "src/graphic/slots.ts",
+            "line": 4,
+            "column": 3,
             "message": "Use `type` instead of `interface`."
           },
           {
@@ -401,11 +436,17 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 4,
+        "count": 9,
         "samples": [
           {
             "file": "demo/examples/GeoChart.vue",
             "line": 11,
+            "column": 1,
+            "message": "All imports in the declaration are only used as types. Use `import type`."
+          },
+          {
+            "file": "demo/examples/GraphicOverlay.vue",
+            "line": 8,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
@@ -426,11 +467,35 @@
             "line": 1,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
+          },
+          {
+            "file": "tests/graphic-extension.node.test.ts",
+            "line": 7,
+            "column": 29,
+            "message": "`import()` type annotations are forbidden."
+          },
+          {
+            "file": "tests/graphic-extension.node.test.ts",
+            "line": 8,
+            "column": 31,
+            "message": "`import()` type annotations are forbidden."
+          },
+          {
+            "file": "tests/types/graphic-events.test-d.ts",
+            "line": 6,
+            "column": 1,
+            "message": "All imports in the declaration are only used as types. Use `import type`."
+          },
+          {
+            "file": "tests/types/graphic-props.test-d.ts",
+            "line": 3,
+            "column": 1,
+            "message": "All imports in the declaration are only used as types. Use `import type`."
           }
         ]
       },
       "no-type-imports": {
-        "count": 66,
+        "count": 109,
         "samples": [
           {
             "file": "demo/CodeGen.vue",
@@ -439,32 +504,32 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "demo/composables/useOptionAnalysis.ts",
-            "line": 3,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "demo/data/radar.ts",
-            "line": 3,
+            "file": "demo/data/pie.ts",
+            "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "demo/examples/PieChart.vue",
-            "line": 12,
+            "line": 11,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "src/ECharts.ts",
-            "line": 31,
+            "line": 35,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/composables/loading.ts",
-            "line": 3,
+            "file": "src/composables/slot.ts",
+            "line": 6,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "src/graphic/order.ts",
+            "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -481,8 +546,8 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "tests/loading.browser.test.ts",
-            "line": 3,
+            "file": "tests/helpers/renderChart.ts",
+            "line": 2,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -497,7 +562,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 139,
+        "count": 229,
         "samples": [
           {
             "file": "demo/CodeGen.vue",
@@ -506,85 +571,79 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "demo/data/radar.ts",
-            "line": 50,
+            "file": "demo/examples/LineChart.vue",
+            "line": 58,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "demo/services/monaco.ts",
+            "line": 152,
             "column": 3,
             "message": "Expected a function expression."
           },
           {
-            "file": "demo/examples/PieChart.vue",
-            "line": 49,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
             "file": "demo/utils/codegen.ts",
-            "line": 184,
+            "line": 568,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "demo/utils/codegen.ts",
-            "line": 558,
+            "file": "src/ECharts.ts",
+            "line": 164,
+            "column": 5,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "src/graphic/build.ts",
+            "line": 46,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "demo/workers/option.worker.ts",
-            "line": 493,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/composables/api.ts",
-            "line": 27,
-            "column": 3,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/utils.ts",
+            "file": "src/graphic/warn.ts",
             "line": 14,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "tests/helpers/dom.ts",
-            "line": 29,
-            "column": 8,
+            "file": "tests/api.node.test.ts",
+            "line": 88,
+            "column": 5,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "tests/graphic-slot-manual.browser.test.ts",
+            "line": 19,
+            "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "tests/slot.browser.test.ts",
-            "line": 125,
+            "line": 120,
             "column": 1,
             "message": "Expected a function expression."
           }
         ]
       },
       "declaration": {
-        "count": 19,
+        "count": 30,
         "samples": [
           {
             "file": "demo/Demo.vue",
-            "line": 56,
+            "line": 57,
             "column": 7,
             "message": "Expected a function declaration."
           },
           {
             "file": "demo/composables/useOptionAnalysis.ts",
-            "line": 83,
+            "line": 102,
             "column": 9,
             "message": "Expected a function declaration."
           },
           {
-            "file": "demo/composables/useOptionAnalysis.ts",
-            "line": 122,
-            "column": 9,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "demo/workers/option.worker.ts",
-            "line": 183,
+            "file": "demo/examples/GraphicOverlay.vue",
+            "line": 93,
             "column": 11,
             "message": "Expected a function declaration."
           },
@@ -595,27 +654,33 @@
             "message": "Expected a function declaration."
           },
           {
-            "file": "src/composables/api.ts",
-            "line": 29,
-            "column": 11,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "src/composables/slot.ts",
-            "line": 67,
-            "column": 9,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "src/composables/slot.ts",
-            "line": 133,
+            "file": "src/composables/autoresize.ts",
+            "line": 22,
             "column": 13,
             "message": "Expected a function declaration."
           },
           {
-            "file": "tests/helpers/renderChart.ts",
-            "line": 14,
+            "file": "src/composables/slot.ts",
+            "line": 139,
+            "column": 13,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "src/graphic/build.ts",
+            "line": 95,
             "column": 9,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "tests/graphic-extension.node.test.ts",
+            "line": 32,
+            "column": 11,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "tests/graphic.node.test.ts",
+            "line": 415,
+            "column": 11,
             "message": "Expected a function declaration."
           },
           {
@@ -675,7 +740,7 @@
           },
           {
             "file": "src/index.ts",
-            "line": 3,
+            "line": 7,
             "column": 8,
             "message": "Prefer named exports"
           },
@@ -694,7 +759,7 @@
         ]
       },
       "default": {
-        "count": 4,
+        "count": 10,
         "samples": [
           {
             "file": "demo/composables/useDemoDark.ts",
@@ -709,8 +774,44 @@
             "message": "Prefer default export on a file with single export."
           },
           {
+            "file": "demo/examples/graphic-overlay/GraphicOverlayTokens.ts",
+            "line": 23,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "demo/examples/graphic-overlay/useGraphicOverlayLayout.ts",
+            "line": 45,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
             "file": "demo/utils/geo.ts",
             "line": 7,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "src/graphic/build.ts",
+            "line": 186,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "src/graphic/component-factory.ts",
+            "line": 17,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "src/graphic/extension.ts",
+            "line": 12,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "src/graphic/mount.ts",
+            "line": 8,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -729,7 +830,7 @@
         "samples": []
       },
       "4-space": {
-        "count": 67,
+        "count": 103,
         "samples": [
           {
             "file": "demo/CodeGen.vue",
@@ -738,14 +839,8 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "demo/data/connect.ts",
-            "line": 8,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "demo/examples/ConnectChart.vue",
-            "line": 5,
+            "file": "demo/data/polar.ts",
+            "line": 7,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -762,25 +857,31 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/composables/loading.ts",
-            "line": 9,
+            "file": "src/global.ts",
+            "line": 5,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/wc.ts",
-            "line": 8,
+            "file": "src/graphic/props-shape.ts",
+            "line": 6,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "tests/helpers/renderChart.ts",
-            "line": 11,
+            "file": "tests/autoresize.browser.test.ts",
+            "line": 12,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "tests/style.browser.test.ts",
+            "file": "tests/graphic-slot-events.browser.test.ts",
+            "line": 17,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "tests/setup.node.ts",
             "line": 4,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
@@ -794,7 +895,7 @@
         ]
       },
       "tab": {
-        "count": 67,
+        "count": 103,
         "samples": [
           {
             "file": "demo/CodeGen.vue",
@@ -803,14 +904,8 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "demo/data/connect.ts",
-            "line": 8,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "demo/examples/ConnectChart.vue",
-            "line": 5,
+            "file": "demo/data/polar.ts",
+            "line": 7,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -827,25 +922,31 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/composables/loading.ts",
-            "line": 9,
+            "file": "src/global.ts",
+            "line": 5,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/wc.ts",
-            "line": 8,
+            "file": "src/graphic/props-shape.ts",
+            "line": 6,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "tests/helpers/renderChart.ts",
-            "line": 11,
+            "file": "tests/autoresize.browser.test.ts",
+            "line": 12,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "tests/style.browser.test.ts",
+            "file": "tests/graphic-slot-events.browser.test.ts",
+            "line": 17,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "tests/setup.node.ts",
             "line": 4,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
@@ -902,7 +1003,7 @@
         ]
       },
       "single": {
-        "count": 1902,
+        "count": 3116,
         "samples": [
           {
             "file": "demo/CodeGen.vue",
@@ -912,55 +1013,55 @@
           },
           {
             "file": "demo/data/map.ts",
-            "line": 59,
+            "line": 193,
             "column": 11,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "demo/data/polar.ts",
+            "file": "demo/examples/PolarChart.vue",
             "line": 31,
+            "column": 16,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "demo/workers/option.worker.ts",
+            "line": 529,
             "column": 15,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "demo/examples/ManualChart.vue",
-            "line": 114,
-            "column": 22,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "demo/utils/codegen.ts",
-            "line": 423,
-            "column": 13,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "src/composables/api.ts",
-            "line": 14,
-            "column": 3,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "tests/echarts.browser.test.ts",
-            "line": 145,
-            "column": 22,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "tests/option.worker.node.test.ts",
-            "line": 1,
-            "column": 63,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "tests/update.node.test.ts",
-            "line": 196,
+            "file": "src/graphic/props-shape.ts",
+            "line": 9,
             "column": 10,
             "message": "Strings must use singlequote."
           },
           {
+            "file": "tests/echarts.browser.test.ts",
+            "line": 339,
+            "column": 37,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "tests/graphic-extension.node.test.ts",
+            "line": 174,
+            "column": 6,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "tests/graphic-slot-order.browser.test.ts",
+            "line": 334,
+            "column": 64,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "tests/style.node.test.ts",
+            "line": 4,
+            "column": 6,
+            "message": "Strings must use singlequote."
+          },
+          {
             "file": "vitest.config.ts",
-            "line": 41,
+            "line": 47,
             "column": 24,
             "message": "Strings must use singlequote."
           }
@@ -973,7 +1074,7 @@
         "samples": []
       },
       "never": {
-        "count": 2774,
+        "count": 5143,
         "samples": [
           {
             "file": "demo/CodeGen.vue",
@@ -982,56 +1083,56 @@
             "message": "Extra semicolon."
           },
           {
-            "file": "demo/examples/BarChart.vue",
+            "file": "demo/examples/PieChart.vue",
+            "line": 42,
+            "column": 17,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "scripts/utils.ts",
             "line": 6,
-            "column": 45,
+            "column": 56,
             "message": "Extra semicolon."
           },
           {
-            "file": "demo/services/monaco.ts",
-            "line": 149,
-            "column": 63,
+            "file": "src/graphic/marker.ts",
+            "line": 16,
+            "column": 19,
             "message": "Extra semicolon."
           },
           {
-            "file": "demo/workers/option.worker.ts",
-            "line": 479,
-            "column": 4,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "src/index.ts",
-            "line": 3,
-            "column": 23,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "tests/autoresize.browser.test.ts",
-            "line": 181,
-            "column": 27,
+            "file": "tests/core-events.node.test.ts",
+            "line": 189,
+            "column": 61,
             "message": "Extra semicolon."
           },
           {
             "file": "tests/echarts.browser.test.ts",
-            "line": 536,
-            "column": 48,
+            "line": 936,
+            "column": 62,
             "message": "Extra semicolon."
           },
           {
-            "file": "tests/loading.browser.test.ts",
-            "line": 57,
-            "column": 49,
+            "file": "tests/graphic-extension.node.test.ts",
+            "line": 187,
+            "column": 61,
             "message": "Extra semicolon."
           },
           {
-            "file": "tests/update.node.test.ts",
-            "line": 39,
-            "column": 87,
+            "file": "tests/graphic-slot-manual.browser.test.ts",
+            "line": 165,
+            "column": 34,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "tests/slot.browser.test.ts",
+            "line": 129,
+            "column": 66,
             "message": "Extra semicolon."
           },
           {
             "file": "vitest.config.ts",
-            "line": 49,
+            "line": 55,
             "column": 3,
             "message": "Extra semicolon."
           }

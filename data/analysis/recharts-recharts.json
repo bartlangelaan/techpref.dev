@@ -1,11 +1,11 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "07882736068597f7b5a6d98c63f5bd736d62d23c",
-  "analyzedCommitDate": "2026-02-15T04:35:48.000Z",
+  "analyzedCommit": "19c7abcebcd5d84c50defdb6eca0492e543e9bc6",
+  "analyzedCommitDate": "2026-02-15T07:24:27.000Z",
   "checks": {
     "array-type": {
       "array": {
-        "count": 722,
+        "count": 726,
         "samples": [
           {
             "file": "omnidoc/DocReader.ts",
@@ -27,37 +27,37 @@
           },
           {
             "file": "src/state/selectors/axisSelectors.ts",
-            "line": 344,
-            "column": 6,
-            "message": "Array type using 'ReadonlyArray<CartesianGraphicalItemSettings>' is forbidden. Use 'readonly CartesianGraphicalItemSettings[]' instead."
+            "line": 329,
+            "column": 19,
+            "message": "Array type using 'ReadonlyArray<T>' is forbidden. Use 'readonly T[]' instead."
           },
           {
             "file": "src/state/selectors/polarGridSelectors.ts",
-            "line": 9,
+            "line": 7,
             "column": 27,
             "message": "Array type using 'Array<number>' is forbidden. Use 'number[]' instead."
           },
           {
-            "file": "src/util/typedDataKey.ts",
-            "line": 43,
-            "column": 36,
-            "message": "Array type using 'ReadonlyArray<T>' is forbidden. Use 'readonly T[]' instead."
+            "file": "src/util/stacks/stackTypes.ts",
+            "line": 34,
+            "column": 28,
+            "message": "Array type using 'ReadonlyArray<MaybeStackedGraphicalItem>' is forbidden. Use 'readonly MaybeStackedGraphicalItem[]' instead."
           },
           {
             "file": "test/cartesian/Scatter.animation.spec.tsx",
-            "line": 93,
-            "column": 57,
+            "line": 58,
+            "column": 12,
             "message": "Array type using 'ReadonlyArray<T>' is forbidden. Use 'readonly T[]' instead."
           },
           {
             "file": "test/helper/parameterizedTestCases.tsx",
-            "line": 95,
-            "column": 40,
+            "line": 86,
+            "column": 4,
             "message": "Array type using 'ReadonlyArray<CartesianChartTestCase>' is forbidden. Use 'readonly CartesianChartTestCase[]' instead."
           },
           {
             "file": "test/util/errorValue.spec.ts",
-            "line": 35,
+            "line": 25,
             "column": 22,
             "message": "Array type using 'ReadonlyArray<ErrorBarsSettings>' is forbidden. Use 'readonly ErrorBarsSettings[]' instead."
           },
@@ -245,7 +245,7 @@
     },
     "consistent-indexed-object-style": {
       "record": {
-        "count": 8,
+        "count": 9,
         "samples": [
           {
             "file": "omnidoc/generateApiDoc.ts",
@@ -268,6 +268,12 @@
           {
             "file": "src/shape/Symbols.tsx",
             "line": 23,
+            "column": 3,
+            "message": "A record is preferred over an index signature."
+          },
+          {
+            "file": "src/state/renderedTicksSlice.ts",
+            "line": 16,
             "column": 3,
             "message": "A record is preferred over an index signature."
           },
@@ -365,7 +371,7 @@
     },
     "consistent-type-definitions": {
       "interface": {
-        "count": 254,
+        "count": 256,
         "samples": [
           {
             "file": "omnidoc/commentSimilarityExceptions.ts",
@@ -381,37 +387,37 @@
           },
           {
             "file": "src/state/cartesianAxisSlice.ts",
-            "line": 31,
+            "line": 59,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
             "file": "src/state/tooltipSlice.ts",
-            "line": 102,
+            "line": 83,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "src/zIndex/ZIndexLayer.tsx",
-            "line": 28,
+            "file": "src/util/useElementOffset.ts",
+            "line": 9,
+            "column": 8,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "test/cartesian/Area.spec.tsx",
+            "line": 45,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "test/cartesian/CartesianGrid.spec.tsx",
-            "line": 43,
-            "column": 1,
-            "message": "Use `interface` instead of `type`."
-          },
-          {
-            "file": "test/helper/expectRadarPolygons.ts",
-            "line": 4,
+            "file": "test/helper/expectPieSectors.ts",
+            "line": 9,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
             "file": "test/util/resolveDefaultProps.spec-d.ts",
-            "line": 60,
+            "line": 56,
             "column": 5,
             "message": "Use `interface` instead of `type`."
           },
@@ -497,7 +503,7 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 1396,
+        "count": 1401,
         "samples": [
           {
             "file": "omnidoc/cross-component-prop-comments.spec.ts",
@@ -507,51 +513,51 @@
           },
           {
             "file": "src/cartesian/XAxis.tsx",
-            "line": 5,
+            "line": 8,
             "column": 1,
-            "message": "Imports ComponentType and ReactNode are only used as type."
+            "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
             "file": "src/polar/PolarAngleAxis.tsx",
-            "line": 29,
+            "line": 30,
             "column": 1,
-            "message": "Imports ZIndexable are only used as type."
+            "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
             "file": "src/state/selectors/barSelectors.ts",
-            "line": 16,
+            "line": 14,
             "column": 1,
-            "message": "Imports BarRectangleItem are only used as type."
+            "message": "Imports BarPositionPosition and StackId are only used as type."
           },
           {
-            "file": "src/state/selectors/selectAllAxes.ts",
-            "line": 3,
+            "file": "src/state/selectors/selectActivePropsFromChartPointer.ts",
+            "line": 9,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
             "file": "src/util/types.ts",
-            "line": 27,
+            "line": 26,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
             "file": "test/cartesian/Area.spec.tsx",
-            "line": 2,
+            "line": 1,
             "column": 1,
-            "message": "Imports Mock are only used as type."
+            "message": "Imports FC are only used as type."
           },
           {
-            "file": "test/helper/expectAxisTicks.ts",
-            "line": 2,
+            "file": "test/helper/createSelectorTestCase.tsx",
+            "line": 7,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
             "file": "test/util/svgPropertiesNoEvents.spec.tsx",
-            "line": 4,
+            "line": 2,
             "column": 1,
-            "message": "Imports SVGElementPropKeysType are only used as type."
+            "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
             "file": "www/test/sitemap.spec.ts",
@@ -629,7 +635,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 816,
+        "count": 817,
         "samples": [
           {
             "file": "omnidoc/generateApiDoc.ts",
@@ -645,13 +651,13 @@
           },
           {
             "file": "src/component/DefaultLegendContent.tsx",
-            "line": 203,
+            "line": 137,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/state/selectors/combiners/combineConfiguredScale.ts",
-            "line": 8,
+            "file": "src/state/selectors/combiners/combineAllBarPositions.ts",
+            "line": 7,
             "column": 1,
             "message": "Expected a function expression."
           },
@@ -663,7 +669,7 @@
           },
           {
             "file": "test/animation/easing.spec.ts",
-            "line": 18,
+            "line": 12,
             "column": 1,
             "message": "Expected a function expression."
           },
@@ -694,7 +700,7 @@
         ]
       },
       "declaration": {
-        "count": 1336,
+        "count": 1337,
         "samples": [
           {
             "file": "omnidoc/generateApiDoc.ts",
@@ -716,8 +722,8 @@
           },
           {
             "file": "src/state/selectors/selectors.ts",
-            "line": 198,
-            "column": 7,
+            "line": 97,
+            "column": 14,
             "message": "Expected a function declaration."
           },
           {
@@ -728,7 +734,7 @@
           },
           {
             "file": "test/cartesian/YAxis/YAxis.spec.tsx",
-            "line": 836,
+            "line": 790,
             "column": 13,
             "message": "Expected a function declaration."
           },
@@ -946,7 +952,7 @@
         ]
       },
       "4-space": {
-        "count": 1095,
+        "count": 1096,
         "samples": [
           {
             "file": ".babelrc.js",
@@ -961,14 +967,14 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/util/cursor/getCursorPoints.ts",
-            "line": 3,
+            "file": "src/util/createEventProxy.ts",
+            "line": 4,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "storybook/stories/Examples/Tooltip.stories.tsx",
-            "line": 6,
+            "file": "storybook/stories/Examples/TimeSeries.stories.tsx",
+            "line": 11,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -979,7 +985,7 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "test/component/DefaultTooltipContent.spec.tsx",
+            "file": "test/component/Customized.spec.tsx",
             "line": 6,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
@@ -1011,7 +1017,7 @@
         ]
       },
       "tab": {
-        "count": 1095,
+        "count": 1096,
         "samples": [
           {
             "file": ".babelrc.js",
@@ -1026,14 +1032,14 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/util/cursor/getCursorPoints.ts",
-            "line": 3,
+            "file": "src/util/createEventProxy.ts",
+            "line": 4,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "storybook/stories/Examples/Tooltip.stories.tsx",
-            "line": 6,
+            "file": "storybook/stories/Examples/TimeSeries.stories.tsx",
+            "line": 11,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -1044,7 +1050,7 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "test/component/DefaultTooltipContent.spec.tsx",
+            "file": "test/component/Customized.spec.tsx",
             "line": 6,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
@@ -1078,7 +1084,7 @@
     },
     "quotes": {
       "double": {
-        "count": 43347,
+        "count": 43375,
         "samples": [
           {
             "file": ".babelrc.js",
@@ -1087,51 +1093,51 @@
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/state/selectors/combiners/combineBarSizeList.ts",
-            "line": 2,
-            "column": 25,
+            "file": "src/state/selectors/combiners/combineActiveTooltipIndex.ts",
+            "line": 5,
+            "column": 35,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "test-vr/tests/www/ActiveIndex.spec-vr.tsx",
-            "line": 3,
-            "column": 34,
+            "file": "test-vr/tests/YAxis.spec-vr.tsx",
+            "line": 110,
+            "column": 82,
             "message": "Strings must use doublequote."
           },
           {
             "file": "test/cartesian/Line.animation.spec.tsx",
-            "line": 110,
-            "column": 15,
+            "line": 97,
+            "column": 14,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "test/cartesian/YAxis/YAxis.tickFormatter.spec.tsx",
-            "line": 6,
-            "column": 34,
+            "file": "test/cartesian/YAxis/YAxis.tick.spec.tsx",
+            "line": 357,
+            "column": 12,
             "message": "Strings must use doublequote."
           },
           {
             "file": "test/chart/ScatterChart.spec.tsx",
-            "line": 1327,
+            "line": 1311,
             "column": 13,
             "message": "Strings must use doublequote."
           },
           {
             "file": "test/component/Tooltip/itemSorter.spec.tsx",
-            "line": 653,
-            "column": 22,
+            "line": 641,
+            "column": 11,
             "message": "Strings must use doublequote."
           },
           {
             "file": "test/polar/RadialBar/RadialBar.spec.tsx",
-            "line": 847,
-            "column": 79,
+            "line": 821,
+            "column": 12,
             "message": "Strings must use doublequote."
           },
           {
             "file": "test/util/svgPropertiesNoEvents.spec.tsx",
-            "line": 198,
-            "column": 11,
+            "line": 195,
+            "column": 18,
             "message": "Strings must use doublequote."
           },
           {
@@ -1214,7 +1220,7 @@
         "samples": []
       },
       "never": {
-        "count": 44642,
+        "count": 44672,
         "samples": [
           {
             "file": ".babelrc.js",
@@ -1224,49 +1230,49 @@
           },
           {
             "file": "src/component/DefaultLegendContent.tsx",
-            "line": 149,
-            "column": 59,
+            "line": 124,
+            "column": 36,
             "message": "Extra semicolon."
           },
           {
             "file": "src/util/ChartUtils.ts",
-            "line": 316,
-            "column": 25,
+            "line": 250,
+            "column": 40,
             "message": "Extra semicolon."
           },
           {
             "file": "test/animation/CSSTransitionAnimate.timing.spec.tsx",
-            "line": 94,
-            "column": 10,
+            "line": 49,
+            "column": 27,
             "message": "Extra semicolon."
           },
           {
-            "file": "test/cartesian/ReferenceLine/getEndPoints.spec.tsx",
-            "line": 386,
-            "column": 3,
+            "file": "test/cartesian/ReferenceLine/ReferenceLine.typed.spec.tsx",
+            "line": 32,
+            "column": 37,
             "message": "Extra semicolon."
           },
           {
             "file": "test/chart/PieChart.spec.tsx",
-            "line": 626,
-            "column": 53,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "test/component/Tooltip/Tooltip.visibility.spec.tsx",
-            "line": 1247,
+            "line": 609,
             "column": 7,
             "message": "Extra semicolon."
           },
           {
+            "file": "test/component/Tooltip/Tooltip.visibility.spec.tsx",
+            "line": 1029,
+            "column": 61,
+            "message": "Extra semicolon."
+          },
+          {
             "file": "test/polar/RadialBar/RadialBar.animation.spec.tsx",
-            "line": 130,
-            "column": 8,
+            "line": 90,
+            "column": 84,
             "message": "Extra semicolon."
           },
           {
             "file": "test/util/DomUtils.spec.tsx",
-            "line": 57,
+            "line": 53,
             "column": 55,
             "message": "Extra semicolon."
           },

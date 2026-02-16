@@ -293,6 +293,9 @@ const { values: args } = parseArgs({
       type: "boolean",
       default: false,
     },
+    repo: {
+      type: "string",
+    },
   },
 });
 
@@ -317,41 +320,43 @@ if (!data) {
 console.log(`Total repositories: ${data.repositories.length}`);
 
 let repoAnalyzeInfo = await Promise.all(
-  data.repositories.map(async (repo) => {
-    const analysis = loadAnalysis(repo.fullName);
+  data.repositories
+    .filter((repo) => !args.repo || repo.fullName === args.repo)
+    .map(async (repo) => {
+      const analysis = loadAnalysis(repo.fullName);
 
-    const remoteInfo = await getRemoteRepoInfo(repo.cloneUrl);
+      const remoteInfo = await getRemoteRepoInfo(repo.cloneUrl);
 
-    let analyseReason:
-      | "no-analysis"
-      | "version-mismatch"
-      | "commit-mismatch"
-      | false = false;
+      let analyseReason:
+        | "no-analysis"
+        | "version-mismatch"
+        | "commit-mismatch"
+        | false = false;
 
-    if (!analysis) {
-      analyseReason = "no-analysis";
-    } else if (analysis.analyzedVersion !== currentVersion) {
-      analyseReason = "version-mismatch";
-    } else if (remoteInfo.latestCommit !== analysis.analyzedCommit) {
-      analyseReason = "commit-mismatch";
-    }
+      if (!analysis) {
+        analyseReason = "no-analysis";
+      } else if (analysis.analyzedVersion !== currentVersion) {
+        analyseReason = "version-mismatch";
+      } else if (remoteInfo.latestCommit !== analysis.analyzedCommit) {
+        analyseReason = "commit-mismatch";
+      }
 
-    const failingInfo = loadFailingInfo(repo.fullName);
-    const failing = !failingInfo
-      ? false
-      : failingInfo.failedCommit === remoteInfo.latestCommit
-        ? ("current-commit" as const)
-        : ("older-commit" as const);
+      const failingInfo = loadFailingInfo(repo.fullName);
+      const failing = !failingInfo
+        ? false
+        : failingInfo.failedCommit === remoteInfo.latestCommit
+          ? ("current-commit" as const)
+          : ("older-commit" as const);
 
-    return {
-      repo,
-      analyseReason,
-      remoteInfo,
-      failing,
-      commit: remoteInfo.latestCommit,
-      fileCount: 0, // Placeholder, will be filled later
-    };
-  }),
+      return {
+        repo,
+        analyseReason,
+        remoteInfo,
+        failing,
+        commit: remoteInfo.latestCommit,
+        fileCount: 0, // Placeholder, will be filled later
+      };
+    }),
 );
 
 let prevCount = data.repositories.length;

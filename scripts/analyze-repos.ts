@@ -212,9 +212,16 @@ async function runOxlintCheck(
     try {
       return parseOxlintOutput(stdout, repoPath, maxSamples);
     } catch (error) {
-      console.warn(
-        `\n\nCould not parse oxlint output: ${repoPath}:\n${stdout}`,
-      );
+      console.warn(`\n\nCould not parse oxlint output: ${repoPath}:`);
+      if (stdout.length > 2500) {
+        console.warn(
+          stdout.substring(0, 1000) +
+            "[...]" +
+            stdout.substring(stdout.length - 1000),
+        );
+      } else {
+        console.warn(stdout);
+      }
 
       throw error;
     }

@@ -161,8 +161,8 @@ async function runOxlintCheck(
     const timeoutPromise = Promise.withResolvers<never>();
     const timeoutId = setTimeout(
       timeoutPromise.reject,
-      timeout,
-      "Oxlint timed out",
+      timeout + 5000,
+      `Oxlint timed out after ${timeout + 5000}ms`,
     );
 
     const subprocess = $("oxlint", [

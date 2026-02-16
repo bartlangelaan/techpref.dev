@@ -1,8 +1,7 @@
 import { last, sortBy } from "es-toolkit";
-import { execa } from "execa";
+import { execa, ExecaError } from "execa";
 import { ensureDir, outputJson, remove } from "fs-extra/esm";
 import { glob } from "glob";
-import { readFile } from "node:fs/promises";
 import { createRequire } from "node:module";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
@@ -113,7 +112,6 @@ async function runOxlintCheck(
     `oxlint-${Date.now()}-${Math.random().toString(36).slice(2)}`,
   );
   const configPath = join(tempDir, ".oxlintrc.json");
-  const outputPath = join(tempDir, "lint-result.json");
   try {
     await ensureDir(tempDir);
 
@@ -152,7 +150,6 @@ async function runOxlintCheck(
       preferLocal: true,
       cwd: repoPath,
       reject: false,
-      shell: true,
       timeout,
     });
 
@@ -171,21 +168,22 @@ async function runOxlintCheck(
       "--format",
       "json",
       ...ignorePatterns.flatMap((pattern) => ["--ignore-pattern", pattern]),
-      ".",
-      ">",
-      outputPath,
     ]);
 
-    const { stderr } = await Promise.race([subprocess, timeoutPromise.promise]);
+    const result = await Promise.race([subprocess, timeoutPromise.promise]);
 
     clearTimeout(timeoutId);
+
+    if (result.timedOut && result instanceof ExecaError) {
+      throw result;
+    }
+
+    const { stdout, stderr } = result;
 
     if (stderr) {
       // Oxlint may output warnings to stderr, but we can still parse stdout
       console.warn(`Oxlint warnings for ${repoPath}:\n${stderr}`);
     }
-
-    const stdout = await readFile(outputPath, "utf-8");
 
     try {
       return parseOxlintOutput(stdout, repoPath, maxSamples);

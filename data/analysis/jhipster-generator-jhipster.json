@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "f76bbbdaedfd316134bcf3551e514c9d42e8d2ce",
-  "analyzedCommitDate": "2026-02-16T09:27:58.000Z",
+  "analyzedCommit": "8dc5e176d6b341767e84e0270949e9b3ae8ddf6f",
+  "analyzedCommitDate": "2026-02-16T22:37:57.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -22,7 +22,7 @@
         ]
       },
       "generic": {
-        "count": 962,
+        "count": 808,
         "samples": [
           {
             "file": ".blueprint/code-workspace/generator.mts",
@@ -31,10 +31,10 @@
             "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           },
           {
-            "file": "generators/base-application/support/enum.ts",
-            "line": 104,
-            "column": 10,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+            "file": "generators/base-application/internal/utils.ts",
+            "line": 280,
+            "column": 74,
+            "message": "Array type using 'F[]' is forbidden. Use 'Array<F>' instead."
           },
           {
             "file": "generators/base-workspaces/internal/docker-prompts.ts",
@@ -43,40 +43,40 @@
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
-            "file": "generators/generate-blueprint/constants.ts",
-            "line": 56,
-            "column": 27,
+            "file": "generators/generate-blueprint/generator.ts",
+            "line": 239,
+            "column": 29,
+            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
+          },
+          {
+            "file": "generators/server/generators/bootstrap/generator.ts",
+            "line": 46,
+            "column": 22,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
-            "file": "generators/languages/support/detect-language.ts",
-            "line": 25,
+            "file": "lib/jdl/converters/json-to-jdl-entity-converter.ts",
+            "line": 233,
             "column": 36,
-            "message": "Array type using 'readonly Language[]' is forbidden. Use 'ReadonlyArray<Language>' instead."
+            "message": "Array type using 'JSONRelationship[]' is forbidden. Use 'Array<JSONRelationship>' instead."
           },
           {
-            "file": "lib/jdl/converters/jdl-to-json/jdl-to-json-field-converter.ts",
-            "line": 52,
-            "column": 83,
-            "message": "Array type using 'JSONField[]' is forbidden. Use 'Array<JSONField>' instead."
-          },
-          {
-            "file": "lib/jdl/core/linters/enum-linter.ts",
-            "line": 68,
-            "column": 78,
-            "message": "Array type using 'CstNode[]' is forbidden. Use 'Array<CstNode>' instead."
+            "file": "lib/jdl/core/linters/field-linter.ts",
+            "line": 25,
+            "column": 13,
+            "message": "Array type using 'FieldIssue[]' is forbidden. Use 'Array<FieldIssue>' instead."
           },
           {
             "file": "lib/jdl/core/parsing/jdl-ast-builder-visitor.ts",
-            "line": 316,
-            "column": 59,
-            "message": "Array type using 'IToken[]' is forbidden. Use 'Array<IToken>' instead."
+            "line": 158,
+            "column": 26,
+            "message": "Array type using 'ParsedJDLAnnotation[]' is forbidden. Use 'Array<ParsedJDLAnnotation>' instead."
           },
           {
-            "file": "lib/jdl/core/types/parsed.d.ts",
-            "line": 66,
-            "column": 9,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+            "file": "lib/jdl/core/parsing/validator.ts",
+            "line": 158,
+            "column": 13,
+            "message": "Array type using 'any[]' is forbidden. Use 'Array<any>' instead."
           },
           {
             "file": "test/support/check-enforcements.ts",
@@ -160,30 +160,11 @@
     },
     "consistent-indexed-object-style": {
       "record": {
-        "count": 3,
-        "samples": [
-          {
-            "file": "lib/command/types.d.ts",
-            "line": 18,
-            "column": 97,
-            "message": "A record is preferred over an index signature."
-          },
-          {
-            "file": "lib/command/types.d.ts",
-            "line": 30,
-            "column": 3,
-            "message": "A record is preferred over an index signature."
-          },
-          {
-            "file": "lib/utils/derived-property.ts",
-            "line": 80,
-            "column": 10,
-            "message": "A record is preferred over an index signature."
-          }
-        ]
+        "count": 0,
+        "samples": []
       },
       "index-signature": {
-        "count": 612,
+        "count": 531,
         "samples": [
           {
             "file": ".blueprint/code-workspace/generator.ts",
@@ -192,50 +173,50 @@
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "generators/base-application/internal/types/application-options.d.ts",
-            "line": 34,
-            "column": 64,
+            "file": "generators/base-application/support/enum.ts",
+            "line": 57,
+            "column": 82,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "generators/base/generator.ts",
-            "line": 419,
-            "column": 49,
+            "line": 403,
+            "column": 6,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "generators/java/support/package-info-transform.ts",
-            "line": 27,
-            "column": 70,
+            "file": "generators/java-simple-application/generators/maven/support/pom-store.ts",
+            "line": 79,
+            "column": 32,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "lib/ci/support/matrix-utils.ts",
-            "line": 131,
-            "column": 19,
+            "line": 112,
+            "column": 40,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "lib/jdl/converters/parsed-jdl-to-jdl-object/parsed-jdl-to-jdl-object-converter.ts",
-            "line": 155,
-            "column": 17,
+            "file": "lib/jdl/converters/validators/validator.ts",
+            "line": 29,
+            "column": 20,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "lib/jdl/core/models/jdl-relationship.ts",
             "line": 55,
-            "column": 85,
+            "column": 22,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "lib/jdl/core/parsing/jdl-ast-builder-visitor.ts",
-            "line": 743,
-            "column": 12,
+            "line": 651,
+            "column": 72,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "lib/jdl/jdl-importer.spec.ts",
-            "line": 387,
+            "line": 478,
             "column": 24,
             "message": "An index signature is preferred over a record."
           },
@@ -250,7 +231,7 @@
     },
     "consistent-type-definitions": {
       "interface": {
-        "count": 193,
+        "count": 97,
         "samples": [
           {
             "file": "cli/download.ts",
@@ -259,51 +240,51 @@
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "generators/base-core/api.d.ts",
-            "line": 85,
+            "file": "generators/base-core/generator.ts",
+            "line": 888,
+            "column": 5,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "generators/client/application.ts",
+            "line": 28,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "generators/client/entity.ts",
-            "line": 32,
+            "file": "generators/info/support/extract-info.ts",
+            "line": 6,
+            "column": 8,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "generators/java/support/java-enum.ts",
+            "line": 3,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "generators/java-simple-application/generators/gradle/types.d.ts",
+            "file": "generators/languages/support/translate.ts",
+            "line": 28,
+            "column": 8,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "generators/spring-boot/application.ts",
             "line": 24,
-            "column": 8,
-            "message": "Use `interface` instead of `type`."
-          },
-          {
-            "file": "generators/java/application.ts",
-            "line": 26,
-            "column": 8,
-            "message": "Use `interface` instead of `type`."
-          },
-          {
-            "file": "generators/liquibase/types.d.ts",
-            "line": 40,
-            "column": 8,
-            "message": "Use `interface` instead of `type`."
-          },
-          {
-            "file": "generators/spring-boot/types.d.ts",
-            "line": 143,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "lib/jdl/core/models/abstract-jdl-option.ts",
-            "line": 24,
-            "column": 8,
+            "file": "lib/ci/github-matrix.ts",
+            "line": 79,
+            "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "lib/jdl/core/types/parsed.d.ts",
-            "line": 116,
-            "column": 8,
+            "file": "lib/jdl/core/parsing/api.ts",
+            "line": 29,
+            "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
@@ -315,17 +296,29 @@
         ]
       },
       "type": {
-        "count": 27,
+        "count": 7,
         "samples": [
           {
-            "file": "generators/angular/types.d.ts",
-            "line": 33,
+            "file": "generators/base-application/entity.ts",
+            "line": 182,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "generators/base-entity-changes/types.d.ts",
-            "line": 14,
+            "file": "generators/base-application/entity.ts",
+            "line": 354,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "generators/client/entity.ts",
+            "line": 45,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "generators/client/entity.ts",
+            "line": 94,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
@@ -336,45 +329,15 @@
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "generators/java/types.d.ts",
-            "line": 55,
+            "file": "generators/languages/entity.ts",
+            "line": 37,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "generators/liquibase/types.d.ts",
-            "line": 48,
-            "column": 8,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "generators/liquibase/types.d.ts",
-            "line": 70,
-            "column": 8,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "generators/server/types.d.ts",
-            "line": 39,
-            "column": 8,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "generators/spring-boot/types.d.ts",
-            "line": 79,
-            "column": 8,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "lib/types/application-all.d.ts",
-            "line": 48,
-            "column": 8,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "types/eslint-plugin-chai-friendly.d.ts",
-            "line": 4,
-            "column": 3,
+            "file": "lib/jdl/core/parsing/validator.ts",
+            "line": 138,
+            "column": 1,
             "message": "Use `type` instead of `interface`."
           }
         ]
@@ -386,7 +349,7 @@
         "samples": []
       },
       "no-type-imports": {
-        "count": 1025,
+        "count": 771,
         "samples": [
           {
             "file": ".blueprint/code-workspace/command.ts",
@@ -395,38 +358,38 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "generators/base-application/support/task-type-inference.ts",
-            "line": 19,
+            "file": "generators/base-application/support/entity.ts",
+            "line": 22,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "generators/bootstrap/generator.ts",
+            "file": "generators/base-workspaces/prompts.ts",
+            "line": 9,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "generators/cypress/generator.ts",
             "line": 27,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "generators/docker/support/docker-compose-file.ts",
-            "line": 19,
+            "file": "generators/java/support/checks/check-java.spec.ts",
+            "line": 3,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "generators/java/support/checks/check-java.ts",
-            "line": 22,
+            "file": "generators/react/support/translate-react.ts",
+            "line": 23,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "generators/project-name/generator.ts",
-            "line": 22,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "generators/upgrade/types.d.ts",
-            "line": 20,
+            "file": "generators/workspaces/command.ts",
+            "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -437,15 +400,15 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "lib/jdl/core/parsing/lexer/relationship-type-tokens.ts",
-            "line": 20,
-            "column": 10,
+            "file": "lib/jdl/core/models/jdl-field.ts",
+            "line": 25,
+            "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "types/eslint-plugin-chai-friendly.d.ts",
-            "line": 2,
-            "column": 3,
+            "file": "test/support/tests.ts",
+            "line": 9,
+            "column": 1,
             "message": "Use an `import` instead of an `import type`."
           }
         ]
@@ -585,7 +548,7 @@
     },
     "import-export-preference": {
       "named": {
-        "count": 462,
+        "count": 461,
         "samples": [
           {
             "file": ".blueprint/cli/commands.ts",
@@ -606,15 +569,15 @@
             "message": "Prefer named exports"
           },
           {
-            "file": "generators/java-simple-application/generators/build-tool/index.ts",
-            "line": 19,
-            "column": 10,
+            "file": "generators/java-simple-application/generators/build-tool/generator.ts",
+            "line": 27,
+            "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "generators/javascript-simple-application/generators/bootstrap/index.ts",
-            "line": 19,
-            "column": 10,
+            "file": "generators/javascript-simple-application/generators/bootstrap/generator.ts",
+            "line": 22,
+            "column": 8,
             "message": "Prefer named exports"
           },
           {
@@ -782,7 +745,7 @@
         ]
       },
       "4-space": {
-        "count": 907,
+        "count": 852,
         "samples": [
           {
             "file": ".blueprint/cli/commands.ts",
@@ -791,63 +754,63 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "generators/base-application/support/task-type-inference.ts",
-            "line": 24,
+            "file": "generators/base-application/support/prepare-field.ts",
+            "line": 33,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "generators/client/support/filter-entities.ts",
+            "file": "generators/client/support/template-utils.ts",
             "line": 25,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "generators/java-simple-application/generators/build-tool/types.d.ts",
-            "line": 21,
+            "file": "generators/java-simple-application/generators/graalvm/generator.ts",
+            "line": 34,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "generators/jdl/generator.spec.ts",
-            "line": 37,
+            "file": "generators/jdl/generators/bootstrap/generator.ts",
+            "line": 26,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "generators/server/support/prepare-field.ts",
-            "line": 44,
+            "file": "generators/server/support/string.spec.ts",
+            "line": 6,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "generators/types.d.ts",
+            "file": "generators/upgrade/command.ts",
             "line": 22,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "lib/jdl/converters/validators/field-validator.spec.ts",
+            "file": "lib/jdl/converters/validators/enum-validator.spec.ts",
             "line": 29,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "lib/jdl/core/parsing/jdl-parser.ts",
-            "line": 28,
+            "file": "lib/jdl/core/models/jdl-validation.spec.ts",
+            "line": 29,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "types/eslint-plugin-chai-friendly.d.ts",
-            "line": 2,
+            "file": "test/support/tests.ts",
+            "line": 19,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           }
         ]
       },
       "tab": {
-        "count": 909,
+        "count": 854,
         "samples": [
           {
             "file": ".blueprint/cli/commands.ts",
@@ -856,56 +819,56 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "generators/base-application/support/relationship.ts",
-            "line": 24,
+            "file": "generators/base-application/support/prepare-field.spec.ts",
+            "line": 34,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "generators/client/support/filter-entities.ts",
+            "file": "generators/client/support/template-utils.ts",
             "line": 25,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "generators/java-simple-application/generators/build-tool/types.d.ts",
-            "line": 21,
+            "file": "generators/java-simple-application/generators/graalvm/generator.spec.ts",
+            "line": 30,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "generators/jdl/generator.spec.ts",
-            "line": 37,
+            "file": "generators/jdl/generators/bootstrap/generator.ts",
+            "line": 26,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "generators/server/support/prepare-field.ts",
-            "line": 44,
+            "file": "generators/server/support/string.spec.ts",
+            "line": 6,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "generators/types.d.ts",
-            "line": 22,
+            "file": "generators/upgrade/generator.spec.ts",
+            "line": 33,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "lib/jdl/converters/validators/field-validator.spec.ts",
+            "file": "lib/jdl/converters/validators/enum-validator.spec.ts",
             "line": 29,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "lib/jdl/core/parsing/jdl-parser.ts",
-            "line": 28,
+            "file": "lib/jdl/core/models/jdl-validation.ts",
+            "line": 24,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "types/eslint-plugin-chai-friendly.d.ts",
-            "line": 2,
+            "file": "test/support/tests.ts",
+            "line": 19,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           }
@@ -914,7 +877,7 @@
     },
     "quotes": {
       "double": {
-        "count": 28922,
+        "count": 28142,
         "samples": [
           {
             "file": ".blueprint/cli/commands.ts",
@@ -924,56 +887,56 @@
           },
           {
             "file": "generators/base-core/generator-core.spec.ts",
-            "line": 175,
-            "column": 60,
+            "line": 7,
+            "column": 44,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "generators/docker-compose/docker-compose.spec.ts",
-            "line": 16,
-            "column": 5,
+            "file": "generators/cypress/generator.ts",
+            "line": 275,
+            "column": 13,
             "message": "Strings must use doublequote."
           },
           {
             "file": "generators/java/generators/gatling/generator.ts",
-            "line": 107,
-            "column": 19,
+            "line": 19,
+            "column": 45,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "generators/liquibase/incremental-liquibase.spec.ts",
-            "line": 16,
-            "column": 18,
+            "file": "generators/liquibase/generator.ts",
+            "line": 425,
+            "column": 26,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "generators/spring-boot/generators/data-relational/internal/dependencies.ts",
-            "line": 83,
-            "column": 98,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "lib/command/generator-command.spec.ts",
-            "line": 254,
+            "file": "generators/spring-boot/generators/data-relational/generator.spec.ts",
+            "line": 80,
             "column": 24,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "lib/jdl/converters/validators/relationship-validator.spec.ts",
-            "line": 260,
-            "column": 22,
+            "file": "lib/command/types.spec.ts",
+            "line": 111,
+            "column": 19,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "lib/jdl/converters/validators/validation-validator.ts",
+            "line": 57,
+            "column": 48,
             "message": "Strings must use doublequote."
           },
           {
             "file": "lib/jdl/core/parsing/generated/generated-serialized-grammar.js",
-            "line": 1794,
-            "column": 32,
+            "line": 1778,
+            "column": 26,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "types/eslint-plugin-chai-friendly.d.ts",
-            "line": 2,
-            "column": 31,
+            "file": "test/support/tests.ts",
+            "line": 383,
+            "column": 46,
             "message": "Strings must use doublequote."
           }
         ]
@@ -1063,7 +1026,7 @@
         ]
       },
       "never": {
-        "count": 33233,
+        "count": 32571,
         "samples": [
           {
             "file": ".blueprint/cli/commands.ts",
@@ -1073,56 +1036,56 @@
           },
           {
             "file": "generators/base-application/support/prepare-entity.ts",
-            "line": 315,
-            "column": 34,
+            "line": 149,
+            "column": 5,
             "message": "Extra semicolon."
           },
           {
             "file": "generators/client/generators/bootstrap/generator.ts",
-            "line": 121,
-            "column": 7,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "generators/java-simple-application/generators/maven/needles.spec.ts",
-            "line": 3,
-            "column": 93,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "generators/liquibase/generator.ts",
-            "line": 225,
+            "line": 90,
             "column": 73,
             "message": "Extra semicolon."
           },
           {
-            "file": "generators/spring-cloud/generators/feign-client/generator.ts",
-            "line": 72,
-            "column": 55,
+            "file": "generators/java-simple-application/generators/maven/support/dependabot-maven.spec.ts",
+            "line": 19,
+            "column": 47,
             "message": "Extra semicolon."
           },
           {
-            "file": "lib/jdl/converters/jdl-to-json/jdl-without-application-to-json-converter.spec.ts",
-            "line": 1504,
-            "column": 43,
+            "file": "generators/liquibase/generator.ts",
+            "line": 664,
+            "column": 40,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "generators/spring-cloud/generators/gateway/jdl/jdl-routes-option.spec.ts",
+            "line": 26,
+            "column": 6,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "lib/jdl/converters/json-to-jdl-converter.spec.ts",
+            "line": 393,
+            "column": 5,
             "message": "Extra semicolon."
           },
           {
             "file": "lib/jdl/core/models/jdl-application.spec.ts",
-            "line": 162,
-            "column": 38,
+            "line": 234,
+            "column": 7,
             "message": "Extra semicolon."
           },
           {
             "file": "lib/jdl/core/parsing/jdl-parser.ts",
-            "line": 501,
+            "line": 418,
             "column": 39,
             "message": "Extra semicolon."
           },
           {
-            "file": "types/eslint-plugin-chai-friendly.d.ts",
-            "line": 11,
-            "column": 24,
+            "file": "test/support/tests.ts",
+            "line": 383,
+            "column": 52,
             "message": "Extra semicolon."
           }
         ]

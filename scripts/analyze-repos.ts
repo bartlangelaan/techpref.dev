@@ -194,6 +194,12 @@ async function runOxlintCheck(
 
       throw error;
     }
+  } catch (error) {
+    if (args["debug-on-failure"]) {
+      console.log(error);
+      process.exit(1);
+    }
+    throw error;
   } finally {
     // Cleanup temp directory
     await remove(tempDir).catch(() => {
@@ -295,6 +301,10 @@ const { values: args } = parseArgs({
     },
     repo: {
       type: "string",
+    },
+    "debug-on-failure": {
+      type: "boolean",
+      default: false,
     },
   },
 });

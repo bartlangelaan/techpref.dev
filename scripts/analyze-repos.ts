@@ -470,3 +470,5 @@ for (const { repo, fileCount, commit: repoCommit } of repoAnalyzeInfo) {
 
 await push(process.cwd());
 console.log(`\n=== Analysis Complete ===`);
+
+process.exit(0);

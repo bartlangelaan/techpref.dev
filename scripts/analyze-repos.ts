@@ -1,7 +1,8 @@
-import { last, sortBy } from "es-toolkit";
+import { isNotNil, last, sortBy } from "es-toolkit";
 import { execa, ExecaError } from "execa";
 import { ensureDir, outputJson, remove } from "fs-extra/esm";
 import { glob } from "glob";
+import { stat } from "node:fs/promises";
 import { createRequire } from "node:module";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
@@ -73,7 +74,9 @@ interface OxlintOutput {
   diagnostics: OxlintDiagnostic[];
 }
 
-const ignorePatterns = [
+const MAX_FILE_SIZE = 1_000_000; // 1MB
+
+const globalIgnorePatterns = [
   "**/node_modules/**",
   "**/dist/**",
   "**/build/**",
@@ -88,13 +91,31 @@ const ignorePatterns = [
 
 /**
  * Find all TypeScript/JavaScript files in a repository.
+ *
+ * Just a rough estimate is enough - it is only used for sorting.
  */
 async function findSourceFiles(repoPath: string): Promise<string[]> {
   return glob("**/*.{ts,tsx,js,jsx,cjs,mjs,cjsx,mjsx,cts,mts,ctsx,mtsx}", {
     cwd: repoPath,
-    absolute: true,
-    ignore: ignorePatterns,
+    ignore: globalIgnorePatterns,
   });
+}
+
+/**
+ * Find source files larger than MAX_FILE_SIZE and return their paths
+ * relative to repoPath, for use as oxlint ignore patterns.
+ */
+async function findLargeFilePatterns(repoPath: string): Promise<string[]> {
+  const files = await findSourceFiles(repoPath);
+
+  const results = await Promise.all(
+    files.map(async (file) => {
+      const stats = await stat(join(repoPath, file));
+      return stats.size > MAX_FILE_SIZE ? file : null;
+    }),
+  );
+
+  return results.filter(isNotNil);
 }
 
 /**
@@ -103,6 +124,7 @@ async function findSourceFiles(repoPath: string): Promise<string[]> {
 async function runOxlintCheck(
   repoPath: string,
   ruleCheck: OxlintRuleCheck,
+  largeFilePatterns: string[],
   maxSamples: number = 10,
 ): Promise<VariantResult> {
   console.log(`  Running check: ${ruleCheck.ruleId} (${ruleCheck.variant})...`);
@@ -161,6 +183,8 @@ async function runOxlintCheck(
       timeout + 5000,
       `Oxlint timed out after ${timeout + 5000}ms`,
     );
+
+    const ignorePatterns = [...globalIgnorePatterns, ...largeFilePatterns];
 
     const subprocess = $("oxlint", [
       "-c",
@@ -267,10 +291,16 @@ async function analyzeRepository(
   analyzedVersion: string,
 ): Promise<AnalysisResult> {
   const repoPath = join(REPOS_DIR, repo.fullName);
-  const [analyzedCommit, analyzedCommitDate] = await Promise.all([
-    getCheckoutCommit(repoPath),
-    getCommitDate(repoPath),
-  ]);
+  const [analyzedCommit, analyzedCommitDate, largeFilePatterns] =
+    await Promise.all([
+      getCheckoutCommit(repoPath),
+      getCommitDate(repoPath),
+      findLargeFilePatterns(repoPath),
+    ]);
+
+  if (largeFilePatterns.length > 0) {
+    console.log(`  Ignoring ${largeFilePatterns.length} file(s) exceeding 1MB`);
+  }
 
   const checks: AnalysisResult["checks"] = {};
 
@@ -279,7 +309,7 @@ async function analyzeRepository(
     if (!checks[ruleCheck.ruleId]) {
       checks[ruleCheck.ruleId] = {};
     }
-    const result = await runOxlintCheck(repoPath, ruleCheck);
+    const result = await runOxlintCheck(repoPath, ruleCheck, largeFilePatterns);
     checks[ruleCheck.ruleId][ruleCheck.variant] = result;
     logRuleCheckResult(ruleCheck.ruleId, ruleCheck.variant, result);
   }

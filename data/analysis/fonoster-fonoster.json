@@ -1,16 +1,28 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "e0b7321a89bdc35b7081aeffefe7d68870c5c26f",
-  "analyzedCommitDate": "2026-02-14T19:40:08.000Z",
+  "analyzedCommit": "051f172b266db965cf1d1366f563da995a29a93d",
+  "analyzedCommitDate": "2026-02-15T23:40:15.000Z",
   "checks": {
     "array-type": {
       "array": {
-        "count": 5,
+        "count": 7,
         "samples": [
+          {
+            "file": "mods/autopilot/test/evaluations/evaluateScenario.test.ts",
+            "line": 31,
+            "column": 26,
+            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
+          },
           {
             "file": "mods/dashboard/src/core/components/design-system/ui/select/select.interfaces.ts",
             "line": 57,
             "column": 13,
+            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
+          },
+          {
+            "file": "mods/sdk/src/Applications.ts",
+            "line": 436,
+            "column": 39,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
@@ -40,7 +52,7 @@
         ]
       },
       "generic": {
-        "count": 206,
+        "count": 224,
         "samples": [
           {
             "file": "mods/apiserver/src/calls/createFetchCalls.ts",
@@ -50,51 +62,51 @@
           },
           {
             "file": "mods/autopilot/src/models/evaluations/evalTestCases.ts",
-            "line": 32,
-            "column": 13,
-            "message": "Array type using 'ScenarioEvaluationReport[]' is forbidden. Use 'Array<ScenarioEvaluationReport>' instead."
+            "line": 41,
+            "column": 53,
+            "message": "Array type using 'EvalScenario[]' is forbidden. Use 'Array<EvalScenario>' instead."
           },
           {
-            "file": "mods/common/src/identity/types.ts",
-            "line": 62,
-            "column": 11,
-            "message": "Array type using 'Access[]' is forbidden. Use 'Array<Access>' instead."
+            "file": "mods/autopilot/test/evaluations/evalScenarios.integration.test.ts",
+            "line": 194,
+            "column": 39,
+            "message": "Array type using 'Integration[]' is forbidden. Use 'Array<Integration>' instead."
           },
           {
-            "file": "mods/dashboard/src/acls/pages/acls/acls.columns.tsx",
-            "line": 66,
-            "column": 50,
+            "file": "mods/ctl/src/config/setActiveWorkspace.ts",
+            "line": 23,
+            "column": 15,
+            "message": "Array type using 'WorkspaceConfig[]' is forbidden. Use 'Array<WorkspaceConfig>' instead."
+          },
+          {
+            "file": "mods/dashboard/src/applications/pages/create-application/sections/tools-section.tsx",
+            "line": 170,
+            "column": 61,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
-            "file": "mods/dashboard/src/core/components/design-system/ui/button/button.styles.ts",
-            "line": 72,
-            "column": 58,
-            "message": "Array type using 'CSSObject[]' is forbidden. Use 'Array<CSSObject>' instead."
+            "file": "mods/dashboard/src/core/components/design-system/ui/select/select.interfaces.ts",
+            "line": 51,
+            "column": 12,
+            "message": "Array type using 'SelectOption[]' is forbidden. Use 'Array<SelectOption>' instead."
           },
           {
-            "file": "mods/dashboard/src/core/components/general/sidebar/sidebar.tsx",
-            "line": 37,
-            "column": 15,
-            "message": "Array type using 'Workspace[]' is forbidden. Use 'Array<Workspace>' instead."
-          },
-          {
-            "file": "mods/dashboard/src/monitoring/pages/calls/calls.columns.tsx",
-            "line": 40,
+            "file": "mods/dashboard/src/credentials/pages/credentials/credentials.columns.tsx",
+            "line": 28,
             "column": 23,
             "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           },
           {
-            "file": "mods/sdk/test/integration/cases/domainsTestCases.ts",
-            "line": 73,
+            "file": "mods/sdk/test/integration/cases/agentsTestCases.ts",
+            "line": 82,
             "column": 18,
             "message": "Array type using 'unknown[]' is forbidden. Use 'Array<unknown>' instead."
           },
           {
-            "file": "mods/sipnet/test/listResources.test.ts",
-            "line": 204,
-            "column": 54,
-            "message": "Array type using 'DomainExtended[]' is forbidden. Use 'Array<DomainExtended>' instead."
+            "file": "mods/sipnet/src/resources/paginationUtils.ts",
+            "line": 55,
+            "column": 37,
+            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           },
           {
             "file": "mods/voice/src/VoiceResponse.ts",
@@ -130,7 +142,7 @@
         ]
       },
       "type-annotation": {
-        "count": 3,
+        "count": 5,
         "samples": [
           {
             "file": "mods/apiserver/src/calls/createTrackCall.ts",
@@ -148,6 +160,18 @@
             "file": "mods/apiserver/src/voice/handlers/gather/getTimeoutPromise.ts",
             "line": 28,
             "column": 37,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "mods/ctl/src/commands/applications/eval.ts",
+            "line": 143,
+            "column": 40,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "mods/ctl/src/utils/printEval.ts",
+            "line": 37,
+            "column": 33,
             "message": "The generic type arguments should be specified as part of the type annotation."
           }
         ]
@@ -196,7 +220,7 @@
         ]
       },
       "index-signature": {
-        "count": 82,
+        "count": 100,
         "samples": [
           {
             "file": "mods/apiserver/src/applications/types.ts",
@@ -205,51 +229,51 @@
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "mods/apiserver/src/events/types.ts",
-            "line": 28,
-            "column": 42,
+            "file": "mods/apiserver/src/voice/stt/Google.ts",
+            "line": 69,
+            "column": 28,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "mods/autopilot/src/handleVoiceRequest.ts",
-            "line": 166,
-            "column": 41,
+            "file": "mods/autopilot/src/models/evaluations/evaluateToolCalls.ts",
+            "line": 23,
+            "column": 44,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "mods/common/src/utils/findIntegrationsCredentials.ts",
-            "line": 22,
+            "file": "mods/autopilot/src/sendConversationEndedEvent.ts",
+            "line": 41,
             "column": 18,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "mods/dashboard/src/core/helpers/remove-empty-values.ts",
-            "line": 19,
-            "column": 42,
+            "file": "mods/dashboard/src/applications/pages/create-application/tooling/create-tool.modal.tsx",
+            "line": 114,
+            "column": 17,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "mods/mcp/src/tools/index.ts",
-            "line": 43,
-            "column": 32,
+            "file": "mods/dashboard/src/workspaces/pages/[workspace]/members/members.constants.ts",
+            "line": 24,
+            "column": 27,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "mods/sdk/src/client/makeRpcRequest.ts",
-            "line": 26,
-            "column": 19,
+            "file": "mods/sdk/src/Applications.ts",
+            "line": 515,
+            "column": 7,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "mods/types/src/acls.types.ts",
+            "line": 31,
+            "column": 14,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "mods/types/src/applications.types.ts",
-            "line": 39,
+            "line": 83,
             "column": 13,
-            "message": "An index signature is preferred over a record."
-          },
-          {
-            "file": "mods/types/src/applications.types.ts",
-            "line": 112,
-            "column": 22,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -263,7 +287,7 @@
     },
     "consistent-type-definitions": {
       "interface": {
-        "count": 182,
+        "count": 199,
         "samples": [
           {
             "file": "mods/apiserver/src/applications/types.ts",
@@ -273,49 +297,49 @@
           },
           {
             "file": "mods/apiserver/src/voice/tts/types.ts",
-            "line": 23,
+            "line": 37,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "mods/autopilot/src/models/types.ts",
-            "line": 29,
+            "file": "mods/autopilot/src/models/evaluations/types.ts",
+            "line": 55,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "mods/common/src/notifications/types.ts",
-            "line": 30,
+            "file": "mods/common/src/errors/types.ts",
+            "line": 19,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "mods/common/src/voice/Verb.ts",
+            "file": "mods/common/src/voice/Say.ts",
+            "line": 27,
+            "column": 1,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "mods/identity/src/getPublicKey.ts",
             "line": 24,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "mods/identity/src/verification/types.ts",
-            "line": 38,
-            "column": 1,
-            "message": "Use `interface` instead of `type`."
-          },
-          {
-            "file": "mods/streams/src/types.ts",
-            "line": 44,
+            "file": "mods/sipnet/src/resources/listResources.ts",
+            "line": 31,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
             "file": "mods/types/src/calls.types.ts",
-            "line": 90,
+            "line": 58,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
             "file": "mods/types/src/identity.types.ts",
-            "line": 93,
+            "line": 79,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
@@ -395,7 +419,7 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 843,
+        "count": 854,
         "samples": [
           {
             "file": "mods/apiserver/src/applications/buildService.ts",
@@ -405,49 +429,49 @@
           },
           {
             "file": "mods/apiserver/src/voice/client/GrpcClientHandler.ts",
+            "line": 20,
+            "column": 1,
+            "message": "Imports GrpcError, VoiceClientConfig, VoiceIn, and VoiceSessionStreamClient are only used as type."
+          },
+          {
+            "file": "mods/apiserver/src/voice/tts/Google.ts",
             "line": 19,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
-          {
-            "file": "mods/apiserver/src/voice/tts/Deepgram.ts",
-            "line": 20,
-            "column": 1,
-            "message": "Imports DeepgramClient are only used as type."
           },
           {
             "file": "mods/autopilot/src/models/LanguageModelFactory.ts",
-            "line": 33,
+            "line": 44,
             "column": 1,
-            "message": "Imports GroqParams are only used as type."
+            "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "mods/common/src/identity/types.ts",
+            "file": "mods/common/src/identity/decodeToken.ts",
+            "line": 20,
+            "column": 1,
+            "message": "All imports in the declaration are only used as types. Use `import type`."
+          },
+          {
+            "file": "mods/identity/src/apikeys/createListApiKeys.ts",
             "line": 19,
             "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
+            "message": "Imports GrpcErrorMessage are only used as type."
           },
           {
-            "file": "mods/identity/src/apikeys/createRegenerateApiKey.ts",
-            "line": 25,
+            "file": "mods/identity/src/utils/withAccess.ts",
+            "line": 21,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "mods/identity/src/verification/createBodyForVerificationMessage.ts",
-            "line": 22,
-            "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
-          {
-            "file": "mods/sdk/src/Calls.ts",
+            "file": "mods/sdk/src/Applications.ts",
             "line": 19,
             "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
+            "message": "Imports Application, BaseApiObject, CreateApplicationRequest, EvaluateIntelligenceEvent, EvaluateIntelligenceRequest, ListApplicationsRequest, ListApplicationsResponse, and UpdateApplicationRequest are only used as type."
           },
           {
-            "file": "mods/sipnet/src/numbers/buildService.ts",
-            "line": 19,
+            "file": "mods/sipnet/src/domains/operations.ts",
+            "line": 20,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
@@ -460,36 +484,36 @@
         ]
       },
       "no-type-imports": {
-        "count": 322,
+        "count": 326,
         "samples": [
           {
-            "file": "mods/dashboard/.storybook/main.ts",
+            "file": "mods/autopilot/src/models/evaluations/evaluateStep.ts",
+            "line": 24,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "mods/dashboard/src/api-keys/pages/api-keys/api-keys.columns.tsx",
             "line": 19,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "mods/dashboard/src/api-keys/pages/create-api-key/create-api-key.form.tsx",
-            "line": 31,
-            "column": 18,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
             "file": "mods/dashboard/src/applications/services/applications.service.ts",
-            "line": 23,
+            "line": 21,
             "column": 3,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "mods/dashboard/src/auth/services/auth.service.ts",
-            "line": 20,
-            "column": 3,
+            "file": "mods/dashboard/src/auth/pages/verification-flow/verification-flow-phone.form.tsx",
+            "line": 19,
+            "column": 19,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "mods/dashboard/src/core/components/design-system/ui/data-table/data-table.stories.tsx",
-            "line": 20,
-            "column": 21,
+            "line": 19,
+            "column": 20,
             "message": "Use an `import` instead of an `import type`."
           },
           {
@@ -512,14 +536,14 @@
           },
           {
             "file": "mods/dashboard/src/secrets/services/secrets.service.ts",
-            "line": 20,
+            "line": 21,
             "column": 3,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "mods/dashboard/src/workspaces/services/workspaces.service.ts",
-            "line": 23,
-            "column": 3,
+            "file": "mods/sdk/src/client/types/ApplicationsClient.ts",
+            "line": 36,
+            "column": 1,
             "message": "Use an `import` instead of an `import type`."
           }
         ]
@@ -527,7 +551,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 3481,
+        "count": 3502,
         "samples": [
           {
             "file": ".scripts/cleanup-users.cjs",
@@ -538,48 +562,48 @@
           {
             "file": "mods/identity/src/generated/@prisma/client/query_engine_bg.js",
             "line": 2,
-            "column": 6988,
+            "column": 6152,
             "message": "Expected a function expression."
           },
           {
             "file": "mods/identity/src/generated/@prisma/client/runtime/edge-esm.js",
-            "line": 24,
-            "column": 4944,
+            "line": 17,
+            "column": 2067,
             "message": "Expected a function expression."
           },
           {
             "file": "mods/identity/src/generated/@prisma/client/runtime/edge.js",
-            "line": 24,
-            "column": 4315,
+            "line": 17,
+            "column": 2124,
             "message": "Expected a function expression."
           },
           {
             "file": "mods/identity/src/generated/@prisma/client/runtime/library.js",
-            "line": 35,
-            "column": 3119,
+            "line": 34,
+            "column": 138,
             "message": "Expected a function expression."
           },
           {
             "file": "mods/identity/src/generated/@prisma/client/runtime/react-native.js",
             "line": 14,
-            "column": 2174,
+            "column": 900,
             "message": "Expected a function expression."
           },
           {
             "file": "mods/identity/src/generated/@prisma/client/runtime/wasm-compiler-edge.js",
             "line": 11,
-            "column": 4868,
+            "column": 3548,
             "message": "Expected a function expression."
           },
           {
             "file": "mods/identity/src/generated/@prisma/client/runtime/wasm-engine-edge.js",
             "line": 10,
-            "column": 5825,
+            "column": 4443,
             "message": "Expected a function expression."
           },
           {
-            "file": "mods/logger/src/getLogger.ts",
-            "line": 24,
+            "file": "mods/identity/src/workspaces/createUpdateWorkspace.ts",
+            "line": 34,
             "column": 1,
             "message": "Expected a function expression."
           },
@@ -592,7 +616,7 @@
         ]
       },
       "declaration": {
-        "count": 618,
+        "count": 620,
         "samples": [
           {
             "file": "mods/apiserver/src/applications/createCreateApplication.ts",
@@ -602,32 +626,32 @@
           },
           {
             "file": "mods/dashboard/src/acls/services/acls.service.ts",
-            "line": 156,
+            "line": 108,
             "column": 14,
             "message": "Expected a function declaration."
           },
           {
             "file": "mods/dashboard/src/auth/services/sessions/session.server.ts",
-            "line": 139,
+            "line": 101,
             "column": 14,
             "message": "Expected a function declaration."
           },
           {
-            "file": "mods/dashboard/src/core/helpers/to-title-case.ts",
-            "line": 26,
+            "file": "mods/dashboard/src/core/helpers/extract-error-message.ts",
+            "line": 19,
             "column": 14,
             "message": "Expected a function declaration."
           },
           {
-            "file": "mods/identity/src/exchanges/createExchangeApiKey.ts",
-            "line": 38,
-            "column": 9,
+            "file": "mods/identity/src/db.ts",
+            "line": 22,
+            "column": 14,
             "message": "Expected a function declaration."
           },
           {
-            "file": "mods/identity/src/generated/@prisma/client/runtime/index-browser.js",
-            "line": 5,
-            "column": 159,
+            "file": "mods/identity/src/generated/@prisma/client/runtime/edge.js",
+            "line": 33,
+            "column": 194,
             "message": "Expected a function declaration."
           },
           {
@@ -639,7 +663,7 @@
           {
             "file": "mods/identity/src/generated/@prisma/client/runtime/wasm-compiler-edge.js",
             "line": 5,
-            "column": 42419,
+            "column": 42228,
             "message": "Expected a function declaration."
           },
           {
@@ -724,7 +748,7 @@
         ]
       },
       "default": {
-        "count": 515,
+        "count": 516,
         "samples": [
           {
             "file": "mods/apiserver/src/applications/buildService.ts",
@@ -745,8 +769,8 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "mods/common/src/assistants/testCasesSchema.ts",
-            "line": 65,
+            "file": "mods/common/src/assistants/languageModelConfigSchema.ts",
+            "line": 60,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -757,14 +781,14 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "mods/dashboard/src/core/components/design-system/ui/tooltip/tooltip.styles.tsx",
-            "line": 21,
+            "file": "mods/dashboard/src/core/components/design-system/ui/switch/switch.styles.tsx",
+            "line": 22,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "mods/dashboard/src/workspaces/pages/[workspace]/members/members.page-header.tsx",
-            "line": 33,
+            "file": "mods/dashboard/src/workspaces/hooks/use-workspace-id.ts",
+            "line": 21,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -795,7 +819,7 @@
         "samples": []
       },
       "4-space": {
-        "count": 1028,
+        "count": 1039,
         "samples": [
           {
             "file": ".scripts/cleanup-users.cjs",
@@ -804,49 +828,49 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "mods/apiserver/src/voice/tts/AbstractTextToSpeech.ts",
+            "file": "mods/apiserver/src/voice/tts/Azure.ts",
             "line": 31,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "mods/autopilot/src/sendConversationEndedEvent.ts",
-            "line": 20,
+            "file": "mods/autopilot/src/models/toolInvocation.ts",
+            "line": 26,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "mods/ctl/src/commands/mcp/configure.ts",
-            "line": 27,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "mods/dashboard/src/applications/pages/create-application/components/voice-selector.tsx",
-            "line": 28,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "mods/dashboard/src/core/components/design-system/ui/password-strength-bar/password-strength.helper.ts",
-            "line": 28,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "mods/dashboard/src/monitoring/pages/calls/calls.page.tsx",
-            "line": 41,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "mods/identity/src/utils/createIsValidVerificationCode.ts",
+            "file": "mods/ctl/src/commands/applications/delete.ts",
             "line": 24,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "mods/sdk/test/integration/cases/callsTestCases.ts",
+            "file": "mods/dashboard/src/applications/hooks/use-sip.ts",
+            "line": 52,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "mods/dashboard/src/core/components/design-system/ui/modal/modal.stories.tsx",
+            "line": 8,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "mods/dashboard/src/domains/services/domains.service.ts",
+            "line": 20,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "mods/identity/src/utils/createGetUserByEmail.ts",
+            "line": 22,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "mods/sdk/test/integration/cases/applicationsTestCases.ts",
             "line": 20,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
@@ -860,7 +884,7 @@
         ]
       },
       "tab": {
-        "count": 1028,
+        "count": 1039,
         "samples": [
           {
             "file": ".scripts/cleanup-users.cjs",
@@ -869,49 +893,49 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "mods/apiserver/src/voice/tts/AbstractTextToSpeech.ts",
+            "file": "mods/apiserver/src/voice/tts/Azure.ts",
             "line": 31,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "mods/autopilot/src/sendConversationEndedEvent.ts",
-            "line": 20,
+            "file": "mods/autopilot/src/models/toolInvocation.ts",
+            "line": 26,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "mods/ctl/src/commands/mcp/configure.ts",
-            "line": 27,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "mods/dashboard/src/applications/pages/create-application/components/voice-selector.tsx",
-            "line": 28,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "mods/dashboard/src/core/components/design-system/ui/password-strength-bar/password-strength.helper.ts",
-            "line": 28,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "mods/dashboard/src/monitoring/pages/calls/calls.page.tsx",
-            "line": 41,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "mods/identity/src/utils/createIsValidVerificationCode.ts",
+            "file": "mods/ctl/src/commands/applications/delete.ts",
             "line": 24,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "mods/sdk/test/integration/cases/callsTestCases.ts",
+            "file": "mods/dashboard/src/applications/hooks/use-sip.ts",
+            "line": 52,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "mods/dashboard/src/core/components/design-system/ui/modal/modal.stories.tsx",
+            "line": 8,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "mods/dashboard/src/domains/services/domains.service.ts",
+            "line": 20,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "mods/identity/src/utils/createGetUserByEmail.ts",
+            "line": 22,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "mods/sdk/test/integration/cases/applicationsTestCases.ts",
             "line": 20,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
@@ -927,7 +951,7 @@
     },
     "quotes": {
       "double": {
-        "count": 856,
+        "count": 855,
         "samples": [
           {
             "file": ".scripts/cleanup-users.cjs",
@@ -943,20 +967,20 @@
           },
           {
             "file": "mods/identity/src/generated/@prisma/client/edge.js",
-            "line": 112,
-            "column": 8,
+            "line": 113,
+            "column": 16,
             "message": "Strings must use doublequote."
           },
           {
             "file": "mods/identity/src/generated/@prisma/client/index-browser.js",
-            "line": 171,
+            "line": 172,
             "column": 9,
             "message": "Strings must use doublequote."
           },
           {
             "file": "mods/identity/src/generated/@prisma/client/runtime/edge-esm.js",
             "line": 5,
-            "column": 4349,
+            "column": 4536,
             "message": "Strings must use doublequote."
           },
           {
@@ -992,7 +1016,7 @@
         ]
       },
       "single": {
-        "count": 27318,
+        "count": 27543,
         "samples": [
           {
             "file": ".scripts/gen-readme.cjs",
@@ -1001,51 +1025,51 @@
             "message": "Strings must use singlequote."
           },
           {
-            "file": "mods/common/src/identity/getPublicKey.ts",
-            "line": 30,
-            "column": 12,
+            "file": "mods/common/src/countryIsoCodes.ts",
+            "line": 168,
+            "column": 34,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "mods/ctl/src/commands/applications/update.ts",
-            "line": 110,
-            "column": 23,
+            "file": "mods/ctl/src/commands/applications/create.ts",
+            "line": 74,
+            "column": 48,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "mods/dashboard/src/core/components/design-system/ui/checkbox/checkbox.styles.tsx",
-            "line": 53,
-            "column": 3,
+            "file": "mods/dashboard/src/core/components/design-system/ui/button/button.stories.ts",
+            "line": 155,
+            "column": 17,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "mods/dashboard/src/credentials/services/credentials.service.ts",
-            "line": 29,
-            "column": 29,
+            "file": "mods/dashboard/src/core/shared/countries.ts",
+            "line": 193,
+            "column": 11,
             "message": "Strings must use singlequote."
           },
           {
             "file": "mods/identity/src/generated/@prisma/client/runtime/edge.js",
             "line": 5,
-            "column": 15485,
+            "column": 5485,
             "message": "Strings must use singlequote."
           },
           {
             "file": "mods/identity/src/generated/@prisma/client/runtime/library.js",
-            "line": 125,
-            "column": 7931,
+            "line": 118,
+            "column": 2289,
             "message": "Strings must use singlequote."
           },
           {
             "file": "mods/identity/src/generated/@prisma/client/runtime/wasm-compiler-edge.js",
-            "line": 63,
-            "column": 1538,
+            "line": 62,
+            "column": 5135,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "mods/identity/src/users/createUpdateUser.ts",
+            "file": "mods/identity/src/users/createResetPasswordBody.ts",
             "line": 32,
-            "column": 37,
+            "column": 52,
             "message": "Strings must use singlequote."
           },
           {
@@ -1124,7 +1148,7 @@
         ]
       },
       "never": {
-        "count": 16858,
+        "count": 17155,
         "samples": [
           {
             "file": ".scripts/cleanup-users.cjs",
@@ -1133,51 +1157,51 @@
             "message": "Extra semicolon."
           },
           {
-            "file": "mods/apiserver/src/voice/stt/types.ts",
-            "line": 67,
-            "column": 2,
+            "file": "mods/apiserver/src/voice/tts/AbstractTextToSpeech.ts",
+            "line": 82,
+            "column": 32,
             "message": "Extra semicolon."
           },
           {
-            "file": "mods/autopilot/src/models/evaluations/createEvaluateIntelligence.ts",
-            "line": 48,
-            "column": 29,
+            "file": "mods/autopilot/src/models/evaluations/evaluateSingleTool.ts",
+            "line": 29,
+            "column": 20,
             "message": "Extra semicolon."
           },
           {
-            "file": "mods/ctl/src/commands/sipnet/calls/create.ts",
-            "line": 93,
-            "column": 15,
+            "file": "mods/ctl/src/commands/sipnet/acls/list.ts",
+            "line": 22,
+            "column": 69,
             "message": "Extra semicolon."
           },
           {
-            "file": "mods/dashboard/src/applications/pages/create-application/tooling/properties-modal.modal.tsx",
-            "line": 30,
+            "file": "mods/dashboard/src/applications/pages/create-application/sections/tools-section.tsx",
+            "line": 28,
             "column": 47,
             "message": "Extra semicolon."
           },
           {
-            "file": "mods/dashboard/src/core/components/general/sidebar/sidebar.styles.tsx",
-            "line": 71,
-            "column": 4,
+            "file": "mods/dashboard/src/core/components/general/link/link.tsx",
+            "line": 31,
+            "column": 3,
             "message": "Extra semicolon."
           },
           {
-            "file": "mods/dashboard/src/workspaces/pages/[workspace]/settings/settings.page.tsx",
-            "line": 81,
-            "column": 30,
+            "file": "mods/dashboard/src/workspaces/pages/[workspace]/settings/delete-workspace-dialog.tsx",
+            "line": 73,
+            "column": 19,
             "message": "Extra semicolon."
           },
           {
-            "file": "mods/sdk/rollup.config.mjs",
-            "line": 19,
-            "column": 47,
+            "file": "mods/mcp/src/tools/createCreateCallBatch.ts",
+            "line": 77,
+            "column": 6,
             "message": "Extra semicolon."
           },
           {
-            "file": "mods/sipnet/src/resources/paginationUtils.ts",
-            "line": 114,
-            "column": 12,
+            "file": "mods/sipnet/src/resources/listResources.ts",
+            "line": 58,
+            "column": 57,
             "message": "Extra semicolon."
           },
           {

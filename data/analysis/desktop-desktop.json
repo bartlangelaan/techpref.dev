@@ -1,11 +1,11 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "939397c32a7166e01a65bf3e5131f9ee47eac707",
-  "analyzedCommitDate": "2026-02-13T19:03:20.000Z",
+  "analyzedCommit": "41f1328049df73910059c0b345f5cd74f03e71cf",
+  "analyzedCommitDate": "2026-02-17T08:55:23.000Z",
   "checks": {
     "array-type": {
       "array": {
-        "count": 947,
+        "count": 948,
         "samples": [
           {
             "file": "app/src/cli/main.ts",
@@ -27,15 +27,15 @@
           },
           {
             "file": "app/src/lib/stores/commit-status-store.ts",
-            "line": 171,
-            "column": 51,
-            "message": "Array type using 'ReadonlyArray<Account>' is forbidden. Use 'readonly Account[]' instead."
+            "line": 248,
+            "column": 20,
+            "message": "Array type using 'ReadonlyArray<IRefCheck>' is forbidden. Use 'readonly IRefCheck[]' instead."
           },
           {
-            "file": "app/src/models/cherry-pick.ts",
-            "line": 9,
-            "column": 21,
-            "message": "Array type using 'ReadonlyArray<CommitOneLine>' is forbidden. Use 'readonly CommitOneLine[]' instead."
+            "file": "app/src/models/commit.ts",
+            "line": 32,
+            "column": 23,
+            "message": "Array type using 'ReadonlyArray<ITrailer>' is forbidden. Use 'readonly ITrailer[]' instead."
           },
           {
             "file": "app/src/ui/branches/pull-request-list.tsx",
@@ -51,15 +51,15 @@
           },
           {
             "file": "app/src/ui/history/unreachable-commits-dialog.tsx",
-            "line": 43,
-            "column": 26,
-            "message": "Array type using 'ReadonlyArray<string>' is forbidden. Use 'readonly string[]' instead."
+            "line": 84,
+            "column": 14,
+            "message": "Array type using 'ReadonlyArray<Commit>' is forbidden. Use 'readonly Commit[]' instead."
           },
           {
-            "file": "app/src/ui/local-changes-overwritten/local-changes-overwritten-dialog.tsx",
-            "line": 35,
+            "file": "app/src/ui/merge-conflicts/commit-conflicts-warning.tsx",
+            "line": 14,
             "column": 19,
-            "message": "Array type using 'ReadonlyArray<string>' is forbidden. Use 'readonly string[]' instead."
+            "message": "Array type using 'ReadonlyArray<WorkingDirectoryFileChange>' is forbidden. Use 'readonly WorkingDirectoryFileChange[]' instead."
           },
           {
             "file": "script/validate-sass/validate-file.ts",
@@ -70,36 +70,36 @@
         ]
       },
       "generic": {
-        "count": 209,
+        "count": 207,
         "samples": [
           {
-            "file": "app/src/highlighter/globals.d.ts",
-            "line": 20,
+            "file": "app/src/lib/actions-log-parser/action-log-parser.ts",
+            "line": 52,
+            "column": 21,
+            "message": "Array type using 'ILogLine[]' is forbidden. Use 'Array<ILogLine>' instead."
+          },
+          {
+            "file": "app/src/lib/ci-checks/ci-checks.ts",
+            "line": 434,
             "column": 12,
+            "message": "Array type using 'readonly IRefCheck[]' is forbidden. Use 'ReadonlyArray<IRefCheck>' instead."
+          },
+          {
+            "file": "app/src/lib/git/core.ts",
+            "line": 89,
+            "column": 29,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
-            "file": "app/src/lib/api.ts",
-            "line": 1701,
-            "column": 35,
-            "message": "Array type using 'IAPIRepoRule[]' is forbidden. Use 'Array<IAPIRepoRule>' instead."
-          },
-          {
-            "file": "app/src/lib/git/cherry-pick.ts",
-            "line": 111,
-            "column": 12,
-            "message": "Array type using 'readonly CommitOneLine[]' is forbidden. Use 'ReadonlyArray<CommitOneLine>' instead."
-          },
-          {
-            "file": "app/src/lib/hooks/shell-escape.ts",
-            "line": 3,
-            "column": 40,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+            "file": "app/src/lib/http.ts",
+            "line": 24,
+            "column": 21,
+            "message": "Array type using 'IError[]' is forbidden. Use 'Array<IError>' instead."
           },
           {
             "file": "app/src/main-process/menu/build-spell-check-menu.ts",
-            "line": 104,
-            "column": 23,
+            "line": 128,
+            "column": 33,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
@@ -269,7 +269,7 @@
     },
     "consistent-indexed-object-style": {
       "record": {
-        "count": 22,
+        "count": 20,
         "samples": [
           {
             "file": "app/src/highlighter/index.ts",
@@ -285,38 +285,38 @@
           },
           {
             "file": "app/src/lib/actions-log-parser/action-log-pipeline-commands.ts",
-            "line": 95,
+            "line": 81,
             "column": 31,
             "message": "A record is preferred over an index signature."
           },
           {
-            "file": "app/src/lib/databases/base-database.ts",
-            "line": 25,
-            "column": 15,
+            "file": "app/src/lib/api.ts",
+            "line": 1167,
+            "column": 21,
             "message": "A record is preferred over an index signature."
           },
           {
-            "file": "app/src/lib/globals.d.ts",
-            "line": 141,
-            "column": 19,
-            "message": "A record is preferred over an index signature."
-          },
-          {
-            "file": "app/src/lib/http.ts",
-            "line": 189,
-            "column": 13,
-            "message": "A record is preferred over an index signature."
-          },
-          {
-            "file": "app/src/lib/parse-app-url.ts",
-            "line": 41,
+            "file": "app/src/lib/highlighter/types.ts",
+            "line": 17,
             "column": 3,
             "message": "A record is preferred over an index signature."
           },
           {
-            "file": "app/src/ui/acknowledgements/acknowledgements.tsx",
-            "line": 28,
-            "column": 19,
+            "file": "app/src/lib/markdown-filters/commit-mention-filter.ts",
+            "line": 227,
+            "column": 37,
+            "message": "A record is preferred over an index signature."
+          },
+          {
+            "file": "app/src/main-process/exception-reporting.ts",
+            "line": 14,
+            "column": 13,
+            "message": "A record is preferred over an index signature."
+          },
+          {
+            "file": "app/src/ui/app-menu/app-menu-bar.tsx",
+            "line": 92,
+            "column": 5,
             "message": "A record is preferred over an index signature."
           },
           {
@@ -466,7 +466,7 @@
         ]
       },
       "type": {
-        "count": 763,
+        "count": 754,
         "samples": [
           {
             "file": "app/src/crash/crash-app.tsx",
@@ -475,50 +475,50 @@
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "app/src/lib/databases/pull-request-database.ts",
-            "line": 5,
+            "file": "app/src/lib/databases/repositories-database.ts",
+            "line": 7,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "app/src/lib/stores/sign-in-store.ts",
-            "line": 145,
+            "file": "app/src/models/app-menu.ts",
+            "line": 18,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "app/src/ui/app-menu/app-menu.tsx",
-            "line": 7,
+            "file": "app/src/ui/app.tsx",
+            "line": 215,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "app/src/ui/check-runs/ci-check-run-step-list-header.tsx",
-            "line": 8,
+            "file": "app/src/ui/cli-installed/cli-installed.tsx",
+            "line": 5,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "app/src/ui/discard-changes/discard-changes-dialog.tsx",
+            "file": "app/src/ui/discard-changes/discard-selection-dialog.tsx",
             "line": 12,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "app/src/ui/lib/focus-container.tsx",
-            "line": 14,
+            "file": "app/src/ui/lib/git-config-user-form.tsx",
+            "line": 36,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "app/src/ui/multi-commit-operation/choose-branch/merge-choose-branch-dialog.tsx",
-            "line": 17,
+            "file": "app/src/ui/multi-commit-operation/dialog/confirm-abort-dialog.tsx",
+            "line": 5,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "app/src/ui/resizable/resizable.tsx",
-            "line": 17,
+            "line": 222,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
@@ -533,7 +533,7 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 1597,
+        "count": 1598,
         "samples": [
           {
             "file": "app/src/crash/crash-app.tsx",
@@ -561,9 +561,9 @@
           },
           {
             "file": "app/src/ui/banners/render-banner.tsx",
-            "line": 5,
+            "line": 7,
             "column": 1,
-            "message": "Imports Banner are only used as type."
+            "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
             "file": "app/src/ui/clone-repository/group-repositories.ts",
@@ -573,19 +573,19 @@
           },
           {
             "file": "app/src/ui/history/compare.tsx",
-            "line": 12,
+            "line": 13,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
             "file": "app/src/ui/multi-commit-operation/choose-branch/rebase-choose-branch-dialog.tsx",
-            "line": 2,
+            "line": 4,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
             "file": "app/src/ui/test-notifications/test-notifications.tsx",
-            "line": 5,
+            "line": 6,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
@@ -623,7 +623,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 5103,
+        "count": 1231,
         "samples": [
           {
             "file": "app/app-info.ts",
@@ -632,63 +632,63 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "app/src/lib/stores/helpers/create-tutorial-repository.ts",
-            "line": 25,
+            "file": "app/src/lib/generic-git-auth.ts",
+            "line": 32,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "app/src/lib/git/pull.ts",
+            "line": 29,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "app/src/lib/menu-update.ts",
+            "line": 434,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "eslint-rules/react-proper-lifecycle-methods.js",
-            "line": 89,
+            "file": "app/src/lib/status.ts",
+            "line": 97,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "app/src/main-process/notifications.ts",
+            "line": 44,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "app/src/ui/diff/diff-explorer.ts",
+            "line": 181,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "vendor/yarn-1.21.1.js",
-            "line": 14433,
-            "column": 5,
+            "file": "app/src/ui/lib/git-perf.ts",
+            "line": 15,
+            "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "vendor/yarn-1.21.1.js",
-            "line": 34972,
+            "file": "app/test/unit/api-test.ts",
+            "line": 11,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "vendor/yarn-1.21.1.js",
-            "line": 55348,
-            "column": 6,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "vendor/yarn-1.21.1.js",
-            "line": 77877,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "vendor/yarn-1.21.1.js",
-            "line": 98895,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "vendor/yarn-1.21.1.js",
-            "line": 125240,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "vendor/yarn-1.21.1.js",
-            "line": 147273,
-            "column": 1,
+            "file": "vendor/windows-argv-parser/index.ts",
+            "line": 6,
+            "column": 8,
             "message": "Expected a function expression."
           }
         ]
       },
       "declaration": {
-        "count": 551,
+        "count": 270,
         "samples": [
           {
             "file": "app/src/cli/main.ts",
@@ -697,57 +697,57 @@
             "message": "Expected a function declaration."
           },
           {
+            "file": "app/src/lib/endpoint-capabilities.ts",
+            "line": 56,
+            "column": 14,
+            "message": "Expected a function declaration."
+          },
+          {
             "file": "app/src/lib/git/git-delimiter-parser.ts",
-            "line": 63,
+            "line": 23,
             "column": 9,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "app/src/lib/hooks/hooks-proxy.ts",
+            "line": 59,
+            "column": 7,
             "message": "Expected a function declaration."
           },
           {
             "file": "app/src/lib/trampoline/trampoline-environment.ts",
-            "line": 40,
+            "line": 16,
             "column": 14,
             "message": "Expected a function declaration."
           },
           {
-            "file": "app/src/ui/main-process-proxy.ts",
+            "file": "app/src/ui/changes/commit-warning.tsx",
+            "line": 38,
+            "column": 14,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "app/src/ui/lib/rect.ts",
+            "line": 37,
+            "column": 14,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "app/test/unit/create-branch-test.ts",
             "line": 77,
-            "column": 14,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "app/test/unit/git/stash-test.ts",
-            "line": 229,
             "column": 11,
             "message": "Expected a function declaration."
           },
           {
-            "file": "vendor/yarn-1.21.1.js",
-            "line": 45043,
-            "column": 6,
+            "file": "app/test/unit/git/rebase/progress-test.ts",
+            "line": 98,
+            "column": 11,
             "message": "Expected a function declaration."
           },
           {
-            "file": "vendor/yarn-1.21.1.js",
-            "line": 80880,
-            "column": 5,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "vendor/yarn-1.21.1.js",
-            "line": 119457,
-            "column": 9,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "vendor/yarn-1.21.1.js",
-            "line": 144563,
-            "column": 5,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "vendor/yarn-1.21.1.js",
-            "line": 143262,
-            "column": 8,
+            "file": "vendor/desktop-notifications/lib/notification-callback.ts",
+            "line": 21,
+            "column": 14,
             "message": "Expected a function declaration."
           }
         ]
@@ -772,7 +772,7 @@
         ]
       },
       "default": {
-        "count": 514,
+        "count": 513,
         "samples": [
           {
             "file": "app/app-info.ts",
@@ -805,26 +805,26 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "app/src/ui/generic-git-auth/index.ts",
-            "line": 1,
-            "column": 10,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "app/src/ui/lib/popover-dropdown.tsx",
-            "line": 32,
+            "file": "app/src/ui/generic-git-auth/generic-git-auth.tsx",
+            "line": 34,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "app/src/ui/preferences/accounts.tsx",
-            "line": 30,
+            "file": "app/src/ui/lib/plural.ts",
+            "line": 2,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "app/src/ui/thank-you/thank-you.tsx",
-            "line": 22,
+            "file": "app/src/ui/preferences/accessibility.tsx",
+            "line": 13,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "app/src/ui/test-notifications/test-notifications.tsx",
+            "line": 150,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -839,7 +839,7 @@
     },
     "indent": {
       "2-space": {
-        "count": 6,
+        "count": 5,
         "samples": [
           {
             "file": "app/src/lib/git/cherry-pick.ts",
@@ -870,17 +870,11 @@
             "line": 221,
             "column": 1,
             "message": "Expected 2-space indentation, but file uses 1-space indentation."
-          },
-          {
-            "file": "vendor/yarn-1.21.1.js",
-            "line": 3099,
-            "column": 1,
-            "message": "Expected 2-space indentation, but file uses 19-space indentation."
           }
         ]
       },
       "4-space": {
-        "count": 958,
+        "count": 956,
         "samples": [
           {
             "file": "app/app-info.ts",
@@ -889,63 +883,63 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "app/src/lib/git/push.ts",
-            "line": 16,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "app/src/lib/shells/win32.ts",
-            "line": 11,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "app/src/models/branch.ts",
-            "line": 8,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "app/src/ui/changes/changes-list-filter-options.tsx",
-            "line": 3,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "app/src/ui/installing-update/installing-update.tsx",
-            "line": 5,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "app/src/ui/multi-commit-operation/base-rebase.tsx",
-            "line": 3,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "app/src/ui/tutorial/tutorial-step-instruction.tsx",
-            "line": 3,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "app/test/unit/git/rev-parse-test.ts",
+            "file": "app/src/lib/git/rebase.ts",
             "line": 10,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "vendor/yarn-1.21.1.js",
-            "line": 305,
+            "file": "app/src/lib/source-map-support.ts",
+            "line": 20,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "app/src/models/branches-tab.ts",
+            "line": 3,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "app/src/ui/changes/changes.tsx",
+            "line": 4,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "app/src/ui/invalidated-token/invalidated-token.tsx",
+            "line": 10,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "app/src/ui/multi-commit-operation/cherry-pick.tsx",
+            "line": 5,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "app/src/ui/tutorial/welcome.tsx",
+            "line": 7,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "app/test/unit/git/reset-test.ts",
+            "line": 14,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "vendor/windows-argv-parser/index.ts",
+            "line": 2,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           }
         ]
       },
       "tab": {
-        "count": 959,
+        "count": 957,
         "samples": [
           {
             "file": "app/app-info.ts",
@@ -954,32 +948,32 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "app/src/lib/git/push.ts",
-            "line": 16,
+            "file": "app/src/lib/git/rebase.ts",
+            "line": 10,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "app/src/lib/shells/win32.ts",
-            "line": 11,
+            "file": "app/src/lib/source-map-support.ts",
+            "line": 20,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "app/src/models/branch.ts",
-            "line": 8,
+            "file": "app/src/models/cherry-pick.ts",
+            "line": 7,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "app/src/ui/changes/changes.tsx",
-            "line": 4,
+            "file": "app/src/ui/changes/commit-message-avatar.tsx",
+            "line": 6,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "app/src/ui/installing-update/installing-update.tsx",
-            "line": 5,
+            "file": "app/src/ui/invalidated-token/invalidated-token.tsx",
+            "line": 10,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -990,20 +984,20 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "app/src/ui/tutorial/welcome.tsx",
-            "line": 7,
+            "file": "app/src/ui/ui-view.tsx",
+            "line": 5,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "app/test/unit/git/squash-test.ts",
-            "line": 6,
+            "file": "app/test/unit/git/rev-parse-test.ts",
+            "line": 10,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "vendor/yarn-1.21.1.js",
-            "line": 118,
+            "file": "vendor/windows-argv-parser/index.ts",
+            "line": 2,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           }
@@ -1012,7 +1006,7 @@
     },
     "quotes": {
       "double": {
-        "count": 39213,
+        "count": 22399,
         "samples": [
           {
             "file": ".markdownlint.js",
@@ -1021,63 +1015,63 @@
             "message": "Strings must use doublequote."
           },
           {
-            "file": "app/src/lib/shells/win32.ts",
-            "line": 6,
+            "file": "app/src/lib/git/log.ts",
+            "line": 320,
             "column": 31,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "app/src/ui/changes/no-changes.tsx",
-            "line": 269,
-            "column": 7,
+            "file": "app/src/lib/stores/git-store.ts",
+            "line": 628,
+            "column": 11,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "app/src/ui/app.tsx",
+            "line": 464,
+            "column": 12,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "app/src/ui/history/commit-list-item.tsx",
+            "line": 26,
+            "column": 23,
             "message": "Strings must use doublequote."
           },
           {
             "file": "app/src/ui/octicons/octicons.generated.ts",
-            "line": 2492,
+            "line": 709,
             "column": 3,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "app/src/ui/undo/warn-local-changes-before-undo.tsx",
+            "line": 41,
+            "column": 48,
             "message": "Strings must use doublequote."
           },
           {
             "file": "app/test/unit/git/diff-test.ts",
-            "line": 126,
-            "column": 9,
+            "line": 441,
+            "column": 36,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "eslint-rules/tests/react-proper-lifecycle-methods.test.js",
-            "line": 423,
-            "column": 26,
+            "file": "app/test/unit/path-text-test.ts",
+            "line": 93,
+            "column": 40,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "vendor/yarn-1.21.1.js",
-            "line": 43364,
-            "column": 32,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "vendor/yarn-1.21.1.js",
-            "line": 72519,
-            "column": 3,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "vendor/yarn-1.21.1.js",
-            "line": 104695,
-            "column": 21,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "vendor/yarn-1.21.1.js",
-            "line": 147249,
-            "column": 3,
+            "file": "vendor/windows-argv-parser/index.ts",
+            "line": 9,
+            "column": 7,
             "message": "Strings must use doublequote."
           }
         ]
       },
       "single": {
-        "count": 29267,
+        "count": 309,
         "samples": [
           {
             "file": "app/src/lib/actions-log-parser/action-log-parser.ts",
@@ -1086,57 +1080,57 @@
             "message": "Strings must use singlequote."
           },
           {
-            "file": "vendor/yarn-1.21.1.js",
-            "line": 81804,
-            "column": 34974,
+            "file": "app/src/lib/is-git-on-path.ts",
+            "line": 24,
+            "column": 16,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "vendor/yarn-1.21.1.js",
-            "line": 84971,
-            "column": 63247,
+            "file": "app/src/lib/stores/repositories-store.ts",
+            "line": 145,
+            "column": 32,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "vendor/yarn-1.21.1.js",
-            "line": 84971,
-            "column": 121510,
+            "file": "app/src/ui/branches/no-branches.tsx",
+            "line": 55,
+            "column": 42,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "vendor/yarn-1.21.1.js",
-            "line": 109797,
-            "column": 2,
+            "file": "app/src/ui/forks/create-fork-dialog.tsx",
+            "line": 120,
+            "column": 12,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "vendor/yarn-1.21.1.js",
-            "line": 121476,
-            "column": 5762,
+            "file": "app/src/ui/lib/list/section-list.tsx",
+            "line": 1428,
+            "column": 11,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "vendor/yarn-1.21.1.js",
-            "line": 127927,
-            "column": 39922,
+            "file": "app/test/unit/bytes-test.ts",
+            "line": 33,
+            "column": 6,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "vendor/yarn-1.21.1.js",
-            "line": 127927,
-            "column": 95478,
+            "file": "app/test/unit/identifier-rules-test.ts",
+            "line": 16,
+            "column": 36,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "vendor/yarn-1.21.1.js",
-            "line": 128357,
-            "column": 4477,
+            "file": "app/test/unit/text-token-parser-test.ts",
+            "line": 35,
+            "column": 20,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "vendor/yarn-1.21.1.js",
-            "line": 147312,
-            "column": 26,
+            "file": "vendor/windows-argv-parser/index.ts",
+            "line": 9,
+            "column": 7,
             "message": "Strings must use singlequote."
           }
         ]
@@ -1144,7 +1138,7 @@
     },
     "semi": {
       "always": {
-        "count": 45416,
+        "count": 39672,
         "samples": [
           {
             "file": ".markdownlint.js",
@@ -1153,122 +1147,110 @@
             "message": "Missing semicolon."
           },
           {
-            "file": "app/src/lib/patch-formatter.ts",
-            "line": 218,
-            "column": 6,
+            "file": "app/src/lib/markdown-filters/commit-mention-link-filter.ts",
+            "line": 292,
+            "column": 52,
             "message": "Missing semicolon."
           },
           {
-            "file": "app/src/lib/stores/notifications-store.ts",
-            "line": 463,
-            "column": 6,
+            "file": "app/src/lib/stores/cloning-repositories-store.ts",
+            "line": 4,
+            "column": 74,
             "message": "Missing semicolon."
           },
           {
-            "file": "app/src/ui/branches/branch-list-item.tsx",
-            "line": 76,
-            "column": 17,
+            "file": "app/src/ui/add-repository/write-default-readme.ts",
+            "line": 20,
+            "column": 54,
             "message": "Missing semicolon."
           },
           {
-            "file": "app/src/ui/dispatcher/dispatcher.ts",
-            "line": 2937,
-            "column": 62,
+            "file": "app/src/ui/commit-progress/commit-progress.tsx",
+            "line": 28,
+            "column": 35,
             "message": "Missing semicolon."
           },
           {
-            "file": "app/src/ui/lib/tooltip.tsx",
-            "line": 502,
+            "file": "app/src/ui/lib/augmented-filter-list.tsx",
+            "line": 8,
+            "column": 44,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "app/src/ui/notifications/pull-request-comment-like.tsx",
+            "line": 164,
             "column": 4,
             "message": "Missing semicolon."
           },
           {
-            "file": "app/test/helpers/fixture.ts",
-            "line": 1,
-            "column": 28,
+            "file": "app/test/unit/commit-identity-test.ts",
+            "line": 16,
+            "column": 8,
             "message": "Missing semicolon."
           },
           {
             "file": "app/test/unit/git/stash-test.ts",
-            "line": 51,
-            "column": 49,
+            "line": 6,
+            "column": 66,
             "message": "Missing semicolon."
           },
           {
-            "file": "vendor/yarn-1.21.1.js",
-            "line": 33514,
-            "column": 28,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "vendor/yarn-1.21.1.js",
-            "line": 146413,
-            "column": 14,
+            "file": "vendor/windows-argv-parser/index.ts",
+            "line": 13,
+            "column": 56,
             "message": "Missing semicolon."
           }
         ]
       },
       "never": {
-        "count": 47185,
+        "count": 8,
         "samples": [
           {
-            "file": "vendor/printenvz/index.d.ts",
-            "line": 4,
-            "column": 43,
+            "file": "vendor/printenvz/index.js",
+            "line": 1,
+            "column": 29,
             "message": "Extra semicolon."
           },
           {
-            "file": "vendor/yarn-1.21.1.js",
-            "line": 22835,
-            "column": 72,
+            "file": "vendor/printenvz/index.js",
+            "line": 2,
+            "column": 25,
             "message": "Extra semicolon."
           },
           {
-            "file": "vendor/yarn-1.21.1.js",
-            "line": 36830,
-            "column": 20,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "vendor/yarn-1.21.1.js",
-            "line": 51079,
-            "column": 51,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "vendor/yarn-1.21.1.js",
-            "line": 64068,
-            "column": 9,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "vendor/yarn-1.21.1.js",
-            "line": 78378,
-            "column": 30,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "vendor/yarn-1.21.1.js",
-            "line": 92906,
-            "column": 69,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "vendor/yarn-1.21.1.js",
-            "line": 108498,
-            "column": 2,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "vendor/yarn-1.21.1.js",
-            "line": 129379,
-            "column": 6,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "vendor/yarn-1.21.1.js",
-            "line": 147312,
+            "file": "vendor/printenvz/index.js",
+            "line": 10,
             "column": 35,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "vendor/printenvz/index.js",
+            "line": 11,
+            "column": 62,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "vendor/printenvz/index.js",
+            "line": 13,
+            "column": 37,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "vendor/printenvz/index.js",
+            "line": 15,
+            "column": 33,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "vendor/printenvz/index.js",
+            "line": 18,
+            "column": 47,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "vendor/printenvz/index.js",
+            "line": 23,
+            "column": 2,
             "message": "Extra semicolon."
           }
         ]

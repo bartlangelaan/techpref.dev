@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "cfacad273e07717ff279d6b570506b604c48c44d",
-  "analyzedCommitDate": "2026-02-18T09:30:25.000Z",
+  "analyzedCommit": "3fc91bfc812ce72355bbe6b5d019277ed56c9281",
+  "analyzedCommitDate": "2026-02-18T20:25:29.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -22,7 +22,7 @@
         ]
       },
       "generic": {
-        "count": 808,
+        "count": 806,
         "samples": [
           {
             "file": ".blueprint/code-workspace/generator.mts",
@@ -32,9 +32,9 @@
           },
           {
             "file": "generators/base-application/internal/utils.ts",
-            "line": 280,
-            "column": 74,
-            "message": "Array type using 'F[]' is forbidden. Use 'Array<F>' instead."
+            "line": 215,
+            "column": 10,
+            "message": "Array type using 'BaseApplicationRelationship[]' is forbidden. Use 'Array<BaseApplicationRelationship>' instead."
           },
           {
             "file": "generators/base-workspaces/internal/docker-prompts.ts",
@@ -43,10 +43,10 @@
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
-            "file": "generators/generate-blueprint/internal/lookup-namespaces.ts",
-            "line": 5,
-            "column": 47,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+            "file": "generators/generate-blueprint/generator.ts",
+            "line": 239,
+            "column": 29,
+            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           },
           {
             "file": "generators/server/generators/bootstrap/generator.ts",
@@ -68,9 +68,9 @@
           },
           {
             "file": "lib/jdl/core/parsing/jdl-ast-builder-visitor.ts",
-            "line": 158,
-            "column": 26,
-            "message": "Array type using 'ParsedJDLAnnotation[]' is forbidden. Use 'Array<ParsedJDLAnnotation>' instead."
+            "line": 156,
+            "column": 87,
+            "message": "Array type using 'CstNode[]' is forbidden. Use 'Array<CstNode>' instead."
           },
           {
             "file": "lib/jdl/core/parsing/validator.ts",
@@ -89,8 +89,15 @@
     },
     "consistent-generic-constructors": {
       "constructor": {
-        "count": 0,
-        "samples": []
+        "count": 1,
+        "samples": [
+          {
+            "file": "generators/java/support/package-info-transform.ts",
+            "line": 32,
+            "column": 33,
+            "message": "The generic type arguments should be specified as part of the constructor type arguments."
+          }
+        ]
       },
       "type-annotation": {
         "count": 26,
@@ -164,7 +171,7 @@
         "samples": []
       },
       "index-signature": {
-        "count": 531,
+        "count": 532,
         "samples": [
           {
             "file": ".blueprint/code-workspace/generator.ts",
@@ -192,8 +199,8 @@
           },
           {
             "file": "lib/ci/support/matrix-utils.ts",
-            "line": 112,
-            "column": 40,
+            "line": 78,
+            "column": 27,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -533,7 +540,7 @@
           },
           {
             "file": "lib/testing/helpers.ts",
-            "line": 167,
+            "line": 163,
             "column": 14,
             "message": "Expected a function declaration."
           },
@@ -564,7 +571,7 @@
           },
           {
             "file": "generators/client/generators/i18n/generator.ts",
-            "line": 29,
+            "line": 32,
             "column": 8,
             "message": "Prefer named exports"
           },
@@ -702,7 +709,7 @@
           },
           {
             "file": "generators/java/support/package-info-transform.ts",
-            "line": 50,
+            "line": 60,
             "column": 1,
             "message": "Expected 2-space indentation, but file uses 1-space indentation."
           },
@@ -877,7 +884,7 @@
     },
     "quotes": {
       "double": {
-        "count": 28143,
+        "count": 28163,
         "samples": [
           {
             "file": ".blueprint/cli/commands.ts",
@@ -887,50 +894,50 @@
           },
           {
             "file": "generators/base-core/generator-core.spec.ts",
-            "line": 7,
-            "column": 44,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "generators/cypress/generator.ts",
-            "line": 275,
-            "column": 13,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "generators/java/generators/gatling/generator.ts",
-            "line": 20,
-            "column": 42,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "generators/liquibase/generator.ts",
-            "line": 425,
-            "column": 26,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "generators/spring-boot/generators/data-relational/generator.spec.ts",
-            "line": 72,
+            "line": 19,
             "column": 12,
             "message": "Strings must use doublequote."
           },
           {
+            "file": "generators/cypress/generator.ts",
+            "line": 294,
+            "column": 39,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "generators/java/generators/gatling/files.ts",
+            "line": 30,
+            "column": 19,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "generators/liquibase/generator.ts",
+            "line": 417,
+            "column": 52,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "generators/spring-boot/generators/data-relational/generator.spec.ts",
+            "line": 19,
+            "column": 76,
+            "message": "Strings must use doublequote."
+          },
+          {
             "file": "lib/command/types.spec.ts",
-            "line": 82,
-            "column": 15,
+            "line": 35,
+            "column": 14,
             "message": "Strings must use doublequote."
           },
           {
             "file": "lib/jdl/converters/validators/validation-validator.ts",
-            "line": 57,
-            "column": 48,
+            "line": 21,
+            "column": 32,
             "message": "Strings must use doublequote."
           },
           {
             "file": "lib/jdl/core/parsing/generated/generated-serialized-grammar.js",
-            "line": 1778,
-            "column": 26,
+            "line": 1774,
+            "column": 23,
             "message": "Strings must use doublequote."
           },
           {
@@ -958,7 +965,7 @@
           },
           {
             "file": "generators/cypress/generator.ts",
-            "line": 111,
+            "line": 131,
             "column": 25,
             "message": "Strings must use singlequote."
           },
@@ -1026,7 +1033,7 @@
         ]
       },
       "never": {
-        "count": 32572,
+        "count": 32595,
         "samples": [
           {
             "file": ".blueprint/cli/commands.ts",
@@ -1036,50 +1043,50 @@
           },
           {
             "file": "generators/base-application/support/prepare-entity.ts",
-            "line": 160,
-            "column": 30,
+            "line": 158,
+            "column": 44,
             "message": "Extra semicolon."
           },
           {
             "file": "generators/client/generators/bootstrap/generator.ts",
-            "line": 109,
-            "column": 88,
+            "line": 118,
+            "column": 65,
             "message": "Extra semicolon."
           },
           {
-            "file": "generators/java-simple-application/generators/maven/support/dependabot-maven.spec.ts",
-            "line": 48,
-            "column": 3,
+            "file": "generators/java-simple-application/generators/maven/needles.spec.ts",
+            "line": 321,
+            "column": 8,
             "message": "Extra semicolon."
           },
           {
             "file": "generators/liquibase/generator.ts",
-            "line": 597,
-            "column": 74,
+            "line": 530,
+            "column": 12,
             "message": "Extra semicolon."
           },
           {
-            "file": "generators/spring-cloud/generators/gateway/jdl/jdl-routes-option.spec.ts",
-            "line": 16,
-            "column": 6,
+            "file": "generators/spring-cloud/generators/gateway/index.ts",
+            "line": 19,
+            "column": 41,
             "message": "Extra semicolon."
           },
           {
             "file": "lib/jdl/converters/json-to-jdl-converter.spec.ts",
-            "line": 36,
-            "column": 40,
+            "line": 22,
+            "column": 29,
             "message": "Extra semicolon."
           },
           {
             "file": "lib/jdl/core/models/jdl-application.spec.ts",
-            "line": 276,
-            "column": 5,
+            "line": 201,
+            "column": 69,
             "message": "Extra semicolon."
           },
           {
             "file": "lib/jdl/core/parsing/jdl-parser.ts",
-            "line": 421,
-            "column": 7,
+            "line": 403,
+            "column": 30,
             "message": "Extra semicolon."
           },
           {

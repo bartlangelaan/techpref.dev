@@ -1,12 +1,24 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "e4acc35bb16b0543ef7b54c0f598d6fd06bb9648",
-  "analyzedCommitDate": "2026-02-04T16:20:24.000Z",
+  "analyzedCommit": "1d69885fb3346af6927af066780b7f55ea8b247c",
+  "analyzedCommitDate": "2026-02-19T18:21:41.000Z",
   "checks": {
     "array-type": {
       "array": {
-        "count": 3,
+        "count": 5,
         "samples": [
+          {
+            "file": "frontend/src/components/agent/AgentActivity.tsx",
+            "line": 179,
+            "column": 64,
+            "message": "Array type using 'Array<any>' is forbidden. Use 'any[]' instead."
+          },
+          {
+            "file": "frontend/src/components/agent/AgentActivity.tsx",
+            "line": 181,
+            "column": 62,
+            "message": "Array type using 'Array<any>' is forbidden. Use 'any[]' instead."
+          },
           {
             "file": "frontend/src/tests/qa.test.ts",
             "line": 9,
@@ -28,67 +40,67 @@
         ]
       },
       "generic": {
-        "count": 71,
+        "count": 102,
         "samples": [
           {
             "file": "frontend/src/App.tsx",
-            "line": 245,
+            "line": 394,
             "column": 22,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
-            "file": "frontend/src/components/UpdateImageUpload.tsx",
-            "line": 20,
-            "column": 29,
+            "file": "frontend/src/components/commits/types.ts",
+            "line": 26,
+            "column": 18,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
             "file": "frontend/src/components/evals/BestOfNEvalsPage.tsx",
-            "line": 28,
-            "column": 50,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
-          },
-          {
-            "file": "frontend/src/components/evals/EvalsPage.tsx",
-            "line": 8,
-            "column": 12,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+            "line": 35,
+            "column": 60,
+            "message": "Array type using 'OutputFolder[]' is forbidden. Use 'Array<OutputFolder>' instead."
           },
           {
             "file": "frontend/src/components/evals/PairwiseEvalsPage.tsx",
-            "line": 14,
-            "column": 10,
-            "message": "Array type using 'Eval[]' is forbidden. Use 'Array<Eval>' instead."
+            "line": 8,
+            "column": 12,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
             "file": "frontend/src/components/evals/RunEvalsPage.tsx",
-            "line": 19,
-            "column": 54,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
-          },
-          {
-            "file": "frontend/src/components/start-pane/StartPane.tsx",
-            "line": 8,
-            "column": 13,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+            "line": 56,
+            "column": 62,
+            "message": "Array type using 'FailedTask[]' is forbidden. Use 'Array<FailedTask>' instead."
           },
           {
             "file": "frontend/src/components/unified-input/tabs/UploadTab.tsx",
-            "line": 146,
-            "column": 12,
-            "message": "Array type using 'FileWithPreview[]' is forbidden. Use 'Array<FileWithPreview>' instead."
-          },
-          {
-            "file": "frontend/src/store/app-store.ts",
-            "line": 15,
-            "column": 29,
+            "line": 55,
+            "column": 60,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
+            "file": "frontend/src/lib/prompt-history.test.ts",
+            "line": 58,
+            "column": 24,
+            "message": "Array type using 'PromptAsset[][]' is forbidden. Use 'Array<PromptAsset[]>' instead."
+          },
+          {
+            "file": "frontend/src/lib/prompt-history.ts",
+            "line": 76,
+            "column": 12,
+            "message": "Array type using 'VariantHistoryMessage[]' is forbidden. Use 'Array<VariantHistoryMessage>' instead."
+          },
+          {
+            "file": "frontend/src/store/project-store.ts",
+            "line": 21,
+            "column": 32,
+            "message": "Array type using 'PromptAsset[]' is forbidden. Use 'Array<PromptAsset>' instead."
+          },
+          {
             "file": "frontend/src/types.ts",
-            "line": 43,
-            "column": 13,
-            "message": "Array type using 'PromptContent[]' is forbidden. Use 'Array<PromptContent>' instead."
+            "line": 65,
+            "column": 17,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           }
         ]
       }
@@ -99,8 +111,15 @@
         "samples": []
       },
       "type-annotation": {
-        "count": 0,
-        "samples": []
+        "count": 1,
+        "samples": [
+          {
+            "file": "frontend/src/lib/prompt-history.ts",
+            "line": 35,
+            "column": 32,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          }
+        ]
       }
     },
     "consistent-indexed-object-style": {
@@ -109,37 +128,49 @@
         "samples": [
           {
             "file": "frontend/src/lib/models.ts",
-            "line": 8,
+            "line": 21,
             "column": 50,
             "message": "A record is preferred over an index signature."
           },
           {
             "file": "frontend/src/lib/stacks.ts",
-            "line": 13,
+            "line": 12,
             "column": 34,
             "message": "A record is preferred over an index signature."
           },
           {
             "file": "frontend/src/store/project-store.ts",
-            "line": 48,
+            "line": 80,
             "column": 24,
             "message": "A record is preferred over an index signature."
           }
         ]
       },
       "index-signature": {
-        "count": 9,
+        "count": 14,
         "samples": [
+          {
+            "file": "frontend/src/App.tsx",
+            "line": 96,
+            "column": 41,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "frontend/src/App.tsx",
+            "line": 97,
+            "column": 42,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "frontend/src/components/agent/AgentActivity.tsx",
+            "line": 448,
+            "column": 5,
+            "message": "An index signature is preferred over a record."
+          },
           {
             "file": "frontend/src/components/evals/EvalsPage.tsx",
             "line": 71,
             "column": 13,
-            "message": "An index signature is preferred over a record."
-          },
-          {
-            "file": "frontend/src/components/history/utils.test.ts",
-            "line": 4,
-            "column": 27,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -155,26 +186,20 @@
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "frontend/src/components/history/utils.test.ts",
-            "line": 67,
-            "column": 31,
+            "file": "frontend/src/lib/prompt-history.test.ts",
+            "line": 72,
+            "column": 23,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "frontend/src/components/history/utils.test.ts",
-            "line": 83,
-            "column": 24,
-            "message": "An index signature is preferred over a record."
-          },
-          {
-            "file": "frontend/src/components/history/utils.ts",
-            "line": 6,
-            "column": 12,
+            "file": "frontend/src/lib/prompt-history.ts",
+            "line": 13,
+            "column": 19,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "frontend/src/store/project-store.ts",
-            "line": 17,
+            "line": 25,
             "column": 12,
             "message": "An index signature is preferred over a record."
           },
@@ -189,17 +214,29 @@
     },
     "consistent-type-definitions": {
       "interface": {
-        "count": 3,
+        "count": 5,
         "samples": [
           {
             "file": "frontend/src/components/commits/types.ts",
-            "line": 5,
+            "line": 10,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
             "file": "frontend/src/components/commits/types.ts",
-            "line": 14,
+            "line": 22,
+            "column": 8,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "frontend/src/components/commits/types.ts",
+            "line": 29,
+            "column": 8,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "frontend/src/components/commits/types.ts",
+            "line": 43,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
@@ -212,65 +249,65 @@
         ]
       },
       "type": {
-        "count": 49,
+        "count": 53,
         "samples": [
           {
             "file": "frontend/src/components/ImageUpload.tsx",
-            "line": 67,
+            "line": 68,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "frontend/src/components/core/StackLabel.tsx",
-            "line": 4,
+            "file": "frontend/src/components/evals/BestOfNEvalsPage.tsx",
+            "line": 6,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "frontend/src/components/evals/EvalsPage.tsx",
-            "line": 19,
+            "file": "frontend/src/components/evals/InputFileSelector.tsx",
+            "line": 6,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "frontend/src/components/evals/RatingPicker.tsx",
-            "line": 1,
-            "column": 1,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "frontend/src/components/preview/CodePreview.tsx",
-            "line": 3,
-            "column": 1,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "frontend/src/components/settings/GenerationSettings.tsx",
-            "line": 8,
-            "column": 1,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "frontend/src/components/ui/badge.tsx",
-            "line": 26,
-            "column": 8,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "frontend/src/components/unified-input/tabs/ImportTab.tsx",
+            "file": "frontend/src/components/evals/RunEvalsPage.tsx",
             "line": 9,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "frontend/src/store/app-store.ts",
-            "line": 5,
+            "file": "frontend/src/components/preview/CodeTab.tsx",
+            "line": 9,
+            "column": 1,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "frontend/src/components/settings/OutputSettingsSection.tsx",
+            "line": 11,
+            "column": 1,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "frontend/src/components/ui/button.tsx",
+            "line": 37,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "frontend/src/components/unified-input/tabs/TextTab.tsx",
+            "line": 8,
+            "column": 1,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "frontend/src/store/project-store.ts",
+            "line": 12,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "frontend/src/types.ts",
-            "line": 39,
+            "line": 56,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           }
@@ -279,35 +316,29 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 26,
+        "count": 39,
         "samples": [
           {
             "file": "frontend/src/App.tsx",
-            "line": 4,
+            "line": 3,
             "column": 1,
-            "message": "Imports CodeGenerationParams and Settings are only used as type."
+            "message": "Imports Settings are only used as type."
           },
           {
-            "file": "frontend/src/components/commits/types.ts",
-            "line": 25,
+            "file": "frontend/src/components/ImportCodeSection.tsx",
+            "line": 15,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "frontend/src/components/history/utils.test.ts",
+            "file": "frontend/src/components/core/StackLabel.tsx",
             "line": 2,
             "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
-          {
-            "file": "frontend/src/components/history/utils.ts",
-            "line": 2,
-            "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
+            "message": "Imports Stack are only used as type."
           },
           {
             "file": "frontend/src/components/preview/PreviewPane.tsx",
-            "line": 10,
+            "line": 15,
             "column": 1,
             "message": "Imports Settings are only used as type."
           },
@@ -318,16 +349,22 @@
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "frontend/src/components/unified-input/UnifiedInputPane.tsx",
+            "file": "frontend/src/components/start-pane/StartPane.tsx",
             "line": 3,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "frontend/src/components/unified-input/tabs/ImportTab.tsx",
-            "line": 7,
+            "file": "frontend/src/components/unified-input/tabs/TextTab.tsx",
+            "line": 6,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
+          },
+          {
+            "file": "frontend/src/hooks/usePersistedState.ts",
+            "line": 1,
+            "column": 1,
+            "message": "Imports Dispatch and SetStateAction are only used as type."
           },
           {
             "file": "frontend/src/store/project-store.ts",
@@ -375,35 +412,35 @@
     },
     "func-style": {
       "expression": {
-        "count": 76,
+        "count": 96,
         "samples": [
           {
             "file": "frontend/src/App.tsx",
-            "line": 26,
+            "line": 35,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "frontend/src/components/ImageUpload.tsx",
-            "line": 76,
+            "file": "frontend/src/components/UpdateImageUpload.tsx",
+            "line": 23,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "frontend/src/components/agent/AgentActivity.tsx",
+            "line": 88,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "frontend/src/components/evals/AllEvalsPage.tsx",
+            "file": "frontend/src/components/evals/EvalsPage.tsx",
+            "line": 23,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "frontend/src/components/messages/TipLink.tsx",
             "line": 3,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "frontend/src/components/generate-from-text/GenerateFromText.tsx",
-            "line": 10,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "frontend/src/components/preview/CodePreview.tsx",
-            "line": 7,
             "column": 1,
             "message": "Expected a function expression."
           },
@@ -414,21 +451,21 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "frontend/src/components/settings/SettingsDialog.tsx",
-            "line": 31,
+            "file": "frontend/src/components/sidebar/Sidebar.tsx",
+            "line": 35,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "frontend/src/components/unified-input/UnifiedInputPane.tsx",
-            "line": 135,
+            "file": "frontend/src/components/unified-input/tabs/ImportTab.tsx",
+            "line": 13,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "frontend/src/components/variants/Variants.tsx",
-            "line": 68,
-            "column": 1,
+            "file": "frontend/src/hooks/useThrottle.ts",
+            "line": 6,
+            "column": 8,
             "message": "Expected a function expression."
           },
           {
@@ -440,29 +477,29 @@
         ]
       },
       "declaration": {
-        "count": 88,
+        "count": 100,
         "samples": [
           {
             "file": "frontend/src/App.tsx",
-            "line": 104,
+            "line": 121,
             "column": 9,
             "message": "Expected a function declaration."
           },
           {
-            "file": "frontend/src/components/TermsOfServiceDialog.tsx",
-            "line": 16,
-            "column": 7,
+            "file": "frontend/src/components/ImageUpload.tsx",
+            "line": 130,
+            "column": 9,
             "message": "Expected a function declaration."
           },
           {
             "file": "frontend/src/components/evals/BestOfNEvalsPage.tsx",
-            "line": 70,
-            "column": 13,
+            "line": 52,
+            "column": 11,
             "message": "Expected a function declaration."
           },
           {
             "file": "frontend/src/components/evals/BestOfNEvalsPage.tsx",
-            "line": 257,
+            "line": 250,
             "column": 9,
             "message": "Expected a function declaration."
           },
@@ -474,26 +511,26 @@
           },
           {
             "file": "frontend/src/components/evals/RunEvalsPage.tsx",
-            "line": 87,
-            "column": 9,
+            "line": 115,
+            "column": 11,
             "message": "Expected a function declaration."
           },
           {
             "file": "frontend/src/components/recording/ScreenRecorder.tsx",
-            "line": 74,
+            "line": 36,
             "column": 9,
             "message": "Expected a function declaration."
           },
           {
-            "file": "frontend/src/components/ui/dialog.tsx",
-            "line": 68,
+            "file": "frontend/src/components/start-pane/StartPane.tsx",
+            "line": 18,
             "column": 7,
             "message": "Expected a function declaration."
           },
           {
             "file": "frontend/src/components/unified-input/tabs/UploadTab.tsx",
-            "line": 98,
-            "column": 9,
+            "line": 80,
+            "column": 11,
             "message": "Expected a function declaration."
           },
           {
@@ -507,7 +544,7 @@
     },
     "import-export-preference": {
       "named": {
-        "count": 43,
+        "count": 46,
         "samples": [
           {
             "file": "frontend/jest.config.js",
@@ -528,14 +565,14 @@
             "message": "Prefer named exports"
           },
           {
-            "file": "frontend/src/components/evals/InputFileSelector.tsx",
-            "line": 150,
+            "file": "frontend/src/components/evals/EvalsPage.tsx",
+            "line": 266,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "frontend/src/components/history/HistoryDisplay.tsx",
-            "line": 19,
+            "file": "frontend/src/components/generate-from-text/GenerateFromText.tsx",
+            "line": 72,
             "column": 8,
             "message": "Prefer named exports"
           },
@@ -552,14 +589,14 @@
             "message": "Prefer named exports"
           },
           {
-            "file": "frontend/src/components/thinking/ThinkingIndicator.tsx",
-            "line": 160,
+            "file": "frontend/src/components/start-pane/StartPane.tsx",
+            "line": 38,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
             "file": "frontend/src/components/unified-input/tabs/UploadTab.tsx",
-            "line": 511,
+            "line": 526,
             "column": 8,
             "message": "Prefer named exports"
           },
@@ -650,7 +687,7 @@
         ]
       },
       "4-space": {
-        "count": 88,
+        "count": 93,
         "samples": [
           {
             "file": "frontend/.eslintrc.cjs",
@@ -659,13 +696,13 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "frontend/src/components/commits/utils.ts",
-            "line": 3,
+            "file": "frontend/src/components/commits/types.ts",
+            "line": 11,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "frontend/src/components/evals/PairwiseEvalsPage.tsx",
+            "file": "frontend/src/components/evals/InputFileSelector.tsx",
             "line": 7,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
@@ -695,7 +732,7 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "frontend/src/components/unified-input/tabs/UploadTab.tsx",
+            "file": "frontend/src/components/unified-input/tabs/UrlTab.tsx",
             "line": 10,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
@@ -715,7 +752,7 @@
         ]
       },
       "tab": {
-        "count": 88,
+        "count": 93,
         "samples": [
           {
             "file": "frontend/.eslintrc.cjs",
@@ -724,13 +761,13 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "frontend/src/components/commits/utils.ts",
-            "line": 3,
+            "file": "frontend/src/components/commits/types.ts",
+            "line": 11,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "frontend/src/components/evals/PairwiseEvalsPage.tsx",
+            "file": "frontend/src/components/evals/InputFileSelector.tsx",
             "line": 7,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
@@ -760,7 +797,7 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "frontend/src/components/unified-input/tabs/UploadTab.tsx",
+            "file": "frontend/src/components/unified-input/tabs/UrlTab.tsx",
             "line": 10,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
@@ -782,7 +819,7 @@
     },
     "quotes": {
       "double": {
-        "count": 35,
+        "count": 31,
         "samples": [
           {
             "file": "frontend/.eslintrc.cjs",
@@ -793,49 +830,49 @@
           {
             "file": "frontend/.eslintrc.cjs",
             "line": 9,
-            "column": 28,
+            "column": 20,
             "message": "Strings must use doublequote."
           },
           {
             "file": "frontend/.eslintrc.cjs",
-            "line": 14,
-            "column": 7,
+            "line": 13,
+            "column": 5,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "frontend/src/components/sidebar/Sidebar.tsx",
-            "line": 51,
-            "column": 50,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "frontend/src/tests/qa.test.ts",
-            "line": 258,
-            "column": 37,
+            "file": "frontend/src/hooks/usePersistedState.ts",
+            "line": 1,
+            "column": 63,
             "message": "Strings must use doublequote."
           },
           {
             "file": "frontend/src/tests/qa.test.ts",
-            "line": 280,
+            "line": 271,
             "column": 27,
             "message": "Strings must use doublequote."
           },
           {
             "file": "frontend/src/tests/qa.test.ts",
-            "line": 304,
-            "column": 26,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "frontend/src/tests/qa.test.ts",
-            "line": 309,
-            "column": 35,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "frontend/src/tests/qa.test.ts",
-            "line": 347,
+            "line": 294,
             "column": 37,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "frontend/src/tests/qa.test.ts",
+            "line": 305,
+            "column": 27,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "frontend/src/tests/qa.test.ts",
+            "line": 317,
+            "column": 27,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "frontend/src/tests/qa.test.ts",
+            "line": 350,
+            "column": 27,
             "message": "Strings must use doublequote."
           },
           {
@@ -847,7 +884,7 @@
         ]
       },
       "single": {
-        "count": 1365,
+        "count": 1717,
         "samples": [
           {
             "file": "frontend/jest.config.js",
@@ -856,51 +893,51 @@
             "message": "Strings must use singlequote."
           },
           {
-            "file": "frontend/src/components/TermsOfServiceDialog.tsx",
-            "line": 26,
-            "column": 9,
+            "file": "frontend/src/components/ImportCodeSection.tsx",
+            "line": 12,
+            "column": 26,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "frontend/src/components/evals/EvalsPage.tsx",
-            "line": 4,
-            "column": 28,
+            "file": "frontend/src/components/commits/utils.ts",
+            "line": 21,
+            "column": 18,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "frontend/src/components/history/utils.test.ts",
-            "line": 70,
-            "column": 11,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "frontend/src/components/preview/PreviewComponent.tsx",
-            "line": 48,
-            "column": 29,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "frontend/src/components/thinking/ThinkingIndicator.tsx",
-            "line": 73,
-            "column": 13,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "frontend/src/components/unified-input/UnifiedInputPane.tsx",
-            "line": 5,
+            "file": "frontend/src/components/evals/RunEvalsPage.tsx",
+            "line": 129,
             "column": 23,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "frontend/src/components/variants/Variants.tsx",
-            "line": 109,
+            "file": "frontend/src/components/preview/PreviewComponent.tsx",
+            "line": 8,
+            "column": 11,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "frontend/src/components/sidebar/Sidebar.tsx",
+            "line": 513,
+            "column": 76,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "frontend/src/components/unified-input/tabs/ImportTab.tsx",
+            "line": 7,
+            "column": 23,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "frontend/src/generateCode.ts",
+            "line": 84,
             "column": 47,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "frontend/src/tests/qa.test.ts",
-            "line": 120,
-            "column": 24,
+            "file": "frontend/src/store/project-store.ts",
+            "line": 87,
+            "column": 14,
             "message": "Strings must use singlequote."
           },
           {
@@ -979,7 +1016,7 @@
         ]
       },
       "never": {
-        "count": 1795,
+        "count": 2297,
         "samples": [
           {
             "file": "frontend/jest.config.js",
@@ -988,51 +1025,51 @@
             "message": "Extra semicolon."
           },
           {
-            "file": "frontend/src/components/ImportCodeSection.tsx",
-            "line": 76,
-            "column": 33,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "frontend/src/components/evals/BestOfNEvalsPage.tsx",
-            "line": 233,
-            "column": 16,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "frontend/src/components/evals/RunEvalsPage.tsx",
-            "line": 6,
+            "file": "frontend/src/components/ImageUpload.tsx",
+            "line": 175,
             "column": 46,
             "message": "Extra semicolon."
           },
           {
-            "file": "frontend/src/components/preview/PreviewComponent.tsx",
-            "line": 29,
-            "column": 41,
+            "file": "frontend/src/components/evals/BestOfNEvalsPage.tsx",
+            "line": 31,
+            "column": 52,
             "message": "Extra semicolon."
           },
           {
-            "file": "frontend/src/components/settings/GenerationSettings.tsx",
-            "line": 24,
-            "column": 8,
+            "file": "frontend/src/components/evals/PairwiseEvalsPage.tsx",
+            "line": 56,
+            "column": 23,
             "message": "Extra semicolon."
           },
           {
-            "file": "frontend/src/components/unified-input/tabs/UploadTab.tsx",
+            "file": "frontend/src/components/preview/CodeTab.tsx",
+            "line": 1,
+            "column": 40,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "frontend/src/components/select-and-edit/utils.ts",
+            "line": 20,
+            "column": 38,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "frontend/src/components/unified-input/tabs/ImportTab.tsx",
+            "line": 5,
+            "column": 73,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "frontend/src/generateCode.ts",
             "line": 2,
-            "column": 45,
+            "column": 42,
             "message": "Extra semicolon."
           },
           {
-            "file": "frontend/src/config.ts",
-            "line": 3,
-            "column": 55,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "frontend/src/tests/qa.test.ts",
-            "line": 51,
-            "column": 64,
+            "file": "frontend/src/store/project-store.ts",
+            "line": 334,
+            "column": 8,
             "message": "Extra semicolon."
           },
           {

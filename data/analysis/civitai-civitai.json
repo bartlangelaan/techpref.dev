@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "1f26e1a6b85f7e724676c8bf1975def312e1e1cd",
-  "analyzedCommitDate": "2026-02-19T20:58:47.000Z",
+  "analyzedCommit": "0cc194c13a3cd3957a21cbc8c441cb9b2b6d3a5f",
+  "analyzedCommitDate": "2026-02-19T21:33:04.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -70,7 +70,7 @@
         ]
       },
       "generic": {
-        "count": 2650,
+        "count": 2651,
         "samples": [
           {
             "file": "prisma/seed.ts",
@@ -98,15 +98,15 @@
           },
           {
             "file": "src/server/db/db-helpers.ts",
-            "line": 172,
-            "column": 19,
-            "message": "Array type using 'any[]' is forbidden. Use 'Array<any>' instead."
+            "line": 203,
+            "column": 7,
+            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           },
           {
-            "file": "src/server/notifications/utils.notifications.ts",
-            "line": 78,
-            "column": 28,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+            "file": "src/server/notifications/notification-cache.ts",
+            "line": 30,
+            "column": 48,
+            "message": "Array type using 'NotificationCategoryCount[]' is forbidden. Use 'Array<NotificationCategoryCount>' instead."
           },
           {
             "file": "src/server/services/collection.service.ts",
@@ -154,7 +154,7 @@
         ]
       },
       "type-annotation": {
-        "count": 103,
+        "count": 104,
         "samples": [
           {
             "file": "scripts/oneoffs/reindex-missing-images.ts",
@@ -182,14 +182,14 @@
           },
           {
             "file": "src/server/jobs/daily-challenge-processing.ts",
-            "line": 837,
-            "column": 33,
+            "line": 1433,
+            "column": 32,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "src/server/rewards/base.reward.ts",
-            "line": 234,
-            "column": 28,
+            "file": "src/server/redis/queues.ts",
+            "line": 45,
+            "column": 26,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
@@ -353,7 +353,7 @@
     },
     "consistent-type-definitions": {
       "interface": {
-        "count": 1009,
+        "count": 1010,
         "samples": [
           {
             "file": "scripts/metric-migration/metric-backfill-config.ts",
@@ -386,8 +386,8 @@
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "src/server/email/templates/trainingFail.email.ts",
-            "line": 4,
+            "file": "src/server/email/templates/verification.email.ts",
+            "line": 5,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
@@ -485,19 +485,13 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 10,
+        "count": 9,
         "samples": [
           {
             "file": "prisma/seed.ts",
             "line": 1,
             "column": 1,
             "message": "Imports ReviewReactions are only used as type."
-          },
-          {
-            "file": "src/server/games/daily-challenge/challenge-helpers.ts",
-            "line": 5,
-            "column": 1,
-            "message": "Imports PoolTrigger are only used as type."
           },
           {
             "file": "src/server/services/csam.service-new.ts",
@@ -550,7 +544,7 @@
         ]
       },
       "no-type-imports": {
-        "count": 2876,
+        "count": 2878,
         "samples": [
           {
             "file": ".ladle/components.tsx",
@@ -559,8 +553,8 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/components/Club/ClubAdminInviteUpsertForm.tsx",
-            "line": 20,
+            "file": "src/components/Club/ClubAdminUpsertForm.tsx",
+            "line": 6,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -572,25 +566,25 @@
           },
           {
             "file": "src/components/Model/ModelVersions/ModelVersionDetails.tsx",
-            "line": 38,
-            "column": 1,
+            "line": 53,
+            "column": 3,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "src/components/Social/SocialLabel.tsx",
+            "line": 3,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "src/pages/api/auth/featurebase.ts",
             "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/pages/api/auth/[...nextauth].ts",
+            "file": "src/providers/StripeProvider.tsx",
             "line": 1,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "src/providers/PaddleProvider.tsx",
-            "line": 2,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -602,7 +596,7 @@
           },
           {
             "file": "src/server/services/model-flag.service.ts",
-            "line": 6,
+            "line": 5,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -617,7 +611,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 3405,
+        "count": 3406,
         "samples": [
           {
             "file": "prisma/seed.ts",
@@ -633,8 +627,8 @@
           },
           {
             "file": "src/components/Image/Infinite/UserMediaInfinite.tsx",
-            "line": 25,
-            "column": 8,
+            "line": 174,
+            "column": 1,
             "message": "Expected a function expression."
           },
           {
@@ -650,9 +644,9 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "src/server/email/templates/base.email.ts",
-            "line": 2,
-            "column": 8,
+            "file": "src/server/email/templates/bounties/bountyExpiredReminder.email.ts",
+            "line": 16,
+            "column": 1,
             "message": "Expected a function expression."
           },
           {
@@ -663,7 +657,7 @@
           },
           {
             "file": "src/server/services/nsfwLevels.service.ts",
-            "line": 258,
+            "line": 241,
             "column": 8,
             "message": "Expected a function expression."
           },
@@ -1078,7 +1072,7 @@
     },
     "quotes": {
       "double": {
-        "count": 58851,
+        "count": 58854,
         "samples": [
           {
             "file": ".ladle/components.tsx",
@@ -1100,26 +1094,26 @@
           },
           {
             "file": "src/components/Profile/ShowcaseItemsInput.tsx",
-            "line": 4,
-            "column": 30,
+            "line": 5,
+            "column": 41,
             "message": "Strings must use doublequote."
           },
           {
             "file": "src/instrumentation.node.ts",
-            "line": 5,
-            "column": 33,
+            "line": 6,
+            "column": 40,
             "message": "Strings must use doublequote."
           },
           {
             "file": "src/pages/moderator/challenges/events.tsx",
-            "line": 20,
-            "column": 26,
+            "line": 22,
+            "column": 28,
             "message": "Strings must use doublequote."
           },
           {
             "file": "src/server/http/nowpayments/nowpayments.caller.ts",
-            "line": 34,
-            "column": 43,
+            "line": 40,
+            "column": 52,
             "message": "Strings must use doublequote."
           },
           {
@@ -1214,7 +1208,7 @@
         "samples": []
       },
       "never": {
-        "count": 85476,
+        "count": 85490,
         "samples": [
           {
             "file": ".ladle/components.tsx",
@@ -1224,50 +1218,50 @@
           },
           {
             "file": "src/components/Club/ClubPost/ClubFeed.tsx",
-            "line": 300,
-            "column": 6,
+            "line": 330,
+            "column": 14,
             "message": "Extra semicolon."
           },
           {
             "file": "src/components/ImageGeneration/GenerationForm/GenerationFormProvider.tsx",
-            "line": 38,
-            "column": 83,
+            "line": 42,
+            "column": 93,
             "message": "Extra semicolon."
           },
           {
             "file": "src/components/Resource/Forms/PostUpsertForm2.tsx",
-            "line": 7,
-            "column": 77,
+            "line": 11,
+            "column": 62,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/pages/api/admin/refresh-sessions.ts",
-            "line": 10,
-            "column": 60,
+            "file": "src/pages/api/admin/rescan-images.ts",
+            "line": 1,
+            "column": 25,
             "message": "Extra semicolon."
           },
           {
             "file": "src/pages/moderator/reports.tsx",
-            "line": 81,
-            "column": 94,
+            "line": 116,
+            "column": 4,
             "message": "Extra semicolon."
           },
           {
             "file": "src/server/jobs/challenge-completion.ts",
-            "line": 3,
-            "column": 69,
+            "line": 11,
+            "column": 62,
             "message": "Extra semicolon."
           },
           {
             "file": "src/server/search-index/utils/taskQueue.ts",
-            "line": 138,
-            "column": 37,
+            "line": 130,
+            "column": 33,
             "message": "Extra semicolon."
           },
           {
             "file": "src/server/services/orchestrator/promptAuditing.ts",
-            "line": 405,
-            "column": 9,
+            "line": 391,
+            "column": 17,
             "message": "Extra semicolon."
           },
           {

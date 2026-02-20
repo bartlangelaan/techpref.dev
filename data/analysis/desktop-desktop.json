@@ -1,11 +1,11 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "63b1cd0714677cc24e1b150a7256a1ccc4ada88c",
-  "analyzedCommitDate": "2026-02-19T10:35:08.000Z",
+  "analyzedCommit": "9217c34b89cc09025eed2a95cd2c0fbd7b970abf",
+  "analyzedCommitDate": "2026-02-20T12:16:27.000Z",
   "checks": {
     "array-type": {
       "array": {
-        "count": 948,
+        "count": 949,
         "samples": [
           {
             "file": "app/src/cli/main.ts",
@@ -21,9 +21,9 @@
           },
           {
             "file": "app/src/lib/menu-item.ts",
-            "line": 105,
-            "column": 10,
-            "message": "Array type using 'ReadonlyArray<IMenuItem>' is forbidden. Use 'readonly IMenuItem[]' instead."
+            "line": 106,
+            "column": 4,
+            "message": "Array type using 'ReadonlyArray<ISerializableMenuItem>' is forbidden. Use 'readonly ISerializableMenuItem[]' instead."
           },
           {
             "file": "app/src/lib/stores/commit-status-store.ts",
@@ -51,9 +51,9 @@
           },
           {
             "file": "app/src/ui/history/unreachable-commits-dialog.tsx",
-            "line": 84,
-            "column": 14,
-            "message": "Array type using 'ReadonlyArray<Commit>' is forbidden. Use 'readonly Commit[]' instead."
+            "line": 43,
+            "column": 26,
+            "message": "Array type using 'ReadonlyArray<string>' is forbidden. Use 'readonly string[]' instead."
           },
           {
             "file": "app/src/ui/merge-conflicts/commit-conflicts-warning.tsx",
@@ -248,7 +248,7 @@
           },
           {
             "file": "app/src/ui/lib/avatar.tsx",
-            "line": 19,
+            "line": 24,
             "column": 52,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
@@ -401,7 +401,7 @@
     },
     "consistent-type-definitions": {
       "interface": {
-        "count": 102,
+        "count": 103,
         "samples": [
           {
             "file": "app/src/lib/api.ts",
@@ -416,9 +416,9 @@
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "app/src/lib/git/core.ts",
-            "line": 50,
-            "column": 8,
+            "file": "app/src/lib/git/stash.ts",
+            "line": 29,
+            "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
@@ -429,7 +429,7 @@
           },
           {
             "file": "app/src/models/drag-drop.ts",
-            "line": 43,
+            "line": 23,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
@@ -447,7 +447,7 @@
           },
           {
             "file": "app/src/models/status.ts",
-            "line": 142,
+            "line": 129,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
@@ -533,7 +533,7 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 1599,
+        "count": 1600,
         "samples": [
           {
             "file": "app/src/crash/crash-app.tsx",
@@ -561,9 +561,9 @@
           },
           {
             "file": "app/src/ui/banners/render-banner.tsx",
-            "line": 5,
+            "line": 7,
             "column": 1,
-            "message": "Imports Banner are only used as type."
+            "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
             "file": "app/src/ui/clone-repository/group-repositories.ts",
@@ -573,7 +573,7 @@
           },
           {
             "file": "app/src/ui/history/compare.tsx",
-            "line": 12,
+            "line": 13,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
@@ -722,8 +722,8 @@
           },
           {
             "file": "app/src/ui/changes/commit-warning.tsx",
-            "line": 38,
-            "column": 14,
+            "line": 12,
+            "column": 7,
             "message": "Expected a function declaration."
           },
           {
@@ -874,7 +874,7 @@
         ]
       },
       "4-space": {
-        "count": 956,
+        "count": 957,
         "samples": [
           {
             "file": "app/app-info.ts",
@@ -895,8 +895,8 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "app/src/models/branches-tab.ts",
-            "line": 3,
+            "file": "app/src/models/cherry-pick.ts",
+            "line": 7,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -907,14 +907,14 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "app/src/ui/invalidated-token/invalidated-token.tsx",
-            "line": 10,
+            "file": "app/src/ui/installing-update/installing-update.tsx",
+            "line": 5,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "app/src/ui/multi-commit-operation/cherry-pick.tsx",
-            "line": 5,
+            "file": "app/src/ui/multi-commit-operation/base-rebase.tsx",
+            "line": 3,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -939,7 +939,7 @@
         ]
       },
       "tab": {
-        "count": 957,
+        "count": 958,
         "samples": [
           {
             "file": "app/app-info.ts",
@@ -954,8 +954,8 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "app/src/lib/source-map-support.ts",
-            "line": 20,
+            "file": "app/src/lib/split-buffer.ts",
+            "line": 2,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -966,8 +966,8 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "app/src/ui/changes/commit-message-avatar.tsx",
-            "line": 6,
+            "file": "app/src/ui/changes/changes.tsx",
+            "line": 4,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -984,8 +984,8 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "app/src/ui/ui-view.tsx",
-            "line": 5,
+            "file": "app/src/ui/tutorial/welcome.tsx",
+            "line": 7,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -1006,7 +1006,7 @@
     },
     "quotes": {
       "double": {
-        "count": 22419,
+        "count": 22416,
         "samples": [
           {
             "file": ".markdownlint.js",
@@ -1023,37 +1023,37 @@
           {
             "file": "app/src/lib/stores/git-store.ts",
             "line": 707,
-            "column": 41,
+            "column": 33,
             "message": "Strings must use doublequote."
           },
           {
             "file": "app/src/ui/app.tsx",
-            "line": 464,
+            "line": 456,
             "column": 12,
             "message": "Strings must use doublequote."
           },
           {
             "file": "app/src/ui/history/commit-list-item.tsx",
-            "line": 14,
-            "column": 29,
+            "line": 10,
+            "column": 54,
             "message": "Strings must use doublequote."
           },
           {
             "file": "app/src/ui/octicons/octicons.generated.ts",
-            "line": 672,
+            "line": 679,
             "column": 7,
             "message": "Strings must use doublequote."
           },
           {
             "file": "app/src/ui/undo/warn-local-changes-before-undo.tsx",
-            "line": 3,
+            "line": 4,
             "column": 28,
             "message": "Strings must use doublequote."
           },
           {
             "file": "app/test/unit/git/diff-test.ts",
             "line": 440,
-            "column": 20,
+            "column": 27,
             "message": "Strings must use doublequote."
           },
           {
@@ -1071,7 +1071,7 @@
         ]
       },
       "single": {
-        "count": 310,
+        "count": 309,
         "samples": [
           {
             "file": "app/src/lib/actions-log-parser/action-log-parser.ts",
@@ -1092,14 +1092,14 @@
             "message": "Strings must use singlequote."
           },
           {
-            "file": "app/src/ui/branches/branch-list.tsx",
-            "line": 236,
-            "column": 31,
+            "file": "app/src/ui/branches/no-branches.tsx",
+            "line": 55,
+            "column": 42,
             "message": "Strings must use singlequote."
           },
           {
             "file": "app/src/ui/forks/create-fork-dialog.tsx",
-            "line": 117,
+            "line": 120,
             "column": 12,
             "message": "Strings must use singlequote."
           },
@@ -1116,9 +1116,9 @@
             "message": "Strings must use singlequote."
           },
           {
-            "file": "app/test/unit/http-test.ts",
-            "line": 53,
-            "column": 8,
+            "file": "app/test/unit/identifier-rules-test.ts",
+            "line": 16,
+            "column": 36,
             "message": "Strings must use singlequote."
           },
           {
@@ -1138,7 +1138,7 @@
     },
     "semi": {
       "always": {
-        "count": 39687,
+        "count": 39700,
         "samples": [
           {
             "file": ".markdownlint.js",
@@ -1148,50 +1148,50 @@
           },
           {
             "file": "app/src/lib/markdown-filters/commit-mention-link-filter.ts",
-            "line": 283,
-            "column": 65,
+            "line": 292,
+            "column": 52,
             "message": "Missing semicolon."
           },
           {
             "file": "app/src/lib/stores/cloning-repositories-store.ts",
-            "line": 3,
-            "column": 58,
+            "line": 7,
+            "column": 59,
             "message": "Missing semicolon."
           },
           {
-            "file": "app/src/ui/add-repository/write-default-readme.ts",
-            "line": 4,
-            "column": 38,
+            "file": "app/src/ui/add-repository/licenses.ts",
+            "line": 91,
+            "column": 4,
             "message": "Missing semicolon."
           },
           {
-            "file": "app/src/ui/commit-progress/commit-progress.tsx",
-            "line": 5,
-            "column": 55,
+            "file": "app/src/ui/commit-message/commit-message-dialog.tsx",
+            "line": 212,
+            "column": 63,
             "message": "Missing semicolon."
           },
           {
             "file": "app/src/ui/lib/application-theme.ts",
-            "line": 131,
-            "column": 31,
+            "line": 89,
+            "column": 29,
             "message": "Missing semicolon."
           },
           {
             "file": "app/src/ui/notifications/pull-request-comment-like.tsx",
-            "line": 128,
-            "column": 6,
+            "line": 96,
+            "column": 48,
             "message": "Missing semicolon."
           },
           {
             "file": "app/test/unit/commit-identity-test.ts",
-            "line": 10,
-            "column": 8,
+            "line": 48,
+            "column": 3,
             "message": "Missing semicolon."
           },
           {
             "file": "app/test/unit/git/stash-test.ts",
-            "line": 4,
-            "column": 29,
+            "line": 3,
+            "column": 52,
             "message": "Missing semicolon."
           },
           {

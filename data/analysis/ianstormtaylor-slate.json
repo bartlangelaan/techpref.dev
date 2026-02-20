@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "d211122d582c19d51023b27ce4940c66f3d205b3",
-  "analyzedCommitDate": "2026-02-11T16:18:11.000Z",
+  "analyzedCommit": "57bdd4feee71f2805af5baab08cf622ee55bceaa",
+  "analyzedCommitDate": "2026-02-20T17:59:38.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -22,7 +22,7 @@
         ]
       },
       "generic": {
-        "count": 213,
+        "count": 187,
         "samples": [
           {
             "file": "packages/slate-dom/src/plugin/with-dom.ts",
@@ -32,51 +32,51 @@
           },
           {
             "file": "packages/slate-hyperscript/src/creators.ts",
-            "line": 131,
-            "column": 4,
-            "message": "Array type using 'Descendant[]' is forbidden. Use 'Array<Descendant>' instead."
+            "line": 106,
+            "column": 13,
+            "message": "Array type using 'any[]' is forbidden. Use 'Array<any>' instead."
           },
           {
             "file": "packages/slate-react/src/chunking/chunk-tree-helper.ts",
-            "line": 481,
-            "column": 21,
-            "message": "Array type using 'Chunk[]' is forbidden. Use 'Array<Chunk>' instead."
+            "line": 180,
+            "column": 30,
+            "message": "Array type using 'ChunkLeaf[]' is forbidden. Use 'Array<ChunkLeaf>' instead."
           },
           {
-            "file": "packages/slate-react/src/hooks/use-decorations.ts",
-            "line": 24,
-            "column": 4,
+            "file": "packages/slate-react/src/components/text.tsx",
+            "line": 25,
+            "column": 16,
             "message": "Array type using 'DecoratedRange[]' is forbidden. Use 'Array<DecoratedRange>' instead."
           },
           {
-            "file": "packages/slate/src/interfaces/editor.ts",
-            "line": 52,
-            "column": 44,
-            "message": "Array type using 'Path[]' is forbidden. Use 'Array<Path>' instead."
-          },
-          {
-            "file": "packages/slate/src/interfaces/text.ts",
-            "line": 127,
-            "column": 17,
-            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
-          },
-          {
-            "file": "playwright/integration/examples/shadow-dom.test.ts",
-            "line": 40,
-            "column": 26,
+            "file": "packages/slate-react/test/decorations.spec.tsx",
+            "line": 53,
+            "column": 33,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
-            "file": "site/examples/ts/custom-types.d.ts",
-            "line": 74,
-            "column": 55,
+            "file": "packages/slate/src/interfaces/node.ts",
+            "line": 485,
+            "column": 15,
+            "message": "Array type using 'Node[]' is forbidden. Use 'Array<Node>' instead."
+          },
+          {
+            "file": "packages/slate/src/transforms-text/delete-text.ts",
+            "line": 106,
+            "column": 20,
+            "message": "Array type using 'NodeEntry[]' is forbidden. Use 'Array<NodeEntry>' instead."
+          },
+          {
+            "file": "site/examples/ts/check-lists.tsx",
+            "line": 29,
+            "column": 21,
             "message": "Array type using 'Descendant[]' is forbidden. Use 'Array<Descendant>' instead."
           },
           {
-            "file": "site/examples/ts/markdown-preview.tsx",
-            "line": 20,
-            "column": 19,
-            "message": "Array type using 'Range[]' is forbidden. Use 'Array<Range>' instead."
+            "file": "site/examples/ts/markdown-shortcuts.tsx",
+            "line": 212,
+            "column": 21,
+            "message": "Array type using 'Descendant[]' is forbidden. Use 'Array<Descendant>' instead."
           },
           {
             "file": "site/pages/examples/[example].tsx",
@@ -209,7 +209,7 @@
     },
     "consistent-indexed-object-style": {
       "record": {
-        "count": 15,
+        "count": 14,
         "samples": [
           {
             "file": "packages/slate-dom/src/utils/range-list.ts",
@@ -218,9 +218,9 @@
             "message": "A record is preferred over an index signature."
           },
           {
-            "file": "packages/slate-hyperscript/src/creators.ts",
-            "line": 81,
-            "column": 17,
+            "file": "packages/slate-dom/src/utils/range-list.ts",
+            "line": 7,
+            "column": 11,
             "message": "A record is preferred over an index signature."
           },
           {
@@ -231,7 +231,7 @@
           },
           {
             "file": "packages/slate-hyperscript/src/creators.ts",
-            "line": 117,
+            "line": 105,
             "column": 17,
             "message": "A record is preferred over an index signature."
           },
@@ -243,7 +243,7 @@
           },
           {
             "file": "packages/slate-hyperscript/src/creators.ts",
-            "line": 178,
+            "line": 141,
             "column": 17,
             "message": "A record is preferred over an index signature."
           },
@@ -255,8 +255,8 @@
           },
           {
             "file": "packages/slate-hyperscript/src/hyperscript.ts",
-            "line": 119,
-            "column": 21,
+            "line": 35,
+            "column": 35,
             "message": "A record is preferred over an index signature."
           },
           {
@@ -266,9 +266,9 @@
             "message": "A record is preferred over an index signature."
           },
           {
-            "file": "site/examples/ts/custom-types.d.ts",
-            "line": 193,
-            "column": 7,
+            "file": "packages/slate/src/types/custom-types.ts",
+            "line": 24,
+            "column": 3,
             "message": "A record is preferred over an index signature."
           }
         ]
@@ -341,11 +341,17 @@
     },
     "consistent-type-definitions": {
       "interface": {
-        "count": 49,
+        "count": 22,
         "samples": [
           {
             "file": "packages/slate-dom/src/utils/diff-text.ts",
             "line": 4,
+            "column": 8,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "packages/slate-dom/src/utils/weak-maps.ts",
+            "line": 14,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
@@ -356,8 +362,26 @@
             "message": "Use `interface` instead of `type`."
           },
           {
+            "file": "packages/slate-react/src/hooks/android-input-manager/android-input-manager.ts",
+            "line": 44,
+            "column": 8,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
             "file": "packages/slate/src/interfaces/operation.ts",
-            "line": 26,
+            "line": 3,
+            "column": 8,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "packages/slate/src/interfaces/operation.ts",
+            "line": 38,
+            "column": 8,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "packages/slate/src/interfaces/operation.ts",
+            "line": 60,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
@@ -368,32 +392,8 @@
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "site/examples/ts/custom-types.d.ts",
-            "line": 5,
-            "column": 8,
-            "message": "Use `interface` instead of `type`."
-          },
-          {
-            "file": "site/examples/ts/custom-types.d.ts",
-            "line": 40,
-            "column": 8,
-            "message": "Use `interface` instead of `type`."
-          },
-          {
-            "file": "site/examples/ts/custom-types.d.ts",
-            "line": 70,
-            "column": 8,
-            "message": "Use `interface` instead of `type`."
-          },
-          {
-            "file": "site/examples/ts/custom-types.d.ts",
-            "line": 83,
-            "column": 8,
-            "message": "Use `interface` instead of `type`."
-          },
-          {
-            "file": "site/examples/ts/custom-types.d.ts",
-            "line": 103,
+            "file": "packages/slate/test/interfaces/CustomTypes/custom-types.ts",
+            "line": 22,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
@@ -406,7 +406,7 @@
         ]
       },
       "type": {
-        "count": 126,
+        "count": 122,
         "samples": [
           {
             "file": "packages/slate-dom/src/custom-types.ts",
@@ -415,15 +415,15 @@
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "packages/slate-react/src/chunking/chunk-tree-helper.ts",
-            "line": 18,
+            "file": "packages/slate-react/src/chunking/reconcile-children.ts",
+            "line": 6,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "packages/slate-react/src/custom-types.ts",
-            "line": 40,
-            "column": 3,
+            "file": "packages/slate-react/src/hooks/use-slate-selector.tsx",
+            "line": 9,
+            "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
@@ -451,8 +451,8 @@
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "packages/slate/src/interfaces/transforms/node.ts",
-            "line": 5,
+            "file": "packages/slate/src/interfaces/transforms/general.ts",
+            "line": 24,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
@@ -473,7 +473,7 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 347,
+        "count": 344,
         "samples": [
           {
             "file": "packages/slate-dom/src/custom-types.ts",
@@ -488,40 +488,40 @@
             "message": "Imports DOMElement, DOMRange, and DOMText are only used as type."
           },
           {
-            "file": "packages/slate-react/test/decorations.spec.tsx",
-            "line": 2,
+            "file": "packages/slate-react/test/chunking.spec.ts",
+            "line": 14,
             "column": 1,
-            "message": "Imports DecoratedRange and NodeEntry are only used as type."
+            "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "packages/slate/src/editor/insert-soft-break.ts",
+            "file": "packages/slate/src/editor/insert-node.ts",
             "line": 2,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "packages/slate/src/editor/range.ts",
+            "file": "packages/slate/src/editor/range-ref.ts",
             "line": 2,
             "column": 1,
-            "message": "Imports EditorInterface are only used as type."
+            "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "packages/slate/src/transforms-node/lift-nodes.ts",
+            "file": "packages/slate/src/transforms-node/insert-nodes.ts",
+            "line": 9,
+            "column": 1,
+            "message": "Imports BaseInsertNodeOperation are only used as type."
+          },
+          {
+            "file": "packages/slate/test/interfaces/CustomTypes/customOperation-true.tsx",
             "line": 1,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "packages/slate/test/interfaces/CustomTypes/customText-true.tsx",
+            "file": "playwright/integration/examples/code-highlighting.test.ts",
             "line": 1,
             "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
-          {
-            "file": "site/components/ExampleLayout.tsx",
-            "line": 1,
-            "column": 1,
-            "message": "Imports ErrorInfo are only used as type."
+            "message": "Imports Page are only used as type."
           },
           {
             "file": "site/examples/ts/iframe.tsx",
@@ -838,7 +838,7 @@
         ]
       },
       "4-space": {
-        "count": 1358,
+        "count": 1353,
         "samples": [
           {
             "file": "babel.config.js",
@@ -847,25 +847,25 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/slate/src/editor/is-start.ts",
+            "file": "packages/slate/src/editor/leaf.ts",
+            "line": 5,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "packages/slate/test/interfaces/Editor/isVoid/block.tsx",
             "line": 6,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/slate/test/interfaces/Editor/isVoid/block-void.tsx",
-            "line": 6,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "packages/slate/test/interfaces/Element/isElementList/full-element.tsx",
+            "file": "packages/slate/test/interfaces/Element/isElementList/not-full-element.tsx",
             "line": 4,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/slate/test/interfaces/Path/hasPrevious/root.tsx",
+            "file": "packages/slate/test/interfaces/Path/hasPrevious/success.tsx",
             "line": 5,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
@@ -883,7 +883,7 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/slate/test/transforms/mergeNodes/path/block-nested.tsx",
+            "file": "packages/slate/test/transforms/mergeNodes/path/block.tsx",
             "line": 6,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
@@ -903,7 +903,7 @@
         ]
       },
       "tab": {
-        "count": 1358,
+        "count": 1353,
         "samples": [
           {
             "file": "babel.config.js",
@@ -912,25 +912,25 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/slate/src/editor/is-start.ts",
+            "file": "packages/slate/src/editor/leaf.ts",
+            "line": 5,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "packages/slate/test/interfaces/Editor/isVoid/block.tsx",
             "line": 6,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/slate/test/interfaces/Editor/isVoid/block-void.tsx",
-            "line": 6,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "packages/slate/test/interfaces/Element/isElementList/full-element.tsx",
+            "file": "packages/slate/test/interfaces/Element/isElementList/not-full-element.tsx",
             "line": 4,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/slate/test/interfaces/Path/hasPrevious/root.tsx",
+            "file": "packages/slate/test/interfaces/Path/hasPrevious/success.tsx",
             "line": 5,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
@@ -948,7 +948,7 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/slate/test/transforms/mergeNodes/path/block-nested.tsx",
+            "file": "packages/slate/test/transforms/mergeNodes/path/block.tsx",
             "line": 6,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
@@ -970,7 +970,7 @@
     },
     "quotes": {
       "double": {
-        "count": 8316,
+        "count": 8281,
         "samples": [
           {
             "file": "babel.config.js",
@@ -986,44 +986,44 @@
           },
           {
             "file": "packages/slate-react/test/use-selected.spec.tsx",
-            "line": 132,
-            "column": 9,
+            "line": 118,
+            "column": 8,
             "message": "Strings must use doublequote."
           },
           {
             "file": "packages/slate/src/types/types.ts",
-            "line": 9,
-            "column": 37,
+            "line": 3,
+            "column": 40,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/slate/test/interfaces/Point/equals/path-before-offset-before.tsx",
+            "file": "packages/slate/test/interfaces/Point/compare/path-after-offset-before.tsx",
             "line": 1,
             "column": 23,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/slate/test/transforms/move/both/basic-reverse.tsx",
-            "line": 3,
-            "column": 21,
+            "file": "packages/slate/test/transforms/move/anchor/distance.tsx",
+            "line": 6,
+            "column": 35,
             "message": "Strings must use doublequote."
           },
           {
             "file": "playwright/integration/examples/markdown-shortcuts.test.ts",
-            "line": 43,
-            "column": 8,
+            "line": 21,
+            "column": 26,
             "message": "Strings must use doublequote."
           },
           {
             "file": "site/examples/js/mentions.jsx",
-            "line": 376,
+            "line": 353,
             "column": 3,
             "message": "Strings must use doublequote."
           },
           {
             "file": "site/examples/ts/iframe.tsx",
-            "line": 148,
-            "column": 11,
+            "line": 158,
+            "column": 15,
             "message": "Strings must use doublequote."
           },
           {
@@ -1102,7 +1102,7 @@
     },
     "semi": {
       "always": {
-        "count": 14699,
+        "count": 14661,
         "samples": [
           {
             "file": "babel.config.js",
@@ -1112,50 +1112,50 @@
           },
           {
             "file": "packages/slate-react/src/components/editable.tsx",
-            "line": 578,
-            "column": 22,
+            "line": 575,
+            "column": 43,
             "message": "Missing semicolon."
           },
           {
             "file": "packages/slate-react/test/decorations.spec.tsx",
-            "line": 661,
-            "column": 9,
+            "line": 580,
+            "column": 11,
             "message": "Missing semicolon."
           },
           {
-            "file": "packages/slate/src/interfaces/transforms/general.ts",
-            "line": 52,
-            "column": 34,
+            "file": "packages/slate/src/interfaces/text.ts",
+            "line": 214,
+            "column": 18,
             "message": "Missing semicolon."
           },
           {
-            "file": "packages/slate/test/interfaces/Editor/nodes/match-function/block.tsx",
-            "line": 18,
-            "column": 50,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "packages/slate/test/interfaces/Path/isChild/above.tsx",
-            "line": 1,
-            "column": 29,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "packages/slate/test/transforms/delete/voids-false/block-hanging-into.tsx",
+            "file": "packages/slate/test/interfaces/Editor/node/range-start.tsx",
             "line": 20,
             "column": 2,
             "message": "Missing semicolon."
           },
           {
-            "file": "packages/slate/test/transforms/unsetNodes/operation-contents-check.tsx",
-            "line": 2,
-            "column": 28,
+            "file": "packages/slate/test/interfaces/Path/isBefore/after.tsx",
+            "line": 1,
+            "column": 29,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "packages/slate/test/transforms/delete/voids-false/block-before.tsx",
+            "line": 17,
+            "column": 2,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "packages/slate/test/transforms/splitNodes/selection/inline-expanded.tsx",
+            "line": 7,
+            "column": 2,
             "message": "Missing semicolon."
           },
           {
             "file": "site/examples/js/mentions.jsx",
-            "line": 193,
-            "column": 47,
+            "line": 90,
+            "column": 62,
             "message": "Missing semicolon."
           },
           {

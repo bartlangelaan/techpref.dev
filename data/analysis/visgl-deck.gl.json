@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "9b4f6132bad5dd1d20d9077d650f5de2f33b25c4",
-  "analyzedCommitDate": "2026-02-20T20:43:17.000Z",
+  "analyzedCommit": "d13ae48a2c54e7b5b6d5e8f38d51f1c0fff8207c",
+  "analyzedCommitDate": "2026-02-21T01:06:40.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -22,7 +22,7 @@
         ]
       },
       "generic": {
-        "count": 843,
+        "count": 844,
         "samples": [
           {
             "file": "examples/basemap-browser/src/config/layers.ts",
@@ -50,9 +50,9 @@
           },
           {
             "file": "modules/core/src/lib/deck.ts",
-            "line": 133,
+            "line": 171,
             "column": 13,
-            "message": "Array type using 'Effect[]' is forbidden. Use 'Array<Effect>' instead."
+            "message": "Array type using 'Widget[]' is forbidden. Use 'Array<Widget>' instead."
           },
           {
             "file": "modules/core/src/passes/pick-layers-pass.ts",
@@ -62,21 +62,21 @@
           },
           {
             "file": "modules/core/src/viewports/viewport.ts",
-            "line": 152,
-            "column": 20,
+            "line": 153,
+            "column": 22,
             "message": "Array type using 'number[]' is forbidden. Use 'Array<number>' instead."
           },
           {
             "file": "modules/geo-layers/src/mvt-layer/coordinate-transform.ts",
-            "line": 25,
-            "column": 36,
-            "message": "Array type using 'number[]' is forbidden. Use 'Array<number>' instead."
+            "line": 29,
+            "column": 39,
+            "message": "Array type using 'number[][]' is forbidden. Use 'Array<number[]>' instead."
           },
           {
-            "file": "modules/layers/src/solid-polygon-layer/polygon-tesselator.ts",
-            "line": 245,
-            "column": 79,
-            "message": "Array type using 'CutPolygon[]' is forbidden. Use 'Array<CutPolygon>' instead."
+            "file": "modules/layers/src/solid-polygon-layer/polygon.ts",
+            "line": 30,
+            "column": 43,
+            "message": "Array type using 'Position[]' is forbidden. Use 'Array<Position>' instead."
           },
           {
             "file": "showcases/wind/src/layers/delaunay-interpolation/delaunay-interpolation.js",
@@ -311,7 +311,7 @@
     },
     "consistent-type-definitions": {
       "interface": {
-        "count": 345,
+        "count": 346,
         "samples": [
           {
             "file": "examples/basemap-browser/src/config/layers.ts",
@@ -326,9 +326,9 @@
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "modules/aggregation-layers/src/grid-layer/bin-options-uniforms.ts",
-            "line": 14,
-            "column": 8,
+            "file": "modules/aggregation-layers/src/grid-layer/grid-cell-layer.ts",
+            "line": 15,
+            "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
@@ -345,20 +345,20 @@
           },
           {
             "file": "modules/core/src/types/layer-props.ts",
-            "line": 26,
+            "line": 107,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
             "file": "modules/extensions/src/path-style/path-style-extension.ts",
-            "line": 19,
-            "column": 1,
+            "line": 24,
+            "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "modules/layers/src/bitmap-layer/bitmap-layer.ts",
-            "line": 52,
-            "column": 1,
+            "file": "modules/layers/src/bitmap-layer/bitmap-layer-uniforms.ts",
+            "line": 18,
+            "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
@@ -443,7 +443,7 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 385,
+        "count": 386,
         "samples": [
           {
             "file": "examples/experimental/tfjs/src/demo-spectrogram.ts",
@@ -459,9 +459,9 @@
           },
           {
             "file": "modules/aggregation-layers/src/screen-grid-layer/screen-grid-cell-layer.ts",
-            "line": 7,
+            "line": 11,
             "column": 1,
-            "message": "Imports UpdateParameters and Color are only used as type."
+            "message": "Imports ScreenGridProps are only used as type."
           },
           {
             "file": "modules/carto/src/layers/label-utils.ts",
@@ -476,22 +476,22 @@
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "modules/core/src/lib/widget-manager.ts",
-            "line": 10,
+            "file": "modules/core/src/lifecycle/component-state.ts",
+            "line": 14,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "modules/extensions/src/data-filter/shader-module.ts",
+            "file": "modules/extensions/src/fill-style/fill-style-extension.ts",
             "line": 7,
             "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
+            "message": "Imports FillStyleModuleProps are only used as type."
           },
           {
             "file": "modules/geo-layers/src/mvt-layer/mvt-layer.ts",
-            "line": 30,
+            "line": 16,
             "column": 1,
-            "message": "Imports TileLayerPickingInfo and TileLayerProps are only used as type."
+            "message": "Imports GeoJsonLayerProps are only used as type."
           },
           {
             "file": "modules/layers/src/geojson-layer/geojson-binary.ts",
@@ -508,7 +508,7 @@
         ]
       },
       "no-type-imports": {
-        "count": 558,
+        "count": 559,
         "samples": [
           {
             "file": "examples/basemap-browser/src/config/build-config.ts",
@@ -542,25 +542,25 @@
           },
           {
             "file": "modules/core/src/scripting/deckgl.ts",
-            "line": 10,
+            "line": 11,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "modules/extensions/src/brushing/shader-module.ts",
-            "line": 6,
+            "line": 8,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "modules/layers/src/bitmap-layer/bitmap-layer-uniforms.ts",
-            "line": 5,
+            "line": 6,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "modules/react/src/deckgl.ts",
-            "line": 15,
+            "file": "modules/react/src/utils/deckgl-context.ts",
+            "line": 2,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -575,7 +575,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 755,
+        "count": 758,
         "samples": [
           {
             "file": "examples/basemap-browser/src/config/build-config.ts",
@@ -597,38 +597,38 @@
           },
           {
             "file": "modules/carto/src/layers/label-utils.ts",
-            "line": 225,
+            "line": 229,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "modules/core/src/lifecycle/props.ts",
-            "line": 7,
+            "line": 20,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "modules/core/src/viewports/globe-viewport.ts",
-            "line": 264,
+            "file": "modules/core/src/viewports/orthographic-viewport.ts",
+            "line": 14,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "modules/geo-layers/src/tileset-2d/utils.ts",
-            "line": 321,
-            "column": 8,
+            "file": "modules/google-maps/src/google-maps-overlay.ts",
+            "line": 29,
+            "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "modules/layers/src/geojson-layer/geojson.ts",
-            "line": 39,
+            "line": 241,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "modules/test-utils/src/lifecycle-test.ts",
-            "line": 20,
-            "column": 1,
+            "line": 222,
+            "column": 8,
             "message": "Expected a function expression."
           },
           {
@@ -686,7 +686,7 @@
           },
           {
             "file": "modules/widgets/src/lib/components/dropdown-menu.tsx",
-            "line": 33,
+            "line": 47,
             "column": 9,
             "message": "Expected a function declaration."
           },
@@ -1036,7 +1036,7 @@
     },
     "quotes": {
       "double": {
-        "count": 8906,
+        "count": 8936,
         "samples": [
           {
             "file": ".eslintrc.cjs",
@@ -1045,51 +1045,51 @@
             "message": "Strings must use doublequote."
           },
           {
-            "file": "examples/website/collision-filter/app.tsx",
-            "line": 91,
-            "column": 19,
+            "file": "examples/website/collision-filter/calculate-labels.ts",
+            "line": 54,
+            "column": 12,
             "message": "Strings must use doublequote."
           },
           {
             "file": "modules/aggregation-layers/src/common/utils/scale-utils.ts",
-            "line": 6,
-            "column": 30,
+            "line": 175,
+            "column": 13,
             "message": "Strings must use doublequote."
           },
           {
             "file": "modules/carto/src/layers/schema/carto-properties-tile-loader.ts",
-            "line": 7,
-            "column": 32,
+            "line": 33,
+            "column": 13,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "modules/core/src/lib/view-manager.ts",
-            "line": 13,
-            "column": 29,
+            "file": "modules/core/src/lib/widget-manager.ts",
+            "line": 5,
+            "column": 23,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "modules/extensions/src/path-style/shaders.glsl.ts",
-            "line": 7,
-            "column": 5,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "modules/layers/src/geojson-layer/geojson-layer.ts",
-            "line": 587,
-            "column": 40,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "modules/test-utils/src/generate-layer-tests.ts",
-            "line": 46,
+            "file": "modules/extensions/src/terrain/shader-module.ts",
+            "line": 11,
             "column": 27,
             "message": "Strings must use doublequote."
           },
           {
+            "file": "modules/layers/src/geojson-layer/geojson.ts",
+            "line": 232,
+            "column": 55,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "modules/test-utils/src/generate-layer-tests.ts",
+            "line": 223,
+            "column": 41,
+            "message": "Strings must use doublequote."
+          },
+          {
             "file": "showcases/wind/src/wind-demo.js",
-            "line": 122,
-            "column": 13,
+            "line": 102,
+            "column": 22,
             "message": "Strings must use doublequote."
           },
           {
@@ -1101,30 +1101,30 @@
         ]
       },
       "single": {
-        "count": 24,
+        "count": 25,
         "samples": [
           {
-            "file": "modules/widgets/src/lib/geocode/geocoders.ts",
-            "line": 137,
-            "column": 24,
+            "file": "modules/widgets/src/geocoder-widget.tsx",
+            "line": 26,
+            "column": 23,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "scripts/extract-types.js",
+            "line": 39,
+            "column": 15,
             "message": "Strings must use singlequote."
           },
           {
             "file": "scripts/write-heading-ids.ts",
-            "line": 46,
-            "column": 7,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "scripts/write-heading-ids.ts",
-            "line": 52,
+            "line": 51,
             "column": 22,
             "message": "Strings must use singlequote."
           },
           {
             "file": "scripts/write-heading-ids.ts",
-            "line": 56,
-            "column": 17,
+            "line": 54,
+            "column": 22,
             "message": "Strings must use singlequote."
           },
           {
@@ -1134,10 +1134,10 @@
             "message": "Strings must use singlequote."
           },
           {
-            "file": "showcases/wind/src/wind-demo.js",
-            "line": 108,
-            "column": 17,
-            "message": "Strings must use singlequote."
+            "file": "showcases/wind/src/layers/delaunay-interpolation/delaunay-interpolation.js",
+            "line": 7,
+            "column": 1,
+            "message": "Expected `from` but found `import`"
           },
           {
             "file": "website/src/doc-demos/codepen-automation.js",
@@ -1233,7 +1233,7 @@
         ]
       },
       "never": {
-        "count": 20606,
+        "count": 20625,
         "samples": [
           {
             "file": ".eslintrc.cjs",
@@ -1243,50 +1243,50 @@
           },
           {
             "file": "examples/website/mask-extension/range-input.tsx",
-            "line": 62,
-            "column": 47,
+            "line": 70,
+            "column": 62,
             "message": "Extra semicolon."
           },
           {
             "file": "modules/carto/src/api/fetch-map.ts",
-            "line": 19,
-            "column": 2,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "modules/core/src/effects/lighting/directional-light.ts",
-            "line": 45,
-            "column": 56,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "modules/core/src/lib/uniform-transition-manager.ts",
-            "line": 43,
-            "column": 59,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "modules/core/src/viewports/viewport.ts",
-            "line": 342,
+            "line": 39,
             "column": 73,
             "message": "Extra semicolon."
           },
           {
+            "file": "modules/core/src/effects/lighting/directional-light.ts",
+            "line": 53,
+            "column": 26,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "modules/core/src/lib/uniform-transition-manager.ts",
+            "line": 61,
+            "column": 30,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "modules/core/src/viewports/viewport.ts",
+            "line": 423,
+            "column": 45,
+            "message": "Extra semicolon."
+          },
+          {
             "file": "modules/geo-layers/src/tileset-2d/tileset-2d.ts",
-            "line": 139,
-            "column": 28,
+            "line": 168,
+            "column": 21,
             "message": "Extra semicolon."
           },
           {
             "file": "modules/layers/src/solid-polygon-layer/polygon.ts",
-            "line": 25,
-            "column": 2,
+            "line": 95,
+            "column": 53,
             "message": "Extra semicolon."
           },
           {
             "file": "modules/widgets/src/screenshot-widget.tsx",
-            "line": 47,
-            "column": 17,
+            "line": 41,
+            "column": 4,
             "message": "Extra semicolon."
           },
           {

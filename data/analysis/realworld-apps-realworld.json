@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "8c5a0b3ee31f20c1cb902d069a9bad72d74c50ff",
-  "analyzedCommitDate": "2026-02-13T16:44:40.000Z",
+  "analyzedCommit": "097ae251d41ff85bed49362a39cfbc2acf357ef0",
+  "analyzedCommitDate": "2026-02-21T22:54:39.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -9,7 +9,7 @@
         "samples": []
       },
       "generic": {
-        "count": 6,
+        "count": 11,
         "samples": [
           {
             "file": "apps/api/server/models/article.model.ts",
@@ -42,10 +42,34 @@
             "message": "Array type using 'User[]' is forbidden. Use 'Array<User>' instead."
           },
           {
-            "file": "apps/api/server/models/user.model.ts",
-            "line": 15,
-            "column": 13,
-            "message": "Array type using 'Comment[]' is forbidden. Use 'Array<Comment>' instead."
+            "file": "specs/e2e/helpers/api.ts",
+            "line": 47,
+            "column": 74,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+          },
+          {
+            "file": "specs/e2e/helpers/api.ts",
+            "line": 92,
+            "column": 12,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+          },
+          {
+            "file": "specs/e2e/helpers/api.ts",
+            "line": 92,
+            "column": 12,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+          },
+          {
+            "file": "specs/e2e/helpers/api.ts",
+            "line": 93,
+            "column": 16,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+          },
+          {
+            "file": "specs/e2e/helpers/articles.ts",
+            "line": 7,
+            "column": 10,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           }
         ]
       }
@@ -56,8 +80,15 @@
         "samples": []
       },
       "type-annotation": {
-        "count": 0,
-        "samples": []
+        "count": 1,
+        "samples": [
+          {
+            "file": "specs/e2e/null-fields.spec.ts",
+            "line": 145,
+            "column": 28,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          }
+        ]
       }
     },
     "consistent-indexed-object-style": {
@@ -76,7 +107,7 @@
         "samples": []
       },
       "type": {
-        "count": 6,
+        "count": 9,
         "samples": [
           {
             "file": "apps/api/server/auth-event-handler.ts",
@@ -113,23 +144,35 @@
             "line": 4,
             "column": 8,
             "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "specs/e2e/helpers/api.ts",
+            "line": 5,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "specs/e2e/helpers/articles.ts",
+            "line": 3,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "specs/e2e/helpers/debug.ts",
+            "line": 24,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
           }
         ]
       }
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 12,
+        "count": 20,
         "samples": [
           {
             "file": "apps/api/prisma/seed.ts",
             "line": 11,
-            "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
-          {
-            "file": "apps/api/server/models/article.model.ts",
-            "line": 1,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
@@ -146,31 +189,13 @@
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "apps/api/server/routes/api/articles/[slug]/favorite/index.delete.ts",
-            "line": 2,
-            "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
-          {
             "file": "apps/api/server/routes/api/articles/[slug]/favorite/index.post.ts",
             "line": 2,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "apps/api/server/routes/api/tags/index.get.ts",
-            "line": 1,
-            "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
-          {
-            "file": "apps/api/server/utils/author.mapper.ts",
-            "line": 1,
-            "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
-          {
-            "file": "apps/api/server/utils/profile.utils.ts",
+            "file": "apps/api/server/routes/api/user/index.get.ts",
             "line": 1,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
@@ -180,75 +205,106 @@
             "line": 2,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
+          },
+          {
+            "file": "specs/e2e/helpers/api.ts",
+            "line": 1,
+            "column": 1,
+            "message": "All imports in the declaration are only used as types. Use `import type`."
+          },
+          {
+            "file": "specs/e2e/helpers/auth.ts",
+            "line": 1,
+            "column": 1,
+            "message": "All imports in the declaration are only used as types. Use `import type`."
+          },
+          {
+            "file": "specs/e2e/helpers/debug.ts",
+            "line": 1,
+            "column": 1,
+            "message": "All imports in the declaration are only used as types. Use `import type`."
+          },
+          {
+            "file": "specs/e2e/xss-security.spec.ts",
+            "line": 1,
+            "column": 1,
+            "message": "Imports Page are only used as type."
           }
         ]
       },
       "no-type-imports": {
-        "count": 0,
-        "samples": []
+        "count": 1,
+        "samples": [
+          {
+            "file": "specs/e2e/playwright.base.ts",
+            "line": 1,
+            "column": 10,
+            "message": "Use an `import` instead of an `import type`."
+          }
+        ]
       }
     },
     "func-style": {
       "expression": {
-        "count": 16,
+        "count": 46,
         "samples": [
           {
-            "file": "api/hurl-to-bruno.js",
-            "line": 16,
-            "column": 1,
+            "file": "apps/api/server/auth-event-handler.ts",
+            "line": 9,
+            "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "api/hurl-to-bruno.js",
-            "line": 32,
-            "column": 3,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "api/hurl-to-bruno.js",
+            "file": "specs/api/hurl-to-bruno.js",
             "line": 177,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "api/hurl-to-bruno.js",
-            "line": 188,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "api/hurl-to-bruno.js",
-            "line": 210,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "api/hurl-to-bruno.js",
+            "file": "specs/api/hurl-to-bruno.js",
             "line": 227,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "api/hurl-to-bruno.js",
-            "line": 382,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "api/hurl-to-bruno.js",
-            "line": 507,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "api/hurl-to-bruno.js",
+            "file": "specs/api/hurl-to-bruno.js",
             "line": 523,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "apps/documentation/astro.config.mjs",
-            "line": 42,
+            "file": "specs/e2e/helpers/api.ts",
+            "line": 44,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "specs/e2e/helpers/articles.ts",
+            "line": 58,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "specs/e2e/helpers/auth.ts",
+            "line": 25,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "specs/e2e/helpers/comments.ts",
+            "line": 29,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "specs/e2e/helpers/debug.ts",
+            "line": 73,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "specs/e2e/xss-security.spec.ts",
+            "line": 105,
             "column": 1,
             "message": "Expected a function expression."
           }
@@ -387,7 +443,7 @@
         ]
       },
       "default": {
-        "count": 5,
+        "count": 6,
         "samples": [
           {
             "file": "apps/api/server/utils/auth.ts",
@@ -418,6 +474,12 @@
             "line": 4,
             "column": 1,
             "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "specs/e2e/playwright.base.ts",
+            "line": 24,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
           }
         ]
       }
@@ -435,14 +497,8 @@
         ]
       },
       "4-space": {
-        "count": 14,
+        "count": 34,
         "samples": [
-          {
-            "file": "api/hurl-to-bruno.js",
-            "line": 17,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
           {
             "file": "apps/api/nitro.config.ts",
             "line": 3,
@@ -450,38 +506,14 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "apps/api/server/models/article.model.ts",
-            "line": 4,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "apps/api/server/models/comment.model.ts",
-            "line": 4,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "apps/api/server/models/profile.model.ts",
+            "file": "apps/api/server/models/http-exception.model.ts",
             "line": 2,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "apps/api/server/models/tag.model.ts",
-            "line": 2,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "apps/api/server/utils/article.mapper.ts",
-            "line": 4,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "apps/api/server/utils/author.mapper.ts",
-            "line": 4,
+            "file": "apps/api/server/models/user.model.ts",
+            "line": 5,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -492,49 +524,67 @@
             "message": "Expected 4-space indentation, but file uses 30-space indentation."
           },
           {
-            "file": "apps/documentation/src/content/config.ts",
-            "line": 5,
+            "file": "specs/e2e/articles.spec.ts",
+            "line": 4,
             "column": 1,
-            "message": "Expected spaces for indentation, but found tabs."
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "specs/e2e/error-handling.spec.ts",
+            "line": 9,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "specs/e2e/helpers/auth.ts",
+            "line": 4,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "specs/e2e/navigation.spec.ts",
+            "line": 7,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "specs/e2e/settings.spec.ts",
+            "line": 13,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "specs/e2e/xss-security.spec.ts",
+            "line": 39,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
           }
         ]
       },
       "tab": {
-        "count": 44,
+        "count": 64,
         "samples": [
           {
-            "file": "api/hurl-to-bruno.js",
-            "line": 17,
+            "file": "apps/api/nitro.config.ts",
+            "line": 3,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "apps/api/server/models/comment.model.ts",
-            "line": 4,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "apps/api/server/routes/api/[...].options.ts",
+            "file": "apps/api/server/models/tag.model.ts",
             "line": 2,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "apps/api/server/routes/api/articles/[slug]/favorite/index.delete.ts",
+            "file": "apps/api/server/routes/api/articles/[slug]/favorite/index.post.ts",
             "line": 6,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "apps/api/server/routes/api/articles/feed.get.ts",
-            "line": 5,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "apps/api/server/routes/api/profiles/[username]/index.get.ts",
-            "line": 6,
+            "file": "apps/api/server/routes/api/profiles/[username]/follow/index.delete.ts",
+            "line": 7,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -545,14 +595,8 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "apps/api/server/routes/api/v2/profile/[id].get.ts",
-            "line": 2,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "apps/api/server/utils/foo.ts",
-            "line": 2,
+            "file": "apps/api/server/utils/auth.ts",
+            "line": 5,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -561,137 +605,155 @@
             "line": 43,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "specs/e2e/health.spec.ts",
+            "line": 4,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "specs/e2e/navigation.spec.ts",
+            "line": 7,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "specs/e2e/xss-security.spec.ts",
+            "line": 39,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
           }
         ]
       }
     },
     "quotes": {
       "double": {
-        "count": 145,
+        "count": 1357,
         "samples": [
           {
-            "file": "api/hurl-to-bruno.js",
+            "file": "apps/api/nitro.config.ts",
+            "line": 4,
+            "column": 11,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "specs/api/hurl-to-bruno.js",
             "line": 246,
+            "column": 53,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "specs/e2e/error-handling.spec.ts",
+            "line": 46,
+            "column": 30,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "specs/e2e/error-handling.spec.ts",
+            "line": 390,
+            "column": 22,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "specs/e2e/error-handling.spec.ts",
+            "line": 664,
+            "column": 84,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "specs/e2e/helpers/articles.ts",
+            "line": 40,
+            "column": 44,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "specs/e2e/null-fields.spec.ts",
+            "line": 28,
             "column": 27,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "apps/api/server/auth-event-handler.ts",
-            "line": 20,
-            "column": 37,
+            "file": "specs/e2e/social.spec.ts",
+            "line": 66,
+            "column": 49,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "apps/api/server/routes/api/articles/[slug]/index.delete.ts",
-            "line": 27,
-            "column": 22,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "apps/api/server/routes/api/profiles/[username]/follow/index.post.ts",
-            "line": 5,
-            "column": 40,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "apps/api/server/routes/api/v2/profile/[id].put.ts",
-            "line": 9,
-            "column": 18,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "apps/api/server/utils/author.mapper.ts",
-            "line": 1,
-            "column": 22,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "apps/documentation/astro.config.mjs",
-            "line": 62,
-            "column": 24,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "apps/documentation/astro.config.mjs",
-            "line": 103,
-            "column": 40,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "apps/documentation/astro.config.mjs",
-            "line": 137,
-            "column": 39,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "apps/documentation/src/content/config.ts",
-            "line": 2,
+            "file": "specs/e2e/user-fetch-errors.spec.ts",
+            "line": 98,
             "column": 28,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "specs/e2e/xss-security.spec.ts",
+            "line": 264,
+            "column": 81,
             "message": "Strings must use doublequote."
           }
         ]
       },
       "single": {
-        "count": 155,
+        "count": 157,
         "samples": [
           {
-            "file": "api/hurl-to-bruno.js",
-            "line": 5,
-            "column": 89,
+            "file": "apps/api/nitro.config.ts",
+            "line": 3,
+            "column": 11,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "api/hurl-to-bruno.js",
-            "line": 102,
-            "column": 15,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "api/hurl-to-bruno.js",
-            "line": 180,
-            "column": 29,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "api/hurl-to-bruno.js",
-            "line": 235,
-            "column": 44,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "api/hurl-to-bruno.js",
-            "line": 405,
-            "column": 76,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "api/hurl-to-bruno.js",
-            "line": 517,
-            "column": 61,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "apps/api/server/routes/api/articles/[slug]/favorite/index.delete.ts",
-            "line": 6,
-            "column": 40,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "apps/api/server/routes/api/articles/index.post.ts",
+            "file": "apps/api/server/routes/api/articles/[slug]/index.delete.ts",
             "line": 1,
             "column": 27,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "apps/api/server/routes/api/user/index.put.ts",
-            "line": 2,
-            "column": 41,
+            "file": "apps/api/server/routes/api/profiles/[username]/follow/index.delete.ts",
+            "line": 1,
+            "column": 27,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "apps/documentation/astro.config.mjs",
-            "line": 3,
-            "column": 25,
+            "file": "apps/api/server/routes/api/users/login.post.ts",
+            "line": 11,
+            "column": 56,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "specs/api/hurl-to-bruno.js",
+            "line": 12,
+            "column": 42,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "specs/api/hurl-to-bruno.js",
+            "line": 124,
+            "column": 19,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "specs/api/hurl-to-bruno.js",
+            "line": 195,
+            "column": 48,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "specs/api/hurl-to-bruno.js",
+            "line": 308,
+            "column": 23,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "specs/api/hurl-to-bruno.js",
+            "line": 442,
+            "column": 34,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "specs/e2e/error-handling.spec.ts",
+            "line": 81,
+            "column": 53,
             "message": "Strings must use singlequote."
           }
         ]
@@ -764,66 +826,66 @@
         ]
       },
       "never": {
-        "count": 504,
+        "count": 2025,
         "samples": [
           {
-            "file": "api/hurl-to-bruno.js",
-            "line": 5,
-            "column": 98,
+            "file": "apps/api/nitro.config.ts",
+            "line": 8,
+            "column": 3,
             "message": "Extra semicolon."
           },
           {
-            "file": "api/hurl-to-bruno.js",
-            "line": 157,
+            "file": "apps/api/server/routes/api/users/login.post.ts",
+            "line": 11,
             "column": 76,
             "message": "Extra semicolon."
           },
           {
-            "file": "api/hurl-to-bruno.js",
-            "line": 309,
-            "column": 77,
+            "file": "specs/api/hurl-to-bruno.js",
+            "line": 346,
+            "column": 36,
             "message": "Extra semicolon."
           },
           {
-            "file": "api/hurl-to-bruno.js",
-            "line": 490,
+            "file": "specs/e2e/auth.spec.ts",
+            "line": 96,
+            "column": 68,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "specs/e2e/error-handling.spec.ts",
+            "line": 421,
+            "column": 61,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "specs/e2e/helpers/api.ts",
+            "line": 63,
+            "column": 70,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "specs/e2e/null-fields.spec.ts",
+            "line": 41,
+            "column": 38,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "specs/e2e/social.spec.ts",
+            "line": 38,
+            "column": 38,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "specs/e2e/user-fetch-errors.spec.ts",
+            "line": 63,
             "column": 46,
             "message": "Extra semicolon."
           },
           {
-            "file": "apps/api/server/auth-event-handler.ts",
-            "line": 16,
-            "column": 18,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "apps/api/server/routes/api/articles/[slug]/favorite/index.post.ts",
-            "line": 40,
-            "column": 7,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "apps/api/server/routes/api/articles/index.get.ts",
-            "line": 57,
-            "column": 29,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "apps/api/server/routes/api/user/index.get.ts",
-            "line": 24,
-            "column": 3,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "apps/api/server/routes/api/v2/auth/signup.post.ts",
-            "line": 7,
-            "column": 3,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "apps/documentation/src/content/config.ts",
-            "line": 6,
-            "column": 2,
+            "file": "specs/e2e/xss-security.spec.ts",
+            "line": 267,
+            "column": 44,
             "message": "Extra semicolon."
           }
         ]

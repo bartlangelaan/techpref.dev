@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "e889123216fc1537c9d1090e26d539228f7ea7ca",
-  "analyzedCommitDate": "2026-02-21T13:31:09.000Z",
+  "analyzedCommit": "46422aec4f4f4aec27b26b1a7b0550668db37b54",
+  "analyzedCommitDate": "2026-02-24T18:24:40.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -9,25 +9,31 @@
         "samples": []
       },
       "generic": {
-        "count": 95,
+        "count": 111,
         "samples": [
           {
-            "file": "backend/cache.ts",
-            "line": 10,
-            "column": 16,
-            "message": "Array type using 'StarRecord[]' is forbidden. Use 'Array<StarRecord>' instead."
+            "file": "arena/bigquery.ts",
+            "line": 26,
+            "column": 14,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+          },
+          {
+            "file": "arena/github.ts",
+            "line": 74,
+            "column": 19,
+            "message": "Array type using 'QualifyingRepo[]' is forbidden. Use 'Array<QualifyingRepo>' instead."
           },
           {
             "file": "backend/shared/common/chart.tsx",
-            "line": 61,
-            "column": 120,
-            "message": "Array type using 'RepoData[]' is forbidden. Use 'Array<RepoData>' instead."
+            "line": 10,
+            "column": 125,
+            "message": "Array type using 'RepoStarData[]' is forbidden. Use 'Array<RepoStarData>' instead."
           },
           {
-            "file": "backend/shared/packages/components/ToolTip.tsx",
-            "line": 6,
-            "column": 12,
-            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
+            "file": "backend/shared/common/utils.tsx",
+            "line": 2,
+            "column": 54,
+            "message": "Array type using 'number[]' is forbidden. Use 'Array<number>' instead."
           },
           {
             "file": "frontend/components/RepoInputer.tsx",
@@ -36,34 +42,28 @@
             "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           },
           {
-            "file": "frontend/helpers/sponsor.tsx",
-            "line": 20,
+            "file": "frontend/helpers/storage.tsx",
+            "line": 56,
             "column": 17,
-            "message": "Array type using 'Sponsor[]' is forbidden. Use 'Array<Sponsor>' instead."
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
-            "file": "frontend/plugins/scripts/generateSitemap.ts",
-            "line": 26,
-            "column": 42,
-            "message": "Array type using 'Route[]' is forbidden. Use 'Array<Route>' instead."
-          },
-          {
-            "file": "frontend/shared/common/chart.tsx",
-            "line": 10,
-            "column": 125,
-            "message": "Array type using 'RepoStarData[]' is forbidden. Use 'Array<RepoStarData>' instead."
+            "file": "frontend/scripts/generateBlogJson.mts",
+            "line": 72,
+            "column": 20,
+            "message": "Array type using 'BlogEntry[]' is forbidden. Use 'Array<BlogEntry>' instead."
           },
           {
             "file": "frontend/shared/common/chart.tsx",
-            "line": 173,
-            "column": 25,
-            "message": "Array type using 'XYData[]' is forbidden. Use 'Array<XYData>' instead."
+            "line": 124,
+            "column": 26,
+            "message": "Array type using 'RepoData[]' is forbidden. Use 'Array<RepoData>' instead."
           },
           {
-            "file": "frontend/shared/packages/xy-chart.tsx",
-            "line": 40,
-            "column": 15,
-            "message": "Array type using 'XYData[]' is forbidden. Use 'Array<XYData>' instead."
+            "file": "frontend/shared/packages/utils/drawLegend.tsx",
+            "line": 5,
+            "column": 12,
+            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           },
           {
             "file": "frontend/store/index.tsx",
@@ -105,8 +105,14 @@
         ]
       },
       "type-annotation": {
-        "count": 2,
+        "count": 3,
         "samples": [
+          {
+            "file": "arena/github.ts",
+            "line": 120,
+            "column": 23,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
           {
             "file": "backend/cache.ts",
             "line": 30,
@@ -128,17 +134,23 @@
         "samples": []
       },
       "index-signature": {
-        "count": 4,
+        "count": 5,
         "samples": [
           {
+            "file": "arena/bigquery.ts",
+            "line": 9,
+            "column": 29,
+            "message": "An index signature is preferred over a record."
+          },
+          {
             "file": "frontend/pages/blog/[slug].tsx",
-            "line": 153,
+            "line": 151,
             "column": 27,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "frontend/pages/blog/[slug].tsx",
-            "line": 180,
+            "line": 178,
             "column": 34,
             "message": "An index signature is preferred over a record."
           },
@@ -176,47 +188,47 @@
         ]
       },
       "type": {
-        "count": 53,
+        "count": 55,
         "samples": [
           {
-            "file": "backend/cache.ts",
-            "line": 9,
-            "column": 1,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "backend/shared/packages/xy-chart.tsx",
-            "line": 33,
+            "file": "arena/types.ts",
+            "line": 1,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "backend/shared/types/chart.tsx",
-            "line": 15,
-            "column": 8,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "frontend/components/GenerateEmbedCodeDialog.tsx",
-            "line": 13,
-            "column": 1,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "frontend/components/Toast.tsx",
+            "file": "backend/shared/packages/utils/drawLegend.tsx",
             "line": 4,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "frontend/helpers/toast.tsx",
-            "line": 7,
+            "file": "backend/shared/types/chart.tsx",
+            "line": 5,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "frontend/components/GenerateEmbedCodeDialog.tsx",
+            "line": 8,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "frontend/pages/index.tsx",
-            "line": 11,
+            "file": "frontend/components/TableOfContents.tsx",
+            "line": 9,
+            "column": 1,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "frontend/helpers/storage.tsx",
+            "line": 4,
+            "column": 1,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "frontend/pages/blog/index.tsx",
+            "line": 13,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
@@ -308,8 +320,26 @@
         ]
       },
       "no-type-imports": {
-        "count": 5,
+        "count": 8,
         "samples": [
+          {
+            "file": "arena/bigquery.ts",
+            "line": 5,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "arena/db.ts",
+            "line": 5,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "arena/github.ts",
+            "line": 4,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
           {
             "file": "backend/cache.ts",
             "line": 3,
@@ -324,7 +354,7 @@
           },
           {
             "file": "frontend/pages/index.tsx",
-            "line": 7,
+            "line": 8,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -345,12 +375,24 @@
     },
     "func-style": {
       "expression": {
-        "count": 40,
+        "count": 55,
         "samples": [
           {
-            "file": "backend/shared/common/api.tsx",
-            "line": 7,
-            "column": 12,
+            "file": "arena/bigquery.ts",
+            "line": 9,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "arena/fetch.ts",
+            "line": 5,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "arena/github.ts",
+            "line": 135,
+            "column": 1,
             "message": "Expected a function expression."
           },
           {
@@ -361,43 +403,31 @@
           },
           {
             "file": "backend/shared/common/utils.tsx",
-            "line": 55,
+            "line": 61,
             "column": 12,
             "message": "Expected a function expression."
           },
           {
-            "file": "backend/shared/common/utils.tsx",
-            "line": 112,
-            "column": 12,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "frontend/helpers/storage.tsx",
-            "line": 15,
-            "column": 12,
+            "file": "frontend/components/LeftSidebar.tsx",
+            "line": 5,
+            "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "frontend/pages/blog/[slug].tsx",
-            "line": 129,
-            "column": 8,
+            "line": 34,
+            "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "frontend/shared/common/api.tsx",
-            "line": 21,
+            "line": 32,
             "column": 12,
             "message": "Expected a function expression."
           },
           {
             "file": "frontend/shared/common/utils.tsx",
-            "line": 10,
-            "column": 12,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "frontend/shared/common/utils.tsx",
-            "line": 61,
+            "line": 43,
             "column": 12,
             "message": "Expected a function expression."
           },
@@ -410,7 +440,7 @@
         ]
       },
       "declaration": {
-        "count": 107,
+        "count": 106,
         "samples": [
           {
             "file": "backend/main.ts",
@@ -426,7 +456,7 @@
           },
           {
             "file": "backend/utils.ts",
-            "line": 16,
+            "line": 7,
             "column": 14,
             "message": "Expected a function declaration."
           },
@@ -438,7 +468,7 @@
           },
           {
             "file": "frontend/components/RepoInputer.tsx",
-            "line": 248,
+            "line": 225,
             "column": 11,
             "message": "Expected a function declaration."
           },
@@ -455,9 +485,9 @@
             "message": "Expected a function declaration."
           },
           {
-            "file": "frontend/server.js",
+            "file": "frontend/shared/common/chart.tsx",
             "line": 10,
-            "column": 7,
+            "column": 14,
             "message": "Expected a function declaration."
           },
           {
@@ -477,7 +507,7 @@
     },
     "import-export-preference": {
       "named": {
-        "count": 49,
+        "count": 50,
         "samples": [
           {
             "file": "backend/cache.ts",
@@ -510,8 +540,8 @@
             "message": "Prefer named exports"
           },
           {
-            "file": "frontend/components/layout.tsx",
-            "line": 8,
+            "file": "frontend/components/header.tsx",
+            "line": 121,
             "column": 8,
             "message": "Prefer named exports"
           },
@@ -542,8 +572,20 @@
         ]
       },
       "default": {
-        "count": 2,
+        "count": 4,
         "samples": [
+          {
+            "file": "arena/bigquery.ts",
+            "line": 24,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "arena/github.ts",
+            "line": 71,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
           {
             "file": "backend/shared/packages/utils/drawWatermark.tsx",
             "line": 6,
@@ -565,13 +607,13 @@
         "samples": [
           {
             "file": "frontend/components/RepoInputer.tsx",
-            "line": 98,
+            "line": 50,
             "column": 1,
             "message": "Expected 2-space indentation, but file uses 11-space indentation."
           },
           {
             "file": "frontend/pages/index.tsx",
-            "line": 17,
+            "line": 18,
             "column": 1,
             "message": "Expected spaces for indentation, but found tabs."
           },
@@ -584,8 +626,20 @@
         ]
       },
       "4-space": {
-        "count": 21,
+        "count": 27,
         "samples": [
+          {
+            "file": "arena/bigquery.ts",
+            "line": 10,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "arena/github.ts",
+            "line": 13,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
           {
             "file": "backend/cache.ts",
             "line": 10,
@@ -593,28 +647,22 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "backend/main.ts",
-            "line": 13,
+            "file": "backend/shared/packages/utils/addFont.tsx",
+            "line": 5,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 6-space indentation."
+          },
+          {
+            "file": "backend/utils.ts",
+            "line": 8,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "backend/shared/packages/xy-chart.tsx",
-            "line": 160,
+            "file": "frontend/components/RepoInputer.tsx",
+            "line": 50,
             "column": 1,
-            "message": "Expected 4-space indentation, but file uses 10-space indentation."
-          },
-          {
-            "file": "frontend/components/GitHubStarButton.tsx",
-            "line": 22,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 14-space indentation."
-          },
-          {
-            "file": "frontend/components/header.tsx",
-            "line": 9,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+            "message": "Expected 4-space indentation, but file uses 11-space indentation."
           },
           {
             "file": "frontend/next-sitemap.config.js",
@@ -623,22 +671,16 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "frontend/pages/index.tsx",
-            "line": 17,
-            "column": 1,
-            "message": "Expected spaces for indentation, but found tabs."
-          },
-          {
-            "file": "frontend/plugins/scripts/generateSitemap.ts",
-            "line": 7,
+            "file": "frontend/plugins/scripts/copyExtensionFiles.ts",
+            "line": 5,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "frontend/shared/packages/utils/addFont.tsx",
-            "line": 5,
+            "file": "frontend/server/cache.ts",
+            "line": 10,
             "column": 1,
-            "message": "Expected 4-space indentation, but file uses 6-space indentation."
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
             "file": "frontend/store/index.tsx",
@@ -649,59 +691,59 @@
         ]
       },
       "tab": {
-        "count": 71,
+        "count": 78,
         "samples": [
           {
-            "file": "backend/cache.ts",
+            "file": "arena/bigquery.ts",
             "line": 10,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "backend/shared/packages/utils/addFont.tsx",
-            "line": 4,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "backend/shared/types/chart.tsx",
-            "line": 6,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "frontend/components/EmbedMarkdownSection.tsx",
+            "file": "backend/shared/common/api.tsx",
             "line": 7,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "frontend/components/Toast.tsx",
+            "file": "backend/shared/packages/utils/drawLegend.tsx",
             "line": 5,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "frontend/helpers/toast.tsx",
-            "line": 8,
+            "file": "frontend/components/Charts/StarXYChart.tsx",
+            "line": 7,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "frontend/pages/index.tsx",
-            "line": 16,
+            "file": "frontend/components/RightSidebar.tsx",
+            "line": 6,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "frontend/server/cache.ts",
-            "line": 10,
+            "file": "frontend/components/layout.tsx",
+            "line": 5,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "frontend/shared/packages/utils/drawLabels.tsx",
+            "file": "frontend/pages/_document.tsx",
             "line": 4,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "frontend/server.js",
+            "line": 11,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "frontend/shared/packages/utils/drawAxis.tsx",
+            "line": 7,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -716,8 +758,14 @@
     },
     "quotes": {
       "double": {
-        "count": 22,
+        "count": 25,
         "samples": [
+          {
+            "file": "arena/test.ts",
+            "line": 71,
+            "column": 7,
+            "message": "Strings must use doublequote."
+          },
           {
             "file": "backend/logger.ts",
             "line": 5,
@@ -737,27 +785,21 @@
             "message": "Strings must use doublequote."
           },
           {
-            "file": "frontend/components/RepoInputer.tsx",
-            "line": 99,
-            "column": 59,
+            "file": "frontend/components/StarChartViewer.tsx",
+            "line": 202,
+            "column": 40,
             "message": "Strings must use doublequote."
           },
           {
             "file": "frontend/next-sitemap.config.js",
-            "line": 2,
-            "column": 14,
+            "line": 6,
+            "column": 26,
             "message": "Strings must use doublequote."
           },
           {
             "file": "frontend/next-sitemap.config.js",
             "line": 7,
-            "column": 26,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "frontend/pages/_document.tsx",
-            "line": 1,
-            "column": 56,
+            "column": 41,
             "message": "Strings must use doublequote."
           },
           {
@@ -767,9 +809,9 @@
             "message": "Strings must use doublequote."
           },
           {
-            "file": "frontend/server.js",
-            "line": 27,
-            "column": 11,
+            "file": "frontend/scripts/generateBlogJson.mts",
+            "line": 53,
+            "column": 56,
             "message": "Strings must use doublequote."
           },
           {
@@ -781,60 +823,60 @@
         ]
       },
       "single": {
-        "count": 1532,
+        "count": 1684,
         "samples": [
           {
-            "file": "backend/cache.ts",
+            "file": "arena/bigquery.ts",
             "line": 1,
-            "column": 22,
+            "column": 26,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "backend/shared/packages/components/ToolTip.tsx",
-            "line": 131,
-            "column": 20,
+            "file": "backend/main.ts",
+            "line": 60,
+            "column": 14,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "backend/shared/packages/utils/drawLegend.tsx",
-            "line": 45,
-            "column": 28,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "backend/shared/packages/xy-chart.tsx",
-            "line": 279,
-            "column": 28,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "frontend/components/RepoInputer.tsx",
-            "line": 301,
+            "file": "backend/shared/packages/utils/addFont.tsx",
+            "line": 4,
             "column": 59,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "frontend/helpers/sponsor.tsx",
-            "line": 42,
-            "column": 15,
+            "file": "backend/shared/packages/utils/getFormatTimeline.tsx",
+            "line": 40,
+            "column": 20,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "frontend/shared/common/utils.tsx",
-            "line": 38,
-            "column": 22,
+            "file": "frontend/components/EmbedMarkdownSection.tsx",
+            "line": 32,
+            "column": 80,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "frontend/shared/packages/utils/drawLabels.tsx",
-            "line": 17,
-            "column": 17,
+            "file": "frontend/components/Toast.tsx",
+            "line": 20,
+            "column": 18,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "frontend/scripts/generateBlogJson.mts",
+            "line": 90,
+            "column": 74,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "frontend/shared/packages/utils/drawAxis.tsx",
+            "line": 40,
+            "column": 56,
             "message": "Strings must use singlequote."
           },
           {
             "file": "frontend/shared/packages/xy-chart.tsx",
-            "line": 84,
-            "column": 56,
+            "line": 19,
+            "column": 54,
             "message": "Strings must use singlequote."
           },
           {
@@ -848,7 +890,7 @@
     },
     "semi": {
       "always": {
-        "count": 1619,
+        "count": 1631,
         "samples": [
           {
             "file": "backend/main.ts",
@@ -858,50 +900,50 @@
           },
           {
             "file": "backend/shared/packages/components/ToolTip.tsx",
-            "line": 33,
-            "column": 13,
+            "line": 34,
+            "column": 18,
             "message": "Missing semicolon."
           },
           {
             "file": "backend/shared/packages/utils/getFormatTimeline.tsx",
-            "line": 1,
-            "column": 26,
+            "line": 3,
+            "column": 56,
             "message": "Missing semicolon."
           },
           {
             "file": "frontend/components/EmbedMarkdownSection.tsx",
-            "line": 24,
-            "column": 34,
+            "line": 32,
+            "column": 491,
             "message": "Missing semicolon."
           },
           {
             "file": "frontend/components/StarChartViewer.tsx",
-            "line": 73,
-            "column": 76,
+            "line": 57,
+            "column": 56,
             "message": "Missing semicolon."
           },
           {
-            "file": "frontend/components/layout.tsx",
-            "line": 1,
-            "column": 29,
+            "file": "frontend/components/footer.tsx",
+            "line": 56,
+            "column": 6,
             "message": "Missing semicolon."
           },
           {
             "file": "frontend/scripts/generateBlogJson.mts",
-            "line": 94,
-            "column": 84,
+            "line": 83,
+            "column": 21,
             "message": "Missing semicolon."
           },
           {
             "file": "frontend/shared/common/utils.tsx",
-            "line": 93,
-            "column": 45,
+            "line": 85,
+            "column": 23,
             "message": "Missing semicolon."
           },
           {
             "file": "frontend/shared/packages/utils/drawLegend.tsx",
-            "line": 28,
-            "column": 26,
+            "line": 27,
+            "column": 43,
             "message": "Missing semicolon."
           },
           {
@@ -913,60 +955,60 @@
         ]
       },
       "never": {
-        "count": 331,
+        "count": 515,
         "samples": [
           {
-            "file": "backend/cache.ts",
+            "file": "arena/bigquery.ts",
             "line": 1,
-            "column": 33,
+            "column": 50,
             "message": "Extra semicolon."
           },
           {
-            "file": "backend/main.ts",
-            "line": 36,
-            "column": 42,
+            "file": "arena/fetch.ts",
+            "line": 22,
+            "column": 54,
             "message": "Extra semicolon."
           },
           {
-            "file": "backend/main.ts",
+            "file": "arena/github.ts",
             "line": 125,
-            "column": 59,
+            "column": 5,
             "message": "Extra semicolon."
           },
           {
-            "file": "backend/token.ts",
-            "line": 15,
-            "column": 14,
+            "file": "arena/test.ts",
+            "line": 165,
+            "column": 5,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "backend/main.ts",
+            "line": 31,
+            "column": 5,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "backend/main.ts",
+            "line": 186,
+            "column": 56,
             "message": "Extra semicolon."
           },
           {
             "file": "frontend/components/RepoInputer.tsx",
-            "line": 61,
-            "column": 26,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "frontend/components/TokenSettingDialog.tsx",
-            "line": 35,
-            "column": 6,
+            "line": 51,
+            "column": 63,
             "message": "Extra semicolon."
           },
           {
             "file": "frontend/plugins/scripts/copyExtensionFiles.ts",
-            "line": 20,
-            "column": 34,
+            "line": 9,
+            "column": 6,
             "message": "Extra semicolon."
           },
           {
-            "file": "frontend/server.js",
-            "line": 26,
-            "column": 57,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "frontend/store/index.tsx",
-            "line": 53,
-            "column": 59,
+            "file": "frontend/server/cache.ts",
+            "line": 33,
+            "column": 21,
             "message": "Extra semicolon."
           },
           {

@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "0a5a5c19c14c8ebfb9a3d4d80cdbe15cc124237d",
-  "analyzedCommitDate": "2026-02-25T11:57:16.000Z",
+  "analyzedCommit": "c5133a487640d4679761bf9d9e6fb12b06d1b2a5",
+  "analyzedCommitDate": "2026-02-25T16:44:40.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -70,7 +70,7 @@
         ]
       },
       "generic": {
-        "count": 494,
+        "count": 498,
         "samples": [
           {
             "file": "packages/kit/src/components.ts",
@@ -91,28 +91,28 @@
             "message": "Array type using 'unknown[]' is forbidden. Use 'Array<unknown>' instead."
           },
           {
-            "file": "packages/nuxt/src/app/types.ts",
-            "line": 45,
-            "column": 15,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+            "file": "packages/nuxt/src/app/utils.ts",
+            "line": 11,
+            "column": 34,
+            "message": "Array type using 'Trace[]' is forbidden. Use 'Array<Trace>' instead."
           },
           {
-            "file": "packages/nuxt/src/core/nuxt.ts",
-            "line": 935,
-            "column": 81,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
-          },
-          {
-            "file": "packages/nuxt/src/pages/runtime/plugins/prerender.server.ts",
-            "line": 16,
+            "file": "packages/nuxt/src/core/plugins/import-protection.ts",
+            "line": 8,
             "column": 13,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
+          },
+          {
+            "file": "packages/nuxt/src/pages/runtime/utils.ts",
+            "line": 4,
+            "column": 46,
+            "message": "Array type using 'any[]' is forbidden. Use 'Array<any>' instead."
           },
           {
             "file": "packages/nuxt/test/pages.test.ts",
-            "line": 297,
-            "column": 16,
-            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
+            "line": 382,
+            "column": 18,
+            "message": "Array type using 'NuxtPage[]' is forbidden. Use 'Array<NuxtPage>' instead."
           },
           {
             "file": "packages/schema/src/types/nuxt.ts",
@@ -141,7 +141,7 @@
         "samples": [
           {
             "file": "packages/nuxt/src/app/nuxt.ts",
-            "line": 449,
+            "line": 450,
             "column": 24,
             "message": "The generic type arguments should be specified as part of the constructor type arguments."
           },
@@ -153,7 +153,7 @@
           },
           {
             "file": "packages/nuxt/src/pages/utils.ts",
-            "line": 344,
+            "line": 370,
             "column": 65,
             "message": "The generic type arguments should be specified as part of the constructor type arguments."
           },
@@ -249,7 +249,7 @@
           },
           {
             "file": "packages/nuxt/src/app/nuxt.ts",
-            "line": 171,
+            "line": 172,
             "column": 5,
             "message": "A record is preferred over an index signature."
           },
@@ -285,7 +285,7 @@
           },
           {
             "file": "packages/schema/src/types/schema.ts",
-            "line": 1864,
+            "line": 1876,
             "column": 18,
             "message": "A record is preferred over an index signature."
           },
@@ -298,7 +298,7 @@
         ]
       },
       "index-signature": {
-        "count": 256,
+        "count": 257,
         "samples": [
           {
             "file": "packages/kit/src/loader/config.ts",
@@ -320,8 +320,8 @@
           },
           {
             "file": "packages/nuxt/src/app/nuxt.ts",
-            "line": 185,
-            "column": 23,
+            "line": 164,
+            "column": 12,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -331,14 +331,14 @@
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "packages/nuxt/src/head/runtime/components.ts",
-            "line": 43,
-            "column": 35,
+            "file": "packages/nuxt/src/core/templates.ts",
+            "line": 202,
+            "column": 78,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "packages/nuxt/test/pages.test.ts",
-            "line": 29,
+            "line": 46,
             "column": 40,
             "message": "An index signature is preferred over a record."
           },
@@ -497,7 +497,7 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 11,
+        "count": 13,
         "samples": [
           {
             "file": "packages/kit/src/loader/nuxt.ts",
@@ -509,12 +509,6 @@
             "file": "packages/kit/src/loader/nuxt.ts",
             "line": 42,
             "column": 50,
-            "message": "`import()` type annotations are forbidden."
-          },
-          {
-            "file": "packages/kit/src/loader/nuxt.ts",
-            "line": 42,
-            "column": 129,
             "message": "`import()` type annotations are forbidden."
           },
           {
@@ -530,21 +524,27 @@
             "message": "`import()` type annotations are forbidden."
           },
           {
-            "file": "packages/nuxt/test/load-nuxt.test.ts",
-            "line": 20,
-            "column": 45,
+            "file": "packages/nuxt/src/core/schema.ts",
+            "line": 69,
+            "column": 59,
+            "message": "`import()` type annotations are forbidden."
+          },
+          {
+            "file": "packages/nuxt/test/page-metadata.test.ts",
+            "line": 15,
+            "column": 37,
             "message": "`import()` type annotations are forbidden."
           },
           {
             "file": "packages/nuxt/test/pages.test.ts",
-            "line": 20,
-            "column": 33,
+            "line": 12,
+            "column": 37,
             "message": "`import()` type annotations are forbidden."
           },
           {
-            "file": "test/fixtures/basic-types/app/app-types.ts",
-            "line": 651,
-            "column": 18,
+            "file": "packages/nuxt/test/pages.test.ts",
+            "line": 37,
+            "column": 33,
             "message": "`import()` type annotations are forbidden."
           },
           {
@@ -562,7 +562,7 @@
         ]
       },
       "no-type-imports": {
-        "count": 547,
+        "count": 549,
         "samples": [
           {
             "file": "packages/kit/src/build.ts",
@@ -577,20 +577,20 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/nuxt/src/app/composables/lazy-hydration.ts",
-            "line": 1,
+            "file": "packages/nuxt/src/app/composables/loading-indicator.ts",
+            "line": 2,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "packages/nuxt/src/components/plugins/transform.ts",
-            "line": 3,
-            "column": 1,
+            "line": 9,
+            "column": 10,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/nuxt/src/imports/presets.ts",
-            "line": 1,
+            "file": "packages/nuxt/src/imports/transform.ts",
+            "line": 2,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -601,14 +601,14 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/schema/src/types/schema.ts",
+            "file": "packages/schema/src/types/router.ts",
             "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "packages/vite/src/plugins/client-manifest.ts",
-            "line": 10,
+            "line": 9,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -629,7 +629,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 734,
+        "count": 737,
         "samples": [
           {
             "file": "packages/kit/src/build.ts",
@@ -639,13 +639,13 @@
           },
           {
             "file": "packages/kit/src/resolve.ts",
-            "line": 105,
+            "line": 121,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "packages/nuxt/src/app/components/nuxt-island.ts",
-            "line": 100,
+            "line": 192,
             "column": 5,
             "message": "Expected a function expression."
           },
@@ -663,25 +663,25 @@
           },
           {
             "file": "packages/nuxt/src/core/plugins/keyed-functions.ts",
-            "line": 235,
-            "column": 9,
+            "line": 246,
+            "column": 11,
             "message": "Expected a function expression."
           },
           {
-            "file": "packages/nuxt/src/utils.ts",
-            "line": 6,
+            "file": "packages/nuxt/src/pages/utils.ts",
+            "line": 563,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "packages/vite/src/utils/config.ts",
-            "line": 3,
+            "file": "packages/vite/src/shared/server.ts",
+            "line": 28,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "scripts/release.ts",
-            "line": 17,
+            "line": 12,
             "column": 1,
             "message": "Expected a function expression."
           },
@@ -704,7 +704,7 @@
           },
           {
             "file": "packages/nuxt/src/app/composables/cookie.ts",
-            "line": 87,
+            "line": 105,
             "column": 11,
             "message": "Expected a function declaration."
           },
@@ -740,7 +740,7 @@
           },
           {
             "file": "test/basic.test.ts",
-            "line": 1314,
+            "line": 1332,
             "column": 11,
             "message": "Expected a function declaration."
           },
@@ -903,7 +903,7 @@
           },
           {
             "file": "packages/nuxt/test/page-metadata.test.ts",
-            "line": 398,
+            "line": 412,
             "column": 1,
             "message": "Expected 2-space indentation, but file uses 1-space indentation."
           },
@@ -916,7 +916,7 @@
         ]
       },
       "4-space": {
-        "count": 647,
+        "count": 648,
         "samples": [
           {
             "file": "eslint.config.mjs",
@@ -937,14 +937,14 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/nuxt/test/builder.test.ts",
+            "file": "packages/nuxt/test/cache.test.ts",
             "line": 10,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/schema/src/types/compiler.ts",
-            "line": 8,
+            "file": "packages/schema/src/types/components.ts",
+            "line": 2,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -981,7 +981,7 @@
         ]
       },
       "tab": {
-        "count": 647,
+        "count": 648,
         "samples": [
           {
             "file": "eslint.config.mjs",
@@ -1002,14 +1002,14 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/nuxt/test/builder.test.ts",
+            "file": "packages/nuxt/test/cache.test.ts",
             "line": 10,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/schema/src/types/compiler.ts",
-            "line": 8,
+            "file": "packages/schema/src/types/components.ts",
+            "line": 2,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -1048,7 +1048,7 @@
     },
     "quotes": {
       "double": {
-        "count": 17096,
+        "count": 17171,
         "samples": [
           {
             "file": "eslint.config.mjs",
@@ -1057,50 +1057,50 @@
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/nitro-server/src/runtime/utils/renderer/app.ts",
-            "line": 11,
-            "column": 70,
+            "file": "packages/nitro-server/src/runtime/utils/renderer/build-files.ts",
+            "line": 5,
+            "column": 31,
             "message": "Strings must use doublequote."
           },
           {
             "file": "packages/nuxt/src/components/plugins/transform.ts",
-            "line": 84,
-            "column": 17,
+            "line": 127,
+            "column": 59,
             "message": "Strings must use doublequote."
           },
           {
             "file": "packages/nuxt/src/pages/module.ts",
-            "line": 128,
-            "column": 45,
+            "line": 212,
+            "column": 18,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/nuxt/test/load-nuxt.test.ts",
-            "line": 34,
-            "column": 10,
+            "file": "packages/nuxt/test/naming.test.ts",
+            "line": 1,
+            "column": 38,
             "message": "Strings must use doublequote."
           },
           {
             "file": "packages/schema/src/config/vite.ts",
-            "line": 100,
-            "column": 82,
+            "line": 83,
+            "column": 66,
             "message": "Strings must use doublequote."
           },
           {
             "file": "packages/webpack/src/presets/style.ts",
-            "line": 49,
+            "line": 52,
             "column": 57,
             "message": "Strings must use doublequote."
           },
           {
             "file": "test/bundle.test.ts",
-            "line": 43,
-            "column": 69,
+            "line": 58,
+            "column": 37,
             "message": "Strings must use doublequote."
           },
           {
             "file": "test/nuxt/composables.test.ts",
-            "line": 102,
+            "line": 111,
             "column": 7,
             "message": "Strings must use doublequote."
           },
@@ -1180,7 +1180,7 @@
     },
     "semi": {
       "always": {
-        "count": 20004,
+        "count": 20099,
         "samples": [
           {
             "file": "eslint.config.mjs",
@@ -1190,50 +1190,50 @@
           },
           {
             "file": "packages/nuxt/src/app/components/client-fallback.server.ts",
-            "line": 38,
-            "column": 18,
+            "line": 55,
+            "column": 39,
             "message": "Missing semicolon."
           },
           {
             "file": "packages/nuxt/src/app/plugins/dev-server-logs.ts",
-            "line": 6,
-            "column": 24,
+            "line": 34,
+            "column": 7,
             "message": "Missing semicolon."
           },
           {
             "file": "packages/nuxt/src/core/schema.ts",
-            "line": 71,
-            "column": 13,
+            "line": 125,
+            "column": 40,
             "message": "Missing semicolon."
           },
           {
-            "file": "packages/nuxt/test/component-names.test.ts",
-            "line": 29,
-            "column": 5,
+            "file": "packages/nuxt/test/components-fixture/components/client/WithClientOnlySetup.vue",
+            "line": 63,
+            "column": 48,
             "message": "Missing semicolon."
           },
           {
-            "file": "packages/schema/test/folder-structure.spec.ts",
-            "line": 3,
-            "column": 35,
+            "file": "packages/schema/src/types/schema.ts",
+            "line": 39,
+            "column": 115,
             "message": "Missing semicolon."
           },
           {
             "file": "packages/webpack/src/webpack.ts",
-            "line": 221,
-            "column": 129,
+            "line": 213,
+            "column": 22,
             "message": "Missing semicolon."
           },
           {
             "file": "test/e2e/test-utils.ts",
-            "line": 96,
-            "column": 6,
+            "line": 102,
+            "column": 194,
             "message": "Missing semicolon."
           },
           {
             "file": "test/nuxt/composables.test.ts",
-            "line": 1043,
-            "column": 44,
+            "line": 1070,
+            "column": 5,
             "message": "Missing semicolon."
           },
           {

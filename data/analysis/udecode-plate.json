@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "37320406b39123fd5d49ae7f22c7d067039f9567",
-  "analyzedCommitDate": "2026-02-24T15:08:55.000Z",
+  "analyzedCommit": "2f719540d5201472ceef318f48eee5a44ea4e11e",
+  "analyzedCommitDate": "2026-02-26T07:31:25.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -40,7 +40,7 @@
         ]
       },
       "generic": {
-        "count": 1160,
+        "count": 1164,
         "samples": [
           {
             "file": "apps/www/scripts/build-docs-registry.mts",
@@ -61,40 +61,40 @@
             "message": "Array type using 'TElement[]' is forbidden. Use 'Array<TElement>' instead."
           },
           {
-            "file": "packages/core/src/lib/plugins/dom/DOMPlugin.ts",
-            "line": 83,
-            "column": 43,
-            "message": "Array type using 'number[]' is forbidden. Use 'Array<number>' instead."
+            "file": "packages/core/src/lib/plugins/getCorePlugins.ts",
+            "line": 33,
+            "column": 13,
+            "message": "Array type using 'AnyPluginConfig[]' is forbidden. Use 'Array<AnyPluginConfig>' instead."
           },
           {
             "file": "packages/diff/src/internal/transforms/transformDiffTexts.ts",
-            "line": 245,
-            "column": 10,
-            "message": "Array type using 'TText[]' is forbidden. Use 'Array<TText>' instead."
+            "line": 247,
+            "column": 4,
+            "message": "Array type using 'Operation[]' is forbidden. Use 'Array<Operation>' instead."
           },
           {
-            "file": "packages/link/src/lib/utils/createLinkNode.ts",
-            "line": 7,
-            "column": 14,
-            "message": "Array type using 'TText[]' is forbidden. Use 'Array<TText>' instead."
-          },
-          {
-            "file": "packages/markdown/src/lib/serializer/convertTextsSerialize.ts",
-            "line": 22,
-            "column": 17,
+            "file": "packages/list-classic/src/lib/BaseListPlugin.ts",
+            "line": 27,
+            "column": 28,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
-            "file": "packages/slate/src/utils/deleteMerge.ts",
-            "line": 126,
-            "column": 20,
-            "message": "Array type using 'NodeEntry[]' is forbidden. Use 'Array<NodeEntry>' instead."
+            "file": "packages/markdown/src/lib/serializer/convertTextsSerialize.ts",
+            "line": 23,
+            "column": 13,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
-            "file": "packages/test-utils/src/internals/hyperscript.ts",
-            "line": 134,
-            "column": 17,
-            "message": "Array type using 'any[]' is forbidden. Use 'Array<any>' instead."
+            "file": "packages/suggestion/src/lib/BaseSuggestionPlugin.ts",
+            "line": 32,
+            "column": 44,
+            "message": "Array type using 'TInlineSuggestionData[]' is forbidden. Use 'Array<TInlineSuggestionData>' instead."
+          },
+          {
+            "file": "packages/toc/src/react/hooks/useContentObserver.ts",
+            "line": 36,
+            "column": 33,
+            "message": "Array type using 'IntersectionObserverEntry[]' is forbidden. Use 'Array<IntersectionObserverEntry>' instead."
           },
           {
             "file": "templates/plate-template/src/lib/utils.ts",
@@ -107,11 +107,18 @@
     },
     "consistent-generic-constructors": {
       "constructor": {
-        "count": 0,
-        "samples": []
+        "count": 1,
+        "samples": [
+          {
+            "file": "packages/code-block/src/lib/setCodeBlockToDecorations.ts",
+            "line": 14,
+            "column": 38,
+            "message": "The generic type arguments should be specified as part of the constructor type arguments."
+          }
+        ]
       },
       "type-annotation": {
-        "count": 40,
+        "count": 39,
         "samples": [
           {
             "file": "apps/www/scripts/build-docs-registry.mts",
@@ -127,20 +134,20 @@
           },
           {
             "file": "packages/code-block/src/lib/setCodeBlockToDecorations.ts",
-            "line": 113,
+            "line": 111,
             "column": 36,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "packages/diff/src/internal/utils/inline-node-char-map.ts",
-            "line": 5,
-            "column": 41,
+            "file": "packages/docx-io/src/lib/html-to-docx/helpers/render-document-file.ts",
+            "line": 881,
+            "column": 37,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "packages/docx-io/src/lib/preprocessMammothHtml.ts",
-            "line": 73,
-            "column": 23,
+            "file": "packages/emoji/src/lib/utils/Grid/Grid.ts",
+            "line": 10,
+            "column": 27,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
@@ -156,9 +163,9 @@
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "packages/table/src/lib/queries/getTableOverriddenColSizes.spec.ts",
-            "line": 52,
-            "column": 32,
+            "file": "packages/test-utils/src/internals/creators.ts",
+            "line": 29,
+            "column": 28,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
@@ -388,11 +395,30 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 0,
-        "samples": []
+        "count": 3,
+        "samples": [
+          {
+            "file": "packages/autoformat/src/lib/__tests__/withAutoformat/block/list.spec.tsx",
+            "line": 165,
+            "column": 16,
+            "message": "`import()` type annotations are forbidden."
+          },
+          {
+            "file": "packages/slate/src/internal/transforms/deselect.spec.ts",
+            "line": 15,
+            "column": 37,
+            "message": "`import()` type annotations are forbidden."
+          },
+          {
+            "file": "packages/slate/src/internal/transforms/deselect.spec.ts",
+            "line": 21,
+            "column": 37,
+            "message": "`import()` type annotations are forbidden."
+          }
+        ]
       },
       "no-type-imports": {
-        "count": 3026,
+        "count": 3037,
         "samples": [
           {
             "file": "apps/www/next.config.ts",
@@ -401,51 +427,51 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "apps/www/src/registry/ui/media-file-node.tsx",
-            "line": 5,
+            "file": "apps/www/src/registry/ui/media-embed-node.tsx",
+            "line": 8,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/core/src/internal/plugin/pipeTransformFragment.ts",
-            "line": 5,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "packages/core/src/react/plugins/react/ReactPlugin.spec.ts",
+            "file": "packages/core/src/internal/plugin/pipeTransformData.ts",
             "line": 3,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/indent/src/lib/withIndent.ts",
+            "file": "packages/core/src/react/plugin/toPlatePlugin.ts",
+            "line": 10,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "packages/indent/src/lib/transforms/outdent.ts",
+            "line": 3,
+            "column": 10,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "packages/markdown/src/lib/serializer/listToMdastTree.ts",
             "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/markdown/src/lib/serializer/listToMdastTree.ts",
-            "line": 3,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
             "file": "packages/slate/src/interfaces/node.ts",
-            "line": 7,
+            "line": 6,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/suggestion/src/lib/transforms/acceptSuggestion.spec.tsx",
-            "line": 3,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "packages/udecode/react-hotkeys/src/internal/HotkeysProvider.tsx",
-            "line": 3,
+            "file": "packages/suggestion/src/lib/queries/findSuggestionProps.ts",
+            "line": 6,
             "column": 3,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "packages/udecode/react-hotkeys/src/internal/BoundHotkeysProxyProvider.tsx",
+            "line": 3,
+            "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
@@ -459,7 +485,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 1270,
+        "count": 1272,
         "samples": [
           {
             "file": "apps/www/scripts/build-docs-registry.mts",
@@ -481,26 +507,26 @@
           },
           {
             "file": "apps/www/src/registry/blocks/fumadocs/mdx-plate-components.tsx",
-            "line": 551,
+            "line": 564,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "apps/www/src/registry/ui/font-color-toolbar-button.tsx",
-            "line": 314,
+            "line": 360,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "packages/ai/src/react/copilot/utils/callCompletionApi.ts",
+            "line": 27,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "packages/slate/src/utils/queryNode.ts",
+            "line": 3,
             "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "packages/ai/src/react/ai/utils/findTextRangeInBlock.tsx",
-            "line": 14,
-            "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "packages/suggestion/src/lib/diffToSuggestions.ts",
-            "line": 15,
-            "column": 8,
             "message": "Expected a function expression."
           },
           {
@@ -524,7 +550,7 @@
         ]
       },
       "declaration": {
-        "count": 1859,
+        "count": 1860,
         "samples": [
           {
             "file": "apps/www/next.config.ts",
@@ -534,7 +560,7 @@
           },
           {
             "file": "apps/www/src/registry/ui/font-size-toolbar-button.tsx",
-            "line": 68,
+            "line": 86,
             "column": 9,
             "message": "Expected a function declaration."
           },
@@ -545,9 +571,9 @@
             "message": "Expected a function declaration."
           },
           {
-            "file": "packages/core/src/react/hooks/useSlateProps.ts",
-            "line": 21,
-            "column": 14,
+            "file": "packages/core/src/react/plugin/createPlatePlugin.spec.ts",
+            "line": 8,
+            "column": 11,
             "message": "Expected a function declaration."
           },
           {
@@ -557,8 +583,8 @@
             "message": "Expected a function declaration."
           },
           {
-            "file": "packages/link/src/react/components/FloatingLink/useFloatingLinkEnter.ts",
-            "line": 6,
+            "file": "packages/link/src/react/components/FloatingLink/useFloatingLinkEscape.ts",
+            "line": 5,
             "column": 14,
             "message": "Expected a function declaration."
           },
@@ -575,8 +601,8 @@
             "message": "Expected a function declaration."
           },
           {
-            "file": "packages/toc/src/lib/transforms/insertToc.ts",
-            "line": 5,
+            "file": "packages/toc/src/internal/getHeadingList.ts",
+            "line": 17,
             "column": 14,
             "message": "Expected a function declaration."
           },
@@ -746,7 +772,7 @@
         ]
       },
       "4-space": {
-        "count": 2234,
+        "count": 2235,
         "samples": [
           {
             "file": ".changeset/changelog-config.js",
@@ -767,14 +793,14 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/core/src/internal/types.ts",
-            "line": 2,
+            "file": "packages/core/src/internal/utils/callOrReturn.ts",
+            "line": 13,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/core/src/static/components/PlateStatic.spec.tsx",
-            "line": 16,
+            "file": "packages/core/src/static/components/PlateStatic.tsx",
+            "line": 4,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -811,7 +837,7 @@
         ]
       },
       "tab": {
-        "count": 2240,
+        "count": 2241,
         "samples": [
           {
             "file": ".changeset/changelog-config.js",
@@ -832,14 +858,14 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/core/src/internal/utils/isFunction.ts",
+            "file": "packages/core/src/internal/utils/mergeDeep.ts",
             "line": 2,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/core/src/static/deserialize/htmlStringToEditorDOM.ts",
-            "line": 8,
+            "file": "packages/core/src/static/editor/withStatic.spec.tsx",
+            "line": 12,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -878,7 +904,7 @@
     },
     "quotes": {
       "double": {
-        "count": 45740,
+        "count": 45809,
         "samples": [
           {
             "file": ".changeset/changelog-config.js",
@@ -888,50 +914,50 @@
           },
           {
             "file": "apps/www/src/lib/themes.ts",
-            "line": 454,
-            "column": 14,
+            "line": 460,
+            "column": 18,
             "message": "Strings must use doublequote."
           },
           {
             "file": "apps/www/src/registry/registry-kits.ts",
-            "line": 519,
-            "column": 7,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "packages/ai/src/react/ai-chat/transforms/replaceSelectionAIChat.ts",
-            "line": 25,
-            "column": 19,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "packages/core/src/lib/plugins/slate-extension/transforms/init.spec.ts",
-            "line": 349,
-            "column": 63,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "packages/docx-io/src/lib/html-to-docx/helpers/xml-builder.ts",
-            "line": 2619,
-            "column": 33,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "packages/markdown/src/lib/serializer/utils/index.ts",
-            "line": 8,
+            "line": 542,
             "column": 15,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/selection/src/react/internal/api/shiftSelection.spec.tsx",
-            "line": 337,
-            "column": 17,
+            "file": "packages/ai/src/react/ai-chat/utils/applyAISuggestions.ts",
+            "line": 25,
+            "column": 8,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/udecode/react-utils/src/useComposedRef.ts",
-            "line": 1,
-            "column": 19,
+            "file": "packages/core/src/lib/plugins/slate-extension/transforms/init.ts",
+            "line": 31,
+            "column": 35,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "packages/docx-io/src/lib/html-to-docx/helpers/xml-builder.ts",
+            "line": 2875,
+            "column": 24,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "packages/markdown/src/lib/serializer/wrapWithBlockId.spec.tsx",
+            "line": 149,
+            "column": 30,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "packages/selection/src/react/internal/api/shiftSelection.spec.tsx",
+            "line": 306,
+            "column": 21,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "packages/udecode/react-utils/src/useComposedRef.spec.ts",
+            "line": 70,
+            "column": 6,
             "message": "Strings must use doublequote."
           },
           {
@@ -1075,7 +1101,7 @@
         ]
       },
       "never": {
-        "count": 48157,
+        "count": 48208,
         "samples": [
           {
             "file": ".changeset/changelog-config.js",
@@ -1085,50 +1111,50 @@
           },
           {
             "file": "apps/www/src/registry/hooks/use-upload-file.ts",
-            "line": 30,
-            "column": 67,
+            "line": 36,
+            "column": 27,
             "message": "Extra semicolon."
           },
           {
-            "file": "packages/basic-nodes/src/lib/BaseItalicPlugin.ts",
-            "line": 25,
-            "column": 31,
+            "file": "packages/basic-nodes/src/lib/BaseSuperscriptPlugin.ts",
+            "line": 1,
+            "column": 50,
             "message": "Extra semicolon."
           },
           {
             "file": "packages/core/src/lib/plugins/override/withBreakRules.ts",
-            "line": 1,
-            "column": 41,
+            "line": 45,
+            "column": 34,
             "message": "Extra semicolon."
           },
           {
             "file": "packages/diff/src/internal/transforms/transformDiffTexts.ts",
-            "line": 201,
-            "column": 14,
+            "line": 298,
+            "column": 34,
             "message": "Extra semicolon."
           },
           {
             "file": "packages/link/src/lib/withLink.spec.tsx",
-            "line": 457,
+            "line": 567,
             "column": 8,
             "message": "Extra semicolon."
           },
           {
             "file": "packages/media/src/react/placeholder/PlaceholderPlugin.tsx",
-            "line": 195,
-            "column": 6,
+            "line": 182,
+            "column": 30,
             "message": "Extra semicolon."
           },
           {
             "file": "packages/slate/src/utils/match.spec.ts",
-            "line": 134,
-            "column": 20,
+            "line": 109,
+            "column": 73,
             "message": "Extra semicolon."
           },
           {
             "file": "packages/udecode/cmdk/src/cmdk.tsx",
-            "line": 1282,
-            "column": 10,
+            "line": 1266,
+            "column": 29,
             "message": "Extra semicolon."
           },
           {

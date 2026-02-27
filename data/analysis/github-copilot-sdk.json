@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "35534c421913bcbc3b43c6ea5c9e2845c3243cbf",
-  "analyzedCommitDate": "2026-02-27T02:55:56.000Z",
+  "analyzedCommit": "fc638905b7fe62d4f9335e0209432c8d0320327d",
+  "analyzedCommitDate": "2026-02-27T04:00:26.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -21,7 +21,7 @@
           },
           {
             "file": "nodejs/test/e2e/session.test.ts",
-            "line": 338,
+            "line": 339,
             "column": 31,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
@@ -52,7 +52,7 @@
         ]
       },
       "generic": {
-        "count": 201,
+        "count": 213,
         "samples": [
           {
             "file": "nodejs/src/client.ts",
@@ -62,51 +62,51 @@
           },
           {
             "file": "nodejs/src/session.ts",
-            "line": 323,
-            "column": 27,
-            "message": "Array type using 'Tool[]' is forbidden. Use 'Array<Tool>' instead."
+            "line": 493,
+            "column": 34,
+            "message": "Array type using 'SessionEvent[]' is forbidden. Use 'Array<SessionEvent>' instead."
           },
           {
-            "file": "nodejs/test/e2e/agent_and_compact_rpc.test.ts",
-            "line": 97,
-            "column": 29,
+            "file": "nodejs/test/e2e/ask_user.test.ts",
+            "line": 76,
+            "column": 34,
+            "message": "Array type using 'UserInputRequest[]' is forbidden. Use 'Array<UserInputRequest>' instead."
+          },
+          {
+            "file": "nodejs/test/e2e/mcp_and_agents.test.ts",
+            "line": 274,
+            "column": 33,
             "message": "Array type using 'CustomAgentConfig[]' is forbidden. Use 'Array<CustomAgentConfig>' instead."
           },
           {
-            "file": "nodejs/test/e2e/session.test.ts",
-            "line": 389,
-            "column": 23,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
-          },
-          {
             "file": "scripts/codegen/csharp.ts",
-            "line": 462,
-            "column": 20,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
-          },
-          {
-            "file": "scripts/codegen/csharp.ts",
-            "line": 732,
-            "column": 26,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
-          },
-          {
-            "file": "scripts/docs-validation/extract.ts",
-            "line": 52,
+            "line": 314,
             "column": 17,
-            "message": "Array type using 'CodeBlock[]' is forbidden. Use 'Array<CodeBlock>' instead."
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+          },
+          {
+            "file": "scripts/codegen/csharp.ts",
+            "line": 681,
+            "column": 89,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+          },
+          {
+            "file": "scripts/codegen/utils.ts",
+            "line": 95,
+            "column": 22,
+            "message": "Array type using 'JSONSchema7Definition[]' is forbidden. Use 'Array<JSONSchema7Definition>' instead."
           },
           {
             "file": "scripts/docs-validation/validate.ts",
-            "line": 356,
-            "column": 115,
-            "message": "Array type using 'ValidationResult[]' is forbidden. Use 'Array<ValidationResult>' instead."
+            "line": 324,
+            "column": 40,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
             "file": "test/harness/replayingCapiProxy.ts",
-            "line": 487,
-            "column": 22,
-            "message": "Array type using 'ToolResultNormalizer[]' is forbidden. Use 'Array<ToolResultNormalizer>' instead."
+            "line": 495,
+            "column": 18,
+            "message": "Array type using 'NormalizedConversation[]' is forbidden. Use 'Array<NormalizedConversation>' instead."
           },
           {
             "file": "test/scenarios/callbacks/user-input/typescript/src/index.ts",
@@ -212,7 +212,7 @@
           },
           {
             "file": "test/harness/replayingCapiProxy.ts",
-            "line": 496,
+            "line": 551,
             "column": 26,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
@@ -351,19 +351,19 @@
           },
           {
             "file": "test/harness/replayingCapiProxy.ts",
-            "line": 931,
+            "line": 986,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
             "file": "test/harness/replayingCapiProxy.ts",
-            "line": 936,
+            "line": 991,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
             "file": "test/harness/replayingCapiProxy.ts",
-            "line": 943,
+            "line": 998,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
@@ -446,7 +446,7 @@
           },
           {
             "file": "test/harness/replayingCapiProxy.ts",
-            "line": 972,
+            "line": 1027,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           }
@@ -455,7 +455,7 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 11,
+        "count": 15,
         "samples": [
           {
             "file": "nodejs/src/client.ts",
@@ -464,10 +464,10 @@
             "message": "Imports MessageConnection are only used as type."
           },
           {
-            "file": "nodejs/test/e2e/client.test.ts",
-            "line": 1,
+            "file": "nodejs/test/e2e/client_lifecycle.test.ts",
+            "line": 6,
             "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
+            "message": "Imports SessionLifecycleEvent are only used as type."
           },
           {
             "file": "nodejs/test/e2e/compaction.test.ts",
@@ -489,9 +489,15 @@
           },
           {
             "file": "nodejs/test/e2e/session.test.ts",
-            "line": 2,
+            "line": 3,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
+          },
+          {
+            "file": "nodejs/test/e2e/session_lifecycle.test.ts",
+            "line": 6,
+            "column": 1,
+            "message": "Imports SessionEvent are only used as type."
           },
           {
             "file": "test/harness/capturingHttpProxy.test.ts",
@@ -506,12 +512,6 @@
             "message": "Imports RequestOptions are only used as type."
           },
           {
-            "file": "test/harness/replayingCapiProxy.test.ts",
-            "line": 16,
-            "column": 1,
-            "message": "Imports NormalizedData and ToolResultNormalizer are only used as type."
-          },
-          {
             "file": "test/harness/replayingCapiProxy.ts",
             "line": 18,
             "column": 1,
@@ -520,7 +520,7 @@
         ]
       },
       "no-type-imports": {
-        "count": 30,
+        "count": 32,
         "samples": [
           {
             "file": "nodejs/samples/chat.ts",
@@ -535,27 +535,27 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "nodejs/src/types.ts",
+            "file": "nodejs/test/e2e/agent_and_compact_rpc.test.ts",
+            "line": 7,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "nodejs/test/e2e/hooks_extended.test.ts",
+            "line": 7,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "nodejs/test/e2e/tools.test.ts",
             "line": 10,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "nodejs/test/e2e/mcp_and_agents.test.ts",
-            "line": 8,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
             "file": "scripts/codegen/csharp.ts",
-            "line": 13,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "scripts/codegen/go.ts",
-            "line": 12,
-            "column": 1,
+            "line": 22,
+            "column": 5,
             "message": "Use an `import` instead of an `import type`."
           },
           {
@@ -566,8 +566,8 @@
           },
           {
             "file": "scripts/codegen/typescript.ts",
-            "line": 18,
-            "column": 5,
+            "line": 10,
+            "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
@@ -587,7 +587,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 168,
+        "count": 169,
         "samples": [
           {
             "file": "nodejs/samples/chat.ts",
@@ -615,7 +615,7 @@
           },
           {
             "file": "scripts/codegen/python.ts",
-            "line": 301,
+            "line": 339,
             "column": 1,
             "message": "Expected a function expression."
           },
@@ -627,13 +627,13 @@
           },
           {
             "file": "test/harness/replayingCapiProxy.ts",
-            "line": 414,
+            "line": 469,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "test/harness/replayingCapiProxy.ts",
-            "line": 915,
+            "line": 970,
             "column": 1,
             "message": "Expected a function expression."
           },
@@ -668,19 +668,19 @@
           },
           {
             "file": "test/harness/replayingCapiProxy.ts",
-            "line": 452,
+            "line": 507,
             "column": 9,
             "message": "Expected a function declaration."
           },
           {
             "file": "test/harness/replayingCapiProxy.ts",
-            "line": 460,
+            "line": 515,
             "column": 9,
             "message": "Expected a function declaration."
           },
           {
             "file": "test/harness/replayingCapiProxy.ts",
-            "line": 843,
+            "line": 898,
             "column": 9,
             "message": "Expected a function declaration."
           }
@@ -825,7 +825,7 @@
         ]
       },
       "tab": {
-        "count": 74,
+        "count": 84,
         "samples": [
           {
             "file": "nodejs/esbuild-copilotsdk-nodejs.ts",
@@ -834,49 +834,49 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "nodejs/src/generated/session-events.ts",
-            "line": 7,
+            "file": "nodejs/src/index.ts",
+            "line": 15,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "nodejs/test/e2e/client.test.ts",
-            "line": 6,
+            "file": "nodejs/test/e2e/client_lifecycle.test.ts",
+            "line": 10,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "nodejs/test/e2e/rpc.test.ts",
-            "line": 6,
+            "file": "nodejs/test/e2e/multi_turn.test.ts",
+            "line": 12,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "scripts/codegen/python.ts",
-            "line": 13,
+            "file": "nodejs/test/e2e/tools.test.ts",
+            "line": 14,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "test/harness/test-mcp-server.mjs",
-            "line": 21,
+            "file": "scripts/docs-validation/validate.ts",
+            "line": 15,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "test/scenarios/bundling/app-backend-to-server/typescript/src/index.ts",
-            "line": 11,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "test/scenarios/modes/minimal/typescript/src/index.ts",
+            "file": "test/scenarios/auth/byok-azure/typescript/src/index.ts",
             "line": 4,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "test/scenarios/tools/custom-agents/typescript/src/index.ts",
+            "file": "test/scenarios/callbacks/user-input/typescript/src/index.ts",
+            "line": 4,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "test/scenarios/sessions/streaming/typescript/src/index.ts",
             "line": 4,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
@@ -957,7 +957,7 @@
         ]
       },
       "single": {
-        "count": 2649,
+        "count": 2885,
         "samples": [
           {
             "file": "nodejs/esbuild-copilotsdk-nodejs.ts",
@@ -967,50 +967,50 @@
           },
           {
             "file": "nodejs/src/generated/session-events.ts",
-            "line": 33,
+            "line": 264,
             "column": 13,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "nodejs/test/e2e/agent_and_compact_rpc.test.ts",
-            "line": 49,
-            "column": 23,
+            "file": "nodejs/test/e2e/builtin_tools.test.ts",
+            "line": 27,
+            "column": 25,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "nodejs/test/e2e/permissions.test.ts",
-            "line": 85,
-            "column": 45,
+            "file": "nodejs/test/e2e/mcp_and_agents.test.ts",
+            "line": 218,
+            "column": 35,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "python/scripts/build-wheels.mjs",
-            "line": 68,
-            "column": 43,
+            "file": "nodejs/test/e2e/tool_results.test.ts",
+            "line": 6,
+            "column": 19,
             "message": "Strings must use singlequote."
           },
           {
             "file": "scripts/codegen/csharp.ts",
-            "line": 683,
+            "line": 422,
             "column": 85,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "scripts/codegen/utils.ts",
-            "line": 137,
-            "column": 57,
+            "file": "scripts/codegen/typescript.ts",
+            "line": 10,
+            "column": 34,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "test/harness/replayingCapiProxy.test.ts",
-            "line": 125,
-            "column": 54,
+            "file": "test/harness/capturingHttpProxy.ts",
+            "line": 93,
+            "column": 27,
             "message": "Strings must use singlequote."
           },
           {
             "file": "test/harness/replayingCapiProxy.ts",
-            "line": 697,
-            "column": 41,
+            "line": 501,
+            "column": 57,
             "message": "Strings must use singlequote."
           },
           {
@@ -1028,7 +1028,7 @@
         "samples": []
       },
       "never": {
-        "count": 3715,
+        "count": 4100,
         "samples": [
           {
             "file": "nodejs/esbuild-copilotsdk-nodejs.ts",
@@ -1037,51 +1037,51 @@
             "message": "Extra semicolon."
           },
           {
-            "file": "nodejs/src/client.ts",
-            "line": 1522,
-            "column": 88,
+            "file": "nodejs/src/session.ts",
+            "line": 174,
+            "column": 30,
             "message": "Extra semicolon."
           },
           {
-            "file": "nodejs/test/e2e/client.test.ts",
-            "line": 148,
-            "column": 42,
+            "file": "nodejs/test/e2e/client_lifecycle.test.ts",
+            "line": 49,
+            "column": 64,
             "message": "Extra semicolon."
           },
           {
-            "file": "nodejs/test/e2e/rpc.test.ts",
-            "line": 79,
-            "column": 60,
+            "file": "nodejs/test/e2e/permissions.test.ts",
+            "line": 33,
+            "column": 11,
             "message": "Extra semicolon."
           },
           {
-            "file": "python/scripts/build-wheels.mjs",
-            "line": 220,
-            "column": 74,
+            "file": "nodejs/test/e2e/skills.test.ts",
+            "line": 112,
+            "column": 55,
             "message": "Extra semicolon."
           },
           {
             "file": "scripts/codegen/csharp.ts",
-            "line": 761,
+            "line": 473,
+            "column": 112,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "scripts/codegen/typescript.ts",
+            "line": 76,
             "column": 85,
             "message": "Extra semicolon."
           },
           {
-            "file": "scripts/docs-validation/extract.ts",
-            "line": 81,
-            "column": 25,
+            "file": "test/harness/capturingHttpProxy.ts",
+            "line": 129,
+            "column": 7,
             "message": "Extra semicolon."
           },
           {
-            "file": "test/harness/replayingCapiProxy.test.ts",
-            "line": 241,
-            "column": 77,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "test/scenarios/auth/byok-openai/typescript/src/index.ts",
-            "line": 32,
-            "column": 41,
+            "file": "test/scenarios/auth/byok-anthropic/typescript/src/index.ts",
+            "line": 39,
+            "column": 28,
             "message": "Extra semicolon."
           },
           {

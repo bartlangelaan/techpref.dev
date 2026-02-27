@@ -1,11 +1,11 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "480be6aec3f731d1233ddd8137fe823b0797a7ce",
-  "analyzedCommitDate": "2026-02-26T01:06:44.000Z",
+  "analyzedCommit": "596017b3b928bb7af372496c073bea3bfc5b9090",
+  "analyzedCommitDate": "2026-02-27T19:01:45.000Z",
   "checks": {
     "array-type": {
       "array": {
-        "count": 18,
+        "count": 20,
         "samples": [
           {
             "file": "bridges/nodejs/src/sdk/base-tool.ts",
@@ -32,15 +32,15 @@
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
-            "file": "server/src/core/context-manager.ts",
-            "line": 516,
-            "column": 11,
+            "file": "server/src/core/context-manager/context-probe-helper.ts",
+            "line": 19,
+            "column": 9,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
-            "file": "server/src/core/context-manager.ts",
-            "line": 563,
-            "column": 14,
+            "file": "server/src/core/llm-manager/llm-providers/openai-llm-provider.ts",
+            "line": 123,
+            "column": 32,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
@@ -70,7 +70,7 @@
         ]
       },
       "generic": {
-        "count": 371,
+        "count": 439,
         "samples": [
           {
             "file": "bridges/nodejs/src/sdk/base-tool.ts",
@@ -79,52 +79,52 @@
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
-            "file": "bridges/nodejs/src/sdk/tools/ffmpeg/ffmpeg-tool.ts",
-            "line": 446,
-            "column": 26,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+            "file": "bridges/nodejs/src/sdk/tools/ffprobe/ffprobe-tool.ts",
+            "line": 271,
+            "column": 50,
+            "message": "Array type using 'FrameInfo[]' is forbidden. Use 'Array<FrameInfo>' instead."
           },
           {
             "file": "bridges/nodejs/src/sdk/tools/opencode/opencode-tool.ts",
-            "line": 349,
-            "column": 14,
+            "line": 1378,
+            "column": 19,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
-            "file": "bridges/nodejs/src/sdk/widget-component.ts",
-            "line": 23,
-            "column": 27,
-            "message": "Array type using 'WidgetEvent[]' is forbidden. Use 'Array<WidgetEvent>' instead."
+            "file": "server/src/core/brain/types.ts",
+            "line": 167,
+            "column": 13,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
             "file": "server/src/core/llm-manager/llm-duties/react-llm-duty.ts",
-            "line": 435,
-            "column": 15,
-            "message": "Array type using 'MessageLog[]' is forbidden. Use 'Array<MessageLog>' instead."
+            "line": 397,
+            "column": 29,
+            "message": "Array type using 'TrackedPlanStep[]' is forbidden. Use 'Array<TrackedPlanStep>' instead."
           },
           {
             "file": "server/src/core/llm-manager/llm-duties/react-llm-duty/types.ts",
-            "line": 73,
+            "line": 96,
             "column": 15,
             "message": "Array type using 'MessageLog[]' is forbidden. Use 'Array<MessageLog>' instead."
           },
           {
-            "file": "server/src/core/llm-manager/types.ts",
-            "line": 106,
+            "file": "server/src/core/llm-manager/llm-providers/groq-llm-provider.ts",
+            "line": 32,
             "column": 11,
             "message": "Array type using 'OpenAITool[]' is forbidden. Use 'Array<OpenAITool>' instead."
           },
           {
             "file": "server/src/core/nlp/types.ts",
-            "line": 135,
-            "column": 14,
-            "message": "Array type using 'NLUResolver[]' is forbidden. Use 'Array<NLUResolver>' instead."
+            "line": 36,
+            "column": 20,
+            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           },
           {
-            "file": "server/src/helpers/skill-domain-helper.ts",
-            "line": 98,
-            "column": 33,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+            "file": "server/src/helpers/log-helper.ts",
+            "line": 44,
+            "column": 47,
+            "message": "Array type using 'unknown[]' is forbidden. Use 'Array<unknown>' instead."
           },
           {
             "file": "skills/weather_forecast_skill/src/widgets/weather-forecast-widget.ts",
@@ -154,7 +154,7 @@
         ]
       },
       "type-annotation": {
-        "count": 20,
+        "count": 24,
         "samples": [
           {
             "file": "bridges/nodejs/src/sdk/toolkit-config.ts",
@@ -164,14 +164,20 @@
           },
           {
             "file": "bridges/nodejs/src/sdk/tools/opencode/opencode-tool.ts",
-            "line": 330,
-            "column": 29,
+            "line": 399,
+            "column": 37,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "server/src/core/brain/brain.ts",
-            "line": 37,
-            "column": 40,
+            "file": "server/src/core/context-manager/context-manager.ts",
+            "line": 33,
+            "column": 38,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "server/src/core/llm-manager/llm-duties/react-llm-duty/execution.ts",
+            "line": 568,
+            "column": 47,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
@@ -181,9 +187,9 @@
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "skills/music_audio_toolkit_skill/src/actions/transcribe_audio.ts",
-            "line": 55,
-            "column": 34,
+            "file": "skills/podcast_generator_skill/src/actions/generate.ts",
+            "line": 54,
+            "column": 32,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
@@ -193,20 +199,14 @@
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "skills/timer_skill/src/lib/memory.ts",
+            "file": "skills/utilities/timer/src/lib/memory.ts",
             "line": 11,
             "column": 33,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "skills/video_summarizer_skill/src/actions/summarize_transcription.ts",
-            "line": 92,
-            "column": 34,
-            "message": "The generic type arguments should be specified as part of the type annotation."
-          },
-          {
             "file": "skills/video_translator_skill/src/actions/create_new_audio.ts",
-            "line": 360,
+            "line": 267,
             "column": 34,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
@@ -221,12 +221,18 @@
     },
     "consistent-indexed-object-style": {
       "record": {
-        "count": 5,
+        "count": 6,
         "samples": [
           {
             "file": "bridges/nodejs/src/sdk/tools/ffprobe/ffprobe-tool.ts",
             "line": 20,
             "column": 12,
+            "message": "A record is preferred over an index signature."
+          },
+          {
+            "file": "server/src/core/llm-manager/llm-providers/openai-llm-provider.ts",
+            "line": 64,
+            "column": 11,
             "message": "A record is preferred over an index signature."
           },
           {
@@ -256,7 +262,7 @@
         ]
       },
       "index-signature": {
-        "count": 182,
+        "count": 239,
         "samples": [
           {
             "file": "bridges/nodejs/src/sdk/base-tool.ts",
@@ -265,51 +271,51 @@
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "bridges/nodejs/src/sdk/tools/cerebras/cerebras-tool.ts",
-            "line": 8,
+            "file": "bridges/nodejs/src/sdk/tools/elevenlabs_audio/elevenlabs_audio-tool.ts",
+            "line": 13,
             "column": 25,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "bridges/nodejs/src/sdk/tools/opencode/opencode-tool.ts",
-            "line": 215,
-            "column": 19,
+            "file": "bridges/nodejs/src/sdk/widget.ts",
+            "line": 18,
+            "column": 10,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "server/src/core/brain/dialog-action-skill-handler.ts",
-            "line": 88,
-            "column": 11,
-            "message": "An index signature is preferred over a record."
-          },
-          {
-            "file": "server/src/core/llm-manager/llm-duties/react-llm-duty/phases.ts",
-            "line": 273,
-            "column": 41,
+            "file": "server/src/core/llm-manager/llm-duties/action-calling-llm-duty.ts",
+            "line": 251,
+            "column": 25,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "server/src/core/llm-manager/llm-duties/react-llm-duty/utils.ts",
-            "line": 232,
-            "column": 14,
+            "line": 180,
+            "column": 27,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "server/src/core/llm-manager/llm-provider.ts",
-            "line": 277,
-            "column": 40,
+            "line": 236,
+            "column": 42,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "server/src/core/nlp/types.ts",
-            "line": 211,
-            "column": 22,
+            "file": "server/src/core/llm-manager/llm-provider.ts",
+            "line": 1031,
+            "column": 49,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "server/src/core/llm-manager/llm-providers/z-ai-llm-provider.ts",
+            "line": 130,
+            "column": 38,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "server/src/core/tool-executor.ts",
-            "line": 337,
-            "column": 22,
+            "line": 177,
+            "column": 26,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -327,7 +333,7 @@
         "samples": []
       },
       "type": {
-        "count": 192,
+        "count": 201,
         "samples": [
           {
             "file": "app/src/custom-aurora-components/timer/timer.tsx",
@@ -336,51 +342,51 @@
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "bridges/nodejs/src/sdk/tools/elevenlabs_audio/elevenlabs_audio-tool.ts",
-            "line": 39,
+            "file": "bridges/nodejs/src/sdk/tools/ffprobe/ffprobe-tool.ts",
+            "line": 10,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "bridges/nodejs/src/sdk/tools/opencode/opencode-tool.ts",
-            "line": 34,
+            "file": "bridges/nodejs/src/sdk/tools/openrouter/openrouter-tool.ts",
+            "line": 14,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "bridges/nodejs/src/sdk/widget.ts",
-            "line": 21,
-            "column": 8,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "server/src/core/llm-manager/llm-duties/react-llm-duty/phases.ts",
-            "line": 51,
+            "file": "server/src/conversation-logger.ts",
+            "line": 8,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "server/src/core/llm-manager/llm-providers/groq-llm-provider.ts",
-            "line": 20,
+            "file": "server/src/core/context-manager/files/browser-history-context-file.ts",
+            "line": 26,
+            "column": 1,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "server/src/core/llm-manager/llm-duty.ts",
+            "line": 44,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "server/src/core/nlp/types.ts",
-            "line": 87,
+            "line": 28,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "server/src/core/tts/types.ts",
-            "line": 23,
-            "column": 8,
+            "file": "server/src/core/tts/synthesizers/local-synthesizer.ts",
+            "line": 10,
+            "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "skills/skill_writer_skill/src/lib/skill-plan.ts",
-            "line": 1,
-            "column": 8,
+            "file": "skills/skill_writer_skill/src/actions/modify_skill.ts",
+            "line": 12,
+            "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
@@ -394,7 +400,7 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 36,
+        "count": 49,
         "samples": [
           {
             "file": "bridges/nodejs/src/constants.ts",
@@ -403,10 +409,16 @@
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "server/src/core/llm-manager/llm-duties/action-calling-llm-duty.ts",
-            "line": 19,
+            "file": "server/src/core/context-manager/files/activity-context-file.ts",
+            "line": 8,
             "column": 1,
-            "message": "Imports ActionCallingOutput are only used as type."
+            "message": "All imports in the declaration are only used as types. Use `import type`."
+          },
+          {
+            "file": "server/src/core/context-manager/files/storage-context-file.ts",
+            "line": 2,
+            "column": 1,
+            "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
             "file": "server/src/core/llm-manager/llm-provider.ts",
@@ -415,16 +427,16 @@
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "server/src/core/socket-server.ts",
-            "line": 2,
-            "column": 1,
-            "message": "Imports Socket are only used as type."
-          },
-          {
-            "file": "server/src/schemas/skill-schemas.ts",
-            "line": 6,
+            "file": "server/src/core/llm-manager/llm-provider.ts",
+            "line": 22,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
+          },
+          {
+            "file": "server/src/pre-check.ts",
+            "line": 13,
+            "column": 1,
+            "message": "Imports GlobalEntitySchema, GlobalResolverSchema, and GlobalAnswersSchema are only used as type."
           },
           {
             "file": "skills/music_audio_toolkit_skill/src/actions/split_instrumental_vocal.ts",
@@ -433,20 +445,14 @@
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "skills/skill_writer_skill/src/actions/create_skill.ts",
+            "file": "skills/skill_writer_skill/src/actions/modify_skill.ts",
             "line": 6,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "skills/video_translator_skill/src/actions/create_new_audio.ts",
-            "line": 7,
-            "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
-          {
-            "file": "skills/video_translator_skill/src/actions/get_speakers_references.ts",
-            "line": 7,
+            "file": "skills/video_translator_skill/src/actions/extract_audio.ts",
+            "line": 6,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
@@ -459,7 +465,7 @@
         ]
       },
       "no-type-imports": {
-        "count": 287,
+        "count": 307,
         "samples": [
           {
             "file": "bridges/nodejs/src/constants.ts",
@@ -468,51 +474,51 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "bridges/nodejs/src/sdk/leon.ts",
-            "line": 4,
+            "file": "bridges/nodejs/src/sdk/params-helper.ts",
+            "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "server/src/core/http-server/api/fetch-widget/get.ts",
+            "file": "server/src/core/http-server/api/info/get.ts",
             "line": 3,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "server/src/core/llm-manager/llm-duties/action-calling-llm-duty.ts",
-            "line": 16,
-            "column": 10,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "server/src/core/llm-manager/llm-duties/react-llm-duty.ts",
-            "line": 46,
+            "file": "server/src/core/llm-manager/llm-duties/conversation-llm-duty.ts",
+            "line": 3,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "server/src/core/llm-manager/llm-providers/local-llm-provider.ts",
-            "line": 4,
-            "column": 3,
+            "file": "server/src/core/llm-manager/llm-duties/react-llm-duty/planning.ts",
+            "line": 7,
+            "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "server/src/core/stt/stt.ts",
+            "file": "server/src/core/llm-manager/llm-providers/huggingface-llm-provider.ts",
+            "line": 11,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "server/src/core/nlp/types.ts",
+            "line": 3,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "server/src/core/tts/types.ts",
             "line": 5,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "server/src/helpers/skill-domain-helper.ts",
-            "line": 6,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "skills/utilities/date_time/src/actions/current_date.ts",
+            "file": "skills/unknown/widget-playground/src/widgets/playground-test.ts",
             "line": 1,
-            "column": 1,
+            "column": 38,
             "message": "Use an `import` instead of an `import type`."
           },
           {
@@ -526,7 +532,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 105,
+        "count": 117,
         "samples": [
           {
             "file": "app/src/custom-aurora-components/timer/timer.tsx",
@@ -535,51 +541,51 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "bridges/nodejs/src/sdk/tools/open-meteo/open-meteo-tool.ts",
-            "line": 125,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
             "file": "bridges/nodejs/src/sdk/utils.ts",
-            "line": 181,
+            "line": 17,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "scripts/setup/setup-pytorch.js",
-            "line": 47,
+            "file": "scripts/setup/setup-llm.js",
+            "line": 29,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "server/src/core/llm-manager/llm-duties/react-llm-duty/phases.ts",
-            "line": 109,
+            "file": "scripts/setup/setup-tcp-server-models.js",
+            "line": 39,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "server/src/core/llm-manager/llm-duties/react-llm-duty/phases.ts",
-            "line": 1133,
+            "file": "server/src/core/llm-manager/llm-duties/react-llm-duty/phase-helpers.ts",
+            "line": 17,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "server/src/core/llm-manager/llm-duties/react-llm-duty/phase-helpers.ts",
+            "line": 254,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "server/src/core/llm-manager/llm-duties/react-llm-duty/utils.ts",
-            "line": 131,
+            "line": 41,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "server/src/utilities.ts",
-            "line": 20,
-            "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "skills/video_translator_skill/src/actions/create_new_audio.ts",
-            "line": 49,
+            "file": "server/src/helpers/loader-helper.ts",
+            "line": 5,
             "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "skills/utilities/timer/src/lib/memory.ts",
+            "line": 53,
+            "column": 8,
             "message": "Expected a function expression."
           },
           {
@@ -591,7 +597,7 @@
         ]
       },
       "declaration": {
-        "count": 109,
+        "count": 115,
         "samples": [
           {
             "file": "app/src/js/listener.js",
@@ -601,49 +607,49 @@
           },
           {
             "file": "bridges/nodejs/src/tool-runtime.ts",
-            "line": 84,
+            "line": 88,
             "column": 7,
             "message": "Expected a function declaration."
           },
           {
-            "file": "server/src/core/http-server/api/fetch-widget/get.ts",
-            "line": 8,
-            "column": 14,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "server/src/core/http-server/plugins/cors.ts",
-            "line": 5,
-            "column": 14,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "server/src/pre-check.ts",
-            "line": 44,
-            "column": 7,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "skills/skill_writer_skill/src/actions/create_skill.ts",
-            "line": 43,
-            "column": 7,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "skills/unknown/widget-playground/src/actions/run.ts",
+            "file": "server/src/core/http-server/api/fetch-widget/index.ts",
             "line": 6,
             "column": 14,
             "message": "Expected a function declaration."
           },
           {
-            "file": "skills/utilities/timer/src/actions/set_timer.ts",
+            "file": "server/src/core/http-server/plugins/other.ts",
+            "line": 5,
+            "column": 14,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "server/src/core/llm-manager/llm-provider.ts",
+            "line": 1737,
+            "column": 15,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "skills/skill_writer_skill/src/actions/create_skill.ts",
+            "line": 74,
+            "column": 14,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "skills/timer_skill/src/actions/set_timer.ts",
             "line": 7,
             "column": 14,
             "message": "Expected a function declaration."
           },
           {
-            "file": "skills/video_translator_skill/src/actions/merge_audio.ts",
-            "line": 11,
+            "file": "skills/utilities/timer/src/actions/check_timer.ts",
+            "line": 7,
+            "column": 14,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "skills/video_translator_skill/src/actions/get_speakers_references.ts",
+            "line": 31,
             "column": 14,
             "message": "Expected a function declaration."
           },
@@ -658,7 +664,7 @@
     },
     "import-export-preference": {
       "named": {
-        "count": 112,
+        "count": 118,
         "samples": [
           {
             "file": "app/src/js/chatbot.js",
@@ -667,50 +673,50 @@
             "message": "Prefer named exports"
           },
           {
-            "file": "bridges/nodejs/src/sdk/tools/assemblyai_audio/index.ts",
+            "file": "bridges/nodejs/src/sdk/tools/bash/bash-tool.ts",
+            "line": 21,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "bridges/nodejs/src/sdk/tools/ffmpeg/index.ts",
             "line": 1,
             "column": 10,
             "message": "Prefer named exports"
           },
           {
-            "file": "bridges/nodejs/src/sdk/tools/ffmpeg/ffmpeg-tool.ts",
-            "line": 7,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "bridges/nodejs/src/sdk/tools/openrouter/index.ts",
+            "file": "bridges/nodejs/src/sdk/tools/qwen3_asr/index.ts",
             "line": 1,
             "column": 10,
             "message": "Prefer named exports"
           },
           {
-            "file": "scripts/check-os.js",
-            "line": 9,
+            "file": "scripts/generate/generate-json-schemas.js",
+            "line": 51,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "scripts/setup/setup-binaries.js",
-            "line": 132,
+            "file": "scripts/setup/setup-llm.js",
+            "line": 109,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "scripts/train/train-main-model/train-skills-actions.js",
-            "line": 13,
+            "file": "scripts/train/train.js",
+            "line": 28,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "server/src/core/llm-manager/llm-providers/cerebras-llm-provider.ts",
-            "line": 35,
+            "file": "server/src/core/llm-manager/llm-providers/huggingface-llm-provider.ts",
+            "line": 24,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "server/src/core/stt/parsers/google-cloud-stt-parser.ts",
-            "line": 10,
+            "file": "server/src/core/stt/parsers/coqui-stt-parser.ts",
+            "line": 11,
             "column": 8,
             "message": "Prefer named exports"
           },
@@ -723,7 +729,7 @@
         ]
       },
       "default": {
-        "count": 124,
+        "count": 140,
         "samples": [
           {
             "file": "app/src/custom-aurora-components/timer/timer.tsx",
@@ -732,50 +738,50 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "bridges/nodejs/src/sdk/aurora/list-item.ts",
+            "file": "bridges/nodejs/src/sdk/aurora/list.ts",
             "line": 5,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "bridges/nodejs/src/sdk/aurora/tab-group.ts",
+            "file": "bridges/nodejs/src/sdk/aurora/widget-wrapper.ts",
             "line": 5,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "server/src/core/brain/dialog-action-skill-handler.ts",
-            "line": 10,
+            "file": "server/src/core/context-manager/files/browser-history-context-file.ts",
+            "line": 37,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "server/src/core/http-server/plugins/key.ts",
-            "line": 5,
+            "file": "server/src/core/http-server/api/run-action/index.ts",
+            "line": 6,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "server/src/helpers/file-helper.ts",
-            "line": 14,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "skills/music_audio_toolkit_skill/src/actions/transcribe_audio.ts",
+            "file": "server/src/core/llm-manager/llm-duties/react-llm-duty/planning.ts",
             "line": 31,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "skills/unknown/widget-playground/src/widgets/playground-test.ts",
-            "line": 19,
+            "file": "skills/leon/age/src/actions/run.ts",
+            "line": 8,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "skills/utilities/timer/src/widgets/timer-widget.ts",
-            "line": 13,
+            "file": "skills/timer_skill/src/widgets/components/timer.ts",
+            "line": 12,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "skills/utilities/timer/src/widgets/components/timer.ts",
+            "line": 12,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -794,7 +800,7 @@
         "samples": []
       },
       "4-space": {
-        "count": 306,
+        "count": 329,
         "samples": [
           {
             "file": "app/src/custom-aurora-components/timer/timer.tsx",
@@ -803,50 +809,50 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "bridges/nodejs/src/sdk/aurora/range-slider.ts",
+            "file": "bridges/nodejs/src/sdk/aurora/select-option.ts",
             "line": 6,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "bridges/nodejs/src/sdk/tools/openrouter/openrouter-tool.ts",
-            "line": 9,
+            "file": "bridges/nodejs/src/sdk/tools/ytdlp/ytdlp-tool.ts",
+            "line": 11,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "scripts/setup-offline/run-setup-hotword.js",
-            "line": 9,
+            "file": "scripts/setup/create-instance-id.js",
+            "line": 8,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "server/src/core/asr/asr.ts",
-            "line": 12,
+            "file": "server/src/core/context-manager/files/architecture-context-file.ts",
+            "line": 4,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "server/src/core/llm-manager/llm-duties/react-llm-duty/plan-widget.ts",
-            "line": 9,
+            "file": "server/src/core/llm-manager/llm-duties/react-llm-duty/execution.ts",
+            "line": 7,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "server/src/core/tts/synthesizers/amazon-polly-synthesizer.ts",
-            "line": 17,
+            "file": "server/src/core/stt/parsers/watson-stt-parser.ts",
+            "line": 14,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "skills/podcast_generator_skill/src/actions/generate.ts",
-            "line": 16,
+            "file": "skills/leon/age/src/lib/getTimeDifferenceBetweenDates.ts",
+            "line": 2,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "skills/video_translator_skill/src/actions/create_new_audio.ts",
-            "line": 17,
+            "file": "skills/video_summarizer_skill/src/actions/prepare_audio.ts",
+            "line": 14,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -859,7 +865,7 @@
         ]
       },
       "tab": {
-        "count": 306,
+        "count": 329,
         "samples": [
           {
             "file": "app/src/custom-aurora-components/timer/timer.tsx",
@@ -868,50 +874,50 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "bridges/nodejs/src/sdk/aurora/range-slider.ts",
+            "file": "bridges/nodejs/src/sdk/aurora/select-option.ts",
             "line": 6,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "bridges/nodejs/src/sdk/tools/openrouter/openrouter-tool.ts",
-            "line": 9,
+            "file": "bridges/nodejs/src/sdk/tools/ytdlp/ytdlp-tool.ts",
+            "line": 11,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "scripts/setup-offline/run-setup-hotword.js",
-            "line": 9,
+            "file": "scripts/setup/create-instance-id.js",
+            "line": 8,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "server/src/core/asr/asr.ts",
-            "line": 12,
+            "file": "server/src/core/context-manager/files/architecture-context-file.ts",
+            "line": 4,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "server/src/core/llm-manager/llm-duties/react-llm-duty/plan-widget.ts",
-            "line": 9,
+            "file": "server/src/core/llm-manager/llm-duties/react-llm-duty/execution.ts",
+            "line": 7,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "server/src/core/tts/synthesizers/amazon-polly-synthesizer.ts",
-            "line": 17,
+            "file": "server/src/core/stt/parsers/watson-stt-parser.ts",
+            "line": 14,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "skills/podcast_generator_skill/src/actions/generate.ts",
-            "line": 16,
+            "file": "skills/leon/age/src/lib/getTimeDifferenceBetweenDates.ts",
+            "line": 2,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "skills/video_translator_skill/src/actions/create_new_audio.ts",
-            "line": 17,
+            "file": "skills/video_summarizer_skill/src/actions/prepare_audio.ts",
+            "line": 14,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -926,7 +932,7 @@
     },
     "quotes": {
       "double": {
-        "count": 8253,
+        "count": 9352,
         "samples": [
           {
             "file": "app/src/custom-aurora-components/index.ts",
@@ -935,51 +941,51 @@
             "message": "Strings must use doublequote."
           },
           {
-            "file": "bridges/nodejs/src/sdk/tools/elevenlabs_audio/elevenlabs_audio-tool.ts",
-            "line": 172,
-            "column": 44,
+            "file": "bridges/nodejs/src/sdk/tools/ffmpeg/ffmpeg-tool.ts",
+            "line": 487,
+            "column": 9,
             "message": "Strings must use doublequote."
           },
           {
             "file": "bridges/nodejs/src/sdk/tools/opencode/opencode-tool.ts",
-            "line": 1503,
+            "line": 1767,
             "column": 16,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "eslint.config.mjs",
-            "line": 72,
+            "file": "scripts/generate/run-generate-skills-endpoints.js",
+            "line": 3,
+            "column": 37,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "server/src/core/context-manager/context-probe-helper.ts",
+            "line": 465,
+            "column": 7,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "server/src/core/llm-manager/llm-duties/react-llm-duty/execution.ts",
+            "line": 844,
+            "column": 46,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "server/src/core/llm-manager/llm-provider.ts",
+            "line": 1693,
+            "column": 23,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "server/src/core/tts/synthesizers/flite-synthesizer.ts",
+            "line": 5,
             "column": 39,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "server/src/ajv.ts",
-            "line": 22,
-            "column": 5,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "server/src/core/llm-manager/llm-duties/react-llm-duty/phases.ts",
-            "line": 66,
-            "column": 64,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "server/src/core/llm-manager/types.ts",
-            "line": 39,
-            "column": 19,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "server/src/helpers/skill-domain-helper.ts",
-            "line": 330,
-            "column": 34,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "skills/video_summarizer_skill/src/actions/prepare_audio.ts",
-            "line": 40,
-            "column": 37,
+            "file": "skills/unknown/widget-playground/src/widgets/playground-test.ts",
+            "line": 57,
+            "column": 44,
             "message": "Strings must use doublequote."
           },
           {
@@ -1058,7 +1064,7 @@
     },
     "semi": {
       "always": {
-        "count": 11800,
+        "count": 13038,
         "samples": [
           {
             "file": "app/src/custom-aurora-components/index.ts",
@@ -1067,51 +1073,51 @@
             "message": "Missing semicolon."
           },
           {
-            "file": "bridges/nodejs/src/sdk/tools/assemblyai_audio/assemblyai_audio-tool.ts",
-            "line": 194,
-            "column": 44,
+            "file": "bridges/nodejs/src/sdk/tools/chatterbox_onnx/chatterbox_onnx-tool.ts",
+            "line": 6,
+            "column": 38,
             "message": "Missing semicolon."
           },
           {
             "file": "bridges/nodejs/src/sdk/tools/opencode/opencode-tool.ts",
-            "line": 1671,
-            "column": 52,
+            "line": 1988,
+            "column": 50,
             "message": "Missing semicolon."
           },
           {
-            "file": "scripts/generate/generate-prompt.js",
-            "line": 19,
-            "column": 40,
+            "file": "scripts/setup/setup-llm.js",
+            "line": 51,
+            "column": 77,
             "message": "Missing semicolon."
           },
           {
-            "file": "server/src/core/brain/answer-queue.ts",
-            "line": 21,
-            "column": 36,
+            "file": "server/src/core/context-manager/context-probe-helper.ts",
+            "line": 825,
+            "column": 6,
             "message": "Missing semicolon."
           },
           {
-            "file": "server/src/core/llm-manager/llm-duties/react-llm-duty.ts",
-            "line": 456,
-            "column": 9,
+            "file": "server/src/core/llm-manager/llm-duties/react-llm-duty/execution.ts",
+            "line": 123,
+            "column": 20,
             "message": "Missing semicolon."
           },
           {
-            "file": "server/src/core/llm-manager/llm-providers/openrouter-llm-provider.ts",
-            "line": 170,
-            "column": 62,
+            "file": "server/src/core/llm-manager/llm-providers/anthropic-llm-provider.ts",
+            "line": 16,
+            "column": 34,
             "message": "Missing semicolon."
           },
           {
-            "file": "server/src/core/tts/synthesizers/google-cloud-tts-synthesizer.ts",
-            "line": 38,
-            "column": 12,
+            "file": "server/src/core/tcp-client.ts",
+            "line": 34,
+            "column": 37,
             "message": "Missing semicolon."
           },
           {
-            "file": "skills/utilities/translator-poc/src/actions/translate.ts",
-            "line": 1,
-            "column": 49,
+            "file": "skills/unknown/widget-playground/src/actions/run.ts",
+            "line": 224,
+            "column": 2,
             "message": "Missing semicolon."
           },
           {

@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "9e2ad3bf26ac0bd4ca1fdbd845505f2644114efa",
-  "analyzedCommitDate": "2026-03-01T09:42:48.000Z",
+  "analyzedCommit": "4547032ceda92c0fefa8408a05e0dffa54c62426",
+  "analyzedCommitDate": "2026-03-01T11:01:39.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -28,7 +28,7 @@
         ]
       },
       "generic": {
-        "count": 43,
+        "count": 55,
         "samples": [
           {
             "file": "examples/expense-splitter/src/App.tsx",
@@ -38,49 +38,49 @@
           },
           {
             "file": "examples/expense-splitter/src/App.tsx",
-            "line": 55,
-            "column": 47,
-            "message": "Array type using 'Person[]' is forbidden. Use 'Array<Person>' instead."
+            "line": 59,
+            "column": 63,
+            "message": "Array type using 'StoredExpense[]' is forbidden. Use 'Array<StoredExpense>' instead."
           },
           {
-            "file": "examples/expense-splitter/src/components/add-expense.tsx",
-            "line": 8,
-            "column": 11,
-            "message": "Array type using 'Person[]' is forbidden. Use 'Array<Person>' instead."
-          },
-          {
-            "file": "examples/expense-splitter/src/components/expense-list.tsx",
+            "file": "examples/expense-splitter/src/components/balances.tsx",
             "line": 9,
             "column": 11,
             "message": "Array type using 'Person[]' is forbidden. Use 'Array<Person>' instead."
           },
           {
-            "file": "examples/expense-splitter/src/utils/calculations.ts",
+            "file": "examples/expense-splitter/src/types/index.ts",
             "line": 21,
-            "column": 13,
-            "message": "Array type using 'Expense[]' is forbidden. Use 'Array<Expense>' instead."
+            "column": 11,
+            "message": "Array type using 'ExpenseShare[]' is forbidden. Use 'Array<ExpenseShare>' instead."
           },
           {
             "file": "examples/expense-splitter/src/utils/calculations.ts",
-            "line": 100,
-            "column": 11,
-            "message": "Array type using 'Person[]' is forbidden. Use 'Array<Person>' instead."
+            "line": 102,
+            "column": 4,
+            "message": "Array type using 'Settlement[]' is forbidden. Use 'Array<Settlement>' instead."
           },
           {
-            "file": "examples/invoice-builder/src/components/editor-panel.tsx",
-            "line": 39,
-            "column": 19,
-            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
+            "file": "examples/invoice-builder/src/lib/money.ts",
+            "line": 90,
+            "column": 10,
+            "message": "Array type using 'LineItem[]' is forbidden. Use 'Array<LineItem>' instead."
           },
           {
-            "file": "packages/dinero.js/src/core/api/toDecimal.ts",
-            "line": 25,
-            "column": 38,
-            "message": "Array type using 'readonly TAmount[]' is forbidden. Use 'ReadonlyArray<TAmount>' instead."
-          },
-          {
-            "file": "packages/dinero.js/src/core/utils/distribute.ts",
+            "file": "examples/portfolio-tracker/src/components/holdings-table.tsx",
             "line": 18,
+            "column": 13,
+            "message": "Array type using 'HoldingRow[]' is forbidden. Use 'Array<HoldingRow>' instead."
+          },
+          {
+            "file": "examples/portfolio-tracker/src/lib/types.ts",
+            "line": 22,
+            "column": 26,
+            "message": "Array type using 'Category[]' is forbidden. Use 'Array<Category>' instead."
+          },
+          {
+            "file": "packages/dinero.js/src/core/api/toUnits.ts",
+            "line": 31,
             "column": 35,
             "message": "Array type using 'readonly TAmount[]' is forbidden. Use 'ReadonlyArray<TAmount>' instead."
           },
@@ -122,7 +122,7 @@
         "samples": []
       },
       "index-signature": {
-        "count": 3,
+        "count": 10,
         "samples": [
           {
             "file": "examples/expense-splitter/src/components/add-expense.tsx",
@@ -134,6 +134,48 @@
             "file": "examples/invoice-builder/src/lib/money.ts",
             "line": 21,
             "column": 25,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "examples/portfolio-tracker/src/hooks/use-portfolio.ts",
+            "line": 48,
+            "column": 21,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "examples/portfolio-tracker/src/hooks/use-portfolio.ts",
+            "line": 171,
+            "column": 22,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "examples/portfolio-tracker/src/hooks/use-portfolio.ts",
+            "line": 187,
+            "column": 22,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "examples/portfolio-tracker/src/lib/money.ts",
+            "line": 9,
+            "column": 25,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "examples/portfolio-tracker/src/lib/money.ts",
+            "line": 22,
+            "column": 28,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "examples/portfolio-tracker/src/lib/types.ts",
+            "line": 31,
+            "column": 31,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "examples/portfolio-tracker/src/lib/types.ts",
+            "line": 40,
+            "column": 31,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -212,17 +254,11 @@
         ]
       },
       "type": {
-        "count": 14,
+        "count": 25,
         "samples": [
           {
             "file": "examples/expense-splitter/src/App.tsx",
             "line": 16,
-            "column": 1,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "examples/expense-splitter/src/components/add-expense.tsx",
-            "line": 7,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
@@ -233,44 +269,50 @@
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "examples/expense-splitter/src/components/expense-list.tsx",
-            "line": 7,
-            "column": 1,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "examples/expense-splitter/src/components/settlements.tsx",
-            "line": 6,
-            "column": 1,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "examples/expense-splitter/src/types/index.ts",
-            "line": 5,
-            "column": 8,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "examples/expense-splitter/src/types/index.ts",
-            "line": 15,
-            "column": 8,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "examples/expense-splitter/src/types/index.ts",
-            "line": 25,
-            "column": 8,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "examples/invoice-builder/src/lib/invoice-types.ts",
+            "file": "examples/expense-splitter/src/components/person-list.tsx",
             "line": 3,
+            "column": 1,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "examples/expense-splitter/src/types/index.ts",
+            "line": 10,
             "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "examples/invoice-builder/src/components/preview-panel.tsx",
+            "line": 12,
+            "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "examples/invoice-builder/src/lib/invoice-types.ts",
             "line": 12,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "examples/portfolio-tracker/src/components/dashboard.tsx",
+            "line": 9,
+            "column": 1,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "examples/portfolio-tracker/src/components/holdings-editor.tsx",
+            "line": 8,
+            "column": 1,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "examples/portfolio-tracker/src/components/holdings-table.tsx",
+            "line": 17,
+            "column": 1,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "examples/portfolio-tracker/src/lib/types.ts",
+            "line": 11,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           }
@@ -283,7 +325,7 @@
         "samples": []
       },
       "no-type-imports": {
-        "count": 131,
+        "count": 143,
         "samples": [
           {
             "file": "docs/.vitepress/theme/index.ts",
@@ -292,49 +334,49 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "examples/expense-splitter/src/utils/calculations.ts",
-            "line": 14,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "packages/dinero.js/src/api/haveSameAmount.ts",
-            "line": 2,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "packages/dinero.js/src/api/trimScale.ts",
-            "line": 2,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "packages/dinero.js/src/calculator/number/api/integerDivide.ts",
+            "file": "examples/invoice-builder/src/components/editor-panel.tsx",
             "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/dinero.js/src/core/api/haveSameAmount.ts",
-            "line": 1,
+            "file": "examples/portfolio-tracker/src/lib/money.ts",
+            "line": 5,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/dinero.js/src/core/api/transformScale.ts",
+            "file": "packages/dinero.js/src/api/maximum.ts",
             "line": 2,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/dinero.js/src/core/types/DineroDivideOperation.ts",
+            "file": "packages/dinero.js/src/calculator/bigint/api/multiply.ts",
             "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/dinero.js/src/core/utils/greaterThanOrEqual.ts",
+            "file": "packages/dinero.js/src/core/api/convert.ts",
+            "line": 5,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "packages/dinero.js/src/core/api/subtract.ts",
+            "line": 3,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "packages/dinero.js/src/core/helpers/createDinero.ts",
+            "line": 3,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "packages/dinero.js/src/core/utils/getDivisors.ts",
             "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
@@ -350,7 +392,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 150,
+        "count": 176,
         "samples": [
           {
             "file": "docs/.vitepress/theme/NotFound.vue",
@@ -359,50 +401,50 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "examples/expense-splitter/src/App.tsx",
-            "line": 42,
+            "file": "examples/expense-splitter/src/components/add-expense.tsx",
+            "line": 13,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "examples/invoice-builder/src/components/preview-panel.tsx",
+            "line": 305,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "examples/invoice-builder/src/components/editor-panel.tsx",
-            "line": 55,
-            "column": 3,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "examples/invoice-builder/src/lib/money.ts",
-            "line": 103,
+            "file": "examples/portfolio-tracker/src/components/breakdown-bar.tsx",
+            "line": 16,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "packages/dinero.js/src/api/compare.ts",
-            "line": 14,
+            "file": "examples/portfolio-tracker/src/lib/money.ts",
+            "line": 139,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "packages/dinero.js/src/api/transformScale.ts",
-            "line": 15,
+            "file": "packages/dinero.js/src/api/hasSubUnits.ts",
+            "line": 13,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "packages/dinero.js/src/core/api/hasSubUnits.ts",
-            "line": 8,
+            "file": "packages/dinero.js/src/core/api/compare.ts",
+            "line": 17,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "packages/dinero.js/src/core/api/maximum.ts",
+            "line": 44,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "packages/dinero.js/src/core/api/subtract.ts",
-            "line": 33,
-            "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "packages/dinero.js/src/core/utils/getDivisors.ts",
-            "line": 3,
+            "file": "packages/dinero.js/src/core/utils/equal.ts",
+            "line": 13,
             "column": 8,
             "message": "Expected a function expression."
           },
@@ -482,7 +524,7 @@
     },
     "import-export-preference": {
       "named": {
-        "count": 18,
+        "count": 21,
         "samples": [
           {
             "file": "docs/.vitepress/config.ts",
@@ -503,14 +545,8 @@
             "message": "Prefer named exports"
           },
           {
-            "file": "examples/cart-vue/vite.config.js",
-            "line": 5,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "examples/expense-splitter/src/App.tsx",
-            "line": 54,
+            "file": "examples/expense-splitter/postcss.config.js",
+            "line": 1,
             "column": 8,
             "message": "Prefer named exports"
           },
@@ -533,6 +569,12 @@
             "message": "Prefer named exports"
           },
           {
+            "file": "examples/portfolio-tracker/vite.config.ts",
+            "line": 5,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
             "file": "examples/pricing-react/vite.config.js",
             "line": 5,
             "column": 8,
@@ -547,7 +589,7 @@
         ]
       },
       "default": {
-        "count": 99,
+        "count": 106,
         "samples": [
           {
             "file": "examples/cart-react/src/utils/convert.js",
@@ -556,50 +598,50 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "examples/expense-splitter/src/utils/format.ts",
-            "line": 9,
+            "file": "examples/invoice-builder/src/components/editor-panel.tsx",
+            "line": 46,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "packages/dinero.js/src/api/greaterThan.ts",
-            "line": 14,
+            "file": "examples/pricing-react/src/utils/format.js",
+            "line": 3,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "packages/dinero.js/src/api/minimum.ts",
+            "file": "packages/dinero.js/src/api/isPositive.ts",
             "line": 13,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "packages/dinero.js/src/calculator/bigint/api/increment.ts",
-            "line": 10,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "packages/dinero.js/src/calculator/number/api/decrement.ts",
-            "line": 10,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "packages/dinero.js/src/core/divide/down.ts",
+            "file": "packages/dinero.js/src/bigint/dinero.ts",
             "line": 15,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "packages/dinero.js/src/core/utils/computeBase.ts",
-            "line": 5,
+            "file": "packages/dinero.js/src/calculator/bigint/calculator.ts",
+            "line": 14,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "packages/dinero.js/src/core/utils/isScaledAmount.ts",
-            "line": 3,
+            "file": "packages/dinero.js/src/core/api/haveSameCurrency.ts",
+            "line": 4,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "packages/dinero.js/src/core/utils/compare.ts",
+            "line": 12,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "packages/dinero.js/src/core/utils/isHalf.ts",
+            "line": 5,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -618,7 +660,7 @@
         "samples": []
       },
       "4-space": {
-        "count": 251,
+        "count": 265,
         "samples": [
           {
             "file": "docs/.vitepress/config.ts",
@@ -627,50 +669,50 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "examples/expense-splitter/src/main.tsx",
-            "line": 9,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "packages/dinero.js/src/api/__tests__/equal.test.ts",
-            "line": 4,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "packages/dinero.js/src/api/greaterThanOrEqual.ts",
-            "line": 15,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "packages/dinero.js/src/calculator/bigint/api/__tests__/subtract.test.ts",
-            "line": 4,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "packages/dinero.js/src/calculator/number/api/modulo.ts",
-            "line": 12,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "packages/dinero.js/src/core/api/toUnits.ts",
-            "line": 5,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "packages/dinero.js/src/core/types/DineroFactory.ts",
-            "line": 4,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "packages/dinero.js/src/core/utils/computeBase.ts",
+            "file": "examples/expense-splitter/src/types/index.ts",
             "line": 6,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "examples/pricing-react/src/main.jsx",
+            "line": 10,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "packages/dinero.js/src/api/__tests__/toUnits.test.ts",
+            "line": 6,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "packages/dinero.js/src/calculator/bigint/api/__tests__/add.test.ts",
+            "line": 4,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "packages/dinero.js/src/calculator/number/api/__tests__/zero.test.ts",
+            "line": 4,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "packages/dinero.js/src/core/api/multiply.ts",
+            "line": 7,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "packages/dinero.js/src/core/types/DineroBinaryOperation.ts",
+            "line": 2,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "packages/dinero.js/src/core/utils/compare.ts",
+            "line": 13,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -683,7 +725,7 @@
         ]
       },
       "tab": {
-        "count": 251,
+        "count": 265,
         "samples": [
           {
             "file": "docs/.vitepress/config.ts",
@@ -692,50 +734,50 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "examples/expense-splitter/src/main.tsx",
-            "line": 9,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "packages/dinero.js/src/api/__tests__/equal.test.ts",
-            "line": 4,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "packages/dinero.js/src/api/greaterThanOrEqual.ts",
-            "line": 15,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "packages/dinero.js/src/calculator/bigint/api/__tests__/subtract.test.ts",
-            "line": 4,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "packages/dinero.js/src/calculator/number/api/modulo.ts",
-            "line": 12,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "packages/dinero.js/src/core/api/toUnits.ts",
-            "line": 5,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "packages/dinero.js/src/core/types/DineroFactory.ts",
-            "line": 4,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "packages/dinero.js/src/core/utils/computeBase.ts",
+            "file": "examples/expense-splitter/src/types/index.ts",
             "line": 6,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "examples/pricing-react/src/main.jsx",
+            "line": 10,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "packages/dinero.js/src/api/__tests__/toUnits.test.ts",
+            "line": 6,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "packages/dinero.js/src/calculator/bigint/api/__tests__/add.test.ts",
+            "line": 4,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "packages/dinero.js/src/calculator/number/api/__tests__/zero.test.ts",
+            "line": 4,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "packages/dinero.js/src/core/api/multiply.ts",
+            "line": 7,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "packages/dinero.js/src/core/types/DineroBinaryOperation.ts",
+            "line": 2,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "packages/dinero.js/src/core/utils/compare.ts",
+            "line": 13,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -750,7 +792,7 @@
     },
     "quotes": {
       "double": {
-        "count": 3018,
+        "count": 3178,
         "samples": [
           {
             "file": "docs/.vitepress/config.ts",
@@ -759,50 +801,50 @@
             "message": "Strings must use doublequote."
           },
           {
-            "file": "examples/expense-splitter/src/components/add-expense.tsx",
-            "line": 224,
-            "column": 38,
+            "file": "examples/expense-splitter/src/components/balances.tsx",
+            "line": 32,
+            "column": 19,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/dinero.js/src/api/__tests__/add.test.ts",
-            "line": 260,
+            "file": "examples/portfolio-tracker/src/lib/types.ts",
+            "line": 25,
+            "column": 3,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "packages/dinero.js/src/api/__tests__/equal.test.ts",
+            "line": 259,
             "column": 10,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/dinero.js/src/api/__tests__/hasSubUnits.test.ts",
-            "line": 107,
-            "column": 10,
+            "file": "packages/dinero.js/src/api/__tests__/subtract.test.ts",
+            "line": 29,
+            "column": 8,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/dinero.js/src/api/__tests__/toDecimal.test.ts",
-            "line": 214,
-            "column": 35,
+            "file": "packages/dinero.js/src/api/subtract.ts",
+            "line": 1,
+            "column": 30,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/dinero.js/src/bigint/currencies/iso4217.ts",
-            "line": 529,
-            "column": 9,
+            "file": "packages/dinero.js/src/core/api/add.ts",
+            "line": 1,
+            "column": 44,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/dinero.js/src/core/api/index.ts",
-            "line": 10,
-            "column": 15,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "packages/dinero.js/src/core/types/index.ts",
-            "line": 12,
+            "file": "packages/dinero.js/src/core/divide/index.ts",
+            "line": 8,
             "column": 15,
             "message": "Strings must use doublequote."
           },
           {
             "file": "packages/dinero.js/src/currencies/iso4217.ts",
-            "line": 475,
+            "line": 394,
             "column": 9,
             "message": "Strings must use doublequote."
           },
@@ -886,7 +928,7 @@
         "samples": []
       },
       "never": {
-        "count": 5380,
+        "count": 5543,
         "samples": [
           {
             "file": "docs/.vitepress/config.ts",
@@ -895,51 +937,51 @@
             "message": "Extra semicolon."
           },
           {
-            "file": "packages/dinero.js/src/api/__tests__/add.test.ts",
-            "line": 77,
-            "column": 11,
+            "file": "examples/pricing-react/src/App.jsx",
+            "line": 2,
+            "column": 54,
             "message": "Extra semicolon."
           },
           {
-            "file": "packages/dinero.js/src/api/__tests__/convert.test.ts",
-            "line": 61,
-            "column": 9,
+            "file": "packages/dinero.js/src/api/__tests__/compare.test.ts",
+            "line": 81,
+            "column": 56,
             "message": "Extra semicolon."
           },
           {
-            "file": "packages/dinero.js/src/api/__tests__/haveSameAmount.test.ts",
-            "line": 82,
-            "column": 71,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "packages/dinero.js/src/api/__tests__/subtract.test.ts",
-            "line": 68,
+            "file": "packages/dinero.js/src/api/__tests__/hasSubUnits.test.ts",
+            "line": 66,
             "column": 48,
             "message": "Extra semicolon."
           },
           {
+            "file": "packages/dinero.js/src/api/__tests__/multiply.test.ts",
+            "line": 100,
+            "column": 5,
+            "message": "Extra semicolon."
+          },
+          {
             "file": "packages/dinero.js/src/api/__tests__/transformScale.test.ts",
-            "line": 759,
-            "column": 9,
+            "line": 481,
+            "column": 75,
             "message": "Extra semicolon."
           },
           {
-            "file": "packages/dinero.js/src/calculator/number/api/__tests__/compare.test.ts",
-            "line": 37,
-            "column": 66,
+            "file": "packages/dinero.js/src/calculator/bigint/api/integerDivide.ts",
+            "line": 1,
+            "column": 59,
             "message": "Extra semicolon."
           },
           {
-            "file": "packages/dinero.js/src/core/divide/__tests__/down.test.ts",
-            "line": 53,
-            "column": 7,
+            "file": "packages/dinero.js/src/core/checks/messages.ts",
+            "line": 1,
+            "column": 59,
             "message": "Extra semicolon."
           },
           {
             "file": "packages/dinero.js/src/core/utils/__tests__/distribute.test.ts",
-            "line": 30,
-            "column": 47,
+            "line": 3,
+            "column": 43,
             "message": "Extra semicolon."
           },
           {

@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "a438ba9aca8c77c6addccf0c6a08218dd7ca61a5",
-  "analyzedCommitDate": "2026-03-01T17:35:47.000Z",
+  "analyzedCommit": "1e8a6745cf8bc4e2a6ccd2b33fd705365166ba5c",
+  "analyzedCommitDate": "2026-03-02T09:05:12.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -9,7 +9,7 @@
         "samples": []
       },
       "generic": {
-        "count": 1894,
+        "count": 1908,
         "samples": [
           {
             "file": "packages/cli/src/CLIHelper.ts",
@@ -19,21 +19,21 @@
           },
           {
             "file": "packages/core/src/entity/EntityLoader.ts",
-            "line": 604,
-            "column": 72,
-            "message": "Array type using 'Entity[]' is forbidden. Use 'Array<Entity>' instead."
+            "line": 405,
+            "column": 89,
+            "message": "Array type using 'AnyEntity[]' is forbidden. Use 'Array<AnyEntity>' instead."
           },
           {
             "file": "packages/core/src/platforms/Platform.ts",
-            "line": 661,
-            "column": 40,
+            "line": 581,
+            "column": 53,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
-            "file": "packages/core/src/utils/Configuration.ts",
-            "line": 356,
-            "column": 45,
-            "message": "Array type using 'any[]' is forbidden. Use 'Array<any>' instead."
+            "file": "packages/core/src/utils/AbstractMigrator.ts",
+            "line": 391,
+            "column": 68,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
             "file": "packages/migrations/src/MigrationStorage.ts",
@@ -43,27 +43,27 @@
           },
           {
             "file": "packages/sql/src/AbstractSqlDriver.ts",
-            "line": 1411,
+            "line": 1427,
             "column": 13,
             "message": "Array type using 'Primary<O>[][]' is forbidden. Use 'Array<Primary<O>[]>' instead."
           },
           {
             "file": "packages/sql/src/dialects/sqlite/SqliteSchemaHelper.ts",
-            "line": 56,
-            "column": 33,
+            "line": 61,
+            "column": 22,
             "message": "Array type using 'Table[]' is forbidden. Use 'Array<Table>' instead."
           },
           {
             "file": "packages/sql/src/schema/DatabaseTable.ts",
-            "line": 68,
-            "column": 33,
+            "line": 60,
+            "column": 17,
             "message": "Array type using 'IndexDef[]' is forbidden. Use 'Array<IndexDef>' instead."
           },
           {
-            "file": "tests/features/embeddables/GH5325.test.ts",
-            "line": 52,
-            "column": 25,
-            "message": "Array type using 'DrugInfoIngredient[]' is forbidden. Use 'Array<DrugInfoIngredient>' instead."
+            "file": "tests/features/embeddables/GH5310.test.ts",
+            "line": 70,
+            "column": 10,
+            "message": "Array type using 'CartItem[]' is forbidden. Use 'Array<CartItem>' instead."
           },
           {
             "file": "tests/types.test.ts",
@@ -109,7 +109,7 @@
         "samples": [
           {
             "file": "packages/core/src/EntityManager.ts",
-            "line": 104,
+            "line": 105,
             "column": 43,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
@@ -176,7 +176,7 @@
         "samples": [
           {
             "file": "packages/core/src/drivers/IDatabaseDriver.ts",
-            "line": 167,
+            "line": 185,
             "column": 52,
             "message": "A record is preferred over an index signature."
           },
@@ -241,7 +241,7 @@
         "samples": [
           {
             "file": "packages/core/src/EntityManager.ts",
-            "line": 103,
+            "line": 104,
             "column": 37,
             "message": "An index signature is preferred over a record."
           },
@@ -436,7 +436,7 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 473,
+        "count": 476,
         "samples": [
           {
             "file": "tests/EntityFactory.test.ts",
@@ -445,52 +445,52 @@
             "message": "Imports EntityFactory and MikroORM are only used as type."
           },
           {
-            "file": "tests/entities/FooBaz.ts",
-            "line": 11,
+            "file": "tests/entities/Publisher.ts",
+            "line": 1,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "tests/features/custom-types/GH4803.test.ts",
+            "file": "tests/features/custom-types/GH6030.test.ts",
             "line": 1,
             "column": 1,
-            "message": "Imports EntityProperty and Platform are only used as type."
+            "message": "Imports Options are only used as type."
           },
           {
-            "file": "tests/features/entity-manager/EntityManager.postgre.test.ts",
-            "line": 2,
+            "file": "tests/features/events/events.mysql.test.ts",
+            "line": 3,
             "column": 1,
-            "message": "Imports AnyEntity, ChangeSet, EventSubscriber, FilterQuery, and FlushEventArgs are only used as type."
+            "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "tests/features/partial-loading/m-n-owners.mongo.test.ts",
+            "file": "tests/features/partial-loading/partial-loading-exclude.mysql.test.ts",
+            "line": 3,
+            "column": 1,
+            "message": "All imports in the declaration are only used as types. Use `import type`."
+          },
+          {
+            "file": "tests/features/schema-generator/deferrable-fks.sqlite.test.ts",
+            "line": 1,
+            "column": 1,
+            "message": "Imports Rel are only used as type."
+          },
+          {
+            "file": "tests/features/upsert/upsert.mssql.test.ts",
+            "line": 4,
+            "column": 1,
+            "message": "All imports in the declaration are only used as types. Use `import type`."
+          },
+          {
+            "file": "tests/issues/GH4065.test.ts",
+            "line": 1,
+            "column": 1,
+            "message": "All imports in the declaration are only used as types. Use `import type`."
+          },
+          {
+            "file": "tests/issues/GH6079.test.ts",
             "line": 1,
             "column": 1,
             "message": "Imports ObjectId are only used as type."
-          },
-          {
-            "file": "tests/features/schema-generator/diffing-default-values.test.ts",
-            "line": 1,
-            "column": 1,
-            "message": "Imports Opt are only used as type."
-          },
-          {
-            "file": "tests/features/upsert/upsert.test.ts",
-            "line": 1,
-            "column": 1,
-            "message": "Imports Ref, EventSubscriber, EventArgs, and IDatabaseDriver are only used as type."
-          },
-          {
-            "file": "tests/issues/GH4122.test.ts",
-            "line": 1,
-            "column": 1,
-            "message": "Imports Ref are only used as type."
-          },
-          {
-            "file": "tests/issues/GH610.test.ts",
-            "line": 1,
-            "column": 1,
-            "message": "Imports Ref are only used as type."
           },
           {
             "file": "tests/types.test.ts",
@@ -501,7 +501,7 @@
         ]
       },
       "no-type-imports": {
-        "count": 1425,
+        "count": 1427,
         "samples": [
           {
             "file": "packages/cli/src/CLIConfigurator.ts",
@@ -516,8 +516,8 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/core/src/types/Uint8ArrayType.ts",
-            "line": 3,
+            "file": "packages/core/src/types/UnknownType.ts",
+            "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -528,26 +528,26 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/mariadb/src/MariaDbPlatform.ts",
-            "line": 1,
-            "column": 25,
+            "file": "packages/mariadb/src/MariaDbQueryBuilder.ts",
+            "line": 2,
+            "column": 3,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "packages/mongodb/src/MongoPlatform.ts",
-            "line": 17,
+            "line": 18,
             "column": 3,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "packages/sql/src/AbstractSqlDriver.ts",
-            "line": 44,
+            "line": 46,
             "column": 3,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "packages/sql/src/query/QueryBuilder.ts",
-            "line": 14,
+            "line": 15,
             "column": 3,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -633,7 +633,7 @@
         ]
       },
       "declaration": {
-        "count": 152,
+        "count": 153,
         "samples": [
           {
             "file": "docs/src/pages/versions.js",
@@ -654,14 +654,14 @@
             "message": "Expected a function declaration."
           },
           {
-            "file": "packages/core/src/utils/fs-utils.ts",
-            "line": 11,
-            "column": 5,
+            "file": "packages/decorators/src/utils.ts",
+            "line": 73,
+            "column": 9,
             "message": "Expected a function declaration."
           },
           {
             "file": "packages/sql/src/dialects/mysql/MySqlSchemaHelper.ts",
-            "line": 257,
+            "line": 258,
             "column": 11,
             "message": "Expected a function declaration."
           },
@@ -678,9 +678,9 @@
             "message": "Expected a function declaration."
           },
           {
-            "file": "tests/features/entity-generator/MetadataHooks.mysql.test.ts",
-            "line": 379,
-            "column": 7,
+            "file": "tests/features/entity-manager/EntityManager.mysql.test.ts",
+            "line": 2143,
+            "column": 11,
             "message": "Expected a function declaration."
           },
           {
@@ -897,7 +897,7 @@
         ]
       },
       "4-space": {
-        "count": 1474,
+        "count": 1476,
         "samples": [
           {
             "file": "docs/docusaurus.config.js",
@@ -912,37 +912,37 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "tests/complex-entities/abstract-class.entity.ts",
-            "line": 5,
+            "file": "tests/database/seeder/author3.seeder.ts",
+            "line": 6,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "tests/features/cursor-based-pagination/cursor-nullable-columns.test.ts",
-            "line": 8,
+            "file": "tests/features/cursor-based-pagination/simple-cursor.test.ts",
+            "line": 9,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "tests/features/embeddables/polymorphic-embedded-entities.mongo.test.ts",
-            "line": 3,
+            "file": "tests/features/embeddables/polymorphic-embedded-entities.sqlite.test.ts",
+            "line": 9,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "tests/features/polymorphic-relations/polymorphic-relations.mongo.test.ts",
-            "line": 3,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "tests/features/single-table-inheritance/GH5224.test.ts",
+            "file": "tests/features/polymorphic-relations/polymorphic-relations.mysql.test.ts",
             "line": 7,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "tests/issues/GH2784.test.ts",
+            "file": "tests/features/single-table-inheritance/GH4423.test.ts",
+            "line": 3,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "tests/issues/GH2781.test.ts",
             "line": 7,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
@@ -962,7 +962,7 @@
         ]
       },
       "tab": {
-        "count": 1486,
+        "count": 1488,
         "samples": [
           {
             "file": "docs/docusaurus.config.js",
@@ -983,26 +983,26 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "tests/features/custom-order/custom-order.mssql.test.ts",
+            "file": "tests/features/custom-order/custom-order.mysql.test.ts",
             "line": 3,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "tests/features/entity-assigner/GH1811.test.ts",
-            "line": 10,
+            "file": "tests/features/entity-assigner/GH3571.test.ts",
+            "line": 8,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "tests/features/query-builder/query-builder-deep.test.ts",
-            "line": 7,
+            "file": "tests/features/query-builder/query-builder-fields-type.test.ts",
+            "line": 14,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "tests/features/single-table-inheritance/GH3745.test.ts",
-            "line": 6,
+            "file": "tests/features/single-table-inheritance/GH2723.test.ts",
+            "line": 8,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -1029,7 +1029,7 @@
     },
     "quotes": {
       "double": {
-        "count": 53500,
+        "count": 53727,
         "samples": [
           {
             "file": "docs/docusaurus.config.js",
@@ -1039,50 +1039,50 @@
           },
           {
             "file": "packages/sql/src/dialects/mysql/MySqlNativeQueryBuilder.ts",
-            "line": 15,
-            "column": 23,
+            "line": 36,
+            "column": 36,
             "message": "Strings must use doublequote."
           },
           {
             "file": "tests/features/auto-refreshing.postgre.test.ts",
-            "line": 155,
-            "column": 30,
+            "line": 232,
+            "column": 95,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "tests/features/embeddables/GH2948.test.ts",
-            "line": 120,
-            "column": 17,
+            "file": "tests/features/embeddables/GH3134.test.ts",
+            "line": 62,
+            "column": 39,
             "message": "Strings must use doublequote."
           },
           {
             "file": "tests/features/entity-manager/EntityManager.mssql.test.ts",
-            "line": 974,
-            "column": 41,
+            "line": 1121,
+            "column": 32,
             "message": "Strings must use doublequote."
           },
           {
             "file": "tests/features/migrations/Migrator.postgres.test.ts",
-            "line": 76,
-            "column": 47,
+            "line": 265,
+            "column": 40,
             "message": "Strings must use doublequote."
           },
           {
             "file": "tests/features/query-builder/query-builder-fields-type.test.ts",
-            "line": 138,
-            "column": 10,
+            "line": 257,
+            "column": 53,
             "message": "Strings must use doublequote."
           },
           {
             "file": "tests/features/serialization/explicit-serialization.test.ts",
-            "line": 161,
-            "column": 42,
+            "line": 16,
+            "column": 27,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "tests/issues/GH2059.test.ts",
-            "line": 76,
-            "column": 20,
+            "file": "tests/issues/GH1968.test.ts",
+            "line": 70,
+            "column": 89,
             "message": "Strings must use doublequote."
           },
           {
@@ -1094,7 +1094,7 @@
         ]
       },
       "single": {
-        "count": 1830,
+        "count": 1831,
         "samples": [
           {
             "file": "docs/static/js/custom.js",
@@ -1104,7 +1104,7 @@
           },
           {
             "file": "packages/sql/src/query/NativeQueryBuilder.ts",
-            "line": 374,
+            "line": 369,
             "column": 23,
             "message": "Strings must use singlequote."
           },
@@ -1116,13 +1116,13 @@
           },
           {
             "file": "tests/features/entity-manager/EntityManager.mongo.test.ts",
-            "line": 2057,
-            "column": 92,
+            "line": 1951,
+            "column": 58,
             "message": "Strings must use singlequote."
           },
           {
             "file": "tests/features/generated-columns/generated-columns.postgres.test.ts",
-            "line": 98,
+            "line": 91,
             "column": 16,
             "message": "Strings must use singlequote."
           },
@@ -1140,8 +1140,8 @@
           },
           {
             "file": "tests/features/schema-generator/enum-diffing.postgres.test.ts",
-            "line": 187,
-            "column": 34,
+            "line": 180,
+            "column": 13,
             "message": "Strings must use singlequote."
           },
           {
@@ -1172,7 +1172,7 @@
         ]
       },
       "never": {
-        "count": 85849,
+        "count": 86144,
         "samples": [
           {
             "file": "docs/docusaurus.config.js",
@@ -1182,50 +1182,50 @@
           },
           {
             "file": "packages/entity-generator/src/EntitySchemaSourceFile.ts",
-            "line": 60,
-            "column": 113,
+            "line": 128,
+            "column": 56,
             "message": "Extra semicolon."
           },
           {
             "file": "tests/bench/types/api-methods.ts",
-            "line": 156,
+            "line": 188,
             "column": 20,
             "message": "Extra semicolon."
           },
           {
-            "file": "tests/features/custom-types/GH5176.test.ts",
-            "line": 130,
-            "column": 60,
+            "file": "tests/features/custom-types/GH5540.mssql.test.ts",
+            "line": 67,
+            "column": 32,
             "message": "Extra semicolon."
           },
           {
             "file": "tests/features/entity-manager/EntityManager.mongo.test.ts",
-            "line": 2429,
-            "column": 3,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "tests/features/generated-columns/generated-columns.mysql.test.ts",
             "line": 156,
-            "column": 3,
+            "column": 74,
             "message": "Extra semicolon."
           },
           {
-            "file": "tests/features/query-builder/query-builder-fields-type.test.ts",
-            "line": 323,
-            "column": 40,
+            "file": "tests/features/generated-columns/generated-columns.sqlite.test.ts",
+            "line": 160,
+            "column": 69,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "tests/features/query-builder/query-builder-mutations.test.ts",
+            "line": 162,
+            "column": 48,
             "message": "Extra semicolon."
           },
           {
             "file": "tests/features/table-per-type-inheritance/table-per-type-inheritance.test.ts",
-            "line": 2402,
-            "column": 54,
+            "line": 2215,
+            "column": 45,
             "message": "Extra semicolon."
           },
           {
-            "file": "tests/issues/GH3540.test.ts",
-            "line": 12,
-            "column": 19,
+            "file": "tests/issues/GH349.test.ts",
+            "line": 150,
+            "column": 38,
             "message": "Extra semicolon."
           },
           {

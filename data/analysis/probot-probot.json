@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "a6077ac60588e543839bf719d9c114c4330bbf8a",
-  "analyzedCommitDate": "2026-03-03T09:01:55.000Z",
+  "analyzedCommit": "c94ac6e0216abf169ad1024140d697ca8f653059",
+  "analyzedCommitDate": "2026-03-03T16:15:51.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -19,7 +19,7 @@
           },
           {
             "file": "src/helpers/update-env.ts",
-            "line": 27,
+            "line": 25,
             "column": 41,
             "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           },
@@ -320,8 +320,20 @@
         ]
       },
       "type": {
-        "count": 6,
+        "count": 8,
         "samples": [
+          {
+            "file": "src/helpers/apply-env.ts",
+            "line": 3,
+            "column": 1,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "src/helpers/load-env.ts",
+            "line": 6,
+            "column": 1,
+            "message": "Use `type` instead of `interface`."
+          },
           {
             "file": "src/helpers/resolve-app-function.ts",
             "line": 19,
@@ -380,7 +392,7 @@
         ]
       },
       "no-type-imports": {
-        "count": 114,
+        "count": 115,
         "samples": [
           {
             "file": "src/apps/default.ts",
@@ -395,14 +407,14 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/helpers/resolve-app-function.ts",
-            "line": 3,
+            "file": "src/helpers/load-package-json.ts",
+            "line": 4,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "src/octokit/get-probot-octokit-with-defaults.ts",
-            "line": 3,
+            "line": 2,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -415,7 +427,7 @@
           {
             "file": "src/server/handlers/http-logger.ts",
             "line": 4,
-            "column": 45,
+            "column": 31,
             "message": "Use an `import` instead of an `import type`."
           },
           {
@@ -447,7 +459,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 58,
+        "count": 60,
         "samples": [
           {
             "file": ".typedoc/typedoc_ga.mjs",
@@ -457,12 +469,12 @@
           },
           {
             "file": "src/bin/read-cli-options.ts",
-            "line": 9,
-            "column": 1,
+            "line": 32,
+            "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/helpers/create-deferred-promise.ts",
+            "file": "src/helpers/apply-env.ts",
             "line": 7,
             "column": 8,
             "message": "Expected a function expression."
@@ -474,20 +486,20 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "src/helpers/load-package-json.ts",
-            "line": 6,
+            "file": "src/helpers/load-env.ts",
+            "line": 10,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/octokit/get-octokit-throttle-options.ts",
-            "line": 12,
+            "file": "src/octokit/get-authenticated-octokit.ts",
+            "line": 39,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/run.ts",
-            "line": 36,
+            "file": "src/octokit/octokit-webhooks-transform.ts",
+            "line": 17,
             "column": 8,
             "message": "Expected a function expression."
           },
@@ -498,9 +510,9 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "test/integration/utils.ts",
-            "line": 6,
-            "column": 8,
+            "file": "test/integration/integration-cli-version.test.ts",
+            "line": 58,
+            "column": 3,
             "message": "Expected a function expression."
           },
           {
@@ -620,7 +632,7 @@
         ]
       },
       "default": {
-        "count": 36,
+        "count": 38,
         "samples": [
           {
             "file": ".typedoc/typedoc_ga.mjs",
@@ -635,20 +647,20 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/helpers/get-error-handler.ts",
+            "file": "src/helpers/apply-env.ts",
             "line": 7,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/helpers/is-production.ts",
-            "line": 1,
+            "file": "src/helpers/get-runtime-version.ts",
+            "line": 3,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/helpers/validate-log-format.ts",
-            "line": 3,
+            "file": "src/helpers/load-package-json.ts",
+            "line": 6,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -698,7 +710,7 @@
         ]
       },
       "4-space": {
-        "count": 88,
+        "count": 90,
         "samples": [
           {
             "file": "example/node-middleware.mjs",
@@ -719,31 +731,31 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/octokit/get-authenticated-octokit.ts",
-            "line": 6,
+            "file": "src/manifest-creation.ts",
+            "line": 15,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/server/handlers/not-found.ts",
-            "line": 4,
+            "file": "src/server/handlers/http-logger.ts",
+            "line": 8,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/views/success.ts",
+            "file": "src/views/setup.ts",
             "line": 2,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "test/e2e/hello-world.cjs",
-            "line": 6,
+            "file": "test/e2e/e2e.test.ts",
+            "line": 4,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "test/integration/integration-cli-version.test.ts",
+            "file": "test/integration/integration-cli-help.test.ts",
             "line": 6,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
@@ -763,7 +775,7 @@
         ]
       },
       "tab": {
-        "count": 90,
+        "count": 92,
         "samples": [
           {
             "file": ".typedoc/typedoc_ga.mjs",
@@ -778,20 +790,20 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/helpers/get-runtime-version.ts",
+            "file": "src/helpers/get-runtime-name.ts",
             "line": 4,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/manifest-creation.ts",
-            "line": 15,
+            "file": "src/helpers/webhook-proxy.ts",
+            "line": 7,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/server/handlers/http-logger.ts",
-            "line": 8,
+            "file": "src/probot.ts",
+            "line": 3,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -895,7 +907,7 @@
         ]
       },
       "single": {
-        "count": 2103,
+        "count": 2109,
         "samples": [
           {
             "file": ".typedoc/typedoc_ga.mjs",
@@ -905,44 +917,44 @@
           },
           {
             "file": "src/bin/receive.ts",
-            "line": 86,
+            "line": 87,
             "column": 15,
             "message": "Strings must use singlequote."
           },
           {
             "file": "src/octokit/get-probot-octokit-with-defaults.ts",
-            "line": 9,
-            "column": 43,
+            "line": 3,
+            "column": 35,
             "message": "Strings must use singlequote."
           },
           {
             "file": "test/apps/default.test.ts",
-            "line": 34,
-            "column": 8,
+            "line": 12,
+            "column": 34,
             "message": "Strings must use singlequote."
           },
           {
             "file": "test/context.test.ts",
-            "line": 213,
-            "column": 31,
+            "line": 207,
+            "column": 8,
             "message": "Strings must use singlequote."
           },
           {
             "file": "test/helpers/load-package-json.test.ts",
-            "line": 5,
-            "column": 10,
+            "line": 1,
+            "column": 33,
             "message": "Strings must use singlequote."
           },
           {
             "file": "test/integration/integration-smee.test.ts",
-            "line": 27,
-            "column": 10,
+            "line": 14,
+            "column": 34,
             "message": "Strings must use singlequote."
           },
           {
             "file": "test/probot-octokit.test.ts",
-            "line": 504,
-            "column": 30,
+            "line": 503,
+            "column": 43,
             "message": "Strings must use singlequote."
           },
           {
@@ -991,7 +1003,7 @@
         ]
       },
       "never": {
-        "count": 2773,
+        "count": 2782,
         "samples": [
           {
             "file": ".typedoc/typedoc_ga.mjs",
@@ -1001,50 +1013,50 @@
           },
           {
             "file": "src/helpers/get-error-handler.ts",
-            "line": 30,
+            "line": 22,
             "column": 10,
             "message": "Extra semicolon."
           },
           {
             "file": "src/probot.ts",
-            "line": 260,
-            "column": 13,
+            "line": 225,
+            "column": 7,
             "message": "Extra semicolon."
           },
           {
             "file": "test/apps/setup.test.ts",
-            "line": 65,
-            "column": 27,
+            "line": 97,
+            "column": 7,
             "message": "Extra semicolon."
           },
           {
             "file": "test/context.test.ts",
-            "line": 278,
-            "column": 51,
+            "line": 272,
+            "column": 9,
             "message": "Extra semicolon."
           },
           {
             "file": "test/helpers/validate-log-format.test.ts",
-            "line": 19,
-            "column": 66,
+            "line": 21,
+            "column": 5,
             "message": "Extra semicolon."
           },
           {
-            "file": "test/manifest-creation.test.ts",
-            "line": 2,
-            "column": 29,
+            "file": "test/integration/utils.ts",
+            "line": 58,
+            "column": 30,
             "message": "Extra semicolon."
           },
           {
             "file": "test/probot.test.ts",
-            "line": 56,
-            "column": 51,
+            "line": 51,
+            "column": 52,
             "message": "Extra semicolon."
           },
           {
             "file": "test/run.test.ts",
-            "line": 45,
-            "column": 26,
+            "line": 44,
+            "column": 37,
             "message": "Extra semicolon."
           },
           {

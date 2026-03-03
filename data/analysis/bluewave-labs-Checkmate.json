@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "332a21cd99423eafa120a57f650c3f4533d058e0",
-  "analyzedCommitDate": "2026-03-03T17:20:22.000Z",
+  "analyzedCommit": "cba9f4303285c765ecae14fc1c9c647f1eb90774",
+  "analyzedCommitDate": "2026-03-03T21:41:05.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -208,12 +208,18 @@
     },
     "consistent-indexed-object-style": {
       "record": {
-        "count": 3,
+        "count": 6,
         "samples": [
           {
             "file": "client/src/Utils/logger.ts",
             "line": 4,
             "column": 2,
+            "message": "A record is preferred over an index signature."
+          },
+          {
+            "file": "server/src/config/services.ts",
+            "line": 154,
+            "column": 101,
             "message": "A record is preferred over an index signature."
           },
           {
@@ -226,6 +232,18 @@
             "file": "server/src/repositories/checks/MongoChecksRepistory.ts",
             "line": 544,
             "column": 42,
+            "message": "A record is preferred over an index signature."
+          },
+          {
+            "file": "server/src/service/infrastructure/networkService.ts",
+            "line": 88,
+            "column": 118,
+            "message": "A record is preferred over an index signature."
+          },
+          {
+            "file": "server/src/service/infrastructure/networkService.ts",
+            "line": 156,
+            "column": 111,
             "message": "A record is preferred over an index signature."
           }
         ]
@@ -277,7 +295,7 @@
           },
           {
             "file": "server/src/service/infrastructure/networkService.ts",
-            "line": 744,
+            "line": 834,
             "column": 22,
             "message": "An index signature is preferred over a record."
           },
@@ -356,7 +374,7 @@
           },
           {
             "file": "server/src/types/network.ts",
-            "line": 115,
+            "line": 124,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           }
@@ -430,7 +448,7 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 100,
+        "count": 112,
         "samples": [
           {
             "file": "server/src/app.ts",
@@ -439,50 +457,50 @@
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "server/src/controllers/diagnosticController.ts",
+            "file": "server/src/controllers/geoCheckController.ts",
             "line": 1,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "server/src/controllers/notificationController.ts",
-            "line": 6,
+            "file": "server/src/controllers/settingsController.ts",
+            "line": 1,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "server/src/db/models/GeoCheck.ts",
-            "line": 1,
+            "file": "server/src/middleware/verifyJWT.ts",
+            "line": 5,
             "column": 1,
-            "message": "Imports Types are only used as type."
+            "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "server/src/repositories/monitor-stats/MongoMonitorStatsRepository.ts",
+            "file": "server/src/repositories/teams/MongoTeamsRepository.ts",
+            "line": 2,
+            "column": 1,
+            "message": "Imports TeamDocument are only used as type."
+          },
+          {
+            "file": "server/src/service/business/userService.ts",
+            "line": 13,
+            "column": 1,
+            "message": "All imports in the declaration are only used as types. Use `import type`."
+          },
+          {
+            "file": "server/src/service/infrastructure/networkService.ts",
+            "line": 86,
+            "column": 24,
+            "message": "`import()` type annotations are forbidden."
+          },
+          {
+            "file": "server/src/service/infrastructure/notificationProviders/discord.ts",
             "line": 3,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "server/src/routes/statusPageRoute.ts",
-            "line": 1,
-            "column": 1,
-            "message": "Imports RequestHandler are only used as type."
-          },
-          {
-            "file": "server/src/service/infrastructure/SuperSimpleQueue/SuperSimpleQueueHelper.ts",
+            "file": "server/src/service/system/settingsService.ts",
             "line": 4,
-            "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
-          {
-            "file": "server/src/service/infrastructure/notificationProviders/slack.ts",
-            "line": 3,
-            "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
-          {
-            "file": "server/src/shutdown.ts",
-            "line": 1,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
@@ -495,7 +513,7 @@
         ]
       },
       "no-type-imports": {
-        "count": 417,
+        "count": 429,
         "samples": [
           {
             "file": "client/src/App.tsx",
@@ -504,52 +522,52 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "client/src/Components/inputs/TimePicker.tsx",
-            "line": 2,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "client/src/Hooks/useMonitorForm.ts",
-            "line": 2,
-            "column": 25,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "client/src/Pages/Incidents/Components/DialogIncidentDetails.tsx",
-            "line": 5,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "client/src/Pages/Notifications/components/NotificationsTable.tsx",
-            "line": 6,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "client/src/Pages/Uptime/Monitors/index.tsx",
-            "line": 11,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "server/src/db/models/Team.ts",
+            "file": "client/src/Components/inputs/ToggleButton.tsx",
             "line": 3,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "server/src/repositories/settings/MongoSettingsRepository.ts",
-            "line": 4,
-            "column": 28,
+            "file": "client/src/Hooks/usePasswordForm.ts",
+            "line": 2,
+            "column": 26,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "server/src/service/infrastructure/notificationMessageBuilder.ts",
-            "line": 2,
+            "file": "client/src/Pages/Incidents/Components/IncidentTable.tsx",
+            "line": 7,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "client/src/Pages/PageSpeed/Monitors/Components/PageSpeedMonitorsTable.tsx",
+            "line": 7,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "client/src/Types/state.ts",
+            "line": 1,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "server/src/repositories/checks/IChecksRepository.ts",
+            "line": 10,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "server/src/service/business/checkService.ts",
+            "line": 4,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "server/src/service/infrastructure/networkService.ts",
+            "line": 163,
+            "column": 23,
+            "message": "`import()` type annotations are forbidden."
           },
           {
             "file": "server/test/superSimpleQueueHelper.test.ts",
@@ -1046,7 +1064,7 @@
         ]
       },
       "single": {
-        "count": 7649,
+        "count": 7690,
         "samples": [
           {
             "file": ".github/scripts/download-translations.js",
@@ -1056,50 +1074,50 @@
           },
           {
             "file": "client/src/Components/inputs/LanguageSelector.tsx",
-            "line": 16,
-            "column": 6,
+            "line": 51,
+            "column": 31,
             "message": "Strings must use singlequote."
           },
           {
             "file": "client/src/Hooks/useMonitorForm.ts",
-            "line": 49,
+            "line": 71,
             "column": 24,
             "message": "Strings must use singlequote."
           },
           {
             "file": "client/src/Pages/Incidents/Components/IncidentTable.tsx",
-            "line": 77,
+            "line": 122,
             "column": 9,
             "message": "Strings must use singlequote."
           },
           {
             "file": "client/src/Pages/Settings/index.tsx",
-            "line": 224,
-            "column": 21,
+            "line": 324,
+            "column": 18,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "client/src/Utils/logger.ts",
-            "line": 110,
-            "column": 17,
+            "file": "client/src/Validation/editUser.ts",
+            "line": 15,
+            "column": 23,
             "message": "Strings must use singlequote."
           },
           {
             "file": "server/src/controllers/monitorController.ts",
-            "line": 162,
+            "line": 344,
+            "column": 53,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "server/src/repositories/monitors/MongoMonitorsRepository.ts",
+            "line": 64,
             "column": 10,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "server/src/repositories/monitor-stats/MongoMonitorStatsRepository.ts",
-            "line": 44,
-            "column": 34,
-            "message": "Strings must use singlequote."
-          },
-          {
             "file": "server/src/service/infrastructure/networkService.ts",
-            "line": 797,
-            "column": 13,
+            "line": 914,
+            "column": 19,
             "message": "Strings must use singlequote."
           },
           {
@@ -1117,7 +1135,7 @@
         "samples": []
       },
       "never": {
-        "count": 9407,
+        "count": 9403,
         "samples": [
           {
             "file": ".github/scripts/download-translations.js",
@@ -1133,44 +1151,44 @@
           },
           {
             "file": "client/src/Pages/Auth/Login/index.tsx",
-            "line": 36,
-            "column": 3,
+            "line": 25,
+            "column": 4,
             "message": "Extra semicolon."
           },
           {
             "file": "client/src/Pages/Maintenance/MaintenanceWindowTable.tsx",
-            "line": 171,
+            "line": 164,
             "column": 3,
             "message": "Extra semicolon."
           },
           {
             "file": "client/src/Routes/index.tsx",
-            "line": 31,
-            "column": 57,
+            "line": 30,
+            "column": 54,
             "message": "Extra semicolon."
           },
           {
             "file": "server/src/controllers/maintenanceWindowController.ts",
-            "line": 110,
-            "column": 15,
+            "line": 99,
+            "column": 64,
             "message": "Extra semicolon."
           },
           {
             "file": "server/src/repositories/geo-checks/MongoGeoChecksRepository.ts",
-            "line": 335,
-            "column": 3,
+            "line": 227,
+            "column": 30,
             "message": "Extra semicolon."
           },
           {
             "file": "server/src/service/business/incidentService.ts",
-            "line": 222,
-            "column": 15,
+            "line": 210,
+            "column": 96,
             "message": "Extra semicolon."
           },
           {
             "file": "server/src/service/infrastructure/networkService.ts",
-            "line": 614,
-            "column": 7,
+            "line": 683,
+            "column": 24,
             "message": "Extra semicolon."
           },
           {

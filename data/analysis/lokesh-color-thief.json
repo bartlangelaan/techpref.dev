@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "27fa209631d00f648db51d3520c11ed24c330163",
-  "analyzedCommitDate": "2026-03-04T17:37:15.000Z",
+  "analyzedCommit": "e1ceaa316d67f9e25f497c0e803ac2672d9d4ee5",
+  "analyzedCommitDate": "2026-03-04T19:24:46.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -70,13 +70,37 @@
         ]
       },
       "generic": {
-        "count": 12,
+        "count": 23,
         "samples": [
           {
-            "file": "src/observe.ts",
-            "line": 34,
-            "column": 25,
+            "file": "src/cli.ts",
+            "line": 47,
+            "column": 12,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+          },
+          {
+            "file": "src/cli.ts",
+            "line": 82,
+            "column": 18,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+          },
+          {
+            "file": "src/cli.ts",
+            "line": 189,
+            "column": 29,
             "message": "Array type using 'Color[]' is forbidden. Use 'Array<Color>' instead."
+          },
+          {
+            "file": "src/cli.ts",
+            "line": 196,
+            "column": 49,
+            "message": "Array type using 'SwatchRole[]' is forbidden. Use 'Array<SwatchRole>' instead."
+          },
+          {
+            "file": "src/cli.ts",
+            "line": 218,
+            "column": 49,
+            "message": "Array type using 'SwatchRole[]' is forbidden. Use 'Array<SwatchRole>' instead."
           },
           {
             "file": "src/quantizers/mmcq.ts",
@@ -86,38 +110,14 @@
           },
           {
             "file": "src/quantizers/mmcq.ts",
-            "line": 167,
-            "column": 33,
-            "message": "Array type using 'U[]' is forbidden. Use 'Array<U>' instead."
-          },
-          {
-            "file": "src/quantizers/mmcq.ts",
             "line": 230,
             "column": 25,
             "message": "Array type using 'number[]' is forbidden. Use 'Array<number>' instead."
           },
           {
             "file": "src/swatches.ts",
-            "line": 21,
-            "column": 16,
-            "message": "Array type using 'SwatchTarget[]' is forbidden. Use 'Array<SwatchTarget>' instead."
-          },
-          {
-            "file": "src/swatches.ts",
             "line": 76,
             "column": 43,
-            "message": "Array type using 'Color[]' is forbidden. Use 'Array<Color>' instead."
-          },
-          {
-            "file": "src/types.ts",
-            "line": 193,
-            "column": 14,
-            "message": "Array type using 'Color[]' is forbidden. Use 'Array<Color>' instead."
-          },
-          {
-            "file": "src/worker/manager.ts",
-            "line": 62,
-            "column": 12,
             "message": "Array type using 'Color[]' is forbidden. Use 'Array<Color>' instead."
           },
           {
@@ -195,8 +195,32 @@
         "samples": []
       },
       "index-signature": {
-        "count": 1,
+        "count": 5,
         "samples": [
+          {
+            "file": "src/cli.ts",
+            "line": 160,
+            "column": 33,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "src/cli.ts",
+            "line": 172,
+            "column": 48,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "src/cli.ts",
+            "line": 173,
+            "column": 19,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "src/cli.ts",
+            "line": 303,
+            "column": 25,
+            "message": "An index signature is preferred over a record."
+          },
           {
             "file": "src/types.ts",
             "line": 145,
@@ -212,35 +236,35 @@
         "samples": []
       },
       "type": {
-        "count": 18,
+        "count": 19,
         "samples": [
           {
-            "file": "src/loaders/node.ts",
-            "line": 8,
+            "file": "src/cli.ts",
+            "line": 45,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "src/observe.ts",
-            "line": 38,
+            "line": 24,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "src/swatches.ts",
-            "line": 8,
-            "column": 1,
+            "file": "src/pipeline.ts",
+            "line": 18,
+            "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "src/types.ts",
-            "line": 6,
+            "file": "src/sync.ts",
+            "line": 27,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "src/types.ts",
-            "line": 20,
+            "line": 13,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
@@ -283,7 +307,7 @@
         "samples": []
       },
       "no-type-imports": {
-        "count": 17,
+        "count": 18,
         "samples": [
           {
             "file": "src/api.ts",
@@ -292,13 +316,13 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/color.ts",
+            "file": "src/color-space.ts",
             "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/loaders/node.ts",
+            "file": "src/loaders/browser.ts",
             "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
@@ -316,13 +340,13 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/quantizers/mmcq.ts",
-            "line": 1,
-            "column": 1,
+            "file": "src/progressive.ts",
+            "line": 7,
+            "column": 26,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/resolve-loader.browser.ts",
+            "file": "src/quantizers/wasm.ts",
             "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
@@ -350,7 +374,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 61,
+        "count": 77,
         "samples": [
           {
             "file": "cypress/e2e/api.cy.js",
@@ -360,13 +384,19 @@
           },
           {
             "file": "src/api.ts",
-            "line": 97,
+            "line": 116,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
+            "file": "src/cli.ts",
+            "line": 189,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
             "file": "src/color-space.ts",
-            "line": 24,
+            "line": 8,
             "column": 8,
             "message": "Expected a function expression."
           },
@@ -378,32 +408,26 @@
           },
           {
             "file": "src/pipeline.ts",
-            "line": 77,
+            "line": 128,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "src/quantizers/mmcq.ts",
-            "line": 176,
+            "line": 313,
             "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/resolve-loader.ts",
-            "line": 10,
-            "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "src/sync.ts",
-            "line": 114,
-            "column": 1,
+            "line": 73,
+            "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "src/worker/manager.ts",
-            "line": 14,
-            "column": 8,
+            "line": 18,
+            "column": 1,
             "message": "Expected a function expression."
           },
           {
@@ -415,7 +439,7 @@
         ]
       },
       "declaration": {
-        "count": 10,
+        "count": 11,
         "samples": [
           {
             "file": "cypress/test-pages/index.js",
@@ -449,12 +473,6 @@
           },
           {
             "file": "src/observe.ts",
-            "line": 138,
-            "column": 23,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "src/observe.ts",
             "line": 156,
             "column": 15,
             "message": "Expected a function declaration."
@@ -463,6 +481,12 @@
             "file": "src/worker/manager.ts",
             "line": 72,
             "column": 15,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "test/cli-test.js",
+            "line": 12,
+            "column": 7,
             "message": "Expected a function declaration."
           },
           {
@@ -558,18 +582,24 @@
         "samples": []
       },
       "4-space": {
-        "count": 1,
+        "count": 2,
         "samples": [
           {
             "file": "cypress.config.cjs",
             "line": 4,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "src/cli.ts",
+            "line": 22,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
           }
         ]
       },
       "tab": {
-        "count": 31,
+        "count": 33,
         "samples": [
           {
             "file": "cypress.config.cjs",
@@ -578,7 +608,7 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "cypress/e2e/cors.cy.js",
+            "file": "cypress/e2e/module.cy.js",
             "line": 2,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
@@ -614,8 +644,8 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/sync.ts",
-            "line": 11,
+            "file": "src/types.ts",
+            "line": 7,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -636,7 +666,7 @@
     },
     "quotes": {
       "double": {
-        "count": 500,
+        "count": 684,
         "samples": [
           {
             "file": "cypress.config.cjs",
@@ -645,56 +675,56 @@
             "message": "Strings must use doublequote."
           },
           {
-            "file": "cypress/e2e/api.cy.js",
-            "line": 20,
-            "column": 48,
+            "file": "cypress/e2e/module.cy.js",
+            "line": 5,
+            "column": 44,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/api.ts",
-            "line": 14,
-            "column": 31,
+            "file": "src/cli.ts",
+            "line": 119,
+            "column": 23,
             "message": "Strings must use doublequote."
           },
           {
             "file": "src/loaders/browser.ts",
-            "line": 68,
+            "line": 48,
             "column": 39,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/quantizers/mmcq.ts",
-            "line": 353,
-            "column": 32,
+            "file": "src/swatches.ts",
+            "line": 23,
+            "column": 13,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/types.ts",
-            "line": 130,
-            "column": 7,
+            "file": "test/cli-test.js",
+            "line": 48,
+            "column": 38,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "test/node-test.js",
-            "line": 30,
-            "column": 33,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "test/node-test.js",
-            "line": 206,
-            "column": 34,
+            "file": "test/cli-test.js",
+            "line": 170,
+            "column": 63,
             "message": "Strings must use doublequote."
           },
           {
             "file": "test/node-test.js",
-            "line": 408,
-            "column": 10,
+            "line": 97,
+            "column": 31,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "test/node-test.js",
+            "line": 350,
+            "column": 24,
             "message": "Strings must use doublequote."
           },
           {
             "file": "tsup.config.ts",
-            "line": 90,
+            "line": 101,
             "column": 25,
             "message": "Strings must use doublequote."
           }
@@ -791,7 +821,7 @@
         ]
       },
       "never": {
-        "count": 1160,
+        "count": 1375,
         "samples": [
           {
             "file": "cypress/e2e/api-direct.cy.js",
@@ -800,51 +830,51 @@
             "message": "Extra semicolon."
           },
           {
-            "file": "cypress/e2e/api.cy.js",
-            "line": 19,
+            "file": "cypress/e2e/cors.cy.js",
+            "line": 6,
             "column": 38,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/color-space.ts",
-            "line": 46,
-            "column": 45,
+            "file": "src/cli.ts",
+            "line": 243,
+            "column": 42,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/loaders/browser.ts",
-            "line": 50,
-            "column": 59,
+            "file": "src/internals.browser.ts",
+            "line": 13,
+            "column": 58,
             "message": "Extra semicolon."
           },
           {
             "file": "src/pipeline.ts",
-            "line": 140,
-            "column": 31,
+            "line": 133,
+            "column": 19,
             "message": "Extra semicolon."
           },
           {
             "file": "src/quantizers/mmcq.ts",
-            "line": 263,
-            "column": 34,
+            "line": 301,
+            "column": 25,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/swatches.ts",
-            "line": 126,
-            "column": 35,
+            "file": "src/sync.ts",
+            "line": 163,
+            "column": 22,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/worker/manager.ts",
-            "line": 104,
-            "column": 20,
+            "file": "test/cli-test.js",
+            "line": 121,
+            "column": 7,
             "message": "Extra semicolon."
           },
           {
             "file": "test/node-test.js",
-            "line": 202,
-            "column": 7,
+            "line": 158,
+            "column": 60,
             "message": "Extra semicolon."
           },
           {

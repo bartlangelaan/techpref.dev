@@ -1,11 +1,11 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "26ecd4cd2e83cf15e2cb6599ab47f83f48b89091",
-  "analyzedCommitDate": "2026-03-02T20:51:53.000Z",
+  "analyzedCommit": "d0c71a5408725e25992a723effaa697c81eceb4d",
+  "analyzedCommitDate": "2026-03-05T08:00:23.000Z",
   "checks": {
     "array-type": {
       "array": {
-        "count": 17,
+        "count": 19,
         "samples": [
           {
             "file": "addons/dexie-cloud/src/helpers/BroadcastedAndLocalEvent.ts",
@@ -26,28 +26,22 @@
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
-            "file": "addons/dexie-export-import/src/json-structure.ts",
-            "line": 29,
-            "column": 11,
+            "file": "libs/dexie-cloud-common/src/DBOperationsSet.ts",
+            "line": 3,
+            "column": 50,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
             "file": "libs/dexie-cloud-common/src/tson/StreamingSyncProcessor.ts",
-            "line": 33,
+            "line": 54,
             "column": 12,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
-            "file": "libs/dexie-cloud-common/src/tson/StreamingSyncProcessor.ts",
-            "line": 118,
-            "column": 37,
-            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
-          },
-          {
-            "file": "libs/dexie-cloud-common/src/tson/types/BlobRef.ts",
-            "line": 202,
-            "column": 24,
-            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
+            "file": "libs/dexie-cloud-common/src/tson/__tests__/TypesonSimplified.test.ts",
+            "line": 213,
+            "column": 40,
+            "message": "Array type using 'Array<number>' is forbidden. Use 'number[]' instead."
           },
           {
             "file": "libs/dexie-react-hooks/src/usePermissions.ts",
@@ -60,6 +54,12 @@
             "line": 613,
             "column": 20,
             "message": "Array type using 'ReadonlyArray<IndexableType>' is forbidden. Use 'readonly IndexableType[]' instead."
+          },
+          {
+            "file": "src/globals/connections.ts",
+            "line": 13,
+            "column": 25,
+            "message": "Array type using 'ReadonlyArray<Dexie>' is forbidden. Use 'readonly Dexie[]' instead."
           },
           {
             "file": "test/tests-live-query.js",
@@ -154,7 +154,7 @@
         ]
       },
       "type-annotation": {
-        "count": 42,
+        "count": 43,
         "samples": [
           {
             "file": "addons/dexie-cloud/src/associate.ts",
@@ -181,9 +181,9 @@
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "addons/dexie-cloud/src/sync/syncIfPossible.ts",
-            "line": 9,
-            "column": 33,
+            "file": "addons/dexie-cloud/src/userIsActive.ts",
+            "line": 19,
+            "column": 48,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
@@ -193,21 +193,21 @@
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "libs/dexie-cloud-common/src/tson/TypesonSimplified.ts",
-            "line": 38,
-            "column": 31,
+            "file": "libs/dexie-cloud-common/src/tson/__tests__/TypesonSimplified.test.ts",
+            "line": 213,
+            "column": 24,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
             "file": "libs/dexie-react-hooks/src/useSuspendingObservable.ts",
-            "line": 6,
-            "column": 33,
+            "line": 7,
+            "column": 31,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "src/classes/table/table.ts",
-            "line": 282,
-            "column": 35,
+            "file": "src/dbcore/dbcore-indexeddb.ts",
+            "line": 248,
+            "column": 49,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
@@ -267,7 +267,7 @@
           },
           {
             "file": "src/classes/dexie/dexie.ts",
-            "line": 72,
+            "line": 73,
             "column": 106,
             "message": "A record is preferred over an index signature."
           },
@@ -473,7 +473,7 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 462,
+        "count": 461,
         "samples": [
           {
             "file": "addons/Dexie.Observable/test/typings/test-typings.ts",
@@ -494,16 +494,16 @@
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "addons/dexie-cloud/src/sync/listSyncifiedChanges.ts",
-            "line": 1,
+            "file": "addons/dexie-cloud/src/sync/listClientChanges.ts",
+            "line": 4,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
             "file": "addons/dexie-cloud/src/yjs/createYHandler.ts",
-            "line": 8,
+            "line": 1,
             "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
+            "message": "Imports Table are only used as type."
           },
           {
             "file": "libs/dexie-cloud-common/src/change-processing/DBKeyMutationSet.ts",
@@ -518,14 +518,14 @@
             "message": "Imports DexieCloudTable are only used as type."
           },
           {
-            "file": "src/classes/table/table.ts",
+            "file": "src/classes/table/table-helpers.ts",
             "line": 2,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
             "file": "src/functions/bulk-delete.ts",
-            "line": 2,
+            "line": 1,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
@@ -538,7 +538,7 @@
         ]
       },
       "no-type-imports": {
-        "count": 49,
+        "count": 50,
         "samples": [
           {
             "file": "addons/dexie-cloud/src/DexieCloudOptions.ts",
@@ -566,7 +566,7 @@
           },
           {
             "file": "addons/dexie-cloud/src/yjs/listYClientMessagesAndStateVector.ts",
-            "line": 1,
+            "line": 2,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -577,15 +577,15 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "addons/y-dexie/src/types/YUpdateRow.ts",
-            "line": 1,
+            "file": "libs/dexie-cloud-common/src/tson/types/BlobRef.ts",
+            "line": 27,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "samples/angular/src/app/db.ts",
-            "line": 2,
-            "column": 17,
+            "file": "samples/dexie-cloud-todo-app/src/App.tsx",
+            "line": 8,
+            "column": 10,
             "message": "Use an `import` instead of an `import type`."
           },
           {
@@ -605,7 +605,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 754,
+        "count": 755,
         "samples": [
           {
             "file": "addons/Dexie.Observable/src/Dexie.Observable.js",
@@ -620,7 +620,7 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "addons/dexie-cloud/src/sync/extractRealm.ts",
+            "file": "addons/dexie-cloud/src/sync/getLatestRevisionsPerTable.ts",
             "line": 3,
             "column": 8,
             "message": "Expected a function expression."
@@ -639,13 +639,13 @@
           },
           {
             "file": "samples/remote-sync/ajax/jquery-2.1.0.js",
-            "line": 6448,
+            "line": 7505,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "src/classes/where-clause/where-clause-helpers.ts",
-            "line": 116,
+            "line": 126,
             "column": 8,
             "message": "Expected a function expression."
           },
@@ -670,7 +670,7 @@
         ]
       },
       "declaration": {
-        "count": 88,
+        "count": 94,
         "samples": [
           {
             "file": "addons/dexie-cloud/src/default-ui/LoginDialog.tsx",
@@ -685,39 +685,39 @@
             "message": "Expected a function declaration."
           },
           {
-            "file": "samples/dexie-cloud-todo-app/src/components/AddTodoList.tsx",
-            "line": 17,
+            "file": "samples/dexie-cloud-todo-app/src/components/TodoItemView.tsx",
+            "line": 21,
             "column": 9,
             "message": "Expected a function declaration."
           },
           {
-            "file": "samples/dexie-cloud-todo-app/src/components/access-control/EditMember.tsx",
-            "line": 24,
-            "column": 9,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "samples/remote-sync/ajax/jquery-2.1.0.js",
-            "line": 3039,
-            "column": 3,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "samples/remote-sync/ajax/jquery-2.1.0.js",
-            "line": 6642,
+            "file": "samples/dexie-cloud-todo-app/src/components/ui/dropdown-menu.tsx",
+            "line": 4,
             "column": 7,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "samples/remote-sync/ajax/jquery-2.1.0.js",
+            "line": 3853,
+            "column": 4,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "src/classes/collection/collection.ts",
+            "line": 492,
+            "column": 13,
             "message": "Expected a function declaration."
           },
           {
             "file": "src/dbcore/dbcore-indexeddb.ts",
-            "line": 177,
-            "column": 15,
+            "line": 361,
+            "column": 17,
             "message": "Expected a function declaration."
           },
           {
-            "file": "src/helpers/yield-support.ts",
-            "line": 5,
-            "column": 7,
+            "file": "src/helpers/promise.js",
+            "line": 75,
+            "column": 5,
             "message": "Expected a function declaration."
           },
           {
@@ -802,7 +802,7 @@
         ]
       },
       "default": {
-        "count": 197,
+        "count": 198,
         "samples": [
           {
             "file": "addons/Dexie.Observable/test/unit/deep-equal.js",
@@ -823,14 +823,14 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "addons/dexie-cloud/src/sync/myId.ts",
-            "line": 3,
+            "file": "addons/dexie-cloud/src/sync/numUnsyncedMutations.ts",
+            "line": 8,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "addons/y-dexie/src/DexieYProvider.ts",
-            "line": 269,
+            "file": "addons/y-dexie/src/createYDocProperty.ts",
+            "line": 7,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -847,13 +847,13 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "samples/dexie-cloud-todo-app/src/helpers/usePersistedOpenState.ts",
+            "file": "samples/dexie-cloud-todo-app/src/lib/utils.ts",
             "line": 4,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/functions/propmods/remove.ts",
+            "file": "src/functions/propmods/replace-prefix.ts",
             "line": 3,
             "column": 1,
             "message": "Prefer default export on a file with single export."
@@ -934,7 +934,7 @@
         ]
       },
       "4-space": {
-        "count": 488,
+        "count": 489,
         "samples": [
           {
             "file": "addons/Dexie.Observable/src/delete-old-changes.js",
@@ -955,14 +955,14 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "addons/dexie-cloud/src/sync/listSyncifiedChanges.ts",
-            "line": 6,
+            "file": "addons/dexie-cloud/src/sync/messagesFromServerQueue.ts",
+            "line": 23,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "addons/y-dexie/src/DexieYProvider.ts",
-            "line": 14,
+            "file": "addons/y-dexie/src/compressYDocs.ts",
+            "line": 13,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -979,8 +979,8 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "samples/vue/src/database.js",
-            "line": 10,
+            "file": "samples/vue/vite.config.js",
+            "line": 5,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -999,7 +999,7 @@
         ]
       },
       "tab": {
-        "count": 529,
+        "count": 531,
         "samples": [
           {
             "file": "addons/Dexie.Observable/src/Dexie.Observable.js",
@@ -1014,44 +1014,44 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "addons/dexie-cloud/src/dexie-cloud-client.ts",
-            "line": 3,
+            "file": "addons/dexie-cloud/src/errors/HttpError.ts",
+            "line": 2,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "addons/dexie-cloud/src/sync/syncIfPossible.ts",
-            "line": 10,
+            "file": "addons/dexie-cloud/src/sync/syncWithServer.ts",
+            "line": 9,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "addons/y-dexie/src/helpers/promisableChain.ts",
-            "line": 4,
+            "file": "addons/y-dexie/src/observeYDocUpdates.ts",
+            "line": 12,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "libs/dexie-cloud-common/src/tson/TypeDefSet.ts",
-            "line": 4,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "samples/angular/src/app/db.ts",
+            "file": "libs/dexie-cloud-common/src/tson/TypesonSimplified.ts",
             "line": 6,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/classes/table/table-constructor.ts",
+            "file": "samples/angular/src/app/item-list.component.ts",
+            "line": 10,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "src/classes/table/table-helpers.ts",
             "line": 11,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/live-query/cache/is-super-range.ts",
-            "line": 5,
+            "file": "src/live-query/cache/is-within-range.ts",
+            "line": 6,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -1066,7 +1066,7 @@
     },
     "quotes": {
       "double": {
-        "count": 6083,
+        "count": 6093,
         "samples": [
           {
             "file": "addons/Dexie.Observable/src/Dexie.Observable.js",
@@ -1076,50 +1076,50 @@
           },
           {
             "file": "addons/Dexie.Syncable/test/unit/get-local-changes-for-node/tests-get-local-changes-for-node.js",
-            "line": 98,
-            "column": 9,
+            "line": 99,
+            "column": 54,
             "message": "Strings must use doublequote."
           },
           {
             "file": "addons/dexie-cloud/src/authentication/handleOAuthCallback.ts",
-            "line": 29,
-            "column": 39,
+            "line": 45,
+            "column": 47,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "addons/dexie-cloud/src/permissions.ts",
-            "line": 24,
-            "column": 30,
+            "file": "addons/dexie-cloud/src/prodLog.ts",
+            "line": 9,
+            "column": 49,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "addons/dexie-cloud/tools/build-configs/rollup.config.mjs",
-            "line": 160,
-            "column": 26,
+            "file": "addons/dexie-cloud/tools/build-configs/rollup.test.unit.config.js",
+            "line": 3,
+            "column": 22,
             "message": "Strings must use doublequote."
           },
           {
             "file": "libs/dexie-cloud-common/src/tson/__tests__/TSONRef.test.ts",
-            "line": 175,
-            "column": 29,
+            "line": 189,
+            "column": 30,
             "message": "Strings must use doublequote."
           },
           {
             "file": "samples/dexie-cloud-todo-app/vite.config.ts",
-            "line": 67,
-            "column": 29,
+            "line": 81,
+            "column": 27,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/hooks/hooks-middleware.ts",
-            "line": 135,
-            "column": 44,
+            "file": "src/index.ts",
+            "line": 4,
+            "column": 26,
             "message": "Strings must use doublequote."
           },
           {
             "file": "test/tests-misc.js",
-            "line": 426,
-            "column": 135,
+            "line": 419,
+            "column": 19,
             "message": "Strings must use doublequote."
           },
           {
@@ -1131,7 +1131,7 @@
         ]
       },
       "single": {
-        "count": 6846,
+        "count": 6867,
         "samples": [
           {
             "file": "addons/Dexie.Observable/src/Dexie.Observable.js",
@@ -1140,51 +1140,51 @@
             "message": "Strings must use singlequote."
           },
           {
-            "file": "addons/dexie-cloud/src/sync/extractRealm.ts",
-            "line": 1,
+            "file": "addons/dexie-cloud/src/sync/getTablesToSyncify.ts",
+            "line": 2,
             "column": 30,
             "message": "Strings must use singlequote."
           },
           {
             "file": "libs/dexie-react-hooks/test/index.ts",
-            "line": 99,
-            "column": 75,
+            "line": 110,
+            "column": 11,
             "message": "Strings must use singlequote."
           },
           {
             "file": "samples/remote-sync/ajax/jquery-2.1.0.js",
-            "line": 5688,
-            "column": 47,
+            "line": 5710,
+            "column": 58,
             "message": "Strings must use singlequote."
           },
           {
             "file": "src/live-query/observability-middleware.ts",
-            "line": 26,
-            "column": 35,
+            "line": 167,
+            "column": 38,
             "message": "Strings must use singlequote."
           },
           {
             "file": "test/tests-crud-hooks.js",
-            "line": 317,
-            "column": 20,
+            "line": 337,
+            "column": 66,
             "message": "Strings must use singlequote."
           },
           {
             "file": "test/tests-promise.js",
-            "line": 98,
+            "line": 86,
             "column": 11,
             "message": "Strings must use singlequote."
           },
           {
             "file": "test/tests-table.js",
-            "line": 1004,
-            "column": 90,
+            "line": 1003,
+            "column": 55,
             "message": "Strings must use singlequote."
           },
           {
             "file": "test/tests-upgrading.js",
-            "line": 645,
-            "column": 32,
+            "line": 644,
+            "column": 22,
             "message": "Strings must use singlequote."
           },
           {
@@ -1198,7 +1198,7 @@
     },
     "semi": {
       "always": {
-        "count": 399,
+        "count": 402,
         "samples": [
           {
             "file": "addons/Dexie.Observable/src/hooks/deleting.js",
@@ -1207,51 +1207,51 @@
             "message": "Missing semicolon."
           },
           {
-            "file": "addons/Dexie.Syncable/test/unit/tests-changing-options.js",
-            "line": 20,
-            "column": 14,
+            "file": "addons/Dexie.Syncable/test/unit/tests-get-or-create-sync-node.js",
+            "line": 70,
+            "column": 43,
             "message": "Missing semicolon."
           },
           {
             "file": "addons/dexie-export-import/src/json-stream.ts",
-            "line": 99,
-            "column": 34,
+            "line": 129,
+            "column": 4,
             "message": "Missing semicolon."
           },
           {
-            "file": "libs/dexie-react-hooks/src/useDocument.ts",
-            "line": 55,
-            "column": 10,
+            "file": "libs/dexie-react-hooks/src/usePermissions.ts",
+            "line": 106,
+            "column": 106,
             "message": "Missing semicolon."
           },
           {
             "file": "samples/dexie-cloud-todo-app/src/components/ui/dropdown-menu.tsx",
-            "line": 24,
-            "column": 21,
+            "line": 44,
+            "column": 3,
             "message": "Missing semicolon."
           },
           {
-            "file": "samples/remote-sync/websocket/WebSocketSyncProtocol.js",
-            "line": 82,
-            "column": 14,
+            "file": "samples/remote-sync/websocket/WebSocketSyncServer.js",
+            "line": 286,
+            "column": 6,
             "message": "Missing semicolon."
           },
           {
-            "file": "src/dbcore/get-effective-keys.ts",
-            "line": 15,
-            "column": 59,
+            "file": "src/dbcore/keyrange.ts",
+            "line": 17,
+            "column": 2,
             "message": "Missing semicolon."
           },
           {
             "file": "test/integrations/test-dexie-relationships/basic-tests.js",
-            "line": 168,
-            "column": 48,
+            "line": 156,
+            "column": 96,
             "message": "Missing semicolon."
           },
           {
             "file": "test/tests-extendability.js",
-            "line": 69,
-            "column": 50,
+            "line": 64,
+            "column": 43,
             "message": "Missing semicolon."
           },
           {
@@ -1263,7 +1263,7 @@
         ]
       },
       "never": {
-        "count": 19144,
+        "count": 19215,
         "samples": [
           {
             "file": "addons/Dexie.Observable/src/Dexie.Observable.js",
@@ -1273,50 +1273,50 @@
           },
           {
             "file": "addons/Dexie.Syncable/test/unit/tests-syncable-partials.js",
-            "line": 113,
-            "column": 54,
+            "line": 130,
+            "column": 75,
             "message": "Extra semicolon."
           },
           {
-            "file": "addons/dexie-cloud/src/sync/encodeIdsForServer.ts",
-            "line": 36,
-            "column": 49,
+            "file": "addons/dexie-cloud/src/sync/getLatestRevisionsPerTable.ts",
+            "line": 10,
+            "column": 23,
             "message": "Extra semicolon."
           },
           {
-            "file": "addons/y-dexie/tools/build-configs/rollup.config.mjs",
-            "line": 92,
-            "column": 4,
+            "file": "import-wrapper-prod.mjs",
+            "line": 5,
+            "column": 40,
             "message": "Extra semicolon."
           },
           {
-            "file": "samples/dexie-cloud-todo-app/src/index.tsx",
-            "line": 1,
-            "column": 26,
+            "file": "samples/dexie-cloud-todo-app/src/serviceWorkerRegistration.ts",
+            "line": 72,
+            "column": 34,
             "message": "Extra semicolon."
           },
           {
             "file": "samples/remote-sync/ajax/jquery-2.1.0.js",
-            "line": 8335,
-            "column": 2,
+            "line": 8564,
+            "column": 4,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/dbcore/dbcore-indexeddb.ts",
-            "line": 374,
-            "column": 41,
+            "file": "src/dbcore/proxy-cursor.ts",
+            "line": 38,
+            "column": 73,
             "message": "Extra semicolon."
           },
           {
             "file": "test/tests-collection.js",
-            "line": 19,
-            "column": 122,
+            "line": 69,
+            "column": 21,
             "message": "Extra semicolon."
           },
           {
             "file": "test/tests-table.js",
-            "line": 958,
-            "column": 37,
+            "line": 933,
+            "column": 101,
             "message": "Extra semicolon."
           },
           {

@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "52173b6ca87761ce8bea0ec4dfd2966e69281ae3",
-  "analyzedCommitDate": "2026-03-07T00:02:56.000Z",
+  "analyzedCommit": "84b85f4c91e83b40eb2bd74d61304fcfdcabf6d5",
+  "analyzedCommitDate": "2026-03-07T10:25:00.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -9,7 +9,7 @@
         "samples": []
       },
       "generic": {
-        "count": 655,
+        "count": 656,
         "samples": [
           {
             "file": "apps/guide/src/app/[[...slug]]/page.tsx",
@@ -25,9 +25,9 @@
           },
           {
             "file": "packages/api-extractor-model/src/model/Deserializer.ts",
-            "line": 127,
-            "column": 15,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+            "line": 132,
+            "column": 11,
+            "message": "Array type using 'DocgenParamJson[]' is forbidden. Use 'Array<DocgenParamJson>' instead."
           },
           {
             "file": "packages/api-extractor-utils/src/tsdoc/RootComment.ts",
@@ -43,20 +43,20 @@
           },
           {
             "file": "packages/api-extractor/src/generators/ApiModelGenerator.ts",
-            "line": 956,
-            "column": 26,
-            "message": "Array type using 'IExcerptBuilderNodeToCapture[]' is forbidden. Use 'Array<IExcerptBuilderNodeToCapture>' instead."
+            "line": 961,
+            "column": 22,
+            "message": "Array type using 'IApiParameterOptions[]' is forbidden. Use 'Array<IApiParameterOptions>' instead."
           },
           {
             "file": "packages/brokers/src/brokers/redis/BaseRedis.ts",
-            "line": 160,
-            "column": 35,
-            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
+            "line": 161,
+            "column": 19,
+            "message": "Array type using 'unknown[][]' is forbidden. Use 'Array<unknown[]>' instead."
           },
           {
             "file": "packages/core/src/api/webhook.ts",
-            "line": 27,
-            "column": 11,
+            "line": 23,
+            "column": 47,
             "message": "Array type using 'RawFile[]' is forbidden. Use 'Array<RawFile>' instead."
           },
           {
@@ -412,18 +412,24 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 1,
+        "count": 2,
         "samples": [
           {
             "file": "packages/discord.js/typings/index.test-d.ts",
-            "line": 207,
+            "line": 4,
+            "column": 1,
+            "message": "Imports ButtonBuilder and ModalBuilder are only used as type."
+          },
+          {
+            "file": "packages/discord.js/typings/index.test-d.ts",
+            "line": 221,
             "column": 1,
             "message": "Imports TextDisplayComponentData, ThumbnailComponentData, UnfurledMediaItemData, UserContextMenuCommandInteraction, UserMention, UserSelectMenuComponent, UserSelectMenuInteraction, and Webhook are only used as type."
           }
         ]
       },
       "no-type-imports": {
-        "count": 1662,
+        "count": 1664,
         "samples": [
           {
             "file": "apps/guide/next.config.ts",
@@ -439,8 +445,8 @@
           },
           {
             "file": "packages/api-extractor-utils/src/tsdoc/FencedCodeCommentNode.ts",
-            "line": 1,
-            "column": 1,
+            "line": 2,
+            "column": 10,
             "message": "Use an `import` instead of an `import type`."
           },
           {
@@ -462,14 +468,14 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/create-discord-bot/template/Deno/src/commands/utility/user.ts",
+            "file": "packages/create-discord-bot/template/Deno/src/events/index.ts",
             "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "packages/structures/src/channels/Channel.ts",
-            "line": 14,
+            "line": 13,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -951,7 +957,7 @@
     },
     "quotes": {
       "double": {
-        "count": 16318,
+        "count": 16316,
         "samples": [
           {
             "file": "apps/guide/.lintstagedrc.cjs",
@@ -973,26 +979,26 @@
           },
           {
             "file": "packages/builders/src/messages/embed/EmbedField.ts",
-            "line": 3,
-            "column": 26,
+            "line": 2,
+            "column": 36,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/discord.js/src/client/actions/GuildRoleCreate.js",
-            "line": 1,
-            "column": 1,
+            "file": "packages/discord.js/src/client/actions/GuildMemberUpdate.js",
+            "line": 4,
+            "column": 28,
             "message": "Strings must use doublequote."
           },
           {
             "file": "packages/discord.js/src/structures/GuildAuditLogs.js",
-            "line": 7,
-            "column": 33,
+            "line": 8,
+            "column": 29,
             "message": "Strings must use doublequote."
           },
           {
             "file": "packages/discord.js/typings/index.test-d.ts",
-            "line": 1785,
-            "column": 46,
+            "line": 1788,
+            "column": 60,
             "message": "Strings must use doublequote."
           },
           {
@@ -1087,7 +1093,7 @@
         "samples": []
       },
       "never": {
-        "count": 28624,
+        "count": 28621,
         "samples": [
           {
             "file": "apps/guide/.lintstagedrc.cjs",
@@ -1103,8 +1109,8 @@
           },
           {
             "file": "packages/brokers/src/brokers/redis/BaseRedis.ts",
-            "line": 144,
-            "column": 47,
+            "line": 153,
+            "column": 4,
             "message": "Extra semicolon."
           },
           {
@@ -1121,20 +1127,20 @@
           },
           {
             "file": "packages/discord.js/src/structures/GuildMember.js",
-            "line": 8,
-            "column": 38,
+            "line": 9,
+            "column": 50,
             "message": "Extra semicolon."
           },
           {
             "file": "packages/discord.js/typings/index.test-d.ts",
-            "line": 282,
-            "column": 88,
+            "line": 290,
+            "column": 3,
             "message": "Extra semicolon."
           },
           {
             "file": "packages/rest/src/lib/handlers/SequentialHandler.ts",
-            "line": 69,
-            "column": 40,
+            "line": 80,
+            "column": 4,
             "message": "Extra semicolon."
           },
           {

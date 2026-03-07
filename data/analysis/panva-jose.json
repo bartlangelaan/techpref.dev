@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "00965b45522ea0bf7d0610a8fd2f5da20985370b",
-  "analyzedCommitDate": "2026-03-05T10:27:19.000Z",
+  "analyzedCommit": "7b22ba8dd0fedfd5a19e952cab99548f044348d4",
+  "analyzedCommitDate": "2026-03-07T17:11:41.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -316,13 +316,19 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 3,
+        "count": 4,
         "samples": [
           {
             "file": "src/lib/validate_crit.ts",
             "line": 1,
             "column": 1,
             "message": "Imports JWEInvalid and JWSInvalid are only used as type."
+          },
+          {
+            "file": "tap/.browser.ts",
+            "line": 21,
+            "column": 37,
+            "message": "`import()` type annotations are forbidden."
           },
           {
             "file": "tap/keyobject-stub.ts",
@@ -339,7 +345,7 @@
         ]
       },
       "no-type-imports": {
-        "count": 87,
+        "count": 88,
         "samples": [
           {
             "file": "src/jwe/compact/decrypt.ts",
@@ -366,7 +372,7 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/lib/is_jwk.ts",
+            "file": "src/lib/is_key_like.ts",
             "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
@@ -406,7 +412,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 142,
+        "count": 141,
         "samples": [
           {
             "file": "src/jwk/embedded.ts",
@@ -433,9 +439,9 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "src/lib/encrypt.ts",
-            "line": 11,
-            "column": 1,
+            "file": "src/lib/ecdhes.ts",
+            "line": 101,
+            "column": 8,
             "message": "Expected a function expression."
           },
           {
@@ -445,8 +451,8 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "src/util/decode_protected_header.ts",
-            "line": 30,
+            "file": "src/util/decode_jwt.ts",
+            "line": 31,
             "column": 8,
             "message": "Expected a function expression."
           },
@@ -538,7 +544,7 @@
     },
     "import-export-preference": {
       "named": {
-        "count": 18,
+        "count": 19,
         "samples": [
           {
             "file": "ava.config.mjs",
@@ -553,20 +559,20 @@
             "message": "Prefer named exports"
           },
           {
-            "file": "tap/aeskw.ts",
+            "file": "tap/aes.ts",
             "line": 6,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "tap/ecdh.ts",
-            "line": 6,
+            "file": "tap/cookbook.ts",
+            "line": 10,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "tap/hmac.ts",
-            "line": 5,
+            "file": "tap/generate_options.ts",
+            "line": 4,
             "column": 8,
             "message": "Prefer named exports"
           },
@@ -674,7 +680,7 @@
         "samples": []
       },
       "4-space": {
-        "count": 131,
+        "count": 132,
         "samples": [
           {
             "file": "ava.config.mjs",
@@ -689,8 +695,8 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/lib/aesgcmkw.ts",
-            "line": 6,
+            "file": "src/key/import.ts",
+            "line": 21,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -701,8 +707,8 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/lib/pbes2kw.ts",
-            "line": 9,
+            "file": "src/lib/normalize_key.ts",
+            "line": 10,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -713,8 +719,8 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "tap/run-bun.ts",
-            "line": 6,
+            "file": "tap/run-browser.ts",
+            "line": 7,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -725,7 +731,7 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "test/jwt/sign.test.ts",
+            "file": "test/jwt/encrypt.test.ts",
             "line": 10,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
@@ -739,7 +745,7 @@
         ]
       },
       "tab": {
-        "count": 131,
+        "count": 132,
         "samples": [
           {
             "file": "ava.config.mjs",
@@ -754,8 +760,8 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/lib/aesgcmkw.ts",
-            "line": 6,
+            "file": "src/key/import.ts",
+            "line": 21,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -766,8 +772,8 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/lib/pbes2kw.ts",
-            "line": 9,
+            "file": "src/lib/normalize_key.ts",
+            "line": 10,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -778,8 +784,8 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "tap/run-bun.ts",
-            "line": 6,
+            "file": "tap/run-browser.ts",
+            "line": 7,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -790,7 +796,7 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "test/jwt/sign.test.ts",
+            "file": "test/jwt/encrypt.test.ts",
             "line": 10,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
@@ -806,7 +812,7 @@
     },
     "quotes": {
       "double": {
-        "count": 4569,
+        "count": 4579,
         "samples": [
           {
             "file": "ava.config.mjs",
@@ -815,51 +821,51 @@
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/index.ts",
-            "line": 6,
-            "column": 43,
+            "file": "playwright.config.ts",
+            "line": 9,
+            "column": 37,
             "message": "Strings must use doublequote."
           },
           {
             "file": "src/key/generate_key_pair.ts",
-            "line": 157,
-            "column": 14,
+            "line": 146,
+            "column": 28,
             "message": "Strings must use doublequote."
           },
           {
             "file": "src/lib/encrypt_key_management.ts",
-            "line": 84,
-            "column": 10,
+            "line": 61,
+            "column": 17,
             "message": "Strings must use doublequote."
           },
           {
             "file": "tap/cookbook.ts",
-            "line": 13,
-            "column": 61,
+            "line": 3,
+            "column": 28,
             "message": "Strings must use doublequote."
           },
           {
             "file": "tap/keyobject-stub.ts",
-            "line": 39,
-            "column": 12,
+            "line": 11,
+            "column": 56,
             "message": "Strings must use doublequote."
           },
           {
             "file": "test/jwe/general.test.ts",
-            "line": 124,
-            "column": 16,
+            "line": 111,
+            "column": 88,
             "message": "Strings must use doublequote."
           },
           {
             "file": "test/jws/compact.verify.test.ts",
-            "line": 37,
-            "column": 27,
+            "line": 34,
+            "column": 32,
             "message": "Strings must use doublequote."
           },
           {
             "file": "test/jwt/verify.test.ts",
-            "line": 18,
-            "column": 18,
+            "line": 17,
+            "column": 6,
             "message": "Strings must use doublequote."
           },
           {
@@ -938,7 +944,7 @@
     },
     "semi": {
       "always": {
-        "count": 3937,
+        "count": 3938,
         "samples": [
           {
             "file": "ava.config.mjs",
@@ -948,32 +954,32 @@
           },
           {
             "file": "src/jwks/local.ts",
-            "line": 130,
-            "column": 35,
+            "line": 125,
+            "column": 36,
             "message": "Missing semicolon."
           },
           {
             "file": "src/key/generate_key_pair.ts",
-            "line": 165,
+            "line": 161,
             "column": 16,
             "message": "Missing semicolon."
           },
           {
             "file": "src/lib/decrypt_key_management.ts",
-            "line": 50,
-            "column": 34,
+            "line": 48,
+            "column": 55,
             "message": "Missing semicolon."
           },
           {
             "file": "src/lib/normalize_key.ts",
-            "line": 202,
+            "line": 191,
             "column": 8,
             "message": "Missing semicolon."
           },
           {
-            "file": "tap/fixtures.ts",
-            "line": 383,
-            "column": 2,
+            "file": "tap/env.ts",
+            "line": 115,
+            "column": 14,
             "message": "Missing semicolon."
           },
           {

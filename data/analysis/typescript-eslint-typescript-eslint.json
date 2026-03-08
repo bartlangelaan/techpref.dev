@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "0f4f101a125487bc07db323288afb86d5247bc31",
-  "analyzedCommitDate": "2026-03-08T21:37:47.000Z",
+  "analyzedCommit": "f696dadfc37078efe4119ad2ab0609cde3e42766",
+  "analyzedCommitDate": "2026-03-08T22:54:03.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -334,7 +334,7 @@
         ]
       },
       "index-signature": {
-        "count": 501,
+        "count": 503,
         "samples": [
           {
             "file": "packages/ast-spec/src/declaration/ClassDeclaration/fixtures/_error_/abstract-constructor/fixture.ts",
@@ -349,10 +349,10 @@
             "message": "Unexpected token"
           },
           {
-            "file": "packages/ast-spec/src/declaration/VariableDeclaration/fixtures/_error_/declare-let-id-definite-no-init/fixture.ts",
+            "file": "packages/ast-spec/src/declaration/VariableDeclaration/fixtures/_error_/declare-let-id-definite-type-init/fixture.ts",
             "line": 1,
             "column": 16,
-            "message": "Declarations with definite assignment assertions must also have type annotations."
+            "message": "Declarations with initializers cannot also have definite assignment assertions."
           },
           {
             "file": "packages/ast-spec/src/element/MethodDefinition/fixtures/_error_/mixed-accessibility-modifiers/fixture.ts",
@@ -361,22 +361,22 @@
             "message": "Accessibility modifier already seen."
           },
           {
-            "file": "packages/ast-spec/src/expression/ObjectExpression/fixtures/_error_/setter-modifier-public/fixture.ts",
+            "file": "packages/ast-spec/src/expression/ObjectExpression/fixtures/_error_/setter-modifier-static/fixture.ts",
             "line": 1,
             "column": 3,
-            "message": "'public' modifier cannot be used here."
+            "message": "'static' modifier cannot be used here."
           },
           {
             "file": "packages/ast-spec/src/legacy-fixtures/errorRecovery/fixtures/_error_/enum-with-keywords/fixture.ts",
             "line": 3,
-            "column": 23,
-            "message": "Accessibility modifier already seen."
+            "column": 8,
+            "message": "'private' modifier cannot be used here."
           },
           {
-            "file": "packages/ast-spec/src/statement/ForOfStatement/fixtures/_error_/expr-not-assignment-target/fixture.ts",
-            "line": 1,
-            "column": 6,
-            "message": "Cannot assign to this expression"
+            "file": "packages/ast-spec/src/statement/ThrowStatement/fixtures/_error_/missing-argument/fixture.ts",
+            "line": 2,
+            "column": 5,
+            "message": "Illegal newline after throw"
           },
           {
             "file": "packages/rule-tester/src/RuleTester.ts",
@@ -466,7 +466,7 @@
         ]
       },
       "type": {
-        "count": 1027,
+        "count": 1029,
         "samples": [
           {
             "file": "packages/ast-spec/src/base/BaseNode.ts",
@@ -487,32 +487,32 @@
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "packages/ast-spec/src/expression/ObjectExpression/spec.ts",
-            "line": 5,
-            "column": 8,
-            "message": "Use `type` instead of `interface`."
+            "file": "packages/ast-spec/src/expression/SequenceExpression/fixtures/_error_/private-id-lhs/fixture.ts",
+            "line": 3,
+            "column": 10,
+            "message": "Expected `in` but found `,`"
           },
           {
             "file": "packages/ast-spec/src/legacy-fixtures/errorRecovery/fixtures/_error_/enum-with-keywords/fixture.ts",
             "line": 3,
-            "column": 23,
-            "message": "'protected' modifier cannot be used here."
+            "column": 33,
+            "message": "'static' modifier cannot be used here."
           },
           {
-            "file": "packages/ast-spec/src/statement/TryStatement/spec.ts",
+            "file": "packages/ast-spec/src/statement/WhileStatement/spec.ts",
             "line": 6,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "packages/eslint-plugin/src/rules/unbound-method.ts",
-            "line": 19,
+            "line": 300,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "packages/types/src/ts-estree.ts",
-            "line": 116,
+            "line": 120,
             "column": 3,
             "message": "Use `type` instead of `interface`."
           },
@@ -665,7 +665,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 1992,
+        "count": 1993,
         "samples": [
           {
             "file": "packages/ast-spec/src/declaration/ClassDeclaration/fixtures/_error_/abstract-constructor/fixture.ts",
@@ -681,7 +681,7 @@
           },
           {
             "file": "packages/eslint-plugin/src/rules/ban-ts-comment.ts",
-            "line": 152,
+            "line": 177,
             "column": 5,
             "message": "Expected a function expression."
           },
@@ -699,19 +699,19 @@
           },
           {
             "file": "packages/eslint-plugin/src/rules/require-await.ts",
-            "line": 238,
-            "column": 5,
+            "line": 312,
+            "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "packages/eslint-plugin/src/util/skipChainExpression.ts",
-            "line": 5,
+            "file": "packages/eslint-plugin/src/util/walkStatements.ts",
+            "line": 10,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "packages/type-utils/src/isUnsafeAssignment.ts",
-            "line": 19,
+            "file": "packages/type-utils/src/isTypeReadonly.ts",
+            "line": 334,
             "column": 8,
             "message": "Expected a function expression."
           },
@@ -1126,7 +1126,7 @@
     },
     "quotes": {
       "double": {
-        "count": 47295,
+        "count": 47311,
         "samples": [
           {
             "file": "eslint.config.mjs",
@@ -1136,50 +1136,50 @@
           },
           {
             "file": "packages/eslint-plugin/src/configs/flat/recommended-type-checked.ts",
-            "line": 36,
-            "column": 57,
+            "line": 37,
+            "column": 50,
             "message": "Strings must use doublequote."
           },
           {
             "file": "packages/eslint-plugin/src/rules/prefer-optional-chain.ts",
-            "line": 63,
-            "column": 15,
+            "line": 71,
+            "column": 19,
             "message": "Strings must use doublequote."
           },
           {
             "file": "packages/eslint-plugin/tests/rules/explicit-function-return-type.test.ts",
-            "line": 1412,
+            "line": 1510,
             "column": 22,
             "message": "Strings must use doublequote."
           },
           {
             "file": "packages/eslint-plugin/tests/rules/no-explicit-any.test.ts",
-            "line": 731,
-            "column": 22,
+            "line": 766,
+            "column": 26,
             "message": "Strings must use doublequote."
           },
           {
             "file": "packages/eslint-plugin/tests/rules/no-unnecessary-type-conversion.test.ts",
-            "line": 191,
-            "column": 22,
+            "line": 243,
+            "column": 13,
             "message": "Strings must use doublequote."
           },
           {
             "file": "packages/eslint-plugin/tests/rules/prefer-reduce-type-parameter.test.ts",
-            "line": 1,
-            "column": 18,
+            "line": 107,
+            "column": 22,
             "message": "Strings must use doublequote."
           },
           {
             "file": "packages/scope-manager/src/lib/dom.ts",
-            "line": 804,
+            "line": 806,
             "column": 6,
             "message": "Strings must use doublequote."
           },
           {
             "file": "packages/type-utils/tests/requiresQuoting.test.ts",
-            "line": 73,
-            "column": 8,
+            "line": 80,
+            "column": 20,
             "message": "Strings must use doublequote."
           },
           {
@@ -1323,7 +1323,7 @@
         ]
       },
       "never": {
-        "count": 27974,
+        "count": 27987,
         "samples": [
           {
             "file": "eslint.config.mjs",
@@ -1333,32 +1333,32 @@
           },
           {
             "file": "packages/eslint-plugin/src/raw-plugin.ts",
-            "line": 4,
-            "column": 56,
+            "line": 7,
+            "column": 43,
             "message": "Extra semicolon."
           },
           {
             "file": "packages/eslint-plugin/src/rules/no-redeclare.ts",
-            "line": 235,
-            "column": 53,
+            "line": 281,
+            "column": 6,
             "message": "Extra semicolon."
           },
           {
             "file": "packages/eslint-plugin/src/rules/prefer-return-this-type.ts",
-            "line": 15,
-            "column": 39,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "packages/eslint-plugin/tests/rules/no-unused-vars/no-unused-vars.test.ts",
-            "line": 5,
+            "line": 54,
             "column": 53,
             "message": "Extra semicolon."
           },
           {
+            "file": "packages/eslint-plugin/tests/rules/no-unused-vars/no-unused-vars.test.ts",
+            "line": 28,
+            "column": 14,
+            "message": "Extra semicolon."
+          },
+          {
             "file": "packages/scope-manager/src/lib/es2023.ts",
-            "line": 8,
-            "column": 34,
+            "line": 6,
+            "column": 49,
             "message": "Extra semicolon."
           },
           {
@@ -1369,14 +1369,14 @@
           },
           {
             "file": "packages/typescript-eslint/tests/config-helper.test.ts",
-            "line": 257,
-            "column": 7,
+            "line": 266,
+            "column": 6,
             "message": "Extra semicolon."
           },
           {
             "file": "packages/typescript-estree/tests/lib/useProgramFromProjectService.test.ts",
-            "line": 674,
-            "column": 58,
+            "line": 669,
+            "column": 48,
             "message": "Extra semicolon."
           },
           {

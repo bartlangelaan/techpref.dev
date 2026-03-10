@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "4362cf43c49d0185cc6e14b9e0f9b56a18a6c186",
-  "analyzedCommitDate": "2026-03-10T20:46:40.000Z",
+  "analyzedCommit": "595b2ecb02020a47034ad3db21dc5cfae17b0a00",
+  "analyzedCommitDate": "2026-03-10T22:15:39.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -70,7 +70,7 @@
         ]
       },
       "generic": {
-        "count": 8221,
+        "count": 8224,
         "samples": [
           {
             "file": ".esbuild.ts",
@@ -80,8 +80,8 @@
           },
           {
             "file": "src/extension/chatSessions/vscode-node/test/chatSessionMetadataStoreImpl.spec.ts",
-            "line": 48,
-            "column": 10,
+            "line": 52,
+            "column": 24,
             "message": "Array type using 'readonly string[]' is forbidden. Use 'ReadonlyArray<string>' instead."
           },
           {
@@ -92,15 +92,15 @@
           },
           {
             "file": "src/extension/prompt/node/intents.ts",
-            "line": 160,
-            "column": 18,
-            "message": "Array type using 'readonly TelemetryData[]' is forbidden. Use 'ReadonlyArray<TelemetryData>' instead."
+            "line": 186,
+            "column": 72,
+            "message": "Array type using 'vscode.LanguageModelToolInformation[]' is forbidden. Use 'Array<vscode.LanguageModelToolInformation>' instead."
           },
           {
-            "file": "src/extension/tools/common/toolsRegistry.ts",
-            "line": 140,
-            "column": 30,
-            "message": "Array type using 'readonly ICopilotToolExtensionCtor[]' is forbidden. Use 'ReadonlyArray<ICopilotToolExtensionCtor>' instead."
+            "file": "src/extension/tools/common/toolsService.ts",
+            "line": 67,
+            "column": 34,
+            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           },
           {
             "file": "src/platform/chunking/node/naiveChunker.ts",
@@ -109,10 +109,10 @@
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
-            "file": "src/platform/notebook/test/node/utils.ts",
-            "line": 39,
-            "column": 62,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+            "file": "src/platform/notebook/vscode/notebookExectionServiceImpl.ts",
+            "line": 40,
+            "column": 24,
+            "message": "Array type using 'IDisposable[]' is forbidden. Use 'Array<IDisposable>' instead."
           },
           {
             "file": "src/util/vs/base/common/arrays.ts",
@@ -123,7 +123,7 @@
           {
             "file": "test/simulation/fixtures/codeMapper/extHostExtensionActivator.test.ts",
             "line": 258,
-            "column": 139,
+            "column": 82,
             "message": "Array type using 'IExtensionDescription[]' is forbidden. Use 'Array<IExtensionDescription>' instead."
           },
           {
@@ -159,7 +159,7 @@
           },
           {
             "file": "src/extension/prompts/node/panel/fileVariable.tsx",
-            "line": 308,
+            "line": 314,
             "column": 23,
             "message": "The generic type arguments should be specified as part of the constructor type arguments."
           },
@@ -466,7 +466,7 @@
         ]
       },
       "type": {
-        "count": 2402,
+        "count": 2405,
         "samples": [
           {
             "file": "script/analyzeEdits.ts",
@@ -488,25 +488,25 @@
           },
           {
             "file": "src/extension/prompt/common/intents.ts",
-            "line": 21,
+            "line": 27,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "src/extension/prompts/node/test/fixtures/editorGroupWatermark.ts",
-            "line": 18,
-            "column": 1,
+            "file": "src/extension/prompts/node/test/fixtures/codeEditorWidget.ts",
+            "line": 67,
+            "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "src/extension/typescriptContext/serverPlugin/src/common/typescripts.ts",
-            "line": 1384,
-            "column": 4,
+            "line": 1265,
+            "column": 9,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "src/platform/inlineEdits/common/workspaceEditTracker/nesXtabHistoryTracker.ts",
-            "line": 28,
+            "line": 24,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
@@ -533,7 +533,7 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 5294,
+        "count": 5297,
         "samples": [
           {
             "file": ".eslintplugin/no-bad-gdpr-comment.ts",
@@ -549,37 +549,37 @@
           },
           {
             "file": "src/extension/completions-core/vscode-node/prompt/src/components/components.ts",
-            "line": 6,
+            "line": 7,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
             "file": "src/extension/intents/node/newNotebookIntent.ts",
-            "line": 13,
+            "line": 14,
+            "column": 1,
+            "message": "Imports NotebookEditGenerationTelemtryOptions are only used as type."
+          },
+          {
+            "file": "src/extension/prompts/node/agent/searchSubagentPrompt.tsx",
+            "line": 8,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "src/extension/prompts/node/agent/promptRegistry.ts",
-            "line": 11,
-            "column": 1,
-            "message": "Imports DefaultAgentPromptProps, ReminderInstructionsProps, and ToolReferencesHintProps are only used as type."
-          },
-          {
-            "file": "src/extension/tools/common/editToolLearningService.ts",
-            "line": 9,
+            "file": "src/extension/testing/node/setupTestsFileManager.tsx",
+            "line": 15,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
             "file": "src/platform/endpoint/common/thinkingDataContainer.tsx",
-            "line": 6,
+            "line": 5,
             "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
+            "message": "Imports BasePromptElementProps and Raw are only used as type."
           },
           {
             "file": "src/platform/snippy/common/snippyFetcher.ts",
-            "line": 11,
+            "line": 7,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
@@ -665,7 +665,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 4818,
+        "count": 4823,
         "samples": [
           {
             "file": ".esbuild.ts",
@@ -675,13 +675,13 @@
           },
           {
             "file": "src/extension/codeBlocks/vscode-node/provider.ts",
-            "line": 277,
+            "line": 285,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "src/extension/completions-core/vscode-node/prompt/src/indentation/description.ts",
-            "line": 80,
+            "line": 134,
             "column": 8,
             "message": "Expected a function expression."
           },
@@ -693,7 +693,7 @@
           },
           {
             "file": "src/extension/trajectory/vscode-node/otelSpanToChatDebugEvent.ts",
-            "line": 478,
+            "line": 474,
             "column": 1,
             "message": "Expected a function expression."
           },
@@ -704,22 +704,22 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "src/util/common/languages.ts",
-            "line": 925,
-            "column": 1,
+            "file": "src/util/common/imageUtils.ts",
+            "line": 118,
+            "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "src/util/vs/base/common/platform.ts",
-            "line": 176,
-            "column": 9,
+            "line": 126,
+            "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "test/simulation/fixtures/fixing/typescript/eslint_unexpected_token.ts",
-            "line": 15,
-            "column": 5,
-            "message": "Unexpected token"
+            "file": "test/simulation/fixtures/fixing/typescript/eslint_sort_keys.ts",
+            "line": 18,
+            "column": 1,
+            "message": "Expected a function expression."
           },
           {
             "file": "test/util.ts",
@@ -929,7 +929,7 @@
     },
     "indent": {
       "2-space": {
-        "count": 2506,
+        "count": 2508,
         "samples": [
           {
             "file": ".esbuild.ts",
@@ -938,8 +938,8 @@
             "message": "Expected spaces for indentation, but found tabs."
           },
           {
-            "file": "src/extension/completions-core/vscode-node/bridge/src/completionsTelemetryServiceBridge.ts",
-            "line": 14,
+            "file": "src/extension/completions-core/vscode-node/completionsServiceBridges.ts",
+            "line": 53,
             "column": 1,
             "message": "Expected spaces for indentation, but found tabs."
           },
@@ -950,8 +950,8 @@
             "message": "Expected spaces for indentation, but found tabs."
           },
           {
-            "file": "src/extension/mcp/test/vscode-node/commands.spec.ts",
-            "line": 14,
+            "file": "src/extension/mcp/test/vscode-node/nuget.integration.spec.ts",
+            "line": 19,
             "column": 1,
             "message": "Expected spaces for indentation, but found tabs."
           },
@@ -980,7 +980,7 @@
             "message": "Expected spaces for indentation, but found tabs."
           },
           {
-            "file": "test/scenarios/test-explain/bar.ts",
+            "file": "test/scenarios/test-current-selection-impls/test.ts",
             "line": 6,
             "column": 1,
             "message": "Expected spaces for indentation, but found tabs."
@@ -994,7 +994,7 @@
         ]
       },
       "4-space": {
-        "count": 2506,
+        "count": 2508,
         "samples": [
           {
             "file": ".esbuild.ts",
@@ -1003,8 +1003,8 @@
             "message": "Expected spaces for indentation, but found tabs."
           },
           {
-            "file": "src/extension/completions-core/vscode-node/bridge/src/completionsTelemetryServiceBridge.ts",
-            "line": 14,
+            "file": "src/extension/completions-core/vscode-node/completionsServiceBridges.ts",
+            "line": 53,
             "column": 1,
             "message": "Expected spaces for indentation, but found tabs."
           },
@@ -1015,8 +1015,8 @@
             "message": "Expected spaces for indentation, but found tabs."
           },
           {
-            "file": "src/extension/mcp/test/vscode-node/commands.spec.ts",
-            "line": 14,
+            "file": "src/extension/mcp/test/vscode-node/nuget.integration.spec.ts",
+            "line": 19,
             "column": 1,
             "message": "Expected spaces for indentation, but found tabs."
           },
@@ -1045,7 +1045,7 @@
             "message": "Expected spaces for indentation, but found tabs."
           },
           {
-            "file": "test/scenarios/test-explain/bar.ts",
+            "file": "test/scenarios/test-current-selection-impls/test.ts",
             "line": 6,
             "column": 1,
             "message": "Expected spaces for indentation, but found tabs."
@@ -1126,7 +1126,7 @@
     },
     "quotes": {
       "double": {
-        "count": 123450,
+        "count": 123529,
         "samples": [
           {
             "file": ".esbuild.ts",
@@ -1136,50 +1136,50 @@
           },
           {
             "file": "src/extension/chatSessions/vscode-node/copilotCLIChatSessionsContribution.ts",
-            "line": 1634,
-            "column": 22,
+            "line": 1746,
+            "column": 36,
             "message": "Strings must use doublequote."
           },
           {
             "file": "src/extension/completions-core/vscode-node/extension/src/panelShared/languages/javaScriptReact.tmLanguage.ts",
-            "line": 2067,
-            "column": 14,
+            "line": 2088,
+            "column": 11,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/extension/completions-core/vscode-node/lib/src/ghostText/test/multilineModel.test.ts",
-            "line": 416,
-            "column": 14,
+            "file": "src/extension/completions-core/vscode-node/lib/src/ghostText/test/normalizeIndent.test.ts",
+            "line": 30,
+            "column": 7,
             "message": "Strings must use doublequote."
           },
           {
             "file": "src/extension/githubMcp/test/node/githubMcpDefinitionProvider.spec.ts",
-            "line": 17,
-            "column": 42,
+            "line": 156,
+            "column": 22,
             "message": "Strings must use doublequote."
           },
           {
             "file": "src/extension/prompt/vscode-node/test/gitDiffService.spec.ts",
-            "line": 227,
-            "column": 6,
+            "line": 379,
+            "column": 28,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/extension/tools/node/scmChangesTool.ts",
-            "line": 85,
-            "column": 12,
+            "file": "src/extension/tools/node/searchSubagentTool.ts",
+            "line": 14,
+            "column": 35,
             "message": "Strings must use doublequote."
           },
           {
             "file": "src/platform/inlineEdits/common/dataTypes/xtabPromptOptions.ts",
-            "line": 364,
-            "column": 2,
+            "line": 276,
+            "column": 19,
             "message": "Strings must use doublequote."
           },
           {
             "file": "src/util/vs/workbench/api/common/extHostTypes/snippetString.ts",
-            "line": 89,
-            "column": 49,
+            "line": 62,
+            "column": 17,
             "message": "Strings must use doublequote."
           },
           {
@@ -1191,7 +1191,7 @@
         ]
       },
       "single": {
-        "count": 3283,
+        "count": 3285,
         "samples": [
           {
             "file": ".esbuild.ts",
@@ -1207,37 +1207,37 @@
           },
           {
             "file": "src/extension/linkify/test/node/filePathLinkifier.spec.ts",
-            "line": 45,
-            "column": 7,
+            "line": 56,
+            "column": 6,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/extension/prompts/node/panel/terminalLastCommand.tsx",
-            "line": 31,
-            "column": 20,
+            "file": "src/extension/prompts/node/panel/terminal.tsx",
+            "line": 100,
+            "column": 8,
             "message": "Strings must use singlequote."
           },
           {
             "file": "src/extension/xtab/test/common/responseProcessor.spec.ts",
-            "line": 167,
+            "line": 166,
             "column": 5,
             "message": "Strings must use singlequote."
           },
           {
             "file": "src/platform/endpoint/test/node/stream.sseProcessor.spec.ts",
-            "line": 875,
+            "line": 874,
             "column": 5,
             "message": "Strings must use singlequote."
           },
           {
             "file": "src/platform/notebook/test/node/alternativeNotebookTextDocument.spec.tsx",
-            "line": 1115,
+            "line": 1108,
             "column": 9,
             "message": "Strings must use singlequote."
           },
           {
             "file": "test/codeMapper/codeMapper.stest.ts",
-            "line": 426,
+            "line": 425,
             "column": 6,
             "message": "Strings must use singlequote."
           },
@@ -1323,7 +1323,7 @@
         ]
       },
       "never": {
-        "count": 176324,
+        "count": 176505,
         "samples": [
           {
             "file": ".esbuild.ts",
@@ -1333,50 +1333,50 @@
           },
           {
             "file": "src/extension/chatSessions/vscode-node/claudeChatSessionContentProvider.ts",
-            "line": 194,
-            "column": 19,
+            "line": 252,
+            "column": 83,
             "message": "Extra semicolon."
           },
           {
             "file": "src/extension/completions-core/vscode-node/lib/src/prompt/components/test/recentEdits.test.tsx",
-            "line": 319,
-            "column": 4,
+            "line": 403,
+            "column": 106,
             "message": "Extra semicolon."
           },
           {
             "file": "src/extension/inlineEdits/vscode-node/features/diagnosticsBasedCompletions/importDiagnosticsCompletionProvider.ts",
-            "line": 309,
-            "column": 51,
+            "line": 484,
+            "column": 39,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/extension/prompts/node/inline/inlineChatNotebookEditPrompt.tsx",
-            "line": 57,
-            "column": 93,
+            "file": "src/extension/prompts/node/inline/inlineChatNotebookFixPrompt.tsx",
+            "line": 13,
+            "column": 91,
             "message": "Extra semicolon."
           },
           {
             "file": "src/extension/tools/node/test/toolUtils.spec.ts",
-            "line": 571,
+            "line": 489,
             "column": 42,
             "message": "Extra semicolon."
           },
           {
             "file": "src/platform/endpoint/vscode-node/test/extChatTokenizer.spec.ts",
-            "line": 197,
-            "column": 56,
+            "line": 85,
+            "column": 26,
             "message": "Extra semicolon."
           },
           {
             "file": "src/platform/workspaceChunkSearch/test/node/externalIngest.spec.ts",
-            "line": 282,
-            "column": 54,
+            "line": 273,
+            "column": 4,
             "message": "Extra semicolon."
           },
           {
-            "file": "test/inline/slashDoc.cpp.stest.ts",
-            "line": 104,
-            "column": 3,
+            "file": "test/inline/review.stest.ts",
+            "line": 84,
+            "column": 19,
             "message": "Extra semicolon."
           },
           {

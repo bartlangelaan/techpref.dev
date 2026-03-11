@@ -1,11 +1,11 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "66adb4e50fd05e80dc041349c0e5dfb7913d0b6a",
-  "analyzedCommitDate": "2026-03-10T22:15:06.000Z",
+  "analyzedCommit": "485fa9d623ed3a32e8aaca3770b703257385d1b5",
+  "analyzedCommitDate": "2026-03-11T19:01:36.000Z",
   "checks": {
     "array-type": {
       "array": {
-        "count": 136,
+        "count": 137,
         "samples": [
           {
             "file": "apps/backend/scripts/verify-data-integrity/payments-verifier.ts",
@@ -26,15 +26,15 @@
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
-            "file": "apps/dashboard/src/app/(main)/(protected)/projects/[projectId]/payments/customers/page-client.tsx",
-            "line": 441,
-            "column": 10,
+            "file": "apps/dashboard/src/app/(main)/(protected)/projects/[projectId]/external-db-sync/page-client.tsx",
+            "line": 232,
+            "column": 36,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
             "file": "apps/dashboard/src/app/(main)/(protected)/projects/[projectId]/payments/products/page-client-product-lines-view.tsx",
-            "line": 1178,
-            "column": 73,
+            "line": 1163,
+            "column": 40,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
@@ -57,7 +57,7 @@
           },
           {
             "file": "packages/template/src/lib/stack-app/apps/implementations/admin-app-impl.ts",
-            "line": 698,
+            "line": 703,
             "column": 15,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
@@ -70,7 +70,7 @@
         ]
       },
       "generic": {
-        "count": 1395,
+        "count": 1432,
         "samples": [
           {
             "file": "apps/backend/prisma/seed.ts",
@@ -79,51 +79,51 @@
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
-            "file": "apps/backend/src/auto-migrations/index.tsx",
-            "line": 216,
-            "column": 20,
-            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
+            "file": "apps/backend/src/auto-migrations/migration-tests.test.ts",
+            "line": 41,
+            "column": 30,
+            "message": "Array type using 'MigrationWithTests[]' is forbidden. Use 'Array<MigrationWithTests>' instead."
           },
           {
             "file": "apps/dashboard/src/app/(main)/(protected)/projects/[projectId]/(overview)/line-chart.tsx",
-            "line": 71,
-            "column": 50,
-            "message": "Array type using 'DataPoint[]' is forbidden. Use 'Array<DataPoint>' instead."
+            "line": 504,
+            "column": 15,
+            "message": "Array type using 'AuthMethodDatapoint[]' is forbidden. Use 'Array<AuthMethodDatapoint>' instead."
           },
           {
-            "file": "apps/dashboard/src/app/(main)/(protected)/projects/[projectId]/widget-playground/page-client.tsx",
-            "line": 135,
-            "column": 44,
-            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
+            "file": "apps/dashboard/src/app/(main)/(protected)/projects/[projectId]/query-analytics/page-client.tsx",
+            "line": 98,
+            "column": 30,
+            "message": "Array type using 'CompletionItem[]' is forbidden. Use 'Array<CompletionItem>' instead."
           },
           {
-            "file": "apps/dashboard/src/lib/apps-frontend.tsx",
-            "line": 14,
-            "column": 58,
+            "file": "apps/dashboard/src/components/rule-builder/condition-builder.tsx",
+            "line": 76,
+            "column": 55,
+            "message": "Array type using 'ConditionOperator[]' is forbidden. Use 'Array<ConditionOperator>' instead."
+          },
+          {
+            "file": "docs/src/app/mcp-browser/page.tsx",
+            "line": 89,
+            "column": 45,
+            "message": "Array type using 'DocSummary[]' is forbidden. Use 'Array<DocSummary>' instead."
+          },
+          {
+            "file": "packages/init-stack/src/index.ts",
+            "line": 1947,
+            "column": 66,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
-            "file": "docs/src/components/chat/ai-chat.tsx",
-            "line": 131,
-            "column": 101,
-            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
-          },
-          {
-            "file": "packages/init-stack/src/util.ts",
-            "line": 40,
-            "column": 76,
-            "message": "Array type using 'any[]' is forbidden. Use 'Array<any>' instead."
-          },
-          {
             "file": "packages/stack-shared/src/utils/arrays.tsx",
-            "line": 207,
-            "column": 17,
-            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
+            "line": 179,
+            "column": 62,
+            "message": "Array type using 'readonly U[]' is forbidden. Use 'ReadonlyArray<U>' instead."
           },
           {
             "file": "packages/template/src/lib/stack-app/apps/implementations/client-app-impl.ts",
-            "line": 1563,
-            "column": 45,
+            "line": 1527,
+            "column": 94,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
@@ -137,12 +137,24 @@
     },
     "consistent-generic-constructors": {
       "constructor": {
-        "count": 9,
+        "count": 11,
         "samples": [
           {
             "file": "apps/backend/src/app/api/latest/internal/session-replays/[session_replay_id]/events/route.tsx",
             "line": 89,
             "column": 22,
+            "message": "The generic type arguments should be specified as part of the constructor type arguments."
+          },
+          {
+            "file": "apps/dashboard/src/app/(main)/(protected)/projects/[projectId]/email-drafts/[draftId]/page-client.tsx",
+            "line": 548,
+            "column": 24,
+            "message": "The generic type arguments should be specified as part of the constructor type arguments."
+          },
+          {
+            "file": "apps/dashboard/src/app/(main)/(protected)/projects/[projectId]/email-drafts/[draftId]/page-client.tsx",
+            "line": 552,
+            "column": 27,
             "message": "The generic type arguments should be specified as part of the constructor type arguments."
           },
           {
@@ -155,12 +167,6 @@
             "file": "apps/dashboard/src/components/permission-field.tsx",
             "line": 25,
             "column": 17,
-            "message": "The generic type arguments should be specified as part of the constructor type arguments."
-          },
-          {
-            "file": "apps/e2e/tests/backend/endpoints/api/v1/external-db-sync-utils.ts",
-            "line": 35,
-            "column": 20,
             "message": "The generic type arguments should be specified as part of the constructor type arguments."
           },
           {
@@ -196,7 +202,7 @@
         ]
       },
       "type-annotation": {
-        "count": 158,
+        "count": 162,
         "samples": [
           {
             "file": "apps/backend/prisma/seed.ts",
@@ -206,50 +212,50 @@
           },
           {
             "file": "apps/backend/scripts/verify-data-integrity/payments-verifier.ts",
-            "line": 647,
-            "column": 45,
+            "line": 648,
+            "column": 41,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "apps/backend/src/lib/managed-email-onboarding.tsx",
-            "line": 257,
+            "file": "apps/backend/src/lib/payments.tsx",
+            "line": 123,
+            "column": 28,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "apps/dashboard/src/app/(main)/(protected)/projects/[projectId]/email-sent/grouped-email-table.tsx",
+            "line": 70,
+            "column": 25,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "apps/dashboard/src/components/cmdk-commands.tsx",
+            "line": 299,
             "column": 32,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "apps/dashboard/src/app/(main)/(protected)/projects/[projectId]/design-language/realistic-demo/page-client.tsx",
-            "line": 179,
-            "column": 37,
+            "file": "apps/dashboard/src/lib/session-replay-streams.ts",
+            "line": 44,
+            "column": 24,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "apps/dashboard/src/components/design-components/alert.tsx",
-            "line": 8,
+            "file": "docs/src/components/layout/toc.tsx",
+            "line": 145,
             "column": 31,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "apps/dashboard/src/lib/theme.tsx",
-            "line": 50,
+            "file": "packages/stack-shared/src/known-errors.tsx",
+            "line": 1971,
             "column": 32,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "docs/src/components/mdx/platform-codeblock.tsx",
-            "line": 17,
-            "column": 35,
-            "message": "The generic type arguments should be specified as part of the type annotation."
-          },
-          {
-            "file": "packages/stack-shared/src/sessions.ts",
-            "line": 105,
-            "column": 40,
-            "message": "The generic type arguments should be specified as part of the type annotation."
-          },
-          {
-            "file": "packages/stack-shared/src/utils/react.tsx",
-            "line": 19,
-            "column": 40,
+            "file": "packages/stack-shared/src/utils/promises.tsx",
+            "line": 465,
+            "column": 38,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
@@ -328,7 +334,7 @@
         ]
       },
       "index-signature": {
-        "count": 431,
+        "count": 445,
         "samples": [
           {
             "file": "apps/backend/prisma/seed.ts",
@@ -343,45 +349,45 @@
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "apps/dashboard/src/app/(main)/(protected)/projects/[projectId]/(overview)/globe.tsx",
-            "line": 151,
-            "column": 81,
+            "file": "apps/dashboard/src/app/(main)/(protected)/projects/[projectId]/(overview)/line-chart.tsx",
+            "line": 290,
+            "column": 28,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "apps/dashboard/src/app/(main)/(protected)/projects/[projectId]/payments/products/page-client-list-view.tsx",
-            "line": 695,
-            "column": 16,
+            "file": "apps/dashboard/src/app/(main)/(protected)/projects/[projectId]/payments/products/new/page-client.tsx",
+            "line": 301,
+            "column": 46,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "apps/dashboard/src/components/repeating-input.tsx",
-            "line": 67,
-            "column": 19,
+            "file": "apps/dashboard/src/components/export-users-dialog.tsx",
+            "line": 366,
+            "column": 28,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "docs/src/components/api/api-page-wrapper.tsx",
-            "line": 53,
-            "column": 54,
+            "line": 27,
+            "column": 33,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "docs/src/components/mdx/jwt-viewer.tsx",
-            "line": 21,
-            "column": 36,
+            "line": 10,
+            "column": 11,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "packages/stack-shared/src/config/migrate-catalogs-to-product-lines.ts",
-            "line": 218,
-            "column": 14,
+            "line": 212,
+            "column": 103,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "packages/stack-shared/src/utils/objects.tsx",
-            "line": 443,
-            "column": 22,
+            "line": 446,
+            "column": 129,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -395,7 +401,7 @@
     },
     "consistent-type-definitions": {
       "interface": {
-        "count": 662,
+        "count": 682,
         "samples": [
           {
             "file": "apps/backend/prisma/seed.ts",
@@ -404,50 +410,50 @@
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "apps/backend/src/lib/dev-perf-stats.tsx",
-            "line": 60,
+            "file": "apps/backend/src/lib/email-delivery-stats.tsx",
+            "line": 6,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "apps/dashboard/src/app/(main)/(protected)/projects/[projectId]/analytics/shared.tsx",
+            "file": "apps/dashboard/src/app/(main)/(protected)/projects/[projectId]/design-language/page-client.tsx",
+            "line": 177,
+            "column": 1,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "apps/dashboard/src/app/(main)/(protected)/projects/[projectId]/payments/products/product-price-row.tsx",
             "line": 37,
-            "column": 8,
-            "message": "Use `interface` instead of `type`."
-          },
-          {
-            "file": "apps/dashboard/src/app/(main)/(protected)/projects/[projectId]/sign-up-rules/page-client.tsx",
-            "line": 71,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "apps/dashboard/src/components/design-components/tabs.tsx",
-            "line": 34,
-            "column": 1,
-            "message": "Use `interface` instead of `type`."
-          },
-          {
-            "file": "apps/dashboard/src/lib/config-update.tsx",
-            "line": 401,
+            "file": "apps/dashboard/src/components/design-components/menu.tsx",
+            "line": 30,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "docs/src/components/mdx/jwt-viewer.tsx",
-            "line": 27,
-            "column": 1,
-            "message": "Use `interface` instead of `type`."
-          },
-          {
-            "file": "packages/stack-shared/src/interface/crud/analytics.ts",
-            "line": 8,
+            "file": "apps/dashboard/src/generated/bundled-type-definitions.ts",
+            "line": 5,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "packages/template/src/lib/stack-app/apps/interfaces/admin-app.ts",
-            "line": 24,
+            "file": "docs/src/components/mdx/button.tsx",
+            "line": 9,
+            "column": 1,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "packages/stack-shared/src/crud.tsx",
+            "line": 117,
+            "column": 8,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "packages/template/src/lib/stack-app/apps/implementations/session-replay.ts",
+            "line": 89,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
@@ -521,7 +527,7 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 754,
+        "count": 770,
         "samples": [
           {
             "file": "apps/backend/prisma/seed.ts",
@@ -531,51 +537,51 @@
           },
           {
             "file": "apps/backend/src/lib/config.tsx",
-            "line": 5,
-            "column": 1,
-            "message": "Imports branchConfigSourceSchema are only used as type."
-          },
-          {
-            "file": "apps/backend/src/oauth/providers/base.tsx",
-            "line": 5,
-            "column": 1,
-            "message": "Imports CallbackParamsType, Client, and OIDCTokenSet are only used as type."
-          },
-          {
-            "file": "apps/dashboard/src/app/(main)/(protected)/projects/[projectId]/@modal/(.)apps/[appId]/page-client.tsx",
-            "line": 9,
+            "line": 12,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "apps/dashboard/src/components/form-fields.tsx",
+            "file": "apps/backend/src/oauth/providers/discord.tsx",
+            "line": 2,
+            "column": 1,
+            "message": "Imports OAuthUserInfo are only used as type."
+          },
+          {
+            "file": "apps/dashboard/src/app/(main)/(protected)/projects/[projectId]/analytics/tables/page-client.tsx",
+            "line": 33,
+            "column": 1,
+            "message": "Imports RowData are only used as type."
+          },
+          {
+            "file": "apps/dashboard/src/components/data-table/user-search-picker.tsx",
             "line": 6,
             "column": 1,
-            "message": "Imports KeyboardEvent are only used as type."
-          },
-          {
-            "file": "examples/convex/components/ConvexClientProvider.tsx",
-            "line": 5,
-            "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "packages/stack-shared/src/interface/crud/team-memberships.ts",
+            "file": "docs/src/components/api/auth-panel.tsx",
             "line": 3,
             "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
+            "message": "Imports AdminOwnedProject and CurrentInternalUser are only used as type."
           },
           {
-            "file": "packages/template/src/components/api-key-table.tsx",
-            "line": 5,
+            "file": "packages/stack-shared/src/interface/crud/svix-token.ts",
+            "line": 1,
             "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
+            "message": "Imports CrudTypeOf are only used as type."
+          },
+          {
+            "file": "packages/template/src/components-page/team-invitation.tsx",
+            "line": 9,
+            "column": 1,
+            "message": "Imports StackClientApp are only used as type."
           },
           {
             "file": "packages/template/src/lib/stack-app/apps/implementations/server-app-impl.ts",
-            "line": 26,
+            "line": 25,
             "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
+            "message": "Imports ApiKey, ApiKeyCreationOptions, and ApiKeyUpdateOptions are only used as type."
           },
           {
             "file": "packages/template/src/providers/stack-provider.tsx",
@@ -586,7 +592,7 @@
         ]
       },
       "no-type-imports": {
-        "count": 389,
+        "count": 400,
         "samples": [
           {
             "file": "apps/backend/prisma/migrations/20260201400000_add_restricted_by_admin_fields/tests/default-values.ts",
@@ -595,39 +601,39 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "apps/backend/src/lib/clickhouse.tsx",
+            "file": "apps/backend/src/lib/dev-perf-stats.tsx",
+            "line": 97,
+            "column": 42,
+            "message": "`import()` type annotations are forbidden."
+          },
+          {
+            "file": "apps/dashboard/src/app/(main)/(protected)/projects/[projectId]/analytics/replays/session-replay-machine.ts",
             "line": 1,
-            "column": 24,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "apps/dashboard/src/app/(main)/(protected)/projects/[projectId]/analytics/replays/session-replay-machine.test.ts",
-            "line": 14,
-            "column": 3,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "apps/dashboard/src/app/(main)/(protected)/projects/[projectId]/payments/products/page-client-product-lines-view.tsx",
-            "line": 50,
-            "column": 3,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "apps/dashboard/src/components/data-table/transaction-table.tsx",
-            "line": 7,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "apps/e2e/tests/js/js-helpers.ts",
+            "file": "apps/dashboard/src/app/(main)/(protected)/projects/[projectId]/payments/products/price-edit-dialog.tsx",
+            "line": 26,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "apps/dashboard/src/components/data-table/transaction-table.tsx",
+            "line": 5,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "apps/e2e/tests/backend/backend-helpers.ts",
             "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "docs/src/components/layouts/docs.tsx",
-            "line": 48,
-            "column": 66,
+            "line": 43,
+            "column": 3,
             "message": "Use an `import` instead of an `import type`."
           },
           {
@@ -637,8 +643,8 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/stack-shared/src/interface/admin-interface.ts",
-            "line": 24,
+            "file": "packages/stack-shared/src/interface/crud/invoices.ts",
+            "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -653,7 +659,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 2577,
+        "count": 2632,
         "samples": [
           {
             "file": "apps/backend/prisma/seed.ts",
@@ -662,50 +668,50 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "apps/backend/src/lib/email-rendering.tsx",
-            "line": 84,
+            "file": "apps/backend/src/lib/email-template-rewrite.ts",
+            "line": 94,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "apps/backend/src/smart-router.tsx",
-            "line": 105,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "apps/dashboard/src/app/(main)/(protected)/projects/[projectId]/sign-up-rules/page-client.tsx",
-            "line": 468,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "apps/dashboard/src/components/rule-builder/condition-builder.tsx",
-            "line": 90,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "apps/e2e/tests/backend/endpoints/api/v1/integrations/custom/oauth.test.ts",
-            "line": 35,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "docs/src/components/layouts/docs.tsx",
-            "line": 813,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "packages/stack-shared/src/config/format.ts",
-            "line": 264,
+            "file": "apps/backend/src/utils/vercel.tsx",
+            "line": 11,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "packages/stack-shared/src/utils/telemetry.tsx",
-            "line": 7,
+            "file": "apps/dashboard/src/app/(main)/(protected)/projects/[projectId]/payments/products/price-edit-dialog.tsx",
+            "line": 285,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "apps/dashboard/src/components/inline-code.tsx",
+            "line": 3,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "apps/e2e/tests/backend/endpoints/api/v1/emails/email-queue.test.ts",
+            "line": 1880,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "docs/src/components/layouts/docs-header-wrapper.tsx",
+            "line": 181,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "packages/stack-cli/src/lib/config.ts",
+            "line": 17,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "packages/stack-shared/src/utils/strings.tsx",
+            "line": 638,
             "column": 8,
             "message": "Expected a function expression."
           },
@@ -718,7 +724,7 @@
         ]
       },
       "declaration": {
-        "count": 959,
+        "count": 983,
         "samples": [
           {
             "file": "apps/backend/next.config.mjs",
@@ -727,51 +733,51 @@
             "message": "Expected a function declaration."
           },
           {
-            "file": "apps/backend/src/lib/email-rendering.test.tsx",
-            "line": 58,
-            "column": 9,
+            "file": "apps/backend/src/lib/internal-api-keys.tsx",
+            "line": 150,
+            "column": 14,
             "message": "Expected a function declaration."
           },
           {
-            "file": "apps/dashboard/src/app/(main)/(protected)/projects/[projectId]/domains/page-client.tsx",
-            "line": 341,
-            "column": 9,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "apps/dashboard/src/app/(main)/(protected)/projects/[projectId]/payments/products/new/page-client.tsx",
-            "line": 511,
-            "column": 9,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "apps/dashboard/src/app/(main)/(protected)/projects/[projectId]/widget-playground/page-client.tsx",
-            "line": 960,
-            "column": 11,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "apps/dashboard/src/components/rule-builder/condition-builder.tsx",
-            "line": 261,
-            "column": 9,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "apps/e2e/tests/js/auth-like.test.ts",
-            "line": 4,
-            "column": 7,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "docs/src/components/mdx/platform-codeblock.tsx",
+            "file": "apps/dashboard/src/app/(main)/(protected)/projects/[projectId]/email-drafts/[draftId]/page-client.tsx",
             "line": 275,
             "column": 9,
             "message": "Expected a function declaration."
           },
           {
+            "file": "apps/dashboard/src/app/(main)/(protected)/projects/[projectId]/payments/products/components.tsx",
+            "line": 118,
+            "column": 9,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "apps/dashboard/src/app/(main)/(protected)/projects/[projectId]/vercel/page-client.tsx",
+            "line": 72,
+            "column": 9,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "apps/dashboard/src/components/resizable-container.tsx",
+            "line": 20,
+            "column": 9,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "apps/e2e/tests/backend/endpoints/api/v1/token-refresh-events.test.ts",
+            "line": 72,
+            "column": 7,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "docs/src/components/mdx/dynamic-code-block.tsx",
+            "line": 49,
+            "column": 11,
+            "message": "Expected a function declaration."
+          },
+          {
             "file": "packages/stack-shared/src/schema-fields.ts",
-            "line": 479,
-            "column": 14,
+            "line": 176,
+            "column": 7,
             "message": "Expected a function declaration."
           },
           {
@@ -785,7 +791,7 @@
     },
     "import-export-preference": {
       "named": {
-        "count": 294,
+        "count": 304,
         "samples": [
           {
             "file": "apps/backend/next.config.mjs",
@@ -794,50 +800,50 @@
             "message": "Prefer named exports"
           },
           {
-            "file": "apps/dashboard/src/app/(main)/(protected)/projects/[projectId]/analytics/queries/page.tsx",
+            "file": "apps/dashboard/src/app/(main)/(protected)/projects/[projectId]/analytics/replays/page-client.tsx",
+            "line": 463,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "apps/dashboard/src/app/(main)/(protected)/projects/[projectId]/email-sent/page.tsx",
+            "line": 7,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "apps/dashboard/src/app/(main)/(protected)/projects/[projectId]/payments/product-lines/page.tsx",
+            "line": 7,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "apps/dashboard/src/app/(main)/(protected)/projects/[projectId]/users/[userId]/page-client.tsx",
+            "line": 77,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "apps/dashboard/src/app/layout.tsx",
+            "line": 56,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "docs/src/components/apple-secret-generator.tsx",
+            "line": 323,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "examples/demo/src/app/settings/page.tsx",
             "line": 3,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "apps/dashboard/src/app/(main)/(protected)/projects/[projectId]/email-templates/[templateId]/page.tsx",
-            "line": 7,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "apps/dashboard/src/app/(main)/(protected)/projects/[projectId]/payments/products/page-client-list-view.tsx",
-            "line": 601,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "apps/dashboard/src/app/(main)/(protected)/projects/[projectId]/vercel/page.tsx",
-            "line": 7,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "apps/dashboard/src/components/resizable-container.tsx",
-            "line": 63,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "examples/cjs-test/app/loading.tsx",
+            "file": "examples/lovable-react-18-example/postcss.config.js",
             "line": 1,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "examples/demo/src/app/spotify-server/page.tsx",
-            "line": 3,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "examples/lovable-react-18-example/src/App.tsx",
-            "line": 43,
             "column": 8,
             "message": "Prefer named exports"
           },
@@ -850,7 +856,7 @@
         ]
       },
       "default": {
-        "count": 524,
+        "count": 533,
         "samples": [
           {
             "file": "apps/backend/prisma/migrations/20260214000000_fix_trusted_domains_config/tests/temp-cleanup.ts",
@@ -865,44 +871,44 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "apps/backend/src/app/api/latest/internal/payments/test-mode-purchase-session/route.tsx",
-            "line": 11,
+            "file": "apps/backend/src/app/api/latest/internal/payments/transactions/refund/route.tsx",
+            "line": 80,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "apps/backend/src/app/api/migrations/v2beta5/payments/purchases/offers-compat.ts",
+            "file": "apps/backend/src/app/health/email/route.tsx",
+            "line": 135,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "apps/dashboard/src/components/app-warning-modal.tsx",
+            "line": 15,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "apps/dashboard/src/components/ui/data-table/toolbar.tsx",
+            "line": 20,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "docs/src/app/sitemap.xml/route.ts",
             "line": 3,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "apps/dashboard/src/components/commands/ask-ai.tsx",
-            "line": 520,
+            "file": "examples/supabase/utils/actions.ts",
+            "line": 9,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "apps/dashboard/src/components/ui/simple-tooltip.tsx",
-            "line": 8,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "docs/src/components/api/webhooks-api-page.tsx",
-            "line": 83,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "packages/init-stack/src/index.ts",
-            "line": 15,
-            "column": 10,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "packages/template/src/components-page/account-settings/notifications/notifications-page.tsx",
-            "line": 8,
+            "file": "packages/template/src/components-page/account-settings/email-and-auth/password-section.tsx",
+            "line": 16,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -917,13 +923,19 @@
     },
     "indent": {
       "2-space": {
-        "count": 15,
+        "count": 16,
         "samples": [
           {
-            "file": "apps/backend/src/lib/external-db-sync.ts",
-            "line": 290,
+            "file": "apps/backend/src/lib/email-template-rewrite.ts",
+            "line": 27,
             "column": 1,
-            "message": "Expected 2-space indentation, but file uses 7-space indentation."
+            "message": "Expected 2-space indentation, but file uses 5-space indentation."
+          },
+          {
+            "file": "apps/backend/src/lib/redirect-urls.tsx",
+            "line": 65,
+            "column": 1,
+            "message": "Expected 2-space indentation, but file uses 9-space indentation."
           },
           {
             "file": "apps/dashboard/src/app/(main)/(protected)/projects/[projectId]/analytics/replays/page-client.tsx",
@@ -932,16 +944,10 @@
             "message": "Expected 2-space indentation, but file uses 23-space indentation."
           },
           {
-            "file": "apps/dashboard/src/app/(main)/(protected)/projects/[projectId]/apps/page-client.tsx",
-            "line": 73,
+            "file": "apps/dashboard/src/components/stack-companion.tsx",
+            "line": 348,
             "column": 1,
-            "message": "Expected 2-space indentation, but file uses 15-space indentation."
-          },
-          {
-            "file": "apps/dashboard/tailwind.config.ts",
-            "line": 9,
-            "column": 1,
-            "message": "Expected spaces for indentation, but found tabs."
+            "message": "Expected 2-space indentation, but file uses 13-space indentation."
           },
           {
             "file": "apps/e2e/tests/backend/endpoints/api/v1/external-db-sync-advanced.test.ts",
@@ -950,10 +956,10 @@
             "message": "Expected 2-space indentation, but file uses 13-space indentation."
           },
           {
-            "file": "apps/e2e/tests/backend/endpoints/api/v1/external-db-sync-race.test.ts",
-            "line": 197,
+            "file": "apps/e2e/tests/backend/endpoints/api/v1/external-db-sync-high-volume.test.ts",
+            "line": 108,
             "column": 1,
-            "message": "Expected 2-space indentation, but file uses 13-space indentation."
+            "message": "Expected 2-space indentation, but file uses 15-space indentation."
           },
           {
             "file": "examples/convex/app/handler/[...stack]/page.tsx",
@@ -982,7 +988,7 @@
         ]
       },
       "4-space": {
-        "count": 1479,
+        "count": 1504,
         "samples": [
           {
             "file": "apps/backend/.eslintrc.cjs",
@@ -991,50 +997,50 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "apps/backend/src/app/api/latest/oauth-providers/crud.tsx",
-            "line": 14,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "apps/dashboard/src/app/(main)/(protected)/projects/[projectId]/@modal/(.)apps/[appId]/page-client.tsx",
-            "line": 14,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "apps/dashboard/src/components/app-store-entry.tsx",
-            "line": 12,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "apps/dashboard/src/instrumentation.ts",
+            "file": "apps/backend/src/app/api/latest/payments/billing/[customer_type]/[customer_id]/route.ts",
             "line": 8,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "apps/e2e/tests/js/app.test.ts",
-            "line": 7,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "docs/src/lib/navigation-utils.ts",
+            "file": "apps/dashboard/src/app/(main)/(protected)/projects/[projectId]/analytics/page.tsx",
             "line": 4,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "examples/react-example/vite.config.ts",
-            "line": 6,
+            "file": "apps/dashboard/src/app/(main)/wizard-congrats/posthog.tsx",
+            "line": 9,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/stack-ui/src/components/ui/button.tsx",
-            "line": 12,
+            "file": "apps/dashboard/src/components/vibe-coding/code-editor.tsx",
+            "line": 9,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "apps/e2e/tests/backend/performance/metrics.test.ts",
+            "line": 7,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "docs/src/components/ui/param-field.tsx",
+            "line": 7,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "examples/middleware/src/app/protected/page.tsx",
+            "line": 5,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "packages/stack-ui/src/components/ui/avatar.tsx",
+            "line": 10,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -1047,7 +1053,7 @@
         ]
       },
       "tab": {
-        "count": 1479,
+        "count": 1504,
         "samples": [
           {
             "file": "apps/backend/.eslintrc.cjs",
@@ -1056,50 +1062,50 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "apps/backend/src/app/api/latest/oauth-providers/crud.tsx",
-            "line": 14,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "apps/dashboard/src/app/(main)/(protected)/projects/[projectId]/@modal/(.)apps/[appId]/page-client.tsx",
-            "line": 14,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "apps/dashboard/src/components/app-store-entry.tsx",
-            "line": 12,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "apps/dashboard/src/instrumentation.ts",
+            "file": "apps/backend/src/app/api/latest/payments/billing/[customer_type]/[customer_id]/route.ts",
             "line": 8,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "apps/e2e/tests/js/app.test.ts",
-            "line": 7,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "docs/src/lib/navigation-utils.ts",
+            "file": "apps/dashboard/src/app/(main)/(protected)/projects/[projectId]/analytics/page.tsx",
             "line": 4,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "examples/react-example/vite.config.ts",
-            "line": 6,
+            "file": "apps/dashboard/src/app/(main)/wizard-congrats/posthog.tsx",
+            "line": 9,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/stack-ui/src/components/ui/button.tsx",
-            "line": 12,
+            "file": "apps/dashboard/src/components/vibe-coding/code-editor.tsx",
+            "line": 9,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "apps/e2e/tests/backend/performance/metrics.test.ts",
+            "line": 7,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "docs/src/components/ui/param-field.tsx",
+            "line": 7,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "examples/middleware/src/app/protected/page.tsx",
+            "line": 5,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "packages/stack-ui/src/components/ui/avatar.tsx",
+            "line": 10,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -1114,7 +1120,7 @@
     },
     "quotes": {
       "double": {
-        "count": 16665,
+        "count": 16668,
         "samples": [
           {
             "file": "apps/backend/.eslintrc.cjs",
@@ -1130,20 +1136,20 @@
           },
           {
             "file": "apps/dashboard/src/app/(main)/(protected)/projects/[projectId]/payments/products/included-item-dialog.tsx",
-            "line": 40,
-            "column": 18,
+            "line": 38,
+            "column": 12,
             "message": "Strings must use doublequote."
           },
           {
             "file": "apps/dashboard/src/app/(main)/(protected)/projects/[projectId]/query-analytics/monaco-clickhouse.ts",
-            "line": 1304,
-            "column": 18,
+            "line": 1293,
+            "column": 5,
             "message": "Strings must use doublequote."
           },
           {
             "file": "apps/e2e/tests/backend/backend-helpers.ts",
-            "line": 1350,
-            "column": 45,
+            "line": 1354,
+            "column": 49,
             "message": "Strings must use doublequote."
           },
           {
@@ -1154,14 +1160,14 @@
           },
           {
             "file": "docs/src/components/api/auth-panel.tsx",
-            "line": 143,
-            "column": 60,
+            "line": 144,
+            "column": 45,
             "message": "Strings must use doublequote."
           },
           {
             "file": "docs/src/components/layouts/sidebar-context.tsx",
-            "line": 117,
-            "column": 24,
+            "line": 118,
+            "column": 28,
             "message": "Strings must use doublequote."
           },
           {
@@ -1179,7 +1185,7 @@
         ]
       },
       "single": {
-        "count": 51326,
+        "count": 52407,
         "samples": [
           {
             "file": "apps/backend/.eslintrc.cjs",
@@ -1189,49 +1195,49 @@
           },
           {
             "file": "apps/backend/src/lib/payments.tsx",
+            "line": 252,
+            "column": 39,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "apps/dashboard/src/app/(main)/(protected)/projects/[projectId]/email-templates/page-client.tsx",
+            "line": 30,
+            "column": 64,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "apps/dashboard/src/components/ui/accordion.tsx",
             "line": 1,
-            "column": 68,
+            "column": 1,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "apps/dashboard/src/app/(main)/(protected)/projects/[projectId]/layout.tsx",
-            "line": 2,
-            "column": 27,
+            "file": "apps/e2e/tests/backend/endpoints/api/v1/emails/outbox-api.test.ts",
+            "line": 449,
+            "column": 39,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "apps/dashboard/src/components/ui/switch.tsx",
-            "line": 5,
-            "column": 35,
+            "file": "apps/e2e/tests/backend/endpoints/api/v1/session-replays.test.ts",
+            "line": 968,
+            "column": 55,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "apps/e2e/tests/backend/endpoints/api/v1/integrations/custom/domain.test.ts",
-            "line": 7,
-            "column": 43,
+            "file": "packages/init-stack/src/index.ts",
+            "line": 1601,
+            "column": 83,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "apps/e2e/tests/backend/endpoints/api/v1/team-invitations.test.ts",
-            "line": 1004,
-            "column": 4,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "packages/stack-cli/src/commands/init.ts",
-            "line": 1,
-            "column": 25,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "packages/stack-ui/src/components/ui/input.tsx",
-            "line": 68,
-            "column": 28,
+            "file": "packages/stack-ui/src/components/ui/button.tsx",
+            "line": 17,
+            "column": 11,
             "message": "Strings must use singlequote."
           },
           {
             "file": "packages/template/src/generated/quetzal-translations.ts",
-            "line": 2228,
+            "line": 2171,
             "column": 5,
             "message": "Strings must use singlequote."
           },
@@ -1246,7 +1252,7 @@
     },
     "semi": {
       "always": {
-        "count": 319,
+        "count": 318,
         "samples": [
           {
             "file": "apps/backend/prisma.config.ts",
@@ -1268,13 +1274,13 @@
           },
           {
             "file": "apps/hosted-components/vite.config.ts",
-            "line": 70,
-            "column": 4,
+            "line": 63,
+            "column": 80,
             "message": "Missing semicolon."
           },
           {
             "file": "docs/src/components/layouts/api/api-sidebar.tsx",
-            "line": 62,
+            "line": 68,
             "column": 2,
             "message": "Missing semicolon."
           },
@@ -1292,8 +1298,8 @@
           },
           {
             "file": "packages/stack-shared/vitest.config.ts",
-            "line": 2,
-            "column": 47,
+            "line": 7,
+            "column": 2,
             "message": "Missing semicolon."
           },
           {
@@ -1311,7 +1317,7 @@
         ]
       },
       "never": {
-        "count": 62360,
+        "count": 63426,
         "samples": [
           {
             "file": "apps/backend/.eslintrc.cjs",
@@ -1320,51 +1326,51 @@
             "message": "Extra semicolon."
           },
           {
-            "file": "apps/backend/src/lib/cel-evaluator.ts",
-            "line": 173,
-            "column": 76,
+            "file": "apps/backend/src/lib/config.tsx",
+            "line": 272,
+            "column": 51,
             "message": "Extra semicolon."
           },
           {
             "file": "apps/dashboard/src/app/(main)/(protected)/projects/[projectId]/analytics/replays/session-replay-machine.test.ts",
-            "line": 1452,
-            "column": 65,
+            "line": 1834,
+            "column": 84,
             "message": "Extra semicolon."
           },
           {
-            "file": "apps/dashboard/src/app/api/ai-search/route.ts",
-            "line": 95,
-            "column": 96,
+            "file": "apps/dashboard/src/app/(main)/(protected)/projects/[projectId]/widget-playground/page-client.tsx",
+            "line": 751,
+            "column": 70,
             "message": "Extra semicolon."
           },
           {
-            "file": "apps/e2e/tests/backend/endpoints/api/v1/analytics-query.test.ts",
-            "line": 1400,
-            "column": 3,
+            "file": "apps/e2e/tests/backend/endpoints/api/migration-tests.test.ts",
+            "line": 59,
+            "column": 113,
             "message": "Extra semicolon."
           },
           {
-            "file": "apps/e2e/tests/backend/endpoints/api/v1/internal/sign-up-rules-stats.test.ts",
-            "line": 13,
-            "column": 110,
+            "file": "apps/e2e/tests/backend/endpoints/api/v1/internal/failed-emails-digest.test.ts",
+            "line": 229,
+            "column": 40,
             "message": "Extra semicolon."
           },
           {
-            "file": "apps/e2e/tests/js/payments.test.ts",
-            "line": 165,
-            "column": 44,
+            "file": "apps/e2e/tests/js/email.test.ts",
+            "line": 22,
+            "column": 5,
             "message": "Extra semicolon."
           },
           {
-            "file": "examples/lovable-react-18-example/src/components/ui/tabs.tsx",
-            "line": 6,
-            "column": 32,
+            "file": "examples/lovable-react-18-example/src/components/ui/select.tsx",
+            "line": 2,
+            "column": 58,
             "message": "Extra semicolon."
           },
           {
-            "file": "packages/stack-shared/src/utils/react.tsx",
-            "line": 291,
-            "column": 81,
+            "file": "packages/stack-shared/src/utils/proxies.tsx",
+            "line": 191,
+            "column": 30,
             "message": "Extra semicolon."
           },
           {

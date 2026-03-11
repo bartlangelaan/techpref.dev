@@ -1,11 +1,11 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "1a4fb20ca11143a0fa90a6eed5720bf67c841b29",
-  "analyzedCommitDate": "2026-03-09T10:53:32.000Z",
+  "analyzedCommit": "3e4afccbbc364470613c993487b7bd0bd496a450",
+  "analyzedCommitDate": "2026-03-11T02:34:50.000Z",
   "checks": {
     "array-type": {
       "array": {
-        "count": 125,
+        "count": 127,
         "samples": [
           {
             "file": "packages/core/test/fixtures/load_context_syntax_error/app/extend/context.js",
@@ -14,16 +14,16 @@
             "message": "Expected `}` but found `EOF`"
           },
           {
-            "file": "tegg/core/aop-decorator/src/CrosscutAdviceFactory.ts",
-            "line": 8,
-            "column": 45,
-            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
+            "file": "tegg/core/aop-decorator/src/AspectMetaBuilder.ts",
+            "line": 22,
+            "column": 23,
+            "message": "Array type using 'Array<Aspect>' is forbidden. Use 'Aspect[]' instead."
           },
           {
-            "file": "tegg/core/background-task/src/BackgroundTaskHelper.ts",
-            "line": 22,
-            "column": 28,
-            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
+            "file": "tegg/core/aop-runtime/test/fixtures/modules/hello_cross_cut/CallTrace.ts",
+            "line": 16,
+            "column": 9,
+            "message": "Array type using 'Array<CallTraceMsg>' is forbidden. Use 'CallTraceMsg[]' instead."
           },
           {
             "file": "tegg/core/core-decorator/src/util/PrototypeUtil.ts",
@@ -51,14 +51,14 @@
           },
           {
             "file": "tegg/core/test-util/src/CoreTestHelper.ts",
-            "line": 43,
-            "column": 94,
+            "line": 46,
+            "column": 22,
             "message": "Array type using 'Array<LoadUnitInstance>' is forbidden. Use 'LoadUnitInstance[]' instead."
           },
           {
-            "file": "tegg/core/types/src/metadata/model/EggPrototype.ts",
-            "line": 128,
-            "column": 27,
+            "file": "tegg/plugin/controller/src/lib/AgentControllerProto.ts",
+            "line": 60,
+            "column": 24,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
@@ -70,7 +70,7 @@
         ]
       },
       "generic": {
-        "count": 1097,
+        "count": 1099,
         "samples": [
           {
             "file": "ecosystem-ci/patch-project.ts",
@@ -92,33 +92,33 @@
           },
           {
             "file": "packages/router/src/Router.ts",
-            "line": 1068,
-            "column": 21,
+            "line": 1073,
+            "column": 68,
             "message": "Array type using 'MiddlewareFunc[]' is forbidden. Use 'Array<MiddlewareFunc>' instead."
           },
           {
-            "file": "plugins/security/src/app/extend/context.ts",
-            "line": 47,
-            "column": 50,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+            "file": "plugins/security/src/app/middleware/securities.ts",
+            "line": 12,
+            "column": 22,
+            "message": "Array type using 'MiddlewareFunc[]' is forbidden. Use 'Array<MiddlewareFunc>' instead."
           },
           {
             "file": "tegg/core/controller-decorator/src/model/MCPControllerMeta.ts",
-            "line": 33,
-            "column": 12,
-            "message": "Array type using 'MCPToolMeta[]' is forbidden. Use 'Array<MCPToolMeta>' instead."
+            "line": 57,
+            "column": 80,
+            "message": "Array type using 'readonly MiddlewareFunc[]' is forbidden. Use 'ReadonlyArray<MiddlewareFunc>' instead."
           },
           {
-            "file": "tegg/core/loader/test/fixtures/modules/loader-failed/AppRepo.ts",
-            "line": 18,
-            "column": 9,
-            "message": "Expected `;` but found `Identifier`"
+            "file": "tegg/core/metadata/src/factory/EggPrototypeCreatorFactory.ts",
+            "line": 29,
+            "column": 83,
+            "message": "Array type using 'EggPrototype[]' is forbidden. Use 'Array<EggPrototype>' instead."
           },
           {
-            "file": "tegg/core/types/src/agent-runtime/AgentRuntime.ts",
-            "line": 72,
+            "file": "tegg/core/types/src/agent-runtime/AgentStore.ts",
+            "line": 45,
             "column": 13,
-            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
+            "message": "Array type using 'MessageObject[]' is forbidden. Use 'Array<MessageObject>' instead."
           },
           {
             "file": "tegg/plugin/tegg/src/app/extend/application.ts",
@@ -202,7 +202,7 @@
         ]
       },
       "type-annotation": {
-        "count": 64,
+        "count": 65,
         "samples": [
           {
             "file": "packages/cookies/src/cookies.ts",
@@ -236,19 +236,19 @@
           },
           {
             "file": "tegg/core/background-task/src/BackgroundTaskHelper.ts",
-            "line": 38,
+            "line": 89,
+            "column": 26,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "tegg/core/controller-decorator/test/http/HTTPMeta.test.ts",
+            "line": 53,
             "column": 39,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "tegg/core/controller-decorator/src/impl/http/HTTPControllerMethodMetaBuilder.ts",
-            "line": 59,
-            "column": 33,
-            "message": "The generic type arguments should be specified as part of the type annotation."
-          },
-          {
-            "file": "tegg/core/metadata/src/impl/ModuleLoadUnit.ts",
-            "line": 202,
+            "file": "tegg/core/metadata/src/model/AppGraph.ts",
+            "line": 240,
             "column": 29,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
@@ -334,7 +334,7 @@
         ]
       },
       "index-signature": {
-        "count": 372,
+        "count": 375,
         "samples": [
           {
             "file": "ecosystem-ci/patch-project.ts",
@@ -344,32 +344,32 @@
           },
           {
             "file": "packages/core/src/loader/egg_loader.ts",
-            "line": 695,
-            "column": 23,
+            "line": 874,
+            "column": 27,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "packages/core/test/loader/file_loader.test.ts",
-            "line": 192,
+            "line": 206,
             "column": 16,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "packages/koa-static-cache/test/index.test.ts",
-            "line": 482,
-            "column": 18,
+            "file": "packages/koa/src/context.ts",
+            "line": 25,
+            "column": 11,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "plugins/i18n/src/app/extend/application.ts",
-            "line": 82,
-            "column": 49,
+            "file": "plugins/i18n/src/config/config.default.ts",
+            "line": 42,
+            "column": 16,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "plugins/security/src/lib/middlewares/nosniff.ts",
-            "line": 8,
-            "column": 23,
+            "file": "plugins/security/src/lib/utils.ts",
+            "line": 95,
+            "column": 31,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -380,14 +380,14 @@
           },
           {
             "file": "tegg/core/types/src/agent-runtime/AgentStore.ts",
-            "line": 57,
+            "line": 46,
             "column": 13,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "tegg/plugin/mcp-proxy/src/index.ts",
-            "line": 405,
-            "column": 26,
+            "line": 397,
+            "column": 52,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -454,7 +454,7 @@
         ]
       },
       "type": {
-        "count": 477,
+        "count": 479,
         "samples": [
           {
             "file": "packages/cluster/src/master.ts",
@@ -481,8 +481,8 @@
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "tegg/core/dal-runtime/src/MySqlDataSource.ts",
-            "line": 10,
+            "file": "tegg/core/dal-runtime/src/DataSource.ts",
+            "line": 9,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
@@ -521,7 +521,7 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 355,
+        "count": 352,
         "samples": [
           {
             "file": "examples/helloworld-tegg/app/biz/Foo.ts",
@@ -536,38 +536,38 @@
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "plugins/view/test/fixtures/apps/ts/app.ts",
-            "line": 1,
+            "file": "plugins/view/src/lib/context_view.ts",
+            "line": 6,
             "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
+            "message": "Imports ViewManager and ViewEngineBase are only used as type."
           },
           {
-            "file": "tegg/core/dal-runtime/test/fixtures/modules/dal/dal/dao/base/BaseFooDAO.ts",
-            "line": 5,
+            "file": "tegg/core/dal-runtime/src/TemplateUtil.ts",
+            "line": 3,
             "column": 1,
-            "message": "Imports DataSource are only used as type."
+            "message": "Imports ColumnModel are only used as type."
           },
           {
-            "file": "tegg/core/metadata/test/fixtures/modules/recursive-load-unit/UserRepo.ts",
+            "file": "tegg/core/metadata/test/fixtures/modules/recursive-load-unit/AppRepo.ts",
             "line": 3,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
             "file": "tegg/plugin/controller/src/lib/impl/http/HTTPControllerRegister.ts",
-            "line": 11,
+            "line": 15,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "tegg/plugin/langchain/test/fixtures/apps/langchain/app/modules/bar/service/Graph.ts",
-            "line": 16,
+            "file": "tegg/plugin/mcp-client/test/fixtures/apps/mcpclient/app/modules/bar/controller/AppController.ts",
+            "line": 1,
             "column": 1,
-            "message": "Imports BaseMessage are only used as type."
+            "message": "Imports HttpMCPClient are only used as type."
           },
           {
             "file": "tegg/plugin/tegg/test/fixtures/apps/egg-app/modules/multi-module-repo/AppRepo.ts",
-            "line": 3,
+            "line": 4,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
@@ -586,7 +586,7 @@
         ]
       },
       "no-type-imports": {
-        "count": 1750,
+        "count": 1761,
         "samples": [
           {
             "file": "examples/helloworld-tegg/app.ts",
@@ -595,51 +595,51 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/egg/test/app/extend/request.test.ts",
-            "line": 8,
+            "file": "packages/egg/test/app/middleware/body_parser.test.ts",
+            "line": 6,
             "column": 21,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "plugins/logrotator/src/app/schedule/rotate_by_file.ts",
+            "file": "plugins/logrotator/src/app/schedule/rotate_by_hour.ts",
             "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "plugins/security/src/config/config.local.ts",
+            "file": "plugins/security/src/lib/helper/shtml.ts",
             "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "tegg/core/aop-runtime/test/fixtures/modules/hello_point_cut/HelloPointCut.ts",
-            "line": 5,
+            "file": "tegg/core/aop-runtime/test/fixtures/modules/state_point_cut/StatePointCut.ts",
+            "line": 3,
             "column": 30,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "tegg/core/langchain-decorator/test/fixtures/modules/langgraph/Graph.ts",
-            "line": 20,
+            "file": "tegg/core/langchain-decorator/src/util/GraphToolInfoUtil.ts",
+            "line": 4,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "tegg/core/types/src/metadata/model/EggPrototype.ts",
-            "line": 14,
+            "file": "tegg/core/types/src/metadata/model/LoadUnit.ts",
+            "line": 2,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "tegg/plugin/dal/test/fixtures/apps/dal-app/modules/dal/dal/dao/base/BaseFooDAO.ts",
+            "line": 6,
             "column": 10,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "tegg/plugin/dal/test/fixtures/apps/dal-app/modules/dal/dal/extension/FooExtension.ts",
-            "line": 1,
-            "column": 10,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "tegg/plugin/tegg/src/lib/ctx_lifecycle_middleware.ts",
+            "file": "tegg/plugin/tegg/src/lib/ModuleHandler.ts",
             "line": 3,
-            "column": 1,
+            "column": 10,
             "message": "Use an `import` instead of an `import type`."
           },
           {
@@ -653,7 +653,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 554,
+        "count": 557,
         "samples": [
           {
             "file": "ecosystem-ci/clone.ts",
@@ -662,39 +662,39 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "packages/core/src/loader/egg_loader.ts",
-            "line": 1827,
-            "column": 3,
+            "file": "packages/core/src/loader/file_loader.ts",
+            "line": 238,
+            "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "packages/egg/test/utils.ts",
-            "line": 31,
+            "line": 47,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "packages/utils/src/plugin.ts",
-            "line": 70,
-            "column": 1,
+            "line": 96,
+            "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "plugins/mock/src/lib/start-cluster.ts",
+            "file": "plugins/mock/src/lib/supertest.ts",
+            "line": 45,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "plugins/typebox-validate/src/decorator.ts",
             "line": 15,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "plugins/static/test/static.test.ts",
-            "line": 7,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "tegg/core/common-util/test/StackUtil.test.ts",
-            "line": 75,
-            "column": 7,
+            "line": 77,
+            "column": 11,
             "message": "Expected a function expression."
           },
           {
@@ -704,8 +704,8 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "tegg/plugin/langchain/src/lib/util.ts",
-            "line": 8,
+            "file": "tegg/plugin/langchain/src/lib/graph/GraphBuildHook.ts",
+            "line": 6,
             "column": 8,
             "message": "Expected a function expression."
           },
@@ -850,7 +850,7 @@
         ]
       },
       "default": {
-        "count": 545,
+        "count": 551,
         "samples": [
           {
             "file": "examples/helloworld-tegg/app/biz/Foo.ts",
@@ -859,26 +859,26 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "packages/errors/src/http/422.ts",
+            "file": "packages/errors/src/http/423.ts",
             "line": 3,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "plugins/mock/src/lib/restore.ts",
+            "file": "plugins/mock/test/fixtures/tegg-app-esm/app/modules/foo/LogService.ts",
             "line": 10,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "tegg/core/controller-decorator/src/decorator/Acl.ts",
+            "file": "tegg/core/controller-decorator/src/decorator/Context.ts",
             "line": 7,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "tegg/core/dal-runtime/src/SqlMapLoader.ts",
-            "line": 7,
+            "file": "tegg/core/dal-runtime/src/NunjucksUtil.ts",
+            "line": 61,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -889,20 +889,20 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "tegg/plugin/controller/src/lib/errors.ts",
-            "line": 9,
+            "file": "tegg/plugin/controller/src/lib/EggControllerPrototypeHook.ts",
+            "line": 5,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "tegg/plugin/langchain/src/lib/boundModel/BoundModelObjectHook.ts",
-            "line": 93,
+            "file": "tegg/plugin/langchain/src/lib/ChatOpenAI.ts",
+            "line": 35,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "tegg/plugin/tegg/test/fixtures/apps/invalid-inject/app/modules/module-a/BarService.ts",
-            "line": 4,
+            "file": "tegg/plugin/tegg/test/fixtures/apps/inject-module-config/modules/module-with-overwrite-config/bar.ts",
+            "line": 6,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -952,7 +952,7 @@
         ]
       },
       "4-space": {
-        "count": 3520,
+        "count": 3532,
         "samples": [
           {
             "file": "ecosystem-ci/clone.ts",
@@ -961,50 +961,50 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/core/test/fixtures/middleware-app-disable/config/config.js",
+            "file": "packages/core/test/fixtures/middleware-disable/app/middleware/custom.js",
             "line": 4,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/egg/test/fixtures/apps/dnscache_httpclient/config/config.default.js",
+            "file": "packages/egg/test/fixtures/apps/docapp/config/config.default.js",
+            "line": 6,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "packages/koa/test/response/has.test.ts",
+            "line": 8,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "plugins/mock/test/fixtures/messenger-binding/agent.js",
+            "line": 2,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "plugins/security/test/fixtures/apps/csrf-cookieOptions-signed/app/controller/home.js",
             "line": 4,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/koa/test/response/attachment.test.ts",
+            "file": "tegg/core/background-task/src/BackgroundTaskHelper.ts",
             "line": 10,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "plugins/mock/test/fixtures/failed-app/config/config.default.js",
-            "line": 4,
+            "file": "tegg/core/test-util/src/TestLoader.ts",
+            "line": 10,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "plugins/security/test/fixtures/apps/csp-ignore/config/config.js",
-            "line": 4,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "tegg/core/aop-runtime/test/fixtures/modules/hello_point_cut/HelloPointCut.ts",
-            "line": 11,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "tegg/core/test-util/src/LoaderUtil.ts",
-            "line": 3,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "tegg/plugin/tegg/test/fixtures/apps/app-with-no-module-json/app/controller/app.ts",
-            "line": 4,
+            "file": "tegg/plugin/tegg/test/fixtures/apps/app-multi-inject-multi/config/plugin.ts",
+            "line": 2,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -1017,7 +1017,7 @@
         ]
       },
       "tab": {
-        "count": 3520,
+        "count": 3532,
         "samples": [
           {
             "file": "ecosystem-ci/clone.ts",
@@ -1026,50 +1026,50 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/core/test/fixtures/middleware-app-disable/config/config.js",
+            "file": "packages/core/test/fixtures/middleware-disable/app/middleware/custom.js",
             "line": 4,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/egg/test/fixtures/apps/dnscache_httpclient/config/config.default.js",
+            "file": "packages/egg/test/fixtures/apps/docapp/config/config.default.js",
+            "line": 6,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "packages/koa/test/response/has.test.ts",
+            "line": 8,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "plugins/mock/test/fixtures/messenger-binding/agent.js",
+            "line": 2,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "plugins/security/test/fixtures/apps/csrf-cookieOptions-signed/app/controller/home.js",
             "line": 4,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/koa/test/response/attachment.test.ts",
+            "file": "tegg/core/background-task/src/BackgroundTaskHelper.ts",
             "line": 10,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "plugins/mock/test/fixtures/failed-app/config/config.default.js",
-            "line": 4,
+            "file": "tegg/core/test-util/src/TestLoader.ts",
+            "line": 10,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "plugins/security/test/fixtures/apps/csp-ignore/config/config.js",
-            "line": 4,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "tegg/core/aop-runtime/test/fixtures/modules/hello_point_cut/HelloPointCut.ts",
-            "line": 11,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "tegg/core/test-util/src/LoaderUtil.ts",
-            "line": 3,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "tegg/plugin/tegg/test/fixtures/apps/app-with-no-module-json/app/controller/app.ts",
-            "line": 4,
+            "file": "tegg/plugin/tegg/test/fixtures/apps/app-multi-inject-multi/config/plugin.ts",
+            "line": 2,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -1084,7 +1084,7 @@
     },
     "quotes": {
       "double": {
-        "count": 42202,
+        "count": 42516,
         "samples": [
           {
             "file": "ecosystem-ci/clone.ts",
@@ -1093,51 +1093,51 @@
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/core/test/loader/egg_loader.test.ts",
-            "line": 87,
-            "column": 25,
+            "file": "packages/core/test/loader/file_loader.test.ts",
+            "line": 114,
+            "column": 50,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/egg/test/fixtures/apps/helper/app/router.js",
-            "line": 19,
-            "column": 73,
+            "file": "packages/egg/test/fixtures/apps/i18n/config/locales/zh-CN.js",
+            "line": 3,
+            "column": 35,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/koa/test/request/accepts.test.ts",
+            "file": "packages/koa/test/request/acceptsEncodings.test.ts",
+            "line": 22,
+            "column": 81,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "plugins/development/test/development.test.ts",
             "line": 43,
-            "column": 38,
+            "column": 29,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/utils/test/plugin.test.ts",
-            "line": 213,
-            "column": 51,
+            "file": "plugins/multipart/test/file-mode.test.ts",
+            "line": 359,
+            "column": 68,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "plugins/multipart/test/file-mode-limit-filesize-per-request.test.ts",
-            "line": 115,
-            "column": 6,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "plugins/security/test/safe_redirect.test.ts",
-            "line": 130,
-            "column": 58,
+            "file": "plugins/security/test/utils.test.ts",
+            "line": 68,
+            "column": 31,
             "message": "Strings must use doublequote."
           },
           {
             "file": "tegg/core/dal-runtime/src/SqlUtil.ts",
-            "line": 59,
-            "column": 14,
+            "line": 187,
+            "column": 25,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "tegg/plugin/mcp-proxy/test/fixtures/apps/mcp-proxy/config/plugin.js",
-            "line": 12,
-            "column": 12,
+            "file": "tegg/plugin/mcp-proxy/test/fixtures/apps/mcp-proxy/app/controller/app.ts",
+            "line": 172,
+            "column": 7,
             "message": "Strings must use doublequote."
           },
           {
@@ -1245,7 +1245,7 @@
         ]
       },
       "never": {
-        "count": 60982,
+        "count": 61480,
         "samples": [
           {
             "file": "ecosystem-ci/clone.ts",
@@ -1254,51 +1254,51 @@
             "message": "Extra semicolon."
           },
           {
-            "file": "packages/core/test/fixtures/timing/index.js",
-            "line": 1,
-            "column": 13,
+            "file": "packages/core/test/lifecycle.test.ts",
+            "line": 32,
+            "column": 28,
             "message": "Extra semicolon."
           },
           {
-            "file": "packages/egg/test/fixtures/apps/middlewares-meta-enablePerformanceTimer/config/config.default.js",
-            "line": 5,
-            "column": 21,
+            "file": "packages/egg/test/fixtures/apps/notfound-custom-404/app/router.js",
+            "line": 3,
+            "column": 34,
             "message": "Extra semicolon."
           },
           {
-            "file": "packages/koa/test/request/querystring.test.ts",
-            "line": 35,
-            "column": 60,
+            "file": "packages/koa/test/response/attachment.test.ts",
+            "line": 69,
+            "column": 38,
             "message": "Extra semicolon."
           },
           {
-            "file": "plugins/logrotator/test/clean_log.test.ts",
-            "line": 186,
-            "column": 36,
+            "file": "plugins/logrotator/test/logrotator.test.ts",
+            "line": 70,
+            "column": 7,
             "message": "Extra semicolon."
           },
           {
-            "file": "plugins/onerror/test/onerror.test.ts",
-            "line": 278,
-            "column": 5,
+            "file": "plugins/redis/test/fixtures/apps/redispathapp/app/controller/home.js",
+            "line": 4,
+            "column": 32,
             "message": "Extra semicolon."
           },
           {
-            "file": "tegg/benchmark/http/app/controller/template/egg_controller_1.ts",
-            "line": 2,
-            "column": 57,
+            "file": "tegg/core/agent-runtime/src/RunBuilder.ts",
+            "line": 121,
+            "column": 35,
             "message": "Extra semicolon."
           },
           {
-            "file": "tegg/core/mcp-client/src/HttpMCPClient.ts",
-            "line": 100,
-            "column": 44,
+            "file": "tegg/core/mcp-client/test/fixtures/streamable-mcp-server/http.ts",
+            "line": 96,
+            "column": 37,
             "message": "Extra semicolon."
           },
           {
-            "file": "tegg/plugin/mcp-proxy/test/fixtures/apps/mcp-proxy/app/controller/app.ts",
-            "line": 77,
-            "column": 44,
+            "file": "tegg/plugin/mcp-proxy/src/index.ts",
+            "line": 470,
+            "column": 6,
             "message": "Extra semicolon."
           },
           {

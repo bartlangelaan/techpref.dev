@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "9707355df755765e5d5ea44540af6c532357c5ef",
-  "analyzedCommitDate": "2026-03-11T11:56:06.000Z",
+  "analyzedCommit": "6ace63ec92f50f322634c5db67db22c7941d8b2b",
+  "analyzedCommitDate": "2026-03-11T15:56:47.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -70,7 +70,7 @@
         ]
       },
       "generic": {
-        "count": 4123,
+        "count": 4126,
         "samples": [
           {
             "file": "frontend/cypress/enterprise/groups.spec.ts",
@@ -86,21 +86,21 @@
           },
           {
             "file": "frontend/src/component/unknownFlags/hooks/useUnknownFlags.ts",
-            "line": 21,
-            "column": 14,
-            "message": "Array type using 'UnknownFlagAppReport[]' is forbidden. Use 'Array<UnknownFlagAppReport>' instead."
+            "line": 25,
+            "column": 19,
+            "message": "Array type using 'UnknownFlag[]' is forbidden. Use 'Array<UnknownFlag>' instead."
           },
           {
             "file": "frontend/src/openapi/models/groupSchema.ts",
-            "line": 30,
-            "column": 19,
+            "line": 34,
+            "column": 16,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
-            "file": "src/lib/db/role-store.ts",
-            "line": 196,
-            "column": 45,
-            "message": "Array type using 'IUserRole[]' is forbidden. Use 'Array<IUserRole>' instead."
+            "file": "src/lib/db/session-store.ts",
+            "line": 30,
+            "column": 40,
+            "message": "Array type using 'ISession[]' is forbidden. Use 'Array<ISession>' instead."
           },
           {
             "file": "src/lib/features/feature-toggle/fakes/fake-feature-strategies-store.ts",
@@ -401,7 +401,7 @@
     },
     "consistent-type-definitions": {
       "interface": {
-        "count": 1470,
+        "count": 1471,
         "samples": [
           {
             "file": "frontend/src/component/admin/apiToken/ApiTokenForm/ProjectSelector/SelectProjectInput/SelectAllButton/SelectAllButton.tsx",
@@ -416,8 +416,8 @@
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "frontend/src/openapi/models/advancedPlaygroundFeatureSchemaEnvironments.ts",
-            "line": 11,
+            "file": "frontend/src/openapi/models/advancedPlaygroundResponseSchemaWarnings.ts",
+            "line": 10,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
@@ -434,13 +434,13 @@
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "frontend/src/openapi/models/getLoginHistory404.ts",
+            "file": "frontend/src/openapi/models/getMaintenance401.ts",
             "line": 7,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "frontend/src/openapi/models/listTags404.ts",
+            "file": "frontend/src/openapi/models/login401.ts",
             "line": 7,
             "column": 8,
             "message": "Use `interface` instead of `type`."
@@ -452,7 +452,7 @@
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "frontend/src/openapi/models/updateServiceAccount404.ts",
+            "file": "frontend/src/openapi/models/updateServiceAccount415.ts",
             "line": 7,
             "column": 8,
             "message": "Use `interface` instead of `type`."
@@ -533,8 +533,14 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 1,
+        "count": 2,
         "samples": [
+          {
+            "file": "frontend/src/component/admin/billing/Billing.test.tsx",
+            "line": 13,
+            "column": 24,
+            "message": "`import()` type annotations are forbidden."
+          },
           {
             "file": "frontend/src/interfaces/strategy.ts",
             "line": 3,
@@ -544,7 +550,7 @@
         ]
       },
       "no-type-imports": {
-        "count": 6732,
+        "count": 6736,
         "samples": [
           {
             "file": "frontend/src/component/InitialRedirect.tsx",
@@ -554,25 +560,25 @@
           },
           {
             "file": "frontend/src/component/context/ContextForm/ContextForm.tsx",
-            "line": 14,
-            "column": 1,
+            "line": 8,
+            "column": 5,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "frontend/src/component/integrations/IntegrationList/RequestIntegrationCard/RequestIntegrationCard.tsx",
+            "file": "frontend/src/component/integrations/IntegrationList/IntegrationList.tsx",
             "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "frontend/src/hooks/api/getters/useNotifications/useNotifications.ts",
-            "line": 5,
-            "column": 1,
+            "line": 1,
+            "column": 18,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "frontend/src/openapi/models/oidcSettingsSchemaOneOfFour.ts",
-            "line": 6,
+            "file": "frontend/src/openapi/models/oidcSettingsSchemaOneOf.ts",
+            "line": 7,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -584,12 +590,12 @@
           },
           {
             "file": "src/lib/features/metrics/unknown-flags/unknown-flags.e2e.test.ts",
-            "line": 8,
-            "column": 1,
+            "line": 5,
+            "column": 5,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/lib/openapi/spec/clone-feature-schema.ts",
+            "file": "src/lib/openapi/spec/client-segment-schema.ts",
             "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
@@ -676,7 +682,7 @@
         ]
       },
       "declaration": {
-        "count": 4770,
+        "count": 4776,
         "samples": [
           {
             "file": "frontend/cypress/support/API.ts",
@@ -685,45 +691,45 @@
             "message": "Expected a function declaration."
           },
           {
-            "file": "frontend/src/component/changeRequest/ChangeRequest/Changes/Change/ChangeOverwriteWarning/OverwriteWarning.tsx",
-            "line": 125,
+            "file": "frontend/src/component/changeRequest/ChangeRequest/Changes/Change/ChangeOverwriteWarning/ChangeOverwriteWarning.tsx",
+            "line": 41,
+            "column": 11,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "frontend/src/component/common/Table/cells/FeatureTagCell/FeatureTagCell.tsx",
+            "line": 20,
             "column": 14,
             "message": "Expected a function declaration."
           },
           {
-            "file": "frontend/src/component/common/Table/cells/HighlightCell/HighlightCell.tsx",
-            "line": 39,
-            "column": 14,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "frontend/src/component/feature/FeatureView/FeatureMetrics/FeatureMetricsTable/FeatureMetricsTable.tsx",
+            "file": "frontend/src/component/feature/FeatureView/FeatureMetrics/FeatureMetricsTable/ApplicationsCell.tsx",
             "line": 19,
             "column": 14,
             "message": "Expected a function declaration."
           },
           {
             "file": "frontend/src/component/insights/componentsChart/MetricsSummaryChart/MetricsChartTooltip/MetricsChartTooltip.tsx",
-            "line": 64,
+            "line": 39,
             "column": 14,
             "message": "Expected a function declaration."
           },
           {
             "file": "frontend/src/component/project/Project/ProjectFeatureToggles/FeatureToggleSwitch/useFeatureToggleSwitch.tsx",
-            "line": 159,
+            "line": 183,
             "column": 19,
             "message": "Expected a function declaration."
           },
           {
-            "file": "frontend/src/component/user/HostedAuth.tsx",
-            "line": 53,
-            "column": 11,
+            "file": "frontend/src/component/user/Login/Login.tsx",
+            "line": 24,
+            "column": 7,
             "message": "Expected a function declaration."
           },
           {
-            "file": "frontend/src/hooks/api/getters/useProjects/useProjects.ts",
-            "line": 11,
-            "column": 11,
+            "file": "frontend/src/hooks/api/getters/useReleasePlanTemplates/useReleasePlanTemplate.ts",
+            "line": 8,
+            "column": 7,
             "message": "Expected a function declaration."
           },
           {
@@ -808,7 +814,7 @@
         ]
       },
       "default": {
-        "count": 1375,
+        "count": 1376,
         "samples": [
           {
             "file": "frontend/src/component/App.tsx",
@@ -817,8 +823,8 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "frontend/src/component/archive/ArchiveTable/ArchivedFeatureActionCell/ArchivedFeatureDeleteConfirm/ArchivedFeatureDeleteConfirm.tsx",
-            "line": 29,
+            "file": "frontend/src/component/archive/ArchiveTable/ArchivedFeatureActionCell/ArchivedFeatureActionCell.tsx",
+            "line": 17,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -829,14 +835,14 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "frontend/src/component/feature/FeatureToggleList/BulkEnableDialog.tsx",
+            "file": "frontend/src/component/feature/FeatureToggleList/BulkDisableDialog.tsx",
             "line": 34,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "frontend/src/component/insights/componentsChart/CreationArchiveChart/placeholderData.ts",
-            "line": 42,
+            "file": "frontend/src/component/insights/componentsChart/CreationArchiveChart/batchCreationArchiveData.ts",
+            "line": 59,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -853,8 +859,8 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "frontend/src/hooks/api/getters/useNotifications/useNotifications.ts",
-            "line": 7,
+            "file": "frontend/src/hooks/api/getters/useLoginHistory/useLoginHistory.ts",
+            "line": 8,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -866,7 +872,7 @@
           },
           {
             "file": "src/test/fixtures/fake-release-plan-milestone-strategy-store.ts",
-            "line": 5,
+            "line": 8,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           }
@@ -885,7 +891,7 @@
           },
           {
             "file": "src/lib/features/release-plans/release-plan-store.ts",
-            "line": 269,
+            "line": 271,
             "column": 1,
             "message": "Expected 2-space indentation, but file uses 19-space indentation."
           },
@@ -940,7 +946,7 @@
         ]
       },
       "4-space": {
-        "count": 386,
+        "count": 389,
         "samples": [
           {
             "file": ".husky/update-openapi-spec-list.js",
@@ -949,40 +955,40 @@
             "message": "Expected 4-space indentation, but file uses 1-space indentation."
           },
           {
-            "file": "frontend/src/component/common/Table/PaginationBar/PaginationBar.tsx",
-            "line": 67,
+            "file": "frontend/src/component/common/Search/SearchSuggestions/SearchSuggestions.tsx",
+            "line": 99,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 18-space indentation."
           },
           {
-            "file": "frontend/src/component/feature/FeatureView/FeatureViewHeader.tsx",
-            "line": 238,
+            "file": "frontend/src/component/feature/FeatureView/FeatureVariants/FeatureEnvironmentVariants/EnvironmentVariantsModal/VariantForm/VariantForm.tsx",
+            "line": 459,
             "column": 1,
-            "message": "Expected 4-space indentation, but file uses 18-space indentation."
+            "message": "Expected 4-space indentation, but file uses 58-space indentation."
           },
           {
-            "file": "frontend/src/component/project/Project/ProjectInfo/ProjectInfo.tsx",
-            "line": 66,
+            "file": "frontend/src/component/project/Project/PaginatedProjectFeatureToggles/ProjectFeatureTogglesHeader/useFlagLimits.tsx",
+            "line": 20,
             "column": 1,
-            "message": "Expected 4-space indentation, but file uses 30-space indentation."
+            "message": "Expected 4-space indentation, but file uses 10-space indentation."
           },
           {
-            "file": "src/lib/features/feature-toggle/feature-toggle-store.ts",
-            "line": 640,
+            "file": "src/lib/features/feature-toggle/feature-toggle-service.ts",
+            "line": 123,
             "column": 1,
-            "message": "Expected 4-space indentation, but file uses 50-space indentation."
+            "message": "Expected 4-space indentation, but file uses 10-space indentation."
           },
           {
-            "file": "src/migrations/20210121115438-add-deprecated-column-to-strategies.js",
-            "line": 7,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "src/migrations/20220111120346-roles-unique-name.js",
+            "file": "src/migrations/20210119084617-add-addon-table.js",
             "line": 4,
             "column": 1,
-            "message": "Expected 4-space indentation, but file uses 6-space indentation."
+            "message": "Expected 4-space indentation, but file uses 7-space indentation."
+          },
+          {
+            "file": "src/migrations/20220111115613-move-feature-toggle-permission.js",
+            "line": 32,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
             "file": "src/migrations/20230419104126-add-disabled-field-to-feature-strategy.js",
@@ -1005,7 +1011,7 @@
         ]
       },
       "tab": {
-        "count": 5374,
+        "count": 5382,
         "samples": [
           {
             "file": ".husky/update-openapi-spec-list.js",
@@ -1014,14 +1020,14 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "frontend/src/component/common/TimeAgo/TimeAgo.tsx",
-            "line": 5,
+            "file": "frontend/src/component/common/ThemeMode/ThemeMode.tsx",
+            "line": 6,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "frontend/src/component/menu/Header/DrawerMenu/DrawerMenu.tsx",
-            "line": 15,
+            "file": "frontend/src/component/menu/Footer/FooterTitle.tsx",
+            "line": 4,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -1032,25 +1038,25 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "frontend/src/openapi/models/createActionsSchemaMatch.ts",
-            "line": 14,
+            "file": "frontend/src/openapi/models/createActionsSchemaMatchSource.ts",
+            "line": 11,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "frontend/src/openapi/models/lifecycleTrendsSchemaLifecycleTrendsDevelopCategoriesPermanent.ts",
+            "file": "frontend/src/openapi/models/lifecycleTrendsSchemaLifecycleTrendsDevelopCategoriesRelease.ts",
             "line": 8,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "frontend/src/openapi/models/validateArchiveFeaturesSchema.ts",
-            "line": 12,
+            "file": "frontend/src/openapi/models/validateConstraint401.ts",
+            "line": 9,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/lib/features/project/project-service.limit.test.ts",
+            "file": "src/lib/features/project/project-service.e2e.test.ts",
             "line": 2,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
@@ -1072,7 +1078,7 @@
     },
     "quotes": {
       "double": {
-        "count": 82822,
+        "count": 82969,
         "samples": [
           {
             "file": ".husky/update-openapi-spec-list.js",
@@ -1081,51 +1087,51 @@
             "message": "Strings must use doublequote."
           },
           {
-            "file": "frontend/src/component/common/ApiTokenTable/CreateApiTokenButton/CreateApiTokenButton.test.tsx",
+            "file": "frontend/src/component/commandBar/RecentlyVisitedRecorder.tsx",
             "line": 3,
-            "column": 50,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "frontend/src/component/feature/FeatureView/FeatureOverview/FeatureOverviewEnvironments/FeatureOverviewEnvironment/EnvironmentAccordionBody/EnvironmentAccordionBody.tsx",
-            "line": 24,
-            "column": 57,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "frontend/src/component/playground/Playground/AdvancedPlayground.tsx",
-            "line": 197,
-            "column": 55,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "frontend/src/hooks/api/actions/useImportApi/useImportApi.ts",
-            "line": 32,
             "column": 24,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "frontend/src/component/feature/FeatureView/FeatureOverview/FeatureLifecycle/populateCurrentStage.ts",
+            "line": 48,
+            "column": 27,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "frontend/src/component/playground/Playground/AdvancedPlayground.test.tsx",
+            "line": 187,
+            "column": 13,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "frontend/src/hooks/api/actions/useGroupApi/useGroupApi.ts",
+            "line": 1,
+            "column": 20,
             "message": "Strings must use doublequote."
           },
           {
             "file": "src/lib/db/access-store.ts",
-            "line": 687,
-            "column": 24,
+            "line": 451,
+            "column": 20,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/lib/features/instance-stats/getLicensedUsers.ts",
-            "line": 13,
-            "column": 21,
+            "file": "src/lib/features/instance-stats/getEdgeInstances.e2e.test.ts",
+            "line": 68,
+            "column": 18,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/lib/openapi/spec/admin-segment-schema.ts",
-            "line": 19,
-            "column": 19,
+            "file": "src/lib/openapi/spec/admin-segment-schema.test.ts",
+            "line": 1,
+            "column": 32,
             "message": "Strings must use doublequote."
           },
           {
             "file": "src/lib/schema/feature-schema.test.ts",
-            "line": 324,
-            "column": 6,
+            "line": 264,
+            "column": 15,
             "message": "Strings must use doublequote."
           },
           {
@@ -1269,7 +1275,7 @@
         ]
       },
       "never": {
-        "count": 92636,
+        "count": 92825,
         "samples": [
           {
             "file": ".husky/update-openapi-spec-list.js",
@@ -1278,51 +1284,51 @@
             "message": "Extra semicolon."
           },
           {
-            "file": "frontend/src/component/common/InstanceStatus/InstanceStatusBar.tsx",
-            "line": 174,
-            "column": 39,
+            "file": "frontend/src/component/common/InstanceStatus/InstanceStatus.tsx",
+            "line": 38,
+            "column": 33,
             "message": "Extra semicolon."
           },
           {
-            "file": "frontend/src/component/feature/FeatureView/FeatureOverview/FeatureOverviewMetaData/LinkDialogue.tsx",
-            "line": 55,
-            "column": 23,
+            "file": "frontend/src/component/feature/FeatureView/FeatureOverview/FeatureOverviewMetaData/FeatureOverviewMetaData.tsx",
+            "line": 17,
+            "column": 73,
             "message": "Extra semicolon."
           },
           {
-            "file": "frontend/src/component/project/Project/ProjectEnterpriseSettingsForm/ProjectLinkTemplates/ProjectLinkTemplateEditor.tsx",
-            "line": 63,
+            "file": "frontend/src/component/project/Project/ProjectEnterpriseSettingsForm/ProjectEnterpriseSettingsForm.tsx",
+            "line": 110,
+            "column": 77,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "frontend/src/hooks/api/getters/useProjectRoleAccessUsage/useProjectRoleAccessUsage.ts",
+            "line": 26,
             "column": 6,
             "message": "Extra semicolon."
           },
           {
-            "file": "frontend/src/hooks/api/getters/useReleasePlanTemplates/useReleasePlanTemplate.ts",
-            "line": 18,
-            "column": 2,
+            "file": "src/lib/db/reset-token-store.ts",
+            "line": 101,
+            "column": 51,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/lib/db/role-store.ts",
-            "line": 2,
-            "column": 56,
+            "file": "src/lib/features/instance-stats/getEdgeInstances.e2e.test.ts",
+            "line": 148,
+            "column": 41,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/lib/features/instance-stats/getLicensedUsers.e2e.test.ts",
-            "line": 36,
-            "column": 3,
+            "file": "src/lib/metrics.test.ts",
+            "line": 334,
+            "column": 43,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/lib/metrics.ts",
-            "line": 63,
-            "column": 11,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "src/lib/util/anyEventEmitter.test.ts",
-            "line": 8,
-            "column": 48,
+            "file": "src/lib/util/anonymise.ts",
+            "line": 10,
+            "column": 36,
             "message": "Extra semicolon."
           },
           {

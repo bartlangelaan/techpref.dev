@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "b9d0db0797cb6a86862aeaafff547119c1e62929",
-  "analyzedCommitDate": "2026-03-12T08:14:59.000Z",
+  "analyzedCommit": "df49560b8d4aa97b32c21fb00ba3d964790ff67f",
+  "analyzedCommitDate": "2026-03-12T11:30:29.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -9,7 +9,7 @@
         "samples": []
       },
       "generic": {
-        "count": 51,
+        "count": 53,
         "samples": [
           {
             "file": "src/component/recycleScroller/recycleManager.ts",
@@ -24,10 +24,10 @@
             "message": "Array type using 'number[]' is forbidden. Use 'Array<number>' instead."
           },
           {
-            "file": "src/core/core.ts",
-            "line": 317,
-            "column": 43,
-            "message": "Array type using 'IVConsoleTopbarOptions[]' is forbidden. Use 'Array<IVConsoleTopbarOptions>' instead."
+            "file": "src/core/options.interface.ts",
+            "line": 13,
+            "column": 21,
+            "message": "Array type using 'VConsoleAvailableStorage[]' is forbidden. Use 'Array<VConsoleAvailableStorage>' instead."
           },
           {
             "file": "src/lib/model.ts",
@@ -37,33 +37,33 @@
           },
           {
             "file": "src/log/log.model.ts",
-            "line": 48,
-            "column": 31,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+            "line": 52,
+            "column": 39,
+            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           },
           {
             "file": "src/log/log.model.ts",
-            "line": 439,
-            "column": 45,
+            "line": 449,
+            "column": 42,
             "message": "Array type using 'IVConsoleLog[]' is forbidden. Use 'Array<IVConsoleLog>' instead."
           },
           {
-            "file": "src/log/logCommand.svelte",
-            "line": 23,
-            "column": 41,
+            "file": "src/log/logRow.svelte",
+            "line": 56,
+            "column": 17,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
-            "file": "src/log/logTool.ts",
-            "line": 195,
-            "column": 24,
-            "message": "Array type using 'IVConsoleLogData[]' is forbidden. Use 'Array<IVConsoleLogData>' instead."
+            "file": "src/log/logTree.svelte",
+            "line": 19,
+            "column": 22,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
-            "file": "src/network/beacon.proxy.ts",
-            "line": 21,
-            "column": 49,
-            "message": "Array type using 'any[]' is forbidden. Use 'Array<any>' instead."
+            "file": "src/network/requestItem.ts",
+            "line": 26,
+            "column": 14,
+            "message": "Array type using 'VConsoleWebSocketMessage[]' is forbidden. Use 'Array<VConsoleWebSocketMessage>' instead."
           },
           {
             "file": "src/storage/storage.wx.ts",
@@ -152,13 +152,13 @@
           },
           {
             "file": "src/network/network.model.ts",
-            "line": 13,
+            "line": 15,
             "column": 39,
             "message": "A record is preferred over an index signature."
           },
           {
             "file": "src/network/requestItem.ts",
-            "line": 28,
+            "line": 36,
             "column": 15,
             "message": "A record is preferred over an index signature."
           },
@@ -171,7 +171,7 @@
         ]
       },
       "index-signature": {
-        "count": 3,
+        "count": 4,
         "samples": [
           {
             "file": "src/log/log.model.ts",
@@ -189,6 +189,12 @@
             "file": "src/log/logTree.svelte",
             "line": 13,
             "column": 22,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "src/network/resource.proxy.ts",
+            "line": 6,
+            "column": 35,
             "message": "An index signature is preferred over a record."
           }
         ]
@@ -219,7 +225,7 @@
         ]
       },
       "type": {
-        "count": 17,
+        "count": 18,
         "samples": [
           {
             "file": "src/component/recycleScroller/scroll/touchTracker.ts",
@@ -240,14 +246,14 @@
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "src/core/options.interface.ts",
-            "line": 16,
+            "file": "src/element/element.model.ts",
+            "line": 4,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "src/lib/plugin.ts",
-            "line": 18,
+            "line": 26,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
@@ -264,15 +270,15 @@
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "src/log/log.model.ts",
-            "line": 36,
+            "file": "src/log/log.store.ts",
+            "line": 5,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "src/log/logCommand.svelte",
-            "line": 8,
-            "column": 3,
+            "file": "src/network/requestItem.ts",
+            "line": 7,
+            "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
@@ -286,7 +292,7 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 5,
+        "count": 6,
         "samples": [
           {
             "file": "src/component/recycleScroller/scroll/scrollHandler.ts",
@@ -317,11 +323,17 @@
             "line": 4,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
+          },
+          {
+            "file": "src/network/websocket.proxy.ts",
+            "line": 2,
+            "column": 1,
+            "message": "Imports VConsoleWebSocketMessage are only used as type."
           }
         ]
       },
       "no-type-imports": {
-        "count": 27,
+        "count": 29,
         "samples": [
           {
             "file": "src/core/core.svelte",
@@ -354,21 +366,21 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/log/log.ts",
+            "file": "src/log/logTool.ts",
+            "line": 2,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "src/network/fetch.proxy.ts",
             "line": 5,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/network/beacon.proxy.ts",
-            "line": 4,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "src/network/helper.ts",
-            "line": 2,
-            "column": 1,
+            "file": "src/network/network.svelte",
+            "line": 9,
+            "column": 3,
             "message": "Use an `import` instead of an `import type`."
           },
           {
@@ -585,7 +597,7 @@
         ]
       },
       "default": {
-        "count": 13,
+        "count": 14,
         "samples": [
           {
             "file": "src/component/icon/icon.svelte",
@@ -612,8 +624,8 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/lib/pluginExporter.ts",
-            "line": 3,
+            "file": "src/lib/sveltePlugin.ts",
+            "line": 5,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -624,15 +636,15 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/network/network.exporter.ts",
-            "line": 5,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
             "file": "src/network/network.svelte",
             "line": 18,
             "column": 3,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "src/network/network.ts",
+            "line": 8,
+            "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
@@ -675,7 +687,7 @@
         ]
       },
       "4-space": {
-        "count": 58,
+        "count": 60,
         "samples": [
           {
             "file": "dev/script/test.js",
@@ -684,8 +696,8 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/component/recycleScroller/recycleScroller.svelte",
-            "line": 2,
+            "file": "src/component/recycleScroller/resizeObserver.ts",
+            "line": 6,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -696,38 +708,38 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/element/element.model.ts",
-            "line": 5,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "src/lib/pluginContent.svelte",
+            "file": "src/element/element.svelte",
             "line": 2,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/log/log.model.ts",
-            "line": 15,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "src/log/logTool.ts",
-            "line": 5,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "src/network/helper.ts",
-            "line": 10,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "src/storage/storage.cookie.ts",
+            "file": "src/lib/pluginExporter.ts",
             "line": 4,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "src/log/log.store.ts",
+            "line": 6,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "src/log/logTree.svelte",
+            "line": 3,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "src/network/network.model.ts",
+            "line": 22,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "src/network/xhr.proxy.ts",
+            "line": 7,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -740,7 +752,7 @@
         ]
       },
       "tab": {
-        "count": 58,
+        "count": 60,
         "samples": [
           {
             "file": "dev/script/test.js",
@@ -749,8 +761,8 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/component/recycleScroller/recycleScroller.svelte",
-            "line": 2,
+            "file": "src/component/recycleScroller/resizeObserver.ts",
+            "line": 6,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -761,38 +773,38 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/element/element.model.ts",
-            "line": 5,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "src/lib/pluginContent.svelte",
+            "file": "src/element/element.svelte",
             "line": 2,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/log/log.model.ts",
-            "line": 15,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "src/log/logTool.ts",
-            "line": 5,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "src/network/helper.ts",
-            "line": 10,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "src/storage/storage.cookie.ts",
+            "file": "src/lib/pluginExporter.ts",
             "line": 4,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "src/log/log.store.ts",
+            "line": 6,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "src/log/logTree.svelte",
+            "line": 3,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "src/network/network.model.ts",
+            "line": 22,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "src/network/xhr.proxy.ts",
+            "line": 7,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -807,7 +819,7 @@
     },
     "quotes": {
       "double": {
-        "count": 1074,
+        "count": 1133,
         "samples": [
           {
             "file": "dev/node.js",
@@ -817,50 +829,50 @@
           },
           {
             "file": "src/core/core.svelte",
-            "line": 276,
-            "column": 16,
+            "line": 287,
+            "column": 20,
             "message": "Strings must use doublequote."
           },
           {
             "file": "src/element/element.ts",
-            "line": 1,
-            "column": 21,
+            "line": 242,
+            "column": 28,
             "message": "Strings must use doublequote."
           },
           {
             "file": "src/lib/tool.ts",
-            "line": 158,
-            "column": 52,
+            "line": 235,
+            "column": 60,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/log/log.model.ts",
-            "line": 332,
-            "column": 19,
+            "file": "src/log/log.ts",
+            "line": 3,
+            "column": 34,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/log/logTool.ts",
-            "line": 55,
-            "column": 25,
+            "file": "src/log/logTree.svelte",
+            "line": 48,
+            "column": 43,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/network/beacon.proxy.ts",
-            "line": 28,
-            "column": 19,
+            "file": "src/network/fetch.proxy.ts",
+            "line": 247,
+            "column": 90,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/network/requestItem.ts",
-            "line": 17,
-            "column": 50,
+            "file": "src/network/resource.proxy.ts",
+            "line": 26,
+            "column": 51,
             "message": "Strings must use doublequote."
           },
           {
             "file": "src/storage/storage.model.ts",
-            "line": 125,
-            "column": 26,
+            "line": 109,
+            "column": 33,
             "message": "Strings must use doublequote."
           },
           {
@@ -1004,7 +1016,7 @@
         ]
       },
       "never": {
-        "count": 2733,
+        "count": 2848,
         "samples": [
           {
             "file": "dev/node.js",
@@ -1014,50 +1026,50 @@
           },
           {
             "file": "src/component/recycleScroller/recycleScroller.svelte",
-            "line": 212,
-            "column": 22,
+            "line": 239,
+            "column": 20,
             "message": "Extra semicolon."
           },
           {
             "file": "src/component/recycleScroller/scroll/touchTracker.ts",
-            "line": 89,
-            "column": 31,
+            "line": 124,
+            "column": 26,
             "message": "Extra semicolon."
           },
           {
             "file": "src/core/core.ts",
-            "line": 370,
+            "line": 466,
             "column": 45,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/lib/plugin.ts",
-            "line": 139,
-            "column": 31,
+            "file": "src/lib/query.ts",
+            "line": 133,
+            "column": 35,
             "message": "Extra semicolon."
           },
           {
             "file": "src/log/log.model.ts",
-            "line": 132,
-            "column": 29,
+            "line": 359,
+            "column": 9,
             "message": "Extra semicolon."
           },
           {
             "file": "src/log/logTool.ts",
-            "line": 1,
-            "column": 36,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "src/network/fetch.proxy.ts",
-            "line": 159,
+            "line": 167,
             "column": 67,
             "message": "Extra semicolon."
           },
           {
+            "file": "src/network/network.exporter.ts",
+            "line": 2,
+            "column": 55,
+            "message": "Extra semicolon."
+          },
+          {
             "file": "src/network/xhr.proxy.ts",
-            "line": 114,
-            "column": 48,
+            "line": 99,
+            "column": 39,
             "message": "Extra semicolon."
           },
           {

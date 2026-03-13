@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "fbd3bcfeecffb0e1dc747e6f73d59dbd18afcafd",
-  "analyzedCommitDate": "2026-03-06T10:07:30.000Z",
+  "analyzedCommit": "2c35b08bcd5f9ca02f4b54186035aadf108e6848",
+  "analyzedCommitDate": "2026-03-13T07:02:56.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -9,61 +9,61 @@
         "samples": []
       },
       "generic": {
-        "count": 33,
+        "count": 45,
         "samples": [
           {
-            "file": "src/commands/ni.ts",
-            "line": 55,
-            "column": 45,
-            "message": "Array type using 'Choice[]' is forbidden. Use 'Array<Choice>' instead."
-          },
-          {
-            "file": "src/commands/nun.ts",
-            "line": 21,
-            "column": 52,
-            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
-          },
-          {
-            "file": "src/completion.ts",
-            "line": 49,
-            "column": 48,
+            "file": "src/catalog/handler.ts",
+            "line": 16,
+            "column": 38,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+          },
+          {
+            "file": "src/catalog/handler.ts",
+            "line": 28,
+            "column": 28,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+          },
+          {
+            "file": "src/catalog/pnpm.ts",
+            "line": 29,
+            "column": 21,
+            "message": "Array type using 'CatalogInfo[]' is forbidden. Use 'Array<CatalogInfo>' instead."
+          },
+          {
+            "file": "src/commands/nr.ts",
+            "line": 48,
+            "column": 47,
+            "message": "Array type using 'Choice[]' is forbidden. Use 'Array<Choice>' instead."
           },
           {
             "file": "src/fetch.ts",
-            "line": 23,
-            "column": 66,
-            "message": "Array type using 'Choice[]' is forbidden. Use 'Array<Choice>' instead."
-          },
-          {
-            "file": "src/package.ts",
-            "line": 11,
-            "column": 82,
+            "line": 10,
+            "column": 13,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
+            "file": "src/monorepo.ts",
+            "line": 47,
+            "column": 16,
+            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
+          },
+          {
             "file": "src/package.ts",
-            "line": 49,
-            "column": 21,
+            "line": 31,
+            "column": 69,
             "message": "Array type using 'PackageScript[]' is forbidden. Use 'Array<PackageScript>' instead."
           },
           {
             "file": "src/runner.ts",
-            "line": 47,
-            "column": 43,
+            "line": 49,
+            "column": 89,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
             "file": "src/utils.ts",
-            "line": 12,
-            "column": 32,
+            "line": 20,
+            "column": 44,
             "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
-          },
-          {
-            "file": "test/ni/interactive.spec.ts",
-            "line": 26,
-            "column": 47,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
             "file": "test/programmatic/runCli.spec.ts",
@@ -90,8 +90,14 @@
         "samples": []
       },
       "index-signature": {
-        "count": 1,
+        "count": 2,
         "samples": [
+          {
+            "file": "src/catalog/types.ts",
+            "line": 3,
+            "column": 13,
+            "message": "An index signature is preferred over a record."
+          },
           {
             "file": "src/monorepo.ts",
             "line": 47,
@@ -107,12 +113,24 @@
         "samples": []
       },
       "type": {
-        "count": 11,
+        "count": 15,
         "samples": [
           {
-            "file": "src/config.ts",
-            "line": 18,
-            "column": 1,
+            "file": "src/catalog/prompt.ts",
+            "line": 8,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "src/catalog/types.ts",
+            "line": 6,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "src/catalog/types.ts",
+            "line": 13,
+            "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
@@ -129,19 +147,13 @@
           },
           {
             "file": "src/fetch.ts",
-            "line": 6,
-            "column": 8,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "src/fetch.ts",
             "line": 19,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "src/runner.ts",
-            "line": 21,
+            "file": "src/package.ts",
+            "line": 5,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
@@ -158,12 +170,6 @@
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "src/storage.ts",
-            "line": 5,
-            "column": 8,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
             "file": "src/utils.ts",
             "line": 28,
             "column": 1,
@@ -174,14 +180,33 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 0,
-        "samples": []
-      },
-      "no-type-imports": {
-        "count": 24,
+        "count": 1,
         "samples": [
           {
-            "file": "src/commands/ni.ts",
+            "file": "test/programmatic/catalog.spec.ts",
+            "line": 14,
+            "column": 48,
+            "message": "`import()` type annotations are forbidden."
+          }
+        ]
+      },
+      "no-type-imports": {
+        "count": 33,
+        "samples": [
+          {
+            "file": "src/catalog/detect.ts",
+            "line": 1,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "src/catalog/handler.ts",
+            "line": 3,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "src/catalog/prompt.ts",
             "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
@@ -193,13 +218,7 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/config.ts",
-            "line": 1,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "src/monorepo.ts",
+            "file": "src/fetch.ts",
             "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
@@ -217,22 +236,16 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/runner.ts",
-            "line": 3,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
             "file": "test/ni/interactive.spec.ts",
-            "line": 2,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "test/programmatic/detect.spec.ts",
             "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "test/programmatic/catalog.spec.ts",
+            "line": 14,
+            "column": 48,
+            "message": "`import()` type annotations are forbidden."
           },
           {
             "file": "test/runner/runCli.test.ts",
@@ -245,23 +258,29 @@
     },
     "func-style": {
       "expression": {
-        "count": 69,
+        "count": 85,
         "samples": [
           {
-            "file": "src/completion.ts",
-            "line": 49,
+            "file": "src/catalog/detect.ts",
+            "line": 5,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/fetch.ts",
-            "line": 23,
+            "file": "src/catalog/pnpm.ts",
+            "line": 6,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "src/config.ts",
+            "line": 87,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "src/parse.ts",
-            "line": 128,
+            "line": 13,
             "column": 8,
             "message": "Expected a function expression."
           },
@@ -272,31 +291,25 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "test/na/npm.spec.ts",
+            "file": "test/na/yarn@berry.spec.ts",
             "line": 5,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "test/ni/pnpm.spec.ts",
+            "file": "test/nlx/deno.spec.ts",
             "line": 5,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "test/nlx/yarn.spec.ts",
+            "file": "test/nr/npm.spec.ts",
             "line": 5,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "test/nr/yarn.spec.ts",
-            "line": 5,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "test/nun/yarn@berry.spec.ts",
+            "file": "test/nup/bun.spec.ts",
             "line": 5,
             "column": 1,
             "message": "Expected a function expression."
@@ -370,8 +383,26 @@
         ]
       },
       "default": {
-        "count": 1,
+        "count": 4,
         "samples": [
+          {
+            "file": "src/catalog/detect.ts",
+            "line": 5,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "src/catalog/handler.ts",
+            "line": 63,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "src/catalog/pnpm.ts",
+            "line": 19,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
           {
             "file": "src/fs.ts",
             "line": 6,
@@ -387,7 +418,7 @@
         "samples": []
       },
       "4-space": {
-        "count": 64,
+        "count": 72,
         "samples": [
           {
             "file": "build.config.ts",
@@ -396,43 +427,43 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/config.ts",
-            "line": 11,
+            "file": "src/commands/nci.ts",
+            "line": 5,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/parse.ts",
-            "line": 8,
+            "file": "src/fetch.ts",
+            "line": 7,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "test/na/deno.spec.ts",
+            "file": "taze.config.ts",
+            "line": 4,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "test/ng.spec.ts",
+            "line": 5,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "test/ni/yarn.spec.ts",
             "line": 6,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "test/ni/deno.spec.ts",
+            "file": "test/nr/bun.spec.ts",
             "line": 6,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "test/nlx/deno.spec.ts",
-            "line": 6,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "test/nr/nodeRunAgent.spec.ts",
-            "line": 10,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "test/nun/npm.spec.ts",
+            "file": "test/nun/deno.spec.ts",
             "line": 6,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
@@ -452,7 +483,7 @@
         ]
       },
       "tab": {
-        "count": 64,
+        "count": 72,
         "samples": [
           {
             "file": "build.config.ts",
@@ -461,43 +492,43 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/config.ts",
-            "line": 11,
+            "file": "src/commands/nci.ts",
+            "line": 5,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/parse.ts",
-            "line": 8,
+            "file": "src/fetch.ts",
+            "line": 7,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "test/na/deno.spec.ts",
+            "file": "taze.config.ts",
+            "line": 4,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "test/ng.spec.ts",
+            "line": 5,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "test/ni/yarn.spec.ts",
             "line": 6,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "test/ni/deno.spec.ts",
+            "file": "test/nr/bun.spec.ts",
             "line": 6,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "test/nlx/deno.spec.ts",
-            "line": 6,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "test/nr/nodeRunAgent.spec.ts",
-            "line": 10,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "test/nun/npm.spec.ts",
+            "file": "test/nun/deno.spec.ts",
             "line": 6,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
@@ -519,7 +550,7 @@
     },
     "quotes": {
       "double": {
-        "count": 1202,
+        "count": 1447,
         "samples": [
           {
             "file": "bin/na.mjs",
@@ -528,51 +559,51 @@
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/config.ts",
-            "line": 14,
-            "column": 41,
+            "file": "src/commands/nr.ts",
+            "line": 34,
+            "column": 15,
             "message": "Strings must use doublequote."
           },
           {
             "file": "src/parse.ts",
-            "line": 116,
-            "column": 30,
+            "line": 72,
+            "column": 21,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "test/na/deno.spec.ts",
-            "line": 19,
-            "column": 17,
+            "file": "test/na/npm.spec.ts",
+            "line": 15,
+            "column": 4,
             "message": "Strings must use doublequote."
           },
           {
             "file": "test/ni/interactive.spec.ts",
-            "line": 39,
-            "column": 20,
+            "line": 7,
+            "column": 25,
             "message": "Strings must use doublequote."
           },
           {
             "file": "test/ni/yarn@berry.spec.ts",
-            "line": 15,
-            "column": 19,
+            "line": 27,
+            "column": 26,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "test/nr/nodeRunAgent.spec.ts",
-            "line": 31,
-            "column": 33,
+            "file": "test/nr/npm.spec.ts",
+            "line": 21,
+            "column": 31,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "test/nun/deno.spec.ts",
-            "line": 18,
-            "column": 17,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "test/nup/yarn@berry.spec.ts",
+            "file": "test/nup/bun.spec.ts",
             "line": 17,
-            "column": 27,
+            "column": 4,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "test/programmatic/catalog.spec.ts",
+            "line": 180,
+            "column": 47,
             "message": "Strings must use doublequote."
           },
           {
@@ -588,7 +619,7 @@
         "samples": [
           {
             "file": "src/commands/ni.ts",
-            "line": 89,
+            "line": 90,
             "column": 18,
             "message": "Strings must use singlequote."
           },
@@ -603,7 +634,7 @@
     },
     "semi": {
       "always": {
-        "count": 1088,
+        "count": 1403,
         "samples": [
           {
             "file": "bin/na.mjs",
@@ -612,51 +643,51 @@
             "message": "Missing semicolon."
           },
           {
-            "file": "src/commands/nr.ts",
-            "line": 139,
-            "column": 43,
+            "file": "src/commands/nci.ts",
+            "line": 1,
+            "column": 35,
             "message": "Missing semicolon."
           },
           {
-            "file": "src/index.ts",
-            "line": 5,
-            "column": 25,
+            "file": "src/config.ts",
+            "line": 49,
+            "column": 49,
             "message": "Missing semicolon."
           },
           {
-            "file": "src/runner.ts",
-            "line": 8,
-            "column": 22,
+            "file": "src/parse.ts",
+            "line": 73,
+            "column": 41,
             "message": "Missing semicolon."
           },
           {
             "file": "src/utils.ts",
-            "line": 84,
-            "column": 29,
+            "line": 87,
+            "column": 15,
             "message": "Missing semicolon."
           },
           {
-            "file": "test/ni/interactive.spec.ts",
-            "line": 6,
-            "column": 51,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "test/nlx/npm.spec.ts",
+            "file": "test/ni/deno.spec.ts",
             "line": 1,
             "column": 36,
             "message": "Missing semicolon."
           },
           {
-            "file": "test/nun/deno.spec.ts",
-            "line": 18,
-            "column": 73,
+            "file": "test/nlx/yarn.spec.ts",
+            "line": 12,
+            "column": 4,
             "message": "Missing semicolon."
           },
           {
-            "file": "test/programmatic/runCli.spec.ts",
-            "line": 14,
-            "column": 61,
+            "file": "test/nup/deno.spec.ts",
+            "line": 19,
+            "column": 78,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "test/programmatic/detect.spec.ts",
+            "line": 5,
+            "column": 71,
             "message": "Missing semicolon."
           },
           {

@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "d770c113483884454d98ca59d729928ef9843113",
-  "analyzedCommitDate": "2026-03-14T21:41:54.000Z",
+  "analyzedCommit": "e1b76c9c5ac51dfb42636c152ceca0fdcc823c1a",
+  "analyzedCommitDate": "2026-03-14T22:02:49.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -70,7 +70,7 @@
         ]
       },
       "generic": {
-        "count": 3408,
+        "count": 3410,
         "samples": [
           {
             "file": "docs/src/components/HomepageFeatures/index.tsx",
@@ -80,33 +80,33 @@
           },
           {
             "file": "src/driver/mysql/MysqlQueryRunner.ts",
-            "line": 1887,
-            "column": 22,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+            "line": 1656,
+            "column": 26,
+            "message": "Array type using 'Query[]' is forbidden. Use 'Array<Query>' instead."
           },
           {
             "file": "src/driver/sqlite-abstract/AbstractSqliteQueryRunner.ts",
             "line": 1727,
-            "column": 64,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+            "column": 39,
+            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           },
           {
             "file": "src/metadata/EntityMetadata.ts",
-            "line": 433,
-            "column": 13,
-            "message": "Array type using 'CheckMetadata[]' is forbidden. Use 'Array<CheckMetadata>' instead."
+            "line": 423,
+            "column": 14,
+            "message": "Array type using 'UniqueMetadata[]' is forbidden. Use 'Array<UniqueMetadata>' instead."
           },
           {
             "file": "src/repository/MongoRepository.ts",
-            "line": 141,
-            "column": 20,
-            "message": "Array type using 'any[]' is forbidden. Use 'Array<any>' instead."
+            "line": 107,
+            "column": 33,
+            "message": "Array type using 'Entity[]' is forbidden. Use 'Array<Entity>' instead."
           },
           {
-            "file": "test/functional/embedded/embedded-many-to-one-case1/entity/User.ts",
-            "line": 16,
-            "column": 17,
-            "message": "Array type using 'Post[]' is forbidden. Use 'Array<Post>' instead."
+            "file": "test/functional/embedded/embedded-many-to-one-case1/embedded-many-to-one-case1.test.ts",
+            "line": 15,
+            "column": 22,
+            "message": "Array type using 'DataSource[]' is forbidden. Use 'Array<DataSource>' instead."
           },
           {
             "file": "test/functional/relations/eager-relations/basic-eager-relations/entity/Post.ts",
@@ -115,8 +115,8 @@
             "message": "Array type using 'Category[]' is forbidden. Use 'Array<Category>' instead."
           },
           {
-            "file": "test/github-issues/1476/issue-1476.test.ts",
-            "line": 15,
+            "file": "test/github-issues/1465/issue-1465.test.ts",
+            "line": 13,
             "column": 22,
             "message": "Array type using 'DataSource[]' is forbidden. Use 'Array<DataSource>' instead."
           },
@@ -249,7 +249,7 @@
           },
           {
             "file": "src/driver/mongodb/bson.typings.ts",
-            "line": 435,
+            "line": 726,
             "column": 5,
             "message": "A record is preferred over an index signature."
           },
@@ -296,7 +296,7 @@
         "samples": [
           {
             "file": "src/driver/mongodb/bson.typings.ts",
-            "line": 408,
+            "line": 706,
             "column": 25,
             "message": "An index signature is preferred over a record."
           },
@@ -359,12 +359,18 @@
     },
     "consistent-type-definitions": {
       "interface": {
-        "count": 25,
+        "count": 28,
         "samples": [
           {
             "file": "docs/src/components/HomepageFeatures/index.tsx",
             "line": 6,
             "column": 1,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "src/driver/mongodb/bson.typings.ts",
+            "line": 1364,
+            "column": 16,
             "message": "Use `interface` instead of `type`."
           },
           {
@@ -375,36 +381,30 @@
           },
           {
             "file": "src/driver/types/GeoJsonTypes.ts",
-            "line": 29,
+            "line": 38,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
             "file": "src/driver/types/GeoJsonTypes.ts",
-            "line": 56,
+            "line": 65,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "src/driver/types/GeoJsonTypes.ts",
-            "line": 106,
+            "file": "src/find-options/OrderByCondition.ts",
+            "line": 10,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "src/logger/Logger.ts",
-            "line": 68,
+            "file": "src/logger/LoggerOptions.ts",
+            "line": 11,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "src/query-builder/InsertOrUpdateOptions.ts",
-            "line": 5,
-            "column": 8,
-            "message": "Use `interface` instead of `type`."
-          },
-          {
-            "file": "test/functional/find-options/array-overlap/entity/Post.ts",
+            "file": "test/functional/find-options/array-contains-operator/entity/Post.ts",
             "line": 3,
             "column": 8,
             "message": "Use `interface` instead of `type`."
@@ -446,7 +446,7 @@
           },
           {
             "file": "src/driver/mongodb/bson.typings.ts",
-            "line": 1038,
+            "line": 1555,
             "column": 16,
             "message": "Use `type` instead of `interface`."
           },
@@ -952,7 +952,7 @@
         ]
       },
       "4-space": {
-        "count": 83,
+        "count": 82,
         "samples": [
           {
             "file": "docs/docusaurus.config.ts",
@@ -973,16 +973,16 @@
             "message": "Expected 4-space indentation, but file uses 26-space indentation."
           },
           {
-            "file": "src/driver/react-native/ReactNativeDriver.ts",
-            "line": 372,
+            "file": "src/driver/sap/SapDriver.ts",
+            "line": 567,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 22-space indentation."
           },
           {
-            "file": "src/entity-manager/MongoEntityManager.ts",
-            "line": 1076,
+            "file": "src/entity-schema/EntitySchemaTransformer.ts",
+            "line": 256,
             "column": 1,
-            "message": "Expected 4-space indentation, but file uses 30-space indentation."
+            "message": "Expected 4-space indentation, but file uses 38-space indentation."
           },
           {
             "file": "src/metadata-builder/ClosureJunctionEntityMetadataBuilder.ts",
@@ -1084,7 +1084,7 @@
     },
     "quotes": {
       "double": {
-        "count": 1456,
+        "count": 1499,
         "samples": [
           {
             "file": "gulpfile.ts",
@@ -1094,50 +1094,50 @@
           },
           {
             "file": "src/driver/cockroachdb/CockroachQueryRunner.ts",
-            "line": 3202,
+            "line": 3214,
             "column": 13,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/driver/oracle/OracleQueryRunner.ts",
-            "line": 495,
-            "column": 13,
+            "file": "src/driver/mysql/MysqlQueryRunner.ts",
+            "line": 405,
+            "column": 21,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/driver/sap/SapQueryRunner.ts",
-            "line": 428,
-            "column": 15,
+            "file": "src/driver/postgres/PostgresQueryRunner.ts",
+            "line": 4561,
+            "column": 13,
             "message": "Strings must use doublequote."
           },
           {
             "file": "src/driver/sqlserver/SqlServerQueryRunner.ts",
-            "line": 3175,
-            "column": 21,
+            "line": 2528,
+            "column": 13,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/util/OrmUtils.ts",
-            "line": 672,
-            "column": 29,
+            "file": "src/query-builder/SoftDeleteQueryBuilder.ts",
+            "line": 428,
+            "column": 17,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "test/functional/database-schema/generated-columns/sqlite/generated-columns-sqlite.test.ts",
-            "line": 248,
-            "column": 21,
+            "file": "test/functional/database-schema/generated-columns/sqlite/entity/Post.ts",
+            "line": 32,
+            "column": 23,
             "message": "Strings must use doublequote."
           },
           {
             "file": "test/functional/query-builder/select/query-builder-select.test.ts",
-            "line": 424,
-            "column": 33,
+            "line": 366,
+            "column": 29,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "test/github-issues/4719/issue-4719.test.ts",
-            "line": 34,
-            "column": 26,
+            "file": "test/github-issues/4415/results-templates.ts",
+            "line": 127,
+            "column": 13,
             "message": "Strings must use doublequote."
           },
           {
@@ -1149,7 +1149,7 @@
         ]
       },
       "single": {
-        "count": 52225,
+        "count": 52196,
         "samples": [
           {
             "file": ".prettierrc.js",
@@ -1158,50 +1158,50 @@
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/driver/oracle/OracleDriver.ts",
-            "line": 979,
-            "column": 18,
+            "file": "src/driver/oracle/OracleQueryRunner.ts",
+            "line": 4,
+            "column": 49,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/query-builder/InsertQueryBuilder.ts",
-            "line": 1615,
-            "column": 23,
+            "file": "src/query-builder/JoinAttribute.ts",
+            "line": 239,
+            "column": 36,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "test/functional/database-schema/column-types/sap/column-types-sap.test.ts",
-            "line": 269,
-            "column": 39,
+            "file": "test/functional/database-schema/column-types/sap/entity/Post.ts",
+            "line": 36,
+            "column": 13,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "test/functional/migrations/vector/0000000000001-CreatePost.ts",
-            "line": 18,
-            "column": 33,
+            "file": "test/functional/migrations/vector/vector-test.test.ts",
+            "line": 45,
+            "column": 43,
             "message": "Strings must use singlequote."
           },
           {
             "file": "test/functional/query-builder/relational/with-many/query-builder-relational-add-remove-many-to-many.test.ts",
-            "line": 61,
+            "line": 177,
             "column": 26,
             "message": "Strings must use singlequote."
           },
           {
             "file": "test/functional/repository/find-options-operators/repository-find-operators.test.ts",
-            "line": 634,
+            "line": 707,
             "column": 8,
             "message": "Strings must use singlequote."
           },
           {
             "file": "test/github-issues/1685/issue-1685.test.ts",
-            "line": 1,
-            "column": 8,
+            "line": 11,
+            "column": 27,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "test/github-issues/7100/entity/Post.ts",
-            "line": 1,
+            "file": "test/github-issues/7100/issue-7100.test.ts",
+            "line": 2,
             "column": 24,
             "message": "Strings must use singlequote."
           },
@@ -1216,7 +1216,7 @@
     },
     "semi": {
       "always": {
-        "count": 82809,
+        "count": 82570,
         "samples": [
           {
             "file": ".prettierrc.js",
@@ -1226,50 +1226,50 @@
           },
           {
             "file": "src/driver/postgres/PostgresQueryRunner.ts",
-            "line": 2473,
-            "column": 33,
+            "line": 3489,
+            "column": 78,
             "message": "Missing semicolon."
           },
           {
-            "file": "src/query-builder/JoinAttribute.ts",
-            "line": 6,
-            "column": 37,
+            "file": "src/query-builder/QueryBuilder.ts",
+            "line": 545,
+            "column": 20,
             "message": "Missing semicolon."
           },
           {
-            "file": "test/functional/database-schema/column-types/postgres/column-types-postgres.test.ts",
-            "line": 520,
-            "column": 63,
+            "file": "test/functional/database-schema/column-types/sap/column-types-sap.test.ts",
+            "line": 69,
+            "column": 48,
             "message": "Missing semicolon."
           },
           {
-            "file": "test/functional/mongodb/basic/object-id/mongodb-object-id.test.ts",
-            "line": 29,
-            "column": 40,
+            "file": "test/functional/mongodb/basic/repository-actions/mongodb-repository-actions.test.ts",
+            "line": 30,
+            "column": 11,
             "message": "Missing semicolon."
           },
           {
-            "file": "test/functional/query-builder/relational/with-many/query-builder-relational-load-many.test.ts",
-            "line": 118,
-            "column": 19,
+            "file": "test/functional/query-builder/relational/with-one/query-builder-relational-load-one.test.ts",
+            "line": 108,
+            "column": 57,
             "message": "Missing semicolon."
           },
           {
-            "file": "test/functional/repository/set-add-remove-relations/entity/Post.ts",
-            "line": 6,
-            "column": 79,
+            "file": "test/functional/repository/set-add-remove-relations/repository-set-add-remove-relations.test.ts",
+            "line": 184,
+            "column": 43,
             "message": "Missing semicolon."
           },
           {
-            "file": "test/github-issues/1926/entity/Role.ts",
-            "line": 1,
-            "column": 79,
+            "file": "test/github-issues/1929/issue-1929.test.ts",
+            "line": 26,
+            "column": 54,
             "message": "Missing semicolon."
           },
           {
             "file": "test/github-issues/7155/issue-7155.test.ts",
-            "line": 1594,
-            "column": 45,
+            "line": 1626,
+            "column": 42,
             "message": "Missing semicolon."
           },
           {
@@ -1281,7 +1281,7 @@
         ]
       },
       "never": {
-        "count": 171,
+        "count": 453,
         "samples": [
           {
             "file": "extra/typeorm-class-transformer-shim.js",
@@ -1291,44 +1291,14 @@
           },
           {
             "file": "extra/typeorm-class-transformer-shim.js",
-            "line": 94,
-            "column": 43,
+            "line": 175,
+            "column": 32,
             "message": "Extra semicolon."
           },
           {
-            "file": "extra/typeorm-class-transformer-shim.js",
-            "line": 143,
+            "file": "extra/typeorm-model-shim.js",
+            "line": 108,
             "column": 36,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "extra/typeorm-class-transformer-shim.js",
-            "line": 193,
-            "column": 45,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "extra/typeorm-class-transformer-shim.js",
-            "line": 244,
-            "column": 46,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "extra/typeorm-model-shim.js",
-            "line": 78,
-            "column": 34,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "extra/typeorm-model-shim.js",
-            "line": 173,
-            "column": 32,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "extra/typeorm-model-shim.js",
-            "line": 268,
-            "column": 32,
             "message": "Extra semicolon."
           },
           {
@@ -1338,9 +1308,39 @@
             "message": "Extra semicolon."
           },
           {
-            "file": "gulpfile.ts",
-            "line": 219,
-            "column": 49,
+            "file": "src/driver/mongodb/bson.typings.ts",
+            "line": 137,
+            "column": 35,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "src/driver/mongodb/bson.typings.ts",
+            "line": 562,
+            "column": 18,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "src/driver/mongodb/bson.typings.ts",
+            "line": 941,
+            "column": 36,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "src/driver/mongodb/bson.typings.ts",
+            "line": 1199,
+            "column": 60,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "src/driver/mongodb/bson.typings.ts",
+            "line": 1419,
+            "column": 39,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "src/driver/mongodb/bson.typings.ts",
+            "line": 1766,
+            "column": 2,
             "message": "Extra semicolon."
           }
         ]

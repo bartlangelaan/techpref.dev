@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "62a53010063e8a11cd05ed0291fbcbd84b232e45",
-  "analyzedCommitDate": "2026-03-13T00:28:50.000Z",
+  "analyzedCommit": "c23c8b44b561b399f036af786d0685dca6363ac2",
+  "analyzedCommitDate": "2026-03-15T02:52:55.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -70,7 +70,7 @@
         ]
       },
       "generic": {
-        "count": 658,
+        "count": 660,
         "samples": [
           {
             "file": "client/src/api/admin/endpoints/adminOrganizations.ts",
@@ -92,27 +92,27 @@
           },
           {
             "file": "client/src/app/[site]/journeys/components/SankeyDiagram.tsx",
-            "line": 172,
-            "column": 20,
+            "line": 383,
+            "column": 34,
             "message": "Array type using 'any[]' is forbidden. Use 'Array<any>' instead."
           },
           {
             "file": "client/src/components/replay/player/utils/replayUtils.ts",
             "line": 8,
-            "column": 50,
-            "message": "Array type using 'any[]' is forbidden. Use 'Array<any>' instead."
+            "column": 81,
+            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           },
           {
-            "file": "docs/src/app/[locale]/(home)/compare/plausible/comparison-data.tsx",
-            "line": 3,
-            "column": 39,
-            "message": "Array type using 'ComparisonSection[]' is forbidden. Use 'Array<ComparisonSection>' instead."
+            "file": "docs/src/app/[locale]/(home)/compare/matomo/comparison-data.tsx",
+            "line": 153,
+            "column": 15,
+            "message": "Array type using 'RelatedResource[]' is forbidden. Use 'Array<RelatedResource>' instead."
           },
           {
-            "file": "docs/src/app/[locale]/(home)/oss-friends/page.tsx",
-            "line": 19,
-            "column": 41,
-            "message": "Array type using 'OSSFriend[]' is forbidden. Use 'Array<OSSFriend>' instead."
+            "file": "docs/src/app/[locale]/(home)/features/web-vitals/feature-data.tsx",
+            "line": 161,
+            "column": 31,
+            "message": "Array type using 'RelatedFeature[]' is forbidden. Use 'Array<RelatedFeature>' instead."
           },
           {
             "file": "server/src/api/admin/getAdminSites.ts",
@@ -357,7 +357,7 @@
         ]
       },
       "type": {
-        "count": 570,
+        "count": 573,
         "samples": [
           {
             "file": "client/src/api/admin/endpoints/accountSettings.ts",
@@ -366,26 +366,26 @@
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "client/src/api/analytics/endpoints/sessions.ts",
-            "line": 128,
+            "file": "client/src/api/analytics/endpoints/types.ts",
+            "line": 7,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "client/src/app/[site]/funnels/components/EditFunnel.tsx",
+            "file": "client/src/app/[site]/funnels/components/Funnel.tsx",
+            "line": 22,
+            "column": 1,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "client/src/app/signup/components/SetupStep.tsx",
             "line": 11,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "client/src/app/signup/components/PlanStep.tsx",
-            "line": 10,
-            "column": 1,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "client/src/components/replay/player/hooks/useReplayPlayer.ts",
-            "line": 7,
+            "file": "client/src/components/replay/replayStore.ts",
+            "line": 3,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
@@ -408,9 +408,9 @@
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "server/src/lib/email/templates/InvitationEmail.tsx",
-            "line": 16,
-            "column": 1,
+            "file": "server/src/lib/const.ts",
+            "line": 43,
+            "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
@@ -424,7 +424,7 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 538,
+        "count": 540,
         "samples": [
           {
             "file": "client/src/api/admin/endpoints/import.ts",
@@ -439,22 +439,22 @@
             "message": "Imports ProcessedRetentionData and RetentionMode are only used as type."
           },
           {
-            "file": "client/src/app/[site]/events/components/EventLog/useEventLogState.ts",
+            "file": "client/src/app/[site]/events/components/EventProperties.tsx",
+            "line": 7,
+            "column": 1,
+            "message": "All imports in the declaration are only used as types. Use `import type`."
+          },
+          {
+            "file": "client/src/app/[site]/performance/components/PercentileSelector.tsx",
+            "line": 4,
+            "column": 1,
+            "message": "Imports PercentileLevel are only used as type."
+          },
+          {
+            "file": "client/src/app/uptime/monitors/components/uptimeStore.ts",
             "line": 2,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
-          {
-            "file": "client/src/app/[site]/pages/page.tsx",
-            "line": 5,
-            "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
-          {
-            "file": "client/src/app/uptime/monitors/components/dialog/MonitorDialog.tsx",
-            "line": 13,
-            "column": 1,
-            "message": "Imports UptimeMonitor are only used as type."
           },
           {
             "file": "docs/src/app/[locale]/(home)/compare/google-analytics/comparison-data.tsx",
@@ -475,8 +475,8 @@
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "server/src/api/stripe/createPortalSession.ts",
-            "line": 6,
+            "file": "server/src/api/stripe/getInvoices.ts",
+            "line": 2,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
@@ -556,7 +556,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 1062,
+        "count": 1065,
         "samples": [
           {
             "file": "client/src/api/admin/endpoints/accountSettings.ts",
@@ -577,20 +577,20 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "client/src/app/[site]/replay/components/EnableSessionReplay.tsx",
-            "line": 14,
+            "file": "client/src/app/[site]/replay/components/ReplayCard.tsx",
+            "line": 56,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "client/src/components/DateSelector/DateSelector.tsx",
-            "line": 22,
-            "column": 8,
+            "file": "client/src/components/DisabledOverlay.tsx",
+            "line": 23,
+            "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "client/src/components/ui/breadcrumb.tsx",
-            "line": 24,
+            "line": 28,
             "column": 1,
             "message": "Expected a function expression."
           },
@@ -601,14 +601,14 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "monitor-agent/src/index.ts",
-            "line": 5,
-            "column": 1,
+            "file": "monitor-agent/src/monitors/http.ts",
+            "line": 8,
+            "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "server/src/api/sites/batchImportEvents.ts",
-            "line": 35,
+            "file": "server/src/api/sites/createSiteImport.ts",
+            "line": 28,
             "column": 8,
             "message": "Expected a function expression."
           },
@@ -621,7 +621,7 @@
         ]
       },
       "declaration": {
-        "count": 707,
+        "count": 724,
         "samples": [
           {
             "file": "client/src/api/admin/endpoints/excludedCountries.ts",
@@ -630,50 +630,50 @@
             "message": "Expected a function declaration."
           },
           {
-            "file": "client/src/app/[site]/globe/2d/hooks/useOpenLayersCountriesLayer.ts",
-            "line": 98,
+            "file": "client/src/app/[site]/globe/2d/hooks/useOpenLayersSubdivisionsLayer.ts",
+            "line": 102,
             "column": 11,
             "message": "Expected a function declaration."
           },
           {
-            "file": "client/src/app/[site]/replay/components/ReplayCard.tsx",
-            "line": 79,
+            "file": "client/src/app/[site]/retention/page.tsx",
+            "line": 93,
             "column": 9,
             "message": "Expected a function declaration."
           },
           {
-            "file": "client/src/app/uptime/incidents/page.tsx",
-            "line": 77,
+            "file": "client/src/app/uptime/monitors/[monitorId]/page.tsx",
+            "line": 25,
+            "column": 7,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "client/src/components/SpinningGlobe.tsx",
+            "line": 261,
+            "column": 13,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "client/src/hooks/useAdminUsers.ts",
+            "line": 19,
             "column": 9,
             "message": "Expected a function declaration."
           },
           {
-            "file": "client/src/components/SiteSettings/ScriptBuilder.tsx",
-            "line": 24,
-            "column": 9,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "client/src/lib/dateTimeUtils.ts",
-            "line": 226,
-            "column": 14,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "docs/src/app/[locale]/(home)/tools/funnel-visualizer/FunnelVisualizerForm.tsx",
-            "line": 29,
+            "file": "docs/src/app/[locale]/(home)/tools/cost-per-view-calculator/CostPerViewForm.tsx",
+            "line": 42,
             "column": 9,
             "message": "Expected a function declaration."
           },
           {
             "file": "server/public/script-full.js",
-            "line": 1198,
-            "column": 11,
+            "line": 890,
+            "column": 28,
             "message": "Expected a function declaration."
           },
           {
-            "file": "server/src/api/user/listApiKeys.ts",
-            "line": 4,
+            "file": "server/src/api/user/getMyOrganizations.ts",
+            "line": 7,
             "column": 14,
             "message": "Expected a function declaration."
           },
@@ -753,7 +753,7 @@
         ]
       },
       "default": {
-        "count": 542,
+        "count": 545,
         "samples": [
           {
             "file": "client/src/api/admin/hooks/useAccountSettings.ts",
@@ -768,20 +768,20 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "client/src/app/[site]/main/components/MainSection/PreviousChart.tsx",
-            "line": 39,
+            "file": "client/src/app/[site]/main/components/MainSection/SparklinesChart.tsx",
+            "line": 6,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "client/src/app/settings/account/components/ApiKeyManager.tsx",
-            "line": 15,
+            "file": "client/src/app/settings/account/components/ChangePassword.tsx",
+            "line": 23,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "client/src/components/OrganizationSelector.tsx",
-            "line": 8,
+            "file": "client/src/components/Sessions/SessionDetails/PageviewItem.tsx",
+            "line": 164,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -804,8 +804,8 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "server/src/api/stripe/createPortalSession.ts",
-            "line": 14,
+            "file": "server/src/api/stripe/getInvoices.ts",
+            "line": 7,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -849,7 +849,7 @@
         ]
       },
       "4-space": {
-        "count": 982,
+        "count": 985,
         "samples": [
           {
             "file": "client/next.config.ts",
@@ -864,14 +864,14 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "client/src/app/[site]/main/page.tsx",
-            "line": 18,
+            "file": "client/src/app/[site]/page.tsx",
+            "line": 6,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "client/src/app/uptime/monitors/components/MonitorResponseTimeChart.tsx",
-            "line": 19,
+            "file": "client/src/app/uptime/monitors/components/MonitorTableRow.tsx",
+            "line": 12,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -900,7 +900,7 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "server/src/api/stripe/getInvoices.ts",
+            "file": "server/src/api/stripe/getSubscription.ts",
             "line": 8,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
@@ -914,7 +914,7 @@
         ]
       },
       "tab": {
-        "count": 986,
+        "count": 989,
         "samples": [
           {
             "file": "client/next.config.ts",
@@ -923,20 +923,20 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "client/src/app/[site]/components/Header/UsageBanners.tsx",
-            "line": 8,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "client/src/app/[site]/main/page.tsx",
+            "file": "client/src/app/[site]/components/Sidebar/MobileSidebar.tsx",
             "line": 18,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "client/src/app/uptime/monitors/components/MonitorResponseTimeChart.tsx",
-            "line": 19,
+            "file": "client/src/app/[site]/page.tsx",
+            "line": 6,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "client/src/app/uptime/monitors/components/MonitorTableRow.tsx",
+            "line": 12,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -1046,7 +1046,7 @@
         ]
       },
       "single": {
-        "count": 33357,
+        "count": 33499,
         "samples": [
           {
             "file": "client/next.config.ts",
@@ -1056,50 +1056,50 @@
           },
           {
             "file": "client/src/app/[site]/globe/3d/hooks/timelineLayer/timelineLayerSetup.ts",
-            "line": 34,
-            "column": 33,
+            "line": 44,
+            "column": 60,
             "message": "Strings must use singlequote."
           },
           {
             "file": "client/src/app/settings/account/components/AccountInner.tsx",
-            "line": 60,
-            "column": 62,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "client/src/components/SiteSettings/SiteConfiguration.tsx",
-            "line": 389,
+            "line": 132,
             "column": 52,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "docs/src/app/[locale]/(home)/compare/posthog/comparison-data.tsx",
-            "line": 73,
-            "column": 5,
+            "file": "client/src/components/SpinningGlobe.tsx",
+            "line": 9,
+            "column": 28,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "docs/src/app/[locale]/(home)/compare/plausible/page.tsx",
+            "line": 82,
+            "column": 22,
             "message": "Strings must use singlequote."
           },
           {
             "file": "docs/src/app/[locale]/(home)/tools/(social-media-tools)/components/FontGeneratorTool.tsx",
-            "line": 1323,
+            "line": 1285,
             "column": 12,
             "message": "Strings must use singlequote."
           },
           {
             "file": "docs/src/app/[locale]/(home)/tools/privacy-policy-builder/page.tsx",
-            "line": 58,
-            "column": 22,
+            "line": 31,
+            "column": 16,
             "message": "Strings must use singlequote."
           },
           {
             "file": "server/public/script-full.js",
-            "line": 1134,
-            "column": 32,
+            "line": 1121,
+            "column": 28,
             "message": "Strings must use singlequote."
           },
           {
             "file": "server/src/db/postgres/schema.ts",
-            "line": 167,
-            "column": 35,
+            "line": 161,
+            "column": 32,
             "message": "Strings must use singlequote."
           },
           {
@@ -1178,7 +1178,7 @@
         ]
       },
       "never": {
-        "count": 24924,
+        "count": 25039,
         "samples": [
           {
             "file": "client/next.config.ts",
@@ -1187,51 +1187,51 @@
             "message": "Extra semicolon."
           },
           {
-            "file": "client/src/app/[site]/events/components/EventProperties.tsx",
-            "line": 130,
-            "column": 55,
+            "file": "client/src/app/[site]/events/components/EventTypesChart.tsx",
+            "line": 8,
+            "column": 41,
             "message": "Extra semicolon."
           },
           {
-            "file": "client/src/app/[site]/main/components/sections/Referrers.tsx",
-            "line": 18,
-            "column": 112,
+            "file": "client/src/app/[site]/main/components/sections/SearchConsole.tsx",
+            "line": 23,
+            "column": 57,
             "message": "Extra semicolon."
           },
           {
             "file": "client/src/app/signup/page.tsx",
-            "line": 22,
-            "column": 78,
+            "line": 59,
+            "column": 59,
             "message": "Extra semicolon."
           },
           {
-            "file": "client/src/components/replay/player/ReplayPlayer.tsx",
-            "line": 107,
-            "column": 5,
+            "file": "client/src/components/replay/player/ReplayPlayerOverlay.tsx",
+            "line": 62,
+            "column": 4,
             "message": "Extra semicolon."
           },
           {
-            "file": "docs/src/app/[locale]/(home)/tools/(social-media-tools)/components/HashtagGenerator.tsx",
-            "line": 82,
-            "column": 44,
+            "file": "docs/src/app/[locale]/(home)/tools/(social-media-tools)/components/FontGeneratorTool.tsx",
+            "line": 1667,
+            "column": 6,
             "message": "Extra semicolon."
           },
           {
-            "file": "docs/src/components/ui/sparkles.tsx",
-            "line": 1,
-            "column": 13,
+            "file": "docs/src/components/ui/shield-check.tsx",
+            "line": 3,
+            "column": 45,
             "message": "Extra semicolon."
           },
           {
             "file": "server/src/api/analytics/goals/getGoalSessions.ts",
-            "line": 57,
-            "column": 90,
+            "line": 32,
+            "column": 16,
             "message": "Extra semicolon."
           },
           {
             "file": "server/src/index.ts",
-            "line": 135,
-            "column": 81,
+            "line": 112,
+            "column": 29,
             "message": "Extra semicolon."
           },
           {

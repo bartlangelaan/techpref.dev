@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "7ed460c9c6cb1de2908cf7699421e7fd4529d4c5",
-  "analyzedCommitDate": "2026-03-12T20:48:31.000Z",
+  "analyzedCommit": "56d3f14f68d6290e509ff633fb5dfd28bee016da",
+  "analyzedCommitDate": "2026-03-16T22:59:57.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -22,19 +22,25 @@
         ]
       },
       "generic": {
-        "count": 102,
+        "count": 123,
         "samples": [
           {
             "file": "apps/cli/src/Game.ts",
-            "line": 37,
-            "column": 12,
+            "line": 23,
+            "column": 11,
             "message": "Array type using 'Tower[]' is forbidden. Use 'Array<Tower>' instead."
           },
           {
-            "file": "apps/cli/src/parseArgs.ts",
-            "line": 17,
-            "column": 26,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+            "file": "apps/cli/src/ui/components/FloorMap.tsx",
+            "line": 10,
+            "column": 13,
+            "message": "Array type using 'FloorSpace[][]' is forbidden. Use 'Array<FloorSpace[]>' instead."
+          },
+          {
+            "file": "apps/cli/src/ui/components/PlayScreen.tsx",
+            "line": 15,
+            "column": 10,
+            "message": "Array type using 'TurnEvent[]' is forbidden. Use 'Array<TurnEvent>' instead."
           },
           {
             "file": "apps/cli/src/utils/getFloorMap.ts",
@@ -43,40 +49,34 @@
             "message": "Array type using 'FloorSpace[][]' is forbidden. Use 'Array<FloorSpace[]>' instead."
           },
           {
-            "file": "apps/cli/src/utils/renderTypes.ts",
-            "line": 73,
-            "column": 19,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+            "file": "libs/abilities/src/detonate.ts",
+            "line": 6,
+            "column": 27,
+            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           },
           {
-            "file": "libs/core/src/Floor.ts",
-            "line": 73,
-            "column": 15,
-            "message": "Array type using 'Unit[]' is forbidden. Use 'Array<Unit>' instead."
-          },
-          {
-            "file": "libs/core/src/Warrior.ts",
-            "line": 37,
-            "column": 22,
-            "message": "Array type using 'AbilityInfo[]' is forbidden. Use 'Array<AbilityInfo>' instead."
-          },
-          {
-            "file": "libs/scoring/src/getClearBonus.test.ts",
-            "line": 20,
-            "column": 40,
-            "message": "Array type using 'unknown[][]' is forbidden. Use 'Array<unknown[]>' instead."
-          },
-          {
-            "file": "libs/scoring/src/getLevelScore.ts",
+            "file": "libs/core/src/Logger.ts",
             "line": 7,
-            "column": 11,
-            "message": "Array type using 'unknown[][]' is forbidden. Use 'Array<unknown[]>' instead."
+            "column": 13,
+            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           },
           {
-            "file": "libs/scoring/src/getWarriorScore.test.ts",
-            "line": 9,
-            "column": 42,
+            "file": "libs/core/src/types.ts",
+            "line": 26,
+            "column": 13,
+            "message": "Array type using 'UnitConfig[]' is forbidden. Use 'Array<UnitConfig>' instead."
+          },
+          {
+            "file": "libs/scoring/src/getLastEvent.ts",
+            "line": 7,
+            "column": 30,
             "message": "Array type using 'unknown[]' is forbidden. Use 'Array<unknown>' instead."
+          },
+          {
+            "file": "libs/scoring/src/getTurnCount.ts",
+            "line": 7,
+            "column": 30,
+            "message": "Array type using 'unknown[][]' is forbidden. Use 'Array<unknown[]>' instead."
           },
           {
             "file": "libs/spatial/src/verifyRelativeDirection.ts",
@@ -93,12 +93,18 @@
         "samples": []
       },
       "type-annotation": {
-        "count": 1,
+        "count": 2,
         "samples": [
           {
             "file": "apps/cli/src/loadTowers.ts",
             "line": 45,
             "column": 23,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "apps/cli/src/ui/components/LogArea.tsx",
+            "line": 20,
+            "column": 22,
             "message": "The generic type arguments should be specified as part of the type annotation."
           }
         ]
@@ -110,18 +116,12 @@
         "samples": []
       },
       "index-signature": {
-        "count": 15,
+        "count": 17,
         "samples": [
           {
-            "file": "apps/cli/src/Game.ts",
-            "line": 273,
-            "column": 63,
-            "message": "An index signature is preferred over a record."
-          },
-          {
             "file": "apps/cli/src/Profile.ts",
-            "line": 92,
-            "column": 42,
+            "line": 26,
+            "column": 22,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -131,21 +131,27 @@
             "message": "An index signature is preferred over a record."
           },
           {
+            "file": "apps/cli/src/ui/components/PlaySession.tsx",
+            "line": 63,
+            "column": 53,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "apps/cli/src/ui/components/TowerCompleteScreen.tsx",
+            "line": 7,
+            "column": 16,
+            "message": "An index signature is preferred over a record."
+          },
+          {
             "file": "apps/cli/src/utils/renderTypes.test.ts",
             "line": 35,
             "column": 37,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "libs/core/src/Unit.ts",
-            "line": 36,
-            "column": 16,
-            "message": "An index signature is preferred over a record."
-          },
-          {
             "file": "libs/core/src/getLevelConfig.ts",
-            "line": 18,
-            "column": 36,
+            "line": 16,
+            "column": 23,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -155,9 +161,9 @@
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "libs/core/src/types.ts",
-            "line": 9,
-            "column": 15,
+            "file": "libs/core/src/loadLevel.ts",
+            "line": 15,
+            "column": 43,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -181,60 +187,60 @@
         "samples": []
       },
       "type": {
-        "count": 44,
+        "count": 70,
         "samples": [
           {
-            "file": "apps/cli/src/loadTowers.ts",
-            "line": 16,
+            "file": "apps/cli/src/Game.ts",
+            "line": 18,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "apps/cli/src/ui/components/GameMenu.tsx",
+            "line": 18,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "apps/cli/src/ui/printLevelReport.ts",
-            "line": 6,
+            "file": "apps/cli/src/ui/components/PlaySession.tsx",
+            "line": 13,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "apps/cli/src/ui/printTowerReport.ts",
+            "file": "apps/cli/src/ui/components/TowerCompleteScreen.tsx",
             "line": 5,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "apps/cli/src/utils/renderReadme.ts",
-            "line": 6,
+            "file": "apps/cli/src/ui/types.ts",
+            "line": 7,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "apps/cli/src/utils/getFloorMap.ts",
+            "line": 1,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "libs/abilities/src/types.ts",
-            "line": 42,
+            "line": 49,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "libs/core/src/Space.ts",
-            "line": 15,
-            "column": 8,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "libs/core/src/Warrior.ts",
-            "line": 3,
+            "file": "libs/core/src/Unit.ts",
+            "line": 17,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "libs/core/src/types.ts",
-            "line": 30,
+            "line": 49,
             "column": 8,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "libs/scoring/src/getLevelScore.ts",
-            "line": 5,
-            "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
@@ -252,7 +258,7 @@
         "samples": []
       },
       "no-type-imports": {
-        "count": 57,
+        "count": 113,
         "samples": [
           {
             "file": "apps/cli/src/Game.ts",
@@ -261,50 +267,50 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "apps/cli/src/ui/getUnitStyle.ts",
-            "line": 1,
-            "column": 17,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "apps/cli/src/utils/renderTypes.ts",
+            "file": "apps/cli/src/ui/components/FloorMap.tsx",
             "line": 2,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "libs/abilities/src/directionOf.ts",
-            "line": 3,
+            "file": "apps/cli/src/ui/components/PlayLayout.test.tsx",
+            "line": 5,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "libs/abilities/src/listen.ts",
-            "line": 3,
+            "file": "apps/cli/src/ui/components/ProfileWizard.test.tsx",
+            "line": 5,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "libs/abilities/src/rescue.ts",
-            "line": 1,
-            "column": 19,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "libs/abilities/src/types.ts",
-            "line": 1,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "libs/core/src/Logger.ts",
+            "file": "apps/cli/src/ui/components/WelcomeScreen.tsx",
             "line": 2,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "libs/core/src/Unit.ts",
-            "line": 3,
+            "file": "apps/cli/src/utils/renderPlayerCode.ts",
+            "line": 2,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "libs/abilities/src/distanceOf.ts",
+            "line": 1,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "libs/abilities/src/rest.ts",
+            "line": 1,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "libs/core/src/Position.ts",
+            "line": 12,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -319,59 +325,59 @@
     },
     "func-style": {
       "expression": {
-        "count": 101,
+        "count": 105,
         "samples": [
           {
             "file": "apps/cli/src/cli.ts",
+            "line": 13,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "apps/cli/src/ui/components/LogArea.tsx",
+            "line": 19,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "apps/cli/src/ui/hooks/usePlaySession.test.ts",
+            "line": 692,
+            "column": 5,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "apps/cli/src/utils/getFloorMapKey.ts",
             "line": 9,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "apps/cli/src/ui/printLevel.ts",
-            "line": 9,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "apps/cli/src/ui/printTurnHeader.ts",
-            "line": 5,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "apps/cli/src/utils/getWarriorNameSuggestions.ts",
-            "line": 56,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "apps/cli/src/utils/renderReadme.ts",
-            "line": 55,
+            "line": 41,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "libs/abilities/src/bind.ts",
-            "line": 7,
+            "file": "apps/website/utils/getImgUrl.js",
+            "line": 5,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "libs/abilities/src/rescue.ts",
-            "line": 7,
+            "file": "libs/abilities/src/maxHealth.ts",
+            "line": 3,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "libs/core/src/loadLevel.ts",
-            "line": 35,
+            "line": 22,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "libs/scoring/src/getWarriorScore.ts",
-            "line": 9,
+            "file": "libs/scoring/src/getTurnCount.ts",
+            "line": 7,
             "column": 1,
             "message": "Expected a function expression."
           },
@@ -384,7 +390,7 @@
         ]
       },
       "declaration": {
-        "count": 19,
+        "count": 26,
         "samples": [
           {
             "file": "apps/cli/src/Profile.ts",
@@ -393,8 +399,20 @@
             "message": "Expected a function declaration."
           },
           {
+            "file": "apps/cli/src/ui/components/GameMenu.tsx",
+            "line": 119,
+            "column": 9,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "apps/cli/src/ui/components/ProfileWizard.tsx",
+            "line": 68,
+            "column": 9,
+            "message": "Expected a function declaration."
+          },
+          {
             "file": "apps/cli/src/utils/renderTypes.test.ts",
-            "line": 155,
+            "line": 133,
             "column": 11,
             "message": "Expected a function declaration."
           },
@@ -406,13 +424,7 @@
           },
           {
             "file": "apps/website/pages/en/index.js",
-            "line": 16,
-            "column": 7,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "apps/website/pages/en/index.js",
-            "line": 52,
+            "line": 28,
             "column": 7,
             "message": "Expected a function declaration."
           },
@@ -430,19 +442,13 @@
           },
           {
             "file": "apps/website/pages/en/index.js",
-            "line": 177,
+            "line": 206,
             "column": 7,
             "message": "Expected a function declaration."
           },
           {
-            "file": "libs/core/src/getLevelConfig.test.ts",
-            "line": 49,
-            "column": 9,
-            "message": "Expected a function declaration."
-          },
-          {
             "file": "libs/core/src/loadPlayer.ts",
-            "line": 43,
+            "line": 47,
             "column": 11,
             "message": "Expected a function declaration."
           }
@@ -451,41 +457,41 @@
     },
     "import-export-preference": {
       "named": {
-        "count": 95,
+        "count": 93,
         "samples": [
           {
             "file": "apps/cli/src/Game.ts",
-            "line": 330,
+            "line": 163,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "apps/cli/src/ui/printBoard.ts",
-            "line": 23,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "apps/cli/src/ui/printSuccessLine.ts",
-            "line": 9,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "apps/cli/src/utils/getFloorMap.ts",
+            "file": "apps/cli/src/ui/components/ErrorMessage.tsx",
             "line": 10,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "libs/abilities/src/directionOfStairs.ts",
-            "line": 18,
+            "file": "apps/cli/src/ui/components/ResultScreen.tsx",
+            "line": 16,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "libs/abilities/src/shoot.ts",
-            "line": 30,
+            "file": "apps/cli/src/utils/getTowerId.ts",
+            "line": 7,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "libs/abilities/src/distanceOf.ts",
+            "line": 16,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "libs/abilities/src/think.ts",
+            "line": 19,
             "column": 8,
             "message": "Prefer named exports"
           },
@@ -496,8 +502,8 @@
             "message": "Prefer named exports"
           },
           {
-            "file": "libs/scoring/src/getTurnCount.ts",
-            "line": 11,
+            "file": "libs/scoring/src/getWarriorScore.ts",
+            "line": 14,
             "column": 8,
             "message": "Prefer named exports"
           },
@@ -516,11 +522,29 @@
         ]
       },
       "default": {
-        "count": 1,
+        "count": 4,
         "samples": [
           {
             "file": "apps/cli/src/cli.ts",
-            "line": 23,
+            "line": 22,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "apps/cli/src/ui/hooks/usePlaySession.ts",
+            "line": 141,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "apps/cli/src/ui/theme.ts",
+            "line": 1,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "apps/cli/src/ui/utils/buildLevelReport.ts",
+            "line": 15,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           }
@@ -533,53 +557,53 @@
         "samples": []
       },
       "4-space": {
-        "count": 200,
+        "count": 203,
         "samples": [
           {
             "file": "apps/cli/src/Game.test.ts",
-            "line": 17,
+            "line": 15,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "apps/cli/src/ui/printBoard.ts",
-            "line": 10,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "apps/cli/src/ui/printSuccessLine.ts",
-            "line": 6,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "apps/cli/src/utils/getFloorMapKey.ts",
-            "line": 2,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "libs/abilities/src/bind.ts",
-            "line": 8,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "libs/abilities/src/rest.test.ts",
-            "line": 6,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "libs/core/src/getLevel.test.ts",
+            "file": "apps/cli/src/ui/components/FloorMap.test.tsx",
             "line": 7,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "libs/scoring/src/getRemainingTimeBonus.ts",
-            "line": 11,
+            "file": "apps/cli/src/ui/components/SelectPrompt.tsx",
+            "line": 6,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "apps/cli/src/utils/getFloorMap.ts",
+            "line": 2,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "libs/abilities/src/bind.test.ts",
+            "line": 7,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "libs/abilities/src/rescue.test.ts",
+            "line": 7,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "libs/core/src/Warrior.ts",
+            "line": 4,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "libs/scoring/src/getRemainingTimeBonus.test.ts",
+            "line": 8,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -598,53 +622,53 @@
         ]
       },
       "tab": {
-        "count": 200,
+        "count": 203,
         "samples": [
           {
             "file": "apps/cli/src/Game.test.ts",
-            "line": 17,
+            "line": 15,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "apps/cli/src/ui/printBoard.ts",
-            "line": 10,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "apps/cli/src/ui/printSuccessLine.ts",
-            "line": 6,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "apps/cli/src/utils/getFloorMapKey.ts",
-            "line": 2,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "libs/abilities/src/bind.ts",
-            "line": 8,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "libs/abilities/src/rest.test.ts",
-            "line": 6,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "libs/core/src/getLevel.test.ts",
+            "file": "apps/cli/src/ui/components/FloorMap.test.tsx",
             "line": 7,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "libs/scoring/src/getRemainingTimeBonus.ts",
-            "line": 11,
+            "file": "apps/cli/src/ui/components/SelectPrompt.tsx",
+            "line": 6,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "apps/cli/src/utils/getFloorMap.ts",
+            "line": 2,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "libs/abilities/src/bind.test.ts",
+            "line": 7,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "libs/abilities/src/rescue.test.ts",
+            "line": 7,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "libs/core/src/Warrior.ts",
+            "line": 4,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "libs/scoring/src/getRemainingTimeBonus.test.ts",
+            "line": 8,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -665,7 +689,7 @@
     },
     "quotes": {
       "double": {
-        "count": 2806,
+        "count": 3560,
         "samples": [
           {
             "file": "apps/cli/bin/warriorjs.js",
@@ -674,51 +698,51 @@
             "message": "Strings must use doublequote."
           },
           {
-            "file": "apps/cli/src/Profile.ts",
-            "line": 18,
-            "column": 28,
+            "file": "apps/cli/src/loadTowers.test.ts",
+            "line": 44,
+            "column": 58,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "apps/cli/src/ui/printFailureLine.test.ts",
-            "line": 5,
-            "column": 23,
+            "file": "apps/cli/src/ui/components/LevelCompleteScreen.tsx",
+            "line": 29,
+            "column": 42,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "apps/cli/src/ui/requestConfirmation.test.ts",
-            "line": 15,
-            "column": 14,
+            "file": "apps/cli/src/ui/components/ProfileWizard.tsx",
+            "line": 169,
+            "column": 25,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "apps/cli/src/ui/hooks/usePlayback.test.ts",
+            "line": 77,
+            "column": 55,
             "message": "Strings must use doublequote."
           },
           {
             "file": "apps/cli/src/utils/renderTypes.test.ts",
-            "line": 78,
+            "line": 48,
             "column": 9,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "libs/abilities/src/detonate.test.ts",
-            "line": 87,
-            "column": 59,
+            "file": "libs/abilities/src/feel.test.ts",
+            "line": 44,
+            "column": 45,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "libs/core/src/Floor.test.ts",
-            "line": 56,
-            "column": 8,
+            "file": "libs/core/src/Unit.test.ts",
+            "line": 19,
+            "column": 28,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "libs/core/src/Unit.ts",
-            "line": 152,
-            "column": 14,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "libs/scoring/src/isFloorClear.test.ts",
-            "line": 14,
-            "column": 39,
+            "file": "libs/scoring/src/getGradeLetter.test.ts",
+            "line": 4,
+            "column": 6,
             "message": "Strings must use doublequote."
           },
           {
@@ -730,60 +754,60 @@
         ]
       },
       "single": {
-        "count": 114,
+        "count": 109,
         "samples": [
           {
             "file": "apps/cli/src/Game.test.ts",
-            "line": 115,
+            "line": 147,
             "column": 10,
             "message": "Strings must use singlequote."
           },
           {
             "file": "apps/cli/src/loadTowers.test.ts",
-            "line": 109,
-            "column": 13,
+            "line": 124,
+            "column": 6,
             "message": "Strings must use singlequote."
           },
           {
             "file": "apps/cli/src/utils/renderTypes.test.ts",
-            "line": 45,
+            "line": 168,
             "column": 9,
             "message": "Strings must use singlequote."
           },
           {
             "file": "libs/core/src/Space.test.ts",
-            "line": 43,
+            "line": 73,
             "column": 12,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "libs/core/src/Space.test.ts",
-            "line": 266,
-            "column": 10,
             "message": "Strings must use singlequote."
           },
           {
             "file": "libs/core/src/Unit.test.ts",
-            "line": 518,
+            "line": 182,
             "column": 10,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "libs/scoring/src/getRemainingTimeBonus.test.ts",
-            "line": 13,
+            "file": "libs/core/src/getLevel.test.ts",
+            "line": 9,
+            "column": 8,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "libs/spatial/src/absoluteDirections.test.ts",
+            "line": 4,
             "column": 6,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "libs/units/src/Archer.test.ts",
-            "line": 83,
-            "column": 10,
+            "file": "libs/units/src/Captive.test.ts",
+            "line": 6,
+            "column": 8,
             "message": "Strings must use singlequote."
           },
           {
             "file": "towers/the-narrow-path/src/index.ts",
-            "line": 160,
-            "column": 12,
+            "line": 161,
+            "column": 13,
             "message": "Strings must use singlequote."
           },
           {
@@ -801,7 +825,7 @@
         "samples": []
       },
       "never": {
-        "count": 4075,
+        "count": 5191,
         "samples": [
           {
             "file": "apps/cli/bin/warriorjs.js",
@@ -810,51 +834,51 @@
             "message": "Extra semicolon."
           },
           {
-            "file": "apps/cli/src/Profile.test.ts",
-            "line": 209,
-            "column": 95,
+            "file": "apps/cli/src/ProfileGenerator.ts",
+            "line": 4,
+            "column": 40,
             "message": "Extra semicolon."
           },
           {
-            "file": "apps/cli/src/parseArgs.test.ts",
-            "line": 44,
-            "column": 32,
+            "file": "apps/cli/src/ui/components/LevelCompleteScreen.test.tsx",
+            "line": 69,
+            "column": 6,
             "message": "Extra semicolon."
           },
           {
-            "file": "apps/cli/src/ui/printWelcomeHeader.test.ts",
-            "line": 2,
-            "column": 42,
+            "file": "apps/cli/src/ui/components/ProfileWizard.tsx",
+            "line": 157,
+            "column": 85,
             "message": "Extra semicolon."
           },
           {
-            "file": "libs/abilities/src/directionOf.test.ts",
-            "line": 23,
+            "file": "apps/cli/src/ui/hooks/usePlaySession.ts",
+            "line": 193,
+            "column": 13,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "libs/abilities/src/detonate.test.ts",
+            "line": 86,
+            "column": 8,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "libs/core/src/Floor.ts",
+            "line": 64,
+            "column": 46,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "libs/core/src/Unit.test.ts",
+            "line": 365,
+            "column": 25,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "libs/scoring/src/getLevelScore.test.ts",
+            "line": 36,
             "column": 5,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "libs/abilities/src/walk.test.ts",
-            "line": 63,
-            "column": 7,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "libs/core/src/Space.ts",
-            "line": 146,
-            "column": 21,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "libs/core/src/Warrior.ts",
-            "line": 45,
-            "column": 42,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "libs/spatial/src/getAbsoluteDirection.test.ts",
-            "line": 70,
-            "column": 61,
             "message": "Extra semicolon."
           },
           {

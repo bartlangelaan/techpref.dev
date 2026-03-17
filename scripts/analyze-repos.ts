@@ -191,6 +191,9 @@ async function runOxlintCheck(
       configPath,
       "--format",
       "json",
+      // Prevent repositories with their own oxlint config files (e.g. kibana)
+      // from having those configs merged with ours.
+      "--disable-nested-config",
       ...ignorePatterns.flatMap((pattern) => ["--ignore-pattern", pattern]),
     ]);
 

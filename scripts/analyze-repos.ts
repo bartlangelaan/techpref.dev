@@ -1,6 +1,7 @@
 import { isNotNil, last, sortBy } from "es-toolkit";
 import { execa, ExecaError } from "execa";
 import { ensureDir, outputJson, remove } from "fs-extra/esm";
+import { readFile } from "node:fs/promises";
 import { glob } from "glob";
 import { stat } from "node:fs/promises";
 import { createRequire } from "node:module";
@@ -134,6 +135,7 @@ async function runOxlintCheck(
     `oxlint-${Date.now()}-${Math.random().toString(36).slice(2)}`,
   );
   const configPath = join(tempDir, ".oxlintrc.json");
+  const outputPath = join(tempDir, "output.json");
   try {
     await ensureDir(tempDir);
 
@@ -165,14 +167,14 @@ async function runOxlintCheck(
 
     const timeout = 5 * 60 * 1000; // 5 minute timeout per check
 
-    // We need to pass the stdout to a file because oxlint fails if it is not a
-    // TTY and stdout is too large.
+    // Write stdout to a file to avoid buffer limits for large repos (e.g. kibana).
     // See: https://github.com/oxc-project/oxc/issues/19124
     const $ = execa({
       preferLocal: true,
       cwd: repoPath,
       reject: false,
       timeout,
+      stdout: { file: outputPath },
     });
 
     // Somehow, the timeout option in execa does not seem to work reliably with
@@ -205,25 +207,28 @@ async function runOxlintCheck(
       throw result;
     }
 
-    const { stdout, stderr } = result;
+    const { stderr } = result;
 
     if (stderr) {
       // Oxlint may output warnings to stderr, but we can still parse stdout
       console.warn(`Oxlint warnings for ${repoPath}:\n${stderr}`);
     }
 
+    // Read the JSON output from the temp file (stdout was redirected there)
+    const outputText = await readFile(outputPath, "utf8");
+
     try {
-      return parseOxlintOutput(stdout, repoPath, maxSamples);
+      return parseOxlintOutput(outputText, repoPath, maxSamples);
     } catch (error) {
       console.warn(`\n\nCould not parse oxlint output: ${repoPath}:`);
-      if (stdout.length > 2500) {
+      if (outputText.length > 2500) {
         console.warn(
-          stdout.substring(0, 1000) +
+          outputText.substring(0, 1000) +
             "[...]" +
-            stdout.substring(stdout.length - 1000),
+            outputText.substring(outputText.length - 1000),
         );
       } else {
-        console.warn(stdout);
+        console.warn(outputText);
       }
 
       throw error;

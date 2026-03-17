@@ -2,6 +2,7 @@ import { isNotNil, last, sortBy } from "es-toolkit";
 import { execa, ExecaError } from "execa";
 import { ensureDir, outputJson, remove } from "fs-extra/esm";
 import { glob } from "glob";
+import { createReadStream } from "node:fs";
 import { stat } from "node:fs/promises";
 import { createRequire } from "node:module";
 import { tmpdir } from "node:os";
@@ -67,12 +68,6 @@ interface OxlintDiagnostic {
   }>;
 }
 
-/**
- * Oxlint JSON output format.
- */
-interface OxlintOutput {
-  diagnostics: OxlintDiagnostic[];
-}
 
 const MAX_FILE_SIZE = 1_000_000; // 1MB
 
@@ -134,6 +129,7 @@ async function runOxlintCheck(
     `oxlint-${Date.now()}-${Math.random().toString(36).slice(2)}`,
   );
   const configPath = join(tempDir, ".oxlintrc.json");
+  const outputPath = join(tempDir, "output.json");
   try {
     await ensureDir(tempDir);
 
@@ -165,14 +161,17 @@ async function runOxlintCheck(
 
     const timeout = 5 * 60 * 1000; // 5 minute timeout per check
 
-    // We need to pass the stdout to a file because oxlint fails if it is not a
-    // TTY and stdout is too large.
+    // Write stdout to a file to avoid buffer/memory limits for large repos (e.g. kibana).
+    // Using buffer: { stdout: false } ensures execa doesn't buffer the output in memory,
+    // so large outputs (100MB+) are written directly to the file without truncation.
     // See: https://github.com/oxc-project/oxc/issues/19124
     const $ = execa({
       preferLocal: true,
       cwd: repoPath,
       reject: false,
       timeout,
+      stdout: { file: outputPath },
+      buffer: { stdout: false },
     });
 
     // Somehow, the timeout option in execa does not seem to work reliably with
@@ -191,6 +190,9 @@ async function runOxlintCheck(
       configPath,
       "--format",
       "json",
+      // Prevent repositories with their own oxlint config files (e.g. kibana)
+      // from having those configs merged with ours.
+      "--disable-nested-config",
       ...ignorePatterns.flatMap((pattern) => ["--ignore-pattern", pattern]),
     ]);
 
@@ -202,27 +204,19 @@ async function runOxlintCheck(
       throw result;
     }
 
-    const { stdout, stderr } = result;
+    const { stderr } = result;
 
     if (stderr) {
       // Oxlint may output warnings to stderr, but we can still parse stdout
       console.warn(`Oxlint warnings for ${repoPath}:\n${stderr}`);
     }
 
+    // Stream the JSON output from the temp file to avoid loading it entirely
+    // into memory (the output can exceed 100MB for large repos like kibana).
     try {
-      return parseOxlintOutput(stdout, repoPath, maxSamples);
+      return await parseOxlintOutputStreaming(outputPath, repoPath, maxSamples);
     } catch (error) {
-      console.warn(`\n\nCould not parse oxlint output: ${repoPath}:`);
-      if (stdout.length > 2500) {
-        console.warn(
-          stdout.substring(0, 1000) +
-            "[...]" +
-            stdout.substring(stdout.length - 1000),
-        );
-      } else {
-        console.warn(stdout);
-      }
-
+      console.warn(`\n\nCould not parse oxlint output: ${repoPath}`);
       throw error;
     }
   } catch (error) {
@@ -240,40 +234,75 @@ async function runOxlintCheck(
 }
 
 /**
- * Parse Oxlint JSON output into VariantResult.
+ * Parse Oxlint JSON output file into VariantResult using streaming to avoid
+ * loading the entire file into memory (large repos like kibana can produce
+ * hundreds of MB of JSON output for certain rules).
+ *
+ * Uses reservoir sampling to build a representative sample from large outputs
+ * without needing to sort all diagnostics in memory.
  */
-function parseOxlintOutput(
-  stdout: string,
+async function parseOxlintOutputStreaming(
+  filePath: string,
   repoPath: string,
   maxSamples: number,
-): VariantResult {
-  const output: OxlintOutput = JSON.parse(stdout);
+): Promise<VariantResult> {
+  // We use a reservoir size much larger than maxSamples so that after sorting
+  // the reservoir by filename, distributedSample still gives a good spread.
+  const RESERVOIR_SIZE = Math.max(maxSamples * 100, 1000);
 
-  const sortedDiagnostics = sortBy(
-    output.diagnostics.filter((d) => d.filename),
-    [(diag) => diag.filename],
-  );
+  return new Promise((resolve, reject) => {
+    let count = 0;
+    const reservoir: OxlintDiagnostic[] = [];
 
-  const samples = distributedSample(
-    sortedDiagnostics,
-    maxSamples,
-  ).map<ViolationSample>((diag) => {
-    // Get path relative to repo root
-    const relativePath = diag.filename!.startsWith(repoPath)
-      ? diag.filename!.slice(repoPath.length + 1)
-      : diag.filename!;
-    return {
-      file: relativePath,
-      line: diag.labels[0]?.span.line ?? 0,
-      column: diag.labels[0]?.span.column ?? 0,
-      message: diag.message,
-    };
+    const { chain } = require("stream-chain") as typeof import("stream-chain");
+    const { parser } = require("stream-json") as typeof import("stream-json");
+    const { pick } = require("stream-json/filters/Pick") as typeof import("stream-json/filters/Pick");
+    const { streamArray } = require("stream-json/streamers/StreamArray") as typeof import("stream-json/streamers/StreamArray");
+
+    const pipeline = chain([
+      createReadStream(filePath),
+      parser(),
+      pick({ filter: "diagnostics" }),
+      streamArray(),
+    ]);
+
+    pipeline.on("data", ({ value }: { value: OxlintDiagnostic }) => {
+      count++;
+      if (value.filename) {
+        if (reservoir.length < RESERVOIR_SIZE) {
+          reservoir.push(value);
+        } else {
+          // Reservoir sampling: replace a random entry with probability
+          // RESERVOIR_SIZE/count to maintain an unbiased random sample.
+          const j = Math.floor(Math.random() * count);
+          if (j < RESERVOIR_SIZE) {
+            reservoir[j] = value;
+          }
+        }
+      }
+    });
+
+    pipeline.on("end", () => {
+      const sortedReservoir = sortBy(reservoir, [(d) => d.filename]);
+      const samples = distributedSample(
+        sortedReservoir,
+        maxSamples,
+      ).map<ViolationSample>((diag) => {
+        const relativePath = diag.filename!.startsWith(repoPath)
+          ? diag.filename!.slice(repoPath.length + 1)
+          : diag.filename!;
+        return {
+          file: relativePath,
+          line: diag.labels[0]?.span.line ?? 0,
+          column: diag.labels[0]?.span.column ?? 0,
+          message: diag.message,
+        };
+      });
+      resolve({ count, samples });
+    });
+
+    pipeline.on("error", reject);
   });
-
-  return {
-    count: output.diagnostics.length,
-    samples,
-  };
 }
 
 /**

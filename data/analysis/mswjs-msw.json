@@ -1,11 +1,11 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "e6a7f81a70e871565a43a40db8694874b5e2bcd2",
-  "analyzedCommitDate": "2026-03-17T01:42:30.000Z",
+  "analyzedCommit": "5f4ccce0f85d958b78311cc04f639f21c64f4e74",
+  "analyzedCommitDate": "2026-03-17T11:36:45.000Z",
   "checks": {
     "array-type": {
       "array": {
-        "count": 109,
+        "count": 111,
         "samples": [
           {
             "file": "src/browser/setupWorker/glossary.ts",
@@ -27,26 +27,26 @@
           },
           {
             "file": "src/core/utils/handleRequest.test.ts",
-            "line": 501,
+            "line": 542,
             "column": 21,
             "message": "Array type using 'Array<RequestHandler>' is forbidden. Use 'RequestHandler[]' instead."
           },
           {
-            "file": "src/core/ws/WebSocketClientStore.ts",
-            "line": 11,
-            "column": 37,
-            "message": "Array type using 'Array<SerializedWebSocketClient>' is forbidden. Use 'SerializedWebSocketClient[]' instead."
+            "file": "src/core/utils/request/getAllAcceptedMimeTypes.ts",
+            "line": 19,
+            "column": 19,
+            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
-            "file": "src/native/index.ts",
+            "file": "src/core/ws/handleWebSocketEvent.ts",
             "line": 13,
-            "column": 16,
-            "message": "Array type using 'Array<RequestHandler>' is forbidden. Use 'RequestHandler[]' instead."
+            "column": 22,
+            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
-            "file": "src/node/glossary.ts",
-            "line": 30,
-            "column": 20,
+            "file": "src/node/SetupServerCommonApi.ts",
+            "line": 41,
+            "column": 15,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
@@ -170,7 +170,7 @@
           },
           {
             "file": "src/core/handlers/GraphQLHandler.ts",
-            "line": 135,
+            "line": 139,
             "column": 42,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
@@ -219,13 +219,13 @@
         "samples": [
           {
             "file": "src/core/handlers/GraphQLHandler.ts",
-            "line": 32,
+            "line": 36,
             "column": 14,
             "message": "A record is preferred over an index signature."
           },
           {
             "file": "src/core/handlers/GraphQLHandler.ts",
-            "line": 33,
+            "line": 37,
             "column": 17,
             "message": "A record is preferred over an index signature."
           },
@@ -256,17 +256,17 @@
         ]
       },
       "index-signature": {
-        "count": 50,
+        "count": 49,
         "samples": [
           {
             "file": "src/core/handlers/GraphQLHandler.ts",
-            "line": 43,
+            "line": 47,
             "column": 28,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "src/core/handlers/GraphQLHandler.ts",
-            "line": 91,
+            "line": 95,
             "column": 20,
             "message": "An index signature is preferred over a record."
           },
@@ -278,7 +278,7 @@
           },
           {
             "file": "src/core/handlers/RequestHandler.ts",
-            "line": 116,
+            "line": 127,
             "column": 24,
             "message": "An index signature is preferred over a record."
           },
@@ -289,9 +289,9 @@
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "src/core/utils/internal/mergeRight.ts",
-            "line": 9,
-            "column": 10,
+            "file": "src/core/utils/internal/parseGraphQLRequest.ts",
+            "line": 60,
+            "column": 42,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -398,7 +398,7 @@
           },
           {
             "file": "src/core/handlers/GraphQLHandler.ts",
-            "line": 31,
+            "line": 35,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
@@ -455,7 +455,7 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 141,
+        "count": 143,
         "samples": [
           {
             "file": "config/plugins/esbuild/resolveCoreImportsPlugin.ts",
@@ -470,25 +470,25 @@
             "message": "Imports EventMap are only used as type."
           },
           {
-            "file": "src/core/handlers/RequestHandler.ts",
-            "line": 2,
+            "file": "src/core/handlers/HttpHandler.ts",
+            "line": 17,
             "column": 1,
-            "message": "Imports AsyncIterable and Iterable are only used as type."
+            "message": "Imports RequestHandlerDefaultInfo, RequestHandlerOptions, and ResponseResolver are only used as type."
           },
           {
-            "file": "src/core/utils/request/onUnhandledRequest.test.ts",
-            "line": 2,
+            "file": "src/core/utils/internal/pipeEvents.ts",
+            "line": 1,
             "column": 1,
-            "message": "Imports UnhandledRequestCallback are only used as type."
+            "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "src/shims/statuses.ts",
-            "line": 4,
-            "column": 51,
+            "file": "src/shims/cookie.ts",
+            "line": 5,
+            "column": 53,
             "message": "`import()` type annotations are forbidden."
           },
           {
-            "file": "test/browser/msw-api/setup-worker/listHandlers.test.ts",
+            "file": "test/browser/msw-api/setup-worker/life-cycle-events/removeListener.test.ts",
             "line": 1,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
@@ -501,7 +501,7 @@
           },
           {
             "file": "test/browser/sse-api/sse.client.send.test.ts",
-            "line": 2,
+            "line": 1,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
@@ -536,7 +536,7 @@
           },
           {
             "file": "src/core/handlers/GraphQLHandler.ts",
-            "line": 5,
+            "line": 6,
             "column": 3,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -587,7 +587,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 154,
+        "count": 155,
         "samples": [
           {
             "file": "cli/init.js",
@@ -621,7 +621,7 @@
           },
           {
             "file": "src/core/utils/matching/matchRequestUrl.ts",
-            "line": 19,
+            "line": 58,
             "column": 8,
             "message": "Expected a function expression."
           },
@@ -784,7 +784,7 @@
         ]
       },
       "default": {
-        "count": 61,
+        "count": 62,
         "samples": [
           {
             "file": "cli/init.js",
@@ -799,8 +799,8 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/browser/setupWorker/start/utils/validateWorkerScope.ts",
-            "line": 4,
+            "file": "src/browser/setupWorker/stop/utils/printStopMessage.ts",
+            "line": 3,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -817,8 +817,8 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/core/utils/internal/toReadonlyArray.ts",
-            "line": 4,
+            "file": "src/core/utils/internal/tryCatch.ts",
+            "line": 1,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -829,8 +829,8 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/core/ws/utils/getMessageLength.ts",
-            "line": 10,
+            "file": "src/core/ws/handleWebSocketEvent.ts",
+            "line": 18,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -855,7 +855,7 @@
         "samples": []
       },
       "4-space": {
-        "count": 500,
+        "count": 503,
         "samples": [
           {
             "file": "cli/index.js",
@@ -864,26 +864,26 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/core/handlers/WebSocketHandler.ts",
+            "file": "src/core/http.test.ts",
             "line": 4,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/core/utils/matching/normalizePath.node.test.ts",
+            "file": "src/core/utils/matching/normalizePath.test.ts",
             "line": 7,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "test/browser/graphql-api/multipart-data.test.ts",
-            "line": 4,
+            "file": "test/browser/graphql-api/multipart-data.mocks.ts",
+            "line": 5,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "test/browser/msw-api/setup-worker/scenarios/iframe-isolated-response/iframe-isolated-response.test.ts",
-            "line": 6,
+            "file": "test/browser/msw-api/setup-worker/scenarios/iframe-isolated-response/iframe-isolated-response.mocks.ts",
+            "line": 9,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -900,14 +900,14 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "test/node/graphql-api/cookies.test.ts",
+            "file": "test/node/graphql-api/content-type.test.ts",
             "line": 9,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "test/node/rest-api/request/matching/custom-predicate.node.test.ts",
-            "line": 8,
+            "file": "test/node/rest-api/request/matching/all.node.test.ts",
+            "line": 11,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -920,7 +920,7 @@
         ]
       },
       "tab": {
-        "count": 500,
+        "count": 503,
         "samples": [
           {
             "file": "cli/index.js",
@@ -929,26 +929,26 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/core/handlers/WebSocketHandler.ts",
+            "file": "src/core/http.test.ts",
             "line": 4,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/core/utils/matching/normalizePath.node.test.ts",
+            "file": "src/core/utils/matching/normalizePath.test.ts",
             "line": 7,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "test/browser/graphql-api/multipart-data.test.ts",
-            "line": 4,
+            "file": "test/browser/graphql-api/multipart-data.mocks.ts",
+            "line": 5,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "test/browser/msw-api/setup-worker/scenarios/iframe-isolated-response/iframe-isolated-response.test.ts",
-            "line": 6,
+            "file": "test/browser/msw-api/setup-worker/scenarios/iframe-isolated-response/iframe-isolated-response.mocks.ts",
+            "line": 9,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -965,14 +965,14 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "test/node/graphql-api/cookies.test.ts",
+            "file": "test/node/graphql-api/content-type.test.ts",
             "line": 9,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "test/node/rest-api/request/matching/custom-predicate.node.test.ts",
-            "line": 8,
+            "file": "test/node/rest-api/request/matching/all.node.test.ts",
+            "line": 11,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -987,7 +987,7 @@
     },
     "quotes": {
       "double": {
-        "count": 8042,
+        "count": 8157,
         "samples": [
           {
             "file": "cli/index.js",
@@ -997,50 +997,50 @@
           },
           {
             "file": "src/core/handlers/GraphQLHandler.test.ts",
-            "line": 348,
-            "column": 8,
+            "line": 385,
+            "column": 9,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/core/utils/internal/parseGraphQLRequest.ts",
-            "line": 104,
-            "column": 42,
+            "file": "src/core/utils/internal/parseMultipartData.test.ts",
+            "line": 60,
+            "column": 33,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "test/browser/graphql-api/logging.mocks.ts",
-            "line": 18,
-            "column": 37,
+            "file": "test/browser/graphql-api/link.mocks.ts",
+            "line": 67,
+            "column": 34,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "test/browser/msw-api/setup-worker/start/quiet.test.ts",
-            "line": 2,
-            "column": 30,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "test/browser/rest-api/response-patching.test.ts",
-            "line": 2,
-            "column": 28,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "test/browser/ws-api/ws.server.connect.browser.test.ts",
-            "line": 14,
-            "column": 6,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "test/node/msw-api/setup-server/scenarios/generator.node.test.ts",
-            "line": 4,
+            "file": "test/browser/msw-api/setup-worker/start/options-sw-scope.mocks.ts",
+            "line": 1,
             "column": 36,
             "message": "Strings must use doublequote."
           },
           {
+            "file": "test/browser/rest-api/response-patching.mocks.ts",
+            "line": 102,
+            "column": 52,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "test/browser/ws-api/ws.server.connect.browser.test.ts",
+            "line": 58,
+            "column": 29,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "test/node/msw-api/setup-server/scenarios/fetch.node.test.ts",
+            "line": 5,
+            "column": 12,
+            "message": "Strings must use doublequote."
+          },
+          {
             "file": "test/node/rest-api/response/throw-response.node.test.ts",
-            "line": 101,
-            "column": 23,
+            "line": 79,
+            "column": 33,
             "message": "Strings must use doublequote."
           },
           {
@@ -1062,7 +1062,7 @@
           },
           {
             "file": "src/core/HttpResponse.test.ts",
-            "line": 145,
+            "line": 148,
             "column": 43,
             "message": "Strings must use singlequote."
           },
@@ -1119,7 +1119,7 @@
     },
     "semi": {
       "always": {
-        "count": 11526,
+        "count": 11664,
         "samples": [
           {
             "file": "cli/index.js",
@@ -1128,51 +1128,51 @@
             "message": "Missing semicolon."
           },
           {
-            "file": "src/core/handlers/HttpHandler.ts",
-            "line": 1,
-            "column": 69,
+            "file": "src/core/handlers/HttpHandler.test.ts",
+            "line": 202,
+            "column": 7,
             "message": "Missing semicolon."
           },
           {
             "file": "src/core/utils/matching/matchRequestUrl.test.ts",
-            "line": 117,
-            "column": 7,
+            "line": 74,
+            "column": 5,
             "message": "Missing semicolon."
           },
           {
-            "file": "test/browser/msw-api/integrity-check-invalid.mocks.ts",
-            "line": 2,
-            "column": 42,
+            "file": "test/browser/msw-api/distribution/iife.test.ts",
+            "line": 32,
+            "column": 5,
             "message": "Missing semicolon."
           },
           {
-            "file": "test/browser/msw-api/setup-worker/use.test.ts",
-            "line": 42,
-            "column": 31,
+            "file": "test/browser/msw-api/setup-worker/use.mocks.ts",
+            "line": 10,
+            "column": 2,
             "message": "Missing semicolon."
           },
           {
             "file": "test/browser/rest-api/response/throw-response.test.ts",
-            "line": 64,
-            "column": 38,
+            "line": 53,
+            "column": 5,
             "message": "Missing semicolon."
           },
           {
-            "file": "test/browser/ws-api/ws.use.browser.test.ts",
-            "line": 253,
-            "column": 7,
+            "file": "test/e2e/auto-update-worker.node.test.ts",
+            "line": 1,
+            "column": 25,
             "message": "Missing semicolon."
           },
           {
-            "file": "test/node/msw-api/setup-server/scenarios/on-unhandled-request/callback.node.test.ts",
-            "line": 51,
-            "column": 37,
+            "file": "test/node/msw-api/setup-server/scenarios/on-unhandled-request/callback-throws.node.test.ts",
+            "line": 21,
+            "column": 75,
             "message": "Missing semicolon."
           },
           {
-            "file": "test/node/ws-api/on-unhandled-request/warn.test.ts",
-            "line": 10,
-            "column": 57,
+            "file": "test/node/ws-api/on-unhandled-request/error.test.ts",
+            "line": 60,
+            "column": 6,
             "message": "Missing semicolon."
           },
           {

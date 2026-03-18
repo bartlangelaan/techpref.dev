@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "e06dbdaf2c09a771a3a4c1e7e364274c2761d9ec",
-  "analyzedCommitDate": "2026-03-18T12:27:37.000Z",
+  "analyzedCommit": "35a6cac0fa515347d4c69434315e7b019260ed98",
+  "analyzedCommitDate": "2026-03-18T14:34:13.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -70,7 +70,7 @@
         ]
       },
       "generic": {
-        "count": 826,
+        "count": 829,
         "samples": [
           {
             "file": "packages/app/src/app/app.tsx",
@@ -86,15 +86,15 @@
           },
           {
             "file": "packages/app/src/app/context/global-sync.tsx",
-            "line": 146,
-            "column": 82,
+            "line": 147,
+            "column": 62,
             "message": "Array type using 'LspStatus[]' is forbidden. Use 'Array<LspStatus>' instead."
           },
           {
             "file": "packages/app/src/app/lib/openwork-server.ts",
-            "line": 1597,
+            "line": 1610,
             "column": 28,
-            "message": "Array type using 'OpenworkCommandItem[]' is forbidden. Use 'Array<OpenworkCommandItem>' instead."
+            "message": "Array type using 'ScheduledJob[]' is forbidden. Use 'Array<ScheduledJob>' instead."
           },
           {
             "file": "packages/app/src/app/pages/session.tsx",
@@ -104,21 +104,21 @@
           },
           {
             "file": "packages/landing/lib/github.ts",
-            "line": 33,
+            "line": 74,
             "column": 15,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+            "message": "Array type using 'Release[]' is forbidden. Use 'Array<Release>' instead."
           },
           {
             "file": "packages/orchestrator/src/cli.ts",
-            "line": 618,
-            "column": 56,
+            "line": 734,
+            "column": 10,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
             "file": "packages/server/src/scheduler.ts",
-            "line": 13,
-            "column": 11,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+            "line": 98,
+            "column": 48,
+            "message": "Array type using 'JobEntry[]' is forbidden. Use 'Array<JobEntry>' instead."
           },
           {
             "file": "packages/web/components/den-admin-panel.tsx",
@@ -299,7 +299,7 @@
     },
     "consistent-type-definitions": {
       "interface": {
-        "count": 453,
+        "count": 456,
         "samples": [
           {
             "file": "packages/app/src/app/app.tsx",
@@ -308,50 +308,50 @@
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "packages/app/src/app/components/session/minimap.tsx",
-            "line": 4,
-            "column": 8,
+            "file": "packages/app/src/app/components/session/sidebar.tsx",
+            "line": 7,
+            "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "packages/app/src/app/lib/opencode.ts",
-            "line": 10,
+            "file": "packages/app/src/app/lib/openwork-server.ts",
+            "line": 5,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
             "file": "packages/app/src/app/lib/openwork-server.ts",
-            "line": 603,
+            "line": 612,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
             "file": "packages/app/src/app/pages/session.tsx",
-            "line": 293,
+            "line": 300,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "packages/landing/components/landing-demo-flows.ts",
-            "line": 11,
+            "file": "packages/landing/components/landing-enterprise.tsx",
+            "line": 12,
+            "column": 1,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "packages/opencode-router/src/media.ts",
+            "line": 34,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "packages/opencode-router/src/media-store.ts",
-            "line": 7,
-            "column": 8,
-            "message": "Use `interface` instead of `type`."
-          },
-          {
-            "file": "packages/orchestrator/src/tui/app.tsx",
-            "line": 69,
-            "column": 8,
+            "file": "packages/server/script/build.ts",
+            "line": 19,
+            "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
             "file": "services/den-v2/src/billing/polar.ts",
-            "line": 41,
+            "line": 27,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
@@ -431,7 +431,7 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 14,
+        "count": 13,
         "samples": [
           {
             "file": "packages/app/src/app/components/text-input.tsx",
@@ -464,10 +464,10 @@
             "message": "Imports AuthUserTable are only used as type."
           },
           {
-            "file": "services/den-v2/src/orgs.ts",
-            "line": 3,
+            "file": "services/den-v2/src/workers/provisioner.ts",
+            "line": 2,
             "column": 1,
-            "message": "Imports AuthUserTable are only used as type."
+            "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
             "file": "services/den/src/http/workers.ts",
@@ -496,7 +496,7 @@
         ]
       },
       "no-type-imports": {
-        "count": 262,
+        "count": 279,
         "samples": [
           {
             "file": "packages/app/src/app/app.tsx",
@@ -505,51 +505,51 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/app/src/app/components/model-picker-modal.tsx",
-            "line": 8,
+            "file": "packages/app/src/app/components/part-view.tsx",
+            "line": 3,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/app/src/app/context/extensions.ts",
-            "line": 7,
+            "file": "packages/app/src/app/context/global-sdk.tsx",
+            "line": 10,
+            "column": 3,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "packages/app/src/app/context/workspace.ts",
+            "line": 29,
+            "column": 3,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "packages/app/src/app/pages/onboarding.tsx",
+            "line": 3,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/app/src/app/context/sync.tsx",
-            "line": 2,
+            "file": "packages/app/src/app/utils/persist.ts",
+            "line": 3,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/app/src/app/pages/extensions.tsx",
-            "line": 6,
-            "column": 19,
+            "file": "packages/opencode-router/src/telegram.ts",
+            "line": 1,
+            "column": 26,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/app/src/app/system-state.ts",
+            "file": "packages/web/app/(den)/_components/dashboard-screen.tsx",
             "line": 4,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/opencode-router/src/cli.ts",
-            "line": 17,
-            "column": 3,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "packages/server/src/file-sessions.ts",
-            "line": 1,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "services/openwork-share/components/share-home-client.tsx",
-            "line": 7,
-            "column": 1,
+            "file": "services/openwork-share/components/share-bundle-page.tsx",
+            "line": 3,
+            "column": 74,
             "message": "Use an `import` instead of an `import type`."
           },
           {
@@ -563,7 +563,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 1628,
+        "count": 1650,
         "samples": [
           {
             "file": "packages/app/scripts/_util.mjs",
@@ -573,49 +573,49 @@
           },
           {
             "file": "packages/app/src/app/context/workspace.ts",
-            "line": 3102,
+            "line": 3126,
             "column": 3,
             "message": "Expected a function expression."
           },
           {
             "file": "packages/app/src/app/utils/index.ts",
-            "line": 71,
+            "line": 124,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "packages/opencode-router/src/media.ts",
-            "line": 131,
+            "file": "packages/opencode-router/src/telegram.ts",
+            "line": 36,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "packages/orchestrator/src/cli.ts",
-            "line": 4136,
+            "line": 5053,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "packages/server/src/server.ts",
-            "line": 4774,
+            "file": "packages/server/src/skill-hub.ts",
+            "line": 26,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "packages/web/components/den-marketing-rail.tsx",
-            "line": 36,
+            "file": "packages/web/components/den-admin-panel.tsx",
+            "line": 273,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "services/den-v2/src/workers/vanity-domain.ts",
-            "line": 39,
+            "line": 1,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "services/openwork-share/app/api/health/route.ts",
-            "line": 3,
+            "file": "services/den/src/workers/vanity-domain.ts",
+            "line": 95,
             "column": 8,
             "message": "Expected a function expression."
           },
@@ -628,7 +628,7 @@
         ]
       },
       "declaration": {
-        "count": 1211,
+        "count": 1209,
         "samples": [
           {
             "file": "packages/app/scripts/bump-version.mjs",
@@ -644,7 +644,7 @@
           },
           {
             "file": "packages/app/src/app/components/part-view.tsx",
-            "line": 792,
+            "line": 787,
             "column": 9,
             "message": "Expected a function declaration."
           },
@@ -656,32 +656,32 @@
           },
           {
             "file": "packages/app/src/app/context/extensions.ts",
-            "line": 364,
+            "line": 361,
             "column": 9,
             "message": "Expected a function declaration."
           },
           {
             "file": "packages/app/src/app/lib/opencode.ts",
-            "line": 98,
-            "column": 9,
+            "line": 96,
+            "column": 7,
             "message": "Expected a function declaration."
           },
           {
             "file": "packages/app/src/app/pages/session.tsx",
-            "line": 1142,
+            "line": 1123,
             "column": 9,
             "message": "Expected a function declaration."
           },
           {
             "file": "packages/app/src/app/pages/skills.tsx",
-            "line": 110,
+            "line": 108,
             "column": 9,
             "message": "Expected a function declaration."
           },
           {
-            "file": "packages/opencode-router/src/health.ts",
-            "line": 671,
-            "column": 13,
+            "file": "packages/opencode-router/src/cli.ts",
+            "line": 176,
+            "column": 9,
             "message": "Expected a function declaration."
           },
           {
@@ -695,7 +695,7 @@
     },
     "import-export-preference": {
       "named": {
-        "count": 92,
+        "count": 95,
         "samples": [
           {
             "file": "packages/app/src/app/app.tsx",
@@ -710,38 +710,38 @@
             "message": "Prefer named exports"
           },
           {
-            "file": "packages/app/src/app/components/reload-workspace-toast.tsx",
-            "line": 24,
+            "file": "packages/app/src/app/components/rename-session-modal.tsx",
+            "line": 18,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "packages/app/src/app/components/session/sidebar.tsx",
-            "line": 54,
+            "file": "packages/app/src/app/components/session/workspace-session-list.tsx",
+            "line": 139,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "packages/app/src/app/components/workspace-chip.tsx",
-            "line": 15,
+            "file": "packages/app/src/app/entry.tsx",
+            "line": 9,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "packages/app/src/app/pages/proto-workspaces.tsx",
-            "line": 105,
+            "file": "packages/app/src/app/pages/scheduled.tsx",
+            "line": 437,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "packages/app/vite.config.ts",
-            "line": 26,
+            "file": "packages/landing/app/den/page.tsx",
+            "line": 10,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "packages/landing/components/og-image.tsx",
-            "line": 4,
+            "file": "packages/web/app/(den)/dashboard/page.tsx",
+            "line": 3,
             "column": 8,
             "message": "Prefer named exports"
           },
@@ -760,7 +760,7 @@
         ]
       },
       "default": {
-        "count": 60,
+        "count": 63,
         "samples": [
           {
             "file": "packages/app/src/app/lib/feedback.ts",
@@ -775,38 +775,38 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "packages/landing/components/den-how-it-works.tsx",
-            "line": 32,
+            "file": "packages/landing/components/den-support-grid.tsx",
+            "line": 7,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "packages/landing/components/landing-enterprise.tsx",
-            "line": 45,
+            "file": "packages/landing/components/landing-home.tsx",
+            "line": 30,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "packages/landing/components/responsive-grain.tsx",
+            "file": "packages/landing/components/site-nav.tsx",
             "line": 17,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "packages/server/src/approvals.ts",
-            "line": 16,
+            "file": "packages/server/src/events.ts",
+            "line": 4,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "packages/web/components/den-admin-panel.tsx",
-            "line": 388,
+            "file": "packages/web/app/api/loops/den-signup/route.ts",
+            "line": 22,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "services/den-v2/src/http/session.ts",
-            "line": 68,
+            "file": "services/den-v2/src/http/desktop-auth.ts",
+            "line": 197,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -856,7 +856,7 @@
         ]
       },
       "4-space": {
-        "count": 340,
+        "count": 348,
         "samples": [
           {
             "file": "packages/app/scripts/_util.mjs",
@@ -865,50 +865,50 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/app/src/app/components/reset-modal.tsx",
-            "line": 10,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "packages/app/src/app/lib/opencode.ts",
-            "line": 7,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "packages/den-db/drizzle.config.ts",
-            "line": 12,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "packages/landing/components/opencode-logo.tsx",
-            "line": 4,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "packages/orchestrator/scripts/build-opencode-router.mjs",
-            "line": 10,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "packages/server/src/workspace-files.ts",
+            "file": "packages/app/src/app/components/session/artifacts-panel.tsx",
             "line": 5,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "services/den-v2/src/http/errors.ts",
-            "line": 4,
+            "file": "packages/app/src/app/lib/openwork-server.ts",
+            "line": 6,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "services/openwork-share/app/api/v1/package/route.ts",
-            "line": 9,
+            "file": "packages/den-db/src/load-env.ts",
+            "line": 6,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "packages/landing/components/site-footer.tsx",
+            "line": 5,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "packages/orchestrator/scripts/router.mjs",
+            "line": 14,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "packages/web/app/(den)/_components/dashboard-screen.tsx",
+            "line": 11,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "services/den-v2/src/http/admin.ts",
+            "line": 15,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "services/openwork-share/app/api/v1/bundles/route.ts",
+            "line": 8,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -921,7 +921,7 @@
         ]
       },
       "tab": {
-        "count": 340,
+        "count": 348,
         "samples": [
           {
             "file": "packages/app/scripts/_util.mjs",
@@ -930,50 +930,50 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/app/src/app/components/reset-modal.tsx",
-            "line": 10,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "packages/app/src/app/lib/opencode.ts",
-            "line": 7,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "packages/den-db/drizzle.config.ts",
-            "line": 12,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "packages/landing/components/opencode-logo.tsx",
-            "line": 4,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "packages/orchestrator/scripts/build-opencode-router.mjs",
-            "line": 10,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "packages/server/src/workspace-files.ts",
+            "file": "packages/app/src/app/components/session/artifacts-panel.tsx",
             "line": 5,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "services/den-v2/src/http/errors.ts",
-            "line": 4,
+            "file": "packages/app/src/app/lib/openwork-server.ts",
+            "line": 6,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "services/openwork-share/app/api/v1/package/route.ts",
-            "line": 9,
+            "file": "packages/den-db/src/load-env.ts",
+            "line": 6,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "packages/landing/components/site-footer.tsx",
+            "line": 5,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "packages/orchestrator/scripts/router.mjs",
+            "line": 14,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "packages/web/app/(den)/_components/dashboard-screen.tsx",
+            "line": 11,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "services/den-v2/src/http/admin.ts",
+            "line": 15,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "services/openwork-share/app/api/v1/bundles/route.ts",
+            "line": 8,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -1053,7 +1053,7 @@
         ]
       },
       "single": {
-        "count": 29875,
+        "count": 29795,
         "samples": [
           {
             "file": "packages/app/scripts/_util.mjs",
@@ -1063,50 +1063,50 @@
           },
           {
             "file": "packages/app/src/app/components/session/message-list.tsx",
-            "line": 277,
-            "column": 16,
+            "line": 234,
+            "column": 14,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "packages/app/src/app/pages/mcp.tsx",
-            "line": 8,
-            "column": 20,
+            "file": "packages/app/src/app/pages/identities.tsx",
+            "line": 1342,
+            "column": 70,
             "message": "Strings must use singlequote."
           },
           {
             "file": "packages/app/src/i18n/locales/en.ts",
-            "line": 217,
-            "column": 3,
+            "line": 203,
+            "column": 25,
             "message": "Strings must use singlequote."
           },
           {
             "file": "packages/app/src/i18n/locales/vi.ts",
-            "line": 231,
-            "column": 23,
+            "line": 214,
+            "column": 3,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "packages/landing/app/api/enterprise-contact/route.ts",
-            "line": 76,
-            "column": 56,
+            "file": "packages/desktop/scripts/tauri-before-dev.mjs",
+            "line": 180,
+            "column": 30,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "packages/orchestrator/scripts/publish-npm.mjs",
-            "line": 44,
-            "column": 36,
+            "file": "packages/orchestrator/scripts/files-session.mjs",
+            "line": 281,
+            "column": 5,
             "message": "Strings must use singlequote."
           },
           {
             "file": "packages/server/src/server.ts",
-            "line": 1380,
-            "column": 28,
+            "line": 1252,
+            "column": 54,
             "message": "Strings must use singlequote."
           },
           {
             "file": "services/den-v2/scripts/e2e-daytona-worker.mjs",
-            "line": 426,
-            "column": 12,
+            "line": 468,
+            "column": 15,
             "message": "Strings must use singlequote."
           },
           {
@@ -1185,7 +1185,7 @@
         ]
       },
       "never": {
-        "count": 30562,
+        "count": 30581,
         "samples": [
           {
             "file": "packages/app/scripts/_util.mjs",
@@ -1195,50 +1195,50 @@
           },
           {
             "file": "packages/app/src/app/app.tsx",
-            "line": 6274,
-            "column": 46,
+            "line": 6276,
+            "column": 40,
             "message": "Extra semicolon."
           },
           {
             "file": "packages/app/src/app/components/session/message-list.tsx",
-            "line": 72,
-            "column": 2,
+            "line": 104,
+            "column": 37,
             "message": "Extra semicolon."
           },
           {
             "file": "packages/app/src/app/context/workspace.ts",
-            "line": 1359,
-            "column": 38,
+            "line": 1369,
+            "column": 77,
             "message": "Extra semicolon."
           },
           {
             "file": "packages/app/src/app/pages/session.tsx",
-            "line": 627,
-            "column": 9,
+            "line": 641,
+            "column": 34,
             "message": "Extra semicolon."
           },
           {
             "file": "packages/desktop/scripts/prepare-sidecar.mjs",
-            "line": 124,
-            "column": 91,
+            "line": 152,
+            "column": 9,
             "message": "Extra semicolon."
           },
           {
-            "file": "packages/opencode-router/test/slack.test.js",
-            "line": 237,
-            "column": 6,
+            "file": "packages/opencode-router/test/telegram.test.js",
+            "line": 1,
+            "column": 40,
             "message": "Extra semicolon."
           },
           {
-            "file": "packages/server/src/paths.ts",
-            "line": 12,
-            "column": 44,
+            "file": "packages/server/src/plugins.ts",
+            "line": 11,
+            "column": 30,
             "message": "Extra semicolon."
           },
           {
-            "file": "packages/web/components/cloud-control.tsx",
-            "line": 1552,
-            "column": 20,
+            "file": "packages/web/app/(den)/_providers/den-flow-provider.tsx",
+            "line": 825,
+            "column": 102,
             "message": "Extra semicolon."
           },
           {

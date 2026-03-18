@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "c38365d9996c2657171fd358d9aa9d2c85091c9b",
-  "analyzedCommitDate": "2026-03-18T12:05:56.000Z",
+  "analyzedCommit": "f20964ece35f36a3b2a5fb41ec950eb71661f8de",
+  "analyzedCommitDate": "2026-03-18T14:44:00.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -70,7 +70,7 @@
         ]
       },
       "generic": {
-        "count": 2713,
+        "count": 2714,
         "samples": [
           {
             "file": "globalSetup.ts",
@@ -110,21 +110,21 @@
           },
           {
             "file": "packages/server/src/sdk/workspace/ai/agents/utils.ts",
-            "line": 247,
-            "column": 16,
-            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
+            "line": 263,
+            "column": 20,
+            "message": "Array type using 'IncompleteToolCall[]' is forbidden. Use 'Array<IncompleteToolCall>' instead."
           },
           {
             "file": "packages/server/src/threads/automation.ts",
-            "line": 659,
-            "column": 23,
-            "message": "Array type using 'any[]' is forbidden. Use 'Array<any>' instead."
+            "line": 797,
+            "column": 14,
+            "message": "Array type using 'AutomationStepResult[]' is forbidden. Use 'Array<AutomationStepResult>' instead."
           },
           {
             "file": "packages/types/src/api/web/workspace/query.ts",
-            "line": 37,
-            "column": 13,
-            "message": "Array type using 'OpenAPIServer[]' is forbidden. Use 'Array<OpenAPIServer>' instead."
+            "line": 40,
+            "column": 17,
+            "message": "Array type using 'Query[]' is forbidden. Use 'Array<Query>' instead."
           },
           {
             "file": "packages/worker/src/tests/utils/oidc.ts",
@@ -298,7 +298,7 @@
         ]
       },
       "index-signature": {
-        "count": 1235,
+        "count": 1236,
         "samples": [
           {
             "file": "packages/backend-core/src/auth/tests/auth.spec.ts",
@@ -320,14 +320,14 @@
           },
           {
             "file": "packages/client/src/components/app/forms/InnerForm.svelte",
-            "line": 147,
-            "column": 20,
+            "line": 148,
+            "column": 13,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "packages/server/__mocks__/chat.ts",
-            "line": 143,
-            "column": 13,
+            "line": 201,
+            "column": 21,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -344,14 +344,14 @@
           },
           {
             "file": "packages/server/src/tests/utilities/TestConfiguration.ts",
-            "line": 486,
-            "column": 14,
+            "line": 498,
+            "column": 13,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "packages/types/src/api/web/workspace/integration.ts",
-            "line": 3,
-            "column": 41,
+            "file": "packages/types/src/api/web/workspace/permission.ts",
+            "line": 8,
+            "column": 18,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -365,7 +365,7 @@
     },
     "consistent-type-definitions": {
       "interface": {
-        "count": 222,
+        "count": 223,
         "samples": [
           {
             "file": "packages/backend-core/src/context/types.ts",
@@ -398,7 +398,7 @@
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "packages/types/src/documents/global/environmentVariables.ts",
+            "file": "packages/types/src/documents/global/auditLogs.ts",
             "line": 7,
             "column": 8,
             "message": "Use `interface` instead of `type`."
@@ -430,7 +430,7 @@
         ]
       },
       "type": {
-        "count": 1614,
+        "count": 1616,
         "samples": [
           {
             "file": "globalSetup.ts",
@@ -452,8 +452,8 @@
           },
           {
             "file": "packages/server/src/integrations/mongodb.ts",
-            "line": 34,
-            "column": 1,
+            "line": 27,
+            "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
@@ -470,7 +470,7 @@
           },
           {
             "file": "packages/types/src/documents/global/config.ts",
-            "line": 44,
+            "line": 59,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
@@ -482,7 +482,7 @@
           },
           {
             "file": "packages/types/src/sdk/events/user.ts",
-            "line": 41,
+            "line": 47,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
@@ -497,7 +497,7 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 1961,
+        "count": 1960,
         "samples": [
           {
             "file": "globalSetup.ts",
@@ -513,7 +513,7 @@
           },
           {
             "file": "packages/builder/src/templates/screenTemplating/table/inline.ts",
-            "line": 4,
+            "line": 2,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
@@ -531,15 +531,15 @@
           },
           {
             "file": "packages/server/src/automations/tests/scenarios.spec.ts",
-            "line": 9,
+            "line": 2,
             "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
+            "message": "Imports Datasource and Table are only used as type."
           },
           {
-            "file": "packages/server/src/sdk/workspace/rows/search/external.ts",
-            "line": 3,
+            "file": "packages/server/src/sdk/workspace/rows/search.ts",
+            "line": 15,
             "column": 1,
-            "message": "Imports PaginationJson, Row, RowSearchParams, SearchFilters, SearchResponse, SortJson, Table, and ViewV2 are only used as type."
+            "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
             "file": "packages/shared-core/src/automations/steps/ai/extract.ts",
@@ -549,9 +549,9 @@
           },
           {
             "file": "packages/types/src/documents/workspace/table/schema.ts",
-            "line": 4,
+            "line": 3,
             "column": 1,
-            "message": "Imports AttachmentSubType, AutoFieldSubType, AutoReason, BBReferenceFieldSubType, FormulaType, JsonFieldSubType, and StringFieldSubType are only used as type."
+            "message": "Imports FormulaResponseType are only used as type."
           },
           {
             "file": "packages/worker/src/utilities/email.ts",
@@ -562,7 +562,7 @@
         ]
       },
       "no-type-imports": {
-        "count": 813,
+        "count": 815,
         "samples": [
           {
             "file": "packages/backend-core/src/auth/tests/auth.spec.ts",
@@ -578,7 +578,7 @@
           },
           {
             "file": "packages/builder/src/components/automation/SetupPanel/ChainOfThoughtModal.svelte",
-            "line": 12,
+            "line": 20,
             "column": 3,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -590,31 +590,31 @@
           },
           {
             "file": "packages/builder/src/pages/builder/workspace/[application]/apis/_components/APIModal.svelte",
-            "line": 12,
+            "line": 13,
             "column": 5,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/builder/src/settings/pages/connections/CreateConnection.svelte",
-            "line": 5,
+            "file": "packages/builder/src/settings/pages/connections/HTTPAuthEditor.svelte",
+            "line": 11,
+            "column": 5,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "packages/client/src/components/app/DataProvider.svelte",
+            "line": 6,
             "column": 3,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/client/src/components/app/Chatbox.svelte",
-            "line": 15,
-            "column": 5,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "packages/pro/tests/sdk/publicApi/roles.spec.ts",
-            "line": 4,
+            "file": "packages/server/src/ai/tools/budibase/automations.ts",
+            "line": 13,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/server/src/middleware/zod-validator.ts",
-            "line": 4,
+            "file": "packages/server/src/sdk/workspace/ai/agentLogs/detail.ts",
+            "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -629,7 +629,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 3990,
+        "count": 3992,
         "samples": [
           {
             "file": "globalSetup.ts",
@@ -650,9 +650,9 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "packages/builder/src/stores/portal/banners.test.ts",
-            "line": 24,
-            "column": 3,
+            "file": "packages/builder/src/stores/portal/appCreation.ts",
+            "line": 18,
+            "column": 1,
             "message": "Expected a function expression."
           },
           {
@@ -668,7 +668,7 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "packages/server/src/integrations/tests/utils/dynamodb.ts",
+            "file": "packages/server/src/integrations/tests/utils/elasticsearch.ts",
             "line": 10,
             "column": 8,
             "message": "Expected a function expression."
@@ -681,7 +681,7 @@
           },
           {
             "file": "packages/server/src/utilities/workerRequests.ts",
-            "line": 193,
+            "line": 203,
             "column": 8,
             "message": "Expected a function expression."
           },
@@ -694,7 +694,7 @@
         ]
       },
       "declaration": {
-        "count": 4506,
+        "count": 4519,
         "samples": [
           {
             "file": "eslint-local-rules/index.js",
@@ -704,50 +704,50 @@
           },
           {
             "file": "packages/bbui/src/Tabs/Tab.svelte",
-            "line": 25,
+            "line": 32,
             "column": 9,
             "message": "Expected a function declaration."
           },
           {
             "file": "packages/builder/src/components/common/WorkspaceSelect.svelte",
-            "line": 67,
+            "line": 94,
             "column": 9,
             "message": "Expected a function declaration."
           },
           {
             "file": "packages/builder/src/dataBinding.js",
-            "line": 1335,
-            "column": 7,
+            "line": 1448,
+            "column": 14,
             "message": "Expected a function declaration."
           },
           {
-            "file": "packages/builder/src/settings/pages/ai/knowledge-bases/files-panel/column-renderer/StatusRenderer.svelte",
-            "line": 10,
-            "column": 9,
+            "file": "packages/builder/src/settings/pages/ai/licenseStatus.ts",
+            "line": 24,
+            "column": 14,
             "message": "Expected a function declaration."
           },
           {
-            "file": "packages/client/src/components/app/deprecated/table/Table.svelte",
-            "line": 171,
+            "file": "packages/client/src/components/app/dynamic-filter/DynamicFilter.svelte",
+            "line": 98,
             "column": 9,
             "message": "Expected a function declaration."
           },
           {
             "file": "packages/frontend-core/src/components/Chatbox/index.svelte",
-            "line": 66,
+            "line": 110,
             "column": 9,
             "message": "Expected a function declaration."
           },
           {
-            "file": "packages/pro/src/sdk/quotas/helpers/ai.ts",
-            "line": 53,
+            "file": "packages/pro/src/sdk/quotas/helpers/groups.ts",
+            "line": 10,
             "column": 14,
             "message": "Expected a function declaration."
           },
           {
             "file": "packages/server/src/jsRunner/bundles/index-helpers.ivm.bundle.js",
             "line": 1,
-            "column": 5936,
+            "column": 7112,
             "message": "Expected a function declaration."
           },
           {
@@ -958,7 +958,7 @@
         ]
       },
       "4-space": {
-        "count": 3303,
+        "count": 3305,
         "samples": [
           {
             "file": "eslint-local-rules/index.js",
@@ -991,20 +991,20 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/frontend-core/src/fetch/DataFetch.ts",
+            "file": "packages/frontend-core/src/fetch/FieldFetch.ts",
             "line": 2,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/server/src/api/routes/public/index.ts",
-            "line": 31,
+            "file": "packages/server/src/api/routes/public/middleware/mapper.ts",
+            "line": 6,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/server/src/sdk/workspace/ai/vectorDb/utils.ts",
-            "line": 8,
+            "file": "packages/server/src/sdk/workspace/automations/crud.ts",
+            "line": 2,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -1023,7 +1023,7 @@
         ]
       },
       "tab": {
-        "count": 3304,
+        "count": 3306,
         "samples": [
           {
             "file": "eslint-local-rules/index.js",
@@ -1044,14 +1044,14 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/builder/src/pages/builder/workspace/[application]/design/[workspaceAppId]/[screenId]/[componentId]/_components/Component/componentStyles.ts",
-            "line": 6,
+            "file": "packages/builder/src/pages/builder/workspace/[application]/design/[workspaceAppId]/[screenId]/[componentId]/_components/Navigation/EditNavItemPopover.svelte",
+            "line": 2,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/client/src/api/patches.ts",
-            "line": 12,
+            "file": "packages/client/src/components/Block.svelte",
+            "line": 2,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -1068,8 +1068,8 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/server/src/sdk/workspace/ai/vectorDb/utils.ts",
-            "line": 8,
+            "file": "packages/server/src/sdk/workspace/automations/crud.ts",
+            "line": 2,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -1090,7 +1090,7 @@
     },
     "quotes": {
       "double": {
-        "count": 892,
+        "count": 890,
         "samples": [
           {
             "file": "eslint-local-rules/index.js",
@@ -1111,27 +1111,27 @@
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/server/specs/resources/misc.ts",
-            "line": 33,
-            "column": 9,
+            "file": "packages/pro/src/sdk/scim/users.ts",
+            "line": 54,
+            "column": 27,
             "message": "Strings must use doublequote."
           },
           {
             "file": "packages/server/src/api/routes/tests/row.spec.ts",
-            "line": 847,
-            "column": 34,
+            "line": 635,
+            "column": 30,
             "message": "Strings must use doublequote."
           },
           {
             "file": "packages/server/src/integrations/mongodb.ts",
-            "line": 253,
+            "line": 257,
             "column": 23,
             "message": "Strings must use doublequote."
           },
           {
             "file": "packages/server/src/tests/utilities/api/ai/agent.ts",
-            "line": 20,
-            "column": 49,
+            "line": 29,
+            "column": 50,
             "message": "Strings must use doublequote."
           },
           {
@@ -1155,7 +1155,7 @@
         ]
       },
       "single": {
-        "count": 74452,
+        "count": 74567,
         "samples": [
           {
             "file": "eslint-local-rules/index.js",
@@ -1165,50 +1165,50 @@
           },
           {
             "file": "packages/bbui/src/helpers.ts",
-            "line": 874,
-            "column": 13,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "packages/builder/src/components/design/settings/controls/IconSelect/icons.js",
-            "line": 1767,
-            "column": 7,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "packages/builder/src/pages/builder/workspace/[application]/design/[workspaceAppId]/[screenId]/_components/ComponentList/getScreenContextMenuItems.js",
-            "line": 24,
+            "line": 886,
             "column": 16,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "packages/client/src/components/app/deprecated/Heading.svelte",
-            "line": 3,
-            "column": 10,
+            "file": "packages/builder/src/components/design/settings/controls/IconSelect/icons.js",
+            "line": 1777,
+            "column": 16,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "packages/server/src/api/controllers/query/index.ts",
-            "line": 310,
-            "column": 14,
+            "file": "packages/builder/src/pages/builder/workspace/[application]/design/[workspaceAppId]/[screenId]/_components/ScreenErrorsButton.svelte",
+            "line": 2,
+            "column": 41,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "packages/client/src/components/app/deprecated/Heading.svelte",
+            "line": 52,
+            "column": 39,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "packages/server/src/api/controllers/role.ts",
+            "line": 22,
+            "column": 8,
             "message": "Strings must use singlequote."
           },
           {
             "file": "packages/server/src/api/routes/tests/table.spec.ts",
-            "line": 1027,
-            "column": 28,
+            "line": 1014,
+            "column": 19,
             "message": "Strings must use singlequote."
           },
           {
             "file": "packages/server/src/integrations/tests/rest.spec.ts",
-            "line": 660,
+            "line": 604,
             "column": 29,
             "message": "Strings must use singlequote."
           },
           {
             "file": "packages/server/src/workspaceMigrations/tests/migrations.spec.ts",
-            "line": 18,
-            "column": 11,
+            "line": 74,
+            "column": 27,
             "message": "Strings must use singlequote."
           },
           {
@@ -1222,7 +1222,7 @@
     },
     "semi": {
       "always": {
-        "count": 114400,
+        "count": 114597,
         "samples": [
           {
             "file": "eslint-local-rules/index.js",
@@ -1232,50 +1232,50 @@
           },
           {
             "file": "packages/bbui/src/Icon/InnerIcon.svelte",
-            "line": 5,
-            "column": 35,
+            "line": 39,
+            "column": 50,
             "message": "Missing semicolon."
           },
           {
             "file": "packages/builder/src/components/integration/APIEndpointViewer.svelte",
-            "line": 602,
-            "column": 75,
+            "line": 711,
+            "column": 4,
             "message": "Missing semicolon."
           },
           {
-            "file": "packages/builder/src/settings/pages/usage.svelte",
-            "line": 176,
-            "column": 17,
+            "file": "packages/builder/src/settings/pages/version.svelte",
+            "line": 51,
+            "column": 29,
             "message": "Missing semicolon."
           },
           {
-            "file": "packages/client/src/components/preview/SettingsButton.svelte",
-            "line": 17,
-            "column": 38,
+            "file": "packages/client/src/constants.ts",
+            "line": 16,
+            "column": 2,
             "message": "Missing semicolon."
           },
           {
             "file": "packages/server/src/api/controllers/ai/chatConversations.ts",
-            "line": 242,
-            "column": 17,
+            "line": 375,
+            "column": 9,
             "message": "Missing semicolon."
           },
           {
             "file": "packages/server/src/api/routes/tests/row.spec.ts",
-            "line": 2140,
-            "column": 53,
+            "line": 2120,
+            "column": 58,
             "message": "Missing semicolon."
           },
           {
             "file": "packages/server/src/integrations/tests/utils/googlesheets.ts",
-            "line": 1079,
-            "column": 56,
+            "line": 1035,
+            "column": 23,
             "message": "Missing semicolon."
           },
           {
             "file": "packages/server/src/utilities/rowProcessor/index.ts",
-            "line": 32,
-            "column": 48,
+            "line": 26,
+            "column": 38,
             "message": "Missing semicolon."
           },
           {

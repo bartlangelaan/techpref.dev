@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "6b09f8c74410e791a8cad86c2e7ba66bb55e50f2",
-  "analyzedCommitDate": "2026-02-26T19:29:26.000Z",
+  "analyzedCommit": "5ce582a3365e974cdab090b1af0c6ce41c0b3d8a",
+  "analyzedCommitDate": "2026-03-18T18:03:09.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -9,7 +9,7 @@
         "samples": []
       },
       "generic": {
-        "count": 74,
+        "count": 75,
         "samples": [
           {
             "file": "src/glob.ts",
@@ -20,38 +20,38 @@
           {
             "file": "src/ignore.ts",
             "line": 32,
-            "column": 13,
+            "column": 21,
             "message": "Array type using 'Minimatch[]' is forbidden. Use 'Array<Minimatch>' instead."
           },
           {
             "file": "src/index.ts",
-            "line": 127,
+            "line": 123,
             "column": 12,
-            "message": "Array type using 'Path[]' is forbidden. Use 'Array<Path>' instead."
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
             "file": "src/processor.ts",
-            "line": 43,
+            "line": 44,
             "column": 14,
             "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           },
           {
             "file": "src/processor.ts",
-            "line": 111,
+            "line": 112,
             "column": 26,
             "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           },
           {
             "file": "src/walker.ts",
-            "line": 316,
-            "column": 14,
-            "message": "Array type using 'Path[]' is forbidden. Use 'Array<Path>' instead."
+            "line": 279,
+            "column": 15,
+            "message": "Array type using 'Pattern[]' is forbidden. Use 'Array<Pattern>' instead."
           },
           {
             "file": "test/00-setup.ts",
-            "line": 166,
-            "column": 28,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+            "line": 124,
+            "column": 18,
+            "message": "Array type using 'Buffer[]' is forbidden. Use 'Array<Buffer>' instead."
           },
           {
             "file": "test/cwd-noent.ts",
@@ -80,19 +80,19 @@
         "samples": [
           {
             "file": "src/processor.ts",
-            "line": 13,
+            "line": 14,
             "column": 20,
             "message": "The generic type arguments should be specified as part of the constructor type arguments."
           },
           {
             "file": "src/processor.ts",
-            "line": 36,
+            "line": 37,
             "column": 8,
             "message": "The generic type arguments should be specified as part of the constructor type arguments."
           },
           {
             "file": "src/processor.ts",
-            "line": 57,
+            "line": 58,
             "column": 8,
             "message": "The generic type arguments should be specified as part of the constructor type arguments."
           }
@@ -103,7 +103,7 @@
         "samples": [
           {
             "file": "src/walker.ts",
-            "line": 417,
+            "line": 427,
             "column": 20,
             "message": "The generic type arguments should be specified as part of the type annotation."
           }
@@ -116,7 +116,7 @@
         "samples": [
           {
             "file": "test/00-setup.ts",
-            "line": 110,
+            "line": 109,
             "column": 23,
             "message": "A record is preferred over an index signature."
           },
@@ -149,13 +149,13 @@
           },
           {
             "file": "src/ignore.ts",
-            "line": 11,
+            "line": 12,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "src/walker.ts",
-            "line": 19,
+            "line": 20,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           }
@@ -164,85 +164,8 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 28,
+        "count": 4,
         "samples": [
-          {
-            "file": "src/glob.ts",
-            "line": 1,
-            "column": 1,
-            "message": "Imports MinimatchOptions are only used as type."
-          },
-          {
-            "file": "src/glob.ts",
-            "line": 12,
-            "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
-          {
-            "file": "src/ignore.ts",
-            "line": 7,
-            "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
-          {
-            "file": "src/index.ts",
-            "line": 3,
-            "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
-          {
-            "file": "src/processor.ts",
-            "line": 5,
-            "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
-          {
-            "file": "src/walker.ts",
-            "line": 9,
-            "column": 1,
-            "message": "Imports IgnoreLike are only used as type."
-          },
-          {
-            "file": "test/broken-symlink.ts",
-            "line": 4,
-            "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
-          {
-            "file": "test/include-child-matches.ts",
-            "line": 2,
-            "column": 1,
-            "message": "Imports GlobOptionsWithFileTypesUnset are only used as type."
-          },
-          {
-            "file": "test/pattern.ts",
-            "line": 3,
-            "column": 1,
-            "message": "Imports MMPattern are only used as type."
-          },
-          {
-            "file": "test/realpath.ts",
-            "line": 84,
-            "column": 19,
-            "message": "`import()` type annotations are forbidden."
-          }
-        ]
-      },
-      "no-type-imports": {
-        "count": 8,
-        "samples": [
-          {
-            "file": "src/index.ts",
-            "line": 4,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "test/ignore.ts",
-            "line": 7,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
           {
             "file": "test/memfs.ts",
             "line": 13,
@@ -256,12 +179,6 @@
             "message": "`import()` type annotations are forbidden."
           },
           {
-            "file": "test/nodir.ts",
-            "line": 4,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
             "file": "test/platform.ts",
             "line": 36,
             "column": 16,
@@ -269,8 +186,67 @@
           },
           {
             "file": "test/realpath.ts",
-            "line": 84,
-            "column": 19,
+            "line": 70,
+            "column": 14,
+            "message": "`import()` type annotations are forbidden."
+          }
+        ]
+      },
+      "no-type-imports": {
+        "count": 32,
+        "samples": [
+          {
+            "file": "src/glob.ts",
+            "line": 1,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "src/glob.ts",
+            "line": 12,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "src/ignore.ts",
+            "line": 10,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "src/index.ts",
+            "line": 4,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "src/processor.ts",
+            "line": 7,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "src/walker.ts",
+            "line": 17,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "test/custom-ignore.ts",
+            "line": 5,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "test/memfs.ts",
+            "line": 13,
+            "column": 39,
+            "message": "`import()` type annotations are forbidden."
+          },
+          {
+            "file": "test/platform.ts",
+            "line": 36,
+            "column": 16,
             "message": "`import()` type annotations are forbidden."
           },
           {
@@ -288,7 +264,7 @@
         "samples": [
           {
             "file": "test/00-setup.ts",
-            "line": 166,
+            "line": 167,
             "column": 3,
             "message": "Expected a function expression."
           }
@@ -311,13 +287,13 @@
           },
           {
             "file": "src/walker.ts",
-            "line": 285,
+            "line": 295,
             "column": 11,
             "message": "Expected a function declaration."
           },
           {
             "file": "test/00-setup.ts",
-            "line": 185,
+            "line": 186,
             "column": 9,
             "message": "Expected a function declaration."
           },
@@ -406,7 +382,7 @@
           },
           {
             "file": "src/ignore.ts",
-            "line": 12,
+            "line": 13,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -471,7 +447,7 @@
           },
           {
             "file": "src/ignore.ts",
-            "line": 12,
+            "line": 13,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -528,7 +504,7 @@
     },
     "quotes": {
       "double": {
-        "count": 1806,
+        "count": 1768,
         "samples": [
           {
             "file": "benchclean.cjs",
@@ -538,49 +514,49 @@
           },
           {
             "file": "test/00-setup.ts",
-            "line": 45,
-            "column": 26,
+            "line": 40,
+            "column": 24,
             "message": "Strings must use doublequote."
           },
           {
             "file": "test/bash-results.ts",
-            "line": 79,
+            "line": 85,
             "column": 5,
             "message": "Strings must use doublequote."
           },
           {
             "file": "test/custom-ignore.ts",
-            "line": 38,
-            "column": 28,
+            "line": 40,
+            "column": 31,
             "message": "Strings must use doublequote."
           },
           {
             "file": "test/ignore.ts",
-            "line": 44,
-            "column": 12,
+            "line": 46,
+            "column": 23,
             "message": "Strings must use doublequote."
           },
           {
             "file": "test/ignore.ts",
-            "line": 239,
+            "line": 248,
             "column": 7,
             "message": "Strings must use doublequote."
           },
           {
             "file": "test/mark.ts",
-            "line": 63,
+            "line": 68,
             "column": 5,
             "message": "Strings must use doublequote."
           },
           {
             "file": "test/oom.ts",
-            "line": 1,
-            "column": 15,
+            "line": 10,
+            "column": 3,
             "message": "Strings must use doublequote."
           },
           {
             "file": "test/signal.ts",
-            "line": 10,
+            "line": 27,
             "column": 8,
             "message": "Strings must use doublequote."
           },
@@ -652,7 +628,7 @@
           {
             "file": "test/has-magic.ts",
             "line": 18,
-            "column": 30,
+            "column": 32,
             "message": "Strings must use singlequote."
           }
         ]
@@ -660,7 +636,7 @@
     },
     "semi": {
       "always": {
-        "count": 1671,
+        "count": 1683,
         "samples": [
           {
             "file": "benchclean.cjs",
@@ -670,50 +646,50 @@
           },
           {
             "file": "src/ignore.ts",
-            "line": 94,
-            "column": 65,
+            "line": 92,
+            "column": 26,
             "message": "Missing semicolon."
           },
           {
             "file": "src/processor.ts",
-            "line": 117,
+            "line": 118,
             "column": 50,
             "message": "Missing semicolon."
           },
           {
             "file": "src/walker.ts",
-            "line": 380,
-            "column": 14,
+            "line": 378,
+            "column": 30,
             "message": "Missing semicolon."
           },
           {
             "file": "test/broken-symlink.ts",
-            "line": 48,
-            "column": 56,
+            "line": 51,
+            "column": 7,
             "message": "Missing semicolon."
           },
           {
             "file": "test/follow.ts",
-            "line": 24,
-            "column": 4,
+            "line": 13,
+            "column": 33,
             "message": "Missing semicolon."
           },
           {
             "file": "test/match-base.ts",
-            "line": 71,
-            "column": 3,
+            "line": 49,
+            "column": 66,
             "message": "Missing semicolon."
           },
           {
             "file": "test/platform.ts",
-            "line": 66,
-            "column": 3,
+            "line": 54,
+            "column": 4,
             "message": "Missing semicolon."
           },
           {
             "file": "test/stream.ts",
-            "line": 56,
-            "column": 29,
+            "line": 55,
+            "column": 34,
             "message": "Missing semicolon."
           },
           {

@@ -1,11 +1,11 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "47e8dc28c464225fcd01e9e8adab1f58223832e5",
-  "analyzedCommitDate": "2026-03-19T17:12:58.000Z",
+  "analyzedCommit": "d27de9e512ffc738384c696192a6a97199b16b6a",
+  "analyzedCommitDate": "2026-03-19T19:31:54.000Z",
   "checks": {
     "array-type": {
       "array": {
-        "count": 385,
+        "count": 386,
         "samples": [
           {
             "file": "packages/app/e2e/actions.ts",
@@ -26,14 +26,14 @@
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
-            "file": "packages/opencode/src/provider/sdk/copilot/responses/openai-responses-api-types.ts",
-            "line": 3,
-            "column": 36,
-            "message": "Array type using 'Array<OpenAIResponsesInputItem>' is forbidden. Use 'OpenAIResponsesInputItem[]' instead."
+            "file": "packages/opencode/src/provider/sdk/copilot/responses/convert-to-openai-responses-input.ts",
+            "line": 209,
+            "column": 39,
+            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
             "file": "packages/opencode/test/tool/external-directory.test.ts",
-            "line": 39,
+            "line": 20,
             "column": 21,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
@@ -51,7 +51,7 @@
           },
           {
             "file": "packages/sdk/js/src/v2/gen/types.gen.ts",
-            "line": 1244,
+            "line": 1243,
             "column": 15,
             "message": "Array type using 'Array<string>' is forbidden. Use 'string[]' instead."
           },
@@ -70,7 +70,7 @@
         ]
       },
       "generic": {
-        "count": 2526,
+        "count": 2527,
         "samples": [
           {
             "file": ".opencode/tool/github-pr-search.ts",
@@ -100,7 +100,7 @@
             "file": "packages/kilo-vscode/tests/unit/git-ops.test.ts",
             "line": 234,
             "column": 23,
-            "message": "Array type using 'string[][]' is forbidden. Use 'Array<string[]>' instead."
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
             "file": "packages/kilo-vscode/webview-ui/src/context/session.tsx",
@@ -202,7 +202,7 @@
         ]
       },
       "type-annotation": {
-        "count": 343,
+        "count": 344,
         "samples": [
           {
             "file": "nix/scripts/canonicalize-node-modules.ts",
@@ -229,9 +229,9 @@
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "packages/kilo-vscode/src/services/autocomplete/__tests__/MockWorkspaceEdit.ts",
-            "line": 5,
-            "column": 25,
+            "file": "packages/kilo-vscode/src/services/autocomplete/__tests__/MockWorkspace.ts",
+            "line": 8,
+            "column": 30,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
@@ -334,7 +334,7 @@
         ]
       },
       "index-signature": {
-        "count": 910,
+        "count": 912,
         "samples": [
           {
             "file": "nix/scripts/normalize-bun-binaries.ts",
@@ -357,25 +357,25 @@
           {
             "file": "packages/kilo-vscode/src/services/marketplace/installer.ts",
             "line": 253,
-            "column": 29,
+            "column": 14,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "packages/kilo-vscode/webview-ui/src/context/session.tsx",
-            "line": 53,
+            "line": 52,
             "column": 10,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "packages/opencode/src/cli/cmd/tui/component/dialog-provider.tsx",
-            "line": 18,
-            "column": 26,
+            "file": "packages/opencode/src/cli/cmd/stats.ts",
+            "line": 175,
+            "column": 30,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "packages/opencode/src/mcp/auth.ts",
-            "line": 57,
-            "column": 32,
+            "line": 56,
+            "column": 40,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -533,7 +533,7 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 386,
+        "count": 387,
         "samples": [
           {
             "file": "packages/app/src/app.tsx",
@@ -555,15 +555,15 @@
           },
           {
             "file": "packages/kilo-vscode/src/services/autocomplete/continuedev/core/autocomplete/context/static-context/StaticContextService.ts",
-            "line": 9,
+            "line": 11,
             "column": 1,
-            "message": "Imports AutocompleteStaticSnippet are only used as type."
+            "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "packages/kilo-vscode/src/services/autocomplete/continuedev/core/autocomplete/templating/validation.ts",
+            "file": "packages/kilo-vscode/src/services/autocomplete/continuedev/core/autocomplete/types.ts",
             "line": 1,
             "column": 1,
-            "message": "Imports AutocompleteClipboardSnippet, AutocompleteCodeSnippet, and AutocompleteSnippet are only used as type."
+            "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
             "file": "packages/kilo-vscode/src/services/autocomplete/types.ts",
@@ -572,10 +572,10 @@
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "packages/kilo-vscode/webview-ui/src/components/profile/DeviceAuthCard.tsx",
-            "line": 1,
+            "file": "packages/kilo-vscode/webview-ui/src/components/migration/MigrationWizard.tsx",
+            "line": 9,
             "column": 1,
-            "message": "Imports Component are only used as type."
+            "message": "Imports Component and JSX are only used as type."
           },
           {
             "file": "packages/opencode/src/cli/cmd/run.ts",
@@ -598,7 +598,7 @@
         ]
       },
       "no-type-imports": {
-        "count": 1122,
+        "count": 1123,
         "samples": [
           {
             "file": "packages/app/e2e/actions.ts",
@@ -631,7 +631,7 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/kilo-vscode/webview-ui/src/stories/shared.stories.tsx",
+            "file": "packages/kilo-vscode/webview-ui/src/stories/settings.stories.tsx",
             "line": 6,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
@@ -665,7 +665,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 3292,
+        "count": 3294,
         "samples": [
           {
             "file": ".opencode/tool/github-pr-search.ts",
@@ -681,37 +681,37 @@
           },
           {
             "file": "packages/kilo-gateway/src/loader.ts",
-            "line": 12,
-            "column": 8,
+            "line": 54,
+            "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "packages/kilo-vscode/src/services/autocomplete/continuedev/core/autocomplete/templating/AutocompleteTemplate.ts",
-            "line": 119,
+            "line": 81,
             "column": 5,
             "message": "Expected a function expression."
           },
           {
             "file": "packages/kilo-vscode/webview-ui/src/context/session.tsx",
-            "line": 1123,
+            "line": 1098,
             "column": 3,
             "message": "Expected a function expression."
           },
           {
             "file": "packages/opencode/src/cli/cmd/tui/ui/spinner.ts",
-            "line": 272,
+            "line": 239,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "packages/opencode/src/mcp/index.ts",
-            "line": 272,
+            "line": 250,
             "column": 3,
             "message": "Expected a function expression."
           },
           {
             "file": "packages/opencode/src/util/glob.ts",
-            "line": 27,
+            "line": 23,
             "column": 10,
             "message": "Expected a function expression."
           },
@@ -730,7 +730,7 @@
         ]
       },
       "declaration": {
-        "count": 2365,
+        "count": 2367,
         "samples": [
           {
             "file": "nix/scripts/canonicalize-node-modules.ts",
@@ -746,38 +746,38 @@
           },
           {
             "file": "packages/app/src/entry.tsx",
-            "line": 40,
+            "line": 53,
             "column": 7,
             "message": "Expected a function declaration."
           },
           {
             "file": "packages/app/src/pages/session/session-side-panel.tsx",
-            "line": 85,
-            "column": 11,
+            "line": 104,
+            "column": 9,
             "message": "Expected a function declaration."
           },
           {
             "file": "packages/kilo-ui/src/components/message-part.tsx",
-            "line": 402,
+            "line": 406,
             "column": 11,
             "message": "Expected a function declaration."
           },
           {
             "file": "packages/kilo-vscode/webview-ui/agent-manager/FullScreenDiffView.tsx",
-            "line": 72,
+            "line": 73,
             "column": 9,
             "message": "Expected a function declaration."
           },
           {
             "file": "packages/kilo-vscode/webview-ui/src/components/settings/AgentBehaviourTab.tsx",
-            "line": 526,
+            "line": 453,
             "column": 9,
             "message": "Expected a function declaration."
           },
           {
-            "file": "packages/opencode/src/util/log.ts",
-            "line": 55,
-            "column": 7,
+            "file": "packages/opencode/src/util/lazy.ts",
+            "line": 5,
+            "column": 9,
             "message": "Expected a function declaration."
           },
           {
@@ -862,7 +862,7 @@
         ]
       },
       "default": {
-        "count": 725,
+        "count": 726,
         "samples": [
           {
             "file": "packages/app/src/components/dialog-connect-provider.tsx",
@@ -871,8 +871,8 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "packages/app/src/utils/id.ts",
-            "line": 17,
+            "file": "packages/app/src/utils/prompt.ts",
+            "line": 56,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -883,8 +883,8 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "packages/kilo-vscode/src/services/autocomplete/continuedev/core/autocomplete/util/textSimilarity.ts",
-            "line": 7,
+            "file": "packages/kilo-vscode/src/services/autocomplete/continuedev/core/diff/streamDiff.ts",
+            "line": 14,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -901,8 +901,8 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "packages/opencode/src/command/index.ts",
-            "line": 12,
+            "file": "packages/opencode/src/cli/upgrade.ts",
+            "line": 6,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -913,8 +913,8 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "packages/opencode/src/util/hash.ts",
-            "line": 3,
+            "file": "packages/opencode/src/util/glob.ts",
+            "line": 4,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -994,7 +994,7 @@
         ]
       },
       "4-space": {
-        "count": 1785,
+        "count": 1786,
         "samples": [
           {
             "file": ".opencode/tool/github-pr-search.ts",
@@ -1009,8 +1009,8 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/kilo-docs/pages/_app.tsx",
-            "line": 32,
+            "file": "packages/kilo-docs/pages/api/llms.txt.ts",
+            "line": 11,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -1039,8 +1039,8 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/opencode/test/config/agent-color.test.ts",
-            "line": 10,
+            "file": "packages/opencode/test/cli/tui/transcript.test.ts",
+            "line": 3,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -1059,7 +1059,7 @@
         ]
       },
       "tab": {
-        "count": 1785,
+        "count": 1786,
         "samples": [
           {
             "file": ".opencode/tool/github-pr-search.ts",
@@ -1074,8 +1074,8 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/kilo-docs/pages/_app.tsx",
-            "line": 32,
+            "file": "packages/kilo-docs/pages/api/llms.txt.ts",
+            "line": 11,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -1104,8 +1104,8 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/opencode/test/config/agent-color.test.ts",
-            "line": 10,
+            "file": "packages/opencode/test/cli/tui/transcript.test.ts",
+            "line": 3,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -1191,7 +1191,7 @@
         ]
       },
       "single": {
-        "count": 152715,
+        "count": 152848,
         "samples": [
           {
             "file": ".opencode/tool/github-pr-search.ts",
@@ -1201,49 +1201,49 @@
           },
           {
             "file": "packages/app/src/i18n/es.ts",
-            "line": 597,
-            "column": 30,
+            "line": 606,
+            "column": 3,
             "message": "Strings must use singlequote."
           },
           {
             "file": "packages/app/src/pages/session/session-side-panel.tsx",
-            "line": 45,
-            "column": 67,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "packages/kilo-vscode/src/services/autocomplete/classic-auto-complete/__tests__/contextualSkip.spec.ts",
-            "line": 223,
+            "line": 137,
             "column": 60,
             "message": "Strings must use singlequote."
           },
           {
+            "file": "packages/kilo-vscode/src/services/autocomplete/classic-auto-complete/__tests__/contextualSkip.spec.ts",
+            "line": 232,
+            "column": 8,
+            "message": "Strings must use singlequote."
+          },
+          {
             "file": "packages/kilo-vscode/webview-ui/agent-manager/i18n/ja.ts",
-            "line": 24,
-            "column": 3,
+            "line": 35,
+            "column": 36,
             "message": "Strings must use singlequote."
           },
           {
             "file": "packages/kilo-vscode/webview-ui/src/i18n/en.ts",
-            "line": 895,
-            "column": 40,
+            "line": 899,
+            "column": 43,
             "message": "Strings must use singlequote."
           },
           {
             "file": "packages/kilo-vscode/webview-ui/src/i18n/zh.ts",
-            "line": 466,
-            "column": 3,
+            "line": 459,
+            "column": 40,
             "message": "Strings must use singlequote."
           },
           {
             "file": "packages/opencode/src/provider/transform.ts",
-            "line": 199,
-            "column": 100,
+            "line": 79,
+            "column": 79,
             "message": "Strings must use singlequote."
           },
           {
             "file": "packages/opencode/test/util/filesystem.test.ts",
-            "line": 261,
+            "line": 223,
             "column": 10,
             "message": "Strings must use singlequote."
           },
@@ -1258,7 +1258,7 @@
     },
     "semi": {
       "always": {
-        "count": 94792,
+        "count": 94845,
         "samples": [
           {
             "file": ".opencode/tool/github-pr-search.ts",
@@ -1268,50 +1268,50 @@
           },
           {
             "file": "packages/app/src/context/layout.tsx",
-            "line": 161,
-            "column": 49,
+            "line": 175,
+            "column": 67,
             "message": "Missing semicolon."
           },
           {
-            "file": "packages/kilo-gateway/src/loader.ts",
-            "line": 57,
-            "column": 16,
+            "file": "packages/kilo-gateway/src/plugin.ts",
+            "line": 36,
+            "column": 57,
             "message": "Missing semicolon."
           },
           {
             "file": "packages/kilo-vscode/src/services/autocomplete/continuedev/core/autocomplete/context/ImportDefinitionsService.test.ts",
-            "line": 455,
-            "column": 11,
+            "line": 427,
+            "column": 26,
             "message": "Missing semicolon."
           },
           {
             "file": "packages/kilo-vscode/tests/unit/worktree-manager.test.ts",
-            "line": 678,
-            "column": 44,
+            "line": 701,
+            "column": 3,
             "message": "Missing semicolon."
           },
           {
-            "file": "packages/opencode/src/cli/cmd/tui/component/prompt/autocomplete.tsx",
-            "line": 5,
-            "column": 115,
+            "file": "packages/opencode/src/cli/cmd/tui/component/logo.tsx",
+            "line": 22,
+            "column": 39,
             "message": "Missing semicolon."
           },
           {
             "file": "packages/opencode/src/provider/provider.ts",
-            "line": 1291,
-            "column": 90,
+            "line": 1224,
+            "column": 36,
             "message": "Missing semicolon."
           },
           {
             "file": "packages/opencode/test/kilocode/paths.test.ts",
-            "line": 94,
-            "column": 9,
+            "line": 55,
+            "column": 37,
             "message": "Missing semicolon."
           },
           {
             "file": "packages/sdk/js/src/v2/gen/sdk.gen.ts",
-            "line": 4681,
-            "column": 21,
+            "line": 4666,
+            "column": 23,
             "message": "Missing semicolon."
           },
           {

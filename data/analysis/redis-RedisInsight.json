@@ -1,11 +1,11 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "396e229bdfb43387b612e5cd69634bce5f688a9e",
-  "analyzedCommitDate": "2026-03-18T13:31:00.000Z",
+  "analyzedCommit": "5e79748fa420b3ebfc0f0f8490c76093b4c16cf4",
+  "analyzedCommitDate": "2026-03-19T14:27:08.000Z",
   "checks": {
     "array-type": {
       "array": {
-        "count": 111,
+        "count": 112,
         "samples": [
           {
             "file": "redisinsight/api/src/modules/azure/auth/models/azure-auth.ts",
@@ -21,9 +21,9 @@
           },
           {
             "file": "redisinsight/api/src/modules/bulk-actions/models/bulk-action-summary.ts",
-            "line": 27,
-            "column": 18,
-            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
+            "line": 35,
+            "column": 17,
+            "message": "Array type using 'Array<RedisString>' is forbidden. Use 'RedisString[]' instead."
           },
           {
             "file": "redisinsight/api/src/utils/cli-helper.ts",
@@ -52,7 +52,7 @@
           {
             "file": "redisinsight/ui/src/utils/monaco/redisearch/utils.ts",
             "line": 117,
-            "column": 18,
+            "column": 12,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
@@ -70,7 +70,7 @@
         ]
       },
       "generic": {
-        "count": 2429,
+        "count": 2430,
         "samples": [
           {
             "file": "redisinsight/api/src/common/logger/app-logger.ts",
@@ -98,9 +98,9 @@
           },
           {
             "file": "redisinsight/ui/src/components/query/hooks/useRedisCompletions.ts",
-            "line": 50,
-            "column": 33,
-            "message": "Array type using 'monacoEditor.languages.CompletionItem[]' is forbidden. Use 'Array<monacoEditor.languages.CompletionItem>' instead."
+            "line": 52,
+            "column": 29,
+            "message": "Array type using 'RedisResponseBuffer[]' is forbidden. Use 'Array<RedisResponseBuffer>' instead."
           },
           {
             "file": "redisinsight/ui/src/pages/autodiscover-sentinel/sentinel-databases-result/components/SentinelDatabasesResult/SentinelDatabasesResult.stories.tsx",
@@ -137,7 +137,7 @@
     },
     "consistent-generic-constructors": {
       "constructor": {
-        "count": 30,
+        "count": 31,
         "samples": [
           {
             "file": "redisinsight/api/src/modules/azure/auth/azure-auth.service.ts",
@@ -152,9 +152,9 @@
             "message": "The generic type arguments should be specified as part of the constructor type arguments."
           },
           {
-            "file": "redisinsight/api/src/modules/cloud/job/cloud-job.provider.ts",
-            "line": 13,
-            "column": 15,
+            "file": "redisinsight/api/src/modules/cluster-monitor/cluster-monitor.service.ts",
+            "line": 26,
+            "column": 25,
             "message": "The generic type arguments should be specified as part of the constructor type arguments."
           },
           {
@@ -170,15 +170,15 @@
             "message": "The generic type arguments should be specified as part of the constructor type arguments."
           },
           {
-            "file": "redisinsight/api/src/modules/profiler/providers/log-file.provider.ts",
-            "line": 9,
-            "column": 27,
+            "file": "redisinsight/api/src/modules/profiler/providers/profiler-client.provider.ts",
+            "line": 13,
+            "column": 26,
             "message": "The generic type arguments should be specified as part of the constructor type arguments."
           },
           {
-            "file": "redisinsight/api/src/modules/pub-sub/model/user-session.ts",
-            "line": 22,
-            "column": 24,
+            "file": "redisinsight/api/src/modules/pub-sub/providers/user-session.provider.ts",
+            "line": 11,
+            "column": 19,
             "message": "The generic type arguments should be specified as part of the constructor type arguments."
           },
           {
@@ -188,21 +188,21 @@
             "message": "The generic type arguments should be specified as part of the constructor type arguments."
           },
           {
-            "file": "redisinsight/api/src/modules/settings/settings.service.ts",
-            "line": 265,
-            "column": 18,
+            "file": "redisinsight/api/src/modules/slow-log/slow-log.analytics.ts",
+            "line": 9,
+            "column": 17,
             "message": "The generic type arguments should be specified as part of the constructor type arguments."
           },
           {
-            "file": "redisinsight/ui/src/pages/browser/BrowserPage.test.tsx",
-            "line": 65,
-            "column": 50,
-            "message": "A parameter cannot have a question mark and an initializer."
+            "file": "redisinsight/ui/src/pages/vector-search/components/query-editor/QueryEditorWrapper.spec.tsx",
+            "line": 6,
+            "column": 10,
+            "message": "Identifier `buildLoadQuery` has already been declared"
           }
         ]
       },
       "type-annotation": {
-        "count": 12,
+        "count": 14,
         "samples": [
           {
             "file": "redisinsight/api/src/utils/logsFormatter.ts",
@@ -217,21 +217,15 @@
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "redisinsight/ui/src/components/columns-config/ColumnsConfigPopover.spec.tsx",
-            "line": 12,
-            "column": 27,
+            "file": "redisinsight/ui/src/constants/databaseList.ts",
+            "line": 11,
+            "column": 45,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
             "file": "redisinsight/ui/src/constants/importDatabasesTableResult.ts",
             "line": 7,
             "column": 64,
-            "message": "The generic type arguments should be specified as part of the type annotation."
-          },
-          {
-            "file": "redisinsight/ui/src/constants/rdiList.ts",
-            "line": 9,
-            "column": 49,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
@@ -247,8 +241,14 @@
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
+            "file": "redisinsight/ui/src/pages/vector-search/hooks/useCreateIndexFlow/useCreateIndexFlow.spec.ts",
+            "line": 248,
+            "column": 38,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
             "file": "redisinsight/ui/src/pages/vector-search/hooks/useIndexInfo/useIndexInfo.spec.ts",
-            "line": 207,
+            "line": 149,
             "column": 44,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
@@ -269,7 +269,7 @@
     },
     "consistent-indexed-object-style": {
       "record": {
-        "count": 74,
+        "count": 75,
         "samples": [
           {
             "file": "redisinsight/api/src/modules/ai/query/utils/context.util.ts",
@@ -291,14 +291,14 @@
           },
           {
             "file": "redisinsight/ui/src/constants/commands.ts",
-            "line": 2,
+            "line": 154,
             "column": 3,
             "message": "A record is preferred over an index signature."
           },
           {
             "file": "redisinsight/ui/src/constants/workbenchResults.ts",
-            "line": 16,
-            "column": 41,
+            "line": 68,
+            "column": 32,
             "message": "A record is preferred over an index signature."
           },
           {
@@ -308,9 +308,9 @@
             "message": "A record is preferred over an index signature."
           },
           {
-            "file": "redisinsight/ui/src/slices/interfaces/aiAssistant.ts",
-            "line": 20,
-            "column": 5,
+            "file": "redisinsight/ui/src/slices/browser/redisearch.ts",
+            "line": 363,
+            "column": 26,
             "message": "A record is preferred over an index signature."
           },
           {
@@ -334,7 +334,7 @@
         ]
       },
       "index-signature": {
-        "count": 195,
+        "count": 196,
         "samples": [
           {
             "file": "redisinsight/api/src/common/decorators/transform-to-map.decorator.spec.ts",
@@ -362,8 +362,8 @@
           },
           {
             "file": "redisinsight/ui/src/components/global-url-handler/GlobalUrlHandler.tsx",
-            "line": 119,
-            "column": 42,
+            "line": 203,
+            "column": 47,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -373,9 +373,9 @@
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "redisinsight/ui/src/pages/vector-search/components/field-type-modal/components/FieldTypeForm/FieldTypeForm.tsx",
-            "line": 15,
-            "column": 31,
+            "file": "redisinsight/ui/src/pages/vector-search/components/field-type-modal/components/FieldTypeSelect/FieldTypeSelect.tsx",
+            "line": 21,
+            "column": 30,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -401,7 +401,7 @@
     },
     "consistent-type-definitions": {
       "interface": {
-        "count": 71,
+        "count": 72,
         "samples": [
           {
             "file": "redisinsight/api/src/modules/ai/query/utils/context.util.ts",
@@ -422,16 +422,16 @@
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "redisinsight/ui/src/components/navigation-menu/app-navigation/AppNavigation.tsx",
-            "line": 43,
-            "column": 8,
+            "file": "redisinsight/ui/src/components/navigation-menu/components/redis-logo/RedisLogo.tsx",
+            "line": 17,
+            "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "redisinsight/ui/src/pages/autodiscover-sentinel/sentinel-databases-result/components/SentinelDatabasesResult/components/SummaryTextProps.types.ts",
-            "line": 1,
-            "column": 8,
-            "message": "Use `interface` instead of `type`."
+            "file": "redisinsight/ui/src/pages/browser/BrowserPage.test.tsx",
+            "line": 65,
+            "column": 50,
+            "message": "A parameter cannot have a question mark and an initializer."
           },
           {
             "file": "redisinsight/ui/src/pages/home/components/database-manage-tags-modal/TagInputField.types.ts",
@@ -440,10 +440,10 @@
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "redisinsight/ui/src/pages/vector-search/hooks/useRedisInstanceCompatibility/useRedisInstanceCompatibility.types.ts",
-            "line": 1,
-            "column": 8,
-            "message": "Use `interface` instead of `type`."
+            "file": "redisinsight/ui/src/pages/vector-search/components/query-editor/QueryEditorWrapper.spec.tsx",
+            "line": 6,
+            "column": 10,
+            "message": "Identifier `buildLoadQuery` has already been declared"
           },
           {
             "file": "redisinsight/ui/src/utils/comparisons/diff.ts",
@@ -466,7 +466,7 @@
         ]
       },
       "type": {
-        "count": 1051,
+        "count": 1052,
         "samples": [
           {
             "file": ".storybook/RootStoryLayout.tsx",
@@ -481,9 +481,9 @@
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "redisinsight/ui/src/components/navigation-menu/app-navigation/AppNavigationTabTrigger.tsx",
-            "line": 6,
-            "column": 1,
+            "file": "redisinsight/ui/src/components/navigation-menu/components/notifications-center/Notification/Notification.tsx",
+            "line": 18,
+            "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
@@ -499,20 +499,20 @@
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "redisinsight/ui/src/pages/browser/modules/key-details/shared/editable-textarea/EditableTextArea.tsx",
-            "line": 14,
+            "file": "redisinsight/ui/src/pages/browser/modules/key-details/shared/formatted-value/FormattedValue.tsx",
+            "line": 5,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "redisinsight/ui/src/pages/redis-cluster/RedisClusterDatabases.tsx",
-            "line": 26,
-            "column": 1,
+            "file": "redisinsight/ui/src/pages/redis-cluster/RedisClusterDatabasesResult.tsx",
+            "line": 23,
+            "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "redisinsight/ui/src/pages/workbench/components/wb-results/WBResults/WBResults.tsx",
-            "line": 20,
+            "file": "redisinsight/ui/src/pages/workbench/components/query/QueryWrapper.types.ts",
+            "line": 9,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
@@ -533,7 +533,7 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 4533,
+        "count": 4534,
         "samples": [
           {
             "file": ".storybook/RootStoryLayout.tsx",
@@ -560,10 +560,10 @@
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "redisinsight/api/src/modules/settings/settings.service.ts",
-            "line": 28,
+            "file": "redisinsight/api/src/modules/slow-log/slow-log.analytics.ts",
+            "line": 2,
             "column": 1,
-            "message": "Imports GetAgreementsSpecResponse and UpdateSettingsDto are only used as type."
+            "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
             "file": "redisinsight/ui/src/components/oauth/shared/oauth-form/OAuthForm.tsx",
@@ -573,15 +573,15 @@
           },
           {
             "file": "redisinsight/ui/src/pages/browser/components/key-tree/KeyTree.types.ts",
-            "line": 2,
+            "line": 3,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
             "file": "redisinsight/ui/src/pages/rdi/instance/InstancePage.tsx",
-            "line": 10,
+            "line": 28,
             "column": 1,
-            "message": "Imports IRoute are only used as type."
+            "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
             "file": "redisinsight/ui/src/slices/browser/hash.ts",
@@ -598,7 +598,7 @@
         ]
       },
       "no-type-imports": {
-        "count": 274,
+        "count": 275,
         "samples": [
           {
             "file": ".storybook/main.ts",
@@ -625,8 +625,8 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "redisinsight/ui/src/pages/autodiscover-cloud/redis-cloud-subscriptions/components/CancelButton/CancelButton.tsx",
-            "line": 10,
+            "file": "redisinsight/ui/src/pages/autodiscover-cloud/redis-cloud-subscriptions/components/SubmitButton/SubmitButton.tsx",
+            "line": 6,
             "column": 10,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -638,19 +638,19 @@
           },
           {
             "file": "redisinsight/ui/src/pages/autodiscover-sentinel/sentinel-databases/components/column-definitions/columns/username.tsx",
-            "line": 3,
+            "line": 4,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "redisinsight/ui/src/pages/rdi/pipeline-management/pages/config/Config.tsx",
-            "line": 35,
+            "file": "redisinsight/ui/src/pages/rdi/statistics/StatisticsPage.tsx",
+            "line": 23,
             "column": 3,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "redisinsight/ui/src/pages/vector-search/components/command-view/CommandView.stories.tsx",
-            "line": 2,
+            "file": "redisinsight/ui/src/pages/vector-search/components/delete-confirmation-modal/DeleteConfirmationModal.stories.tsx",
+            "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -665,7 +665,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 408,
+        "count": 409,
         "samples": [
           {
             "file": ".github/deps-audit-report.js",
@@ -680,20 +680,20 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "redisinsight/ui/src/packages/redisearch/src/utils/formatLongName.ts",
-            "line": 3,
+            "file": "redisinsight/ui/src/packages/ri-explain/src/App.tsx",
+            "line": 4,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "redisinsight/ui/src/services/database/instancesService.ts",
-            "line": 107,
+            "line": 101,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "redisinsight/ui/src/slices/browser/hash.ts",
-            "line": 343,
+            "line": 305,
             "column": 8,
             "message": "Expected a function expression."
           },
@@ -711,7 +711,7 @@
           },
           {
             "file": "redisinsight/ui/src/slices/oauth/azure.ts",
-            "line": 179,
+            "line": 143,
             "column": 8,
             "message": "Expected a function expression."
           },
@@ -797,7 +797,7 @@
     },
     "import-export-preference": {
       "named": {
-        "count": 1130,
+        "count": 1131,
         "samples": [
           {
             "file": ".storybook/main.ts",
@@ -806,8 +806,8 @@
             "message": "Prefer named exports"
           },
           {
-            "file": "redisinsight/ui/src/components/command-helper/index.ts",
-            "line": 3,
+            "file": "redisinsight/ui/src/components/config/Config.tsx",
+            "line": 222,
             "column": 8,
             "message": "Prefer named exports"
           },
@@ -818,8 +818,8 @@
             "message": "Prefer named exports"
           },
           {
-            "file": "redisinsight/ui/src/components/side-panels/SidePanels.tsx",
-            "line": 178,
+            "file": "redisinsight/ui/src/components/side-panels/components/copilot-panel/CopilotPanel.tsx",
+            "line": 56,
             "column": 8,
             "message": "Prefer named exports"
           },
@@ -830,8 +830,8 @@
             "message": "Prefer named exports"
           },
           {
-            "file": "redisinsight/ui/src/pages/browser/components/bulk-actions/BulkUpload/BulkUpload.tsx",
-            "line": 238,
+            "file": "redisinsight/ui/src/pages/browser/components/bulk-actions/BulkUpload/index.ts",
+            "line": 3,
             "column": 8,
             "message": "Prefer named exports"
           },
@@ -842,8 +842,8 @@
             "message": "Prefer named exports"
           },
           {
-            "file": "redisinsight/ui/src/pages/rdi/home/search/SearchRdiList.tsx",
-            "line": 52,
+            "file": "redisinsight/ui/src/pages/rdi/instance/InstancePage.tsx",
+            "line": 105,
             "column": 8,
             "message": "Prefer named exports"
           },
@@ -862,7 +862,7 @@
         ]
       },
       "default": {
-        "count": 1411,
+        "count": 1412,
         "samples": [
           {
             "file": ".storybook/ThemeContextBridge.tsx",
@@ -877,8 +877,8 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "redisinsight/api/src/modules/cloud/auth/cloud-auth.module.ts",
-            "line": 31,
+            "file": "redisinsight/api/src/modules/cloud/auth/cloud-auth.service.ts",
+            "line": 36,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -895,14 +895,14 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "redisinsight/api/src/modules/session/providers/session.provider.ts",
-            "line": 6,
+            "file": "redisinsight/api/src/modules/session/providers/single-user.session.provider.ts",
+            "line": 8,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "redisinsight/ui/src/components/main-router/constants/sub-routes/analyticsRoutes.ts",
-            "line": 6,
+            "file": "redisinsight/ui/src/components/main-router/constants/sub-routes/rdiPipelineManagementRoutes.ts",
+            "line": 5,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -913,9 +913,9 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "redisinsight/ui/src/pages/vector-search/components/no-search-results/NoSearchResults.tsx",
-            "line": 9,
-            "column": 1,
+            "file": "redisinsight/ui/src/pages/vector-search/components/no-search-results/index.ts",
+            "line": 1,
+            "column": 10,
             "message": "Prefer default export on a file with single export."
           },
           {
@@ -929,7 +929,7 @@
     },
     "indent": {
       "2-space": {
-        "count": 3,
+        "count": 4,
         "samples": [
           {
             "file": "redisinsight/ui/src/pages/browser/BrowserPage.test.tsx",
@@ -942,6 +942,12 @@
             "line": 11,
             "column": 1,
             "message": "Expected 2-space indentation, but file uses 3-space indentation."
+          },
+          {
+            "file": "redisinsight/ui/src/pages/vector-search/components/query-editor/QueryEditorWrapper.spec.tsx",
+            "line": 6,
+            "column": 10,
+            "message": "Identifier `buildLoadQuery` has already been declared"
           },
           {
             "file": "redisinsight/ui/src/pages/vector-search/components/query-editor/QueryEditorWrapper.stories.tsx",
@@ -1084,7 +1090,7 @@
     },
     "quotes": {
       "double": {
-        "count": 79353,
+        "count": 79280,
         "samples": [
           {
             "file": ".eslintrc.js",
@@ -1093,50 +1099,50 @@
             "message": "Strings must use doublequote."
           },
           {
-            "file": "redisinsight/api/src/modules/cli/decorators/api-cli-params.decorator.ts",
-            "line": 9,
-            "column": 13,
+            "file": "redisinsight/api/src/modules/cli/controllers/cli.controller.ts",
+            "line": 76,
+            "column": 22,
             "message": "Strings must use doublequote."
           },
           {
             "file": "redisinsight/api/src/modules/profiler/models/log-file.spec.ts",
-            "line": 76,
-            "column": 18,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "redisinsight/ui/src/components/base/forms/fieldset/FormFieldset.spec.tsx",
-            "line": 76,
+            "line": 33,
             "column": 20,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "redisinsight/ui/src/components/query/context/query-results-context.spec.tsx",
-            "line": 1,
+            "file": "redisinsight/ui/src/components/base/forms/fieldset/FormFieldset.spec.tsx",
+            "line": 2,
             "column": 19,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "redisinsight/ui/src/packages/clients-list/src/utils/cachedIcons.ts",
-            "line": 3,
+            "file": "redisinsight/ui/src/components/query/components/RunButton.tsx",
+            "line": 2,
+            "column": 20,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "redisinsight/ui/src/packages/clients-list/src/icons/copy.js",
+            "line": 79,
+            "column": 41,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "redisinsight/ui/src/pages/database-analysis/components/recommendations-view/Recommendations.spec.tsx",
+            "line": 475,
+            "column": 31,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "redisinsight/ui/src/pages/vector-search/components/query-editor/QueryEditorWrapper.tsx",
+            "line": 8,
             "column": 42,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "redisinsight/ui/src/pages/database-analysis/components/styles.ts",
-            "line": 5,
-            "column": 23,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "redisinsight/ui/src/pages/vector-search/components/query-editor/QueryEditorWrapper.stories.tsx",
-            "line": 1,
-            "column": 44,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "redisinsight/ui/src/slices/tests/browser/set.spec.ts",
-            "line": 632,
+            "file": "redisinsight/ui/src/slices/tests/browser/stream.spec.ts",
+            "line": 7,
             "column": 8,
             "message": "Strings must use doublequote."
           },
@@ -1149,7 +1155,7 @@
         ]
       },
       "single": {
-        "count": 332,
+        "count": 333,
         "samples": [
           {
             "file": ".github/virustotal-report.js",
@@ -1170,15 +1176,15 @@
             "message": "Strings must use singlequote."
           },
           {
-            "file": "redisinsight/api/src/utils/catch-redis-errors.spec.ts",
-            "line": 215,
-            "column": 18,
+            "file": "redisinsight/api/src/utils/catch-redis-errors.ts",
+            "line": 78,
+            "column": 27,
             "message": "Strings must use singlequote."
           },
           {
             "file": "redisinsight/ui/src/components/yaml-validator/validatePipeline.test.ts",
-            "line": 91,
-            "column": 36,
+            "line": 111,
+            "column": 16,
             "message": "Strings must use singlequote."
           },
           {
@@ -1216,7 +1222,7 @@
     },
     "semi": {
       "always": {
-        "count": 80474,
+        "count": 80385,
         "samples": [
           {
             "file": ".storybook/RootStoryLayout.tsx",
@@ -1226,50 +1232,50 @@
           },
           {
             "file": "redisinsight/ui/src/components/instance-header/components/instances-navigation-popover/components/instances-list/InstancesList.tsx",
-            "line": 154,
-            "column": 33,
+            "line": 110,
+            "column": 41,
             "message": "Missing semicolon."
           },
           {
-            "file": "redisinsight/ui/src/components/side-panels/components/copilot-panel/CopilotPanel.spec.tsx",
-            "line": 1,
-            "column": 26,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "redisinsight/ui/src/pages/browser/components/add-key/AddKeyReJSON/AddKeyReJSON.spec.tsx",
-            "line": 37,
-            "column": 77,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "redisinsight/ui/src/pages/browser/modules/key-details/components/zset-details/zset-details-table/ZSetDetailsTable.tsx",
-            "line": 472,
+            "file": "redisinsight/ui/src/components/side-panels/SidePanels.tsx",
+            "line": 90,
             "column": 13,
             "message": "Missing semicolon."
           },
           {
-            "file": "redisinsight/ui/src/pages/rdi/pipeline-management/components/navigation/cards/jobs/JobNameForm.tsx",
-            "line": 51,
-            "column": 2,
+            "file": "redisinsight/ui/src/pages/browser/components/add-key/AddKeyList/AddKeyList.tsx",
+            "line": 45,
+            "column": 27,
             "message": "Missing semicolon."
           },
           {
-            "file": "redisinsight/ui/src/pages/vector-search/pages/VectorSearchCreateIndexPage/VectorSearchCreateIndexPage.spec.tsx",
-            "line": 61,
-            "column": 6,
+            "file": "redisinsight/ui/src/pages/browser/modules/key-details/components/zset-details/zset-details-table/ZSetDetailsTable.tsx",
+            "line": 205,
+            "column": 31,
             "message": "Missing semicolon."
           },
           {
-            "file": "redisinsight/ui/src/slices/interfaces/instances.ts",
-            "line": 244,
+            "file": "redisinsight/ui/src/pages/rdi/pipeline-management/components/navigation/cards/hooks/useConfigurationState.spec.ts",
+            "line": 20,
             "column": 3,
             "message": "Missing semicolon."
           },
           {
+            "file": "redisinsight/ui/src/pages/vector-search/pages/VectorSearchCreateIndexPage/VectorSearchCreateIndexPage.spec.tsx",
+            "line": 132,
+            "column": 5,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "redisinsight/ui/src/slices/interfaces/recommendations.ts",
+            "line": 2,
+            "column": 39,
+            "message": "Missing semicolon."
+          },
+          {
             "file": "redisinsight/ui/src/slices/tests/rdi/pipeline.spec.ts",
-            "line": 1001,
-            "column": 70,
+            "line": 1031,
+            "column": 58,
             "message": "Missing semicolon."
           },
           {
@@ -1281,7 +1287,7 @@
         ]
       },
       "never": {
-        "count": 35020,
+        "count": 35021,
         "samples": [
           {
             "file": ".eslintrc.js",
@@ -1315,26 +1321,26 @@
           },
           {
             "file": "redisinsight/api/src/modules/database-recommendation/scanner/strategies/avoid-logical-databases.strategy.ts",
-            "line": 1,
-            "column": 137,
+            "line": 2,
+            "column": 132,
             "message": "Extra semicolon."
           },
           {
             "file": "redisinsight/api/src/modules/feature/providers/feature-flag/strategies/feature.flag.strategy.spec.ts",
-            "line": 362,
-            "column": 7,
+            "line": 361,
+            "column": 65,
             "message": "Extra semicolon."
           },
           {
             "file": "redisinsight/api/src/modules/rdi/exceptions/rdi-pipeline.error.handler.spec.ts",
-            "line": 149,
-            "column": 5,
+            "line": 130,
+            "column": 6,
             "message": "Extra semicolon."
           },
           {
             "file": "redisinsight/api/src/modules/server/local.server.service.spec.ts",
-            "line": 113,
-            "column": 76,
+            "line": 125,
+            "column": 7,
             "message": "Extra semicolon."
           },
           {

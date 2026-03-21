@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "79cc7b482837f6ba28c6e3b153ca3f2ab8ba83c3",
-  "analyzedCommitDate": "2026-03-19T19:26:28.000Z",
+  "analyzedCommit": "a48aed7490911f39dd9e57022dd515092bc5a481",
+  "analyzedCommitDate": "2026-03-21T05:57:52.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -9,7 +9,7 @@
         "samples": [
           {
             "file": "packages/styled-components/src/constructors/createGlobalStyle.ts",
-            "line": 18,
+            "line": 17,
             "column": 22,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
@@ -34,7 +34,7 @@
         ]
       },
       "generic": {
-        "count": 52,
+        "count": 57,
         "samples": [
           {
             "file": "packages/styled-components/src/constructors/constructWithOptions.ts",
@@ -56,32 +56,32 @@
           },
           {
             "file": "packages/styled-components/src/models/StyledNativeComponent.ts",
-            "line": 29,
-            "column": 10,
+            "line": 138,
+            "column": 21,
             "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           },
           {
-            "file": "packages/styled-components/src/sheet/Sheet.ts",
-            "line": 121,
-            "column": 48,
+            "file": "packages/styled-components/src/sheet/Tag.ts",
+            "line": 100,
+            "column": 10,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
-            "file": "packages/styled-components/src/test/utils.ts",
-            "line": 38,
-            "column": 43,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+            "file": "packages/styled-components/src/test/ordering.test.tsx",
+            "line": 784,
+            "column": 40,
+            "message": "Array type using 'number[]' is forbidden. Use 'Array<number>' instead."
           },
           {
-            "file": "packages/styled-components/src/utils/empties.ts",
-            "line": 3,
-            "column": 58,
-            "message": "Array type using 'any[]' is forbidden. Use 'Array<any>' instead."
+            "file": "packages/styled-components/src/types.ts",
+            "line": 153,
+            "column": 6,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
             "file": "packages/styled-components/src/utils/interleave.ts",
-            "line": 6,
-            "column": 4,
+            "line": 5,
+            "column": 19,
             "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           },
           {
@@ -101,8 +101,14 @@
     },
     "consistent-generic-constructors": {
       "constructor": {
-        "count": 2,
+        "count": 3,
         "samples": [
+          {
+            "file": "packages/styled-components/src/models/GlobalStyle.ts",
+            "line": 15,
+            "column": 16,
+            "message": "The generic type arguments should be specified as part of the constructor type arguments."
+          },
           {
             "file": "packages/styled-components/src/sheet/GroupIDAllocator.ts",
             "line": 5,
@@ -118,18 +124,12 @@
         ]
       },
       "type-annotation": {
-        "count": 3,
+        "count": 2,
         "samples": [
           {
             "file": "packages/styled-components/src/constructors/createGlobalStyle.ts",
-            "line": 22,
+            "line": 21,
             "column": 38,
-            "message": "The generic type arguments should be specified as part of the type annotation."
-          },
-          {
-            "file": "packages/styled-components/src/constructors/createGlobalStyle.ts",
-            "line": 29,
-            "column": 34,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
@@ -233,7 +233,7 @@
     },
     "consistent-type-definitions": {
       "interface": {
-        "count": 18,
+        "count": 19,
         "samples": [
           {
             "file": "packages/benchmarks/src/cases/SierpinskiTriangle.tsx",
@@ -242,27 +242,27 @@
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "packages/styled-components/src/models/ThemeProvider.tsx",
-            "line": 37,
-            "column": 1,
+            "file": "packages/styled-components/src/models/StyleSheetManager.tsx",
+            "line": 11,
+            "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
             "file": "packages/styled-components/src/sheet/Sheet.ts",
-            "line": 20,
+            "line": 13,
             "column": 1,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "packages/styled-components/src/sheet/types.ts",
+            "line": 21,
+            "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
             "file": "packages/styled-components/src/test/attrs.test.tsx",
-            "line": 51,
+            "line": 325,
             "column": 5,
-            "message": "Use `interface` instead of `type`."
-          },
-          {
-            "file": "packages/styled-components/src/test/types.tsx",
-            "line": 376,
-            "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
@@ -497,7 +497,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 49,
+        "count": 78,
         "samples": [
           {
             "file": "packages/benchmarks/src/app/Benchmark/timing.js",
@@ -506,33 +506,39 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "packages/sandbox/app/test-augmentation.ts",
-            "line": 4,
-            "column": 1,
+            "file": "packages/styled-components/src/constructors/test/createGlobalStyle.ssr.test.tsx",
+            "line": 18,
+            "column": 3,
             "message": "Expected a function expression."
           },
           {
-            "file": "packages/styled-components/src/models/StyleSheetManager.tsx",
-            "line": 45,
-            "column": 8,
+            "file": "packages/styled-components/src/constructors/test/createGlobalStyle.test.tsx",
+            "line": 616,
+            "column": 5,
             "message": "Expected a function expression."
           },
           {
             "file": "packages/styled-components/src/models/StyledComponent.ts",
-            "line": 117,
-            "column": 1,
+            "line": 309,
+            "column": 3,
             "message": "Expected a function expression."
           },
           {
-            "file": "packages/styled-components/src/models/ThemeProvider.tsx",
-            "line": 53,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "packages/styled-components/src/test/ssr.test.tsx",
-            "line": 402,
+            "file": "packages/styled-components/src/test/constants.test.tsx",
+            "line": 77,
             "column": 5,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "packages/styled-components/src/test/ordering.test.tsx",
+            "line": 626,
+            "column": 9,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "packages/styled-components/src/test/rehydration.test.tsx",
+            "line": 411,
+            "column": 7,
             "message": "Expected a function expression."
           },
           {
@@ -542,14 +548,8 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "packages/styled-components/src/utils/nonce.ts",
-            "line": 15,
-            "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "packages/styled-components/src/utils/test/stylis.test.ts",
-            "line": 3,
+            "file": "packages/styled-components/src/utils/stylis.ts",
+            "line": 125,
             "column": 1,
             "message": "Expected a function expression."
           },
@@ -562,7 +562,7 @@
         ]
       },
       "declaration": {
-        "count": 145,
+        "count": 148,
         "samples": [
           {
             "file": "packages/benchmarks/src/app/App.js",
@@ -577,20 +577,20 @@
             "message": "Expected a function declaration."
           },
           {
-            "file": "packages/styled-components/src/constructors/constructWithOptions.ts",
-            "line": 113,
+            "file": "packages/styled-components/src/constructors/createGlobalStyle.ts",
+            "line": 27,
             "column": 9,
             "message": "Expected a function declaration."
           },
           {
-            "file": "packages/styled-components/src/models/test/StyleSheetManager.test.tsx",
-            "line": 126,
+            "file": "packages/styled-components/src/models/StyledNativeComponent.ts",
+            "line": 157,
             "column": 11,
             "message": "Expected a function declaration."
           },
           {
             "file": "packages/styled-components/src/sheet/GroupIDAllocator.ts",
-            "line": 15,
+            "line": 9,
             "column": 14,
             "message": "Expected a function declaration."
           },
@@ -602,13 +602,13 @@
           },
           {
             "file": "packages/styled-components/src/test/props.test.tsx",
-            "line": 210,
+            "line": 190,
             "column": 13,
             "message": "Expected a function declaration."
           },
           {
             "file": "packages/styled-components/src/test/types.tsx",
-            "line": 593,
+            "line": 515,
             "column": 7,
             "message": "Expected a function declaration."
           },
@@ -784,7 +784,7 @@
         ]
       },
       "4-space": {
-        "count": 201,
+        "count": 206,
         "samples": [
           {
             "file": "babel-preset.js",
@@ -793,44 +793,44 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/benchmarks/src/implementations/css-modules/View.js",
+            "file": "packages/benchmarks/src/implementations/css-modules/index.js",
             "line": 6,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/benchmarks/src/implementations/styled-components-v5/Dot.js",
-            "line": 5,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "packages/sandbox/app/client-example/testing-harness.tsx",
+            "file": "packages/benchmarks/src/implementations/styled-components-v5/index.js",
             "line": 7,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/styled-components/rollup.config.mjs",
-            "line": 19,
+            "file": "packages/sandbox/app/components/home-content.tsx",
+            "line": 7,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/styled-components/src/models/Keyframes.ts",
-            "line": 9,
+            "file": "packages/styled-components/src/base.ts",
+            "line": 11,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/styled-components/src/sheet/test/Sheet.test.ts",
-            "line": 9,
+            "file": "packages/styled-components/src/models/StyleSheetManager.tsx",
+            "line": 12,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/styled-components/src/utils/checkDynamicCreation.ts",
-            "line": 8,
+            "file": "packages/styled-components/src/sheet/test/Tag.test.ts",
+            "line": 6,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "packages/styled-components/src/utils/addUnitIfNeeded.ts",
+            "line": 6,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -849,7 +849,7 @@
         ]
       },
       "tab": {
-        "count": 202,
+        "count": 207,
         "samples": [
           {
             "file": "babel-preset.js",
@@ -858,32 +858,32 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/benchmarks/src/implementations/css-modules/View.js",
+            "file": "packages/benchmarks/src/implementations/css-modules/index.js",
             "line": 6,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/benchmarks/src/implementations/styled-components-v5/View.js",
-            "line": 4,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "packages/sandbox/app/client-example/testing-harness.tsx",
+            "file": "packages/benchmarks/src/implementations/styled-components-v5/index.js",
             "line": 7,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/styled-components/rollup.config.mjs",
-            "line": 19,
+            "file": "packages/sandbox/app/components/interactive-demo.tsx",
+            "line": 7,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/styled-components/src/models/ServerStyleSheet.tsx",
-            "line": 15,
+            "file": "packages/styled-components/src/constants.ts",
+            "line": 7,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "packages/styled-components/src/models/StyleSheetManager.tsx",
+            "line": 12,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -916,7 +916,7 @@
     },
     "quotes": {
       "double": {
-        "count": 4273,
+        "count": 4588,
         "samples": [
           {
             "file": "babel-preset.js",
@@ -925,51 +925,51 @@
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/benchmarks/src/implementations/styled-jsx/Dot.js",
+            "file": "packages/benchmarks/src/implementations/styletron-react/View.js",
             "line": 1,
-            "column": 19,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "packages/styled-components/src/constructors/test/createGlobalStyle.test.tsx",
-            "line": 87,
             "column": 24,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/styled-components/src/models/test/ThemeProvider.test.tsx",
-            "line": 179,
-            "column": 32,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "packages/styled-components/src/sheet/test/dom.test.ts",
-            "line": 5,
+            "file": "packages/styled-components/src/constructors/test/createGlobalStyle.test.tsx",
+            "line": 611,
             "column": 6,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/styled-components/src/test/rehydration.test.tsx",
-            "line": 103,
-            "column": 8,
+            "file": "packages/styled-components/src/native/index.ts",
+            "line": 4,
+            "column": 46,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/styled-components/src/test/utils.ts",
-            "line": 87,
-            "column": 23,
+            "file": "packages/styled-components/src/test/attrs.test.tsx",
+            "line": 122,
+            "column": 6,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "packages/styled-components/src/test/overriding.test.tsx",
+            "line": 91,
+            "column": 20,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "packages/styled-components/src/test/types.tsx",
+            "line": 378,
+            "column": 51,
             "message": "Strings must use doublequote."
           },
           {
             "file": "packages/styled-components/src/test/veryLargeUnionType.ts",
-            "line": 475,
+            "line": 416,
             "column": 5,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/styled-components/src/utils/test/flatten.test.tsx",
-            "line": 8,
-            "column": 53,
+            "file": "packages/styled-components/src/utils/test/determineTheme.test.ts",
+            "line": 13,
+            "column": 6,
             "message": "Strings must use doublequote."
           },
           {
@@ -981,7 +981,7 @@
         ]
       },
       "single": {
-        "count": 71,
+        "count": 82,
         "samples": [
           {
             "file": "packages/styled-components/rollup.config.mjs",
@@ -991,49 +991,49 @@
           },
           {
             "file": "packages/styled-components/src/constructors/test/createGlobalStyle.ssr.test.tsx",
-            "line": 33,
-            "column": 7,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "packages/styled-components/src/constructors/test/createGlobalStyle.test.tsx",
-            "line": 83,
+            "line": 42,
             "column": 6,
             "message": "Strings must use singlequote."
           },
           {
             "file": "packages/styled-components/src/constructors/test/createGlobalStyle.test.tsx",
-            "line": 323,
+            "line": 220,
             "column": 6,
             "message": "Strings must use singlequote."
           },
           {
             "file": "packages/styled-components/src/constructors/test/createGlobalStyle.test.tsx",
-            "line": 492,
+            "line": 415,
+            "column": 52,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "packages/styled-components/src/constructors/test/createGlobalStyle.test.tsx",
+            "line": 611,
             "column": 6,
             "message": "Strings must use singlequote."
           },
           {
             "file": "packages/styled-components/src/constructors/test/keyframes.test.tsx",
-            "line": 338,
+            "line": 57,
             "column": 52,
             "message": "Strings must use singlequote."
           },
           {
             "file": "packages/styled-components/src/models/test/StyleSheetManager.test.tsx",
-            "line": 482,
-            "column": 70,
+            "line": 59,
+            "column": 29,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "packages/styled-components/src/utils/checkDynamicCreation.ts",
-            "line": 19,
-            "column": 7,
+            "file": "packages/styled-components/src/test/expanded-api.test.tsx",
+            "line": 152,
+            "column": 55,
             "message": "Strings must use singlequote."
           },
           {
             "file": "packages/styled-components/src/utils/test/generateAlphabeticName.test.ts",
-            "line": 17,
+            "line": 16,
             "column": 64,
             "message": "Strings must use singlequote."
           },
@@ -1059,7 +1059,7 @@
         ]
       },
       "never": {
-        "count": 5708,
+        "count": 6344,
         "samples": [
           {
             "file": "babel-preset.js",
@@ -1068,51 +1068,51 @@
             "message": "Extra semicolon."
           },
           {
-            "file": "packages/sandbox/app/global-style-test/layout.tsx",
-            "line": 37,
-            "column": 4,
+            "file": "packages/styled-components/rollup.config.mjs",
+            "line": 88,
+            "column": 10,
             "message": "Extra semicolon."
           },
           {
-            "file": "packages/styled-components/src/constructors/test/styled.rsc.test.tsx",
-            "line": 387,
-            "column": 56,
+            "file": "packages/styled-components/src/constructors/test/styled.test.tsx",
+            "line": 10,
+            "column": 27,
             "message": "Extra semicolon."
           },
           {
             "file": "packages/styled-components/src/models/test/StyleSheetManager.test.tsx",
-            "line": 520,
-            "column": 6,
+            "line": 683,
+            "column": 5,
             "message": "Extra semicolon."
           },
           {
-            "file": "packages/styled-components/src/sheet/test/GroupIDAllocator.test.ts",
-            "line": 7,
-            "column": 48,
+            "file": "packages/styled-components/src/sheet/test/Rehydration.test.tsx",
+            "line": 9,
+            "column": 34,
             "message": "Extra semicolon."
           },
           {
-            "file": "packages/styled-components/src/test/basic.test.tsx",
-            "line": 205,
-            "column": 87,
+            "file": "packages/styled-components/src/test/constants.test.tsx",
+            "line": 60,
+            "column": 38,
             "message": "Extra semicolon."
           },
           {
-            "file": "packages/styled-components/src/test/ssr.test.tsx",
-            "line": 8,
-            "column": 94,
+            "file": "packages/styled-components/src/test/props.test.tsx",
+            "line": 259,
+            "column": 7,
             "message": "Extra semicolon."
           },
           {
-            "file": "packages/styled-components/src/test/types.tsx",
-            "line": 8,
-            "column": 42,
+            "file": "packages/styled-components/src/test/theme.test.tsx",
+            "line": 234,
+            "column": 17,
             "message": "Extra semicolon."
           },
           {
             "file": "packages/styled-components/src/utils/stylis.ts",
-            "line": 135,
-            "column": 35,
+            "line": 12,
+            "column": 17,
             "message": "Extra semicolon."
           },
           {

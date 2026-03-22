@@ -1,11 +1,11 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "8d8736520ba0447b1af5011c46cca449f29e0447",
-  "analyzedCommitDate": "2026-03-22T11:38:09.000Z",
+  "analyzedCommit": "bbc60f7f51a4f26ec2fed1bfdc73c5de0ff6ca35",
+  "analyzedCommitDate": "2026-03-22T13:01:28.000Z",
   "checks": {
     "array-type": {
       "array": {
-        "count": 600,
+        "count": 601,
         "samples": [
           {
             "file": "packages/agent/src/actions/stream-control.ts",
@@ -33,9 +33,9 @@
           },
           {
             "file": "packages/agent/test/plugin-lifecycle.e2e.test.ts",
-            "line": 521,
-            "column": 34,
-            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
+            "line": 523,
+            "column": 49,
+            "message": "Array type using 'Array<unknown>' is forbidden. Use 'unknown[]' instead."
           },
           {
             "file": "packages/training/src/adapter.ts",
@@ -45,14 +45,14 @@
           },
           {
             "file": "packages/typescript/build.ts",
-            "line": 31,
-            "column": 11,
+            "line": 162,
+            "column": 42,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
             "file": "packages/typescript/src/database/inMemoryAdapter.ts",
-            "line": 290,
-            "column": 9,
+            "line": 355,
+            "column": 13,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
@@ -70,7 +70,7 @@
         ]
       },
       "generic": {
-        "count": 4163,
+        "count": 4164,
         "samples": [
           {
             "file": "packages/agent/src/actions/emote.test.ts",
@@ -80,8 +80,8 @@
           },
           {
             "file": "packages/agent/src/config/schema.ts",
-            "line": 1154,
-            "column": 4,
+            "line": 1156,
+            "column": 18,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
@@ -92,9 +92,9 @@
           },
           {
             "file": "packages/training/src/benchmark/BenchmarkChartGenerator.ts",
-            "line": 513,
-            "column": 48,
-            "message": "Array type using 'ModelComparisonData[]' is forbidden. Use 'Array<ModelComparisonData>' instead."
+            "line": 672,
+            "column": 18,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
             "file": "packages/tui/test/viewport-overwrite-repro.ts",
@@ -104,9 +104,9 @@
           },
           {
             "file": "packages/typescript/src/advanced-memory/evaluators/long-term-extraction.ts",
-            "line": 51,
-            "column": 37,
-            "message": "Array type using 'EvaluationExample[]' is forbidden. Use 'Array<EvaluationExample>' instead."
+            "line": 123,
+            "column": 18,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
             "file": "packages/typescript/src/database/inMemoryAdapter.ts",
@@ -116,15 +116,15 @@
           },
           {
             "file": "packages/typescript/src/runtime.ts",
-            "line": 5828,
-            "column": 37,
-            "message": "Array type using 'Component[]' is forbidden. Use 'Array<Component>' instead."
+            "line": 5832,
+            "column": 39,
+            "message": "Array type using 'UUID[]' is forbidden. Use 'Array<UUID>' instead."
           },
           {
             "file": "packages/typescript/src/types/hook.ts",
-            "line": 332,
-            "column": 37,
-            "message": "Array type using 'HookRegistration[]' is forbidden. Use 'Array<HookRegistration>' instead."
+            "line": 227,
+            "column": 10,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
             "file": "scripts/debug-cli-delegation.ts",
@@ -254,7 +254,7 @@
           },
           {
             "file": "packages/typescript/src/services/message.ts",
-            "line": 2025,
+            "line": 2074,
             "column": 38,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
@@ -533,7 +533,7 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 86,
+        "count": 85,
         "samples": [
           {
             "file": "packages/agent/src/api/database.ts",
@@ -555,8 +555,8 @@
           },
           {
             "file": "packages/agent/test/api/agent-admin-routes.test.ts",
-            "line": 108,
-            "column": 36,
+            "line": 111,
+            "column": 37,
             "message": "`import()` type annotations are forbidden."
           },
           {
@@ -566,10 +566,10 @@
             "message": "`import()` type annotations are forbidden."
           },
           {
-            "file": "packages/computeruse/packages/kv/src/index.test.ts",
-            "line": 3,
+            "file": "packages/computeruse/packages/kv/src/index.ts",
+            "line": 1,
             "column": 1,
-            "message": "Imports KVClient are only used as type."
+            "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
             "file": "packages/typescript/src/__tests__/runtime.test.ts",
@@ -598,7 +598,7 @@
         ]
       },
       "no-type-imports": {
-        "count": 1275,
+        "count": 1274,
         "samples": [
           {
             "file": "packages/agent/src/actions/emote.ts",
@@ -607,9 +607,9 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/agent/src/auth/credentials.ts",
-            "line": 14,
-            "column": 3,
+            "file": "packages/agent/src/auth/anthropic.ts",
+            "line": 13,
+            "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
@@ -625,8 +625,8 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/typescript/build.ts",
-            "line": 9,
+            "file": "packages/typescript/e2e/setup/global-setup.ts",
+            "line": 12,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -638,7 +638,7 @@
           },
           {
             "file": "packages/typescript/src/memory.ts",
-            "line": 4,
+            "line": 5,
             "column": 2,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -650,7 +650,7 @@
           },
           {
             "file": "packages/typescript/src/types/events.ts",
-            "line": 4,
+            "line": 5,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -665,7 +665,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 3271,
+        "count": 3272,
         "samples": [
           {
             "file": "packages/agent/src/actions/stream-control.ts",
@@ -692,8 +692,8 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "packages/computeruse/crates/computeruse-mcp-agent/scripts/download-source.js",
-            "line": 172,
+            "file": "packages/computeruse/crates/computeruse-mcp-agent/tests/integration/chrome_bridge_health_check.js",
+            "line": 662,
             "column": 1,
             "message": "Expected a function expression."
           },
@@ -705,7 +705,7 @@
           },
           {
             "file": "packages/typescript/scripts/perf-memory.ts",
-            "line": 197,
+            "line": 278,
             "column": 1,
             "message": "Expected a function expression."
           },
@@ -764,7 +764,7 @@
           },
           {
             "file": "packages/typescript/src/__tests__/action-parameters.test.ts",
-            "line": 7,
+            "line": 13,
             "column": 7,
             "message": "Expected a function declaration."
           },
@@ -825,7 +825,7 @@
           },
           {
             "file": "packages/typescript/src/advanced-capabilities/actions/updateEntity.ts",
-            "line": 466,
+            "line": 464,
             "column": 8,
             "message": "Prefer named exports"
           },
@@ -929,7 +929,7 @@
     },
     "indent": {
       "2-space": {
-        "count": 431,
+        "count": 432,
         "samples": [
           {
             "file": "packages/agent/src/api/database.ts",
@@ -950,13 +950,13 @@
             "message": "Expected spaces for indentation, but found tabs."
           },
           {
-            "file": "packages/typescript/src/__tests__/settings-production-salt.test.ts",
+            "file": "packages/typescript/src/__tests__/settings.test.ts",
             "line": 5,
             "column": 1,
             "message": "Expected spaces for indentation, but found tabs."
           },
           {
-            "file": "packages/typescript/src/advanced-capabilities/providers/knowledge.ts",
+            "file": "packages/typescript/src/advanced-capabilities/providers/relationships.ts",
             "line": 3,
             "column": 1,
             "message": "Expected spaces for indentation, but found tabs."
@@ -968,8 +968,8 @@
             "message": "Expected spaces for indentation, but found tabs."
           },
           {
-            "file": "packages/typescript/src/runtime.ts",
-            "line": 4,
+            "file": "packages/typescript/src/runtime-composition.ts",
+            "line": 33,
             "column": 1,
             "message": "Expected spaces for indentation, but found tabs."
           },
@@ -1059,7 +1059,7 @@
         ]
       },
       "tab": {
-        "count": 592,
+        "count": 591,
         "samples": [
           {
             "file": "packages/agent/src/actions/emote.test.ts",
@@ -1086,7 +1086,7 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/agent/test/services/version-compat.test.ts",
+            "file": "packages/agent/test/security/network-policy.test.ts",
             "line": 3,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
@@ -1098,20 +1098,20 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/daemon/typescript/src/types.ts",
+            "file": "packages/daemon/typescript/src/systemd.ts",
+            "line": 12,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "packages/training/src/archetypes/index.ts",
             "line": 8,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/training/src/benchmark/ArchetypeMatchupBenchmark.ts",
-            "line": 13,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "packages/training/src/training/__tests__/TrajectoryRecorder.test.ts",
-            "line": 22,
+            "file": "packages/training/src/training/TrajectoryRecorder.ts",
+            "line": 15,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -1126,7 +1126,7 @@
     },
     "quotes": {
       "double": {
-        "count": 4232,
+        "count": 4245,
         "samples": [
           {
             "file": "packages/agent/src/actions/stream-control.ts",
@@ -1136,50 +1136,50 @@
           },
           {
             "file": "packages/computeruse/crates/computeruse-mcp-agent/tests/integration/test_amazon_country_button_highlight.js",
-            "line": 8,
-            "column": 31,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "packages/computeruse/crates/computeruse-mcp-agent/tests/integration/test_netronline_highlight_with_modal.js",
-            "line": 139,
+            "line": 16,
             "column": 26,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/computeruse/crates/computeruse-mcp-agent/tests/integration/test_search_scope_performance.js",
-            "line": 254,
-            "column": 22,
+            "file": "packages/computeruse/crates/computeruse-mcp-agent/tests/integration/test_netronline_highlight_with_modal.js",
+            "line": 172,
+            "column": 50,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/computeruse/examples/strip-ui-styles/strip-styles.js",
-            "line": 83,
-            "column": 45,
+            "file": "packages/computeruse/crates/computeruse-mcp-agent/tests/integration/test_search_scope_performance.js",
+            "line": 267,
+            "column": 19,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "packages/computeruse/examples/strip-ui-styles/strip-styles.ts",
+            "line": 42,
+            "column": 46,
             "message": "Strings must use doublequote."
           },
           {
             "file": "packages/computeruse/packages/kv/src/adapters/memory.ts",
-            "line": 50,
-            "column": 47,
+            "line": 128,
+            "column": 49,
             "message": "Strings must use doublequote."
           },
           {
             "file": "packages/computeruse/packages/workflow/src/events.ts",
-            "line": 69,
-            "column": 11,
+            "line": 154,
+            "column": 32,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/training/scripts/generate_should_respond_dataset.ts",
-            "line": 68,
-            "column": 47,
+            "file": "packages/training/scripts/json-mode-benchmark.ts",
+            "line": 16,
+            "column": 37,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/training/scripts/test-trained-model.ts",
-            "line": 189,
-            "column": 19,
+            "file": "packages/training/scripts/train-and-test.ts",
+            "line": 87,
+            "column": 29,
             "message": "Strings must use doublequote."
           },
           {
@@ -1191,7 +1191,7 @@
         ]
       },
       "single": {
-        "count": 62506,
+        "count": 61051,
         "samples": [
           {
             "file": "packages/agent/src/actions/emote.test.ts",
@@ -1200,51 +1200,51 @@
             "message": "Strings must use singlequote."
           },
           {
-            "file": "packages/agent/src/benchmark-server.ts",
-            "line": 144,
-            "column": 7,
+            "file": "packages/agent/src/api/whatsapp-routes.ts",
+            "line": 63,
+            "column": 18,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "packages/agent/src/runtime/trajectory-persistence.ts",
-            "line": 1914,
-            "column": 45,
+            "file": "packages/agent/src/runtime/release-plugin-policy.ts",
+            "line": 19,
+            "column": 3,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "packages/agent/test/database-api.e2e.test.ts",
-            "line": 476,
-            "column": 25,
+            "file": "packages/agent/test/cloud-providers.e2e.test.ts",
+            "line": 464,
+            "column": 37,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "packages/daemon/typescript/src/systemd.ts",
-            "line": 204,
-            "column": 38,
+            "file": "packages/computeruse/packages/workflow/src/__tests__/workflow.integration.test.ts",
+            "line": 272,
+            "column": 33,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "packages/tui/test/autocomplete.test.ts",
-            "line": 93,
-            "column": 61,
+            "file": "packages/tui/src/keys.ts",
+            "line": 354,
+            "column": 13,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "packages/typescript/src/__tests__/logger-browser-node.test.ts",
-            "line": 861,
+            "file": "packages/typescript/src/__tests__/dynamic-prompt-exec.test.ts",
+            "line": 930,
             "column": 6,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "packages/typescript/src/advanced-capabilities/actions/unmuteRoom.ts",
-            "line": 82,
-            "column": 25,
+            "file": "packages/typescript/src/__tests__/utils/streaming.test.ts",
+            "line": 195,
+            "column": 24,
             "message": "Strings must use singlequote."
           },
           {
             "file": "packages/typescript/src/runtime.ts",
-            "line": 3794,
-            "column": 27,
+            "line": 5391,
+            "column": 25,
             "message": "Strings must use singlequote."
           },
           {
@@ -1305,7 +1305,7 @@
         ]
       },
       "never": {
-        "count": 86409,
+        "count": 86447,
         "samples": [
           {
             "file": "packages/agent/src/actions/emote.test.ts",
@@ -1315,50 +1315,50 @@
           },
           {
             "file": "packages/agent/src/api/wallet-routes.ts",
-            "line": 307,
-            "column": 73,
+            "line": 316,
+            "column": 76,
             "message": "Extra semicolon."
           },
           {
             "file": "packages/agent/src/triggers/action.ts",
-            "line": 207,
-            "column": 9,
+            "line": 229,
+            "column": 58,
             "message": "Extra semicolon."
           },
           {
             "file": "packages/agent/test/subscription-auth.e2e.test.ts",
-            "line": 159,
-            "column": 5,
+            "line": 183,
+            "column": 8,
             "message": "Extra semicolon."
           },
           {
             "file": "packages/computeruse/packages/workflow/src/workflow.ts",
-            "line": 280,
-            "column": 47,
+            "line": 313,
+            "column": 37,
             "message": "Extra semicolon."
           },
           {
             "file": "packages/tui/src/components/box.ts",
-            "line": 2,
-            "column": 66,
+            "line": 57,
+            "column": 27,
             "message": "Extra semicolon."
           },
           {
-            "file": "packages/typescript/src/__tests__/advanced-planning.test.ts",
-            "line": 208,
-            "column": 24,
+            "file": "packages/typescript/src/__tests__/agent-uuid.test.ts",
+            "line": 32,
+            "column": 35,
             "message": "Extra semicolon."
           },
           {
             "file": "packages/typescript/src/__tests__/utils/crypto-compat.test.ts",
-            "line": 128,
-            "column": 14,
+            "line": 155,
+            "column": 60,
             "message": "Extra semicolon."
           },
           {
             "file": "packages/typescript/src/runtime.ts",
-            "line": 4991,
-            "column": 57,
+            "line": 5019,
+            "column": 36,
             "message": "Extra semicolon."
           },
           {

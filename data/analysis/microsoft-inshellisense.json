@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "57b464c248189b8b681af0a29b155100e2551882",
-  "analyzedCommitDate": "2026-03-16T17:42:39.000Z",
+  "analyzedCommit": "86bdd7b23d1c57978a01e58d45f289922914f1f0",
+  "analyzedCommitDate": "2026-03-22T02:48:23.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -9,11 +9,11 @@
         "samples": []
       },
       "generic": {
-        "count": 126,
+        "count": 128,
         "samples": [
           {
             "file": "src/isterm/commandManager.ts",
-            "line": 130,
+            "line": 126,
             "column": 31,
             "message": "Array type using 'IBufferLine[]' is forbidden. Use 'Array<IBufferLine>' instead."
           },
@@ -43,20 +43,20 @@
           },
           {
             "file": "src/runtime/suggestion.ts",
-            "line": 252,
+            "line": 261,
             "column": 4,
             "message": "Array type using 'Suggestion[]' is forbidden. Use 'Array<Suggestion>' instead."
           },
           {
             "file": "src/runtime/suggestion.ts",
-            "line": 307,
-            "column": 95,
+            "line": 312,
+            "column": 60,
             "message": "Array type using 'Suggestion[]' is forbidden. Use 'Array<Suggestion>' instead."
           },
           {
             "file": "src/runtime/template.ts",
-            "line": 15,
-            "column": 76,
+            "line": 34,
+            "column": 26,
             "message": "Array type using 'Fig.TemplateSuggestion[]' is forbidden. Use 'Array<Fig.TemplateSuggestion>' instead."
           },
           {
@@ -80,7 +80,7 @@
         "samples": [
           {
             "file": "src/utils/shell.ts",
-            "line": 211,
+            "line": 213,
             "column": 16,
             "message": "The generic type arguments should be specified as part of the constructor type arguments."
           }
@@ -110,7 +110,7 @@
         "samples": [
           {
             "file": "src/isterm/pty.ts",
-            "line": 29,
+            "line": 34,
             "column": 11,
             "message": "A record is preferred over an index signature."
           },
@@ -135,7 +135,7 @@
         ]
       },
       "index-signature": {
-        "count": 3,
+        "count": 4,
         "samples": [
           {
             "file": "scripts/pkg.ts",
@@ -151,8 +151,14 @@
           },
           {
             "file": "src/isterm/pty.ts",
-            "line": 424,
+            "line": 432,
             "column": 14,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "src/tests/ui/autocomplete.test.ts",
+            "line": 13,
+            "column": 9,
             "message": "An index signature is preferred over a record."
           }
         ]
@@ -160,7 +166,7 @@
     },
     "consistent-type-definitions": {
       "interface": {
-        "count": 13,
+        "count": 14,
         "samples": [
           {
             "file": "src/commands/root.ts",
@@ -176,19 +182,19 @@
           },
           {
             "file": "src/isterm/pty.ts",
-            "line": 28,
+            "line": 33,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
             "file": "src/isterm/pty.ts",
-            "line": 38,
+            "line": 43,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
             "file": "src/runtime/model.ts",
-            "line": 6,
+            "line": 17,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
@@ -199,15 +205,15 @@
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "src/runtime/replacement.ts",
-            "line": 7,
+            "file": "src/runtime/utils.ts",
+            "line": 13,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "src/runtime/utils.ts",
-            "line": 13,
-            "column": 8,
+            "file": "src/tests/ui/autocomplete.test.ts",
+            "line": 10,
+            "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
@@ -225,8 +231,15 @@
         ]
       },
       "type": {
-        "count": 0,
-        "samples": []
+        "count": 1,
+        "samples": [
+          {
+            "file": "src/isterm/pty.ts",
+            "line": 18,
+            "column": 1,
+            "message": "Use `type` instead of `interface`."
+          }
+        ]
       }
     },
     "consistent-type-imports": {
@@ -398,7 +411,7 @@
         ]
       },
       "declaration": {
-        "count": 183,
+        "count": 184,
         "samples": [
           {
             "file": "scripts/pkg-base.ts",
@@ -414,8 +427,8 @@
           },
           {
             "file": "src/runtime/alias.ts",
-            "line": 37,
-            "column": 7,
+            "line": 53,
+            "column": 14,
             "message": "Expected a function declaration."
           },
           {
@@ -432,13 +445,13 @@
           },
           {
             "file": "src/runtime/utils.ts",
-            "line": 87,
+            "line": 90,
             "column": 14,
             "message": "Expected a function declaration."
           },
           {
             "file": "src/ui/ui-root.ts",
-            "line": 29,
+            "line": 59,
             "column": 7,
             "message": "Expected a function declaration."
           },
@@ -465,7 +478,7 @@
     },
     "import-export-preference": {
       "named": {
-        "count": 9,
+        "count": 10,
         "samples": [
           {
             "file": "src/commands/complete.ts",
@@ -518,6 +531,12 @@
           {
             "file": "src/utils/log.ts",
             "line": 51,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "tui-test.config.ts",
+            "line": 6,
             "column": 8,
             "message": "Prefer named exports"
           }
@@ -583,7 +602,7 @@
         "samples": []
       },
       "4-space": {
-        "count": 43,
+        "count": 46,
         "samples": [
           {
             "file": ".eslintrc.cjs",
@@ -598,32 +617,32 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/commands/root.ts",
-            "line": 17,
+            "file": "src/commands/specs/list.ts",
+            "line": 13,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/isterm/pty.ts",
-            "line": 29,
+            "file": "src/runtime/alias.ts",
+            "line": 16,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/runtime/replacement.ts",
-            "line": 8,
+            "file": "src/runtime/runtime.ts",
+            "line": 5,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/runtime/utils.ts",
-            "line": 14,
+            "file": "src/tests/runtime/alias.test.ts",
+            "line": 11,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/tests/runtime/runtime.test.ts",
-            "line": 12,
+            "file": "src/tests/ui/status.test.ts",
+            "line": 10,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -634,13 +653,13 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/utils/ansi.ts",
-            "line": 13,
+            "file": "src/utils/config.ts",
+            "line": 17,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/utils/unicode.ts",
+            "file": "tui-test.config.ts",
             "line": 7,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
@@ -648,7 +667,7 @@
         ]
       },
       "tab": {
-        "count": 43,
+        "count": 46,
         "samples": [
           {
             "file": ".eslintrc.cjs",
@@ -663,32 +682,32 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/commands/root.ts",
-            "line": 17,
+            "file": "src/commands/specs/list.ts",
+            "line": 13,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/isterm/pty.ts",
-            "line": 29,
+            "file": "src/runtime/alias.ts",
+            "line": 16,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/runtime/replacement.ts",
-            "line": 8,
+            "file": "src/runtime/runtime.ts",
+            "line": 5,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/runtime/utils.ts",
-            "line": 14,
+            "file": "src/tests/runtime/alias.test.ts",
+            "line": 11,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/tests/runtime/runtime.test.ts",
-            "line": 12,
+            "file": "src/tests/ui/status.test.ts",
+            "line": 10,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -699,13 +718,13 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/utils/ansi.ts",
-            "line": 13,
+            "file": "src/utils/config.ts",
+            "line": 17,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/utils/unicode.ts",
+            "file": "tui-test.config.ts",
             "line": 7,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
@@ -773,14 +792,14 @@
           },
           {
             "file": "src/utils/shell.ts",
-            "line": 288,
+            "line": 290,
             "column": 14,
             "message": "Strings must use doublequote."
           }
         ]
       },
       "single": {
-        "count": 1207,
+        "count": 1345,
         "samples": [
           {
             "file": ".eslintrc.cjs",
@@ -790,56 +809,56 @@
           },
           {
             "file": "scripts/pkg.ts",
-            "line": 205,
-            "column": 38,
+            "line": 259,
+            "column": 49,
             "message": "Strings must use singlequote."
           },
           {
             "file": "src/isterm/pty.ts",
-            "line": 21,
-            "column": 23,
+            "line": 248,
+            "column": 44,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/runtime/model.ts",
-            "line": 4,
-            "column": 30,
+            "file": "src/runtime/runtime.ts",
+            "line": 141,
+            "column": 32,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/runtime/suggestion.ts",
-            "line": 278,
-            "column": 75,
+            "file": "src/runtime/utils.ts",
+            "line": 135,
+            "column": 89,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/tests/runtime/parser.test.ts",
-            "line": 24,
+            "file": "src/tests/runtime/replacement.test.ts",
+            "line": 44,
+            "column": 8,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "src/tests/ui/autocomplete.test.ts",
+            "line": 50,
+            "column": 84,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "src/ui/ui-doctor.ts",
+            "line": 20,
+            "column": 26,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "src/utils/config.ts",
+            "line": 81,
+            "column": 13,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "tui-test.config.ts",
+            "line": 7,
             "column": 14,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "src/tests/runtime/runtime.test.ts",
-            "line": 21,
-            "column": 45,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "src/ui/ui-init.ts",
-            "line": 4,
-            "column": 19,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "src/utils/constants.ts",
-            "line": 4,
-            "column": 18,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "src/utils/version.ts",
-            "line": 4,
-            "column": 17,
             "message": "Strings must use singlequote."
           }
         ]
@@ -851,7 +870,7 @@
         "samples": []
       },
       "never": {
-        "count": 1956,
+        "count": 2091,
         "samples": [
           {
             "file": ".eslintrc.cjs",
@@ -860,57 +879,57 @@
             "message": "Extra semicolon."
           },
           {
-            "file": "src/commands/init.ts",
-            "line": 17,
-            "column": 11,
+            "file": "src/commands/reinit.ts",
+            "line": 13,
+            "column": 19,
             "message": "Extra semicolon."
           },
           {
             "file": "src/isterm/pty.ts",
-            "line": 7,
-            "column": 29,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "src/runtime/alias.ts",
-            "line": 34,
+            "line": 77,
             "column": 7,
             "message": "Extra semicolon."
           },
           {
+            "file": "src/runtime/model.ts",
+            "line": 15,
+            "column": 2,
+            "message": "Extra semicolon."
+          },
+          {
             "file": "src/runtime/runtime.ts",
-            "line": 170,
-            "column": 69,
+            "line": 440,
+            "column": 2,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/runtime/utils.ts",
-            "line": 18,
-            "column": 43,
+            "file": "src/tests/isterm/pty.test.ts",
+            "line": 22,
+            "column": 52,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/tests/runtime/runtime.test.ts",
-            "line": 82,
-            "column": 73,
+            "file": "src/tests/ui/autocomplete.test.ts",
+            "line": 144,
+            "column": 7,
             "message": "Extra semicolon."
           },
           {
             "file": "src/ui/ui-root.ts",
-            "line": 54,
-            "column": 142,
+            "line": 10,
+            "column": 64,
             "message": "Extra semicolon."
           },
           {
             "file": "src/utils/node.ts",
-            "line": 87,
-            "column": 91,
+            "line": 63,
+            "column": 73,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/utils/version.ts",
-            "line": 6,
-            "column": 48,
+            "file": "tui-test.config.ts",
+            "line": 12,
+            "column": 3,
             "message": "Extra semicolon."
           }
         ]

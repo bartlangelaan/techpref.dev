@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "1f17c18362b12a9e8af21e571e844d05bda87ff5",
-  "analyzedCommitDate": "2026-02-12T04:09:50.000Z",
+  "analyzedCommit": "6ca6a964ac8dca292d2f46e9d64d5cb42609a37c",
+  "analyzedCommitDate": "2026-03-22T18:21:38.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -34,42 +34,42 @@
         ]
       },
       "generic": {
-        "count": 35,
+        "count": 31,
         "samples": [
           {
-            "file": "packages/libvesktop/index.d.ts",
-            "line": 2,
-            "column": 68,
+            "file": "scripts/utils/spawn.mts",
+            "line": 16,
+            "column": 55,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
-            "file": "src/main/cli.ts",
-            "line": 15,
-            "column": 15,
+            "file": "src/main/mainWindow.ts",
+            "line": 238,
+            "column": 72,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
-            "file": "src/main/utils/ipcWrappers.ts",
-            "line": 35,
-            "column": 98,
-            "message": "Array type using 'any[]' is forbidden. Use 'Array<any>' instead."
+            "file": "src/main/venmic.ts",
+            "line": 106,
+            "column": 62,
+            "message": "Array type using 'Node[]' is forbidden. Use 'Array<Node>' instead."
           },
           {
             "file": "src/preload/VesktopNative.ts",
-            "line": 15,
-            "column": 63,
+            "line": 63,
+            "column": 47,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
             "file": "src/preload/VesktopNative.ts",
-            "line": 93,
-            "column": 26,
+            "line": 94,
+            "column": 32,
             "message": "Array type using 'Node[]' is forbidden. Use 'Array<Node>' instead."
           },
           {
             "file": "src/renderer/components/ScreenSharePicker.tsx",
-            "line": 137,
-            "column": 48,
+            "line": 180,
+            "column": 61,
             "message": "Array type using 'Source[]' is forbidden. Use 'Array<Source>' instead."
           },
           {
@@ -217,7 +217,7 @@
         "samples": []
       },
       "type": {
-        "count": 20,
+        "count": 18,
         "samples": [
           {
             "file": "src/main/arrpc/types.ts",
@@ -250,6 +250,12 @@
             "message": "Use `type` instead of `interface`."
           },
           {
+            "file": "src/main/utils/http.ts",
+            "line": 12,
+            "column": 1,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
             "file": "src/renderer/components/ScreenSharePicker.tsx",
             "line": 56,
             "column": 1,
@@ -272,55 +278,49 @@
             "line": 35,
             "column": 1,
             "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "src/shared/settings.d.ts",
-            "line": 51,
-            "column": 8,
-            "message": "Use `type` instead of `interface`."
           }
         ]
       }
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 35,
+        "count": 33,
         "samples": [
           {
-            "file": "scripts/build/build.mts",
+            "file": "scripts/utils/spawn.mts",
             "line": 7,
             "column": 1,
-            "message": "Imports BuildContext and BuildOptions are only used as type."
+            "message": "Imports SpawnOptions are only used as type."
           },
           {
-            "file": "src/main/arrpc/index.ts",
-            "line": 13,
+            "file": "src/main/arrpc/worker.ts",
+            "line": 11,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "src/main/dbus.ts",
-            "line": 11,
-            "column": 24,
-            "message": "`import()` type annotations are forbidden."
-          },
-          {
-            "file": "src/main/mainWindow.ts",
-            "line": 7,
+            "file": "src/main/events.ts",
+            "line": 9,
             "column": 1,
-            "message": "Imports BrowserWindowConstructorOptions, MenuItemConstructorOptions, and Rectangle are only used as type."
+            "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "src/main/utils/clearData.ts",
+            "file": "src/main/tray.ts",
             "line": 7,
             "column": 1,
             "message": "Imports BrowserWindow are only used as type."
           },
           {
-            "file": "src/main/utils/popout.ts",
+            "file": "src/main/utils/ipcWrappers.ts",
             "line": 7,
             "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
+            "message": "Imports IpcMainEvent, IpcMainInvokeEvent, and WebFrameMain are only used as type."
+          },
+          {
+            "file": "src/main/utils/steamOS.ts",
+            "line": 7,
+            "column": 1,
+            "message": "Imports BrowserWindow are only used as type."
           },
           {
             "file": "src/renderer/components/ScreenSharePicker.tsx",
@@ -329,10 +329,10 @@
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "src/renderer/components/settings/DeveloperOptions.tsx",
-            "line": 21,
+            "file": "src/renderer/components/settings/DiscordBranchPicker.tsx",
+            "line": 10,
             "column": 1,
-            "message": "Imports SettingsComponent are only used as type."
+            "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
             "file": "src/renderer/components/settings/UserAssets.tsx",
@@ -349,7 +349,7 @@
         ]
       },
       "no-type-imports": {
-        "count": 19,
+        "count": 18,
         "samples": [
           {
             "file": "src/main/dbus.ts",
@@ -382,31 +382,31 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/preload/typedIpc.ts",
+            "file": "src/preload/VesktopNative.ts",
+            "line": 10,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "src/preload/updater.ts",
             "line": 8,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/renderer/arrpc.ts",
-            "line": 7,
+            "file": "src/renderer/components/ScreenSharePicker.tsx",
+            "line": 36,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/renderer/components/SimpleErrorBoundary.tsx",
-            "line": 9,
+            "file": "src/renderer/components/settings/VesktopSettingsSwitch.tsx",
+            "line": 8,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/renderer/index.ts",
-            "line": 21,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "src/shared/settings.d.ts",
+            "file": "src/shared/browserWinProperties.ts",
             "line": 7,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
@@ -416,53 +416,53 @@
     },
     "func-style": {
       "expression": {
-        "count": 131,
+        "count": 126,
         "samples": [
           {
-            "file": "scripts/build/build.mts",
-            "line": 37,
+            "file": "scripts/utils/generateMeta.mts",
+            "line": 12,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/main/autoStart.ts",
-            "line": 55,
-            "column": 1,
+            "file": "src/main/dbus.ts",
+            "line": 38,
+            "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "src/main/mainWindow.ts",
-            "line": 197,
+            "line": 266,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/main/settings.ts",
-            "line": 18,
-            "column": 1,
+            "file": "src/main/tray.ts",
+            "line": 38,
+            "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/main/utils/ipcWrappers.ts",
-            "line": 35,
+            "file": "src/main/utils/makeLinksOpenExternally.ts",
+            "line": 50,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "src/main/utils/steamOS.ts",
-            "line": 60,
+            "line": 70,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "src/renderer/appBadge.ts",
-            "line": 16,
-            "column": 8,
+            "line": 36,
+            "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "src/renderer/components/SimpleErrorBoundary.tsx",
-            "line": 11,
+            "line": 30,
             "column": 1,
             "message": "Expected a function expression."
           },
@@ -481,14 +481,8 @@
         ]
       },
       "declaration": {
-        "count": 25,
+        "count": 22,
         "samples": [
-          {
-            "file": "scripts/build/includeDirPlugin.mts",
-            "line": 4,
-            "column": 7,
-            "message": "Expected a function declaration."
-          },
           {
             "file": "src/main/mainWindow.ts",
             "line": 53,
@@ -509,20 +503,26 @@
           },
           {
             "file": "src/preload/VesktopNative.ts",
-            "line": 24,
+            "line": 23,
             "column": 5,
             "message": "Expected a function declaration."
           },
           {
             "file": "src/renderer/components/ScreenSharePicker.tsx",
-            "line": 634,
+            "line": 365,
             "column": 11,
             "message": "Expected a function declaration."
           },
           {
             "file": "src/renderer/components/settings/DeveloperOptions.tsx",
-            "line": 57,
-            "column": 7,
+            "line": 23,
+            "column": 14,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "src/renderer/components/settings/DiscordBranchPicker.tsx",
+            "line": 12,
+            "column": 14,
             "message": "Expected a function declaration."
           },
           {
@@ -532,9 +532,9 @@
             "message": "Expected a function declaration."
           },
           {
-            "file": "src/renderer/components/settings/WindowsTransparencyControls.tsx",
-            "line": 14,
-            "column": 14,
+            "file": "src/renderer/patches/spellCheck.tsx",
+            "line": 36,
+            "column": 15,
             "message": "Expected a function declaration."
           },
           {
@@ -548,29 +548,11 @@
     },
     "import-export-preference": {
       "named": {
-        "count": 5,
+        "count": 2,
         "samples": [
           {
             "file": "eslint.config.mjs",
             "line": 19,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "scripts/build/afterPack.mjs",
-            "line": 3,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "scripts/build/beforePack.mjs",
-            "line": 3,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "scripts/build/vencordDep.mts",
-            "line": 18,
             "column": 8,
             "message": "Prefer named exports"
           },
@@ -583,35 +565,35 @@
         ]
       },
       "default": {
-        "count": 38,
+        "count": 36,
         "samples": [
           {
-            "file": "scripts/build/includeDirPlugin.mts",
+            "file": "scripts/utils/spawn.mts",
+            "line": 16,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "src/main/autoStart.ts",
+            "line": 89,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "src/main/screenShare.ts",
+            "line": 17,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "src/main/utils/isPathInDirectory.ts",
             "line": 9,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/main/appBadge.ts",
-            "line": 32,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "src/main/firstLaunch.ts",
-            "line": 28,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "src/main/utils/desktopFileEscape.ts",
-            "line": 32,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "src/main/vencordFilesDir.ts",
-            "line": 13,
+            "file": "src/renderer/appBadge.ts",
+            "line": 16,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -695,7 +677,7 @@
         ]
       },
       "tab": {
-        "count": 97,
+        "count": 88,
         "samples": [
           {
             "file": "eslint.config.mjs",
@@ -704,44 +686,44 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/main/about.ts",
+            "file": "src/main/cli.ts",
             "line": 13,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/main/firstLaunch.ts",
-            "line": 21,
+            "file": "src/main/mediaPermissions.ts",
+            "line": 10,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/main/userAssets.ts",
-            "line": 24,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "src/main/utils/vencordLoader.ts",
-            "line": 18,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "src/renderer/appBadge.ts",
-            "line": 17,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "src/renderer/components/settings/VesktopSettingsSwitch.tsx",
+            "file": "src/main/utils/http.ts",
             "line": 13,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/renderer/patches/platformClass.tsx",
-            "line": 13,
+            "file": "src/main/vesktopStatic.ts",
+            "line": 16,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "src/renderer/components/SimpleErrorBoundary.tsx",
+            "line": 12,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "src/renderer/fixes.ts",
+            "line": 12,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "src/renderer/patches/screenShareFixes.ts",
+            "line": 15,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -772,7 +754,7 @@
           },
           {
             "file": "src/main/mainWindow.ts",
-            "line": 479,
+            "line": 482,
             "column": 62,
             "message": "Strings must use doublequote."
           },
@@ -827,7 +809,7 @@
         ]
       },
       "single": {
-        "count": 1547,
+        "count": 1449,
         "samples": [
           {
             "file": "eslint.config.mjs",
@@ -836,51 +818,51 @@
             "message": "Strings must use singlequote."
           },
           {
-            "file": "scripts/build/includeDirPlugin.mts",
-            "line": 5,
-            "column": 63,
+            "file": "scripts/utils/generateMeta.mts",
+            "line": 105,
+            "column": 71,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/main/cli.ts",
-            "line": 36,
-            "column": 5,
+            "file": "src/main/events.ts",
+            "line": 14,
+            "column": 31,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/main/ipc.ts",
-            "line": 30,
-            "column": 25,
+            "file": "src/main/mainWindow.ts",
+            "line": 75,
+            "column": 43,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/main/settings.ts",
-            "line": 42,
-            "column": 64,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "src/main/utils/popout.ts",
+            "file": "src/main/updater.ts",
             "line": 15,
-            "column": 5,
+            "column": 41,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/renderer/appBadge.ts",
-            "line": 48,
-            "column": 28,
+            "file": "src/main/utils/steamOS.ts",
+            "line": 8,
+            "column": 27,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/renderer/components/settings/NotificationBadgeToggle.tsx",
-            "line": 9,
-            "column": 35,
+            "file": "src/renderer/components/ScreenSharePicker.tsx",
+            "line": 32,
+            "column": 8,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/renderer/patches/platformClass.tsx",
-            "line": 24,
-            "column": 51,
+            "file": "src/renderer/components/settings/Settings.tsx",
+            "line": 17,
+            "column": 37,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "src/renderer/patches/screenShareFixes.ts",
+            "line": 7,
+            "column": 24,
             "message": "Strings must use singlequote."
           },
           {
@@ -898,7 +880,7 @@
         "samples": []
       },
       "never": {
-        "count": 1863,
+        "count": 1787,
         "samples": [
           {
             "file": "eslint.config.mjs",
@@ -907,51 +889,51 @@
             "message": "Extra semicolon."
           },
           {
-            "file": "src/main/arrpc/index.ts",
-            "line": 36,
-            "column": 26,
+            "file": "src/main/autoStart.ts",
+            "line": 61,
+            "column": 57,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/main/index.ts",
-            "line": 66,
-            "column": 72,
+            "file": "src/main/ipc.ts",
+            "line": 40,
+            "column": 2,
             "message": "Extra semicolon."
           },
           {
             "file": "src/main/mainWindow.ts",
-            "line": 201,
-            "column": 7,
+            "line": 320,
+            "column": 66,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/main/tray.ts",
-            "line": 48,
-            "column": 27,
+            "file": "src/main/updater.ts",
+            "line": 55,
+            "column": 43,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/main/utils/popout.ts",
-            "line": 89,
-            "column": 41,
+            "file": "src/main/utils/steamOS.ts",
+            "line": 36,
+            "column": 50,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/renderer/appBadge.ts",
-            "line": 39,
-            "column": 42,
+            "file": "src/renderer/arrpc.ts",
+            "line": 43,
+            "column": 30,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/renderer/components/settings/DeveloperOptions.tsx",
-            "line": 111,
-            "column": 38,
+            "file": "src/renderer/components/settings/OutdatedVesktopWarning.tsx",
+            "line": 10,
+            "column": 32,
             "message": "Extra semicolon."
           },
           {
             "file": "src/renderer/patches/spellCheck.tsx",
-            "line": 32,
-            "column": 23,
+            "line": 115,
+            "column": 3,
             "message": "Extra semicolon."
           },
           {

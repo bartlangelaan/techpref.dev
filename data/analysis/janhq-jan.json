@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "ba1824e8c1d70c9092b6c0a48199bba3b8973fee",
-  "analyzedCommitDate": "2026-03-19T08:15:19.000Z",
+  "analyzedCommit": "b14392d8bbc1470d6035ed1a7e96bc89832b31e4",
+  "analyzedCommitDate": "2026-03-22T05:31:54.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -70,7 +70,7 @@
         ]
       },
       "generic": {
-        "count": 734,
+        "count": 733,
         "samples": [
           {
             "file": "core/src/browser/core.ts",
@@ -94,7 +94,7 @@
             "file": "extensions/rag-extension/src/index.ts",
             "line": 533,
             "column": 16,
-            "message": "Array type using 'number[]' is forbidden. Use 'Array<number>' instead."
+            "message": "Array type using 'number[][]' is forbidden. Use 'Array<number[]>' instead."
           },
           {
             "file": "src-tauri/plugins/tauri-plugin-vector-db/guest-js/index.ts",
@@ -104,9 +104,9 @@
           },
           {
             "file": "web-app/src/containers/dialogs/SearchDialog.tsx",
-            "line": 90,
-            "column": 43,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+            "line": 121,
+            "column": 27,
+            "message": "Array type using 'Thread[]' is forbidden. Use 'Array<Thread>' instead."
           },
           {
             "file": "web-app/src/hooks/useThreadManagement.ts",
@@ -148,7 +148,7 @@
         ]
       },
       "type-annotation": {
-        "count": 21,
+        "count": 22,
         "samples": [
           {
             "file": "core/src/browser/extensions/engines/EngineManager.ts",
@@ -163,9 +163,9 @@
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "extensions/llamacpp-extension/src/index.ts",
-            "line": 2036,
-            "column": 43,
+            "file": "extensions/mlx-extension/src/index.ts",
+            "line": 64,
+            "column": 34,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
@@ -181,15 +181,15 @@
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "web-app/src/containers/RenderMarkdown.tsx",
-            "line": 28,
-            "column": 27,
+            "file": "web-app/src/containers/SetupScreen.tsx",
+            "line": 27,
+            "column": 34,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "web-app/src/containers/SetupScreen.tsx",
-            "line": 142,
-            "column": 40,
+            "file": "web-app/src/hooks/useAttachments.ts",
+            "line": 64,
+            "column": 26,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
@@ -280,7 +280,7 @@
         ]
       },
       "index-signature": {
-        "count": 142,
+        "count": 143,
         "samples": [
           {
             "file": "core/src/browser/extension.test.ts",
@@ -296,8 +296,8 @@
           },
           {
             "file": "web-app/src/components/ui/dropdrawer.tsx",
-            "line": 478,
-            "column": 17,
+            "line": 857,
+            "column": 22,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -314,20 +314,20 @@
           },
           {
             "file": "web-app/src/lib/custom-chat-transport.ts",
-            "line": 145,
-            "column": 24,
+            "line": 208,
+            "column": 41,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "web-app/src/lib/model-factory.ts",
-            "line": 490,
+            "line": 571,
             "column": 17,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "web-app/src/routes/hub/index.tsx",
-            "line": 113,
-            "column": 5,
+            "line": 104,
+            "column": 56,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -412,7 +412,7 @@
         ]
       },
       "type": {
-        "count": 236,
+        "count": 235,
         "samples": [
           {
             "file": "core/src/browser/extension.ts",
@@ -433,15 +433,15 @@
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "src-tauri/plugins/tauri-plugin-llamacpp/guest-js/types.ts",
-            "line": 174,
+            "file": "src-tauri/plugins/tauri-plugin-mlx/guest-js/types.ts",
+            "line": 1,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "web-app/src/components/animated-icon/settings.tsx",
-            "line": 9,
-            "column": 8,
+            "line": 14,
+            "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
@@ -479,7 +479,7 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 144,
+        "count": 143,
         "samples": [
           {
             "file": "core/src/browser/extension.test.ts",
@@ -500,10 +500,10 @@
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "extensions/conversational-extension/src/index.ts",
+            "file": "extensions/assistant-extension/src/index.ts",
             "line": 1,
             "column": 1,
-            "message": "Imports Thread, ThreadAssistantInfo, and ThreadMessage are only used as type."
+            "message": "Imports Assistant are only used as type."
           },
           {
             "file": "web-app/src/components/left-sidebar/NavMain.tsx",
@@ -513,13 +513,13 @@
           },
           {
             "file": "web-app/src/containers/ProjectFiles.tsx",
-            "line": 15,
-            "column": 1,
-            "message": "Imports FileStat and VectorDBExtension are only used as type."
+            "line": 162,
+            "column": 14,
+            "message": "`import()` type annotations are forbidden."
           },
           {
-            "file": "web-app/src/hooks/useChatAttachments.ts",
-            "line": 3,
+            "file": "web-app/src/hooks/useMessages.ts",
+            "line": 2,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
@@ -544,7 +544,7 @@
         ]
       },
       "no-type-imports": {
-        "count": 182,
+        "count": 183,
         "samples": [
           {
             "file": "core/src/browser/extensions/engines/LocalOAIEngine.test.ts",
@@ -555,11 +555,11 @@
           {
             "file": "extensions/vector-db-extension/src/index.ts",
             "line": 1,
-            "column": 115,
+            "column": 90,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "web-app/src/components/animated-icon/folder-plus.tsx",
+            "file": "web-app/src/components/animated-icon/folder-open.tsx",
             "line": 3,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
@@ -578,13 +578,13 @@
           },
           {
             "file": "web-app/src/lib/utils.ts",
-            "line": 8,
+            "line": 4,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "web-app/src/services/core/types.ts",
-            "line": 6,
+            "file": "web-app/src/services/core/tauri.ts",
+            "line": 7,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -627,37 +627,37 @@
           },
           {
             "file": "src-tauri/plugins/tauri-plugin-llamacpp/guest-js/index.ts",
-            "line": 195,
+            "line": 205,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "web-app/src/components/ai-elements/code-block.tsx",
-            "line": 51,
+            "file": "web-app/src/components/left-sidebar/NavChats.tsx",
+            "line": 19,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "web-app/src/components/ui/dropdown-menu.tsx",
-            "line": 109,
+            "line": 120,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "web-app/src/components/ui/sheet.tsx",
-            "line": 31,
+            "line": 47,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "web-app/src/containers/SetupScreen.tsx",
-            "line": 43,
+            "line": 55,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "web-app/src/hooks/useMediaQuery.ts",
-            "line": 25,
+            "line": 41,
             "column": 1,
             "message": "Expected a function expression."
           },
@@ -676,7 +676,7 @@
         ]
       },
       "declaration": {
-        "count": 542,
+        "count": 543,
         "samples": [
           {
             "file": "core/src/browser/core.ts",
@@ -691,9 +691,9 @@
             "message": "Expected a function declaration."
           },
           {
-            "file": "web-app/src/components/WindowControls.tsx",
-            "line": 5,
-            "column": 14,
+            "file": "web-app/src/components/TokenCounter.tsx",
+            "line": 103,
+            "column": 9,
             "message": "Expected a function declaration."
           },
           {
@@ -709,14 +709,14 @@
             "message": "Expected a function declaration."
           },
           {
-            "file": "web-app/src/containers/dialogs/DeleteProvider.tsx",
-            "line": 26,
-            "column": 7,
+            "file": "web-app/src/containers/dialogs/DeleteProjectDialog.tsx",
+            "line": 59,
+            "column": 9,
             "message": "Expected a function declaration."
           },
           {
-            "file": "web-app/src/containers/dialogs/ToolApproval.tsx",
-            "line": 24,
+            "file": "web-app/src/containers/dialogs/SecurityConfigDialog.tsx",
+            "line": 767,
             "column": 9,
             "message": "Expected a function declaration."
           },
@@ -1066,7 +1066,7 @@
     },
     "quotes": {
       "double": {
-        "count": 16560,
+        "count": 16559,
         "samples": [
           {
             "file": "core/rolldown.config.mjs",
@@ -1082,32 +1082,32 @@
           },
           {
             "file": "scripts/find-missing-translations.js",
-            "line": 51,
-            "column": 42,
+            "line": 249,
+            "column": 9,
             "message": "Strings must use doublequote."
           },
           {
             "file": "web-app/src/constants/models.ts",
-            "line": 99,
-            "column": 22,
+            "line": 115,
+            "column": 25,
             "message": "Strings must use doublequote."
           },
           {
             "file": "web-app/src/containers/__tests__/EditModel.test.tsx",
-            "line": 2,
-            "column": 24,
+            "line": 114,
+            "column": 6,
             "message": "Strings must use doublequote."
           },
           {
             "file": "web-app/src/hooks/__tests__/useGeneralSetting.test.ts",
-            "line": 176,
+            "line": 235,
             "column": 44,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "web-app/src/hooks/__tests__/useToolAvailable.test.ts",
-            "line": 415,
-            "column": 56,
+            "file": "web-app/src/hooks/__tests__/useTools.test.ts",
+            "line": 47,
+            "column": 15,
             "message": "Strings must use doublequote."
           },
           {
@@ -1198,7 +1198,7 @@
     },
     "semi": {
       "always": {
-        "count": 22837,
+        "count": 22856,
         "samples": [
           {
             "file": "core/rolldown.config.mjs",
@@ -1208,50 +1208,50 @@
           },
           {
             "file": "extensions/llamacpp-extension/src/index.ts",
-            "line": 393,
-            "column": 69,
+            "line": 445,
+            "column": 66,
             "message": "Missing semicolon."
           },
           {
-            "file": "web-app/src/components/ai-elements/tool.tsx",
-            "line": 340,
-            "column": 46,
+            "file": "web-app/src/components/left-sidebar/NavChats.tsx",
+            "line": 23,
+            "column": 73,
             "message": "Missing semicolon."
           },
           {
             "file": "web-app/src/containers/DownloadManegement.tsx",
-            "line": 304,
-            "column": 74,
+            "line": 357,
+            "column": 41,
             "message": "Missing semicolon."
           },
           {
             "file": "web-app/src/containers/dialogs/AddEditMCPServer.tsx",
-            "line": 254,
-            "column": 43,
+            "line": 291,
+            "column": 17,
             "message": "Missing semicolon."
           },
           {
             "file": "web-app/src/hooks/__tests__/useLocalApiServer.test.ts",
-            "line": 302,
-            "column": 60,
+            "line": 375,
+            "column": 5,
             "message": "Missing semicolon."
           },
           {
             "file": "web-app/src/hooks/useAttachments.ts",
-            "line": 34,
-            "column": 2,
+            "line": 184,
+            "column": 9,
             "message": "Missing semicolon."
           },
           {
             "file": "web-app/src/providers/ExtensionProvider.tsx",
-            "line": 8,
-            "column": 60,
+            "line": 2,
+            "column": 37,
             "message": "Missing semicolon."
           },
           {
             "file": "web-app/src/routes/threads/$threadId.tsx",
-            "line": 484,
-            "column": 6,
+            "line": 474,
+            "column": 43,
             "message": "Missing semicolon."
           },
           {

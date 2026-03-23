@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "826f22f5b34316d88c6146d03d60c4ec4082ed5f",
-  "analyzedCommitDate": "2026-02-28T11:45:52.000Z",
+  "analyzedCommit": "712a0013426cd7bd5027d6726b11b1cfdc7c9067",
+  "analyzedCommitDate": "2026-03-23T10:39:22.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -334,7 +334,7 @@
         ]
       },
       "index-signature": {
-        "count": 26,
+        "count": 33,
         "samples": [
           {
             "file": "desktop-app-legacy/app/actions/networkConfig.js",
@@ -344,20 +344,14 @@
           },
           {
             "file": "desktop-app-legacy/app/components/WebView/index.js",
-            "line": 485,
-            "column": 4,
-            "message": "Expected `,` or `)` but found `:`"
+            "line": 483,
+            "column": 5,
+            "message": "Invalid assignment in object literal"
           },
           {
             "file": "desktop-app-legacy/app/move-to-applications.js",
             "line": 14,
-            "column": 7,
-            "message": "Missing initializer in const declaration"
-          },
-          {
-            "file": "desktop-app-legacy/app/reducers/bookmarks.js",
-            "line": 6,
-            "column": 5,
+            "column": 18,
             "message": "Expected a semicolon or an implicit semicolon after a statement, but found none"
           },
           {
@@ -373,21 +367,15 @@
             "message": "Expected function body"
           },
           {
-            "file": "desktop-app-legacy/app/utils/urlUtils.js",
-            "line": 3,
-            "column": 35,
-            "message": "Expected `,` or `)` but found `:`"
-          },
-          {
-            "file": "desktop-app-legacy/flow-typed/module_vx.x.x.js",
+            "file": "desktop-app-legacy/flow-typed/electron.js",
             "line": 1,
             "column": 8,
             "message": "Expected a semicolon or an implicit semicolon after a statement, but found none"
           },
           {
             "file": "desktop-app/src/main/web-permissions/PermissionsManager.ts",
-            "line": 55,
-            "column": 39,
+            "line": 50,
+            "column": 14,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -395,13 +383,25 @@
             "line": 3,
             "column": 40,
             "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "desktop-app/src/store/migrations.test.ts",
+            "line": 30,
+            "column": 51,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "desktop-app/src/store/migrations.test.ts",
+            "line": 57,
+            "column": 23,
+            "message": "An index signature is preferred over a record."
           }
         ]
       }
     },
     "consistent-type-definitions": {
       "interface": {
-        "count": 26,
+        "count": 27,
         "samples": [
           {
             "file": "desktop-app-legacy/app/actions/networkConfig.js",
@@ -422,16 +422,16 @@
             "message": "Missing initializer in const declaration"
           },
           {
-            "file": "desktop-app-legacy/app/reducers/bookmarks.js",
-            "line": 6,
-            "column": 5,
-            "message": "Expected a semicolon or an implicit semicolon after a statement, but found none"
+            "file": "desktop-app-legacy/app/reducers/types.js",
+            "line": 1,
+            "column": 13,
+            "message": "Expected `from` but found `{`"
           },
           {
             "file": "desktop-app-legacy/app/shortcut-manager/renderer-shortcut-manager.js",
             "line": 21,
-            "column": 7,
-            "message": "Missing initializer in const declaration"
+            "column": 10,
+            "message": "Expected a semicolon or an implicit semicolon after a statement, but found none"
           },
           {
             "file": "desktop-app-legacy/app/utils/browserSync.js",
@@ -446,21 +446,21 @@
             "message": "Expected `,` or `)` but found `:`"
           },
           {
-            "file": "desktop-app-legacy/flow-typed/module_vx.x.x.js",
-            "line": 1,
+            "file": "desktop-app/src/common/constants.ts",
+            "line": 18,
             "column": 8,
-            "message": "Expected a semicolon or an implicit semicolon after a statement, but found none"
-          },
-          {
-            "file": "desktop-app/src/renderer/components/Accordion/AccordionItem.tsx",
-            "line": 3,
-            "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "desktop-app/src/renderer/store/features/ruler/index.ts",
-            "line": 13,
+            "file": "desktop-app/src/renderer/components/FileUploader/FileUploader.tsx",
+            "line": 4,
             "column": 8,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "desktop-app/src/store/migrations.test.ts",
+            "line": 6,
+            "column": 1,
             "message": "Use `interface` instead of `type`."
           }
         ]
@@ -598,7 +598,7 @@
         ]
       },
       "no-type-imports": {
-        "count": 46,
+        "count": 47,
         "samples": [
           {
             "file": "desktop-app-legacy/app/actions/networkConfig.js",
@@ -631,32 +631,32 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "desktop-app/src/renderer/components/FileUploader/FileUploader.test.tsx",
-            "line": 2,
-            "column": 9,
+            "file": "desktop-app/src/renderer/components/Previewer/Device/DesignOverlay/index.tsx",
+            "line": 3,
+            "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "desktop-app/src/renderer/components/Previewer/Device/DesignOverlayControls/index.tsx",
-            "line": 8,
+            "file": "desktop-app/src/renderer/components/Previewer/Device/index.tsx",
+            "line": 41,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "desktop-app/src/renderer/store/features/design-overlay/index.test.ts",
-            "line": 3,
-            "column": 9,
+            "line": 9,
+            "column": 3,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "desktop-app/src/renderer/store/features/devtools/index.ts",
-            "line": 3,
+            "file": "desktop-app/src/renderer/store/features/renderer/index.ts",
+            "line": 2,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "desktop-app/src/renderer/store/features/ui/index.ts",
-            "line": 3,
+            "file": "desktop-app/src/store/migrations.test.ts",
+            "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           }
@@ -730,7 +730,7 @@
         ]
       },
       "declaration": {
-        "count": 444,
+        "count": 448,
         "samples": [
           {
             "file": "browser-extension/src/popup.js",
@@ -740,56 +740,56 @@
           },
           {
             "file": "desktop-app-legacy/app/components/KebabMenu.js",
-            "line": 7,
-            "column": 14,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "desktop-app-legacy/app/components/ScreenShotSavePreference/index.js",
-            "line": 16,
-            "column": 9,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "desktop-app-legacy/app/services/searchUrlSuggestions/index.js",
-            "line": 32,
-            "column": 14,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "desktop-app/src/main/http-basic-auth/index.ts",
-            "line": 37,
-            "column": 14,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "desktop-app/src/renderer/components/DeviceManager/PreviewSuites/CreateSuiteButton/index.tsx",
-            "line": 6,
-            "column": 14,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "desktop-app/src/renderer/components/Previewer/Device/DesignOverlay/index.tsx",
-            "line": 75,
-            "column": 11,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "desktop-app/src/renderer/components/ToolBar/AddressBar/SitePermissions/index.tsx",
-            "line": 26,
-            "column": 9,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "desktop-app/src/renderer/components/ToolBar/Menu/Flyout/index.tsx",
             "line": 16,
             "column": 7,
             "message": "Expected a function declaration."
           },
           {
-            "file": "desktop-app/src/renderer/store/features/ui/index.ts",
-            "line": 46,
+            "file": "desktop-app-legacy/app/components/ScrollControls/index.js",
+            "line": 35,
+            "column": 7,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "desktop-app-legacy/app/services/searchUrlSuggestions/index.js",
+            "line": 49,
+            "column": 7,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "desktop-app/src/main/main.ts",
+            "line": 84,
+            "column": 7,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "desktop-app/src/renderer/components/DeviceManager/PreviewSuites/ManageSuitesTool/ManageSuitesTool.tsx",
+            "line": 13,
             "column": 14,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "desktop-app/src/renderer/components/Previewer/Device/DesignOverlayControls/index.test.tsx",
+            "line": 92,
+            "column": 7,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "desktop-app/src/renderer/components/ToolBar/AddressBar/SitePermissions/index.tsx",
+            "line": 89,
+            "column": 11,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "desktop-app/src/renderer/components/ToolBar/Menu/index.tsx",
+            "line": 35,
+            "column": 9,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "desktop-app/src/store/migrations.test.ts",
+            "line": 63,
+            "column": 7,
             "message": "Expected a function declaration."
           }
         ]
@@ -994,7 +994,7 @@
         ]
       },
       "4-space": {
-        "count": 359,
+        "count": 360,
         "samples": [
           {
             "file": "browser-extension/src/background.js",
@@ -1015,14 +1015,14 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "desktop-app-legacy/app/components/icons/Start.js",
-            "line": 4,
+            "file": "desktop-app-legacy/app/components/icons/TickAnimation/index.js",
+            "line": 5,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "desktop-app-legacy/app/containers/StatusBarContainer/index.js",
-            "line": 12,
+            "file": "desktop-app-legacy/app/containers/UserPreferencesContainer/index.js",
+            "line": 10,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -1039,14 +1039,14 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "desktop-app/src/renderer/components/InfoPopups/index.tsx",
-            "line": 6,
+            "file": "desktop-app/src/renderer/components/Input/index.tsx",
+            "line": 5,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "desktop-app/src/renderer/components/ToolBar/Menu/Flyout/Bookmark/ViewAllBookmarks/BookmarkListButton.tsx",
-            "line": 8,
+            "file": "desktop-app/src/renderer/components/ToolBar/Menu/Flyout/Bookmark/ViewAllBookmarks/index.tsx",
+            "line": 10,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -1059,7 +1059,7 @@
         ]
       },
       "tab": {
-        "count": 359,
+        "count": 360,
         "samples": [
           {
             "file": "browser-extension/src/background.js",
@@ -1080,14 +1080,14 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "desktop-app-legacy/app/components/icons/Start.js",
-            "line": 4,
+            "file": "desktop-app-legacy/app/components/icons/TickAnimation/index.js",
+            "line": 5,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "desktop-app-legacy/app/containers/StatusBarContainer/index.js",
-            "line": 12,
+            "file": "desktop-app-legacy/app/containers/UserPreferencesContainer/index.js",
+            "line": 10,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -1104,14 +1104,14 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "desktop-app/src/renderer/components/InfoPopups/index.tsx",
-            "line": 6,
+            "file": "desktop-app/src/renderer/components/Input/index.tsx",
+            "line": 5,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "desktop-app/src/renderer/components/ToolBar/Menu/Flyout/Bookmark/ViewAllBookmarks/BookmarkListButton.tsx",
-            "line": 8,
+            "file": "desktop-app/src/renderer/components/ToolBar/Menu/Flyout/Bookmark/ViewAllBookmarks/index.tsx",
+            "line": 10,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -1126,7 +1126,7 @@
     },
     "quotes": {
       "double": {
-        "count": 5886,
+        "count": 5909,
         "samples": [
           {
             "file": "browser-extension/src/background.js",
@@ -1136,50 +1136,50 @@
           },
           {
             "file": "desktop-app-legacy/app/components/LiveCssEditor/index.js",
-            "line": 17,
-            "column": 36,
+            "line": 19,
+            "column": 27,
             "message": "Strings must use doublequote."
           },
           {
             "file": "desktop-app-legacy/app/components/UrlSearchResults/useStyles.js",
-            "line": 27,
-            "column": 14,
+            "line": 36,
+            "column": 12,
             "message": "Strings must use doublequote."
           },
           {
             "file": "desktop-app-legacy/app/constants/chromeEmulatedDevices.js",
-            "line": 823,
+            "line": 836,
+            "column": 26,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "desktop-app-legacy/app/preload.js",
+            "line": 1,
+            "column": 39,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "desktop-app/src/common/deviceList.ts",
+            "line": 82,
             "column": 11,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "desktop-app-legacy/app/index.js",
-            "line": 19,
-            "column": 35,
-            "message": "Strings must use doublequote."
-          },
-          {
             "file": "desktop-app/src/common/deviceList.ts",
-            "line": 55,
-            "column": 9,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "desktop-app/src/common/deviceList.ts",
-            "line": 1479,
-            "column": 7,
+            "line": 1516,
+            "column": 20,
             "message": "Strings must use doublequote."
           },
           {
             "file": "desktop-app/src/renderer/components/DeviceManager/PreviewSuites/ManageSuitesTool/helpers.test.tsx",
-            "line": 54,
-            "column": 60,
+            "line": 108,
+            "column": 20,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "desktop-app/src/renderer/components/Sponsorship/index.tsx",
-            "line": 38,
-            "column": 15,
+            "file": "desktop-app/src/renderer/components/ToolBar/AddressBar/BookmarkButton.tsx",
+            "line": 2,
+            "column": 33,
             "message": "Strings must use doublequote."
           },
           {
@@ -1323,7 +1323,7 @@
         ]
       },
       "never": {
-        "count": 6060,
+        "count": 6106,
         "samples": [
           {
             "file": "browser-extension/src/background.js",
@@ -1332,51 +1332,51 @@
             "message": "Extra semicolon."
           },
           {
-            "file": "desktop-app-legacy/app/components/HttpAuthDialog/index.js",
-            "line": 37,
-            "column": 19,
+            "file": "desktop-app-legacy/app/components/KebabMenu.js",
+            "line": 2,
+            "column": 39,
             "message": "Extra semicolon."
           },
           {
             "file": "desktop-app-legacy/app/components/StatusBar/index.js",
-            "line": 2,
-            "column": 28,
+            "line": 14,
+            "column": 58,
             "message": "Extra semicolon."
           },
           {
             "file": "desktop-app-legacy/app/containers/Root.js",
-            "line": 146,
-            "column": 6,
+            "line": 235,
+            "column": 40,
             "message": "Extra semicolon."
           },
           {
-            "file": "desktop-app-legacy/scripts/generate-checksums.js",
-            "line": 55,
-            "column": 70,
+            "file": "desktop-app/.erb/scripts/check-build-exists.ts",
+            "line": 8,
+            "column": 77,
             "message": "Extra semicolon."
           },
           {
-            "file": "desktop-app/src/main/web-permissions/PermissionsManager.ts",
-            "line": 231,
-            "column": 79,
+            "file": "desktop-app/src/main/web-permissions/index.ts",
+            "line": 54,
+            "column": 22,
             "message": "Extra semicolon."
           },
           {
-            "file": "desktop-app/src/renderer/components/FileUploader/hooks/useFileUpload.test.tsx",
-            "line": 32,
-            "column": 7,
+            "file": "desktop-app/src/renderer/components/Input/index.tsx",
+            "line": 1,
+            "column": 28,
             "message": "Extra semicolon."
           },
           {
             "file": "desktop-app/src/renderer/components/Previewer/Device/index.tsx",
-            "line": 413,
-            "column": 15,
+            "line": 504,
+            "column": 13,
             "message": "Extra semicolon."
           },
           {
-            "file": "desktop-app/src/renderer/components/ToolBar/Menu/Flyout/Settings/SettingsContent.tsx",
-            "line": 34,
-            "column": 4,
+            "file": "desktop-app/src/renderer/components/ToolBar/Menu/Flyout/Zoom.tsx",
+            "line": 23,
+            "column": 51,
             "message": "Extra semicolon."
           },
           {

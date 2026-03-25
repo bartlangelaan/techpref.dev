@@ -1,11 +1,11 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "c7ab7678722fb5d62003123efebe59d8d9da1736",
-  "analyzedCommitDate": "2026-01-05T14:39:36.000Z",
+  "analyzedCommit": "7fb8ceb03bcb4c9778c5b583b6a59d8c817aed7d",
+  "analyzedCommitDate": "2026-03-25T16:02:37.000Z",
   "checks": {
     "array-type": {
       "array": {
-        "count": 7,
+        "count": 10,
         "samples": [
           {
             "file": "apps/web/components/CollectionListing.tsx",
@@ -48,11 +48,29 @@
             "line": 49,
             "column": 18,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
+          },
+          {
+            "file": "packages/lib/ssrf.ts",
+            "line": 20,
+            "column": 14,
+            "message": "Array type using 'ReadonlyArray<ResolvedAddress>' is forbidden. Use 'readonly ResolvedAddress[]' instead."
+          },
+          {
+            "file": "packages/lib/ssrf.ts",
+            "line": 20,
+            "column": 14,
+            "message": "Array type using 'ReadonlyArray<ResolvedAddress>' is forbidden. Use 'readonly ResolvedAddress[]' instead."
+          },
+          {
+            "file": "packages/lib/ssrf.ts",
+            "line": 279,
+            "column": 18,
+            "message": "Array type using 'ReadonlyArray<ResolvedAddress>' is forbidden. Use 'readonly ResolvedAddress[]' instead."
           }
         ]
       },
       "generic": {
-        "count": 139,
+        "count": 161,
         "samples": [
           {
             "file": "apps/mobile/app/(tabs)/collections/index.tsx",
@@ -61,58 +79,58 @@
             "message": "Array type using 'CollectionIncludingMembersAndLinkCount[]' is forbidden. Use 'Array<CollectionIncludingMembersAndLinkCount>' instead."
           },
           {
-            "file": "apps/mobile/types/global.ts",
-            "line": 34,
-            "column": 9,
-            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
-          },
-          {
-            "file": "apps/web/components/LinkViews/Links.tsx",
-            "line": 36,
-            "column": 10,
-            "message": "Array type using 'LinkIncludingShortenedCollectionAndTags[]' is forbidden. Use 'Array<LinkIncludingShortenedCollectionAndTags>' instead."
-          },
-          {
-            "file": "apps/web/hooks/useArchivalTags.ts",
-            "line": 37,
-            "column": 29,
-            "message": "Array type using 'ArchivalTagOption[]' is forbidden. Use 'Array<ArchivalTagOption>' instead."
-          },
-          {
-            "file": "apps/web/lib/api/controllers/migration/importFromOmnivore.ts",
-            "line": 21,
-            "column": 25,
-            "message": "Array type using 'OmnivoreItem[]' is forbidden. Use 'Array<OmnivoreItem>' instead."
-          },
-          {
-            "file": "apps/web/lib/api/controllers/users/userId/updateUserById.ts",
-            "line": 255,
-            "column": 28,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
-          },
-          {
-            "file": "apps/web/pages/dashboard.tsx",
-            "line": 223,
-            "column": 9,
-            "message": "Array type using 'any[]' is forbidden. Use 'Array<any>' instead."
-          },
-          {
-            "file": "packages/router/collections.tsx",
-            "line": 20,
-            "column": 32,
+            "file": "apps/web/components/CollectionListing.tsx",
+            "line": 393,
+            "column": 16,
             "message": "Array type using 'CollectionIncludingMembersAndLinkCount[]' is forbidden. Use 'Array<CollectionIncludingMembersAndLinkCount>' instead."
           },
           {
-            "file": "packages/router/tokens.tsx",
-            "line": 41,
-            "column": 54,
-            "message": "Array type using 'AccessToken[]' is forbidden. Use 'Array<AccessToken>' instead."
+            "file": "apps/web/components/ModalContent/BulkDeleteTagsModal.tsx",
+            "line": 11,
+            "column": 17,
+            "message": "Array type using 'number[]' is forbidden. Use 'Array<number>' instead."
+          },
+          {
+            "file": "apps/web/lib/api/controllers/collections/collectionId/updateCollectionById.ts",
+            "line": 71,
+            "column": 18,
+            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
+          },
+          {
+            "file": "apps/web/lib/api/controllers/migration/importFromWallabag.ts",
+            "line": 8,
+            "column": 9,
+            "message": "Array type using 'String[]' is forbidden. Use 'Array<String>' instead."
+          },
+          {
+            "file": "apps/web/pages/api/v1/archives/index.ts",
+            "line": 47,
+            "column": 17,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+          },
+          {
+            "file": "apps/worker/lib/preservationScheme/handleMonolith.ts",
+            "line": 35,
+            "column": 19,
+            "message": "Array type using 'Buffer[]' is forbidden. Use 'Array<Buffer>' instead."
+          },
+          {
+            "file": "packages/router/highlights.tsx",
+            "line": 13,
+            "column": 19,
+            "message": "Array type using 'Highlight[]' is forbidden. Use 'Array<Highlight>' instead."
+          },
+          {
+            "file": "packages/router/tags.tsx",
+            "line": 24,
+            "column": 9,
+            "message": "Array type using 'TagIncludingLinkCount[]' is forbidden. Use 'Array<TagIncludingLinkCount>' instead."
           },
           {
             "file": "packages/types/global.ts",
-            "line": 110,
-            "column": 16,
-            "message": "Array type using 'LinksIncludingTags[]' is forbidden. Use 'Array<LinksIncludingTags>' instead."
+            "line": 234,
+            "column": 24,
+            "message": "Array type using 'DashboardSection[]' is forbidden. Use 'Array<DashboardSection>' instead."
           }
         ]
       }
@@ -123,8 +141,14 @@
         "samples": []
       },
       "type-annotation": {
-        "count": 8,
+        "count": 14,
         "samples": [
+          {
+            "file": "apps/mobile/components/ActionSheets/EditLinkSheet.tsx",
+            "line": 278,
+            "column": 29,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
           {
             "file": "apps/web/components/LinkViews/Links.tsx",
             "line": 392,
@@ -138,9 +162,9 @@
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "apps/worker/lib/getLinkBatchFairly.ts",
-            "line": 72,
-            "column": 30,
+            "file": "apps/web/lib/api/getCollectionRootOwnerAndMembers.ts",
+            "line": 21,
+            "column": 26,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
@@ -156,12 +180,6 @@
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "apps/worker/lib/getLinkBatchFairly.ts",
-            "line": 152,
-            "column": 24,
-            "message": "The generic type arguments should be specified as part of the type annotation."
-          },
-          {
             "file": "apps/worker/lib/preservationScheme/handleScreenshotAndPdf.ts",
             "line": 97,
             "column": 37,
@@ -171,6 +189,18 @@
             "file": "apps/worker/lib/preservationScheme/handleScreenshotAndPdf.ts",
             "line": 103,
             "column": 39,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "packages/router/collections.tsx",
+            "line": 20,
+            "column": 26,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "packages/router/links.tsx",
+            "line": 134,
+            "column": 27,
             "message": "The generic type arguments should be specified as part of the type annotation."
           }
         ]
@@ -188,7 +218,7 @@
           },
           {
             "file": "packages/types/global.ts",
-            "line": 88,
+            "line": 103,
             "column": 23,
             "message": "A record is preferred over an index signature."
           }
@@ -211,7 +241,7 @@
           },
           {
             "file": "apps/web/lib/api/controllers/dashboard/getDashboardDataV2.ts",
-            "line": 129,
+            "line": 149,
             "column": 26,
             "message": "An index signature is preferred over a record."
           },
@@ -238,7 +268,7 @@
     },
     "consistent-type-definitions": {
       "interface": {
-        "count": 111,
+        "count": 115,
         "samples": [
           {
             "file": "apps/mobile/components/CollectionListing.tsx",
@@ -247,63 +277,63 @@
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "apps/mobile/store/tmp.ts",
+            "file": "apps/mobile/types/global.ts",
             "line": 10,
+            "column": 8,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "apps/web/components/IconPicker.tsx",
+            "line": 9,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "apps/web/components/IconGrid.tsx",
-            "line": 12,
+            "file": "apps/web/components/MobileNavigation.tsx",
+            "line": 17,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "apps/web/components/LinkViews/LinkComponents/LinkPin.tsx",
+            "file": "apps/web/components/ModalContent/InviteModal.tsx",
+            "line": 13,
+            "column": 1,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "apps/web/components/ModalContent/SurveyModal.tsx",
             "line": 7,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "apps/web/components/ModalContent/EditCollectionSharingModal.tsx",
-            "line": 30,
+            "file": "apps/web/components/ToggleDarkMode.tsx",
+            "line": 12,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "apps/web/components/ModalContent/NewUserModal.tsx",
-            "line": 15,
-            "column": 1,
-            "message": "Use `interface` instead of `type`."
-          },
-          {
-            "file": "apps/web/components/SearchBar.tsx",
+            "file": "apps/web/lib/api/verifyByCredentials.ts",
             "line": 6,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "apps/web/lib/api/sendVerificationRequest.ts",
-            "line": 6,
-            "column": 1,
-            "message": "Use `interface` instead of `type`."
-          },
-          {
-            "file": "apps/web/store/links.ts",
-            "line": 3,
+            "file": "apps/worker/lib/getLinkBatchFairly.ts",
+            "line": 4,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
             "file": "packages/types/global.ts",
-            "line": 162,
+            "line": 182,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           }
         ]
       },
       "type": {
-        "count": 39,
+        "count": 41,
         "samples": [
           {
             "file": "apps/mobile/components/ActionSheets/Sheets.tsx",
@@ -318,14 +348,14 @@
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "apps/web/components/UserListing.tsx",
-            "line": 17,
-            "column": 1,
+            "file": "apps/web/components/ui/button.tsx",
+            "line": 42,
+            "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "apps/web/lib/api/controllers/search/searchLinks.ts",
-            "line": 10,
+            "file": "apps/web/layouts/SettingsLayout.tsx",
+            "line": 8,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
@@ -343,19 +373,19 @@
           },
           {
             "file": "packages/types/global.ts",
-            "line": 7,
+            "line": 36,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "packages/types/global.ts",
-            "line": 61,
+            "line": 67,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "packages/types/global.ts",
-            "line": 168,
+            "line": 197,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
@@ -370,72 +400,72 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 324,
+        "count": 343,
         "samples": [
           {
             "file": "apps/mobile/app/(tabs)/_layout.tsx",
-            "line": 7,
+            "line": 6,
             "column": 1,
             "message": "Imports ThemeName are only used as type."
           },
           {
             "file": "apps/mobile/components/Formats/ReadableFormat.tsx",
-            "line": 15,
+            "line": 12,
+            "column": 1,
+            "message": "Imports ThemeName are only used as type."
+          },
+          {
+            "file": "apps/web/components/DashboardLinks.tsx",
+            "line": 1,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "apps/web/components/DashboardLayoutDropdown.tsx",
-            "line": 23,
-            "column": 1,
-            "message": "Imports DragEndEvent are only used as type."
-          },
-          {
-            "file": "apps/web/components/ModalContent/DeleteCollectionModal.tsx",
-            "line": 3,
-            "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
-          {
-            "file": "apps/web/hooks/useArchivalTags.ts",
+            "file": "apps/web/components/ModalContent/DeleteTagModal.tsx",
             "line": 2,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "apps/web/lib/api/controllers/users/getUsers.ts",
-            "line": 2,
+            "file": "apps/web/hooks/useSort.tsx",
+            "line": 6,
             "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
+            "message": "Imports SetStateAction are only used as type."
           },
           {
-            "file": "apps/web/pages/api/v1/links/index.ts",
+            "file": "apps/web/lib/api/controllers/users/userId/deleteUserById.ts",
             "line": 4,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "apps/web/pages/settings/account.tsx",
-            "line": 1,
-            "column": 1,
-            "message": "Imports ChangeEvent and ReactElement are only used as type."
-          },
-          {
-            "file": "apps/worker/lib/preservationScheme/imageHandler.ts",
-            "line": 1,
+            "file": "apps/web/pages/api/v1/dashboard/index.ts",
+            "line": 2,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
+            "file": "apps/web/pages/settings/access-tokens.tsx",
+            "line": 17,
+            "column": 1,
+            "message": "All imports in the declaration are only used as types. Use `import type`."
+          },
+          {
+            "file": "packages/filesystem/readFile.ts",
+            "line": 1,
+            "column": 1,
+            "message": "Imports GetObjectCommandInput and S3 are only used as type."
+          },
+          {
             "file": "packages/types/global.ts",
-            "line": 2,
+            "line": 9,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           }
         ]
       },
       "no-type-imports": {
-        "count": 51,
+        "count": 61,
         "samples": [
           {
             "file": "apps/mobile/components/ui/Button.tsx",
@@ -444,57 +474,57 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "apps/web/pages/_app.tsx",
-            "line": 5,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "apps/web/pages/api/v1/auth/reset-password.ts",
+            "file": "apps/web/lib/api/controllers/users/postUser.ts",
             "line": 2,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "apps/web/pages/api/v1/dashboard/index.ts",
+            "file": "apps/web/pages/api/v1/auth/[...nextauth].ts",
+            "line": 9,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "apps/web/pages/api/v1/config/index.ts",
             "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "apps/web/pages/api/v1/links/[id]/highlights/index.ts",
+            "file": "apps/web/pages/api/v1/links/[id]/index.ts",
             "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "apps/web/pages/api/v1/payment/index.ts",
+            "file": "apps/web/pages/api/v1/public/collections/[id].ts",
+            "line": 2,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "apps/web/pages/api/v1/tags/[id].ts",
             "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "apps/web/pages/api/v1/public/users/[id].ts",
+            "file": "apps/web/pages/api/v1/users/index.ts",
             "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "apps/web/pages/api/v1/tokens/[id].ts",
+            "file": "apps/web/pages/settings/background-jobs.tsx",
             "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "apps/web/pages/api/v1/users/me.ts",
-            "line": 1,
+            "file": "packages/router/links.tsx",
+            "line": 23,
             "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "packages/lib/utils.ts",
-            "line": 1,
-            "column": 16,
             "message": "Use an `import` instead of an `import type`."
           }
         ]
@@ -502,7 +532,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 112,
+        "count": 129,
         "samples": [
           {
             "file": "apps/mobile/components/ActionSheets/SupportSheet.tsx",
@@ -511,44 +541,38 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "apps/web/components/ClickAwayHandler.tsx",
-            "line": 32,
-            "column": 5,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "apps/web/components/LinkViews/LinkComponents/LinkMasonry.tsx",
-            "line": 44,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "apps/web/hooks/useWindowDimensions.tsx",
-            "line": 10,
-            "column": 5,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "apps/web/lib/api/sendInvitationRequest.ts",
-            "line": 54,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "apps/web/pages/api/v1/archives/index.ts",
-            "line": 26,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "apps/web/pages/login.tsx",
-            "line": 222,
+            "file": "apps/web/components/CollectionListing.tsx",
+            "line": 176,
             "column": 3,
             "message": "Expected a function expression."
           },
           {
-            "file": "apps/worker/index.ts",
-            "line": 3,
+            "file": "apps/web/components/LinkViews/Links.tsx",
+            "line": 154,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "apps/web/lib/api/controllers/migration/importFromHTMLFile.ts",
+            "line": 262,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "apps/web/pages/api/v1/archives/[linkId].ts",
+            "line": 28,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "apps/web/pages/forgot.tsx",
+            "line": 44,
+            "column": 3,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "apps/web/scripts/migration/v2.6.1/index.js",
+            "line": 38,
             "column": 1,
             "message": "Expected a function expression."
           },
@@ -556,6 +580,12 @@
             "file": "apps/worker/workers/trialEndEmailWorker.ts",
             "line": 21,
             "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "packages/lib/ssrf.ts",
+            "line": 94,
+            "column": 1,
             "message": "Expected a function expression."
           },
           {
@@ -567,65 +597,65 @@
         ]
       },
       "declaration": {
-        "count": 271,
+        "count": 318,
         "samples": [
           {
             "file": "apps/mobile/app/(tabs)/dashboard/index.tsx",
-            "line": 65,
+            "line": 85,
             "column": 9,
             "message": "Expected a function declaration."
           },
           {
-            "file": "apps/web/components/DashboardLayoutDropdown.tsx",
-            "line": 236,
+            "file": "apps/web/components/DragNDrop.tsx",
+            "line": 83,
             "column": 9,
             "message": "Expected a function declaration."
           },
           {
-            "file": "apps/web/components/LinkViews/Links.tsx",
-            "line": 230,
-            "column": 11,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "apps/web/components/ModalContent/UploadFileModal.tsx",
-            "line": 47,
+            "file": "apps/web/components/ModalContent/DeleteLinkModal.tsx",
+            "line": 28,
             "column": 9,
             "message": "Expected a function declaration."
           },
           {
-            "file": "apps/web/hooks/useArchivalTags.ts",
-            "line": 10,
+            "file": "apps/web/components/ProfileDropdown.tsx",
+            "line": 24,
+            "column": 9,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "apps/web/lib/api/controllers/migration/importFromHTMLFile.ts",
+            "line": 275,
+            "column": 9,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "apps/web/pages/public/collections/[id]/index.tsx",
+            "line": 46,
+            "column": 9,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "apps/worker/lib/autoTagLink.ts",
+            "line": 25,
             "column": 7,
             "message": "Expected a function declaration."
           },
           {
-            "file": "apps/web/pages/api/v1/webhook/index.ts",
-            "line": 11,
-            "column": 7,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "apps/web/pages/settings/preference.tsx",
-            "line": 29,
-            "column": 7,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "packages/filesystem/manageFiles.ts",
-            "line": 4,
+            "file": "packages/router/collections.tsx",
+            "line": 141,
             "column": 7,
             "message": "Expected a function declaration."
           },
           {
             "file": "packages/router/links.tsx",
-            "line": 170,
+            "line": 1057,
             "column": 7,
             "message": "Expected a function declaration."
           },
           {
-            "file": "packages/router/users.tsx",
-            "line": 57,
+            "file": "packages/router/worker.tsx",
+            "line": 23,
             "column": 7,
             "message": "Expected a function declaration."
           }
@@ -634,11 +664,11 @@
     },
     "import-export-preference": {
       "named": {
-        "count": 314,
+        "count": 327,
         "samples": [
           {
             "file": "apps/mobile/app/(tabs)/_layout.tsx",
-            "line": 10,
+            "line": 9,
             "column": 8,
             "message": "Prefer named exports"
           },
@@ -655,43 +685,43 @@
             "message": "Prefer named exports"
           },
           {
-            "file": "apps/web/components/ModalContent/UploadFileModal.tsx",
-            "line": 21,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "apps/web/layouts/SettingsLayout.tsx",
-            "line": 13,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "apps/web/lib/api/controllers/tags/tagId/updateTagById.ts",
-            "line": 7,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "apps/web/lib/client/openLink.ts",
-            "line": 27,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "apps/web/pages/api/v1/public/collections/tags/index.ts",
-            "line": 6,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "apps/web/pages/public/preserved/[id].tsx",
+            "file": "apps/web/components/PageHeader.tsx",
             "line": 4,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "packages/lib/transporter.ts",
+            "file": "apps/web/lib/api/controllers/collections/collectionId/updateCollectionById.ts",
+            "line": 8,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "apps/web/lib/api/controllers/tokens/tokenId/deleteTokenById.ts",
+            "line": 3,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "apps/web/lib/client/remToPixels.ts",
+            "line": 1,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "apps/web/pages/api/v1/rss/[id].ts",
+            "line": 5,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "apps/web/pages/search.tsx",
+            "line": 73,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "vitest.config.ts",
             "line": 3,
             "column": 8,
             "message": "Prefer named exports"
@@ -699,7 +729,7 @@
         ]
       },
       "default": {
-        "count": 37,
+        "count": 39,
         "samples": [
           {
             "file": "apps/mobile/components/ui/IconSymbol.ios.tsx",
@@ -720,38 +750,38 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "apps/web/e2e/fixtures/index.ts",
-            "line": 6,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "apps/web/lib/client/resizeImage.ts",
-            "line": 3,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "apps/worker/workers/migrationWorker.ts",
+            "file": "apps/web/e2e/fixtures/login-page.ts",
             "line": 4,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "packages/filesystem/createFolder.ts",
+            "file": "apps/worker/lib/countUnprocessedBillableLinks.ts",
+            "line": 3,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "apps/worker/workers/rssPolling.ts",
+            "line": 11,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "packages/filesystem/moveFile.ts",
+            "line": 6,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "packages/lib/generatePreview.ts",
             "line": 5,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "packages/filesystem/removeFolder.ts",
-            "line": 40,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "packages/lib/rssHandler.ts",
-            "line": 6,
+            "file": "packages/lib/safeFetch.ts",
+            "line": 95,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -783,130 +813,130 @@
         ]
       },
       "4-space": {
-        "count": 400,
+        "count": 419,
         "samples": [
           {
             "file": "apps/mobile/app/(tabs)/_layout.tsx",
-            "line": 11,
+            "line": 10,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "apps/mobile/components/ui/TabBarBackground.ios.tsx",
-            "line": 7,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "apps/web/components/LinkViews/LinkComponents/LinkIcon.tsx",
-            "line": 11,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "apps/web/components/SearchBar.tsx",
-            "line": 7,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "apps/web/lib/api/controllers/collections/collectionId/getCollectionById.ts",
-            "line": 4,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "apps/web/lib/api/isDemoMode.ts",
-            "line": 2,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "apps/web/pages/api/v1/auth/verify-email.ts",
-            "line": 7,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "apps/web/pages/index.tsx",
+            "file": "apps/mobile/components/ui/TabBarBackground.tsx",
             "line": 5,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "apps/worker/lib/preservationScheme/pdfHandler.ts",
-            "line": 6,
+            "file": "apps/web/components/LinkViews/LinkComponents/LinkList.tsx",
+            "line": 2,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/types/inputSelect.ts",
+            "file": "apps/web/components/SidebarHighlightLink.tsx",
+            "line": 3,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "apps/web/lib/api/controllers/dashboard/getDashboardDataV2.ts",
+            "line": 5,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "apps/web/lib/api/searchQueryBuilder.ts",
             "line": 2,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "apps/web/pages/api/v1/collections/index.ts",
+            "line": 7,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "apps/web/pages/links/pinned.tsx",
+            "line": 13,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "apps/worker/workers/linkIndexing.ts",
+            "line": 10,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "vitest.config.ts",
+            "line": 4,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           }
         ]
       },
       "tab": {
-        "count": 400,
+        "count": 419,
         "samples": [
           {
             "file": "apps/mobile/app/(tabs)/_layout.tsx",
-            "line": 11,
+            "line": 10,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "apps/mobile/components/ui/TabBarBackground.ios.tsx",
-            "line": 7,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "apps/web/components/LinkViews/LinkComponents/LinkIcon.tsx",
-            "line": 11,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "apps/web/components/SearchBar.tsx",
-            "line": 7,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "apps/web/lib/api/controllers/collections/collectionId/getCollectionById.ts",
-            "line": 4,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "apps/web/lib/api/isDemoMode.ts",
-            "line": 2,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "apps/web/pages/api/v1/auth/verify-email.ts",
-            "line": 7,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "apps/web/pages/index.tsx",
+            "file": "apps/mobile/components/ui/TabBarBackground.tsx",
             "line": 5,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "apps/worker/lib/preservationScheme/pdfHandler.ts",
-            "line": 6,
+            "file": "apps/web/components/LinkViews/LinkComponents/LinkList.tsx",
+            "line": 2,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/types/inputSelect.ts",
+            "file": "apps/web/components/SidebarHighlightLink.tsx",
+            "line": 3,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "apps/web/lib/api/controllers/dashboard/getDashboardDataV2.ts",
+            "line": 5,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "apps/web/lib/api/searchQueryBuilder.ts",
             "line": 2,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "apps/web/pages/api/v1/collections/index.ts",
+            "line": 7,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "apps/web/pages/links/pinned.tsx",
+            "line": 13,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "apps/worker/workers/linkIndexing.ts",
+            "line": 10,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "vitest.config.ts",
+            "line": 4,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           }
@@ -915,72 +945,72 @@
     },
     "quotes": {
       "double": {
-        "count": 77,
+        "count": 81,
         "samples": [
           {
-            "file": "apps/web/components/Announcement.tsx",
-            "line": 37,
-            "column": 25,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "apps/web/components/DashboardLinks.tsx",
-            "line": 176,
-            "column": 32,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "apps/web/components/MobileNavigation.tsx",
-            "line": 65,
-            "column": 41,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "apps/web/components/SettingsSidebar.tsx",
-            "line": 136,
-            "column": 24,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "apps/web/components/Sidebar.tsx",
-            "line": 163,
-            "column": 19,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "apps/web/components/ViewDropdown.tsx",
-            "line": 97,
-            "column": 27,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "apps/web/lib/api/controllers/migration/importFromWallabag.ts",
-            "line": 42,
+            "file": "apps/web/components/AdminSidebar.tsx",
+            "line": 84,
             "column": 17,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "apps/web/lib/client/getLatestVersion.ts",
-            "line": 6,
-            "column": 5,
+            "file": "apps/web/components/DashboardLinks.tsx",
+            "line": 142,
+            "column": 20,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "apps/worker/lib/archiveHandler.ts",
-            "line": 145,
-            "column": 15,
+            "file": "apps/web/components/LinkViews/LinkComponents/LinkTypeBadge.tsx",
+            "line": 48,
+            "column": 34,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "apps/web/components/Preservation/PreservationPageContent.tsx",
+            "line": 47,
+            "column": 20,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "apps/web/components/Sidebar.tsx",
+            "line": 170,
+            "column": 32,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "apps/web/components/Sidebar.tsx",
+            "line": 198,
+            "column": 32,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "apps/web/lib/api/controllers/migration/importFromLinkwarden.ts",
+            "line": 22,
+            "column": 17,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "apps/web/lib/api/sendInvitationRequest.ts",
+            "line": 37,
+            "column": 14,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "apps/web/tailwind.config.js",
+            "line": 42,
+            "column": 23,
             "message": "Strings must use doublequote."
           },
           {
             "file": "packages/router/tags.tsx",
-            "line": 174,
+            "line": 408,
             "column": 36,
             "message": "Strings must use doublequote."
           }
         ]
       },
       "single": {
-        "count": 7595,
+        "count": 8017,
         "samples": [
           {
             "file": "apps/mobile/app/(tabs)/_layout.tsx",
@@ -989,57 +1019,57 @@
             "message": "Strings must use singlequote."
           },
           {
-            "file": "apps/mobile/lib/colors.ts",
-            "line": 6,
-            "column": 14,
+            "file": "apps/mobile/components/ui/IconSymbol.tsx",
+            "line": 15,
+            "column": 20,
             "message": "Strings must use singlequote."
           },
           {
             "file": "apps/web/components/LinkViews/LinkComponents/LinkIcon.tsx",
-            "line": 55,
-            "column": 36,
+            "line": 24,
+            "column": 7,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "apps/web/components/Preservation/PreservationNavbar.tsx",
-            "line": 73,
-            "column": 25,
+            "file": "apps/web/components/Preservation/ReadableView.tsx",
+            "line": 29,
+            "column": 55,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "apps/web/lib/api/controllers/dashboard/getDashboardData.ts",
-            "line": 11,
-            "column": 56,
+            "file": "apps/web/lib/api/controllers/links/linkId/getLinkById.ts",
+            "line": 2,
+            "column": 37,
             "message": "Strings must use singlequote."
           },
           {
             "file": "apps/web/pages/api/v1/auth/[...nextauth].ts",
-            "line": 425,
-            "column": 51,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "apps/web/pages/collections/index.tsx",
-            "line": 102,
+            "line": 334,
             "column": 22,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "apps/web/pages/tags/[id].tsx",
-            "line": 132,
-            "column": 29,
+            "file": "apps/web/pages/dashboard.tsx",
+            "line": 11,
+            "column": 32,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "apps/web/tailwind.config.js",
+            "line": 12,
+            "column": 19,
             "message": "Strings must use singlequote."
           },
           {
             "file": "packages/prisma/seed.js",
-            "line": 508,
-            "column": 13,
+            "line": 596,
+            "column": 9,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "packages/types/inputSelect.ts",
-            "line": 18,
-            "column": 23,
+            "file": "vitest.config.ts",
+            "line": 5,
+            "column": 51,
             "message": "Strings must use singlequote."
           }
         ]
@@ -1047,54 +1077,11 @@
     },
     "semi": {
       "always": {
-        "count": 7,
-        "samples": [
-          {
-            "file": "apps/web/components/ui/checkbox.tsx",
-            "line": 1,
-            "column": 31,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "apps/web/components/ui/checkbox.tsx",
-            "line": 2,
-            "column": 62,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "apps/web/components/ui/checkbox.tsx",
-            "line": 3,
-            "column": 37,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "apps/web/components/ui/checkbox.tsx",
-            "line": 5,
-            "column": 33,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "apps/web/components/ui/checkbox.tsx",
-            "line": 25,
-            "column": 3,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "apps/web/components/ui/checkbox.tsx",
-            "line": 26,
-            "column": 58,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "apps/web/components/ui/checkbox.tsx",
-            "line": 28,
-            "column": 20,
-            "message": "Missing semicolon."
-          }
-        ]
+        "count": 0,
+        "samples": []
       },
       "never": {
-        "count": 8837,
+        "count": 9662,
         "samples": [
           {
             "file": "apps/mobile/app/(tabs)/_layout.tsx",
@@ -1103,57 +1090,57 @@
             "message": "Extra semicolon."
           },
           {
-            "file": "apps/web/components/ClickAwayHandler.tsx",
-            "line": 51,
-            "column": 6,
+            "file": "apps/web/components/Checkbox.tsx",
+            "line": 34,
+            "column": 4,
             "message": "Extra semicolon."
           },
           {
-            "file": "apps/web/components/LinkViews/Links.tsx",
-            "line": 395,
-            "column": 20,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "apps/web/components/Preservation/ReadableView.tsx",
-            "line": 162,
-            "column": 6,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "apps/web/lib/api/controllers/links/linkId/updateLinkById.ts",
-            "line": 70,
-            "column": 5,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "apps/web/next.config.js",
+            "file": "apps/web/components/ModalContent/BulkDeleteLinksModal.tsx",
             "line": 31,
-            "column": 28,
+            "column": 26,
             "message": "Extra semicolon."
           },
           {
-            "file": "apps/web/pages/api/v1/payment/index.ts",
-            "line": 8,
+            "file": "apps/web/components/Sidebar.tsx",
+            "line": 9,
+            "column": 38,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "apps/web/lib/api/controllers/migration/importFromHTMLFile.ts",
+            "line": 299,
+            "column": 15,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "apps/web/pages/api/v1/archives/index.ts",
+            "line": 5,
+            "column": 66,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "apps/web/pages/api/v1/webhook/index.ts",
+            "line": 9,
+            "column": 2,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "apps/web/pages/subscribe.tsx",
+            "line": 15,
             "column": 58,
             "message": "Extra semicolon."
           },
           {
-            "file": "apps/web/pages/settings/account.tsx",
-            "line": 107,
-            "column": 55,
+            "file": "packages/lib/schemaValidation.ts",
+            "line": 179,
+            "column": 68,
             "message": "Extra semicolon."
           },
           {
-            "file": "apps/worker/workers/linkIndexing.ts",
-            "line": 154,
-            "column": 6,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "packages/types/inputSelect.ts",
-            "line": 19,
-            "column": 2,
+            "file": "vitest.config.ts",
+            "line": 7,
+            "column": 3,
             "message": "Extra semicolon."
           }
         ]

@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "52c1e35033a65fa3fa1ec9ee9741319e149d2afb",
-  "analyzedCommitDate": "2026-03-25T18:12:17.000Z",
+  "analyzedCommit": "61c774f347582e34f578c96afca9aa3ff24adb49",
+  "analyzedCommitDate": "2026-03-25T19:36:20.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -40,7 +40,7 @@
         ]
       },
       "generic": {
-        "count": 235,
+        "count": 236,
         "samples": [
           {
             "file": "src/agent/agent.ts",
@@ -56,20 +56,20 @@
           },
           {
             "file": "src/gateway/channels/whatsapp/inbound.ts",
-            "line": 157,
-            "column": 71,
-            "message": "Array type using 'WAMessage[]' is forbidden. Use 'Array<WAMessage>' instead."
+            "line": 110,
+            "column": 14,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
-            "file": "src/gateway/utils.test.ts",
-            "line": 28,
-            "column": 64,
+            "file": "src/gateway/index.ts",
+            "line": 63,
+            "column": 17,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
             "file": "src/memory/embeddings.ts",
-            "line": 41,
-            "column": 23,
+            "line": 40,
+            "column": 10,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
@@ -148,7 +148,7 @@
         ]
       },
       "type-annotation": {
-        "count": 20,
+        "count": 21,
         "samples": [
           {
             "file": "src/components/chat-log.ts",
@@ -157,15 +157,15 @@
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "src/gateway/agent-runner.ts",
-            "line": 12,
-            "column": 25,
+            "file": "src/cron/executor.ts",
+            "line": 24,
+            "column": 34,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "src/gateway/channels/whatsapp/inbound.ts",
-            "line": 145,
-            "column": 30,
+            "file": "src/gateway/channels/whatsapp/dedupe.ts",
+            "line": 9,
+            "column": 22,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
@@ -181,14 +181,14 @@
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "src/memory/mmr.ts",
-            "line": 108,
-            "column": 29,
+            "file": "src/memory/indexer.ts",
+            "line": 208,
+            "column": 32,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "src/memory/search.ts",
-            "line": 64,
+            "file": "src/memory/mmr.ts",
+            "line": 169,
             "column": 27,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
@@ -241,8 +241,8 @@
           },
           {
             "file": "src/gateway/channels/manager.ts",
-            "line": 138,
-            "column": 21,
+            "line": 132,
+            "column": 27,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -286,7 +286,7 @@
     },
     "consistent-type-definitions": {
       "interface": {
-        "count": 47,
+        "count": 55,
         "samples": [
           {
             "file": "src/agent/prompts.ts",
@@ -295,14 +295,20 @@
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "src/gateway/channels/manager.ts",
-            "line": 3,
+            "file": "src/cron/types.ts",
+            "line": 24,
+            "column": 8,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "src/gateway/agent-runner.ts",
+            "line": 7,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
             "file": "src/gateway/channels/types.ts",
-            "line": 28,
+            "line": 20,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
@@ -313,33 +319,27 @@
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "src/gateway/channels/whatsapp/types.ts",
-            "line": 27,
+            "file": "src/gateway/config.ts",
+            "line": 85,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "src/gateway/heartbeat/suppression.ts",
-            "line": 5,
-            "column": 8,
-            "message": "Use `interface` instead of `type`."
-          },
-          {
-            "file": "src/gateway/types.ts",
-            "line": 1,
+            "file": "src/gateway/routing/resolve-route.ts",
+            "line": 3,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
             "file": "src/memory/database.ts",
-            "line": 34,
+            "line": 16,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
             "file": "src/memory/session-files.ts",
-            "line": 21,
-            "column": 1,
+            "line": 12,
+            "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
@@ -483,7 +483,7 @@
         ]
       },
       "no-type-imports": {
-        "count": 81,
+        "count": 86,
         "samples": [
           {
             "file": "src/agent/agent.ts",
@@ -498,33 +498,33 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/components/working-indicator.ts",
+            "file": "src/controllers/agent-runner.ts",
             "line": 2,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/evals/components/eval-stats.ts",
-            "line": 1,
-            "column": 27,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "src/gateway/channels/whatsapp/inbound.ts",
-            "line": 10,
+            "file": "src/cron/schedule.ts",
+            "line": 2,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/gateway/channels/whatsapp/reconnect.ts",
+            "file": "src/gateway/channels/manager.ts",
             "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/gateway/heartbeat/runner.ts",
-            "line": 8,
-            "column": 31,
+            "file": "src/gateway/channels/whatsapp/plugin.ts",
+            "line": 3,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "src/gateway/gateway.ts",
+            "line": 24,
+            "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
@@ -534,8 +534,8 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/theme.ts",
-            "line": 1,
+            "file": "src/tools/cron/cron-tool.ts",
+            "line": 7,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -550,7 +550,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 332,
+        "count": 347,
         "samples": [
           {
             "file": "src/agent/channels.ts",
@@ -559,50 +559,50 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "src/gateway/access-control.ts",
-            "line": 17,
+            "file": "src/cron/runner.ts",
+            "line": 30,
+            "column": 3,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "src/gateway/channels/whatsapp/dedupe.ts",
+            "line": 12,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/gateway/channels/whatsapp/login.ts",
-            "line": 18,
+            "file": "src/gateway/gateway.ts",
+            "line": 30,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/gateway/heartbeat/runner.ts",
-            "line": 14,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/memory/embeddings.ts",
-            "line": 102,
-            "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/skills/registry.ts",
+            "file": "src/memory/database.ts",
             "line": 86,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "src/skills/loader.ts",
+            "line": 43,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/tools/filesystem/sandbox.ts",
-            "line": 5,
-            "column": 8,
+            "file": "src/tools/fetch/web-fetch.ts",
+            "line": 212,
+            "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "src/tools/finance/screen-stocks.ts",
-            "line": 69,
+            "line": 42,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "src/utils/env.ts",
-            "line": 49,
+            "line": 22,
             "column": 8,
             "message": "Expected a function expression."
           },
@@ -631,7 +631,7 @@
           },
           {
             "file": "src/gateway/agent-runner.ts",
-            "line": 44,
+            "line": 47,
             "column": 9,
             "message": "Expected a function declaration."
           },
@@ -655,7 +655,7 @@
           },
           {
             "file": "src/gateway/gateway.ts",
-            "line": 111,
+            "line": 112,
             "column": 9,
             "message": "Expected a function declaration."
           },
@@ -693,7 +693,7 @@
         ]
       },
       "default": {
-        "count": 40,
+        "count": 43,
         "samples": [
           {
             "file": "src/agent/agent.ts",
@@ -702,8 +702,8 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/cli.ts",
-            "line": 161,
+            "file": "src/components/answer-box.ts",
+            "line": 5,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -714,26 +714,26 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/components/working-indicator.ts",
-            "line": 6,
+            "file": "src/controllers/input-history.ts",
+            "line": 5,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/evals/components/eval-stats.ts",
-            "line": 14,
+            "file": "src/evals/components/eval-progress.ts",
+            "line": 4,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/gateway/extension-points.ts",
-            "line": 11,
+            "file": "src/gateway/channels/whatsapp/plugin.ts",
+            "line": 7,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/memory/indexer.ts",
-            "line": 11,
+            "file": "src/memory/index.ts",
+            "line": 55,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -744,8 +744,8 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/tools/search/exa.ts",
-            "line": 25,
+            "file": "src/tools/finance/segments.ts",
+            "line": 22,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -795,7 +795,7 @@
         ]
       },
       "4-space": {
-        "count": 149,
+        "count": 155,
         "samples": [
           {
             "file": "jest.config.js",
@@ -804,49 +804,49 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/components/index.ts",
-            "line": 8,
+            "file": "src/components/intro.ts",
+            "line": 9,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/gateway/agent-runner.ts",
-            "line": 8,
+            "file": "src/evals/components/eval-recent-results.ts",
+            "line": 5,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/gateway/channels/whatsapp/types.ts",
+            "file": "src/gateway/channels/whatsapp/reconnect.test.ts",
+            "line": 6,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "src/gateway/routing/resolve-route.ts",
             "line": 4,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/gateway/types.ts",
-            "line": 2,
+            "file": "src/model/llm.ts",
+            "line": 26,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/providers.ts",
+            "file": "src/tools/filesystem/utils/path-utils.ts",
             "line": 8,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/tools/filesystem/write-file.ts",
-            "line": 31,
+            "file": "src/tools/finance/stock-price.ts",
+            "line": 11,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/tools/heartbeat/heartbeat-tool.ts",
-            "line": 34,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "src/utils/env.ts",
+            "file": "src/utils/config.ts",
             "line": 9,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
@@ -860,7 +860,7 @@
         ]
       },
       "tab": {
-        "count": 149,
+        "count": 155,
         "samples": [
           {
             "file": "jest.config.js",
@@ -869,49 +869,49 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/components/index.ts",
-            "line": 8,
+            "file": "src/components/intro.ts",
+            "line": 9,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/gateway/agent-runner.ts",
-            "line": 8,
+            "file": "src/evals/components/eval-recent-results.ts",
+            "line": 5,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/gateway/channels/whatsapp/types.ts",
+            "file": "src/gateway/channels/whatsapp/reconnect.test.ts",
+            "line": 6,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "src/gateway/routing/resolve-route.ts",
             "line": 4,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/gateway/types.ts",
-            "line": 2,
+            "file": "src/model/llm.ts",
+            "line": 26,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/providers.ts",
+            "file": "src/tools/filesystem/utils/path-utils.ts",
             "line": 8,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/tools/filesystem/write-file.ts",
-            "line": 31,
+            "file": "src/tools/finance/stock-price.ts",
+            "line": 11,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/tools/heartbeat/heartbeat-tool.ts",
-            "line": 34,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "src/utils/env.ts",
+            "file": "src/utils/config.ts",
             "line": 9,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
@@ -927,7 +927,7 @@
     },
     "quotes": {
       "double": {
-        "count": 2783,
+        "count": 2906,
         "samples": [
           {
             "file": "jest.config.js",
@@ -936,51 +936,51 @@
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/components/approval-prompt.ts",
-            "line": 28,
-            "column": 28,
+            "file": "src/components/chat-log.ts",
+            "line": 40,
+            "column": 14,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/evals/components/eval-progress.ts",
-            "line": 19,
-            "column": 22,
+            "file": "src/cron/types.ts",
+            "line": 4,
+            "column": 41,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/gateway/channels/whatsapp/reconnect.test.ts",
-            "line": 19,
+            "file": "src/gateway/channels/whatsapp/login.ts",
+            "line": 50,
             "column": 19,
             "message": "Strings must use doublequote."
           },
           {
             "file": "src/gateway/utils.test.ts",
-            "line": 21,
-            "column": 10,
+            "line": 23,
+            "column": 41,
             "message": "Strings must use doublequote."
           },
           {
             "file": "src/providers.ts",
-            "line": 39,
+            "line": 60,
             "column": 16,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/tools/finance/earnings.ts",
-            "line": 4,
-            "column": 34,
+            "file": "src/tools/filesystem/write-file.ts",
+            "line": 53,
+            "column": 54,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/tools/memory/memory-search.ts",
-            "line": 2,
-            "column": 19,
+            "file": "src/tools/heartbeat/heartbeat-tool.ts",
+            "line": 105,
+            "column": 55,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/utils/config.ts",
-            "line": 17,
-            "column": 14,
+            "file": "src/utils/cache.ts",
+            "line": 142,
+            "column": 44,
             "message": "Strings must use doublequote."
           },
           {
@@ -1063,7 +1063,7 @@
         "samples": []
       },
       "never": {
-        "count": 5095,
+        "count": 5356,
         "samples": [
           {
             "file": "jest.config.js",
@@ -1073,50 +1073,50 @@
           },
           {
             "file": "src/components/chat-log.ts",
-            "line": 82,
-            "column": 74,
+            "line": 140,
+            "column": 64,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/controllers/model-selection.ts",
-            "line": 235,
-            "column": 32,
+            "file": "src/cron/executor.ts",
+            "line": 129,
+            "column": 98,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/gateway/channels/whatsapp/inbound.ts",
-            "line": 12,
-            "column": 53,
+            "file": "src/gateway/channels/manager.ts",
+            "line": 47,
+            "column": 4,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/gateway/heartbeat/runner.ts",
-            "line": 39,
-            "column": 42,
+            "file": "src/gateway/gateway.ts",
+            "line": 122,
+            "column": 73,
             "message": "Extra semicolon."
           },
           {
             "file": "src/memory/index.ts",
-            "line": 201,
-            "column": 30,
+            "line": 128,
+            "column": 37,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/tools/fetch/cache.ts",
-            "line": 18,
-            "column": 95,
+            "file": "src/tools/cron/cron-tool.ts",
+            "line": 69,
+            "column": 3,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/tools/finance/filings.ts",
-            "line": 156,
-            "column": 41,
+            "file": "src/tools/finance/earnings.ts",
+            "line": 10,
+            "column": 3,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/tools/types.ts",
-            "line": 11,
-            "column": 32,
+            "file": "src/tools/search/x-search.ts",
+            "line": 292,
+            "column": 52,
             "message": "Extra semicolon."
           },
           {

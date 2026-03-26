@@ -1,15 +1,22 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "b97d751c36a6b2a4ad7dcf8685638d3de3e7a79c",
-  "analyzedCommitDate": "2026-03-22T19:52:43.000Z",
+  "analyzedCommit": "80324b57e31b15f36cb51e8512bab922e802248b",
+  "analyzedCommitDate": "2026-03-26T10:55:22.000Z",
   "checks": {
     "array-type": {
       "array": {
-        "count": 0,
-        "samples": []
+        "count": 1,
+        "samples": [
+          {
+            "file": "lib/actions/adanos.helpers.ts",
+            "line": 140,
+            "column": 14,
+            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
+          }
+        ]
       },
       "generic": {
-        "count": 28,
+        "count": 33,
         "samples": [
           {
             "file": "components/NavItems.tsx",
@@ -18,16 +25,22 @@
             "message": "Array type using 'StockWithWatchlistStatus[]' is forbidden. Use 'Array<StockWithWatchlistStatus>' instead."
           },
           {
-            "file": "components/watchlist/AlertsPanel.tsx",
+            "file": "components/watchlist/NewsGrid.tsx",
             "line": 9,
-            "column": 13,
+            "column": 11,
             "message": "Array type using 'any[]' is forbidden. Use 'Array<any>' instead."
           },
           {
-            "file": "components/watchlist/WatchlistManager.tsx",
-            "line": 11,
-            "column": 19,
-            "message": "Array type using 'WatchlistItem[]' is forbidden. Use 'Array<WatchlistItem>' instead."
+            "file": "components/watchlist/WatchlistTable.tsx",
+            "line": 13,
+            "column": 11,
+            "message": "Array type using 'any[]' is forbidden. Use 'Array<any>' instead."
+          },
+          {
+            "file": "lib/actions/adanos.helpers.ts",
+            "line": 72,
+            "column": 14,
+            "message": "Array type using 'SentimentSourceInsight[]' is forbidden. Use 'Array<SentimentSourceInsight>' instead."
           },
           {
             "file": "lib/actions/finnhub.actions.ts",
@@ -37,33 +50,27 @@
           },
           {
             "file": "lib/actions/finnhub.actions.ts",
-            "line": 76,
-            "column": 60,
-            "message": "Array type using 'MarketNewsArticle[]' is forbidden. Use 'Array<MarketNewsArticle>' instead."
+            "line": 91,
+            "column": 53,
+            "message": "Array type using 'RawNewsArticle[]' is forbidden. Use 'Array<RawNewsArticle>' instead."
           },
           {
             "file": "lib/actions/finnhub.actions.ts",
-            "line": 106,
-            "column": 30,
-            "message": "Array type using 'MarketNewsArticle[]' is forbidden. Use 'Array<MarketNewsArticle>' instead."
+            "line": 131,
+            "column": 41,
+            "message": "Array type using 'RawNewsArticle[]' is forbidden. Use 'Array<RawNewsArticle>' instead."
           },
           {
             "file": "lib/actions/finnhub.actions.ts",
-            "line": 152,
-            "column": 67,
-            "message": "Array type using 'StockWithWatchlistStatus[]' is forbidden. Use 'Array<StockWithWatchlistStatus>' instead."
+            "line": 163,
+            "column": 22,
+            "message": "Array type using 'FinnhubSearchResult[]' is forbidden. Use 'Array<FinnhubSearchResult>' instead."
           },
           {
-            "file": "lib/actions/finnhub.actions.ts",
-            "line": 207,
-            "column": 23,
-            "message": "Array type using 'StockWithWatchlistStatus[]' is forbidden. Use 'Array<StockWithWatchlistStatus>' instead."
-          },
-          {
-            "file": "lib/inngest/functions.ts",
-            "line": 252,
-            "column": 32,
-            "message": "Array type using 'TriggeredAlert[]' is forbidden. Use 'Array<TriggeredAlert>' instead."
+            "file": "lib/actions/watchlist.actions.ts",
+            "line": 71,
+            "column": 74,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
             "file": "lib/utils.ts",
@@ -109,7 +116,7 @@
         "samples": []
       },
       "index-signature": {
-        "count": 5,
+        "count": 7,
         "samples": [
           {
             "file": "components/TradingViewWidget.tsx",
@@ -121,6 +128,18 @@
             "file": "hooks/useTradingViewWidget.tsx",
             "line": 4,
             "column": 58,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "lib/actions/adanos.helpers.ts",
+            "line": 42,
+            "column": 22,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "lib/actions/adanos.helpers.ts",
+            "line": 52,
+            "column": 43,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -146,7 +165,7 @@
     },
     "consistent-type-definitions": {
       "interface": {
-        "count": 3,
+        "count": 5,
         "samples": [
           {
             "file": "components/OpenDevSocietyBranding.tsx",
@@ -161,6 +180,18 @@
             "message": "Use `interface` instead of `type`."
           },
           {
+            "file": "lib/actions/adanos.helpers.ts",
+            "line": 4,
+            "column": 1,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "lib/actions/adanos.helpers.ts",
+            "line": 13,
+            "column": 8,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
             "file": "lib/inngest/functions.ts",
             "line": 251,
             "column": 9,
@@ -169,7 +200,7 @@
         ]
       },
       "type": {
-        "count": 13,
+        "count": 16,
         "samples": [
           {
             "file": "components/TradingViewWidget.tsx",
@@ -178,14 +209,14 @@
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "components/WatchlistButton.tsx",
-            "line": 6,
+            "file": "components/stocks/StockSentimentCard.tsx",
+            "line": 3,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "components/watchlist/CreateAlertModal.tsx",
-            "line": 12,
+            "file": "components/watchlist/AlertsPanel.tsx",
+            "line": 8,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
@@ -196,8 +227,8 @@
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "components/watchlist/TradingViewWatchlist.tsx",
-            "line": 6,
+            "file": "components/watchlist/WatchlistManager.tsx",
+            "line": 10,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
@@ -208,20 +239,20 @@
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "components/watchlist/WatchlistTable.tsx",
-            "line": 12,
-            "column": 1,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
             "file": "database/models/alert.model.ts",
             "line": 3,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "lib/ai-provider.ts",
-            "line": 14,
+            "file": "lib/actions/adanos.helpers.ts",
+            "line": 54,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "lib/actions/adanos.helpers.ts",
+            "line": 65,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
@@ -277,7 +308,7 @@
         ]
       },
       "no-type-imports": {
-        "count": 10,
+        "count": 15,
         "samples": [
           {
             "file": "__tests__/ai-provider.test.ts",
@@ -286,7 +317,7 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "app/layout.tsx",
+            "file": "components/stocks/StockSentimentCard.tsx",
             "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
@@ -300,12 +331,6 @@
           {
             "file": "database/models/alert.model.ts",
             "line": 1,
-            "column": 33,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "database/models/alert.model.ts",
-            "line": 1,
             "column": 48,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -316,21 +341,27 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "database/models/watchlist.model.ts",
-            "line": 1,
-            "column": 48,
+            "file": "lib/actions/adanos.actions.ts",
+            "line": 7,
+            "column": 5,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "lib/actions/adanos.actions.ts",
+            "line": 8,
+            "column": 5,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "lib/actions/adanos.actions.ts",
+            "line": 10,
+            "column": 5,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "lib/actions/alert.actions.ts",
             "line": 4,
             "column": 17,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "lib/utils.ts",
-            "line": 1,
-            "column": 16,
             "message": "Use an `import` instead of an `import type`."
           },
           {
@@ -344,7 +375,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 104,
+        "count": 119,
         "samples": [
           {
             "file": "app/(root)/about/page.tsx",
@@ -353,50 +384,50 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "components/ui/command.tsx",
-            "line": 16,
+            "file": "components/ui/avatar.tsx",
+            "line": 37,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "components/ui/dialog.tsx",
-            "line": 27,
+            "line": 21,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "components/ui/dropdown-menu.tsx",
-            "line": 54,
+            "line": 62,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "components/ui/label.tsx",
-            "line": 8,
+            "file": "components/ui/popover.tsx",
+            "line": 14,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "components/ui/select.tsx",
-            "line": 101,
-            "column": 1,
+            "file": "hooks/useDebounce.ts",
+            "line": 5,
+            "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "lib/actions/finnhub.actions.ts",
-            "line": 37,
+            "file": "lib/actions/alert.actions.ts",
+            "line": 30,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "lib/ai-provider.ts",
-            "line": 106,
-            "column": 1,
+            "line": 24,
+            "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "scripts/inspect-user.mjs",
-            "line": 6,
+            "file": "scripts/check_db_name.js",
+            "line": 11,
             "column": 1,
             "message": "Expected a function expression."
           },
@@ -476,7 +507,7 @@
     },
     "import-export-preference": {
       "named": {
-        "count": 37,
+        "count": 38,
         "samples": [
           {
             "file": "app/(auth)/layout.tsx",
@@ -492,7 +523,7 @@
           },
           {
             "file": "app/(root)/stocks/[symbol]/page.tsx",
-            "line": 17,
+            "line": 19,
             "column": 8,
             "message": "Prefer named exports"
           },
@@ -509,14 +540,14 @@
             "message": "Prefer named exports"
           },
           {
-            "file": "components/UserDropdown.tsx",
-            "line": 73,
+            "file": "components/WatchlistButton.tsx",
+            "line": 120,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "components/forms/SelectField.tsx",
-            "line": 42,
+            "file": "components/stocks/StockSentimentCard.tsx",
+            "line": 36,
             "column": 8,
             "message": "Prefer named exports"
           },
@@ -541,7 +572,7 @@
         ]
       },
       "default": {
-        "count": 9,
+        "count": 10,
         "samples": [
           {
             "file": "components/forms/CountrySelectField.tsx",
@@ -576,6 +607,12 @@
           {
             "file": "hooks/useDebounce.ts",
             "line": 5,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "lib/actions/adanos.actions.ts",
+            "line": 68,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -708,11 +745,11 @@
         ]
       },
       "tab": {
-        "count": 83,
+        "count": 87,
         "samples": [
           {
-            "file": "__tests__/ai-provider.integration.test.ts",
-            "line": 11,
+            "file": "__tests__/adanos.actions.test.ts",
+            "line": 4,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -729,8 +766,8 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "components/forms/InputField.tsx",
-            "line": 7,
+            "file": "components/forms/SelectField.tsx",
+            "line": 5,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -747,20 +784,20 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "lib/actions/user.actions.ts",
-            "line": 6,
+            "file": "lib/actions/auth.actions.ts",
+            "line": 8,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "lib/nodemailer/index.ts",
-            "line": 6,
+            "file": "lib/kit.ts",
+            "line": 4,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "scripts/inspect-user.mjs",
-            "line": 7,
+            "file": "scripts/create-kit-tag.mjs",
+            "line": 8,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -775,60 +812,60 @@
     },
     "quotes": {
       "double": {
-        "count": 802,
+        "count": 968,
         "samples": [
           {
-            "file": "__tests__/ai-provider.integration.test.ts",
-            "line": 34,
-            "column": 9,
+            "file": "__tests__/adanos.actions.test.ts",
+            "line": 1,
+            "column": 53,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "app/(root)/watchlist/page.tsx",
-            "line": 6,
+            "file": "app/(auth)/sign-up/page.tsx",
+            "line": 25,
+            "column": 23,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "components/TradingViewWidget.tsx",
+            "line": 23,
             "column": 31,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "components/watchlist/WatchlistManager.tsx",
-            "line": 63,
-            "column": 40,
+            "file": "lib/actions/adanos.actions.ts",
+            "line": 11,
+            "column": 8,
             "message": "Strings must use doublequote."
           },
           {
             "file": "lib/actions/watchlist.actions.ts",
-            "line": 5,
-            "column": 32,
+            "line": 28,
+            "column": 23,
             "message": "Strings must use doublequote."
           },
           {
             "file": "lib/constants.ts",
-            "line": 76,
-            "column": 22,
+            "line": 102,
+            "column": 17,
             "message": "Strings must use doublequote."
           },
           {
             "file": "lib/constants.ts",
-            "line": 224,
-            "column": 15,
+            "line": 289,
+            "column": 5,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "lib/inngest/functions.ts",
-            "line": 57,
-            "column": 88,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "lib/utils.ts",
-            "line": 91,
-            "column": 75,
+            "file": "lib/kit.ts",
+            "line": 109,
+            "column": 44,
             "message": "Strings must use doublequote."
           },
           {
             "file": "scripts/check-env.mjs",
-            "line": 102,
-            "column": 17,
+            "line": 41,
+            "column": 13,
             "message": "Strings must use doublequote."
           },
           {
@@ -840,7 +877,7 @@
         ]
       },
       "single": {
-        "count": 692,
+        "count": 693,
         "samples": [
           {
             "file": "__tests__/ai-provider.integration.test.ts",
@@ -874,14 +911,14 @@
           },
           {
             "file": "components/ui/dialog.tsx",
-            "line": 5,
-            "column": 23,
+            "line": 4,
+            "column": 34,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "components/watchlist/AlertsPanel.tsx",
-            "line": 1,
-            "column": 1,
+            "file": "components/ui/sonner.tsx",
+            "line": 17,
+            "column": 30,
             "message": "Strings must use singlequote."
           },
           {
@@ -972,60 +1009,60 @@
         ]
       },
       "never": {
-        "count": 1449,
+        "count": 1589,
         "samples": [
           {
-            "file": "__tests__/ai-provider.integration.test.ts",
+            "file": "__tests__/adanos.actions.test.ts",
             "line": 1,
-            "column": 57,
+            "column": 61,
             "message": "Extra semicolon."
           },
           {
             "file": "__tests__/ai-provider.test.ts",
-            "line": 313,
-            "column": 60,
+            "line": 194,
+            "column": 38,
             "message": "Extra semicolon."
           },
           {
-            "file": "app/layout.tsx",
-            "line": 37,
-            "column": 6,
+            "file": "app/(root)/watchlist/page.tsx",
+            "line": 5,
+            "column": 67,
             "message": "Extra semicolon."
           },
           {
             "file": "components/forms/CountrySelectField.tsx",
-            "line": 145,
-            "column": 6,
+            "line": 31,
+            "column": 2,
             "message": "Extra semicolon."
           },
           {
-            "file": "database/mongoose.ts",
-            "line": 33,
-            "column": 50,
+            "file": "database/models/watchlist.model.ts",
+            "line": 18,
+            "column": 2,
             "message": "Extra semicolon."
           },
           {
             "file": "lib/actions/finnhub.actions.ts",
-            "line": 187,
-            "column": 48,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "lib/inngest/functions.ts",
-            "line": 97,
-            "column": 114,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "lib/utils.ts",
             "line": 50,
-            "column": 29,
+            "column": 52,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "lib/constants.ts",
+            "line": 181,
+            "column": 3,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "lib/nodemailer/templates.ts",
+            "line": 513,
+            "column": 9,
             "message": "Extra semicolon."
           },
           {
             "file": "scripts/migrate-users-to-kit.mjs",
-            "line": 41,
-            "column": 46,
+            "line": 2,
+            "column": 28,
             "message": "Extra semicolon."
           },
           {

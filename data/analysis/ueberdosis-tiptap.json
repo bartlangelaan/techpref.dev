@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "536a33da059430eae24d5bca6dcc8efeb4269b02",
-  "analyzedCommitDate": "2026-03-27T11:24:45.000Z",
+  "analyzedCommit": "91c51be53c4655ef07e29ec489471524debfa0ca",
+  "analyzedCommitDate": "2026-03-27T14:51:20.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -70,7 +70,7 @@
         ]
       },
       "generic": {
-        "count": 356,
+        "count": 359,
         "samples": [
           {
             "file": "demos/src/Examples/Savvy/React/findColors.ts",
@@ -80,50 +80,50 @@
           },
           {
             "file": "packages/core/src/Extendable.ts",
-            "line": 109,
-            "column": 17,
-            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
+            "line": 173,
+            "column": 9,
+            "message": "Array type using 'InputRule[]' is forbidden. Use 'Array<InputRule>' instead."
           },
           {
-            "file": "packages/core/src/helpers/getMarkRange.ts",
-            "line": 23,
-            "column": 29,
-            "message": "Array type using 'ProseMirrorMark[]' is forbidden. Use 'Array<ProseMirrorMark>' instead."
+            "file": "packages/core/src/helpers/getMarksBetween.ts",
+            "line": 6,
+            "column": 82,
+            "message": "Array type using 'MarkRange[]' is forbidden. Use 'Array<MarkRange>' instead."
           },
           {
             "file": "packages/core/src/types.ts",
-            "line": 898,
-            "column": 45,
-            "message": "Array type using 'JSONContent[]' is forbidden. Use 'Array<JSONContent>' instead."
+            "line": 900,
+            "column": 27,
+            "message": "Array type using 'MarkdownToken[]' is forbidden. Use 'Array<MarkdownToken>' instead."
           },
           {
             "file": "packages/core/src/utilities/removeDuplicates.ts",
             "line": 5,
-            "column": 44,
+            "column": 71,
             "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           },
           {
             "file": "packages/extension-emoji/src/emoji.ts",
-            "line": 276,
-            "column": 23,
-            "message": "Array type using 'InputRule[]' is forbidden. Use 'Array<InputRule>' instead."
+            "line": 414,
+            "column": 83,
+            "message": "Array type using 'Transaction[]' is forbidden. Use 'Array<Transaction>' instead."
           },
           {
             "file": "packages/extension-table-of-contents/src/tableOfContents.ts",
-            "line": 30,
-            "column": 26,
+            "line": 186,
+            "column": 45,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
-            "file": "packages/extension-unique-id/src/unique-id.ts",
-            "line": 402,
-            "column": 27,
-            "message": "Array type using 'ProseMirrorNode[]' is forbidden. Use 'Array<ProseMirrorNode>' instead."
+            "file": "packages/extensions/src/placeholder/placeholder.ts",
+            "line": 124,
+            "column": 32,
+            "message": "Array type using 'Decoration[]' is forbidden. Use 'Array<Decoration>' instead."
           },
           {
-            "file": "packages/markdown/src/utils.ts",
-            "line": 30,
-            "column": 82,
+            "file": "packages/markdown/src/MarkdownManager.ts",
+            "line": 1086,
+            "column": 32,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
@@ -147,7 +147,7 @@
           },
           {
             "file": "packages/markdown/src/MarkdownManager.ts",
-            "line": 973,
+            "line": 982,
             "column": 22,
             "message": "The generic type arguments should be specified as part of the constructor type arguments."
           },
@@ -194,13 +194,13 @@
           },
           {
             "file": "packages/markdown/src/MarkdownManager.ts",
-            "line": 974,
+            "line": 983,
             "column": 45,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
             "file": "packages/markdown/src/MarkdownManager.ts",
-            "line": 975,
+            "line": 984,
             "column": 37,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
@@ -273,7 +273,7 @@
           },
           {
             "file": "packages/extension-details/src/details.ts",
-            "line": 30,
+            "line": 46,
             "column": 5,
             "message": "A record is preferred over an index signature."
           },
@@ -424,7 +424,7 @@
         ]
       },
       "type": {
-        "count": 264,
+        "count": 265,
         "samples": [
           {
             "file": "demos/src/Experiments/CollaborationAnnotation/Vue/extension/AnnotationPlugin.ts",
@@ -439,7 +439,7 @@
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "packages/core/src/commands/selectNodeBackward.ts",
+            "file": "packages/core/src/commands/selectNodeForward.ts",
             "line": 6,
             "column": 3,
             "message": "Use `type` instead of `interface`."
@@ -470,7 +470,7 @@
           },
           {
             "file": "packages/extension-text-style/src/color/color.ts",
-            "line": 35,
+            "line": 15,
             "column": 3,
             "message": "Use `type` instead of `interface`."
           },
@@ -491,11 +491,18 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 0,
-        "samples": []
+        "count": 1,
+        "samples": [
+          {
+            "file": "packages/markdown/__tests__/manager.spec.ts",
+            "line": 212,
+            "column": 51,
+            "message": "`import()` type annotations are forbidden."
+          }
+        ]
       },
       "no-type-imports": {
-        "count": 693,
+        "count": 697,
         "samples": [
           {
             "file": "demos/src/Examples/Accessibility/React/InsertMenu.tsx",
@@ -510,38 +517,38 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/core/src/commands/selectTextblockStart.ts",
-            "line": 5,
+            "file": "packages/core/src/commands/setContent.ts",
+            "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "packages/core/src/helpers/getMarkRange.ts",
+            "line": 3,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "packages/core/src/pasteRules/textPasteRule.ts",
             "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/core/src/pasteRules/nodePasteRule.ts",
-            "line": 5,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "packages/extension-drag-handle/src/drag-handle-plugin.ts",
-            "line": 6,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "packages/extension-list/src/keymap/listHelpers/hasListItemBefore.ts",
+            "file": "packages/extension-drag-handle/src/drag-handle.ts",
             "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/extensions/src/gap-cursor/gap-cursor.ts",
-            "line": 1,
+            "file": "packages/extension-list/src/keymap/listHelpers/listItemHasSubList.ts",
+            "line": 3,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "packages/extensions/src/placeholder/placeholder.ts",
+            "line": 3,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -627,7 +634,7 @@
         ]
       },
       "declaration": {
-        "count": 288,
+        "count": 289,
         "samples": [
           {
             "file": "demos/setup/helper.ts",
@@ -660,8 +667,8 @@
             "message": "Expected a function declaration."
           },
           {
-            "file": "packages/core/src/helpers/getTextContentFromNodes.ts",
-            "line": 9,
+            "file": "packages/core/src/helpers/isAtEndOfNode.ts",
+            "line": 5,
             "column": 14,
             "message": "Expected a function declaration."
           },
@@ -826,11 +833,18 @@
     },
     "indent": {
       "2-space": {
-        "count": 0,
-        "samples": []
+        "count": 1,
+        "samples": [
+          {
+            "file": "packages/markdown/__tests__/manager.spec.ts",
+            "line": 182,
+            "column": 1,
+            "message": "Expected 2-space indentation, but file uses 3-space indentation."
+          }
+        ]
       },
       "4-space": {
-        "count": 1127,
+        "count": 1128,
         "samples": [
           {
             "file": ".eslintrc.js",
@@ -851,14 +865,14 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "demos/src/GuideMarkViews/ReactComponent/React/index.spec.js",
-            "line": 4,
+            "file": "demos/src/GuideMarkViews/ReactComponent/React/index.tsx",
+            "line": 10,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "demos/src/Nodes/ListItem/Vue/index.spec.js",
-            "line": 2,
+            "file": "demos/src/Nodes/ListItem/Vue/index.vue",
+            "line": 49,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -895,7 +909,7 @@
         ]
       },
       "tab": {
-        "count": 1127,
+        "count": 1128,
         "samples": [
           {
             "file": ".eslintrc.js",
@@ -916,14 +930,14 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "demos/src/GuideMarkViews/ReactComponent/React/index.spec.js",
-            "line": 4,
+            "file": "demos/src/GuideMarkViews/ReactComponent/React/index.tsx",
+            "line": 10,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "demos/src/Nodes/ListItem/Vue/index.spec.js",
-            "line": 2,
+            "file": "demos/src/Nodes/ListItem/Vue/index.vue",
+            "line": 49,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -962,7 +976,7 @@
     },
     "quotes": {
       "double": {
-        "count": 42450,
+        "count": 42526,
         "samples": [
           {
             "file": ".eslintrc.js",
@@ -971,51 +985,51 @@
             "message": "Strings must use doublequote."
           },
           {
-            "file": "demos/src/Examples/TextDirection/React/index.tsx",
-            "line": 43,
-            "column": 72,
+            "file": "demos/src/Examples/TransformPastedHTML/React/index.jsx",
+            "line": 4,
+            "column": 42,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "demos/src/Marks/Underline/Vue/index.vue",
-            "line": 27,
-            "column": 23,
+            "file": "demos/src/Nodes/Audio/Vue/index.vue",
+            "line": 76,
+            "column": 27,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/core/src/commands/joinTextblockBackward.ts",
-            "line": 16,
-            "column": 49,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "packages/extension-emoji/src/data.ts",
-            "line": 1733,
-            "column": 62,
+            "file": "packages/core/src/commands/lift.ts",
+            "line": 2,
+            "column": 31,
             "message": "Strings must use doublequote."
           },
           {
             "file": "packages/extension-emoji/src/data.ts",
-            "line": 5410,
-            "column": 131,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "packages/extension-emoji/src/data.ts",
-            "line": 10245,
+            "line": 2540,
             "column": 12,
             "message": "Strings must use doublequote."
           },
           {
             "file": "packages/extension-emoji/src/data.ts",
-            "line": 14903,
-            "column": 12,
+            "line": 7214,
+            "column": 7,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "packages/extension-emoji/src/data.ts",
+            "line": 12317,
+            "column": 21,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "packages/extension-emoji/src/data.ts",
+            "line": 17127,
+            "column": 38,
             "message": "Strings must use doublequote."
           },
           {
             "file": "packages/extension-list/__tests__/taskItem.spec.ts",
-            "line": 104,
-            "column": 66,
+            "line": 176,
+            "column": 60,
             "message": "Strings must use doublequote."
           },
           {
@@ -1079,13 +1093,13 @@
           },
           {
             "file": "packages/extension-emoji/src/data.ts",
-            "line": 1185,
+            "line": 1769,
             "column": 17,
             "message": "Strings must use singlequote."
           },
           {
             "file": "packages/markdown/__tests__/manager.spec.ts",
-            "line": 190,
+            "line": 306,
             "column": 28,
             "message": "Strings must use singlequote."
           }
@@ -1094,7 +1108,7 @@
     },
     "semi": {
       "always": {
-        "count": 24079,
+        "count": 24133,
         "samples": [
           {
             "file": ".eslintrc.js",
@@ -1104,50 +1118,50 @@
           },
           {
             "file": "demos/src/Examples/NodePos/React/index.spec.js",
-            "line": 129,
-            "column": 7,
+            "line": 121,
+            "column": 63,
             "message": "Missing semicolon."
           },
           {
             "file": "demos/src/Extensions/Typography/React/index.spec.js",
-            "line": 66,
-            "column": 74,
+            "line": 90,
+            "column": 90,
             "message": "Missing semicolon."
           },
           {
             "file": "demos/src/Nodes/Heading/React/index.spec.js",
-            "line": 3,
-            "column": 42,
+            "line": 36,
+            "column": 67,
             "message": "Missing semicolon."
           },
           {
             "file": "packages/core/__tests__/requiredAttributes.spec.ts",
-            "line": 33,
-            "column": 76,
+            "line": 109,
+            "column": 88,
             "message": "Missing semicolon."
           },
           {
-            "file": "packages/core/src/helpers/isList.ts",
-            "line": 8,
-            "column": 57,
+            "file": "packages/core/src/helpers/isMarkActive.ts",
+            "line": 62,
+            "column": 17,
             "message": "Missing semicolon."
           },
           {
             "file": "packages/extension-drag-handle/__tests__/findBestDragTarget.spec.ts",
-            "line": 334,
-            "column": 61,
+            "line": 365,
+            "column": 19,
             "message": "Missing semicolon."
           },
           {
-            "file": "packages/extension-paragraph/src/paragraph.ts",
-            "line": 75,
-            "column": 48,
+            "file": "packages/extension-paragraph/tsup.config.ts",
+            "line": 1,
+            "column": 36,
             "message": "Missing semicolon."
           },
           {
             "file": "packages/markdown/__tests__/utilities.spec.ts",
-            "line": 71,
-            "column": 9,
+            "line": 53,
+            "column": 31,
             "message": "Missing semicolon."
           },
           {

@@ -1,11 +1,11 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "095c71585af947034328c559b3cabb752e4f433d",
-  "analyzedCommitDate": "2026-03-27T02:52:01.000Z",
+  "analyzedCommit": "7502c8e239f651ad2cb008f035bc00324246501a",
+  "analyzedCommitDate": "2026-03-27T06:36:04.000Z",
   "checks": {
     "array-type": {
       "array": {
-        "count": 269,
+        "count": 273,
         "samples": [
           {
             "file": "docs/app/llms.mdx/[[...slug]]/route.ts",
@@ -27,15 +27,15 @@
           },
           {
             "file": "ts/packages/cli/src/commands/toolkits/format.ts",
-            "line": 111,
-            "column": 47,
+            "line": 134,
+            "column": 46,
             "message": "Array type using 'ReadonlyArray<UnifiedToolkit>' is forbidden. Use 'readonly UnifiedToolkit[]' instead."
           },
           {
             "file": "ts/packages/cli/src/effects/from-lazy-json.ts",
-            "line": 120,
-            "column": 13,
-            "message": "Array type using 'ReadonlyArray<string>' is forbidden. Use 'readonly string[]' instead."
+            "line": 124,
+            "column": 22,
+            "message": "Array type using 'Array<A>' is forbidden. Use 'A[]' instead."
           },
           {
             "file": "ts/packages/cli/src/services/composio-clients.ts",
@@ -206,7 +206,7 @@
           },
           {
             "file": "ts/packages/cli/src/utils/api-error-extraction.ts",
-            "line": 100,
+            "line": 114,
             "column": 23,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
@@ -292,7 +292,7 @@
         ]
       },
       "index-signature": {
-        "count": 386,
+        "count": 391,
         "samples": [
           {
             "file": "docs/app/api/feedback/route.ts",
@@ -309,12 +309,12 @@
           {
             "file": "ts/e2e-tests/cli/toolkits/info/e2e.test.ts",
             "line": 69,
-            "column": 53,
+            "column": 68,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "ts/packages/cli/src/commands/logs-cmd/commands/logs.triggers.cmd.ts",
-            "line": 219,
+            "line": 232,
             "column": 66,
             "message": "An index signature is preferred over a record."
           },
@@ -326,20 +326,20 @@
           },
           {
             "file": "ts/packages/cli/src/services/project-environment-detector.ts",
-            "line": 219,
-            "column": 43,
+            "line": 43,
+            "column": 22,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "ts/packages/cli/test/src/commands/tools/tools.execute.cmd.test.ts",
-            "line": 649,
-            "column": 24,
+            "line": 576,
+            "column": 22,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "ts/packages/core/src/types/connectedAccounts.types.ts",
-            "line": 94,
-            "column": 12,
+            "line": 92,
+            "column": 10,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -359,7 +359,7 @@
     },
     "consistent-type-definitions": {
       "interface": {
-        "count": 96,
+        "count": 97,
         "samples": [
           {
             "file": "docs/components/decimal-widget.tsx",
@@ -375,12 +375,12 @@
           },
           {
             "file": "ts/packages/cli/src/commands/tools/commands/tools.search.cmd.ts",
-            "line": 69,
+            "line": 61,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "ts/packages/cli/src/generation/python/generate.ts",
+            "file": "ts/packages/cli/src/effects/resolve-optional-text-input.ts",
             "line": 6,
             "column": 1,
             "message": "Use `interface` instead of `type`."
@@ -392,9 +392,9 @@
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "ts/packages/core/src/composio.ts",
-            "line": 24,
-            "column": 8,
+            "file": "ts/packages/cli/test/__utils__/typescript-compiler.ts",
+            "line": 64,
+            "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
@@ -623,7 +623,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 599,
+        "count": 601,
         "samples": [
           {
             "file": ".pnpmfile.cjs",
@@ -633,8 +633,8 @@
           },
           {
             "file": "docs/components/connect-flow.tsx",
-            "line": 103,
-            "column": 5,
+            "line": 222,
+            "column": 8,
             "message": "Expected a function expression."
           },
           {
@@ -645,25 +645,25 @@
           },
           {
             "file": "docs/lib/toolkit-schema.ts",
-            "line": 5,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "ts/e2e-tests/_utils/src/config.ts",
-            "line": 207,
+            "line": 34,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "ts/examples/file-handling/src/url.ts",
-            "line": 26,
+            "file": "ts/e2e-tests/_utils/src/config.ts",
+            "line": 248,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "ts/examples/google/src/experimental.mcp.ts",
+            "line": 7,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "ts/packages/cli/src/commands/tools/format.ts",
-            "line": 133,
+            "line": 97,
             "column": 8,
             "message": "Expected a function expression."
           },
@@ -675,7 +675,7 @@
           },
           {
             "file": "ts/packages/core/src/utils/transformers/toolRouterResponseTransform.ts",
-            "line": 109,
+            "line": 91,
             "column": 1,
             "message": "Expected a function expression."
           },
@@ -688,7 +688,7 @@
         ]
       },
       "declaration": {
-        "count": 628,
+        "count": 636,
         "samples": [
           {
             "file": "docs/components/ask-ai-button.tsx",
@@ -698,19 +698,19 @@
           },
           {
             "file": "ts/packages/cli/src/analytics/events.ts",
-            "line": 151,
+            "line": 157,
             "column": 7,
             "message": "Expected a function declaration."
           },
           {
-            "file": "ts/packages/cli/src/commands/logs-cmd/commands/logs.tools.cmd.ts",
-            "line": 27,
+            "file": "ts/packages/cli/src/commands/logs-cmd/commands/logs.triggers.cmd.ts",
+            "line": 211,
             "column": 14,
             "message": "Expected a function declaration."
           },
           {
             "file": "ts/packages/cli/src/commands/tools/commands/tools.execute.cmd.ts",
-            "line": 1555,
+            "line": 1674,
             "column": 14,
             "message": "Expected a function declaration."
           },
@@ -722,25 +722,25 @@
           },
           {
             "file": "ts/packages/cli/src/services/composio-clients.ts",
-            "line": 902,
+            "line": 848,
             "column": 14,
             "message": "Expected a function declaration."
           },
           {
-            "file": "ts/packages/cli/src/services/run-subagent-legacy.ts",
-            "line": 64,
+            "file": "ts/packages/cli/src/services/run-subagent-acp.ts",
+            "line": 219,
             "column": 7,
             "message": "Expected a function declaration."
           },
           {
-            "file": "ts/packages/cli/src/utils/parse-json-ish.ts",
-            "line": 3,
-            "column": 14,
+            "file": "ts/packages/cli/src/utils/api-error-extraction.ts",
+            "line": 111,
+            "column": 9,
             "message": "Expected a function declaration."
           },
           {
-            "file": "ts/packages/core/src/utils/logger.ts",
-            "line": 21,
+            "file": "ts/packages/core/src/utils/jsonSchema.ts",
+            "line": 12,
             "column": 14,
             "message": "Expected a function declaration."
           },
@@ -952,7 +952,7 @@
         ]
       },
       "4-space": {
-        "count": 766,
+        "count": 768,
         "samples": [
           {
             "file": ".pnpmfile.cjs",
@@ -973,13 +973,13 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "ts/packages/cli/src/commands/login.cmd.ts",
-            "line": 5,
+            "file": "ts/packages/cli/src/commands/logout.cmd.ts",
+            "line": 15,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "ts/packages/cli/src/effects/compare-semver.ts",
+            "file": "ts/packages/cli/src/effects/core-dependency.ts",
             "line": 5,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
@@ -991,7 +991,7 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "ts/packages/core/src/errors/PusherErrors.ts",
+            "file": "ts/packages/core/src/errors/FileModifierErrors.ts",
             "line": 4,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
@@ -1017,7 +1017,7 @@
         ]
       },
       "tab": {
-        "count": 763,
+        "count": 765,
         "samples": [
           {
             "file": ".pnpmfile.cjs",
@@ -1032,20 +1032,20 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "ts/examples/mastra/src/experimental.mcp.ts",
+            "file": "ts/examples/mastra/src/experimental.tool-router.ts",
             "line": 9,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "ts/packages/cli/src/commands/logs-cmd/commands/logs.triggers.cmd.ts",
-            "line": 13,
+            "file": "ts/packages/cli/src/commands/logs-cmd/format.ts",
+            "line": 10,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "ts/packages/cli/src/effects/debug-config.ts",
-            "line": 4,
+            "file": "ts/packages/cli/src/effects/detect-platform.ts",
+            "line": 8,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -1056,14 +1056,14 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "ts/packages/core/src/errors/RemoteFileErrors.ts",
+            "file": "ts/packages/core/src/errors/PusherErrors.ts",
             "line": 4,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "ts/packages/core/src/utils/version.ts",
-            "line": 12,
+            "file": "ts/packages/core/src/utils/uuid.ts",
+            "line": 2,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -1084,7 +1084,7 @@
     },
     "quotes": {
       "double": {
-        "count": 27756,
+        "count": 27941,
         "samples": [
           {
             "file": "docs/app/(home)/cookbooks/[[...slug]]/page.tsx",
@@ -1093,51 +1093,51 @@
             "message": "Strings must use doublequote."
           },
           {
-            "file": "ts/e2e-tests/runtimes/node/cjs-basic/fixtures/test.cjs",
-            "line": 66,
-            "column": 37,
+            "file": "ts/e2e-tests/runtimes/node/custom-tools/e2e.test.ts",
+            "line": 45,
+            "column": 10,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "ts/packages/cli/src/commands/proxy.cmd.ts",
-            "line": 264,
-            "column": 7,
+            "file": "ts/packages/cli/src/commands/py/commands/py.generate.cmd.ts",
+            "line": 32,
+            "column": 5,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "ts/packages/cli/src/generation/python/generate-toolkit-sources.ts",
-            "line": 38,
-            "column": 34,
+            "file": "ts/packages/cli/src/effects/validate-toolkit-versions.ts",
+            "line": 37,
+            "column": 39,
             "message": "Strings must use doublequote."
           },
           {
             "file": "ts/packages/cli/test/src/commands/py/py.generate.cmd.test.ts",
-            "line": 50,
-            "column": 15,
+            "line": 1,
+            "column": 18,
             "message": "Strings must use doublequote."
           },
           {
             "file": "ts/packages/cli/test/src/generation/typescript/generate-index-source.test.ts",
-            "line": 170,
-            "column": 14,
+            "line": 5,
+            "column": 8,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "ts/packages/core/test/AuthConfigs/AuthScheme.test.ts",
-            "line": 214,
-            "column": 21,
+            "file": "ts/packages/core/src/utils/version.ts",
+            "line": 2,
+            "column": 38,
             "message": "Strings must use doublequote."
           },
           {
             "file": "ts/packages/core/test/models/triggers.test.ts",
-            "line": 735,
-            "column": 37,
+            "line": 572,
+            "column": 96,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "ts/packages/json-schema-to-zod/test/json-to-zod.test.ts",
-            "line": 14,
-            "column": 30,
+            "file": "ts/packages/json-schema-to-zod/test/comprehensive-edge-case-tests.ts",
+            "line": 215,
+            "column": 28,
             "message": "Strings must use doublequote."
           },
           {
@@ -1149,7 +1149,7 @@
         ]
       },
       "single": {
-        "count": 1029,
+        "count": 1044,
         "samples": [
           {
             "file": "docs/app/llms.mdx/[[...slug]]/route.ts",
@@ -1159,50 +1159,50 @@
           },
           {
             "file": "docs/tests/integration/llm-endpoints.test.ts",
-            "line": 18,
-            "column": 28,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "docs/tests/static/content.test.ts",
-            "line": 12,
-            "column": 45,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "eslint.config.mjs",
-            "line": 27,
+            "line": 24,
             "column": 13,
             "message": "Strings must use singlequote."
           },
           {
+            "file": "docs/tests/static/content.test.ts",
+            "line": 43,
+            "column": 35,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "eslint.config.mjs",
+            "line": 31,
+            "column": 24,
+            "message": "Strings must use singlequote."
+          },
+          {
             "file": "ts/examples/tool-router/src/custom-tools-agent.ts",
-            "line": 70,
-            "column": 5,
+            "line": 78,
+            "column": 88,
             "message": "Strings must use singlequote."
           },
           {
             "file": "ts/examples/tool-router/src/custom-tools-e2e.ts",
-            "line": 136,
-            "column": 51,
+            "line": 176,
+            "column": 42,
             "message": "Strings must use singlequote."
           },
           {
             "file": "ts/examples/tool-router/src/custom-tools.ts",
-            "line": 22,
-            "column": 16,
+            "line": 38,
+            "column": 45,
             "message": "Strings must use singlequote."
           },
           {
             "file": "ts/packages/cli/src/commands/root-help.ts",
-            "line": 320,
+            "line": 335,
             "column": 7,
             "message": "Strings must use singlequote."
           },
           {
             "file": "ts/packages/core/src/models/Triggers.ts",
-            "line": 919,
-            "column": 9,
+            "line": 443,
+            "column": 33,
             "message": "Strings must use singlequote."
           },
           {
@@ -1281,7 +1281,7 @@
         ]
       },
       "never": {
-        "count": 29887,
+        "count": 30049,
         "samples": [
           {
             "file": "docs/app/(home)/cookbooks/[[...slug]]/page.tsx",
@@ -1290,51 +1290,51 @@
             "message": "Extra semicolon."
           },
           {
-            "file": "ts/e2e-tests/_utils/src/runner.ts",
-            "line": 939,
-            "column": 11,
+            "file": "ts/e2e-tests/_utils/src/sanitize.ts",
+            "line": 5,
+            "column": 45,
             "message": "Extra semicolon."
           },
           {
-            "file": "ts/packages/cli/src/commands/auth-configs/commands/auth-configs.delete.cmd.ts",
-            "line": 79,
-            "column": 63,
+            "file": "ts/packages/cli/src/commands/auth-configs/commands/auth-configs.list.cmd.ts",
+            "line": 3,
+            "column": 75,
             "message": "Extra semicolon."
           },
           {
             "file": "ts/packages/cli/src/effects/core-dependency.ts",
-            "line": 205,
-            "column": 38,
+            "line": 206,
+            "column": 5,
             "message": "Extra semicolon."
           },
           {
-            "file": "ts/packages/cli/test/src/commands/connected-accounts/connected-accounts.delete.cmd.test.ts",
-            "line": 58,
-            "column": 73,
+            "file": "ts/packages/cli/test/src/commands/auth-configs/auth-configs.list.cmd.test.ts",
+            "line": 84,
+            "column": 42,
             "message": "Extra semicolon."
           },
           {
             "file": "ts/packages/cli/test/src/generation/typescript/generate-toolkit-source.test.ts",
-            "line": 1421,
-            "column": 53,
+            "line": 87,
+            "column": 36,
             "message": "Extra semicolon."
           },
           {
-            "file": "ts/packages/core/src/types/mcp.types.ts",
-            "line": 139,
-            "column": 56,
+            "file": "ts/packages/core/src/types/customTool.types.ts",
+            "line": 266,
+            "column": 85,
             "message": "Extra semicolon."
           },
           {
             "file": "ts/packages/core/test/models/toolRouter.test.ts",
-            "line": 2102,
-            "column": 8,
+            "line": 1999,
+            "column": 92,
             "message": "Extra semicolon."
           },
           {
             "file": "ts/packages/json-schema-to-zod/src/parsers/parse-schema.ts",
-            "line": 177,
-            "column": 2,
+            "line": 90,
+            "column": 19,
             "message": "Extra semicolon."
           },
           {

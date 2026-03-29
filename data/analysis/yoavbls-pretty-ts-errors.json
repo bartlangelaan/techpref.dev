@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "2bb9325f9dc6f0a1454c8f3372d584b20909aa08",
-  "analyzedCommitDate": "2026-03-28T23:55:27.000Z",
+  "analyzedCommit": "21dd3948f61298374e59ca6f83b7ae389e898ce0",
+  "analyzedCommitDate": "2026-03-29T00:13:19.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -9,7 +9,7 @@
         "samples": []
       },
       "generic": {
-        "count": 21,
+        "count": 23,
         "samples": [
           {
             "file": "apps/vscode-extension/src/commands/execute.ts",
@@ -24,28 +24,28 @@
             "message": "Array type using 'MarkdownString[]' is forbidden. Use 'Array<MarkdownString>' instead."
           },
           {
-            "file": "apps/vscode-extension/src/logger.ts",
-            "line": 42,
-            "column": 33,
-            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
-          },
-          {
-            "file": "apps/vscode-extension/src/provider/webviewViewProvider.ts",
-            "line": 290,
-            "column": 53,
-            "message": "Array type using 'DiagnosticItem[]' is forbidden. Use 'Array<DiagnosticItem>' instead."
-          },
-          {
-            "file": "apps/vscode-extension/src/provider/webviewViewProvider.ts",
-            "line": 300,
-            "column": 53,
-            "message": "Array type using 'DiagnosticItem[]' is forbidden. Use 'Array<DiagnosticItem>' instead."
-          },
-          {
-            "file": "apps/vscode-extension/src/provider/webviewViewProvider.ts",
-            "line": 316,
-            "column": 21,
+            "file": "apps/vscode-extension/src/provider/markdownWebviewProvider.ts",
+            "line": 57,
+            "column": 16,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+          },
+          {
+            "file": "apps/vscode-extension/src/provider/webviewViewProvider.ts",
+            "line": 133,
+            "column": 17,
+            "message": "Array type using 'ThemeRegistration[]' is forbidden. Use 'Array<ThemeRegistration>' instead."
+          },
+          {
+            "file": "apps/vscode-extension/src/provider/webviewViewProvider.ts",
+            "line": 335,
+            "column": 53,
+            "message": "Array type using 'DiagnosticItem[]' is forbidden. Use 'Array<DiagnosticItem>' instead."
+          },
+          {
+            "file": "apps/vscode-extension/src/provider/webviewViewProvider.ts",
+            "line": 345,
+            "column": 53,
+            "message": "Array type using 'DiagnosticItem[]' is forbidden. Use 'Array<DiagnosticItem>' instead."
           },
           {
             "file": "packages/formatter/src/addMissingParentheses.ts",
@@ -55,9 +55,9 @@
           },
           {
             "file": "packages/formatter/src/errorMessagePrettifier.ts",
-            "line": 38,
-            "column": 58,
-            "message": "Array type using 'Rule[]' is forbidden. Use 'Array<Rule>' instead."
+            "line": 35,
+            "column": 23,
+            "message": "Array type using 'any[]' is forbidden. Use 'Array<any>' instead."
           },
           {
             "file": "packages/utils/src/index.ts",
@@ -102,13 +102,13 @@
           },
           {
             "file": "apps/vscode-extension/src/provider/webviewViewProvider.ts",
-            "line": 22,
+            "line": 27,
             "column": 33,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
             "file": "apps/vscode-extension/src/provider/webviewViewProvider.ts",
-            "line": 99,
+            "line": 104,
             "column": 32,
             "message": "The generic type arguments should be specified as part of the type annotation."
           }
@@ -185,13 +185,13 @@
           },
           {
             "file": "apps/vscode-extension/src/provider/webviewViewProvider.ts",
-            "line": 26,
+            "line": 31,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "apps/vscode-extension/src/provider/webviewViewProvider.ts",
-            "line": 31,
+            "line": 36,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
@@ -218,7 +218,7 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 14,
+        "count": 15,
         "samples": [
           {
             "file": "apps/vscode-extension/src/diagnostics.ts",
@@ -227,10 +227,10 @@
             "message": "Imports ExtensionContext and Uri are only used as type."
           },
           {
-            "file": "apps/vscode-extension/src/extension.ts",
+            "file": "apps/vscode-extension/src/formattedDiagnosticsStore.ts",
             "line": 1,
             "column": 1,
-            "message": "Imports ExtensionContext are only used as type."
+            "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
             "file": "apps/vscode-extension/src/logger.ts",
@@ -239,10 +239,10 @@
             "message": "Imports LogOutputChannel are only used as type."
           },
           {
-            "file": "apps/vscode-extension/src/logger.ts",
-            "line": 56,
-            "column": 28,
-            "message": "`import()` type annotations are forbidden."
+            "file": "apps/vscode-extension/src/provider/hoverProvider.ts",
+            "line": 1,
+            "column": 1,
+            "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
             "file": "apps/vscode-extension/src/provider/selectedTextHoverProvider.ts",
@@ -257,8 +257,8 @@
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "packages/vscode-formatter/src/components/hoverCodeBlock.ts",
-            "line": 4,
+            "file": "packages/vscode-formatter/src/components/errorTitle.ts",
+            "line": 2,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
@@ -269,8 +269,8 @@
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "packages/vscode-formatter/src/format/prettifyDiagnosticForHover.ts",
-            "line": 2,
+            "file": "packages/vscode-formatter/src/format/embedSymbolLinks.ts",
+            "line": 1,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
@@ -335,7 +335,7 @@
           },
           {
             "file": "apps/vscode-extension/src/provider/webviewViewProvider.ts",
-            "line": 9,
+            "line": 13,
             "column": 3,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -714,7 +714,7 @@
     },
     "quotes": {
       "double": {
-        "count": 28,
+        "count": 30,
         "samples": [
           {
             "file": "apps/vscode-extension/scripts/build.js",
@@ -724,38 +724,38 @@
           },
           {
             "file": "apps/vscode-extension/src/provider/webviewViewProvider.ts",
-            "line": 321,
+            "line": 141,
             "column": 9,
             "message": "Strings must use doublequote."
           },
           {
             "file": "apps/vscode-extension/src/provider/webviewViewProvider.ts",
-            "line": 324,
+            "line": 367,
             "column": 11,
             "message": "Strings must use doublequote."
           },
           {
             "file": "apps/vscode-extension/src/provider/webviewViewProvider.ts",
-            "line": 327,
+            "line": 371,
             "column": 11,
             "message": "Strings must use doublequote."
           },
           {
             "file": "apps/vscode-extension/src/provider/webviewViewProvider.ts",
-            "line": 332,
-            "column": 21,
+            "line": 375,
+            "column": 11,
             "message": "Strings must use doublequote."
           },
           {
             "file": "apps/vscode-extension/src/provider/webviewViewProvider.ts",
-            "line": 346,
-            "column": 15,
+            "line": 390,
+            "column": 13,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/formatter/src/formatTypeBlock.ts",
-            "line": 70,
-            "column": 39,
+            "file": "apps/vscode-extension/webview/index.js",
+            "line": 15,
+            "column": 25,
             "message": "Strings must use doublequote."
           },
           {
@@ -779,7 +779,7 @@
         ]
       },
       "single": {
-        "count": 457,
+        "count": 466,
         "samples": [
           {
             "file": "apps/vscode-extension/scripts/build.js",
@@ -789,49 +789,49 @@
           },
           {
             "file": "apps/vscode-extension/src/commands/revealSelection.ts",
-            "line": 2,
-            "column": 46,
+            "line": 3,
+            "column": 25,
             "message": "Strings must use singlequote."
           },
           {
             "file": "apps/vscode-extension/src/extension.ts",
-            "line": 8,
-            "column": 36,
+            "line": 10,
+            "column": 45,
             "message": "Strings must use singlequote."
           },
           {
             "file": "apps/vscode-extension/src/provider/selectedTextHoverProvider.ts",
-            "line": 27,
-            "column": 19,
+            "line": 49,
+            "column": 21,
             "message": "Strings must use singlequote."
           },
           {
             "file": "apps/vscode-extension/src/provider/webviewViewProvider.ts",
-            "line": 346,
-            "column": 15,
+            "line": 373,
+            "column": 11,
             "message": "Strings must use singlequote."
           },
           {
             "file": "eslint.config.mjs",
-            "line": 18,
+            "line": 14,
             "column": 7,
             "message": "Strings must use singlequote."
           },
           {
             "file": "packages/formatter/src/errorMessagePrettifier.ts",
-            "line": 91,
-            "column": 29,
+            "line": 71,
+            "column": 17,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "packages/utils/src/index.ts",
-            "line": 1,
-            "column": 20,
+            "file": "packages/formatter/vitest.config.ts",
+            "line": 7,
+            "column": 15,
             "message": "Strings must use singlequote."
           },
           {
             "file": "packages/vscode-formatter/src/format/prettifyDiagnosticForHover.ts",
-            "line": 15,
+            "line": 14,
             "column": 32,
             "message": "Strings must use singlequote."
           },
@@ -850,7 +850,7 @@
         "samples": []
       },
       "never": {
-        "count": 717,
+        "count": 730,
         "samples": [
           {
             "file": "apps/vscode-extension/scripts/build.js",
@@ -860,50 +860,50 @@
           },
           {
             "file": "apps/vscode-extension/src/commands/unpinError.ts",
-            "line": 3,
-            "column": 66,
+            "line": 5,
+            "column": 47,
             "message": "Extra semicolon."
           },
           {
             "file": "apps/vscode-extension/src/extension.ts",
-            "line": 35,
-            "column": 28,
+            "line": 41,
+            "column": 30,
             "message": "Extra semicolon."
           },
           {
             "file": "apps/vscode-extension/src/provider/markdownWebviewProvider.ts",
-            "line": 73,
+            "line": 83,
             "column": 47,
             "message": "Extra semicolon."
           },
           {
             "file": "apps/vscode-extension/src/provider/webviewViewProvider.ts",
-            "line": 146,
-            "column": 56,
+            "line": 165,
+            "column": 41,
             "message": "Extra semicolon."
           },
           {
-            "file": "apps/vscode-extension/src/test/runTest.ts",
-            "line": 21,
-            "column": 7,
+            "file": "apps/vscode-extension/src/provider/webviewViewProvider.ts",
+            "line": 403,
+            "column": 34,
             "message": "Extra semicolon."
           },
           {
-            "file": "packages/formatter/src/errorMessagePrettifier.ts",
-            "line": 7,
-            "column": 12,
+            "file": "packages/formatter/src/addMissingParentheses.ts",
+            "line": 49,
+            "column": 23,
             "message": "Extra semicolon."
           },
           {
             "file": "packages/formatter/test/formatter.vitest.ts",
-            "line": 28,
-            "column": 5,
+            "line": 18,
+            "column": 23,
             "message": "Extra semicolon."
           },
           {
             "file": "packages/vscode-formatter/src/format/embedSymbolLinks.ts",
-            "line": 15,
-            "column": 22,
+            "line": 12,
+            "column": 25,
             "message": "Extra semicolon."
           },
           {

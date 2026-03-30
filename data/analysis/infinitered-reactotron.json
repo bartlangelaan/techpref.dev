@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "40b15e30b57fc319db7756a3992d7c9f5431abc1",
-  "analyzedCommitDate": "2025-10-13T17:13:46.000Z",
+  "analyzedCommit": "8cebb4f77f080656b85d13e3c718afbf0308e67d",
+  "analyzedCommitDate": "2026-03-30T21:48:55.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -64,7 +64,7 @@
         ]
       },
       "generic": {
-        "count": 90,
+        "count": 102,
         "samples": [
           {
             "file": "apps/example-app/app/components/Screen.tsx",
@@ -74,51 +74,51 @@
           },
           {
             "file": "apps/reactotron-app/src/renderer/components/Footer/Stateless.tsx",
-            "line": 82,
+            "line": 132,
             "column": 16,
             "message": "Array type using 'Connection[]' is forbidden. Use 'Array<Connection>' instead."
           },
           {
             "file": "lib/reactotron-core-client/src/reactotron-core-client.ts",
-            "line": 37,
-            "column": 30,
-            "message": "Array type using 'any[]' is forbidden. Use 'Array<any>' instead."
-          },
-          {
-            "file": "lib/reactotron-core-client/src/reactotron-core-client.ts",
-            "line": 537,
-            "column": 30,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
-          },
-          {
-            "file": "lib/reactotron-core-contract/src/sagaTaskComplete.ts",
-            "line": 21,
-            "column": 13,
-            "message": "Array type using 'SagaTaskCompleteChild[]' is forbidden. Use 'Array<SagaTaskCompleteChild>' instead."
-          },
-          {
-            "file": "lib/reactotron-core-ui/src/components/Header/index.tsx",
-            "line": 62,
-            "column": 13,
+            "line": 108,
+            "column": 47,
             "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           },
           {
-            "file": "lib/reactotron-core-ui/src/contexts/State/useSubscriptions.ts",
-            "line": 10,
+            "file": "lib/reactotron-core-contract/src/benchmark.ts",
+            "line": 9,
+            "column": 10,
+            "message": "Array type using 'BenchmarkStep[]' is forbidden. Use 'Array<BenchmarkStep>' instead."
+          },
+          {
+            "file": "lib/reactotron-core-server/src/reactotron-core-server.ts",
+            "line": 89,
             "column": 18,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
-            "file": "lib/reactotron-core-ui/src/timelineCommands/LogCommand/index.tsx",
-            "line": 217,
-            "column": 12,
-            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
+            "file": "lib/reactotron-core-ui/src/contexts/CustomCommands/useCustomCommands.ts",
+            "line": 20,
+            "column": 19,
+            "message": "Array type using 'CustomCommand[]' is forbidden. Use 'Array<CustomCommand>' instead."
+          },
+          {
+            "file": "lib/reactotron-core-ui/src/contexts/Timeline/useTimeline.ts",
+            "line": 45,
+            "column": 16,
+            "message": "Array type using 'CommandTypeKey[]' is forbidden. Use 'Array<CommandTypeKey>' instead."
           },
           {
             "file": "lib/reactotron-core-ui/src/utils/filterCommands/index.ts",
-            "line": 77,
-            "column": 74,
+            "line": 71,
+            "column": 63,
             "message": "Array type using 'CommandTypeKey[]' is forbidden. Use 'Array<CommandTypeKey>' instead."
+          },
+          {
+            "file": "lib/reactotron-mcp/test/mcp-server.test.ts",
+            "line": 305,
+            "column": 23,
+            "message": "Array type using 'any[]' is forbidden. Use 'Array<any>' instead."
           },
           {
             "file": "lib/reactotron-redux/src/subscriptionsHandler.ts",
@@ -131,15 +131,22 @@
     },
     "consistent-generic-constructors": {
       "constructor": {
-        "count": 0,
-        "samples": []
+        "count": 1,
+        "samples": [
+          {
+            "file": "lib/reactotron-core-server/src/reactotron-core-server.ts",
+            "line": 94,
+            "column": 17,
+            "message": "The generic type arguments should be specified as part of the constructor type arguments."
+          }
+        ]
       },
       "type-annotation": {
         "count": 1,
         "samples": [
           {
             "file": "apps/reactotron-app/src/renderer/config.ts",
-            "line": 8,
+            "line": 9,
             "column": 25,
             "message": "The generic type arguments should be specified as part of the type annotation."
           }
@@ -148,7 +155,7 @@
     },
     "consistent-indexed-object-style": {
       "record": {
-        "count": 11,
+        "count": 10,
         "samples": [
           {
             "file": "apps/reactotron-app/src/renderer/pages/reactNative/components/OverlayMargins.tsx",
@@ -175,9 +182,9 @@
             "message": "A record is preferred over an index signature."
           },
           {
-            "file": "lib/reactotron-core-client/src/reactotron-core-client.ts",
-            "line": 62,
-            "column": 9,
+            "file": "lib/reactotron-core-contract/src/apiResponse.ts",
+            "line": 5,
+            "column": 16,
             "message": "A record is preferred over an index signature."
           },
           {
@@ -213,7 +220,7 @@
         ]
       },
       "index-signature": {
-        "count": 23,
+        "count": 29,
         "samples": [
           {
             "file": "apps/example-app/app/components/Button.tsx",
@@ -222,9 +229,9 @@
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "apps/example-app/app/components/Button.tsx",
-            "line": 211,
-            "column": 28,
+            "file": "apps/example-app/app/components/Text.tsx",
+            "line": 87,
+            "column": 11,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -235,19 +242,13 @@
           },
           {
             "file": "lib/reactotron-apisauce/test/plugin.test.ts",
-            "line": 20,
-            "column": 18,
-            "message": "An index signature is preferred over a record."
-          },
-          {
-            "file": "lib/reactotron-core-contract/src/command.ts",
-            "line": 95,
+            "line": 21,
             "column": 19,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "lib/reactotron-core-contract/src/state.ts",
-            "line": 6,
+            "line": 2,
             "column": 10,
             "message": "An index signature is preferred over a record."
           },
@@ -258,15 +259,21 @@
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "lib/reactotron-core-ui/src/components/TreeViewDiff/index.tsx",
-            "line": 77,
-            "column": 19,
+            "file": "lib/reactotron-core-ui/src/themes.ts",
+            "line": 35,
+            "column": 15,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "lib/reactotron-mst/test/mocks/create-mock-reactotron.ts",
-            "line": 67,
-            "column": 15,
+            "file": "lib/reactotron-mcp/src/tools.ts",
+            "line": 282,
+            "column": 31,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "lib/reactotron-mst/src/reactotron-mst.ts",
+            "line": 57,
+            "column": 39,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -321,7 +328,7 @@
         ]
       },
       "type": {
-        "count": 188,
+        "count": 193,
         "samples": [
           {
             "file": "apps/example-app/app/app.tsx",
@@ -337,43 +344,43 @@
           },
           {
             "file": "apps/reactotron-app/src/renderer/components/Footer/Stateless.tsx",
-            "line": 101,
+            "line": 130,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "lib/reactotron-core-client/src/client-options.ts",
-            "line": 9,
+            "file": "lib/reactotron-core-client/src/reactotron-core-client.ts",
+            "line": 25,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "lib/reactotron-core-contract/src/display.ts",
+            "file": "lib/reactotron-core-contract/src/image.ts",
             "line": 1,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "lib/reactotron-core-contract/src/state.ts",
-            "line": 58,
-            "column": 8,
+            "file": "lib/reactotron-core-ui/src/components/Checkbox/index.tsx",
+            "line": 17,
+            "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "lib/reactotron-core-ui/src/contexts/ReactNative/index.tsx",
-            "line": 8,
+            "file": "lib/reactotron-core-ui/src/contexts/Reactotron/index.tsx",
+            "line": 7,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "lib/reactotron-core-ui/src/timelineCommands/BaseCommand.tsx",
-            "line": 3,
-            "column": 8,
+            "line": 61,
+            "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "lib/reactotron-core-ui/src/utils/makeTable.tsx",
-            "line": 19,
+            "file": "lib/reactotron-mcp/src/resources.ts",
+            "line": 14,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
@@ -388,7 +395,7 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 144,
+        "count": 145,
         "samples": [
           {
             "file": "apps/example-app/app/app.tsx",
@@ -453,7 +460,7 @@
         ]
       },
       "no-type-imports": {
-        "count": 132,
+        "count": 144,
         "samples": [
           {
             "file": "apps/example-app/app/navigators/navigationUtilities.ts",
@@ -468,44 +475,44 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "lib/reactotron-core-client/src/plugins/clear.ts",
-            "line": 1,
+            "file": "lib/reactotron-core-client/src/plugins/image.ts",
+            "line": 2,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "lib/reactotron-core-contract/src/command.ts",
-            "line": 5,
+            "line": 8,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "lib/reactotron-core-ui/src/components/TreeViewDiff/index.tsx",
-            "line": 2,
-            "column": 20,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "lib/reactotron-core-ui/src/timelineCommands/LogCommand/index.tsx",
-            "line": 10,
+            "file": "lib/reactotron-core-ui/src/contexts/State/useSnapshots.ts",
+            "line": 6,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "lib/reactotron-mst/test/dispatch-action.test.ts",
+            "file": "lib/reactotron-core-ui/src/utils/filterCommands/index.ts",
             "line": 2,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "lib/reactotron-react-native/src/plugins/asyncStorage.ts",
-            "line": 1,
+            "file": "lib/reactotron-mst/src/reactotron-mst.ts",
+            "line": 27,
+            "column": 3,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "lib/reactotron-react-native/src/helpers/parseErrorStack.ts",
+            "line": 2,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "lib/reactotron-react-native/src/plugins/trackGlobalErrors.ts",
-            "line": 17,
+            "line": 16,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -520,7 +527,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 228,
+        "count": 255,
         "samples": [
           {
             "file": "apps/example-app/App.tsx",
@@ -529,56 +536,56 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "apps/example-app/app/navigators/navigationUtilities.ts",
-            "line": 181,
+            "file": "apps/example-app/app/utils/openLinkInBrowser.ts",
+            "line": 6,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "apps/reactotron-app/src/renderer/components/Footer/Stateless.tsx",
-            "line": 80,
-            "column": 1,
+            "file": "apps/reactotron-app/src/renderer/contexts/Layout/useLayout.ts",
+            "line": 14,
+            "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "apps/reactotron-app/src/renderer/pages/home/welcome.tsx",
-            "line": 24,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "apps/reactotron-app/src/renderer/pages/state/Snapshots.tsx",
-            "line": 60,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "lib/reactotron-core-server/src/repair-serialization.ts",
-            "line": 37,
+            "file": "apps/reactotron-app/src/renderer/pages/reactNative/Overlay.tsx",
+            "line": 224,
             "column": 3,
             "message": "Expected a function expression."
           },
           {
-            "file": "lib/reactotron-core-ui/src/timelineCommands/ApiResponseCommand/index.tsx",
-            "line": 40,
+            "file": "apps/reactotron-app/src/renderer/util/connectionHelpers.ts",
+            "line": 98,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "lib/reactotron-core-ui/src/contexts/Reactotron/useReactotron.ts",
+            "line": 49,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "lib/reactotron-core-ui/src/utils/filterCommands/index.ts",
-            "line": 77,
+            "file": "lib/reactotron-core-ui/src/timelineCommands/StateValuesResponseCommand/StateValuesResponseCommand.story.tsx",
+            "line": 10,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "lib/reactotron-react-js/src/index.ts",
-            "line": 21,
+            "file": "lib/reactotron-mcp/src/serialization.ts",
+            "line": 70,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "lib/reactotron-mst/test/request-values.test.ts",
+            "line": 4,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "scripts/release.artifacts.mjs",
-            "line": 74,
+            "line": 81,
             "column": 1,
             "message": "Expected a function expression."
           }
@@ -652,7 +659,7 @@
     },
     "import-export-preference": {
       "named": {
-        "count": 165,
+        "count": 166,
         "samples": [
           {
             "file": "apps/example-app/App.tsx",
@@ -662,13 +669,13 @@
           },
           {
             "file": "apps/reactotron-app/src/renderer/components/Footer/Stateless.tsx",
-            "line": 132,
+            "line": 175,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "apps/reactotron-app/src/renderer/pages/help/index.tsx",
-            "line": 130,
+            "file": "apps/reactotron-app/src/renderer/pages/home/index.tsx",
+            "line": 102,
             "column": 8,
             "message": "Prefer named exports"
           },
@@ -685,14 +692,14 @@
             "message": "Prefer named exports"
           },
           {
-            "file": "lib/reactotron-core-ui/src/contexts/Reactotron/useReactotron.ts",
-            "line": 92,
+            "file": "lib/reactotron-core-ui/src/contexts/State/index.tsx",
+            "line": 77,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "lib/reactotron-core-ui/src/timelineCommands/AsyncStorageMutationCommand/index.tsx",
-            "line": 40,
+            "file": "lib/reactotron-core-ui/src/timelineCommands/BenchmarkReportCommand/BenchmarkReportCommand.story.tsx",
+            "line": 6,
             "column": 8,
             "message": "Prefer named exports"
           },
@@ -717,7 +724,7 @@
         ]
       },
       "default": {
-        "count": 47,
+        "count": 49,
         "samples": [
           {
             "file": "apps/example-app/app/components/Repo.tsx",
@@ -732,38 +739,38 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "apps/example-app/app/screens/ErrorScreen/ErrorBoundary.tsx",
-            "line": 23,
+            "file": "apps/example-app/app/screens/LoggingScreen.tsx",
+            "line": 11,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "apps/example-app/app/screens/WelcomeScreen.tsx",
-            "line": 14,
+            "file": "apps/example-app/app/theme/colors.ts",
+            "line": 40,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "apps/example-app/app/utils/openLinkInBrowser.ts",
-            "line": 6,
+            "file": "apps/example-app/app/utils/useIsMounted.ts",
+            "line": 3,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "apps/reactotron-app/src/renderer/pages/reactNative/components/OverlayMargins.tsx",
-            "line": 33,
+            "file": "apps/reactotron-app/src/renderer/pages/reactNative/components/OverlayOpacity.tsx",
+            "line": 13,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "lib/reactotron-core-client/test/create-closing-server.ts",
-            "line": 9,
+            "file": "lib/reactotron-core-server/src/repair-serialization.ts",
+            "line": 30,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "lib/reactotron-core-ui/src/utils/escape-regex.ts",
-            "line": 9,
+            "file": "lib/reactotron-mcp/src/resources.ts",
+            "line": 85,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -788,7 +795,7 @@
         "samples": []
       },
       "4-space": {
-        "count": 350,
+        "count": 358,
         "samples": [
           {
             "file": ".eslintrc.js",
@@ -797,50 +804,50 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "apps/example-app/app/screens/ReduxScreen.tsx",
-            "line": 16,
+            "file": "apps/example-app/app/screens/WelcomeScreen.tsx",
+            "line": 15,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "apps/reactotron-app/src/renderer/components/Footer/Stateless.tsx",
-            "line": 7,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "apps/reactotron-app/src/renderer/pages/timeline/index.tsx",
+            "file": "apps/reactotron-app/src/renderer/components/Footer/index.tsx",
             "line": 8,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "lib/reactotron-core-client/test/plugin-send.test.ts",
-            "line": 12,
+            "file": "lib/eslint-plugin-reactotron/src/index.ts",
+            "line": 20,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "lib/reactotron-core-ui/src/components/HeaderTabButton/index.tsx",
-            "line": 9,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "lib/reactotron-core-ui/src/modals/SnapshotRenameModal/index.tsx",
+            "file": "lib/reactotron-core-client/test/start-timer.test.ts",
             "line": 7,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "lib/reactotron-core-ui/src/utils/filterCommands/index.ts",
-            "line": 6,
+            "file": "lib/reactotron-core-ui/src/components/RandomJoke/RandomJoke.tsx",
+            "line": 5,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "lib/reactotron-react-native/src/plugins/devTools.ts",
-            "line": 11,
+            "file": "lib/reactotron-core-ui/src/modals/TimelineFilterModal/index.tsx",
+            "line": 10,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "lib/reactotron-mcp/src/resources.ts",
+            "line": 7,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "lib/reactotron-react-native/src/plugins/asyncStorage.ts",
+            "line": 4,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -853,7 +860,7 @@
         ]
       },
       "tab": {
-        "count": 350,
+        "count": 358,
         "samples": [
           {
             "file": ".eslintrc.js",
@@ -862,50 +869,50 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "apps/example-app/app/screens/ReduxScreen.tsx",
-            "line": 16,
+            "file": "apps/example-app/app/screens/WelcomeScreen.tsx",
+            "line": 15,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "apps/reactotron-app/src/renderer/components/Footer/Stateless.tsx",
-            "line": 7,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "apps/reactotron-app/src/renderer/pages/timeline/index.tsx",
+            "file": "apps/reactotron-app/src/renderer/components/Footer/index.tsx",
             "line": 8,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "lib/reactotron-core-client/test/plugin-send.test.ts",
-            "line": 12,
+            "file": "lib/eslint-plugin-reactotron/src/index.ts",
+            "line": 20,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "lib/reactotron-core-ui/src/components/HeaderTabButton/index.tsx",
-            "line": 9,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "lib/reactotron-core-ui/src/modals/SnapshotRenameModal/index.tsx",
+            "file": "lib/reactotron-core-client/test/start-timer.test.ts",
             "line": 7,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "lib/reactotron-core-ui/src/utils/filterCommands/index.ts",
-            "line": 6,
+            "file": "lib/reactotron-core-ui/src/components/RandomJoke/RandomJoke.tsx",
+            "line": 5,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "lib/reactotron-react-native/src/plugins/devTools.ts",
-            "line": 11,
+            "file": "lib/reactotron-core-ui/src/modals/TimelineFilterModal/index.tsx",
+            "line": 10,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "lib/reactotron-mcp/src/resources.ts",
+            "line": 7,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "lib/reactotron-react-native/src/plugins/asyncStorage.ts",
+            "line": 4,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -920,7 +927,7 @@
     },
     "quotes": {
       "double": {
-        "count": 36,
+        "count": 40,
         "samples": [
           {
             "file": "apps/example-app/test/i18n.test.ts",
@@ -936,38 +943,38 @@
           },
           {
             "file": "lib/reactotron-core-client/src/serialize.ts",
-            "line": 9,
-            "column": 15,
+            "line": 10,
+            "column": 14,
             "message": "Strings must use doublequote."
           },
           {
             "file": "lib/reactotron-core-client/test/serialize.test.ts",
-            "line": 14,
+            "line": 26,
             "column": 20,
             "message": "Strings must use doublequote."
           },
           {
             "file": "lib/reactotron-core-ui/src/themes.ts",
-            "line": 38,
+            "line": 68,
             "column": 7,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "lib/reactotron-core-ui/src/timelineCommands/ApiResponseCommand/ApiResponseCommand.story.tsx",
-            "line": 35,
-            "column": 11,
-            "message": "Strings must use doublequote."
-          },
-          {
             "file": "lib/reactotron-core-ui/src/utils/filterCommands/filterCommands.test.ts",
-            "line": 136,
+            "line": 114,
             "column": 19,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "lib/reactotron-react-js/src/plugins/track-global-errors.ts",
-            "line": 8,
-            "column": 3,
+            "file": "lib/reactotron-core-ui/src/utils/filterCommands/filterCommands.test.ts",
+            "line": 189,
+            "column": 19,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "lib/reactotron-mcp/test/serialization.test.ts",
+            "line": 148,
+            "column": 40,
             "message": "Strings must use doublequote."
           },
           {
@@ -985,7 +992,7 @@
         ]
       },
       "single": {
-        "count": 7993,
+        "count": 8716,
         "samples": [
           {
             "file": ".eslintrc.js",
@@ -994,51 +1001,51 @@
             "message": "Strings must use singlequote."
           },
           {
-            "file": "apps/reactotron-app/src/main/menu.ts",
-            "line": 67,
-            "column": 38,
+            "file": "apps/reactotron-app/src/main/utils.ts",
+            "line": 34,
+            "column": 49,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "lib/reactotron-core-client/src/reactotron-core-client.ts",
-            "line": 7,
-            "column": 28,
+            "file": "lib/reactotron-core-client/test/api-response.test.ts",
+            "line": 24,
+            "column": 21,
             "message": "Strings must use singlequote."
           },
           {
             "file": "lib/reactotron-core-client/test/fixtures/large.js",
-            "line": 1260,
+            "line": 1581,
             "column": 19,
             "message": "Strings must use singlequote."
           },
           {
             "file": "lib/reactotron-core-client/test/fixtures/large.js",
-            "line": 2795,
+            "line": 3261,
+            "column": 11,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "lib/reactotron-core-client/test/fixtures/large.js",
+            "line": 4939,
+            "column": 13,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "lib/reactotron-core-server/test/connections.test.ts",
+            "line": 2,
+            "column": 30,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "lib/reactotron-core-ui/src/timelineCommands/StateActionCompleteCommand/StateActionCompleteCommand.story.tsx",
+            "line": 2,
             "column": 19,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "lib/reactotron-core-client/test/fixtures/large.js",
-            "line": 4338,
-            "column": 15,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "lib/reactotron-core-client/test/fixtures/large.js",
-            "line": 5884,
-            "column": 15,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "lib/reactotron-core-ui/src/contexts/Timeline/useTimeline.test.ts",
-            "line": 77,
-            "column": 45,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "lib/reactotron-mst/src/reactotron-mst.ts",
-            "line": 336,
-            "column": 70,
+            "file": "lib/reactotron-mcp/test/serialization.test.ts",
+            "line": 142,
+            "column": 8,
             "message": "Strings must use singlequote."
           },
           {
@@ -1052,7 +1059,7 @@
     },
     "semi": {
       "always": {
-        "count": 6624,
+        "count": 7441,
         "samples": [
           {
             "file": ".eslintrc.js",
@@ -1061,56 +1068,56 @@
             "message": "Missing semicolon."
           },
           {
-            "file": "apps/example-app/app/screens/ReduxScreen.tsx",
-            "line": 30,
-            "column": 68,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "apps/reactotron-app/src/renderer/contexts/Standalone/useStandalone.test.ts",
-            "line": 42,
-            "column": 11,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "lib/eslint-plugin-reactotron/tests/no-tron-in-production.test.ts",
-            "line": 2,
-            "column": 36,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "lib/reactotron-core-client/test/plugin-on-connect.test.ts",
-            "line": 17,
+            "file": "apps/example-app/app/services/api/apiProblem.test.ts",
+            "line": 68,
             "column": 3,
             "message": "Missing semicolon."
           },
           {
-            "file": "lib/reactotron-core-ui/src/contexts/CustomCommands/useCustomCommands.test.tsx",
-            "line": 59,
-            "column": 7,
+            "file": "apps/reactotron-app/src/renderer/contexts/Standalone/useStandalone.ts",
+            "line": 134,
+            "column": 59,
             "message": "Missing semicolon."
           },
           {
-            "file": "lib/reactotron-core-ui/src/modals/TimelineFilterModal/index.tsx",
-            "line": 106,
-            "column": 61,
+            "file": "lib/reactotron-core-client/src/reactotron-core-client.ts",
+            "line": 387,
+            "column": 20,
             "message": "Missing semicolon."
           },
           {
-            "file": "lib/reactotron-mst/src/reactotron-mst.ts",
-            "line": 374,
-            "column": 33,
+            "file": "lib/reactotron-core-server/src/reactotron-core-server.ts",
+            "line": 334,
+            "column": 12,
             "message": "Missing semicolon."
           },
           {
-            "file": "lib/reactotron-react-native/src/reactotron-react-native.ts",
-            "line": 108,
+            "file": "lib/reactotron-core-ui/src/contexts/State/useSubscriptions.test.tsx",
+            "line": 112,
+            "column": 9,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "lib/reactotron-core-ui/src/timelineCommands/StateValuesChangeCommand/index.tsx",
+            "line": 55,
             "column": 2,
             "message": "Missing semicolon."
           },
           {
+            "file": "lib/reactotron-mcp/test/mcp-server.test.ts",
+            "line": 703,
+            "column": 5,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "lib/reactotron-react-native/src/plugins/trackGlobalErrors.ts",
+            "line": 65,
+            "column": 36,
+            "message": "Missing semicolon."
+          },
+          {
             "file": "scripts/release.artifacts.mjs",
-            "line": 201,
+            "line": 208,
             "column": 20,
             "message": "Missing semicolon."
           }

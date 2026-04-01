@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "a408c63746f82b5af817a1454a3408a1b0e1940a",
-  "analyzedCommitDate": "2026-04-01T08:35:45.000Z",
+  "analyzedCommit": "7939cabc30af12f2248c00b48bfa99e6ab6c9fd7",
+  "analyzedCommitDate": "2026-04-01T15:33:02.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -70,7 +70,7 @@
         ]
       },
       "generic": {
-        "count": 3056,
+        "count": 3058,
         "samples": [
           {
             "file": "packages/shared/scripts/seeder/load-seed-clickhouse.ts",
@@ -80,39 +80,39 @@
           },
           {
             "file": "packages/shared/src/server/repositories/dataset-items.ts",
-            "line": 524,
-            "column": 25,
-            "message": "Array type using 'CreateManyValidationError[]' is forbidden. Use 'Array<CreateManyValidationError>' instead."
+            "line": 51,
+            "column": 15,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
-            "file": "packages/shared/src/utils/objects.ts",
-            "line": 9,
-            "column": 9,
-            "message": "Array type using 'K[]' is forbidden. Use 'Array<K>' instead."
-          },
-          {
-            "file": "web/src/components/table/data-table-toolbar.tsx",
-            "line": 100,
-            "column": 28,
-            "message": "Array type using 'ColumnDefinition[]' is forbidden. Use 'Array<ColumnDefinition>' instead."
-          },
-          {
-            "file": "web/src/components/ui/AdvancedJsonViewer/utils/jsonTypes.ts",
-            "line": 66,
-            "column": 28,
+            "file": "packages/shared/src/utils/json.ts",
+            "line": 298,
+            "column": 32,
             "message": "Array type using 'unknown[]' is forbidden. Use 'Array<unknown>' instead."
           },
           {
-            "file": "web/src/features/datasets/components/DatasetRunsTable.tsx",
-            "line": 185,
-            "column": 30,
+            "file": "web/src/components/table/data-table-toolbar.tsx",
+            "line": 79,
+            "column": 16,
+            "message": "Array type using 'TracingSearchType[]' is forbidden. Use 'Array<TracingSearchType>' instead."
+          },
+          {
+            "file": "web/src/components/ui/AdvancedJsonViewer/utils/debug.ts",
+            "line": 41,
+            "column": 37,
+            "message": "Array type using 'unknown[]' is forbidden. Use 'Array<unknown>' instead."
+          },
+          {
+            "file": "web/src/features/datasets/components/DatasetRunItemsByRunTable.tsx",
+            "line": 97,
+            "column": 18,
             "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           },
           {
             "file": "web/src/features/playground/page/context/index.tsx",
-            "line": 476,
-            "column": 27,
-            "message": "Array type using 'ChatMessage[]' is forbidden. Use 'Array<ChatMessage>' instead."
+            "line": 146,
+            "column": 12,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
             "file": "web/src/features/trace-graph-view/buildStepData.ts",
@@ -121,8 +121,8 @@
             "message": "Array type using 'AgentGraphDataResponse[]' is forbidden. Use 'Array<AgentGraphDataResponse>' instead."
           },
           {
-            "file": "worker/src/backgroundMigrations/migrateEventLogToBlobStorageRefTable.ts",
-            "line": 46,
+            "file": "worker/src/backgroundMigrations/migrateDatasetRunItemsFromPostgresToClickhouseRmt.ts",
+            "line": 39,
             "column": 54,
             "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           },
@@ -533,7 +533,7 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 377,
+        "count": 379,
         "samples": [
           {
             "file": "packages/shared/scripts/seeder/prepare-clickhouse.ts",
@@ -548,34 +548,34 @@
             "message": "Imports Model are only used as type."
           },
           {
-            "file": "packages/shared/src/server/redis/projectDelete.ts",
-            "line": 1,
+            "file": "packages/shared/src/server/redis/otelIngestionQueue.ts",
+            "line": 2,
             "column": 1,
             "message": "Imports TQueueJobTypes are only used as type."
           },
           {
             "file": "packages/shared/src/server/repositories/observations.ts",
-            "line": 28,
+            "line": 25,
             "column": 1,
-            "message": "Imports PreferredClickhouseService are only used as type."
+            "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "packages/shared/src/server/services/PromptService/index.ts",
+            "file": "packages/shared/src/server/services/InMemoryFilterService.ts",
             "line": 1,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "packages/shared/src/tableDefinitions/datasetItemsTable.ts",
-            "line": 1,
+            "file": "packages/shared/src/server/utils/transforms/index.ts",
+            "line": 3,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "worker/src/backgroundMigrations/backfillSysIdForDatasetItems.ts",
-            "line": 1,
+            "file": "worker/src/backgroundMigrations/backfillExperimentsHistoric.ts",
+            "line": 10,
             "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
+            "message": "Imports DatasetRunItem, SpanRecord, EnrichedSpan, and TraceProperties are only used as type."
           },
           {
             "file": "worker/src/features/evaluation/evalService.ts",
@@ -598,7 +598,7 @@
         ]
       },
       "no-type-imports": {
-        "count": 2219,
+        "count": 2221,
         "samples": [
           {
             "file": "packages/shared/scripts/seeder/seed-postgres.ts",
@@ -608,14 +608,14 @@
           },
           {
             "file": "web/src/components/ChatMessages/messageSearch/context.tsx",
-            "line": 16,
+            "line": 17,
             "column": 3,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "web/src/components/trace2/ObservationPreview.tsx",
-            "line": 47,
-            "column": 10,
+            "line": 25,
+            "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
@@ -637,9 +637,9 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "web/src/features/organizations/components/ProjectOverview.tsx",
-            "line": 34,
-            "column": 10,
+            "file": "web/src/features/organizations/components/NewOrganizationForm.tsx",
+            "line": 3,
+            "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
@@ -649,9 +649,9 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "web/src/pages/api/public/organizations/memberships/index.ts",
-            "line": 11,
-            "column": 10,
+            "file": "web/src/pages/api/public/organizations/apiKeys/index.ts",
+            "line": 7,
+            "column": 31,
             "message": "Use an `import` instead of an `import type`."
           },
           {
@@ -665,7 +665,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 2049,
+        "count": 2053,
         "samples": [
           {
             "file": ".agents/skills/add-model-price/scripts/test-match-pattern.mjs",
@@ -681,37 +681,37 @@
           },
           {
             "file": "web/src/components/deleteButton.tsx",
-            "line": 252,
+            "line": 295,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "web/src/components/trace2/components/_layout/TracePanelNavigationHeader.tsx",
-            "line": 41,
-            "column": 1,
+            "file": "web/src/components/trace2/components/_layout/TracePanelNavigation.tsx",
+            "line": 25,
+            "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "web/src/components/ui/time-picker-utils.tsx",
-            "line": 89,
+            "line": 81,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "web/src/features/datasets/components/DatasetVersionHistoryPanel.tsx",
-            "line": 68,
+            "file": "web/src/features/datasets/components/DatasetRunsTable.tsx",
+            "line": 181,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "web/src/features/playground/page/components/JumpToPlaygroundButton.tsx",
-            "line": 486,
+            "line": 444,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "web/src/features/support-chat/pylon/pylonClient.ts",
-            "line": 171,
+            "line": 142,
             "column": 8,
             "message": "Expected a function expression."
           },
@@ -730,7 +730,7 @@
         ]
       },
       "declaration": {
-        "count": 2135,
+        "count": 2134,
         "samples": [
           {
             "file": "packages/shared/scripts/seeder/load-seed-clickhouse.ts",
@@ -764,13 +764,13 @@
           },
           {
             "file": "web/src/features/datasets/server/utils.ts",
-            "line": 7,
+            "line": 6,
             "column": 7,
             "message": "Expected a function declaration."
           },
           {
-            "file": "web/src/features/notifications/ErrorNotification.tsx",
-            "line": 14,
+            "file": "web/src/features/navigation/utils/tracing-tabs.ts",
+            "line": 8,
             "column": 14,
             "message": "Expected a function declaration."
           },
@@ -862,7 +862,7 @@
         ]
       },
       "default": {
-        "count": 862,
+        "count": 863,
         "samples": [
           {
             "file": "ee/src/ee-license-check/index.ts",
@@ -871,7 +871,7 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "packages/shared/src/server/utils/transforms/transformStreamToJsonl.ts",
+            "file": "packages/shared/src/server/utils/transforms/transformStreamToJson.ts",
             "line": 4,
             "column": 1,
             "message": "Prefer default export on a file with single export."
@@ -883,14 +883,14 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "web/src/ee/features/billing/components/StripeCustomerPortalButton.tsx",
-            "line": 7,
+            "file": "web/src/ee/features/billing/components/StripeCancellationButton.tsx",
+            "line": 18,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "web/src/features/comments/hooks/useTextSelection.ts",
-            "line": 31,
+            "file": "web/src/features/comments/hooks/useMentionAutocomplete.ts",
+            "line": 4,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -907,8 +907,8 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "web/src/features/score-analytics/components/charts/HeatmapCell.tsx",
-            "line": 156,
+            "file": "web/src/features/score-analytics/components/cards/TimelineChartCard.tsx",
+            "line": 35,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -994,7 +994,7 @@
         ]
       },
       "4-space": {
-        "count": 2104,
+        "count": 2106,
         "samples": [
           {
             "file": ".agents/skills/add-model-price/scripts/test-match-pattern.mjs",
@@ -1003,8 +1003,8 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/shared/src/server/services/email/blobStorageExportFailed/BlobStorageExportFailedEmailTemplate.tsx",
-            "line": 3,
+            "file": "packages/shared/src/server/services/email/batchExportSuccess/sendBatchExportSuccessEmail.ts",
+            "line": 9,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -1015,32 +1015,32 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "web/src/components/trace2/contexts/TraceGraphDataContext.tsx",
-            "line": 19,
+            "file": "web/src/components/trace2/contexts/TraceDataContext.tsx",
+            "line": 16,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "web/src/features/automations/components/actions/SlackActionHandler.ts",
-            "line": 6,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "web/src/features/evals/utils/template-output.clienttest.ts",
-            "line": 2,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "web/src/features/projects/components/ConfigureRetention.tsx",
-            "line": 8,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "web/src/features/widgets/chart-library/VerticalBarChart.tsx",
+            "file": "web/src/features/automations/components/actions/SlackActionForm.tsx",
             "line": 3,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "web/src/features/evals/utils/template-form-defaults.ts",
+            "line": 4,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "web/src/features/posthog-integration/types.ts",
+            "line": 5,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "web/src/features/widgets/chart-library/QueryProgressBar.tsx",
+            "line": 5,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -1059,7 +1059,7 @@
         ]
       },
       "tab": {
-        "count": 2104,
+        "count": 2106,
         "samples": [
           {
             "file": ".agents/skills/add-model-price/scripts/test-match-pattern.mjs",
@@ -1068,8 +1068,8 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/shared/src/server/services/email/blobStorageExportFailed/BlobStorageExportFailedEmailTemplate.tsx",
-            "line": 3,
+            "file": "packages/shared/src/server/services/email/batchExportSuccess/sendBatchExportSuccessEmail.ts",
+            "line": 9,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -1080,32 +1080,32 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "web/src/components/trace2/contexts/TraceGraphDataContext.tsx",
-            "line": 19,
+            "file": "web/src/components/trace2/contexts/TraceDataContext.tsx",
+            "line": 16,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "web/src/features/automations/components/actions/SlackActionHandler.ts",
-            "line": 6,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "web/src/features/evals/utils/template-output.clienttest.ts",
-            "line": 2,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "web/src/features/projects/components/ConfigureRetention.tsx",
-            "line": 8,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "web/src/features/widgets/chart-library/VerticalBarChart.tsx",
+            "file": "web/src/features/automations/components/actions/SlackActionForm.tsx",
             "line": 3,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "web/src/features/evals/utils/template-form-defaults.ts",
+            "line": 4,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "web/src/features/posthog-integration/types.ts",
+            "line": 5,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "web/src/features/widgets/chart-library/QueryProgressBar.tsx",
+            "line": 5,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -1191,7 +1191,7 @@
         ]
       },
       "single": {
-        "count": 82939,
+        "count": 83031,
         "samples": [
           {
             "file": ".agents/skills/add-model-price/scripts/test-match-pattern.mjs",
@@ -1201,50 +1201,50 @@
           },
           {
             "file": "packages/shared/src/server/tableMappings/mapObservationsTable.ts",
-            "line": 196,
-            "column": 30,
+            "line": 179,
+            "column": 7,
             "message": "Strings must use singlequote."
           },
           {
             "file": "web/src/__tests__/server/datasets-schema-validation.servertest.ts",
-            "line": 741,
-            "column": 42,
+            "line": 732,
+            "column": 9,
             "message": "Strings must use singlequote."
           },
           {
             "file": "web/src/__tests__/server/repositories/experiment-repository.servertest.ts",
-            "line": 629,
+            "line": 475,
             "column": 15,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "web/src/components/trace2/components/TraceTree.tsx",
-            "line": 33,
-            "column": 36,
+            "file": "web/src/components/trace2/components/TraceTimeline/timeline-calculations.clienttest.ts",
+            "line": 76,
+            "column": 34,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "web/src/features/datasets/components/DatasetAggregateTableCell.tsx",
-            "line": 21,
-            "column": 25,
+            "file": "web/src/features/datasets/components/DatasetActionButton.tsx",
+            "line": 85,
+            "column": 41,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "web/src/features/prompts/components/duplicate-prompt.tsx",
-            "line": 15,
-            "column": 30,
+            "file": "web/src/features/prompts/components/duplicate-folder.tsx",
+            "line": 28,
+            "column": 29,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "web/src/pages/api/public/prompts.ts",
-            "line": 113,
+            "file": "web/src/pages/api/public/projects/index.ts",
+            "line": 105,
             "column": 16,
             "message": "Strings must use singlequote."
           },
           {
             "file": "worker/src/__tests__/ingestionMasking.test.ts",
-            "line": 123,
-            "column": 17,
+            "line": 49,
+            "column": 54,
             "message": "Strings must use singlequote."
           },
           {
@@ -1262,7 +1262,7 @@
         "samples": []
       },
       "never": {
-        "count": 96637,
+        "count": 96702,
         "samples": [
           {
             "file": ".agents/skills/add-model-price/scripts/test-match-pattern.mjs",
@@ -1278,44 +1278,44 @@
           },
           {
             "file": "web/src/__tests__/server/projects-api.servertest.ts",
-            "line": 138,
-            "column": 38,
+            "line": 92,
+            "column": 64,
             "message": "Extra semicolon."
           },
           {
-            "file": "web/src/components/date-picker.tsx",
-            "line": 112,
-            "column": 15,
+            "file": "web/src/components/VersionLabel.tsx",
+            "line": 30,
+            "column": 55,
             "message": "Extra semicolon."
           },
           {
             "file": "web/src/components/ui/PrettyJsonView.tsx",
-            "line": 1444,
-            "column": 33,
+            "line": 1081,
+            "column": 30,
             "message": "Extra semicolon."
           },
           {
-            "file": "web/src/features/evals/hooks/useEvalConfigMappingData.ts",
-            "line": 63,
-            "column": 28,
+            "file": "web/src/features/evals/hooks/useEvalCapabilities.ts",
+            "line": 22,
+            "column": 51,
             "message": "Extra semicolon."
           },
           {
-            "file": "web/src/features/score-analytics/components/charts/ScoreChartLegendContent.tsx",
-            "line": 136,
-            "column": 11,
+            "file": "web/src/features/score-analytics/components/charts/MetricCard.tsx",
+            "line": 132,
+            "column": 4,
             "message": "Extra semicolon."
           },
           {
             "file": "web/src/pages/auth/sign-in.tsx",
-            "line": 633,
-            "column": 12,
+            "line": 582,
+            "column": 44,
             "message": "Extra semicolon."
           },
           {
             "file": "worker/src/__tests__/slack-processor.test.ts",
-            "line": 408,
-            "column": 68,
+            "line": 357,
+            "column": 75,
             "message": "Extra semicolon."
           },
           {

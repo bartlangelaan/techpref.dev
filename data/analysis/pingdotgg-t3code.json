@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "60f7ae86bbeaa95ebdfeb0fd83edc564119258df",
-  "analyzedCommitDate": "2026-04-02T07:47:47.000Z",
+  "analyzedCommit": "5ce5472bc389e178132df40f316014d714f3275d",
+  "analyzedCommitDate": "2026-04-02T18:39:27.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -70,7 +70,7 @@
         ]
       },
       "generic": {
-        "count": 423,
+        "count": 424,
         "samples": [
           {
             "file": "apps/desktop/src/main.ts",
@@ -98,9 +98,9 @@
           },
           {
             "file": "apps/web/src/components/Sidebar.logic.ts",
-            "line": 403,
-            "column": 19,
-            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
+            "line": 397,
+            "column": 12,
+            "message": "Array type using 'readonly T[]' is forbidden. Use 'ReadonlyArray<T>' instead."
           },
           {
             "file": "apps/web/src/composerDraftStore.ts",
@@ -411,7 +411,7 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 113,
+        "count": 115,
         "samples": [
           {
             "file": "apps/desktop/src/syncShellEnvironment.ts",
@@ -420,10 +420,10 @@
             "message": "Imports ShellEnvironmentReader are only used as type."
           },
           {
-            "file": "apps/server/src/checkpointing/Utils.ts",
+            "file": "apps/server/src/cli.ts",
             "line": 2,
             "column": 1,
-            "message": "Imports ProjectId are only used as type."
+            "message": "Imports LogLevel are only used as type."
           },
           {
             "file": "apps/server/src/git/Services/GitManager.ts",
@@ -432,28 +432,28 @@
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "apps/server/src/persistence/Services/OrchestrationCommandReceipts.ts",
-            "line": 18,
+            "file": "apps/server/src/persistence/Services/OrchestrationEventStore.ts",
+            "line": 12,
             "column": 1,
-            "message": "Imports Option are only used as type."
+            "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
             "file": "apps/server/src/provider/Layers/CodexAdapter.ts",
-            "line": 9,
+            "line": 25,
             "column": 1,
-            "message": "Imports ThreadId and ProviderSendTurnInput are only used as type."
+            "message": "Imports ServiceMap are only used as type."
           },
           {
-            "file": "apps/server/src/terminal/Layers/Manager.test.ts",
-            "line": 11,
+            "file": "apps/server/src/terminal/Layers/NodePTY.ts",
+            "line": 4,
             "column": 1,
-            "message": "Imports PlatformError are only used as type."
+            "message": "Imports PtyAdapterShape, PtyExitEvent, and PtyProcess are only used as type."
           },
           {
             "file": "apps/web/src/components/ChatView.tsx",
-            "line": 1,
+            "line": 159,
             "column": 1,
-            "message": "Imports OrchestrationThreadActivity, ProviderInteractionMode, RuntimeMode, and TerminalOpenInput are only used as type."
+            "message": "Imports ExpandedImagePreview are only used as type."
           },
           {
             "file": "apps/web/src/components/chat/ProviderModelPicker.tsx",
@@ -462,10 +462,10 @@
             "message": "Imports buttonVariants are only used as type."
           },
           {
-            "file": "apps/web/src/modelSelection.ts",
-            "line": 9,
+            "file": "apps/web/src/lib/providerReactQuery.ts",
+            "line": 1,
             "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
+            "message": "Imports ThreadId are only used as type."
           },
           {
             "file": "packages/contracts/src/ipc.ts",
@@ -476,7 +476,7 @@
         ]
       },
       "no-type-imports": {
-        "count": 755,
+        "count": 758,
         "samples": [
           {
             "file": "apps/desktop/src/confirmDialog.test.ts",
@@ -498,25 +498,25 @@
           },
           {
             "file": "apps/server/src/provider/Layers/ClaudeProvider.ts",
-            "line": 1,
-            "column": 1,
+            "line": 23,
+            "column": 3,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "apps/server/src/server.test.ts",
-            "line": 40,
+            "line": 44,
             "column": 3,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "apps/web/src/components/ChatView.tsx",
-            "line": 16,
+            "line": 35,
             "column": 3,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "apps/web/src/components/chat/ChangedFilesTree.tsx",
-            "line": 3,
+            "line": 1,
             "column": 10,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -543,7 +543,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 1633,
+        "count": 1635,
         "samples": [
           {
             "file": "apps/desktop/scripts/dev-electron.mjs",
@@ -553,7 +553,7 @@
           },
           {
             "file": "apps/server/src/git/Layers/GitCore.ts",
-            "line": 318,
+            "line": 339,
             "column": 1,
             "message": "Expected a function expression."
           },
@@ -565,25 +565,25 @@
           },
           {
             "file": "apps/server/src/terminal/Layers/Manager.ts",
-            "line": 425,
+            "line": 429,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "apps/web/src/components/PullRequestThreadDialog.tsx",
-            "line": 33,
-            "column": 8,
+            "file": "apps/web/src/components/ProjectScriptsControl.tsx",
+            "line": 129,
+            "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "apps/web/src/components/ui/card.tsx",
-            "line": 150,
+            "line": 134,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "apps/web/src/composerDraftStore.test.ts",
-            "line": 52,
+            "line": 25,
             "column": 1,
             "message": "Expected a function expression."
           },
@@ -595,7 +595,7 @@
           },
           {
             "file": "apps/web/src/store.ts",
-            "line": 343,
+            "line": 326,
             "column": 1,
             "message": "Expected a function expression."
           },
@@ -608,7 +608,7 @@
         ]
       },
       "declaration": {
-        "count": 550,
+        "count": 556,
         "samples": [
           {
             "file": "apps/desktop/scripts/dev-electron.mjs",
@@ -618,49 +618,49 @@
           },
           {
             "file": "apps/server/src/git/Layers/CodexTextGeneration.ts",
-            "line": 63,
+            "line": 85,
             "column": 9,
             "message": "Expected a function declaration."
           },
           {
             "file": "apps/server/src/orchestration/Layers/CheckpointReactor.ts",
-            "line": 130,
-            "column": 11,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "apps/server/src/orchestration/Layers/ProviderRuntimeIngestion.ts",
-            "line": 31,
-            "column": 7,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "apps/server/src/persistence/Layers/ProjectionThreads.ts",
             "line": 150,
             "column": 9,
             "message": "Expected a function declaration."
           },
           {
-            "file": "apps/server/src/provider/Layers/ProviderRegistry.ts",
-            "line": 25,
-            "column": 14,
+            "file": "apps/server/src/orchestration/Layers/ProviderRuntimeIngestion.ts",
+            "line": 543,
+            "column": 9,
             "message": "Expected a function declaration."
           },
           {
-            "file": "apps/server/src/workspace/Layers/WorkspaceEntries.test.ts",
-            "line": 65,
+            "file": "apps/server/src/persistence/Layers/ProjectionTurns.ts",
+            "line": 279,
+            "column": 9,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "apps/server/src/provider/Layers/ProviderService.test.ts",
+            "line": 52,
             "column": 7,
             "message": "Expected a function declaration."
           },
           {
+            "file": "apps/web/src/components/BranchToolbarBranchSelector.tsx",
+            "line": 160,
+            "column": 9,
+            "message": "Expected a function declaration."
+          },
+          {
             "file": "apps/web/src/components/Sidebar.tsx",
-            "line": 1498,
+            "line": 1493,
             "column": 11,
             "message": "Expected a function declaration."
           },
           {
             "file": "apps/web/src/routes/__root.tsx",
-            "line": 356,
+            "line": 317,
             "column": 11,
             "message": "Expected a function declaration."
           },
@@ -818,7 +818,7 @@
         ]
       },
       "4-space": {
-        "count": 512,
+        "count": 513,
         "samples": [
           {
             "file": "apps/desktop/scripts/dev-electron.mjs",
@@ -839,26 +839,26 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "apps/server/src/project/Layers/ProjectFaviconResolver.ts",
-            "line": 4,
+            "file": "apps/server/src/project/Services/ProjectFaviconResolver.ts",
+            "line": 21,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "apps/server/src/workspace/Layers/WorkspaceFileSystem.ts",
-            "line": 4,
+            "file": "apps/server/src/workspace/Layers/WorkspacePaths.test.ts",
+            "line": 9,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "apps/web/src/components/chat/MessagesTimeline.logic.ts",
-            "line": 10,
+            "file": "apps/web/src/components/chat/MessagesTimeline.logic.test.ts",
+            "line": 5,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "apps/web/src/components/ui/skeleton.tsx",
-            "line": 4,
+            "file": "apps/web/src/components/ui/sidebar.tsx",
+            "line": 12,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -883,7 +883,7 @@
         ]
       },
       "tab": {
-        "count": 512,
+        "count": 513,
         "samples": [
           {
             "file": "apps/desktop/scripts/dev-electron.mjs",
@@ -904,26 +904,26 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "apps/server/src/project/Layers/ProjectFaviconResolver.ts",
-            "line": 4,
+            "file": "apps/server/src/project/Services/ProjectFaviconResolver.ts",
+            "line": 21,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "apps/server/src/workspace/Layers/WorkspaceFileSystem.ts",
-            "line": 4,
+            "file": "apps/server/src/workspace/Layers/WorkspacePaths.test.ts",
+            "line": 9,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "apps/web/src/components/chat/MessagesTimeline.logic.ts",
-            "line": 10,
+            "file": "apps/web/src/components/chat/MessagesTimeline.logic.test.ts",
+            "line": 5,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "apps/web/src/components/ui/skeleton.tsx",
-            "line": 4,
+            "file": "apps/web/src/components/ui/sidebar.tsx",
+            "line": 12,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -950,7 +950,7 @@
     },
     "quotes": {
       "double": {
-        "count": 177,
+        "count": 181,
         "samples": [
           {
             "file": "apps/marketing/src/pages/index.astro",
@@ -966,37 +966,37 @@
           },
           {
             "file": "apps/server/src/git/Layers/CodexTextGeneration.test.ts",
-            "line": 91,
+            "line": 97,
             "column": 15,
             "message": "Strings must use doublequote."
           },
           {
             "file": "apps/server/src/git/Layers/GitManager.test.ts",
-            "line": 2575,
+            "line": 2638,
             "column": 9,
             "message": "Strings must use doublequote."
           },
           {
             "file": "apps/server/src/provider/Layers/EventNdjsonLogger.test.ts",
-            "line": 69,
-            "column": 11,
+            "line": 108,
+            "column": 43,
             "message": "Strings must use doublequote."
           },
           {
             "file": "apps/server/src/provider/Layers/ProviderRegistry.test.ts",
-            "line": 746,
+            "line": 750,
             "column": 15,
             "message": "Strings must use doublequote."
           },
           {
             "file": "apps/web/src/components/ChatView.browser.tsx",
-            "line": 775,
+            "line": 823,
             "column": 47,
             "message": "Strings must use doublequote."
           },
           {
             "file": "apps/web/src/components/GitActionsControl.logic.test.ts",
-            "line": 840,
+            "line": 825,
             "column": 9,
             "message": "Strings must use doublequote."
           },
@@ -1015,7 +1015,7 @@
         ]
       },
       "single": {
-        "count": 30064,
+        "count": 30138,
         "samples": [
           {
             "file": "apps/desktop/scripts/dev-electron.mjs",
@@ -1025,50 +1025,50 @@
           },
           {
             "file": "apps/server/src/git/Layers/GitCore.test.ts",
-            "line": 394,
-            "column": 11,
+            "line": 409,
+            "column": 20,
             "message": "Strings must use singlequote."
           },
           {
             "file": "apps/server/src/git/Prompts.ts",
-            "line": 94,
+            "line": 100,
             "column": 5,
             "message": "Strings must use singlequote."
           },
           {
             "file": "apps/server/src/orchestration/Layers/ProviderRuntimeIngestion.test.ts",
-            "line": 595,
-            "column": 24,
+            "line": 625,
+            "column": 26,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "apps/server/src/provider/Layers/ClaudeAdapter.test.ts",
-            "line": 3051,
-            "column": 19,
+            "file": "apps/server/src/provider/Layers/ClaudeAdapter.ts",
+            "line": 212,
+            "column": 51,
             "message": "Strings must use singlequote."
           },
           {
             "file": "apps/server/src/terminal/Layers/Manager.test.ts",
-            "line": 706,
-            "column": 23,
+            "line": 798,
+            "column": 36,
             "message": "Strings must use singlequote."
           },
           {
             "file": "apps/web/src/components/Sidebar.logic.test.ts",
-            "line": 883,
-            "column": 24,
+            "line": 838,
+            "column": 35,
             "message": "Strings must use singlequote."
           },
           {
             "file": "apps/web/src/components/ui/toast.tsx",
-            "line": 200,
-            "column": 11,
+            "line": 65,
+            "column": 5,
             "message": "Strings must use singlequote."
           },
           {
             "file": "apps/web/src/session-logic.ts",
-            "line": 551,
-            "column": 77,
+            "line": 476,
+            "column": 61,
             "message": "Strings must use singlequote."
           },
           {
@@ -1086,7 +1086,7 @@
         "samples": []
       },
       "never": {
-        "count": 33974,
+        "count": 34041,
         "samples": [
           {
             "file": "apps/desktop/scripts/dev-electron.mjs",
@@ -1096,50 +1096,50 @@
           },
           {
             "file": "apps/server/src/git/Layers/GitCore.test.ts",
-            "line": 1193,
-            "column": 11,
+            "line": 1206,
+            "column": 40,
             "message": "Extra semicolon."
           },
           {
-            "file": "apps/server/src/orchestration/Layers/OrchestrationEngine.test.ts",
-            "line": 887,
-            "column": 6,
+            "file": "apps/server/src/orchestration/Layers/OrchestrationEngine.ts",
+            "line": 19,
+            "column": 59,
             "message": "Extra semicolon."
           },
           {
             "file": "apps/server/src/provider/Layers/ClaudeAdapter.test.ts",
-            "line": 139,
-            "column": 38,
+            "line": 230,
+            "column": 21,
             "message": "Extra semicolon."
           },
           {
             "file": "apps/server/src/server.test.ts",
-            "line": 347,
-            "column": 78,
+            "line": 406,
+            "column": 81,
             "message": "Extra semicolon."
           },
           {
             "file": "apps/web/src/components/ChatView.tsx",
-            "line": 570,
-            "column": 4,
+            "line": 655,
+            "column": 62,
             "message": "Extra semicolon."
           },
           {
             "file": "apps/web/src/components/ThreadTerminalDrawer.tsx",
-            "line": 635,
-            "column": 32,
+            "line": 593,
+            "column": 59,
             "message": "Extra semicolon."
           },
           {
             "file": "apps/web/src/composerDraftStore.ts",
-            "line": 1330,
-            "column": 63,
+            "line": 1273,
+            "column": 74,
             "message": "Extra semicolon."
           },
           {
             "file": "apps/web/src/terminal-links.ts",
-            "line": 173,
-            "column": 33,
+            "line": 159,
+            "column": 63,
             "message": "Extra semicolon."
           },
           {

@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "7aea19ffca705ecf21c1502e9b05a7feda55e54d",
-  "analyzedCommitDate": "2026-04-06T08:46:36.000Z",
+  "analyzedCommit": "7cf80ea1c5f79f8f5532b6932e823173161fdc1c",
+  "analyzedCommitDate": "2026-04-06T14:06:19.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -9,7 +9,7 @@
         "samples": []
       },
       "generic": {
-        "count": 12,
+        "count": 13,
         "samples": [
           {
             "file": "src/get-plugins.ts",
@@ -24,10 +24,10 @@
             "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           },
           {
-            "file": "src/get-plugins.ts",
+            "file": "src/path-filter.ts",
             "line": 21,
-            "column": 60,
-            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
+            "column": 57,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
             "file": "src/path-filter.ts",
@@ -43,27 +43,27 @@
           },
           {
             "file": "src/path-rewriter.ts",
-            "line": 17,
-            "column": 19,
-            "message": "Array type using 'RewriteRule[]' is forbidden. Use 'Array<RewriteRule>' instead."
-          },
-          {
-            "file": "src/path-rewriter.ts",
-            "line": 59,
+            "line": 63,
             "column": 16,
             "message": "Array type using 'RewriteRule[]' is forbidden. Use 'Array<RewriteRule>' instead."
           },
           {
+            "file": "src/plugins/default/proxy-events.ts",
+            "line": 42,
+            "column": 79,
+            "message": "Array type using 'unknown[]' is forbidden. Use 'Array<unknown>' instead."
+          },
+          {
             "file": "src/types.ts",
-            "line": 105,
+            "line": 108,
             "column": 13,
             "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           },
           {
-            "file": "test/e2e/http-proxy-middleware.spec.ts",
-            "line": 498,
-            "column": 24,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+            "file": "test/e2e/test-kit.ts",
+            "line": 10,
+            "column": 43,
+            "message": "Array type using 'RequestHandler[]' is forbidden. Use 'Array<RequestHandler>' instead."
           },
           {
             "file": "test/unit/get-plugins.spec.ts",
@@ -99,41 +99,35 @@
     },
     "consistent-indexed-object-style": {
       "record": {
-        "count": 7,
+        "count": 6,
         "samples": [
           {
             "file": "src/types.ts",
-            "line": 86,
-            "column": 9,
-            "message": "A record is preferred over an index signature."
-          },
-          {
-            "file": "src/types.ts",
-            "line": 144,
-            "column": 9,
+            "line": 62,
+            "column": 7,
             "message": "A record is preferred over an index signature."
           },
           {
             "file": "test/types.spec.ts",
-            "line": 287,
+            "line": 295,
             "column": 28,
             "message": "A record is preferred over an index signature."
           },
           {
             "file": "test/types.spec.ts",
-            "line": 291,
+            "line": 299,
             "column": 29,
             "message": "A record is preferred over an index signature."
           },
           {
             "file": "test/types.spec.ts",
-            "line": 342,
+            "line": 350,
             "column": 28,
             "message": "A record is preferred over an index signature."
           },
           {
             "file": "test/types.spec.ts",
-            "line": 346,
+            "line": 354,
             "column": 29,
             "message": "A record is preferred over an index signature."
           },
@@ -146,12 +140,24 @@
         ]
       },
       "index-signature": {
-        "count": 1,
+        "count": 3,
         "samples": [
           {
-            "file": "src/path-rewriter.ts",
-            "line": 58,
-            "column": 47,
+            "file": "src/router.ts",
+            "line": 29,
+            "column": 10,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "src/types.ts",
+            "line": 147,
+            "column": 7,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "test/e2e/express-router.spec.ts",
+            "line": 53,
+            "column": 33,
             "message": "An index signature is preferred over a record."
           }
         ]
@@ -163,7 +169,7 @@
         "samples": [
           {
             "file": "src/path-rewriter.ts",
-            "line": 8,
+            "line": 11,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
@@ -204,31 +210,31 @@
           },
           {
             "file": "src/types.ts",
-            "line": 61,
+            "line": 66,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "test/types.spec.ts",
-            "line": 286,
+            "line": 294,
             "column": 7,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "test/types.spec.ts",
-            "line": 290,
+            "line": 298,
             "column": 7,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "test/types.spec.ts",
-            "line": 341,
+            "line": 349,
             "column": 7,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "test/types.spec.ts",
-            "line": 345,
+            "line": 353,
             "column": 7,
             "message": "Use `type` instead of `interface`."
           }
@@ -241,7 +247,7 @@
         "samples": []
       },
       "no-type-imports": {
-        "count": 51,
+        "count": 58,
         "samples": [
           {
             "file": "src/configuration.ts",
@@ -257,43 +263,43 @@
           },
           {
             "file": "src/http-proxy-middleware.ts",
+            "line": 3,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "src/path-rewriter.ts",
             "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/path-filter.ts",
+            "file": "src/plugins/default/logger-plugin.ts",
             "line": 1,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "src/plugins/default/error-response-plugin.ts",
-            "line": 5,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "src/types.ts",
-            "line": 8,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "test/e2e/http-proxy-middleware.spec.ts",
-            "line": 1,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "test/e2e/plugins.spec.ts",
             "line": 6,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "test/e2e/websocket.spec.ts",
+            "file": "test/e2e/hono.spec.ts",
             "line": 5,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "test/e2e/plugins.spec.ts",
+            "line": 1,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "test/e2e/websocket.spec.ts",
+            "line": 8,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -308,7 +314,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 37,
+        "count": 36,
         "samples": [
           {
             "file": "src/configuration.ts",
@@ -342,19 +348,19 @@
           },
           {
             "file": "src/path-rewriter.ts",
-            "line": 46,
+            "line": 33,
+            "column": 3,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "src/plugins/default/error-response-plugin.ts",
+            "line": 12,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/router.ts",
-            "line": 7,
-            "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/utils/function.ts",
-            "line": 3,
+            "file": "src/status-code.ts",
+            "line": 1,
             "column": 8,
             "message": "Expected a function expression."
           },
@@ -373,7 +379,7 @@
         ]
       },
       "declaration": {
-        "count": 35,
+        "count": 30,
         "samples": [
           {
             "file": "src/handlers/fix-request-body.ts",
@@ -382,20 +388,26 @@
             "message": "Expected a function declaration."
           },
           {
-            "file": "src/plugins/default/proxy-events.ts",
-            "line": 27,
+            "file": "src/plugins/default/logger-plugin.ts",
+            "line": 21,
             "column": 14,
             "message": "Expected a function declaration."
           },
           {
-            "file": "test/e2e/http-proxy-middleware.spec.ts",
-            "line": 177,
-            "column": 15,
+            "file": "test/e2e/express-router.spec.ts",
+            "line": 22,
+            "column": 13,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "test/e2e/plugins.spec.ts",
+            "line": 27,
+            "column": 11,
             "message": "Expected a function declaration."
           },
           {
             "file": "test/e2e/websocket.spec.ts",
-            "line": 46,
+            "line": 63,
             "column": 9,
             "message": "Expected a function declaration."
           },
@@ -407,26 +419,20 @@
           },
           {
             "file": "test/unit/fix-request-body.spec.ts",
-            "line": 23,
+            "line": 18,
             "column": 7,
             "message": "Expected a function declaration."
           },
           {
             "file": "test/unit/get-plugins.spec.ts",
-            "line": 92,
+            "line": 58,
             "column": 11,
             "message": "Expected a function declaration."
           },
           {
-            "file": "test/unit/path-rewriter.spec.ts",
-            "line": 93,
-            "column": 13,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "test/unit/path-rewriter.spec.ts",
-            "line": 135,
-            "column": 13,
+            "file": "test/unit/response-interceptor.spec.ts",
+            "line": 8,
+            "column": 7,
             "message": "Expected a function declaration."
           },
           {
@@ -562,7 +568,7 @@
           },
           {
             "file": "test/e2e/express-error-middleware.spec.ts",
-            "line": 7,
+            "line": 8,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -627,7 +633,7 @@
           },
           {
             "file": "test/e2e/express-error-middleware.spec.ts",
-            "line": 7,
+            "line": 8,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -660,7 +666,7 @@
     },
     "quotes": {
       "double": {
-        "count": 1324,
+        "count": 1341,
         "samples": [
           {
             "file": "eslint.config.mjs",
@@ -670,50 +676,50 @@
           },
           {
             "file": "src/factory-hono.ts",
-            "line": 4,
-            "column": 53,
+            "line": 44,
+            "column": 22,
             "message": "Strings must use doublequote."
           },
           {
             "file": "src/plugins/default/logger-plugin.ts",
-            "line": 6,
-            "column": 25,
+            "line": 24,
+            "column": 18,
             "message": "Strings must use doublequote."
           },
           {
             "file": "test/e2e/http-proxy-middleware.spec.ts",
-            "line": 137,
-            "column": 10,
+            "line": 132,
+            "column": 46,
             "message": "Strings must use doublequote."
           },
           {
             "file": "test/e2e/path-rewriter.spec.ts",
-            "line": 44,
-            "column": 8,
+            "line": 39,
+            "column": 34,
             "message": "Strings must use doublequote."
           },
           {
             "file": "test/e2e/websocket.spec.ts",
-            "line": 80,
+            "line": 79,
             "column": 19,
             "message": "Strings must use doublequote."
           },
           {
             "file": "test/unit/fix-request-body.spec.ts",
-            "line": 32,
-            "column": 13,
+            "line": 39,
+            "column": 10,
             "message": "Strings must use doublequote."
           },
           {
             "file": "test/unit/path-filter.spec.ts",
-            "line": 69,
-            "column": 14,
+            "line": 77,
+            "column": 16,
             "message": "Strings must use doublequote."
           },
           {
             "file": "test/unit/path-rewriter.spec.ts",
-            "line": 100,
-            "column": 8,
+            "line": 101,
+            "column": 29,
             "message": "Strings must use doublequote."
           },
           {
@@ -796,7 +802,7 @@
         "samples": []
       },
       "never": {
-        "count": 1928,
+        "count": 1933,
         "samples": [
           {
             "file": "eslint.config.mjs",
@@ -806,50 +812,50 @@
           },
           {
             "file": "src/handlers/response-interceptor.ts",
-            "line": 84,
-            "column": 40,
+            "line": 85,
+            "column": 12,
             "message": "Extra semicolon."
           },
           {
             "file": "src/plugins/default/logger-plugin.ts",
-            "line": 30,
+            "line": 29,
             "column": 90,
             "message": "Extra semicolon."
           },
           {
             "file": "test/e2e/http-proxy-middleware.spec.ts",
-            "line": 133,
+            "line": 112,
             "column": 9,
             "message": "Extra semicolon."
           },
           {
             "file": "test/e2e/plugins.spec.ts",
-            "line": 10,
+            "line": 3,
             "column": 32,
             "message": "Extra semicolon."
           },
           {
             "file": "test/e2e/websocket.spec.ts",
-            "line": 136,
+            "line": 129,
             "column": 7,
             "message": "Extra semicolon."
           },
           {
             "file": "test/types.spec.ts",
-            "line": 319,
-            "column": 37,
+            "line": 343,
+            "column": 9,
             "message": "Extra semicolon."
           },
           {
             "file": "test/unit/get-plugins.spec.ts",
-            "line": 45,
-            "column": 36,
+            "line": 26,
+            "column": 7,
             "message": "Extra semicolon."
           },
           {
             "file": "test/unit/path-rewriter.spec.ts",
-            "line": 89,
-            "column": 51,
+            "line": 77,
+            "column": 7,
             "message": "Extra semicolon."
           },
           {

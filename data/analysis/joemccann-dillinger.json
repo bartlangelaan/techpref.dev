@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "1d4781725d2c3977f0e3579c655d7f4834932acd",
-  "analyzedCommitDate": "2026-04-07T07:58:05.000Z",
+  "analyzedCommit": "09d824cc772bc6de1ef4ee97cb62e69ac1feae28",
+  "analyzedCommitDate": "2026-04-07T16:19:23.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -22,7 +22,7 @@
         ]
       },
       "generic": {
-        "count": 28,
+        "count": 29,
         "samples": [
           {
             "file": "app/api/github/branches/route.ts",
@@ -31,28 +31,28 @@
             "message": "Array type using 'unknown[]' is forbidden. Use 'Array<unknown>' instead."
           },
           {
-            "file": "components/ui/Toast.tsx",
-            "line": 24,
-            "column": 40,
-            "message": "Array type using 'Toast[]' is forbidden. Use 'Array<Toast>' instead."
+            "file": "components/sidebar/Sidebar.tsx",
+            "line": 292,
+            "column": 23,
+            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           },
           {
             "file": "hooks/useBitbucket.ts",
-            "line": 36,
-            "column": 13,
-            "message": "Array type using 'Branch[]' is forbidden. Use 'Array<Branch>' instead."
+            "line": 35,
+            "column": 10,
+            "message": "Array type using 'Repo[]' is forbidden. Use 'Array<Repo>' instead."
           },
           {
-            "file": "hooks/useDropbox.ts",
-            "line": 21,
-            "column": 10,
-            "message": "Array type using 'DropboxFile[]' is forbidden. Use 'Array<DropboxFile>' instead."
+            "file": "hooks/useBitbucket.ts",
+            "line": 42,
+            "column": 16,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
             "file": "hooks/useGitHub.ts",
-            "line": 40,
-            "column": 10,
-            "message": "Array type using 'GitHubRepo[]' is forbidden. Use 'Array<GitHubRepo>' instead."
+            "line": 39,
+            "column": 9,
+            "message": "Array type using 'GitHubOrg[]' is forbidden. Use 'Array<GitHubOrg>' instead."
           },
           {
             "file": "hooks/useGoogleDrive.ts",
@@ -116,7 +116,7 @@
         "samples": []
       },
       "index-signature": {
-        "count": 7,
+        "count": 9,
         "samples": [
           {
             "file": "app/api/github/branches/route.ts",
@@ -152,6 +152,18 @@
             "file": "components/modals/GitHubModal.tsx",
             "line": 118,
             "column": 20,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "packages/cli/src/index.ts",
+            "line": 8,
+            "column": 9,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "packages/mcp/src/index.ts",
+            "line": 13,
+            "column": 44,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -236,7 +248,7 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 30,
+        "count": 36,
         "samples": [
           {
             "file": "app/api/bitbucket/branches/route.ts",
@@ -245,25 +257,19 @@
             "message": "Imports NextRequest are only used as type."
           },
           {
-            "file": "app/api/bitbucket/save/route.ts",
+            "file": "app/api/dropbox/callback/route.ts",
             "line": 3,
             "column": 1,
             "message": "Imports NextRequest are only used as type."
           },
           {
-            "file": "app/api/dropbox/save/route.ts",
+            "file": "app/api/export/markdown/route.ts",
             "line": 3,
             "column": 1,
             "message": "Imports NextRequest are only used as type."
           },
           {
-            "file": "app/api/github/branches/route.ts",
-            "line": 3,
-            "column": 1,
-            "message": "Imports NextRequest are only used as type."
-          },
-          {
-            "file": "app/api/github/save/route.ts",
+            "file": "app/api/github/files/route.ts",
             "line": 3,
             "column": 1,
             "message": "Imports NextRequest are only used as type."
@@ -281,16 +287,22 @@
             "message": "Imports NextRequest are only used as type."
           },
           {
-            "file": "components/providers/Providers.tsx",
+            "file": "app/api/v1/export/html/route.ts",
             "line": 3,
             "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
+            "message": "Imports NextRequest are only used as type."
           },
           {
-            "file": "tests/components/document-list.test.tsx",
-            "line": 7,
+            "file": "components/editor/MonacoEditor.tsx",
+            "line": 4,
             "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
+            "message": "Imports OnMount and OnChange are only used as type."
+          },
+          {
+            "file": "stores/store.ts",
+            "line": 3,
+            "column": 1,
+            "message": "Imports Document and UserSettings are only used as type."
           },
           {
             "file": "tests/e2e/editor.spec.ts",
@@ -368,7 +380,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 157,
+        "count": 176,
         "samples": [
           {
             "file": "app/api/bitbucket/branches/route.ts",
@@ -377,50 +389,50 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "app/api/dropbox/unlink/route.ts",
+            "file": "app/api/export/markdown/route.ts",
             "line": 6,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "app/api/google-drive/save/route.ts",
-            "line": 6,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "components/editor/DocumentTitle.tsx",
-            "line": 8,
+            "file": "app/api/import/html-to-markdown/route.ts",
+            "line": 19,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "components/sidebar/DocumentList.tsx",
-            "line": 6,
+            "file": "components/ads/LogoBar.tsx",
+            "line": 37,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "components/sidebar/Sidebar.tsx",
+            "line": 77,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "lib/cache.ts",
-            "line": 20,
+            "line": 41,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "lib/markdown.ts",
-            "line": 11,
+            "file": "lib/pdf.ts",
+            "line": 54,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "tests/components/navbar.test.tsx",
-            "line": 211,
-            "column": 5,
+            "file": "tests/components/document-title.test.tsx",
+            "line": 40,
+            "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "tests/hooks/useImageUpload.test.ts",
-            "line": 53,
+            "line": 45,
             "column": 1,
             "message": "Expected a function expression."
           },
@@ -565,11 +577,11 @@
         ]
       },
       "default": {
-        "count": 31,
+        "count": 33,
         "samples": [
           {
-            "file": "components/ads/LogoBar.tsx",
-            "line": 37,
+            "file": "app/api/v1/openapi/route.ts",
+            "line": 158,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -580,8 +592,8 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "components/modals/GitHubModal.tsx",
-            "line": 27,
+            "file": "components/modals/DropboxModal.tsx",
+            "line": 24,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -610,14 +622,14 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "hooks/useImageUpload.ts",
-            "line": 14,
+            "file": "hooks/useOneDrive.ts",
+            "line": 24,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "lib/markdown.ts",
-            "line": 131,
+            "file": "lib/import.ts",
+            "line": 30,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -697,7 +709,7 @@
         ]
       },
       "4-space": {
-        "count": 124,
+        "count": 133,
         "samples": [
           {
             "file": "app/(content)/ai/page.tsx",
@@ -706,50 +718,50 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "app/api/bitbucket/status/route.ts",
+            "file": "app/api/bitbucket/unlink/route.ts",
             "line": 7,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "app/api/github/callback/route.ts",
-            "line": 8,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "app/api/onedrive/callback/route.ts",
-            "line": 8,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "components/editor/DocumentTitle.tsx",
-            "line": 9,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "components/providers/StoreProvider.tsx",
+            "file": "app/api/github/oauth/route.ts",
             "line": 7,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "lib/env.ts",
+            "file": "app/api/onedrive/save/route.ts",
+            "line": 7,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "app/sitemap.ts",
             "line": 4,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "tests/components/document-title.test.tsx",
-            "line": 12,
+            "file": "components/providers/Providers.tsx",
+            "line": 8,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "tests/lib/cache.test.ts",
-            "line": 4,
+            "file": "lib/document.ts",
+            "line": 7,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "tests/components/delete-confirm-modal.test.tsx",
+            "line": 8,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "tests/hooks/useImageUpload.test.ts",
+            "line": 10,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -762,7 +774,7 @@
         ]
       },
       "tab": {
-        "count": 124,
+        "count": 133,
         "samples": [
           {
             "file": "app/(content)/ai/page.tsx",
@@ -771,50 +783,50 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "app/api/bitbucket/status/route.ts",
+            "file": "app/api/bitbucket/unlink/route.ts",
             "line": 7,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "app/api/github/callback/route.ts",
-            "line": 8,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "app/api/onedrive/callback/route.ts",
-            "line": 8,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "components/editor/DocumentTitle.tsx",
-            "line": 9,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "components/providers/StoreProvider.tsx",
+            "file": "app/api/github/oauth/route.ts",
             "line": 7,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "lib/env.ts",
+            "file": "app/api/onedrive/save/route.ts",
+            "line": 7,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "app/sitemap.ts",
             "line": 4,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "tests/components/document-title.test.tsx",
-            "line": 12,
+            "file": "components/providers/Providers.tsx",
+            "line": 8,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "tests/lib/cache.test.ts",
-            "line": 4,
+            "file": "lib/document.ts",
+            "line": 7,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "tests/components/delete-confirm-modal.test.tsx",
+            "line": 8,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "tests/hooks/useImageUpload.test.ts",
+            "line": 10,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -894,7 +906,7 @@
         ]
       },
       "single": {
-        "count": 4349,
+        "count": 4580,
         "samples": [
           {
             "file": "app/(content)/ai/page.tsx",
@@ -903,51 +915,51 @@
             "message": "Strings must use singlequote."
           },
           {
-            "file": "app/api/dropbox/save/route.ts",
-            "line": 31,
-            "column": 15,
+            "file": "app/api/export/html/route.ts",
+            "line": 19,
+            "column": 47,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "components/editor/MonacoEditor.tsx",
-            "line": 34,
-            "column": 11,
+            "file": "app/page.tsx",
+            "line": 8,
+            "column": 5,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "hooks/useBitbucket.ts",
-            "line": 288,
-            "column": 14,
+            "file": "components/ui/Toast.tsx",
+            "line": 10,
+            "column": 19,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "tests/components/github-modal.test.tsx",
-            "line": 119,
-            "column": 56,
+            "file": "tests/components/document-list.test.tsx",
+            "line": 5,
+            "column": 30,
             "message": "Strings must use singlequote."
           },
           {
             "file": "tests/components/navbar.test.tsx",
-            "line": 423,
-            "column": 40,
+            "line": 211,
+            "column": 45,
             "message": "Strings must use singlequote."
           },
           {
             "file": "tests/e2e/editor.spec.ts",
-            "line": 561,
-            "column": 13,
+            "line": 413,
+            "column": 9,
             "message": "Strings must use singlequote."
           },
           {
             "file": "tests/hooks/useGitHub.test.ts",
-            "line": 581,
-            "column": 62,
+            "line": 379,
+            "column": 39,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "tests/routes/export-markdown.route.test.ts",
-            "line": 47,
-            "column": 32,
+            "file": "tests/routes/export-html.route.test.ts",
+            "line": 39,
+            "column": 11,
             "message": "Strings must use singlequote."
           },
           {
@@ -965,7 +977,7 @@
         "samples": []
       },
       "never": {
-        "count": 4876,
+        "count": 5052,
         "samples": [
           {
             "file": "app/(content)/ai/page.tsx",
@@ -975,50 +987,50 @@
           },
           {
             "file": "app/api/google-drive/save/route.ts",
-            "line": 32,
-            "column": 113,
+            "line": 104,
+            "column": 53,
             "message": "Extra semicolon."
           },
           {
-            "file": "components/modals/GitHubModal.tsx",
-            "line": 55,
-            "column": 6,
+            "file": "components/modals/DropboxModal.tsx",
+            "line": 63,
+            "column": 42,
             "message": "Extra semicolon."
           },
           {
             "file": "hooks/useGitHub.ts",
-            "line": 157,
-            "column": 4,
+            "line": 101,
+            "column": 9,
             "message": "Extra semicolon."
           },
           {
-            "file": "tests/components/github-modal.test.tsx",
-            "line": 11,
-            "column": 31,
+            "file": "tests/components/document-list.test.tsx",
+            "line": 75,
+            "column": 69,
             "message": "Extra semicolon."
           },
           {
             "file": "tests/components/navbar.test.tsx",
-            "line": 555,
-            "column": 57,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "tests/e2e/settings-sidebar.spec.ts",
-            "line": 100,
-            "column": 50,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "tests/hooks/useImageUpload.test.ts",
-            "line": 118,
+            "line": 397,
             "column": 54,
             "message": "Extra semicolon."
           },
           {
+            "file": "tests/e2e/logobar.spec.ts",
+            "line": 1,
+            "column": 48,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "tests/hooks/useImageUpload.test.ts",
+            "line": 3,
+            "column": 38,
+            "message": "Extra semicolon."
+          },
+          {
             "file": "tests/routes/github.route.test.ts",
-            "line": 206,
-            "column": 60,
+            "line": 163,
+            "column": 5,
             "message": "Extra semicolon."
           },
           {

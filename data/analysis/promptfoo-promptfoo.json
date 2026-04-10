@@ -1,11 +1,11 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "3f4d39c799c86813e13e13df719c17e7a6c84e5d",
-  "analyzedCommitDate": "2026-04-09T22:13:03.000Z",
+  "analyzedCommit": "fe622433c4174dd1e1e8e00d41ee4cf0350273a4",
+  "analyzedCommitDate": "2026-04-09T23:48:08.000Z",
   "checks": {
     "array-type": {
       "array": {
-        "count": 233,
+        "count": 234,
         "samples": [
           {
             "file": "examples/huggingface/dataset-factuality/dataset_loader.ts",
@@ -27,14 +27,14 @@
           },
           {
             "file": "src/providers/claude-agent-sdk.ts",
-            "line": 556,
+            "line": 559,
             "column": 14,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
-            "file": "src/providers/http.ts",
-            "line": 1151,
-            "column": 18,
+            "file": "src/providers/huggingface.ts",
+            "line": 323,
+            "column": 13,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
@@ -51,14 +51,14 @@
           },
           {
             "file": "src/util/agent/fsOperations.ts",
-            "line": 96,
-            "column": 12,
+            "line": 100,
+            "column": 18,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
-            "file": "test/config-schema.test.ts",
-            "line": 70,
-            "column": 24,
+            "file": "test/evaluator.test.ts",
+            "line": 4012,
+            "column": 21,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
@@ -70,7 +70,7 @@
         ]
       },
       "generic": {
-        "count": 3338,
+        "count": 3339,
         "samples": [
           {
             "file": "code-scan-action/src/github.ts",
@@ -92,8 +92,8 @@
           },
           {
             "file": "src/models/eval.ts",
-            "line": 242,
-            "column": 24,
+            "line": 243,
+            "column": 14,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
@@ -116,15 +116,15 @@
           },
           {
             "file": "src/util/testCaseReader.ts",
-            "line": 452,
-            "column": 66,
+            "line": 473,
+            "column": 12,
             "message": "Array type using 'TestCase[]' is forbidden. Use 'Array<TestCase>' instead."
           },
           {
-            "file": "test/redteam/providers/crescendo/index.test.ts",
-            "line": 1127,
-            "column": 14,
-            "message": "Array type using 'unknown[]' is forbidden. Use 'Array<unknown>' instead."
+            "file": "test/redteam/providers/custom/index.test.ts",
+            "line": 97,
+            "column": 21,
+            "message": "Array type using 'Message[]' is forbidden. Use 'Array<Message>' instead."
           },
           {
             "file": "test/validators/testProvider.test.ts",
@@ -466,7 +466,7 @@
         ]
       },
       "type": {
-        "count": 1280,
+        "count": 1281,
         "samples": [
           {
             "file": "code-scan-action/src/main.ts",
@@ -487,8 +487,8 @@
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "src/app/src/pages/redteam/setup/components/Targets/tabs/VariableSelectionDialog.tsx",
-            "line": 19,
+            "file": "src/app/src/pages/redteam/setup/components/TestCaseDialog.tsx",
+            "line": 49,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
@@ -500,13 +500,13 @@
           },
           {
             "file": "src/providers/elevenlabs/agents/types.ts",
-            "line": 109,
+            "line": 91,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "src/providers/openai/chatkit-pool.ts",
-            "line": 35,
+            "line": 27,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
@@ -533,7 +533,7 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 240,
+        "count": 243,
         "samples": [
           {
             "file": "code-scan-action/src/github.ts",
@@ -548,40 +548,40 @@
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "src/validators/testProvider.ts",
-            "line": 6,
-            "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
+            "file": "test/assertions/google.test.ts",
+            "line": 20,
+            "column": 47,
+            "message": "`import()` type annotations are forbidden."
           },
           {
             "file": "test/commands/eval/filterTestsUtil.test.ts",
-            "line": 1234,
+            "line": 1091,
             "column": 38,
             "message": "`import()` type annotations are forbidden."
           },
           {
             "file": "test/index.test.ts",
-            "line": 61,
-            "column": 34,
+            "line": 53,
+            "column": 55,
             "message": "`import()` type annotations are forbidden."
           },
           {
-            "file": "test/providers/google/image.test.ts",
-            "line": 1,
-            "column": 1,
-            "message": "Imports Mock are only used as type."
+            "file": "test/providers/google/gemini-image.test.ts",
+            "line": 11,
+            "column": 46,
+            "message": "`import()` type annotations are forbidden."
           },
           {
             "file": "test/providers/rubyCompletion.test.ts",
-            "line": 33,
+            "line": 23,
             "column": 47,
             "message": "`import()` type annotations are forbidden."
           },
           {
-            "file": "test/redteam/providers/iterative.test.ts",
-            "line": 1,
-            "column": 1,
-            "message": "Imports Mocked are only used as type."
+            "file": "test/redteam/providers/hydra/index.test.ts",
+            "line": 9,
+            "column": 27,
+            "message": "`import()` type annotations are forbidden."
           },
           {
             "file": "test/tracing/otelSdk.test.ts",
@@ -598,7 +598,7 @@
         ]
       },
       "no-type-imports": {
-        "count": 2230,
+        "count": 2236,
         "samples": [
           {
             "file": "code-scan-action/src/config.ts",
@@ -613,8 +613,8 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/assertions/bleu.ts",
-            "line": 15,
+            "file": "src/assertions/contains.ts",
+            "line": 3,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -631,20 +631,20 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/providers/xai/video.ts",
-            "line": 27,
+            "file": "src/providers/xai/voice.ts",
+            "line": 17,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/redteam/strategies/simpleVideo.ts",
-            "line": 12,
+            "file": "src/redteam/strategies/types.ts",
+            "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "test/assertions/trajectoryGoalSuccess.test.ts",
-            "line": 11,
+            "file": "test/assertions/trajectory.test.ts",
+            "line": 14,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -665,7 +665,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 2811,
+        "count": 2819,
         "samples": [
           {
             "file": "code-scan-action/src/auth.ts",
@@ -675,31 +675,31 @@
           },
           {
             "file": "site/src/plugins/docusaurus-plugin-og-image/index.js",
-            "line": 1922,
+            "line": 2020,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/app/src/pages/media/hooks/useVideoThumbnail.ts",
-            "line": 156,
+            "file": "src/app/src/pages/model-audit/components/ChecksSection.tsx",
+            "line": 34,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "src/assertions/synthesis.ts",
+            "line": 225,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/assertions/traceErrorSpans.ts",
-            "line": 12,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/database/signal.ts",
-            "line": 28,
+            "file": "src/database/index.ts",
+            "line": 108,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "src/providers/elevenlabs/tts/pronunciation.ts",
-            "line": 139,
+            "line": 123,
             "column": 8,
             "message": "Expected a function expression."
           },
@@ -717,7 +717,7 @@
           },
           {
             "file": "src/util/inlineBlobsForShare.ts",
-            "line": 43,
+            "line": 66,
             "column": 1,
             "message": "Expected a function expression."
           },
@@ -730,7 +730,7 @@
         ]
       },
       "declaration": {
-        "count": 1338,
+        "count": 1341,
         "samples": [
           {
             "file": "examples/config-node-package/full-eval.js",
@@ -745,45 +745,45 @@
             "message": "Expected a function declaration."
           },
           {
-            "file": "src/app/src/hooks/useEvalOperations.test.ts",
-            "line": 33,
+            "file": "src/app/src/hooks/useIsPrinting.ts",
+            "line": 15,
             "column": 11,
             "message": "Expected a function declaration."
           },
           {
             "file": "src/app/src/pages/eval/components/EvalOutputCell.test.tsx",
-            "line": 1142,
+            "line": 1426,
             "column": 9,
             "message": "Expected a function declaration."
           },
           {
-            "file": "src/app/src/pages/model-audit-setup/ModelAuditSetupPage.test.tsx",
-            "line": 100,
+            "file": "src/app/src/pages/model-audit/components/AdvancedOptionsDialog.tsx",
+            "line": 57,
             "column": 9,
             "message": "Expected a function declaration."
           },
           {
             "file": "src/app/src/pages/redteam/setup/components/PluginsTab.test.tsx",
-            "line": 395,
+            "line": 403,
             "column": 13,
             "message": "Expected a function declaration."
           },
           {
-            "file": "src/app/src/pages/redteam/setup/components/Targets/index.test.tsx",
-            "line": 320,
-            "column": 11,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "src/commands/eval/summary.ts",
-            "line": 306,
+            "file": "src/app/src/pages/redteam/setup/components/Targets/index.tsx",
+            "line": 54,
             "column": 9,
             "message": "Expected a function declaration."
           },
           {
-            "file": "test/__fixtures__/testModule.ts",
-            "line": 2,
-            "column": 14,
+            "file": "src/commands/eval/summary.ts",
+            "line": 312,
+            "column": 9,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "test/assertions/meteor.test.ts",
+            "line": 6,
+            "column": 7,
             "message": "Expected a function declaration."
           },
           {
@@ -994,7 +994,7 @@
         ]
       },
       "4-space": {
-        "count": 2354,
+        "count": 2357,
         "samples": [
           {
             "file": "code-scan-action/src/auth.ts",
@@ -1003,20 +1003,20 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/app/src/components/JsonTextField.test.tsx",
-            "line": 6,
+            "file": "src/app/src/components/JsonTextField.tsx",
+            "line": 9,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/app/src/pages/eval/components/EvaluationPanel.tsx",
-            "line": 5,
+            "file": "src/app/src/pages/eval/components/FailReasonCarousel.tsx",
+            "line": 7,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/app/src/pages/redteam/setup/components/Targets/TargetConfiguration.test.tsx",
-            "line": 12,
+            "file": "src/app/src/pages/redteam/setup/components/Targets/TargetConfiguration.tsx",
+            "line": 15,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -1027,14 +1027,14 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/redteam/plugins/bias.ts",
-            "line": 7,
+            "file": "src/redteam/plugins/bola.ts",
+            "line": 9,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/util/agent/fsOperations.ts",
-            "line": 28,
+            "file": "src/util/agent/targetLink.ts",
+            "line": 16,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -1059,7 +1059,7 @@
         ]
       },
       "tab": {
-        "count": 2354,
+        "count": 2357,
         "samples": [
           {
             "file": "code-scan-action/src/auth.ts",
@@ -1068,20 +1068,20 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/app/src/components/JsonTextField.test.tsx",
-            "line": 6,
+            "file": "src/app/src/components/JsonTextField.tsx",
+            "line": 9,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/app/src/pages/eval/components/EvaluationPanel.tsx",
-            "line": 5,
+            "file": "src/app/src/pages/eval/components/FailReasonCarousel.tsx",
+            "line": 7,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/app/src/pages/redteam/setup/components/Targets/TargetConfiguration.test.tsx",
-            "line": 12,
+            "file": "src/app/src/pages/redteam/setup/components/Targets/TargetConfiguration.tsx",
+            "line": 15,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -1092,14 +1092,14 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/redteam/plugins/bias.ts",
-            "line": 7,
+            "file": "src/redteam/plugins/bola.ts",
+            "line": 9,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/util/agent/fsOperations.ts",
-            "line": 28,
+            "file": "src/util/agent/targetLink.ts",
+            "line": 16,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -1126,7 +1126,7 @@
     },
     "quotes": {
       "double": {
-        "count": 173574,
+        "count": 173721,
         "samples": [
           {
             "file": "code-scan-action/src/auth.ts",
@@ -1136,50 +1136,50 @@
           },
           {
             "file": "src/app/src/pages/eval-creator/components/VarsForm.test.tsx",
-            "line": 49,
-            "column": 32,
+            "line": 83,
+            "column": 57,
             "message": "Strings must use doublequote."
           },
           {
             "file": "src/app/src/pages/redteam/setup/components/Targets/CommonConfigurationOptions.test.tsx",
-            "line": 89,
-            "column": 6,
+            "line": 222,
+            "column": 76,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/providers/elevenlabs/client.ts",
-            "line": 226,
+            "file": "src/providers/elevenlabs/cost-tracker.ts",
+            "line": 78,
             "column": 18,
             "message": "Strings must use doublequote."
           },
           {
             "file": "test/assertions/contains.test.ts",
-            "line": 282,
+            "line": 441,
             "column": 21,
             "message": "Strings must use doublequote."
           },
           {
             "file": "test/logger.test.ts",
-            "line": 634,
-            "column": 12,
+            "line": 408,
+            "column": 51,
             "message": "Strings must use doublequote."
           },
           {
             "file": "test/providers/google/vertex.test.ts",
-            "line": 2630,
-            "column": 46,
+            "line": 2530,
+            "column": 15,
             "message": "Strings must use doublequote."
           },
           {
             "file": "test/providers/voyage.test.ts",
-            "line": 75,
+            "line": 44,
             "column": 50,
             "message": "Strings must use doublequote."
           },
           {
             "file": "test/redteam/validators.test.ts",
-            "line": 813,
-            "column": 71,
+            "line": 829,
+            "column": 17,
             "message": "Strings must use doublequote."
           },
           {
@@ -1191,7 +1191,7 @@
         ]
       },
       "single": {
-        "count": 973,
+        "count": 978,
         "samples": [
           {
             "file": "examples/config-custom-prompt-function/prompt_chat.js",
@@ -1200,50 +1200,50 @@
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/app/src/pages/eval-creator/components/PromptDialog.test.tsx",
-            "line": 72,
+            "file": "src/app/src/pages/eval-creator/components/PromptsSection.test.tsx",
+            "line": 109,
             "column": 6,
             "message": "Strings must use singlequote."
           },
           {
             "file": "src/app/src/utils/scrollTimelinePolyfill.test.ts",
-            "line": 58,
+            "line": 66,
             "column": 8,
             "message": "Strings must use singlequote."
           },
           {
             "file": "src/providers/browser.ts",
-            "line": 209,
-            "column": 22,
+            "line": 322,
+            "column": 15,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/providers/xai/chat.ts",
-            "line": 519,
+            "file": "src/providers/xai/responses.ts",
+            "line": 376,
             "column": 18,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/redteam/strategies/simpleAudio.ts",
-            "line": 40,
-            "column": 18,
+            "file": "src/redteam/strategies/simpleImage.ts",
+            "line": 185,
+            "column": 21,
             "message": "Strings must use singlequote."
           },
           {
             "file": "src/util/cloud.ts",
-            "line": 300,
-            "column": 7,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "test/models/eval.test.ts",
-            "line": 2006,
+            "line": 379,
             "column": 27,
             "message": "Strings must use singlequote."
           },
           {
+            "file": "test/models/eval.test.ts",
+            "line": 1793,
+            "column": 41,
+            "message": "Strings must use singlequote."
+          },
+          {
             "file": "test/providers/openai/chatkit.test.ts",
-            "line": 323,
+            "line": 312,
             "column": 30,
             "message": "Strings must use singlequote."
           },
@@ -1262,7 +1262,7 @@
         "samples": []
       },
       "never": {
-        "count": 189773,
+        "count": 189874,
         "samples": [
           {
             "file": "code-scan-action/src/auth.ts",
@@ -1272,50 +1272,50 @@
           },
           {
             "file": "src/app/src/pages/eval/components/FilterChips.test.tsx",
-            "line": 297,
-            "column": 62,
+            "line": 342,
+            "column": 5,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/app/src/pages/redteam/setup/components/Targets/BrowserAutomationConfiguration.tsx",
-            "line": 302,
-            "column": 84,
+            "file": "src/app/src/pages/redteam/setup/components/Targets/CommonConfigurationOptions.test.tsx",
+            "line": 68,
+            "column": 4,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/providers/audio/index.ts",
-            "line": 236,
-            "column": 11,
+            "file": "src/providers/azure/assistant.ts",
+            "line": 189,
+            "column": 8,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/redteam/shared/runtimeTransform.ts",
-            "line": 16,
-            "column": 52,
+            "file": "src/redteam/sharedFrontend.ts",
+            "line": 113,
+            "column": 10,
             "message": "Extra semicolon."
           },
           {
-            "file": "test/commands/show.test.ts",
-            "line": 3,
-            "column": 95,
+            "file": "test/commands/share.test.ts",
+            "line": 555,
+            "column": 27,
             "message": "Extra semicolon."
           },
           {
             "file": "test/providers/cloudflare-gateway.test.ts",
-            "line": 52,
-            "column": 3,
+            "line": 33,
+            "column": 4,
             "message": "Extra semicolon."
           },
           {
             "file": "test/providers/registry.test.ts",
-            "line": 490,
-            "column": 81,
+            "line": 501,
+            "column": 42,
             "message": "Extra semicolon."
           },
           {
-            "file": "test/redteam/util.test.ts",
-            "line": 1035,
-            "column": 68,
+            "file": "test/redteam/validators.test.ts",
+            "line": 61,
+            "column": 6,
             "message": "Extra semicolon."
           },
           {

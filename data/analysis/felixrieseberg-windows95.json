@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "c243ebbbcc7b186f4183f3692a89b9f038d1e36e",
-  "analyzedCommitDate": "2026-04-11T14:57:17.000Z",
+  "analyzedCommit": "e9ddfab65d10429b4e09921b8826ca0e281ca776",
+  "analyzedCommitDate": "2026-04-11T16:45:08.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -15,14 +15,14 @@
           },
           {
             "file": "src/renderer/emulator.tsx",
-            "line": 551,
+            "line": 560,
             "column": 27,
             "message": "Array type using 'Array<number>' is forbidden. Use 'number[]' instead."
           }
         ]
       },
       "generic": {
-        "count": 36,
+        "count": 44,
         "samples": [
           {
             "file": "src/main/fileserver/hide-files.ts",
@@ -31,21 +31,27 @@
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
-            "file": "src/main/fileserver/page-directory-listing.ts",
-            "line": 12,
-            "column": 10,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+            "file": "src/main/logging.ts",
+            "line": 1,
+            "column": 47,
+            "message": "Array type using 'unknown[]' is forbidden. Use 'Array<unknown>' instead."
           },
           {
             "file": "src/renderer/debug-harness.ts",
-            "line": 41,
-            "column": 59,
+            "line": 48,
+            "column": 46,
             "message": "Array type using 'number[]' is forbidden. Use 'Array<number>' instead."
           },
           {
             "file": "src/renderer/emulator-info.tsx",
-            "line": 138,
-            "column": 30,
+            "line": 22,
+            "column": 16,
+            "message": "Array type using 'number[]' is forbidden. Use 'Array<number>' instead."
+          },
+          {
+            "file": "src/renderer/emulator-info.tsx",
+            "line": 194,
+            "column": 31,
             "message": "Array type using 'number[]' is forbidden. Use 'Array<number>' instead."
           },
           {
@@ -55,27 +61,21 @@
             "message": "Array type using 'unknown[]' is forbidden. Use 'Array<unknown>' instead."
           },
           {
-            "file": "src/renderer/smb/nbns.ts",
-            "line": 121,
-            "column": 18,
-            "message": "Array type using 'number[]' is forbidden. Use 'Array<number>' instead."
+            "file": "src/renderer/smb/netbios.ts",
+            "line": 21,
+            "column": 28,
+            "message": "Array type using 'NBMessage[]' is forbidden. Use 'Array<NBMessage>' instead."
           },
           {
             "file": "src/renderer/smb/server.ts",
-            "line": 17,
-            "column": 20,
-            "message": "Array type using 'unknown[]' is forbidden. Use 'Array<unknown>' instead."
-          },
-          {
-            "file": "src/renderer/smb/server.ts",
-            "line": 177,
-            "column": 20,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
-          },
-          {
-            "file": "src/renderer/smb/test-standalone.ts",
-            "line": 26,
+            "line": 101,
             "column": 37,
+            "message": "Array type using 'DirEntry[]' is forbidden. Use 'Array<DirEntry>' instead."
+          },
+          {
+            "file": "src/renderer/smb/smb.ts",
+            "line": 132,
+            "column": 29,
             "message": "Array type using 'number[]' is forbidden. Use 'Array<number>' instead."
           },
           {
@@ -150,7 +150,7 @@
           },
           {
             "file": "src/renderer/emulator.tsx",
-            "line": 19,
+            "line": 23,
             "column": 19,
             "message": "An index signature is preferred over a record."
           },
@@ -191,7 +191,7 @@
           },
           {
             "file": "src/renderer/card-settings.tsx",
-            "line": 16,
+            "line": 25,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
@@ -203,37 +203,37 @@
           },
           {
             "file": "src/renderer/emulator-info.tsx",
-            "line": 9,
+            "line": 11,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "src/renderer/smb/index.ts",
-            "line": 43,
+            "line": 32,
+            "column": 1,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "src/renderer/smb/index.ts",
+            "line": 50,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "src/renderer/smb/nbns.ts",
-            "line": 19,
+            "line": 48,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "src/renderer/smb/server.ts",
-            "line": 22,
+            "line": 30,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "src/renderer/smb/server.ts",
-            "line": 36,
-            "column": 1,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "src/renderer/start-menu.tsx",
-            "line": 3,
+            "file": "src/renderer/smb/smb.ts",
+            "line": 55,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           }
@@ -242,7 +242,7 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 5,
+        "count": 8,
         "samples": [
           {
             "file": "src/main/about-panel.ts",
@@ -263,8 +263,26 @@
             "message": "Imports FileEntry are only used as type."
           },
           {
+            "file": "src/renderer/card-settings.tsx",
+            "line": 4,
+            "column": 1,
+            "message": "All imports in the declaration are only used as types. Use `import type`."
+          },
+          {
+            "file": "src/renderer/emulator-info.tsx",
+            "line": 2,
+            "column": 1,
+            "message": "All imports in the declaration are only used as types. Use `import type`."
+          },
+          {
             "file": "src/renderer/emulator.tsx",
-            "line": 13,
+            "line": 11,
+            "column": 1,
+            "message": "Imports InfoBarSettings are only used as type."
+          },
+          {
+            "file": "src/renderer/emulator.tsx",
+            "line": 17,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
@@ -283,7 +301,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 218,
+        "count": 241,
         "samples": [
           {
             "file": "src/cache.ts",
@@ -293,91 +311,97 @@
           },
           {
             "file": "src/main/main.ts",
-            "line": 17,
+            "line": 56,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "src/renderer/lib/libv86.js",
-            "line": 45,
-            "column": 61,
+            "line": 12,
+            "column": 65,
             "message": "Expected a function expression."
           },
           {
             "file": "src/renderer/lib/libv86.js",
-            "line": 183,
-            "column": 459,
+            "line": 105,
+            "column": 64,
             "message": "Expected a function expression."
           },
           {
             "file": "src/renderer/lib/libv86.js",
-            "line": 399,
-            "column": 148,
+            "line": 176,
+            "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "src/renderer/lib/libv86.js",
-            "line": 509,
-            "column": 445,
+            "line": 241,
+            "column": 25,
             "message": "Expected a function expression."
           },
           {
             "file": "src/renderer/lib/libv86.js",
-            "line": 548,
-            "column": 598,
+            "line": 300,
+            "column": 403,
             "message": "Expected a function expression."
           },
           {
             "file": "src/renderer/lib/libv86.js",
-            "line": 618,
-            "column": 18,
+            "line": 627,
+            "column": 33,
             "message": "Expected a function expression."
           },
           {
             "file": "src/renderer/smb/server.ts",
-            "line": 988,
+            "line": 1051,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "tools/update-v86.js",
-            "line": 54,
+            "line": 150,
             "column": 1,
             "message": "Expected a function expression."
           }
         ]
       },
       "declaration": {
-        "count": 19,
+        "count": 25,
         "samples": [
           {
-            "file": "src/renderer/debug-harness.ts",
-            "line": 56,
-            "column": 9,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "src/renderer/lib/libv86.js",
-            "line": 419,
-            "column": 28,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "src/renderer/smb/index.ts",
-            "line": 57,
-            "column": 7,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "src/renderer/smb/index.ts",
-            "line": 105,
+            "file": "src/renderer/card-settings.tsx",
+            "line": 225,
             "column": 11,
             "message": "Expected a function declaration."
           },
           {
-            "file": "src/renderer/smb/nbns.ts",
-            "line": 17,
-            "column": 7,
+            "file": "src/renderer/emulator-info.tsx",
+            "line": 240,
+            "column": 11,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "src/renderer/lib/libv86.js",
+            "line": 695,
+            "column": 28,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "src/renderer/lib/libv86.js",
+            "line": 529,
+            "column": 91,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "src/renderer/smb/index.ts",
+            "line": 100,
+            "column": 9,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "src/renderer/smb/index.ts",
+            "line": 144,
+            "column": 9,
             "message": "Expected a function declaration."
           },
           {
@@ -388,19 +412,13 @@
           },
           {
             "file": "src/renderer/smb/server.ts",
-            "line": 17,
+            "line": 18,
             "column": 7,
             "message": "Expected a function declaration."
           },
           {
             "file": "src/renderer/smb/test-standalone.ts",
-            "line": 15,
-            "column": 7,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "src/renderer/smb/test-standalone.ts",
-            "line": 47,
+            "line": 21,
             "column": 7,
             "message": "Expected a function declaration."
           },
@@ -486,7 +504,7 @@
     },
     "indent": {
       "2-space": {
-        "count": 4,
+        "count": 5,
         "samples": [
           {
             "file": "src/renderer/debug-harness.ts",
@@ -511,6 +529,12 @@
             "line": 11,
             "column": 1,
             "message": "Expected 2-space indentation, but file uses 9-space indentation."
+          },
+          {
+            "file": "tools/update-v86.js",
+            "line": 122,
+            "column": 1,
+            "message": "Expected 2-space indentation, but file uses 5-space indentation."
           }
         ]
       },
@@ -543,21 +567,21 @@
           },
           {
             "file": "src/renderer/card-settings.tsx",
-            "line": 6,
+            "line": 10,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/renderer/smb/index.ts",
-            "line": 22,
+            "file": "src/renderer/info-bar-settings.ts",
+            "line": 2,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/renderer/smb/test-standalone.ts",
-            "line": 11,
+            "file": "src/renderer/smb/smb.ts",
+            "line": 56,
             "column": 1,
-            "message": "Expected 4-space indentation, but file uses 9-space indentation."
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
             "file": "src/renderer/utils/reset-state.ts",
@@ -573,9 +597,9 @@
           },
           {
             "file": "tools/update-v86.js",
-            "line": 26,
+            "line": 32,
             "column": 1,
-            "message": "Expected 4-space indentation, but file uses 14-space indentation."
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
           }
         ]
       },
@@ -608,19 +632,19 @@
           },
           {
             "file": "src/renderer/card-settings.tsx",
-            "line": 6,
+            "line": 10,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/renderer/smb/index.ts",
-            "line": 22,
+            "file": "src/renderer/info-bar-settings.ts",
+            "line": 2,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/renderer/smb/test-standalone.ts",
-            "line": 11,
+            "file": "src/renderer/smb/smb.ts",
+            "line": 56,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -638,7 +662,7 @@
           },
           {
             "file": "tools/update-v86.js",
-            "line": 26,
+            "line": 32,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           }
@@ -647,7 +671,7 @@
     },
     "quotes": {
       "double": {
-        "count": 157,
+        "count": 168,
         "samples": [
           {
             "file": "forge.config.js",
@@ -657,62 +681,62 @@
           },
           {
             "file": "forge.config.js",
-            "line": 85,
-            "column": 19,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "src/renderer/card-settings.tsx",
-            "line": 158,
-            "column": 15,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "src/renderer/emulator.tsx",
-            "line": 488,
-            "column": 9,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "tools/parcel-build.js",
-            "line": 5,
+            "line": 89,
             "column": 20,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "tools/parcel-build.js",
-            "line": 60,
-            "column": 15,
+            "file": "src/renderer/emulator-info.tsx",
+            "line": 175,
+            "column": 9,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "tools/tsc.js",
+            "file": "src/renderer/smb/wire.ts",
+            "line": 43,
+            "column": 30,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "tools/parcel-build.js",
+            "line": 20,
+            "column": 43,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "tools/resedit.js",
             "line": 3,
             "column": 25,
             "message": "Strings must use doublequote."
           },
           {
             "file": "tools/update-v86.js",
-            "line": 44,
-            "column": 14,
+            "line": 27,
+            "column": 22,
             "message": "Strings must use doublequote."
           },
           {
             "file": "tools/update-v86.js",
-            "line": 97,
-            "column": 9,
+            "line": 58,
+            "column": 25,
             "message": "Strings must use doublequote."
           },
           {
             "file": "tools/update-v86.js",
-            "line": 151,
-            "column": 37,
+            "line": 105,
+            "column": 40,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "tools/update-v86.js",
+            "line": 164,
+            "column": 17,
             "message": "Strings must use doublequote."
           }
         ]
       },
       "single": {
-        "count": 1928,
+        "count": 1955,
         "samples": [
           {
             "file": "forge.config.js",
@@ -722,55 +746,55 @@
           },
           {
             "file": "src/main/menu.ts",
-            "line": 139,
-            "column": 18,
+            "line": 153,
+            "column": 22,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/renderer/emulator.tsx",
-            "line": 247,
-            "column": 54,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "src/renderer/lib/libv86.js",
-            "line": 35,
-            "column": 103,
+            "file": "src/renderer/emulator-info.tsx",
+            "line": 100,
+            "column": 36,
             "message": "Strings must use singlequote."
           },
           {
             "file": "src/renderer/lib/libv86.js",
-            "line": 111,
-            "column": 182,
+            "line": 58,
+            "column": 172,
             "message": "Strings must use singlequote."
           },
           {
             "file": "src/renderer/lib/libv86.js",
-            "line": 462,
-            "column": 361,
+            "line": 210,
+            "column": 135,
             "message": "Strings must use singlequote."
           },
           {
             "file": "src/renderer/lib/libv86.js",
-            "line": 558,
-            "column": 169,
+            "line": 274,
+            "column": 364,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "src/renderer/lib/libv86.js",
+            "line": 381,
+            "column": 259,
             "message": "Strings must use singlequote."
           },
           {
             "file": "src/renderer/lib/libv86.js",
             "line": 641,
-            "column": 310,
+            "column": 453,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/renderer/smb/server.ts",
-            "line": 19,
-            "column": 76,
+            "file": "src/renderer/smb/nbns.ts",
+            "line": 177,
+            "column": 11,
             "message": "Strings must use singlequote."
           },
           {
             "file": "tools/update-v86.js",
-            "line": 133,
+            "line": 74,
             "column": 7,
             "message": "Strings must use singlequote."
           }
@@ -779,7 +803,7 @@
     },
     "semi": {
       "always": {
-        "count": 1526,
+        "count": 1567,
         "samples": [
           {
             "file": "forge.config.js",
@@ -789,50 +813,50 @@
           },
           {
             "file": "src/renderer/lib/libv86.js",
-            "line": 68,
-            "column": 238,
+            "line": 60,
+            "column": 403,
             "message": "Missing semicolon."
           },
           {
             "file": "src/renderer/lib/libv86.js",
-            "line": 148,
-            "column": 465,
+            "line": 136,
+            "column": 471,
             "message": "Missing semicolon."
           },
           {
             "file": "src/renderer/lib/libv86.js",
-            "line": 260,
-            "column": 435,
+            "line": 222,
+            "column": 600,
             "message": "Missing semicolon."
           },
           {
             "file": "src/renderer/lib/libv86.js",
-            "line": 349,
-            "column": 44,
+            "line": 299,
+            "column": 219,
             "message": "Missing semicolon."
           },
           {
             "file": "src/renderer/lib/libv86.js",
-            "line": 423,
-            "column": 445,
+            "line": 356,
+            "column": 310,
             "message": "Missing semicolon."
           },
           {
             "file": "src/renderer/lib/libv86.js",
-            "line": 517,
-            "column": 96,
+            "line": 427,
+            "column": 167,
             "message": "Missing semicolon."
           },
           {
             "file": "src/renderer/lib/libv86.js",
-            "line": 576,
-            "column": 238,
+            "line": 542,
+            "column": 413,
             "message": "Missing semicolon."
           },
           {
             "file": "src/renderer/lib/libv86.js",
-            "line": 650,
-            "column": 445,
+            "line": 678,
+            "column": 92,
             "message": "Missing semicolon."
           },
           {
@@ -844,7 +868,7 @@
         ]
       },
       "never": {
-        "count": 2066,
+        "count": 2120,
         "samples": [
           {
             "file": "forge.config.js",
@@ -853,57 +877,57 @@
             "message": "Extra semicolon."
           },
           {
-            "file": "src/main/settings.ts",
-            "line": 74,
-            "column": 46,
+            "file": "src/main/windows.ts",
+            "line": 3,
+            "column": 44,
             "message": "Extra semicolon."
           },
           {
             "file": "src/renderer/emulator.tsx",
-            "line": 48,
-            "column": 59,
+            "line": 17,
+            "column": 36,
             "message": "Extra semicolon."
           },
           {
             "file": "src/renderer/lib/libv86.js",
-            "line": 176,
-            "column": 455,
+            "line": 110,
+            "column": 499,
             "message": "Extra semicolon."
           },
           {
             "file": "src/renderer/lib/libv86.js",
-            "line": 581,
-            "column": 513,
+            "line": 531,
+            "column": 505,
             "message": "Extra semicolon."
           },
           {
             "file": "src/renderer/smb/nbns.ts",
-            "line": 172,
-            "column": 29,
+            "line": 91,
+            "column": 38,
             "message": "Extra semicolon."
           },
           {
             "file": "src/renderer/smb/server.ts",
-            "line": 421,
-            "column": 74,
+            "line": 313,
+            "column": 66,
             "message": "Extra semicolon."
           },
           {
             "file": "src/renderer/smb/server.ts",
-            "line": 952,
-            "column": 25,
+            "line": 840,
+            "column": 32,
             "message": "Extra semicolon."
           },
           {
             "file": "src/renderer/smb/test-standalone.ts",
-            "line": 132,
-            "column": 53,
+            "line": 90,
+            "column": 47,
             "message": "Extra semicolon."
           },
           {
             "file": "tools/update-v86.js",
-            "line": 151,
-            "column": 71,
+            "line": 165,
+            "column": 18,
             "message": "Extra semicolon."
           }
         ]

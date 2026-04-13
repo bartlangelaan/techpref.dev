@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "27a0de2d49bec1958f24d3e80e6364aa6762083a",
-  "analyzedCommitDate": "2026-04-13T06:25:50.000Z",
+  "analyzedCommit": "d906e5390a707035b69d0ba0455651c3171eca41",
+  "analyzedCommitDate": "2026-04-13T21:16:13.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -63,14 +63,14 @@
           },
           {
             "file": "tests/unit/controller/fragment-tracker.ts",
-            "line": 591,
+            "line": 599,
             "column": 22,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           }
         ]
       },
       "generic": {
-        "count": 368,
+        "count": 369,
         "samples": [
           {
             "file": "demo/chart/timeline-chart.ts",
@@ -86,9 +86,9 @@
           },
           {
             "file": "src/controller/interstitials-schedule.ts",
-            "line": 363,
-            "column": 6,
-            "message": "Array type using 'InterstitialScheduleItem[]' is forbidden. Use 'Array<InterstitialScheduleItem>' instead."
+            "line": 361,
+            "column": 25,
+            "message": "Array type using 'InterstitialEvent[]' is forbidden. Use 'Array<InterstitialEvent>' instead."
           },
           {
             "file": "src/hls.ts",
@@ -104,13 +104,13 @@
           },
           {
             "file": "src/types/events.ts",
-            "line": 435,
-            "column": 12,
-            "message": "Array type using 'UserdataSample[]' is forbidden. Use 'Array<UserdataSample>' instead."
+            "line": 417,
+            "column": 17,
+            "message": "Array type using 'FragLoadedData[]' is forbidden. Use 'Array<FragLoadedData>' instead."
           },
           {
             "file": "src/utils/cues.ts",
-            "line": 23,
+            "line": 14,
             "column": 6,
             "message": "Array type using 'VTTCue[]' is forbidden. Use 'Array<VTTCue>' instead."
           },
@@ -176,7 +176,7 @@
           },
           {
             "file": "src/controller/fragment-tracker.ts",
-            "line": 26,
+            "line": 31,
             "column": 28,
             "message": "A record is preferred over an index signature."
           },
@@ -277,7 +277,7 @@
           },
           {
             "file": "tests/unit/controller/interstitials-controller.ts",
-            "line": 102,
+            "line": 127,
             "column": 19,
             "message": "An index signature is preferred over a record."
           }
@@ -344,7 +344,7 @@
           },
           {
             "file": "tests/unit/controller/fragment-tracker.ts",
-            "line": 643,
+            "line": 651,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           }
@@ -418,46 +418,33 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 2,
+        "count": 0,
+        "samples": []
+      },
+      "no-type-imports": {
+        "count": 631,
         "samples": [
           {
             "file": "demo/chart/timeline-chart.ts",
             "line": 3,
             "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
+            "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "demo/chart/timeline-chart.ts",
-            "line": 8,
-            "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
-          }
-        ]
-      },
-      "no-type-imports": {
-        "count": 623,
-        "samples": [
-          {
-            "file": "demo/chart/timeline-chart.ts",
-            "line": 4,
+            "file": "src/controller/buffer-controller.ts",
+            "line": 61,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/controller/buffer-operation-queue.ts",
-            "line": 1,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "src/controller/id3-track-controller.ts",
-            "line": 12,
+            "file": "src/controller/gap-controller.ts",
+            "line": 23,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "src/controller/subtitle-stream-controller.ts",
-            "line": 20,
+            "line": 19,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -474,21 +461,21 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/remux/mp4-remuxer.ts",
-            "line": 35,
+            "file": "src/remux/passthrough-remuxer.ts",
+            "line": 8,
+            "column": 10,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "src/utils/attr-list.ts",
+            "line": 3,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/types/transmuxer.ts",
-            "line": 2,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "tests/unit/controller/base-stream-controller.ts",
-            "line": 14,
-            "column": 1,
+            "file": "tests/unit/controller/buffer-controller-operations.ts",
+            "line": 16,
+            "column": 3,
             "message": "Use an `import` instead of an `import type`."
           },
           {
@@ -589,7 +576,7 @@
           },
           {
             "file": "src/controller/interstitials-controller.ts",
-            "line": 2404,
+            "line": 2424,
             "column": 11,
             "message": "Expected a function declaration."
           },
@@ -613,7 +600,7 @@
           },
           {
             "file": "tests/unit/controller/interstitials-controller.ts",
-            "line": 1537,
+            "line": 1582,
             "column": 13,
             "message": "Expected a function declaration."
           },
@@ -909,7 +896,7 @@
     },
     "quotes": {
       "double": {
-        "count": 9317,
+        "count": 9341,
         "samples": [
           {
             "file": ".eslintrc.js",
@@ -919,49 +906,49 @@
           },
           {
             "file": "src/controller/audio-track-controller.ts",
-            "line": 396,
+            "line": 408,
             "column": 13,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/crypt/decrypter.ts",
-            "line": 172,
-            "column": 22,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "src/task-loop.ts",
+            "file": "src/crypt/fast-aes-key.ts",
             "line": 1,
-            "column": 38,
+            "column": 34,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "tests/functional/auto/.eslintrc.js",
-            "line": 24,
-            "column": 5,
+            "file": "src/types/buffer.ts",
+            "line": 10,
+            "column": 52,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "tests/functional/auto/setup.js",
+            "line": 8,
+            "column": 9,
             "message": "Strings must use doublequote."
           },
           {
             "file": "tests/unit/controller/buffer-controller-operations.ts",
-            "line": 828,
-            "column": 15,
+            "line": 938,
+            "column": 10,
             "message": "Strings must use doublequote."
           },
           {
             "file": "tests/unit/controller/error-controller.ts",
-            "line": 1058,
-            "column": 13,
+            "line": 1126,
+            "column": 3,
             "message": "Strings must use doublequote."
           },
           {
             "file": "tests/unit/controller/level-helper.ts",
-            "line": 676,
-            "column": 8,
+            "line": 591,
+            "column": 34,
             "message": "Strings must use doublequote."
           },
           {
             "file": "tests/unit/loader/m3u8-parser.ts",
-            "line": 616,
+            "line": 562,
             "column": 7,
             "message": "Strings must use doublequote."
           },
@@ -974,7 +961,7 @@
         ]
       },
       "single": {
-        "count": 109,
+        "count": 111,
         "samples": [
           {
             "file": "build-config.js",
@@ -984,7 +971,7 @@
           },
           {
             "file": "src/controller/base-stream-controller.ts",
-            "line": 2102,
+            "line": 2115,
             "column": 18,
             "message": "Strings must use singlequote."
           },
@@ -996,37 +983,37 @@
           },
           {
             "file": "src/hls.ts",
-            "line": 487,
-            "column": 21,
+            "line": 489,
+            "column": 24,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/utils/cea-608-parser.ts",
-            "line": 1319,
-            "column": 11,
+            "file": "src/utils/mp4-tools.ts",
+            "line": 772,
+            "column": 15,
             "message": "Strings must use singlequote."
           },
           {
             "file": "tests/unit/controller/cmcd-controller.ts",
-            "line": 159,
+            "line": 160,
             "column": 26,
             "message": "Strings must use singlequote."
           },
           {
             "file": "tests/unit/controller/interstitials-controller.ts",
-            "line": 1124,
+            "line": 1170,
             "column": 9,
             "message": "Strings must use singlequote."
           },
           {
             "file": "tests/unit/controller/interstitials-controller.ts",
-            "line": 1466,
+            "line": 1813,
             "column": 9,
             "message": "Strings must use singlequote."
           },
           {
             "file": "tests/unit/controller/interstitials-controller.ts",
-            "line": 1929,
+            "line": 1981,
             "column": 28,
             "message": "Strings must use singlequote."
           },
@@ -1045,7 +1032,7 @@
         "samples": []
       },
       "never": {
-        "count": 27226,
+        "count": 27294,
         "samples": [
           {
             "file": ".eslintrc.js",
@@ -1055,50 +1042,50 @@
           },
           {
             "file": "src/controller/base-playlist-controller.ts",
-            "line": 165,
-            "column": 45,
+            "line": 219,
+            "column": 15,
             "message": "Extra semicolon."
           },
           {
             "file": "src/controller/fragment-tracker.ts",
-            "line": 53,
-            "column": 62,
+            "line": 132,
+            "column": 40,
             "message": "Extra semicolon."
           },
           {
             "file": "src/controller/subtitle-stream-controller.ts",
-            "line": 187,
-            "column": 21,
+            "line": 191,
+            "column": 18,
             "message": "Extra semicolon."
           },
           {
             "file": "src/hls.ts",
-            "line": 852,
+            "line": 893,
             "column": 47,
             "message": "Extra semicolon."
           },
           {
             "file": "src/utils/cea-608-parser.ts",
-            "line": 1251,
-            "column": 17,
+            "line": 1301,
+            "column": 20,
             "message": "Extra semicolon."
           },
           {
             "file": "tests/unit/controller/audio-stream-controller.ts",
-            "line": 208,
-            "column": 30,
+            "line": 296,
+            "column": 7,
             "message": "Extra semicolon."
           },
           {
             "file": "tests/unit/controller/fragment-finders.ts",
-            "line": 315,
-            "column": 44,
+            "line": 384,
+            "column": 13,
             "message": "Extra semicolon."
           },
           {
             "file": "tests/unit/controller/subtitle-track-controller.ts",
-            "line": 662,
-            "column": 19,
+            "line": 638,
+            "column": 8,
             "message": "Extra semicolon."
           },
           {

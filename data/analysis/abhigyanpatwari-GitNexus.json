@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "1a597f3cc6a6d4ac1eed61fc6bb904050285655b",
-  "analyzedCommitDate": "2026-04-14T07:57:29.000Z",
+  "analyzedCommit": "9ad1984b17e4c53f7e3085226f0e4ce17ad9354b",
+  "analyzedCommitDate": "2026-04-14T08:39:17.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -70,7 +70,7 @@
         ]
       },
       "generic": {
-        "count": 1734,
+        "count": 1735,
         "samples": [
           {
             "file": "gitnexus-shared/src/graph/types.ts",
@@ -98,15 +98,15 @@
           },
           {
             "file": "gitnexus/src/core/ingestion/model/resolution-context.ts",
-            "line": 133,
-            "column": 24,
-            "message": "Array type using 'readonly SymbolDefinition[]' is forbidden. Use 'ReadonlyArray<SymbolDefinition>' instead."
+            "line": 241,
+            "column": 27,
+            "message": "Array type using 'SymbolDefinition[]' is forbidden. Use 'Array<SymbolDefinition>' instead."
           },
           {
             "file": "gitnexus/src/core/ingestion/process-processor.ts",
             "line": 434,
             "column": 41,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+            "message": "Array type using 'string[][]' is forbidden. Use 'Array<string[]>' instead."
           },
           {
             "file": "gitnexus/src/core/search/hybrid-search.ts",
@@ -184,7 +184,7 @@
         ]
       },
       "type-annotation": {
-        "count": 365,
+        "count": 376,
         "samples": [
           {
             "file": "gitnexus-shared/src/language-detection.ts",
@@ -193,50 +193,50 @@
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "gitnexus-web/test/unit/server-connection.test.ts",
-            "line": 105,
-            "column": 38,
+            "file": "gitnexus/src/cli/analyze.ts",
+            "line": 231,
+            "column": 35,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "gitnexus/src/core/group/normalization.ts",
-            "line": 95,
-            "column": 26,
+            "file": "gitnexus/src/core/ingestion/ast-cache.ts",
+            "line": 16,
+            "column": 29,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
             "file": "gitnexus/src/core/ingestion/community-processor.ts",
-            "line": 225,
+            "line": 294,
             "column": 30,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "gitnexus/src/core/ingestion/model/resolution-context.ts",
-            "line": 358,
-            "column": 25,
+            "file": "gitnexus/src/core/ingestion/model/symbol-table.ts",
+            "line": 265,
+            "column": 28,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "gitnexus/src/core/ingestion/pipeline-phases/routes.ts",
-            "line": 67,
-            "column": 34,
+            "file": "gitnexus/src/core/ingestion/pipeline-phases/runner.ts",
+            "line": 41,
+            "column": 27,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "gitnexus/src/core/ingestion/vue-sfc-extractor.ts",
-            "line": 116,
+            "file": "gitnexus/src/core/ingestion/workers/parse-worker.ts",
+            "line": 727,
             "column": 29,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
             "file": "gitnexus/src/mcp/local/local-backend.ts",
-            "line": 1610,
-            "column": 38,
+            "line": 2626,
+            "column": 29,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
             "file": "gitnexus/test/unit/dart-type-extractor.test.ts",
-            "line": 108,
+            "line": 493,
             "column": 26,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
@@ -454,7 +454,7 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 104,
+        "count": 103,
         "samples": [
           {
             "file": "gitnexus-shared/src/graph/types.ts",
@@ -481,16 +481,16 @@
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "gitnexus/src/core/ingestion/mro-processor.ts",
-            "line": 22,
-            "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
+            "file": "gitnexus/src/core/ingestion/method-types.ts",
+            "line": 100,
+            "column": 42,
+            "message": "`import()` type annotations are forbidden."
           },
           {
             "file": "gitnexus/src/core/lbug/csv-generator.ts",
-            "line": 16,
+            "line": 19,
             "column": 1,
-            "message": "Imports WriteStream are only used as type."
+            "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
             "file": "gitnexus/test/fixtures/lang-resolution/ts-deep-field-chain/service.ts",
@@ -519,7 +519,7 @@
         ]
       },
       "no-type-imports": {
-        "count": 596,
+        "count": 598,
         "samples": [
           {
             "file": "gitnexus-web/e2e/debug-issues.spec.ts",
@@ -535,38 +535,38 @@
           },
           {
             "file": "gitnexus/src/core/group/sync.ts",
-            "line": 12,
+            "line": 14,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "gitnexus/src/core/ingestion/import-processor.ts",
-            "line": 6,
+            "line": 11,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "gitnexus/src/core/ingestion/method-extractors/configs/dart.ts",
-            "line": 5,
+            "line": 11,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "gitnexus/src/core/ingestion/parsing-processor.ts",
-            "line": 25,
+            "line": 33,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "gitnexus/src/core/ingestion/type-env.ts",
-            "line": 25,
+            "line": 24,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "gitnexus/src/server/analyze-worker.ts",
+            "file": "gitnexus/src/server/analyze-job.ts",
             "line": 14,
-            "column": 27,
+            "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
@@ -586,7 +586,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 951,
+        "count": 952,
         "samples": [
           {
             "file": "gitnexus-claude-plugin/hooks/gitnexus-hook.js",
@@ -614,13 +614,13 @@
           },
           {
             "file": "gitnexus/src/core/ingestion/method-extractors/configs/typescript-javascript.ts",
-            "line": 244,
+            "line": 257,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "gitnexus/src/core/ingestion/workers/parse-worker.ts",
-            "line": 943,
+            "line": 917,
             "column": 1,
             "message": "Expected a function expression."
           },
@@ -651,7 +651,7 @@
         ]
       },
       "declaration": {
-        "count": 843,
+        "count": 845,
         "samples": [
           {
             "file": "gitnexus-shared/src/language-detection.ts",
@@ -666,9 +666,9 @@
             "message": "Expected a function declaration."
           },
           {
-            "file": "gitnexus-web/test/unit/security-guards.test.ts",
-            "line": 20,
-            "column": 7,
+            "file": "gitnexus/src/cli/analyze.ts",
+            "line": 64,
+            "column": 14,
             "message": "Expected a function declaration."
           },
           {
@@ -679,13 +679,13 @@
           },
           {
             "file": "gitnexus/src/core/ingestion/model/heritage-map.ts",
-            "line": 60,
+            "line": 128,
             "column": 14,
             "message": "Expected a function declaration."
           },
           {
             "file": "gitnexus/src/core/ingestion/type-extractors/c-cpp.ts",
-            "line": 200,
+            "line": 175,
             "column": 7,
             "message": "Expected a function declaration."
           },
@@ -697,7 +697,7 @@
           },
           {
             "file": "gitnexus/src/core/lbug/lbug-adapter.ts",
-            "line": 127,
+            "line": 119,
             "column": 7,
             "message": "Expected a function declaration."
           },
@@ -915,7 +915,7 @@
         ]
       },
       "4-space": {
-        "count": 757,
+        "count": 758,
         "samples": [
           {
             "file": "eslint.config.mjs",
@@ -948,26 +948,26 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "gitnexus/test/fixtures/lang-resolution/shape-check-integration/app/api/users/route.ts",
-            "line": 4,
+            "file": "gitnexus/test/fixtures/lang-resolution/shape-check-integration/components/GdprExport.tsx",
+            "line": 2,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "gitnexus/test/fixtures/lang-resolution/typescript-generic-calls/src/service.ts",
-            "line": 4,
+            "file": "gitnexus/test/fixtures/lang-resolution/typescript-generic-calls/src/token.ts",
+            "line": 2,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "gitnexus/test/integration/lbug-core-adapter.test.ts",
-            "line": 19,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "gitnexus/test/unit/group/fixtures.ts",
+            "file": "gitnexus/test/integration/lbug-lock-retry.test.ts",
             "line": 20,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "gitnexus/test/unit/group/group-tools.test.ts",
+            "line": 6,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -980,7 +980,7 @@
         ]
       },
       "tab": {
-        "count": 776,
+        "count": 777,
         "samples": [
           {
             "file": "eslint.config.mjs",
@@ -1001,13 +1001,13 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "gitnexus/src/core/ingestion/pipeline-phases/cross-file.ts",
-            "line": 41,
+            "file": "gitnexus/src/core/ingestion/pipeline-phases/markdown.ts",
+            "line": 20,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "gitnexus/test/fixtures/cross-file-binding/ts-reexport/src/core.ts",
+            "file": "gitnexus/test/fixtures/cross-file-binding/ts-return-type/src/api.ts",
             "line": 2,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
@@ -1025,14 +1025,14 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "gitnexus/test/integration/has-method.test.ts",
-            "line": 16,
+            "file": "gitnexus/test/integration/hooks-e2e.test.ts",
+            "line": 19,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "gitnexus/test/unit/group/bridge-db.test.ts",
-            "line": 6,
+            "file": "gitnexus/test/unit/group/config-parser.test.ts",
+            "line": 12,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -1047,7 +1047,7 @@
     },
     "quotes": {
       "double": {
-        "count": 56677,
+        "count": 56783,
         "samples": [
           {
             "file": "eslint.config.mjs",
@@ -1056,51 +1056,51 @@
             "message": "Strings must use doublequote."
           },
           {
-            "file": "gitnexus/src/core/group/extractors/topic-patterns/index.ts",
-            "line": 31,
-            "column": 3,
+            "file": "gitnexus/src/core/group/extractors/topic-patterns/java.ts",
+            "line": 41,
+            "column": 21,
             "message": "Strings must use doublequote."
           },
           {
             "file": "gitnexus/src/core/ingestion/type-extractors/csharp.ts",
-            "line": 521,
-            "column": 32,
+            "line": 541,
+            "column": 30,
             "message": "Strings must use doublequote."
           },
           {
             "file": "gitnexus/test/integration/group/group-sync.test.ts",
-            "line": 49,
-            "column": 38,
+            "line": 53,
+            "column": 21,
             "message": "Strings must use doublequote."
           },
           {
             "file": "gitnexus/test/integration/resolvers/javascript.test.ts",
-            "line": 428,
-            "column": 60,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "gitnexus/test/integration/resolvers/typescript.test.ts",
-            "line": 2618,
-            "column": 31,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "gitnexus/test/unit/csv-escaping.test.ts",
-            "line": 95,
+            "line": 465,
             "column": 6,
             "message": "Strings must use doublequote."
           },
           {
+            "file": "gitnexus/test/integration/resolvers/vue.test.ts",
+            "line": 43,
+            "column": 84,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "gitnexus/test/unit/csv-escaping.test.ts",
+            "line": 158,
+            "column": 20,
+            "message": "Strings must use doublequote."
+          },
+          {
             "file": "gitnexus/test/unit/jcl-parser.test.ts",
-            "line": 82,
-            "column": 46,
+            "line": 163,
+            "column": 31,
             "message": "Strings must use doublequote."
           },
           {
             "file": "gitnexus/test/unit/symbol-resolver.test.ts",
-            "line": 470,
-            "column": 61,
+            "line": 565,
+            "column": 6,
             "message": "Strings must use doublequote."
           },
           {
@@ -1183,7 +1183,7 @@
         "samples": []
       },
       "never": {
-        "count": 61484,
+        "count": 61584,
         "samples": [
           {
             "file": "eslint.config.mjs",
@@ -1193,50 +1193,50 @@
           },
           {
             "file": "gitnexus/src/core/augmentation/engine.ts",
-            "line": 220,
-            "column": 36,
+            "line": 275,
+            "column": 53,
             "message": "Extra semicolon."
           },
           {
-            "file": "gitnexus/src/core/ingestion/method-extractors/configs/rust.ts",
-            "line": 128,
-            "column": 43,
+            "file": "gitnexus/src/core/ingestion/method-extractors/configs/swift.ts",
+            "line": 24,
+            "column": 3,
             "message": "Extra semicolon."
           },
           {
             "file": "gitnexus/src/core/lbug/lbug-adapter.ts",
-            "line": 253,
-            "column": 21,
+            "line": 254,
+            "column": 78,
             "message": "Extra semicolon."
           },
           {
             "file": "gitnexus/test/integration/parsing.test.ts",
-            "line": 354,
-            "column": 11,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "gitnexus/test/integration/resolvers/php.test.ts",
-            "line": 1805,
-            "column": 6,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "gitnexus/test/unit/call-processor.test.ts",
-            "line": 490,
-            "column": 6,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "gitnexus/test/unit/group/topic-extractor.test.ts",
-            "line": 133,
+            "line": 339,
             "column": 56,
             "message": "Extra semicolon."
           },
           {
-            "file": "gitnexus/test/unit/repo-manager.test.ts",
-            "line": 119,
-            "column": 3,
+            "file": "gitnexus/test/integration/resolvers/python-mcp-tools.test.ts",
+            "line": 9,
+            "column": 22,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "gitnexus/test/unit/call-processor.test.ts",
+            "line": 548,
+            "column": 7,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "gitnexus/test/unit/group/topic-extractor.test.ts",
+            "line": 188,
+            "column": 40,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "gitnexus/test/unit/resolve-enclosing-owner.test.ts",
+            "line": 53,
+            "column": 93,
             "message": "Extra semicolon."
           },
           {

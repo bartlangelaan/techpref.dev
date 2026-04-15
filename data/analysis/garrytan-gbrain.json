@@ -1,12 +1,42 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "d547a64600f81b44c8cf85d3d97efa5bfa3d3cc0",
-  "analyzedCommitDate": "2026-04-14T07:03:40.000Z",
+  "analyzedCommit": "e5a9f0126a3cb9b7e79d4dcf3b251e446d566177",
+  "analyzedCommitDate": "2026-04-15T05:41:34.000Z",
   "checks": {
     "array-type": {
       "array": {
-        "count": 2,
+        "count": 7,
         "samples": [
+          {
+            "file": "src/commands/doctor.ts",
+            "line": 12,
+            "column": 12,
+            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
+          },
+          {
+            "file": "src/core/check-resolvable.ts",
+            "line": 115,
+            "column": 43,
+            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
+          },
+          {
+            "file": "src/core/enrichment-service.ts",
+            "line": 243,
+            "column": 48,
+            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
+          },
+          {
+            "file": "src/core/enrichment-service.ts",
+            "line": 244,
+            "column": 19,
+            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
+          },
+          {
+            "file": "src/core/fail-improve.ts",
+            "line": 229,
+            "column": 47,
+            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
+          },
           {
             "file": "src/core/sync.ts",
             "line": 18,
@@ -22,7 +52,7 @@
         ]
       },
       "generic": {
-        "count": 452,
+        "count": 506,
         "samples": [
           {
             "file": "scripts/smoke-test-mcp.ts",
@@ -32,57 +62,57 @@
           },
           {
             "file": "src/commands/integrations.ts",
-            "line": 42,
-            "column": 13,
+            "line": 88,
+            "column": 9,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
             "file": "src/core/chunkers/llm.ts",
-            "line": 63,
-            "column": 12,
-            "message": "Array type using 'number[]' is forbidden. Use 'Array<number>' instead."
+            "line": 140,
+            "column": 36,
+            "message": "Array type using 'TextChunk[]' is forbidden. Use 'Array<TextChunk>' instead."
           },
           {
             "file": "src/core/chunkers/semantic.ts",
-            "line": 220,
-            "column": 72,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+            "line": 269,
+            "column": 36,
+            "message": "Array type using 'number[]' is forbidden. Use 'Array<number>' instead."
           },
           {
             "file": "src/core/engine.ts",
-            "line": 53,
-            "column": 56,
-            "message": "Array type using 'GraphNode[]' is forbidden. Use 'Array<GraphNode>' instead."
+            "line": 40,
+            "column": 69,
+            "message": "Array type using 'SearchResult[]' is forbidden. Use 'Array<SearchResult>' instead."
           },
           {
             "file": "src/core/pglite-engine.ts",
-            "line": 401,
-            "column": 79,
-            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
+            "line": 202,
+            "column": 75,
+            "message": "Array type using 'SearchResult[]' is forbidden. Use 'Array<SearchResult>' instead."
           },
           {
             "file": "src/core/postgres-engine.ts",
-            "line": 547,
+            "line": 389,
             "column": 31,
-            "message": "Array type using 'RawData[]' is forbidden. Use 'Array<RawData>' instead."
+            "message": "Array type using 'Link[]' is forbidden. Use 'Array<Link>' instead."
           },
           {
-            "file": "src/core/search/hybrid.ts",
-            "line": 40,
-            "column": 12,
-            "message": "Array type using 'SearchResult[]' is forbidden. Use 'Array<SearchResult>' instead."
+            "file": "src/core/search/eval.ts",
+            "line": 276,
+            "column": 47,
+            "message": "Array type using 'EvalQrel[]' is forbidden. Use 'Array<EvalQrel>' instead."
           },
           {
             "file": "test/benchmark-search-quality.ts",
-            "line": 608,
-            "column": 13,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+            "line": 527,
+            "column": 35,
+            "message": "Array type using 'SearchResult[]' is forbidden. Use 'Array<SearchResult>' instead."
           },
           {
-            "file": "test/search.test.ts",
-            "line": 55,
-            "column": 17,
-            "message": "Array type using 'SearchResult[]' is forbidden. Use 'Array<SearchResult>' instead."
+            "file": "test/skills-conformance.test.ts",
+            "line": 95,
+            "column": 18,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           }
         ]
       }
@@ -93,7 +123,7 @@
         "samples": []
       },
       "type-annotation": {
-        "count": 17,
+        "count": 21,
         "samples": [
           {
             "file": "src/cli.ts",
@@ -114,9 +144,15 @@
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "src/commands/import.ts",
-            "line": 28,
+            "file": "src/core/check-resolvable.ts",
+            "line": 259,
             "column": 29,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "src/core/enrichment-service.ts",
+            "line": 245,
+            "column": 23,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
@@ -129,12 +165,6 @@
             "file": "src/core/search/dedup.ts",
             "line": 58,
             "column": 25,
-            "message": "The generic type arguments should be specified as part of the type annotation."
-          },
-          {
-            "file": "src/core/search/dedup.ts",
-            "line": 129,
-            "column": 29,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
@@ -160,11 +190,18 @@
     },
     "consistent-indexed-object-style": {
       "record": {
-        "count": 0,
-        "samples": []
+        "count": 1,
+        "samples": [
+          {
+            "file": "src/core/data-research.ts",
+            "line": 47,
+            "column": 3,
+            "message": "A record is preferred over an index signature."
+          }
+        ]
       },
       "index-signature": {
-        "count": 59,
+        "count": 71,
         "samples": [
           {
             "file": "src/cli.ts",
@@ -173,9 +210,15 @@
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "src/commands/import.ts",
+            "file": "src/commands/integrations.ts",
             "line": 71,
-            "column": 22,
+            "column": 13,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "src/core/data-research.ts",
+            "line": 162,
+            "column": 17,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -185,33 +228,27 @@
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "src/core/operations.ts",
-            "line": 682,
-            "column": 6,
+            "file": "src/core/pglite-engine.ts",
+            "line": 110,
+            "column": 33,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "src/core/pglite-engine.ts",
-            "line": 311,
-            "column": 21,
-            "message": "An index signature is preferred over a record."
-          },
-          {
-            "file": "src/core/postgres-engine.ts",
-            "line": 431,
-            "column": 25,
+            "line": 565,
+            "column": 24,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "src/core/types.ts",
-            "line": 120,
-            "column": 9,
+            "line": 11,
+            "column": 16,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "src/core/utils.ts",
-            "line": 60,
-            "column": 40,
+            "line": 46,
+            "column": 33,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -221,9 +258,9 @@
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "test/import-file.test.ts",
-            "line": 10,
-            "column": 40,
+            "file": "test/skills-conformance.test.ts",
+            "line": 13,
+            "column": 17,
             "message": "An index signature is preferred over a record."
           }
         ]
@@ -235,7 +272,7 @@
         "samples": []
       },
       "type": {
-        "count": 72,
+        "count": 93,
         "samples": [
           {
             "file": "src/commands/backlinks.ts",
@@ -245,14 +282,14 @@
           },
           {
             "file": "src/commands/integrations.ts",
-            "line": 56,
+            "line": 80,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "src/commands/migrate-engine.ts",
-            "line": 52,
-            "column": 1,
+            "file": "src/commands/sync.ts",
+            "line": 21,
+            "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
@@ -262,32 +299,32 @@
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "src/core/markdown.ts",
-            "line": 5,
+            "file": "src/core/enrichment-service.ts",
+            "line": 31,
             "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "src/core/migrate.ts",
+            "line": 17,
+            "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "src/core/search/eval.ts",
-            "line": 21,
-            "column": 8,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "src/core/sync.ts",
-            "line": 14,
+            "line": 75,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "src/core/types.ts",
-            "line": 69,
+            "line": 26,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "src/core/types.ts",
-            "line": 134,
+            "line": 118,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
@@ -302,11 +339,18 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 0,
-        "samples": []
+        "count": 1,
+        "samples": [
+          {
+            "file": "test/doctor.test.ts",
+            "line": 27,
+            "column": 18,
+            "message": "`import()` type annotations are forbidden."
+          }
+        ]
       },
       "no-type-imports": {
-        "count": 67,
+        "count": 69,
         "samples": [
           {
             "file": "src/cli.ts",
@@ -316,8 +360,8 @@
           },
           {
             "file": "src/commands/eval.ts",
-            "line": 14,
-            "column": 1,
+            "line": 18,
+            "column": 3,
             "message": "Use an `import` instead of an `import type`."
           },
           {
@@ -327,9 +371,9 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/core/chunkers/semantic.ts",
-            "line": 16,
-            "column": 39,
+            "file": "src/core/config.ts",
+            "line": 4,
+            "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
@@ -351,14 +395,14 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/core/storage/s3.ts",
-            "line": 9,
+            "file": "src/core/storage/supabase.ts",
+            "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "test/e2e/search-quality.test.ts",
-            "line": 13,
+            "file": "test/e2e/mechanical.test.ts",
+            "line": 20,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -373,7 +417,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 295,
+        "count": 341,
         "samples": [
           {
             "file": "scripts/smoke-test-mcp.ts",
@@ -382,50 +426,50 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "src/commands/config.ts",
-            "line": 4,
+            "file": "src/commands/doctor.ts",
+            "line": 220,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/commands/files.ts",
-            "line": 441,
+            "file": "src/commands/import.ts",
+            "line": 9,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/commands/integrations.ts",
-            "line": 413,
-            "column": 1,
+            "file": "src/commands/lint.ts",
+            "line": 43,
+            "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/commands/sync.ts",
-            "line": 284,
+            "file": "src/core/backoff.ts",
+            "line": 93,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "src/core/chunkers/semantic.ts",
-            "line": 241,
+            "line": 336,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/core/import-file.ts",
-            "line": 139,
+            "file": "src/core/enrichment-service.ts",
+            "line": 243,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/core/search/hybrid.ts",
-            "line": 165,
+            "file": "src/core/search/expansion.ts",
+            "line": 43,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "test/benchmark-search-quality.ts",
-            "line": 577,
+            "line": 500,
             "column": 1,
             "message": "Expected a function expression."
           },
@@ -448,7 +492,7 @@
           },
           {
             "file": "src/commands/init.ts",
-            "line": 162,
+            "line": 168,
             "column": 11,
             "message": "Expected a function declaration."
           },
@@ -509,7 +553,7 @@
         "samples": []
       },
       "default": {
-        "count": 24,
+        "count": 22,
         "samples": [
           {
             "file": "src/commands/call.ts",
@@ -524,32 +568,32 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/commands/export.ts",
-            "line": 6,
+            "file": "src/commands/migrate-engine.ts",
+            "line": 77,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/commands/report.ts",
-            "line": 16,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "src/commands/tools-json.ts",
-            "line": 3,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "src/core/pglite-schema.ts",
-            "line": 16,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "src/core/schema-embedded.ts",
+            "file": "src/commands/serve.ts",
             "line": 4,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "src/core/engine-factory.ts",
+            "line": 8,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "src/core/postgres-engine.ts",
+            "line": 22,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "src/core/search/dedup.ts",
+            "line": 18,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -560,8 +604,8 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/core/storage/local.ts",
-            "line": 9,
+            "file": "src/core/storage/s3.ts",
+            "line": 15,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -580,7 +624,7 @@
         "samples": [
           {
             "file": "src/commands/doctor.ts",
-            "line": 46,
+            "line": 107,
             "column": 1,
             "message": "Expected 2-space indentation, but file uses 27-space indentation."
           },
@@ -611,7 +655,7 @@
         ]
       },
       "4-space": {
-        "count": 102,
+        "count": 116,
         "samples": [
           {
             "file": "scripts/smoke-test-mcp.ts",
@@ -620,50 +664,50 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/commands/files.ts",
-            "line": 12,
+            "file": "src/commands/init.ts",
+            "line": 13,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/commands/upgrade.ts",
-            "line": 7,
+            "file": "src/core/chunkers/recursive.ts",
+            "line": 30,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/core/migrate.ts",
-            "line": 18,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "src/core/search/intent.ts",
-            "line": 14,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "src/core/yaml-lite.ts",
+            "file": "src/core/markdown.ts",
             "line": 6,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "test/e2e/mcp.test.ts",
-            "line": 17,
+            "file": "src/core/search/keyword.ts",
+            "line": 5,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "test/import-file.test.ts",
-            "line": 11,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "test/publish.test.ts",
+            "file": "test/backlinks.test.ts",
             "line": 3,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "test/e2e/mechanical.test.ts",
+            "line": 16,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "test/files.test.ts",
+            "line": 16,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "test/report.test.ts",
+            "line": 11,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -676,7 +720,7 @@
         ]
       },
       "tab": {
-        "count": 102,
+        "count": 116,
         "samples": [
           {
             "file": "scripts/smoke-test-mcp.ts",
@@ -685,50 +729,50 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/commands/files.ts",
-            "line": 12,
+            "file": "src/commands/init.ts",
+            "line": 13,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/commands/upgrade.ts",
-            "line": 7,
+            "file": "src/core/chunkers/recursive.ts",
+            "line": 30,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/core/migrate.ts",
-            "line": 18,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "src/core/search/intent.ts",
-            "line": 14,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "src/core/yaml-lite.ts",
+            "file": "src/core/markdown.ts",
             "line": 6,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "test/e2e/mcp.test.ts",
-            "line": 17,
+            "file": "src/core/search/keyword.ts",
+            "line": 5,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "test/import-file.test.ts",
-            "line": 11,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "test/publish.test.ts",
+            "file": "test/backlinks.test.ts",
             "line": 3,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "test/e2e/mechanical.test.ts",
+            "line": 16,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "test/files.test.ts",
+            "line": 16,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "test/report.test.ts",
+            "line": 11,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -743,7 +787,7 @@
     },
     "quotes": {
       "double": {
-        "count": 6220,
+        "count": 7039,
         "samples": [
           {
             "file": "scripts/smoke-test-mcp.ts",
@@ -752,51 +796,51 @@
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/commands/import.ts",
-            "line": 42,
-            "column": 53,
+            "file": "src/commands/init.ts",
+            "line": 35,
+            "column": 21,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/core/import-file.ts",
-            "line": 53,
-            "column": 27,
+            "file": "src/core/embedding.ts",
+            "line": 68,
+            "column": 40,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "test/backlinks.test.ts",
-            "line": 14,
-            "column": 31,
+            "file": "src/core/transcription.ts",
+            "line": 99,
+            "column": 10,
             "message": "Strings must use doublequote."
           },
           {
             "file": "test/check-update.test.ts",
-            "line": 144,
-            "column": 8,
+            "line": 50,
+            "column": 40,
             "message": "Strings must use doublequote."
           },
           {
             "file": "test/e2e/mechanical.test.ts",
-            "line": 766,
-            "column": 8,
+            "line": 376,
+            "column": 13,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "test/file-migration.test.ts",
-            "line": 57,
-            "column": 54,
+            "file": "test/eval.test.ts",
+            "line": 110,
+            "column": 27,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "test/intent.test.ts",
-            "line": 41,
-            "column": 34,
+            "file": "test/integrations.test.ts",
+            "line": 264,
+            "column": 76,
             "message": "Strings must use doublequote."
           },
           {
             "file": "test/publish.test.ts",
-            "line": 192,
-            "column": 48,
+            "line": 93,
+            "column": 63,
             "message": "Strings must use doublequote."
           },
           {
@@ -808,7 +852,7 @@
         ]
       },
       "single": {
-        "count": 78,
+        "count": 179,
         "samples": [
           {
             "file": "src/commands/eval.ts",
@@ -817,51 +861,51 @@
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/commands/files.ts",
-            "line": 92,
-            "column": 21,
+            "file": "src/commands/sync.ts",
+            "line": 143,
+            "column": 41,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/commands/integrations.ts",
-            "line": 509,
-            "column": 15,
+            "file": "test/check-resolvable.test.ts",
+            "line": 8,
+            "column": 8,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/core/pglite-engine.ts",
-            "line": 262,
-            "column": 9,
+            "file": "test/check-resolvable.test.ts",
+            "line": 90,
+            "column": 58,
             "message": "Strings must use singlequote."
           },
           {
             "file": "test/cli.test.ts",
-            "line": 9,
+            "line": 20,
             "column": 33,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "test/e2e/helpers.ts",
-            "line": 179,
-            "column": 35,
+            "file": "test/enrichment-service.test.ts",
+            "line": 15,
+            "column": 28,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "test/e2e/mechanical.test.ts",
-            "line": 679,
-            "column": 39,
+            "file": "test/resolver.test.ts",
+            "line": 25,
+            "column": 8,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "test/intent.test.ts",
-            "line": 53,
-            "column": 34,
+            "file": "test/skills-conformance.test.ts",
+            "line": 14,
+            "column": 33,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "test/sync.test.ts",
-            "line": 38,
-            "column": 20,
+            "file": "test/skills-conformance.test.ts",
+            "line": 84,
+            "column": 12,
             "message": "Strings must use singlequote."
           },
           {
@@ -879,7 +923,7 @@
         "samples": []
       },
       "never": {
-        "count": 7338,
+        "count": 8424,
         "samples": [
           {
             "file": "scripts/smoke-test-mcp.ts",
@@ -889,50 +933,50 @@
           },
           {
             "file": "src/commands/files.ts",
-            "line": 212,
-            "column": 91,
+            "line": 358,
+            "column": 19,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/commands/migrate-engine.ts",
-            "line": 69,
-            "column": 70,
+            "file": "src/commands/report.ts",
+            "line": 34,
+            "column": 101,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/core/markdown.ts",
-            "line": 151,
-            "column": 35,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "src/core/storage/s3.ts",
-            "line": 82,
-            "column": 8,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "test/e2e/helpers.ts",
-            "line": 170,
+            "file": "src/core/file-resolver.ts",
+            "line": 138,
             "column": 40,
             "message": "Extra semicolon."
           },
           {
-            "file": "test/e2e/sync.test.ts",
-            "line": 356,
-            "column": 41,
+            "file": "src/core/storage/supabase.ts",
+            "line": 45,
+            "column": 50,
             "message": "Extra semicolon."
           },
           {
-            "file": "test/integrations.test.ts",
-            "line": 65,
-            "column": 34,
+            "file": "test/data-research.test.ts",
+            "line": 172,
+            "column": 73,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "test/e2e/sync.test.ts",
+            "line": 158,
+            "column": 31,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "test/import-resume.test.ts",
+            "line": 1,
+            "column": 61,
             "message": "Extra semicolon."
           },
           {
             "file": "test/pglite-lock.test.ts",
-            "line": 82,
-            "column": 47,
+            "line": 85,
+            "column": 28,
             "message": "Extra semicolon."
           },
           {

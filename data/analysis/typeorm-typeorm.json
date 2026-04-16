@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "e5eb60b4030f91a8d8ab51e14907930048298884",
-  "analyzedCommitDate": "2026-04-15T18:01:22.000Z",
+  "analyzedCommit": "e085e4c67b79e7d7e66c71d2b1813dd7e74cc151",
+  "analyzedCommitDate": "2026-04-16T00:58:44.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -70,7 +70,7 @@
         ]
       },
       "generic": {
-        "count": 3512,
+        "count": 3516,
         "samples": [
           {
             "file": "packages/codemod/src/cli/parse-args.ts",
@@ -79,50 +79,50 @@
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
-            "file": "src/driver/mysql/MysqlDataSourceOptions.ts",
-            "line": 123,
-            "column": 26,
-            "message": "Array type using 'MysqlConnectionCredentialsOptions[]' is forbidden. Use 'Array<MysqlConnectionCredentialsOptions>' instead."
+            "file": "src/driver/mysql/MysqlDriver.ts",
+            "line": 46,
+            "column": 47,
+            "message": "Array type using 'IsolationLevel[]' is forbidden. Use 'Array<IsolationLevel>' instead."
           },
           {
             "file": "src/driver/sqlite-abstract/AbstractSqliteQueryRunner.ts",
-            "line": 446,
-            "column": 26,
+            "line": 447,
+            "column": 28,
             "message": "Array type using 'Query[]' is forbidden. Use 'Array<Query>' instead."
           },
           {
             "file": "src/metadata/EntityMetadata.ts",
-            "line": 274,
-            "column": 23,
-            "message": "Array type using 'ColumnMetadata[]' is forbidden. Use 'Array<ColumnMetadata>' instead."
+            "line": 337,
+            "column": 19,
+            "message": "Array type using 'RelationMetadata[]' is forbidden. Use 'Array<RelationMetadata>' instead."
           },
           {
             "file": "src/repository/BaseEntity.ts",
-            "line": 549,
+            "line": 561,
             "column": 16,
             "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           },
           {
-            "file": "test/functional/decorators/foreign-key/foreign-key-decorator.test.ts",
-            "line": 16,
+            "file": "test/functional/decorators/relation-id/relation-id-many-to-many/entity/Category.ts",
+            "line": 22,
+            "column": 12,
+            "message": "Array type using 'Post[]' is forbidden. Use 'Array<Post>' instead."
+          },
+          {
+            "file": "test/functional/query-builder/sql-injection/sql-injection.test.ts",
+            "line": 12,
             "column": 22,
             "message": "Array type using 'DataSource[]' is forbidden. Use 'Array<DataSource>' instead."
           },
           {
-            "file": "test/functional/query-builder/soft-delete/global-condition-non-deleted/query-builder-global-condition-non-deleted.test.ts",
+            "file": "test/functional/schema-builder/table/create-table/create-table.test.ts",
             "line": 11,
             "column": 22,
             "message": "Array type using 'DataSource[]' is forbidden. Use 'Array<DataSource>' instead."
           },
           {
-            "file": "test/functional/schema-builder/schema/custom-db-and-schema-sync/custom-db-and-schema-sync.test.ts",
-            "line": 108,
-            "column": 26,
-            "message": "Array type using 'DataSource[]' is forbidden. Use 'Array<DataSource>' instead."
-          },
-          {
-            "file": "test/github-issues/3118/entity/CategoryWithVeryLongName.ts",
-            "line": 16,
+            "file": "test/github-issues/3118/entity/AuthorWithVeryLongName.ts",
+            "line": 24,
             "column": 28,
             "message": "Array type using 'PostWithVeryLongName[]' is forbidden. Use 'Array<PostWithVeryLongName>' instead."
           },
@@ -153,7 +153,7 @@
           },
           {
             "file": "src/util/OrmUtils.ts",
-            "line": 636,
+            "line": 634,
             "column": 13,
             "message": "The generic type arguments should be specified as part of the constructor type arguments."
           },
@@ -365,7 +365,7 @@
     },
     "consistent-type-definitions": {
       "interface": {
-        "count": 27,
+        "count": 31,
         "samples": [
           {
             "file": "src/driver/mongodb/bson.typings.ts",
@@ -381,25 +381,19 @@
           },
           {
             "file": "src/driver/types/GeoJsonTypes.ts",
-            "line": 20,
+            "line": 29,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
             "file": "src/driver/types/GeoJsonTypes.ts",
-            "line": 47,
+            "line": 56,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
             "file": "src/driver/types/GeoJsonTypes.ts",
-            "line": 94,
-            "column": 8,
-            "message": "Use `interface` instead of `type`."
-          },
-          {
-            "file": "src/find-options/OrderByCondition.ts",
-            "line": 11,
+            "line": 106,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
@@ -413,6 +407,12 @@
             "file": "test/functional/find-options/array-contains-operator/entity/Post.ts",
             "line": 3,
             "column": 8,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "test/functional/transaction/isolation-level/spanner-isolation.test.ts",
+            "line": 100,
+            "column": 9,
             "message": "Use `interface` instead of `type`."
           },
           {
@@ -694,7 +694,7 @@
         ]
       },
       "declaration": {
-        "count": 180,
+        "count": 181,
         "samples": [
           {
             "file": "docs/src/components/icons/github-icon.tsx",
@@ -728,20 +728,20 @@
           },
           {
             "file": "packages/codemod/test/transforms/transformer.test.ts",
-            "line": 24,
-            "column": 11,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "src/query-builder/transformer/PlainObjectToDatabaseEntityTransformer.ts",
-            "line": 109,
+            "line": 58,
             "column": 15,
             "message": "Expected a function declaration."
           },
           {
-            "file": "test/functional/query-runner/rename-table.test.ts",
-            "line": 38,
-            "column": 23,
+            "file": "src/query-builder/transformer/RawSqlResultsToEntityTransformer.ts",
+            "line": 380,
+            "column": 19,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "test/functional/relations/load-strategy/query/relation-load-strategy-query.test.ts",
+            "line": 28,
+            "column": 11,
             "message": "Expected a function declaration."
           },
           {
@@ -958,7 +958,7 @@
         ]
       },
       "4-space": {
-        "count": 75,
+        "count": 76,
         "samples": [
           {
             "file": "docs/docusaurus.config.ts",
@@ -979,16 +979,16 @@
             "message": "Expected 4-space indentation, but file uses 22-space indentation."
           },
           {
-            "file": "src/driver/react-native/ReactNativeDriver.ts",
-            "line": 404,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 22-space indentation."
-          },
-          {
-            "file": "src/driver/sqlserver/SqlServerQueryRunner.ts",
-            "line": 1352,
+            "file": "src/driver/postgres/PostgresQueryRunner.ts",
+            "line": 1319,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 18-space indentation."
+          },
+          {
+            "file": "src/driver/sqlserver/SqlServerDriver.ts",
+            "line": 620,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 22-space indentation."
           },
           {
             "file": "src/find-options/FindOptionsSelect.ts",
@@ -1003,10 +1003,10 @@
             "message": "Expected 4-space indentation, but file uses 18-space indentation."
           },
           {
-            "file": "src/query-builder/RelationRemover.ts",
-            "line": 66,
+            "file": "src/query-builder/RelationIdLoader.ts",
+            "line": 46,
             "column": 1,
-            "message": "Expected 4-space indentation, but file uses 50-space indentation."
+            "message": "Expected 4-space indentation, but file uses 14-space indentation."
           },
           {
             "file": "test/functional/commands/templates/generate/oracle.ts",
@@ -1090,7 +1090,7 @@
     },
     "quotes": {
       "double": {
-        "count": 1599,
+        "count": 1601,
         "samples": [
           {
             "file": "docs/docusaurus.config.ts",
@@ -1106,7 +1106,7 @@
           },
           {
             "file": "src/driver/mysql/MysqlQueryRunner.ts",
-            "line": 2480,
+            "line": 2500,
             "column": 17,
             "message": "Strings must use doublequote."
           },
@@ -1130,7 +1130,7 @@
           },
           {
             "file": "test/functional/database-schema/generated-columns/spanner/generated-columns-spanner.test.ts",
-            "line": 216,
+            "line": 224,
             "column": 21,
             "message": "Strings must use doublequote."
           },
@@ -1155,7 +1155,7 @@
         ]
       },
       "single": {
-        "count": 53909,
+        "count": 53962,
         "samples": [
           {
             "file": ".prettierrc.js",
@@ -1165,50 +1165,50 @@
           },
           {
             "file": "src/driver/mongodb/MongoQueryRunner.ts",
-            "line": 53,
-            "column": 29,
+            "line": 47,
+            "column": 34,
             "message": "Strings must use singlequote."
           },
           {
             "file": "src/metadata/ColumnMetadata.ts",
-            "line": 967,
-            "column": 20,
+            "line": 464,
+            "column": 52,
             "message": "Strings must use singlequote."
           },
           {
             "file": "test/functional/database-schema/column-types/mssql/entity/Post.ts",
-            "line": 48,
-            "column": 13,
+            "line": 2,
+            "column": 31,
             "message": "Strings must use singlequote."
           },
           {
             "file": "test/functional/find-options/array-contains-operator/array-contains-operator.test.ts",
-            "line": 31,
-            "column": 26,
+            "line": 11,
+            "column": 10,
             "message": "Strings must use singlequote."
           },
           {
             "file": "test/functional/query-builder/relation-id/many-to-one/basic-functionality/basic-functionality.test.ts",
-            "line": 12,
-            "column": 30,
+            "line": 10,
+            "column": 26,
             "message": "Strings must use singlequote."
           },
           {
             "file": "test/functional/relations/multiple-primary-keys/multiple-primary-keys-other-cases/multiple-primary-keys-other-cases.test.ts",
-            "line": 12,
-            "column": 24,
+            "line": 28,
+            "column": 30,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "test/functional/tree-tables/closure-table/basic/closure-table.test.ts",
-            "line": 27,
-            "column": 27,
+            "file": "test/functional/tree-tables/closure-table/basic/closure-table-mysql.test.ts",
+            "line": 116,
+            "column": 51,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "test/github-issues/345/entity/Category.ts",
-            "line": 3,
-            "column": 24,
+            "file": "test/github-issues/3422/issue-3422.test.ts",
+            "line": 13,
+            "column": 36,
             "message": "Strings must use singlequote."
           },
           {
@@ -1222,7 +1222,7 @@
     },
     "semi": {
       "always": {
-        "count": 85434,
+        "count": 85512,
         "samples": [
           {
             "file": ".prettierrc.js",
@@ -1232,50 +1232,50 @@
           },
           {
             "file": "src/driver/oracle/OracleQueryRunner.ts",
-            "line": 1267,
-            "column": 19,
+            "line": 1292,
+            "column": 26,
             "message": "Missing semicolon."
           },
           {
             "file": "src/persistence/SubjectExecutor.ts",
-            "line": 90,
-            "column": 24,
+            "line": 120,
+            "column": 74,
             "message": "Missing semicolon."
           },
           {
             "file": "test/functional/database-schema/column-types/cockroachdb-enum/cockroachdb-enum.test.ts",
-            "line": 260,
-            "column": 18,
+            "line": 294,
+            "column": 69,
             "message": "Missing semicolon."
           },
           {
-            "file": "test/functional/find-options/basic-usage/find-options-relations.test.ts",
-            "line": 268,
-            "column": 59,
+            "file": "test/functional/find-options/basic-usage/find-options-select.test.ts",
+            "line": 59,
+            "column": 11,
             "message": "Missing semicolon."
           },
           {
-            "file": "test/functional/query-builder/relation-id/one-to-many/embedded/entity/Subcounters.ts",
-            "line": 14,
-            "column": 20,
+            "file": "test/functional/query-builder/relation-id/one-to-many/multiple-pk/entity/Image.ts",
+            "line": 10,
+            "column": 15,
             "message": "Missing semicolon."
           },
           {
             "file": "test/functional/repository/clear-cascade/clear-cascade-oracle.test.ts",
-            "line": 41,
-            "column": 62,
+            "line": 126,
+            "column": 52,
             "message": "Missing semicolon."
           },
           {
             "file": "test/functional/tree-tables/materialized-path/custom-join-column/custom-join-column.test.ts",
-            "line": 292,
-            "column": 47,
+            "line": 363,
+            "column": 15,
             "message": "Missing semicolon."
           },
           {
             "file": "test/github-issues/3422/issue-3422.test.ts",
-            "line": 23,
-            "column": 76,
+            "line": 6,
+            "column": 32,
             "message": "Missing semicolon."
           },
           {

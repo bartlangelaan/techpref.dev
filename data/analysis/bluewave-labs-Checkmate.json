@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "b5fe314dde85d3af59a0781b2711b95c70dbb833",
-  "analyzedCommitDate": "2026-04-16T17:01:33.000Z",
+  "analyzedCommit": "e9a0914fad0deae6c825982a5e2af8eff454f1fc",
+  "analyzedCommitDate": "2026-04-16T18:21:43.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -70,7 +70,7 @@
         ]
       },
       "generic": {
-        "count": 658,
+        "count": 665,
         "samples": [
           {
             "file": "client/scripts/migrate-locales.ts",
@@ -79,15 +79,15 @@
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
-            "file": "client/src/Pages/Maintenance/create/index.tsx",
-            "line": 45,
-            "column": 36,
-            "message": "Array type using 'Monitor[]' is forbidden. Use 'Array<Monitor>' instead."
+            "file": "client/src/Pages/Maintenance/index.tsx",
+            "line": 13,
+            "column": 22,
+            "message": "Array type using 'MaintenanceWindow[]' is forbidden. Use 'Array<MaintenanceWindow>' instead."
           },
           {
             "file": "client/src/Types/StatusPage.ts",
-            "line": 34,
-            "column": 15,
+            "line": 33,
+            "column": 12,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
@@ -110,21 +110,21 @@
           },
           {
             "file": "server/src/repositories/status-pages/TimescaleStatusPagesRepository.ts",
-            "line": 117,
-            "column": 17,
-            "message": "Array type using 'unknown[]' is forbidden. Use 'Array<unknown>' instead."
+            "line": 116,
+            "column": 15,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
             "file": "server/src/service/business/userService.ts",
-            "line": 40,
-            "column": 25,
-            "message": "Array type using 'User[]' is forbidden. Use 'Array<User>' instead."
+            "line": 39,
+            "column": 77,
+            "message": "Array type using 'UserRole[]' is forbidden. Use 'Array<UserRole>' instead."
           },
           {
             "file": "server/src/types/monitor.ts",
-            "line": 122,
-            "column": 7,
-            "message": "Array type using 'HardwareNetStats[]' is forbidden. Use 'Array<HardwareNetStats>' instead."
+            "line": 121,
+            "column": 9,
+            "message": "Array type using 'HardwareDiskStats[]' is forbidden. Use 'Array<HardwareDiskStats>' instead."
           },
           {
             "file": "server/test/unit/services/userService.test.ts",
@@ -199,7 +199,7 @@
           },
           {
             "file": "server/src/repositories/monitors/TimescaleMonitorsRepository.ts",
-            "line": 943,
+            "line": 992,
             "column": 22,
             "message": "The generic type arguments should be specified as part of the type annotation."
           }
@@ -231,7 +231,7 @@
         ]
       },
       "index-signature": {
-        "count": 113,
+        "count": 112,
         "samples": [
           {
             "file": "client/scripts/migrate-locales.ts",
@@ -252,9 +252,9 @@
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "client/src/store.ts",
-            "line": 14,
-            "column": 17,
+            "file": "server/src/controllers/settingsController.ts",
+            "line": 31,
+            "column": 28,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -265,8 +265,8 @@
           },
           {
             "file": "server/src/repositories/settings/MongoSettingsRepository.ts",
-            "line": 63,
-            "column": 15,
+            "line": 64,
+            "column": 17,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -356,14 +356,14 @@
           },
           {
             "file": "server/test/unit/services/statusService.test.ts",
-            "line": 974,
+            "line": 1025,
             "column": 3,
             "message": "Use `interface` instead of `type`."
           }
         ]
       },
       "type": {
-        "count": 359,
+        "count": 360,
         "samples": [
           {
             "file": "client/scripts/migrate-locales.ts",
@@ -396,15 +396,15 @@
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "server/src/controllers/queueController.ts",
-            "line": 6,
+            "file": "server/src/controllers/notificationController.ts",
+            "line": 18,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "server/src/repositories/recovery-tokens/IRecoveryTokensRepository.ts",
-            "line": 3,
-            "column": 8,
+            "file": "server/src/repositories/notifications/TimescaleNotificationsRepository.ts",
+            "line": 6,
+            "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
@@ -430,7 +430,7 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 200,
+        "count": 201,
         "samples": [
           {
             "file": "server/src/app.ts",
@@ -464,13 +464,13 @@
           },
           {
             "file": "server/src/service/infrastructure/SuperSimpleQueue/SuperSimpleQueue.ts",
-            "line": 5,
+            "line": 4,
             "column": 1,
-            "message": "Imports Monitor and MonitorType are only used as type."
+            "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
             "file": "server/src/service/infrastructure/network/GameProvider.ts",
-            "line": 2,
+            "line": 1,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
@@ -495,7 +495,7 @@
         ]
       },
       "no-type-imports": {
-        "count": 567,
+        "count": 569,
         "samples": [
           {
             "file": "client/src/App.tsx",
@@ -528,19 +528,19 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "server/src/repositories/geo-checks/MongoGeoChecksRepository.ts",
-            "line": 4,
-            "column": 51,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "server/src/repositories/settings/TimescaleSettingsRepository.ts",
-            "line": 3,
+            "file": "server/src/repositories/geo-checks/TimescaleGeoChecksRepository.ts",
+            "line": 2,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "server/src/service/infrastructure/notificationProviders/discord.ts",
+            "file": "server/src/repositories/status-pages/MongoStatusPagesRepository.ts",
+            "line": 2,
+            "column": 10,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "server/src/service/infrastructure/notificationProviders/email.ts",
             "line": 5,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
@@ -627,7 +627,7 @@
         ]
       },
       "declaration": {
-        "count": 685,
+        "count": 689,
         "samples": [
           {
             "file": "client/src/Components/LanguageSelector.jsx",
@@ -643,26 +643,26 @@
           },
           {
             "file": "client/src/Hooks/UseApi.ts",
-            "line": 149,
-            "column": 14,
+            "line": 154,
+            "column": 8,
             "message": "Expected a function declaration."
           },
           {
             "file": "client/src/Pages/CreateMonitor/index.tsx",
-            "line": 232,
+            "line": 236,
             "column": 8,
             "message": "Expected a function declaration."
           },
           {
             "file": "client/src/Pages/Maintenance/create/index.tsx",
-            "line": 66,
+            "line": 112,
             "column": 8,
             "message": "Expected a function declaration."
           },
           {
             "file": "client/src/Pages/Uptime/Details/Components/GeoChecksTable.tsx",
-            "line": 76,
-            "column": 8,
+            "line": 57,
+            "column": 14,
             "message": "Expected a function declaration."
           },
           {
@@ -759,7 +759,7 @@
         ]
       },
       "default": {
-        "count": 153,
+        "count": 154,
         "samples": [
           {
             "file": "client/src/Components/common/charts/HeatmapResponseTime.tsx",
@@ -792,26 +792,26 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "client/src/Pages/Logs/TabLogs.tsx",
-            "line": 16,
+            "file": "client/src/Pages/Logs/TabQueue.tsx",
+            "line": 12,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "client/src/Routes/index.tsx",
-            "line": 247,
+            "file": "client/src/Utils/toastUtils.jsx",
+            "line": 13,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "server/src/repositories/incidents/TimescaleIncidentsRepository.ts",
-            "line": 26,
+            "file": "server/src/repositories/invites/TimescaleInvitesRepository.ts",
+            "line": 28,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "server/src/service/infrastructure/network/PortProvider.ts",
-            "line": 11,
+            "file": "server/src/service/infrastructure/network/WebSocketProvider.ts",
+            "line": 13,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -826,7 +826,7 @@
     },
     "indent": {
       "2-space": {
-        "count": 445,
+        "count": 447,
         "samples": [
           {
             "file": "client/.eslintrc.cjs",
@@ -835,7 +835,7 @@
             "message": "Expected spaces for indentation, but found tabs."
           },
           {
-            "file": "client/src/Components/inputs/ToggleButton.tsx",
+            "file": "client/src/Components/inputs/index.tsx",
             "line": 8,
             "column": 1,
             "message": "Expected spaces for indentation, but found tabs."
@@ -847,32 +847,32 @@
             "message": "Expected spaces for indentation, but found tabs."
           },
           {
-            "file": "client/src/Pages/PageSpeed/Monitors/Components/PageSpeedMonitorsTable.tsx",
-            "line": 20,
+            "file": "client/src/Pages/PageSpeed/Monitors/index.tsx",
+            "line": 2,
             "column": 1,
             "message": "Expected spaces for indentation, but found tabs."
           },
           {
-            "file": "client/src/Validation/monitor.ts",
+            "file": "client/src/Validation/notifications.ts",
+            "line": 4,
+            "column": 1,
+            "message": "Expected spaces for indentation, but found tabs."
+          },
+          {
+            "file": "server/src/db/models/Migration.ts",
+            "line": 4,
+            "column": 1,
+            "message": "Expected spaces for indentation, but found tabs."
+          },
+          {
+            "file": "server/src/repositories/status-pages/TimescaleStatusPagesRepository.ts",
+            "line": 7,
+            "column": 1,
+            "message": "Expected spaces for indentation, but found tabs."
+          },
+          {
+            "file": "server/src/service/infrastructure/notificationProviders/email.ts",
             "line": 9,
-            "column": 1,
-            "message": "Expected spaces for indentation, but found tabs."
-          },
-          {
-            "file": "server/src/db/models/MaintenanceWindow.ts",
-            "line": 5,
-            "column": 1,
-            "message": "Expected spaces for indentation, but found tabs."
-          },
-          {
-            "file": "server/src/repositories/status-pages/MongoStatusPagesRepository.ts",
-            "line": 9,
-            "column": 1,
-            "message": "Expected spaces for indentation, but found tabs."
-          },
-          {
-            "file": "server/src/service/infrastructure/notificationProviders/INotificationProvider.ts",
-            "line": 8,
             "column": 1,
             "message": "Expected spaces for indentation, but found tabs."
           },
@@ -891,7 +891,7 @@
         ]
       },
       "4-space": {
-        "count": 448,
+        "count": 450,
         "samples": [
           {
             "file": ".github/scripts/download-translations.js",
@@ -906,44 +906,44 @@
             "message": "Expected spaces for indentation, but found tabs."
           },
           {
-            "file": "client/src/Pages/Account/EditUser/index.tsx",
-            "line": 27,
+            "file": "client/src/Pages/Account/TabPassword.tsx",
+            "line": 13,
             "column": 1,
             "message": "Expected spaces for indentation, but found tabs."
           },
           {
-            "file": "client/src/Pages/PageSpeed/Details/index.tsx",
-            "line": 6,
+            "file": "client/src/Pages/PageSpeed/Monitors/Components/PageSpeedMonitorsTable.tsx",
+            "line": 20,
             "column": 1,
             "message": "Expected spaces for indentation, but found tabs."
           },
           {
-            "file": "client/src/Validation/monitor.ts",
+            "file": "client/src/Validation/notifications.ts",
+            "line": 4,
+            "column": 1,
+            "message": "Expected spaces for indentation, but found tabs."
+          },
+          {
+            "file": "server/src/db/models/Invite.ts",
+            "line": 5,
+            "column": 1,
+            "message": "Expected spaces for indentation, but found tabs."
+          },
+          {
+            "file": "server/src/repositories/status-pages/MongoStatusPagesRepository.ts",
             "line": 9,
             "column": 1,
             "message": "Expected spaces for indentation, but found tabs."
           },
           {
-            "file": "server/src/db/models/Incident.ts",
-            "line": 5,
+            "file": "server/src/service/infrastructure/notificationProviders/discord.ts",
+            "line": 9,
             "column": 1,
             "message": "Expected spaces for indentation, but found tabs."
           },
           {
-            "file": "server/src/repositories/status-pages/IStatusPagesRepository.ts",
-            "line": 5,
-            "column": 1,
-            "message": "Expected spaces for indentation, but found tabs."
-          },
-          {
-            "file": "server/src/service/infrastructure/notificationProviders/INotificationProvider.ts",
-            "line": 8,
-            "column": 1,
-            "message": "Expected spaces for indentation, but found tabs."
-          },
-          {
-            "file": "server/test/helpers/InMemoryMonitorsRepository.ts",
-            "line": 5,
+            "file": "server/test/helpers/createMockLogger.ts",
+            "line": 4,
             "column": 1,
             "message": "Expected spaces for indentation, but found tabs."
           },
@@ -1023,7 +1023,7 @@
     },
     "quotes": {
       "double": {
-        "count": 117,
+        "count": 119,
         "samples": [
           {
             "file": ".github/scripts/upload-translations.js",
@@ -1088,7 +1088,7 @@
         ]
       },
       "single": {
-        "count": 13197,
+        "count": 13338,
         "samples": [
           {
             "file": ".github/scripts/download-translations.js",
@@ -1098,50 +1098,50 @@
           },
           {
             "file": "client/src/Components/sidebar/Authfooter.tsx",
-            "line": 6,
-            "column": 22,
+            "line": 54,
+            "column": 40,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "client/src/Pages/Infrastructure/Monitors/index.tsx",
-            "line": 142,
-            "column": 31,
+            "file": "client/src/Pages/Logs/TabLogs.tsx",
+            "line": 19,
+            "column": 75,
             "message": "Strings must use singlequote."
           },
           {
             "file": "client/src/Utils/Theme/Theme.ts",
-            "line": 124,
-            "column": 7,
+            "line": 154,
+            "column": 45,
             "message": "Strings must use singlequote."
           },
           {
             "file": "server/src/repositories/checks/MongoChecksRepistory.ts",
-            "line": 258,
-            "column": 15,
+            "line": 390,
+            "column": 48,
             "message": "Strings must use singlequote."
           },
           {
             "file": "server/src/service/business/userService.ts",
-            "line": 166,
-            "column": 47,
+            "line": 293,
+            "column": 13,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "server/test/helpers/createMockLogger.ts",
-            "line": 1,
-            "column": 22,
+            "file": "server/test/helpers/InMemoryMonitorsRepository.ts",
+            "line": 121,
+            "column": 19,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "server/test/unit/services/bufferService.test.ts",
-            "line": 80,
-            "column": 6,
+            "file": "server/test/unit/providers/notifications/webhookProvider.test.ts",
+            "line": 86,
+            "column": 61,
             "message": "Strings must use singlequote."
           },
           {
             "file": "server/test/unit/services/networkService.test.ts",
-            "line": 278,
-            "column": 58,
+            "line": 236,
+            "column": 66,
             "message": "Strings must use singlequote."
           },
           {
@@ -1159,7 +1159,7 @@
         "samples": []
       },
       "never": {
-        "count": 16974,
+        "count": 17173,
         "samples": [
           {
             "file": ".github/scripts/download-translations.js",
@@ -1168,51 +1168,51 @@
             "message": "Extra semicolon."
           },
           {
-            "file": "client/src/Hooks/useProfileForm.ts",
-            "line": 14,
-            "column": 2,
+            "file": "client/src/Hooks/useSettingsForm.ts",
+            "line": 47,
+            "column": 46,
             "message": "Extra semicolon."
           },
           {
             "file": "client/src/Pages/StatusPage/Create/index.tsx",
-            "line": 31,
-            "column": 81,
+            "line": 122,
+            "column": 23,
             "message": "Extra semicolon."
           },
           {
-            "file": "server/src/controllers/monitorController.ts",
-            "line": 455,
-            "column": 3,
+            "file": "server/src/controllers/notificationController.ts",
+            "line": 48,
+            "column": 6,
             "message": "Extra semicolon."
           },
           {
-            "file": "server/src/repositories/monitors/MongoMonitorsRepository.ts",
-            "line": 313,
-            "column": 90,
+            "file": "server/src/repositories/monitors/TimescaleMonitorsRepository.ts",
+            "line": 3,
+            "column": 100,
             "message": "Extra semicolon."
           },
           {
-            "file": "server/src/service/infrastructure/SuperSimpleQueue/SuperSimpleQueueHelper.ts",
-            "line": 385,
-            "column": 12,
+            "file": "server/src/service/infrastructure/bufferService.ts",
+            "line": 26,
+            "column": 45,
             "message": "Extra semicolon."
           },
           {
             "file": "server/test/integration/heartbeatJobThresholdBreach.test.ts",
-            "line": 73,
-            "column": 36,
+            "line": 203,
+            "column": 4,
             "message": "Extra semicolon."
           },
           {
             "file": "server/test/unit/services/bufferService.test.ts",
-            "line": 73,
-            "column": 53,
+            "line": 6,
+            "column": 87,
             "message": "Extra semicolon."
           },
           {
             "file": "server/test/unit/services/networkService.test.ts",
-            "line": 402,
-            "column": 6,
+            "line": 393,
+            "column": 59,
             "message": "Extra semicolon."
           },
           {

@@ -1,11 +1,11 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "214ad2bede957fea8b3cd717aac83cea3ded4043",
-  "analyzedCommitDate": "2026-04-13T23:55:15.000Z",
+  "analyzedCommit": "759d0e4f7877677980d9cee18c8f895bee655394",
+  "analyzedCommitDate": "2026-04-16T20:51:04.000Z",
   "checks": {
     "array-type": {
       "array": {
-        "count": 7,
+        "count": 11,
         "samples": [
           {
             "file": "src/extractors/design-extractor.ts",
@@ -38,9 +38,27 @@
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
-            "file": "src/services/figma.ts",
-            "line": 166,
-            "column": 12,
+            "file": "src/tests/rich-text.test.ts",
+            "line": 19,
+            "column": 15,
+            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
+          },
+          {
+            "file": "src/transformers/text.ts",
+            "line": 244,
+            "column": 20,
+            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
+          },
+          {
+            "file": "src/transformers/text.ts",
+            "line": 311,
+            "column": 4,
+            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
+          },
+          {
+            "file": "src/transformers/text.ts",
+            "line": 312,
+            "column": 16,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
@@ -52,7 +70,7 @@
         ]
       },
       "generic": {
-        "count": 56,
+        "count": 77,
         "samples": [
           {
             "file": "scripts/benchmark-simplify.ts",
@@ -61,52 +79,52 @@
             "message": "Array type using 'SimplifiedNode[]' is forbidden. Use 'Array<SimplifiedNode>' instead."
           },
           {
-            "file": "src/extractors/built-in.ts",
-            "line": 295,
-            "column": 13,
-            "message": "Array type using 'SimplifiedNode[]' is forbidden. Use 'Array<SimplifiedNode>' instead."
-          },
-          {
-            "file": "src/extractors/node-walker.ts",
-            "line": 54,
-            "column": 25,
-            "message": "Array type using 'SimplifiedNode[]' is forbidden. Use 'Array<SimplifiedNode>' instead."
+            "file": "src/extractors/design-extractor.ts",
+            "line": 19,
+            "column": 19,
+            "message": "Array type using 'ExtractorFn[]' is forbidden. Use 'Array<ExtractorFn>' instead."
           },
           {
             "file": "src/extractors/types.ts",
-            "line": 111,
-            "column": 18,
-            "message": "Array type using 'number[]' is forbidden. Use 'Array<number>' instead."
+            "line": 99,
+            "column": 10,
+            "message": "Array type using 'SimplifiedNode[]' is forbidden. Use 'Array<SimplifiedNode>' instead."
           },
           {
             "file": "src/services/download-figma-images.ts",
-            "line": 32,
-            "column": 25,
+            "line": 89,
+            "column": 48,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
-            "file": "src/services/figma.ts",
-            "line": 181,
-            "column": 29,
-            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
-          },
-          {
-            "file": "src/telemetry/types.ts",
-            "line": 18,
-            "column": 22,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
-          },
-          {
-            "file": "src/transformers/style.ts",
-            "line": 110,
-            "column": 11,
+            "file": "src/services/get-figma-data-metrics.ts",
+            "line": 59,
+            "column": 32,
             "message": "Array type using 'SimplifiedFill[]' is forbidden. Use 'Array<SimplifiedFill>' instead."
           },
           {
+            "file": "src/tests/rich-text.test.ts",
+            "line": 36,
+            "column": 31,
+            "message": "Array type using 'FigmaNode[]' is forbidden. Use 'Array<FigmaNode>' instead."
+          },
+          {
             "file": "src/transformers/style.ts",
-            "line": 660,
+            "line": 634,
             "column": 18,
             "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
+          },
+          {
+            "file": "src/transformers/text.ts",
+            "line": 309,
+            "column": 15,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+          },
+          {
+            "file": "src/transformers/text.ts",
+            "line": 345,
+            "column": 18,
+            "message": "Array type using 'Run[]' is forbidden. Use 'Array<Run>' instead."
           },
           {
             "file": "src/utils/logger.ts",
@@ -123,12 +141,18 @@
         "samples": []
       },
       "type-annotation": {
-        "count": 8,
+        "count": 11,
         "samples": [
           {
             "file": "src/extractors/built-in.ts",
-            "line": 29,
+            "line": 30,
             "column": 32,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "src/extractors/built-in.ts",
+            "line": 37,
+            "column": 42,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
@@ -151,12 +175,6 @@
           },
           {
             "file": "src/services/get-figma-data-metrics.ts",
-            "line": 58,
-            "column": 23,
-            "message": "The generic type arguments should be specified as part of the type annotation."
-          },
-          {
-            "file": "src/services/get-figma-data-metrics.ts",
             "line": 147,
             "column": 23,
             "message": "The generic type arguments should be specified as part of the type annotation."
@@ -165,6 +183,18 @@
             "file": "src/tests/server.test.ts",
             "line": 175,
             "column": 32,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "src/transformers/text.ts",
+            "line": 387,
+            "column": 29,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "src/transformers/text.ts",
+            "line": 460,
+            "column": 25,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
@@ -195,7 +225,7 @@
         ]
       },
       "index-signature": {
-        "count": 57,
+        "count": 71,
         "samples": [
           {
             "file": "scripts/benchmark-simplify.ts",
@@ -204,51 +234,51 @@
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "src/extractors/built-in.ts",
-            "line": 213,
-            "column": 35,
+            "file": "src/extractors/design-extractor.ts",
+            "line": 50,
+            "column": 34,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "src/extractors/types.ts",
-            "line": 26,
-            "column": 17,
+            "line": 101,
+            "column": 18,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "src/services/figma.ts",
-            "line": 38,
-            "column": 29,
-            "message": "An index signature is preferred over a record."
-          },
-          {
-            "file": "src/telemetry/client.ts",
-            "line": 106,
-            "column": 57,
+            "line": 131,
+            "column": 14,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "src/transformers/component.ts",
-            "line": 21,
+            "line": 13,
             "column": 25,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "src/transformers/component.ts",
-            "line": 62,
-            "column": 17,
+            "line": 77,
+            "column": 15,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "src/transformers/component.ts",
-            "line": 94,
-            "column": 4,
+            "line": 116,
+            "column": 25,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "src/utils/error-meta.ts",
-            "line": 76,
-            "column": 22,
+            "file": "src/transformers/text.ts",
+            "line": 93,
+            "column": 18,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "src/utils/common.ts",
+            "line": 237,
+            "column": 40,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -262,60 +292,60 @@
     },
     "consistent-type-definitions": {
       "interface": {
-        "count": 38,
+        "count": 42,
         "samples": [
           {
             "file": "src/extractors/built-in.ts",
-            "line": 204,
-            "column": 1,
-            "message": "Use `interface` instead of `type`."
-          },
-          {
-            "file": "src/mcp/index.ts",
-            "line": 60,
+            "line": 251,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
             "file": "src/mcp/validation-capture.ts",
-            "line": 53,
+            "line": 43,
+            "column": 3,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "src/mcp/validation-capture.ts",
+            "line": 54,
             "column": 3,
             "message": "Use `interface` instead of `type`."
           },
           {
             "file": "src/services/download-figma-images.ts",
-            "line": 11,
+            "line": 29,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "src/services/download-figma-images.ts",
-            "line": 45,
-            "column": 8,
-            "message": "Use `interface` instead of `type`."
-          },
-          {
-            "file": "src/services/get-figma-data.ts",
-            "line": 26,
-            "column": 8,
-            "message": "Use `interface` instead of `type`."
-          },
-          {
-            "file": "src/telemetry/client.ts",
-            "line": 11,
+            "file": "src/services/figma.ts",
+            "line": 20,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
+            "file": "src/services/get-figma-data.ts",
+            "line": 44,
+            "column": 8,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
             "file": "src/telemetry/types.ts",
-            "line": 38,
+            "line": 21,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
             "file": "src/transformers/style.ts",
-            "line": 84,
+            "line": 79,
             "column": 8,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "src/transformers/text.ts",
+            "line": 156,
+            "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
@@ -355,13 +385,13 @@
           },
           {
             "file": "src/extractors/types.ts",
-            "line": 90,
+            "line": 97,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "src/extractors/types.ts",
-            "line": 125,
+            "line": 138,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
@@ -447,7 +477,7 @@
         ]
       },
       "no-type-imports": {
-        "count": 77,
+        "count": 81,
         "samples": [
           {
             "file": "scripts/benchmark-simplify.ts",
@@ -468,34 +498,34 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/mcp/progress.ts",
-            "line": 2,
-            "column": 1,
+            "file": "src/mcp/tools/download-figma-images-tool.ts",
+            "line": 8,
+            "column": 3,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "src/mcp/validation-capture.ts",
-            "line": 5,
+            "line": 6,
             "column": 3,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "src/services/download-figma-images.ts",
+            "line": 3,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "src/telemetry/capture.ts",
             "line": 2,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/services/get-figma-data.ts",
-            "line": 12,
-            "column": 3,
+            "file": "src/tests/rich-text.test.ts",
+            "line": 2,
+            "column": 1,
             "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "src/tests/path-validation.test.ts",
-            "line": 5,
-            "column": 46,
-            "message": "`import()` type annotations are forbidden."
           },
           {
             "file": "src/transformers/component.ts",
@@ -514,7 +544,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 137,
+        "count": 154,
         "samples": [
           {
             "file": "scripts/benchmark-simplify.ts",
@@ -523,51 +553,51 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "src/config.ts",
-            "line": 77,
-            "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/extractors/node-walker.ts",
-            "line": 165,
+            "file": "src/extractors/built-in.ts",
+            "line": 39,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/services/download-figma-images.ts",
-            "line": 65,
+            "file": "src/mcp/index.ts",
+            "line": 69,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "src/services/get-figma-data-metrics.ts",
+            "line": 87,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "src/telemetry/client.ts",
-            "line": 25,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/transformers/component.ts",
-            "line": 91,
+            "line": 131,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/transformers/style.ts",
-            "line": 124,
+            "file": "src/transformers/effects.ts",
+            "line": 68,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "src/transformers/style.ts",
-            "line": 714,
+            "line": 423,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "src/transformers/text.ts",
+            "line": 428,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "src/utils/fetch-json.ts",
-            "line": 83,
-            "column": 1,
+            "line": 31,
+            "column": 8,
             "message": "Expected a function expression."
           },
           {
@@ -595,13 +625,13 @@
           },
           {
             "file": "src/extractors/built-in.ts",
-            "line": 89,
+            "line": 129,
             "column": 14,
             "message": "Expected a function declaration."
           },
           {
             "file": "src/extractors/built-in.ts",
-            "line": 107,
+            "line": 154,
             "column": 14,
             "message": "Expected a function declaration."
           },
@@ -710,7 +740,7 @@
         "samples": []
       },
       "4-space": {
-        "count": 53,
+        "count": 54,
         "samples": [
           {
             "file": "eslint.config.js",
@@ -731,14 +761,14 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/server.ts",
-            "line": 17,
+            "file": "src/services/download-figma-images.ts",
+            "line": 12,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/telemetry/client.ts",
-            "line": 12,
+            "file": "src/telemetry/index.ts",
+            "line": 3,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -749,8 +779,8 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/tests/stdio.test.ts",
-            "line": 5,
+            "file": "src/tests/server.test.ts",
+            "line": 10,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -775,7 +805,7 @@
         ]
       },
       "tab": {
-        "count": 53,
+        "count": 54,
         "samples": [
           {
             "file": "eslint.config.js",
@@ -796,14 +826,14 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/server.ts",
-            "line": 17,
+            "file": "src/services/download-figma-images.ts",
+            "line": 12,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/telemetry/client.ts",
-            "line": 12,
+            "file": "src/telemetry/index.ts",
+            "line": 3,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -814,8 +844,8 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/tests/stdio.test.ts",
-            "line": 5,
+            "file": "src/tests/server.test.ts",
+            "line": 10,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -907,7 +937,7 @@
         ]
       },
       "single": {
-        "count": 1679,
+        "count": 2035,
         "samples": [
           {
             "file": "eslint.config.js",
@@ -916,51 +946,51 @@
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/config.ts",
-            "line": 129,
-            "column": 45,
+            "file": "src/extractors/built-in.ts",
+            "line": 180,
+            "column": 71,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/mcp/tools/get-figma-data-tool.ts",
-            "line": 18,
-            "column": 7,
+            "file": "src/services/figma.ts",
+            "line": 7,
+            "column": 8,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/telemetry/client.ts",
-            "line": 48,
-            "column": 43,
+            "file": "src/tests/image-processing.test.ts",
+            "line": 33,
+            "column": 41,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/tests/layout-alignment.test.ts",
-            "line": 92,
-            "column": 10,
+            "file": "src/tests/rich-text.test.ts",
+            "line": 97,
+            "column": 21,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/tests/server.test.ts",
-            "line": 76,
-            "column": 31,
+            "file": "src/tests/rich-text.test.ts",
+            "line": 636,
+            "column": 39,
             "message": "Strings must use singlequote."
           },
           {
             "file": "src/tests/tree-walker.test.ts",
-            "line": 226,
-            "column": 17,
+            "line": 168,
+            "column": 28,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/transformers/component.ts",
-            "line": 1,
-            "column": 46,
+            "file": "src/transformers/effects.ts",
+            "line": 8,
+            "column": 26,
             "message": "Strings must use singlequote."
           },
           {
             "file": "src/transformers/style.ts",
-            "line": 321,
-            "column": 11,
+            "line": 738,
+            "column": 10,
             "message": "Strings must use singlequote."
           },
           {
@@ -978,7 +1008,7 @@
         "samples": []
       },
       "never": {
-        "count": 2062,
+        "count": 2456,
         "samples": [
           {
             "file": "eslint.config.js",
@@ -987,51 +1017,51 @@
             "message": "Extra semicolon."
           },
           {
-            "file": "src/config.ts",
-            "line": 112,
-            "column": 75,
+            "file": "src/extractors/built-in.ts",
+            "line": 52,
+            "column": 49,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/mcp/tools/download-figma-images-tool.ts",
-            "line": 12,
-            "column": 104,
+            "file": "src/mcp/validation-capture.ts",
+            "line": 53,
+            "column": 59,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/services/download-figma-images.ts",
-            "line": 166,
-            "column": 16,
+            "file": "src/services/get-figma-data-metrics.ts",
+            "line": 107,
+            "column": 43,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/telemetry/client.ts",
-            "line": 65,
-            "column": 21,
+            "file": "src/tests/image-processing.test.ts",
+            "line": 70,
+            "column": 67,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/tests/layout-alignment.test.ts",
-            "line": 122,
-            "column": 7,
+            "file": "src/tests/rich-text.test.ts",
+            "line": 420,
+            "column": 54,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/tests/server.test.ts",
-            "line": 215,
-            "column": 39,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "src/transformers/effects.ts",
-            "line": 15,
-            "column": 2,
+            "file": "src/tests/tree-walker.test.ts",
+            "line": 89,
+            "column": 48,
             "message": "Extra semicolon."
           },
           {
             "file": "src/transformers/style.ts",
-            "line": 682,
-            "column": 4,
+            "line": 250,
+            "column": 42,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "src/transformers/text.ts",
+            "line": 592,
+            "column": 14,
             "message": "Extra semicolon."
           },
           {

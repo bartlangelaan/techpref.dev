@@ -1,5 +1,5 @@
 {
-  "analyzedVersion": "e88a060848ee",
+  "analyzedVersion": "09f4ce718368",
   "analyzedCommit": "d927c9bbc66bd26380dc360a71e1876d284a7faf",
   "analyzedCommitDate": "2022-03-13T19:29:22.000Z",
   "checks": {
@@ -9,7 +9,7 @@
         "samples": []
       },
       "generic": {
-        "count": 5,
+        "count": 3,
         "samples": [
           {
             "file": "src/core.ts",
@@ -28,18 +28,6 @@
             "line": 119,
             "column": 36,
             "message": "Array type using 'any[]' is forbidden. Use 'Array<any>' instead."
-          },
-          {
-            "file": "typings/core.d.ts",
-            "line": 3,
-            "column": 34,
-            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
-          },
-          {
-            "file": "typings/modules/options/index.d.ts",
-            "line": 16,
-            "column": 43,
-            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           }
         ]
       }
@@ -56,7 +44,7 @@
     },
     "consistent-indexed-object-style": {
       "record": {
-        "count": 10,
+        "count": 5,
         "samples": [
           {
             "file": "src/modules/class-list/index.ts",
@@ -87,36 +75,6 @@
             "line": 19,
             "column": 3,
             "message": "A record is preferred over an index signature."
-          },
-          {
-            "file": "typings/modules/class-list/index.d.ts",
-            "line": 2,
-            "column": 5,
-            "message": "A record is preferred over an index signature."
-          },
-          {
-            "file": "typings/modules/options/buttons.d.ts",
-            "line": 9,
-            "column": 5,
-            "message": "A record is preferred over an index signature."
-          },
-          {
-            "file": "typings/modules/options/deprecations.d.ts",
-            "line": 9,
-            "column": 5,
-            "message": "A record is preferred over an index signature."
-          },
-          {
-            "file": "typings/modules/state.d.ts",
-            "line": 8,
-            "column": 9,
-            "message": "A record is preferred over an index signature."
-          },
-          {
-            "file": "typings/modules/state.d.ts",
-            "line": 16,
-            "column": 5,
-            "message": "A record is preferred over an index signature."
           }
         ]
       },
@@ -131,7 +89,7 @@
         "samples": []
       },
       "type": {
-        "count": 20,
+        "count": 10,
         "samples": [
           {
             "file": "src/core.ts",
@@ -140,8 +98,20 @@
             "message": "Use `type` instead of `interface`."
           },
           {
+            "file": "src/modules/class-list/index.ts",
+            "line": 7,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
             "file": "src/modules/options/buttons.ts",
             "line": 3,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "src/modules/options/buttons.ts",
+            "line": 11,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
@@ -153,7 +123,19 @@
           },
           {
             "file": "src/modules/options/deprecations.ts",
+            "line": 30,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "src/modules/options/deprecations.ts",
             "line": 37,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "src/modules/options/index.ts",
+            "line": 29,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
@@ -164,32 +146,8 @@
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "typings/modules/class-list/index.d.ts",
-            "line": 1,
-            "column": 8,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "typings/modules/options/buttons.d.ts",
-            "line": 8,
-            "column": 8,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "typings/modules/options/deprecations.d.ts",
-            "line": 2,
-            "column": 8,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "typings/modules/options/index.d.ts",
-            "line": 3,
-            "column": 8,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "typings/modules/state.d.ts",
-            "line": 15,
+            "file": "src/modules/state.ts",
+            "line": 18,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           }
@@ -198,13 +156,19 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 24,
+        "count": 13,
         "samples": [
           {
             "file": "src/core.ts",
             "line": 16,
             "column": 1,
             "message": "Imports ActionOptions and SwalState are only used as type."
+          },
+          {
+            "file": "src/core.ts",
+            "line": 22,
+            "column": 1,
+            "message": "Imports SwalOptions are only used as type."
           },
           {
             "file": "src/modules/event-listeners.ts",
@@ -214,9 +178,21 @@
           },
           {
             "file": "src/modules/init/buttons.ts",
+            "line": 7,
+            "column": 1,
+            "message": "Imports ButtonList and ButtonOptions are only used as type."
+          },
+          {
+            "file": "src/modules/init/buttons.ts",
             "line": 11,
             "column": 1,
             "message": "Imports ActionOptions are only used as type."
+          },
+          {
+            "file": "src/modules/init/index.ts",
+            "line": 2,
+            "column": 1,
+            "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
             "file": "src/modules/init/modal.ts",
@@ -225,40 +201,22 @@
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
+            "file": "src/modules/init/modal.ts",
+            "line": 4,
+            "column": 1,
+            "message": "All imports in the declaration are only used as types. Use `import type`."
+          },
+          {
             "file": "src/modules/options/index.ts",
-            "line": 1,
+            "line": 9,
             "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
+            "message": "Imports ButtonList are only used as type."
           },
           {
-            "file": "typings/core.d.ts",
-            "line": 1,
+            "file": "src/modules/options/index.ts",
+            "line": 15,
             "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
-          {
-            "file": "typings/modules/actions.d.ts",
-            "line": 1,
-            "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
-          {
-            "file": "typings/modules/init/content.d.ts",
-            "line": 1,
-            "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
-          {
-            "file": "typings/modules/init/modal.d.ts",
-            "line": 1,
-            "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
-          {
-            "file": "typings/sweetalert.d.ts",
-            "line": 1,
-            "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
+            "message": "Imports ContentOptions are only used as type."
           }
         ]
       },
@@ -269,60 +227,12 @@
     },
     "func-style": {
       "expression": {
-        "count": 3157,
+        "count": 2,
         "samples": [
           {
-            "file": "docs/assets/js/add-preview-buttons.js",
+            "file": "docs/assets/js/landing-text-rotater.js",
             "line": 1,
             "column": 20,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "docs/assets/js/add-preview-buttons.js",
-            "line": 23142,
-            "column": 2,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "docs/assets/js/add-preview-buttons.js",
-            "line": 36339,
-            "column": 2,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "docs/assets/js/add-preview-buttons.js",
-            "line": 48059,
-            "column": 2,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "docs/assets/js/index.js",
-            "line": 830,
-            "column": 2,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "docs/assets/js/index.js",
-            "line": 23805,
-            "column": 2,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "docs/assets/js/index.js",
-            "line": 37044,
-            "column": 4,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "docs/assets/js/index.js",
-            "line": 48756,
-            "column": 2,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "docs/assets/js/index.js",
-            "line": 65298,
-            "column": 3,
             "message": "Expected a function expression."
           },
           {
@@ -334,7 +244,7 @@
         ]
       },
       "declaration": {
-        "count": 472,
+        "count": 87,
         "samples": [
           {
             "file": "docs-src/assets/js/add-preview-buttons.js",
@@ -343,51 +253,51 @@
             "message": "Expected a function declaration."
           },
           {
-            "file": "docs/assets/js/add-preview-buttons.js",
-            "line": 21804,
-            "column": 6,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "docs/assets/js/add-preview-buttons.js",
-            "line": 48127,
+            "file": "docs-src/assets/js/landing-text-rotater.js",
+            "line": 63,
             "column": 7,
             "message": "Expected a function declaration."
           },
           {
-            "file": "docs/assets/js/index.js",
-            "line": 2,
-            "column": 34588,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "docs/assets/js/index.js",
-            "line": 10000,
-            "column": 16,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "docs/assets/js/index.js",
-            "line": 30585,
+            "file": "src/modules/actions.ts",
+            "line": 22,
             "column": 7,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "docs/assets/js/index.js",
-            "line": 51690,
-            "column": 10,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "docs/assets/js/index.js",
-            "line": 75294,
-            "column": 5,
             "message": "Expected a function declaration."
           },
           {
             "file": "src/modules/event-listeners.ts",
-            "line": 103,
+            "line": 57,
             "column": 7,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "src/modules/init/buttons.ts",
+            "line": 72,
+            "column": 7,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "src/modules/init/modal.ts",
+            "line": 35,
+            "column": 7,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "src/modules/markup/icons.ts",
+            "line": 29,
+            "column": 14,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "src/modules/options/index.ts",
+            "line": 87,
+            "column": 7,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "src/modules/state.ts",
+            "line": 67,
+            "column": 14,
             "message": "Expected a function declaration."
           },
           {
@@ -401,11 +311,17 @@
     },
     "import-export-preference": {
       "named": {
-        "count": 26,
+        "count": 13,
         "samples": [
           {
             "file": "docs-src/assets/js/landing-text-rotater.js",
             "line": 91,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "src/core.ts",
+            "line": 65,
             "column": 8,
             "message": "Prefer named exports"
           },
@@ -416,8 +332,20 @@
             "message": "Prefer named exports"
           },
           {
-            "file": "src/modules/init/icon.ts",
-            "line": 58,
+            "file": "src/modules/init/buttons.ts",
+            "line": 94,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "src/modules/init/content.ts",
+            "line": 77,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "src/modules/init/index.ts",
+            "line": 35,
             "column": 8,
             "message": "Prefer named exports"
           },
@@ -428,38 +356,20 @@
             "message": "Prefer named exports"
           },
           {
+            "file": "src/modules/init/overlay.ts",
+            "line": 10,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
             "file": "src/modules/markup/overlay.ts",
             "line": 14,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "typings/modules/class-list/index.d.ts",
-            "line": 5,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "typings/modules/init/content.d.ts",
-            "line": 3,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "typings/modules/init/index.d.ts",
-            "line": 3,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "typings/modules/markup/modal.d.ts",
-            "line": 2,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "typings/sweetalert.d.ts",
-            "line": 7,
+            "file": "src/modules/state.ts",
+            "line": 75,
             "column": 8,
             "message": "Prefer named exports"
           }
@@ -485,20 +395,8 @@
     },
     "indent": {
       "2-space": {
-        "count": 3,
+        "count": 1,
         "samples": [
-          {
-            "file": "docs/assets/js/add-preview-buttons.js",
-            "line": 89,
-            "column": 1,
-            "message": "Expected spaces for indentation, but found tabs."
-          },
-          {
-            "file": "docs/assets/js/index.js",
-            "line": 661,
-            "column": 1,
-            "message": "Expected spaces for indentation, but found tabs."
-          },
           {
             "file": "src/modules/markup/modal.ts",
             "line": 20,
@@ -508,7 +406,7 @@
         ]
       },
       "4-space": {
-        "count": 41,
+        "count": 38,
         "samples": [
           {
             "file": "docs-src/assets/js/add-preview-buttons.js",
@@ -517,20 +415,20 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "docs/assets/js/index.js",
-            "line": 17,
+            "file": "postcss.config.js",
+            "line": 2,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/modules/class-list/index.ts",
+            "file": "src/modules/event-listeners.ts",
+            "line": 11,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "src/modules/init/index.ts",
             "line": 8,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "src/modules/init/icon.ts",
-            "line": 5,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -541,7 +439,7 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/modules/markup/modal.ts",
+            "file": "src/modules/markup/overlay.ts",
             "line": 4,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
@@ -559,7 +457,7 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "test/icons.test.ts",
+            "file": "test/content.test.ts",
             "line": 2,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
@@ -573,7 +471,7 @@
         ]
       },
       "tab": {
-        "count": 48,
+        "count": 38,
         "samples": [
           {
             "file": "docs-src/assets/js/add-preview-buttons.js",
@@ -582,8 +480,8 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "docs/assets/js/landing-text-rotater.js",
-            "line": 5,
+            "file": "postcss.config.js",
+            "line": 2,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -594,20 +492,26 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/modules/init/overlay.ts",
-            "line": 5,
+            "file": "src/modules/init/index.ts",
+            "line": 8,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/modules/markup/index.ts",
+            "file": "src/modules/markup/buttons.ts",
             "line": 4,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/modules/options/deprecations.ts",
-            "line": 7,
+            "file": "src/modules/markup/overlay.ts",
+            "line": 4,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "src/modules/options/index.ts",
+            "line": 4,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -618,13 +522,7 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "test/index.test.ts",
-            "line": 2,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "typings/modules/options/content.d.ts",
+            "file": "test/content.test.ts",
             "line": 2,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
@@ -640,7 +538,7 @@
     },
     "quotes": {
       "double": {
-        "count": 10511,
+        "count": 291,
         "samples": [
           {
             "file": "docs-src/assets/js/add-preview-buttons.js",
@@ -649,51 +547,51 @@
             "message": "Strings must use doublequote."
           },
           {
-            "file": "docs/assets/js/add-preview-buttons.js",
-            "line": 45964,
-            "column": 2,
+            "file": "docs-src/assets/js/landing-text-rotater.js",
+            "line": 78,
+            "column": 32,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "docs/assets/js/add-preview-buttons.js",
-            "line": 56783,
-            "column": 96,
+            "file": "src/modules/class-list/index.ts",
+            "line": 20,
+            "column": 16,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "docs/assets/js/index.js",
-            "line": 18989,
-            "column": 27,
+            "file": "src/modules/init/content.ts",
+            "line": 19,
+            "column": 26,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "docs/assets/js/index.js",
-            "line": 51207,
-            "column": 39,
+            "file": "src/modules/init/text.ts",
+            "line": 38,
+            "column": 53,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "docs/assets/js/index.js",
-            "line": 62870,
-            "column": 20,
+            "file": "src/modules/options/deprecations.ts",
+            "line": 53,
+            "column": 11,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "docs/assets/js/index.js",
-            "line": 69554,
+            "file": "src/modules/options/deprecations.ts",
+            "line": 95,
+            "column": 3,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "src/polyfills.js",
+            "line": 100,
             "column": 35,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "docs/assets/js/index.js",
-            "line": 76257,
-            "column": 40,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "docs/assets/js/index.js",
-            "line": 81253,
-            "column": 12,
+            "file": "test/index.test.ts",
+            "line": 46,
+            "column": 31,
             "message": "Strings must use doublequote."
           },
           {
@@ -705,7 +603,7 @@
         ]
       },
       "single": {
-        "count": 15175,
+        "count": 160,
         "samples": [
           {
             "file": "docs-src/assets/js/add-preview-buttons.js",
@@ -714,51 +612,51 @@
             "message": "Strings must use singlequote."
           },
           {
-            "file": "docs/assets/js/add-preview-buttons.js",
-            "line": 16696,
+            "file": "docs/assets/js/landing-text-rotater.js",
+            "line": 1,
+            "column": 378,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "src/modules/init/icon.ts",
+            "line": 14,
+            "column": 37,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "test/actions.test.ts",
+            "line": 39,
+            "column": 27,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "test/button-options.test.ts",
+            "line": 69,
+            "column": 15,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "test/buttons.test.ts",
+            "line": 70,
+            "column": 43,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "test/buttons.test.ts",
+            "line": 166,
+            "column": 24,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "test/content.test.ts",
+            "line": 36,
+            "column": 8,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "test/index.test.ts",
+            "line": 25,
             "column": 10,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "docs/assets/js/add-preview-buttons.js",
-            "line": 37903,
-            "column": 17,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "docs/assets/js/add-preview-buttons.js",
-            "line": 45400,
-            "column": 62,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "docs/assets/js/add-preview-buttons.js",
-            "line": 61768,
-            "column": 1549,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "docs/assets/js/index.js",
-            "line": 13190,
-            "column": 144,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "docs/assets/js/index.js",
-            "line": 33705,
-            "column": 58,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "docs/assets/js/index.js",
-            "line": 45132,
-            "column": 139,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "docs/assets/js/index.js",
-            "line": 62334,
-            "column": 18393,
             "message": "Strings must use singlequote."
           },
           {
@@ -770,9 +668,44 @@
         ]
       }
     },
+    "react-destructuring-assignment": {
+      "never": {
+        "count": 1,
+        "samples": [
+          {
+            "file": "docs-src/assets/js/index.js",
+            "line": 90,
+            "column": 22,
+            "message": "Must never use destructuring props assignment in SFC argument"
+          }
+        ]
+      },
+      "always-in-signature": {
+        "count": 1,
+        "samples": [
+          {
+            "file": "docs-src/assets/js/index.js",
+            "line": 45,
+            "column": 16,
+            "message": "Must use destructuring state assignment"
+          }
+        ]
+      },
+      "always-outside-signature": {
+        "count": 1,
+        "samples": [
+          {
+            "file": "docs-src/assets/js/index.js",
+            "line": 45,
+            "column": 16,
+            "message": "Must use destructuring state assignment"
+          }
+        ]
+      }
+    },
     "semi": {
       "always": {
-        "count": 673,
+        "count": 23,
         "samples": [
           {
             "file": "docs-src/assets/js/add-preview-buttons.js",
@@ -781,51 +714,51 @@
             "message": "Missing semicolon."
           },
           {
-            "file": "docs/assets/js/index.js",
-            "line": 2,
-            "column": 3696,
+            "file": "docs-src/assets/js/index.js",
+            "line": 88,
+            "column": 4,
             "message": "Missing semicolon."
           },
           {
-            "file": "docs/assets/js/index.js",
-            "line": 2,
-            "column": 21719,
+            "file": "docs-src/assets/js/index.js",
+            "line": 119,
+            "column": 5,
             "message": "Missing semicolon."
           },
           {
-            "file": "docs/assets/js/index.js",
-            "line": 2,
-            "column": 27532,
+            "file": "docs-src/assets/js/landing-text-rotater.js",
+            "line": 31,
+            "column": 2,
             "message": "Missing semicolon."
           },
           {
-            "file": "docs/assets/js/index.js",
-            "line": 2,
-            "column": 35483,
+            "file": "docs-src/assets/js/landing-text-rotater.js",
+            "line": 89,
+            "column": 2,
             "message": "Missing semicolon."
           },
           {
-            "file": "docs/assets/js/index.js",
-            "line": 63879,
-            "column": 34,
+            "file": "docs/assets/js/landing-text-rotater.js",
+            "line": 1,
+            "column": 335,
             "message": "Missing semicolon."
           },
           {
-            "file": "docs/assets/js/index.js",
-            "line": 84066,
-            "column": 34,
+            "file": "docs/assets/js/landing-text-rotater.js",
+            "line": 1,
+            "column": 441,
             "message": "Missing semicolon."
           },
           {
-            "file": "docs/assets/js/index.js",
-            "line": 85021,
-            "column": 7,
+            "file": "src/modules/init/icon.ts",
+            "line": 20,
+            "column": 2,
             "message": "Missing semicolon."
           },
           {
-            "file": "docs/assets/js/index.js",
-            "line": 85186,
-            "column": 74,
+            "file": "src/modules/state.ts",
+            "line": 36,
+            "column": 2,
             "message": "Missing semicolon."
           },
           {
@@ -837,7 +770,7 @@
         ]
       },
       "never": {
-        "count": 51291,
+        "count": 856,
         "samples": [
           {
             "file": "docs-src/assets/js/add-preview-buttons.js",
@@ -846,51 +779,51 @@
             "message": "Extra semicolon."
           },
           {
-            "file": "docs/assets/js/add-preview-buttons.js",
-            "line": 14317,
-            "column": 39,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "docs/assets/js/add-preview-buttons.js",
-            "line": 29442,
-            "column": 23,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "docs/assets/js/add-preview-buttons.js",
-            "line": 43629,
-            "column": 39,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "docs/assets/js/index.js",
-            "line": 1786,
-            "column": 47,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "docs/assets/js/index.js",
-            "line": 16111,
-            "column": 40,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "docs/assets/js/index.js",
-            "line": 31297,
-            "column": 24,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "docs/assets/js/index.js",
-            "line": 47301,
+            "file": "docs/assets/js/landing-text-rotater.js",
+            "line": 6,
             "column": 3,
             "message": "Extra semicolon."
           },
           {
-            "file": "docs/assets/js/index.js",
-            "line": 65836,
+            "file": "src/modules/event-listeners.ts",
+            "line": 5,
             "column": 47,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "src/modules/init/content.ts",
+            "line": 2,
+            "column": 49,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "src/modules/init/modal.ts",
+            "line": 56,
+            "column": 22,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "src/modules/options/buttons.ts",
+            "line": 129,
+            "column": 9,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "src/modules/state.ts",
+            "line": 49,
+            "column": 56,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "test/button-options.test.ts",
+            "line": 54,
+            "column": 7,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "test/content.test.ts",
+            "line": 12,
+            "column": 16,
             "message": "Extra semicolon."
           },
           {

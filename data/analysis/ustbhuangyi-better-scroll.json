@@ -1,11 +1,11 @@
 {
-  "analyzedVersion": "e88a060848ee",
+  "analyzedVersion": "09f4ce718368",
   "analyzedCommit": "f87fbd161d4bebb1d1e90fc1675db1b0f90174d0",
   "analyzedCommitDate": "2023-03-29T13:40:38.000Z",
   "checks": {
     "array-type": {
       "array": {
-        "count": 39,
+        "count": 38,
         "samples": [
           {
             "file": "packages/infinity/src/DataManager.ts",
@@ -27,15 +27,15 @@
           },
           {
             "file": "packages/infinity/src/DomManager.ts",
-            "line": 120,
-            "column": 26,
-            "message": "Array type using 'Array<HTMLElement>' is forbidden. Use 'HTMLElement[]' instead."
+            "line": 116,
+            "column": 11,
+            "message": "Array type using 'Array<pListItem>' is forbidden. Use 'pListItem[]' instead."
           },
           {
-            "file": "packages/infinity/src/Tombstone.ts",
-            "line": 4,
-            "column": 19,
-            "message": "Array type using 'Array<HTMLElement>' is forbidden. Use 'HTMLElement[]' instead."
+            "file": "packages/infinity/src/IndexCalculator.ts",
+            "line": 60,
+            "column": 11,
+            "message": "Array type using 'Array<any>' is forbidden. Use 'any[]' instead."
           },
           {
             "file": "packages/infinity/src/index.ts",
@@ -52,14 +52,14 @@
           {
             "file": "packages/slide/src/PagesMatrix.ts",
             "line": 15,
-            "column": 16,
-            "message": "Array type using 'Array<PageStats>' is forbidden. Use 'PageStats[]' instead."
+            "column": 10,
+            "message": "Array type using 'Array<Array<PageStats>>' is forbidden. Use 'Array<PageStats>[]' instead."
           },
           {
             "file": "packages/slide/src/PagesMatrix.ts",
             "line": 73,
-            "column": 22,
-            "message": "Array type using 'Array<PageStats>' is forbidden. Use 'PageStats[]' instead."
+            "column": 16,
+            "message": "Array type using 'Array<Array<PageStats>>' is forbidden. Use 'Array<PageStats>[]' instead."
           },
           {
             "file": "tests/e2e/pulldown/sina.e2e.ts",
@@ -690,7 +690,7 @@
         ]
       },
       "4-space": {
-        "count": 317,
+        "count": 316,
         "samples": [
           {
             "file": ".eslintrc.js",
@@ -723,20 +723,20 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/react-examples/src/pages/mouse-wheel/components/pullup.js",
-            "line": 12,
+            "file": "packages/react-examples/src/pages/mouse-wheel/components/pulldown.js",
+            "line": 10,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/react-examples/src/pages/zoom/components/default.js",
-            "line": 13,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "packages/slide/src/__tests__/PagesMatrix.spec.ts",
+            "file": "packages/react-examples/src/pages/slide/index.js",
             "line": 6,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "packages/slide/src/__mocks__/SlidePages.ts",
+            "line": 5,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -755,7 +755,7 @@
         ]
       },
       "tab": {
-        "count": 318,
+        "count": 317,
         "samples": [
           {
             "file": ".eslintrc.js",
@@ -776,14 +776,14 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/examples/vue/pages/movable-entry.vue",
-            "line": 24,
+            "file": "packages/examples/vue/pages/mouse-wheel-entry.vue",
+            "line": 33,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/observe-dom/src/index.ts",
-            "line": 5,
+            "file": "packages/observe-dom/src/__tests__/index.spec.ts",
+            "line": 4,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -800,8 +800,8 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/slide/src/__tests__/SlidePages.spec.ts",
-            "line": 10,
+            "file": "packages/slide/src/__tests__/PagesMatrix.spec.ts",
+            "line": 6,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -952,9 +952,152 @@
         ]
       }
     },
+    "react-destructuring-assignment": {
+      "never": {
+        "count": 1,
+        "samples": [
+          {
+            "file": "packages/react-examples/src/router.js",
+            "line": 356,
+            "column": 16,
+            "message": "Must never use destructuring props assignment in SFC argument"
+          }
+        ]
+      },
+      "always-in-signature": {
+        "count": 26,
+        "samples": [
+          {
+            "file": "packages/react-examples/src/pages/compose/index.js",
+            "line": 26,
+            "column": 5,
+            "message": "Must use destructuring props assignment"
+          },
+          {
+            "file": "packages/react-examples/src/pages/core/index.js",
+            "line": 54,
+            "column": 8,
+            "message": "Must use destructuring props assignment"
+          },
+          {
+            "file": "packages/react-examples/src/pages/indicators/index.js",
+            "line": 18,
+            "column": 5,
+            "message": "Must use destructuring props assignment"
+          },
+          {
+            "file": "packages/react-examples/src/pages/mouse-wheel/index.js",
+            "line": 38,
+            "column": 5,
+            "message": "Must use destructuring props assignment"
+          },
+          {
+            "file": "packages/react-examples/src/pages/movable/index.js",
+            "line": 42,
+            "column": 8,
+            "message": "Must use destructuring props assignment"
+          },
+          {
+            "file": "packages/react-examples/src/pages/observe-dom/index.js",
+            "line": 5,
+            "column": 34,
+            "message": "Must use destructuring props assignment"
+          },
+          {
+            "file": "packages/react-examples/src/pages/picker/index.js",
+            "line": 38,
+            "column": 8,
+            "message": "Must use destructuring props assignment"
+          },
+          {
+            "file": "packages/react-examples/src/pages/pulldown/index.js",
+            "line": 34,
+            "column": 8,
+            "message": "Must use destructuring props assignment"
+          },
+          {
+            "file": "packages/react-examples/src/pages/scrollbar/index.js",
+            "line": 42,
+            "column": 8,
+            "message": "Must use destructuring props assignment"
+          },
+          {
+            "file": "packages/react-examples/src/pages/zoom/index.js",
+            "line": 5,
+            "column": 28,
+            "message": "Must use destructuring props assignment"
+          }
+        ]
+      },
+      "always-outside-signature": {
+        "count": 26,
+        "samples": [
+          {
+            "file": "packages/react-examples/src/pages/compose/index.js",
+            "line": 26,
+            "column": 5,
+            "message": "Must use destructuring props assignment"
+          },
+          {
+            "file": "packages/react-examples/src/pages/core/index.js",
+            "line": 54,
+            "column": 8,
+            "message": "Must use destructuring props assignment"
+          },
+          {
+            "file": "packages/react-examples/src/pages/indicators/index.js",
+            "line": 18,
+            "column": 5,
+            "message": "Must use destructuring props assignment"
+          },
+          {
+            "file": "packages/react-examples/src/pages/mouse-wheel/index.js",
+            "line": 38,
+            "column": 5,
+            "message": "Must use destructuring props assignment"
+          },
+          {
+            "file": "packages/react-examples/src/pages/movable/index.js",
+            "line": 42,
+            "column": 8,
+            "message": "Must use destructuring props assignment"
+          },
+          {
+            "file": "packages/react-examples/src/pages/observe-dom/index.js",
+            "line": 5,
+            "column": 34,
+            "message": "Must use destructuring props assignment"
+          },
+          {
+            "file": "packages/react-examples/src/pages/picker/index.js",
+            "line": 38,
+            "column": 8,
+            "message": "Must use destructuring props assignment"
+          },
+          {
+            "file": "packages/react-examples/src/pages/pulldown/index.js",
+            "line": 34,
+            "column": 8,
+            "message": "Must use destructuring props assignment"
+          },
+          {
+            "file": "packages/react-examples/src/pages/scrollbar/index.js",
+            "line": 42,
+            "column": 8,
+            "message": "Must use destructuring props assignment"
+          },
+          {
+            "file": "packages/react-examples/src/pages/zoom/index.js",
+            "line": 5,
+            "column": 28,
+            "message": "Must use destructuring props assignment"
+          }
+        ]
+      }
+    },
     "semi": {
       "always": {
-        "count": 10899,
+        "count": 10885,
         "samples": [
           {
             "file": "jest-e2e.config.js",
@@ -964,50 +1107,50 @@
           },
           {
             "file": "packages/core/src/scroller/Scroller.ts",
-            "line": 166,
-            "column": 7,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "packages/examples/vue/components/mouse-wheel/pullup.vue",
-            "line": 72,
+            "line": 161,
             "column": 24,
             "message": "Missing semicolon."
           },
           {
-            "file": "packages/infinity/src/index.ts",
-            "line": 70,
-            "column": 38,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "packages/pull-up/src/__tests__/index.spec.ts",
-            "line": 21,
-            "column": 38,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "packages/react-examples/src/pages/picker/components/one-column.js",
-            "line": 72,
-            "column": 55,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "packages/shared-utils/src/dom.ts",
-            "line": 319,
-            "column": 36,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "packages/wheel/src/__tests__/index.spec.ts",
-            "line": 357,
+            "file": "packages/examples/vue/components/mouse-wheel/pullup.vue",
+            "line": 66,
             "column": 27,
             "message": "Missing semicolon."
           },
           {
+            "file": "packages/infinity/src/index.ts",
+            "line": 62,
+            "column": 69,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "packages/pull-up/src/__tests__/index.spec.ts",
+            "line": 10,
+            "column": 31,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "packages/react-examples/src/pages/picker/components/one-column.js",
+            "line": 193,
+            "column": 2,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "packages/shared-utils/src/dom.ts",
+            "line": 294,
+            "column": 27,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "packages/wheel/src/__tests__/index.spec.ts",
+            "line": 339,
+            "column": 37,
+            "message": "Missing semicolon."
+          },
+          {
             "file": "tests/e2e/infinity/infinity.e2e.ts",
-            "line": 4,
-            "column": 23,
+            "line": 7,
+            "column": 42,
             "message": "Missing semicolon."
           },
           {

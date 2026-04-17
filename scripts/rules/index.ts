@@ -1,4 +1,4 @@
-import { DummyRule, OxlintConfig } from "oxlint";
+import { DummyRule, ExternalPluginEntry, OxlintConfig } from "oxlint";
 import { arrayTypeChecks } from "./array-type";
 import { consistentGenericConstructorsChecks } from "./consistent-generic-constructors";
 import { consistentIndexedObjectStyleChecks } from "./consistent-indexed-object-style";
@@ -8,6 +8,7 @@ import { funcStyleChecks } from "./func-style";
 import { importExportPreferenceChecks } from "./import-export-preference";
 import { indentChecks } from "./indent";
 import { quotesChecks } from "./quotes";
+import { reactDestructuringAssignmentChecks } from "./react-destructuring-assignment";
 import { semiChecks } from "./semi";
 
 /**
@@ -27,7 +28,7 @@ export interface OxlintRuleCheck {
     /** Native Oxlint plugins to enable (e.g., ["eslint", "typescript"]) */
     plugins: NonNullable<OxlintConfig["plugins"]>;
     /** JS plugins to load (e.g., ["@stylistic/eslint-plugin"]) */
-    jsPlugins?: string[];
+    jsPlugins?: ExternalPluginEntry[];
   };
 }
 
@@ -44,5 +45,6 @@ export const allRuleChecks: OxlintRuleCheck[] = [
   ...importExportPreferenceChecks,
   ...indentChecks,
   ...quotesChecks,
+  ...reactDestructuringAssignmentChecks,
   ...semiChecks,
 ];

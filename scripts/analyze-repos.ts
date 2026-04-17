@@ -157,9 +157,16 @@ async function runOxlintCheck(
     // Add JS plugins if specified (for ESLint plugin compatibility)
     // Resolve to absolute paths since config is in temp directory
     if (ruleCheck.oxlintConfig.jsPlugins?.length) {
-      config.jsPlugins = ruleCheck.oxlintConfig.jsPlugins.map((plugin) =>
-        require.resolve(plugin),
-      );
+      config.jsPlugins = ruleCheck.oxlintConfig.jsPlugins.map((plugin) => {
+        if (typeof plugin === "string") {
+          return require.resolve(plugin);
+        }
+
+        return {
+          ...plugin,
+          specifier: require.resolve(plugin.specifier),
+        };
+      });
     }
     await outputJson(configPath, config);
 

@@ -1,11 +1,11 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "de37c8d0998d26c3d3569a9e0c5bff0dbdc48319",
-  "analyzedCommitDate": "2026-04-17T07:17:32.000Z",
+  "analyzedCommit": "5749c4a916cb9c9f255e5039819d56a9ee0653b6",
+  "analyzedCommitDate": "2026-04-17T14:51:18.000Z",
   "checks": {
     "array-type": {
       "array": {
-        "count": 690,
+        "count": 692,
         "samples": [
           {
             "file": "examples/ai-e2e-next/app/api/chat/azure-code-interpreter-annotation-download/route.ts",
@@ -20,10 +20,10 @@
             "message": "Array type using 'Array<ELEMENT>' is forbidden. Use 'ELEMENT[]' instead."
           },
           {
-            "file": "packages/ai/src/generate-text/output.ts",
-            "line": 351,
-            "column": 33,
-            "message": "Array type using 'Array<ELEMENT>' is forbidden. Use 'ELEMENT[]' instead."
+            "file": "packages/ai/src/generate-text/prepare-step.ts",
+            "line": 49,
+            "column": 13,
+            "message": "Array type using 'Array<ModelMessage>' is forbidden. Use 'ModelMessage[]' instead."
           },
           {
             "file": "packages/ai/src/generate-video/generate-video-result.ts",
@@ -32,27 +32,27 @@
             "message": "Array type using 'Array<VideoModelResponseMetadata>' is forbidden. Use 'VideoModelResponseMetadata[]' instead."
           },
           {
-            "file": "packages/ai/src/util/deep-partial.ts",
-            "line": 63,
-            "column": 21,
-            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
+            "file": "packages/ai/src/util/detect-media-type.ts",
+            "line": 201,
+            "column": 28,
+            "message": "Array type using 'ReadonlyArray<T>' is forbidden. Use 'readonly T[]' instead."
           },
           {
             "file": "packages/deepseek/src/chat/convert-to-deepseek-chat-messages.ts",
-            "line": 19,
-            "column": 19,
-            "message": "Array type using 'Array<SharedV4Warning>' is forbidden. Use 'SharedV4Warning[]' instead."
+            "line": 86,
+            "column": 26,
+            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
-            "file": "packages/huggingface/src/responses/convert-to-huggingface-responses-messages.ts",
-            "line": 16,
-            "column": 19,
-            "message": "Array type using 'Array<any>' is forbidden. Use 'any[]' instead."
+            "file": "packages/huggingface/src/responses/huggingface-responses-language-model.ts",
+            "line": 215,
+            "column": 20,
+            "message": "Array type using 'Array<LanguageModelV4Content>' is forbidden. Use 'LanguageModelV4Content[]' instead."
           },
           {
             "file": "packages/openai/src/tool/shell.ts",
-            "line": 152,
-            "column": 18,
+            "line": 186,
+            "column": 13,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
@@ -92,7 +92,7 @@
           },
           {
             "file": "packages/ai/src/generate-text/stream-text.test.ts",
-            "line": 13126,
+            "line": 13196,
             "column": 35,
             "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           },
@@ -206,7 +206,7 @@
           },
           {
             "file": "packages/ai/src/generate-text/stream-text.ts",
-            "line": 909,
+            "line": 897,
             "column": 47,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
@@ -458,7 +458,7 @@
           },
           {
             "file": "packages/ai/src/generate-text/reasoning-output.ts",
-            "line": 8,
+            "line": 28,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
@@ -515,7 +515,7 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 2379,
+        "count": 2388,
         "samples": [
           {
             "file": "examples/ai-e2e-next/agent/anthropic/code-execution-agent.ts",
@@ -525,48 +525,48 @@
           },
           {
             "file": "examples/ai-functions/src/e2e/openai.test.ts",
-            "line": 2,
+            "line": 3,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "packages/ai/src/error/no-transcript-generated-error.ts",
+            "file": "packages/ai/src/error/no-speech-generated-error.ts",
             "line": 2,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
             "file": "packages/ai/src/generate-text/stream-text.test.ts",
-            "line": 60,
+            "line": 14,
+            "column": 1,
+            "message": "Imports ModelMessage, Tool, and ToolExecuteFunction are only used as type."
+          },
+          {
+            "file": "packages/ai/src/ui/chat.test.ts",
+            "line": 9,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "packages/ai/src/ui/chat.ts",
-            "line": 14,
-            "column": 1,
-            "message": "Imports StreamingUIMessageState are only used as type."
-          },
-          {
-            "file": "packages/deepinfra/src/deepinfra-chat-language-model.ts",
+            "file": "packages/deepgram/src/deepgram-transcription-model.ts",
             "line": 1,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
             "file": "packages/mistral/src/mistral-provider.ts",
-            "line": 16,
+            "line": 1,
+            "column": 1,
+            "message": "Imports EmbeddingModelV4, LanguageModelV4, and ProviderV4 are only used as type."
+          },
+          {
+            "file": "packages/provider-utils/src/to-json-schema/zod3-to-json-schema/parsers/branded.ts",
+            "line": 1,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "packages/provider-utils/src/to-json-schema/zod3-to-json-schema/parsers/catch.test.ts",
-            "line": 5,
-            "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
-          {
-            "file": "packages/provider/src/language-model/v3/language-model-v3-stream-part.ts",
+            "file": "packages/provider/src/language-model/v3/language-model-v3-source.ts",
             "line": 1,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
@@ -607,32 +607,32 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/ai/src/generate-text/prepare-step.ts",
-            "line": 1,
+            "file": "packages/ai/src/generate-text/smooth-stream.ts",
+            "line": 4,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/alibaba/src/alibaba-config.ts",
-            "line": 1,
+            "file": "packages/alibaba/src/alibaba-chat-language-model.ts",
+            "line": 37,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/gateway/src/gateway-fetch-metadata.ts",
-            "line": 11,
+            "file": "packages/gateway/src/gateway-fetch-metadata.test.ts",
+            "line": 4,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "packages/langchain/src/utils.ts",
-            "line": 21,
+            "line": 20,
             "column": 3,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "packages/svelte/src/chat.svelte.ts",
-            "line": 7,
+            "line": 6,
             "column": 3,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -647,7 +647,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 1736,
+        "count": 1737,
         "samples": [
           {
             "file": ".cursor/skills/adr-skill/scripts/bootstrap_adr.js",
@@ -668,14 +668,14 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "packages/ai/src/ui/validate-ui-messages.ts",
-            "line": 490,
-            "column": 8,
+            "file": "packages/ai/src/upload-file/upload-file.test.ts",
+            "line": 6,
+            "column": 3,
             "message": "Expected a function expression."
           },
           {
             "file": "packages/codemod/src/test/__testfixtures__/flatten-streamtext-file-properties.output.ts",
-            "line": 9,
+            "line": 53,
             "column": 1,
             "message": "Expected a function expression."
           },
@@ -692,8 +692,8 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "packages/otel/src/gen-ai-format-messages.ts",
-            "line": 562,
+            "file": "packages/otel/src/gen-ai-open-telemetry-integration.test.ts",
+            "line": 21,
             "column": 1,
             "message": "Expected a function expression."
           },
@@ -728,7 +728,7 @@
           },
           {
             "file": "packages/ai/src/generate-text/stream-text.test.ts",
-            "line": 15286,
+            "line": 15324,
             "column": 13,
             "message": "Expected a function declaration."
           },
@@ -844,7 +844,7 @@
         ]
       },
       "default": {
-        "count": 624,
+        "count": 625,
         "samples": [
           {
             "file": ".github/workflows/actions/verify-changesets/index.js",
@@ -859,8 +859,8 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "packages/ai/src/agent/pipe-agent-ui-stream-to-response.ts",
-            "line": 29,
+            "file": "packages/ai/src/agent/tool-loop-agent.ts",
+            "line": 28,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -877,14 +877,14 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "packages/codemod/src/test/__testfixtures__/restructure-file-stream-parts.output.ts",
-            "line": 48,
+            "file": "packages/cohere/src/cohere-chat-language-model.ts",
+            "line": 45,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "packages/groq/src/groq-prepare-tools.ts",
-            "line": 12,
+            "file": "packages/groq/src/groq-tools.ts",
+            "line": 3,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -934,7 +934,7 @@
         ]
       },
       "4-space": {
-        "count": 3868,
+        "count": 3871,
         "samples": [
           {
             "file": ".cursor/skills/adr-skill/scripts/bootstrap_adr.js",
@@ -949,38 +949,38 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "examples/ai-functions/src/generate-text/openai/gpt-chat-verbosity.ts",
+            "file": "examples/ai-functions/src/generate-text/openai/gpt5-verbosity.ts",
             "line": 6,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "examples/ai-functions/src/stream-text/google/vertex-anthropic-fullstream.ts",
-            "line": 8,
+            "file": "examples/ai-functions/src/stream-text/google/vertex-anthropic-image-url.ts",
+            "line": 7,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "examples/next-openai-pages/pages/chat/stream-chat-edge/index.tsx",
+            "file": "examples/next-openai-pages/pages/chat/stream-chat/index.tsx",
             "line": 6,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/ai/src/util/deep-partial.ts",
-            "line": 34,
+            "file": "packages/ai/src/util/detect-media-type.test.ts",
+            "line": 3,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/codemod/src/test/__testfixtures__/replace-usechat-api-with-transport.output.ts",
+            "file": "packages/codemod/src/test/__testfixtures__/replace-usechat-input-with-state.input.ts",
             "line": 5,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/hume/src/hume-speech-model.test.ts",
-            "line": 7,
+            "file": "packages/hume/src/hume-speech-model.ts",
+            "line": 3,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -999,7 +999,7 @@
         ]
       },
       "tab": {
-        "count": 3868,
+        "count": 3871,
         "samples": [
           {
             "file": ".cursor/skills/adr-skill/scripts/bootstrap_adr.js",
@@ -1014,38 +1014,38 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "examples/ai-functions/src/generate-text/openai/gpt-chat-verbosity.ts",
+            "file": "examples/ai-functions/src/generate-text/openai/gpt5-verbosity.ts",
             "line": 6,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "examples/ai-functions/src/stream-text/google/vertex-anthropic-fullstream.ts",
-            "line": 8,
+            "file": "examples/ai-functions/src/stream-text/google/vertex-anthropic-image-url.ts",
+            "line": 7,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "examples/next-openai-pages/pages/chat/stream-chat-edge/index.tsx",
+            "file": "examples/next-openai-pages/pages/chat/stream-chat/index.tsx",
             "line": 6,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/ai/src/util/deep-partial.ts",
-            "line": 34,
+            "file": "packages/ai/src/util/detect-media-type.test.ts",
+            "line": 3,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/codemod/src/test/__testfixtures__/replace-usechat-api-with-transport.output.ts",
+            "file": "packages/codemod/src/test/__testfixtures__/replace-usechat-input-with-state.input.ts",
             "line": 5,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/hume/src/hume-speech-model.test.ts",
-            "line": 7,
+            "file": "packages/hume/src/hume-speech-model.ts",
+            "line": 3,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -1066,7 +1066,7 @@
     },
     "quotes": {
       "double": {
-        "count": 119322,
+        "count": 119295,
         "samples": [
           {
             "file": ".cursor/skills/adr-skill/scripts/bootstrap_adr.js",
@@ -1076,50 +1076,50 @@
           },
           {
             "file": "examples/ai-functions/src/stream-text/amazon/bedrock-activetools.ts",
-            "line": 58,
-            "column": 15,
+            "line": 49,
+            "column": 21,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/ai/src/generate-text/collect-tool-approvals.ts",
-            "line": 10,
-            "column": 30,
+            "file": "packages/ai/src/generate-text/collect-tool-approvals.test.ts",
+            "line": 444,
+            "column": 25,
             "message": "Strings must use doublequote."
           },
           {
             "file": "packages/ai/src/registry/custom-provider.test.ts",
-            "line": 38,
-            "column": 10,
+            "line": 131,
+            "column": 6,
             "message": "Strings must use doublequote."
           },
           {
             "file": "packages/anthropic/src/anthropic-messages-language-model.test.ts",
-            "line": 3109,
-            "column": 10,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "packages/fireworks/src/fireworks-image-model.test.ts",
-            "line": 542,
-            "column": 19,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "packages/langchain/src/__fixtures__/langgraph.ts",
-            "line": 4179,
+            "line": 3175,
             "column": 26,
             "message": "Strings must use doublequote."
           },
           {
+            "file": "packages/fireworks/src/fireworks-image-model.test.ts",
+            "line": 650,
+            "column": 11,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "packages/langchain/src/__fixtures__/langgraph.ts",
+            "line": 4204,
+            "column": 21,
+            "message": "Strings must use doublequote."
+          },
+          {
             "file": "packages/openai-compatible/src/image/openai-compatible-image-model.test.ts",
-            "line": 50,
-            "column": 10,
+            "line": 92,
+            "column": 12,
             "message": "Strings must use doublequote."
           },
           {
             "file": "packages/provider-utils/src/to-json-schema/zod3-to-json-schema/parsers/bigint.test.ts",
-            "line": 4,
-            "column": 32,
+            "line": 7,
+            "column": 6,
             "message": "Strings must use doublequote."
           },
           {
@@ -1131,7 +1131,7 @@
         ]
       },
       "single": {
-        "count": 1827,
+        "count": 1836,
         "samples": [
           {
             "file": ".cursor/skills/adr-skill/scripts/set_adr_status.js",
@@ -1141,49 +1141,49 @@
           },
           {
             "file": "packages/ai/src/generate-object/stream-object.test.ts",
-            "line": 1329,
+            "line": 1330,
             "column": 49,
             "message": "Strings must use singlequote."
           },
           {
             "file": "packages/ai/src/generate-text/stream-text.test.ts",
-            "line": 18658,
-            "column": 24,
+            "line": 17502,
+            "column": 52,
             "message": "Strings must use singlequote."
           },
           {
             "file": "packages/anthropic/src/anthropic-messages-language-model.test.ts",
-            "line": 7372,
+            "line": 7309,
             "column": 11,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "packages/deepinfra/src/deepinfra-provider.test.ts",
-            "line": 88,
-            "column": 22,
+            "file": "packages/deepgram/src/deepgram-speech-model.ts",
+            "line": 445,
+            "column": 18,
             "message": "Strings must use singlequote."
           },
           {
             "file": "packages/groq/src/groq-chat-language-model.test.ts",
-            "line": 1638,
-            "column": 9,
+            "line": 1367,
+            "column": 11,
             "message": "Strings must use singlequote."
           },
           {
             "file": "packages/openai-compatible/src/chat/openai-compatible-chat-language-model.test.ts",
-            "line": 2362,
+            "line": 2359,
             "column": 11,
             "message": "Strings must use singlequote."
           },
           {
             "file": "packages/openai/src/chat/openai-chat-language-model.test.ts",
-            "line": 2605,
-            "column": 11,
+            "line": 2603,
+            "column": 9,
             "message": "Strings must use singlequote."
           },
           {
             "file": "packages/openai/src/responses/openai-responses-language-model.test.ts",
-            "line": 7263,
+            "line": 7262,
             "column": 13,
             "message": "Strings must use singlequote."
           },
@@ -1263,7 +1263,7 @@
         ]
       },
       "never": {
-        "count": 96908,
+        "count": 96887,
         "samples": [
           {
             "file": ".cursor/skills/adr-skill/scripts/bootstrap_adr.js",
@@ -1273,50 +1273,50 @@
           },
           {
             "file": "examples/ai-functions/src/generate-text/openai/output-json.ts",
-            "line": 3,
-            "column": 40,
+            "line": 4,
+            "column": 36,
             "message": "Extra semicolon."
           },
           {
             "file": "examples/next-fastapi/app/(examples)/01-chat-text/page.tsx",
-            "line": 6,
-            "column": 33,
+            "line": 5,
+            "column": 45,
             "message": "Extra semicolon."
           },
           {
             "file": "packages/ai/src/generate-text/stream-text.ts",
-            "line": 2301,
-            "column": 17,
+            "line": 2531,
+            "column": 58,
             "message": "Extra semicolon."
           },
           {
             "file": "packages/alibaba/src/alibaba-video-model.test.ts",
-            "line": 291,
-            "column": 57,
+            "line": 362,
+            "column": 59,
             "message": "Extra semicolon."
           },
           {
-            "file": "packages/codemod/src/test/__testfixtures__/import-LanguageModelV2-from-provider-package.input.ts",
-            "line": 4,
-            "column": 47,
+            "file": "packages/codemod/src/test/__testfixtures__/move-maxsteps-to-stopwhen-alias.input.ts",
+            "line": 46,
+            "column": 16,
             "message": "Extra semicolon."
           },
           {
             "file": "packages/google/src/google-generative-ai-embedding-model.test.ts",
-            "line": 25,
-            "column": 3,
+            "line": 107,
+            "column": 48,
             "message": "Extra semicolon."
           },
           {
-            "file": "packages/openai-compatible/src/chat/openai-compatible-chat-language-model.ts",
-            "line": 589,
-            "column": 71,
+            "file": "packages/openai-compatible/src/chat/openai-compatible-metadata-extractor.ts",
+            "line": 1,
+            "column": 60,
             "message": "Extra semicolon."
           },
           {
             "file": "packages/provider-utils/src/to-json-schema/zod3-to-json-schema/zod3-to-json-schema.test.ts",
-            "line": 290,
-            "column": 7,
+            "line": 317,
+            "column": 29,
             "message": "Extra semicolon."
           },
           {

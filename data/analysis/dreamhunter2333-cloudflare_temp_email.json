@@ -1,12 +1,19 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "a5aa4753806d136c135afb5cac801ebc5f4b79f6",
-  "analyzedCommitDate": "2026-04-14T12:13:40.000Z",
+  "analyzedCommit": "e772db8c3e1fd10d20ff4b803315a5727bafcbfc",
+  "analyzedCommitDate": "2026-04-17T03:37:14.000Z",
   "checks": {
     "array-type": {
       "array": {
-        "count": 0,
-        "samples": []
+        "count": 1,
+        "samples": [
+          {
+            "file": "e2e/tests/api/send-mail-limit.spec.ts",
+            "line": 200,
+            "column": 18,
+            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
+          }
+        ]
       },
       "generic": {
         "count": 94,
@@ -102,7 +109,7 @@
           },
           {
             "file": "worker/src/admin_api/index.ts",
-            "line": 22,
+            "line": 27,
             "column": 28,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
@@ -114,7 +121,7 @@
           },
           {
             "file": "worker/src/mails_api/send_mail_api.ts",
-            "line": 14,
+            "line": 17,
             "column": 28,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
@@ -158,12 +165,18 @@
         ]
       },
       "index-signature": {
-        "count": 14,
+        "count": 18,
         "samples": [
           {
-            "file": "e2e/tests/api/subdomain-create.spec.ts",
-            "line": 24,
-            "column": 14,
+            "file": "e2e/tests/api/send-mail-limit.spec.ts",
+            "line": 33,
+            "column": 24,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "e2e/tests/api/send-mail-limit.spec.ts",
+            "line": 200,
+            "column": 24,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -174,14 +187,14 @@
           },
           {
             "file": "worker/src/admin_api/index.ts",
-            "line": 40,
+            "line": 45,
             "column": 48,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "worker/src/admin_api/index.ts",
-            "line": 66,
-            "column": 31,
+            "file": "worker/src/common.ts",
+            "line": 43,
+            "column": 46,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -191,27 +204,21 @@
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "worker/src/email/auto_reply.ts",
-            "line": 31,
-            "column": 38,
+            "file": "worker/src/mails_api/send_mail_api.ts",
+            "line": 205,
+            "column": 46,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "worker/src/models/index.ts",
-            "line": 192,
+            "line": 199,
             "column": 33,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "worker/src/telegram_api/common.ts",
-            "line": 58,
-            "column": 42,
-            "message": "An index signature is preferred over a record."
-          },
-          {
-            "file": "worker/src/user_api/passkey.ts",
-            "line": 20,
-            "column": 34,
+            "line": 62,
+            "column": 32,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -225,7 +232,7 @@
     },
     "consistent-type-definitions": {
       "interface": {
-        "count": 14,
+        "count": 15,
         "samples": [
           {
             "file": "frontend/src/models/index.ts",
@@ -234,9 +241,9 @@
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "frontend/src/views/admin/AiExtractSettings.vue",
-            "line": 37,
-            "column": 1,
+            "file": "worker/src/admin_api/ai_extract_settings.ts",
+            "line": 5,
+            "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
@@ -246,8 +253,8 @@
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "worker/src/i18n/type.ts",
-            "line": 1,
+            "file": "worker/src/ip_blacklist.ts",
+            "line": 8,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
@@ -259,7 +266,7 @@
           },
           {
             "file": "worker/src/models/index.ts",
-            "line": 26,
+            "line": 37,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
@@ -271,7 +278,7 @@
           },
           {
             "file": "worker/src/models/index.ts",
-            "line": 162,
+            "line": 182,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
@@ -283,7 +290,7 @@
           },
           {
             "file": "worker/src/models/index.ts",
-            "line": 194,
+            "line": 201,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           }
@@ -303,7 +310,7 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 68,
+        "count": 71,
         "samples": [
           {
             "file": "e2e/fixtures/test-helpers.ts",
@@ -336,26 +343,26 @@
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "worker/src/mails_api/s3_attachment.ts",
+            "file": "worker/src/mails_api/send_mail_api.ts",
+            "line": 1,
+            "column": 1,
+            "message": "Imports Context are only used as type."
+          },
+          {
+            "file": "worker/src/telegram_api/common.ts",
             "line": 1,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "worker/src/telegram_api/common.ts",
-            "line": 6,
-            "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
-          {
             "file": "worker/src/telegram_api/telegram.ts",
-            "line": 8,
+            "line": 3,
             "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
+            "message": "Imports TgContext are only used as type."
           },
           {
             "file": "worker/src/user_api/passkey.ts",
-            "line": 10,
+            "line": 1,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
@@ -423,7 +430,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 91,
+        "count": 97,
         "samples": [
           {
             "file": "e2e/fixtures/test-helpers.ts",
@@ -433,50 +440,50 @@
           },
           {
             "file": "e2e/tests/api-gzip/mail-gzip.spec.ts",
-            "line": 60,
+            "line": 84,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "e2e/tests/smtp-proxy/imap-proxy.spec.ts",
-            "line": 8,
+            "file": "e2e/tests/api/subdomain-create.spec.ts",
+            "line": 15,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "frontend/src/utils/mail-actions.js",
-            "line": 19,
+            "file": "frontend/src/utils/email-parser.js",
+            "line": 3,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "worker/src/admin_api/ip_blacklist_settings.ts",
-            "line": 10,
+            "file": "vitepress-docs/docs/.vitepress/zh.ts",
+            "line": 92,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "worker/src/common.ts",
-            "line": 749,
-            "column": 8,
+            "file": "worker/src/admin_api/webhook_settings.ts",
+            "line": 5,
+            "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "worker/src/email/forward.ts",
-            "line": 123,
+            "line": 55,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "worker/src/ip_blacklist.ts",
-            "line": 144,
-            "column": 8,
+            "line": 93,
+            "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "worker/src/telegram_api/miniapp.ts",
-            "line": 63,
-            "column": 1,
+            "file": "worker/src/scheduled.ts",
+            "line": 8,
+            "column": 8,
             "message": "Expected a function expression."
           },
           {
@@ -488,7 +495,7 @@
         ]
       },
       "declaration": {
-        "count": 285,
+        "count": 304,
         "samples": [
           {
             "file": "e2e/tests/browser/webhook-presets.spec.ts",
@@ -498,50 +505,50 @@
           },
           {
             "file": "frontend/src/components/MailBox.vue",
-            "line": 297,
+            "line": 317,
             "column": 7,
             "message": "Expected a function declaration."
           },
           {
-            "file": "frontend/src/views/Header.vue",
-            "line": 55,
+            "file": "frontend/src/views/Index.vue",
+            "line": 79,
             "column": 7,
             "message": "Expected a function declaration."
           },
           {
-            "file": "frontend/src/views/admin/CreateAccount.vue",
-            "line": 66,
+            "file": "frontend/src/views/admin/DatabaseManager.vue",
+            "line": 51,
             "column": 7,
             "message": "Expected a function declaration."
           },
           {
-            "file": "frontend/src/views/admin/Telegram.vue",
-            "line": 59,
+            "file": "frontend/src/views/admin/UserManagement.vue",
+            "line": 123,
             "column": 7,
             "message": "Expected a function declaration."
           },
           {
-            "file": "frontend/src/views/index/AutoReply.vue",
-            "line": 46,
+            "file": "frontend/src/views/index/SimpleIndex.vue",
+            "line": 81,
             "column": 7,
             "message": "Expected a function declaration."
           },
           {
-            "file": "frontend/src/views/user/UserMailBox.vue",
+            "file": "worker/src/admin_api/cleanup_api.ts",
             "line": 34,
-            "column": 7,
+            "column": 14,
             "message": "Expected a function declaration."
           },
           {
             "file": "worker/src/common.ts",
-            "line": 256,
-            "column": 7,
+            "line": 718,
+            "column": 14,
             "message": "Expected a function declaration."
           },
           {
-            "file": "worker/src/telegram_api/telegram.ts",
-            "line": 20,
-            "column": 7,
+            "file": "worker/src/telegram_api/common.ts",
+            "line": 141,
+            "column": 14,
             "message": "Expected a function declaration."
           },
           {
@@ -620,7 +627,7 @@
         ]
       },
       "default": {
-        "count": 21,
+        "count": 20,
         "samples": [
           {
             "file": "frontend/src/api/index.js",
@@ -641,8 +648,8 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "worker/src/admin_api/index.ts",
-            "line": 22,
+            "file": "vitepress-docs/docs/.vitepress/zh.ts",
+            "line": 3,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -653,14 +660,14 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "worker/src/email/auto_reply.ts",
-            "line": 24,
+            "file": "worker/src/email/black_list.ts",
+            "line": 3,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "worker/src/email/check_attachment.ts",
-            "line": 5,
+            "file": "worker/src/email/check_junk.ts",
+            "line": 4,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -704,7 +711,7 @@
         ]
       },
       "4-space": {
-        "count": 45,
+        "count": 46,
         "samples": [
           {
             "file": "e2e/fixtures/test-helpers.ts",
@@ -731,8 +738,8 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "e2e/tests/api/webhook-trigger.spec.ts",
-            "line": 4,
+            "file": "e2e/tests/api/webhook-settings.spec.ts",
+            "line": 3,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -769,7 +776,7 @@
         ]
       },
       "tab": {
-        "count": 155,
+        "count": 157,
         "samples": [
           {
             "file": "e2e/fixtures/test-helpers.ts",
@@ -778,7 +785,7 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "e2e/tests/api/send-mail.spec.ts",
+            "file": "e2e/tests/api/send-mail-limit.spec.ts",
             "line": 3,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
@@ -820,8 +827,8 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "worker/src/mails_api/send_mail_api.ts",
-            "line": 17,
+            "file": "worker/src/mails_api/send_mail_limit_utils.ts",
+            "line": 8,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -836,7 +843,7 @@
     },
     "quotes": {
       "double": {
-        "count": 4190,
+        "count": 4275,
         "samples": [
           {
             "file": "e2e/fixtures/test-helpers.ts",
@@ -845,50 +852,50 @@
             "message": "Strings must use doublequote."
           },
           {
-            "file": "e2e/tests/api/webhook-settings.spec.ts",
-            "line": 80,
-            "column": 40,
+            "file": "e2e/tests/api/send-mail.spec.ts",
+            "line": 9,
+            "column": 8,
             "message": "Strings must use doublequote."
           },
           {
             "file": "frontend/src/components/MailBox.vue",
-            "line": 188,
-            "column": 17,
+            "line": 6,
+            "column": 94,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "frontend/src/views/Admin.vue",
-            "line": 16,
-            "column": 29,
+            "file": "frontend/src/utils/email-parser.js",
+            "line": 72,
+            "column": 24,
             "message": "Strings must use doublequote."
           },
           {
             "file": "frontend/src/views/admin/AccountSettings.vue",
-            "line": 187,
-            "column": 51,
+            "line": 88,
+            "column": 26,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "frontend/src/views/admin/UserManagement.vue",
-            "line": 36,
-            "column": 21,
+            "file": "frontend/src/views/admin/UserAddressManagement.vue",
+            "line": 23,
+            "column": 25,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "frontend/src/views/index/SendMail.vue",
-            "line": 33,
-            "column": 27,
+            "file": "frontend/src/views/index/LocalAddress.vue",
+            "line": 94,
+            "column": 18,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "vitepress-docs/docs/.vitepress/en.ts",
-            "line": 1,
-            "column": 49,
+            "file": "vitepress-docs/docs/.vitepress/config.ts",
+            "line": 31,
+            "column": 44,
             "message": "Strings must use doublequote."
           },
           {
             "file": "worker/src/admin_api/index.ts",
-            "line": 439,
+            "line": 451,
             "column": 9,
             "message": "Strings must use doublequote."
           },
@@ -901,7 +908,7 @@
         ]
       },
       "single": {
-        "count": 1912,
+        "count": 1943,
         "samples": [
           {
             "file": "e2e/fixtures/test-helpers.ts",
@@ -911,49 +918,49 @@
           },
           {
             "file": "frontend/src/views/Header.vue",
-            "line": 140,
-            "column": 64,
+            "line": 162,
+            "column": 23,
             "message": "Strings must use singlequote."
           },
           {
             "file": "frontend/src/views/admin/UserManagement.vue",
-            "line": 161,
-            "column": 40,
+            "line": 199,
+            "column": 14,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "frontend/src/views/user/UserMailBox.vue",
-            "line": 36,
-            "column": 9,
+            "file": "frontend/src/views/user/UserSettings.vue",
+            "line": 105,
+            "column": 14,
             "message": "Strings must use singlequote."
           },
           {
             "file": "worker/src/admin_api/worker_config.ts",
-            "line": 13,
+            "line": 19,
             "column": 13,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "worker/src/email/check_junk.ts",
-            "line": 43,
-            "column": 60,
+            "file": "worker/src/email/forward.ts",
+            "line": 17,
+            "column": 26,
             "message": "Strings must use singlequote."
           },
           {
             "file": "worker/src/i18n/zh.ts",
-            "line": 21,
-            "column": 34,
+            "line": 30,
+            "column": 27,
             "message": "Strings must use singlequote."
           },
           {
             "file": "worker/src/mails_api/webhook_settings.ts",
-            "line": 17,
-            "column": 65,
+            "line": 2,
+            "column": 27,
             "message": "Strings must use singlequote."
           },
           {
             "file": "worker/src/user_api/bind_address.ts",
-            "line": 133,
+            "line": 129,
             "column": 15,
             "message": "Strings must use singlequote."
           },
@@ -968,7 +975,7 @@
     },
     "semi": {
       "always": {
-        "count": 1852,
+        "count": 1900,
         "samples": [
           {
             "file": "frontend/src/App.vue",
@@ -977,51 +984,51 @@
             "message": "Missing semicolon."
           },
           {
-            "file": "frontend/src/components/WebhookComponent.vue",
-            "line": 220,
-            "column": 41,
+            "file": "frontend/src/i18n.ts",
+            "line": 13,
+            "column": 3,
             "message": "Missing semicolon."
           },
           {
-            "file": "frontend/src/views/Index.vue",
-            "line": 23,
-            "column": 29,
+            "file": "frontend/src/views/User.vue",
+            "line": 4,
+            "column": 42,
             "message": "Missing semicolon."
           },
           {
             "file": "frontend/src/views/admin/IpBlacklistSettings.vue",
-            "line": 78,
-            "column": 35,
+            "line": 8,
+            "column": 37,
             "message": "Missing semicolon."
           },
           {
             "file": "frontend/src/views/admin/UserManagement.vue",
-            "line": 326,
-            "column": 2,
+            "line": 317,
+            "column": 15,
             "message": "Missing semicolon."
           },
           {
-            "file": "frontend/src/views/index/LocalAddress.vue",
-            "line": 81,
-            "column": 35,
+            "file": "frontend/src/views/index/SendMail.vue",
+            "line": 2,
+            "column": 47,
             "message": "Missing semicolon."
           },
           {
             "file": "frontend/src/views/user/UserSettings.vue",
-            "line": 7,
-            "column": 45,
+            "line": 19,
+            "column": 35,
             "message": "Missing semicolon."
           },
           {
             "file": "worker/src/common.ts",
-            "line": 121,
+            "line": 226,
             "column": 2,
             "message": "Missing semicolon."
           },
           {
             "file": "worker/src/open_api/auth.ts",
-            "line": 52,
-            "column": 61,
+            "line": 43,
+            "column": 3,
             "message": "Missing semicolon."
           },
           {
@@ -1033,7 +1040,7 @@
         ]
       },
       "never": {
-        "count": 4651,
+        "count": 4912,
         "samples": [
           {
             "file": "e2e/fixtures/test-helpers.ts",
@@ -1043,50 +1050,50 @@
           },
           {
             "file": "e2e/tests/api/mail-deletion.spec.ts",
-            "line": 51,
-            "column": 45,
+            "line": 124,
+            "column": 37,
             "message": "Extra semicolon."
           },
           {
-            "file": "e2e/tests/smtp-proxy/imap-proxy.spec.ts",
-            "line": 5,
-            "column": 62,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "frontend/src/components/MailBox.vue",
-            "line": 257,
-            "column": 31,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "frontend/src/views/admin/AccountSettings.vue",
-            "line": 382,
+            "file": "e2e/tests/browser/passkey.spec.ts",
+            "line": 34,
             "column": 26,
             "message": "Extra semicolon."
           },
           {
-            "file": "frontend/src/views/user/UserOauth2Callback.vue",
-            "line": 36,
-            "column": 45,
+            "file": "frontend/src/components/AddressSelect.vue",
+            "line": 176,
+            "column": 68,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "frontend/src/views/admin/Account.vue",
+            "line": 191,
+            "column": 48,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "frontend/src/views/user/UserLogin.vue",
+            "line": 199,
+            "column": 32,
             "message": "Extra semicolon."
           },
           {
             "file": "worker/src/common.ts",
-            "line": 350,
-            "column": 77,
+            "line": 225,
+            "column": 30,
             "message": "Extra semicolon."
           },
           {
             "file": "worker/src/mails_api/send_mail_api.ts",
-            "line": 33,
-            "column": 45,
+            "line": 56,
+            "column": 36,
             "message": "Extra semicolon."
           },
           {
             "file": "worker/src/telegram_api/telegram.ts",
-            "line": 439,
-            "column": 52,
+            "line": 371,
+            "column": 7,
             "message": "Extra semicolon."
           },
           {

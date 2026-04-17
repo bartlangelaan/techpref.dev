@@ -347,6 +347,8 @@ const { values: args } = parseArgs({
 });
 
 const ghAction = args["gh-action"];
+const ANALYSIS_COOLDOWN_DAYS = 21;
+const ANALYSIS_COOLDOWN_MS = ANALYSIS_COOLDOWN_DAYS * 24 * 60 * 60 * 1000;
 
 console.log("=== TechPref Repository Analyzer ===\n");
 
@@ -373,6 +375,14 @@ let repoAnalyzeInfo = await Promise.all(
       const analysis = loadAnalysis(repo.fullName);
 
       const remoteInfo = await getRemoteRepoInfo(repo.cloneUrl);
+      const analyzedCommitDate = analysis
+        ? new Date(analysis.analyzedCommitDate)
+        : null;
+      const analyzedRecently =
+        analyzedCommitDate &&
+        !Number.isNaN(analyzedCommitDate.getTime()) &&
+        new Date().getTime() - analyzedCommitDate.getTime() <
+          ANALYSIS_COOLDOWN_MS;
 
       let analyseReason:
         | "no-analysis"
@@ -382,6 +392,8 @@ let repoAnalyzeInfo = await Promise.all(
 
       if (!analysis) {
         analyseReason = "no-analysis";
+      } else if (analyzedRecently) {
+        analyseReason = false;
       } else if (analysis.analyzedVersion !== currentVersion) {
         analyseReason = "version-mismatch";
       } else if (remoteInfo.latestCommit !== analysis.analyzedCommit) {

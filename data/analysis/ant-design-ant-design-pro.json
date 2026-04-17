@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "e88a060848ee",
-  "analyzedCommit": "788fcf6f031030ef258fb73ee6b0264360026881",
-  "analyzedCommitDate": "2026-04-17T04:12:20.000Z",
+  "analyzedCommit": "6690640635bfaec343be58294b059da06dabcc78",
+  "analyzedCommitDate": "2026-04-17T11:40:10.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -28,7 +28,7 @@
         ]
       },
       "generic": {
-        "count": 86,
+        "count": 75,
         "samples": [
           {
             "file": "cloudflare-worker/src/data/notices.ts",
@@ -37,16 +37,22 @@
             "message": "Array type using 'NoticeItem[]' is forbidden. Use 'Array<NoticeItem>' instead."
           },
           {
-            "file": "src/pages/account/settings/components/base.tsx",
-            "line": 18,
-            "column": 10,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+            "file": "src/components/TagSelect/index.tsx",
+            "line": 38,
+            "column": 11,
+            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
+          },
+          {
+            "file": "src/pages/account/settings/components/security.tsx",
+            "line": 4,
+            "column": 30,
+            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           },
           {
             "file": "src/pages/dashboard/analysis/components/OfflineData.tsx",
-            "line": 55,
-            "column": 16,
-            "message": "Array type using 'OfflineDataType[]' is forbidden. Use 'Array<OfflineDataType>' instead."
+            "line": 56,
+            "column": 21,
+            "message": "Array type using 'DataItem[]' is forbidden. Use 'Array<DataItem>' instead."
           },
           {
             "file": "src/pages/dashboard/monitor/components/Map/index.tsx",
@@ -56,33 +62,27 @@
           },
           {
             "file": "src/pages/dashboard/workplace/_mock.ts",
-            "line": 120,
-            "column": 20,
-            "message": "Array type using 'OfflineDataType[]' is forbidden. Use 'Array<OfflineDataType>' instead."
+            "line": 26,
+            "column": 18,
+            "message": "Array type using 'DataItem[]' is forbidden. Use 'Array<DataItem>' instead."
           },
           {
             "file": "src/pages/form/advanced-form/index.tsx",
-            "line": 69,
-            "column": 33,
-            "message": "Array type using 'ErrorField[]' is forbidden. Use 'Array<ErrorField>' instead."
-          },
-          {
-            "file": "src/pages/list/search/applications/components/TagSelect/index.tsx",
-            "line": 39,
-            "column": 18,
+            "line": 27,
+            "column": 25,
             "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           },
           {
-            "file": "src/pages/list/search/articles/index.tsx",
-            "line": 59,
-            "column": 16,
-            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
+            "file": "src/pages/list/card-list/service.ts",
+            "line": 6,
+            "column": 29,
+            "message": "Array type using 'CardListItemDataType[]' is forbidden. Use 'Array<CardListItemDataType>' instead."
           },
           {
-            "file": "src/pages/list/search/projects/index.tsx",
-            "line": 23,
-            "column": 16,
-            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
+            "file": "src/pages/list/search/projects/service.ts",
+            "line": 6,
+            "column": 28,
+            "message": "Array type using 'ListItemDataType[]' is forbidden. Use 'Array<ListItemDataType>' instead."
           },
           {
             "file": "src/pages/table-list/index.tsx",
@@ -183,8 +183,20 @@
     },
     "consistent-type-definitions": {
       "interface": {
-        "count": 21,
+        "count": 16,
         "samples": [
+          {
+            "file": "src/components/ArticleListContent/index.tsx",
+            "line": 6,
+            "column": 8,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "src/components/AvatarList/index.tsx",
+            "line": 16,
+            "column": 8,
+            "message": "Use `interface` instead of `type`."
+          },
           {
             "file": "src/components/RightContent/AvatarDropdown.tsx",
             "line": 15,
@@ -192,15 +204,15 @@
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "src/pages/account/center/components/AvatarList/index.tsx",
-            "line": 6,
-            "column": 8,
-            "message": "Use `interface` instead of `type`."
-          },
-          {
             "file": "src/pages/account/settings/index.tsx",
             "line": 11,
             "column": 1,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "src/pages/dashboard/analysis/components/NumberInfo/index.tsx",
+            "line": 5,
+            "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
@@ -222,20 +234,8 @@
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "src/pages/list/search/articles/components/ArticleListContent/index.tsx",
+            "file": "src/pages/list/search/index.tsx",
             "line": 6,
-            "column": 1,
-            "message": "Use `interface` instead of `type`."
-          },
-          {
-            "file": "src/pages/list/search/projects/components/AvatarList/index.tsx",
-            "line": 6,
-            "column": 8,
-            "message": "Use `interface` instead of `type`."
-          },
-          {
-            "file": "src/pages/list/search/projects/components/StandardFormRow/index.tsx",
-            "line": 5,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
@@ -248,11 +248,23 @@
         ]
       },
       "type": {
-        "count": 14,
+        "count": 10,
         "samples": [
           {
             "file": "cloudflare-worker/src/data/table.ts",
             "line": 1,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "src/components/TagSelect/index.tsx",
+            "line": 9,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "src/components/TagSelect/index.tsx",
+            "line": 35,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
@@ -264,38 +276,26 @@
           },
           {
             "file": "src/pages/form/advanced-form/index.tsx",
-            "line": 62,
+            "line": 19,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "src/pages/list/search/applications/components/TagSelect/index.tsx",
-            "line": 9,
-            "column": 8,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "src/pages/list/search/articles/components/TagSelect/index.tsx",
-            "line": 9,
-            "column": 8,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "src/pages/list/search/articles/components/TagSelect/index.tsx",
-            "line": 35,
-            "column": 8,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "src/pages/list/search/projects/components/TagSelect/index.tsx",
-            "line": 35,
-            "column": 8,
+            "file": "src/pages/form/advanced-form/index.tsx",
+            "line": 62,
+            "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "src/pages/table-list/components/CreateForm.tsx",
             "line": 14,
             "column": 1,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "src/pages/user/register/service.ts",
+            "line": 3,
+            "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
@@ -319,7 +319,7 @@
         "samples": []
       },
       "no-type-imports": {
-        "count": 93,
+        "count": 91,
         "samples": [
           {
             "file": "cloudflare-worker/src/routes/table.ts",
@@ -328,45 +328,45 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/pages/account/center/_mock.ts",
-            "line": 1,
-            "column": 1,
+            "file": "src/components/TagSelect/index.tsx",
+            "line": 5,
+            "column": 17,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "src/pages/chatbot/index.tsx",
-            "line": 13,
+            "line": 4,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/pages/dashboard/analysis/index.tsx",
+            "file": "src/pages/dashboard/analysis/components/TopSearch.tsx",
             "line": 6,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/pages/dashboard/workplace/_mock.ts",
-            "line": 3,
+            "file": "src/pages/dashboard/monitor/service.ts",
+            "line": 2,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/pages/form/step-form/index.tsx",
-            "line": 20,
+            "file": "src/pages/form/basic-form/index.tsx",
+            "line": 14,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/pages/list/mock/index.ts",
-            "line": 1,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "src/pages/list/search/projects/components/TagSelect/index.tsx",
+            "file": "src/pages/list/card-list/index.tsx",
             "line": 5,
-            "column": 17,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "src/pages/list/search/index.tsx",
+            "line": 4,
+            "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
@@ -451,7 +451,7 @@
         ]
       },
       "declaration": {
-        "count": 179,
+        "count": 163,
         "samples": [
           {
             "file": "cloudflare-worker/src/data/table.ts",
@@ -460,50 +460,50 @@
             "message": "Expected a function declaration."
           },
           {
-            "file": "src/pages/404.tsx",
-            "line": 5,
-            "column": 7,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "src/pages/account/settings/components/base.tsx",
-            "line": 16,
-            "column": 7,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "src/pages/chatbot/service.ts",
-            "line": 12,
-            "column": 14,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "src/pages/dashboard/analysis/index.tsx",
-            "line": 98,
+            "file": "src/components/RightContent/AvatarDropdown.tsx",
+            "line": 72,
             "column": 9,
             "message": "Expected a function declaration."
           },
           {
-            "file": "src/pages/form/advanced-form/index.tsx",
-            "line": 132,
+            "file": "src/pages/account/center/components/Articles/index.tsx",
+            "line": 10,
+            "column": 7,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "src/pages/account/settings/components/notification.tsx",
+            "line": 7,
             "column": 9,
             "message": "Expected a function declaration."
           },
           {
-            "file": "src/pages/list/search/applications/components/TagSelect/index.tsx",
-            "line": 51,
+            "file": "src/pages/dashboard/analysis/components/IntroduceRow.tsx",
+            "line": 21,
             "column": 7,
             "message": "Expected a function declaration."
           },
           {
-            "file": "src/pages/list/search/index.tsx",
-            "line": 25,
+            "file": "src/pages/dashboard/monitor/components/ActiveChart/index.tsx",
+            "line": 20,
             "column": 7,
             "message": "Expected a function declaration."
           },
           {
-            "file": "src/pages/profile/basic/index.tsx",
-            "line": 44,
+            "file": "src/pages/form/step-form/index.tsx",
+            "line": 23,
+            "column": 7,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "src/pages/list/search/articles/index.tsx",
+            "line": 22,
+            "column": 7,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "src/pages/table-list/components/CreateForm.tsx",
+            "line": 18,
             "column": 7,
             "message": "Expected a function declaration."
           },
@@ -518,7 +518,7 @@
     },
     "import-export-preference": {
       "named": {
-        "count": 213,
+        "count": 201,
         "samples": [
           {
             "file": "cloudflare-worker/src/index.ts",
@@ -527,50 +527,50 @@
             "message": "Prefer named exports"
           },
           {
-            "file": "src/components/HeaderDropdown/index.tsx",
-            "line": 43,
+            "file": "src/access.ts",
+            "line": 4,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "src/locales/fa-IR/pages.ts",
+            "file": "src/locales/en-US/component.ts",
             "line": 1,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "src/locales/pt-BR/pages.ts",
+            "file": "src/locales/ja-JP.ts",
+            "line": 9,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "src/locales/zh-CN/settingDrawer.ts",
             "line": 1,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "src/pages/account/center/Center.style.ts",
-            "line": 67,
+            "file": "src/pages/account/settings/_mock.ts",
+            "line": 26,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "src/pages/dashboard/analysis/components/Charts/ChartCard/index.tsx",
-            "line": 110,
+            "file": "src/pages/dashboard/analysis/components/SalesCard.tsx",
+            "line": 225,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "src/pages/dashboard/monitor/mock/map-geo.ts",
-            "line": 1,
+            "file": "src/pages/form/advanced-form/_mock.ts",
+            "line": 3,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "src/pages/list/basic-list/utils/utils.style.ts",
-            "line": 6,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "src/pages/list/search/projects/components/StandardFormRow/index.style.ts",
-            "line": 62,
+            "file": "src/pages/list/search/articles/style.style.ts",
+            "line": 30,
             "column": 8,
             "message": "Prefer named exports"
           },
@@ -654,7 +654,7 @@
         "samples": []
       },
       "4-space": {
-        "count": 252,
+        "count": 240,
         "samples": [
           {
             "file": "cloudflare-worker/src/data/common.ts",
@@ -663,49 +663,49 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "mock/utils.ts",
-            "line": 8,
+            "file": "mock/user.ts",
+            "line": 14,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/locales/en-US/settings.ts",
+            "file": "src/locales/bn-BD/pages.ts",
             "line": 2,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/locales/pt-BR/menu.ts",
+            "file": "src/locales/id-ID/settings.ts",
             "line": 2,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/pages/account/center/components/ArticleListContent/index.style.ts",
+            "file": "src/locales/zh-TW/component.ts",
+            "line": 2,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "src/pages/account/settings/service.ts",
+            "line": 5,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "src/pages/dashboard/analysis/utils/utils.ts",
+            "line": 7,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "src/pages/form/step-form/_mock.ts",
             "line": 4,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/pages/dashboard/analysis/components/Charts/index.style.ts",
-            "line": 4,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "src/pages/dashboard/workplace/components/EditableLinkGroup/index.tsx",
-            "line": 6,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "src/pages/list/card-list/utils/utils.style.ts",
-            "line": 4,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "src/pages/list/search/projects/style.style.ts",
+            "file": "src/pages/profile/advanced/_mock.ts",
             "line": 4,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
@@ -719,7 +719,7 @@
         ]
       },
       "tab": {
-        "count": 252,
+        "count": 240,
         "samples": [
           {
             "file": "cloudflare-worker/src/data/common.ts",
@@ -728,49 +728,49 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "mock/utils.ts",
-            "line": 8,
+            "file": "mock/user.ts",
+            "line": 14,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/locales/en-US/settings.ts",
+            "file": "src/locales/bn-BD/pages.ts",
             "line": 2,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/locales/pt-BR/menu.ts",
+            "file": "src/locales/id-ID/settings.ts",
             "line": 2,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/pages/account/center/components/ArticleListContent/index.style.ts",
+            "file": "src/locales/zh-TW/component.ts",
+            "line": 2,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "src/pages/account/settings/service.ts",
+            "line": 5,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "src/pages/dashboard/analysis/utils/utils.ts",
+            "line": 7,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "src/pages/form/step-form/_mock.ts",
             "line": 4,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/pages/dashboard/analysis/components/Charts/index.style.ts",
-            "line": 4,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "src/pages/dashboard/workplace/components/EditableLinkGroup/index.tsx",
-            "line": 6,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "src/pages/list/card-list/utils/utils.style.ts",
-            "line": 4,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "src/pages/list/search/projects/style.style.ts",
+            "file": "src/pages/profile/advanced/_mock.ts",
             "line": 4,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
@@ -786,7 +786,7 @@
     },
     "quotes": {
       "double": {
-        "count": 7964,
+        "count": 7785,
         "samples": [
           {
             "file": ".commitlintrc.js",
@@ -796,50 +796,50 @@
           },
           {
             "file": "config/routes.ts",
-            "line": 253,
+            "line": 218,
             "column": 15,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/locales/en-US.ts",
-            "line": 1,
-            "column": 23,
+            "file": "src/locales/bn-BD/settingDrawer.ts",
+            "line": 3,
+            "column": 33,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/locales/fa-IR/settings.ts",
-            "line": 47,
+            "file": "src/locales/fa-IR/pages.ts",
+            "line": 59,
+            "column": 43,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "src/locales/ja-JP/pages.ts",
+            "line": 36,
             "column": 3,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/locales/ja-JP/settings.ts",
-            "line": 33,
-            "column": 5,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "src/locales/zh-CN/settings.ts",
-            "line": 21,
+            "file": "src/locales/zh-CN/pages.ts",
+            "line": 11,
             "column": 3,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/pages/account/settings/index.tsx",
-            "line": 67,
-            "column": 12,
+            "file": "src/pages/account/center/components/Articles/index.tsx",
+            "line": 6,
+            "column": 39,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/pages/dashboard/workplace/service.ts",
-            "line": 1,
-            "column": 25,
+            "file": "src/pages/dashboard/monitor/index.tsx",
+            "line": 115,
+            "column": 21,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/pages/list/search/projects/components/StandardFormRow/index.style.ts",
-            "line": 38,
-            "column": 7,
+            "file": "src/pages/list/search/articles/style.style.ts",
+            "line": 13,
+            "column": 17,
             "message": "Strings must use doublequote."
           },
           {
@@ -851,7 +851,7 @@
         ]
       },
       "single": {
-        "count": 44745,
+        "count": 44743,
         "samples": [
           {
             "file": "config/config.ts",
@@ -861,50 +861,50 @@
           },
           {
             "file": "src/pages/dashboard/monitor/mock/map-geo.ts",
-            "line": 4292,
+            "line": 4290,
             "column": 9,
             "message": "Strings must use singlequote."
           },
           {
             "file": "src/pages/dashboard/monitor/mock/map-grid.ts",
-            "line": 1644,
+            "line": 1643,
             "column": 7,
             "message": "Strings must use singlequote."
           },
           {
             "file": "src/pages/dashboard/monitor/mock/map-grid.ts",
-            "line": 7325,
-            "column": 17,
+            "line": 7324,
+            "column": 7,
             "message": "Strings must use singlequote."
           },
           {
             "file": "src/pages/dashboard/monitor/mock/map-grid.ts",
-            "line": 13006,
+            "line": 13005,
             "column": 9,
             "message": "Strings must use singlequote."
           },
           {
             "file": "src/pages/dashboard/monitor/mock/map-grid.ts",
-            "line": 18690,
+            "line": 18686,
+            "column": 9,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "src/pages/dashboard/monitor/mock/map-grid.ts",
+            "line": 24370,
+            "column": 7,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "src/pages/dashboard/monitor/mock/map-grid.ts",
+            "line": 30050,
             "column": 15,
             "message": "Strings must use singlequote."
           },
           {
             "file": "src/pages/dashboard/monitor/mock/map-grid.ts",
-            "line": 24371,
+            "line": 35732,
             "column": 7,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "src/pages/dashboard/monitor/mock/map-grid.ts",
-            "line": 30053,
-            "column": 9,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "src/pages/dashboard/monitor/mock/map-grid.ts",
-            "line": 35733,
-            "column": 17,
             "message": "Strings must use singlequote."
           },
           {
@@ -922,7 +922,7 @@
         "samples": []
       },
       "never": {
-        "count": 2631,
+        "count": 2484,
         "samples": [
           {
             "file": ".commitlintrc.js",
@@ -931,51 +931,51 @@
             "message": "Extra semicolon."
           },
           {
-            "file": "mock/listTableList.ts",
-            "line": 33,
-            "column": 42,
+            "file": "mock/fakeList.ts",
+            "line": 1,
+            "column": 49,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/global.tsx",
-            "line": 42,
-            "column": 45,
+            "file": "src/components/RightContent/AvatarDropdown.tsx",
+            "line": 5,
+            "column": 27,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/pages/account/center/index.tsx",
-            "line": 81,
-            "column": 67,
+            "file": "src/pages/404.tsx",
+            "line": 22,
+            "column": 27,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/pages/dashboard/analysis/components/Charts/ChartCard/index.tsx",
-            "line": 95,
-            "column": 69,
+            "file": "src/pages/chatbot/index.tsx",
+            "line": 21,
+            "column": 40,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/pages/dashboard/workplace/_mock.ts",
-            "line": 6,
-            "column": 33,
+            "file": "src/pages/dashboard/analysis/index.tsx",
+            "line": 64,
+            "column": 24,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/pages/list/basic-list/index.tsx",
-            "line": 275,
+            "file": "src/pages/form/advanced-form/index.tsx",
+            "line": 134,
             "column": 4,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/pages/list/search/projects/components/AvatarList/index.style.ts",
-            "line": 1,
-            "column": 42,
+            "file": "src/pages/list/search/articles/index.tsx",
+            "line": 59,
+            "column": 9,
             "message": "Extra semicolon."
           },
           {
             "file": "src/pages/table-list/index.tsx",
-            "line": 13,
-            "column": 55,
+            "line": 41,
+            "column": 71,
             "message": "Extra semicolon."
           },
           {

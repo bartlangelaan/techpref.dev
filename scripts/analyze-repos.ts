@@ -392,12 +392,10 @@ let repoAnalyzeInfo = await Promise.all(
 
       if (!analysis) {
         analyseReason = "no-analysis";
-      } else if (analyzedRecently) {
-        analyseReason = false;
       } else if (analysis.analyzedVersion !== currentVersion) {
         analyseReason = "version-mismatch";
       } else if (remoteInfo.latestCommit !== analysis.analyzedCommit) {
-        analyseReason = "commit-mismatch";
+        analyseReason = analyzedRecently ? false : "commit-mismatch";
       }
 
       const failingInfo = loadFailingInfo(repo.fullName);

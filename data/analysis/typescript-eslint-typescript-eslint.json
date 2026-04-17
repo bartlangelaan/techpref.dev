@@ -1,5 +1,5 @@
 {
-  "analyzedVersion": "e88a060848ee",
+  "analyzedVersion": "09f4ce718368",
   "analyzedCommit": "6d599b4769e22ed634236980d7da1e23e3f073a6",
   "analyzedCommitDate": "2026-04-17T00:57:40.000Z",
   "checks": {
@@ -1252,6 +1252,203 @@
             "line": 276,
             "column": 24,
             "message": "Strings must use singlequote."
+          }
+        ]
+      }
+    },
+    "react-destructuring-assignment": {
+      "never": {
+        "count": 386,
+        "samples": [
+          {
+            "file": "packages/ast-spec/src/declaration/ClassDeclaration/fixtures/_error_/abstract-constructor/fixture.ts",
+            "line": 2,
+            "column": 12,
+            "message": "'abstract' modifier can only appear on a class, method, or property declaration."
+          },
+          {
+            "file": "packages/ast-spec/src/declaration/ImportDeclaration/fixtures/_error_/named-identifier-aliased-to-number-literal/fixture.ts",
+            "line": 1,
+            "column": 15,
+            "message": "Unexpected token"
+          },
+          {
+            "file": "packages/ast-spec/src/declaration/TSModuleDeclaration/fixtures/_error_/module-invalid-id/fixture.ts",
+            "line": 1,
+            "column": 7,
+            "message": "Expected a semicolon or an implicit semicolon after a statement, but found none"
+          },
+          {
+            "file": "packages/ast-spec/src/declaration/VariableDeclaration/fixtures/_error_/decorator/fixture.ts",
+            "line": 1,
+            "column": 7,
+            "message": "Unexpected token"
+          },
+          {
+            "file": "packages/ast-spec/src/element/PropertyDefinition/fixtures/_error_/key-constructor-string/fixture.ts",
+            "line": 2,
+            "column": 3,
+            "message": "Classes can't have a field named 'constructor'"
+          },
+          {
+            "file": "packages/ast-spec/src/expression/ObjectExpression/fixtures/_error_/property-modifier-static/fixture.ts",
+            "line": 1,
+            "column": 3,
+            "message": "'static' modifier cannot be used here."
+          },
+          {
+            "file": "packages/ast-spec/src/legacy-fixtures/errorRecovery/fixtures/_error_/class-empty-extends-implements/fixture.ts",
+            "line": 3,
+            "column": 30,
+            "message": "Expected `{` but found `Identifier`"
+          },
+          {
+            "file": "packages/ast-spec/src/legacy-fixtures/errorRecovery/fixtures/_error_/interface-method-static/fixture.ts",
+            "line": 4,
+            "column": 3,
+            "message": "'static' modifier cannot appear on a type member."
+          },
+          {
+            "file": "packages/parser/tests/fixtures/scope-analysis/expression-type-parameters.ts",
+            "line": 1,
+            "column": 16,
+            "message": "Missing initializer in const declaration"
+          },
+          {
+            "file": "packages/website/src/theme/MDXComponents/TryInPlayground.tsx",
+            "line": 15,
+            "column": 8,
+            "message": "Must never use destructuring props assignment in SFC argument"
+          }
+        ]
+      },
+      "always-in-signature": {
+        "count": 401,
+        "samples": [
+          {
+            "file": "packages/ast-spec/src/declaration/ClassDeclaration/fixtures/_error_/abstract-constructor/fixture.ts",
+            "line": 2,
+            "column": 12,
+            "message": "'abstract' modifier can only appear on a class, method, or property declaration."
+          },
+          {
+            "file": "packages/ast-spec/src/declaration/ImportDeclaration/fixtures/_error_/named-identifier-aliased-to-string-literal/fixture.ts",
+            "line": 1,
+            "column": 15,
+            "message": "Identifier expected."
+          },
+          {
+            "file": "packages/ast-spec/src/declaration/TSModuleDeclaration/fixtures/_error_/namespace-id-literal/fixture.ts",
+            "line": 1,
+            "column": 11,
+            "message": "Unexpected token"
+          },
+          {
+            "file": "packages/ast-spec/src/declaration/VariableDeclaration/fixtures/_error_/let-id-definite-type-init/fixture.ts",
+            "line": 1,
+            "column": 8,
+            "message": "Declarations with initializers cannot also have definite assignment assertions."
+          },
+          {
+            "file": "packages/ast-spec/src/element/TSEnumMember/fixtures/_error_/bigint-name/fixture.ts",
+            "line": 2,
+            "column": 3,
+            "message": "An enum member cannot have a numeric name."
+          },
+          {
+            "file": "packages/ast-spec/src/expression/ObjectExpression/fixtures/_error_/setter-modifier-public/fixture.ts",
+            "line": 1,
+            "column": 3,
+            "message": "'public' modifier cannot be used here."
+          },
+          {
+            "file": "packages/ast-spec/src/legacy-fixtures/errorRecovery/fixtures/_error_/empty-type-arguments-in-call-expression/fixture.ts",
+            "line": 3,
+            "column": 4,
+            "message": "Type argument list cannot be empty."
+          },
+          {
+            "file": "packages/ast-spec/src/legacy-fixtures/errorRecovery/fixtures/_error_/object-optional-not-allowed/fixture.ts",
+            "line": 3,
+            "column": 4,
+            "message": "Expected `,` or `}` but found `?`"
+          },
+          {
+            "file": "packages/website/src/components/ast/DataRenderer.tsx",
+            "line": 154,
+            "column": 7,
+            "message": "Must use destructuring props assignment"
+          },
+          {
+            "file": "packages/website/src/components/typeDetails/TypeInfo.tsx",
+            "line": 57,
+            "column": 61,
+            "message": "Must use destructuring props assignment"
+          }
+        ]
+      },
+      "always-outside-signature": {
+        "count": 399,
+        "samples": [
+          {
+            "file": "packages/ast-spec/src/declaration/ClassDeclaration/fixtures/_error_/abstract-constructor/fixture.ts",
+            "line": 2,
+            "column": 12,
+            "message": "'abstract' modifier can only appear on a class, method, or property declaration."
+          },
+          {
+            "file": "packages/ast-spec/src/declaration/ImportDeclaration/fixtures/_error_/named-identifier-aliased-to-string-literal/fixture.ts",
+            "line": 1,
+            "column": 15,
+            "message": "Identifier expected."
+          },
+          {
+            "file": "packages/ast-spec/src/declaration/TSModuleDeclaration/fixtures/_error_/namespace-declare-no-body/fixture.ts",
+            "line": 1,
+            "column": 20,
+            "message": "Expected `{` but found `;`"
+          },
+          {
+            "file": "packages/ast-spec/src/declaration/VariableDeclaration/fixtures/_error_/let-id-definite-type-init/fixture.ts",
+            "line": 1,
+            "column": 8,
+            "message": "Declarations with initializers cannot also have definite assignment assertions."
+          },
+          {
+            "file": "packages/ast-spec/src/element/TSAbstractPropertyDefinition/fixtures/_error_/key-constructor-string/fixture.ts",
+            "line": 2,
+            "column": 3,
+            "message": "Classes can't have a field named 'constructor'"
+          },
+          {
+            "file": "packages/ast-spec/src/expression/ObjectExpression/fixtures/_error_/setter-modifier-protected/fixture.ts",
+            "line": 1,
+            "column": 3,
+            "message": "'protected' modifier cannot be used here."
+          },
+          {
+            "file": "packages/ast-spec/src/legacy-fixtures/errorRecovery/fixtures/_error_/decorator-on-variable/fixture.ts",
+            "line": 4,
+            "column": 1,
+            "message": "Unexpected token"
+          },
+          {
+            "file": "packages/ast-spec/src/legacy-fixtures/errorRecovery/fixtures/_error_/object-assertion-not-allowed/fixture.ts",
+            "line": 3,
+            "column": 4,
+            "message": "Expected `,` or `}` but found `!`"
+          },
+          {
+            "file": "packages/website/src/components/ast/DataRenderer.tsx",
+            "line": 150,
+            "column": 29,
+            "message": "Must use destructuring props assignment"
+          },
+          {
+            "file": "packages/website/src/components/typeDetails/TypeInfo.tsx",
+            "line": 57,
+            "column": 61,
+            "message": "Must use destructuring props assignment"
           }
         ]
       }

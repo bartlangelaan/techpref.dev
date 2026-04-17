@@ -4,6 +4,8 @@ export { consistentIndexedObjectStyleData } from "./consistent-indexed-object-st
 export { consistentTypeDefinitionsData } from "./consistent-type-definitions";
 export { consistentTypeImportsData } from "./consistent-type-imports";
 export { twoVsFourSpacesData } from "./2-spaces-vs-4-spaces";
+export { destructureInSignatureData } from "./destructure-in-signature";
+export { destructurePropsData } from "./destructure-props";
 export { funcStyleData } from "./func-style";
 export { namedVsDefaultExportsData } from "./named-vs-default-exports";
 export { semicolonsData } from "./semicolons";
@@ -16,6 +18,8 @@ import { consistentGenericConstructorsData } from "./consistent-generic-construc
 import { consistentIndexedObjectStyleData } from "./consistent-indexed-object-style";
 import { consistentTypeDefinitionsData } from "./consistent-type-definitions";
 import { consistentTypeImportsData } from "./consistent-type-imports";
+import { destructureInSignatureData } from "./destructure-in-signature";
+import { destructurePropsData } from "./destructure-props";
 import { funcStyleData } from "./func-style";
 import { namedVsDefaultExportsData } from "./named-vs-default-exports";
 import { semicolonsData } from "./semicolons";
@@ -34,4 +38,6 @@ export const allComparisons = [
   consistentGenericConstructorsData,
   namedVsDefaultExportsData,
   singleVsDoubleQuotesData,
+  destructurePropsData,
+  destructureInSignatureData,
 ];

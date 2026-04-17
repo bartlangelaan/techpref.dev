@@ -375,13 +375,9 @@ let repoAnalyzeInfo = await Promise.all(
       const analysis = loadAnalysis(repo.fullName);
 
       const remoteInfo = await getRemoteRepoInfo(repo.cloneUrl);
-      const analyzedCommitDate = analysis
-        ? new Date(analysis.analyzedCommitDate)
-        : null;
       const analyzedRecently =
-        analyzedCommitDate &&
-        !Number.isNaN(analyzedCommitDate.getTime()) &&
-        new Date().getTime() - analyzedCommitDate.getTime() <
+        !!analysis &&
+        new Date().getTime() - new Date(analysis.analyzedCommitDate).getTime() <
           ANALYSIS_COOLDOWN_MS;
 
       let analyseReason:
@@ -394,8 +390,11 @@ let repoAnalyzeInfo = await Promise.all(
         analyseReason = "no-analysis";
       } else if (analysis.analyzedVersion !== currentVersion) {
         analyseReason = "version-mismatch";
-      } else if (remoteInfo.latestCommit !== analysis.analyzedCommit) {
-        analyseReason = analyzedRecently ? false : "commit-mismatch";
+      } else if (
+        remoteInfo.latestCommit !== analysis.analyzedCommit &&
+        !analyzedRecently
+      ) {
+        analyseReason = "commit-mismatch";
       }
 
       const failingInfo = loadFailingInfo(repo.fullName);

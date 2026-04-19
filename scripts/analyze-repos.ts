@@ -405,11 +405,25 @@ let repoAnalyzeInfo = await Promise.all(
       }
 
       const failingInfo = loadFailingInfo(repo.fullName);
+      const failedRecently =
+        !!failingInfo &&
+        new Date().getTime() - new Date(failingInfo.failedAt).getTime() <
+          ANALYSIS_COOLDOWN_MS;
       const failing = !failingInfo
         ? false
         : failingInfo.failedCommit === remoteInfo.latestCommit
           ? ("current-commit" as const)
           : ("older-commit" as const);
+
+      // Skip failed analyses if:
+      // 1. The commit matches the failed commit (still on same commit that failed), OR
+      // 2. The commit is different but the failure was recent (within cooldown period)
+      if (
+        failing === "current-commit" ||
+        (failing === "older-commit" && failedRecently)
+      ) {
+        analyseReason = false;
+      }
 
       return {
         repo,
@@ -520,6 +534,7 @@ for (const { repo, fileCount, commit: repoCommit } of repoAnalyzeInfo) {
     // Save failing info so we deprioritize this repo in future runs
     saveFailingInfo(repo.fullName, {
       failedCommit: repoCommit,
+      failedAt: new Date().toISOString(),
     });
   }
 

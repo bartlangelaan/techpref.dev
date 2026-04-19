@@ -93,7 +93,7 @@ export function getBasicStats<V extends string>(
           samples: getSamples(result),
         }));
 
-      if (variants.length === 0) return null;
+      if (variants.length < 2) return null;
 
       const variantsByViolations = sortBy(variants, [(v) => v.count]);
 

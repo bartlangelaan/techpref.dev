@@ -9,6 +9,7 @@ import { importExportPreferenceChecks } from "./import-export-preference";
 import { indentChecks } from "./indent";
 import { quotesChecks } from "./quotes";
 import { reactDestructuringAssignmentChecks } from "./react-destructuring-assignment";
+import { reactFunctionComponentDefinitionChecks } from "./react-function-component-definition";
 import { semiChecks } from "./semi";
 
 /**
@@ -46,5 +47,6 @@ export const allRuleChecks: OxlintRuleCheck[] = [
   ...indentChecks,
   ...quotesChecks,
   ...reactDestructuringAssignmentChecks,
+  ...reactFunctionComponentDefinitionChecks,
   ...semiChecks,
 ];

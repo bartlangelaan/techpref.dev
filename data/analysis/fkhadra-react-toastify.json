@@ -1,42 +1,49 @@
 {
   "analyzedVersion": "09f4ce718368",
-  "analyzedCommit": "e1fa4760cea8adf28d5cf93cd14067a852b1f5c8",
-  "analyzedCommitDate": "2025-02-24T14:53:04.000Z",
+  "analyzedCommit": "769ce82f1c72cde5ee681068194adfa88a0c81c9",
+  "analyzedCommitDate": "2026-04-19T21:02:38.000Z",
   "checks": {
     "array-type": {
       "array": {
-        "count": 0,
-        "samples": []
+        "count": 1,
+        "samples": [
+          {
+            "file": "src/core/toast.cy.tsx",
+            "line": 122,
+            "column": 19,
+            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
+          }
+        ]
       },
       "generic": {
         "count": 11,
         "samples": [
           {
-            "file": "src/addons/use-notification-center/NotificationCenter.cy.tsx",
-            "line": 107,
+            "file": "packages/use-notification-center/src/NotificationCenter.cy.tsx",
+            "line": 112,
             "column": 25,
             "message": "Array type using 'NotificationCenterItem[]' is forbidden. Use 'Array<NotificationCenterItem>' instead."
           },
           {
-            "file": "src/addons/use-notification-center/useNotificationCenter.ts",
+            "file": "packages/use-notification-center/src/useNotificationCenter.ts",
             "line": 19,
             "column": 10,
             "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           },
           {
-            "file": "src/addons/use-notification-center/useNotificationCenter.ts",
+            "file": "packages/use-notification-center/src/useNotificationCenter.ts",
             "line": 53,
             "column": 18,
             "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           },
           {
-            "file": "src/addons/use-notification-center/useNotificationCenter.ts",
+            "file": "packages/use-notification-center/src/useNotificationCenter.ts",
             "line": 160,
             "column": 12,
             "message": "Array type using 'Id[]' is forbidden. Use 'Array<Id>' instead."
           },
           {
-            "file": "src/addons/use-notification-center/useNotificationCenter.ts",
+            "file": "packages/use-notification-center/src/useNotificationCenter.ts",
             "line": 184,
             "column": 54,
             "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
@@ -80,7 +87,7 @@
         "samples": []
       },
       "type-annotation": {
-        "count": 5,
+        "count": 6,
         "samples": [
           {
             "file": "src/core/containerObserver.ts",
@@ -104,6 +111,12 @@
             "file": "src/core/store.ts",
             "line": 26,
             "column": 26,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "src/hooks/useStyleSheet.ts",
+            "line": 3,
+            "column": 32,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
@@ -144,7 +157,7 @@
           },
           {
             "file": "src/types.ts",
-            "line": 352,
+            "line": 359,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           }
@@ -160,14 +173,14 @@
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "playground/src/components/ContainerCode.tsx",
-            "line": 17,
+            "file": "packages/use-notification-center/src/useNotificationCenter.ts",
+            "line": 15,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "src/addons/use-notification-center/useNotificationCenter.ts",
-            "line": 6,
+            "file": "playground/src/components/ContainerCode.tsx",
+            "line": 17,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
@@ -203,7 +216,7 @@
           },
           {
             "file": "src/types.ts",
-            "line": 319,
+            "line": 326,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
@@ -221,16 +234,16 @@
         "count": 32,
         "samples": [
           {
-            "file": "playground/src/components/App.tsx",
-            "line": 9,
+            "file": "packages/use-notification-center/src/NotificationCenter.cy.tsx",
+            "line": 4,
             "column": 1,
-            "message": "Imports ContainerCodeProps are only used as type."
+            "message": "Imports NotificationCenterItem and UseNotificationCenterParams are only used as type."
           },
           {
-            "file": "playground/src/components/ContainerCode.tsx",
-            "line": 2,
+            "file": "playground/src/components/App.tsx",
+            "line": 12,
             "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
+            "message": "Imports ToastCodeProps are only used as type."
           },
           {
             "file": "src/components/CloseButton.tsx",
@@ -283,17 +296,24 @@
         ]
       },
       "no-type-imports": {
-        "count": 0,
-        "samples": []
+        "count": 1,
+        "samples": [
+          {
+            "file": "src/components/StyledToastContainer.tsx",
+            "line": 5,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          }
+        ]
       }
     },
     "func-style": {
       "expression": {
-        "count": 53,
+        "count": 54,
         "samples": [
           {
-            "file": "playground/src/components/ContainerCode.tsx",
-            "line": 4,
+            "file": "packages/use-notification-center/src/NotificationCenter.cy.tsx",
+            "line": 6,
             "column": 1,
             "message": "Expected a function expression."
           },
@@ -311,7 +331,7 @@
           },
           {
             "file": "src/components/ToastContainer.tsx",
-            "line": 92,
+            "line": 93,
             "column": 5,
             "message": "Expected a function expression."
           },
@@ -322,20 +342,20 @@
             "message": "Expected a function expression."
           },
           {
+            "file": "src/core/toast.cy.tsx",
+            "line": 376,
+            "column": 5,
+            "message": "Expected a function expression."
+          },
+          {
             "file": "src/core/toast.ts",
-            "line": 20,
+            "line": 71,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "src/hooks/useToast.ts",
-            "line": 16,
-            "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/hooks/useToast.ts",
-            "line": 98,
+            "line": 99,
             "column": 3,
             "message": "Expected a function expression."
           },
@@ -354,24 +374,24 @@
         ]
       },
       "declaration": {
-        "count": 46,
+        "count": 47,
         "samples": [
           {
-            "file": "playground/src/components/Checkbox.tsx",
-            "line": 10,
-            "column": 14,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "src/addons/use-notification-center/useNotificationCenter.ts",
+            "file": "packages/use-notification-center/src/useNotificationCenter.ts",
             "line": 219,
             "column": 9,
             "message": "Expected a function declaration."
           },
           {
-            "file": "src/addons/use-notification-center/useNotificationCenter.ts",
+            "file": "packages/use-notification-center/src/useNotificationCenter.ts",
             "line": 252,
             "column": 9,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "playground/src/components/ContainerCode.tsx",
+            "line": 22,
+            "column": 14,
             "message": "Expected a function declaration."
           },
           {
@@ -388,13 +408,13 @@
           },
           {
             "file": "src/core/containerObserver.ts",
-            "line": 57,
+            "line": 71,
             "column": 9,
             "message": "Expected a function declaration."
           },
           {
             "file": "src/core/store.ts",
-            "line": 28,
+            "line": 30,
             "column": 7,
             "message": "Expected a function declaration."
           },
@@ -437,20 +457,20 @@
           },
           {
             "file": "tsup.config.ts",
-            "line": 39,
+            "line": 29,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
             "file": "vite.config.mts",
-            "line": 6,
+            "line": 5,
             "column": 8,
             "message": "Prefer named exports"
           }
         ]
       },
       "default": {
-        "count": 10,
+        "count": 12,
         "samples": [
           {
             "file": "playground/src/components/App.tsx",
@@ -471,8 +491,8 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "playground/src/components/Radio.tsx",
-            "line": 10,
+            "file": "src/components/StyledToastContainer.tsx",
+            "line": 7,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -521,7 +541,7 @@
         "samples": []
       },
       "4-space": {
-        "count": 41,
+        "count": 45,
         "samples": [
           {
             "file": "cypress.config.ts",
@@ -530,26 +550,26 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "playground/src/components/App.tsx",
-            "line": 24,
+            "file": "playground/.eslintrc.cjs",
+            "line": 2,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "playground/src/components/ToastCode.tsx",
-            "line": 6,
+            "file": "playground/src/components/Radio.tsx",
+            "line": 4,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/addons/use-notification-center/NotificationCenter.cy.tsx",
-            "line": 7,
+            "file": "src/components/CloseButton.cy.tsx",
+            "line": 5,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/components/Icons.tsx",
-            "line": 10,
+            "file": "src/components/ProgressBar.tsx",
+            "line": 11,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -567,26 +587,26 @@
           },
           {
             "file": "src/index.ts",
-            "line": 9,
+            "line": 8,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/utils/cssTransition.tsx",
-            "line": 11,
+            "file": "src/utils/constant.ts",
+            "line": 2,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
             "file": "vite.config.mts",
-            "line": 7,
+            "line": 6,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           }
         ]
       },
       "tab": {
-        "count": 41,
+        "count": 45,
         "samples": [
           {
             "file": "cypress.config.ts",
@@ -595,26 +615,26 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "playground/src/components/App.tsx",
-            "line": 24,
+            "file": "playground/.eslintrc.cjs",
+            "line": 2,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "playground/src/components/ToastCode.tsx",
-            "line": 6,
+            "file": "playground/src/components/Radio.tsx",
+            "line": 4,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/addons/use-notification-center/NotificationCenter.cy.tsx",
-            "line": 7,
+            "file": "src/components/CloseButton.cy.tsx",
+            "line": 5,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/components/Icons.tsx",
-            "line": 10,
+            "file": "src/components/ProgressBar.tsx",
+            "line": 11,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -632,19 +652,19 @@
           },
           {
             "file": "src/index.ts",
-            "line": 9,
+            "line": 8,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/utils/cssTransition.tsx",
-            "line": 11,
+            "file": "src/utils/constant.ts",
+            "line": 2,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
             "file": "vite.config.mts",
-            "line": 7,
+            "line": 6,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           }
@@ -653,7 +673,7 @@
     },
     "quotes": {
       "double": {
-        "count": 969,
+        "count": 1047,
         "samples": [
           {
             "file": "cypress.config.ts",
@@ -662,51 +682,51 @@
             "message": "Strings must use doublequote."
           },
           {
-            "file": "playground/src/components/constants.ts",
-            "line": 26,
-            "column": 12,
+            "file": "playground/src/components/App.tsx",
+            "line": 91,
+            "column": 28,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/components/CloseButton.cy.tsx",
-            "line": 10,
-            "column": 19,
+            "file": "src/components/Icons.cy.tsx",
+            "line": 7,
+            "column": 9,
             "message": "Strings must use doublequote."
           },
           {
             "file": "src/components/Toast.cy.tsx",
             "line": 35,
-            "column": 15,
+            "column": 28,
             "message": "Strings must use doublequote."
           },
           {
             "file": "src/components/Toast.tsx",
-            "line": 5,
+            "line": 7,
+            "column": 29,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "src/core/toast.cy.tsx",
+            "line": 132,
+            "column": 19,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "src/core/toast.cy.tsx",
+            "line": 341,
             "column": 28,
             "message": "Strings must use doublequote."
           },
           {
             "file": "src/core/toast.cy.tsx",
-            "line": 109,
-            "column": 32,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "src/core/toast.cy.tsx",
-            "line": 300,
-            "column": 6,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "src/core/toast.cy.tsx",
-            "line": 615,
-            "column": 45,
+            "line": 665,
+            "column": 19,
             "message": "Strings must use doublequote."
           },
           {
             "file": "src/tests.cy.tsx",
-            "line": 13,
-            "column": 22,
+            "line": 38,
+            "column": 17,
             "message": "Strings must use doublequote."
           },
           {
@@ -718,7 +738,7 @@
         ]
       },
       "single": {
-        "count": 7,
+        "count": 8,
         "samples": [
           {
             "file": "playground/src/components/ContainerCode.tsx",
@@ -760,6 +780,12 @@
             "file": "playground/src/components/ToastCode.tsx",
             "line": 87,
             "column": 13,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "src/core/toast.cy.tsx",
+            "line": 121,
+            "column": 6,
             "message": "Strings must use singlequote."
           }
         ]
@@ -832,7 +858,7 @@
         ]
       },
       "always-in-signature": {
-        "count": 31,
+        "count": 32,
         "samples": [
           {
             "file": "playground/src/components/App.tsx",
@@ -860,7 +886,7 @@
           },
           {
             "file": "playground/src/components/App.tsx",
-            "line": 89,
+            "line": 90,
             "column": 7,
             "message": "Must use destructuring state assignment"
           },
@@ -872,20 +898,20 @@
           },
           {
             "file": "playground/src/components/App.tsx",
-            "line": 150,
+            "line": 152,
+            "column": 31,
+            "message": "Must use destructuring state assignment"
+          },
+          {
+            "file": "playground/src/components/App.tsx",
+            "line": 187,
             "column": 28,
             "message": "Must use destructuring state assignment"
           },
           {
             "file": "playground/src/components/App.tsx",
-            "line": 173,
-            "column": 94,
-            "message": "Must use destructuring state assignment"
-          },
-          {
-            "file": "playground/src/components/App.tsx",
             "line": 254,
-            "column": 22,
+            "column": 60,
             "message": "Must use destructuring state assignment"
           },
           {
@@ -897,7 +923,7 @@
         ]
       },
       "always-outside-signature": {
-        "count": 31,
+        "count": 32,
         "samples": [
           {
             "file": "playground/src/components/App.tsx",
@@ -925,7 +951,7 @@
           },
           {
             "file": "playground/src/components/App.tsx",
-            "line": 89,
+            "line": 90,
             "column": 7,
             "message": "Must use destructuring state assignment"
           },
@@ -937,20 +963,20 @@
           },
           {
             "file": "playground/src/components/App.tsx",
-            "line": 150,
+            "line": 152,
+            "column": 31,
+            "message": "Must use destructuring state assignment"
+          },
+          {
+            "file": "playground/src/components/App.tsx",
+            "line": 187,
             "column": 28,
             "message": "Must use destructuring state assignment"
           },
           {
             "file": "playground/src/components/App.tsx",
-            "line": 173,
-            "column": 94,
-            "message": "Must use destructuring state assignment"
-          },
-          {
-            "file": "playground/src/components/App.tsx",
             "line": 254,
-            "column": 22,
+            "column": 60,
             "message": "Must use destructuring state assignment"
           },
           {
@@ -993,7 +1019,7 @@
         ]
       },
       "never": {
-        "count": 1131,
+        "count": 1217,
         "samples": [
           {
             "file": "cypress.config.ts",
@@ -1002,56 +1028,56 @@
             "message": "Extra semicolon."
           },
           {
-            "file": "src/addons/use-notification-center/NotificationCenter.cy.tsx",
-            "line": 149,
-            "column": 45,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "src/components/Icons.tsx",
-            "line": 86,
-            "column": 27,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "src/components/Toast.cy.tsx",
-            "line": 237,
-            "column": 44,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "src/core/containerObserver.ts",
-            "line": 32,
-            "column": 4,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "src/core/toast.cy.tsx",
-            "line": 19,
+            "file": "playground/src/components/App.tsx",
+            "line": 10,
             "column": 34,
             "message": "Extra semicolon."
           },
           {
+            "file": "src/components/ProgressBar.cy.tsx",
+            "line": 51,
+            "column": 50,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "src/components/Toast.cy.tsx",
+            "line": 248,
+            "column": 8,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "src/core/containerObserver.ts",
+            "line": 26,
+            "column": 38,
+            "message": "Extra semicolon."
+          },
+          {
             "file": "src/core/toast.cy.tsx",
-            "line": 339,
-            "column": 35,
+            "line": 26,
+            "column": 29,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "src/core/toast.cy.tsx",
+            "line": 371,
+            "column": 49,
             "message": "Extra semicolon."
           },
           {
             "file": "src/core/toast.ts",
-            "line": 28,
+            "line": 40,
             "column": 30,
             "message": "Extra semicolon."
           },
           {
             "file": "src/hooks/useToastContainer.ts",
-            "line": 18,
-            "column": 39,
+            "line": 15,
+            "column": 46,
             "message": "Extra semicolon."
           },
           {
             "file": "vite.config.mts",
-            "line": 14,
+            "line": 13,
             "column": 3,
             "message": "Extra semicolon."
           }

@@ -81,6 +81,7 @@ export const REPOS_DIR = join(process.cwd(), "repos");
  */
 export interface FailingAnalysisInfo {
   failedCommit: string;
+  failedAt: string;
 }
 
 /**

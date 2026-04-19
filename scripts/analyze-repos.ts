@@ -405,11 +405,22 @@ let repoAnalyzeInfo = await Promise.all(
       }
 
       const failingInfo = loadFailingInfo(repo.fullName);
+      const failedCommitMatches =
+        !!failingInfo && failingInfo.failedCommit === remoteInfo.latestCommit;
+      const failedRecently =
+        !!failingInfo &&
+        failedCommitMatches &&
+        new Date().getTime() - new Date(failingInfo.failedAt).getTime() <
+          ANALYSIS_COOLDOWN_MS;
       const failing = !failingInfo
         ? false
-        : failingInfo.failedCommit === remoteInfo.latestCommit
+        : failedCommitMatches
           ? ("current-commit" as const)
           : ("older-commit" as const);
+
+      if (failedRecently) {
+        analyseReason = false;
+      }
 
       return {
         repo,
@@ -417,16 +428,25 @@ let repoAnalyzeInfo = await Promise.all(
         remoteInfo,
         failing,
         commit: remoteInfo.latestCommit,
+        failedRecently,
         fileCount: 0, // Placeholder, will be filled later
       };
     }),
 );
 
 let prevCount = data.repositories.length;
-repoAnalyzeInfo = repoAnalyzeInfo.filter((i) => i.analyseReason);
-console.log(
-  `Completely up-to-date analysis: ${prevCount - repoAnalyzeInfo.length}`,
+const failedRecentlyCount = repoAnalyzeInfo.filter(
+  (i) => i.failedRecently,
+).length;
+repoAnalyzeInfo = repoAnalyzeInfo.filter(
+  (i) => i.analyseReason && !i.failedRecently,
 );
+console.log(
+  `Completely up-to-date analysis or within cooldown: ${prevCount - repoAnalyzeInfo.length}`,
+);
+if (failedRecentlyCount > 0) {
+  console.log(`  - Within failure cooldown: ${failedRecentlyCount}`);
+}
 
 if (repoAnalyzeInfo.length === 0) {
   console.log("\nNo repositories to analyze.");
@@ -520,6 +540,7 @@ for (const { repo, fileCount, commit: repoCommit } of repoAnalyzeInfo) {
     // Save failing info so we deprioritize this repo in future runs
     saveFailingInfo(repo.fullName, {
       failedCommit: repoCommit,
+      failedAt: new Date().toISOString(),
     });
   }
 

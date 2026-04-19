@@ -23,9 +23,7 @@ export function getDestructureInSignatureData(): ComparisonData {
 
   const inSignaturePercent =
     destructuringVerdicts > 0
-      ? Math.round(
-          (inSignatureVerdicts.length / destructuringVerdicts) * 100,
-        )
+      ? Math.round((inSignatureVerdicts.length / destructuringVerdicts) * 100)
       : 0;
   const outsideSignaturePercent =
     destructuringVerdicts > 0

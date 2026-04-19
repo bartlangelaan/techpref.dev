@@ -80,8 +80,6 @@ export const REPOS_DIR = join(process.cwd(), "repos");
  * Information about a failed analysis attempt.
  */
 export interface FailingAnalysisInfo {
-  failedCommit: string;
-  failedAt: string;
   analyzedVersion: string;
   analyzedCommit: string;
   analyzedCommitDate: string;

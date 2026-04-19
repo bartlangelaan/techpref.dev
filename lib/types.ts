@@ -78,10 +78,9 @@ export const REPOS_DIR = join(process.cwd(), "repos");
 
 /**
  * Information about a failed analysis attempt.
+ * Uses the same metadata as AnalysisResult but without the checks.
  */
-export interface FailingAnalysisInfo {
-  failedCommit: string;
-}
+export type FailingAnalysisInfo = Omit<AnalysisResult, "checks">;
 
 /**
  * Convert a repository fullName to its analysis file name.

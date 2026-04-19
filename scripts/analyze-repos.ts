@@ -379,12 +379,17 @@ let repoAnalyzeInfo = await Promise.all(
   data.repositories
     .filter((repo) => !args.repo || repo.fullName === args.repo)
     .map(async (repo) => {
+      // Load either successful analysis or failing info - they have the same structure
       const analysis = loadAnalysis(repo.fullName);
+      const failingInfo = loadFailingInfo(repo.fullName);
+
+      // Use successful analysis if available, otherwise use failing info
+      const lastAnalysis = analysis || failingInfo;
 
       const remoteInfo = await getRemoteRepoInfo(repo.cloneUrl);
       const analyzedRecently =
-        !!analysis &&
-        new Date().getTime() - new Date(analysis.analyzedCommitDate).getTime() <
+        !!lastAnalysis &&
+        new Date().getTime() - new Date(lastAnalysis.analyzedCommitDate).getTime() <
           ANALYSIS_COOLDOWN_MS;
 
       let analyseReason:
@@ -393,29 +398,22 @@ let repoAnalyzeInfo = await Promise.all(
         | "commit-mismatch"
         | false = false;
 
-      if (!analysis) {
+      if (!lastAnalysis) {
         analyseReason = "no-analysis";
-      } else if (analysis.analyzedVersion !== currentVersion) {
+      } else if (lastAnalysis.analyzedVersion !== currentVersion) {
         analyseReason = "version-mismatch";
       } else if (
-        remoteInfo.latestCommit !== analysis.analyzedCommit &&
+        remoteInfo.latestCommit !== lastAnalysis.analyzedCommit &&
         !analyzedRecently
       ) {
         analyseReason = "commit-mismatch";
       }
 
-      const failingInfo = loadFailingInfo(repo.fullName);
-      const failing = !failingInfo
-        ? false
-        : failingInfo.failedCommit === remoteInfo.latestCommit
-          ? ("current-commit" as const)
-          : ("older-commit" as const);
-
       return {
         repo,
         analyseReason,
         remoteInfo,
-        failing,
+        failing: !!failingInfo && !analysis, // Only mark as failing if there's no successful analysis
         commit: remoteInfo.latestCommit,
         fileCount: 0, // Placeholder, will be filled later
       };
@@ -457,8 +455,8 @@ await Promise.all(
 console.log("Done counting source files, now sorting...");
 
 repoAnalyzeInfo = sortBy(repoAnalyzeInfo, [
-  // Run failing repos last, especially if current commit matches failed commit
-  (i) => (!i.failing ? 0 : i.failing === "older-commit" ? 1 : 2),
+  // Run failing repos last
+  (i) => (i.failing ? 1 : 0),
   (i) =>
     i.analyseReason === "no-analysis"
       ? 0
@@ -477,7 +475,7 @@ const startTime = new Date().getTime();
 let timeSinceLastPush = new Date().getTime();
 
 let completed = 0;
-for (const { repo, fileCount, commit: repoCommit } of repoAnalyzeInfo) {
+for (const { repo, fileCount } of repoAnalyzeInfo) {
   if (ghAction && new Date().getTime() - startTime > 55 * 60 * 1000) {
     console.log(
       `Passed the 55 minute mark, stopping analysis. Completed ${completed}/${repoAnalyzeInfo.length} repositories.`,
@@ -517,9 +515,18 @@ for (const { repo, fileCount, commit: repoCommit } of repoAnalyzeInfo) {
     // Pull before saving anything.
     if (ghAction) await pullRebase(process.cwd());
 
+    // Get commit info for the failed analysis
+    const repoPath = join(REPOS_DIR, repo.fullName);
+    const [analyzedCommit, analyzedCommitDate] = await Promise.all([
+      getCheckoutCommit(repoPath),
+      getCommitDate(repoPath),
+    ]);
+
     // Save failing info so we deprioritize this repo in future runs
     saveFailingInfo(repo.fullName, {
-      failedCommit: repoCommit,
+      analyzedVersion: currentVersion,
+      analyzedCommit,
+      analyzedCommitDate,
     });
   }
 

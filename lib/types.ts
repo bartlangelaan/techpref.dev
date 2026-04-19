@@ -84,9 +84,10 @@ export type FailingAnalysisInfo = Omit<AnalysisResult, "checks">;
 
 /**
  * Convert a repository fullName to its analysis file name.
+ * Uses lowercase to avoid git case-sensitivity issues.
  */
 export function getAnalysisFileName(fullName: string): string {
-  return fullName.replace("/", "-") + ".json";
+  return fullName.replace("/", "-").toLowerCase() + ".json";
 }
 
 /**

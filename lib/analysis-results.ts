@@ -60,15 +60,15 @@ export function getBasicStats<V extends string>(
 
   type PV = V | "mixed";
   const variants: V[] = [];
-  for (const repo of repos) {
-    const rule = repo.analysis?.checks[ruleId];
-    if (rule) {
-      const keys = Object.keys(rule) as V[];
-      const filtered = variantFilter
-        ? keys.filter((k) => variantFilter.includes(k))
-        : keys;
-      variants.push(...filtered);
-      break;
+  if (variantFilter) {
+    variants.push(...variantFilter);
+  } else {
+    for (const repo of repos) {
+      const rule = repo.analysis?.checks[ruleId];
+      if (rule) {
+        variants.push(...(Object.keys(rule) as V[]));
+        break;
+      }
     }
   }
   const possibleVerdicts = [...variants, "mixed"] as PV[];

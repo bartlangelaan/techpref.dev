@@ -411,7 +411,7 @@ let repoAnalyzeInfo = await Promise.all(
           ANALYSIS_COOLDOWN_MS;
       const failing = !failingInfo
         ? false
-        : failingInfo.failedCommit === remoteInfo.latestCommit
+        : failingInfo.analyzedCommit === remoteInfo.latestCommit
           ? ("current-commit" as const)
           : ("older-commit" as const);
 
@@ -531,9 +531,18 @@ for (const { repo, fileCount, commit: repoCommit } of repoAnalyzeInfo) {
     // Pull before saving anything.
     if (ghAction) await pullRebase(process.cwd());
 
+    // Get commit info for the failed analysis
+    const repoPath = join(REPOS_DIR, repo.fullName);
+    const [analyzedCommit, analyzedCommitDate] = await Promise.all([
+      getCheckoutCommit(repoPath),
+      getCommitDate(repoPath),
+    ]);
+
     // Save failing info so we deprioritize this repo in future runs
     saveFailingInfo(repo.fullName, {
-      failedCommit: repoCommit,
+      analyzedVersion: currentVersion,
+      analyzedCommit,
+      analyzedCommitDate,
       failedAt: new Date().toISOString(),
     });
   }

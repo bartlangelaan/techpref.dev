@@ -475,7 +475,7 @@ const startTime = new Date().getTime();
 let timeSinceLastPush = new Date().getTime();
 
 let completed = 0;
-for (const { repo, fileCount, commit: repoCommit } of repoAnalyzeInfo) {
+for (const { repo, fileCount } of repoAnalyzeInfo) {
   if (ghAction && new Date().getTime() - startTime > 55 * 60 * 1000) {
     console.log(
       `Passed the 55 minute mark, stopping analysis. Completed ${completed}/${repoAnalyzeInfo.length} repositories.`,

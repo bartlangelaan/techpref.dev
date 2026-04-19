@@ -83,7 +83,6 @@ export interface FailingAnalysisInfo {
   analyzedVersion: string;
   analyzedCommit: string;
   analyzedCommitDate: string;
-  failedAt: string;
 }
 
 /**

@@ -407,7 +407,7 @@ let repoAnalyzeInfo = await Promise.all(
       const failingInfo = loadFailingInfo(repo.fullName);
       const failedRecently =
         !!failingInfo &&
-        new Date().getTime() - new Date(failingInfo.failedAt).getTime() <
+        new Date().getTime() - new Date(failingInfo.analyzedCommitDate).getTime() <
           ANALYSIS_COOLDOWN_MS;
       const failing = !failingInfo
         ? false
@@ -543,7 +543,6 @@ for (const { repo, fileCount, commit: repoCommit } of repoAnalyzeInfo) {
       analyzedVersion: currentVersion,
       analyzedCommit,
       analyzedCommitDate,
-      failedAt: new Date().toISOString(),
     });
   }
 

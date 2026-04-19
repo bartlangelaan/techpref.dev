@@ -19,6 +19,16 @@ export const reactDestructuringAssignmentChecks: OxlintRuleCheck[] = [
   },
   {
     ruleId: "react-destructuring-assignment",
+    variant: "always",
+    oxlintConfig: {
+      rule: "react-js/destructuring-assignment",
+      config: ["error", "always", { destructureInSignature: "ignore" }],
+      plugins: [],
+      jsPlugins: [{ name: "react-js", specifier: "eslint-plugin-react" }],
+    },
+  },
+  {
+    ruleId: "react-destructuring-assignment",
     variant: "always-in-signature",
     oxlintConfig: {
       rule: "react-js/destructuring-assignment",

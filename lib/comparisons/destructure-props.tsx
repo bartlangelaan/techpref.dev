@@ -3,25 +3,17 @@ import type { ComparisonData } from "@/components/comparison";
 import { getBasicStats } from "@/lib/analysis-results";
 
 export function getDestructurePropsData(): ComparisonData {
-  const stats = getBasicStats<
-    "never" | "always-in-signature" | "always-outside-signature"
-  >("react-destructuring-assignment");
+  const stats = getBasicStats<"never" | "always">(
+    "react-destructuring-assignment",
+    ["never", "always"],
+  );
 
   const neverVerdicts = stats.verdicts.never ?? [];
-  const inSignatureVerdicts = stats.verdicts["always-in-signature"] ?? [];
-  const outsideSignatureVerdicts =
-    stats.verdicts["always-outside-signature"] ?? [];
+  const alwaysVerdicts = stats.verdicts.always ?? [];
   const mixedVerdicts = stats.verdicts.mixed ?? [];
 
-  const destructureVerdicts = [
-    ...inSignatureVerdicts,
-    ...outsideSignatureVerdicts,
-  ];
-
-  const destructureRepos = [
-    ...(stats.verdictRepositories["always-in-signature"] ?? []),
-    ...(stats.verdictRepositories["always-outside-signature"] ?? []),
-  ];
+  const destructureVerdicts = alwaysVerdicts;
+  const destructureRepos = stats.verdictRepositories.always ?? [];
 
   const definiteVerdicts = destructureVerdicts.length + neverVerdicts.length;
   const destructurePercent =

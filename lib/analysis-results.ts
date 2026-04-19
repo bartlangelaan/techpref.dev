@@ -51,7 +51,10 @@ function getSamples(
 }
 
 /** Get basic statistics */
-export function getBasicStats<V extends string>(ruleId: string) {
+export function getBasicStats<V extends string>(
+  ruleId: string,
+  variantFilter?: V[],
+) {
   const data = getDataWithAnalysis();
   const repos = data.repositories.filter((r) => r.analysis !== null);
 
@@ -60,7 +63,11 @@ export function getBasicStats<V extends string>(ruleId: string) {
   for (const repo of repos) {
     const rule = repo.analysis?.checks[ruleId];
     if (rule) {
-      variants.push(...(Object.keys(rule) as V[]));
+      const keys = Object.keys(rule) as V[];
+      const filtered = variantFilter
+        ? keys.filter((k) => variantFilter.includes(k))
+        : keys;
+      variants.push(...filtered);
       break;
     }
   }
@@ -78,11 +85,15 @@ export function getBasicStats<V extends string>(ruleId: string) {
       const rule = repo.analysis?.checks[ruleId];
       if (!rule) return null;
 
-      const variants = Object.entries(rule).map(([name, result]) => ({
-        name: name as V,
-        count: getCount(result),
-        samples: getSamples(result),
-      }));
+      const variants = Object.entries(rule)
+        .filter(([name]) => !variantFilter || variantFilter.includes(name as V))
+        .map(([name, result]) => ({
+          name: name as V,
+          count: getCount(result),
+          samples: getSamples(result),
+        }));
+
+      if (variants.length === 0) return null;
 
       const variantsByViolations = sortBy(variants, [(v) => v.count]);
 

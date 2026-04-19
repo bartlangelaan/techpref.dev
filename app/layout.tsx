@@ -5,9 +5,6 @@ import { GeistSans } from "geist/font/sans";
 
 export const dynamic = "error";
 
-const geistSans = GeistSans;
-const geistMono = GeistMono;
-
 const siteUrl = "https://techpref.dev";
 
 export const metadata: Metadata = {
@@ -61,7 +58,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${GeistSans.variable} ${GeistMono.variable} antialiased`}
       >
         {children}
       </body>

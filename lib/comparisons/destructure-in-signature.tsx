@@ -5,7 +5,11 @@ import { getBasicStats } from "@/lib/analysis-results";
 export function getDestructureInSignatureData(): ComparisonData {
   const stats = getBasicStats<
     "never" | "always-in-signature" | "always-outside-signature"
-  >("react-destructuring-assignment");
+  >("react-destructuring-assignment", [
+    "never",
+    "always-in-signature",
+    "always-outside-signature",
+  ]);
 
   const neverVerdicts = stats.verdicts.never ?? [];
   const inSignatureVerdicts = stats.verdicts["always-in-signature"] ?? [];

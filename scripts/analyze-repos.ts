@@ -515,9 +515,15 @@ for (const { repo, fileCount, commit: repoCommit } of repoAnalyzeInfo) {
     `[${completed + 1}/${repoAnalyzeInfo.length}] Analyzing ${repo.fullName}${fileCount > 0 ? ` (${fileCount} files)` : ""}...`,
   );
 
+  const repoPath = join(REPOS_DIR, repo.fullName);
+  let analyzedCommit = repoCommit;
+  let analyzedCommitDate: string | null = null;
+
   try {
     console.log("  Checking out repository...");
     await checkoutRepository(repo);
+    analyzedCommit = await getCheckoutCommit(repoPath);
+    analyzedCommitDate = await getCommitDate(repoPath);
     const result = await analyzeRepository(repo, currentVersion);
 
     // Pull before saving anything.
@@ -539,8 +545,11 @@ for (const { repo, fileCount, commit: repoCommit } of repoAnalyzeInfo) {
 
     // Save failing info so we deprioritize this repo in future runs
     saveFailingInfo(repo.fullName, {
-      failedCommit: repoCommit,
+      failedCommit: analyzedCommit,
       failedAt: new Date().toISOString(),
+      analyzedVersion: currentVersion,
+      analyzedCommit,
+      analyzedCommitDate: analyzedCommitDate ?? new Date().toISOString(),
     });
   }
 

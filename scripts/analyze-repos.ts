@@ -375,16 +375,26 @@ if (!data) {
 
 console.log(`Total repositories: ${data.repositories.length}`);
 
+type AnalyzedMeta = Pick<
+  AnalysisResult,
+  "analyzedVersion" | "analyzedCommit" | "analyzedCommitDate"
+>;
+
 let repoAnalyzeInfo = await Promise.all(
   data.repositories
     .filter((repo) => !args.repo || repo.fullName === args.repo)
     .map(async (repo) => {
       const analysis = loadAnalysis(repo.fullName);
+      const failingInfo = loadFailingInfo(repo.fullName);
 
       const remoteInfo = await getRemoteRepoInfo(repo.cloneUrl);
+      const latestAttempt: AnalyzedMeta | null =
+        analysis ?? failingInfo ?? null;
       const analyzedRecently =
-        !!analysis &&
-        new Date().getTime() - new Date(analysis.analyzedCommitDate).getTime() <
+        !!latestAttempt &&
+        latestAttempt.analyzedVersion === currentVersion &&
+        new Date().getTime() -
+          new Date(latestAttempt.analyzedCommitDate).getTime() <
           ANALYSIS_COOLDOWN_MS;
 
       let analyseReason:
@@ -393,18 +403,17 @@ let repoAnalyzeInfo = await Promise.all(
         | "commit-mismatch"
         | false = false;
 
-      if (!analysis) {
+      if (!latestAttempt) {
         analyseReason = "no-analysis";
-      } else if (analysis.analyzedVersion !== currentVersion) {
+      } else if (latestAttempt.analyzedVersion !== currentVersion) {
         analyseReason = "version-mismatch";
       } else if (
-        remoteInfo.latestCommit !== analysis.analyzedCommit &&
+        remoteInfo.latestCommit !== latestAttempt.analyzedCommit &&
         !analyzedRecently
       ) {
         analyseReason = "commit-mismatch";
       }
 
-      const failingInfo = loadFailingInfo(repo.fullName);
       const failedCommitMatches =
         !!failingInfo && failingInfo.analyzedCommit === remoteInfo.latestCommit;
       const failedRecently =
@@ -440,9 +449,7 @@ let prevCount = data.repositories.length;
 const failedRecentlyCount = repoAnalyzeInfo.filter(
   (i) => i.failedRecently,
 ).length;
-repoAnalyzeInfo = repoAnalyzeInfo.filter(
-  (i) => i.analyseReason && !i.failedRecently,
-);
+repoAnalyzeInfo = repoAnalyzeInfo.filter((i) => i.analyseReason);
 console.log(
   `Completely up-to-date analysis or within cooldown: ${prevCount - repoAnalyzeInfo.length}`,
 );

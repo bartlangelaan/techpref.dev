@@ -1,5 +1,5 @@
 {
-  "analyzedVersion": "09f4ce718368",
+  "analyzedVersion": "839860ca7673",
   "analyzedCommit": "6a5bbc6005c5d898156f7d03218dc8318bc5e6b3",
   "analyzedCommitDate": "2026-04-15T02:39:29.000Z",
   "checks": {
@@ -1064,6 +1064,10 @@
           }
         ]
       },
+      "always": {
+        "count": 0,
+        "samples": []
+      },
       "always-in-signature": {
         "count": 0,
         "samples": []
@@ -1071,6 +1075,59 @@
       "always-outside-signature": {
         "count": 0,
         "samples": []
+      }
+    },
+    "react-function-component-definition": {
+      "function-declaration": {
+        "count": 1,
+        "samples": [
+          {
+            "file": "examples/next-simple-chat/src/utils/chat_component.tsx",
+            "line": 5,
+            "column": 23,
+            "message": "Function component is not a function declaration"
+          }
+        ]
+      },
+      "arrow-function": {
+        "count": 3,
+        "samples": [
+          {
+            "file": "examples/next-simple-chat/src/pages/_app.tsx",
+            "line": 4,
+            "column": 16,
+            "message": "Function component is not an arrow function"
+          },
+          {
+            "file": "examples/next-simple-chat/src/pages/_document.tsx",
+            "line": 3,
+            "column": 16,
+            "message": "Function component is not an arrow function"
+          },
+          {
+            "file": "examples/next-simple-chat/src/pages/index.tsx",
+            "line": 10,
+            "column": 16,
+            "message": "Function component is not an arrow function"
+          }
+        ]
+      }
+    },
+    "react-jsx-fragments": {
+      "syntax": {
+        "count": 0,
+        "samples": []
+      },
+      "element": {
+        "count": 1,
+        "samples": [
+          {
+            "file": "examples/next-simple-chat/src/pages/index.tsx",
+            "line": 12,
+            "column": 5,
+            "message": "Prefer React.Fragment over fragment shorthand"
+          }
+        ]
       }
     },
     "semi": {

@@ -1,7 +1,7 @@
 {
-  "analyzedVersion": "09f4ce718368",
-  "analyzedCommit": "fedf9bee96d1aa9c7f6e4208b648b955ed42a7cf",
-  "analyzedCommitDate": "2026-04-17T21:33:28.000Z",
+  "analyzedVersion": "839860ca7673",
+  "analyzedCommit": "142deb69129e244e6f296dcc196fdeb15a0e17ea",
+  "analyzedCommitDate": "2026-04-19T07:00:38.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -16,30 +16,12 @@
         ]
       },
       "generic": {
-        "count": 39,
+        "count": 25,
         "samples": [
           {
-            "file": "apps/www/src/features/editor/views/GraphView/lib/jsonParser.ts",
-            "line": 11,
-            "column": 10,
-            "message": "Array type using 'NodeData[]' is forbidden. Use 'Array<NodeData>' instead."
-          },
-          {
-            "file": "apps/www/src/features/editor/views/GraphView/lib/jsonParser.ts",
-            "line": 26,
-            "column": 17,
-            "message": "Array type using 'NodeRow[]' is forbidden. Use 'Array<NodeRow>' instead."
-          },
-          {
-            "file": "apps/www/src/features/editor/views/GraphView/lib/utils/getChildrenEdges.ts",
-            "line": 3,
-            "column": 73,
-            "message": "Array type using 'EdgeData[]' is forbidden. Use 'Array<EdgeData>' instead."
-          },
-          {
-            "file": "apps/www/src/features/editor/views/GraphView/lib/utils/getOutgoers.ts",
-            "line": 12,
-            "column": 24,
+            "file": "apps/www/src/features/editor/views/GraphView/stores/useGraph.ts",
+            "line": 15,
+            "column": 19,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
@@ -50,15 +32,27 @@
           },
           {
             "file": "apps/www/src/lib/utils/collapse.ts",
-            "line": 26,
-            "column": 15,
+            "line": 17,
+            "column": 56,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+          },
+          {
+            "file": "apps/www/src/lib/utils/jsonAdapter.ts",
+            "line": 9,
+            "column": 19,
+            "message": "Array type using 'ParseError[]' is forbidden. Use 'Array<ParseError>' instead."
           },
           {
             "file": "packages/jsoncrack-react/src/JSONCrackComponent.tsx",
             "line": 223,
             "column": 39,
             "message": "Array type using 'JSONPath[]' is forbidden. Use 'Array<JSONPath>' instead."
+          },
+          {
+            "file": "packages/jsoncrack-react/src/components/CollapseContext.ts",
+            "line": 21,
+            "column": 22,
+            "message": "Array type using 'readonly JSONPath[]' is forbidden. Use 'ReadonlyArray<JSONPath>' instead."
           },
           {
             "file": "packages/jsoncrack-react/src/parser.ts",
@@ -68,9 +62,15 @@
           },
           {
             "file": "packages/jsoncrack-react/src/parser.ts",
-            "line": 28,
-            "column": 17,
-            "message": "Array type using 'NodeRow[]' is forbidden. Use 'Array<NodeRow>' instead."
+            "line": 22,
+            "column": 16,
+            "message": "Array type using 'EdgeData[]' is forbidden. Use 'Array<EdgeData>' instead."
+          },
+          {
+            "file": "packages/jsoncrack-react/src/parser.ts",
+            "line": 78,
+            "column": 26,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
             "file": "packages/jsoncrack-react/src/types.ts",
@@ -87,14 +87,8 @@
         "samples": []
       },
       "type-annotation": {
-        "count": 5,
+        "count": 4,
         "samples": [
-          {
-            "file": "apps/www/src/features/editor/views/GraphView/lib/utils/calculateNodeSize.ts",
-            "line": 38,
-            "column": 26,
-            "message": "The generic type arguments should be specified as part of the type annotation."
-          },
           {
             "file": "packages/jsoncrack-react/src/JSONCrackComponent.tsx",
             "line": 238,
@@ -132,7 +126,7 @@
         "samples": [
           {
             "file": "apps/chrome-extension/src/content-script.tsx",
-            "line": 216,
+            "line": 197,
             "column": 14,
             "message": "An index signature is preferred over a record."
           },
@@ -195,26 +189,8 @@
     },
     "consistent-type-definitions": {
       "interface": {
-        "count": 13,
+        "count": 9,
         "samples": [
-          {
-            "file": "apps/www/src/features/editor/views/GraphView/CustomNode/ObjectNode.tsx",
-            "line": 8,
-            "column": 1,
-            "message": "Use `interface` instead of `type`."
-          },
-          {
-            "file": "apps/www/src/features/editor/views/GraphView/CustomNode/styles.tsx",
-            "line": 6,
-            "column": 1,
-            "message": "Use `interface` instead of `type`."
-          },
-          {
-            "file": "apps/www/src/features/editor/views/GraphView/lib/utils/calculateNodeSize.ts",
-            "line": 4,
-            "column": 1,
-            "message": "Use `interface` instead of `type`."
-          },
           {
             "file": "apps/www/src/features/editor/views/TreeView/Value.tsx",
             "line": 6,
@@ -225,6 +201,12 @@
             "file": "apps/www/src/store/useFile.ts",
             "line": 14,
             "column": 1,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "apps/www/src/store/useFile.ts",
+            "line": 38,
+            "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
@@ -246,6 +228,12 @@
             "message": "Use `interface` instead of `type`."
           },
           {
+            "file": "packages/jsoncrack-react/src/components/TextNode.tsx",
+            "line": 7,
+            "column": 1,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
             "file": "packages/jsoncrack-react/src/components/nodeStyles.ts",
             "line": 1,
             "column": 1,
@@ -260,7 +248,7 @@
         ]
       },
       "type": {
-        "count": 27,
+        "count": 26,
         "samples": [
           {
             "file": "apps/vscode/src/App.tsx",
@@ -269,14 +257,14 @@
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "apps/www/src/features/editor/views/GraphView/CustomNode/index.tsx",
-            "line": 11,
-            "column": 8,
+            "file": "apps/www/src/features/editor/views/GraphView/index.tsx",
+            "line": 47,
+            "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "apps/www/src/features/editor/views/GraphView/stores/useGraph.ts",
-            "line": 27,
+            "file": "apps/www/src/features/editor/views/TreeView/Label.tsx",
+            "line": 6,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
@@ -293,14 +281,14 @@
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "apps/www/src/store/useFile.ts",
-            "line": 23,
+            "file": "apps/www/src/store/useJson.ts",
+            "line": 3,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "packages/jsoncrack-react/src/JSONCrackComponent.tsx",
-            "line": 47,
+            "line": 61,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
@@ -331,7 +319,7 @@
         "samples": []
       },
       "no-type-imports": {
-        "count": 72,
+        "count": 61,
         "samples": [
           {
             "file": "apps/chrome-extension/src/content-script.tsx",
@@ -340,50 +328,50 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "apps/www/src/features/editor/views/GraphView/CustomEdge/index.tsx",
+            "file": "apps/www/src/features/editor/TextEditor.tsx",
+            "line": 4,
+            "column": 44,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "apps/www/src/features/editor/views/GraphView/stores/useGraph.ts",
             "line": 3,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "apps/www/src/features/editor/views/GraphView/index.tsx",
-            "line": 5,
+            "file": "apps/www/src/features/modals/ImportModal/index.tsx",
+            "line": 8,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "apps/www/src/features/editor/views/GraphView/stores/useGraph.ts",
-            "line": 4,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "apps/www/src/features/modals/JQModal/index.tsx",
+            "file": "apps/www/src/features/modals/TypeModal/index.tsx",
             "line": 2,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "apps/www/src/lib/utils/generateType.ts",
-            "line": 1,
-            "column": 10,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "apps/www/src/store/useModal.ts",
-            "line": 2,
-            "column": 10,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "packages/jsoncrack-react/src/canvasHelpers.ts",
+            "file": "apps/www/src/pages/_document.tsx",
             "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/jsoncrack-react/src/components/CustomNode.tsx",
-            "line": 4,
+            "file": "packages/jsoncrack-react/src/JSONCrackComponent.tsx",
+            "line": 15,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "packages/jsoncrack-react/src/components/CollapseContext.ts",
+            "line": 2,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "packages/jsoncrack-react/src/components/ObjectNode.tsx",
+            "line": 2,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -398,7 +386,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 51,
+        "count": 46,
         "samples": [
           {
             "file": "apps/chrome-extension/src/content-script.tsx",
@@ -408,7 +396,7 @@
           },
           {
             "file": "apps/chrome-extension/src/content-script.tsx",
-            "line": 232,
+            "line": 213,
             "column": 1,
             "message": "Expected a function expression."
           },
@@ -419,38 +407,38 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "apps/vscode/src/App.tsx",
-            "line": 8,
+            "file": "apps/vscode/ext-src/webview.ts",
+            "line": 53,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "apps/www/src/features/editor/views/GraphView/CustomNode/TextRenderer.tsx",
+            "file": "apps/www/src/features/editor/views/TreeView/TextRenderer.tsx",
             "line": 48,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "apps/www/src/lib/utils/helpers.ts",
-            "line": 1,
-            "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
             "file": "apps/www/src/lib/utils/json2go.js",
-            "line": 207,
+            "line": 41,
             "column": 3,
             "message": "Expected a function expression."
           },
           {
             "file": "apps/www/src/lib/utils/json2go.js",
-            "line": 275,
+            "line": 215,
             "column": 3,
             "message": "Expected a function expression."
           },
           {
             "file": "apps/www/src/lib/utils/json2go.js",
-            "line": 387,
+            "line": 298,
+            "column": 3,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "apps/www/src/lib/utils/json2go.js",
+            "line": 395,
             "column": 3,
             "message": "Expected a function expression."
           },
@@ -463,7 +451,7 @@
         ]
       },
       "declaration": {
-        "count": 171,
+        "count": 154,
         "samples": [
           {
             "file": "apps/chrome-extension/src/content-script.tsx",
@@ -472,50 +460,50 @@
             "message": "Expected a function declaration."
           },
           {
-            "file": "apps/www/src/features/editor/BottomBar.tsx",
-            "line": 83,
+            "file": "apps/www/next.config.js",
+            "line": 35,
+            "column": 7,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "apps/www/src/features/editor/views/GraphView/CustomEdge/index.tsx",
+            "line": 7,
+            "column": 7,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "apps/www/src/features/modals/DownloadModal/index.tsx",
+            "line": 24,
+            "column": 7,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "apps/www/src/features/modals/NodeModal/index.tsx",
+            "line": 29,
             "column": 14,
             "message": "Expected a function declaration."
           },
           {
-            "file": "apps/www/src/features/editor/views/GraphView/CustomNode/ObjectNode.tsx",
+            "file": "apps/www/src/layout/Landing/Section3.tsx",
+            "line": 56,
+            "column": 14,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "apps/www/src/pages/index.tsx",
             "line": 15,
-            "column": 7,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "apps/www/src/features/editor/views/GraphView/lib/utils/calculateNodeSize.ts",
-            "line": 6,
-            "column": 7,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "apps/www/src/features/modals/ImportModal/index.tsx",
-            "line": 18,
-            "column": 9,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "apps/www/src/layout/JSONCrackBrandLogo.tsx",
-            "line": 38,
-            "column": 14,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "apps/www/src/lib/utils/search.ts",
-            "line": 13,
             "column": 14,
             "message": "Expected a function declaration."
           },
           {
             "file": "packages/jsoncrack-react/src/canvasHelpers.ts",
-            "line": 103,
+            "line": 224,
             "column": 14,
             "message": "Expected a function declaration."
           },
           {
             "file": "packages/jsoncrack-react/src/components/ObjectNode.tsx",
-            "line": 92,
+            "line": 129,
             "column": 7,
             "message": "Expected a function declaration."
           },
@@ -595,7 +583,7 @@
         ]
       },
       "default": {
-        "count": 58,
+        "count": 52,
         "samples": [
           {
             "file": "apps/vscode/ext-src/webview.ts",
@@ -610,38 +598,38 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "apps/www/src/features/editor/views/GraphView/CustomEdge/index.tsx",
-            "line": 41,
+            "file": "apps/www/src/features/editor/Toolbar/index.tsx",
+            "line": 64,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "apps/www/src/features/editor/views/GraphView/Toolbar/index.tsx",
-            "line": 78,
+            "file": "apps/www/src/features/editor/views/GraphView/index.tsx",
+            "line": 51,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "apps/www/src/features/editor/views/TreeView/Value.tsx",
-            "line": 26,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "apps/www/src/features/modals/NodeModal/index.tsx",
-            "line": 29,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "apps/www/src/layout/Landing/Features.tsx",
-            "line": 82,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "apps/www/src/layout/PageLayout/Footer.tsx",
+            "file": "apps/www/src/features/modals/EditorChoiceModal/index.tsx",
             "line": 8,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "apps/www/src/features/modals/SchemaModal/index.tsx",
+            "line": 11,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "apps/www/src/layout/Landing/HeroPreview.tsx",
+            "line": 4,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "apps/www/src/layout/PageLayout/Navbar.tsx",
+            "line": 55,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -666,7 +654,7 @@
         "samples": []
       },
       "4-space": {
-        "count": 110,
+        "count": 101,
         "samples": [
           {
             "file": "apps/chrome-extension/src/content-script.tsx",
@@ -675,50 +663,50 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "apps/www/src/constants/globalStyle.ts",
-            "line": 4,
+            "file": "apps/www/next.config.js",
+            "line": 2,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "apps/www/src/features/editor/Toolbar/ThemeToggle.tsx",
-            "line": 6,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "apps/www/src/features/editor/views/GraphView/SecureInfo.tsx",
-            "line": 6,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "apps/www/src/features/modals/EditorChoiceModal/index.tsx",
-            "line": 9,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "apps/www/src/layout/Landing/Features.tsx",
-            "line": 3,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "apps/www/src/lib/utils/json2go.js",
-            "line": 11,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "apps/www/src/pages/legal/terms.tsx",
+            "file": "apps/www/src/features/editor/Toolbar/FileMenu.tsx",
             "line": 10,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/jsoncrack-react/src/components/Controls.tsx",
-            "line": 4,
+            "file": "apps/www/src/features/editor/views/GraphView/index.tsx",
+            "line": 17,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "apps/www/src/features/modals/ModalController.tsx",
+            "line": 7,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "apps/www/src/layout/Landing/Section1.tsx",
+            "line": 6,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "apps/www/src/lib/utils/search.ts",
+            "line": 2,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "apps/www/src/store/useConfig.ts",
+            "line": 5,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "packages/jsoncrack-react/src/components/CustomEdge.tsx",
+            "line": 8,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -731,7 +719,7 @@
         ]
       },
       "tab": {
-        "count": 110,
+        "count": 101,
         "samples": [
           {
             "file": "apps/chrome-extension/src/content-script.tsx",
@@ -740,50 +728,50 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "apps/www/src/constants/globalStyle.ts",
-            "line": 4,
+            "file": "apps/www/next.config.js",
+            "line": 2,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "apps/www/src/features/editor/Toolbar/ThemeToggle.tsx",
-            "line": 6,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "apps/www/src/features/editor/views/GraphView/SecureInfo.tsx",
-            "line": 6,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "apps/www/src/features/modals/EditorChoiceModal/index.tsx",
-            "line": 9,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "apps/www/src/layout/Landing/Features.tsx",
-            "line": 3,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "apps/www/src/lib/utils/json2go.js",
-            "line": 11,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "apps/www/src/pages/legal/terms.tsx",
+            "file": "apps/www/src/features/editor/Toolbar/FileMenu.tsx",
             "line": 10,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/jsoncrack-react/src/components/Controls.tsx",
-            "line": 4,
+            "file": "apps/www/src/features/editor/views/GraphView/index.tsx",
+            "line": 17,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "apps/www/src/features/modals/ModalController.tsx",
+            "line": 7,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "apps/www/src/layout/Landing/Section1.tsx",
+            "line": 6,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "apps/www/src/lib/utils/search.ts",
+            "line": 2,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "apps/www/src/store/useConfig.ts",
+            "line": 5,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "packages/jsoncrack-react/src/components/CustomEdge.tsx",
+            "line": 8,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -802,13 +790,13 @@
         "samples": [
           {
             "file": "apps/chrome-extension/src/content-script.tsx",
-            "line": 128,
+            "line": 109,
             "column": 5,
             "message": "Strings must use doublequote."
           },
           {
             "file": "apps/chrome-extension/src/content-script.tsx",
-            "line": 130,
+            "line": 111,
             "column": 5,
             "message": "Strings must use doublequote."
           },
@@ -863,7 +851,7 @@
         ]
       },
       "single": {
-        "count": 1985,
+        "count": 1865,
         "samples": [
           {
             "file": "apps/chrome-extension/src/content-script.tsx",
@@ -872,51 +860,51 @@
             "message": "Strings must use singlequote."
           },
           {
-            "file": "apps/vscode/vite.config.ts",
-            "line": 3,
-            "column": 31,
+            "file": "apps/vscode/src/index.tsx",
+            "line": 2,
+            "column": 8,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "apps/www/src/features/editor/ExternalMode.tsx",
-            "line": 101,
-            "column": 25,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "apps/www/src/features/editor/views/GraphView/NotSupported.tsx",
-            "line": 6,
+            "file": "apps/www/src/features/editor/BottomBar.tsx",
+            "line": 11,
             "column": 21,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "apps/www/src/features/modals/DownloadModal/index.tsx",
-            "line": 56,
-            "column": 39,
+            "file": "apps/www/src/features/editor/views/GraphView/Toolbar/index.tsx",
+            "line": 36,
+            "column": 38,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "apps/www/src/layout/Landing/Features.tsx",
-            "line": 35,
-            "column": 12,
+            "file": "apps/www/src/features/modals/ImportModal/index.tsx",
+            "line": 31,
+            "column": 34,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "apps/www/src/lib/utils/mantineColorScheme.ts",
+            "file": "apps/www/src/layout/Landing/Section1.tsx",
             "line": 71,
-            "column": 29,
+            "column": 32,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "apps/www/src/store/useFile.ts",
-            "line": 4,
-            "column": 24,
+            "file": "apps/www/src/pages/_app.tsx",
+            "line": 22,
+            "column": 59,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "packages/jsoncrack-react/eslint.config.mjs",
+            "line": 6,
+            "column": 22,
             "message": "Strings must use singlequote."
           },
           {
             "file": "packages/jsoncrack-react/src/canvasHelpers.ts",
-            "line": 38,
-            "column": 28,
+            "line": 47,
+            "column": 5,
             "message": "Strings must use singlequote."
           },
           {
@@ -930,54 +918,54 @@
     },
     "react-destructuring-assignment": {
       "never": {
-        "count": 31,
+        "count": 28,
         "samples": [
           {
             "file": "apps/chrome-extension/src/content-script.tsx",
-            "line": 232,
+            "line": 213,
             "column": 1,
             "message": "Must never use destructuring props assignment in SFC argument"
           },
           {
             "file": "apps/www/src/features/editor/Toolbar/SearchInput.tsx",
-            "line": 93,
+            "line": 35,
             "column": 28,
             "message": "Must never use destructuring props assignment in SFC argument"
           },
           {
-            "file": "apps/www/src/features/editor/views/GraphView/CustomNode/TextRenderer.tsx",
+            "file": "apps/www/src/features/editor/views/TreeView/TextRenderer.tsx",
             "line": 33,
             "column": 29,
             "message": "Must never use destructuring props assignment in SFC argument"
           },
           {
-            "file": "apps/www/src/features/editor/views/TreeView/Value.tsx",
-            "line": 28,
-            "column": 9,
-            "message": "Must never use destructuring props assignment"
-          },
-          {
-            "file": "apps/www/src/features/modals/JPathModal/index.tsx",
-            "line": 11,
-            "column": 27,
-            "message": "Must never use destructuring props assignment in SFC argument"
-          },
-          {
-            "file": "apps/www/src/features/modals/SchemaModal/index.tsx",
+            "file": "apps/www/src/features/modals/ImportModal/index.tsx",
             "line": 11,
             "column": 28,
             "message": "Must never use destructuring props assignment in SFC argument"
           },
           {
-            "file": "apps/www/src/layout/Landing/HeroSection.tsx",
-            "line": 104,
-            "column": 28,
+            "file": "apps/www/src/features/modals/ModalController.tsx",
+            "line": 6,
+            "column": 15,
             "message": "Must never use destructuring props assignment in SFC argument"
           },
           {
-            "file": "packages/jsoncrack-react/src/components/Controls.tsx",
-            "line": 10,
-            "column": 25,
+            "file": "apps/www/src/features/modals/TypeModal/index.tsx",
+            "line": 50,
+            "column": 26,
+            "message": "Must never use destructuring props assignment in SFC argument"
+          },
+          {
+            "file": "apps/www/src/layout/PageLayout/index.tsx",
+            "line": 24,
+            "column": 20,
+            "message": "Must never use destructuring props assignment in SFC argument"
+          },
+          {
+            "file": "packages/jsoncrack-react/src/components/CustomEdge.tsx",
+            "line": 26,
+            "column": 24,
             "message": "Must never use destructuring props assignment in SFC argument"
           },
           {
@@ -994,8 +982,8 @@
           }
         ]
       },
-      "always-in-signature": {
-        "count": 7,
+      "always": {
+        "count": 4,
         "samples": [
           {
             "file": "apps/www/src/features/editor/views/GraphView/CustomEdge/index.tsx",
@@ -1010,22 +998,39 @@
             "message": "Must use destructuring props assignment"
           },
           {
-            "file": "apps/www/src/features/editor/views/GraphView/CustomNode/TextRenderer.tsx",
+            "file": "apps/www/src/features/editor/views/TreeView/TextRenderer.tsx",
             "line": 27,
             "column": 17,
             "message": "Must use destructuring text assignment"
           },
           {
-            "file": "apps/www/src/features/editor/views/GraphView/CustomNode/index.tsx",
-            "line": 50,
-            "column": 13,
-            "message": "Must use destructuring nodeProps assignment"
+            "file": "apps/www/src/pages/index.tsx",
+            "line": 19,
+            "column": 27,
+            "message": "Must use destructuring props assignment"
+          }
+        ]
+      },
+      "always-in-signature": {
+        "count": 5,
+        "samples": [
+          {
+            "file": "apps/www/src/features/editor/views/GraphView/CustomEdge/index.tsx",
+            "line": 13,
+            "column": 27,
+            "message": "Must use destructuring props assignment"
           },
           {
-            "file": "apps/www/src/features/editor/views/GraphView/CustomNode/index.tsx",
-            "line": 51,
-            "column": 34,
-            "message": "Must use destructuring nodeProps assignment"
+            "file": "apps/www/src/features/editor/views/GraphView/CustomEdge/index.tsx",
+            "line": 26,
+            "column": 35,
+            "message": "Must use destructuring props assignment"
+          },
+          {
+            "file": "apps/www/src/features/editor/views/TreeView/TextRenderer.tsx",
+            "line": 27,
+            "column": 17,
+            "message": "Must use destructuring text assignment"
           },
           {
             "file": "apps/www/src/features/editor/views/TreeView/Value.tsx",
@@ -1042,7 +1047,7 @@
         ]
       },
       "always-outside-signature": {
-        "count": 6,
+        "count": 4,
         "samples": [
           {
             "file": "apps/www/src/features/editor/views/GraphView/CustomEdge/index.tsx",
@@ -1057,22 +1062,10 @@
             "message": "Must use destructuring props assignment"
           },
           {
-            "file": "apps/www/src/features/editor/views/GraphView/CustomNode/TextRenderer.tsx",
+            "file": "apps/www/src/features/editor/views/TreeView/TextRenderer.tsx",
             "line": 27,
             "column": 17,
             "message": "Must use destructuring text assignment"
-          },
-          {
-            "file": "apps/www/src/features/editor/views/GraphView/CustomNode/index.tsx",
-            "line": 50,
-            "column": 13,
-            "message": "Must use destructuring nodeProps assignment"
-          },
-          {
-            "file": "apps/www/src/features/editor/views/GraphView/CustomNode/index.tsx",
-            "line": 51,
-            "column": 34,
-            "message": "Must use destructuring nodeProps assignment"
           },
           {
             "file": "apps/www/src/pages/index.tsx",
@@ -1083,13 +1076,156 @@
         ]
       }
     },
+    "react-function-component-definition": {
+      "function-declaration": {
+        "count": 60,
+        "samples": [
+          {
+            "file": "apps/vscode/src/App.tsx",
+            "line": 21,
+            "column": 23,
+            "message": "Function component is not a function declaration"
+          },
+          {
+            "file": "apps/www/src/features/editor/TextEditor.tsx",
+            "line": 23,
+            "column": 20,
+            "message": "Function component is not a function declaration"
+          },
+          {
+            "file": "apps/www/src/features/editor/Toolbar/index.tsx",
+            "line": 64,
+            "column": 24,
+            "message": "Function component is not a function declaration"
+          },
+          {
+            "file": "apps/www/src/features/editor/views/TreeView/TextRenderer.tsx",
+            "line": 20,
+            "column": 17,
+            "message": "Function component is not a function declaration"
+          },
+          {
+            "file": "apps/www/src/features/modals/ImportModal/index.tsx",
+            "line": 11,
+            "column": 28,
+            "message": "Function component is not a function declaration"
+          },
+          {
+            "file": "apps/www/src/layout/JSONCrackBrandLogo.tsx",
+            "line": 38,
+            "column": 30,
+            "message": "Function component is not a function declaration"
+          },
+          {
+            "file": "apps/www/src/layout/Landing/Section2.tsx",
+            "line": 76,
+            "column": 25,
+            "message": "Function component is not a function declaration"
+          },
+          {
+            "file": "apps/www/src/pages/docs.tsx",
+            "line": 62,
+            "column": 14,
+            "message": "Function component is not a function declaration"
+          },
+          {
+            "file": "packages/jsoncrack-react/src/components/Controls.tsx",
+            "line": 10,
+            "column": 25,
+            "message": "Function component is not a function declaration"
+          },
+          {
+            "file": "packages/jsoncrack-react/src/components/TextRenderer.tsx",
+            "line": 40,
+            "column": 29,
+            "message": "Function component is not a function declaration"
+          }
+        ]
+      },
+      "arrow-function": {
+        "count": 4,
+        "samples": [
+          {
+            "file": "apps/chrome-extension/src/content-script.tsx",
+            "line": 213,
+            "column": 1,
+            "message": "Function component is not an arrow function"
+          },
+          {
+            "file": "apps/chrome-extension/src/content-script.tsx",
+            "line": 304,
+            "column": 1,
+            "message": "Function component is not an arrow function"
+          },
+          {
+            "file": "apps/chrome-extension/src/content-script.tsx",
+            "line": 365,
+            "column": 1,
+            "message": "Function component is not an arrow function"
+          },
+          {
+            "file": "apps/www/src/pages/_app.tsx",
+            "line": 70,
+            "column": 1,
+            "message": "Function component is not an arrow function"
+          }
+        ]
+      }
+    },
+    "react-jsx-fragments": {
+      "syntax": {
+        "count": 0,
+        "samples": []
+      },
+      "element": {
+        "count": 6,
+        "samples": [
+          {
+            "file": "apps/www/src/features/editor/views/TreeView/TextRenderer.tsx",
+            "line": 45,
+            "column": 10,
+            "message": "Prefer React.Fragment over fragment shorthand"
+          },
+          {
+            "file": "apps/www/src/pages/_app.tsx",
+            "line": 81,
+            "column": 5,
+            "message": "Prefer React.Fragment over fragment shorthand"
+          },
+          {
+            "file": "apps/www/src/pages/_document.tsx",
+            "line": 22,
+            "column": 11,
+            "message": "Prefer React.Fragment over fragment shorthand"
+          },
+          {
+            "file": "apps/www/src/pages/editor.tsx",
+            "line": 124,
+            "column": 5,
+            "message": "Prefer React.Fragment over fragment shorthand"
+          },
+          {
+            "file": "packages/jsoncrack-react/src/components/TextRenderer.tsx",
+            "line": 23,
+            "column": 28,
+            "message": "Prefer React.Fragment over fragment shorthand"
+          },
+          {
+            "file": "packages/jsoncrack-react/src/components/TextRenderer.tsx",
+            "line": 54,
+            "column": 10,
+            "message": "Prefer React.Fragment over fragment shorthand"
+          }
+        ]
+      }
+    },
     "semi": {
       "always": {
         "count": 0,
         "samples": []
       },
       "never": {
-        "count": 2596,
+        "count": 2379,
         "samples": [
           {
             "file": "apps/chrome-extension/src/content-script.tsx",
@@ -1098,51 +1234,51 @@
             "message": "Extra semicolon."
           },
           {
-            "file": "apps/vscode/src/index.tsx",
-            "line": 8,
-            "column": 65,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "apps/www/src/features/editor/views/GraphView/CustomNode/ObjectNode.tsx",
+            "file": "apps/vscode/src/components/NodeModal.tsx",
             "line": 19,
-            "column": 73,
+            "column": 5,
             "message": "Extra semicolon."
           },
           {
-            "file": "apps/www/src/features/editor/views/GraphView/lib/utils/calculateNodeSize.ts",
-            "line": 22,
-            "column": 40,
+            "file": "apps/www/src/features/editor/Toolbar/index.tsx",
+            "line": 33,
+            "column": 2,
             "message": "Extra semicolon."
           },
           {
-            "file": "apps/www/src/features/modals/SchemaModal/index.tsx",
-            "line": 43,
-            "column": 36,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "apps/www/src/lib/utils/json2go.js",
-            "line": 156,
-            "column": 43,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "apps/www/src/pages/index.tsx",
-            "line": 27,
+            "file": "apps/www/src/features/modals/DownloadModal/index.tsx",
+            "line": 116,
             "column": 4,
             "message": "Extra semicolon."
           },
           {
-            "file": "packages/jsoncrack-react/src/JSONCrackComponent.tsx",
-            "line": 350,
-            "column": 58,
+            "file": "apps/www/src/layout/JSONCrackBrandLogo.tsx",
+            "line": 12,
+            "column": 3,
             "message": "Extra semicolon."
           },
           {
-            "file": "packages/jsoncrack-react/src/canvasHelpers.ts",
-            "line": 248,
-            "column": 2,
+            "file": "apps/www/src/lib/utils/jsonAdapter.ts",
+            "line": 8,
+            "column": 51,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "apps/www/src/store/useConfig.ts",
+            "line": 2,
+            "column": 45,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "packages/jsoncrack-react/src/__tests__/canvasHelpers.test.ts",
+            "line": 8,
+            "column": 26,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "packages/jsoncrack-react/src/components/CollapseContext.ts",
+            "line": 34,
+            "column": 29,
             "message": "Extra semicolon."
           },
           {

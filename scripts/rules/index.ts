@@ -10,6 +10,7 @@ import { indentChecks } from "./indent";
 import { quotesChecks } from "./quotes";
 import { reactDestructuringAssignmentChecks } from "./react-destructuring-assignment";
 import { reactFunctionComponentDefinitionChecks } from "./react-function-component-definition";
+import { reactJsxBooleanValueChecks } from "./react-jsx-boolean-value";
 import { reactJsxFragmentsChecks } from "./react-jsx-fragments";
 import { semiChecks } from "./semi";
 
@@ -49,6 +50,7 @@ export const allRuleChecks: OxlintRuleCheck[] = [
   ...quotesChecks,
   ...reactDestructuringAssignmentChecks,
   ...reactFunctionComponentDefinitionChecks,
+  ...reactJsxBooleanValueChecks,
   ...reactJsxFragmentsChecks,
   ...semiChecks,
 ];

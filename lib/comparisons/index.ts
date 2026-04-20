@@ -9,6 +9,7 @@ export { destructurePropsData } from "./destructure-props";
 export { funcStyleData } from "./func-style";
 export { namedVsDefaultExportsData } from "./named-vs-default-exports";
 export { reactComponentStyleData } from "./react-component-style";
+export { reactJsxBooleanValueData } from "./react-jsx-boolean-value";
 export { reactJsxFragmentsData } from "./react-jsx-fragments";
 export { semicolonsData } from "./semicolons";
 export { singleVsDoubleQuotesData } from "./single-vs-double-quotes";
@@ -25,6 +26,7 @@ import { destructurePropsData } from "./destructure-props";
 import { funcStyleData } from "./func-style";
 import { namedVsDefaultExportsData } from "./named-vs-default-exports";
 import { reactComponentStyleData } from "./react-component-style";
+import { reactJsxBooleanValueData } from "./react-jsx-boolean-value";
 import { reactJsxFragmentsData } from "./react-jsx-fragments";
 import { semicolonsData } from "./semicolons";
 import { singleVsDoubleQuotesData } from "./single-vs-double-quotes";
@@ -45,5 +47,6 @@ export const allComparisons = [
   destructurePropsData,
   destructureInSignatureData,
   reactComponentStyleData,
+  reactJsxBooleanValueData,
   reactJsxFragmentsData,
 ];

@@ -1,7 +1,7 @@
 {
-  "analyzedVersion": "09f4ce718368",
-  "analyzedCommit": "50beecbba4e2dc984a60f622c12fa247ad00166f",
-  "analyzedCommitDate": "2026-04-11T11:02:47.000Z",
+  "analyzedVersion": "96d58f23c7cc",
+  "analyzedCommit": "6129083f93204533bfc6aa85cb66690e53393bd5",
+  "analyzedCommitDate": "2026-04-19T07:12:29.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -16,7 +16,7 @@
         ]
       },
       "generic": {
-        "count": 88,
+        "count": 90,
         "samples": [
           {
             "file": "bin/index.spec.ts",
@@ -32,51 +32,51 @@
           },
           {
             "file": "lib/concurrently.ts",
-            "line": 48,
-            "column": 15,
-            "message": "Array type using 'Command[]' is forbidden. Use 'Array<Command>' instead."
+            "line": 57,
+            "column": 21,
+            "message": "Array type using 'CloseEvent[]' is forbidden. Use 'Array<CloseEvent>' instead."
           },
           {
             "file": "lib/concurrently.ts",
-            "line": 279,
-            "column": 54,
-            "message": "Array type using 'CommandParser[]' is forbidden. Use 'Array<CommandParser>' instead."
-          },
-          {
-            "file": "lib/flow-control/kill-others.spec.ts",
-            "line": 12,
-            "column": 15,
-            "message": "Array type using 'FakeCommand[]' is forbidden. Use 'Array<FakeCommand>' instead."
-          },
-          {
-            "file": "lib/flow-control/log-output.spec.ts",
-            "line": 12,
-            "column": 15,
-            "message": "Array type using 'FakeCommand[]' is forbidden. Use 'Array<FakeCommand>' instead."
-          },
-          {
-            "file": "lib/flow-control/output-error-handler.ts",
-            "line": 25,
-            "column": 46,
+            "line": 286,
+            "column": 37,
             "message": "Array type using 'Command[]' is forbidden. Use 'Array<Command>' instead."
           },
           {
-            "file": "lib/index.ts",
-            "line": 126,
-            "column": 15,
-            "message": "Array type using 'ConcurrentlyCommandInput[]' is forbidden. Use 'Array<ConcurrentlyCommandInput>' instead."
+            "file": "lib/flow-control/kill-others.spec.ts",
+            "line": 22,
+            "column": 17,
+            "message": "Array type using 'ProcessCloseCondition[]' is forbidden. Use 'Array<ProcessCloseCondition>' instead."
           },
           {
-            "file": "lib/prefix-color-selector.spec.ts",
-            "line": 16,
-            "column": 29,
+            "file": "lib/flow-control/log-output.ts",
+            "line": 14,
+            "column": 22,
+            "message": "Array type using 'Command[]' is forbidden. Use 'Array<Command>' instead."
+          },
+          {
+            "file": "lib/flow-control/restart-process.spec.ts",
+            "line": 9,
+            "column": 15,
+            "message": "Array type using 'FakeCommand[]' is forbidden. Use 'Array<FakeCommand>' instead."
+          },
+          {
+            "file": "lib/logger.ts",
+            "line": 76,
+            "column": 28,
+            "message": "Array type using 'CommandIdentifier[]' is forbidden. Use 'Array<CommandIdentifier>' instead."
+          },
+          {
+            "file": "lib/prefix-color-selector.ts",
+            "line": 3,
+            "column": 60,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
             "file": "lib/utils.ts",
-            "line": 8,
-            "column": 92,
-            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
+            "line": 26,
+            "column": 21,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           }
         ]
       }
@@ -87,12 +87,18 @@
         "samples": []
       },
       "type-annotation": {
-        "count": 4,
+        "count": 5,
         "samples": [
           {
             "file": "lib/assert.ts",
             "line": 1,
             "column": 29,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "lib/assert.ts",
+            "line": 15,
+            "column": 25,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
@@ -150,25 +156,25 @@
           },
           {
             "file": "lib/logger.ts",
-            "line": 16,
-            "column": 56,
+            "line": 55,
+            "column": 33,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "lib/logger.ts",
-            "line": 112,
+            "line": 166,
             "column": 47,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "lib/logger.ts",
-            "line": 222,
+            "line": 267,
             "column": 29,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "lib/logger.ts",
-            "line": 229,
+            "line": 274,
             "column": 24,
             "message": "An index signature is preferred over a record."
           },
@@ -261,7 +267,7 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 93,
+        "count": 94,
         "samples": [
           {
             "file": "lib/__fixtures__/create-mock-instance.ts",
@@ -271,9 +277,9 @@
           },
           {
             "file": "lib/command-parser/expand-wildcard.spec.ts",
-            "line": 5,
+            "line": 3,
             "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
+            "message": "Imports Mock are only used as type."
           },
           {
             "file": "lib/command.ts",
@@ -283,13 +289,13 @@
           },
           {
             "file": "lib/concurrently.ts",
-            "line": 16,
+            "line": 8,
             "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
+            "message": "Imports CloseEvent, CommandIdentifier, CommandInfo, KillProcess, and SpawnCommand are only used as type."
           },
           {
             "file": "lib/flow-control/input-handler.ts",
-            "line": 9,
+            "line": 8,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
@@ -306,8 +312,8 @@
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "lib/flow-control/teardown.spec.ts",
-            "line": 1,
+            "file": "lib/flow-control/restart-process.ts",
+            "line": 7,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
@@ -357,7 +363,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 27,
+        "count": 30,
         "samples": [
           {
             "file": "bin/read-package-json.ts",
@@ -366,14 +372,14 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "lib/command.ts",
-            "line": 343,
-            "column": 1,
+            "file": "lib/assert.ts",
+            "line": 21,
+            "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "lib/concurrently.ts",
-            "line": 279,
+            "line": 254,
             "column": 1,
             "message": "Expected a function expression."
           },
@@ -391,31 +397,31 @@
           },
           {
             "file": "lib/date-format.ts",
-            "line": 368,
+            "line": 378,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "lib/index.ts",
-            "line": 125,
-            "column": 8,
+            "file": "lib/logger.ts",
+            "line": 19,
+            "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "lib/output-writer.spec.ts",
-            "line": 12,
+            "line": 22,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "lib/prefix-color-selector.ts",
-            "line": 13,
-            "column": 1,
+            "file": "lib/spawn.ts",
+            "line": 11,
+            "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "lib/utils.ts",
-            "line": 13,
+            "line": 25,
             "column": 8,
             "message": "Expected a function expression."
           }
@@ -499,7 +505,7 @@
           },
           {
             "file": "lib/index.ts",
-            "line": 204,
+            "line": 212,
             "column": 8,
             "message": "Prefer named exports"
           },
@@ -518,7 +524,7 @@
         ]
       },
       "default": {
-        "count": 20,
+        "count": 19,
         "samples": [
           {
             "file": "bin/read-package-json.ts",
@@ -527,26 +533,26 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "lib/assert.ts",
-            "line": 7,
+            "file": "lib/command-parser/expand-arguments.ts",
+            "line": 9,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "lib/command-parser/expand-shortcut.ts",
+            "file": "lib/command-parser/expand-wildcard.ts",
             "line": 16,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "lib/command-parser/strip-quotes.ts",
-            "line": 7,
+            "file": "lib/flow-control/input-handler.ts",
+            "line": 20,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "lib/flow-control/kill-on-signal.ts",
-            "line": 14,
+            "file": "lib/flow-control/log-error.ts",
+            "line": 8,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -670,7 +676,7 @@
           },
           {
             "file": "lib/logger.ts",
-            "line": 13,
+            "line": 21,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -691,7 +697,7 @@
     },
     "quotes": {
       "double": {
-        "count": 2761,
+        "count": 2930,
         "samples": [
           {
             "file": "bin/__fixtures__/read-echo.js",
@@ -701,50 +707,50 @@
           },
           {
             "file": "bin/index.ts",
-            "line": 166,
-            "column": 19,
+            "line": 199,
+            "column": 17,
             "message": "Strings must use doublequote."
           },
           {
             "file": "lib/command-parser/expand-wildcard.spec.ts",
-            "line": 218,
-            "column": 21,
+            "line": 270,
+            "column": 8,
             "message": "Strings must use doublequote."
           },
           {
             "file": "lib/concurrently.spec.ts",
-            "line": 7,
-            "column": 36,
+            "line": 105,
+            "column": 20,
             "message": "Strings must use doublequote."
           },
           {
             "file": "lib/date-format.spec.ts",
-            "line": 131,
-            "column": 49,
+            "line": 200,
+            "column": 33,
             "message": "Strings must use doublequote."
           },
           {
             "file": "lib/date-format.spec.ts",
-            "line": 478,
-            "column": 15,
+            "line": 557,
+            "column": 51,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "lib/flow-control/input-handler.spec.ts",
-            "line": 98,
-            "column": 59,
+            "file": "lib/flow-control/log-error.spec.ts",
+            "line": 30,
+            "column": 30,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "lib/index.ts",
-            "line": 22,
-            "column": 46,
+            "file": "lib/logger.spec.ts",
+            "line": 173,
+            "column": 31,
             "message": "Strings must use doublequote."
           },
           {
             "file": "lib/output-writer.spec.ts",
-            "line": 6,
-            "column": 51,
+            "line": 51,
+            "column": 39,
             "message": "Strings must use doublequote."
           },
           {
@@ -814,7 +820,7 @@
           },
           {
             "file": "lib/logger.spec.ts",
-            "line": 407,
+            "line": 609,
             "column": 8,
             "message": "Strings must use singlequote."
           }
@@ -823,6 +829,10 @@
     },
     "react-destructuring-assignment": {
       "never": {
+        "count": 0,
+        "samples": []
+      },
+      "always": {
         "count": 0,
         "samples": []
       },
@@ -835,13 +845,43 @@
         "samples": []
       }
     },
+    "react-function-component-definition": {
+      "function-declaration": {
+        "count": 0,
+        "samples": []
+      },
+      "arrow-function": {
+        "count": 0,
+        "samples": []
+      }
+    },
+    "react-jsx-boolean-value": {
+      "never": {
+        "count": 0,
+        "samples": []
+      },
+      "always": {
+        "count": 0,
+        "samples": []
+      }
+    },
+    "react-jsx-fragments": {
+      "syntax": {
+        "count": 0,
+        "samples": []
+      },
+      "element": {
+        "count": 0,
+        "samples": []
+      }
+    },
     "semi": {
       "always": {
         "count": 0,
         "samples": []
       },
       "never": {
-        "count": 3107,
+        "count": 3255,
         "samples": [
           {
             "file": "bin/__fixtures__/read-echo.js",
@@ -857,44 +897,44 @@
           },
           {
             "file": "lib/command.spec.ts",
-            "line": 201,
-            "column": 72,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "lib/completion-listener.spec.ts",
-            "line": 153,
-            "column": 74,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "lib/date-format.spec.ts",
-            "line": 5,
+            "line": 225,
             "column": 56,
             "message": "Extra semicolon."
           },
           {
-            "file": "lib/flow-control/kill-on-signal.spec.ts",
-            "line": 55,
-            "column": 84,
+            "file": "lib/completion-listener.spec.ts",
+            "line": 209,
+            "column": 30,
             "message": "Extra semicolon."
           },
           {
-            "file": "lib/flow-control/log-timings.ts",
-            "line": 91,
-            "column": 22,
+            "file": "lib/date-format.spec.ts",
+            "line": 234,
+            "column": 65,
             "message": "Extra semicolon."
           },
           {
-            "file": "lib/index.ts",
-            "line": 2,
-            "column": 39,
+            "file": "lib/flow-control/kill-others.spec.ts",
+            "line": 54,
+            "column": 57,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "lib/flow-control/output-error-handler.spec.ts",
+            "line": 27,
+            "column": 54,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "lib/logger.spec.ts",
+            "line": 62,
+            "column": 74,
             "message": "Extra semicolon."
           },
           {
             "file": "lib/logger.ts",
-            "line": 109,
-            "column": 42,
+            "line": 186,
+            "column": 54,
             "message": "Extra semicolon."
           },
           {

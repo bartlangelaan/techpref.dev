@@ -1,11 +1,11 @@
 {
-  "analyzedVersion": "839860ca7673",
-  "analyzedCommit": "2aee4d42031892e7937640a003d11fad82420944",
-  "analyzedCommitDate": "2026-04-19T07:38:15.000Z",
+  "analyzedVersion": "96d58f23c7cc",
+  "analyzedCommit": "d359cc7e2f4dd5e920e7daa6dbd1eddc8f53bc19",
+  "analyzedCommitDate": "2026-04-21T08:27:52.000Z",
   "checks": {
     "array-type": {
       "array": {
-        "count": 2,
+        "count": 4,
         "samples": [
           {
             "file": "src/release/components.ts",
@@ -15,14 +15,26 @@
           },
           {
             "file": "src/release/metadata.ts",
-            "line": 22,
+            "line": 29,
             "column": 12,
+            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
+          },
+          {
+            "file": "src/release/metadata.ts",
+            "line": 38,
+            "column": 12,
+            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
+          },
+          {
+            "file": "src/release/metadata.ts",
+            "line": 265,
+            "column": 29,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           }
         ]
       },
       "generic": {
-        "count": 219,
+        "count": 232,
         "samples": [
           {
             "file": "scripts/release/preview.ts",
@@ -31,27 +43,33 @@
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
-            "file": "src/converters/claude-to-opencode.ts",
-            "line": 44,
+            "file": "src/converters/claude-to-gemini.ts",
+            "line": 145,
+            "column": 16,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+          },
+          {
+            "file": "src/data/plugin-legacy-artifacts.ts",
+            "line": 243,
             "column": 11,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
-            "file": "src/parsers/claude-home.ts",
-            "line": 29,
-            "column": 19,
-            "message": "Array type using 'ClaudeSkill[]' is forbidden. Use 'Array<ClaudeSkill>' instead."
+            "file": "src/parsers/claude.ts",
+            "line": 125,
+            "column": 22,
+            "message": "Array type using 'ClaudeHooks[]' is forbidden. Use 'Array<ClaudeHooks>' instead."
           },
           {
-            "file": "src/parsers/claude.ts",
-            "line": 212,
-            "column": 54,
+            "file": "src/release/config.ts",
+            "line": 13,
+            "column": 17,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
-            "file": "src/sync/copilot.ts",
-            "line": 12,
-            "column": 10,
+            "file": "src/targets/managed-artifacts.ts",
+            "line": 11,
+            "column": 26,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
@@ -61,28 +79,22 @@
             "message": "Array type using 'ClaudeHookMatcher[]' is forbidden. Use 'Array<ClaudeHookMatcher>' instead."
           },
           {
-            "file": "src/types/openclaw.ts",
-            "line": 14,
-            "column": 14,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
-          },
-          {
-            "file": "src/utils/detect-tools.ts",
-            "line": 15,
+            "file": "src/types/kiro.ts",
+            "line": 45,
             "column": 18,
-            "message": "Array type using 'DetectedTool[]' is forbidden. Use 'Array<DetectedTool>' instead."
+            "message": "Array type using 'KiroSteeringFile[]' is forbidden. Use 'Array<KiroSteeringFile>' instead."
           },
           {
-            "file": "tests/review-skill-contract.test.ts",
-            "line": 165,
-            "column": 30,
+            "file": "src/utils/legacy-cleanup.ts",
+            "line": 389,
+            "column": 12,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
-            "file": "tests/windsurf-writer.test.ts",
-            "line": 292,
-            "column": 30,
-            "message": "Array type using 'unknown[]' is forbidden. Use 'Array<unknown>' instead."
+            "file": "tests/skills/ce-release-notes-helper.test.ts",
+            "line": 22,
+            "column": 9,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           }
         ]
       }
@@ -93,18 +105,12 @@
         "samples": []
       },
       "type-annotation": {
-        "count": 23,
+        "count": 60,
         "samples": [
           {
-            "file": "src/converters/claude-to-codex.ts",
-            "line": 34,
-            "column": 30,
-            "message": "The generic type arguments should be specified as part of the type annotation."
-          },
-          {
-            "file": "src/converters/claude-to-codex.ts",
-            "line": 37,
-            "column": 37,
+            "file": "src/commands/cleanup.ts",
+            "line": 565,
+            "column": 31,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
@@ -114,44 +120,50 @@
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "src/converters/claude-to-gemini.ts",
-            "line": 15,
-            "column": 35,
-            "message": "The generic type arguments should be specified as part of the type annotation."
-          },
-          {
-            "file": "src/converters/claude-to-opencode.ts",
-            "line": 405,
-            "column": 29,
-            "message": "The generic type arguments should be specified as part of the type annotation."
-          },
-          {
             "file": "src/converters/claude-to-pi.ts",
-            "line": 22,
-            "column": 33,
+            "line": 21,
+            "column": 30,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "src/release/components.ts",
-            "line": 103,
-            "column": 33,
+            "file": "src/data/plugin-legacy-artifacts.ts",
+            "line": 323,
+            "column": 32,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "src/targets/opencode.ts",
-            "line": 79,
-            "column": 29,
+            "file": "src/data/plugin-legacy-artifacts.ts",
+            "line": 364,
+            "column": 32,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "src/data/plugin-legacy-artifacts.ts",
+            "line": 401,
+            "column": 32,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "src/data/plugin-legacy-artifacts.ts",
+            "line": 433,
+            "column": 32,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "src/data/plugin-legacy-artifacts.ts",
+            "line": 499,
+            "column": 32,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "src/targets/codex.ts",
+            "line": 335,
+            "column": 38,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
             "file": "src/utils/legacy-cleanup.ts",
-            "line": 367,
-            "column": 29,
-            "message": "The generic type arguments should be specified as part of the type annotation."
-          },
-          {
-            "file": "src/utils/legacy-cleanup.ts",
-            "line": 369,
+            "line": 413,
             "column": 30,
             "message": "The generic type arguments should be specified as part of the type annotation."
           }
@@ -164,7 +176,7 @@
         "samples": []
       },
       "index-signature": {
-        "count": 237,
+        "count": 138,
         "samples": [
           {
             "file": "scripts/release/preview.ts",
@@ -173,57 +185,57 @@
             "message": "An index signature is preferred over a record."
           },
           {
+            "file": "src/converters/claude-to-copilot.ts",
+            "line": 150,
+            "column": 4,
+            "message": "An index signature is preferred over a record."
+          },
+          {
             "file": "src/converters/claude-to-kiro.ts",
-            "line": 115,
-            "column": 22,
+            "line": 180,
+            "column": 4,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "src/converters/claude-to-pi.ts",
-            "line": 152,
-            "column": 40,
+            "line": 72,
+            "column": 22,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "src/release/components.ts",
-            "line": 42,
-            "column": 29,
+            "file": "src/parsers/claude.ts",
+            "line": 257,
+            "column": 71,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "src/sync/json-config.ts",
-            "line": 4,
-            "column": 19,
+            "file": "src/targets/kiro.ts",
+            "line": 93,
+            "column": 41,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "src/targets/gemini.ts",
-            "line": 42,
-            "column": 27,
+            "file": "src/types/gemini.ts",
+            "line": 35,
+            "column": 16,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "src/types/copilot.ts",
-            "line": 22,
-            "column": 9,
-            "message": "An index signature is preferred over a record."
-          },
-          {
-            "file": "src/types/qwen.ts",
-            "line": 19,
+            "file": "src/types/pi.ts",
+            "line": 27,
             "column": 13,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "tests/openclaw-converter.test.ts",
-            "line": 180,
-            "column": 55,
+            "file": "src/utils/legacy-cleanup.ts",
+            "line": 266,
+            "column": 39,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "tests/sync-windsurf.test.ts",
-            "line": 82,
-            "column": 19,
+            "file": "tests/skills/ce-release-notes-helper.test.ts",
+            "line": 323,
+            "column": 18,
             "message": "An index signature is preferred over a record."
           }
         ]
@@ -231,59 +243,59 @@
     },
     "consistent-type-definitions": {
       "interface": {
-        "count": 109,
+        "count": 100,
         "samples": [
           {
-            "file": "src/commands/install.ts",
-            "line": 228,
+            "file": "src/commands/cleanup.ts",
+            "line": 35,
             "column": 1,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "src/data/plugin-legacy-artifacts.ts",
+            "line": 264,
+            "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
             "file": "src/release/metadata.ts",
-            "line": 29,
+            "line": 43,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "src/sync/pi.ts",
-            "line": 17,
+            "file": "src/targets/pi.ts",
+            "line": 44,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
             "file": "src/types/claude.ts",
-            "line": 93,
+            "line": 98,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "src/types/droid.ts",
-            "line": 1,
+            "file": "src/types/copilot.ts",
+            "line": 26,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
             "file": "src/types/kiro.ts",
-            "line": 22,
+            "line": 1,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
             "file": "src/types/opencode.ts",
-            "line": 13,
+            "line": 49,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "src/types/pi.ts",
-            "line": 34,
-            "column": 8,
-            "message": "Use `interface` instead of `type`."
-          },
-          {
-            "file": "src/types/windsurf.ts",
-            "line": 26,
+            "file": "src/utils/codex-content.ts",
+            "line": 1,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
@@ -296,31 +308,17 @@
         ]
       },
       "type": {
-        "count": 1,
-        "samples": [
-          {
-            "file": "src/parsers/claude-home.ts",
-            "line": 8,
-            "column": 8,
-            "message": "Use `type` instead of `interface`."
-          }
-        ]
+        "count": 0,
+        "samples": []
       }
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 1,
-        "samples": [
-          {
-            "file": "tests/windsurf-converter.test.ts",
-            "line": 599,
-            "column": 19,
-            "message": "`import()` type annotations are forbidden."
-          }
-        ]
+        "count": 0,
+        "samples": []
       },
       "no-type-imports": {
-        "count": 145,
+        "count": 80,
         "samples": [
           {
             "file": "scripts/release/preview.ts",
@@ -329,56 +327,56 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/converters/claude-to-copilot.ts",
+            "file": "src/converters/claude-to-codex.ts",
+            "line": 10,
+            "column": 3,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "src/converters/claude-to-droid.ts",
+            "line": 2,
+            "column": 48,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "src/converters/claude-to-gemini.ts",
             "line": 4,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/converters/claude-to-kiro.ts",
-            "line": 4,
-            "column": 70,
+            "file": "src/converters/claude-to-opencode.ts",
+            "line": 6,
+            "column": 3,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "src/converters/claude-to-pi.ts",
-            "line": 2,
-            "column": 28,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "src/parsers/claude-home.ts",
-            "line": 6,
+            "line": 9,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/sync/kiro.ts",
-            "line": 3,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "src/sync/windsurf.ts",
+            "file": "src/parsers/claude.ts",
             "line": 4,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/types/codex.ts",
+            "file": "src/targets/kiro.ts",
+            "line": 4,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "tests/copilot-converter.test.ts",
+            "line": 4,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "tests/skills/ce-release-notes-helper.test.ts",
             "line": 2,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "tests/pi-converter.test.ts",
-            "line": 6,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "tests/windsurf-writer.test.ts",
-            "line": 6,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           }
@@ -387,7 +385,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 387,
+        "count": 386,
         "samples": [
           {
             "file": "plugins/compound-engineering/skills/ce-onboarding/scripts/inventory.mjs",
@@ -396,56 +394,56 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "src/converters/claude-to-codex.ts",
-            "line": 163,
+            "file": "src/commands/cleanup.ts",
+            "line": 689,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/converters/claude-to-openclaw.ts",
-            "line": 79,
+            "file": "src/converters/claude-to-droid.ts",
+            "line": 104,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/converters/claude-to-windsurf.ts",
-            "line": 110,
+            "file": "src/converters/claude-to-pi.ts",
+            "line": 95,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/release/metadata.ts",
-            "line": 121,
+            "file": "src/release/components.ts",
+            "line": 125,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/sync/qwen.ts",
-            "line": 10,
-            "column": 8,
+            "file": "src/targets/codex.ts",
+            "line": 587,
+            "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/targets/qwen.ts",
-            "line": 6,
-            "column": 8,
+            "file": "src/targets/pi.ts",
+            "line": 366,
+            "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "src/utils/legacy-cleanup.ts",
-            "line": 488,
+            "line": 454,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "tests/openclaw-writer.test.ts",
-            "line": 18,
+            "file": "tests/legacy-cleanup.test.ts",
+            "line": 44,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "tests/windsurf-writer.test.ts",
-            "line": 8,
+            "file": "tests/skills/ce-release-notes-helper.test.ts",
+            "line": 110,
             "column": 1,
             "message": "Expected a function expression."
           }
@@ -480,6 +478,12 @@
         "count": 5,
         "samples": [
           {
+            "file": "src/commands/cleanup.ts",
+            "line": 41,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
             "file": "src/commands/convert.ts",
             "line": 14,
             "column": 8,
@@ -502,17 +506,11 @@
             "line": 6,
             "column": 8,
             "message": "Prefer named exports"
-          },
-          {
-            "file": "src/commands/sync.ts",
-            "line": 22,
-            "column": 8,
-            "message": "Prefer named exports"
           }
         ]
       },
       "default": {
-        "count": 25,
+        "count": 8,
         "samples": [
           {
             "file": "src/parsers/claude.ts",
@@ -521,56 +519,44 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/sync/copilot.ts",
-            "line": 23,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "src/sync/gemini.ts",
-            "line": 18,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "src/sync/openclaw.ts",
-            "line": 6,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "src/sync/qwen.ts",
-            "line": 10,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "src/sync/windsurf.ts",
-            "line": 10,
+            "file": "src/release/config.ts",
+            "line": 12,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
             "file": "src/targets/gemini.ts",
-            "line": 7,
+            "line": 18,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "src/targets/kiro.ts",
+            "line": 9,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
             "file": "src/targets/opencode.ts",
-            "line": 59,
+            "line": 62,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/targets/qwen.ts",
-            "line": 6,
+            "file": "src/templates/pi/compat-extension.ts",
+            "line": 1,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/utils/resolve-output.ts",
-            "line": 5,
+            "file": "src/utils/json-config.ts",
+            "line": 10,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "src/utils/opencode-config.ts",
+            "line": 19,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           }
@@ -596,7 +582,7 @@
         ]
       },
       "4-space": {
-        "count": 130,
+        "count": 91,
         "samples": [
           {
             "file": "plugins/compound-engineering/skills/ce-onboarding/scripts/inventory.mjs",
@@ -605,63 +591,63 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/converters/claude-to-openclaw.ts",
+            "file": "src/converters/claude-to-copilot.ts",
             "line": 5,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/sync/droid.ts",
-            "line": 9,
+            "file": "src/release/config.ts",
+            "line": 4,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/targets/droid.ts",
-            "line": 8,
+            "file": "src/templates/pi/compat-extension.ts",
+            "line": 13,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/types/gemini.ts",
+            "file": "src/utils/codex-content.ts",
             "line": 2,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/utils/resolve-output.ts",
-            "line": 6,
+            "file": "src/utils/secrets.ts",
+            "line": 5,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "tests/detect-tools.test.ts",
-            "line": 8,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "tests/pi-converter.test.ts",
-            "line": 11,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "tests/skills/ce-polish-beta-package-manager.test.ts",
+            "file": "tests/copilot-converter.test.ts",
             "line": 7,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "tests/windsurf-writer.test.ts",
-            "line": 9,
+            "file": "tests/model-utils.test.ts",
+            "line": 3,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "tests/release-metadata.test.ts",
+            "line": 6,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "tests/skills/ce-release-notes-helper.test.ts",
+            "line": 8,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           }
         ]
       },
       "tab": {
-        "count": 130,
+        "count": 91,
         "samples": [
           {
             "file": "plugins/compound-engineering/skills/ce-onboarding/scripts/inventory.mjs",
@@ -670,56 +656,56 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/converters/claude-to-openclaw.ts",
+            "file": "src/converters/claude-to-copilot.ts",
             "line": 5,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/sync/droid.ts",
-            "line": 9,
+            "file": "src/release/config.ts",
+            "line": 4,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/targets/droid.ts",
-            "line": 8,
+            "file": "src/templates/pi/compat-extension.ts",
+            "line": 13,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/types/gemini.ts",
+            "file": "src/utils/codex-content.ts",
             "line": 2,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/utils/resolve-output.ts",
-            "line": 6,
+            "file": "src/utils/secrets.ts",
+            "line": 5,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "tests/detect-tools.test.ts",
-            "line": 8,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "tests/pi-converter.test.ts",
-            "line": 11,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "tests/skills/ce-polish-beta-package-manager.test.ts",
+            "file": "tests/copilot-converter.test.ts",
             "line": 7,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "tests/windsurf-writer.test.ts",
-            "line": 9,
+            "file": "tests/model-utils.test.ts",
+            "line": 3,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "tests/release-metadata.test.ts",
+            "line": 6,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "tests/skills/ce-release-notes-helper.test.ts",
+            "line": 8,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           }
@@ -728,7 +714,7 @@
     },
     "quotes": {
       "double": {
-        "count": 104,
+        "count": 105,
         "samples": [
           {
             "file": "src/converters/claude-to-droid.ts",
@@ -737,63 +723,63 @@
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/converters/claude-to-gemini.ts",
-            "line": 157,
-            "column": 14,
+            "file": "src/targets/codex.ts",
+            "line": 570,
+            "column": 11,
             "message": "Strings must use doublequote."
           },
           {
             "file": "tests/codex-writer.test.ts",
-            "line": 200,
+            "line": 64,
+            "column": 33,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "tests/codex-writer.test.ts",
+            "line": 830,
             "column": 7,
             "message": "Strings must use doublequote."
           },
           {
             "file": "tests/codex-writer.test.ts",
-            "line": 532,
+            "line": 924,
             "column": 7,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "tests/converter.test.ts",
-            "line": 231,
-            "column": 48,
             "message": "Strings must use doublequote."
           },
           {
             "file": "tests/gemini-converter.test.ts",
-            "line": 372,
+            "line": 147,
+            "column": 39,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "tests/gemini-converter.test.ts",
+            "line": 391,
             "column": 30,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "tests/legacy-cleanup.test.ts",
-            "line": 560,
-            "column": 7,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "tests/pi-writer.test.ts",
-            "line": 126,
-            "column": 38,
+            "file": "tests/pi-converter.test.ts",
+            "line": 147,
+            "column": 41,
             "message": "Strings must use doublequote."
           },
           {
             "file": "tests/skills/ce-polish-beta-resolve-port.test.ts",
-            "line": 153,
-            "column": 9,
+            "line": 98,
+            "column": 7,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "tests/windsurf-writer.test.ts",
-            "line": 267,
-            "column": 33,
+            "file": "tests/skills/ce-polish-beta-resolve-port.test.ts",
+            "line": 325,
+            "column": 7,
             "message": "Strings must use doublequote."
           }
         ]
       },
       "single": {
-        "count": 9437,
+        "count": 10191,
         "samples": [
           {
             "file": "plugins/compound-engineering/skills/ce-onboarding/scripts/inventory.mjs",
@@ -802,57 +788,57 @@
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/converters/claude-to-opencode.ts",
-            "line": 57,
-            "column": 26,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "src/utils/frontmatter.ts",
-            "line": 1,
-            "column": 22,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "tests/cli.test.ts",
-            "line": 695,
-            "column": 55,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "tests/copilot-converter.test.ts",
-            "line": 465,
-            "column": 8,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "tests/kiro-writer.test.ts",
-            "line": 72,
-            "column": 17,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "tests/pipeline-review-contract.test.ts",
-            "line": 36,
-            "column": 41,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "tests/resolve-output.test.ts",
-            "line": 49,
-            "column": 61,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "tests/skills/ce-polish-beta-resolve-port.test.ts",
-            "line": 270,
+            "file": "src/converters/claude-to-droid.ts",
+            "line": 165,
             "column": 39,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "tests/windsurf-writer.test.ts",
-            "line": 391,
-            "column": 30,
+            "file": "src/utils/legacy-cleanup.ts",
+            "line": 49,
+            "column": 3,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "tests/cli.test.ts",
+            "line": 780,
+            "column": 44,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "tests/codex-writer.test.ts",
+            "line": 200,
+            "column": 19,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "tests/droid-converter.test.ts",
+            "line": 327,
+            "column": 17,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "tests/manifest-path-safety.test.ts",
+            "line": 90,
+            "column": 11,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "tests/pipeline-review-contract.test.ts",
+            "line": 245,
+            "column": 40,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "tests/review-skill-contract.test.ts",
+            "line": 175,
+            "column": 31,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "tests/skills/ce-release-notes-helper.test.ts",
+            "line": 354,
+            "column": 16,
             "message": "Strings must use singlequote."
           }
         ]
@@ -886,6 +872,16 @@
         "samples": []
       }
     },
+    "react-jsx-boolean-value": {
+      "never": {
+        "count": 0,
+        "samples": []
+      },
+      "always": {
+        "count": 0,
+        "samples": []
+      }
+    },
     "react-jsx-fragments": {
       "syntax": {
         "count": 0,
@@ -898,7 +894,7 @@
     },
     "semi": {
       "always": {
-        "count": 8529,
+        "count": 8501,
         "samples": [
           {
             "file": "scripts/release/preview.ts",
@@ -907,57 +903,57 @@
             "message": "Missing semicolon."
           },
           {
-            "file": "src/converters/claude-to-pi.ts",
-            "line": 149,
-            "column": 21,
+            "file": "src/converters/claude-to-opencode.ts",
+            "line": 127,
+            "column": 44,
             "message": "Missing semicolon."
           },
           {
-            "file": "src/targets/gemini.ts",
-            "line": 1,
-            "column": 24,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "tests/ce-demo-reel.test.ts",
-            "line": 370,
-            "column": 15,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "tests/converter.test.ts",
-            "line": 170,
-            "column": 48,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "tests/gemini-writer.test.ts",
-            "line": 166,
-            "column": 93,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "tests/pi-converter.test.ts",
-            "line": 37,
-            "column": 42,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "tests/review-skill-contract.test.ts",
-            "line": 2,
-            "column": 24,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "tests/skills/ce-polish-beta-resolve-port.test.ts",
-            "line": 260,
+            "file": "src/targets/managed-artifacts.ts",
+            "line": 101,
             "column": 71,
             "message": "Missing semicolon."
           },
           {
-            "file": "tests/windsurf-writer.test.ts",
-            "line": 393,
-            "column": 31,
+            "file": "tests/claude-parser.test.ts",
+            "line": 57,
+            "column": 97,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "tests/codex-converter.test.ts",
+            "line": 441,
+            "column": 52,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "tests/detect-tools.test.ts",
+            "line": 82,
+            "column": 93,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "tests/legacy-cleanup.test.ts",
+            "line": 605,
+            "column": 3,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "tests/pipeline-review-contract.test.ts",
+            "line": 338,
+            "column": 5,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "tests/session-history-scripts.test.ts",
+            "line": 204,
+            "column": 13,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "tests/skills/ce-release-notes-helper.test.ts",
+            "line": 357,
+            "column": 38,
             "message": "Missing semicolon."
           }
         ]

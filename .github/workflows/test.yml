@@ -1,4 +1,4 @@
-name: Lint
+name: Test
 
 on:
   pull_request:
@@ -8,8 +8,10 @@ on:
   workflow_dispatch:
 
 jobs:
-  lint:
+  test:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -25,3 +27,6 @@ jobs:
 
       - name: Check formatting
         run: pnpm format:check
+
+      - name: Test
+        run: pnpm test

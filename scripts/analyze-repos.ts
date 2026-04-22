@@ -389,7 +389,8 @@ let repoAnalyzeInfo = await Promise.all(
       const remoteInfo = await getRemoteRepoInfo(repo.cloneUrl);
       const analyzedRecently =
         !!lastAnalysis &&
-        new Date().getTime() - new Date(lastAnalysis.analyzedCommitDate).getTime() <
+        new Date().getTime() -
+          new Date(lastAnalysis.analyzedCommitDate).getTime() <
           ANALYSIS_COOLDOWN_MS;
 
       let analyseReason:

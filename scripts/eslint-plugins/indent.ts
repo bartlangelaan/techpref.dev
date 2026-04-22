@@ -72,7 +72,13 @@ const plugin = eslintCompatPlugin({
               return;
             }
 
-            // Space mode: indentation should only contain spaces and be a multiple of expectedSpaceCount
+            // Space mode: detect the base indent unit of the file (minimum
+            // even-length indentation) and compare it to the expected size.
+            // Odd-length indents are skipped because they indicate alignment-
+            // based continuation lines, not real indentation levels.
+            let minEvenIndent: number | null = null;
+            let minEvenIndentLine = -1;
+
             for (let i = 0; i < lines.length; i++) {
               const line = lines[i];
               const lineNumber = i + 1;
@@ -94,21 +100,36 @@ const plugin = eslintCompatPlugin({
                   },
                   messageId: "expectedSpaces",
                 });
-                return;
-              } else if (indent.length % expectedSpaceCount !== 0) {
-                context.report({
-                  loc: {
-                    start: { line: lineNumber, column: 0 },
-                    end: { line: lineNumber, column: indent.length },
-                  },
-                  messageId: "wrongIndentSize",
-                  data: {
-                    expected: String(expectedSpaceCount),
-                    actual: String(indent.length),
-                  },
-                });
-                return;
+                return; // Report only the first occurrence
               }
+
+              // Track minimum even-length indentation to detect the file's
+              // base indent unit (odd indents are alignment/continuation lines)
+              if (
+                indent.length % 2 === 0 &&
+                (minEvenIndent === null || indent.length < minEvenIndent)
+              ) {
+                minEvenIndent = indent.length;
+                minEvenIndentLine = lineNumber;
+              }
+            }
+
+            // If no even-length indentation found, can't determine indent style
+            if (minEvenIndent === null) return;
+
+            // Report if the detected base indent unit doesn't match expected
+            if (minEvenIndent !== expectedSpaceCount) {
+              context.report({
+                loc: {
+                  start: { line: minEvenIndentLine, column: 0 },
+                  end: { line: minEvenIndentLine, column: minEvenIndent },
+                },
+                messageId: "wrongIndentSize",
+                data: {
+                  expected: String(expectedSpaceCount),
+                  actual: String(minEvenIndent),
+                },
+              });
             }
           },
         };

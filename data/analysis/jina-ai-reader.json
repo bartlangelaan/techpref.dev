@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "96d58f23c7cc",
-  "analyzedCommit": "f7c491b6e3bb533c0159deb367c62dc280791f35",
-  "analyzedCommitDate": "2026-04-16T06:37:01.000Z",
+  "analyzedCommit": "bc0c608953e57f972eb960ee55fd4605c5ff776c",
+  "analyzedCommitDate": "2026-05-07T04:14:29.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -70,7 +70,7 @@
         ]
       },
       "generic": {
-        "count": 300,
+        "count": 315,
         "samples": [
           {
             "file": "src/3rd-party/anthropic.ts",
@@ -80,56 +80,56 @@
           },
           {
             "file": "src/3rd-party/open-router.ts",
-            "line": 59,
+            "line": 78,
             "column": 39,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
-            "file": "src/api/serp.ts",
-            "line": 194,
-            "column": 24,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+            "file": "src/db/bucket-storage.ts",
+            "line": 217,
+            "column": 54,
+            "message": "Array type using 'any[]' is forbidden. Use 'Array<any>' instead."
           },
           {
-            "file": "src/lib/json-parse-stream.ts",
-            "line": 1513,
-            "column": 24,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
-          },
-          {
-            "file": "src/services/common-llm/google-gemini.ts",
-            "line": 980,
-            "column": 14,
-            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
-          },
-          {
-            "file": "src/services/common-llm/open-router.ts",
-            "line": 263,
-            "column": 13,
-            "message": "Array type using 'ChatGPTToolDescriber_Function[]' is forbidden. Use 'Array<ChatGPTToolDescriber_Function>' instead."
-          },
-          {
-            "file": "src/services/jsdom.ts",
-            "line": 67,
-            "column": 25,
-            "message": "Array type using 'Node[]' is forbidden. Use 'Array<Node>' instead."
-          },
-          {
-            "file": "src/services/pdf-extract.ts",
-            "line": 100,
-            "column": 40,
-            "message": "Array type using 'TextItem[]' is forbidden. Use 'Array<TextItem>' instead."
-          },
-          {
-            "file": "src/services/rate-limit/stamp-log-kit.ts",
-            "line": 11,
-            "column": 22,
+            "file": "src/services/alt-text.ts",
+            "line": 124,
+            "column": 19,
             "message": "Array type using 'number[]' is forbidden. Use 'Array<number>' instead."
           },
           {
-            "file": "tests/run.ts",
-            "line": 12,
-            "column": 37,
+            "file": "src/services/common-llm/gpt-35.ts",
+            "line": 156,
+            "column": 18,
+            "message": "Array type using 'ChatGPTToolCall_Function[]' is forbidden. Use 'Array<ChatGPTToolCall_Function>' instead."
+          },
+          {
+            "file": "src/services/common-llm/open-router.ts",
+            "line": 339,
+            "column": 21,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+          },
+          {
+            "file": "src/services/jsdom.ts",
+            "line": 586,
+            "column": 33,
+            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
+          },
+          {
+            "file": "src/services/pdf-extract.ts",
+            "line": 316,
+            "column": 21,
+            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
+          },
+          {
+            "file": "src/services/serp/puppeteer.ts",
+            "line": 27,
+            "column": 15,
+            "message": "Array type using 'Cookie[]' is forbidden. Use 'Array<Cookie>' instead."
+          },
+          {
+            "file": "tests/unit/sse-stream.test.ts",
+            "line": 34,
+            "column": 61,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           }
         ]
@@ -137,8 +137,14 @@
     },
     "consistent-generic-constructors": {
       "constructor": {
-        "count": 5,
+        "count": 6,
         "samples": [
+          {
+            "file": "src/services/bogo-sites.ts",
+            "line": 36,
+            "column": 14,
+            "message": "The generic type arguments should be specified as part of the constructor type arguments."
+          },
           {
             "file": "src/services/common-iminterrogate/base.ts",
             "line": 33,
@@ -182,7 +188,7 @@
           },
           {
             "file": "src/api/crawler.ts",
-            "line": 1605,
+            "line": 1639,
             "column": 31,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
@@ -239,7 +245,7 @@
     },
     "consistent-indexed-object-style": {
       "record": {
-        "count": 50,
+        "count": 52,
         "samples": [
           {
             "file": "src/3rd-party/anthropic.ts",
@@ -248,39 +254,39 @@
             "message": "A record is preferred over an index signature."
           },
           {
-            "file": "src/3rd-party/replicate.ts",
-            "line": 41,
-            "column": 25,
+            "file": "src/3rd-party/serper-search.ts",
+            "line": 66,
+            "column": 23,
             "message": "A record is preferred over an index signature."
           },
           {
             "file": "src/services/common-llm/google-gemini.ts",
-            "line": 343,
-            "column": 45,
+            "line": 217,
+            "column": 20,
+            "message": "A record is preferred over an index signature."
+          },
+          {
+            "file": "src/services/markify.ts",
+            "line": 39,
+            "column": 24,
             "message": "A record is preferred over an index signature."
           },
           {
             "file": "src/services/puppeteer.ts",
-            "line": 90,
-            "column": 18,
-            "message": "A record is preferred over an index signature."
-          },
-          {
-            "file": "src/services/puppeteer.ts",
-            "line": 132,
-            "column": 28,
+            "line": 130,
+            "column": 13,
             "message": "A record is preferred over an index signature."
           },
           {
             "file": "src/services/serp/common-serp.ts",
-            "line": 104,
-            "column": 31,
+            "line": 89,
+            "column": 30,
             "message": "A record is preferred over an index signature."
           },
           {
             "file": "src/services/serp/google.ts",
-            "line": 387,
-            "column": 31,
+            "line": 349,
+            "column": 39,
             "message": "A record is preferred over an index signature."
           },
           {
@@ -291,8 +297,8 @@
           },
           {
             "file": "src/services/snapshot-formatter.ts",
-            "line": 113,
-            "column": 53,
+            "line": 109,
+            "column": 18,
             "message": "A record is preferred over an index signature."
           },
           {
@@ -304,48 +310,42 @@
         ]
       },
       "index-signature": {
-        "count": 47,
+        "count": 55,
         "samples": [
           {
             "file": "src/api/crawler.ts",
-            "line": 212,
+            "line": 214,
             "column": 28,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "src/api/serp.ts",
-            "line": 343,
-            "column": 67,
+            "file": "src/db/bucket-storage.ts",
+            "line": 97,
+            "column": 24,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "src/db/noop-storage.ts",
-            "line": 145,
-            "column": 65,
+            "file": "src/services/common-iminterrogate/registry.ts",
+            "line": 54,
+            "column": 15,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "src/services/common-llm/open-router.ts",
-            "line": 582,
-            "column": 25,
-            "message": "An index signature is preferred over a record."
-          },
-          {
-            "file": "src/services/default-bucket.ts",
-            "line": 47,
-            "column": 62,
-            "message": "An index signature is preferred over a record."
-          },
-          {
-            "file": "src/services/jsdom.ts",
-            "line": 185,
-            "column": 31,
-            "message": "An index signature is preferred over a record."
-          },
-          {
-            "file": "src/services/misc.ts",
+            "file": "src/services/curl.ts",
             "line": 107,
-            "column": 26,
+            "column": 28,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "src/services/envconfig.ts",
+            "line": 35,
+            "column": 18,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "src/services/markify.ts",
+            "line": 116,
+            "column": 12,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -356,14 +356,20 @@
           },
           {
             "file": "tests/e2e/summaries.test.ts",
-            "line": 35,
+            "line": 27,
             "column": 22,
             "message": "An index signature is preferred over a record."
           },
           {
+            "file": "tests/e2e/summaries.test.ts",
+            "line": 109,
+            "column": 60,
+            "message": "An index signature is preferred over a record."
+          },
+          {
             "file": "tests/helpers/client.ts",
-            "line": 25,
-            "column": 11,
+            "line": 61,
+            "column": 67,
             "message": "An index signature is preferred over a record."
           }
         ]
@@ -371,7 +377,7 @@
     },
     "consistent-type-definitions": {
       "interface": {
-        "count": 11,
+        "count": 12,
         "samples": [
           {
             "file": "src/lib/json-parse-stream.ts",
@@ -380,15 +386,15 @@
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "src/services/common-llm/open-router.ts",
-            "line": 332,
+            "file": "src/services/bogo-sites.ts",
+            "line": 7,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
             "file": "src/services/common-llm/open-router.ts",
-            "line": 350,
-            "column": 8,
+            "line": 332,
+            "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
@@ -405,13 +411,13 @@
           },
           {
             "file": "src/services/common-llm/open-router.ts",
-            "line": 400,
+            "line": 388,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
             "file": "src/services/common-llm/open-router.ts",
-            "line": 412,
+            "line": 400,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
@@ -503,7 +509,7 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 281,
+        "count": 284,
         "samples": [
           {
             "file": "src/3rd-party/anthropic.ts",
@@ -513,9 +519,9 @@
           },
           {
             "file": "src/api/searcher.ts",
-            "line": 11,
+            "line": 2,
             "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
+            "message": "Imports RPCReflection are only used as type."
           },
           {
             "file": "src/db/bucket-storage.ts",
@@ -531,25 +537,25 @@
           },
           {
             "file": "src/services/common-llm/google-gemini.ts",
-            "line": 16,
+            "line": 15,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
             "file": "src/services/common-llm/registry.ts",
-            "line": 9,
+            "line": 7,
             "column": 1,
-            "message": "Imports Readable are only used as type."
+            "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
             "file": "src/services/pdf-extract.ts",
-            "line": 5,
+            "line": 3,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
             "file": "src/services/serp/google.ts",
-            "line": 8,
+            "line": 7,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
@@ -635,7 +641,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 67,
+        "count": 83,
         "samples": [
           {
             "file": "src/lib/filtered-stream.ts",
@@ -644,27 +650,21 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "src/services/common-llm/google-gemini.ts",
-            "line": 996,
-            "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
             "file": "src/services/common-llm/misc.ts",
-            "line": 296,
+            "line": 41,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/services/serp/bing.ts",
-            "line": 255,
-            "column": 1,
+            "file": "src/services/minimal-stealth.js",
+            "line": 458,
+            "column": 9,
             "message": "Expected a function expression."
           },
           {
             "file": "src/services/serp/google.ts",
-            "line": 653,
-            "column": 1,
+            "line": 608,
+            "column": 8,
             "message": "Expected a function expression."
           },
           {
@@ -675,25 +675,31 @@
           },
           {
             "file": "src/utils/misc.ts",
-            "line": 29,
+            "line": 80,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/utils/openai.ts",
-            "line": 3,
-            "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "tests/e2e/crawler-options-dto.test.ts",
-            "line": 18,
+            "file": "src/utils/search-query.ts",
+            "line": 5,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "tests/run.ts",
-            "line": 10,
+            "file": "tests/helpers/client.ts",
+            "line": 15,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "tests/unit/filtered-stream.test.ts",
+            "line": 31,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "tests/unit/sse-stream.test.ts",
+            "line": 34,
             "column": 1,
             "message": "Expected a function expression."
           }
@@ -728,7 +734,7 @@
           },
           {
             "file": "src/services/puppeteer.ts",
-            "line": 1338,
+            "line": 1342,
             "column": 15,
             "message": "Expected a function declaration."
           },
@@ -814,7 +820,7 @@
         ]
       },
       "default": {
-        "count": 31,
+        "count": 29,
         "samples": [
           {
             "file": "src/3rd-party/cloud-flare.ts",
@@ -829,32 +835,32 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/db/bucket-storage.ts",
+            "file": "src/api/serp.ts",
+            "line": 44,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "src/dto/base-auth.ts",
+            "line": 37,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "src/services/alt-text.ts",
             "line": 17,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/dto/turndown-tweakable-options.ts",
-            "line": 6,
+            "file": "src/services/default-bucket.ts",
+            "line": 8,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/services/binary-extractor.ts",
-            "line": 22,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "src/services/lm.ts",
-            "line": 14,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "src/services/proxy-provider/brightdata.ts",
-            "line": 7,
+            "file": "src/services/misc.ts",
+            "line": 18,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -865,8 +871,8 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/utils/get-function-url.ts",
-            "line": 10,
+            "file": "src/services/temp-file.ts",
+            "line": 7,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -885,7 +891,7 @@
         "samples": []
       },
       "4-space": {
-        "count": 2,
+        "count": 3,
         "samples": [
           {
             "file": "src/services/puppeteer.ts",
@@ -898,11 +904,17 @@
             "line": 185,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "tests/e2e/html-input.test.ts",
+            "line": 70,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 10-space indentation."
           }
         ]
       },
       "tab": {
-        "count": 115,
+        "count": 128,
         "samples": [
           {
             "file": ".docker/mongo/10-create-db-creds.js",
@@ -911,56 +923,56 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/api/searcher.ts",
+            "file": "src/api/serp.ts",
             "line": 3,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/lib/transform-server-event-stream.ts",
-            "line": 6,
+            "file": "src/services/binary-extractor.ts",
+            "line": 23,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/services/common-llm/gpt-1106.ts",
-            "line": 6,
+            "file": "src/services/common-llm/jina-vlm.ts",
+            "line": 7,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/services/errors.ts",
-            "line": 65,
+            "file": "src/services/jsdom.ts",
+            "line": 19,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/services/proxy-provider/index.ts",
+            "file": "src/services/serp/common-serp.ts",
             "line": 13,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/services/serper-search.ts",
-            "line": 6,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "src/utils/misc.ts",
+            "file": "src/utils/ip.ts",
             "line": 4,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "tests/e2e/markdown-chunking.test.ts",
+            "file": "tests/e2e/dom-options.test.ts",
+            "line": 10,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "tests/e2e/summaries.test.ts",
             "line": 11,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "tests/run.ts",
-            "line": 11,
+            "file": "tests/unit/sse-stream.test.ts",
+            "line": 17,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           }
@@ -969,7 +981,7 @@
     },
     "quotes": {
       "double": {
-        "count": 6630,
+        "count": 7816,
         "samples": [
           {
             "file": "bin/compile-secret.js",
@@ -978,57 +990,57 @@
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/api/searcher.ts",
-            "line": 790,
-            "column": 39,
+            "file": "src/api/serp.ts",
+            "line": 291,
+            "column": 46,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/lib/json-parse-stream.ts",
-            "line": 555,
-            "column": 19,
+            "file": "src/lib/transform-server-event-stream.ts",
+            "line": 54,
+            "column": 36,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/services/common-llm/base.ts",
-            "line": 817,
-            "column": 100,
+            "file": "src/services/common-llm/gpt-35.ts",
+            "line": 467,
+            "column": 31,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/services/common-llm/open-router.ts",
-            "line": 819,
-            "column": 50,
+            "file": "src/services/jsdom.ts",
+            "line": 537,
+            "column": 57,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/services/markify.ts",
-            "line": 668,
+            "file": "src/services/serp/common-serp.ts",
+            "line": 3,
             "column": 30,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/services/serp/google.ts",
-            "line": 469,
-            "column": 49,
-            "message": "Strings must use doublequote."
-          },
-          {
             "file": "src/utils/ip.ts",
-            "line": 132,
-            "column": 5,
+            "line": 216,
+            "column": 20,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "tests/e2e/crawler-options-dto.test.ts",
-            "line": 171,
-            "column": 8,
+            "file": "tests/e2e/crawler-options-misc.test.ts",
+            "line": 76,
+            "column": 50,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "tests/run.ts",
-            "line": 35,
-            "column": 15,
+            "file": "tests/unit/filtered-stream.test.ts",
+            "line": 106,
+            "column": 39,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "tests/unit/sse-stream.test.ts",
+            "line": 240,
+            "column": 47,
             "message": "Strings must use doublequote."
           }
         ]
@@ -1050,50 +1062,50 @@
           },
           {
             "file": "src/utils/tailwind-classes.ts",
-            "line": 420,
+            "line": 421,
             "column": 5,
             "message": "Strings must use singlequote."
           },
           {
             "file": "src/utils/tailwind-classes.ts",
-            "line": 1735,
+            "line": 1736,
             "column": 5,
             "message": "Strings must use singlequote."
           },
           {
             "file": "src/utils/tailwind-classes.ts",
-            "line": 3050,
+            "line": 3051,
             "column": 5,
             "message": "Strings must use singlequote."
           },
           {
             "file": "src/utils/tailwind-classes.ts",
-            "line": 4364,
+            "line": 4365,
             "column": 5,
             "message": "Strings must use singlequote."
           },
           {
             "file": "src/utils/tailwind-classes.ts",
-            "line": 5679,
+            "line": 5680,
             "column": 5,
             "message": "Strings must use singlequote."
           },
           {
             "file": "src/utils/tailwind-classes.ts",
-            "line": 6994,
+            "line": 6995,
             "column": 5,
             "message": "Strings must use singlequote."
           },
           {
             "file": "src/utils/tailwind-classes.ts",
-            "line": 8309,
+            "line": 8310,
             "column": 5,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/utils/tailwind-classes.ts",
-            "line": 9624,
-            "column": 5,
+            "file": "tests/e2e/content-fidelity.test.ts",
+            "line": 57,
+            "column": 36,
             "message": "Strings must use singlequote."
           }
         ]
@@ -1214,7 +1226,7 @@
         ]
       },
       "never": {
-        "count": 9618,
+        "count": 10931,
         "samples": [
           {
             "file": ".docker/mongo/10-create-db-creds.js",
@@ -1224,56 +1236,56 @@
           },
           {
             "file": "src/api/searcher.ts",
-            "line": 366,
-            "column": 32,
+            "line": 702,
+            "column": 42,
             "message": "Extra semicolon."
           },
           {
             "file": "src/lib/json-parse-stream.ts",
-            "line": 560,
-            "column": 55,
+            "line": 1126,
+            "column": 37,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/services/common-iminterrogate/registry.ts",
-            "line": 89,
-            "column": 102,
+            "file": "src/services/common-llm/google-gemini.ts",
+            "line": 88,
+            "column": 22,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/services/common-llm/misc.ts",
-            "line": 176,
-            "column": 35,
+            "file": "src/services/common-llm/vertex-gemini.ts",
+            "line": 108,
+            "column": 53,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/services/jsdom.ts",
-            "line": 289,
-            "column": 30,
+            "file": "src/services/pdf-extract.ts",
+            "line": 24,
+            "column": 70,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/services/puppeteer.ts",
-            "line": 953,
-            "column": 33,
+            "file": "src/services/serp/puppeteer.ts",
+            "line": 286,
+            "column": 81,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/services/serper-search.ts",
-            "line": 89,
+            "file": "src/utils/search-query.ts",
+            "line": 61,
             "column": 85,
             "message": "Extra semicolon."
           },
           {
-            "file": "tests/e2e/browser-options.test.ts",
-            "line": 61,
-            "column": 52,
+            "file": "tests/e2e/stream-output.test.ts",
+            "line": 8,
+            "column": 33,
             "message": "Extra semicolon."
           },
           {
-            "file": "tests/run.ts",
-            "line": 46,
-            "column": 7,
+            "file": "tests/unit/sse-stream.test.ts",
+            "line": 240,
+            "column": 64,
             "message": "Extra semicolon."
           }
         ]

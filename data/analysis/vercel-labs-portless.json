@@ -1,22 +1,28 @@
 {
   "analyzedVersion": "96d58f23c7cc",
-  "analyzedCommit": "08ce521bee485e3e1019bd7f8ac8100a9dc1c158",
-  "analyzedCommitDate": "2026-04-20T05:30:58.000Z",
+  "analyzedCommit": "d564c2c0974a9ad2a5aad6af23068d3f721aff73",
+  "analyzedCommitDate": "2026-05-08T00:17:39.000Z",
   "checks": {
     "array-type": {
       "array": {
-        "count": 1,
+        "count": 2,
         "samples": [
           {
             "file": "packages/portless/src/mdns.test.ts",
             "line": 13,
             "column": 20,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
+          },
+          {
+            "file": "tests/e2e/src/zombie.test.ts",
+            "line": 204,
+            "column": 17,
+            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           }
         ]
       },
       "generic": {
-        "count": 121,
+        "count": 205,
         "samples": [
           {
             "file": "apps/docs/src/app/api/docs-chat/route.ts",
@@ -25,79 +31,86 @@
             "message": "Array type using 'ModelMessage[]' is forbidden. Use 'Array<ModelMessage>' instead."
           },
           {
-            "file": "packages/portless/src/certs.ts",
-            "line": 177,
-            "column": 24,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
-          },
-          {
             "file": "packages/portless/src/cli-utils.ts",
-            "line": 828,
-            "column": 39,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+            "line": 655,
+            "column": 47,
+            "message": "Array type using 'number[]' is forbidden. Use 'Array<number>' instead."
           },
           {
             "file": "packages/portless/src/cli.ts",
-            "line": 1183,
-            "column": 29,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
-          },
-          {
-            "file": "packages/portless/src/lan-ip.test.ts",
-            "line": 7,
-            "column": 33,
-            "message": "Array type using 'NetworkInterfaceInfo[]' is forbidden. Use 'Array<NetworkInterfaceInfo>' instead."
-          },
-          {
-            "file": "packages/portless/src/proxy.test.ts",
-            "line": 167,
-            "column": 21,
-            "message": "Array type using 'RouteInfo[]' is forbidden. Use 'Array<RouteInfo>' instead."
-          },
-          {
-            "file": "packages/portless/src/proxy.test.ts",
-            "line": 429,
+            "line": 1872,
             "column": 21,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
+            "file": "packages/portless/src/config.ts",
+            "line": 224,
+            "column": 48,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+          },
+          {
             "file": "packages/portless/src/proxy.test.ts",
-            "line": 929,
+            "line": 222,
             "column": 21,
             "message": "Array type using 'RouteInfo[]' is forbidden. Use 'Array<RouteInfo>' instead."
           },
           {
             "file": "packages/portless/src/proxy.test.ts",
-            "line": 1396,
+            "line": 832,
             "column": 21,
             "message": "Array type using 'RouteInfo[]' is forbidden. Use 'Array<RouteInfo>' instead."
           },
           {
-            "file": "tests/e2e/src/parallel.test.ts",
-            "line": 150,
-            "column": 17,
-            "message": "Array type using 'AppResult[]' is forbidden. Use 'Array<AppResult>' instead."
+            "file": "packages/portless/src/routes.ts",
+            "line": 181,
+            "column": 21,
+            "message": "Array type using 'RouteMapping[]' is forbidden. Use 'Array<RouteMapping>' instead."
+          },
+          {
+            "file": "packages/portless/src/service.ts",
+            "line": 398,
+            "column": 5,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+          },
+          {
+            "file": "packages/portless/src/tailscale.test.ts",
+            "line": 503,
+            "column": 20,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+          },
+          {
+            "file": "tests/e2e/src/zombie.test.ts",
+            "line": 71,
+            "column": 19,
+            "message": "Array type using 'number[]' is forbidden. Use 'Array<number>' instead."
           }
         ]
       }
     },
     "consistent-generic-constructors": {
       "constructor": {
-        "count": 0,
-        "samples": []
+        "count": 1,
+        "samples": [
+          {
+            "file": "packages/portless/src/service.ts",
+            "line": 382,
+            "column": 7,
+            "message": "The generic type arguments should be specified as part of the constructor type arguments."
+          }
+        ]
       },
       "type-annotation": {
-        "count": 6,
+        "count": 11,
         "samples": [
           {
             "file": "packages/portless/src/certs.ts",
-            "line": 713,
+            "line": 756,
             "column": 24,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
             "file": "packages/portless/src/certs.ts",
-            "line": 714,
+            "line": 757,
             "column": 26,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
@@ -109,14 +122,38 @@
           },
           {
             "file": "packages/portless/src/cli-utils.ts",
-            "line": 209,
+            "line": 234,
             "column": 34,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "packages/portless/src/cli.ts",
+            "line": 2905,
+            "column": 32,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
             "file": "packages/portless/src/mdns.ts",
             "line": 23,
             "column": 33,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "packages/portless/src/tailscale.ts",
+            "line": 225,
+            "column": 26,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "packages/portless/src/workspace.ts",
+            "line": 205,
+            "column": 27,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "packages/portless/src/workspace.ts",
+            "line": 206,
+            "column": 27,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
@@ -130,22 +167,23 @@
     },
     "consistent-indexed-object-style": {
       "record": {
-        "count": 0,
-        "samples": []
+        "count": 1,
+        "samples": [
+          {
+            "file": "packages/portless/src/tailscale.ts",
+            "line": 204,
+            "column": 3,
+            "message": "A record is preferred over an index signature."
+          }
+        ]
       },
       "index-signature": {
-        "count": 28,
+        "count": 51,
         "samples": [
           {
             "file": "apps/docs/src/app/api/docs-chat/route.ts",
             "line": 33,
             "column": 41,
-            "message": "An index signature is preferred over a record."
-          },
-          {
-            "file": "apps/docs/src/components/docs-chat.tsx",
-            "line": 37,
-            "column": 11,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -155,39 +193,45 @@
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "packages/portless/src/certs.ts",
-            "line": 490,
-            "column": 31,
-            "message": "An index signature is preferred over a record."
-          },
-          {
             "file": "packages/portless/src/cli-utils.ts",
-            "line": 817,
-            "column": 32,
-            "message": "An index signature is preferred over a record."
-          },
-          {
-            "file": "packages/portless/src/cli.test.ts",
-            "line": 14,
+            "line": 780,
             "column": 14,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "packages/portless/src/cli.test.ts",
-            "line": 719,
-            "column": 51,
+            "line": 816,
+            "column": 16,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "packages/portless/src/cli.ts",
+            "line": 2784,
+            "column": 17,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "packages/portless/src/config.ts",
+            "line": 305,
+            "column": 25,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "packages/portless/src/proxy.test.ts",
-            "line": 1352,
-            "column": 30,
+            "line": 1337,
+            "column": 16,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "packages/portless/src/proxy.ts",
-            "line": 375,
-            "column": 64,
+            "file": "packages/portless/src/service.ts",
+            "line": 182,
+            "column": 14,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "packages/portless/src/tailscale.ts",
+            "line": 211,
+            "column": 9,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -201,7 +245,7 @@
     },
     "consistent-type-definitions": {
       "interface": {
-        "count": 7,
+        "count": 11,
         "samples": [
           {
             "file": "apps/docs/src/components/search.tsx",
@@ -223,19 +267,13 @@
           },
           {
             "file": "packages/portless/src/cli.ts",
-            "line": 81,
+            "line": 121,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
             "file": "packages/portless/src/cli.ts",
-            "line": 90,
-            "column": 1,
-            "message": "Use `interface` instead of `type`."
-          },
-          {
-            "file": "packages/portless/src/mdns.ts",
-            "line": 7,
+            "line": 130,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
@@ -244,11 +282,35 @@
             "line": 14,
             "column": 1,
             "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "packages/portless/src/service.ts",
+            "line": 34,
+            "column": 1,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "packages/portless/src/service.ts",
+            "line": 41,
+            "column": 1,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "packages/portless/src/service.ts",
+            "line": 82,
+            "column": 1,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "packages/portless/src/service.ts",
+            "line": 89,
+            "column": 8,
+            "message": "Use `interface` instead of `type`."
           }
         ]
       },
       "type": {
-        "count": 12,
+        "count": 28,
         "samples": [
           {
             "file": "apps/docs/src/components/code.tsx",
@@ -257,33 +319,39 @@
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "packages/portless/src/auto.ts",
-            "line": 49,
-            "column": 8,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "packages/portless/src/auto.ts",
-            "line": 157,
-            "column": 8,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "packages/portless/src/cli.ts",
-            "line": 1065,
+            "file": "packages/portless/src/certs.ts",
+            "line": 528,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "packages/portless/src/cli.ts",
-            "line": 1075,
+            "line": 1245,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "packages/portless/src/routes.ts",
-            "line": 31,
+            "file": "packages/portless/src/config.ts",
+            "line": 18,
             "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "packages/portless/src/tailscale.test.ts",
+            "line": 15,
+            "column": 1,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "packages/portless/src/tailscale.ts",
+            "line": 39,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "packages/portless/src/tailscale.ts",
+            "line": 209,
+            "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
@@ -299,15 +367,9 @@
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "tests/e2e/src/harness.ts",
-            "line": 83,
-            "column": 8,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "tests/e2e/src/parallel.test.ts",
-            "line": 141,
-            "column": 5,
+            "file": "tests/e2e/src/zombie.test.ts",
+            "line": 104,
+            "column": 1,
             "message": "Use `type` instead of `interface`."
           }
         ]
@@ -315,7 +377,7 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 4,
+        "count": 5,
         "samples": [
           {
             "file": "apps/docs/src/app/api/search/route.ts",
@@ -331,8 +393,14 @@
           },
           {
             "file": "packages/portless/src/cli.ts",
-            "line": 2134,
+            "line": 2459,
             "column": 19,
+            "message": "`import()` type annotations are forbidden."
+          },
+          {
+            "file": "packages/portless/src/service.test.ts",
+            "line": 10,
+            "column": 43,
             "message": "`import()` type annotations are forbidden."
           },
           {
@@ -344,7 +412,7 @@
         ]
       },
       "no-type-imports": {
-        "count": 38,
+        "count": 44,
         "samples": [
           {
             "file": "apps/docs/src/app/api/docs-chat/route.ts",
@@ -353,21 +421,21 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "apps/docs/src/components/docs-chat.tsx",
-            "line": 8,
-            "column": 3,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "examples/google-oauth/next.config.ts",
+            "file": "apps/docs/src/lib/page-metadata.ts",
             "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "examples/google-oauth/src/lib/utils.ts",
-            "line": 1,
-            "column": 16,
+            "file": "examples/google-oauth/src/components/ui/badge.tsx",
+            "line": 3,
+            "column": 15,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "packages/portless/src/cli.ts",
+            "line": 89,
+            "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
@@ -377,19 +445,19 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "tests/e2e/fixtures/next-app/next.config.ts",
+            "file": "packages/portless/src/tailscale.test.ts",
+            "line": 12,
+            "column": 3,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "tests/e2e/fixtures/remix-app/react-router.config.ts",
             "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "tests/e2e/src/angular.test.ts",
-            "line": 2,
-            "column": 32,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "tests/e2e/src/flask.test.ts",
+            "file": "tests/e2e/src/fastapi.test.ts",
             "line": 3,
             "column": 44,
             "message": "Use an `import` instead of an `import type`."
@@ -401,9 +469,9 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "tests/e2e/src/vite.test.ts",
+            "file": "tests/e2e/src/zombie.test.ts",
             "line": 2,
-            "column": 32,
+            "column": 38,
             "message": "Use an `import` instead of an `import type`."
           }
         ]
@@ -411,7 +479,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 232,
+        "count": 362,
         "samples": [
           {
             "file": "apps/docs/src/app/api/docs-chat/route.ts",
@@ -420,63 +488,63 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "apps/docs/src/components/ui/dialog.tsx",
-            "line": 16,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "examples/google-oauth/src/app/page.tsx",
-            "line": 160,
+            "file": "apps/docs/src/lib/search-index.ts",
+            "line": 14,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "packages/portless/src/auto.ts",
-            "line": 170,
+            "line": 269,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "packages/portless/src/certs.ts",
-            "line": 706,
-            "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
             "file": "packages/portless/src/cli-utils.ts",
-            "line": 318,
+            "line": 164,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "packages/portless/src/cli.ts",
-            "line": 285,
+            "line": 302,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "packages/portless/src/hosts.ts",
-            "line": 17,
+            "file": "packages/portless/src/cli.ts",
+            "line": 3315,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "packages/portless/src/proxy.test.ts",
-            "line": 19,
+            "file": "packages/portless/src/mdns.ts",
+            "line": 129,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "tests/e2e/src/parallel.test.ts",
-            "line": 64,
+            "file": "packages/portless/src/service.ts",
+            "line": 431,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "packages/portless/src/tailscale.ts",
+            "line": 426,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "tests/e2e/src/zombie.test.ts",
+            "line": 141,
             "column": 1,
             "message": "Expected a function expression."
           }
         ]
       },
       "declaration": {
-        "count": 27,
+        "count": 32,
         "samples": [
           {
             "file": "apps/docs/src/components/docs-chat.tsx",
@@ -491,45 +559,45 @@
             "message": "Expected a function declaration."
           },
           {
-            "file": "packages/portless/src/clean-utils.ts",
-            "line": 32,
+            "file": "packages/portless/src/cli-utils.ts",
+            "line": 543,
             "column": 9,
             "message": "Expected a function declaration."
           },
           {
             "file": "packages/portless/src/cli-utils.ts",
-            "line": 763,
-            "column": 9,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "packages/portless/src/cli-utils.ts",
-            "line": 778,
+            "line": 820,
             "column": 9,
             "message": "Expected a function declaration."
           },
           {
             "file": "packages/portless/src/cli.test.ts",
-            "line": 945,
+            "line": 1073,
             "column": 11,
             "message": "Expected a function declaration."
           },
           {
             "file": "packages/portless/src/cli.ts",
-            "line": 391,
+            "line": 461,
             "column": 9,
             "message": "Expected a function declaration."
           },
           {
             "file": "packages/portless/src/cli.ts",
-            "line": 2400,
+            "line": 3196,
             "column": 9,
             "message": "Expected a function declaration."
           },
           {
+            "file": "packages/portless/src/colors.ts",
+            "line": 14,
+            "column": 7,
+            "message": "Expected a function declaration."
+          },
+          {
             "file": "packages/portless/src/proxy.ts",
-            "line": 123,
-            "column": 9,
+            "line": 327,
+            "column": 13,
             "message": "Expected a function declaration."
           },
           {
@@ -679,14 +747,14 @@
         "samples": [
           {
             "file": "packages/portless/src/cli.ts",
-            "line": 1286,
+            "line": 1496,
             "column": 1,
             "message": "Expected 2-space indentation, but file uses 5-space indentation."
           }
         ]
       },
       "4-space": {
-        "count": 98,
+        "count": 110,
         "samples": [
           {
             "file": "apps/docs/next.config.mjs",
@@ -695,44 +763,44 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "apps/docs/src/app/og/route.tsx",
+            "file": "apps/docs/src/app/robots.ts",
             "line": 4,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "apps/docs/src/components/ui/dialog.tsx",
+            "file": "apps/docs/src/lib/docs-navigation.ts",
+            "line": 2,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "examples/google-oauth/src/app/layout.tsx",
             "line": 9,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "apps/docs/src/mdx-components.tsx",
-            "line": 5,
+            "file": "packages/portless/src/clean-utils.test.ts",
+            "line": 8,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "examples/google-oauth/src/lib/utils.ts",
-            "line": 5,
+            "file": "packages/portless/src/lan-ip.ts",
+            "line": 9,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/portless/src/colors.ts",
-            "line": 2,
+            "file": "packages/portless/src/turbo.test.ts",
+            "line": 6,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/portless/src/routes.test.ts",
-            "line": 10,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "tests/e2e/fixtures/next-app/app/layout.tsx",
-            "line": 2,
+            "file": "tests/e2e/fixtures/minimal-server/wrapper.js",
+            "line": 11,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -751,7 +819,7 @@
         ]
       },
       "tab": {
-        "count": 98,
+        "count": 110,
         "samples": [
           {
             "file": "apps/docs/next.config.mjs",
@@ -760,44 +828,44 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "apps/docs/src/app/og/route.tsx",
+            "file": "apps/docs/src/app/robots.ts",
             "line": 4,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "apps/docs/src/components/ui/dialog.tsx",
+            "file": "apps/docs/src/lib/docs-navigation.ts",
+            "line": 2,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "examples/google-oauth/src/app/layout.tsx",
             "line": 9,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "apps/docs/src/mdx-components.tsx",
-            "line": 5,
+            "file": "packages/portless/src/clean-utils.test.ts",
+            "line": 8,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "examples/google-oauth/src/lib/utils.ts",
-            "line": 5,
+            "file": "packages/portless/src/lan-ip.ts",
+            "line": 9,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/portless/src/colors.ts",
-            "line": 2,
+            "file": "packages/portless/src/turbo.test.ts",
+            "line": 6,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/portless/src/routes.test.ts",
-            "line": 10,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "tests/e2e/fixtures/next-app/app/layout.tsx",
-            "line": 2,
+            "file": "tests/e2e/fixtures/minimal-server/wrapper.js",
+            "line": 11,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -818,72 +886,72 @@
     },
     "quotes": {
       "double": {
-        "count": 23,
+        "count": 41,
         "samples": [
           {
             "file": "packages/portless/src/cli.test.ts",
-            "line": 41,
+            "line": 42,
             "column": 7,
             "message": "Strings must use doublequote."
           },
           {
             "file": "packages/portless/src/cli.ts",
-            "line": 763,
-            "column": 31,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "packages/portless/src/pages.ts",
-            "line": 4,
-            "column": 3,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "packages/portless/src/proxy.test.ts",
-            "line": 130,
-            "column": 34,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "packages/portless/src/proxy.ts",
-            "line": 141,
-            "column": 11,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "packages/portless/src/proxy.ts",
-            "line": 267,
-            "column": 11,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "packages/portless/src/routes.test.ts",
-            "line": 315,
-            "column": 11,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "packages/portless/src/routes.test.ts",
-            "line": 317,
-            "column": 11,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "packages/portless/src/routes.test.ts",
-            "line": 377,
+            "line": 1733,
             "column": 13,
             "message": "Strings must use doublequote."
           },
           {
+            "file": "packages/portless/src/config.test.ts",
+            "line": 71,
+            "column": 25,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "packages/portless/src/config.ts",
+            "line": 242,
+            "column": 23,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "packages/portless/src/proxy.ts",
+            "line": 140,
+            "column": 11,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "packages/portless/src/proxy.ts",
+            "line": 312,
+            "column": 22,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "packages/portless/src/routes.test.ts",
+            "line": 318,
+            "column": 11,
+            "message": "Strings must use doublequote."
+          },
+          {
             "file": "packages/portless/src/routes.ts",
-            "line": 57,
+            "line": 53,
             "column": 9,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "packages/portless/src/service.test.ts",
+            "line": 152,
+            "column": 35,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "packages/portless/src/workspace.test.ts",
+            "line": 90,
+            "column": 35,
             "message": "Strings must use doublequote."
           }
         ]
       },
       "single": {
-        "count": 4611,
+        "count": 6558,
         "samples": [
           {
             "file": "apps/docs/next.config.mjs",
@@ -892,51 +960,51 @@
             "message": "Strings must use singlequote."
           },
           {
-            "file": "examples/google-oauth/src/app/layout.tsx",
-            "line": 1,
-            "column": 31,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "packages/portless/src/certs.test.ts",
-            "line": 245,
-            "column": 58,
+            "file": "packages/portless/src/auto.test.ts",
+            "line": 177,
+            "column": 40,
             "message": "Strings must use singlequote."
           },
           {
             "file": "packages/portless/src/cli-utils.test.ts",
-            "line": 342,
-            "column": 42,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "packages/portless/src/cli-utils.ts",
-            "line": 215,
-            "column": 4,
+            "line": 101,
+            "column": 6,
             "message": "Strings must use singlequote."
           },
           {
             "file": "packages/portless/src/cli.test.ts",
-            "line": 755,
-            "column": 50,
+            "line": 43,
+            "column": 7,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "packages/portless/src/cli.ts",
-            "line": 2178,
-            "column": 38,
+            "file": "packages/portless/src/cli.test.ts",
+            "line": 1366,
+            "column": 60,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "packages/portless/src/config.test.ts",
+            "line": 233,
+            "column": 58,
             "message": "Strings must use singlequote."
           },
           {
             "file": "packages/portless/src/proxy.test.ts",
-            "line": 417,
-            "column": 8,
+            "line": 361,
+            "column": 19,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "packages/portless/src/routes.test.ts",
-            "line": 153,
-            "column": 40,
+            "file": "packages/portless/src/service.test.ts",
+            "line": 144,
+            "column": 32,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "packages/portless/src/utils.test.ts",
+            "line": 82,
+            "column": 26,
             "message": "Strings must use singlequote."
           },
           {
@@ -1162,7 +1230,7 @@
         "samples": []
       },
       "never": {
-        "count": 5572,
+        "count": 7816,
         "samples": [
           {
             "file": "apps/docs/next.config.mjs",
@@ -1171,51 +1239,51 @@
             "message": "Extra semicolon."
           },
           {
-            "file": "packages/portless/src/auto.test.ts",
-            "line": 97,
-            "column": 89,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "packages/portless/src/certs.ts",
-            "line": 519,
-            "column": 22,
+            "file": "packages/portless/src/auto.ts",
+            "line": 148,
+            "column": 17,
             "message": "Extra semicolon."
           },
           {
             "file": "packages/portless/src/cli-utils.test.ts",
-            "line": 961,
-            "column": 5,
+            "line": 639,
+            "column": 59,
             "message": "Extra semicolon."
           },
           {
             "file": "packages/portless/src/cli.test.ts",
-            "line": 665,
-            "column": 11,
+            "line": 890,
+            "column": 35,
             "message": "Extra semicolon."
           },
           {
             "file": "packages/portless/src/cli.ts",
-            "line": 1368,
-            "column": 18,
+            "line": 2035,
+            "column": 85,
             "message": "Extra semicolon."
           },
           {
-            "file": "packages/portless/src/lan-ip.test.ts",
-            "line": 118,
-            "column": 58,
+            "file": "packages/portless/src/config.test.ts",
+            "line": 569,
+            "column": 5,
             "message": "Extra semicolon."
           },
           {
             "file": "packages/portless/src/proxy.test.ts",
-            "line": 855,
-            "column": 24,
+            "line": 688,
+            "column": 11,
             "message": "Extra semicolon."
           },
           {
-            "file": "packages/portless/src/routes.test.ts",
-            "line": 307,
-            "column": 57,
+            "file": "packages/portless/src/routes.ts",
+            "line": 311,
+            "column": 43,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "packages/portless/src/utils.test.ts",
+            "line": 190,
+            "column": 80,
             "message": "Extra semicolon."
           },
           {

@@ -1,11 +1,11 @@
 {
   "analyzedVersion": "96d58f23c7cc",
-  "analyzedCommit": "ccb530310633c84286e1ab106cf5cacc3d7a215c",
-  "analyzedCommitDate": "2026-04-20T09:15:42.000Z",
+  "analyzedCommit": "ca86c839ccf6a9b82544c75f4e85be5b24d74ade",
+  "analyzedCommitDate": "2026-05-05T22:37:38.000Z",
   "checks": {
     "array-type": {
       "array": {
-        "count": 7,
+        "count": 9,
         "samples": [
           {
             "file": "apps/worker/src/ai/output-formatters.ts",
@@ -20,9 +20,21 @@
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
+            "file": "apps/worker/src/services/findings-renderer.ts",
+            "line": 65,
+            "column": 16,
+            "message": "Array type using 'ReadonlyArray<T>' is forbidden. Use 'readonly T[]' instead."
+          },
+          {
             "file": "apps/worker/src/services/git-manager.ts",
             "line": 79,
             "column": 18,
+            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
+          },
+          {
+            "file": "apps/worker/src/services/preflight.ts",
+            "line": 164,
+            "column": 17,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
@@ -33,26 +45,26 @@
           },
           {
             "file": "apps/worker/src/temporal/workflows.ts",
-            "line": 279,
+            "line": 313,
             "column": 36,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
             "file": "apps/worker/src/temporal/workflows.ts",
-            "line": 349,
+            "line": 383,
             "column": 13,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
             "file": "apps/worker/src/temporal/workflows.ts",
-            "line": 466,
+            "line": 503,
             "column": 27,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           }
         ]
       },
       "generic": {
-        "count": 93,
+        "count": 117,
         "samples": [
           {
             "file": "apps/cli/src/commands/start.ts",
@@ -62,49 +74,49 @@
           },
           {
             "file": "apps/cli/src/env.ts",
-            "line": 48,
-            "column": 34,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
-          },
-          {
-            "file": "apps/worker/src/ai/output-formatters.ts",
-            "line": 15,
-            "column": 12,
-            "message": "Array type using 'unknown[]' is forbidden. Use 'Array<unknown>' instead."
-          },
-          {
-            "file": "apps/worker/src/ai/output-formatters.ts",
-            "line": 378,
-            "column": 16,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
-          },
-          {
-            "file": "apps/worker/src/audit/workflow-logger.ts",
-            "line": 159,
+            "line": 75,
             "column": 20,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
-            "file": "apps/worker/src/scripts/generate-totp.ts",
-            "line": 32,
-            "column": 17,
-            "message": "Array type using 'number[]' is forbidden. Use 'Array<number>' instead."
+            "file": "apps/worker/src/ai/output-formatters.ts",
+            "line": 320,
+            "column": 4,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
-            "file": "apps/worker/src/services/reporting.ts",
-            "line": 25,
-            "column": 27,
-            "message": "Array type using 'DeliverableFile[]' is forbidden. Use 'Array<DeliverableFile>' instead."
+            "file": "apps/worker/src/audit/metrics-tracker.ts",
+            "line": 321,
+            "column": 37,
+            "message": "Array type using 'AgentAuditMetrics[]' is forbidden. Use 'Array<AgentAuditMetrics>' instead."
+          },
+          {
+            "file": "apps/worker/src/progress-indicator.ts",
+            "line": 9,
+            "column": 19,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+          },
+          {
+            "file": "apps/worker/src/services/preflight.ts",
+            "line": 176,
+            "column": 18,
+            "message": "Array type using 'MissingCodePath[]' is forbidden. Use 'Array<MissingCodePath>' instead."
+          },
+          {
+            "file": "apps/worker/src/temporal/activities.ts",
+            "line": 502,
+            "column": 22,
+            "message": "Array type using 'ResumeAttempt[]' is forbidden. Use 'Array<ResumeAttempt>' instead."
           },
           {
             "file": "apps/worker/src/temporal/worker.ts",
-            "line": 74,
-            "column": 29,
+            "line": 173,
+            "column": 91,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
             "file": "apps/worker/src/temporal/workflows.ts",
-            "line": 351,
+            "line": 385,
             "column": 14,
             "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           },
@@ -136,17 +148,17 @@
         ]
       },
       "type-annotation": {
-        "count": 6,
+        "count": 7,
         "samples": [
           {
             "file": "apps/cli/src/config/resolver.ts",
-            "line": 107,
+            "line": 111,
             "column": 25,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
             "file": "apps/worker/src/config-parser.ts",
-            "line": 547,
+            "line": 634,
             "column": 23,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
@@ -158,13 +170,19 @@
           },
           {
             "file": "apps/worker/src/services/reporting.ts",
-            "line": 110,
+            "line": 116,
             "column": 25,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
             "file": "apps/worker/src/temporal/workflows.ts",
-            "line": 353,
+            "line": 234,
+            "column": 35,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "apps/worker/src/temporal/workflows.ts",
+            "line": 387,
             "column": 29,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
@@ -183,18 +201,18 @@
         "samples": [
           {
             "file": "apps/worker/src/types/errors.ts",
-            "line": 61,
+            "line": 53,
             "column": 3,
             "message": "A record is preferred over an index signature."
           }
         ]
       },
       "index-signature": {
-        "count": 43,
+        "count": 47,
         "samples": [
           {
             "file": "apps/cli/src/config/resolver.ts",
-            "line": 56,
+            "line": 58,
             "column": 20,
             "message": "An index signature is preferred over a record."
           },
@@ -206,37 +224,37 @@
           },
           {
             "file": "apps/worker/src/ai/queue-schemas.ts",
-            "line": 95,
-            "column": 94,
-            "message": "An index signature is preferred over a record."
-          },
-          {
-            "file": "apps/worker/src/audit/audit-session.ts",
-            "line": 147,
-            "column": 31,
+            "line": 114,
+            "column": 56,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "apps/worker/src/audit/metrics-tracker.ts",
-            "line": 338,
-            "column": 25,
+            "line": 69,
+            "column": 13,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "apps/worker/src/services/agent-execution.ts",
-            "line": 66,
-            "column": 12,
+            "file": "apps/worker/src/audit/workflow-logger.ts",
+            "line": 37,
+            "column": 17,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "apps/worker/src/services/findings-renderer.ts",
+            "line": 151,
+            "column": 16,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "apps/worker/src/session-manager.ts",
-            "line": 153,
-            "column": 42,
+            "line": 113,
+            "column": 40,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "apps/worker/src/temporal/activity-logger.ts",
-            "line": 19,
+            "line": 15,
             "column": 33,
             "message": "An index signature is preferred over a record."
           },
@@ -261,7 +279,7 @@
         "samples": []
       },
       "type": {
-        "count": 97,
+        "count": 104,
         "samples": [
           {
             "file": "apps/cli/src/commands/start.ts",
@@ -271,26 +289,26 @@
           },
           {
             "file": "apps/worker/src/ai/message-handlers.ts",
-            "line": 268,
+            "line": 271,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "apps/worker/src/ai/types.ts",
-            "line": 52,
+            "line": 67,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "apps/worker/src/audit/metrics-tracker.ts",
-            "line": 41,
+            "line": 55,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "apps/worker/src/interfaces/report-output-provider.ts",
-            "line": 13,
-            "column": 8,
+            "file": "apps/worker/src/services/agent-execution.ts",
+            "line": 58,
+            "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
@@ -306,14 +324,14 @@
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "apps/worker/src/types/activity-logger.ts",
-            "line": 11,
-            "column": 8,
+            "file": "apps/worker/src/temporal/workspaces.ts",
+            "line": 38,
+            "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "apps/worker/src/types/config.ts",
-            "line": 45,
+            "line": 58,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
@@ -350,20 +368,20 @@
           },
           {
             "file": "apps/worker/src/services/preflight.ts",
-            "line": 187,
+            "line": 257,
             "column": 94,
             "message": "`import()` type annotations are forbidden."
           },
           {
             "file": "apps/worker/src/services/preflight.ts",
-            "line": 478,
+            "line": 549,
             "column": 20,
             "message": "`import()` type annotations are forbidden."
           }
         ]
       },
       "no-type-imports": {
-        "count": 102,
+        "count": 111,
         "samples": [
           {
             "file": "apps/cli/src/commands/setup.ts",
@@ -373,19 +391,19 @@
           },
           {
             "file": "apps/worker/src/ai/message-handlers.ts",
-            "line": 21,
+            "line": 22,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "apps/worker/src/audit/metrics-tracker.ts",
-            "line": 15,
-            "column": 27,
+            "line": 17,
+            "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "apps/worker/src/interfaces/report-output-provider.ts",
-            "line": 10,
+            "file": "apps/worker/src/interfaces/findings-provider.ts",
+            "line": 11,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -398,18 +416,18 @@
           {
             "file": "apps/worker/src/services/error-handling.ts",
             "line": 7,
-            "column": 47,
+            "column": 70,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "apps/worker/src/services/prompt-manager.ts",
-            "line": 10,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
+            "file": "apps/worker/src/services/preflight.ts",
+            "line": 257,
+            "column": 94,
+            "message": "`import()` type annotations are forbidden."
           },
           {
             "file": "apps/worker/src/temporal/activities.ts",
-            "line": 32,
+            "line": 33,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -430,7 +448,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 230,
+        "count": 261,
         "samples": [
           {
             "file": "apps/cli/src/commands/build.ts",
@@ -439,63 +457,63 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "apps/cli/src/config/resolver.ts",
-            "line": 167,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "apps/cli/src/home.ts",
-            "line": 29,
+            "file": "apps/cli/src/config/writer.ts",
+            "line": 22,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "apps/worker/src/ai/message-handlers.ts",
-            "line": 257,
-            "column": 1,
+            "file": "apps/cli/src/mode.ts",
+            "line": 12,
+            "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "apps/worker/src/audit/utils.ts",
-            "line": 89,
+            "file": "apps/worker/src/ai/output-formatters.ts",
+            "line": 244,
             "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "apps/worker/src/scripts/generate-totp.ts",
+            "line": 24,
+            "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "apps/worker/src/services/git-manager.ts",
-            "line": 113,
-            "column": 1,
+            "line": 16,
+            "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "apps/worker/src/session-manager.ts",
-            "line": 144,
+            "file": "apps/worker/src/services/queue-validation.ts",
+            "line": 97,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "apps/worker/src/temporal/activities.ts",
-            "line": 565,
-            "column": 1,
+            "line": 434,
+            "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "apps/worker/src/temporal/workflows.ts",
-            "line": 257,
-            "column": 3,
+            "line": 141,
+            "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "apps/worker/src/utils/functional.ts",
-            "line": 20,
+            "file": "apps/worker/src/utils/glob.ts",
+            "line": 9,
             "column": 8,
             "message": "Expected a function expression."
           }
         ]
       },
       "declaration": {
-        "count": 23,
+        "count": 24,
         "samples": [
           {
             "file": "apps/cli/src/commands/logs.ts",
@@ -504,39 +522,39 @@
             "message": "Expected a function declaration."
           },
           {
-            "file": "apps/worker/src/audit/log-stream.ts",
-            "line": 71,
-            "column": 13,
-            "message": "Expected a function declaration."
-          },
-          {
             "file": "apps/worker/src/config-parser.ts",
-            "line": 309,
-            "column": 7,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "apps/worker/src/config-parser.ts",
-            "line": 437,
-            "column": 7,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "apps/worker/src/config-parser.ts",
-            "line": 563,
-            "column": 7,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "apps/worker/src/config-parser.ts",
-            "line": 588,
+            "line": 178,
             "column": 14,
             "message": "Expected a function declaration."
           },
           {
-            "file": "apps/worker/src/services/prompt-manager.ts",
-            "line": 41,
-            "column": 11,
+            "file": "apps/worker/src/config-parser.ts",
+            "line": 318,
+            "column": 9,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "apps/worker/src/config-parser.ts",
+            "line": 512,
+            "column": 7,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "apps/worker/src/config-parser.ts",
+            "line": 633,
+            "column": 7,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "apps/worker/src/config-parser.ts",
+            "line": 675,
+            "column": 14,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "apps/worker/src/services/container.ts",
+            "line": 108,
+            "column": 5,
             "message": "Expected a function declaration."
           },
           {
@@ -547,13 +565,13 @@
           },
           {
             "file": "apps/worker/src/services/queue-validation.ts",
-            "line": 217,
+            "line": 193,
             "column": 7,
             "message": "Expected a function declaration."
           },
           {
             "file": "apps/worker/src/temporal/workflows.ts",
-            "line": 252,
+            "line": 286,
             "column": 9,
             "message": "Expected a function declaration."
           }
@@ -573,7 +591,7 @@
         ]
       },
       "default": {
-        "count": 22,
+        "count": 25,
         "samples": [
           {
             "file": "apps/cli/src/commands/build.ts",
@@ -582,8 +600,8 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "apps/cli/src/commands/setup.ts",
-            "line": 18,
+            "file": "apps/cli/src/commands/status.ts",
+            "line": 7,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -594,15 +612,15 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "apps/cli/src/config/resolver.ts",
-            "line": 256,
+            "file": "apps/cli/src/splash.ts",
+            "line": 5,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "apps/worker/src/audit/audit-session.ts",
-            "line": 30,
-            "column": 1,
+            "file": "apps/worker/src/audit/index.ts",
+            "line": 19,
+            "column": 10,
             "message": "Prefer default export on a file with single export."
           },
           {
@@ -612,14 +630,14 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "apps/worker/src/services/config-loader.ts",
+            "file": "apps/worker/src/services/exploitation-checker.ts",
             "line": 26,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "apps/worker/src/services/preflight.ts",
-            "line": 471,
+            "file": "apps/worker/src/services/prompt-manager.ts",
+            "line": 356,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -644,7 +662,7 @@
         "samples": []
       },
       "4-space": {
-        "count": 74,
+        "count": 77,
         "samples": [
           {
             "file": "apps/cli/src/commands/build.ts",
@@ -659,20 +677,20 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "apps/cli/src/splash.ts",
-            "line": 6,
+            "file": "apps/cli/tsdown.config.ts",
+            "line": 4,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "apps/worker/src/ai/queue-schemas.ts",
-            "line": 21,
+            "file": "apps/worker/src/ai/settings-writer.ts",
+            "line": 20,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "apps/worker/src/config-parser.ts",
-            "line": 27,
+            "file": "apps/worker/src/interfaces/checkpoint-provider.ts",
+            "line": 15,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -695,8 +713,8 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "apps/worker/src/types/errors.ts",
-            "line": 20,
+            "file": "apps/worker/src/types/metrics.ts",
+            "line": 13,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -709,7 +727,7 @@
         ]
       },
       "tab": {
-        "count": 74,
+        "count": 77,
         "samples": [
           {
             "file": "apps/cli/src/commands/build.ts",
@@ -724,20 +742,20 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "apps/cli/src/splash.ts",
-            "line": 6,
+            "file": "apps/cli/tsdown.config.ts",
+            "line": 4,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "apps/worker/src/ai/queue-schemas.ts",
-            "line": 21,
+            "file": "apps/worker/src/ai/settings-writer.ts",
+            "line": 20,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "apps/worker/src/config-parser.ts",
-            "line": 27,
+            "file": "apps/worker/src/interfaces/checkpoint-provider.ts",
+            "line": 15,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -760,8 +778,8 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "apps/worker/src/types/errors.ts",
-            "line": 20,
+            "file": "apps/worker/src/types/metrics.ts",
+            "line": 13,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -776,7 +794,7 @@
     },
     "quotes": {
       "double": {
-        "count": 2312,
+        "count": 2526,
         "samples": [
           {
             "file": "apps/cli/src/commands/build.ts",
@@ -786,62 +804,62 @@
           },
           {
             "file": "apps/cli/src/config/resolver.ts",
-            "line": 48,
-            "column": 41,
+            "line": 90,
+            "column": 61,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "apps/cli/src/home.ts",
-            "line": 10,
-            "column": 18,
+            "file": "apps/cli/src/index.ts",
+            "line": 49,
+            "column": 48,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "apps/worker/src/ai/message-handlers.ts",
-            "line": 343,
-            "column": 34,
+            "file": "apps/worker/src/ai/output-formatters.ts",
+            "line": 92,
+            "column": 10,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "apps/worker/src/audit/metrics-tracker.ts",
-            "line": 322,
-            "column": 7,
+            "file": "apps/worker/src/audit/workflow-logger.ts",
+            "line": 258,
+            "column": 12,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "apps/worker/src/scripts/save-deliverable.ts",
-            "line": 128,
-            "column": 42,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "apps/worker/src/services/preflight.ts",
-            "line": 236,
-            "column": 7,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "apps/worker/src/session-manager.ts",
-            "line": 122,
+            "file": "apps/worker/src/services/error-handling.ts",
+            "line": 56,
             "column": 3,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "apps/worker/src/temporal/workflows.ts",
-            "line": 35,
-            "column": 28,
+            "file": "apps/worker/src/services/preflight.ts",
+            "line": 373,
+            "column": 17,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "apps/worker/src/utils/formatting.ts",
-            "line": 59,
+            "file": "apps/worker/src/session-manager.ts",
+            "line": 115,
             "column": 10,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "apps/worker/src/temporal/workflows.ts",
+            "line": 36,
+            "column": 50,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "apps/worker/src/utils/glob.ts",
+            "line": 7,
+            "column": 22,
             "message": "Strings must use doublequote."
           }
         ]
       },
       "single": {
-        "count": 33,
+        "count": 35,
         "samples": [
           {
             "file": "apps/cli/src/commands/logs.ts",
@@ -851,14 +869,14 @@
           },
           {
             "file": "apps/cli/src/env.ts",
-            "line": 149,
+            "line": 150,
             "column": 9,
             "message": "Strings must use singlequote."
           },
           {
             "file": "apps/worker/src/ai/output-formatters.ts",
-            "line": 295,
-            "column": 16,
+            "line": 380,
+            "column": 14,
             "message": "Strings must use singlequote."
           },
           {
@@ -868,39 +886,39 @@
             "message": "Strings must use singlequote."
           },
           {
-            "file": "apps/worker/src/audit/logger.ts",
-            "line": 114,
+            "file": "apps/worker/src/audit/workflow-logger.ts",
+            "line": 81,
             "column": 7,
             "message": "Strings must use singlequote."
           },
           {
             "file": "apps/worker/src/audit/workflow-logger.ts",
-            "line": 87,
+            "line": 88,
             "column": 7,
             "message": "Strings must use singlequote."
           },
           {
             "file": "apps/worker/src/audit/workflow-logger.ts",
-            "line": 107,
-            "column": 7,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "apps/worker/src/audit/workflow-logger.ts",
-            "line": 116,
+            "line": 109,
             "column": 7,
             "message": "Strings must use singlequote."
           },
           {
             "file": "apps/worker/src/services/preflight.ts",
-            "line": 168,
-            "column": 26,
+            "line": 188,
+            "column": 11,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "apps/worker/src/services/preflight.ts",
+            "line": 413,
+            "column": 13,
             "message": "Strings must use singlequote."
           },
           {
             "file": "apps/worker/src/temporal/activities.ts",
-            "line": 538,
-            "column": 13,
+            "line": 646,
+            "column": 11,
             "message": "Strings must use singlequote."
           }
         ]
@@ -960,7 +978,7 @@
         "samples": []
       },
       "never": {
-        "count": 2948,
+        "count": 3178,
         "samples": [
           {
             "file": "apps/cli/src/commands/build.ts",
@@ -970,50 +988,50 @@
           },
           {
             "file": "apps/cli/src/config/resolver.ts",
-            "line": 109,
-            "column": 51,
+            "line": 152,
+            "column": 78,
             "message": "Extra semicolon."
           },
           {
-            "file": "apps/cli/src/paths.ts",
-            "line": 33,
-            "column": 75,
+            "file": "apps/cli/tsdown.config.ts",
+            "line": 1,
+            "column": 38,
             "message": "Extra semicolon."
           },
           {
-            "file": "apps/worker/src/ai/output-formatters.ts",
-            "line": 306,
-            "column": 39,
+            "file": "apps/worker/src/ai/queue-schemas.ts",
+            "line": 96,
+            "column": 70,
             "message": "Extra semicolon."
           },
           {
             "file": "apps/worker/src/audit/workflow-logger.ts",
-            "line": 136,
-            "column": 64,
+            "line": 321,
+            "column": 75,
             "message": "Extra semicolon."
           },
           {
-            "file": "apps/worker/src/scripts/save-deliverable.ts",
-            "line": 38,
-            "column": 23,
+            "file": "apps/worker/src/services/agent-execution.ts",
+            "line": 81,
+            "column": 37,
             "message": "Extra semicolon."
           },
           {
             "file": "apps/worker/src/services/preflight.ts",
-            "line": 113,
-            "column": 25,
+            "line": 273,
+            "column": 46,
             "message": "Extra semicolon."
           },
           {
             "file": "apps/worker/src/temporal/activities.ts",
-            "line": 94,
-            "column": 91,
+            "line": 44,
+            "column": 76,
             "message": "Extra semicolon."
           },
           {
             "file": "apps/worker/src/temporal/worker.ts",
-            "line": 379,
-            "column": 34,
+            "line": 381,
+            "column": 42,
             "message": "Extra semicolon."
           },
           {

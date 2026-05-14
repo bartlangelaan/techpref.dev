@@ -1,11 +1,11 @@
 {
   "analyzedVersion": "96d58f23c7cc",
-  "analyzedCommit": "6a51b089f8bce4eb8add929360440ab9aec367fd",
-  "analyzedCommitDate": "2026-04-22T04:17:24.000Z",
+  "analyzedCommit": "1e6aae34eb52f28ca145edb82799d37574c80d06",
+  "analyzedCommitDate": "2026-05-06T02:39:25.000Z",
   "checks": {
     "array-type": {
       "array": {
-        "count": 4,
+        "count": 5,
         "samples": [
           {
             "file": "packages/chrome-extension/src/background.ts",
@@ -20,21 +20,27 @@
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
+            "file": "packages/core/src/context.splitter.test.ts",
+            "line": 35,
+            "column": 19,
+            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
+          },
+          {
             "file": "packages/core/src/context.ts",
-            "line": 708,
+            "line": 843,
             "column": 26,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
             "file": "packages/core/src/context.ts",
-            "line": 792,
+            "line": 938,
             "column": 51,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           }
         ]
       },
       "generic": {
-        "count": 227,
+        "count": 268,
         "samples": [
           {
             "file": "packages/chrome-extension/src/background.ts",
@@ -43,50 +49,50 @@
             "message": "Array type using 'number[]' is forbidden. Use 'Array<number>' instead."
           },
           {
-            "file": "packages/chrome-extension/src/content.ts",
-            "line": 502,
-            "column": 36,
-            "message": "Array type using 'any[]' is forbidden. Use 'Array<any>' instead."
+            "file": "packages/chrome-extension/src/milvus/chromeMilvusAdapter.ts",
+            "line": 135,
+            "column": 102,
+            "message": "Array type using 'SearchResult[]' is forbidden. Use 'Array<SearchResult>' instead."
           },
           {
             "file": "packages/core/src/context.ts",
-            "line": 409,
-            "column": 136,
-            "message": "Array type using 'SemanticSearchResult[]' is forbidden. Use 'Array<SemanticSearchResult>' instead."
+            "line": 108,
+            "column": 24,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
             "file": "packages/core/src/context.ts",
-            "line": 1009,
-            "column": 51,
+            "line": 795,
+            "column": 16,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
-            "file": "packages/core/src/embedding/openai-embedding.ts",
-            "line": 87,
-            "column": 48,
-            "message": "Array type using 'EmbeddingVector[]' is forbidden. Use 'Array<EmbeddingVector>' instead."
-          },
-          {
-            "file": "packages/core/src/sync/merkle.ts",
-            "line": 7,
-            "column": 14,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
-          },
-          {
-            "file": "packages/core/src/vectordb/milvus-restful-vectordb.ts",
-            "line": 394,
-            "column": 55,
+            "file": "packages/core/src/embedding/base-embedding.ts",
+            "line": 3,
+            "column": 13,
             "message": "Array type using 'number[]' is forbidden. Use 'Array<number>' instead."
           },
           {
-            "file": "packages/core/src/vectordb/milvus-vectordb.ts",
-            "line": 618,
-            "column": 127,
-            "message": "Array type using 'HybridSearchResult[]' is forbidden. Use 'Array<HybridSearchResult>' instead."
+            "file": "packages/core/src/splitter/ast-splitter.ts",
+            "line": 164,
+            "column": 84,
+            "message": "Array type using 'CodeChunk[]' is forbidden. Use 'Array<CodeChunk>' instead."
           },
           {
-            "file": "packages/mcp/src/snapshot.ts",
-            "line": 41,
+            "file": "packages/core/src/sync/synchronizer.ts",
+            "line": 260,
+            "column": 120,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+          },
+          {
+            "file": "packages/core/src/vectordb/milvus-vectordb.ts",
+            "line": 435,
+            "column": 106,
+            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
+          },
+          {
+            "file": "packages/mcp/src/handlers.ts",
+            "line": 548,
             "column": 31,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
@@ -101,12 +107,12 @@
     },
     "consistent-generic-constructors": {
       "constructor": {
-        "count": 4,
+        "count": 5,
         "samples": [
           {
-            "file": "packages/mcp/src/snapshot.ts",
-            "line": 17,
-            "column": 30,
+            "file": "packages/mcp/src/handlers.ts",
+            "line": 22,
+            "column": 26,
             "message": "The generic type arguments should be specified as part of the constructor type arguments."
           },
           {
@@ -118,7 +124,7 @@
           {
             "file": "packages/mcp/src/snapshot.ts",
             "line": 19,
-            "column": 28,
+            "column": 30,
             "message": "The generic type arguments should be specified as part of the constructor type arguments."
           },
           {
@@ -126,15 +132,27 @@
             "line": 20,
             "column": 28,
             "message": "The generic type arguments should be specified as part of the constructor type arguments."
+          },
+          {
+            "file": "packages/mcp/src/snapshot.ts",
+            "line": 21,
+            "column": 28,
+            "message": "The generic type arguments should be specified as part of the constructor type arguments."
           }
         ]
       },
       "type-annotation": {
-        "count": 6,
+        "count": 7,
         "samples": [
           {
             "file": "packages/core/src/context.ts",
-            "line": 105,
+            "line": 123,
+            "column": 49,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "packages/core/src/context.ts",
+            "line": 124,
             "column": 36,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
@@ -146,25 +164,25 @@
           },
           {
             "file": "packages/mcp/src/handlers.ts",
-            "line": 174,
+            "line": 184,
             "column": 43,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
             "file": "packages/mcp/src/snapshot.ts",
-            "line": 101,
+            "line": 102,
             "column": 47,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
             "file": "packages/mcp/src/snapshot.ts",
-            "line": 102,
+            "line": 103,
             "column": 39,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
             "file": "packages/mcp/src/snapshot.ts",
-            "line": 103,
+            "line": 104,
             "column": 45,
             "message": "The generic type arguments should be specified as part of the type annotation."
           }
@@ -187,7 +205,7 @@
           },
           {
             "file": "packages/core/src/context.ts",
-            "line": 885,
+            "line": 1031,
             "column": 28,
             "message": "An index signature is preferred over a record."
           },
@@ -211,7 +229,7 @@
           },
           {
             "file": "packages/core/src/vectordb/milvus-vectordb.ts",
-            "line": 426,
+            "line": 435,
             "column": 106,
             "message": "An index signature is preferred over a record."
           },
@@ -229,7 +247,7 @@
           },
           {
             "file": "packages/mcp/src/config.ts",
-            "line": 63,
+            "line": 76,
             "column": 16,
             "message": "An index signature is preferred over a record."
           },
@@ -244,8 +262,14 @@
     },
     "consistent-type-definitions": {
       "interface": {
-        "count": 1,
+        "count": 2,
         "samples": [
+          {
+            "file": "packages/core/src/embedding/gemini-embedding.ts",
+            "line": 4,
+            "column": 1,
+            "message": "Use `interface` instead of `type`."
+          },
           {
             "file": "packages/vscode-extension/src/config/configManager.ts",
             "line": 39,
@@ -255,7 +279,7 @@
         ]
       },
       "type": {
-        "count": 52,
+        "count": 53,
         "samples": [
           {
             "file": "packages/chrome-extension/src/config/milvusConfig.ts",
@@ -270,7 +294,7 @@
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "packages/core/src/embedding/gemini-embedding.ts",
+            "file": "packages/core/src/embedding/ollama-embedding.ts",
             "line": 4,
             "column": 8,
             "message": "Use `type` instead of `interface`."
@@ -289,13 +313,13 @@
           },
           {
             "file": "packages/core/src/vectordb/types.ts",
-            "line": 39,
+            "line": 44,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "packages/core/src/vectordb/zilliz-utils.ts",
-            "line": 30,
+            "line": 36,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
@@ -307,7 +331,7 @@
           },
           {
             "file": "packages/mcp/src/config.ts",
-            "line": 33,
+            "line": 46,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
@@ -322,7 +346,7 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 29,
+        "count": 38,
         "samples": [
           {
             "file": "packages/chrome-extension/src/background.ts",
@@ -331,19 +355,25 @@
             "message": "Imports CodeChunk are only used as type."
           },
           {
+            "file": "packages/core/src/context.abort.test.ts",
+            "line": 7,
+            "column": 1,
+            "message": "All imports in the declaration are only used as types. Use `import type`."
+          },
+          {
+            "file": "packages/core/src/context.splitter.test.ts",
+            "line": 5,
+            "column": 1,
+            "message": "Imports EmbeddingVector are only used as type."
+          },
+          {
             "file": "packages/core/src/context.ts",
             "line": 6,
             "column": 1,
             "message": "Imports Embedding and EmbeddingVector are only used as type."
           },
           {
-            "file": "packages/core/src/embedding/gemini-embedding.ts",
-            "line": 2,
-            "column": 1,
-            "message": "Imports EmbeddingVector are only used as type."
-          },
-          {
-            "file": "packages/core/src/embedding/voyageai-embedding.ts",
+            "file": "packages/core/src/embedding/ollama-embedding.ts",
             "line": 2,
             "column": 1,
             "message": "Imports EmbeddingVector are only used as type."
@@ -362,21 +392,15 @@
           },
           {
             "file": "packages/mcp/src/sync.ts",
-            "line": 2,
-            "column": 1,
-            "message": "Imports Context are only used as type."
-          },
-          {
-            "file": "packages/vscode-extension/src/commands/searchCommand.ts",
-            "line": 2,
+            "line": 5,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "packages/vscode-extension/src/webview/semanticSearchProvider.ts",
-            "line": 3,
+            "file": "packages/vscode-extension/src/config/configManager.ts",
+            "line": 2,
             "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
+            "message": "Imports OpenAIEmbeddingConfig, VoyageAIEmbeddingConfig, OllamaEmbeddingConfig, GeminiEmbeddingConfig, MilvusConfig, and SplitterConfig are only used as type."
           },
           {
             "file": "packages/vscode-extension/src/webview/semanticSearchProvider.ts",
@@ -387,13 +411,38 @@
         ]
       },
       "no-type-imports": {
-        "count": 0,
-        "samples": []
+        "count": 4,
+        "samples": [
+          {
+            "file": "packages/mcp/src/handlers.ts",
+            "line": 6,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "packages/mcp/src/splitter.ts",
+            "line": 2,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "packages/mcp/src/splitter.ts",
+            "line": 3,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "packages/mcp/src/sync.ts",
+            "line": 6,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          }
+        ]
       }
     },
     "func-style": {
       "expression": {
-        "count": 59,
+        "count": 76,
         "samples": [
           {
             "file": "examples/basic-usage/index.ts",
@@ -403,49 +452,49 @@
           },
           {
             "file": "packages/chrome-extension/src/background.ts",
-            "line": 294,
+            "line": 355,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "packages/chrome-extension/src/background.ts",
-            "line": 608,
+            "line": 713,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "packages/chrome-extension/src/content.ts",
-            "line": 13,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "packages/chrome-extension/src/content.ts",
-            "line": 414,
+            "line": 405,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "packages/chrome-extension/src/options.ts",
-            "line": 83,
+            "line": 124,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "packages/mcp/scripts/sync-lock-e2e.mjs",
+            "line": 74,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "packages/mcp/src/config.ts",
-            "line": 87,
-            "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "packages/mcp/src/index.ts",
-            "line": 272,
+            "line": 121,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
+            "file": "packages/mcp/src/splitter.ts",
+            "line": 5,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
             "file": "packages/vscode-extension/src/extension.ts",
-            "line": 121,
+            "line": 84,
             "column": 1,
             "message": "Expected a function expression."
           },
@@ -458,11 +507,29 @@
         ]
       },
       "declaration": {
-        "count": 2,
+        "count": 5,
         "samples": [
           {
+            "file": "packages/core/src/context.abort.test.ts",
+            "line": 56,
+            "column": 7,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "packages/core/src/context.ignore-patterns.test.ts",
+            "line": 52,
+            "column": 7,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "packages/core/src/context.splitter.test.ts",
+            "line": 57,
+            "column": 7,
+            "message": "Expected a function declaration."
+          },
+          {
             "file": "packages/core/src/context.ts",
-            "line": 347,
+            "line": 450,
             "column": 15,
             "message": "Expected a function declaration."
           },
@@ -503,13 +570,13 @@
           },
           {
             "file": "packages/mcp/src/handlers.ts",
-            "line": 8,
+            "line": 10,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
             "file": "packages/mcp/src/snapshot.ts",
-            "line": 14,
+            "line": 15,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -565,7 +632,7 @@
         ]
       },
       "4-space": {
-        "count": 4,
+        "count": 6,
         "samples": [
           {
             "file": "packages/chrome-extension/webpack.config.js",
@@ -574,8 +641,20 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
+            "file": "packages/mcp/scripts/path-resolution-e2e.mjs",
+            "line": 28,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "packages/mcp/scripts/sync-lock-e2e.mjs",
+            "line": 14,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
             "file": "packages/mcp/src/config.ts",
-            "line": 181,
+            "line": 227,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -594,7 +673,7 @@
         ]
       },
       "tab": {
-        "count": 49,
+        "count": 58,
         "samples": [
           {
             "file": ".eslintrc.js",
@@ -603,26 +682,26 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/chrome-extension/src/milvus/chromeMilvusAdapter.ts",
-            "line": 10,
+            "file": "packages/chrome-extension/src/options.ts",
+            "line": 5,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/core/src/embedding/base-embedding.ts",
-            "line": 3,
+            "file": "packages/core/src/context.splitter.test.ts",
+            "line": 11,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/core/src/splitter/ast-splitter.ts",
-            "line": 17,
+            "file": "packages/core/src/embedding/openai-embedding.ts",
+            "line": 5,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/core/src/types.ts",
-            "line": 2,
+            "file": "packages/core/src/sync/synchronizer.ts",
+            "line": 8,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -633,20 +712,20 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/mcp/src/snapshot.ts",
+            "file": "packages/mcp/src/index.ts",
+            "line": 9,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "packages/vscode-extension/copy-assets.js",
+            "line": 7,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "packages/vscode-extension/src/stubs/milvus-vectordb-stub.js",
             "line": 5,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "packages/vscode-extension/src/commands/searchCommand.ts",
-            "line": 6,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "packages/vscode-extension/src/webview/scripts/semanticSearch.js",
-            "line": 6,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -661,7 +740,7 @@
     },
     "quotes": {
       "double": {
-        "count": 2338,
+        "count": 2623,
         "samples": [
           {
             "file": ".eslintrc.js",
@@ -671,50 +750,50 @@
           },
           {
             "file": "packages/chrome-extension/src/content.ts",
-            "line": 229,
-            "column": 46,
+            "line": 308,
+            "column": 44,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/chrome-extension/src/stubs/milvus-vectordb-stub.ts",
-            "line": 232,
-            "column": 73,
+            "file": "packages/core/src/context.abort.test.ts",
+            "line": 6,
+            "column": 37,
             "message": "Strings must use doublequote."
           },
           {
             "file": "packages/core/src/context.ts",
-            "line": 1012,
-            "column": 57,
+            "line": 756,
+            "column": 52,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/core/src/splitter/langchain-splitter.ts",
-            "line": 68,
-            "column": 27,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "packages/core/src/vectordb/milvus-vectordb.ts",
-            "line": 501,
-            "column": 30,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "packages/mcp/src/handlers.ts",
-            "line": 993,
+            "file": "packages/core/src/splitter/ast-splitter.ts",
+            "line": 8,
             "column": 22,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "packages/core/src/vectordb/milvus-restful-vectordb.ts",
+            "line": 865,
+            "column": 32,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "packages/mcp/src/embedding.ts",
+            "line": 97,
+            "column": 14,
             "message": "Strings must use doublequote."
           },
           {
             "file": "packages/vscode-extension/src/config/configManager.ts",
-            "line": 96,
-            "column": 59,
+            "line": 1,
+            "column": 25,
             "message": "Strings must use doublequote."
           },
           {
             "file": "packages/vscode-extension/src/webview/scripts/semanticSearch.js",
-            "line": 169,
-            "column": 22,
+            "line": 48,
+            "column": 50,
             "message": "Strings must use doublequote."
           },
           {
@@ -726,7 +805,7 @@
         ]
       },
       "single": {
-        "count": 332,
+        "count": 528,
         "samples": [
           {
             "file": "packages/chrome-extension/src/content.ts",
@@ -736,50 +815,50 @@
           },
           {
             "file": "packages/chrome-extension/webpack.config.js",
-            "line": 39,
+            "line": 52,
             "column": 7,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "packages/core/src/context.ts",
-            "line": 459,
-            "column": 25,
+            "file": "packages/core/src/vectordb/milvus-restful-vectordb.ts",
+            "line": 283,
+            "column": 36,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "packages/core/src/vectordb/milvus-restful-vectordb.ts",
-            "line": 235,
-            "column": 40,
+            "file": "packages/core/src/vectordb/milvus-vectordb.ts",
+            "line": 656,
+            "column": 27,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "packages/core/src/vectordb/milvus-restful-vectordb.ts",
-            "line": 586,
+            "file": "packages/mcp/scripts/sync-lock-e2e.mjs",
+            "line": 94,
             "column": 39,
             "message": "Strings must use singlequote."
           },
           {
             "file": "packages/mcp/src/config.ts",
-            "line": 1,
-            "column": 28,
+            "line": 150,
+            "column": 52,
             "message": "Strings must use singlequote."
           },
           {
             "file": "packages/mcp/src/handlers.ts",
-            "line": 436,
-            "column": 31,
+            "line": 846,
+            "column": 27,
             "message": "Strings must use singlequote."
           },
           {
             "file": "packages/mcp/src/index.ts",
-            "line": 23,
-            "column": 8,
+            "line": 204,
+            "column": 43,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "packages/mcp/src/index.ts",
-            "line": 193,
-            "column": 40,
+            "file": "packages/mcp/src/snapshot.request-options.test.ts",
+            "line": 93,
+            "column": 36,
             "message": "Strings must use singlequote."
           },
           {
@@ -845,7 +924,7 @@
         "samples": []
       },
       "never": {
-        "count": 3922,
+        "count": 4778,
         "samples": [
           {
             "file": ".eslintrc.js",
@@ -855,50 +934,50 @@
           },
           {
             "file": "packages/chrome-extension/src/content.ts",
-            "line": 295,
-            "column": 71,
+            "line": 516,
+            "column": 46,
             "message": "Extra semicolon."
           },
           {
-            "file": "packages/core/src/context.ts",
-            "line": 100,
-            "column": 33,
+            "file": "packages/core/src/context.splitter.test.ts",
+            "line": 4,
+            "column": 36,
             "message": "Extra semicolon."
           },
           {
-            "file": "packages/core/src/embedding/ollama-embedding.ts",
-            "line": 202,
-            "column": 64,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "packages/core/src/utils/index.ts",
+            "file": "packages/core/src/embedding/gemini-embedding.ts",
             "line": 1,
-            "column": 55,
+            "column": 44,
             "message": "Extra semicolon."
           },
           {
-            "file": "packages/core/src/vectordb/zilliz-utils.ts",
-            "line": 315,
-            "column": 82,
+            "file": "packages/core/src/utils/env-manager.ts",
+            "line": 69,
+            "column": 30,
             "message": "Extra semicolon."
           },
           {
-            "file": "packages/mcp/src/index.ts",
-            "line": 230,
-            "column": 61,
+            "file": "packages/mcp/scripts/sync-lock-e2e.mjs",
+            "line": 31,
+            "column": 63,
             "message": "Extra semicolon."
           },
           {
-            "file": "packages/vscode-extension/src/commands/searchCommand.ts",
-            "line": 193,
-            "column": 56,
+            "file": "packages/mcp/src/handlers.ts",
+            "line": 993,
+            "column": 44,
             "message": "Extra semicolon."
           },
           {
-            "file": "packages/vscode-extension/src/webview/scripts/semanticSearch.js",
-            "line": 160,
-            "column": 48,
+            "file": "packages/mcp/src/sync.ts",
+            "line": 322,
+            "column": 66,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "packages/vscode-extension/src/stubs/ast-splitter-stub.js",
+            "line": 231,
+            "column": 90,
             "message": "Extra semicolon."
           },
           {

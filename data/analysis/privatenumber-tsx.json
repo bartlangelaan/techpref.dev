@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "96d58f23c7cc",
-  "analyzedCommit": "98f94189b971d06f9d042f7eefdcd9ef27028273",
-  "analyzedCommitDate": "2026-04-25T15:33:18.000Z",
+  "analyzedCommit": "b29f6ee4d6872fdef474eb0a89c6d4e982478a77",
+  "analyzedCommitDate": "2026-05-14T14:03:39.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -9,7 +9,7 @@
         "samples": []
       },
       "generic": {
-        "count": 32,
+        "count": 45,
         "samples": [
           {
             "file": "src/preflight.cts",
@@ -18,22 +18,28 @@
             "message": "Array type using 'NodeJS.Signals[]' is forbidden. Use 'Array<NodeJS.Signals>' instead."
           },
           {
-            "file": "src/utils/debug.ts",
-            "line": 19,
-            "column": 11,
-            "message": "Array type using 'any[]' is forbidden. Use 'Array<any>' instead."
+            "file": "src/utils/ipc/client.ts",
+            "line": 10,
+            "column": 21,
+            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           },
           {
             "file": "src/utils/node-features.ts",
-            "line": 19,
-            "column": 12,
-            "message": "Array type using 'Version[]' is forbidden. Use 'Array<Version>' instead."
-          },
-          {
-            "file": "src/utils/node-features.ts",
-            "line": 53,
+            "line": 59,
             "column": 30,
             "message": "Array type using 'Version[]' is forbidden. Use 'Array<Version>' instead."
+          },
+          {
+            "file": "src/utils/node-features.ts",
+            "line": 95,
+            "column": 40,
+            "message": "Array type using 'Version[]' is forbidden. Use 'Array<Version>' instead."
+          },
+          {
+            "file": "src/utils/node-features.ts",
+            "line": 129,
+            "column": 40,
+            "message": "Array type using 'VersionRange[]' is forbidden. Use 'Array<VersionRange>' instead."
           },
           {
             "file": "src/utils/transform/apply-transformers.ts",
@@ -42,32 +48,26 @@
             "message": "Array type using 'SourceMap[]' is forbidden. Use 'Array<SourceMap>' instead."
           },
           {
-            "file": "src/utils/transform/apply-transformers.ts",
-            "line": 50,
+            "file": "src/utils/transform/cache.ts",
+            "line": 27,
             "column": 14,
-            "message": "Array type using 'SourceMap[]' is forbidden. Use 'Array<SourceMap>' instead."
+            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           },
           {
-            "file": "src/watch/utils.ts",
-            "line": 15,
-            "column": 61,
-            "message": "Array type using 'any[]' is forbidden. Use 'Array<any>' instead."
-          },
-          {
-            "file": "tests/specs/smoke.ts",
-            "line": 17,
-            "column": 19,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
-          },
-          {
-            "file": "tests/utils/tsx.ts",
+            "file": "tests/specs/cli.ts",
             "line": 14,
-            "column": 8,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+            "column": 17,
+            "message": "Array type using 'Searchable[]' is forbidden. Use 'Array<Searchable>' instead."
+          },
+          {
+            "file": "tests/utils/process-interact.ts",
+            "line": 53,
+            "column": 11,
+            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           },
           {
             "file": "tests/utils/tsx.ts",
-            "line": 114,
+            "line": 192,
             "column": 10,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           }
@@ -111,18 +111,11 @@
     },
     "consistent-indexed-object-style": {
       "record": {
-        "count": 1,
-        "samples": [
-          {
-            "file": "src/utils/transform/index.ts",
-            "line": 42,
-            "column": 18,
-            "message": "A record is preferred over an index signature."
-          }
-        ]
+        "count": 0,
+        "samples": []
       },
       "index-signature": {
-        "count": 5,
+        "count": 6,
         "samples": [
           {
             "file": "src/cjs/api/module-extensions.ts",
@@ -134,6 +127,12 @@
             "file": "src/utils/ipc/client.ts",
             "line": 4,
             "column": 35,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "src/utils/ipc/client.ts",
+            "line": 10,
+            "column": 21,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -159,42 +158,36 @@
     },
     "consistent-type-definitions": {
       "interface": {
-        "count": 12,
+        "count": 13,
         "samples": [
           {
             "file": "src/cjs/api/register.ts",
-            "line": 35,
+            "line": 36,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
             "file": "src/cjs/api/register.ts",
-            "line": 58,
-            "column": 8,
-            "message": "Use `interface` instead of `type`."
-          },
-          {
-            "file": "src/cjs/api/types.ts",
-            "line": 3,
+            "line": 59,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
             "file": "src/esm/api/register.ts",
-            "line": 16,
+            "line": 14,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
             "file": "src/esm/api/register.ts",
-            "line": 29,
+            "line": 20,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "src/esm/api/ts-import.ts",
-            "line": 6,
-            "column": 1,
+            "file": "src/esm/api/register.ts",
+            "line": 33,
+            "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
@@ -204,8 +197,14 @@
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "src/utils/transform/apply-transformers.ts",
-            "line": 17,
+            "file": "src/utils/ipc/client.ts",
+            "line": 6,
+            "column": 8,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "src/utils/node-features.ts",
+            "line": 2,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
@@ -217,7 +216,7 @@
           },
           {
             "file": "tests/utils/tsx.ts",
-            "line": 13,
+            "line": 22,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           }
@@ -230,7 +229,7 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 4,
+        "count": 3,
         "samples": [
           {
             "file": "src/cjs/api/module-extensions.ts",
@@ -249,17 +248,11 @@
             "line": 3,
             "column": 23,
             "message": "`import()` type annotations are forbidden."
-          },
-          {
-            "file": "tests/specs/watch.ts",
-            "line": 11,
-            "column": 14,
-            "message": "`import()` type annotations are forbidden."
           }
         ]
       },
       "no-type-imports": {
-        "count": 65,
+        "count": 66,
         "samples": [
           {
             "file": "src/cjs/api/module-extensions.ts",
@@ -281,7 +274,7 @@
           },
           {
             "file": "src/esm/hook/initialize.ts",
-            "line": 1,
+            "line": 2,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -292,32 +285,32 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/remove-argv-flags.ts",
-            "line": 4,
-            "column": 2,
+            "file": "src/patch-repl.ts",
+            "line": 1,
+            "column": 33,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/utils/transform/cache.ts",
-            "line": 6,
+            "file": "src/utils/transform/apply-transformers.ts",
+            "line": 1,
+            "column": 21,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "src/utils/transform/transform-dynamic-import.ts",
+            "line": 2,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/utils/tsconfig.ts",
-            "line": 1,
-            "column": 37,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "tests/specs/smoke.ts",
-            "line": 9,
+            "file": "tests/specs/loaders.ts",
+            "line": 5,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "tests/utils/tsx.ts",
-            "line": 9,
+            "line": 18,
             "column": 2,
             "message": "Use an `import` instead of an `import type`."
           }
@@ -330,7 +323,7 @@
         "samples": []
       },
       "declaration": {
-        "count": 123,
+        "count": 158,
         "samples": [
           {
             "file": "docs/.vitepress/theme/components/ContactForm.vue",
@@ -339,57 +332,57 @@
             "message": "Expected a function declaration."
           },
           {
-            "file": "src/cjs/api/module-resolve-filename/index.ts",
-            "line": 49,
-            "column": 14,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "src/cjs/api/register.ts",
-            "line": 113,
-            "column": 9,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "src/esm/hook/package-json.ts",
-            "line": 6,
-            "column": 7,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "src/preflight.cts",
-            "line": 8,
-            "column": 7,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "src/utils/ipc/client.ts",
-            "line": 15,
-            "column": 10,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "src/utils/transform/apply-transformers.ts",
+            "file": "src/cjs/api/module-resolve-filename/interop-cjs-exports.ts",
             "line": 22,
             "column": 14,
             "message": "Expected a function declaration."
           },
           {
-            "file": "src/watch/utils.ts",
-            "line": 3,
+            "file": "src/esm/api/register.ts",
+            "line": 136,
+            "column": 10,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "src/esm/hook/package-json.ts",
+            "line": 7,
             "column": 7,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "src/esm/hook/resolve.ts",
+            "line": 514,
+            "column": 8,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "src/utils/cjs-loader-state.ts",
+            "line": 13,
+            "column": 14,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "src/utils/path-utils.ts",
+            "line": 23,
+            "column": 14,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "src/watch/index.ts",
+            "line": 106,
+            "column": 8,
             "message": "Expected a function declaration."
           },
           {
             "file": "tests/specs/smoke.ts",
             "line": 41,
-            "column": 14,
+            "column": 7,
             "message": "Expected a function declaration."
           },
           {
             "file": "tests/utils/tsx.ts",
-            "line": 47,
-            "column": 14,
+            "line": 158,
+            "column": 10,
             "message": "Expected a function declaration."
           }
         ]
@@ -432,7 +425,7 @@
         ]
       },
       "default": {
-        "count": 35,
+        "count": 32,
         "samples": [
           {
             "file": "src/cjs/api/module-extensions.ts",
@@ -441,50 +434,50 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/cjs/api/module-resolve-filename/resolve-implicit-extensions.ts",
-            "line": 13,
+            "file": "src/cjs/api/module-resolve-filename/preserve-query.ts",
+            "line": 7,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/esm/hook/load.ts",
-            "line": 185,
+            "file": "src/esm/api/ts-import.ts",
+            "line": 87,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/run.ts",
-            "line": 6,
+            "file": "src/utils/ipc/server.ts",
+            "line": 29,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/utils/map-ts-extensions.ts",
-            "line": 25,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "src/utils/tsconfig.ts",
+            "file": "src/utils/sha1.ts",
             "line": 3,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "tests/specs/cli.ts",
-            "line": 45,
+            "file": "src/utils/url-search-params-stringify.ts",
+            "line": 1,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "tests/specs/repl.ts",
-            "line": 5,
+            "file": "tests/specs/commonjs-mode-contracts.ts",
+            "line": 22,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "tests/specs/version-sensitive.ts",
-            "line": 8,
+            "file": "tests/specs/smoke.ts",
+            "line": 52,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "tests/specs/watch.ts",
+            "line": 10,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -499,7 +492,7 @@
     },
     "indent": {
       "2-space": {
-        "count": 76,
+        "count": 77,
         "samples": [
           {
             "file": "docs/.vitepress/config.ts",
@@ -521,19 +514,19 @@
           },
           {
             "file": "src/esm/hook/load.ts",
-            "line": 19,
+            "line": 21,
             "column": 1,
             "message": "Expected spaces for indentation, but found tabs."
           },
           {
-            "file": "src/remove-argv-flags.ts",
-            "line": 2,
+            "file": "src/repl.ts",
+            "line": 10,
             "column": 1,
             "message": "Expected spaces for indentation, but found tabs."
           },
           {
-            "file": "src/utils/ipc/get-pipe-path.ts",
-            "line": 6,
+            "file": "src/utils/ipc/client.ts",
+            "line": 7,
             "column": 1,
             "message": "Expected spaces for indentation, but found tabs."
           },
@@ -551,20 +544,20 @@
           },
           {
             "file": "tests/specs/transform.ts",
-            "line": 10,
+            "line": 13,
             "column": 1,
             "message": "Expected spaces for indentation, but found tabs."
           },
           {
             "file": "tests/utils/tsx.ts",
-            "line": 4,
+            "line": 5,
             "column": 1,
             "message": "Expected spaces for indentation, but found tabs."
           }
         ]
       },
       "4-space": {
-        "count": 76,
+        "count": 77,
         "samples": [
           {
             "file": "docs/.vitepress/config.ts",
@@ -586,19 +579,19 @@
           },
           {
             "file": "src/esm/hook/load.ts",
-            "line": 19,
+            "line": 21,
             "column": 1,
             "message": "Expected spaces for indentation, but found tabs."
           },
           {
-            "file": "src/remove-argv-flags.ts",
-            "line": 2,
+            "file": "src/repl.ts",
+            "line": 10,
             "column": 1,
             "message": "Expected spaces for indentation, but found tabs."
           },
           {
-            "file": "src/utils/ipc/get-pipe-path.ts",
-            "line": 6,
+            "file": "src/utils/ipc/client.ts",
+            "line": 7,
             "column": 1,
             "message": "Expected spaces for indentation, but found tabs."
           },
@@ -616,13 +609,13 @@
           },
           {
             "file": "tests/specs/transform.ts",
-            "line": 10,
+            "line": 13,
             "column": 1,
             "message": "Expected spaces for indentation, but found tabs."
           },
           {
             "file": "tests/utils/tsx.ts",
-            "line": 4,
+            "line": 5,
             "column": 1,
             "message": "Expected spaces for indentation, but found tabs."
           }
@@ -648,7 +641,7 @@
     },
     "quotes": {
       "double": {
-        "count": 1723,
+        "count": 1977,
         "samples": [
           {
             "file": "docs/.vitepress/config.ts",
@@ -657,67 +650,73 @@
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/cjs/api/module-extensions.ts",
-            "line": 155,
-            "column": 46,
+            "file": "src/cjs/api/module-resolve-filename/preserve-query.ts",
+            "line": 4,
+            "column": 32,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/esm/hook/load.ts",
-            "line": 110,
-            "column": 57,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "src/utils/map-ts-extensions.ts",
-            "line": 29,
-            "column": 56,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "tests/fixtures.ts",
-            "line": 317,
-            "column": 3,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "tests/specs/api.ts",
-            "line": 593,
+            "file": "src/esm/hook/resolve.ts",
+            "line": 7,
             "column": 8,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "tests/specs/cli.ts",
-            "line": 438,
+            "file": "src/utils/path-utils.ts",
+            "line": 16,
+            "column": 17,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "tests/index.ts",
+            "line": 10,
+            "column": 26,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "tests/specs/api.ts",
+            "line": 795,
             "column": 7,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "tests/specs/smoke.ts",
-            "line": 499,
-            "column": 27,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "tests/specs/version-sensitive.ts",
-            "line": 71,
+            "file": "tests/specs/loaders.ts",
+            "line": 30,
             "column": 34,
             "message": "Strings must use doublequote."
           },
           {
+            "file": "tests/specs/transform.ts",
+            "line": 150,
+            "column": 15,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "tests/specs/version-sensitive.ts",
+            "line": 249,
+            "column": 5,
+            "message": "Strings must use doublequote."
+          },
+          {
             "file": "tests/utils/tsx.ts",
-            "line": 110,
+            "line": 188,
             "column": 18,
             "message": "Strings must use doublequote."
           }
         ]
       },
       "single": {
-        "count": 6,
+        "count": 7,
         "samples": [
           {
             "file": "src/esm/hook/resolve.ts",
-            "line": 231,
+            "line": 346,
+            "column": 88,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "src/esm/hook/resolve.ts",
+            "line": 410,
             "column": 88,
             "message": "Strings must use singlequote."
           },
@@ -735,19 +734,19 @@
           },
           {
             "file": "tests/specs/watch.ts",
-            "line": 261,
+            "line": 229,
             "column": 25,
             "message": "Strings must use singlequote."
           },
           {
             "file": "tests/specs/watch.ts",
-            "line": 267,
+            "line": 235,
             "column": 25,
             "message": "Strings must use singlequote."
           },
           {
             "file": "tests/specs/watch.ts",
-            "line": 273,
+            "line": 241,
             "column": 25,
             "message": "Strings must use singlequote."
           }
@@ -808,7 +807,7 @@
         "samples": []
       },
       "never": {
-        "count": 2022,
+        "count": 2385,
         "samples": [
           {
             "file": "docs/.vitepress/config.ts",
@@ -817,56 +816,56 @@
             "message": "Extra semicolon."
           },
           {
-            "file": "src/cjs/api/module-resolve-filename/resolve-implicit-extensions.ts",
-            "line": 29,
-            "column": 50,
+            "file": "src/cjs/api/register.ts",
+            "line": 4,
+            "column": 55,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/esm/api/ts-import.ts",
-            "line": 25,
-            "column": 41,
+            "file": "src/esm/hook/load.ts",
+            "line": 85,
+            "column": 27,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/esm/index.ts",
-            "line": 3,
-            "column": 42,
+            "file": "src/esm/hook/resolve.ts",
+            "line": 598,
+            "column": 96,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/utils/node-features.ts",
-            "line": 61,
-            "column": 2,
+            "file": "src/utils/map-ts-extensions.ts",
+            "line": 19,
+            "column": 67,
             "message": "Extra semicolon."
           },
           {
             "file": "src/watch/index.ts",
-            "line": 156,
-            "column": 41,
+            "line": 114,
+            "column": 30,
             "message": "Extra semicolon."
           },
           {
             "file": "tests/specs/cli.ts",
-            "line": 56,
-            "column": 48,
+            "line": 83,
+            "column": 39,
             "message": "Extra semicolon."
           },
           {
             "file": "tests/specs/smoke.ts",
-            "line": 1,
-            "column": 29,
+            "line": 494,
+            "column": 107,
             "message": "Extra semicolon."
           },
           {
             "file": "tests/specs/version-sensitive.ts",
-            "line": 143,
-            "column": 52,
+            "line": 356,
+            "column": 71,
             "message": "Extra semicolon."
           },
           {
             "file": "tests/utils/tsx.ts",
-            "line": 124,
+            "line": 202,
             "column": 62,
             "message": "Extra semicolon."
           }

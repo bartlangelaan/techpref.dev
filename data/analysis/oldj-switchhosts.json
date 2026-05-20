@@ -1,75 +1,94 @@
 {
   "analyzedVersion": "96d58f23c7cc",
-  "analyzedCommit": "19b273ab24c3272d6cf1a6192a2c9c287ce75e14",
-  "analyzedCommitDate": "2026-04-16T03:03:11.000Z",
+  "analyzedCommit": "841aa2f00efc2b37bce57dc0bfba36e3920b3f03",
+  "analyzedCommitDate": "2026-05-20T05:49:28.000Z",
   "checks": {
     "array-type": {
       "array": {
-        "count": 0,
-        "samples": []
-      },
-      "generic": {
-        "count": 172,
+        "count": 3,
         "samples": [
           {
-            "file": "src/common/hostsFn.ts",
+            "file": "e2e/support/test.ts",
+            "line": 24,
+            "column": 13,
+            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
+          },
+          {
+            "file": "e2e/support/test.ts",
+            "line": 41,
+            "column": 12,
+            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
+          },
+          {
+            "file": "src/renderer/components/Pref/languageOptions.ts",
             "line": 13,
-            "column": 31,
+            "column": 22,
+            "message": "Array type using 'ReadonlyArray<T>' is forbidden. Use 'readonly T[]' instead."
+          }
+        ]
+      },
+      "generic": {
+        "count": 184,
+        "samples": [
+          {
+            "file": "e2e/preferences.spec.ts",
+            "line": 107,
+            "column": 26,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+          },
+          {
+            "file": "src/common/hostsFn.ts",
+            "line": 14,
+            "column": 16,
             "message": "Array type using 'IHostsListObject[]' is forbidden. Use 'Array<IHostsListObject>' instead."
           },
           {
-            "file": "src/common/normalize.ts",
-            "line": 45,
-            "column": 18,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
-          },
-          {
-            "file": "src/main/actions/find/getReplaceHistory.ts",
-            "line": 8,
-            "column": 34,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
-          },
-          {
-            "file": "src/main/actions/list/moveManyToTrashcan.ts",
-            "line": 8,
-            "column": 37,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+            "file": "src/common/tree.ts",
+            "line": 18,
+            "column": 14,
+            "message": "Array type using 'IWithChildren[]' is forbidden. Use 'Array<IWithChildren>' instead."
           },
           {
             "file": "src/renderer/components/Editor/hosts_highlight.ts",
-            "line": 108,
-            "column": 34,
-            "message": "Array type using 'LineInfo[]' is forbidden. Use 'Array<LineInfo>' instead."
+            "line": 192,
+            "column": 21,
+            "message": "Array type using 'Transform[]' is forbidden. Use 'Array<Transform>' instead."
           },
           {
-            "file": "src/renderer/components/List/index.tsx",
-            "line": 177,
-            "column": 15,
-            "message": "Array type using 'IHostsListObject[]' is forbidden. Use 'Array<IHostsListObject>' instead."
+            "file": "src/renderer/components/Transfer.tsx",
+            "line": 22,
+            "column": 9,
+            "message": "Array type using 'ITransferSourceObject[]' is forbidden. Use 'Array<ITransferSourceObject>' instead."
           },
           {
-            "file": "src/renderer/components/Tree/Node.tsx",
-            "line": 275,
-            "column": 35,
-            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
-          },
-          {
-            "file": "src/renderer/components/Tree/fn.ts",
-            "line": 88,
-            "column": 40,
+            "file": "src/renderer/components/Tree/Tree.test.tsx",
+            "line": 77,
+            "column": 64,
             "message": "Array type using 'ITreeNodeData[]' is forbidden. Use 'Array<ITreeNodeData>' instead."
           },
           {
-            "file": "src/renderer/core/PopupMenu.ts",
-            "line": 46,
-            "column": 14,
-            "message": "Array type using 'OffFunction[]' is forbidden. Use 'Array<OffFunction>' instead."
+            "file": "src/renderer/components/Tree/fn.ts",
+            "line": 30,
+            "column": 41,
+            "message": "Array type using 'ITreeNodeData[]' is forbidden. Use 'Array<ITreeNodeData>' instead."
           },
           {
-            "file": "vite.main.config.mts",
-            "line": 16,
-            "column": 20,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+            "file": "src/renderer/components/Tree/fn.ts",
+            "line": 228,
+            "column": 25,
+            "message": "Array type using 'NodeIdType[]' is forbidden. Use 'Array<NodeIdType>' instead."
+          },
+          {
+            "file": "src/renderer/pages/find.test.tsx",
+            "line": 342,
+            "column": 29,
+            "message": "Array type using 'IFindItem[]' is forbidden. Use 'Array<IFindItem>' instead."
+          },
+          {
+            "file": "test/common/hostsFn.test.ts",
+            "line": 63,
+            "column": 15,
+            "message": "Array type using 'IHostsListObject[]' is forbidden. Use 'Array<IHostsListObject>' instead."
           }
         ]
       }
@@ -80,42 +99,55 @@
         "samples": []
       },
       "type-annotation": {
-        "count": 0,
-        "samples": []
+        "count": 6,
+        "samples": [
+          {
+            "file": "src/renderer/components/Editor/hosts_cm.ts",
+            "line": 31,
+            "column": 38,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "src/renderer/components/List/index.test.tsx",
+            "line": 118,
+            "column": 30,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "src/renderer/components/Pref/languageOptions.ts",
+            "line": 17,
+            "column": 37,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "src/renderer/core/agent.ts",
+            "line": 98,
+            "column": 24,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "src/renderer/core/agent.ts",
+            "line": 158,
+            "column": 35,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "src/renderer/pages/find.test.tsx",
+            "line": 206,
+            "column": 30,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          }
+        ]
       }
     },
     "consistent-indexed-object-style": {
       "record": {
-        "count": 6,
+        "count": 2,
         "samples": [
           {
             "file": "src/common/normalize.ts",
-            "line": 22,
+            "line": 20,
             "column": 3,
-            "message": "A record is preferred over an index signature."
-          },
-          {
-            "file": "src/main/actions/find/splitContent.ts",
-            "line": 9,
-            "column": 3,
-            "message": "A record is preferred over an index signature."
-          },
-          {
-            "file": "src/main/core/message.ts",
-            "line": 14,
-            "column": 29,
-            "message": "A record is preferred over an index signature."
-          },
-          {
-            "file": "src/main/libs/request.ts",
-            "line": 13,
-            "column": 3,
-            "message": "A record is preferred over an index signature."
-          },
-          {
-            "file": "src/main/libs/request.ts",
-            "line": 18,
-            "column": 15,
             "message": "A record is preferred over an index signature."
           },
           {
@@ -127,8 +159,57 @@
         ]
       },
       "index-signature": {
-        "count": 0,
-        "samples": []
+        "count": 8,
+        "samples": [
+          {
+            "file": "e2e/support/test.ts",
+            "line": 39,
+            "column": 13,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "src/renderer/components/EditHostsInfo.tsx",
+            "line": 222,
+            "column": 29,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "src/renderer/components/Pref/languageOptions.ts",
+            "line": 21,
+            "column": 30,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "src/renderer/components/RightPanel/index.tsx",
+            "line": 178,
+            "column": 26,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "src/renderer/core/agent.ts",
+            "line": 32,
+            "column": 22,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "src/renderer/core/notify.ts",
+            "line": 25,
+            "column": 26,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "src/renderer/models/useConfigs.test.tsx",
+            "line": 17,
+            "column": 36,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "src/renderer/models/useConfigs.test.tsx",
+            "line": 38,
+            "column": 44,
+            "message": "An index signature is preferred over a record."
+          }
+        ]
       }
     },
     "consistent-type-definitions": {
@@ -137,66 +218,66 @@
         "samples": []
       },
       "type": {
-        "count": 51,
+        "count": 58,
         "samples": [
           {
+            "file": "e2e/support/test.ts",
+            "line": 8,
+            "column": 1,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
             "file": "src/common/normalize.ts",
-            "line": 15,
+            "line": 19,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "src/common/update.ts",
-            "line": 7,
-            "column": 8,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "src/main/libs/request.ts",
-            "line": 12,
-            "column": 1,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "src/renderer/components/Editor/hosts_highlight.ts",
-            "line": 31,
-            "column": 1,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "src/renderer/components/HostsViewer.tsx",
+            "file": "src/renderer/common/PageWrapper.tsx",
             "line": 9,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "src/renderer/components/List/index.tsx",
-            "line": 24,
+            "file": "src/renderer/components/Editor/hosts_highlight.ts",
+            "line": 28,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "src/renderer/components/Pref/Proxy.tsx",
-            "line": 11,
+            "file": "src/renderer/components/ItemIcon.tsx",
+            "line": 16,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "src/renderer/components/TopBar/ConfigMenu.tsx",
-            "line": 29,
+            "file": "src/renderer/components/Pref/Advanced.tsx",
+            "line": 16,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "src/renderer/components/Transfer.tsx",
-            "line": 27,
-            "column": 1,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "test/_base.ts",
+            "file": "src/renderer/components/SetWriteMode.tsx",
             "line": 17,
-            "column": 5,
+            "column": 1,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "src/renderer/components/TopBar/index.tsx",
+            "line": 30,
+            "column": 1,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "src/renderer/components/Tree/Tree.tsx",
+            "line": 17,
+            "column": 1,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "src/renderer/pages/find.tsx",
+            "line": 67,
+            "column": 8,
             "message": "Use `type` instead of `interface`."
           }
         ]
@@ -204,7 +285,7 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 95,
+        "count": 52,
         "samples": [
           {
             "file": "src/common/default_configs.ts",
@@ -213,102 +294,114 @@
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "src/main/actions/cmd/changeDataDir.ts",
-            "line": 10,
-            "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
-          {
-            "file": "src/main/actions/find/splitContent.ts",
+            "file": "src/common/i18n/languages/ja.ts",
             "line": 6,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "src/main/actions/list/getItem.ts",
-            "line": 7,
+            "file": "src/renderer/components/Editor/HostsEditor.tsx",
+            "line": 9,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "src/main/core/popupMenu.ts",
+            "file": "src/renderer/components/List/ListItem.tsx",
             "line": 8,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "src/main/ui/tray/index.ts",
-            "line": 13,
-            "column": 1,
-            "message": "Imports BrowserWindow and MenuItemConstructorOptions are only used as type."
-          },
-          {
-            "file": "src/renderer/components/List/index.tsx",
-            "line": 9,
-            "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
-          {
-            "file": "src/renderer/components/SudoPasswordInput.tsx",
+            "file": "src/renderer/components/Pref/General.tsx",
             "line": 6,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "src/renderer/core/useOnBroadcast.ts",
+            "file": "src/renderer/components/RightPanel/index.tsx",
             "line": 1,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "test/main/setSystemHosts.test.ts",
-            "line": 29,
-            "column": 51,
-            "message": "`import()` type annotations are forbidden."
+            "file": "src/renderer/components/Tree/fn.ts",
+            "line": 1,
+            "column": 1,
+            "message": "All imports in the declaration are only used as types. Use `import type`."
+          },
+          {
+            "file": "src/renderer/core/agent.ts",
+            "line": 12,
+            "column": 1,
+            "message": "All imports in the declaration are only used as types. Use `import type`."
+          },
+          {
+            "file": "src/renderer/models/useResolvedTheme.ts",
+            "line": 1,
+            "column": 1,
+            "message": "Imports ResolvedThemeType are only used as type."
+          },
+          {
+            "file": "src/renderer/utils/theme.ts",
+            "line": 1,
+            "column": 1,
+            "message": "All imports in the declaration are only used as types. Use `import type`."
           }
         ]
       },
       "no-type-imports": {
-        "count": 11,
+        "count": 24,
         "samples": [
           {
-            "file": "src/main/core/updater.ts",
-            "line": 5,
+            "file": "e2e/preferences.spec.ts",
+            "line": 11,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/main/http/api/list.ts",
-            "line": 9,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "src/main/http/api/toggle.ts",
-            "line": 10,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "src/main/http/index.ts",
-            "line": 9,
-            "column": 1,
+            "file": "src/renderer/components/DescriptionText.tsx",
+            "line": 1,
+            "column": 16,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "src/renderer/components/Editor/HostsEditor.tsx",
-            "line": 16,
-            "column": 19,
+            "line": 21,
+            "column": 3,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/renderer/components/SideDrawer.tsx",
+            "file": "src/renderer/components/Editor/hosts_cm.ts",
+            "line": 19,
+            "column": 3,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "src/renderer/components/Pref/languageOptions.ts",
             "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/renderer/components/SideDrawer.tsx",
+            "file": "src/renderer/components/TopBar/ConfigMenu.tsx",
+            "line": 8,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "src/renderer/components/Tree/Tree.test.tsx",
+            "line": 7,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "src/renderer/core/notify.test.ts",
+            "line": 1,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "src/renderer/pages/find.test.tsx",
             "line": 3,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
@@ -318,149 +411,137 @@
             "line": 7,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "test/main/setSystemHosts.test.ts",
-            "line": 29,
-            "column": 51,
-            "message": "`import()` type annotations are forbidden."
-          },
-          {
-            "file": "test/main/trashcan.test.ts",
-            "line": 9,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
           }
         ]
       }
     },
     "func-style": {
       "expression": {
-        "count": 135,
+        "count": 97,
         "samples": [
           {
-            "file": "scripts/hooks/notarize-options.mjs",
-            "line": 4,
+            "file": "e2e/preferences.spec.ts",
+            "line": 13,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "scripts/libs/build-plan.mjs",
-            "line": 7,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "scripts/release-config.mjs",
-            "line": 16,
+            "file": "e2e/support/test.ts",
+            "line": 127,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "scripts/upload-progress.mjs",
-            "line": 15,
+            "file": "scripts/sort-lang.mjs",
+            "line": 87,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "src/renderer/components/Editor/hosts_cm.ts",
+            "line": 122,
             "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "scripts/upload-progress.mjs",
-            "line": 268,
-            "column": 3,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "scripts/upload-release.mjs",
-            "line": 68,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "scripts/upload-release.mjs",
-            "line": 425,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/main/data/index.ts",
-            "line": 35,
-            "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "src/renderer/components/Editor/hosts_highlight.ts",
-            "line": 218,
+            "line": 182,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "src/renderer/components/Tree/Node.tsx",
+            "line": 293,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "src/renderer/components/Tree/fn.ts",
-            "line": 183,
+            "line": 184,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "src/renderer/core/notify.ts",
+            "line": 137,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "src/renderer/pages/find.tsx",
+            "line": 132,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "src/renderer/utils/theme.ts",
+            "line": 36,
             "column": 8,
             "message": "Expected a function expression."
           }
         ]
       },
       "declaration": {
-        "count": 204,
+        "count": 226,
         "samples": [
           {
-            "file": "scripts/make.mjs",
-            "line": 177,
-            "column": 7,
+            "file": "e2e/support/tauri-mock.js",
+            "line": 2,
+            "column": 9,
             "message": "Expected a function declaration."
           },
           {
-            "file": "src/main/actions/hosts/getContent.ts",
-            "line": 17,
-            "column": 7,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "src/main/libs/cron.ts",
-            "line": 62,
-            "column": 7,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "src/renderer/components/About/index.tsx",
-            "line": 13,
+            "file": "src/renderer/components/About/AboutContent.tsx",
+            "line": 15,
             "column": 7,
             "message": "Expected a function declaration."
           },
           {
             "file": "src/renderer/components/Editor/HostsEditor.tsx",
-            "line": 202,
+            "line": 190,
             "column": 9,
             "message": "Expected a function declaration."
           },
           {
-            "file": "src/renderer/components/List/ListItem.tsx",
-            "line": 59,
+            "file": "src/renderer/components/List/index.tsx",
+            "line": 28,
+            "column": 7,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "src/renderer/components/ResizeHandle/index.tsx",
+            "line": 18,
+            "column": 7,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "src/renderer/components/TopBar/ConfigMenu.tsx",
+            "line": 46,
+            "column": 7,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "src/renderer/components/Tree/Tree.tsx",
+            "line": 96,
             "column": 9,
             "message": "Expected a function declaration."
           },
           {
-            "file": "src/renderer/components/SetWriteMode.tsx",
-            "line": 30,
-            "column": 9,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "src/renderer/components/Tree/Node.tsx",
-            "line": 169,
+            "file": "src/renderer/pages/find.test.tsx",
+            "line": 52,
             "column": 9,
             "message": "Expected a function declaration."
           },
           {
             "file": "src/renderer/pages/find.tsx",
-            "line": 73,
+            "line": 676,
             "column": 9,
             "message": "Expected a function declaration."
           },
           {
-            "file": "vite.main.config.mts",
-            "line": 6,
-            "column": 7,
+            "file": "test/common/normalize.test.ts",
+            "line": 57,
+            "column": 11,
             "message": "Expected a function declaration."
           }
         ]
@@ -468,59 +549,59 @@
     },
     "import-export-preference": {
       "named": {
-        "count": 130,
+        "count": 67,
         "samples": [
           {
-            "file": "scripts/hooks/artifactBuildCompleted.mjs",
+            "file": "eslint.config.mjs",
             "line": 6,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "src/common/normalize.ts",
-            "line": 86,
+            "file": "src/common/i18n/languages/fr.ts",
+            "line": 240,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "src/main/actions/downloadUpdate.ts",
-            "line": 3,
+            "file": "src/common/utils/wait.ts",
+            "line": 6,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "src/main/actions/hosts/deleteHistory.ts",
-            "line": 9,
+            "file": "src/renderer/components/EditHostsInfo.tsx",
+            "line": 333,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "src/main/actions/list/setList.ts",
-            "line": 9,
+            "file": "src/renderer/components/LeftPanel/Trashcan.tsx",
+            "line": 111,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "src/main/actions/updateTrayTitle.ts",
+            "file": "src/renderer/components/Pref/Advanced.tsx",
+            "line": 160,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "src/renderer/components/RightPanel/SystemHostsPanel.tsx",
+            "line": 98,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "src/renderer/components/TopBar/ImportFromUrl.tsx",
+            "line": 114,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "src/renderer/models/useHostsData.ts",
             "line": 12,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "src/renderer/components/About/index.tsx",
-            "line": 30,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "src/renderer/components/Loading.tsx",
-            "line": 15,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "src/renderer/components/TopBar/index.tsx",
-            "line": 30,
             "column": 8,
             "message": "Prefer named exports"
           },
@@ -533,47 +614,11 @@
         ]
       },
       "default": {
-        "count": 12,
+        "count": 4,
         "samples": [
           {
-            "file": "src/main/core/agent.ts",
-            "line": 9,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "src/main/core/message.ts",
-            "line": 95,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "src/main/libs/cron.ts",
-            "line": 70,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "src/main/ui/find.ts",
-            "line": 68,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "src/main/ui/menu.ts",
+            "file": "src/renderer/core/PopupMenu.ts",
             "line": 13,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "src/main/ui/tray/window.ts",
-            "line": 70,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "src/main/utils/fs2.ts",
-            "line": 9,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -590,8 +635,8 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "test/_base.ts",
-            "line": 31,
+            "file": "src/renderer/utils/formatInterval.ts",
+            "line": 5,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           }
@@ -604,59 +649,59 @@
         "samples": []
       },
       "4-space": {
-        "count": 179,
+        "count": 113,
         "samples": [
           {
-            "file": "scripts/hooks/artifactBuildCompleted.mjs",
+            "file": "e2e/data-transfer.spec.ts",
+            "line": 2,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "playwright.config.ts",
+            "line": 4,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "src/common/i18n/languages/pl.ts",
             "line": 7,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/common/i18n/languages/fr.ts",
-            "line": 9,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "src/main/actions/config/all.ts",
-            "line": 10,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "src/main/actions/hosts/getPathOfSystemHostsPath.ts",
-            "line": 8,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "src/main/actions/quit.ts",
-            "line": 10,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "src/main/libs/isDev.ts",
-            "line": 8,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "src/renderer/components/History.tsx",
-            "line": 9,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "src/renderer/components/SideDrawer.tsx",
+            "file": "src/renderer/components/ConfirmModal.tsx",
             "line": 6,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
+            "file": "src/renderer/components/LeftPanel/TrashcanItem.tsx",
+            "line": 12,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "src/renderer/components/Pref/Proxy.tsx",
+            "line": 13,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "src/renderer/components/SwitchButton.test.tsx",
+            "line": 8,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "src/renderer/core/PopupMenu.ts",
+            "line": 14,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
             "file": "src/renderer/pages/index.tsx",
-            "line": 23,
+            "line": 32,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -669,59 +714,59 @@
         ]
       },
       "tab": {
-        "count": 179,
+        "count": 113,
         "samples": [
           {
-            "file": "scripts/hooks/artifactBuildCompleted.mjs",
+            "file": "e2e/data-transfer.spec.ts",
+            "line": 2,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "playwright.config.ts",
+            "line": 4,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "src/common/i18n/languages/pl.ts",
             "line": 7,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/common/i18n/languages/fr.ts",
-            "line": 9,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "src/main/actions/config/all.ts",
-            "line": 10,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "src/main/actions/hosts/getPathOfSystemHostsPath.ts",
-            "line": 8,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "src/main/actions/quit.ts",
-            "line": 10,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "src/main/libs/isDev.ts",
-            "line": 8,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "src/renderer/components/History.tsx",
-            "line": 9,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "src/renderer/components/SideDrawer.tsx",
+            "file": "src/renderer/components/ConfirmModal.tsx",
             "line": 6,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
+            "file": "src/renderer/components/LeftPanel/TrashcanItem.tsx",
+            "line": 12,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "src/renderer/components/Pref/Proxy.tsx",
+            "line": 13,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "src/renderer/components/SwitchButton.test.tsx",
+            "line": 8,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "src/renderer/core/PopupMenu.ts",
+            "line": 14,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
             "file": "src/renderer/pages/index.tsx",
-            "line": 23,
+            "line": 32,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -736,131 +781,131 @@
     },
     "quotes": {
       "double": {
-        "count": 4269,
+        "count": 4900,
         "samples": [
           {
-            "file": "scripts/hooks/artifactBuildCompleted.mjs",
-            "line": 1,
-            "column": 26,
+            "file": "e2e/data-transfer.spec.ts",
+            "line": 8,
+            "column": 8,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/common/events.ts",
-            "line": 9,
-            "column": 17,
+            "file": "e2e/remote-hosts.spec.ts",
+            "line": 120,
+            "column": 33,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "src/common/i18n/languages/de.ts",
+            "line": 15,
+            "column": 8,
             "message": "Strings must use doublequote."
           },
           {
             "file": "src/common/i18n/languages/fr.ts",
-            "line": 81,
-            "column": 11,
+            "line": 173,
+            "column": 40,
             "message": "Strings must use doublequote."
           },
           {
             "file": "src/common/i18n/languages/pl.ts",
-            "line": 24,
-            "column": 23,
+            "line": 97,
+            "column": 16,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/common/i18n/languages/zh-hant.ts",
-            "line": 135,
-            "column": 20,
+            "file": "src/common/i18n/languages/zh.ts",
+            "line": 16,
+            "column": 11,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/main/actions/index.ts",
-            "line": 51,
-            "column": 42,
+            "file": "src/renderer/components/List/index.test.tsx",
+            "line": 44,
+            "column": 30,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/renderer/components/About/index.tsx",
-            "line": 11,
-            "column": 20,
+            "file": "src/renderer/components/Tree/Tree.test.tsx",
+            "line": 136,
+            "column": 13,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/renderer/components/TopBar/ImportFromUrl.tsx",
-            "line": 11,
-            "column": 20,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "test/main/basic.test.ts",
-            "line": 62,
-            "column": 44,
+            "file": "src/renderer/pages/find.test.tsx",
+            "line": 434,
+            "column": 41,
             "message": "Strings must use doublequote."
           },
           {
             "file": "vitest.config.mts",
-            "line": 10,
+            "line": 13,
             "column": 19,
             "message": "Strings must use doublequote."
           }
         ]
       },
       "single": {
-        "count": 40,
+        "count": 36,
         "samples": [
           {
-            "file": "scripts/upload-release.mjs",
-            "line": 138,
-            "column": 9,
+            "file": "src/common/i18n/languages/fr.ts",
+            "line": 31,
+            "column": 5,
             "message": "Strings must use singlequote."
           },
           {
             "file": "src/common/i18n/languages/fr.ts",
-            "line": 36,
-            "column": 19,
+            "line": 73,
+            "column": 17,
             "message": "Strings must use singlequote."
           },
           {
             "file": "src/common/i18n/languages/fr.ts",
-            "line": 70,
+            "line": 82,
             "column": 15,
             "message": "Strings must use singlequote."
           },
           {
             "file": "src/common/i18n/languages/fr.ts",
-            "line": 79,
-            "column": 24,
+            "line": 93,
+            "column": 16,
             "message": "Strings must use singlequote."
           },
           {
             "file": "src/common/i18n/languages/fr.ts",
-            "line": 114,
-            "column": 5,
+            "line": 152,
+            "column": 20,
             "message": "Strings must use singlequote."
           },
           {
             "file": "src/common/i18n/languages/fr.ts",
-            "line": 160,
-            "column": 5,
+            "line": 164,
+            "column": 17,
             "message": "Strings must use singlequote."
           },
           {
             "file": "src/common/i18n/languages/fr.ts",
-            "line": 181,
+            "line": 193,
             "column": 21,
             "message": "Strings must use singlequote."
           },
           {
             "file": "src/common/i18n/languages/fr.ts",
-            "line": 194,
+            "line": 210,
             "column": 5,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/renderer/components/Editor/hosts_highlight.ts",
-            "line": 64,
-            "column": 17,
+            "file": "src/common/i18n/languages/fr.ts",
+            "line": 229,
+            "column": 15,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "vite.main.config.mts",
-            "line": 53,
-            "column": 29,
+            "file": "src/common/i18n/languages/tr.ts",
+            "line": 215,
+            "column": 21,
             "message": "Strings must use singlequote."
           }
         ]
@@ -868,7 +913,7 @@
     },
     "react-destructuring-assignment": {
       "never": {
-        "count": 24,
+        "count": 37,
         "samples": [
           {
             "file": "src/renderer/common/PageWrapper.tsx",
@@ -878,31 +923,25 @@
           },
           {
             "file": "src/renderer/components/HostsViewer.tsx",
-            "line": 14,
-            "column": 9,
-            "message": "Must never use destructuring props assignment"
-          },
-          {
-            "file": "src/renderer/components/LeftPanel/TrashcanItem.tsx",
-            "line": 21,
-            "column": 9,
-            "message": "Must never use destructuring props assignment"
-          },
-          {
-            "file": "src/renderer/components/Pref/Advanced.tsx",
             "line": 19,
             "column": 9,
             "message": "Must never use destructuring props assignment"
           },
           {
-            "file": "src/renderer/components/Pref/Commands.tsx",
-            "line": 18,
+            "file": "src/renderer/components/List/ListItem.tsx",
+            "line": 30,
+            "column": 9,
+            "message": "Must never use destructuring props assignment"
+          },
+          {
+            "file": "src/renderer/components/Pref/Advanced.tsx",
+            "line": 52,
             "column": 9,
             "message": "Must never use destructuring props assignment"
           },
           {
             "file": "src/renderer/components/Pref/Proxy.tsx",
-            "line": 17,
+            "line": 22,
             "column": 9,
             "message": "Must never use destructuring props assignment"
           },
@@ -913,27 +952,33 @@
             "message": "Must never use destructuring props assignment"
           },
           {
-            "file": "src/renderer/components/TopBar/ImportFromUrl.tsx",
-            "line": 19,
+            "file": "src/renderer/components/TopBar/index.tsx",
+            "line": 37,
             "column": 9,
             "message": "Must never use destructuring props assignment"
           },
           {
-            "file": "src/renderer/components/Transfer.tsx",
-            "line": 35,
+            "file": "src/renderer/components/Tree/Tree.tsx",
+            "line": 37,
             "column": 9,
             "message": "Must never use destructuring props assignment"
+          },
+          {
+            "file": "src/renderer/pages/find.test.tsx",
+            "line": 52,
+            "column": 17,
+            "message": "Must never use destructuring props assignment in SFC argument"
           },
           {
             "file": "src/renderer/pages/find.tsx",
-            "line": 244,
+            "line": 846,
             "column": 21,
             "message": "Must never use destructuring props assignment in SFC argument"
           }
         ]
       },
       "always": {
-        "count": 31,
+        "count": 30,
         "samples": [
           {
             "file": "src/renderer/components/BrowserLink.tsx",
@@ -942,57 +987,57 @@
             "message": "Must use destructuring props assignment"
           },
           {
-            "file": "src/renderer/components/Lang.tsx",
-            "line": 22,
-            "column": 13,
-            "message": "Must use destructuring props assignment"
-          },
-          {
             "file": "src/renderer/components/Tree/Node.tsx",
-            "line": 173,
+            "line": 112,
             "column": 5,
             "message": "Must use destructuring props assignment"
           },
           {
             "file": "src/renderer/components/Tree/Node.tsx",
-            "line": 205,
-            "column": 27,
+            "line": 180,
+            "column": 5,
             "message": "Must use destructuring props assignment"
           },
           {
             "file": "src/renderer/components/Tree/Node.tsx",
-            "line": 249,
-            "column": 19,
+            "line": 248,
+            "column": 13,
+            "message": "Must use destructuring props assignment"
+          },
+          {
+            "file": "src/renderer/components/Tree/Node.tsx",
+            "line": 266,
+            "column": 18,
             "message": "Must use destructuring props assignment"
           },
           {
             "file": "src/renderer/components/Tree/Tree.tsx",
-            "line": 50,
+            "line": 51,
             "column": 9,
             "message": "Must use destructuring props assignment"
           },
           {
             "file": "src/renderer/components/Tree/Tree.tsx",
-            "line": 53,
+            "line": 56,
             "column": 7,
             "message": "Must use destructuring props assignment"
           },
           {
             "file": "src/renderer/components/Tree/Tree.tsx",
-            "line": 154,
-            "column": 28,
+            "line": 159,
+            "column": 23,
             "message": "Must use destructuring props assignment"
           },
           {
             "file": "src/renderer/components/Tree/Tree.tsx",
-            "line": 161,
+            "line": 164,
             "column": 34,
             "message": "Must use destructuring props assignment"
           },
           {
             "file": "src/renderer/components/Tree/Tree.tsx",
-            "line": 165,
-            "column": 33,
+            "line": 168,
+            "column": 30,
             "message": "Must use destructuring props assignment"
           }
         ]
@@ -1007,20 +1052,20 @@
             "message": "Must destructure props in the function signature."
           },
           {
-            "file": "src/renderer/components/ItemIcon.tsx",
-            "line": 21,
-            "column": 9,
-            "message": "Must destructure props in the function signature."
+            "file": "src/renderer/components/Lang.tsx",
+            "line": 18,
+            "column": 18,
+            "message": "Must use destructuring props assignment"
           },
           {
             "file": "src/renderer/components/Pref/Advanced.tsx",
-            "line": 19,
+            "line": 22,
             "column": 9,
             "message": "Must destructure props in the function signature."
           },
           {
             "file": "src/renderer/components/Pref/Proxy.tsx",
-            "line": 17,
+            "line": 22,
             "column": 9,
             "message": "Must destructure props in the function signature."
           },
@@ -1032,20 +1077,79 @@
           },
           {
             "file": "src/renderer/components/Tree/Node.tsx",
-            "line": 188,
+            "line": 195,
             "column": 17,
             "message": "Must use destructuring props assignment"
           },
           {
             "file": "src/renderer/components/Tree/Node.tsx",
-            "line": 252,
+            "line": 266,
+            "column": 18,
+            "message": "Must use destructuring props assignment"
+          },
+          {
+            "file": "src/renderer/components/Tree/Tree.tsx",
+            "line": 53,
+            "column": 22,
+            "message": "Must use destructuring props assignment"
+          },
+          {
+            "file": "src/renderer/components/Tree/Tree.tsx",
+            "line": 162,
+            "column": 23,
+            "message": "Must use destructuring props assignment"
+          },
+          {
+            "file": "src/renderer/components/Tree/Tree.tsx",
+            "line": 168,
+            "column": 30,
+            "message": "Must use destructuring props assignment"
+          }
+        ]
+      },
+      "always-outside-signature": {
+        "count": 30,
+        "samples": [
+          {
+            "file": "src/renderer/components/BrowserLink.tsx",
+            "line": 28,
+            "column": 8,
+            "message": "Must use destructuring props assignment"
+          },
+          {
+            "file": "src/renderer/components/Tree/Node.tsx",
+            "line": 112,
+            "column": 5,
+            "message": "Must use destructuring props assignment"
+          },
+          {
+            "file": "src/renderer/components/Tree/Node.tsx",
+            "line": 180,
+            "column": 5,
+            "message": "Must use destructuring props assignment"
+          },
+          {
+            "file": "src/renderer/components/Tree/Node.tsx",
+            "line": 248,
+            "column": 13,
+            "message": "Must use destructuring props assignment"
+          },
+          {
+            "file": "src/renderer/components/Tree/Node.tsx",
+            "line": 266,
             "column": 18,
             "message": "Must use destructuring props assignment"
           },
           {
             "file": "src/renderer/components/Tree/Tree.tsx",
             "line": 51,
-            "column": 22,
+            "column": 9,
+            "message": "Must use destructuring props assignment"
+          },
+          {
+            "file": "src/renderer/components/Tree/Tree.tsx",
+            "line": 56,
+            "column": 7,
             "message": "Must use destructuring props assignment"
           },
           {
@@ -1056,73 +1160,14 @@
           },
           {
             "file": "src/renderer/components/Tree/Tree.tsx",
-            "line": 165,
-            "column": 33,
-            "message": "Must use destructuring props assignment"
-          }
-        ]
-      },
-      "always-outside-signature": {
-        "count": 31,
-        "samples": [
-          {
-            "file": "src/renderer/components/BrowserLink.tsx",
-            "line": 28,
-            "column": 8,
-            "message": "Must use destructuring props assignment"
-          },
-          {
-            "file": "src/renderer/components/Lang.tsx",
-            "line": 22,
-            "column": 13,
-            "message": "Must use destructuring props assignment"
-          },
-          {
-            "file": "src/renderer/components/Tree/Node.tsx",
-            "line": 173,
-            "column": 5,
-            "message": "Must use destructuring props assignment"
-          },
-          {
-            "file": "src/renderer/components/Tree/Node.tsx",
-            "line": 205,
-            "column": 27,
-            "message": "Must use destructuring props assignment"
-          },
-          {
-            "file": "src/renderer/components/Tree/Node.tsx",
-            "line": 249,
-            "column": 19,
-            "message": "Must use destructuring props assignment"
-          },
-          {
-            "file": "src/renderer/components/Tree/Tree.tsx",
-            "line": 50,
-            "column": 9,
-            "message": "Must use destructuring props assignment"
-          },
-          {
-            "file": "src/renderer/components/Tree/Tree.tsx",
-            "line": 53,
-            "column": 7,
-            "message": "Must use destructuring props assignment"
-          },
-          {
-            "file": "src/renderer/components/Tree/Tree.tsx",
-            "line": 154,
-            "column": 28,
-            "message": "Must use destructuring props assignment"
-          },
-          {
-            "file": "src/renderer/components/Tree/Tree.tsx",
-            "line": 161,
+            "line": 164,
             "column": 34,
             "message": "Must use destructuring props assignment"
           },
           {
             "file": "src/renderer/components/Tree/Tree.tsx",
-            "line": 165,
-            "column": 33,
+            "line": 168,
+            "column": 30,
             "message": "Must use destructuring props assignment"
           }
         ]
@@ -1130,7 +1175,7 @@
     },
     "react-function-component-definition": {
       "function-declaration": {
-        "count": 45,
+        "count": 57,
         "samples": [
           {
             "file": "src/renderer/components/About/AboutContent.tsx",
@@ -1139,58 +1184,58 @@
             "message": "Function component is not a function declaration"
           },
           {
-            "file": "src/renderer/components/History.tsx",
-            "line": 38,
+            "file": "src/renderer/components/Editor/HostsEditor.tsx",
+            "line": 27,
             "column": 21,
             "message": "Function component is not a function declaration"
           },
           {
-            "file": "src/renderer/components/ItemIcon.tsx",
-            "line": 20,
-            "column": 18,
+            "file": "src/renderer/components/Lang.tsx",
+            "line": 15,
+            "column": 14,
             "message": "Function component is not a function declaration"
           },
           {
-            "file": "src/renderer/components/LeftPanel/index.tsx",
-            "line": 19,
-            "column": 15,
+            "file": "src/renderer/components/List/index.tsx",
+            "line": 28,
+            "column": 14,
             "message": "Function component is not a function declaration"
           },
           {
-            "file": "src/renderer/components/Pref/Advanced.tsx",
+            "file": "src/renderer/components/Pref/CommandsHistory.tsx",
             "line": 18,
-            "column": 18,
+            "column": 25,
             "message": "Function component is not a function declaration"
           },
           {
-            "file": "src/renderer/components/Pref/General.tsx",
-            "line": 18,
-            "column": 17,
+            "file": "src/renderer/components/RightPanel/index.tsx",
+            "line": 24,
+            "column": 20,
             "message": "Function component is not a function declaration"
           },
           {
-            "file": "src/renderer/components/StatusBar.tsx",
-            "line": 17,
-            "column": 19,
+            "file": "src/renderer/components/TopBar/ConfigMenu.tsx",
+            "line": 46,
+            "column": 20,
             "message": "Function component is not a function declaration"
-          },
-          {
-            "file": "src/renderer/components/TopBar/index.tsx",
-            "line": 30,
-            "column": 16,
-            "message": "Function component is not a function expression"
           },
           {
             "file": "src/renderer/components/UpdateDialog.tsx",
-            "line": 18,
+            "line": 19,
             "column": 22,
             "message": "Function component is not a function declaration"
           },
           {
+            "file": "src/renderer/pages/find.test.tsx",
+            "line": 55,
+            "column": 18,
+            "message": "Function component is not a function declaration"
+          },
+          {
             "file": "src/renderer/pages/tray.tsx",
-            "line": 12,
-            "column": 16,
-            "message": "Function component is not a function expression"
+            "line": 16,
+            "column": 18,
+            "message": "Function component is not a function declaration"
           }
         ]
       },
@@ -1212,50 +1257,50 @@
         "samples": [
           {
             "file": "src/renderer/components/HostsViewer.tsx",
-            "line": 28,
-            "column": 67,
-            "message": "Value must be omitted for boolean attribute `read_only`"
+            "line": 61,
+            "column": 9,
+            "message": "Value must be omitted for boolean attribute `readOnly`"
           },
           {
             "file": "src/renderer/components/LeftPanel/TrashcanItem.tsx",
-            "line": 84,
+            "line": 99,
             "column": 38,
-            "message": "Value must be omitted for boolean attribute `is_collapsed`"
+            "message": "Value must be omitted for boolean attribute `isCollapsed`"
           },
           {
             "file": "src/renderer/components/List/index.tsx",
-            "line": 251,
+            "line": 321,
             "column": 9,
-            "message": "Value must be omitted for boolean attribute `allowed_multiple_selection`"
-          },
-          {
-            "file": "src/renderer/components/SudoPasswordInput.tsx",
-            "line": 54,
-            "column": 11,
-            "message": "Value must be omitted for boolean attribute `autoFocus`"
+            "message": "Value must be omitted for boolean attribute `allowedMultipleSelection`"
           },
           {
             "file": "src/renderer/components/TopBar/ImportFromUrl.tsx",
-            "line": 65,
+            "line": 86,
             "column": 13,
             "message": "Value must be omitted for boolean attribute `autoFocus`"
           },
           {
             "file": "src/renderer/pages/find.tsx",
-            "line": 341,
-            "column": 11,
+            "line": 984,
+            "column": 13,
             "message": "Value must be omitted for boolean attribute `autoFocus`"
           },
           {
+            "file": "src/renderer/pages/find.tsx",
+            "line": 1064,
+            "column": 13,
+            "message": "Value must be omitted for boolean attribute `offsetScrollbars`"
+          },
+          {
             "file": "src/renderer/pages/tray.tsx",
-            "line": 39,
+            "line": 65,
             "column": 15,
-            "message": "Value must be omitted for boolean attribute `is_tray`"
+            "message": "Value must be omitted for boolean attribute `isTray`"
           }
         ]
       },
       "always": {
-        "count": 10,
+        "count": 24,
         "samples": [
           {
             "file": "src/renderer/components/About/index.tsx",
@@ -1264,56 +1309,56 @@
             "message": "Value must be set for boolean attribute `centered`"
           },
           {
-            "file": "src/renderer/components/EditHostsInfo.tsx",
-            "line": 315,
-            "column": 13,
-            "message": "Value must be set for boolean attribute `data-autofocus`"
+            "file": "src/renderer/components/History.tsx",
+            "line": 249,
+            "column": 9,
+            "message": "Value must be set for boolean attribute `danger`"
+          },
+          {
+            "file": "src/renderer/components/LeftPanel/TrashcanItem.tsx",
+            "line": 112,
+            "column": 9,
+            "message": "Value must be set for boolean attribute `danger`"
+          },
+          {
+            "file": "src/renderer/components/RightPanel/index.tsx",
+            "line": 234,
+            "column": 15,
+            "message": "Value must be set for boolean attribute `mono`"
           },
           {
             "file": "src/renderer/components/SetWriteMode.tsx",
-            "line": 54,
-            "column": 47,
-            "message": "Value must be set for boolean attribute `centered`"
-          },
-          {
-            "file": "src/renderer/components/SudoPasswordInput.tsx",
-            "line": 44,
-            "column": 47,
-            "message": "Value must be set for boolean attribute `centered`"
-          },
-          {
-            "file": "src/renderer/components/SudoPasswordInput.tsx",
-            "line": 55,
-            "column": 11,
-            "message": "Value must be set for boolean attribute `data-autofocus`"
-          },
-          {
-            "file": "src/renderer/components/TopBar/ConfigMenu.tsx",
-            "line": 43,
-            "column": 25,
-            "message": "Value must be set for boolean attribute `withinPortal`"
-          },
-          {
-            "file": "src/renderer/components/TopBar/ImportFromUrl.tsx",
-            "line": 56,
+            "line": 53,
             "column": 47,
             "message": "Value must be set for boolean attribute `centered`"
           },
           {
             "file": "src/renderer/components/TopBar/ImportFromUrl.tsx",
-            "line": 66,
-            "column": 13,
-            "message": "Value must be set for boolean attribute `data-autofocus`"
+            "line": 77,
+            "column": 47,
+            "message": "Value must be set for boolean attribute `centered`"
           },
           {
-            "file": "src/renderer/components/UpdateDialog.tsx",
-            "line": 99,
+            "file": "src/renderer/components/TopBar/index.tsx",
+            "line": 68,
             "column": 7,
-            "message": "Value must be set for boolean attribute `centered`"
+            "message": "Value must be set for boolean attribute `data-tauri-drag-region`"
+          },
+          {
+            "file": "src/renderer/components/TopBar/index.tsx",
+            "line": 80,
+            "column": 15,
+            "message": "Value must be set for boolean attribute `data-tauri-drag-region`"
+          },
+          {
+            "file": "src/renderer/components/TopBar/index.tsx",
+            "line": 119,
+            "column": 9,
+            "message": "Value must be set for boolean attribute `data-tauri-drag-region`"
           },
           {
             "file": "src/renderer/components/UpdateDialog.tsx",
-            "line": 123,
+            "line": 133,
             "column": 48,
             "message": "Value must be set for boolean attribute `animated`"
           }
@@ -1326,12 +1371,18 @@
         "samples": []
       },
       "element": {
-        "count": 9,
+        "count": 11,
         "samples": [
           {
             "file": "src/renderer/components/EditHostsInfo.tsx",
-            "line": 113,
+            "line": 116,
             "column": 7,
+            "message": "Prefer React.Fragment over fragment shorthand"
+          },
+          {
+            "file": "src/renderer/components/History.tsx",
+            "line": 187,
+            "column": 5,
             "message": "Prefer React.Fragment over fragment shorthand"
           },
           {
@@ -1342,43 +1393,43 @@
           },
           {
             "file": "src/renderer/components/List/ListItem.tsx",
-            "line": 170,
+            "line": 183,
             "column": 11,
             "message": "Prefer React.Fragment over fragment shorthand"
           },
           {
             "file": "src/renderer/components/Pref/CommandsHistory.tsx",
-            "line": 75,
-            "column": 17,
-            "message": "Prefer React.Fragment over fragment shorthand"
-          },
-          {
-            "file": "src/renderer/components/Pref/CommandsHistory.tsx",
-            "line": 85,
+            "line": 76,
             "column": 17,
             "message": "Prefer React.Fragment over fragment shorthand"
           },
           {
             "file": "src/renderer/components/TopBar/ConfigMenu.tsx",
-            "line": 42,
+            "line": 62,
             "column": 5,
             "message": "Prefer React.Fragment over fragment shorthand"
           },
           {
             "file": "src/renderer/components/TopBar/index.tsx",
-            "line": 88,
+            "line": 123,
             "column": 13,
             "message": "Prefer React.Fragment over fragment shorthand"
           },
           {
             "file": "src/renderer/components/TopBar/index.tsx",
-            "line": 95,
+            "line": 136,
             "column": 13,
             "message": "Prefer React.Fragment over fragment shorthand"
           },
           {
+            "file": "src/renderer/components/TopBar/index.tsx",
+            "line": 194,
+            "column": 11,
+            "message": "Prefer React.Fragment over fragment shorthand"
+          },
+          {
             "file": "src/renderer/components/Tree/Node.tsx",
-            "line": 193,
+            "line": 200,
             "column": 5,
             "message": "Prefer React.Fragment over fragment shorthand"
           }
@@ -1387,65 +1438,65 @@
     },
     "semi": {
       "always": {
-        "count": 4611,
+        "count": 4692,
         "samples": [
           {
-            "file": "scripts/hooks/artifactBuildCompleted.mjs",
-            "line": 1,
-            "column": 46,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "scripts/upload-release.mjs",
-            "line": 130,
-            "column": 59,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "src/main/actions/find/setHistory.ts",
-            "line": 16,
-            "column": 2,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "src/main/actions/trashcan/restoreItem.ts",
-            "line": 40,
+            "file": "e2e/data-transfer.spec.ts",
+            "line": 8,
             "column": 24,
             "message": "Missing semicolon."
           },
           {
-            "file": "src/main/ui/tray/index.ts",
-            "line": 25,
-            "column": 106,
+            "file": "e2e/preferences.spec.ts",
+            "line": 407,
+            "column": 48,
             "message": "Missing semicolon."
           },
           {
-            "file": "src/renderer/components/Editor/hosts_highlight.ts",
-            "line": 283,
-            "column": 91,
+            "file": "scripts/sync-tauri-version.mjs",
+            "line": 33,
+            "column": 65,
             "message": "Missing semicolon."
           },
           {
-            "file": "src/renderer/components/SetWriteMode.tsx",
-            "line": 94,
-            "column": 28,
+            "file": "src/renderer/components/Editor/hosts_cm.ts",
+            "line": 56,
+            "column": 24,
             "message": "Missing semicolon."
           },
           {
-            "file": "src/renderer/core/useOnBroadcast.ts",
-            "line": 11,
-            "column": 50,
+            "file": "src/renderer/components/List/index.test.tsx",
+            "line": 258,
+            "column": 56,
             "message": "Missing semicolon."
           },
           {
-            "file": "test/main/basic.test.ts",
-            "line": 37,
-            "column": 35,
+            "file": "src/renderer/components/RightPanel/index.tsx",
+            "line": 182,
+            "column": 4,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "src/renderer/components/Tree/fn.ts",
+            "line": 22,
+            "column": 29,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "src/renderer/pages/find.test.tsx",
+            "line": 351,
+            "column": 30,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "src/renderer/pages/find.tsx",
+            "line": 610,
+            "column": 70,
             "message": "Missing semicolon."
           },
           {
             "file": "vitest.config.mts",
-            "line": 12,
+            "line": 15,
             "column": 3,
             "message": "Missing semicolon."
           }

@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "96d58f23c7cc",
-  "analyzedCommit": "7c33689cca049f46192b091eaf979b2e64fd6213",
-  "analyzedCommitDate": "2026-04-30T15:38:13.000Z",
+  "analyzedCommit": "e010bdd239b5c10415d4b70ca791467cde12fc88",
+  "analyzedCommitDate": "2026-05-20T22:32:27.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -70,7 +70,7 @@
         ]
       },
       "generic": {
-        "count": 487,
+        "count": 501,
         "samples": [
           {
             "file": "codegen/local-state/plugin.ts",
@@ -79,52 +79,52 @@
             "message": "Array type using 'Types.DocumentFile[]' is forbidden. Use 'Array<Types.DocumentFile>' instead."
           },
           {
-            "file": "src/__tests__/client.ts",
-            "line": 6730,
-            "column": 21,
-            "message": "Array type using 'ApolloLink.Operation[]' is forbidden. Use 'Array<ApolloLink.Operation>' instead."
+            "file": "scripts/codemods/ac3-to-ac4/src/util/getAllExports.ts",
+            "line": 70,
+            "column": 55,
+            "message": "Array type using 'ExportInfo[]' is forbidden. Use 'Array<ExportInfo>' instead."
           },
           {
-            "file": "src/cache/inmemory/__tests__/entityStore.ts",
-            "line": 1871,
-            "column": 27,
-            "message": "Array type using 'any[]' is forbidden. Use 'Array<any>' instead."
+            "file": "src/cache/inmemory/__tests__/cache.ts",
+            "line": 1578,
+            "column": 22,
+            "message": "Array type using 'QueryData[]' is forbidden. Use 'Array<QueryData>' instead."
           },
           {
-            "file": "src/cache/inmemory/fragmentRegistry.ts",
-            "line": 33,
-            "column": 17,
-            "message": "Array type using 'DocumentNode[]' is forbidden. Use 'Array<DocumentNode>' instead."
-          },
-          {
-            "file": "src/core/__tests__/ObservableQuery.ts",
-            "line": 2934,
-            "column": 41,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
-          },
-          {
-            "file": "src/link/persisted-queries/__tests__/persisted-queries.test.ts",
-            "line": 798,
-            "column": 33,
-            "message": "Array type using 'any[]' is forbidden. Use 'Array<any>' instead."
-          },
-          {
-            "file": "src/react/hooks/__tests__/useLoadableQuery.test.tsx",
-            "line": 2371,
-            "column": 16,
-            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
-          },
-          {
-            "file": "src/react/hooks/__tests__/useSuspenseFragment/arrays.test.tsx",
-            "line": 768,
-            "column": 13,
+            "file": "src/cache/inmemory/__tests__/readFromStore.ts",
+            "line": 468,
+            "column": 12,
             "message": "Array type using 'StoreObject[]' is forbidden. Use 'Array<StoreObject>' instead."
           },
           {
+            "file": "src/core/QueryInfo.ts",
+            "line": 467,
+            "column": 22,
+            "message": "Array type using 'any[]' is forbidden. Use 'Array<any>' instead."
+          },
+          {
+            "file": "src/link/batch/batching.ts",
+            "line": 154,
+            "column": 19,
+            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
+          },
+          {
+            "file": "src/react/hooks/__tests__/useLazyQuery.test.tsx",
+            "line": 5275,
+            "column": 61,
+            "message": "Array type using 'number[]' is forbidden. Use 'Array<number>' instead."
+          },
+          {
+            "file": "src/react/hooks/__tests__/useSubscription.test.tsx",
+            "line": 1568,
+            "column": 44,
+            "message": "Array type using 'useSubscription.Options[]' is forbidden. Use 'Array<useSubscription.Options>' instead."
+          },
+          {
             "file": "src/testing/internal/disposables/spyOnConsole.ts",
-            "line": 32,
-            "column": 47,
-            "message": "Array type using 'jest.SpyInstance[]' is forbidden. Use 'Array<jest.SpyInstance>' instead."
+            "line": 10,
+            "column": 26,
+            "message": "Array type using 'any[]' is forbidden. Use 'Array<any>' instead."
           },
           {
             "file": "src/utilities/policies/pagination.ts",
@@ -137,8 +137,15 @@
     },
     "consistent-generic-constructors": {
       "constructor": {
-        "count": 0,
-        "samples": []
+        "count": 1,
+        "samples": [
+          {
+            "file": "src/core/RefetchEventManager.ts",
+            "line": 132,
+            "column": 24,
+            "message": "The generic type arguments should be specified as part of the constructor type arguments."
+          }
+        ]
       },
       "type-annotation": {
         "count": 121,
@@ -208,7 +215,7 @@
     },
     "consistent-indexed-object-style": {
       "record": {
-        "count": 50,
+        "count": 71,
         "samples": [
           {
             "file": "codegen/local-state/config.ts",
@@ -217,15 +224,33 @@
             "message": "A record is preferred over an index signature."
           },
           {
-            "file": "src/cache/inmemory/fragmentRegistry.ts",
-            "line": 178,
-            "column": 3,
+            "file": "integration-tests/type-tests/signatures/classic/createQueryPreloader.ts",
+            "line": 674,
+            "column": 11,
+            "message": "A record is preferred over an index signature."
+          },
+          {
+            "file": "integration-tests/type-tests/signatures/classic/createQueryPreloader.ts",
+            "line": 931,
+            "column": 11,
+            "message": "A record is preferred over an index signature."
+          },
+          {
+            "file": "integration-tests/type-tests/signatures/modern/createQueryPreloader.ts",
+            "line": 582,
+            "column": 11,
+            "message": "A record is preferred over an index signature."
+          },
+          {
+            "file": "src/cache/inmemory/__tests__/cache.ts",
+            "line": 22,
+            "column": 29,
             "message": "A record is preferred over an index signature."
           },
           {
             "file": "src/cache/inmemory/policies.ts",
-            "line": 371,
-            "column": 5,
+            "line": 365,
+            "column": 9,
             "message": "A record is preferred over an index signature."
           },
           {
@@ -235,33 +260,15 @@
             "message": "A record is preferred over an index signature."
           },
           {
-            "file": "src/masking/GraphQLCodegenDataMasking.ts",
-            "line": 35,
-            "column": 30,
+            "file": "src/masking/__benches__/types.bench.ts",
+            "line": 606,
+            "column": 42,
             "message": "A record is preferred over an index signature."
           },
           {
-            "file": "src/react/query-preloader/__tests__/createQueryPreloader.test.tsx",
-            "line": 2580,
-            "column": 13,
-            "message": "A record is preferred over an index signature."
-          },
-          {
-            "file": "src/react/query-preloader/__tests__/createQueryPreloader.test.tsx",
-            "line": 2776,
-            "column": 13,
-            "message": "A record is preferred over an index signature."
-          },
-          {
-            "file": "src/react/query-preloader/__tests__/createQueryPreloader.test.tsx",
-            "line": 2933,
-            "column": 13,
-            "message": "A record is preferred over an index signature."
-          },
-          {
-            "file": "src/react/ssr/getDataFromTree.ts",
-            "line": 25,
-            "column": 15,
+            "file": "src/react/hooks/useSuspenseQuery.ts",
+            "line": 598,
+            "column": 26,
             "message": "A record is preferred over an index signature."
           },
           {
@@ -273,7 +280,7 @@
         ]
       },
       "index-signature": {
-        "count": 436,
+        "count": 523,
         "samples": [
           {
             "file": "config/build.ts",
@@ -282,51 +289,51 @@
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "src/__tests__/dataMasking.ts",
-            "line": 3814,
-            "column": 7,
-            "message": "An index signature is preferred over a record."
-          },
-          {
-            "file": "src/cache/inmemory/__tests__/writeToStore.ts",
-            "line": 3207,
+            "file": "src/__tests__/client.ts",
+            "line": 6748,
             "column": 21,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "src/core/QueryInfo.ts",
-            "line": 198,
+            "file": "src/cache/core/cache.ts",
+            "line": 369,
+            "column": 54,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "src/cache/inmemory/policies.ts",
+            "line": 743,
+            "column": 14,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "src/core/__tests__/RefetchEventManager/core.test.ts",
+            "line": 2595,
             "column": 17,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "src/incremental/handlers/defer20220824.ts",
-            "line": 174,
-            "column": 13,
+            "file": "src/incremental/types.ts",
+            "line": 22,
+            "column": 34,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "src/link/http/selectHttpOptionsAndBody.ts",
-            "line": 68,
-            "column": 36,
-            "message": "An index signature is preferred over a record."
-          },
-          {
-            "file": "src/react/hooks/__tests__/useBackgroundQuery.test.tsx",
-            "line": 4588,
-            "column": 41,
+            "file": "src/masking/__benches__/types.bench.ts",
+            "line": 263,
+            "column": 12,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "src/react/hooks/__tests__/useQuery.test.tsx",
-            "line": 11662,
-            "column": 45,
+            "line": 11137,
+            "column": 44,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "src/react/hooks/useSubscription.ts",
-            "line": 392,
-            "column": 15,
+            "file": "src/react/hooks/useMutation.ts",
+            "line": 429,
+            "column": 9,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -340,7 +347,7 @@
     },
     "consistent-type-definitions": {
       "interface": {
-        "count": 182,
+        "count": 239,
         "samples": [
           {
             "file": "config/build.ts",
@@ -349,51 +356,51 @@
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "src/__tests__/dataMasking.ts",
-            "line": 4050,
-            "column": 5,
+            "file": "integration-tests/type-tests/signatures/classic/useLazyQuery.explicit-generics.ts",
+            "line": 487,
+            "column": 3,
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "src/cache/inmemory/__tests__/writeToStore.ts",
-            "line": 2900,
-            "column": 5,
+            "file": "integration-tests/type-tests/signatures/classic/useQuery.explicit-generics.ts",
+            "line": 368,
+            "column": 3,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "src/__tests__/ApolloClient.ts",
+            "line": 3342,
+            "column": 7,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "src/cache/inmemory/__tests__/cache.ts",
+            "line": 4328,
+            "column": 3,
             "message": "Use `interface` instead of `type`."
           },
           {
             "file": "src/core/__tests__/client.watchFragment/arrays.test.ts",
-            "line": 130,
+            "line": 173,
             "column": 3,
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "src/incremental/handlers/defer20220824.ts",
-            "line": 49,
-            "column": 10,
-            "message": "Use `interface` instead of `type`."
-          },
-          {
-            "file": "src/react/hooks/__tests__/useFragment.test.tsx",
-            "line": 52,
+            "file": "src/masking/__benches__/types.bench.ts",
+            "line": 404,
             "column": 3,
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "src/react/hooks/__tests__/useLoadableQuery.test.tsx",
-            "line": 2835,
+            "file": "src/react/hooks/__tests__/useFragment/arrays.test.tsx",
+            "line": 280,
             "column": 3,
             "message": "Use `interface` instead of `type`."
           },
           {
             "file": "src/react/hooks/__tests__/useSuspenseFragment/arrays.test.tsx",
-            "line": 267,
+            "line": 500,
             "column": 3,
-            "message": "Use `interface` instead of `type`."
-          },
-          {
-            "file": "src/react/internal/cache/__tests__/QueryReference.test.tsx",
-            "line": 255,
-            "column": 5,
             "message": "Use `interface` instead of `type`."
           },
           {
@@ -405,7 +412,7 @@
         ]
       },
       "type": {
-        "count": 571,
+        "count": 738,
         "samples": [
           {
             "file": "codegen/local-state/config.ts",
@@ -414,51 +421,51 @@
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "src/__tests__/dataMasking.ts",
-            "line": 4256,
-            "column": 5,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "src/cache/inmemory/writeToStore.ts",
-            "line": 128,
-            "column": 1,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "src/incremental/handlers/defer20220824.ts",
-            "line": 18,
+            "file": "integration-tests/type-tests/signatures/classic/useMutation.ts",
+            "line": 222,
             "column": 3,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "src/masking/GraphQLCodegenDataMasking.ts",
-            "line": 10,
+            "file": "src/__tests__/dataMasking.ts",
+            "line": 4195,
+            "column": 5,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "src/core/ApolloClient.ts",
+            "line": 614,
             "column": 10,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "src/react/hooks/__tests__/useLazyQuery.test.tsx",
-            "line": 3021,
-            "column": 5,
+            "file": "src/incremental/types.ts",
+            "line": 14,
+            "column": 10,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "src/react/hooks/__tests__/useBackgroundQuery.test.tsx",
+            "line": 4455,
+            "column": 3,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "src/react/hooks/__tests__/useQuery.test.tsx",
-            "line": 6359,
-            "column": 5,
+            "line": 1690,
+            "column": 7,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "src/react/hooks/__tests__/useSuspenseQuery.test.tsx",
-            "line": 7975,
+            "line": 9023,
             "column": 5,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "src/react/internal/cache/getSuspenseCache.ts",
-            "line": 8,
-            "column": 5,
+            "file": "src/react/hooks/useSuspenseQuery.ts",
+            "line": 284,
+            "column": 12,
             "message": "Use `type` instead of `interface`."
           },
           {
@@ -472,7 +479,7 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 29,
+        "count": 89,
         "samples": [
           {
             "file": "config/babel.ts",
@@ -481,51 +488,51 @@
             "message": "`import()` type annotations are forbidden."
           },
           {
-            "file": "integration-tests/next/src/app/cc/ApolloWrapper.tsx",
-            "line": 3,
+            "file": "integration-tests/type-tests/signatures/classic/createQueryPreloader.ts",
+            "line": 18,
             "column": 1,
-            "message": "Imports ApolloLink are only used as type."
+            "message": "Imports SimpleCaseData are only used as type."
+          },
+          {
+            "file": "integration-tests/type-tests/signatures/classic/useBackgroundQuery.ts",
+            "line": 15,
+            "column": 1,
+            "message": "Imports MaskedVariablesCaseData, UnmaskedVariablesCaseData, VariablesCaseData, and VariablesCaseVariables are only used as type."
+          },
+          {
+            "file": "integration-tests/type-tests/signatures/classic/useLoadableQuery.ts",
+            "line": 8,
+            "column": 1,
+            "message": "All imports in the declaration are only used as types. Use `import type`."
+          },
+          {
+            "file": "integration-tests/type-tests/signatures/classic/useSuspenseQuery.ts",
+            "line": 1,
+            "column": 1,
+            "message": "Imports DataValue and TypedDocumentNode are only used as type."
+          },
+          {
+            "file": "integration-tests/type-tests/signatures/modern/useBackgroundQuery.ts",
+            "line": 7,
+            "column": 1,
+            "message": "Imports QueryRef are only used as type."
+          },
+          {
+            "file": "integration-tests/type-tests/signatures/modern/useMutation.ts",
+            "line": 2,
+            "column": 1,
+            "message": "Imports ApolloClient and TypedDocumentNode are only used as type."
           },
           {
             "file": "integration-tests/vite/src/enhanceDataStates.ts",
-            "line": 1,
+            "line": 3,
             "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
+            "message": "Imports DataValue and TypedDocumentNode are only used as type."
           },
           {
-            "file": "integration-tests/vite/src/enhanceMaskingTypes.ts",
-            "line": 1,
-            "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
-          {
-            "file": "scripts/codemods/ac2-to-ac3/examples/client-and-cache.ts",
-            "line": 2,
-            "column": 1,
-            "message": "Imports InMemoryCacheConfig are only used as type."
-          },
-          {
-            "file": "src/local-state/__tests__/LocalState/types.test.ts",
-            "line": 63,
-            "column": 7,
-            "message": "`import()` type annotations are forbidden."
-          },
-          {
-            "file": "src/react/hooks/useSyncExternalStore.ts",
-            "line": 15,
-            "column": 10,
-            "message": "`import()` type annotations are forbidden."
-          },
-          {
-            "file": "src/react/ssr/__tests__/useQuery.test.tsx",
-            "line": 411,
-            "column": 56,
-            "message": "`import()` type annotations are forbidden."
-          },
-          {
-            "file": "src/utilities/internal/index.production.ts",
-            "line": 10,
-            "column": 27,
+            "file": "src/masking/__benches__/types.bench.ts",
+            "line": 592,
+            "column": 17,
             "message": "`import()` type annotations are forbidden."
           },
           {
@@ -537,7 +544,7 @@
         ]
       },
       "no-type-imports": {
-        "count": 855,
+        "count": 897,
         "samples": [
           {
             "file": "codegen/local-state/config.ts",
@@ -546,50 +553,50 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "scripts/codemods/ac3-to-ac4/src/util/findReferences.ts",
+            "file": "scripts/codemods/ac3-to-ac4/src/util/findImportDeclarationFor.ts",
             "line": 5,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/cache/inmemory/entityStore.ts",
-            "line": 7,
+            "file": "src/cache/inmemory/__tests__/writeToStore.ts",
+            "line": 12,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "src/core/QueryInfo.ts",
-            "line": 9,
+            "line": 6,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/link/batch/__tests__/batchLink.ts",
+            "file": "src/incremental/handlers/graphql17Alpha9.ts",
+            "line": 8,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "src/react/context/ApolloProvider.tsx",
             "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/react/hooks/__tests__/useBackgroundQuery.test.tsx",
-            "line": 41,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "src/react/hooks/useBackgroundQuery.ts",
-            "line": 16,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "src/react/ssr/getDataFromTree.ts",
+            "file": "src/react/hooks/internal/validateSuspenseHookOptions.ts",
             "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/utilities/graphql/isFormattedExecutionResult.ts",
-            "line": 1,
+            "file": "src/react/ssr/__tests__/prerenderStatic.test.tsx",
+            "line": 23,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "src/utilities/graphql/DocumentTransform.ts",
+            "line": 3,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -604,7 +611,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 1131,
+        "count": 1161,
         "samples": [
           {
             "file": ".github/workflows/cleanup-checks.mjs",
@@ -614,49 +621,49 @@
           },
           {
             "file": "src/__tests__/fetchMore.ts",
-            "line": 1570,
-            "column": 5,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/cache/inmemory/policies.ts",
-            "line": 1089,
+            "line": 2808,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/local-state/LocalState.ts",
-            "line": 1150,
+            "file": "src/cache/inmemory/reactiveVars.ts",
+            "line": 119,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/react/hooks/__tests__/useBackgroundQuery/streamGraphQL17Alpha9.test.tsx",
-            "line": 54,
-            "column": 3,
+            "file": "src/masking/__tests__/utils.test.ts",
+            "line": 124,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "src/react/hooks/__tests__/useBackgroundQuery/testUtils.tsx",
+            "line": 13,
+            "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "src/react/hooks/__tests__/useQuery.test.tsx",
-            "line": 10079,
-            "column": 5,
+            "line": 8836,
+            "column": 7,
             "message": "Expected a function expression."
           },
           {
             "file": "src/react/hooks/__tests__/useSuspenseQuery.test.tsx",
-            "line": 372,
+            "line": 738,
+            "column": 5,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "src/react/hooks/useQueryRefHandlers.ts",
+            "line": 90,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/react/hooks/useReadQuery.ts",
-            "line": 108,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/testing/internal/scenarios/index.ts",
-            "line": 11,
+            "file": "src/testing/internal/rtl/renderHookAsync.tsx",
+            "line": 23,
             "column": 8,
             "message": "Expected a function expression."
           },
@@ -669,7 +676,7 @@
         ]
       },
       "declaration": {
-        "count": 288,
+        "count": 294,
         "samples": [
           {
             "file": "codegen/local-state/plugin.ts",
@@ -679,43 +686,43 @@
           },
           {
             "file": "src/__tests__/client.ts",
-            "line": 799,
+            "line": 856,
             "column": 11,
             "message": "Expected a function declaration."
           },
           {
             "file": "src/cache/inmemory/writeToStore.ts",
-            "line": 232,
-            "column": 17,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "src/link/batch-http/BaseBatchHttpLink.ts",
-            "line": 115,
+            "line": 306,
             "column": 11,
             "message": "Expected a function declaration."
           },
           {
-            "file": "src/link/http/parseAndCheckHttpResponse.ts",
-            "line": 63,
-            "column": 9,
+            "file": "src/incremental/handlers/__tests__/graphql17Alpha9/stream.test.ts",
+            "line": 1054,
+            "column": 11,
             "message": "Expected a function declaration."
           },
           {
-            "file": "src/react/hooks/__tests__/useLazyQuery.test.tsx",
-            "line": 962,
+            "file": "src/link/http/__tests__/selectHttpOptionsAndBody.ts",
+            "line": 129,
+            "column": 11,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "src/react/hooks/__tests__/useFragment.test.tsx",
+            "line": 1093,
             "column": 11,
             "message": "Expected a function declaration."
           },
           {
             "file": "src/react/hooks/__tests__/useQuery.test.tsx",
-            "line": 3724,
-            "column": 13,
+            "line": 3598,
+            "column": 15,
             "message": "Expected a function declaration."
           },
           {
             "file": "src/react/hooks/__tests__/useQuery.test.tsx",
-            "line": 8241,
+            "line": 8239,
             "column": 13,
             "message": "Expected a function declaration."
           },
@@ -801,7 +808,7 @@
         ]
       },
       "default": {
-        "count": 191,
+        "count": 194,
         "samples": [
           {
             "file": ".github/workflows/cleanup-checks.mjs",
@@ -816,14 +823,14 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/config/jest/areLocalStateErrorsEqual.ts",
-            "line": 5,
+            "file": "src/config/jest/areMissingFieldErrorsEqual.ts",
+            "line": 3,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/link/http/createSignalIfSupported.ts",
-            "line": 6,
+            "file": "src/link/http/checkFetcher.ts",
+            "line": 3,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -834,20 +841,20 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/testing/internal/schemas/friendList.graphql17Alpha2.ts",
-            "line": 68,
+            "file": "src/testing/internal/rtl/renderHookAsync.tsx",
+            "line": 23,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/utilities/environment/index.ts",
-            "line": 3,
+            "file": "src/utilities/environment/index.production.ts",
+            "line": 1,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/utilities/internal/getFragmentDefinitions.ts",
-            "line": 4,
+            "file": "src/utilities/internal/getFragmentDefinition.ts",
+            "line": 6,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -885,7 +892,7 @@
         ]
       },
       "4-space": {
-        "count": 595,
+        "count": 649,
         "samples": [
           {
             "file": ".github/workflows/cleanup-checks.mjs",
@@ -894,50 +901,50 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "integration-tests/shared/fixture.ts",
-            "line": 6,
+            "file": "integration-tests/type-tests/defaultOptions/query/errorPolicyAll/index.ts",
+            "line": 7,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/__tests__/graphqlSubscriptions.ts",
-            "line": 8,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "src/core/__tests__/client.watchQuery/defer20220824.test.ts",
-            "line": 9,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "src/link/http/__tests__/selectHttpOptionsAndBody.ts",
-            "line": 6,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "src/react/hooks/__tests__/useBackgroundQuery/defer20220824.test.tsx",
-            "line": 3,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "src/react/internal/types.ts",
-            "line": 2,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "src/testing/matchers/toStrictEqualTyped.ts",
+            "file": "scripts/codemods/ac3-to-ac4/src/util/findImportSpecifiersFor.ts",
             "line": 10,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/utilities/internal/getGraphQLErrorsFromResult.ts",
-            "line": 5,
+            "file": "src/config/jest/areWeakRefsEqual.ts",
+            "line": 4,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "src/link/batch/batchLink.ts",
+            "line": 9,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "src/masking/__tests__/maskFragment.test.ts",
+            "line": 11,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "src/react/hooks/useSubscription.ts",
+            "line": 7,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "src/testing/matchers/toComplete.ts",
+            "line": 9,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "src/utilities/internal/getFragmentDefinition.ts",
+            "line": 7,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -950,7 +957,7 @@
         ]
       },
       "tab": {
-        "count": 595,
+        "count": 649,
         "samples": [
           {
             "file": ".github/workflows/cleanup-checks.mjs",
@@ -959,50 +966,50 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "integration-tests/shared/fixture.ts",
-            "line": 6,
+            "file": "integration-tests/type-tests/defaultOptions/query/errorPolicyAll/index.ts",
+            "line": 7,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/__tests__/graphqlSubscriptions.ts",
-            "line": 8,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "src/core/__tests__/client.watchQuery/defer20220824.test.ts",
-            "line": 9,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "src/link/http/__tests__/selectHttpOptionsAndBody.ts",
-            "line": 6,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "src/react/hooks/__tests__/useBackgroundQuery/defer20220824.test.tsx",
-            "line": 3,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "src/react/internal/types.ts",
-            "line": 2,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "src/testing/matchers/toStrictEqualTyped.ts",
+            "file": "scripts/codemods/ac3-to-ac4/src/util/findImportSpecifiersFor.ts",
             "line": 10,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/utilities/internal/getGraphQLErrorsFromResult.ts",
-            "line": 5,
+            "file": "src/config/jest/areWeakRefsEqual.ts",
+            "line": 4,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "src/link/batch/batchLink.ts",
+            "line": 9,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "src/masking/__tests__/maskFragment.test.ts",
+            "line": 11,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "src/react/hooks/useSubscription.ts",
+            "line": 7,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "src/testing/matchers/toComplete.ts",
+            "line": 9,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "src/utilities/internal/getFragmentDefinition.ts",
+            "line": 7,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -1017,7 +1024,7 @@
     },
     "quotes": {
       "double": {
-        "count": 803,
+        "count": 824,
         "samples": [
           {
             "file": "config/apiExtractor.ts",
@@ -1026,50 +1033,50 @@
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/cache/inmemory/__tests__/cache.ts",
-            "line": 248,
-            "column": 13,
+            "file": "src/__tests__/client.ts",
+            "line": 6464,
+            "column": 6,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/cache/inmemory/__tests__/entityStore.ts",
-            "line": 987,
+            "file": "src/cache/inmemory/__tests__/cache.ts",
+            "line": 3477,
             "column": 7,
             "message": "Strings must use doublequote."
           },
           {
             "file": "src/cache/inmemory/__tests__/policies.ts",
-            "line": 965,
-            "column": 8,
+            "line": 669,
+            "column": 12,
             "message": "Strings must use doublequote."
           },
           {
             "file": "src/cache/inmemory/__tests__/policies.ts",
-            "line": 3551,
-            "column": 24,
+            "line": 2761,
+            "column": 22,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/cache/inmemory/__tests__/writeToStore.ts",
-            "line": 145,
-            "column": 9,
+            "file": "src/cache/inmemory/__tests__/readFromStore.ts",
+            "line": 1894,
+            "column": 20,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/link/http/__tests__/responseIteratorNoAsyncIterator.ts",
-            "line": 51,
-            "column": 5,
+            "file": "src/link/http/__tests__/HttpLink.ts",
+            "line": 1506,
+            "column": 19,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/react/hooks/__tests__/useLoadableQuery.test.tsx",
-            "line": 3874,
-            "column": 4,
+            "file": "src/react/hooks/__tests__/useLazyQuery.test.tsx",
+            "line": 635,
+            "column": 6,
             "message": "Strings must use doublequote."
           },
           {
             "file": "src/react/hooks/__tests__/useSuspenseQuery.test.tsx",
-            "line": 5387,
+            "line": 4280,
             "column": 6,
             "message": "Strings must use doublequote."
           },
@@ -1082,7 +1089,7 @@
         ]
       },
       "single": {
-        "count": 40872,
+        "count": 46998,
         "samples": [
           {
             "file": ".github/workflows/cleanup-checks.mjs",
@@ -1091,51 +1098,51 @@
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/__tests__/dataMasking.ts",
-            "line": 3,
+            "file": "integration-tests/type-tests/signatures/classic/useBackgroundQuery.ts",
+            "line": 1274,
+            "column": 36,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "src/__tests__/ApolloClient.ts",
+            "line": 1258,
+            "column": 24,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "src/cache/inmemory/__tests__/diffAgainstStore.ts",
+            "line": 567,
+            "column": 17,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "src/core/__tests__/ApolloClient/multiple-results.test.ts",
+            "line": 196,
             "column": 20,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/cache/inmemory/__tests__/entityStore.ts",
-            "line": 1359,
-            "column": 23,
+            "file": "src/incremental/handlers/__tests__/graphql17Alpha9/stream.test.ts",
+            "line": 1157,
+            "column": 33,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/core/__tests__/ApolloClient/general.test.ts",
-            "line": 8041,
-            "column": 8,
+            "file": "src/react/hooks/__tests__/useBackgroundQuery.test.tsx",
+            "line": 1563,
+            "column": 4,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/incremental/handlers/__tests__/graphql17Alpha9/defer.test.ts",
-            "line": 1050,
+            "file": "src/react/hooks/__tests__/useQuery.test.tsx",
+            "line": 7852,
             "column": 22,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/masking/__tests__/maskFragment.test.ts",
-            "line": 568,
-            "column": 21,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "src/react/hooks/__tests__/useLazyQuery.test.tsx",
-            "line": 5622,
-            "column": 34,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "src/react/hooks/__tests__/useQuery/streamGraphQL17Alpha9.test.tsx",
-            "line": 126,
-            "column": 48,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "src/react/hooks/__tests__/useSuspenseQuery/streamDefer20220824.test.tsx",
-            "line": 571,
-            "column": 47,
+            "file": "src/react/hooks/__tests__/useSuspenseQuery/deferGraphQL17Alpha9.test.tsx",
+            "line": 942,
+            "column": 58,
             "message": "Strings must use singlequote."
           },
           {
@@ -1149,7 +1156,7 @@
     },
     "react-destructuring-assignment": {
       "never": {
-        "count": 115,
+        "count": 121,
         "samples": [
           {
             "file": "integration-tests/next/src/app/cc/ApolloWrapper.tsx",
@@ -1159,7 +1166,7 @@
           },
           {
             "file": "src/react/hooks/__tests__/useBackgroundQuery.test.tsx",
-            "line": 5449,
+            "line": 5441,
             "column": 5,
             "message": "Must never use destructuring props assignment in SFC argument"
           },
@@ -1177,7 +1184,7 @@
           },
           {
             "file": "src/react/hooks/__tests__/useQueryRefHandlers.test.tsx",
-            "line": 1480,
+            "line": 978,
             "column": 3,
             "message": "Must never use destructuring props assignment in SFC argument"
           },
@@ -1189,7 +1196,7 @@
           },
           {
             "file": "src/react/hooks/__tests__/useSuspenseQuery.test.tsx",
-            "line": 4578,
+            "line": 4517,
             "column": 5,
             "message": "Must never use destructuring props assignment in SFC argument"
           },
@@ -1337,25 +1344,25 @@
           },
           {
             "file": "src/react/hooks/__tests__/useMutation.test.tsx",
-            "line": 2366,
+            "line": 2364,
             "column": 25,
             "message": "Function component is not a function declaration"
           },
           {
             "file": "src/react/hooks/__tests__/useQuery.test.tsx",
-            "line": 1015,
+            "line": 1010,
             "column": 30,
             "message": "Function component is not a function declaration"
           },
           {
             "file": "src/react/hooks/__tests__/useQuery.test.tsx",
-            "line": 4304,
+            "line": 4299,
             "column": 12,
             "message": "Function component is not a function declaration"
           },
           {
             "file": "src/react/hooks/__tests__/useSuspenseQuery.test.tsx",
-            "line": 453,
+            "line": 392,
             "column": 23,
             "message": "Function component is not a function declaration"
           },
@@ -1386,7 +1393,7 @@
         ]
       },
       "arrow-function": {
-        "count": 460,
+        "count": 475,
         "samples": [
           {
             "file": "integration-tests/cra5/src/App.tsx",
@@ -1396,25 +1403,25 @@
           },
           {
             "file": "src/react/hooks/__tests__/useBackgroundQuery.test.tsx",
-            "line": 2198,
+            "line": 2328,
             "column": 3,
             "message": "Function component is not an arrow function"
           },
           {
             "file": "src/react/hooks/__tests__/useBackgroundQuery/deferGraphQL17Alpha9.test.tsx",
-            "line": 43,
+            "line": 62,
             "column": 3,
             "message": "Function component is not an arrow function"
           },
           {
             "file": "src/react/hooks/__tests__/useLoadableQuery.test.tsx",
-            "line": 1349,
+            "line": 1445,
             "column": 3,
             "message": "Function component is not an arrow function"
           },
           {
             "file": "src/react/hooks/__tests__/useQuery.test.tsx",
-            "line": 6423,
+            "line": 6158,
             "column": 5,
             "message": "Function component is not an arrow function"
           },
@@ -1426,19 +1433,19 @@
           },
           {
             "file": "src/react/hooks/__tests__/useSuspenseFragment/arrays.test.tsx",
-            "line": 20,
+            "line": 33,
             "column": 3,
             "message": "Function component is not an arrow function"
           },
           {
             "file": "src/react/hooks/__tests__/useSuspenseQuery.test.tsx",
-            "line": 7572,
+            "line": 7663,
             "column": 5,
             "message": "Function component is not an arrow function"
           },
           {
             "file": "src/react/query-preloader/__tests__/createQueryPreloader.test.tsx",
-            "line": 289,
+            "line": 287,
             "column": 3,
             "message": "Function component is not an arrow function"
           },
@@ -1457,7 +1464,7 @@
         "samples": [
           {
             "file": "src/react/hooks/__tests__/useSuspenseQuery.test.tsx",
-            "line": 6792,
+            "line": 6731,
             "column": 25,
             "message": "Value must be omitted for boolean attribute `returnPartialData`"
           }
@@ -1474,7 +1481,7 @@
         "samples": [
           {
             "file": "src/react/hooks/__tests__/useQuery.test.tsx",
-            "line": 1036,
+            "line": 1031,
             "column": 11,
             "message": "Prefer fragment shorthand over React.Fragment"
           }
@@ -1491,31 +1498,31 @@
           },
           {
             "file": "src/react/hooks/__tests__/useBackgroundQuery.test.tsx",
-            "line": 2135,
+            "line": 2127,
             "column": 7,
             "message": "Prefer React.Fragment over fragment shorthand"
           },
           {
             "file": "src/react/hooks/__tests__/useBackgroundQuery.test.tsx",
-            "line": 5725,
+            "line": 5717,
             "column": 9,
             "message": "Prefer React.Fragment over fragment shorthand"
           },
           {
             "file": "src/react/hooks/__tests__/useLoadableQuery.test.tsx",
-            "line": 287,
+            "line": 285,
             "column": 7,
             "message": "Prefer React.Fragment over fragment shorthand"
           },
           {
             "file": "src/react/hooks/__tests__/useLoadableQuery.test.tsx",
-            "line": 1641,
+            "line": 1639,
             "column": 7,
             "message": "Prefer React.Fragment over fragment shorthand"
           },
           {
             "file": "src/react/hooks/__tests__/useLoadableQuery.test.tsx",
-            "line": 3445,
+            "line": 3443,
             "column": 7,
             "message": "Prefer React.Fragment over fragment shorthand"
           },
@@ -1552,7 +1559,7 @@
         "samples": []
       },
       "never": {
-        "count": 54666,
+        "count": 60382,
         "samples": [
           {
             "file": ".github/workflows/cleanup-checks.mjs",
@@ -1561,51 +1568,51 @@
             "message": "Extra semicolon."
           },
           {
-            "file": "src/__tests__/fetchMore.ts",
-            "line": 2788,
+            "file": "integration-tests/type-tests/signatures/modern/useLoadableQuery.ts",
+            "line": 121,
+            "column": 3,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "src/__tests__/local-state/general.ts",
+            "line": 849,
             "column": 5,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/cache/inmemory/__tests__/readFromStore.ts",
-            "line": 130,
-            "column": 21,
+            "file": "src/cache/inmemory/reactiveVars.ts",
+            "line": 60,
+            "column": 40,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/core/__tests__/ObservableQuery.ts",
-            "line": 6403,
+            "file": "src/core/__tests__/client.watchQuery/streamGraphQL17Alpha9.test.ts",
+            "line": 358,
             "column": 5,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/link/client-awareness/__tests__/ClientAwarenessLink.test.ts",
-            "line": 245,
-            "column": 57,
+            "file": "src/link/http/__tests__/responseIterator.ts",
+            "line": 35,
+            "column": 49,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/react/hooks/__tests__/useBackgroundQuery.test.tsx",
-            "line": 266,
-            "column": 53,
+            "file": "src/react/hooks/__tests__/useFragment.test.tsx",
+            "line": 2213,
+            "column": 45,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/react/hooks/__tests__/useLoadableQuery/defer20220824.test.tsx",
-            "line": 51,
-            "column": 50,
+            "file": "src/react/hooks/__tests__/useQuery/deferGraphQL17Alpha9.test.tsx",
+            "line": 85,
+            "column": 5,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/react/hooks/__tests__/useSubscription.test.tsx",
-            "line": 3033,
-            "column": 44,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "src/react/index.ts",
-            "line": 25,
-            "column": 51,
+            "file": "src/react/hooks/__tests__/useSuspenseQuery/streamGraphQL17Alpha9.test.tsx",
+            "line": 1707,
+            "column": 2,
             "message": "Extra semicolon."
           },
           {

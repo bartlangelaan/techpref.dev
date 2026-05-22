@@ -1,34 +1,22 @@
 {
   "analyzedVersion": "96d58f23c7cc",
-  "analyzedCommit": "822b71d3fcc5838c2c319e3b60ea83d164bd0a6e",
-  "analyzedCommitDate": "2026-05-01T06:48:13.000Z",
+  "analyzedCommit": "c6f90971baf4b827ba16cb56d53a388cc3b1df0a",
+  "analyzedCommitDate": "2026-05-11T20:02:52.000Z",
   "checks": {
     "array-type": {
       "array": {
-        "count": 11,
+        "count": 23,
         "samples": [
+          {
+            "file": "apps/api/src/lib/rpc-router.ts",
+            "line": 301,
+            "column": 24,
+            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
+          },
           {
             "file": "apps/desktop/src/main/lib/database/migrate.ts",
             "line": 79,
             "column": 78,
-            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
-          },
-          {
-            "file": "apps/desktop/src/main/lib/database/migrate.ts",
-            "line": 106,
-            "column": 73,
-            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
-          },
-          {
-            "file": "apps/desktop/src/main/lib/download-queue.ts",
-            "line": 93,
-            "column": 23,
-            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
-          },
-          {
-            "file": "apps/desktop/src/main/lib/download-queue.ts",
-            "line": 100,
-            "column": 23,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
@@ -44,22 +32,34 @@
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
-            "file": "apps/web/src/components/pages/download-page.tsx",
-            "line": 441,
-            "column": 16,
-            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
-          },
-          {
-            "file": "packages/downloader-core/src/downloader-core.ts",
-            "line": 64,
-            "column": 13,
-            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
-          },
-          {
             "file": "packages/downloader-core/src/format-preferences.ts",
             "line": 33,
             "column": 29,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
+          },
+          {
+            "file": "packages/subscriptions-core/test/api.test.ts",
+            "line": 70,
+            "column": 12,
+            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
+          },
+          {
+            "file": "packages/task-queue/src/persist/sqlite.ts",
+            "line": 157,
+            "column": 53,
+            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
+          },
+          {
+            "file": "packages/task-queue/src/process/registry.ts",
+            "line": 122,
+            "column": 5,
+            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
+          },
+          {
+            "file": "packages/task-queue/test/fsm.test.ts",
+            "line": 26,
+            "column": 40,
+            "message": "Array type using 'ReadonlyArray<TaskStatus>' is forbidden. Use 'readonly TaskStatus[]' instead."
           },
           {
             "file": "packages/ui/src/components/ui/download-filter-bar.tsx",
@@ -70,61 +70,61 @@
         ]
       },
       "generic": {
-        "count": 287,
+        "count": 468,
         "samples": [
           {
-            "file": "apps/api/src/lib/history-record-mapper.ts",
-            "line": 18,
+            "file": "apps/api/scripts/migrate-history.ts",
+            "line": 201,
             "column": 32,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+            "message": "Array type using 'unknown[]' is forbidden. Use 'Array<unknown>' instead."
           },
           {
-            "file": "apps/desktop/src/main/ipc/services/subscription-service.ts",
-            "line": 22,
-            "column": 10,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+            "file": "apps/cli/src/subcommands/index.ts",
+            "line": 199,
+            "column": 37,
+            "message": "Array type using 'readonly string[]' is forbidden. Use 'ReadonlyArray<string>' instead."
           },
           {
-            "file": "apps/desktop/src/main/lib/subscription-feed-items.ts",
-            "line": 21,
-            "column": 18,
-            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
+            "file": "apps/desktop/src/main/index.ts",
+            "line": 122,
+            "column": 51,
+            "message": "Array type using 'unknown[]' is forbidden. Use 'Array<unknown>' instead."
           },
           {
-            "file": "apps/desktop/src/main/lib/ytdlp-manager.ts",
-            "line": 55,
-            "column": 23,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+            "file": "apps/desktop/src/preload/index.ts",
+            "line": 15,
+            "column": 45,
+            "message": "Array type using 'unknown[]' is forbidden. Use 'Array<unknown>' instead."
           },
           {
-            "file": "apps/desktop/src/renderer/src/components/download/UnifiedDownloadHistory.tsx",
-            "line": 295,
-            "column": 22,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+            "file": "apps/desktop/src/renderer/src/main.tsx",
+            "line": 124,
+            "column": 78,
+            "message": "Array type using 'readonly string[]' is forbidden. Use 'ReadonlyArray<string>' instead."
           },
           {
-            "file": "apps/desktop/src/shared/telemetry/issue-filter.ts",
-            "line": 112,
-            "column": 14,
-            "message": "Array type using 'TelemetryEventExceptionValue[]' is forbidden. Use 'Array<TelemetryEventExceptionValue>' instead."
-          },
-          {
-            "file": "apps/desktop/src/shared/types/index.ts",
-            "line": 267,
-            "column": 11,
-            "message": "Array type using 'SubscriptionFeedItem[]' is forbidden. Use 'Array<SubscriptionFeedItem>' instead."
-          },
-          {
-            "file": "apps/web/src/components/download/single-video-download.tsx",
-            "line": 373,
-            "column": 16,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+            "file": "apps/extension/entrypoints/background.ts",
+            "line": 20,
+            "column": 13,
+            "message": "Array type using 'VideoFormat[]' is forbidden. Use 'Array<VideoFormat>' instead."
           },
           {
             "file": "packages/downloader-core/src/format-preferences.ts",
-            "line": 35,
-            "column": 17,
+            "line": 33,
+            "column": 57,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+          },
+          {
+            "file": "packages/subscriptions-core/src/feed-items.ts",
+            "line": 178,
+            "column": 72,
+            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
+          },
+          {
+            "file": "packages/task-queue/src/persist/adapter.ts",
+            "line": 74,
+            "column": 29,
+            "message": "Array type using 'ProcessJournalRow[]' is forbidden. Use 'Array<ProcessJournalRow>' instead."
           },
           {
             "file": "packages/ui/src/lib/cn.ts",
@@ -137,56 +137,8 @@
     },
     "consistent-generic-constructors": {
       "constructor": {
-        "count": 9,
+        "count": 1,
         "samples": [
-          {
-            "file": "apps/desktop/src/main/lib/download-engine.ts",
-            "line": 82,
-            "column": 35,
-            "message": "The generic type arguments should be specified as part of the constructor type arguments."
-          },
-          {
-            "file": "apps/desktop/src/main/lib/download-engine.ts",
-            "line": 86,
-            "column": 33,
-            "message": "The generic type arguments should be specified as part of the constructor type arguments."
-          },
-          {
-            "file": "apps/desktop/src/main/lib/download-engine.ts",
-            "line": 87,
-            "column": 34,
-            "message": "The generic type arguments should be specified as part of the constructor type arguments."
-          },
-          {
-            "file": "apps/desktop/src/main/lib/download-engine.ts",
-            "line": 88,
-            "column": 38,
-            "message": "The generic type arguments should be specified as part of the constructor type arguments."
-          },
-          {
-            "file": "apps/desktop/src/main/lib/download-queue.ts",
-            "line": 12,
-            "column": 35,
-            "message": "The generic type arguments should be specified as part of the constructor type arguments."
-          },
-          {
-            "file": "apps/desktop/src/main/lib/download-queue.ts",
-            "line": 13,
-            "column": 38,
-            "message": "The generic type arguments should be specified as part of the constructor type arguments."
-          },
-          {
-            "file": "apps/desktop/src/main/lib/history-manager.ts",
-            "line": 43,
-            "column": 18,
-            "message": "The generic type arguments should be specified as part of the constructor type arguments."
-          },
-          {
-            "file": "apps/desktop/src/main/lib/subscription-scheduler.ts",
-            "line": 91,
-            "column": 29,
-            "message": "The generic type arguments should be specified as part of the constructor type arguments."
-          },
           {
             "file": "apps/desktop/src/main/lib/thumbnail-cache.ts",
             "line": 32,
@@ -196,60 +148,60 @@
         ]
       },
       "type-annotation": {
-        "count": 42,
+        "count": 83,
         "samples": [
           {
-            "file": "apps/api/src/lib/downloader.ts",
-            "line": 28,
-            "column": 33,
+            "file": "apps/api/src/lib/rpc-router.ts",
+            "line": 24,
+            "column": 39,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "apps/desktop/src/main/lib/database/migrate.ts",
-            "line": 195,
-            "column": 29,
+            "file": "apps/cli/src/parser/probe-flags.ts",
+            "line": 45,
+            "column": 27,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "apps/desktop/src/main/lib/subscription-feed-items.ts",
-            "line": 20,
-            "column": 26,
-            "message": "The generic type arguments should be specified as part of the type annotation."
-          },
-          {
-            "file": "apps/desktop/src/renderer/src/components/download/SingleVideoDownload.tsx",
-            "line": 489,
-            "column": 28,
-            "message": "The generic type arguments should be specified as part of the type annotation."
-          },
-          {
-            "file": "apps/desktop/src/renderer/src/components/download/format-presentation.ts",
-            "line": 74,
-            "column": 36,
+            "file": "apps/desktop/src/main/local-api.ts",
+            "line": 162,
+            "column": 37,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
             "file": "apps/desktop/src/shared/telemetry/issue-filter.ts",
-            "line": 323,
-            "column": 24,
+            "line": 291,
+            "column": 27,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "apps/web/src/components/download/download-item.tsx",
-            "line": 295,
-            "column": 23,
+            "file": "apps/web/src/components/download/single-video-download.tsx",
+            "line": 632,
+            "column": 26,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "apps/web/src/components/pages/download-page.tsx",
-            "line": 265,
-            "column": 24,
+            "file": "packages/subscriptions-core/src/api.ts",
+            "line": 86,
+            "column": 39,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "packages/downloader-core/src/downloader-core.ts",
-            "line": 495,
-            "column": 40,
+            "file": "packages/subscriptions-core/test/scheduler.test.ts",
+            "line": 74,
+            "column": 33,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "packages/task-queue/src/events/index.ts",
+            "line": 58,
+            "column": 39,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "packages/task-queue/src/scheduler/scheduler.ts",
+            "line": 54,
+            "column": 37,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
@@ -267,48 +219,42 @@
         "samples": []
       },
       "index-signature": {
-        "count": 40,
+        "count": 74,
         "samples": [
           {
-            "file": "apps/api/src/server.ts",
-            "line": 265,
-            "column": 28,
+            "file": "apps/api/scripts/migrate-history.ts",
+            "line": 90,
+            "column": 24,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "apps/desktop/src/main/download-engine/format-utils.ts",
-            "line": 166,
+            "file": "apps/cli/src/transport/automation-client.ts",
+            "line": 241,
             "column": 22,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "apps/desktop/src/main/lib/subscription-scheduler.ts",
-            "line": 58,
-            "column": 27,
+            "file": "apps/desktop/src/main/lib/glitchtip.ts",
+            "line": 17,
+            "column": 11,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "apps/desktop/src/renderer/src/components/changelog/Changelog.tsx",
-            "line": 16,
-            "column": 21,
+            "file": "apps/desktop/src/main/local-api.ts",
+            "line": 308,
+            "column": 41,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "apps/desktop/src/renderer/src/lib/glitchtip.ts",
-            "line": 21,
-            "column": 39,
-            "message": "An index signature is preferred over a record."
-          },
-          {
-            "file": "apps/desktop/src/renderer/src/pages/Subscriptions.tsx",
-            "line": 447,
-            "column": 60,
+            "line": 15,
+            "column": 11,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "apps/desktop/src/shared/telemetry/issue-filter.ts",
-            "line": 135,
-            "column": 30,
+            "line": 94,
+            "column": 10,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -318,15 +264,21 @@
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "apps/web/src/components/download/single-video-download.tsx",
-            "line": 49,
-            "column": 35,
+            "file": "packages/i18n/src/languages.ts",
+            "line": 78,
+            "column": 22,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "packages/i18n/src/resources.ts",
-            "line": 20,
-            "column": 32,
+            "file": "packages/task-queue/src/fsm/index.ts",
+            "line": 58,
+            "column": 42,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "packages/task-queue/test/fsm.test.ts",
+            "line": 26,
+            "column": 21,
             "message": "An index signature is preferred over a record."
           }
         ]
@@ -338,60 +290,60 @@
         "samples": []
       },
       "type": {
-        "count": 169,
+        "count": 290,
         "samples": [
           {
-            "file": "apps/desktop/src/main/index.ts",
-            "line": 88,
+            "file": "apps/api/scripts/migrate-history.ts",
+            "line": 59,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "apps/desktop/src/renderer/src/components/changelog/Changelog.tsx",
-            "line": 10,
-            "column": 1,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "apps/desktop/src/renderer/src/components/feedback/FeedbackLinks.tsx",
-            "line": 4,
-            "column": 1,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "apps/desktop/src/renderer/src/pages/About.tsx",
-            "line": 26,
-            "column": 1,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "apps/desktop/src/shared/types/index.ts",
-            "line": 45,
+            "file": "apps/cli/src/transport/connect.ts",
+            "line": 22,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "apps/extension/entrypoints/popup/App.tsx",
-            "line": 4,
+            "file": "apps/desktop/src/renderer/src/components/download/SingleVideoDownload.tsx",
+            "line": 112,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "packages/downloader-core/src/browser-cookies-setting.ts",
-            "line": 1,
+            "file": "apps/desktop/src/renderer/src/store/subscriptions.ts",
+            "line": 34,
             "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "apps/extension/entrypoints/background.ts",
+            "line": 16,
+            "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "packages/downloader-core/src/types.ts",
-            "line": 144,
+            "line": 94,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "packages/ui/src/components/ui/app-sidebar.tsx",
-            "line": 11,
-            "column": 1,
+            "file": "packages/subscriptions-core/src/feed-parser.ts",
+            "line": 12,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "packages/task-queue/src/executor/index.ts",
+            "line": 24,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "packages/task-queue/src/types.ts",
+            "line": 74,
+            "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
@@ -405,63 +357,124 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 0,
-        "samples": []
-      },
-      "no-type-imports": {
-        "count": 178,
+        "count": 10,
         "samples": [
           {
-            "file": "apps/api/src/lib/database-migrate.ts",
-            "line": 3,
-            "column": 1,
+            "file": "apps/api/scripts/migrate-history.ts",
+            "line": 40,
+            "column": 54,
+            "message": "`import()` type annotations are forbidden."
+          },
+          {
+            "file": "apps/api/src/lib/subscriptions-host.ts",
+            "line": 62,
+            "column": 56,
+            "message": "`import()` type annotations are forbidden."
+          },
+          {
+            "file": "apps/api/src/lib/task-queue-host.ts",
+            "line": 120,
+            "column": 56,
+            "message": "`import()` type annotations are forbidden."
+          },
+          {
+            "file": "apps/cli/src/transport/local-client.ts",
+            "line": 88,
+            "column": 58,
+            "message": "`import()` type annotations are forbidden."
+          },
+          {
+            "file": "apps/desktop/src/main/lib/download-facade.ts",
+            "line": 55,
+            "column": 45,
+            "message": "`import()` type annotations are forbidden."
+          },
+          {
+            "file": "apps/desktop/src/main/lib/subscriptions-host.ts",
+            "line": 72,
+            "column": 45,
+            "message": "`import()` type annotations are forbidden."
+          },
+          {
+            "file": "apps/desktop/src/main/lib/task-queue-host.ts",
+            "line": 77,
+            "column": 58,
+            "message": "`import()` type annotations are forbidden."
+          },
+          {
+            "file": "apps/desktop/src/main/lib/task-queue-migrate.ts",
+            "line": 388,
+            "column": 56,
+            "message": "`import()` type annotations are forbidden."
+          },
+          {
+            "file": "apps/desktop/src/main/lib/task-queue-migrate.ts",
+            "line": 440,
+            "column": 21,
+            "message": "`import()` type annotations are forbidden."
+          },
+          {
+            "file": "packages/task-queue/src/api/index.ts",
+            "line": 519,
+            "column": 8,
+            "message": "`import()` type annotations are forbidden."
+          }
+        ]
+      },
+      "no-type-imports": {
+        "count": 295,
+        "samples": [
+          {
+            "file": "apps/api/scripts/migrate-history.ts",
+            "line": 33,
+            "column": 3,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "apps/desktop/src/main/ipc/services/history-service.ts",
-            "line": 2,
-            "column": 1,
+            "file": "apps/cli/src/subcommands/index.ts",
+            "line": 10,
+            "column": 25,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "apps/desktop/src/main/lib/download-queue.ts",
-            "line": 2,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "apps/desktop/src/preload/index.ts",
-            "line": 4,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "apps/desktop/src/renderer/src/components/ui/button.tsx",
+            "file": "apps/desktop/src/main/ipc/services/download-service.ts",
             "line": 1,
-            "column": 18,
+            "column": 10,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "apps/desktop/src/shared/utils/format-preferences.ts",
-            "line": 5,
+            "file": "apps/desktop/src/main/lib/task-queue-migrate.ts",
+            "line": 23,
+            "column": 3,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "apps/desktop/src/renderer/src/hooks/use-download-events.ts",
+            "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "apps/web/src/components/download/playlist-download.tsx",
+            "file": "apps/web/src/components/download/download-item.tsx",
+            "line": 51,
+            "column": 2,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "packages/downloader-core/src/yt-dlp-executor.ts",
+            "line": 29,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "packages/task-queue/src/api/index.ts",
+            "line": 20,
+            "column": 3,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "packages/task-queue/test/orchestrator.test.ts",
             "line": 15,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "apps/web/src/lib/orpc-download-settings.ts",
-            "line": 1,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "packages/ui/src/components/ui/download-filter-bar.tsx",
-            "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -476,60 +489,60 @@
     },
     "func-style": {
       "expression": {
-        "count": 212,
+        "count": 1388,
         "samples": [
           {
-            "file": "apps/desktop/scripts/ensure-native-deps.mjs",
-            "line": 10,
+            "file": ".claude/router_runtime.js",
+            "line": 1,
+            "column": 870,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": ".claude/router_runtime.js",
+            "line": 1,
+            "column": 217452,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": ".claude/router_runtime.js",
+            "line": 1,
+            "column": 311252,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": ".claude/router_runtime.js",
+            "line": 1,
+            "column": 381995,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": ".claude/router_runtime.js",
+            "line": 1,
+            "column": 1125637,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": ".claude/router_runtime.js",
+            "line": 1,
+            "column": 1447404,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": ".claude/router_runtime.js",
+            "line": 1,
+            "column": 2074881,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "apps/cli/src/parser/redact.ts",
+            "line": 130,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "apps/desktop/scripts/setup-dev-binaries.js",
-            "line": 498,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "apps/desktop/src/main/tray.ts",
-            "line": 181,
+            "file": "apps/web/src/components/download/download-item.tsx",
+            "line": 229,
             "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "apps/desktop/src/renderer/src/components/update/UpdateOutdatedNotice.tsx",
-            "line": 57,
-            "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "apps/docs/src/lib/i18n.ts",
-            "line": 15,
-            "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "packages/ui/src/components/ui/checkbox.tsx",
-            "line": 6,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "packages/ui/src/components/ui/dialog.tsx",
-            "line": 92,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "packages/ui/src/components/ui/item.tsx",
-            "line": 59,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "packages/ui/src/components/ui/sheet.tsx",
-            "line": 38,
-            "column": 1,
             "message": "Expected a function expression."
           },
           {
@@ -541,59 +554,59 @@
         ]
       },
       "declaration": {
-        "count": 607,
+        "count": 930,
         "samples": [
           {
-            "file": "apps/api/src/index.ts",
-            "line": 17,
+            "file": ".claude/router_runtime.js",
+            "line": 1,
+            "column": 120443,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": ".claude/router_runtime.js",
+            "line": 1,
+            "column": 1029871,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": ".claude/router_runtime.js",
+            "line": 1,
+            "column": 2128661,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "apps/desktop/src/main/download-engine/format-utils.ts",
+            "line": 99,
             "column": 7,
             "message": "Expected a function declaration."
           },
           {
-            "file": "apps/desktop/src/main/index.ts",
-            "line": 479,
+            "file": "apps/desktop/src/main/lib/yt-dlp-info.ts",
+            "line": 129,
             "column": 7,
             "message": "Expected a function declaration."
           },
           {
-            "file": "apps/desktop/src/main/lib/subscription-error-utils.ts",
-            "line": 74,
-            "column": 14,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "apps/desktop/src/renderer/src/components/download/DownloadItem.tsx",
-            "line": 160,
-            "column": 7,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "apps/desktop/src/renderer/src/components/ui/title-bar.tsx",
-            "line": 22,
-            "column": 11,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "apps/desktop/src/renderer/src/pages/Settings.tsx",
-            "line": 263,
+            "file": "apps/desktop/src/renderer/src/components/download/format-presentation.ts",
+            "line": 51,
             "column": 9,
             "message": "Expected a function declaration."
           },
           {
-            "file": "apps/extension/entrypoints/popup/App.tsx",
-            "line": 298,
-            "column": 9,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "apps/web/src/components/pages/download-page.tsx",
-            "line": 46,
+            "file": "apps/desktop/src/shared/telemetry/issue-filter.ts",
+            "line": 215,
             "column": 7,
             "message": "Expected a function declaration."
           },
           {
-            "file": "packages/downloader-core/src/downloader-core.ts",
-            "line": 210,
+            "file": "apps/web/src/components/download/single-video-download.tsx",
+            "line": 347,
+            "column": 8,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "packages/downloader-core/src/format-preferences.ts",
+            "line": 52,
             "column": 7,
             "message": "Expected a function declaration."
           },
@@ -608,10 +621,10 @@
     },
     "import-export-preference": {
       "named": {
-        "count": 21,
+        "count": 24,
         "samples": [
           {
-            "file": "apps/desktop/drizzle.config.ts",
+            "file": "apps/cli/vitest.config.ts",
             "line": 3,
             "column": 8,
             "message": "Prefer named exports"
@@ -641,39 +654,39 @@
             "message": "Prefer named exports"
           },
           {
-            "file": "apps/docs/src/app/[lang]/(docs)/[[...slug]]/page.tsx",
-            "line": 9,
+            "file": "apps/docs/src/app/[lang]/(docs)/layout.tsx",
+            "line": 6,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "apps/docs/src/app/[lang]/layout.tsx",
-            "line": 17,
+            "file": "apps/docs/src/app/layout.tsx",
+            "line": 24,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "apps/docs/src/middleware.ts",
+            "file": "apps/extension/entrypoints/background.ts",
+            "line": 200,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "apps/extension/wxt.config.ts",
             "line": 4,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "apps/extension/entrypoints/popup/App.tsx",
-            "line": 500,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "apps/web/vite.config.ts",
-            "line": 50,
+            "file": "packages/task-queue/vitest.config.ts",
+            "line": 3,
             "column": 8,
             "message": "Prefer named exports"
           }
         ]
       },
       "default": {
-        "count": 115,
+        "count": 117,
         "samples": [
           {
             "file": "apps/api/src/lib/database-migrate.ts",
@@ -682,44 +695,44 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "apps/desktop/src/main/ipc/services/file-system-service.ts",
-            "line": 462,
+            "file": "apps/desktop/src/main/ipc/services/history-service.ts",
+            "line": 55,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "apps/desktop/src/main/lib/download-queue.ts",
+            "file": "apps/desktop/src/main/lib/startup-dependencies.ts",
+            "line": 15,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "apps/desktop/src/renderer/src/components/download/download-item-utils.ts",
             "line": 10,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "apps/desktop/src/renderer/src/components/download/PlaylistDownloadGroup.tsx",
-            "line": 43,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "apps/desktop/src/renderer/src/components/ui/label.tsx",
+            "file": "apps/desktop/src/renderer/src/components/ui/separator.tsx",
             "line": 3,
             "column": 10,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "apps/desktop/src/renderer/src/hooks/use-cached-thumbnail.ts",
-            "line": 5,
+            "file": "apps/desktop/src/renderer/src/hooks/use-ipc-example.ts",
+            "line": 13,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "apps/desktop/src/renderer/src/pages/Settings.tsx",
-            "line": 40,
+            "file": "apps/docs/src/lib/layout.shared.tsx",
+            "line": 4,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "apps/web/src/hooks/use-web-download-settings.ts",
-            "line": 7,
+            "file": "apps/web/src/lib/orpc-download-settings.ts",
+            "line": 4,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -740,53 +753,53 @@
     },
     "indent": {
       "2-space": {
-        "count": 25,
+        "count": 27,
         "samples": [
           {
-            "file": "apps/web/src/components/download/download-dialog.tsx",
+            "file": "apps/api/scripts/migrate-history.ts",
+            "line": 263,
+            "column": 1,
+            "message": "Expected 2-space indentation, but file uses 7-space indentation."
+          },
+          {
+            "file": "apps/web/src/components/download/download-item.tsx",
             "line": 2,
             "column": 1,
             "message": "Expected spaces for indentation, but found tabs."
           },
           {
-            "file": "apps/web/src/components/download/playlist-download.tsx",
-            "line": 7,
-            "column": 1,
-            "message": "Expected spaces for indentation, but found tabs."
-          },
-          {
-            "file": "apps/web/src/components/download/types.ts",
+            "file": "apps/web/src/components/download/single-video-download.tsx",
             "line": 4,
             "column": 1,
             "message": "Expected spaces for indentation, but found tabs."
           },
           {
-            "file": "apps/web/src/components/pages/download-page.tsx",
+            "file": "apps/web/src/components/pages/about-page.tsx",
+            "line": 4,
+            "column": 1,
+            "message": "Expected spaces for indentation, but found tabs."
+          },
+          {
+            "file": "apps/web/src/hooks/use-web-download-settings.ts",
+            "line": 2,
+            "column": 1,
+            "message": "Expected spaces for indentation, but found tabs."
+          },
+          {
+            "file": "apps/web/src/lib/add-url-shortcut.test.ts",
+            "line": 4,
+            "column": 1,
+            "message": "Expected spaces for indentation, but found tabs."
+          },
+          {
+            "file": "apps/web/src/lib/orpc-download-settings.ts",
             "line": 5,
             "column": 1,
             "message": "Expected spaces for indentation, but found tabs."
           },
           {
-            "file": "apps/web/src/hooks/use-web-settings.ts",
+            "file": "apps/web/src/router.tsx",
             "line": 5,
-            "column": 1,
-            "message": "Expected spaces for indentation, but found tabs."
-          },
-          {
-            "file": "apps/web/src/lib/download-format-preferences.ts",
-            "line": 3,
-            "column": 1,
-            "message": "Expected spaces for indentation, but found tabs."
-          },
-          {
-            "file": "apps/web/src/lib/remote-image-proxy.ts",
-            "line": 6,
-            "column": 1,
-            "message": "Expected spaces for indentation, but found tabs."
-          },
-          {
-            "file": "apps/web/src/routes/__root.tsx",
-            "line": 12,
             "column": 1,
             "message": "Expected spaces for indentation, but found tabs."
           },
@@ -805,59 +818,59 @@
         ]
       },
       "4-space": {
-        "count": 238,
+        "count": 339,
         "samples": [
           {
-            "file": "apps/api/src/index.ts",
-            "line": 10,
+            "file": ".claude/setup.mjs",
+            "line": 16,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "apps/desktop/src/main/ipc/services/app-service.ts",
-            "line": 8,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "apps/desktop/src/main/lib/startup-dependencies.ts",
-            "line": 2,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "apps/desktop/src/renderer/src/components/download/audio-format-preferences.ts",
-            "line": 2,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "apps/desktop/src/renderer/src/hooks/use-cached-thumbnail.ts",
+            "file": "apps/cli/test/automation-client.test.ts",
             "line": 6,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "apps/desktop/src/shared/telemetry/issue-filter.ts",
+            "file": "apps/desktop/src/main/ipc/services/history-service.ts",
+            "line": 6,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "apps/desktop/src/renderer/src/components/changelog/Changelog.tsx",
+            "line": 11,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "apps/desktop/src/renderer/src/hooks/use-rybbit-daily-client-version.ts",
             "line": 4,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "apps/extension/wxt.config.ts",
-            "line": 5,
+            "file": "apps/docs/src/app/api/search/route.ts",
+            "line": 9,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/downloader-core/src/browser-cookies-setting.ts",
-            "line": 2,
+            "file": "packages/db/src/history.ts",
+            "line": 4,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/ui/src/components/ui/feedback-link-buttons.tsx",
-            "line": 18,
+            "file": "packages/task-queue/src/api/index.ts",
+            "line": 19,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "packages/ui/src/components/ui/app-sidebar-icons.tsx",
+            "line": 16,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -870,59 +883,59 @@
         ]
       },
       "tab": {
-        "count": 214,
+        "count": 315,
         "samples": [
           {
-            "file": "apps/api/src/index.ts",
-            "line": 10,
+            "file": ".claude/setup.mjs",
+            "line": 16,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "apps/desktop/src/main/index.ts",
+            "file": "apps/cli/src/transport/descriptor.ts",
+            "line": 17,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "apps/desktop/src/main/ipc/index.ts",
+            "line": 15,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "apps/desktop/src/main/settings.ts",
+            "line": 15,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "apps/desktop/src/renderer/src/components/ui/title-bar.tsx",
+            "line": 11,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "apps/desktop/src/shared/telemetry/yt-dlp-error-classifier.ts",
+            "line": 9,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "packages/downloader-core/src/format-preferences.ts",
             "line": 6,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "apps/desktop/src/main/lib/ffmpeg-manager.ts",
-            "line": 12,
+            "file": "packages/task-queue/src/executor/index.ts",
+            "line": 8,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "apps/desktop/src/renderer/src/App.tsx",
-            "line": 29,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "apps/desktop/src/renderer/src/components/ui/select.tsx",
-            "line": 2,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "apps/desktop/src/renderer/src/lib/subscription-status.ts",
-            "line": 4,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "apps/docs/src/app/(docs)/layout.tsx",
-            "line": 10,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "packages/downloader-core/src/index.ts",
-            "line": 3,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "packages/ui/src/components/ui/hover-card.tsx",
-            "line": 6,
+            "file": "packages/ui/src/components/ui/badge.tsx",
+            "line": 7,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -937,60 +950,60 @@
     },
     "quotes": {
       "double": {
-        "count": 5611,
+        "count": 44742,
         "samples": [
           {
-            "file": "apps/api/src/index.ts",
+            "file": ".claude/router_runtime.js",
             "line": 1,
-            "column": 33,
+            "column": 612,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "apps/desktop/scripts/setup-dev-binaries.js",
-            "line": 1022,
-            "column": 46,
+            "file": ".claude/router_runtime.js",
+            "line": 1,
+            "column": 436385,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "apps/desktop/src/main/ipc/services/subscription-service.ts",
-            "line": 12,
-            "column": 8,
+            "file": ".claude/router_runtime.js",
+            "line": 1,
+            "column": 517545,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "apps/desktop/src/main/lib/subscription-scheduler.ts",
-            "line": 607,
-            "column": 19,
+            "file": ".claude/router_runtime.js",
+            "line": 1,
+            "column": 601271,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": ".claude/router_runtime.js",
+            "line": 1,
+            "column": 1049038,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": ".claude/router_runtime.js",
+            "line": 1,
+            "column": 1465790,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": ".claude/router_runtime.js",
+            "line": 1,
+            "column": 1909384,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": ".claude/router_runtime.js",
+            "line": 1,
+            "column": 2306157,
             "message": "Strings must use doublequote."
           },
           {
             "file": "apps/desktop/src/renderer/src/components/download/DownloadItem.tsx",
-            "line": 40,
-            "column": 61,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "apps/desktop/src/renderer/src/components/subscription/SubscriptionFormDialog.tsx",
-            "line": 96,
-            "column": 18,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "apps/desktop/src/renderer/src/pages/Settings.tsx",
-            "line": 141,
-            "column": 56,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "apps/desktop/src/shared/types/index.ts",
-            "line": 212,
-            "column": 50,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "packages/downloader-core/src/yt-dlp-args.ts",
-            "line": 195,
-            "column": 44,
+            "line": 514,
+            "column": 12,
             "message": "Strings must use doublequote."
           },
           {
@@ -1002,60 +1015,60 @@
         ]
       },
       "single": {
-        "count": 1108,
+        "count": 1251,
         "samples": [
           {
-            "file": "apps/api/src/lib/rpc-router.ts",
-            "line": 90,
-            "column": 50,
+            "file": ".claude/setup.mjs",
+            "line": 2,
+            "column": 30,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "apps/web/src/components/download/download-dialog.tsx",
-            "line": 642,
-            "column": 22,
+            "file": "apps/cli/src/download/build-input.ts",
+            "line": 81,
+            "column": 32,
             "message": "Strings must use singlequote."
           },
           {
             "file": "apps/web/src/components/download/download-item.tsx",
-            "line": 654,
-            "column": 13,
+            "line": 4,
+            "column": 8,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "apps/web/src/components/download/playlist-download.tsx",
-            "line": 211,
-            "column": 16,
+            "file": "apps/web/src/components/download/download-item.tsx",
+            "line": 862,
+            "column": 49,
             "message": "Strings must use singlequote."
           },
           {
             "file": "apps/web/src/components/download/single-video-download.tsx",
-            "line": 666,
-            "column": 12,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "apps/web/src/components/pages/about-page.tsx",
-            "line": 279,
-            "column": 15,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "apps/web/src/components/pages/download-page.tsx",
-            "line": 574,
-            "column": 18,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "apps/web/src/components/pages/settings-page.tsx",
-            "line": 621,
+            "line": 186,
             "column": 19,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "apps/web/src/lib/i18n.ts",
-            "line": 1,
-            "column": 32,
+            "file": "apps/web/src/components/layout/app-shell.tsx",
+            "line": 58,
+            "column": 13,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "apps/web/src/components/pages/download-page.tsx",
+            "line": 215,
+            "column": 29,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "apps/web/src/components/pages/settings-page.tsx",
+            "line": 393,
+            "column": 4,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "apps/web/src/lib/add-url-shortcut.test.ts",
+            "line": 54,
+            "column": 5,
             "message": "Strings must use singlequote."
           },
           {
@@ -1069,12 +1082,12 @@
     },
     "react-destructuring-assignment": {
       "never": {
-        "count": 140,
+        "count": 141,
         "samples": [
           {
-            "file": "apps/desktop/src/renderer/src/components/changelog/Changelog.tsx",
-            "line": 61,
-            "column": 8,
+            "file": ".claude/router_runtime.js",
+            "line": 1,
+            "column": 2291349,
             "message": "Must never use destructuring props assignment in SFC argument"
           },
           {
@@ -1084,9 +1097,9 @@
             "message": "Must never use destructuring props assignment in SFC argument"
           },
           {
-            "file": "apps/web/src/components/layout/app-shell.tsx",
-            "line": 17,
-            "column": 25,
+            "file": "apps/web/src/components/download/single-video-download.tsx",
+            "line": 469,
+            "column": 8,
             "message": "Must never use destructuring props assignment in SFC argument"
           },
           {
@@ -1097,7 +1110,7 @@
           },
           {
             "file": "packages/ui/src/components/ui/dialog.tsx",
-            "line": 72,
+            "line": 38,
             "column": 1,
             "message": "Must never use destructuring props assignment in SFC argument"
           },
@@ -1109,7 +1122,7 @@
           },
           {
             "file": "packages/ui/src/components/ui/item.tsx",
-            "line": 111,
+            "line": 96,
             "column": 1,
             "message": "Must never use destructuring props assignment in SFC argument"
           },
@@ -1121,7 +1134,7 @@
           },
           {
             "file": "packages/ui/src/components/ui/table.tsx",
-            "line": 20,
+            "line": 16,
             "column": 1,
             "message": "Must never use destructuring props assignment in SFC argument"
           },
@@ -1134,13 +1147,19 @@
         ]
       },
       "always": {
-        "count": 14,
+        "count": 17,
         "samples": [
           {
-            "file": "apps/desktop/src/renderer/src/components/error/ErrorBoundary.tsx",
-            "line": 85,
-            "column": 9,
-            "message": "Must use destructuring state assignment"
+            "file": ".claude/router_runtime.js",
+            "line": 1,
+            "column": 834340,
+            "message": "Must use destructuring _0x11cacd assignment"
+          },
+          {
+            "file": ".claude/router_runtime.js",
+            "line": 1,
+            "column": 834604,
+            "message": "Must use destructuring _0x4264ce assignment"
           },
           {
             "file": "apps/desktop/src/renderer/src/components/error/ErrorBoundary.tsx",
@@ -1150,9 +1169,9 @@
           },
           {
             "file": "apps/desktop/src/renderer/src/components/error/ErrorBoundary.tsx",
-            "line": 101,
-            "column": 9,
-            "message": "Must use destructuring props assignment"
+            "line": 90,
+            "column": 16,
+            "message": "Must use destructuring state assignment"
           },
           {
             "file": "apps/desktop/src/renderer/src/components/error/ErrorBoundary.tsx",
@@ -1168,8 +1187,8 @@
           },
           {
             "file": "apps/desktop/src/renderer/src/components/error/ErrorBoundary.tsx",
-            "line": 150,
-            "column": 11,
+            "line": 151,
+            "column": 16,
             "message": "Must use destructuring props assignment"
           },
           {
@@ -1180,14 +1199,8 @@
           },
           {
             "file": "apps/desktop/src/renderer/src/components/error/ErrorBoundary.tsx",
-            "line": 155,
-            "column": 22,
-            "message": "Must use destructuring state assignment"
-          },
-          {
-            "file": "apps/docs/src/app/(docs)/[[...slug]]/page.tsx",
-            "line": 11,
-            "column": 24,
+            "line": 162,
+            "column": 12,
             "message": "Must use destructuring props assignment"
           },
           {
@@ -1199,13 +1212,19 @@
         ]
       },
       "always-in-signature": {
-        "count": 14,
+        "count": 17,
         "samples": [
           {
-            "file": "apps/desktop/src/renderer/src/components/error/ErrorBoundary.tsx",
-            "line": 85,
-            "column": 9,
-            "message": "Must use destructuring state assignment"
+            "file": ".claude/router_runtime.js",
+            "line": 1,
+            "column": 834340,
+            "message": "Must use destructuring _0x11cacd assignment"
+          },
+          {
+            "file": ".claude/router_runtime.js",
+            "line": 1,
+            "column": 834604,
+            "message": "Must use destructuring _0x4264ce assignment"
           },
           {
             "file": "apps/desktop/src/renderer/src/components/error/ErrorBoundary.tsx",
@@ -1215,9 +1234,9 @@
           },
           {
             "file": "apps/desktop/src/renderer/src/components/error/ErrorBoundary.tsx",
-            "line": 101,
-            "column": 9,
-            "message": "Must use destructuring props assignment"
+            "line": 90,
+            "column": 16,
+            "message": "Must use destructuring state assignment"
           },
           {
             "file": "apps/desktop/src/renderer/src/components/error/ErrorBoundary.tsx",
@@ -1233,8 +1252,8 @@
           },
           {
             "file": "apps/desktop/src/renderer/src/components/error/ErrorBoundary.tsx",
-            "line": 150,
-            "column": 11,
+            "line": 151,
+            "column": 16,
             "message": "Must use destructuring props assignment"
           },
           {
@@ -1245,14 +1264,8 @@
           },
           {
             "file": "apps/desktop/src/renderer/src/components/error/ErrorBoundary.tsx",
-            "line": 155,
-            "column": 22,
-            "message": "Must use destructuring state assignment"
-          },
-          {
-            "file": "apps/docs/src/app/(docs)/[[...slug]]/page.tsx",
-            "line": 11,
-            "column": 24,
+            "line": 162,
+            "column": 12,
             "message": "Must use destructuring props assignment"
           },
           {
@@ -1264,13 +1277,19 @@
         ]
       },
       "always-outside-signature": {
-        "count": 14,
+        "count": 17,
         "samples": [
           {
-            "file": "apps/desktop/src/renderer/src/components/error/ErrorBoundary.tsx",
-            "line": 85,
-            "column": 9,
-            "message": "Must use destructuring state assignment"
+            "file": ".claude/router_runtime.js",
+            "line": 1,
+            "column": 834340,
+            "message": "Must use destructuring _0x11cacd assignment"
+          },
+          {
+            "file": ".claude/router_runtime.js",
+            "line": 1,
+            "column": 834604,
+            "message": "Must use destructuring _0x4264ce assignment"
           },
           {
             "file": "apps/desktop/src/renderer/src/components/error/ErrorBoundary.tsx",
@@ -1280,9 +1299,9 @@
           },
           {
             "file": "apps/desktop/src/renderer/src/components/error/ErrorBoundary.tsx",
-            "line": 101,
-            "column": 9,
-            "message": "Must use destructuring props assignment"
+            "line": 90,
+            "column": 16,
+            "message": "Must use destructuring state assignment"
           },
           {
             "file": "apps/desktop/src/renderer/src/components/error/ErrorBoundary.tsx",
@@ -1298,8 +1317,8 @@
           },
           {
             "file": "apps/desktop/src/renderer/src/components/error/ErrorBoundary.tsx",
-            "line": 150,
-            "column": 11,
+            "line": 151,
+            "column": 16,
             "message": "Must use destructuring props assignment"
           },
           {
@@ -1310,14 +1329,8 @@
           },
           {
             "file": "apps/desktop/src/renderer/src/components/error/ErrorBoundary.tsx",
-            "line": 155,
-            "column": 22,
-            "message": "Must use destructuring state assignment"
-          },
-          {
-            "file": "apps/docs/src/app/(docs)/[[...slug]]/page.tsx",
-            "line": 11,
-            "column": 24,
+            "line": 162,
+            "column": 12,
             "message": "Must use destructuring props assignment"
           },
           {
@@ -1396,54 +1409,54 @@
         ]
       },
       "arrow-function": {
-        "count": 142,
+        "count": 144,
         "samples": [
           {
-            "file": "apps/desktop/src/renderer/src/App.tsx",
-            "line": 54,
-            "column": 1,
+            "file": ".claude/router_runtime.js",
+            "line": 1,
+            "column": 834124,
             "message": "Function component is not an arrow function"
           },
           {
-            "file": "apps/desktop/src/renderer/src/components/update/UpdateRestartNotice.tsx",
-            "line": 9,
+            "file": "apps/desktop/src/renderer/src/components/ui/title-bar.tsx",
+            "line": 14,
             "column": 8,
             "message": "Function component is not an arrow function"
           },
           {
             "file": "apps/docs/src/components/ai/page-actions.tsx",
-            "line": 60,
+            "line": 11,
             "column": 8,
             "message": "Function component is not an arrow function"
           },
           {
-            "file": "packages/ui/src/components/ui/checkbox.tsx",
-            "line": 6,
+            "file": "packages/ui/src/components/ui/badge.tsx",
+            "line": 25,
             "column": 1,
             "message": "Function component is not an arrow function"
           },
           {
-            "file": "packages/ui/src/components/ui/dialog.tsx",
-            "line": 6,
+            "file": "packages/ui/src/components/ui/context-menu.tsx",
+            "line": 195,
             "column": 1,
             "message": "Function component is not an arrow function"
           },
           {
             "file": "packages/ui/src/components/ui/dropdown-menu.tsx",
-            "line": 46,
+            "line": 42,
             "column": 1,
             "message": "Function component is not an arrow function"
           },
           {
             "file": "packages/ui/src/components/ui/item.tsx",
-            "line": 59,
+            "line": 17,
             "column": 1,
             "message": "Function component is not an arrow function"
           },
           {
-            "file": "packages/ui/src/components/ui/scroll-area.tsx",
-            "line": 5,
-            "column": 1,
+            "file": "packages/ui/src/components/ui/remote-image.tsx",
+            "line": 37,
+            "column": 8,
             "message": "Function component is not an arrow function"
           },
           {
@@ -1496,13 +1509,13 @@
           },
           {
             "file": "apps/desktop/src/renderer/src/components/download/DownloadItem.tsx",
-            "line": 932,
+            "line": 959,
             "column": 41,
             "message": "Value must be set for boolean attribute `asChild`"
           },
           {
             "file": "apps/desktop/src/renderer/src/components/download/DownloadItem.tsx",
-            "line": 1072,
+            "line": 1099,
             "column": 43,
             "message": "Value must be set for boolean attribute `asChild`"
           },
@@ -1561,19 +1574,19 @@
         "samples": [
           {
             "file": "apps/desktop/src/renderer/src/components/download/DownloadItem.tsx",
-            "line": 964,
+            "line": 991,
             "column": 23,
             "message": "Prefer React.Fragment over fragment shorthand"
           },
           {
             "file": "apps/desktop/src/renderer/src/components/download/DownloadItem.tsx",
-            "line": 1048,
+            "line": 1075,
             "column": 21,
             "message": "Prefer React.Fragment over fragment shorthand"
           },
           {
             "file": "apps/desktop/src/renderer/src/components/download/DownloadItem.tsx",
-            "line": 1281,
+            "line": 1324,
             "column": 11,
             "message": "Prefer React.Fragment over fragment shorthand"
           },
@@ -1624,60 +1637,60 @@
     },
     "semi": {
       "always": {
-        "count": 8150,
+        "count": 12641,
         "samples": [
           {
-            "file": "apps/api/src/index.ts",
-            "line": 1,
-            "column": 43,
+            "file": "apps/api/scripts/migrate-history.ts",
+            "line": 25,
+            "column": 25,
             "message": "Missing semicolon."
           },
           {
-            "file": "apps/desktop/scripts/setup-dev-binaries.js",
-            "line": 933,
-            "column": 43,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "apps/desktop/src/main/ipc/services/history-service.ts",
-            "line": 3,
-            "column": 59,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "apps/desktop/src/main/lib/ffmpeg-manager.ts",
-            "line": 80,
-            "column": 42,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "apps/desktop/src/main/local-api.ts",
-            "line": 49,
-            "column": 2,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "apps/desktop/src/renderer/src/components/download/DownloadItem.tsx",
-            "line": 782,
-            "column": 53,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "apps/desktop/src/renderer/src/components/update/UpdateOutdatedNotice.tsx",
-            "line": 59,
+            "file": "apps/cli/src/transport/automation-client.ts",
+            "line": 88,
             "column": 60,
             "message": "Missing semicolon."
           },
           {
-            "file": "apps/desktop/src/renderer/src/pages/Subscriptions.tsx",
-            "line": 526,
-            "column": 22,
+            "file": "apps/desktop/scripts/setup-dev-binaries.js",
+            "line": 410,
+            "column": 70,
             "message": "Missing semicolon."
           },
           {
-            "file": "packages/downloader-core/src/downloader-core.ts",
-            "line": 854,
-            "column": 13,
+            "file": "apps/desktop/src/main/lib/database/migrate.ts",
+            "line": 205,
+            "column": 69,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "apps/desktop/src/renderer/src/components/changelog/Changelog.tsx",
+            "line": 77,
+            "column": 67,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "apps/desktop/src/renderer/src/components/ui/separator.tsx",
+            "line": 3,
+            "column": 21,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "apps/extension/entrypoints/background.ts",
+            "line": 108,
+            "column": 14,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "packages/subscriptions-core/src/leader.ts",
+            "line": 164,
+            "column": 30,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "packages/task-queue/src/projection/index.ts",
+            "line": 233,
+            "column": 41,
             "message": "Missing semicolon."
           },
           {
@@ -1689,60 +1702,60 @@
         ]
       },
       "never": {
-        "count": 1673,
+        "count": 12660,
         "samples": [
           {
-            "file": "apps/docs/next.config.mjs",
+            "file": ".claude/router_runtime.js",
             "line": 1,
-            "column": 46,
+            "column": 641,
             "message": "Extra semicolon."
           },
           {
-            "file": "apps/docs/src/mdx-components.tsx",
-            "line": 16,
-            "column": 2,
+            "file": ".claude/router_runtime.js",
+            "line": 1,
+            "column": 173737,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": ".claude/router_runtime.js",
+            "line": 1,
+            "column": 688599,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": ".claude/router_runtime.js",
+            "line": 1,
+            "column": 982277,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": ".claude/router_runtime.js",
+            "line": 1,
+            "column": 1284727,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": ".claude/router_runtime.js",
+            "line": 1,
+            "column": 1550295,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": ".claude/router_runtime.js",
+            "line": 1,
+            "column": 1834411,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": ".claude/router_runtime.js",
+            "line": 1,
+            "column": 2141458,
             "message": "Extra semicolon."
           },
           {
             "file": "apps/web/src/components/download/download-dialog.tsx",
-            "line": 435,
-            "column": 12,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "apps/web/src/components/download/download-item.tsx",
-            "line": 350,
-            "column": 12,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "apps/web/src/components/download/playlist-download-group.tsx",
-            "line": 98,
-            "column": 73,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "apps/web/src/components/download/single-video-download.tsx",
-            "line": 411,
-            "column": 75,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "apps/web/src/components/pages/download-page.tsx",
-            "line": 44,
-            "column": 30,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "apps/web/src/components/pages/download-page.tsx",
-            "line": 529,
-            "column": 50,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "apps/web/src/hooks/use-web-download-settings.ts",
-            "line": 9,
-            "column": 19,
+            "line": 149,
+            "column": 13,
             "message": "Extra semicolon."
           },
           {

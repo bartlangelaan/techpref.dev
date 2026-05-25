@@ -1,16 +1,22 @@
 {
   "analyzedVersion": "96d58f23c7cc",
-  "analyzedCommit": "59091b70406d29426bf3df14571ba9cae4ff30ab",
-  "analyzedCommitDate": "2026-04-21T20:58:37.000Z",
+  "analyzedCommit": "988ec9c8220f4751c97d14bf95a7cc4fff8754a5",
+  "analyzedCommitDate": "2026-05-25T12:44:32.000Z",
   "checks": {
     "array-type": {
       "array": {
-        "count": 18,
+        "count": 20,
         "samples": [
           {
             "file": "addons/dexie-cloud/src/helpers/BroadcastedAndLocalEvent.ts",
             "line": 4,
             "column": 27,
+            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
+          },
+          {
+            "file": "addons/dexie-cloud/src/sync/BlobDownloadTracker.ts",
+            "line": 47,
+            "column": 20,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
@@ -29,12 +35,6 @@
             "file": "libs/dexie-cloud-common/src/DBOperationsSet.ts",
             "line": 3,
             "column": 52,
-            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
-          },
-          {
-            "file": "libs/dexie-cloud-common/src/tson/StreamingSyncProcessor.ts",
-            "line": 54,
-            "column": 12,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
@@ -70,7 +70,7 @@
         ]
       },
       "generic": {
-        "count": 277,
+        "count": 280,
         "samples": [
           {
             "file": "addons/dexie-cloud/src/DexieCloudAPI.ts",
@@ -85,39 +85,39 @@
             "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           },
           {
-            "file": "addons/dexie-cloud/src/sync/listClientChanges.ts",
-            "line": 12,
-            "column": 19,
-            "message": "Array type using 'Table[]' is forbidden. Use 'Array<Table>' instead."
+            "file": "addons/dexie-cloud/src/sync/connectWebSocket.ts",
+            "line": 146,
+            "column": 29,
+            "message": "Array type using 'WSConnectionMsg[]' is forbidden. Use 'Array<WSConnectionMsg>' instead."
           },
           {
-            "file": "addons/dexie-export-import/src/import.ts",
-            "line": 31,
+            "file": "addons/dexie-export-import/src/export.ts",
+            "line": 7,
             "column": 16,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
             "file": "libs/dexie-cloud-common/src/SyncRequest.ts",
-            "line": 17,
+            "line": 14,
             "column": 13,
-            "message": "Array type using 'BaseRevisionMapEntry[]' is forbidden. Use 'Array<BaseRevisionMapEntry>' instead."
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
             "file": "libs/dexie-cloud-common/src/types.ts",
-            "line": 33,
+            "line": 23,
             "column": 11,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
             "file": "src/classes/dexie/dexie.ts",
-            "line": 256,
-            "column": 19,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+            "line": 178,
+            "column": 28,
+            "message": "Array type using 'any[]' is forbidden. Use 'Array<any>' instead."
           },
           {
             "file": "src/classes/version/schema-helpers.ts",
-            "line": 447,
-            "column": 12,
+            "line": 375,
+            "column": 11,
             "message": "Array type using 'IndexSpec[]' is forbidden. Use 'Array<IndexSpec>' instead."
           },
           {
@@ -473,7 +473,7 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 483,
+        "count": 482,
         "samples": [
           {
             "file": "addons/Dexie.Observable/test/typings/test-typings.ts",
@@ -483,7 +483,7 @@
           },
           {
             "file": "addons/dexie-cloud/src/computeSyncState.ts",
-            "line": 6,
+            "line": 4,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
@@ -495,12 +495,12 @@
           },
           {
             "file": "addons/dexie-cloud/src/sync/eagerBlobDownloader.ts",
-            "line": 14,
+            "line": 50,
             "column": 1,
-            "message": "Imports ResolvedBlob are only used as type."
+            "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "addons/dexie-cloud/src/verifyConfig.ts",
+            "file": "addons/dexie-cloud/src/verifySchema.ts",
             "line": 2,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
@@ -512,8 +512,8 @@
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "samples/dexie-cloud-todo-app/src/components/TodoListView.tsx",
-            "line": 3,
+            "file": "samples/dexie-cloud-todo-app/src/components/access-control/EditMember.tsx",
+            "line": 2,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
@@ -524,10 +524,10 @@
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "src/dbcore/proxy-cursor.ts",
+            "file": "src/dbcore/virtual-index-middleware.ts",
             "line": 1,
             "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
+            "message": "Imports DBCore, DBCoreIndex, DBCoreKeyRange, DBCoreQueryRequest, DBCoreOpenCursorRequest, DBCoreCountRequest, DBCoreCursor, and DBCoreTable are only used as type."
           },
           {
             "file": "test/typings-test/test-updatespec.ts",
@@ -605,7 +605,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 789,
+        "count": 788,
         "samples": [
           {
             "file": "addons/Dexie.Observable/src/Dexie.Observable.js",
@@ -615,13 +615,13 @@
           },
           {
             "file": "addons/dexie-cloud/src/authentication/oauthLogin.ts",
-            "line": 63,
+            "line": 53,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "addons/dexie-cloud/src/sync/blobOffloading.ts",
-            "line": 91,
+            "line": 123,
             "column": 8,
             "message": "Expected a function expression."
           },
@@ -633,8 +633,8 @@
           },
           {
             "file": "libs/dexie-cloud-common/src/validation/isValidSyncableID.ts",
-            "line": 18,
-            "column": 8,
+            "line": 37,
+            "column": 1,
             "message": "Expected a function expression."
           },
           {
@@ -645,7 +645,7 @@
           },
           {
             "file": "src/classes/version/schema-helpers.ts",
-            "line": 557,
+            "line": 601,
             "column": 8,
             "message": "Expected a function expression."
           },
@@ -657,7 +657,7 @@
           },
           {
             "file": "src/live-query/cache/is-within-range.ts",
-            "line": 13,
+            "line": 21,
             "column": 8,
             "message": "Expected a function expression."
           },
@@ -670,7 +670,7 @@
         ]
       },
       "declaration": {
-        "count": 99,
+        "count": 98,
         "samples": [
           {
             "file": "addons/dexie-cloud/src/default-ui/LoginDialog.tsx",
@@ -685,9 +685,9 @@
             "message": "Expected a function declaration."
           },
           {
-            "file": "libs/dexie-cloud-common/src/tson/TSONRef.ts",
-            "line": 88,
-            "column": 11,
+            "file": "samples/dexie-cloud-todo-app/src/components/AddTodoItem.tsx",
+            "line": 17,
+            "column": 9,
             "message": "Expected a function declaration."
           },
           {
@@ -703,15 +703,15 @@
             "message": "Expected a function declaration."
           },
           {
-            "file": "samples/remote-sync/ajax/jquery-2.1.0.js",
-            "line": 8382,
-            "column": 3,
+            "file": "src/classes/collection/collection-helpers.ts",
+            "line": 101,
+            "column": 11,
             "message": "Expected a function declaration."
           },
           {
             "file": "src/dbcore/dbcore-indexeddb.ts",
-            "line": 281,
-            "column": 17,
+            "line": 318,
+            "column": 19,
             "message": "Expected a function declaration."
           },
           {
@@ -1060,7 +1060,7 @@
     },
     "quotes": {
       "double": {
-        "count": 8099,
+        "count": 8091,
         "samples": [
           {
             "file": "addons/Dexie.Observable/src/Dexie.Observable.js",
@@ -1069,14 +1069,14 @@
             "message": "Strings must use doublequote."
           },
           {
-            "file": "addons/Dexie.Syncable/test/unit/tests-WebSocketSyncServer.js",
-            "line": 1,
-            "column": 11,
+            "file": "addons/Dexie.Syncable/test/unit/tests-PersistedContext.js",
+            "line": 65,
+            "column": 49,
             "message": "Strings must use doublequote."
           },
           {
             "file": "addons/dexie-cloud/src/authentication/exchangeOAuthCode.ts",
-            "line": 58,
+            "line": 44,
             "column": 15,
             "message": "Strings must use doublequote."
           },
@@ -1087,32 +1087,32 @@
             "message": "Strings must use doublequote."
           },
           {
-            "file": "addons/dexie-cloud/test/unit/tests-github-issues.ts",
-            "line": 160,
-            "column": 35,
+            "file": "addons/dexie-cloud/test/unit/tests-migrate-to-cloud.ts",
+            "line": 11,
+            "column": 8,
             "message": "Strings must use doublequote."
           },
           {
             "file": "libs/dexie-cloud-common/src/change-processing/toDBOperationSet.ts",
-            "line": 42,
-            "column": 14,
+            "line": 54,
+            "column": 19,
             "message": "Strings must use doublequote."
           },
           {
             "file": "libs/dexie-react-hooks/test/index.ts",
-            "line": 172,
-            "column": 9,
+            "line": 187,
+            "column": 13,
             "message": "Strings must use doublequote."
           },
           {
             "file": "src/dbcore/cache-existing-values-middleware.ts",
-            "line": 53,
-            "column": 25,
+            "line": 62,
+            "column": 30,
             "message": "Strings must use doublequote."
           },
           {
             "file": "test/tests-cmp.js",
-            "line": 129,
+            "line": 130,
             "column": 5,
             "message": "Strings must use doublequote."
           },
@@ -1651,7 +1651,7 @@
         ]
       },
       "never": {
-        "count": 19952,
+        "count": 19961,
         "samples": [
           {
             "file": "addons/Dexie.Observable/src/Dexie.Observable.js",
@@ -1661,50 +1661,50 @@
           },
           {
             "file": "addons/Dexie.Syncable/test/unit/tests-syncable-partials.js",
-            "line": 397,
-            "column": 13,
+            "line": 401,
+            "column": 5,
             "message": "Extra semicolon."
           },
           {
             "file": "addons/dexie-cloud/src/sync/LocalSyncWorker.ts",
-            "line": 72,
-            "column": 28,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "addons/y-dexie/src/helpers/nonStoppableEventChain.ts",
-            "line": 1,
-            "column": 28,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "samples/dexie-cloud-todo-app/src/App.test.tsx",
-            "line": 4,
+            "line": 15,
             "column": 24,
             "message": "Extra semicolon."
           },
           {
+            "file": "addons/y-dexie/src/getOrCreateDocument.ts",
+            "line": 35,
+            "column": 13,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "samples/angular/src/main.ts",
+            "line": 3,
+            "column": 51,
+            "message": "Extra semicolon."
+          },
+          {
             "file": "samples/remote-sync/ajax/jquery-2.1.0.js",
-            "line": 7263,
-            "column": 11,
+            "line": 7254,
+            "column": 28,
             "message": "Extra semicolon."
           },
           {
             "file": "src/dbcore/cache-existing-values-middleware.ts",
-            "line": 67,
-            "column": 6,
+            "line": 25,
+            "column": 57,
             "message": "Extra semicolon."
           },
           {
             "file": "test/tests-blobs.js",
-            "line": 27,
-            "column": 39,
+            "line": 25,
+            "column": 55,
             "message": "Extra semicolon."
           },
           {
             "file": "test/tests-table.js",
-            "line": 739,
-            "column": 6,
+            "line": 732,
+            "column": 108,
             "message": "Extra semicolon."
           },
           {

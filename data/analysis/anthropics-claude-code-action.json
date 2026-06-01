@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "96d58f23c7cc",
-  "analyzedCommit": "dde2242db6af13460b916652159b6ba19a598f30",
-  "analyzedCommitDate": "2026-05-11T18:44:48.000Z",
+  "analyzedCommit": "fb53c379a095ce320374ea95deb57e86e7f59313",
+  "analyzedCommitDate": "2026-05-31T19:43:36.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -34,19 +34,19 @@
         ]
       },
       "generic": {
-        "count": 97,
+        "count": 99,
         "samples": [
           {
-            "file": "base-action/src/install-plugins.ts",
-            "line": 83,
-            "column": 52,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+            "file": "base-action/src/execution-file.ts",
+            "line": 16,
+            "column": 13,
+            "message": "Array type using 'unknown[]' is forbidden. Use 'Array<unknown>' instead."
           },
           {
             "file": "src/entrypoints/format-turns.ts",
-            "line": 43,
-            "column": 11,
-            "message": "Array type using 'any[]' is forbidden. Use 'Array<any>' instead."
+            "line": 32,
+            "column": 12,
+            "message": "Array type using 'ContentItem[]' is forbidden. Use 'Array<ContentItem>' instead."
           },
           {
             "file": "src/entrypoints/format-turns.ts",
@@ -86,15 +86,15 @@
           },
           {
             "file": "test/image-downloader.test.ts",
-            "line": 419,
+            "line": 457,
             "column": 21,
             "message": "Array type using 'CommentWithImages[]' is forbidden. Use 'Array<CommentWithImages>' instead."
           },
           {
-            "file": "test/integration-sanitization.test.ts",
-            "line": 69,
-            "column": 21,
-            "message": "Array type using 'GitHubComment[]' is forbidden. Use 'Array<GitHubComment>' instead."
+            "file": "test/restore-config.test.ts",
+            "line": 137,
+            "column": 22,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           }
         ]
       }
@@ -174,7 +174,7 @@
           },
           {
             "file": "src/entrypoints/collect-inputs.ts",
-            "line": 45,
+            "line": 50,
             "column": 24,
             "message": "An index signature is preferred over a record."
           },
@@ -213,7 +213,7 @@
     },
     "consistent-type-definitions": {
       "interface": {
-        "count": 57,
+        "count": 58,
         "samples": [
           {
             "file": "base-action/src/parse-sdk-options.ts",
@@ -222,8 +222,8 @@
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "src/create-prompt/types.ts",
-            "line": 3,
+            "file": "src/auth/workload-identity.ts",
+            "line": 32,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
@@ -235,19 +235,19 @@
           },
           {
             "file": "src/entrypoints/format-turns.ts",
-            "line": 39,
+            "line": 31,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
             "file": "src/github/context.ts",
-            "line": 29,
+            "line": 13,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
             "file": "src/github/operations/branch.ts",
-            "line": 128,
+            "line": 130,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
@@ -259,7 +259,7 @@
           },
           {
             "file": "src/github/types.ts",
-            "line": 113,
+            "line": 95,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
@@ -314,7 +314,7 @@
         ]
       },
       "no-type-imports": {
-        "count": 70,
+        "count": 71,
         "samples": [
           {
             "file": "base-action/src/parse-sdk-options.ts",
@@ -335,15 +335,15 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/github/data/formatter.ts",
-            "line": 1,
+            "file": "src/github/data/fetcher.ts",
+            "line": 21,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "src/github/operations/comments/create-initial.ts",
-            "line": 15,
-            "column": 1,
+            "line": 13,
+            "column": 3,
             "message": "Use an `import` instead of an `import type`."
           },
           {
@@ -360,7 +360,7 @@
           },
           {
             "file": "test/data-formatter.test.ts",
-            "line": 16,
+            "line": 10,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -381,73 +381,79 @@
     },
     "func-style": {
       "expression": {
-        "count": 138,
+        "count": 154,
         "samples": [
           {
-            "file": "base-action/src/index.ts",
-            "line": 10,
-            "column": 1,
+            "file": "base-action/src/execution-file.ts",
+            "line": 8,
+            "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "base-action/src/prepare-prompt.ts",
-            "line": 62,
+            "line": 14,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "src/create-prompt/index.ts",
-            "line": 333,
+            "line": 79,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/entrypoints/post-buffered-inline-comments.ts",
-            "line": 45,
+            "file": "src/entrypoints/format-turns.ts",
+            "line": 425,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "src/github/context.ts",
-            "line": 279,
+            "line": 285,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "src/github/data/formatter.ts",
-            "line": 50,
+            "line": 137,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/github/operations/comments/update-claude-comment.ts",
-            "line": 25,
-            "column": 8,
+            "file": "src/github/operations/restore-config.ts",
+            "line": 33,
+            "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "src/github/utils/sanitizer.ts",
-            "line": 12,
+            "line": 65,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/mcp/github-file-ops-server.ts",
-            "line": 674,
-            "column": 1,
+            "file": "src/modes/agent/index.ts",
+            "line": 19,
+            "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "test/actor.test.ts",
-            "line": 8,
-            "column": 1,
+            "file": "test/restore-config.test.ts",
+            "line": 165,
+            "column": 3,
             "message": "Expected a function expression."
           }
         ]
       },
       "declaration": {
-        "count": 10,
+        "count": 13,
         "samples": [
+          {
+            "file": "src/auth/workload-identity.ts",
+            "line": 87,
+            "column": 9,
+            "message": "Expected a function declaration."
+          },
           {
             "file": "src/github/utils/sanitizer.ts",
             "line": 99,
@@ -455,9 +461,9 @@
             "message": "Expected a function declaration."
           },
           {
-            "file": "test/branch-cleanup.test.ts",
-            "line": 21,
-            "column": 9,
+            "file": "test/create-prompt.test.ts",
+            "line": 802,
+            "column": 11,
             "message": "Expected a function declaration."
           },
           {
@@ -469,12 +475,6 @@
           {
             "file": "test/data-fetcher.test.ts",
             "line": 325,
-            "column": 9,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "test/data-fetcher.test.ts",
-            "line": 471,
             "column": 9,
             "message": "Expected a function declaration."
           },
@@ -498,14 +498,14 @@
           },
           {
             "file": "test/permissions.test.ts",
-            "line": 25,
+            "line": 35,
             "column": 9,
             "message": "Expected a function declaration."
           },
           {
             "file": "test/permissions.test.ts",
-            "line": 35,
-            "column": 9,
+            "line": 314,
+            "column": 11,
             "message": "Expected a function declaration."
           }
         ]
@@ -545,13 +545,13 @@
           },
           {
             "file": "src/github/operations/restore-config.ts",
-            "line": 45,
+            "line": 77,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
             "file": "src/github/validation/actor.ts",
-            "line": 11,
+            "line": 30,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -588,41 +588,41 @@
         "samples": [
           {
             "file": "src/create-prompt/index.ts",
-            "line": 714,
+            "line": 713,
             "column": 1,
             "message": "Expected 2-space indentation, but file uses 3-space indentation."
           }
         ]
       },
       "4-space": {
-        "count": 90,
+        "count": 96,
         "samples": [
           {
-            "file": "base-action/src/index.ts",
-            "line": 11,
+            "file": "base-action/src/execution-file.ts",
+            "line": 9,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "base-action/test/parse-sdk-options.test.ts",
-            "line": 8,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "src/entrypoints/post-buffered-inline-comments.ts",
-            "line": 18,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "src/github/operations/branch-cleanup.ts",
+            "file": "base-action/test/mcp-test/simple-mcp-server.ts",
             "line": 6,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/github/types.ts",
+            "file": "src/entrypoints/cleanup-ssh-signing.ts",
+            "line": 11,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "src/github/data/fetcher.ts",
+            "line": 5,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "src/github/operations/restore-config.ts",
             "line": 3,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
@@ -640,54 +640,54 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "test/format-turns.test.ts",
-            "line": 5,
+            "file": "test/github-file-ops-path-validation.test.ts",
+            "line": 9,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "test/parse-permissions.test.ts",
-            "line": 5,
+            "file": "test/permissions.test.ts",
+            "line": 8,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "test/validate-branch-name.test.ts",
-            "line": 5,
+            "file": "test/workload-identity.test.ts",
+            "line": 9,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           }
         ]
       },
       "tab": {
-        "count": 90,
+        "count": 96,
         "samples": [
           {
-            "file": "base-action/src/index.ts",
-            "line": 11,
+            "file": "base-action/src/execution-file.ts",
+            "line": 9,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "base-action/test/parse-sdk-options.test.ts",
-            "line": 8,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "src/entrypoints/post-buffered-inline-comments.ts",
-            "line": 18,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "src/github/operations/branch-cleanup.ts",
+            "file": "base-action/test/mcp-test/simple-mcp-server.ts",
             "line": 6,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/github/types.ts",
+            "file": "src/entrypoints/cleanup-ssh-signing.ts",
+            "line": 11,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "src/github/data/fetcher.ts",
+            "line": 5,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "src/github/operations/restore-config.ts",
             "line": 3,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
@@ -705,20 +705,20 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "test/format-turns.test.ts",
-            "line": 5,
+            "file": "test/github-file-ops-path-validation.test.ts",
+            "line": 9,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "test/parse-permissions.test.ts",
-            "line": 5,
+            "file": "test/permissions.test.ts",
+            "line": 8,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "test/validate-branch-name.test.ts",
-            "line": 5,
+            "file": "test/workload-identity.test.ts",
+            "line": 9,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           }
@@ -792,66 +792,66 @@
         ]
       },
       "single": {
-        "count": 6323,
+        "count": 6697,
         "samples": [
           {
-            "file": "base-action/src/index.ts",
-            "line": 3,
+            "file": "base-action/src/execution-file.ts",
+            "line": 1,
             "column": 23,
             "message": "Strings must use singlequote."
           },
           {
             "file": "base-action/test/parse-shell-args.test.ts",
-            "line": 36,
-            "column": 8,
+            "line": 65,
+            "column": 31,
             "message": "Strings must use singlequote."
           },
           {
             "file": "src/entrypoints/update-comment-link.ts",
-            "line": 103,
+            "line": 188,
+            "column": 13,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "src/modes/tag/index.ts",
+            "line": 38,
             "column": 21,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/modes/detector.ts",
-            "line": 66,
-            "column": 7,
-            "message": "Strings must use singlequote."
-          },
-          {
             "file": "test/create-prompt.test.ts",
-            "line": 382,
-            "column": 8,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "test/data-fetcher.test.ts",
-            "line": 903,
+            "line": 469,
             "column": 30,
             "message": "Strings must use singlequote."
           },
           {
+            "file": "test/data-fetcher.test.ts",
+            "line": 1010,
+            "column": 68,
+            "message": "Strings must use singlequote."
+          },
+          {
             "file": "test/format-turns.test.ts",
-            "line": 188,
-            "column": 25,
+            "line": 413,
+            "column": 30,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "test/mockContext.ts",
-            "line": 305,
-            "column": 14,
+            "file": "test/modes/agent.test.ts",
+            "line": 140,
+            "column": 60,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "test/pull-request-target.test.ts",
-            "line": 354,
-            "column": 10,
+            "file": "test/restore-config.test.ts",
+            "line": 108,
+            "column": 20,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "test/validate-branch-name.test.ts",
-            "line": 217,
-            "column": 39,
+            "file": "test/workload-identity.test.ts",
+            "line": 120,
+            "column": 11,
             "message": "Strings must use singlequote."
           }
         ]
@@ -911,66 +911,66 @@
         "samples": []
       },
       "never": {
-        "count": 5989,
+        "count": 6466,
         "samples": [
           {
-            "file": "base-action/src/index.ts",
-            "line": 3,
+            "file": "base-action/src/execution-file.ts",
+            "line": 1,
             "column": 38,
             "message": "Extra semicolon."
           },
           {
             "file": "base-action/test/parse-sdk-options.test.ts",
-            "line": 385,
-            "column": 78,
+            "line": 401,
+            "column": 8,
             "message": "Extra semicolon."
           },
           {
             "file": "src/entrypoints/post-buffered-inline-comments.ts",
-            "line": 129,
-            "column": 36,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "src/github/operations/comment-logic.ts",
-            "line": 194,
-            "column": 73,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "src/mcp/github-inline-comment-server.ts",
-            "line": 173,
-            "column": 27,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "test/create-prompt.test.ts",
-            "line": 250,
-            "column": 6,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "test/data-formatter.test.ts",
-            "line": 256,
-            "column": 6,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "test/install-mcp-server.test.ts",
-            "line": 149,
+            "line": 84,
             "column": 44,
             "message": "Extra semicolon."
           },
           {
-            "file": "test/retry.test.ts",
-            "line": 12,
-            "column": 35,
+            "file": "src/github/operations/comments/create-initial.ts",
+            "line": 102,
+            "column": 54,
             "message": "Extra semicolon."
           },
           {
-            "file": "test/validate-branch-name.test.ts",
-            "line": 217,
-            "column": 54,
+            "file": "src/mcp/path-validation.ts",
+            "line": 35,
+            "column": 49,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "test/create-prompt.test.ts",
+            "line": 520,
+            "column": 76,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "test/extract-user-request.test.ts",
+            "line": 2,
+            "column": 71,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "test/mockContext.ts",
+            "line": 465,
+            "column": 2,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "test/retry.test.ts",
+            "line": 77,
+            "column": 21,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "test/workload-identity.test.ts",
+            "line": 123,
+            "column": 23,
             "message": "Extra semicolon."
           }
         ]

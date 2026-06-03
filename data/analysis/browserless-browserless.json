@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "96d58f23c7cc",
-  "analyzedCommit": "75f9296be38a153a1d62568228a3889c7f6b6e0a",
-  "analyzedCommitDate": "2026-05-13T11:53:05.000Z",
+  "analyzedCommit": "e1030e369c76607c367380422131d55fc85729d9",
+  "analyzedCommitDate": "2026-06-03T21:03:23.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -9,7 +9,7 @@
         "samples": [
           {
             "file": "src/browserless.ts",
-            "line": 204,
+            "line": 210,
             "column": 26,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
@@ -21,13 +21,13 @@
           },
           {
             "file": "src/config.ts",
-            "line": 393,
+            "line": 406,
             "column": 15,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
             "file": "src/router.ts",
-            "line": 25,
+            "line": 41,
             "column": 25,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
@@ -63,14 +63,14 @@
           },
           {
             "file": "src/types.ts",
-            "line": 235,
+            "line": 250,
             "column": 26,
             "message": "Array type using 'Array<contentTypes>' is forbidden. Use 'contentTypes[]' instead."
           }
         ]
       },
       "generic": {
-        "count": 108,
+        "count": 112,
         "samples": [
           {
             "file": "src/browserless.ts",
@@ -79,65 +79,65 @@
             "message": "Array type using 'unknown[]' is forbidden. Use 'Array<unknown>' instead."
           },
           {
-            "file": "src/file-system.ts",
-            "line": 48,
-            "column": 62,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+            "file": "src/browsers/index.ts",
+            "line": 422,
+            "column": 14,
+            "message": "Array type using 'BrowserlessSessionJSON[]' is forbidden. Use 'Array<BrowserlessSessionJSON>' instead."
           },
           {
             "file": "src/logger.ts",
-            "line": 72,
-            "column": 18,
+            "line": 13,
+            "column": 31,
+            "message": "Array type using 'unknown[]' is forbidden. Use 'Array<unknown>' instead."
+          },
+          {
+            "file": "src/metrics.ts",
+            "line": 6,
+            "column": 27,
+            "message": "Array type using 'number[]' is forbidden. Use 'Array<number>' instead."
+          },
+          {
+            "file": "src/routes/chromium/tests/websocket.spec.ts",
+            "line": 107,
+            "column": 11,
+            "message": "Array type using 'BrowserlessSessionJSON[]' is forbidden. Use 'Array<BrowserlessSessionJSON>' instead."
+          },
+          {
+            "file": "src/routes/management/http/meta.get.ts",
+            "line": 46,
+            "column": 15,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
-            "file": "src/routes/chrome/tests/websocket.spec.ts",
-            "line": 98,
-            "column": 11,
-            "message": "Array type using 'BrowserlessSessionJSON[]' is forbidden. Use 'Array<BrowserlessSessionJSON>' instead."
-          },
-          {
-            "file": "src/routes/edge/tests/websocket.spec.ts",
-            "line": 88,
-            "column": 11,
-            "message": "Array type using 'BrowserlessSessionJSON[]' is forbidden. Use 'Array<BrowserlessSessionJSON>' instead."
-          },
-          {
-            "file": "src/shared/content.http.ts",
-            "line": 45,
-            "column": 26,
-            "message": "Array type using 'rejectRequestPattern[]' is forbidden. Use 'Array<rejectRequestPattern>' instead."
-          },
-          {
             "file": "src/shared/scrape.http.ts",
-            "line": 201,
-            "column": 62,
-            "message": "Array type using 'HTMLElement[]' is forbidden. Use 'Array<HTMLElement>' instead."
+            "line": 77,
+            "column": 18,
+            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           },
           {
-            "file": "src/shared/utils/enjoi-resolver.ts",
-            "line": 141,
-            "column": 47,
+            "file": "src/shared/tests/schema-coercion-parity.spec.ts",
+            "line": 128,
+            "column": 68,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
             "file": "src/types.ts",
-            "line": 363,
+            "line": 455,
             "column": 10,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           },
           {
             "file": "src/utils.ts",
-            "line": 686,
-            "column": 13,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+            "line": 1019,
+            "column": 16,
+            "message": "Array type using 'unknown[]' is forbidden. Use 'Array<unknown>' instead."
           }
         ]
       }
     },
     "consistent-generic-constructors": {
       "constructor": {
-        "count": 8,
+        "count": 10,
         "samples": [
           {
             "file": "src/browsers/index.ts",
@@ -186,12 +186,79 @@
             "line": 18,
             "column": 14,
             "message": "The generic type arguments should be specified as part of the constructor type arguments."
+          },
+          {
+            "file": "src/shared/utils/schema-validator.ts",
+            "line": 68,
+            "column": 7,
+            "message": "The generic type arguments should be specified as part of the constructor type arguments."
+          },
+          {
+            "file": "src/shared/utils/schema-validator.ts",
+            "line": 103,
+            "column": 7,
+            "message": "The generic type arguments should be specified as part of the constructor type arguments."
           }
         ]
       },
       "type-annotation": {
-        "count": 0,
-        "samples": []
+        "count": 9,
+        "samples": [
+          {
+            "file": "src/browsers/browsers.playwright.spec.ts",
+            "line": 444,
+            "column": 37,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "src/browsers/browsers.playwright.spec.ts",
+            "line": 470,
+            "column": 37,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "src/browsers/browsers.playwright.spec.ts",
+            "line": 497,
+            "column": 37,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "src/browsers/browsers.playwright.spec.ts",
+            "line": 534,
+            "column": 37,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "src/browsers/browsers.playwright.spec.ts",
+            "line": 555,
+            "column": 37,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "src/browsers/browsers.playwright.spec.ts",
+            "line": 602,
+            "column": 42,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "src/browsers/browsers.playwright.spec.ts",
+            "line": 692,
+            "column": 41,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "src/shared/utils/schema-validator.ts",
+            "line": 31,
+            "column": 34,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "src/shared/utils/schema-validator.ts",
+            "line": 105,
+            "column": 22,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          }
+        ]
       }
     },
     "consistent-indexed-object-style": {
@@ -200,7 +267,7 @@
         "samples": [
           {
             "file": "src/browserless.ts",
-            "line": 164,
+            "line": 170,
             "column": 29,
             "message": "A record is preferred over an index signature."
           },
@@ -212,7 +279,7 @@
           },
           {
             "file": "src/config.ts",
-            "line": 387,
+            "line": 400,
             "column": 36,
             "message": "A record is preferred over an index signature."
           },
@@ -261,7 +328,7 @@
         ]
       },
       "index-signature": {
-        "count": 17,
+        "count": 40,
         "samples": [
           {
             "file": "src/http.ts",
@@ -271,56 +338,56 @@
           },
           {
             "file": "src/monitoring.spec.ts",
-            "line": 166,
+            "line": 247,
             "column": 22,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "src/monitoring.spec.ts",
-            "line": 249,
+            "file": "src/shared/tests/schema-coercion-parity.spec.ts",
+            "line": 191,
+            "column": 31,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "src/shared/utils/schema-validator.ts",
+            "line": 55,
+            "column": 17,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "src/shared/utils/schema-validator.ts",
+            "line": 101,
+            "column": 11,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "src/shared/utils/schema-validator.ts",
+            "line": 136,
+            "column": 9,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "src/shared/utils/schema-validator.ts",
+            "line": 240,
             "column": 22,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "src/monitoring.spec.ts",
-            "line": 315,
-            "column": 22,
+            "file": "src/shared/utils/schema-validator.ts",
+            "line": 295,
+            "column": 9,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "src/monitoring.spec.ts",
-            "line": 374,
-            "column": 22,
-            "message": "An index signature is preferred over a record."
-          },
-          {
-            "file": "src/shared/utils/enjoi-resolver.ts",
-            "line": 25,
-            "column": 16,
-            "message": "An index signature is preferred over a record."
-          },
-          {
-            "file": "src/shared/utils/enjoi-resolver.ts",
-            "line": 67,
-            "column": 24,
-            "message": "An index signature is preferred over a record."
-          },
-          {
-            "file": "src/shared/utils/enjoi-resolver.ts",
-            "line": 261,
-            "column": 30,
-            "message": "An index signature is preferred over a record."
-          },
-          {
-            "file": "src/shared/utils/enjoi-resolver.ts",
-            "line": 376,
-            "column": 22,
+            "file": "src/shared/utils/schema-validator.ts",
+            "line": 383,
+            "column": 28,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "src/utils.ts",
-            "line": 556,
-            "column": 4,
+            "line": 1023,
+            "column": 48,
             "message": "An index signature is preferred over a record."
           }
         ]
@@ -350,32 +417,32 @@
           },
           {
             "file": "src/types.ts",
-            "line": 456,
+            "line": 471,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
             "file": "src/types.ts",
-            "line": 477,
+            "line": 492,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
             "file": "src/types.ts",
-            "line": 484,
+            "line": 499,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
             "file": "src/types.ts",
-            "line": 549,
+            "line": 564,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           }
         ]
       },
       "type": {
-        "count": 63,
+        "count": 64,
         "samples": [
           {
             "file": "src/http.ts",
@@ -408,32 +475,32 @@
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "src/shared/utils/function/handler.ts",
-            "line": 31,
-            "column": 1,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "src/types.ts",
-            "line": 47,
+            "file": "src/shared/utils/performance/types.ts",
+            "line": 10,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "src/types.ts",
-            "line": 393,
+            "line": 53,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "src/types.ts",
-            "line": 507,
+            "line": 408,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "src/types.ts",
+            "line": 522,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "src/utils.ts",
-            "line": 859,
+            "line": 864,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           }
@@ -442,7 +509,7 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 103,
+        "count": 110,
         "samples": [
           {
             "file": "bin/scaffold/src/hello-world.http.ts",
@@ -451,40 +518,40 @@
             "message": "Imports Logger, Request, and Response are only used as type."
           },
           {
-            "file": "src/hooks.ts",
-            "line": 1,
+            "file": "src/browsers/index.ts",
+            "line": 38,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "src/routes/edge/tests/websocket.spec.ts",
-            "line": 1,
-            "column": 1,
-            "message": "Imports BrowserlessSessionJSON are only used as type."
+            "file": "src/router.spec.ts",
+            "line": 77,
+            "column": 24,
+            "message": "`import()` type annotations are forbidden."
           },
           {
-            "file": "src/routes/management/http/metrics-total.get.ts",
+            "file": "src/routes/management/http/kill.get.ts",
             "line": 1,
             "column": 1,
-            "message": "Imports IBrowserlessMetricTotals and Request are only used as type."
+            "message": "Imports Request and SystemQueryParameters are only used as type."
           },
           {
-            "file": "src/routes/webkit/ws/playwright.ts",
-            "line": 13,
+            "file": "src/routes/management/http/static.get.ts",
+            "line": 1,
             "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
+            "message": "Imports Logger and Request are only used as type."
           },
           {
             "file": "src/shared/content.http.ts",
-            "line": 34,
-            "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
-          {
-            "file": "src/shared/page.ws.ts",
             "line": 1,
             "column": 1,
-            "message": "Imports CDPLaunchOptions, Logger, Request, and SystemQueryParameters are only used as type."
+            "message": "Imports BrowserInstance, CDPLaunchOptions, Logger, Request, SystemQueryParameters, UnwrapPromise, WaitForEventOptions, WaitForFunctionOptions, WaitForSelectorOptions, bestAttempt, rejectRequestPattern, rejectResourceTypes, requestInterceptors, and setJavaScriptEnabled are only used as type."
+          },
+          {
+            "file": "src/shared/json-version.http.ts",
+            "line": 1,
+            "column": 1,
+            "message": "Imports BrowserManager, Logger, Request, Response, and UnwrapPromise are only used as type."
           },
           {
             "file": "src/shared/screenshot.http.ts",
@@ -494,9 +561,9 @@
           },
           {
             "file": "src/shim.ts",
-            "line": 2,
+            "line": 1,
             "column": 1,
-            "message": "Imports CDPLaunchOptions are only used as type."
+            "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
             "file": "src/webhooks.ts",
@@ -507,13 +574,32 @@
         ]
       },
       "no-type-imports": {
-        "count": 0,
-        "samples": []
+        "count": 3,
+        "samples": [
+          {
+            "file": "src/browsers/browsers.playwright.spec.ts",
+            "line": 606,
+            "column": 19,
+            "message": "`import()` type annotations are forbidden."
+          },
+          {
+            "file": "src/browsers/browsers.playwright.ts",
+            "line": 17,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "src/router.spec.ts",
+            "line": 77,
+            "column": 24,
+            "message": "`import()` type annotations are forbidden."
+          }
+        ]
       }
     },
     "func-style": {
       "expression": {
-        "count": 1111,
+        "count": 1109,
         "samples": [
           {
             "file": "src/monitoring.ts",
@@ -524,43 +610,43 @@
           {
             "file": "static/docs/docs.js",
             "line": 2,
-            "column": 138813,
+            "column": 146921,
             "message": "Expected a function expression."
           },
           {
             "file": "static/docs/docs.js",
             "line": 2,
-            "column": 345710,
+            "column": 346542,
             "message": "Expected a function expression."
           },
           {
             "file": "static/docs/docs.js",
             "line": 2,
-            "column": 451763,
+            "column": 451961,
             "message": "Expected a function expression."
           },
           {
             "file": "static/docs/docs.js",
             "line": 2,
-            "column": 489131,
+            "column": 489218,
             "message": "Expected a function expression."
           },
           {
             "file": "static/docs/docs.js",
             "line": 2,
-            "column": 565667,
+            "column": 566021,
             "message": "Expected a function expression."
           },
           {
             "file": "static/docs/docs.js",
             "line": 2,
-            "column": 680958,
+            "column": 681416,
             "message": "Expected a function expression."
           },
           {
             "file": "static/docs/docs.js",
             "line": 2,
-            "column": 755258,
+            "column": 755316,
             "message": "Expected a function expression."
           },
           {
@@ -578,7 +664,7 @@
         ]
       },
       "declaration": {
-        "count": 396,
+        "count": 431,
         "samples": [
           {
             "file": "bin/browserless.js",
@@ -587,51 +673,51 @@
             "message": "Expected a function declaration."
           },
           {
-            "file": "src/monitoring.spec.ts",
-            "line": 381,
-            "column": 11,
+            "file": "src/limiter.spec.ts",
+            "line": 460,
+            "column": 13,
             "message": "Expected a function declaration."
           },
           {
-            "file": "src/routes/edge/tests/page-websocket.spec.ts",
-            "line": 9,
+            "file": "src/routes/chromium/tests/pdf.spec.ts",
+            "line": 7,
             "column": 9,
             "message": "Expected a function declaration."
           },
           {
-            "file": "src/utils.ts",
-            "line": 168,
-            "column": 14,
+            "file": "src/shared/utils/performance/child.ts",
+            "line": 11,
+            "column": 7,
             "message": "Expected a function declaration."
           },
           {
             "file": "src/utils.ts",
-            "line": 949,
+            "line": 624,
             "column": 14,
             "message": "Expected a function declaration."
           },
           {
             "file": "static/docs/docs.js",
             "line": 2,
-            "column": 207340,
+            "column": 193258,
             "message": "Expected a function declaration."
           },
           {
             "file": "static/docs/docs.js",
             "line": 2,
-            "column": 244771,
+            "column": 239944,
             "message": "Expected a function declaration."
           },
           {
             "file": "static/docs/docs.js",
             "line": 2,
-            "column": 299664,
+            "column": 273126,
             "message": "Expected a function declaration."
           },
           {
             "file": "static/docs/docs.js",
             "line": 2,
-            "column": 758536,
+            "column": 755092,
             "message": "Expected a function declaration."
           },
           {
@@ -710,8 +796,14 @@
         ]
       },
       "default": {
-        "count": 11,
+        "count": 12,
         "samples": [
+          {
+            "file": "scripts/extract-zip-native.js",
+            "line": 22,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
           {
             "file": "src/browserless.ts",
             "line": 59,
@@ -721,12 +813,6 @@
           {
             "file": "src/browsers/index.ts",
             "line": 48,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "src/config.ts",
-            "line": 116,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -743,14 +829,14 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/mime-types.ts",
-            "line": 326,
+            "file": "src/metrics.ts",
+            "line": 5,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/router.ts",
-            "line": 23,
+            "file": "src/mime-types.ts",
+            "line": 326,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -781,7 +867,7 @@
         "samples": []
       },
       "4-space": {
-        "count": 150,
+        "count": 156,
         "samples": [
           {
             "file": "bin/browserless.js",
@@ -790,31 +876,31 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/hooks.ts",
+            "file": "src/config.ts",
             "line": 2,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/routes/chrome/http/json-new.put.ts",
-            "line": 6,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "src/routes/chrome/tests/websocket.spec.ts",
+            "file": "src/routes/chrome/http/download.post.ts",
             "line": 2,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/routes/chromium/tests/json.spec.ts",
+            "file": "src/routes/chrome/tests/scrape.spec.ts",
             "line": 5,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/routes/edge/http/performance.post.ts",
+            "file": "src/routes/chromium/tests/function.spec.ts",
+            "line": 5,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "src/routes/edge/http/pdf.post.ts",
             "line": 2,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
@@ -826,13 +912,13 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/routes/webkit/tests/websocket.spec.ts",
+            "file": "src/routes/webkit/ws/playwright.ts",
             "line": 2,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/shared/pdf.http.ts",
+            "file": "src/shared/scrape.http.ts",
             "line": 2,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
@@ -846,7 +932,7 @@
         ]
       },
       "tab": {
-        "count": 150,
+        "count": 156,
         "samples": [
           {
             "file": "bin/browserless.js",
@@ -855,31 +941,31 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/hooks.ts",
+            "file": "src/config.ts",
             "line": 2,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/routes/chrome/http/json-new.put.ts",
-            "line": 6,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "src/routes/chrome/tests/websocket.spec.ts",
+            "file": "src/routes/chrome/http/download.post.ts",
             "line": 2,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/routes/chromium/tests/json.spec.ts",
+            "file": "src/routes/chrome/tests/scrape.spec.ts",
             "line": 5,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/routes/edge/http/performance.post.ts",
+            "file": "src/routes/chromium/tests/function.spec.ts",
+            "line": 5,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "src/routes/edge/http/pdf.post.ts",
             "line": 2,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
@@ -891,13 +977,13 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/routes/webkit/tests/websocket.spec.ts",
+            "file": "src/routes/webkit/ws/playwright.ts",
             "line": 2,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/shared/pdf.http.ts",
+            "file": "src/shared/scrape.http.ts",
             "line": 2,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
@@ -913,7 +999,7 @@
     },
     "quotes": {
       "double": {
-        "count": 6251,
+        "count": 6748,
         "samples": [
           {
             "file": "bin/browserless.js",
@@ -922,51 +1008,51 @@
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/file-system.ts",
-            "line": 8,
-            "column": 33,
+            "file": "src/browsers/browsers.playwright.ts",
+            "line": 340,
+            "column": 27,
             "message": "Strings must use doublequote."
           },
           {
             "file": "src/mime-types.ts",
-            "line": 229,
-            "column": 18,
+            "line": 126,
+            "column": 3,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/routes/chrome/tests/content.spec.ts",
-            "line": 243,
-            "column": 30,
+            "file": "src/monitoring.ts",
+            "line": 309,
+            "column": 60,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/routes/chrome/tests/screenshot.spec.ts",
-            "line": 287,
-            "column": 52,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "src/routes/chromium/tests/pdf.spec.ts",
-            "line": 453,
-            "column": 13,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "src/routes/edge/tests/function.spec.ts",
-            "line": 72,
-            "column": 9,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "src/routes/edge/tests/websocket.spec.ts",
-            "line": 360,
+            "file": "src/routes/chrome/tests/scrape.spec.ts",
+            "line": 190,
             "column": 21,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/shared/utils/enjoi-resolver.ts",
-            "line": 246,
-            "column": 72,
+            "file": "src/routes/chromium/tests/pdf.spec.ts",
+            "line": 51,
+            "column": 17,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "src/routes/edge/tests/content.spec.ts",
+            "line": 236,
+            "column": 17,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "src/routes/edge/tests/websocket.spec.ts",
+            "line": 118,
+            "column": 6,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "src/shared/tests/schema-coercion-parity.spec.ts",
+            "line": 132,
+            "column": 6,
             "message": "Strings must use doublequote."
           },
           {
@@ -978,7 +1064,7 @@
         ]
       },
       "single": {
-        "count": 11001,
+        "count": 11004,
         "samples": [
           {
             "file": "bin/browserless.js",
@@ -989,49 +1075,49 @@
           {
             "file": "static/docs/docs.js",
             "line": 2,
-            "column": 52013,
+            "column": 51865,
             "message": "Strings must use singlequote."
           },
           {
             "file": "static/docs/docs.js",
             "line": 2,
-            "column": 146761,
+            "column": 146742,
             "message": "Strings must use singlequote."
           },
           {
             "file": "static/docs/docs.js",
             "line": 2,
-            "column": 261559,
+            "column": 261548,
             "message": "Strings must use singlequote."
           },
           {
             "file": "static/docs/docs.js",
             "line": 2,
-            "column": 326634,
+            "column": 326550,
             "message": "Strings must use singlequote."
           },
           {
             "file": "static/docs/docs.js",
             "line": 2,
-            "column": 445342,
+            "column": 444829,
             "message": "Strings must use singlequote."
           },
           {
             "file": "static/docs/docs.js",
             "line": 2,
-            "column": 688185,
+            "column": 687622,
             "message": "Strings must use singlequote."
           },
           {
             "file": "static/docs/docs.js",
             "line": 2,
-            "column": 779164,
+            "column": 779145,
             "message": "Strings must use singlequote."
           },
           {
             "file": "static/docs/docs.js",
             "line": 2,
-            "column": 887908,
+            "column": 887772,
             "message": "Strings must use singlequote."
           },
           {
@@ -1427,7 +1513,7 @@
         ]
       },
       "never": {
-        "count": 9015,
+        "count": 9934,
         "samples": [
           {
             "file": "bin/browserless.js",
@@ -1436,51 +1522,51 @@
             "message": "Extra semicolon."
           },
           {
-            "file": "src/browsers/index.ts",
-            "line": 681,
-            "column": 49,
+            "file": "src/browsers/browsers.playwright.spec.ts",
+            "line": 697,
+            "column": 12,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/monitoring.spec.ts",
-            "line": 359,
-            "column": 52,
+            "file": "src/limiter.ts",
+            "line": 49,
+            "column": 6,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/routes/chrome/tests/pdf.spec.ts",
-            "line": 63,
-            "column": 35,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "src/routes/chromium/tests/download.spec.ts",
-            "line": 1,
-            "column": 75,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "src/routes/chromium/tests/websocket.spec.ts",
-            "line": 201,
-            "column": 34,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "src/routes/edge/tests/performance.spec.ts",
-            "line": 40,
+            "file": "src/routes/chrome/tests/content.spec.ts",
+            "line": 23,
             "column": 5,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/routes/management/http/static.get.ts",
-            "line": 55,
-            "column": 15,
+            "file": "src/routes/chrome/tests/websocket.spec.ts",
+            "line": 265,
+            "column": 7,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "src/routes/chromium/tests/scrape.spec.ts",
+            "line": 283,
+            "column": 32,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "src/routes/edge/tests/page-websocket.spec.ts",
+            "line": 44,
+            "column": 19,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "src/routes/management/http/meta.get.ts",
+            "line": 107,
+            "column": 44,
             "message": "Extra semicolon."
           },
           {
             "file": "src/shared/screenshot.http.ts",
-            "line": 155,
-            "column": 39,
+            "line": 130,
+            "column": 31,
             "message": "Extra semicolon."
           },
           {

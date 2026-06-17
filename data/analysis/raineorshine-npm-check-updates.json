@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "96d58f23c7cc",
-  "analyzedCommit": "35e74de31364b127e9ad4cea6943036dce8fec40",
-  "analyzedCommitDate": "2026-05-27T19:09:27.000Z",
+  "analyzedCommit": "2e1c17bc51c47c99d06beada99032c9082f75a00",
+  "analyzedCommitDate": "2026-06-15T23:46:39.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -9,11 +9,11 @@
         "samples": []
       },
       "generic": {
-        "count": 124,
+        "count": 125,
         "samples": [
           {
             "file": "src/cli-options.ts",
-            "line": 667,
+            "line": 687,
             "column": 19,
             "message": "Array type using 'CLIOption[]' is forbidden. Use 'Array<CLIOption>' instead."
           },
@@ -25,9 +25,9 @@
           },
           {
             "file": "src/lib/logging.ts",
-            "line": 107,
-            "column": 38,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+            "line": 195,
+            "column": 12,
+            "message": "Array type using 'readonly string[]' is forbidden. Use 'ReadonlyArray<string>' instead."
           },
           {
             "file": "src/lib/table.ts",
@@ -43,21 +43,21 @@
           },
           {
             "file": "src/package-managers/npm.ts",
-            "line": 697,
-            "column": 92,
-            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
+            "line": 768,
+            "column": 16,
+            "message": "Array type using 'any[]' is forbidden. Use 'Array<any>' instead."
           },
           {
             "file": "src/package-managers/yarn.ts",
-            "line": 179,
+            "line": 191,
             "column": 35,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
-            "file": "test/cooldown.test.ts",
-            "line": 51,
-            "column": 52,
-            "message": "Array type using 'any[]' is forbidden. Use 'Array<any>' instead."
+            "file": "src/types/TargetFunction.ts",
+            "line": 4,
+            "column": 66,
+            "message": "Array type using 'SemVer[]' is forbidden. Use 'Array<SemVer>' instead."
           },
           {
             "file": "test/determinePackageManager.test.ts",
@@ -104,19 +104,19 @@
         "samples": [
           {
             "file": "src/lib/initOptions.ts",
-            "line": 321,
+            "line": 350,
             "column": 26,
             "message": "A record is preferred over an index signature."
           },
           {
             "file": "src/lib/logging.ts",
-            "line": 97,
+            "line": 89,
             "column": 41,
             "message": "A record is preferred over an index signature."
           },
           {
             "file": "src/package-managers/yarn.ts",
-            "line": 342,
+            "line": 354,
             "column": 21,
             "message": "A record is preferred over an index signature."
           },
@@ -129,11 +129,11 @@
         ]
       },
       "index-signature": {
-        "count": 19,
+        "count": 20,
         "samples": [
           {
             "file": "src/bin/cli.ts",
-            "line": 201,
+            "line": 198,
             "column": 22,
             "message": "An index signature is preferred over a record."
           },
@@ -157,8 +157,8 @@
           },
           {
             "file": "src/package-managers/pnpm.ts",
-            "line": 75,
-            "column": 15,
+            "line": 99,
+            "column": 46,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -175,13 +175,13 @@
           },
           {
             "file": "test/cooldown.test.ts",
-            "line": 24,
+            "line": 27,
             "column": 14,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "test/deep.test.ts",
-            "line": 304,
+            "line": 295,
             "column": 11,
             "message": "An index signature is preferred over a record."
           },
@@ -243,7 +243,7 @@
         ]
       },
       "type": {
-        "count": 27,
+        "count": 28,
         "samples": [
           {
             "file": "src/lib/upgradeDependencies.ts",
@@ -253,25 +253,25 @@
           },
           {
             "file": "src/package-managers/npm.ts",
-            "line": 429,
+            "line": 432,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "src/package-managers/yarn.ts",
-            "line": 32,
+            "line": 25,
+            "column": 1,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "src/package-managers/yarn.ts",
+            "line": 46,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "src/types/CLIOption.ts",
-            "line": 3,
-            "column": 8,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "src/types/DependencyGroup.ts",
-            "line": 3,
+            "file": "src/types/Cacher.ts",
+            "line": 11,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
@@ -301,7 +301,7 @@
           },
           {
             "file": "test/cooldown.test.ts",
-            "line": 21,
+            "line": 24,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           }
@@ -314,11 +314,11 @@
         "samples": []
       },
       "no-type-imports": {
-        "count": 263,
+        "count": 265,
         "samples": [
           {
             "file": "src/bin/cli.ts",
-            "line": 13,
+            "line": 12,
             "column": 10,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -330,37 +330,37 @@
           },
           {
             "file": "src/lib/getInstalledPackages.ts",
-            "line": 2,
+            "line": 3,
             "column": 10,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "src/lib/logging.ts",
-            "line": 11,
+            "line": 10,
             "column": 10,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/lib/upgradeJsonCatalogDependencies.ts",
-            "line": 2,
+            "file": "src/lib/upgradeDependencies.ts",
+            "line": 6,
             "column": 10,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/package-managers/gitTags.ts",
-            "line": 8,
-            "column": 10,
+            "file": "src/package-managers/filters.ts",
+            "line": 9,
+            "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "src/package-managers/staticRegistry.ts",
-            "line": 5,
+            "line": 4,
             "column": 10,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "src/types/IgnoredUpgradeDueToEnginesNode.ts",
-            "line": 2,
+            "line": 1,
             "column": 10,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -372,7 +372,7 @@
           },
           {
             "file": "vite.config.ts",
-            "line": 2,
+            "line": 3,
             "column": 10,
             "message": "Use an `import` instead of an `import type`."
           }
@@ -381,7 +381,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 132,
+        "count": 135,
         "samples": [
           {
             "file": "src/index.ts",
@@ -396,15 +396,15 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "src/lib/initOptions.ts",
-            "line": 54,
+            "file": "src/lib/isFetchable.ts",
+            "line": 5,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "src/lib/logging.ts",
-            "line": 406,
-            "column": 1,
+            "line": 351,
+            "column": 8,
             "message": "Expected a function expression."
           },
           {
@@ -414,9 +414,9 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "src/lib/version-util.ts",
-            "line": 45,
-            "column": 8,
+            "file": "src/lib/utils/parseJson.ts",
+            "line": 37,
+            "column": 1,
             "message": "Expected a function expression."
           },
           {
@@ -427,13 +427,13 @@
           },
           {
             "file": "src/package-managers/npm.ts",
-            "line": 515,
+            "line": 518,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "test/determinePackageManager.test.ts",
-            "line": 80,
+            "line": 101,
             "column": 5,
             "message": "Expected a function expression."
           },
@@ -446,11 +446,11 @@
         ]
       },
       "declaration": {
-        "count": 141,
+        "count": 149,
         "samples": [
           {
             "file": "src/bin/cli.ts",
-            "line": 18,
+            "line": 17,
             "column": 7,
             "message": "Expected a function declaration."
           },
@@ -462,43 +462,43 @@
           },
           {
             "file": "src/lib/chalk.ts",
-            "line": 49,
-            "column": 14,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "src/lib/getAllPackages.ts",
-            "line": 45,
+            "line": 59,
             "column": 7,
             "message": "Expected a function declaration."
           },
           {
-            "file": "src/lib/upgradePackageDefinitions.ts",
-            "line": 26,
+            "file": "src/lib/getCurrentDependencies.ts",
+            "line": 13,
             "column": 7,
             "message": "Expected a function declaration."
           },
           {
             "file": "src/lib/version-util.ts",
-            "line": 568,
+            "line": 366,
+            "column": 7,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "src/package-managers/bun.ts",
+            "line": 27,
             "column": 14,
             "message": "Expected a function declaration."
           },
           {
             "file": "src/package-managers/npm.ts",
-            "line": 394,
-            "column": 9,
+            "line": 895,
+            "column": 14,
             "message": "Expected a function declaration."
           },
           {
-            "file": "src/package-managers/staticRegistry.ts",
-            "line": 18,
+            "file": "src/package-managers/pnpm.ts",
+            "line": 187,
             "column": 7,
             "message": "Expected a function declaration."
           },
           {
             "file": "test/cooldown.test.ts",
-            "line": 36,
+            "line": 39,
             "column": 7,
             "message": "Expected a function declaration."
           },
@@ -513,7 +513,7 @@
     },
     "import-export-preference": {
       "named": {
-        "count": 57,
+        "count": 60,
         "samples": [
           {
             "file": ".ncurc.js",
@@ -522,26 +522,26 @@
             "message": "Prefer named exports"
           },
           {
-            "file": "src/lib/defineConfig.ts",
-            "line": 11,
+            "file": "src/lib/determinePackageManager.ts",
+            "line": 72,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "src/lib/findLockfile.ts",
-            "line": 23,
+            "file": "src/lib/findPackage.ts",
+            "line": 97,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "src/lib/getInstalledPackages.ts",
-            "line": 46,
+            "file": "src/lib/getNcuRc.ts",
+            "line": 146,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "src/lib/getPreferredWildcard.ts",
-            "line": 36,
+            "file": "src/lib/getRepoUrl.ts",
+            "line": 76,
             "column": 8,
             "message": "Prefer named exports"
           },
@@ -552,20 +552,20 @@
             "message": "Prefer named exports"
           },
           {
-            "file": "src/lib/runGlobal.ts",
-            "line": 95,
+            "file": "src/lib/resolveDepSections.ts",
+            "line": 24,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "src/lib/utils/parseJson.ts",
-            "line": 58,
+            "file": "src/lib/upgradePackageDefinitions.ts",
+            "line": 168,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "src/package-managers/yarn.ts",
-            "line": 446,
+            "file": "src/package-managers/pnpm.ts",
+            "line": 227,
             "column": 8,
             "message": "Prefer named exports"
           },
@@ -625,7 +625,7 @@
         "samples": [
           {
             "file": "src/cli-options.ts",
-            "line": 660,
+            "line": 680,
             "column": 1,
             "message": "Expected 2-space indentation, but file uses 1-space indentation."
           },
@@ -650,7 +650,7 @@
         ]
       },
       "4-space": {
-        "count": 145,
+        "count": 150,
         "samples": [
           {
             "file": ".ncurc.js",
@@ -659,26 +659,26 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/lib/getCurrentDependencies.ts",
-            "line": 15,
+            "file": "src/lib/getEnginesNodeFromRegistry.ts",
+            "line": 16,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/lib/loadPackageInfoFromFile.ts",
-            "line": 9,
+            "file": "src/lib/libnpmconfig/index.js",
+            "line": 16,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/lib/upgradePackageDefinitions.ts",
-            "line": 15,
+            "file": "src/lib/upgradePackageData.ts",
+            "line": 32,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/types/CatalogConfig.ts",
-            "line": 4,
+            "file": "src/types/Cacher.ts",
+            "line": 5,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -695,8 +695,8 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "test/group.test.ts",
-            "line": 22,
+            "file": "test/helpers/chaiSetup.ts",
+            "line": 8,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -715,7 +715,7 @@
         ]
       },
       "tab": {
-        "count": 145,
+        "count": 150,
         "samples": [
           {
             "file": ".ncurc.js",
@@ -724,26 +724,26 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/lib/getCurrentDependencies.ts",
-            "line": 15,
+            "file": "src/lib/getEnginesNodeFromRegistry.ts",
+            "line": 16,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/lib/loadPackageInfoFromFile.ts",
-            "line": 9,
+            "file": "src/lib/libnpmconfig/index.js",
+            "line": 16,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/lib/upgradePackageDefinitions.ts",
-            "line": 15,
+            "file": "src/lib/upgradePackageData.ts",
+            "line": 32,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/types/CatalogConfig.ts",
-            "line": 4,
+            "file": "src/types/Cacher.ts",
+            "line": 5,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -760,8 +760,8 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "test/group.test.ts",
-            "line": 22,
+            "file": "test/helpers/chaiSetup.ts",
+            "line": 8,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -782,7 +782,7 @@
     },
     "quotes": {
       "double": {
-        "count": 8295,
+        "count": 8748,
         "samples": [
           {
             "file": ".ncurc.js",
@@ -791,51 +791,51 @@
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/lib/getAllPackages.ts",
-            "line": 222,
-            "column": 32,
+            "file": "src/lib/getIgnoredUpgradesDueToEnginesNode.ts",
+            "line": 29,
+            "column": 15,
             "message": "Strings must use doublequote."
           },
           {
             "file": "src/package-managers/npm.ts",
-            "line": 31,
-            "column": 37,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "test/cli-options.test.ts",
-            "line": 1,
-            "column": 24,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "test/determinePackageManager.test.ts",
-            "line": 44,
-            "column": 26,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "test/getCurrentDependencies.test.ts",
-            "line": 49,
+            "line": 374,
             "column": 16,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "test/interactive.test.ts",
-            "line": 13,
-            "column": 34,
+            "file": "test/cooldown.test.ts",
+            "line": 232,
+            "column": 19,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "test/rc-config.test.ts",
-            "line": 478,
+            "file": "test/dep.test.ts",
+            "line": 54,
+            "column": 36,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "test/getAllPackages.test.ts",
+            "line": 74,
             "column": 8,
             "message": "Strings must use doublequote."
           },
           {
+            "file": "test/install.test.ts",
+            "line": 160,
+            "column": 8,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "test/rc-config.test.ts",
+            "line": 439,
+            "column": 29,
+            "message": "Strings must use doublequote."
+          },
+          {
             "file": "test/version-util.test.ts",
-            "line": 306,
-            "column": 36,
+            "line": 309,
+            "column": 31,
             "message": "Strings must use doublequote."
           },
           {
@@ -847,65 +847,65 @@
         ]
       },
       "single": {
-        "count": 88,
+        "count": 112,
         "samples": [
           {
             "file": "src/bin/cli.ts",
-            "line": 131,
+            "line": 128,
             "column": 15,
             "message": "Strings must use singlequote."
           },
           {
             "file": "src/cli-options.ts",
-            "line": 253,
-            "column": 54,
+            "line": 289,
+            "column": 65,
             "message": "Strings must use singlequote."
           },
           {
             "file": "src/cli-options.ts",
-            "line": 397,
-            "column": 54,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "src/cli-options.ts",
-            "line": 456,
-            "column": 21,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "src/cli-options.ts",
-            "line": 800,
+            "line": 429,
             "column": 18,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/lib/chalk.ts",
-            "line": 61,
-            "column": 21,
+            "file": "src/cli-options.ts",
+            "line": 656,
+            "column": 13,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/lib/initOptions.ts",
-            "line": 161,
-            "column": 7,
+            "file": "src/cli-options.ts",
+            "line": 1036,
+            "column": 18,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/package-managers/npm.ts",
-            "line": 780,
-            "column": 30,
+            "file": "src/lib/logging.ts",
+            "line": 549,
+            "column": 18,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "test/bun/index.test.ts",
+            "line": 34,
+            "column": 11,
             "message": "Strings must use singlequote."
           },
           {
             "file": "test/cooldown.test.ts",
-            "line": 1607,
-            "column": 10,
+            "line": 2157,
+            "column": 39,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "test/cooldown.test.ts",
+            "line": 2325,
+            "column": 53,
             "message": "Strings must use singlequote."
           },
           {
             "file": "test/workspaces.test.ts",
-            "line": 1129,
+            "line": 1177,
             "column": 31,
             "message": "Strings must use singlequote."
           }
@@ -962,7 +962,7 @@
     },
     "semi": {
       "always": {
-        "count": 6719,
+        "count": 7105,
         "samples": [
           {
             "file": ".ncurc.js",
@@ -971,51 +971,51 @@
             "message": "Missing semicolon."
           },
           {
-            "file": "src/lib/getIgnoredUpgradesDueToPeerDeps.ts",
-            "line": 60,
-            "column": 75,
+            "file": "src/lib/getNcuRc.ts",
+            "line": 96,
+            "column": 43,
             "message": "Missing semicolon."
           },
           {
-            "file": "src/lib/upgradeDependencies.ts",
-            "line": 80,
-            "column": 76,
+            "file": "src/lib/upgradePackageData.ts",
+            "line": 145,
+            "column": 121,
             "message": "Missing semicolon."
           },
           {
-            "file": "src/package-managers/pnpm.ts",
-            "line": 10,
-            "column": 54,
+            "file": "src/package-managers/yarn.ts",
+            "line": 9,
+            "column": 47,
             "message": "Missing semicolon."
           },
           {
             "file": "test/cooldown.test.ts",
-            "line": 188,
-            "column": 37,
+            "line": 576,
+            "column": 68,
             "message": "Missing semicolon."
           },
           {
-            "file": "test/determinePackageManager.test.ts",
-            "line": 183,
-            "column": 45,
+            "file": "test/dep.test.ts",
+            "line": 341,
+            "column": 85,
             "message": "Missing semicolon."
           },
           {
-            "file": "test/getIgnoredUpgradesDueToEnginesNode.test.ts",
-            "line": 29,
-            "column": 6,
+            "file": "test/getCurrentDependencies.test.ts",
+            "line": 300,
+            "column": 9,
             "message": "Missing semicolon."
           },
           {
             "file": "test/package-managers/yarn/index.test.ts",
-            "line": 153,
-            "column": 111,
+            "line": 172,
+            "column": 87,
             "message": "Missing semicolon."
           },
           {
-            "file": "test/upgradeYamlCatalogDependencies.test.ts",
-            "line": 17,
-            "column": 7,
+            "file": "test/upgradeDependencies.test.ts",
+            "line": 49,
+            "column": 113,
             "message": "Missing semicolon."
           },
           {

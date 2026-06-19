@@ -1,11 +1,11 @@
 {
   "analyzedVersion": "96d58f23c7cc",
-  "analyzedCommit": "a6f9bf468e81fb70eccddeb0fe47c6854397b360",
-  "analyzedCommitDate": "2026-05-29T16:20:39.000Z",
+  "analyzedCommit": "c4c38dcf051f6c5f54f9339b1c6ed95f16c3a008",
+  "analyzedCommitDate": "2026-06-19T07:15:13.000Z",
   "checks": {
     "array-type": {
       "array": {
-        "count": 5,
+        "count": 7,
         "samples": [
           {
             "file": "cli/commands/create/files/create-preset/src/bundle.ts",
@@ -32,6 +32,18 @@
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
+            "file": "integrations/mcp-server/src/tools/listPackages.ts",
+            "line": 24,
+            "column": 13,
+            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
+          },
+          {
+            "file": "integrations/mcp-server/src/tools/suggestPlugins.ts",
+            "line": 41,
+            "column": 25,
+            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
+          },
+          {
             "file": "wrappers/inferno/src/ParticlesProvider.tsx",
             "line": 13,
             "column": 26,
@@ -40,61 +52,61 @@
         ]
       },
       "generic": {
-        "count": 429,
+        "count": 536,
         "samples": [
           {
             "file": "bundles/confetti/src/ConfettiOptions.ts",
-            "line": 207,
+            "line": 186,
             "column": 90,
             "message": "Array type using 'IShapeValues[]' is forbidden. Use 'Array<IShapeValues>' instead."
           },
           {
             "file": "cli/utils/rollup-plugin/src/index.ts",
-            "line": 29,
-            "column": 76,
+            "line": 37,
+            "column": 62,
             "message": "Array type using 'RollupOptions[]' is forbidden. Use 'Array<RollupOptions>' instead."
           },
           {
-            "file": "engine/src/Core/Engine.ts",
-            "line": 142,
+            "file": "engine/src/Core/ParticlesManager.ts",
+            "line": 55,
             "column": 23,
-            "message": "Array type using 'Container[]' is forbidden. Use 'Array<Container>' instead."
+            "message": "Array type using 'IContainerPlugin[]' is forbidden. Use 'Array<IContainerPlugin>' instead."
           },
           {
-            "file": "engine/src/Core/Utils/SpatialHashGrid.ts",
-            "line": 139,
-            "column": 10,
-            "message": "Array type using 'Particle[]' is forbidden. Use 'Array<Particle>' instead."
+            "file": "engine/src/Utils/Utils.ts",
+            "line": 50,
+            "column": 58,
+            "message": "Array type using 'MutationRecord[]' is forbidden. Use 'Array<MutationRecord>' instead."
           },
           {
-            "file": "interactions/external/remove/src/Remover.ts",
-            "line": 71,
-            "column": 17,
+            "file": "interactions/external/drag/src/Dragger.ts",
+            "line": 55,
+            "column": 21,
+            "message": "Array type using 'MomentumSample[]' is forbidden. Use 'Array<MomentumSample>' instead."
+          },
+          {
+            "file": "plugins/colors/lab/src/conversion.spec.ts",
+            "line": 6,
+            "column": 20,
             "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           },
           {
-            "file": "plugins/colors/hsv/src/conversion.spec.ts",
-            "line": 7,
-            "column": 16,
-            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
-          },
-          {
-            "file": "plugins/interactivity/src/index.ts",
-            "line": 40,
-            "column": 102,
-            "message": "Array type using 'IInteractor[]' is forbidden. Use 'Array<IInteractor>' instead."
-          },
-          {
-            "file": "shapes/image/src/GifUtils/Utils.ts",
-            "line": 25,
-            "column": 17,
-            "message": "Array type using 'IRgb[]' is forbidden. Use 'Array<IRgb>' instead."
-          },
-          {
-            "file": "utils/noiseField/src/NoiseFieldGenerator.ts",
+            "file": "plugins/polygonMask/src/PolygonMaskInstance.ts",
             "line": 41,
-            "column": 10,
-            "message": "Array type using 'Vector[]' is forbidden. Use 'Array<Vector>' instead."
+            "column": 11,
+            "message": "Array type using 'ISvgPath[]' is forbidden. Use 'Array<ISvgPath>' instead."
+          },
+          {
+            "file": "templates/tictactoe/template/angular/src/app/app.component.ts",
+            "line": 46,
+            "column": 27,
+            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
+          },
+          {
+            "file": "updaters/twinkle/src/TwinkleUpdater.ts",
+            "line": 117,
+            "column": 17,
+            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           },
           {
             "file": "wrappers/webcomponents/src/Particles.ts",
@@ -107,28 +119,34 @@
     },
     "consistent-generic-constructors": {
       "constructor": {
-        "count": 1,
+        "count": 2,
         "samples": [
           {
             "file": "cli/commands/create/files/create-preset/src/bundle.ts",
             "line": 1,
             "column": 10,
             "message": "Identifier `loadTemplatePreset` has already been declared"
+          },
+          {
+            "file": "integrations/mcp-server/src/tools/suggestPlugins.ts",
+            "line": 75,
+            "column": 16,
+            "message": "The generic type arguments should be specified as part of the constructor type arguments."
           }
         ]
       },
       "type-annotation": {
-        "count": 54,
+        "count": 55,
         "samples": [
           {
             "file": "bundles/confetti/src/utils.ts",
-            "line": 12,
+            "line": 13,
             "column": 16,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
             "file": "cli/utils/rollup-plugin/src/config/createSingleConfig.ts",
-            "line": 181,
+            "line": 184,
             "column": 65,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
@@ -140,43 +158,43 @@
           },
           {
             "file": "engine/src/Core/Utils/PluginManager.ts",
-            "line": 73,
+            "line": 72,
             "column": 29,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
             "file": "engine/src/Core/Utils/PluginManager.ts",
-            "line": 100,
+            "line": 99,
             "column": 35,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "plugins/absorbers/src/getAbsorbersInstancesManager.ts",
-            "line": 4,
-            "column": 38,
+            "file": "plugins/colors/named/src/NamedColorManager.ts",
+            "line": 10,
+            "column": 28,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "plugins/easings/elastic/src/easingsFunctions.ts",
-            "line": 4,
-            "column": 33,
-            "message": "The generic type arguments should be specified as part of the type annotation."
-          },
-          {
-            "file": "plugins/easings/quint/src/easingsFunctions.ts",
+            "file": "plugins/easings/expo/src/easingsFunctions.ts",
             "line": 4,
             "column": 33,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "plugins/sounds/src/utils.ts",
-            "line": 1,
-            "column": 22,
+            "file": "plugins/easings/sigmoid/src/easingsFunctions.ts",
+            "line": 4,
+            "column": 33,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "utils/noiseField/src/NoiseFieldGenerator.ts",
-            "line": 202,
+            "file": "shapes/cards/src/utils.ts",
+            "line": 20,
+            "column": 23,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "wrappers/jquery/src/particles.ts",
+            "line": 52,
             "column": 31,
             "message": "The generic type arguments should be specified as part of the type annotation."
           }
@@ -196,7 +214,7 @@
         ]
       },
       "index-signature": {
-        "count": 471,
+        "count": 541,
         "samples": [
           {
             "file": "bundles/all/src/browser.ts",
@@ -205,57 +223,57 @@
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "effects/shadow/src/browser.ts",
+            "file": "effects/particles/src/browser.ts",
             "line": 4,
             "column": 28,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "palettes/atmospheric/heatDuality/src/browser.ts",
+            "file": "interactions/external/destroy/src/browser.ts",
             "line": 4,
             "column": 28,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "palettes/fireworks/goldStroke/src/browser.ts",
+            "file": "palettes/fantasy/fairyDust/src/browser.ts",
             "line": 4,
             "column": 28,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "palettes/monochromatic/brown/src/browser.ts",
+            "file": "palettes/food/tropical-fruits/src/browser.ts",
             "line": 4,
             "column": 28,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "palettes/spectrum/rgbPrimaries/src/browser.ts",
+            "file": "palettes/spectrum/dualityGreenMagenta/src/browser.ts",
             "line": 4,
             "column": 28,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "plugins/colors/lab/src/browser.ts",
+            "file": "plugins/colors/named/src/browser.ts",
             "line": 4,
             "column": 28,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "presets/bigCircles/src/bundle.ts",
-            "line": 7,
-            "column": 28,
-            "message": "An index signature is preferred over a record."
-          },
-          {
-            "file": "shapes/rounded-rect/src/browser.ts",
+            "file": "presets/confettiFalling/src/browser.ts",
             "line": 4,
             "column": 28,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "wrappers/preact/src/Utils.ts",
-            "line": 21,
-            "column": 34,
+            "file": "templates/tictactoe/template/angular/src/app/app.component.ts",
+            "line": 60,
+            "column": 48,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "wrappers/stencil/src/components/stencil-particles/stencil-particles.tsx",
+            "line": 72,
+            "column": 25,
             "message": "An index signature is preferred over a record."
           }
         ]
@@ -285,7 +303,7 @@
           },
           {
             "file": "websites/website/docs/.vitepress/theme/components/playgroundLoaders.ts",
-            "line": 224,
+            "line": 226,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
@@ -309,20 +327,20 @@
           },
           {
             "file": "wrappers/jquery/src/particles.ts",
-            "line": 55,
+            "line": 57,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
             "file": "wrappers/jquery/src/particles.ts",
-            "line": 60,
+            "line": 63,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           }
         ]
       },
       "type": {
-        "count": 498,
+        "count": 523,
         "samples": [
           {
             "file": "bundles/confetti/src/ConfettiParams.ts",
@@ -331,50 +349,50 @@
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "demo/inferno/src/components/Incrementer.tsx",
-            "line": 11,
-            "column": 1,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "engine/src/Core/Interfaces/ICoordinates.ts",
-            "line": 27,
-            "column": 8,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "engine/src/Options/Interfaces/Particles/IFill.ts",
-            "line": 10,
-            "column": 8,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "interactions/external/drag/src/Types.ts",
-            "line": 12,
-            "column": 8,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "paths/branches/src/IBranchesPathOptions.ts",
-            "line": 13,
-            "column": 8,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "plugins/exports/video/src/IExportVideoData.ts",
+            "file": "demo/astro/src/layouts/Layout.astro",
             "line": 2,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "shapes/emoji/src/IEmojiShape.ts",
+            "file": "engine/src/Core/Interfaces/ICoordinates.ts",
+            "line": 33,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "engine/src/Options/Interfaces/Particles/IStroke.ts",
+            "line": 10,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "interactions/external/drag/src/Options/Interfaces/IDrag.ts",
             "line": 4,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "updaters/rotate/src/Options/Interfaces/IRotateAnimation.ts",
-            "line": 4,
+            "file": "paths/brownian/src/IBrownianPathOptions.ts",
+            "line": 1,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "plugins/infection/src/Types.ts",
+            "line": 16,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "shapes/image/src/GifUtils/Types/GIF.ts",
+            "line": 5,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "updaters/roll/src/Options/Interfaces/IRoll.ts",
+            "line": 9,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
@@ -389,7 +407,7 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 44,
+        "count": 65,
         "samples": [
           {
             "file": "cli/commands/create/files/create-preset/src/bundle.ts",
@@ -398,16 +416,10 @@
             "message": "Identifier `loadTemplatePreset` has already been declared"
           },
           {
-            "file": "demo/ionic/src/app/app.component.ts",
-            "line": 2,
+            "file": "demo/ionic/src/app/explore-container/explore-container.component.ts",
+            "line": 1,
             "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
-          {
-            "file": "demo/ionic/src/app/tab2/tab2-routing.module.ts",
-            "line": 2,
-            "column": 1,
-            "message": "Imports Routes are only used as type."
+            "message": "Imports OnInit are only used as type."
           },
           {
             "file": "demo/ionic/src/app/tabs/tabs-routing.module.ts",
@@ -416,34 +428,40 @@
             "message": "Imports Routes are only used as type."
           },
           {
-            "file": "templates/react-ts/template/src/App.tsx",
-            "line": 6,
-            "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
-          {
-            "file": "wrappers/angular-fireworks/projects/ng-fireworks/src/lib/ng-fireworks.component.ts",
-            "line": 3,
-            "column": 1,
-            "message": "Imports FireworkOptions are only used as type."
-          },
-          {
-            "file": "wrappers/lit/src/lit-tsparticles.ts",
-            "line": 1,
-            "column": 1,
-            "message": "Imports PropertyValues are only used as type."
-          },
-          {
-            "file": "wrappers/preact/src/Particles.tsx",
-            "line": 6,
-            "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
-          {
-            "file": "wrappers/solid/src/IParticlesProps.ts",
+            "file": "templates/login/template/angular-confetti/src/app/app.component.ts",
             "line": 2,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
+          },
+          {
+            "file": "templates/particles/template/angular-fireworks/src/app/app.component.ts",
+            "line": 1,
+            "column": 1,
+            "message": "Imports OnInit are only used as type."
+          },
+          {
+            "file": "templates/portfolio/template/angular/src/app/app.component.ts",
+            "line": 1,
+            "column": 1,
+            "message": "Imports OnInit are only used as type."
+          },
+          {
+            "file": "wrappers/angular-confetti/projects/ng-confetti/src/lib/ng-confetti.component.ts",
+            "line": 2,
+            "column": 1,
+            "message": "Imports AfterViewInit, OnChanges, OnDestroy, and SimpleChanges are only used as type."
+          },
+          {
+            "file": "wrappers/angular/projects/ng-particles/src/lib/ng-particles.service.ts",
+            "line": 2,
+            "column": 1,
+            "message": "Imports Engine are only used as type."
+          },
+          {
+            "file": "wrappers/react/lib/Particles.tsx",
+            "line": 1,
+            "column": 1,
+            "message": "Imports FC are only used as type."
           },
           {
             "file": "wrappers/webcomponents/build.ts",
@@ -454,7 +472,7 @@
         ]
       },
       "no-type-imports": {
-        "count": 3923,
+        "count": 4012,
         "samples": [
           {
             "file": "bundles/all/src/index.lazy.ts",
@@ -463,51 +481,51 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "engine/src/Options/Classes/FullScreen/FullScreen.ts",
-            "line": 2,
+            "file": "engine/src/Options/Classes/Options.ts",
+            "line": 6,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "interactions/external/grab/src/index.lazy.ts",
+            "file": "interactions/external/particle/src/Options/Classes/InteractivityParticleOptionsData.ts",
+            "line": 1,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "palettes/fantasy/bloodAndGore/src/index.ts",
             "line": 1,
             "column": 10,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "palettes/confetti/monochromeGreen/src/index.ts",
+            "file": "palettes/water/risingBubbles/src/index.lazy.ts",
             "line": 1,
             "column": 10,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "palettes/tech/crtPhosphor/src/options.ts",
+            "file": "plugins/easings/quad/src/index.lazy.ts",
             "line": 1,
             "column": 10,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "plugins/colors/named/src/conversion.spec.ts",
+            "file": "plugins/poisson/src/PoissonDisc.ts",
             "line": 2,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "plugins/interactivity/src/Options/Interfaces/Events/IEvents.ts",
+            "file": "shapes/polygon/src/TriangleDrawer.ts",
             "line": 2,
-            "column": 1,
+            "column": 10,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "shapes/emoji/src/EmojiDrawer.ts",
-            "line": 13,
+            "file": "updaters/rotate/src/Options/Interfaces/IRotateAnimation.ts",
+            "line": 1,
             "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "updaters/rotate/src/RotateUpdater.ts",
-            "line": 5,
-            "column": 3,
             "message": "Use an `import` instead of an `import type`."
           },
           {
@@ -521,7 +539,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 1456,
+        "count": 1698,
         "samples": [
           {
             "file": ".agents/skills/monitor-ci/scripts/ci-poll-decide.mjs",
@@ -530,50 +548,50 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "cli/commands/create-utils/src/string-utils.ts",
-            "line": 7,
-            "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "engine/src/Utils/MathUtils.ts",
-            "line": 352,
-            "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "palettes/confetti/gold/src/index.lazy.ts",
+            "file": "cli/commands/create/files/create-preset/src/index.ts",
             "line": 8,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "palettes/food/watermelon/src/index.lazy.ts",
-            "line": 9,
-            "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "palettes/water/deepOcean/src/index.ts",
-            "line": 9,
-            "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "plugins/emittersShapes/square/src/index.lazy.ts",
-            "line": 9,
-            "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "shapes/matrix/src/Utils.ts",
-            "line": 217,
+            "file": "integrations/mcp-server/scripts/extractNeedsPlugin.ts",
+            "line": 104,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "websites/ribbons/src/main.js",
-            "line": 418,
+            "file": "palettes/fantasy/iceMagic/src/index.ts",
+            "line": 9,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "palettes/optics/bokehCold/src/index.ts",
+            "line": 9,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "plugins/colors/oklab/src/utils.ts",
+            "line": 89,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "shapes/cards/src/diamonds/index.lazy.ts",
+            "line": 8,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "templates/login/template/svelte/src/App.svelte",
+            "line": 31,
+            "column": 3,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "websites/confetti/src/cookie-consent.js",
+            "line": 129,
             "column": 1,
             "message": "Expected a function expression."
           },
@@ -586,7 +604,7 @@
         ]
       },
       "declaration": {
-        "count": 274,
+        "count": 293,
         "samples": [
           {
             "file": "bundles/all/src/index.lazy.ts",
@@ -596,49 +614,49 @@
           },
           {
             "file": "cli/utils/rollup-plugin/src/config/createSingleConfig.ts",
-            "line": 125,
+            "line": 150,
             "column": 3,
             "message": "Expected a function declaration."
           },
           {
             "file": "cli/utils/rollup-plugin/src/index.ts",
-            "line": 19,
+            "line": 29,
             "column": 14,
             "message": "Expected a function declaration."
           },
           {
-            "file": "demo/solid/src/App.tsx",
-            "line": 7,
+            "file": "demo/vanilla/app.ts",
+            "line": 111,
             "column": 7,
             "message": "Expected a function declaration."
           },
           {
-            "file": "demo/vanilla/public/javascripts/playground.js",
-            "line": 24,
-            "column": 9,
+            "file": "demo/webcomponents/public/javascripts/webcomponents-demo.js",
+            "line": 54,
+            "column": 13,
             "message": "Expected a function declaration."
           },
           {
-            "file": "plugins/colors/oklab/src/utils.ts",
-            "line": 58,
-            "column": 5,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "presets/fireworks/src/options.ts",
-            "line": 25,
-            "column": 9,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "scripts/generate-presets-samples.js",
-            "line": 166,
+            "file": "plugins/interactivity/src/InteractionManager.ts",
+            "line": 146,
             "column": 7,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "scripts/generate-palettes-samples.js",
+            "line": 98,
+            "column": 7,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "templates/tictactoe/template/inferno/src/App.tsx",
+            "line": 50,
+            "column": 9,
             "message": "Expected a function declaration."
           },
           {
             "file": "websites/confetti/src/main.js",
-            "line": 123,
+            "line": 79,
             "column": 7,
             "message": "Expected a function declaration."
           },
@@ -653,7 +671,7 @@
     },
     "import-export-preference": {
       "named": {
-        "count": 1085,
+        "count": 1195,
         "samples": [
           {
             "file": "bundles/all/eslint.config.js",
@@ -662,50 +680,50 @@
             "message": "Prefer named exports"
           },
           {
-            "file": "interactions/external/cannon/eslint.config.js",
-            "line": 4,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "palettes/fantasy/bioluminescence/rollup.config.js",
+            "file": "interactions/external/parallax/rollup.config.js",
             "line": 12,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "palettes/food/spice-rack/eslint.config.js",
-            "line": 4,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "palettes/spectrum/acidPair/rollup.config.js",
+            "file": "palettes/fire/candlelight/rollup.config.js",
             "line": 12,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "plugins/colors/named/rollup.config.js",
+            "file": "palettes/monochromatic/brown/rollup.config.js",
             "line": 12,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "shapes/arrow/eslint.config.js",
+            "file": "palettes/water/deepOcean/eslint.config.js",
             "line": 4,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "utils/configs/src/e/emitterImageShape.ts",
-            "line": 119,
+            "file": "plugins/interactivity/eslint.config.js",
+            "line": 4,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "utils/configs/src/s/seaAnemone.ts",
-            "line": 92,
+            "file": "templates/login/template/react/src/App.tsx",
+            "line": 33,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "utils/configs/src/c/confettiExplosions.ts",
+            "line": 154,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "utils/configs/src/r/repulseCirc.ts",
+            "line": 59,
             "column": 8,
             "message": "Prefer named exports"
           },
@@ -718,7 +736,7 @@
         ]
       },
       "default": {
-        "count": 1373,
+        "count": 1442,
         "samples": [
           {
             "file": "bundles/all/src/index.lazy.ts",
@@ -727,50 +745,50 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "engine/src/Options/Classes/FullScreen/FullScreen.ts",
-            "line": 11,
+            "file": "engine/src/Options/Classes/Particles/Move/Move.ts",
+            "line": 19,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "palettes/atmospheric/shockwave/src/options.ts",
+            "file": "palettes/atmospheric/smokeCold/src/options.ts",
             "line": 3,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "palettes/fireworks/green/src/index.ts",
-            "line": 9,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "palettes/monochromatic/cyan/src/index.ts",
-            "line": 9,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "palettes/spectrum/rgbPrimaries/src/index.lazy.ts",
+            "file": "palettes/fireworks/multicolor/src/index.lazy.ts",
             "line": 8,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "plugins/easings/bounce/src/index.lazy.ts",
-            "line": 8,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "plugins/sounds/src/Options/Classes/Sounds.ts",
+            "file": "palettes/monochromatic/purples/src/index.ts",
             "line": 7,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "shapes/polygon/src/TriangleDrawer.ts",
+            "file": "palettes/tech/vaporwave/src/index.lazy.ts",
+            "line": 8,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "plugins/easings/sine/src/index.ts",
             "line": 10,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "presets/confettiCannon/src/options.ts",
+            "line": 3,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "templates/login/template/angular-confetti/src/app/app.module.ts",
+            "line": 13,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -785,11 +803,11 @@
     },
     "indent": {
       "2-space": {
-        "count": 47,
+        "count": 48,
         "samples": [
           {
             "file": "cli/commands/create-utils/src/create-project.ts",
-            "line": 91,
+            "line": 93,
             "column": 1,
             "message": "Expected 2-space indentation, but file uses 1-space indentation."
           },
@@ -806,10 +824,10 @@
             "message": "Expected spaces for indentation, but found tabs."
           },
           {
-            "file": "demo/webcomponents/app.js",
-            "line": 14,
+            "file": "integrations/mcp-server/src/prompts/generateOptions.ts",
+            "line": 22,
             "column": 1,
-            "message": "Expected 2-space indentation, but file uses 1-space indentation."
+            "message": "Expected 2-space indentation, but file uses 3-space indentation."
           },
           {
             "file": "wrappers/inferno/src/ParticlesProvider.tsx",
@@ -818,14 +836,14 @@
             "message": "Expected spaces for indentation, but found tabs."
           },
           {
-            "file": "wrappers/svelte/vite.config.ts",
-            "line": 5,
+            "file": "wrappers/svelte/svelte.config.js",
+            "line": 8,
             "column": 1,
             "message": "Expected spaces for indentation, but found tabs."
           },
           {
-            "file": "wrappers/wordpress/src/plugins/bundles.js",
-            "line": 5,
+            "file": "wrappers/wordpress/src/load.js",
+            "line": 11,
             "column": 1,
             "message": "Expected spaces for indentation, but found tabs."
           },
@@ -850,7 +868,7 @@
         ]
       },
       "4-space": {
-        "count": 3165,
+        "count": 3463,
         "samples": [
           {
             "file": ".agents/skills/monitor-ci/scripts/ci-poll-decide.mjs",
@@ -859,49 +877,49 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "effects/trail/src/index.ts",
-            "line": 10,
+            "file": "engine/src/Core/Interfaces/IParticleHslAnimation.ts",
+            "line": 6,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "interactions/particles/links/src/LinkInstance.ts",
-            "line": 2,
+            "file": "palettes/atmosphere/coloredSmokeGreen/rollup.config.js",
+            "line": 7,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "palettes/fireworks/gold/src/index.ts",
-            "line": 10,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "palettes/monochromatic/yellows/src/index.lazy.ts",
-            "line": 9,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "paths/fractalNoise/src/index.ts",
-            "line": 13,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "plugins/exports/json/src/index.ts",
-            "line": 11,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "shapes/emoji/src/browser.ts",
+            "file": "palettes/fireworks/purpleStroke/src/options.ts",
             "line": 4,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "utils/configs/src/f/fireworks.ts",
+            "file": "palettes/pastel/sunset/src/index.lazy.ts",
+            "line": 9,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "plugins/colors/hsl/src/index.lazy.ts",
+            "line": 10,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "plugins/themes/src/types.ts",
+            "line": 9,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "templates/landing/template/vue2/src/App.vue",
+            "line": 74,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "utils/configs/src/c/colorAnimation.ts",
             "line": 4,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
@@ -915,7 +933,7 @@
         ]
       },
       "tab": {
-        "count": 3539,
+        "count": 3845,
         "samples": [
           {
             "file": ".agents/skills/monitor-ci/scripts/ci-poll-decide.mjs",
@@ -924,50 +942,50 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "effects/shadow/src/browser.ts",
+            "file": "engine/src/Core/Interfaces/ICoordinates.ts",
+            "line": 7,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "palettes/atmosphere/coloredSmokeMagenta/src/options.ts",
             "line": 4,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "interactions/particles/links/src/index.ts",
-            "line": 13,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "palettes/fireworks/copperStroke/src/options.ts",
-            "line": 4,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "palettes/monochromatic/yellows/src/browser.ts",
-            "line": 4,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "paths/brownian/src/IBrownianPathOptions.ts",
+            "file": "palettes/fireworks/pastelStroke/eslint.config.js",
             "line": 5,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "plugins/emittersShapes/path/src/EmittersPathShapeGenerator.ts",
-            "line": 8,
+            "file": "palettes/pastel/cool/rollup.config.js",
+            "line": 7,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "shapes/arrow/src/index.ts",
-            "line": 10,
+            "file": "plugins/blend/src/browser.ts",
+            "line": 4,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "utils/configs/src/b/index.ts",
-            "line": 12,
+            "file": "plugins/responsive/src/ResponsiveMode.ts",
+            "line": 2,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "shapes/star/src/IStarShape.ts",
+            "line": 6,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "updaters/wobble/eslint.config.js",
+            "line": 5,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -982,7 +1000,7 @@
     },
     "quotes": {
       "double": {
-        "count": 2811,
+        "count": 3201,
         "samples": [
           {
             "file": "cli/commands/build-bundle-webpack/.dependency-cruiser.cjs",
@@ -991,51 +1009,51 @@
             "message": "Strings must use doublequote."
           },
           {
-            "file": "cli/commands/build-distfiles/.dependency-cruiser.cjs",
-            "line": 202,
-            "column": 17,
+            "file": "cli/commands/build-diststats/.dependency-cruiser.cjs",
+            "line": 64,
+            "column": 11,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "cli/commands/build-tsc/.dependency-cruiser.cjs",
-            "line": 150,
+            "file": "cli/commands/create-app/.dependency-cruiser.cjs",
+            "line": 159,
             "column": 15,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "cli/commands/create-palette/.dependency-cruiser.cjs",
-            "line": 104,
+            "file": "cli/commands/create-path/.dependency-cruiser.cjs",
+            "line": 44,
+            "column": 11,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "cli/commands/create-updater/.dependency-cruiser.cjs",
+            "line": 103,
+            "column": 9,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "demo/ionic/src/app/explore-container/explore-container.component.ts",
+            "line": 4,
+            "column": 13,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "demo/svelte/src/main.ts",
+            "line": 2,
             "column": 17,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "cli/commands/create-shape/.dependency-cruiser.cjs",
-            "line": 66,
-            "column": 11,
+            "file": "websites/confetti/src/main.js",
+            "line": 200,
+            "column": 36,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "cli/utils/rollup-plugin/src/config/umdPolicy.ts",
-            "line": 284,
-            "column": 5,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "demo/lit/rollup.config.js",
-            "line": 23,
-            "column": 11,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "websites/confetti/src/cookie-consent.js",
-            "line": 81,
-            "column": 30,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "wrappers/ember/.template-lintrc.js",
-            "line": 4,
-            "column": 12,
+            "file": "websites/ribbons/src/main.js",
+            "line": 476,
+            "column": 28,
             "message": "Strings must use doublequote."
           },
           {
@@ -1047,7 +1065,7 @@
         ]
       },
       "single": {
-        "count": 26239,
+        "count": 33657,
         "samples": [
           {
             "file": ".agents/skills/monitor-ci/scripts/ci-poll-decide.mjs",
@@ -1056,51 +1074,51 @@
             "message": "Strings must use singlequote."
           },
           {
-            "file": "cli/commands/create-utils/tests/string-utils.test.ts",
-            "line": 43,
-            "column": 55,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "effects/filter/src/index.lazy.ts",
-            "line": 12,
-            "column": 31,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "palettes/confetti/monochromeBlue/src/browser.ts",
-            "line": 10,
+            "file": "cli/utils/depcruise-config/src/defaultConfig.ts",
+            "line": 144,
             "column": 15,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "palettes/monochromatic/oranges/src/options.ts",
-            "line": 14,
-            "column": 9,
+            "file": "integrations/mcp-server/src/index.ts",
+            "line": 34,
+            "column": 21,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "plugins/colors/hsv/src/conversion.spec.ts",
-            "line": 17,
-            "column": 15,
+            "file": "palettes/atmospheric/heatHaze/src/index.ts",
+            "line": 2,
+            "column": 25,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "scripts/generate-presets-samples.js",
-            "line": 294,
+            "file": "palettes/optics/bokehCold/eslint.config.js",
+            "line": 1,
+            "column": 37,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "plugins/infection/src/Options/Interfaces/IInfectionStage.ts",
+            "line": 1,
+            "column": 36,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "templates/landing/template/nuxt4/app.vue",
+            "line": 26,
             "column": 11,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "utils/configs/src/i/images.ts",
-            "line": 14,
-            "column": 15,
+            "file": "updaters/rotate/src/RotateUpdater.ts",
+            "line": 146,
+            "column": 33,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "websites/website/docs/.vitepress/config.ts",
-            "line": 59,
-            "column": 31,
+            "file": "utils/configs/src/w/wobbleBig.ts",
+            "line": 43,
+            "column": 14,
             "message": "Strings must use singlequote."
           },
           {
@@ -1114,7 +1132,7 @@
     },
     "react-destructuring-assignment": {
       "never": {
-        "count": 13,
+        "count": 19,
         "samples": [
           {
             "file": "cli/commands/create/files/create-preset/src/bundle.ts",
@@ -1124,15 +1142,9 @@
           },
           {
             "file": "demo/inferno/src/components/Incrementer.tsx",
-            "line": 29,
+            "line": 30,
             "column": 11,
-            "message": "Must never use destructuring props assignment"
-          },
-          {
-            "file": "demo/nextjs-legacy/pages/_app.js",
-            "line": 13,
-            "column": 1,
-            "message": "Must never use destructuring props assignment in SFC argument"
+            "message": "Must never use destructuring state assignment"
           },
           {
             "file": "demo/nextjs/app/layout.tsx",
@@ -1141,15 +1153,27 @@
             "message": "Must never use destructuring props assignment in SFC argument"
           },
           {
-            "file": "demo/nextjs/app/providers.tsx",
+            "file": "templates/landing/template/nextjs/src/app/providers.tsx",
             "line": 7,
             "column": 8,
             "message": "Must never use destructuring props assignment in SFC argument"
           },
           {
+            "file": "templates/portfolio/template/nextjs/src/app/providers.tsx",
+            "line": 7,
+            "column": 8,
+            "message": "Must never use destructuring props assignment in SFC argument"
+          },
+          {
+            "file": "templates/scaffold/template/nextjs/src/app/providers.tsx",
+            "line": 7,
+            "column": 16,
+            "message": "Must never use destructuring props assignment in SFC argument"
+          },
+          {
             "file": "wrappers/inferno/src/Particles.tsx",
-            "line": 70,
-            "column": 9,
+            "line": 54,
+            "column": 10,
             "message": "Must never use destructuring props assignment"
           },
           {
@@ -1159,16 +1183,10 @@
             "message": "Must never use destructuring props assignment in SFC argument"
           },
           {
-            "file": "wrappers/preact/src/Particles.tsx",
-            "line": 97,
-            "column": 11,
+            "file": "wrappers/react/lib/Particles.tsx",
+            "line": 7,
+            "column": 9,
             "message": "Must never use destructuring props assignment"
-          },
-          {
-            "file": "wrappers/react/lib/ParticlesProvider.tsx",
-            "line": 21,
-            "column": 63,
-            "message": "Must never use destructuring props assignment in SFC argument"
           },
           {
             "file": "wrappers/wordpress/src/edit.js",
@@ -1179,7 +1197,7 @@
         ]
       },
       "always": {
-        "count": 37,
+        "count": 89,
         "samples": [
           {
             "file": "cli/commands/create/files/create-preset/src/bundle.ts",
@@ -1188,63 +1206,63 @@
             "message": "Identifier `loadTemplatePreset` has already been declared"
           },
           {
-            "file": "demo/preact/src/components/app.js",
-            "line": 71,
-            "column": 71,
+            "file": "templates/login/template/inferno/src/App.tsx",
+            "line": 70,
+            "column": 19,
             "message": "Must use destructuring state assignment"
           },
           {
-            "file": "wrappers/inferno/src/Particles.tsx",
-            "line": 25,
-            "column": 26,
-            "message": "Must use destructuring props assignment"
+            "file": "templates/login/template/inferno/src/App.tsx",
+            "line": 123,
+            "column": 20,
+            "message": "Must use destructuring state assignment"
+          },
+          {
+            "file": "templates/login/template/inferno/src/App.tsx",
+            "line": 144,
+            "column": 38,
+            "message": "Must use destructuring state assignment"
           },
           {
             "file": "wrappers/inferno/src/ParticlesProvider.tsx",
-            "line": 114,
-            "column": 10,
-            "message": "Must use destructuring state assignment"
-          },
-          {
-            "file": "wrappers/preact/src/Particles.tsx",
-            "line": 46,
-            "column": 26,
-            "message": "Must use destructuring state assignment"
-          },
-          {
-            "file": "wrappers/preact/src/Particles.tsx",
-            "line": 50,
-            "column": 31,
+            "line": 81,
+            "column": 24,
             "message": "Must use destructuring props assignment"
           },
           {
             "file": "wrappers/preact/src/Particles.tsx",
-            "line": 54,
+            "line": 51,
+            "column": 28,
+            "message": "Must use destructuring props assignment"
+          },
+          {
+            "file": "wrappers/preact/src/Particles.tsx",
+            "line": 65,
+            "column": 9,
+            "message": "Must use destructuring props assignment"
+          },
+          {
+            "file": "wrappers/preact/src/Particles.tsx",
+            "line": 78,
             "column": 37,
             "message": "Must use destructuring props assignment"
           },
           {
             "file": "wrappers/preact/src/Particles.tsx",
-            "line": 104,
-            "column": 16,
-            "message": "Must use destructuring props assignment"
-          },
-          {
-            "file": "wrappers/preact/src/Particles.tsx",
-            "line": 133,
+            "line": 159,
             "column": 11,
             "message": "Must use destructuring props assignment"
           },
           {
-            "file": "wrappers/preact/src/Particles.tsx",
-            "line": 141,
-            "column": 11,
+            "file": "wrappers/solid/src/Particles.tsx",
+            "line": 36,
+            "column": 19,
             "message": "Must use destructuring props assignment"
           }
         ]
       },
       "always-in-signature": {
-        "count": 38,
+        "count": 90,
         "samples": [
           {
             "file": "cli/commands/create/files/create-preset/src/bundle.ts",
@@ -1253,27 +1271,27 @@
             "message": "Identifier `loadTemplatePreset` has already been declared"
           },
           {
-            "file": "demo/preact/src/components/app.js",
-            "line": 71,
-            "column": 71,
+            "file": "templates/login/template/inferno/src/App.tsx",
+            "line": 70,
+            "column": 19,
             "message": "Must use destructuring state assignment"
           },
           {
-            "file": "wrappers/inferno/src/Particles.tsx",
-            "line": 25,
-            "column": 26,
-            "message": "Must use destructuring props assignment"
+            "file": "templates/login/template/inferno/src/App.tsx",
+            "line": 123,
+            "column": 20,
+            "message": "Must use destructuring state assignment"
+          },
+          {
+            "file": "templates/login/template/inferno/src/App.tsx",
+            "line": 147,
+            "column": 22,
+            "message": "Must use destructuring state assignment"
           },
           {
             "file": "wrappers/inferno/src/ParticlesProvider.tsx",
             "line": 114,
             "column": 10,
-            "message": "Must use destructuring state assignment"
-          },
-          {
-            "file": "wrappers/preact/src/Particles.tsx",
-            "line": 46,
-            "column": 26,
             "message": "Must use destructuring state assignment"
           },
           {
@@ -1284,32 +1302,32 @@
           },
           {
             "file": "wrappers/preact/src/Particles.tsx",
-            "line": 55,
+            "line": 65,
+            "column": 9,
+            "message": "Must use destructuring props assignment"
+          },
+          {
+            "file": "wrappers/preact/src/Particles.tsx",
+            "line": 79,
             "column": 59,
             "message": "Must use destructuring props assignment"
           },
           {
             "file": "wrappers/preact/src/Particles.tsx",
-            "line": 120,
-            "column": 10,
-            "message": "Must use destructuring state assignment"
-          },
-          {
-            "file": "wrappers/preact/src/Particles.tsx",
-            "line": 134,
+            "line": 160,
             "column": 15,
             "message": "Must use destructuring props assignment"
           },
           {
-            "file": "wrappers/react/lib/Particles.tsx",
-            "line": 7,
-            "column": 9,
-            "message": "Must destructure props in the function signature."
+            "file": "wrappers/solid/src/Particles.tsx",
+            "line": 36,
+            "column": 19,
+            "message": "Must use destructuring props assignment"
           }
         ]
       },
       "always-outside-signature": {
-        "count": 37,
+        "count": 89,
         "samples": [
           {
             "file": "cli/commands/create/files/create-preset/src/bundle.ts",
@@ -1318,57 +1336,57 @@
             "message": "Identifier `loadTemplatePreset` has already been declared"
           },
           {
-            "file": "demo/preact/src/components/app.js",
-            "line": 71,
-            "column": 71,
+            "file": "templates/login/template/inferno/src/App.tsx",
+            "line": 70,
+            "column": 19,
             "message": "Must use destructuring state assignment"
           },
           {
-            "file": "wrappers/inferno/src/Particles.tsx",
-            "line": 25,
-            "column": 26,
-            "message": "Must use destructuring props assignment"
+            "file": "templates/login/template/inferno/src/App.tsx",
+            "line": 123,
+            "column": 20,
+            "message": "Must use destructuring state assignment"
+          },
+          {
+            "file": "templates/login/template/inferno/src/App.tsx",
+            "line": 144,
+            "column": 38,
+            "message": "Must use destructuring state assignment"
           },
           {
             "file": "wrappers/inferno/src/ParticlesProvider.tsx",
-            "line": 114,
-            "column": 10,
-            "message": "Must use destructuring state assignment"
-          },
-          {
-            "file": "wrappers/preact/src/Particles.tsx",
-            "line": 46,
-            "column": 26,
-            "message": "Must use destructuring state assignment"
-          },
-          {
-            "file": "wrappers/preact/src/Particles.tsx",
-            "line": 50,
-            "column": 31,
+            "line": 81,
+            "column": 24,
             "message": "Must use destructuring props assignment"
           },
           {
             "file": "wrappers/preact/src/Particles.tsx",
-            "line": 54,
+            "line": 51,
+            "column": 28,
+            "message": "Must use destructuring props assignment"
+          },
+          {
+            "file": "wrappers/preact/src/Particles.tsx",
+            "line": 65,
+            "column": 9,
+            "message": "Must use destructuring props assignment"
+          },
+          {
+            "file": "wrappers/preact/src/Particles.tsx",
+            "line": 78,
             "column": 37,
             "message": "Must use destructuring props assignment"
           },
           {
             "file": "wrappers/preact/src/Particles.tsx",
-            "line": 104,
-            "column": 16,
-            "message": "Must use destructuring props assignment"
-          },
-          {
-            "file": "wrappers/preact/src/Particles.tsx",
-            "line": 133,
+            "line": 159,
             "column": 11,
             "message": "Must use destructuring props assignment"
           },
           {
-            "file": "wrappers/preact/src/Particles.tsx",
-            "line": 141,
-            "column": 11,
+            "file": "wrappers/solid/src/Particles.tsx",
+            "line": 36,
+            "column": 19,
             "message": "Must use destructuring props assignment"
           }
         ]
@@ -1398,7 +1416,7 @@
           },
           {
             "file": "demo/solid/src/App.tsx",
-            "line": 7,
+            "line": 15,
             "column": 24,
             "message": "Function component is not a function declaration"
           },
@@ -1416,14 +1434,14 @@
           },
           {
             "file": "wrappers/solid/src/Particles.tsx",
-            "line": 9,
+            "line": 6,
             "column": 19,
             "message": "Function component is not a function declaration"
           }
         ]
       },
       "arrow-function": {
-        "count": 15,
+        "count": 55,
         "samples": [
           {
             "file": "cli/commands/create/files/create-preset/src/bundle.ts",
@@ -1432,51 +1450,51 @@
             "message": "Identifier `loadTemplatePreset` has already been declared"
           },
           {
-            "file": "demo/nextjs-legacy/pages/_app.js",
-            "line": 13,
-            "column": 1,
-            "message": "Function component is not an arrow function"
-          },
-          {
-            "file": "demo/nextjs-legacy/pages/index.js",
-            "line": 7,
-            "column": 16,
-            "message": "Function component is not an arrow function"
-          },
-          {
-            "file": "demo/nextjs/app/layout.tsx",
-            "line": 4,
-            "column": 16,
-            "message": "Function component is not an arrow function"
-          },
-          {
             "file": "demo/nextjs/app/page.tsx",
             "line": 11,
             "column": 16,
             "message": "Function component is not an arrow function"
           },
           {
-            "file": "demo/nextjs/app/providers.tsx",
-            "line": 7,
-            "column": 8,
+            "file": "templates/confetti/template/react/src/App.tsx",
+            "line": 13,
+            "column": 16,
             "message": "Function component is not an arrow function"
           },
           {
-            "file": "demo/react/src/App.jsx",
+            "file": "templates/landing/template/solid/src/App.tsx",
             "line": 6,
-            "column": 1,
+            "column": 16,
             "message": "Function component is not an arrow function"
           },
           {
-            "file": "templates/react/template/src/App.js",
-            "line": 7,
-            "column": 1,
+            "file": "templates/particles/template/nextjs/src/app/page.tsx",
+            "line": 30,
+            "column": 16,
             "message": "Function component is not an arrow function"
           },
           {
-            "file": "wrappers/nextjs/lib/index.tsx",
-            "line": 17,
+            "file": "templates/portfolio/template/preact/src/App.tsx",
+            "line": 34,
             "column": 8,
+            "message": "Function component is not an arrow function"
+          },
+          {
+            "file": "templates/ribbons/template/nextjs/src/app/page.tsx",
+            "line": 5,
+            "column": 16,
+            "message": "Function component is not an arrow function"
+          },
+          {
+            "file": "templates/scaffold/template/nextjs/src/app/page.tsx",
+            "line": 28,
+            "column": 16,
+            "message": "Function component is not an arrow function"
+          },
+          {
+            "file": "templates/tictactoe/template/nextjs/src/app/providers.tsx",
+            "line": 11,
+            "column": 16,
             "message": "Function component is not an arrow function"
           },
           {
@@ -1501,7 +1519,7 @@
         ]
       },
       "always": {
-        "count": 4,
+        "count": 47,
         "samples": [
           {
             "file": "cli/commands/create/files/create-preset/src/bundle.ts",
@@ -1510,22 +1528,58 @@
             "message": "Identifier `loadTemplatePreset` has already been declared"
           },
           {
-            "file": "demo/nextjs/app/page.tsx",
-            "line": 37,
-            "column": 110,
-            "message": "Value must be set for boolean attribute `priority`"
+            "file": "templates/login/template/inferno/src/App.tsx",
+            "line": 126,
+            "column": 48,
+            "message": "Value must be set for boolean attribute `noValidate`"
           },
           {
-            "file": "demo/nextjs/app/page.tsx",
-            "line": 43,
-            "column": 99,
-            "message": "Value must be set for boolean attribute `priority`"
+            "file": "templates/login/template/nextjs/src/app/page.tsx",
+            "line": 147,
+            "column": 146,
+            "message": "Value must be set for boolean attribute `required`"
           },
           {
-            "file": "demo/nextjs/app/page.tsx",
-            "line": 45,
-            "column": 70,
-            "message": "Value must be set for boolean attribute `priority`"
+            "file": "templates/login/template/qwik/src/App.tsx",
+            "line": 113,
+            "column": 182,
+            "message": "Value must be set for boolean attribute `required`"
+          },
+          {
+            "file": "templates/login/template/solid/src/App.tsx",
+            "line": 120,
+            "column": 41,
+            "message": "Value must be set for boolean attribute `novalidate`"
+          },
+          {
+            "file": "templates/portfolio/template/inferno/src/App.tsx",
+            "line": 90,
+            "column": 58,
+            "message": "Value must be set for boolean attribute `required`"
+          },
+          {
+            "file": "templates/portfolio/template/nextjs/src/app/page.tsx",
+            "line": 87,
+            "column": 59,
+            "message": "Value must be set for boolean attribute `required`"
+          },
+          {
+            "file": "templates/portfolio/template/qwik/src/App.tsx",
+            "line": 96,
+            "column": 58,
+            "message": "Value must be set for boolean attribute `required`"
+          },
+          {
+            "file": "templates/portfolio/template/solid/src/App.tsx",
+            "line": 88,
+            "column": 56,
+            "message": "Value must be set for boolean attribute `required`"
+          },
+          {
+            "file": "templates/portfolio/template/stencil/src/components/app-home/app-home.tsx",
+            "line": 101,
+            "column": 61,
+            "message": "Value must be set for boolean attribute `required`"
           }
         ]
       }
@@ -1543,7 +1597,7 @@
         ]
       },
       "element": {
-        "count": 5,
+        "count": 21,
         "samples": [
           {
             "file": "cli/commands/create/files/create-preset/src/bundle.ts",
@@ -1552,20 +1606,50 @@
             "message": "Identifier `loadTemplatePreset` has already been declared"
           },
           {
-            "file": "demo/nextjs/app/head.tsx",
-            "line": 3,
-            "column": 5,
-            "message": "Prefer React.Fragment over fragment shorthand"
-          },
-          {
             "file": "demo/qwik/src/root.tsx",
-            "line": 20,
+            "line": 13,
             "column": 5,
             "message": "Prefer React.Fragment over fragment shorthand"
           },
           {
-            "file": "wrappers/qwik/src/root.tsx",
-            "line": 16,
+            "file": "templates/landing/template/preact/src/App.tsx",
+            "line": 40,
+            "column": 5,
+            "message": "Prefer React.Fragment over fragment shorthand"
+          },
+          {
+            "file": "templates/login/template/solid/src/App.tsx",
+            "line": 111,
+            "column": 5,
+            "message": "Prefer React.Fragment over fragment shorthand"
+          },
+          {
+            "file": "templates/particles/template/nextjs/src/app/page.tsx",
+            "line": 32,
+            "column": 5,
+            "message": "Prefer React.Fragment over fragment shorthand"
+          },
+          {
+            "file": "templates/particles/template/qwik/src/App.tsx",
+            "line": 32,
+            "column": 5,
+            "message": "Prefer React.Fragment over fragment shorthand"
+          },
+          {
+            "file": "templates/portfolio/template/nextjs/src/app/providers.tsx",
+            "line": 19,
+            "column": 10,
+            "message": "Prefer React.Fragment over fragment shorthand"
+          },
+          {
+            "file": "templates/scaffold/template/solid/src/App.tsx",
+            "line": 36,
+            "column": 5,
+            "message": "Prefer React.Fragment over fragment shorthand"
+          },
+          {
+            "file": "templates/tictactoe/template/solid/src/App.tsx",
+            "line": 127,
             "column": 5,
             "message": "Prefer React.Fragment over fragment shorthand"
           },
@@ -1645,7 +1729,7 @@
         ]
       },
       "never": {
-        "count": 32666,
+        "count": 37465,
         "samples": [
           {
             "file": ".agents/skills/monitor-ci/scripts/ci-poll-decide.mjs",
@@ -1654,51 +1738,51 @@
             "message": "Extra semicolon."
           },
           {
-            "file": "demo/nextjs-legacy/pages/index.js",
-            "line": 165,
-            "column": 4,
+            "file": "demo/vanilla/app.ts",
+            "line": 281,
+            "column": 45,
             "message": "Extra semicolon."
           },
           {
-            "file": "engine/src/Options/Interfaces/IAnimation.ts",
+            "file": "integrations/mcp-server/src/resources/optionsGuide.ts",
+            "line": 121,
+            "column": 82,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "palettes/confetti/rainbow/rollup.config.js",
             "line": 3,
-            "column": 74,
+            "column": 44,
             "message": "Extra semicolon."
           },
           {
-            "file": "palettes/atmosphere/coloredSmokeBlue/eslint.config.js",
-            "line": 1,
-            "column": 65,
+            "file": "palettes/water/splash/rollup.config.js",
+            "line": 3,
+            "column": 44,
             "message": "Extra semicolon."
           },
           {
-            "file": "palettes/optics/bokehGold/src/browser.ts",
-            "line": 10,
-            "column": 27,
+            "file": "plugins/interactivity/src/InteractionManager.ts",
+            "line": 107,
+            "column": 49,
             "message": "Extra semicolon."
           },
           {
-            "file": "plugins/colors/rgb/src/conversion.spec.ts",
-            "line": 24,
-            "column": 59,
+            "file": "shapes/cards/src/utils.ts",
+            "line": 202,
+            "column": 52,
             "message": "Extra semicolon."
           },
           {
-            "file": "plugins/sounds/src/SoundsPluginInstance.ts",
-            "line": 20,
-            "column": 66,
+            "file": "templates/scaffold/template/lit/src/main.ts",
+            "line": 7,
+            "column": 25,
             "message": "Extra semicolon."
           },
           {
-            "file": "shapes/text/rollup.config.js",
-            "line": 4,
-            "column": 29,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "utils/tests/src/tests/SpatialGrid.ts",
-            "line": 29,
-            "column": 5,
+            "file": "utils/smoothValueNoise/src/SmoothValueNoise.ts",
+            "line": 118,
+            "column": 40,
             "message": "Extra semicolon."
           },
           {

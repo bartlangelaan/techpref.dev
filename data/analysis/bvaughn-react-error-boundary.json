@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "96d58f23c7cc",
-  "analyzedCommit": "c3bcfebcfbbd56e98c9cc196abc3491bec9dcc8a",
-  "analyzedCommitDate": "2026-05-25T14:02:48.000Z",
+  "analyzedCommit": "8399123482422c60ae5fd12979f08945d548f003",
+  "analyzedCommitDate": "2026-06-20T15:48:10.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -9,25 +9,19 @@
         "samples": []
       },
       "generic": {
-        "count": 21,
+        "count": 18,
         "samples": [
           {
-            "file": "integrations/vite/src/components/Children.tsx",
-            "line": 13,
-            "column": 30,
-            "message": "Array type using 'SizeProps[]' is forbidden. Use 'Array<SizeProps>' instead."
-          },
-          {
-            "file": "integrations/vite/src/utils/cn.ts",
-            "line": 4,
-            "column": 31,
-            "message": "Array type using 'ClassValue[]' is forbidden. Use 'Array<ClassValue>' instead."
+            "file": "integrations/vite/tests/utils/serializer/decode.ts",
+            "line": 33,
+            "column": 43,
+            "message": "Array type using 'EncodedElement[]' is forbidden. Use 'Array<EncodedElement>' instead."
           },
           {
             "file": "integrations/vite/tests/utils/serializer/decode.ts",
-            "line": 39,
-            "column": 13,
-            "message": "Array type using 'EncodedElement[]' is forbidden. Use 'Array<EncodedElement>' instead."
+            "line": 41,
+            "column": 4,
+            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           },
           {
             "file": "integrations/vite/tests/utils/serializer/encode.ts",
@@ -48,9 +42,15 @@
             "message": "Array type using 'unknown[]' is forbidden. Use 'Array<unknown>' instead."
           },
           {
+            "file": "lib/components/ErrorBoundary.test.tsx",
+            "line": 312,
+            "column": 33,
+            "message": "Array type using 'unknown[]' is forbidden. Use 'Array<unknown>' instead."
+          },
+          {
             "file": "lib/components/ErrorBoundary.tsx",
-            "line": 60,
-            "column": 31,
+            "line": 148,
+            "column": 29,
             "message": "Array type using 'unknown[]' is forbidden. Use 'Array<unknown>' instead."
           },
           {
@@ -109,14 +109,8 @@
     },
     "consistent-type-definitions": {
       "interface": {
-        "count": 9,
+        "count": 8,
         "samples": [
-          {
-            "file": "integrations/vite/src/components/Children.tsx",
-            "line": 3,
-            "column": 8,
-            "message": "Use `interface` instead of `type`."
-          },
           {
             "file": "integrations/vite/tests/utils/serializer/decode.ts",
             "line": 25,
@@ -221,7 +215,7 @@
         "samples": []
       },
       "no-type-imports": {
-        "count": 68,
+        "count": 65,
         "samples": [
           {
             "file": "integrations/vite/src/components/Container.tsx",
@@ -230,21 +224,21 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "integrations/vite/tests/utils/expectLayout.ts",
+            "file": "integrations/vite/tests/utils/expectPanelSize.ts",
             "line": 1,
             "column": 18,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "integrations/vite/tests/utils/goToUrlWithIframe.ts",
-            "line": 1,
+            "line": 2,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "integrations/vite/tests/utils/serializer/encode.ts",
             "line": 1,
-            "column": 10,
+            "column": 34,
             "message": "Use an `import` instead of an `import type`."
           },
           {
@@ -254,9 +248,9 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "integrations/vite/tests/utils/updateUrl.ts",
+            "file": "lib/components/ErrorBoundary.test.tsx",
             "line": 3,
-            "column": 1,
+            "column": 3,
             "message": "Use an `import` instead of an `import type`."
           },
           {
@@ -288,7 +282,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 78,
+        "count": 71,
         "samples": [
           {
             "file": "integrations/vite/src/components/Container.tsx",
@@ -297,50 +291,50 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "integrations/vite/tests/utils/debugging/logDebugState.ts",
+            "file": "integrations/vite/tests/utils/getCenterCoordinates.ts",
             "line": 3,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "integrations/vite/tests/utils/pointer-interactions/resizeHelper.ts",
-            "line": 5,
-            "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
             "file": "integrations/vite/tests/utils/serializer/decode.ts",
-            "line": 166,
+            "line": 101,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "integrations/vite/tests/utils/serializer/encode.ts",
-            "line": 182,
+            "line": 41,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "lib/components/ErrorBoundary.tsx",
-            "line": 148,
-            "column": 1,
+            "file": "integrations/vite/tests/utils/updateUrl.ts",
+            "line": 6,
+            "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "lib/utils/getErrorMessage.ts",
-            "line": 1,
+            "file": "lib/hooks/useErrorBoundary.test.tsx",
+            "line": 20,
+            "column": 3,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "lib/utils/isErrorBoundaryContext.ts",
+            "line": 3,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "src/routes/examples/AsyncUserCodeErrors.tsx",
-            "line": 4,
+            "line": 15,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/routes/examples/FallbackContent.tsx",
-            "line": 9,
+            "file": "src/routes/examples/GetErrorMessage.ts",
+            "line": 3,
             "column": 1,
             "message": "Expected a function expression."
           },
@@ -353,15 +347,8 @@
         ]
       },
       "declaration": {
-        "count": 1,
-        "samples": [
-          {
-            "file": "integrations/vite/src/components/Children.tsx",
-            "line": 8,
-            "column": 14,
-            "message": "Expected a function declaration."
-          }
-        ]
+        "count": 0,
+        "samples": []
       }
     },
     "import-export-preference": {
@@ -431,35 +418,35 @@
         ]
       },
       "default": {
-        "count": 35,
+        "count": 30,
         "samples": [
           {
-            "file": "integrations/vite/src/components/DebugData.tsx",
+            "file": "integrations/vite/src/routes/Home.tsx",
+            "line": 1,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "integrations/vite/tests/utils/debugging/logDebugState.ts",
             "line": 3,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "integrations/vite/tests/utils/calculateBoxBetween.ts",
-            "line": 3,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "integrations/vite/tests/utils/expectLayout.ts",
+            "file": "integrations/vite/tests/utils/expectPanelSize.ts",
             "line": 4,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "integrations/vite/tests/utils/getSeparatorAriaAttributes.ts",
-            "line": 3,
+            "file": "integrations/vite/tests/utils/goToUrlWithIframe.ts",
+            "line": 6,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "integrations/vite/tests/utils/serializer/decode.ts",
-            "line": 32,
+            "file": "integrations/vite/tests/utils/serializer/encode.ts",
+            "line": 34,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -470,20 +457,20 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "lib/utils/withErrorBoundary.ts",
-            "line": 10,
+            "file": "lib/utils/isErrorBoundaryContext.ts",
+            "line": 3,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/components/Link.tsx",
-            "line": 5,
+            "file": "src/routes/examples/AsyncUserCodeErrors.tsx",
+            "line": 36,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/routes/examples/ResetWithUseErrorBoundary.tsx",
-            "line": 12,
+            "file": "src/routes/examples/TransitionErrors.tsx",
+            "line": 30,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -509,7 +496,7 @@
         ]
       },
       "4-space": {
-        "count": 74,
+        "count": 67,
         "samples": [
           {
             "file": "eslint.config.js",
@@ -518,50 +505,50 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "integrations/vite/src/main.tsx",
-            "line": 8,
+            "file": "integrations/vite/tests/utils/calculateBoxBetween.ts",
+            "line": 4,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "integrations/vite/tests/utils/expectLayout.ts",
+            "file": "integrations/vite/tests/utils/goToUrl.ts",
+            "line": 7,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "integrations/vite/tests/utils/updateUrl.ts",
+            "line": 7,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "lib/index.ts",
+            "line": 12,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "scripts/compile-docs.ts",
+            "line": 4,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "src/routes/ErrorBoundaryPropsRoute.tsx",
             "line": 5,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "integrations/vite/tests/utils/serializer/encode.ts",
-            "line": 3,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "lib/hooks/useErrorBoundary.test.tsx",
-            "line": 10,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "lib/utils/withErrorBoundary.ts",
-            "line": 2,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "src/routes.ts",
+            "file": "src/routes/TransitionErrorsRoute.tsx",
             "line": 6,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/routes/ResetNearestBoundaryRoute.tsx",
-            "line": 6,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "src/routes/examples/GetErrorMessage.ts",
-            "line": 6,
+            "file": "src/routes/examples/RenderProp.tsx",
+            "line": 4,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -574,7 +561,7 @@
         ]
       },
       "tab": {
-        "count": 74,
+        "count": 67,
         "samples": [
           {
             "file": "eslint.config.js",
@@ -583,50 +570,50 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "integrations/vite/src/main.tsx",
-            "line": 8,
+            "file": "integrations/vite/tests/utils/calculateBoxBetween.ts",
+            "line": 4,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "integrations/vite/tests/utils/expectLayout.ts",
+            "file": "integrations/vite/tests/utils/goToUrl.ts",
+            "line": 7,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "integrations/vite/tests/utils/updateUrl.ts",
+            "line": 7,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "lib/index.ts",
+            "line": 12,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "scripts/compile-docs.ts",
+            "line": 4,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "src/routes/ErrorBoundaryPropsRoute.tsx",
             "line": 5,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "integrations/vite/tests/utils/serializer/encode.ts",
-            "line": 3,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "lib/hooks/useErrorBoundary.test.tsx",
-            "line": 10,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "lib/utils/withErrorBoundary.ts",
-            "line": 2,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "src/routes.ts",
+            "file": "src/routes/TransitionErrorsRoute.tsx",
             "line": 6,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/routes/ResetNearestBoundaryRoute.tsx",
-            "line": 6,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "src/routes/examples/GetErrorMessage.ts",
-            "line": 6,
+            "file": "src/routes/examples/RenderProp.tsx",
+            "line": 4,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -694,7 +681,7 @@
         ]
       },
       "single": {
-        "count": 485,
+        "count": 474,
         "samples": [
           {
             "file": "eslint.config.js",
@@ -704,50 +691,50 @@
           },
           {
             "file": "integrations/vite/eslint.config.js",
-            "line": 33,
-            "column": 30,
+            "line": 32,
+            "column": 43,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "integrations/vite/tests/utils/goToUrl.ts",
-            "line": 45,
-            "column": 11,
+            "file": "integrations/vite/tests/utils/goToUrlWithIframe.ts",
+            "line": 3,
+            "column": 33,
             "message": "Strings must use singlequote."
           },
           {
             "file": "integrations/vite/tests/utils/serializer/types.ts",
-            "line": 12,
-            "column": 3,
+            "line": 42,
+            "column": 9,
             "message": "Strings must use singlequote."
           },
           {
             "file": "lib/components/ErrorBoundary.test.tsx",
-            "line": 224,
-            "column": 42,
+            "line": 241,
+            "column": 23,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "lib/hooks/useErrorBoundary.ts",
+            "file": "lib/index.ts",
             "line": 1,
-            "column": 47,
+            "column": 1,
             "message": "Strings must use singlequote."
           },
           {
             "file": "src/App.tsx",
-            "line": 8,
-            "column": 8,
+            "line": 9,
+            "column": 28,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/routes.ts",
-            "line": 30,
-            "column": 3,
+            "file": "src/routes/AsyncUserCodeErrorsRoute.tsx",
+            "line": 2,
+            "column": 22,
             "message": "Strings must use singlequote."
           },
           {
             "file": "src/routes/examples/TransitionErrors.tsx",
-            "line": 23,
-            "column": 34,
+            "line": 33,
+            "column": 19,
             "message": "Strings must use singlequote."
           },
           {
@@ -761,17 +748,11 @@
     },
     "react-destructuring-assignment": {
       "never": {
-        "count": 15,
+        "count": 12,
         "samples": [
           {
-            "file": "integrations/vite/src/components/Children.tsx",
-            "line": 8,
-            "column": 25,
-            "message": "Must never use destructuring props assignment in SFC argument"
-          },
-          {
-            "file": "integrations/vite/src/components/DebugData.tsx",
-            "line": 3,
+            "file": "integrations/vite/src/components/Container.tsx",
+            "line": 7,
             "column": 8,
             "message": "Must never use destructuring props assignment in SFC argument"
           },
@@ -783,9 +764,9 @@
           },
           {
             "file": "lib/components/ErrorBoundary.tsx",
-            "line": 82,
+            "line": 81,
             "column": 11,
-            "message": "Must never use destructuring props assignment"
+            "message": "Must never use destructuring state assignment"
           },
           {
             "file": "lib/components/ErrorBoundary.tsx",
@@ -794,10 +775,10 @@
             "message": "Must never use destructuring props assignment"
           },
           {
-            "file": "src/components/ContinueLink.tsx",
-            "line": 4,
-            "column": 8,
-            "message": "Must never use destructuring props assignment in SFC argument"
+            "file": "lib/components/ErrorBoundary.tsx",
+            "line": 107,
+            "column": 11,
+            "message": "Must never use destructuring state assignment"
           },
           {
             "file": "src/components/Link.tsx",
@@ -806,14 +787,20 @@
             "message": "Must never use destructuring props assignment in SFC argument"
           },
           {
-            "file": "src/routes/examples/AsyncUserCodeErrors.tsx",
-            "line": 4,
-            "column": 1,
+            "file": "src/components/NavLink.tsx",
+            "line": 5,
+            "column": 8,
             "message": "Must never use destructuring props assignment in SFC argument"
           },
           {
             "file": "src/routes/examples/AsyncUserCodeErrors.tsx",
             "line": 15,
+            "column": 1,
+            "message": "Must never use destructuring props assignment in SFC argument"
+          },
+          {
+            "file": "src/routes/examples/FallbackComponent.tsx",
+            "line": 3,
             "column": 1,
             "message": "Must never use destructuring props assignment in SFC argument"
           },
@@ -915,70 +902,63 @@
     },
     "react-function-component-definition": {
       "function-declaration": {
-        "count": 1,
-        "samples": [
-          {
-            "file": "integrations/vite/src/components/Children.tsx",
-            "line": 8,
-            "column": 25,
-            "message": "Function component is not a function declaration"
-          }
-        ]
+        "count": 0,
+        "samples": []
       },
       "arrow-function": {
-        "count": 33,
+        "count": 29,
         "samples": [
           {
-            "file": "integrations/vite/src/components/Children.tsx",
-            "line": 8,
-            "column": 25,
-            "message": "Function component is not an arrow function"
-          },
-          {
-            "file": "lib/hooks/useErrorBoundary.test.tsx",
-            "line": 32,
-            "column": 5,
-            "message": "Function component is not an arrow function"
-          },
-          {
-            "file": "src/components/ContinueLink.tsx",
-            "line": 4,
+            "file": "integrations/vite/src/components/Container.tsx",
+            "line": 7,
             "column": 8,
             "message": "Function component is not an arrow function"
           },
           {
-            "file": "src/routes/AsyncUserCodeErrorsRoute.tsx",
-            "line": 4,
-            "column": 16,
+            "file": "lib/hooks/useErrorBoundary.test.tsx",
+            "line": 70,
+            "column": 5,
             "message": "Function component is not an arrow function"
           },
           {
-            "file": "src/routes/FallbackComponentRoute.tsx",
-            "line": 4,
-            "column": 16,
-            "message": "Function component is not an arrow function"
-          },
-          {
-            "file": "src/routes/ResetNearestBoundaryRoute.tsx",
+            "file": "src/components/NavLink.tsx",
             "line": 5,
+            "column": 8,
+            "message": "Function component is not an arrow function"
+          },
+          {
+            "file": "src/routes/ErrorLoggingRoute.tsx",
+            "line": 4,
             "column": 16,
             "message": "Function component is not an arrow function"
           },
           {
-            "file": "src/routes/WithErrorBoundaryRoute.tsx",
-            "line": 6,
+            "file": "src/routes/GetErrorMessageRoute.tsx",
+            "line": 4,
             "column": 16,
             "message": "Function component is not an arrow function"
           },
           {
-            "file": "src/routes/examples/ErrorLogging.tsx",
-            "line": 20,
+            "file": "src/routes/UseErrorBoundaryRoute.tsx",
+            "line": 4,
+            "column": 16,
+            "message": "Function component is not an arrow function"
+          },
+          {
+            "file": "src/routes/examples/AsyncUserCodeErrors.tsx",
+            "line": 15,
             "column": 1,
             "message": "Function component is not an arrow function"
           },
           {
-            "file": "src/routes/examples/FallbackContent.tsx",
-            "line": 9,
+            "file": "src/routes/examples/FallbackComponent.tsx",
+            "line": 3,
+            "column": 1,
+            "message": "Function component is not an arrow function"
+          },
+          {
+            "file": "src/routes/examples/RenderProp.tsx",
+            "line": 21,
             "column": 1,
             "message": "Function component is not an arrow function"
           },
@@ -1049,7 +1029,7 @@
         "samples": []
       },
       "never": {
-        "count": 757,
+        "count": 731,
         "samples": [
           {
             "file": "eslint.config.js",
@@ -1058,50 +1038,50 @@
             "message": "Extra semicolon."
           },
           {
-            "file": "integrations/vite/tests/utils/goToUrl.ts",
-            "line": 4,
-            "column": 45,
+            "file": "integrations/vite/tests/utils/goToUrlWithIframe.ts",
+            "line": 13,
+            "column": 66,
             "message": "Extra semicolon."
           },
           {
             "file": "integrations/vite/tests/utils/serializer/encode.ts",
-            "line": 36,
-            "column": 43,
+            "line": 78,
+            "column": 14,
             "message": "Extra semicolon."
           },
           {
             "file": "lib/components/ErrorBoundary.test.tsx",
-            "line": 61,
-            "column": 5,
+            "line": 81,
+            "column": 25,
             "message": "Extra semicolon."
           },
           {
             "file": "lib/components/ErrorBoundary.test.tsx",
-            "line": 221,
-            "column": 41,
+            "line": 239,
+            "column": 49,
             "message": "Extra semicolon."
           },
           {
             "file": "lib/components/ErrorBoundary.tsx",
-            "line": 52,
-            "column": 65,
+            "line": 82,
+            "column": 37,
             "message": "Extra semicolon."
           },
           {
             "file": "lib/index.ts",
-            "line": 1,
-            "column": 13,
+            "line": 7,
+            "column": 62,
             "message": "Extra semicolon."
           },
           {
             "file": "src/App.tsx",
-            "line": 71,
-            "column": 4,
+            "line": 180,
+            "column": 2,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/routes/examples/GetErrorMessage.ts",
-            "line": 9,
+            "file": "src/routes/examples/RenderProp.tsx",
+            "line": 17,
             "column": 17,
             "message": "Extra semicolon."
           },

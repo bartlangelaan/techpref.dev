@@ -1,16 +1,22 @@
 {
   "analyzedVersion": "96d58f23c7cc",
-  "analyzedCommit": "c419c3ab63b55bc5c41fb31135ad2b704a82fe36",
-  "analyzedCommitDate": "2026-06-03T11:32:11.000Z",
+  "analyzedCommit": "97c6cc3ab33e734cef4a7d096a001e8067cd7391",
+  "analyzedCommitDate": "2026-06-24T01:16:20.000Z",
   "checks": {
     "array-type": {
       "array": {
-        "count": 26,
+        "count": 29,
         "samples": [
           {
             "file": "plugins/notion/server/utils/NotionConverter.ts",
             "line": 589,
             "column": 18,
+            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
+          },
+          {
+            "file": "server/models/WebhookSubscription.ts",
+            "line": 69,
+            "column": 14,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
@@ -26,27 +32,21 @@
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
-            "file": "shared/editor/commands/toggleCheckboxItems.ts",
-            "line": 19,
-            "column": 25,
+            "file": "shared/editor/lib/ChangesetHelper.ts",
+            "line": 331,
+            "column": 26,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
-            "file": "shared/editor/plugins/PlaceholderPlugin.ts",
-            "line": 7,
-            "column": 15,
-            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
-          },
-          {
-            "file": "shared/editor/rules/mention.test.ts",
-            "line": 5,
-            "column": 19,
+            "file": "shared/editor/rules/alphaLists.ts",
+            "line": 15,
+            "column": 24,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
             "file": "shared/types.ts",
-            "line": 633,
-            "column": 13,
+            "line": 608,
+            "column": 12,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
@@ -70,60 +70,60 @@
         ]
       },
       "generic": {
-        "count": 1187,
+        "count": 1225,
         "samples": [
           {
             "file": "app/actions/definitions/documents.tsx",
-            "line": 115,
+            "line": 116,
             "column": 13,
             "message": "Array type using 'NavigationNode[]' is forbidden. Use 'Array<NavigationNode>' instead."
           },
           {
-            "file": "app/editor/components/ToolbarMenu.tsx",
-            "line": 23,
-            "column": 10,
-            "message": "Array type using 'MenuItem[]' is forbidden. Use 'Array<MenuItem>' instead."
+            "file": "app/editor/components/SuggestionsMenu.tsx",
+            "line": 519,
+            "column": 23,
+            "message": "Array type using 'EmbedDescriptor[]' is forbidden. Use 'Array<EmbedDescriptor>' instead."
           },
           {
-            "file": "app/scenes/Invite.tsx",
-            "line": 138,
-            "column": 17,
-            "message": "Array type using 'Option[]' is forbidden. Use 'Array<Option>' instead."
-          },
-          {
-            "file": "app/stores/PinsStore.ts",
+            "file": "app/scenes/Login/OAuthAuthorize.tsx",
             "line": 56,
-            "column": 53,
-            "message": "Array type using 'Pin[]' is forbidden. Use 'Array<Pin>' instead."
+            "column": 39,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
-            "file": "server/commands/documentCollaborativeUpdater.ts",
-            "line": 18,
+            "file": "app/stores/SearchesStore.ts",
+            "line": 15,
+            "column": 17,
+            "message": "Array type using 'SearchQuery[]' is forbidden. Use 'Array<SearchQuery>' instead."
+          },
+          {
+            "file": "server/commands/groupsSyncer.ts",
+            "line": 17,
+            "column": 19,
+            "message": "Array type using 'ExternalGroupData[]' is forbidden. Use 'Array<ExternalGroupData>' instead."
+          },
+          {
+            "file": "server/policies/cancan.ts",
+            "line": 6,
+            "column": 34,
+            "message": "Array type using 'any[]' is forbidden. Use 'Array<any>' instead."
+          },
+          {
+            "file": "server/routes/api/groupMemberships/groupMemberships.ts",
+            "line": 62,
             "column": 27,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
-            "file": "server/models/helpers/ProsemirrorHelper.tsx",
-            "line": 690,
-            "column": 20,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+            "file": "shared/editor/commands/toggleList.ts",
+            "line": 134,
+            "column": 16,
+            "message": "Array type using 'ProsemirrorNode[]' is forbidden. Use 'Array<ProsemirrorNode>' instead."
           },
           {
-            "file": "server/queues/tasks/UpdateDocumentsPopularityScoreTask.ts",
-            "line": 314,
-            "column": 18,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
-          },
-          {
-            "file": "shared/editor/commands/table.ts",
-            "line": 102,
+            "file": "shared/editor/rules/breaks.ts",
+            "line": 46,
             "column": 22,
-            "message": "Array type using 'Node[]' is forbidden. Use 'Array<Node>' instead."
-          },
-          {
-            "file": "shared/editor/rules/checkboxes.ts",
-            "line": 35,
-            "column": 27,
             "message": "Array type using 'Token[]' is forbidden. Use 'Array<Token>' instead."
           },
           {
@@ -189,7 +189,7 @@
           },
           {
             "file": "server/models/helpers/ProsemirrorHelper.tsx",
-            "line": 935,
+            "line": 982,
             "column": 26,
             "message": "The generic type arguments should be specified as part of the constructor type arguments."
           },
@@ -212,50 +212,50 @@
           },
           {
             "file": "app/models/decorators/Relation.ts",
-            "line": 45,
-            "column": 35,
+            "line": 37,
+            "column": 26,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
             "file": "server/models/helpers/ProsemirrorHelper.tsx",
-            "line": 353,
-            "column": 28,
+            "line": 193,
+            "column": 25,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
             "file": "server/queues/tasks/ExportDocumentTreeTask.ts",
-            "line": 237,
-            "column": 24,
+            "line": 175,
+            "column": 28,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "server/queues/tasks/JSONAPIImportTask.ts",
-            "line": 449,
-            "column": 31,
+            "file": "server/queues/tasks/MarkdownAPIImportTask.ts",
+            "line": 181,
+            "column": 27,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "server/storage/requestContext.ts",
-            "line": 9,
-            "column": 52,
+            "file": "server/tools/comments.ts",
+            "line": 198,
+            "column": 39,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "server/utils/fs.ts",
-            "line": 155,
-            "column": 38,
+            "file": "shared/editor/commands/table.ts",
+            "line": 368,
+            "column": 34,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
             "file": "shared/editor/nodes/CodeFence.ts",
-            "line": 76,
-            "column": 23,
+            "line": 462,
+            "column": 46,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "shared/editor/plugins/TableDragState.ts",
-            "line": 18,
-            "column": 46,
+            "file": "shared/editor/queries/getDocumentHighlightColors.ts",
+            "line": 10,
+            "column": 25,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
@@ -315,7 +315,7 @@
           },
           {
             "file": "shared/types.ts",
-            "line": 712,
+            "line": 722,
             "column": 28,
             "message": "A record is preferred over an index signature."
           },
@@ -334,48 +334,48 @@
         ]
       },
       "index-signature": {
-        "count": 290,
+        "count": 297,
         "samples": [
           {
             "file": "app/actions/definitions/shares.tsx",
-            "line": 42,
+            "line": 43,
             "column": 8,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "app/models/base/Model.ts",
-            "line": 93,
-            "column": 15,
-            "message": "An index signature is preferred over a record."
-          },
-          {
-            "file": "plugins/gitlab/server/GitLabIssueProvider.ts",
-            "line": 82,
+            "line": 92,
             "column": 14,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "server/models/Document.ts",
-            "line": 1030,
-            "column": 14,
+            "file": "plugins/github/server/github.ts",
+            "line": 118,
+            "column": 7,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "server/queues/tasks/JSONAPIImportTask.ts",
-            "line": 490,
+            "file": "server/logging/tracing.ts",
+            "line": 201,
             "column": 22,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "server/utils/environment.test.ts",
-            "line": 21,
-            "column": 16,
+            "file": "server/queues/tasks/JSONAPIImportTask.ts",
+            "line": 412,
+            "column": 19,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "shared/editor/extensions/CodeHighlighting.ts",
-            "line": 16,
-            "column": 14,
+            "file": "server/utils/decorators/Public.ts",
+            "line": 22,
+            "column": 29,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "shared/editor/embeds/index.tsx",
+            "line": 83,
+            "column": 11,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -385,9 +385,9 @@
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "shared/editor/queries/table.ts",
-            "line": 530,
-            "column": 10,
+            "file": "shared/editor/rules/tables.test.ts",
+            "line": 13,
+            "column": 26,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -401,7 +401,7 @@
     },
     "consistent-type-definitions": {
       "interface": {
-        "count": 604,
+        "count": 612,
         "samples": [
           {
             "file": "app/components/Analytics.tsx",
@@ -410,32 +410,32 @@
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "app/components/Icons/GoogleIcon.tsx",
+            "file": "app/components/Icons/MarkdownIcon.tsx",
             "line": 1,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "app/components/Sidebar/components/DropCursor.tsx",
-            "line": 4,
+            "file": "app/components/Sidebar/components/Folder.tsx",
+            "line": 1,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "app/hooks/useTableRequest.ts",
-            "line": 11,
+            "file": "app/hooks/useShareBranding.ts",
+            "line": 6,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "app/scenes/Document/components/SharedHeader.tsx",
-            "line": 39,
+            "file": "app/scenes/Document/components/ShareButton.tsx",
+            "line": 22,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
             "file": "app/types.ts",
-            "line": 54,
+            "line": 49,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
@@ -447,13 +447,13 @@
           },
           {
             "file": "server/models/helpers/ProsemirrorHelper.tsx",
-            "line": 66,
+            "line": 49,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "shared/editor/components/Img.tsx",
-            "line": 4,
+            "file": "shared/editor/components/FileExtension.tsx",
+            "line": 7,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
@@ -466,7 +466,7 @@
         ]
       },
       "type": {
-        "count": 144,
+        "count": 147,
         "samples": [
           {
             "file": "app/components/Avatar/Avatar.tsx",
@@ -481,21 +481,21 @@
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "app/hooks/useGroupMenuActions.tsx",
-            "line": 21,
+            "file": "app/env.ts",
+            "line": 3,
+            "column": 3,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "plugins/gitlab/server/GitLabIssueProvider.ts",
+            "line": 11,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "plugins/oidc/server/auth/oidcRouter.ts",
-            "line": 32,
-            "column": 8,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "server/emails/templates/BaseEmail.tsx",
-            "line": 33,
-            "column": 8,
+            "file": "server/commands/groupsSyncer.ts",
+            "line": 20,
+            "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
@@ -511,14 +511,14 @@
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "shared/editor/lib/prosemirror-recreate-transform/types.ts",
-            "line": 1,
+            "file": "shared/editor/lib/table.ts",
+            "line": 8,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "shared/types.ts",
-            "line": 236,
+            "line": 237,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
@@ -544,7 +544,7 @@
         ]
       },
       "no-type-imports": {
-        "count": 2033,
+        "count": 2064,
         "samples": [
           {
             "file": "app/actions/definitions/apiKeys.tsx",
@@ -554,20 +554,20 @@
           },
           {
             "file": "app/components/Sidebar/hooks/useDragAndDrop.tsx",
-            "line": 9,
+            "line": 12,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "app/models/Template.ts",
-            "line": 7,
+            "file": "app/models/Share.ts",
+            "line": 2,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "app/stores/DocumentsStore.ts",
-            "line": 14,
-            "column": 1,
+            "line": 9,
+            "column": 3,
             "message": "Use an `import` instead of an `import type`."
           },
           {
@@ -577,27 +577,27 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "server/models/Star.ts",
-            "line": 1,
+            "file": "server/models/Team.ts",
+            "line": 4,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "server/routes/api/attachments/attachments.ts",
-            "line": 2,
+            "file": "server/routes/api/collections/collections.ts",
+            "line": 4,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "server/utils/validators.ts",
-            "line": 2,
+            "file": "shared/components/PullRequestIcon.tsx",
+            "line": 3,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "shared/editor/nodes/Embed.tsx",
-            "line": 6,
-            "column": 3,
+            "line": 9,
+            "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
@@ -611,7 +611,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 1116,
+        "count": 1187,
         "samples": [
           {
             "file": "app/actions/definitions/developer.tsx",
@@ -620,50 +620,50 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "app/components/Sidebar/components/DocumentRow.tsx",
-            "line": 116,
+            "file": "app/components/Sidebar/components/DropToImport.tsx",
+            "line": 23,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "app/hooks/useTableRequest.ts",
-            "line": 25,
+            "file": "app/menus/CollectionMenu.tsx",
+            "line": 22,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "app/scenes/Settings/Members.tsx",
+            "line": 32,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "plugins/storage/server/api/files.ts",
+            "line": 169,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "server/routes/api/documents/documents.test.ts",
+            "line": 96,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "server/utils/oauthState.ts",
+            "line": 48,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "app/scenes/Settings/Features.tsx",
-            "line": 20,
-            "column": 1,
+            "file": "shared/editor/extensions/Math.ts",
+            "line": 15,
+            "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "plugins/passkeys/client/components/PasskeyListItem.tsx",
-            "line": 69,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "server/presenters/policy.ts",
-            "line": 11,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "server/utils/fs.ts",
-            "line": 78,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "shared/editor/embeds/InVision.tsx",
-            "line": 4,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "shared/editor/rules/checkboxes.ts",
-            "line": 14,
+            "file": "shared/editor/rules/links.ts",
+            "line": 5,
             "column": 1,
             "message": "Expected a function expression."
           },
@@ -676,7 +676,7 @@
         ]
       },
       "declaration": {
-        "count": 844,
+        "count": 873,
         "samples": [
           {
             "file": "app/actions/definitions/apiKeys.tsx",
@@ -691,45 +691,45 @@
             "message": "Expected a function declaration."
           },
           {
-            "file": "app/components/Sidebar/components/DragPlaceholder.tsx",
-            "line": 43,
-            "column": 7,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "app/hooks/useDesktopTitlebar.ts",
-            "line": 4,
+            "file": "app/components/Sidebar/components/Header.tsx",
+            "line": 22,
             "column": 14,
             "message": "Expected a function declaration."
           },
           {
-            "file": "app/scenes/Login/components/AuthenticationProvider.tsx",
-            "line": 75,
-            "column": 11,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "plugins/webhooks/server/tasks/CleanupWebhookDeliveriesTask.test.ts",
-            "line": 6,
+            "file": "app/hooks/useHover.ts",
+            "line": 16,
             "column": 7,
             "message": "Expected a function declaration."
           },
           {
-            "file": "server/routes/app.ts",
-            "line": 74,
+            "file": "app/scenes/Search/Search.tsx",
+            "line": 237,
+            "column": 9,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "server/commands/subscriptionCreator.ts",
+            "line": 179,
             "column": 14,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "server/scripts/20210716000000-backfill-revisions.ts",
+            "line": 10,
+            "column": 9,
             "message": "Expected a function declaration."
           },
           {
             "file": "shared/editor/commands/link.ts",
-            "line": 82,
-            "column": 7,
+            "line": 253,
+            "column": 14,
             "message": "Expected a function declaration."
           },
           {
-            "file": "shared/editor/nodes/Image.tsx",
-            "line": 65,
-            "column": 14,
+            "file": "shared/editor/nodes/Mention.tsx",
+            "line": 43,
+            "column": 11,
             "message": "Expected a function declaration."
           },
           {
@@ -743,7 +743,7 @@
     },
     "import-export-preference": {
       "named": {
-        "count": 1157,
+        "count": 1161,
         "samples": [
           {
             "file": "__mocks__/ctx.js",
@@ -752,50 +752,50 @@
             "message": "Prefer named exports"
           },
           {
-            "file": "app/components/PaginatedList.tsx",
-            "line": 341,
+            "file": "app/components/PinnedDocuments.tsx",
+            "line": 176,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "app/hooks/useActionContext.tsx",
-            "line": 232,
+            "file": "app/env.ts",
+            "line": 25,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "app/scenes/Document/components/Comments/Comments.tsx",
-            "line": 253,
+            "file": "app/scenes/Document/components/Comments/CommentThread.tsx",
+            "line": 377,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "app/stores/PoliciesStore.ts",
+            "file": "app/stores/OAuthClientsStore.ts",
+            "line": 5,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "server/commands/revisionCreator.ts",
             "line": 7,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "server/commands/teamCreator.ts",
-            "line": 86,
+            "file": "server/presenters/attachment.ts",
+            "line": 3,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "server/presenters/comment.ts",
-            "line": 16,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "server/routes/api/auth/index.ts",
+            "file": "server/routes/api/attachments/index.ts",
             "line": 1,
             "column": 10,
             "message": "Prefer named exports"
           },
           {
-            "file": "shared/editor/commands/deleteEmptyFirstParagraph.ts",
-            "line": 31,
+            "file": "shared/editor/commands/clearNodes.ts",
+            "line": 48,
             "column": 8,
             "message": "Prefer named exports"
           },
@@ -808,7 +808,7 @@
         ]
       },
       "default": {
-        "count": 248,
+        "count": 255,
         "samples": [
           {
             "file": "app/actions/definitions/emojis.tsx",
@@ -835,14 +835,14 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "app/scenes/Settings/components/SharesTable.tsx",
-            "line": 46,
+            "file": "app/scenes/Settings/components/ImportListItem.tsx",
+            "line": 26,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "plugins/notion/client/Imports.tsx",
-            "line": 17,
+            "file": "plugins/linear/server/uninstall.ts",
+            "line": 8,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -875,8 +875,20 @@
     },
     "indent": {
       "2-space": {
-        "count": 5,
+        "count": 8,
         "samples": [
+          {
+            "file": "app/components/FilterOptions.tsx",
+            "line": 332,
+            "column": 1,
+            "message": "Expected 2-space indentation, but file uses 5-space indentation."
+          },
+          {
+            "file": "app/components/InputSearchPage.tsx",
+            "line": 123,
+            "column": 1,
+            "message": "Expected 2-space indentation, but file uses 3-space indentation."
+          },
           {
             "file": "app/components/primitives/Popover.tsx",
             "line": 125,
@@ -897,20 +909,26 @@
           },
           {
             "file": "server/queues/tasks/UpdateDocumentsPopularityScoreTask.ts",
-            "line": 451,
+            "line": 458,
             "column": 1,
             "message": "Expected 2-space indentation, but file uses 9-space indentation."
           },
           {
+            "file": "shared/components/Calendar.tsx",
+            "line": 36,
+            "column": 1,
+            "message": "Expected 2-space indentation, but file uses 5-space indentation."
+          },
+          {
             "file": "shared/editor/components/Styles.ts",
-            "line": 2252,
+            "line": 574,
             "column": 1,
             "message": "Expected 2-space indentation, but file uses 5-space indentation."
           }
         ]
       },
       "4-space": {
-        "count": 2168,
+        "count": 2217,
         "samples": [
           {
             "file": "__mocks__/ctx.js",
@@ -919,50 +937,50 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "app/components/Sidebar/components/HistoryNavigation.tsx",
-            "line": 20,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "app/routes/authenticated.tsx",
-            "line": 16,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "app/utils/routeHelpers.ts",
-            "line": 8,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "server/commands/teamUpdater.test.ts",
-            "line": 8,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "server/migrations/20230720002422-add-insights-control.js",
-            "line": 4,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "server/policies/template.ts",
+            "file": "app/components/Sidebar/components/ResizeBorder.ts",
             "line": 6,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "server/routes/api/relationships/relationships.test.ts",
+            "file": "app/scenes/ApiKeyNew/components/ExpiryDatePicker.tsx",
+            "line": 9,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "app/utils/urls.ts",
+            "line": 16,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "server/config/database.js",
+            "line": 2,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "server/migrations/20231118195149-add-content-to-documents.js",
+            "line": 4,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "server/presenters/apiKey.ts",
             "line": 5,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "shared/editor/embeds/Dropbox.tsx",
-            "line": 9,
+            "file": "server/routes/api/stars/stars.ts",
+            "line": 11,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "shared/editor/extensions/DateTime.ts",
+            "line": 4,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -975,7 +993,7 @@
         ]
       },
       "tab": {
-        "count": 2168,
+        "count": 2217,
         "samples": [
           {
             "file": "__mocks__/ctx.js",
@@ -984,50 +1002,50 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "app/components/Sidebar/components/HistoryNavigation.tsx",
-            "line": 20,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "app/routes/authenticated.tsx",
-            "line": 16,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "app/utils/routeHelpers.ts",
-            "line": 8,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "server/commands/teamUpdater.test.ts",
-            "line": 8,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "server/migrations/20230720002422-add-insights-control.js",
-            "line": 4,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "server/policies/template.ts",
+            "file": "app/components/Sidebar/components/ResizeBorder.ts",
             "line": 6,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "server/routes/api/relationships/relationships.test.ts",
+            "file": "app/scenes/ApiKeyNew/components/ExpiryDatePicker.tsx",
+            "line": 9,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "app/utils/urls.ts",
+            "line": 16,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "server/config/database.js",
+            "line": 2,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "server/migrations/20231118195149-add-content-to-documents.js",
+            "line": 4,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "server/presenters/apiKey.ts",
             "line": 5,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "shared/editor/embeds/Dropbox.tsx",
-            "line": 9,
+            "file": "server/routes/api/stars/stars.ts",
+            "line": 11,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "shared/editor/extensions/DateTime.ts",
+            "line": 4,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -1042,11 +1060,11 @@
     },
     "quotes": {
       "double": {
-        "count": 556,
+        "count": 561,
         "samples": [
           {
             "file": "app/actions/definitions/documents.tsx",
-            "line": 978,
+            "line": 999,
             "column": 14,
             "message": "Strings must use doublequote."
           },
@@ -1058,43 +1076,43 @@
           },
           {
             "file": "plugins/enterprise/client/translations.tsx",
-            "line": 5,
+            "line": 6,
             "column": 22,
             "message": "Strings must use doublequote."
           },
           {
             "file": "plugins/enterprise/client/translations.tsx",
-            "line": 97,
+            "line": 99,
             "column": 22,
             "message": "Strings must use doublequote."
           },
           {
             "file": "server/collaboration/APIUpdateExtension.ts",
-            "line": 141,
-            "column": 35,
+            "line": 205,
+            "column": 33,
             "message": "Strings must use doublequote."
           },
           {
             "file": "server/migrations/20230921071140-rename-collection-groups.js",
-            "line": 32,
+            "line": 108,
             "column": 9,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "server/models/Collection.ts",
-            "line": 460,
-            "column": 27,
+            "file": "server/migrations/20260621000000-add-search-queries-user-created-index.js",
+            "line": 29,
+            "column": 7,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "server/routes/api/revisions/revisions.ts",
-            "line": 207,
-            "column": 23,
+            "file": "server/routes/api/pins/pins.ts",
+            "line": 122,
+            "column": 29,
             "message": "Strings must use doublequote."
           },
           {
             "file": "server/utils/startup.ts",
-            "line": 40,
+            "line": 43,
             "column": 11,
             "message": "Strings must use doublequote."
           },
@@ -1107,7 +1125,7 @@
         ]
       },
       "single": {
-        "count": 47907,
+        "count": 49757,
         "samples": [
           {
             "file": "__mocks__/fileMock.js",
@@ -1116,51 +1134,51 @@
             "message": "Strings must use singlequote."
           },
           {
-            "file": "app/components/WebsocketProvider.tsx",
-            "line": 483,
-            "column": 15,
+            "file": "app/components/primitives/Menu/index.tsx",
+            "line": 244,
+            "column": 18,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "app/scenes/Document/components/PresentationMode.tsx",
-            "line": 7,
-            "column": 32,
+            "file": "app/scenes/Document/components/SharedHeader.tsx",
+            "line": 31,
+            "column": 23,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "plugins/github/server/github.ts",
-            "line": 27,
-            "column": 64,
+            "file": "plugins/gitlab/server/api/gitlab.ts",
+            "line": 6,
+            "column": 33,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "server/emails/templates/CommentMentionedEmail.tsx",
-            "line": 61,
+            "file": "server/emails/templates/GroupCommentMentionedEmail.tsx",
+            "line": 4,
+            "column": 42,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "server/models/User.ts",
+            "line": 532,
+            "column": 30,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "server/routes/api/comments/comments.test.ts",
+            "line": 539,
+            "column": 33,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "server/services/websockets.ts",
+            "line": 123,
+            "column": 22,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "shared/editor/lib/isMarkdown.test.ts",
+            "line": 28,
             "column": 21,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "server/models/Share.ts",
-            "line": 133,
-            "column": 10,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "server/routes/api/collections/collections.test.ts",
-            "line": 930,
-            "column": 6,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "server/routes/oauth/oauth.test.ts",
-            "line": 111,
-            "column": 35,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "shared/editor/lib/code.ts",
-            "line": 72,
-            "column": 26,
             "message": "Strings must use singlequote."
           },
           {
@@ -1174,11 +1192,11 @@
     },
     "react-destructuring-assignment": {
       "never": {
-        "count": 377,
+        "count": 381,
         "samples": [
           {
             "file": "app/actions/definitions/collections.tsx",
-            "line": 47,
+            "line": 48,
             "column": 29,
             "message": "Must never use destructuring props assignment in SFC argument"
           },
@@ -1195,15 +1213,15 @@
             "message": "Must never use destructuring props assignment in SFC argument"
           },
           {
-            "file": "app/components/Sharing/components/Placeholder.tsx",
+            "file": "app/components/Sharing/components/ShareSubscribeForm.tsx",
             "line": 15,
             "column": 8,
             "message": "Must never use destructuring props assignment in SFC argument"
           },
           {
-            "file": "app/components/UserDialogs.tsx",
-            "line": 112,
-            "column": 8,
+            "file": "app/components/WebsocketProvider.tsx",
+            "line": 786,
+            "column": 1,
             "message": "Must never use destructuring props assignment in SFC argument"
           },
           {
@@ -1219,15 +1237,15 @@
             "message": "Must never use destructuring props assignment in SFC argument"
           },
           {
-            "file": "app/scenes/Settings/components/SettingRow.tsx",
-            "line": 71,
-            "column": 37,
+            "file": "app/scenes/Settings/components/UserRoleFilter.tsx",
+            "line": 13,
+            "column": 24,
             "message": "Must never use destructuring props assignment in SFC argument"
           },
           {
-            "file": "server/emails/templates/components/Footer.tsx",
-            "line": 34,
-            "column": 16,
+            "file": "shared/components/Backticks.tsx",
+            "line": 23,
+            "column": 43,
             "message": "Must never use destructuring props assignment in SFC argument"
           },
           {
@@ -1261,13 +1279,13 @@
           },
           {
             "file": "app/editor/components/SuggestionsMenu.tsx",
-            "line": 161,
+            "line": 275,
             "column": 9,
             "message": "Must use destructuring props assignment"
           },
           {
             "file": "app/editor/components/SuggestionsMenu.tsx",
-            "line": 910,
+            "line": 1041,
             "column": 66,
             "message": "Must use destructuring props assignment"
           },
@@ -1291,8 +1309,8 @@
           },
           {
             "file": "shared/editor/components/Image.tsx",
-            "line": 239,
-            "column": 23,
+            "line": 260,
+            "column": 26,
             "message": "Must use destructuring props assignment"
           },
           {
@@ -1326,13 +1344,13 @@
           },
           {
             "file": "app/editor/components/SuggestionsMenu.tsx",
-            "line": 162,
+            "line": 276,
             "column": 10,
             "message": "Must use destructuring props assignment"
           },
           {
             "file": "app/editor/components/ToolbarMenu.tsx",
-            "line": 149,
+            "line": 92,
             "column": 9,
             "message": "Must destructure props in the function signature."
           },
@@ -1356,8 +1374,8 @@
           },
           {
             "file": "shared/editor/components/Image.tsx",
-            "line": 144,
-            "column": 28,
+            "line": 140,
+            "column": 18,
             "message": "Must use destructuring props assignment"
           },
           {
@@ -1391,13 +1409,13 @@
           },
           {
             "file": "app/editor/components/SuggestionsMenu.tsx",
-            "line": 161,
+            "line": 275,
             "column": 9,
             "message": "Must use destructuring props assignment"
           },
           {
             "file": "app/editor/components/SuggestionsMenu.tsx",
-            "line": 910,
+            "line": 1041,
             "column": 66,
             "message": "Must use destructuring props assignment"
           },
@@ -1421,8 +1439,8 @@
           },
           {
             "file": "shared/editor/components/Image.tsx",
-            "line": 239,
-            "column": 23,
+            "line": 260,
+            "column": 26,
             "message": "Must use destructuring props assignment"
           },
           {
@@ -1440,13 +1458,13 @@
         "samples": [
           {
             "file": "app/actions/definitions/collections.tsx",
-            "line": 47,
+            "line": 48,
             "column": 29,
             "message": "Function component is not a function declaration"
           },
           {
             "file": "app/components/FilterOptions.tsx",
-            "line": 35,
+            "line": 45,
             "column": 23,
             "message": "Function component is not a function declaration"
           },
@@ -1470,13 +1488,13 @@
           },
           {
             "file": "app/scenes/ApiKeyNew/components/ExpiryDatePicker.tsx",
-            "line": 79,
-            "column": 14,
+            "line": 20,
+            "column": 26,
             "message": "Function component is not a function declaration"
           },
           {
             "file": "app/scenes/Errors/Error403.tsx",
-            "line": 20,
+            "line": 21,
             "column": 18,
             "message": "Function component is not a function declaration"
           },
@@ -1494,14 +1512,14 @@
           },
           {
             "file": "shared/editor/components/Mentions.tsx",
-            "line": 524,
+            "line": 574,
             "column": 22,
             "message": "Function component is not a function declaration"
           }
         ]
       },
       "arrow-function": {
-        "count": 364,
+        "count": 372,
         "samples": [
           {
             "file": "app/components/ArrowKeyNavigation.tsx",
@@ -1510,50 +1528,50 @@
             "message": "Function component is not an arrow function"
           },
           {
-            "file": "app/components/ExportDialog.tsx",
-            "line": 20,
+            "file": "app/components/Facepile.tsx",
+            "line": 30,
             "column": 1,
             "message": "Function component is not an arrow function"
           },
           {
-            "file": "app/components/Sharing/Collection/SharePopover.tsx",
-            "line": 43,
+            "file": "app/components/Sharing/Document/DocumentMemberList.tsx",
+            "line": 34,
             "column": 1,
             "message": "Function component is not an arrow function"
           },
           {
-            "file": "app/components/SortableTable.tsx",
-            "line": 11,
-            "column": 8,
-            "message": "Function component is not an arrow function"
-          },
-          {
-            "file": "app/menus/NewChildDocumentMenu.tsx",
-            "line": 20,
+            "file": "app/components/Table.tsx",
+            "line": 66,
             "column": 1,
             "message": "Function component is not an arrow function"
           },
           {
-            "file": "app/scenes/Document/components/MultiplayerEditor.tsx",
-            "line": 56,
+            "file": "app/menus/OAuthAuthenticationMenu.tsx",
+            "line": 17,
+            "column": 1,
+            "message": "Function component is not an arrow function"
+          },
+          {
+            "file": "app/scenes/Document/components/ObservingBanner.tsx",
+            "line": 19,
             "column": 1,
             "message": "Function component is not an arrow function"
           },
           {
             "file": "app/scenes/Settings/Authentication.tsx",
-            "line": 31,
+            "line": 32,
             "column": 1,
             "message": "Function component is not an arrow function"
           },
           {
-            "file": "app/scenes/Shared/index.tsx",
-            "line": 125,
+            "file": "app/scenes/TeamNew.tsx",
+            "line": 18,
             "column": 1,
             "message": "Function component is not an arrow function"
           },
           {
-            "file": "plugins/webhooks/client/Settings.tsx",
-            "line": 25,
+            "file": "plugins/webhooks/client/components/WebhookSubscriptionEdit.tsx",
+            "line": 19,
             "column": 1,
             "message": "Function component is not an arrow function"
           },
@@ -1572,13 +1590,13 @@
         "samples": [
           {
             "file": "app/components/IconPicker/index.tsx",
-            "line": 192,
+            "line": 191,
             "column": 58,
             "message": "Value must be omitted for boolean attribute `modal`"
           },
           {
             "file": "app/components/Lightbox.tsx",
-            "line": 750,
+            "line": 760,
             "column": 18,
             "message": "Value must be omitted for boolean attribute `open`"
           },
@@ -1615,61 +1633,61 @@
         ]
       },
       "always": {
-        "count": 865,
+        "count": 887,
         "samples": [
           {
             "file": "app/actions/definitions/collections.tsx",
-            "line": 139,
+            "line": 140,
             "column": 11,
             "message": "Value must be set for boolean attribute `visible`"
           },
           {
-            "file": "app/components/IconPicker/index.tsx",
-            "line": 183,
-            "column": 24,
-            "message": "Value must be set for boolean attribute `asChild`"
+            "file": "app/components/IconPicker/components/SkinTonePicker.tsx",
+            "line": 69,
+            "column": 9,
+            "message": "Value must be set for boolean attribute `shrink`"
           },
           {
-            "file": "app/components/Sharing/components/ShareSubscribeForm.tsx",
-            "line": 83,
-            "column": 65,
-            "message": "Value must be set for boolean attribute `neutral`"
+            "file": "app/components/Sharing/components/Suggestions.tsx",
+            "line": 206,
+            "column": 17,
+            "message": "Value must be set for boolean attribute `keyboardNavigation`"
           },
           {
             "file": "app/editor/components/SuggestionsMenu.tsx",
-            "line": 980,
-            "column": 17,
-            "message": "Value must be set for boolean attribute `autoFocus`"
+            "line": 1043,
+            "column": 31,
+            "message": "Value must be set for boolean attribute `hiddenScrollbars`"
           },
           {
-            "file": "app/scenes/DesktopRedirect.tsx",
-            "line": 30,
-            "column": 54,
-            "message": "Value must be set for boolean attribute `auto`"
+            "file": "app/scenes/Developer/Changesets.tsx",
+            "line": 102,
+            "column": 9,
+            "message": "Value must be set for boolean attribute `column`"
           },
           {
-            "file": "app/scenes/Document/components/SharedHeader.tsx",
-            "line": 195,
-            "column": 19,
-            "message": "Value must be set for boolean attribute `neutral`"
+            "file": "app/scenes/Document/components/SidebarLayout.tsx",
+            "line": 41,
+            "column": 34,
+            "message": "Value must be set for boolean attribute `topShadow`"
           },
           {
             "file": "app/scenes/Login/Login.tsx",
-            "line": 176,
-            "column": 20,
-            "message": "Value must be set for boolean attribute `centered`"
+            "line": 315,
+            "column": 46,
+            "message": "Value must be set for boolean attribute `fullwidth`"
           },
           {
             "file": "app/scenes/Settings/Security.tsx",
-            "line": 261,
-            "column": 13,
+            "line": 385,
+            "column": 11,
             "message": "Value must be set for boolean attribute `labelHidden`"
           },
           {
-            "file": "app/scenes/TeamDelete.tsx",
-            "line": 115,
-            "column": 63,
-            "message": "Value must be set for boolean attribute `neutral`"
+            "file": "app/scenes/Trash/components/DeleteDocumentsInTrash.tsx",
+            "line": 29,
+            "column": 11,
+            "message": "Value must be set for boolean attribute `column`"
           },
           {
             "file": "shared/utils/IconLibrary.tsx",
@@ -1686,14 +1704,14 @@
         "samples": [
           {
             "file": "app/components/PaginatedList.tsx",
-            "line": 274,
+            "line": 275,
             "column": 5,
             "message": "Prefer fragment shorthand over React.Fragment"
           }
         ]
       },
       "element": {
-        "count": 268,
+        "count": 265,
         "samples": [
           {
             "file": "app/components/Analytics.tsx",
@@ -1702,21 +1720,21 @@
             "message": "Prefer React.Fragment over fragment shorthand"
           },
           {
-            "file": "app/components/LazyPolyfills.tsx",
-            "line": 29,
-            "column": 10,
+            "file": "app/components/Lightbox.tsx",
+            "line": 1091,
+            "column": 5,
             "message": "Prefer React.Fragment over fragment shorthand"
           },
           {
-            "file": "app/components/Sidebar/components/SharedCollectionLink.tsx",
-            "line": 22,
+            "file": "app/components/Sidebar/components/SidebarLink.tsx",
+            "line": 153,
             "column": 5,
             "message": "Prefer React.Fragment over fragment shorthand"
           },
           {
             "file": "app/scenes/Developer/Changesets.tsx",
-            "line": 136,
-            "column": 11,
+            "line": 145,
+            "column": 15,
             "message": "Prefer React.Fragment over fragment shorthand"
           },
           {
@@ -1727,31 +1745,31 @@
           },
           {
             "file": "app/scenes/KeyboardShortcuts.tsx",
-            "line": 369,
+            "line": 381,
             "column": 15,
             "message": "Prefer React.Fragment over fragment shorthand"
           },
           {
-            "file": "app/scenes/Settings/Embeds.tsx",
-            "line": 102,
-            "column": 9,
+            "file": "app/scenes/Settings/Details.tsx",
+            "line": 385,
+            "column": 13,
             "message": "Prefer React.Fragment over fragment shorthand"
           },
           {
-            "file": "app/scenes/Settings/components/ImportMarkdownDialog.tsx",
-            "line": 13,
-            "column": 5,
+            "file": "app/scenes/Settings/components/ImportListItem.tsx",
+            "line": 124,
+            "column": 13,
             "message": "Prefer React.Fragment over fragment shorthand"
           },
           {
-            "file": "plugins/passkeys/client/Settings.tsx",
-            "line": 171,
-            "column": 9,
+            "file": "plugins/linear/client/Settings.tsx",
+            "line": 97,
+            "column": 27,
             "message": "Prefer React.Fragment over fragment shorthand"
           },
           {
             "file": "shared/editor/nodes/Attachment.tsx",
-            "line": 125,
+            "line": 126,
             "column": 7,
             "message": "Prefer React.Fragment over fragment shorthand"
           }
@@ -1764,7 +1782,7 @@
         "samples": []
       },
       "never": {
-        "count": 75358,
+        "count": 77782,
         "samples": [
           {
             "file": "__mocks__/console.js",
@@ -1773,51 +1791,51 @@
             "message": "Extra semicolon."
           },
           {
-            "file": "app/components/TemplatizeDialog/index.tsx",
-            "line": 18,
+            "file": "app/components/WebsocketProvider.tsx",
+            "line": 17,
+            "column": 48,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "app/scenes/Document/components/ShareButton.tsx",
+            "line": 29,
+            "column": 42,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "plugins/notion/server/notion.ts",
+            "line": 267,
             "column": 31,
             "message": "Extra semicolon."
           },
           {
-            "file": "app/scenes/Document/components/PublicBreadcrumb.tsx",
-            "line": 35,
+            "file": "server/migrations/20210915051740-collaborative-collections.js",
+            "line": 10,
+            "column": 62,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "server/queues/HealthMonitor.ts",
+            "line": 24,
             "column": 7,
             "message": "Extra semicolon."
           },
           {
-            "file": "plugins/notion/client/Imports.tsx",
-            "line": 7,
-            "column": 51,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "server/migrations/20191119023010-cascade-backlinks.js",
-            "line": 30,
-            "column": 14,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "server/presenters/policy.ts",
-            "line": 2,
-            "column": 56,
-            "message": "Extra semicolon."
-          },
-          {
             "file": "server/routes/api/documents/documents.test.ts",
-            "line": 2387,
+            "line": 3553,
             "column": 5,
             "message": "Extra semicolon."
           },
           {
-            "file": "server/routes/api/views/views.ts",
-            "line": 69,
-            "column": 22,
+            "file": "server/routes/oauth/index.test.ts",
+            "line": 25,
+            "column": 62,
             "message": "Extra semicolon."
           },
           {
-            "file": "shared/editor/embeds/Pinterest.tsx",
-            "line": 26,
-            "column": 9,
+            "file": "shared/editor/extensions/Diff.ts",
+            "line": 87,
+            "column": 15,
             "message": "Extra semicolon."
           },
           {

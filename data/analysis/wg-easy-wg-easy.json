@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "96d58f23c7cc",
-  "analyzedCommit": "c70ad1d08b37f92799f7614ac056900691a1b6fa",
-  "analyzedCommitDate": "2026-06-03T12:43:32.000Z",
+  "analyzedCommit": "ec301d17d7f6d276b04938e1a4d95649353c4c9d",
+  "analyzedCommitDate": "2026-06-22T10:25:39.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -9,7 +9,7 @@
         "samples": []
       },
       "generic": {
-        "count": 27,
+        "count": 28,
         "samples": [
           {
             "file": "src/app/components/Base/Select.vue",
@@ -43,26 +43,26 @@
           },
           {
             "file": "src/server/database/repositories/client/schema.ts",
-            "line": 35,
-            "column": 12,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
-          },
-          {
-            "file": "src/server/database/repositories/userConfig/schema.ts",
-            "line": 19,
-            "column": 12,
+            "line": 55,
+            "column": 39,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
             "file": "src/server/utils/firewall.ts",
-            "line": 199,
-            "column": 24,
+            "line": 138,
+            "column": 4,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
+            "file": "src/server/utils/firewall.ts",
+            "line": 242,
+            "column": 14,
+            "message": "Array type using 'FirewallClient[]' is forbidden. Use 'Array<FirewallClient>' instead."
+          },
+          {
             "file": "src/server/utils/ip.ts",
-            "line": 93,
-            "column": 37,
+            "line": 95,
+            "column": 53,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
@@ -97,20 +97,20 @@
         "samples": [
           {
             "file": "src/shared/utils/permissions.ts",
-            "line": 57,
+            "line": 59,
             "column": 29,
             "message": "A record is preferred over an index signature."
           },
           {
             "file": "src/shared/utils/permissions.ts",
-            "line": 59,
+            "line": 61,
             "column": 33,
             "message": "A record is preferred over an index signature."
           }
         ]
       },
       "index-signature": {
-        "count": 5,
+        "count": 8,
         "samples": [
           {
             "file": "src/app/composables/useSubmit.ts",
@@ -126,19 +126,37 @@
           },
           {
             "file": "src/cli/index.ts",
-            "line": 21,
+            "line": 22,
             "column": 25,
             "message": "An index signature is preferred over a record."
           },
           {
+            "file": "src/server/api/auth/[provider]/index.get.ts",
+            "line": 41,
+            "column": 21,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "src/server/api/auth/methods.get.ts",
+            "line": 17,
+            "column": 13,
+            "message": "An index signature is preferred over a record."
+          },
+          {
             "file": "src/server/utils/ip.ts",
-            "line": 93,
+            "line": 95,
             "column": 14,
             "message": "An index signature is preferred over a record."
           },
           {
+            "file": "src/server/utils/oauth.ts",
+            "line": 13,
+            "column": 11,
+            "message": "An index signature is preferred over a record."
+          },
+          {
             "file": "src/server/utils/template.ts",
-            "line": 8,
+            "line": 7,
             "column": 49,
             "message": "An index signature is preferred over a record."
           }
@@ -147,7 +165,7 @@
     },
     "consistent-type-definitions": {
       "interface": {
-        "count": 15,
+        "count": 18,
         "samples": [
           {
             "file": "src/app/composables/useSubmit.ts",
@@ -162,14 +180,8 @@
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "src/app/utils/types.ts",
-            "line": 2,
-            "column": 8,
-            "message": "Use `interface` instead of `type`."
-          },
-          {
-            "file": "src/server/database/repositories/interface/types.ts",
-            "line": 57,
+            "file": "src/server/database/repositories/general/types.ts",
+            "line": 29,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
@@ -181,19 +193,25 @@
           },
           {
             "file": "src/server/utils/handler.ts",
-            "line": 9,
+            "line": 14,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
             "file": "src/server/utils/handler.ts",
-            "line": 77,
+            "line": 82,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "src/server/utils/release.ts",
-            "line": 1,
+            "file": "src/server/utils/oauth.ts",
+            "line": 7,
+            "column": 1,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "src/server/utils/oauth.ts",
+            "line": 169,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
@@ -205,7 +223,7 @@
           },
           {
             "file": "src/shared/utils/permissions.ts",
-            "line": 65,
+            "line": 67,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           }
@@ -222,7 +240,7 @@
         "samples": []
       },
       "no-type-imports": {
-        "count": 60,
+        "count": 71,
         "samples": [
           {
             "file": "src/app/components/Base/Chart.vue",
@@ -231,32 +249,32 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/cli/index.ts",
-            "line": 3,
+            "file": "src/server/api/auth/methods.get.ts",
+            "line": 5,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "src/server/database/repositories/general/service.ts",
-            "line": 3,
+            "line": 7,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/server/database/repositories/hooks/types.ts",
-            "line": 3,
+            "file": "src/server/database/repositories/interface/service.ts",
+            "line": 5,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/server/database/repositories/oneTimeLink/types.ts",
-            "line": 1,
+            "file": "src/server/database/repositories/user/schema.ts",
+            "line": 6,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "src/server/database/repositories/userConfig/service.ts",
-            "line": 5,
+            "line": 4,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -268,13 +286,13 @@
           },
           {
             "file": "src/server/utils/ip.ts",
-            "line": 6,
+            "line": 5,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "src/server/utils/types.ts",
-            "line": 3,
+            "line": 2,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -289,7 +307,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 103,
+        "count": 115,
         "samples": [
           {
             "file": "src/app/components/Base/CodeBlock.vue",
@@ -298,50 +316,50 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "src/app/components/Clients/Sort.vue",
-            "line": 13,
+            "file": "src/app/components/Form/ArrayField.vue",
+            "line": 40,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/app/pages/admin/general.vue",
-            "line": 57,
+            "file": "src/app/pages/admin/hooks.vue",
+            "line": 51,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/app/pages/login.vue",
-            "line": 118,
+            "file": "src/app/pages/me.vue",
+            "line": 232,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/app/stores/auth.ts",
-            "line": 7,
+            "file": "src/app/stores/clients.ts",
+            "line": 135,
             "column": 3,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/server/database/repositories/client/service.ts",
-            "line": 12,
+            "file": "src/server/database/repositories/interface/service.ts",
+            "line": 11,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/server/routes/metrics/json.get.ts",
-            "line": 5,
+            "file": "src/server/utils/firewall.ts",
+            "line": 42,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/server/utils/ip.ts",
-            "line": 66,
-            "column": 1,
+            "file": "src/server/utils/oauth.ts",
+            "line": 91,
+            "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "src/server/utils/session.ts",
-            "line": 24,
+            "line": 26,
             "column": 8,
             "message": "Expected a function expression."
           },
@@ -364,43 +382,43 @@
           },
           {
             "file": "src/server/utils/WireGuard.ts",
-            "line": 7,
+            "line": 17,
             "column": 7,
             "message": "Expected a function declaration."
           },
           {
             "file": "src/server/utils/config.ts",
-            "line": 15,
+            "line": 22,
             "column": 7,
             "message": "Expected a function declaration."
           },
           {
             "file": "src/server/utils/handler.ts",
-            "line": 29,
+            "line": 34,
             "column": 14,
             "message": "Expected a function declaration."
           },
           {
             "file": "src/server/utils/handler.ts",
-            "line": 85,
+            "line": 90,
             "column": 14,
             "message": "Expected a function declaration."
           },
           {
             "file": "src/server/utils/handler.ts",
-            "line": 133,
+            "line": 138,
             "column": 14,
             "message": "Expected a function declaration."
           },
           {
             "file": "src/server/utils/types.ts",
-            "line": 14,
+            "line": 15,
             "column": 14,
             "message": "Expected a function declaration."
           },
           {
             "file": "src/server/utils/types.ts",
-            "line": 163,
+            "line": 178,
             "column": 14,
             "message": "Expected a function declaration."
           }
@@ -409,7 +427,7 @@
     },
     "import-export-preference": {
       "named": {
-        "count": 51,
+        "count": 59,
         "samples": [
           {
             "file": "src/app/middleware/auth.global.ts",
@@ -419,55 +437,55 @@
           },
           {
             "file": "src/eslint.config.mjs",
+            "line": 5,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "src/server/api/admin/hooks.post.ts",
+            "line": 9,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "src/server/api/admin/userconfig.get.ts",
             "line": 4,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "src/server/api/admin/general.post.ts",
-            "line": 3,
+            "file": "src/server/api/auth/password.post.ts",
+            "line": 9,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "src/server/api/admin/interface/restart.post.ts",
-            "line": 1,
+            "file": "src/server/api/client/[clientId]/enable.post.ts",
+            "line": 9,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "src/server/api/client/[clientId]/disable.post.ts",
-            "line": 3,
+            "file": "src/server/api/client/index.post.ts",
+            "line": 9,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "src/server/api/client/[clientId]/qrcode.svg.get.ts",
-            "line": 3,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "src/server/api/me/password.post.ts",
-            "line": 3,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "src/server/api/setup/4.get.ts",
-            "line": 1,
+            "file": "src/server/api/session.get.ts",
+            "line": 7,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
             "file": "src/server/routes/cnf/[oneTimeLink].ts",
-            "line": 3,
+            "line": 13,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
             "file": "src/vitest.config.ts",
-            "line": 3,
+            "line": 5,
             "column": 8,
             "message": "Prefer named exports"
           }
@@ -484,7 +502,7 @@
           },
           {
             "file": "src/app/stores/auth.ts",
-            "line": 4,
+            "line": 3,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -496,37 +514,37 @@
           },
           {
             "file": "src/server/database/repositories/client/service.ts",
-            "line": 90,
+            "line": 43,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
             "file": "src/server/database/repositories/general/service.ts",
-            "line": 51,
+            "line": 54,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
             "file": "src/server/database/repositories/interface/service.ts",
-            "line": 31,
+            "line": 34,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
             "file": "src/server/database/repositories/user/service.ts",
-            "line": 52,
+            "line": 82,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
             "file": "src/server/database/repositories/userConfig/service.ts",
-            "line": 15,
+            "line": 17,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
             "file": "src/server/utils/cmd.ts",
-            "line": 6,
+            "line": 7,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -545,7 +563,7 @@
         "samples": []
       },
       "4-space": {
-        "count": 161,
+        "count": 175,
         "samples": [
           {
             "file": "src/app/app.vue",
@@ -560,37 +578,37 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/app/components/Form/SecondaryActionField.vue",
-            "line": 13,
+            "file": "src/app/components/Form/TextField.vue",
+            "line": 22,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/app/pages/index.vue",
-            "line": 48,
+            "file": "src/app/pages/login/2fa.vue",
+            "line": 44,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/cli/admin/reset.ts",
+            "file": "src/cli/build.js",
+            "line": 8,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "src/server/api/auth/[provider]/callback.get.ts",
+            "line": 10,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "src/server/api/information.get.ts",
             "line": 9,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/server/api/admin/ip-info.get.ts",
-            "line": 2,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "src/server/api/session.get.ts",
-            "line": 4,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "src/server/database/repositories/interface/types.ts",
+            "file": "src/server/database/repositories/interface/schema.ts",
             "line": 9,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
@@ -603,14 +621,14 @@
           },
           {
             "file": "src/vitest.config.ts",
-            "line": 4,
+            "line": 6,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           }
         ]
       },
       "tab": {
-        "count": 161,
+        "count": 175,
         "samples": [
           {
             "file": "src/app/app.vue",
@@ -625,37 +643,37 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/app/components/Form/SecondaryActionField.vue",
-            "line": 13,
+            "file": "src/app/components/Form/TextField.vue",
+            "line": 22,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/app/pages/index.vue",
-            "line": 48,
+            "file": "src/app/pages/login/2fa.vue",
+            "line": 44,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/cli/admin/reset.ts",
+            "file": "src/cli/build.js",
+            "line": 8,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "src/server/api/auth/[provider]/callback.get.ts",
+            "line": 10,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "src/server/api/information.get.ts",
             "line": 9,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/server/api/admin/ip-info.get.ts",
-            "line": 2,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "src/server/api/session.get.ts",
-            "line": 4,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "src/server/database/repositories/interface/types.ts",
+            "file": "src/server/database/repositories/interface/schema.ts",
             "line": 9,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
@@ -668,7 +686,7 @@
           },
           {
             "file": "src/vitest.config.ts",
-            "line": 4,
+            "line": 6,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           }
@@ -677,7 +695,7 @@
     },
     "quotes": {
       "double": {
-        "count": 1551,
+        "count": 1947,
         "samples": [
           {
             "file": "src/app/app.vue",
@@ -686,63 +704,63 @@
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/app/pages/admin/hooks.vue",
-            "line": 44,
-            "column": 12,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "src/cli/admin/reset.ts",
-            "line": 23,
-            "column": 39,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "src/nuxt.config.ts",
-            "line": 140,
+            "file": "src/app/pages/login/2fa.vue",
+            "line": 94,
             "column": 15,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/server/database/repositories/client/schema.ts",
-            "line": 52,
-            "column": 19,
+            "file": "src/drizzle.config.ts",
+            "line": 4,
+            "column": 8,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/server/database/repositories/oneTimeLink/schema.ts",
-            "line": 14,
-            "column": 21,
+            "file": "src/server/api/auth/[provider]/callback.get.ts",
+            "line": 45,
+            "column": 12,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "src/server/api/session.get.ts",
+            "line": 22,
+            "column": 22,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "src/server/database/repositories/interface/service.ts",
+            "line": 48,
+            "column": 23,
             "message": "Strings must use doublequote."
           },
           {
             "file": "src/server/database/sqlite.ts",
-            "line": 163,
-            "column": 16,
+            "line": 65,
+            "column": 25,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/server/utils/ip.ts",
-            "line": 3,
-            "column": 29,
+            "file": "src/server/utils/handler.ts",
+            "line": 7,
+            "column": 31,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/tailwind.config.ts",
-            "line": 2,
-            "column": 27,
+            "file": "src/server/utils/wgHelper.ts",
+            "line": 164,
+            "column": 42,
             "message": "Strings must use doublequote."
           },
           {
             "file": "src/vitest.config.ts",
-            "line": 10,
+            "line": 17,
             "column": 24,
             "message": "Strings must use doublequote."
           }
         ]
       },
       "single": {
-        "count": 21,
+        "count": 19,
         "samples": [
           {
             "file": "src/app/pages/admin/config.vue",
@@ -764,43 +782,43 @@
           },
           {
             "file": "src/app/pages/admin/interface.vue",
-            "line": 180,
-            "column": 12,
+            "line": 172,
+            "column": 49,
             "message": "Strings must use singlequote."
           },
           {
             "file": "src/app/pages/admin/interface.vue",
-            "line": 222,
-            "column": 12,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "src/app/pages/me.vue",
-            "line": 152,
-            "column": 12,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "src/app/pages/me.vue",
             "line": 206,
             "column": 12,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/server/plugins/manager.ts",
-            "line": 2,
-            "column": 15,
+            "file": "src/app/pages/me.vue",
+            "line": 197,
+            "column": 12,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/server/plugins/manager.ts",
-            "line": 4,
-            "column": 15,
+            "file": "src/app/pages/me.vue",
+            "line": 244,
+            "column": 12,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "src/app/pages/me.vue",
+            "line": 299,
+            "column": 12,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "src/server/middleware/setup.ts",
+            "line": 18,
+            "column": 34,
             "message": "Strings must use singlequote."
           },
           {
             "file": "src/server/utils/types.ts",
-            "line": 259,
+            "line": 291,
             "column": 19,
             "message": "Strings must use singlequote."
           }
@@ -861,7 +879,7 @@
         "samples": []
       },
       "never": {
-        "count": 2067,
+        "count": 2526,
         "samples": [
           {
             "file": "src/app/app.vue",
@@ -870,56 +888,56 @@
             "message": "Extra semicolon."
           },
           {
-            "file": "src/app/components/Form/PrimaryActionField.vue",
-            "line": 15,
-            "column": 5,
+            "file": "src/app/components/Icons/Plus.vue",
+            "line": 6,
+            "column": 62,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/app/pages/setup/migrate.vue",
-            "line": 26,
+            "file": "src/app/stores/clients.ts",
+            "line": 91,
+            "column": 78,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "src/server/api/auth/[provider]/callback.get.ts",
+            "line": 69,
+            "column": 11,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "src/server/api/me/totp.post.ts",
+            "line": 17,
             "column": 42,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/i18n/localeDetector.ts",
-            "line": 17,
-            "column": 29,
+            "file": "src/server/database/repositories/interface/types.ts",
+            "line": 71,
+            "column": 2,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/server/api/setup/migrate.post.ts",
-            "line": 65,
-            "column": 53,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "src/server/database/repositories/user/service.ts",
-            "line": 109,
-            "column": 7,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "src/server/utils/Database.ts",
-            "line": 24,
-            "column": 24,
+            "file": "src/server/routes/cnf/[oneTimeLink].ts",
+            "line": 10,
+            "column": 50,
             "message": "Extra semicolon."
           },
           {
             "file": "src/server/utils/firewall.ts",
-            "line": 287,
-            "column": 32,
+            "line": 223,
+            "column": 78,
             "message": "Extra semicolon."
           },
           {
             "file": "src/server/utils/types.ts",
-            "line": 141,
-            "column": 80,
+            "line": 41,
+            "column": 62,
             "message": "Extra semicolon."
           },
           {
             "file": "src/vitest.config.ts",
-            "line": 18,
+            "line": 25,
             "column": 3,
             "message": "Extra semicolon."
           }

@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "96d58f23c7cc",
-  "analyzedCommit": "0521ed8f0486647d0c7b77bbeda7e89e9d011b38",
-  "analyzedCommitDate": "2026-06-03T16:18:11.000Z",
+  "analyzedCommit": "506da577ad312a9d052a697303814900afe451ef",
+  "analyzedCommitDate": "2026-06-23T11:31:54.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -28,37 +28,37 @@
         ]
       },
       "generic": {
-        "count": 27,
+        "count": 28,
         "samples": [
           {
             "file": "src/commands/manifest.ts",
-            "line": 39,
+            "line": 40,
             "column": 29,
             "message": "Array type using 'Interfaces.Manifest[]' is forbidden. Use 'Array<Interfaces.Manifest>' instead."
           },
           {
-            "file": "src/log.ts",
-            "line": 9,
-            "column": 46,
-            "message": "Array type using 'unknown[]' is forbidden. Use 'Array<unknown>' instead."
+            "file": "src/commands/pack/win.ts",
+            "line": 17,
+            "column": 74,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
             "file": "src/readme-generator.ts",
-            "line": 136,
-            "column": 15,
+            "line": 87,
+            "column": 84,
             "message": "Array type using 'Command.Cached[]' is forbidden. Use 'Array<Command.Cached>' instead."
           },
           {
             "file": "src/tarballs/config.ts",
-            "line": 45,
-            "column": 12,
-            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
+            "line": 40,
+            "column": 16,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
-            "file": "src/util.ts",
-            "line": 11,
-            "column": 48,
-            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
+            "file": "src/tarballs/config.ts",
+            "line": 116,
+            "column": 21,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
             "file": "src/util.ts",
@@ -261,7 +261,7 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 38,
+        "count": 39,
         "samples": [
           {
             "file": "src/aws.ts",
@@ -282,16 +282,16 @@
             "message": "Imports Interfaces are only used as type."
           },
           {
-            "file": "src/commands/upload/tarballs.ts",
+            "file": "src/generator.ts",
             "line": 1,
             "column": 1,
-            "message": "Imports Interfaces are only used as type."
+            "message": "Imports Args and Interfaces are only used as type."
           },
           {
-            "file": "src/readme-generator.ts",
-            "line": 1,
+            "file": "src/tarballs/bin.ts",
+            "line": 2,
             "column": 1,
-            "message": "Imports Command, Config, HelpBase, and Interfaces are only used as type."
+            "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
             "file": "src/tarballs/config.ts",
@@ -306,7 +306,7 @@
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "test/fixtures/cli-with-jit-plugin/src/help.ts",
+            "file": "test/fixtures/cli-with-malicious-jit-plugin/src/help.ts",
             "line": 1,
             "column": 1,
             "message": "Imports Command are only used as type."
@@ -464,7 +464,7 @@
     },
     "import-export-preference": {
       "named": {
-        "count": 35,
+        "count": 37,
         "samples": [
           {
             "file": "eslint.config.mjs",
@@ -485,31 +485,31 @@
             "message": "Prefer named exports"
           },
           {
-            "file": "src/commands/pack/win.ts",
-            "line": 233,
+            "file": "src/commands/promote.ts",
+            "line": 11,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "src/commands/upload/macos.ts",
-            "line": 10,
+            "file": "src/commands/upload/tarballs.ts",
+            "line": 9,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "test/fixtures/cli-command-with-alias/src/commands/hello.ts",
+            "file": "test/fixtures/cli-command-with-alias/src/help.ts",
             "line": 3,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "test/fixtures/cli-with-custom-help/src/commands/hello.ts",
+            "file": "test/fixtures/cli-with-custom-help/src/help.ts",
             "line": 3,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "test/fixtures/cli-with-jit-plugin/src/help.ts",
+            "file": "test/fixtures/cli-with-malicious-jit-plugin/src/help.ts",
             "line": 3,
             "column": 8,
             "message": "Prefer named exports"
@@ -601,7 +601,7 @@
         ]
       },
       "4-space": {
-        "count": 63,
+        "count": 65,
         "samples": [
           {
             "file": "bin/dev.js",
@@ -634,7 +634,7 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "test/fixtures/cli-with-custom-help-no-format-command/src/help.ts",
+            "file": "test/fixtures/cli-with-custom-help/src/help.ts",
             "line": 4,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
@@ -666,7 +666,7 @@
         ]
       },
       "tab": {
-        "count": 63,
+        "count": 65,
         "samples": [
           {
             "file": "bin/dev.js",
@@ -699,7 +699,7 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "test/fixtures/cli-with-custom-help-no-format-command/src/help.ts",
+            "file": "test/fixtures/cli-with-custom-help/src/help.ts",
             "line": 4,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
@@ -733,7 +733,7 @@
     },
     "quotes": {
       "double": {
-        "count": 1841,
+        "count": 1870,
         "samples": [
           {
             "file": "bin/dev.js",
@@ -743,20 +743,20 @@
           },
           {
             "file": "src/commands/generate/command.ts",
-            "line": 38,
-            "column": 49,
+            "line": 42,
+            "column": 51,
             "message": "Strings must use doublequote."
           },
           {
             "file": "src/commands/pack/deb.ts",
-            "line": 91,
-            "column": 29,
+            "line": 74,
+            "column": 13,
             "message": "Strings must use doublequote."
           },
           {
             "file": "src/commands/pack/win.ts",
-            "line": 397,
-            "column": 5,
+            "line": 389,
+            "column": 47,
             "message": "Strings must use doublequote."
           },
           {
@@ -767,26 +767,26 @@
           },
           {
             "file": "src/tarballs/bin.ts",
-            "line": 50,
-            "column": 42,
+            "line": 107,
+            "column": 28,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/upload-util.ts",
-            "line": 62,
-            "column": 46,
+            "file": "src/util.ts",
+            "line": 6,
+            "column": 25,
             "message": "Strings must use doublequote."
           },
           {
             "file": "test/integration/deb.test.ts",
-            "line": 22,
-            "column": 10,
+            "line": 53,
+            "column": 134,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "test/unit/aws-checksum.test.ts",
-            "line": 48,
-            "column": 63,
+            "file": "test/unit/manifest.test.ts",
+            "line": 13,
+            "column": 14,
             "message": "Strings must use doublequote."
           },
           {
@@ -877,7 +877,7 @@
     },
     "semi": {
       "always": {
-        "count": 1918,
+        "count": 1940,
         "samples": [
           {
             "file": "bin/dev.js",
@@ -887,38 +887,38 @@
           },
           {
             "file": "src/commands/init.ts",
-            "line": 93,
+            "line": 108,
             "column": 7,
             "message": "Missing semicolon."
           },
           {
-            "file": "src/commands/pack/tarballs.ts",
-            "line": 28,
+            "file": "src/commands/pack/macos.ts",
+            "line": 247,
             "column": 51,
             "message": "Missing semicolon."
           },
           {
             "file": "src/commands/upload/tarballs.ts",
-            "line": 83,
+            "line": 66,
             "column": 101,
             "message": "Missing semicolon."
           },
           {
             "file": "src/readme-generator.ts",
-            "line": 299,
-            "column": 32,
+            "line": 296,
+            "column": 75,
             "message": "Missing semicolon."
           },
           {
             "file": "src/tarballs/config.ts",
-            "line": 127,
-            "column": 49,
+            "line": 129,
+            "column": 121,
             "message": "Missing semicolon."
           },
           {
             "file": "test/fixtures/cli-with-nested-topics-with-space-separator/src/commands/roottopic/subtopic1/hello.ts",
-            "line": 9,
-            "column": 28,
+            "line": 5,
+            "column": 42,
             "message": "Missing semicolon."
           },
           {
@@ -929,8 +929,8 @@
           },
           {
             "file": "test/integration/win.test.ts",
-            "line": 10,
-            "column": 113,
+            "line": 14,
+            "column": 77,
             "message": "Missing semicolon."
           },
           {

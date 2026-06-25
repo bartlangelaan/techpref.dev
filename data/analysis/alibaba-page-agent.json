@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "96d58f23c7cc",
-  "analyzedCommit": "1c82030a21071b3be0094b2fcc0498325a399225",
-  "analyzedCommitDate": "2026-06-04T13:05:19.000Z",
+  "analyzedCommit": "fb4b8fd0670bce33a134f7d7075e636992de481d",
+  "analyzedCommitDate": "2026-06-23T06:24:52.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -16,7 +16,7 @@
         ]
       },
       "generic": {
-        "count": 89,
+        "count": 88,
         "samples": [
           {
             "file": "packages/core/src/PageAgentCore.ts",
@@ -37,16 +37,16 @@
             "message": "Array type using 'SessionRecord[]' is forbidden. Use 'Array<SessionRecord>' instead."
           },
           {
-            "file": "packages/extension/src/lib/utils.ts",
-            "line": 4,
-            "column": 31,
-            "message": "Array type using 'ClassValue[]' is forbidden. Use 'Array<ClassValue>' instead."
+            "file": "packages/llms/src/OpenAIClient.ts",
+            "line": 23,
+            "column": 13,
+            "message": "Array type using 'Message[]' is forbidden. Use 'Array<Message>' instead."
           },
           {
             "file": "packages/page-controller/src/dom/index.ts",
-            "line": 27,
-            "column": 25,
-            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
+            "line": 28,
+            "column": 22,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
             "file": "packages/page-controller/src/dom/index.ts",
@@ -62,9 +62,9 @@
           },
           {
             "file": "packages/website/src/components/JSConsole.tsx",
-            "line": 116,
-            "column": 41,
-            "message": "Array type using 'OutputItem[]' is forbidden. Use 'Array<OutputItem>' instead."
+            "line": 145,
+            "column": 52,
+            "message": "Array type using 'unknown[]' is forbidden. Use 'Array<unknown>' instead."
           },
           {
             "file": "packages/website/src/components/ui/particles.tsx",
@@ -87,17 +87,23 @@
         "samples": []
       },
       "type-annotation": {
-        "count": 13,
+        "count": 15,
         "samples": [
           {
+            "file": "packages/core/src/PageAgentCore.test.ts",
+            "line": 331,
+            "column": 36,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
             "file": "packages/core/src/tools/index.ts",
-            "line": 28,
+            "line": 36,
             "column": 29,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
             "file": "packages/core/src/utils/index.ts",
-            "line": 60,
+            "line": 80,
             "column": 29,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
@@ -114,9 +120,9 @@
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "packages/page-controller/src/PageController.ts",
-            "line": 71,
-            "column": 34,
+            "file": "packages/page-controller/src/dom/index.ts",
+            "line": 55,
+            "column": 37,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
@@ -127,20 +133,14 @@
           },
           {
             "file": "packages/page-controller/src/dom/index.ts",
-            "line": 335,
-            "column": 35,
-            "message": "The generic type arguments should be specified as part of the type annotation."
-          },
-          {
-            "file": "packages/page-controller/src/dom/index.ts",
             "line": 497,
             "column": 29,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "packages/website/src/components/JSConsole.tsx",
-            "line": 14,
-            "column": 31,
+            "file": "packages/page-controller/src/dom/index.ts",
+            "line": 515,
+            "column": 32,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
@@ -236,35 +236,35 @@
         ]
       },
       "type": {
-        "count": 82,
+        "count": 83,
         "samples": [
           {
             "file": "packages/core/src/tools/index.ts",
-            "line": 13,
+            "line": 14,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "packages/core/src/types.ts",
-            "line": 248,
+            "line": 238,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "packages/extension/src/agent/useAgent.ts",
-            "line": 28,
+            "line": 20,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "packages/extension/src/entrypoints/hub/hub-ws.ts",
-            "line": 39,
+            "line": 35,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "packages/llms/src/types.ts",
-            "line": 57,
+            "line": 38,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
@@ -368,42 +368,42 @@
         ]
       },
       "no-type-imports": {
-        "count": 66,
+        "count": 68,
         "samples": [
           {
-            "file": "packages/core/src/PageAgentCore.ts",
-            "line": 6,
-            "column": 28,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "packages/core/src/utils/autoFixer.ts",
-            "line": 5,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "packages/extension/src/agent/useAgent.ts",
-            "line": 4,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "packages/extension/src/components/misc.tsx",
+            "file": "packages/core/src/PageAgentCore.test.ts",
             "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/extension/src/entrypoints/hub/hub-ws.ts",
-            "line": 19,
+            "file": "packages/core/src/types.ts",
+            "line": 4,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/llms/src/OpenAIClient.test.ts",
-            "line": 7,
+            "file": "packages/extension/src/agent/tabTools.ts",
+            "line": 11,
             "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "packages/extension/src/components/HistoryList.tsx",
+            "line": 13,
+            "column": 10,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "packages/extension/src/entrypoints/hub/hub-ws.ts",
+            "line": 16,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "packages/extension/src/lib/utils.ts",
+            "line": 1,
+            "column": 10,
             "message": "Use an `import` instead of an `import type`."
           },
           {
@@ -413,9 +413,9 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/ui/src/i18n/index.ts",
-            "line": 2,
-            "column": 2,
+            "file": "packages/page-controller/src/patches/react.ts",
+            "line": 1,
+            "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
@@ -435,41 +435,41 @@
     },
     "func-style": {
       "expression": {
-        "count": 243,
+        "count": 258,
         "samples": [
           {
-            "file": "packages/core/src/tools/index.ts",
-            "line": 20,
-            "column": 8,
+            "file": "packages/core/src/PageAgentCore.test.ts",
+            "line": 10,
+            "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "packages/extension/src/agent/useAgent.ts",
+            "file": "packages/extension/src/agent/TabsController.background.ts",
+            "line": 135,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "packages/extension/src/components/misc.tsx",
             "line": 43,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "packages/extension/src/components/ui/card.tsx",
-            "line": 51,
+            "file": "packages/extension/src/components/ui/input.tsx",
+            "line": 5,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "packages/extension/src/components/ui/item.tsx",
-            "line": 101,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "packages/extension/src/lib/history-export.ts",
-            "line": 19,
+            "file": "packages/extension/src/lib/db.ts",
+            "line": 62,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "packages/page-controller/src/actions.ts",
-            "line": 419,
+            "line": 277,
             "column": 8,
             "message": "Expected a function expression."
           },
@@ -480,15 +480,15 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "packages/ui/src/panel/cards.ts",
-            "line": 18,
+            "file": "packages/ui/src/motion-css/createMotion.ts",
+            "line": 3,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "packages/website/src/components/ui/separator.tsx",
-            "line": 6,
-            "column": 1,
+            "file": "packages/website/src/components/ui/marquee.tsx",
+            "line": 36,
+            "column": 8,
             "message": "Expected a function expression."
           },
           {
@@ -500,48 +500,48 @@
         ]
       },
       "declaration": {
-        "count": 80,
+        "count": 82,
         "samples": [
           {
-            "file": "packages/extension/src/agent/TabsController.ts",
-            "line": 408,
+            "file": "packages/core/src/PageAgentCore.test.ts",
+            "line": 77,
             "column": 9,
             "message": "Expected a function declaration."
           },
           {
             "file": "packages/extension/src/components/HistoryList.tsx",
-            "line": 64,
+            "line": 53,
             "column": 8,
             "message": "Expected a function declaration."
           },
           {
-            "file": "packages/extension/src/entrypoints/sidepanel/App.tsx",
-            "line": 87,
+            "file": "packages/extension/src/entrypoints/main-world.ts",
+            "line": 37,
             "column": 8,
             "message": "Expected a function declaration."
           },
           {
-            "file": "packages/page-controller/src/dom/index.ts",
-            "line": 232,
-            "column": 8,
+            "file": "packages/page-controller/src/dom/dom_tree/index.js",
+            "line": 378,
+            "column": 10,
             "message": "Expected a function declaration."
           },
           {
-            "file": "packages/website/src/components/JSConsole.tsx",
-            "line": 125,
-            "column": 8,
+            "file": "packages/website/src/components/HighlightSyntax.tsx",
+            "line": 169,
+            "column": 7,
             "message": "Expected a function declaration."
           },
           {
             "file": "packages/website/src/components/ThemeSwitcher.tsx",
-            "line": 48,
-            "column": 8,
+            "line": 36,
+            "column": 9,
             "message": "Expected a function declaration."
           },
           {
-            "file": "packages/website/src/components/ui/neon-gradient-card.tsx",
-            "line": 59,
-            "column": 14,
+            "file": "packages/website/src/components/ui/magic-card.tsx",
+            "line": 52,
+            "column": 9,
             "message": "Expected a function declaration."
           },
           {
@@ -567,7 +567,7 @@
     },
     "import-export-preference": {
       "named": {
-        "count": 49,
+        "count": 51,
         "samples": [
           {
             "file": "eslint.config.js",
@@ -582,31 +582,31 @@
             "message": "Prefer named exports"
           },
           {
-            "file": "packages/page-agent/vite.iife.config.js",
-            "line": 17,
+            "file": "packages/page-agent/vite.config.js",
+            "line": 11,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "packages/website/src/components/CodeEditor.tsx",
-            "line": 129,
+            "file": "packages/website/src/components/BetaNotice.tsx",
+            "line": 3,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "packages/website/src/components/LanguageSwitcher.tsx",
-            "line": 5,
+            "file": "packages/website/src/components/JSConsole.tsx",
+            "line": 371,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "packages/website/src/pages/docs/advanced/page-controller/page.tsx",
-            "line": 8,
+            "file": "packages/website/src/pages/docs/advanced/page-agent/page.tsx",
+            "line": 7,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "packages/website/src/pages/docs/features/data-masking/page.tsx",
+            "file": "packages/website/src/pages/docs/features/custom-tools/page.tsx",
             "line": 5,
             "column": 8,
             "message": "Prefer named exports"
@@ -618,8 +618,8 @@
             "message": "Prefer named exports"
           },
           {
-            "file": "packages/website/src/pages/home/OneMoreThingSection.tsx",
-            "line": 9,
+            "file": "packages/website/src/pages/home/HeroSection.tsx",
+            "line": 40,
             "column": 8,
             "message": "Prefer named exports"
           },
@@ -699,7 +699,7 @@
     },
     "indent": {
       "2-space": {
-        "count": 156,
+        "count": 160,
         "samples": [
           {
             "file": "eslint.config.js",
@@ -708,50 +708,50 @@
             "message": "Expected spaces for indentation, but found tabs."
           },
           {
-            "file": "packages/extension/src/components/ErrorBoundary.tsx",
+            "file": "packages/extension/src/components/ConfigPanel.tsx",
+            "line": 2,
+            "column": 1,
+            "message": "Expected spaces for indentation, but found tabs."
+          },
+          {
+            "file": "packages/extension/src/components/ui/switch.tsx",
             "line": 7,
             "column": 1,
             "message": "Expected spaces for indentation, but found tabs."
           },
           {
-            "file": "packages/extension/src/components/ui/textarea.tsx",
+            "file": "packages/llms/src/index.test.ts",
+            "line": 7,
+            "column": 1,
+            "message": "Expected spaces for indentation, but found tabs."
+          },
+          {
+            "file": "packages/page-controller/src/dom/getPageInfo.ts",
+            "line": 2,
+            "column": 1,
+            "message": "Expected spaces for indentation, but found tabs."
+          },
+          {
+            "file": "packages/website/src/components/APIReference.tsx",
+            "line": 17,
+            "column": 1,
+            "message": "Expected spaces for indentation, but found tabs."
+          },
+          {
+            "file": "packages/website/src/components/ui/highlighter.tsx",
+            "line": 8,
+            "column": 1,
+            "message": "Expected spaces for indentation, but found tabs."
+          },
+          {
+            "file": "packages/website/src/lib/useDocumentTitle.ts",
             "line": 6,
             "column": 1,
             "message": "Expected spaces for indentation, but found tabs."
           },
           {
-            "file": "packages/llms/src/index.ts",
-            "line": 11,
-            "column": 1,
-            "message": "Expected spaces for indentation, but found tabs."
-          },
-          {
-            "file": "packages/page-controller/src/dom/index.ts",
-            "line": 3,
-            "column": 1,
-            "message": "Expected spaces for indentation, but found tabs."
-          },
-          {
-            "file": "packages/website/src/components/CodeEditor.tsx",
-            "line": 9,
-            "column": 1,
-            "message": "Expected spaces for indentation, but found tabs."
-          },
-          {
-            "file": "packages/website/src/components/ui/hyper-text.tsx",
-            "line": 10,
-            "column": 1,
-            "message": "Expected spaces for indentation, but found tabs."
-          },
-          {
-            "file": "packages/website/src/lib/utils.ts",
-            "line": 5,
-            "column": 1,
-            "message": "Expected spaces for indentation, but found tabs."
-          },
-          {
-            "file": "packages/website/src/pages/docs/introduction/overview/page.tsx",
-            "line": 5,
+            "file": "packages/website/src/pages/docs/introduction/limitations/page.tsx",
+            "line": 7,
             "column": 1,
             "message": "Expected spaces for indentation, but found tabs."
           },
@@ -764,7 +764,7 @@
         ]
       },
       "4-space": {
-        "count": 156,
+        "count": 160,
         "samples": [
           {
             "file": "eslint.config.js",
@@ -773,50 +773,50 @@
             "message": "Expected spaces for indentation, but found tabs."
           },
           {
-            "file": "packages/extension/src/components/ErrorBoundary.tsx",
+            "file": "packages/extension/src/components/ConfigPanel.tsx",
+            "line": 2,
+            "column": 1,
+            "message": "Expected spaces for indentation, but found tabs."
+          },
+          {
+            "file": "packages/extension/src/components/ui/switch.tsx",
             "line": 7,
             "column": 1,
             "message": "Expected spaces for indentation, but found tabs."
           },
           {
-            "file": "packages/extension/src/components/ui/textarea.tsx",
+            "file": "packages/llms/src/index.test.ts",
+            "line": 7,
+            "column": 1,
+            "message": "Expected spaces for indentation, but found tabs."
+          },
+          {
+            "file": "packages/page-controller/src/dom/getPageInfo.ts",
+            "line": 2,
+            "column": 1,
+            "message": "Expected spaces for indentation, but found tabs."
+          },
+          {
+            "file": "packages/website/src/components/APIReference.tsx",
+            "line": 17,
+            "column": 1,
+            "message": "Expected spaces for indentation, but found tabs."
+          },
+          {
+            "file": "packages/website/src/components/ui/highlighter.tsx",
+            "line": 8,
+            "column": 1,
+            "message": "Expected spaces for indentation, but found tabs."
+          },
+          {
+            "file": "packages/website/src/lib/useDocumentTitle.ts",
             "line": 6,
             "column": 1,
             "message": "Expected spaces for indentation, but found tabs."
           },
           {
-            "file": "packages/llms/src/index.ts",
-            "line": 11,
-            "column": 1,
-            "message": "Expected spaces for indentation, but found tabs."
-          },
-          {
-            "file": "packages/page-controller/src/dom/index.ts",
-            "line": 3,
-            "column": 1,
-            "message": "Expected spaces for indentation, but found tabs."
-          },
-          {
-            "file": "packages/website/src/components/CodeEditor.tsx",
-            "line": 9,
-            "column": 1,
-            "message": "Expected spaces for indentation, but found tabs."
-          },
-          {
-            "file": "packages/website/src/components/ui/hyper-text.tsx",
-            "line": 10,
-            "column": 1,
-            "message": "Expected spaces for indentation, but found tabs."
-          },
-          {
-            "file": "packages/website/src/lib/utils.ts",
-            "line": 5,
-            "column": 1,
-            "message": "Expected spaces for indentation, but found tabs."
-          },
-          {
-            "file": "packages/website/src/pages/docs/introduction/overview/page.tsx",
-            "line": 5,
+            "file": "packages/website/src/pages/docs/introduction/limitations/page.tsx",
+            "line": 7,
             "column": 1,
             "message": "Expected spaces for indentation, but found tabs."
           },
@@ -875,7 +875,7 @@
           },
           {
             "file": "packages/website/src/pages/docs/features/models/page.tsx",
-            "line": 135,
+            "line": 144,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -896,7 +896,7 @@
     },
     "quotes": {
       "double": {
-        "count": 4513,
+        "count": 4694,
         "samples": [
           {
             "file": "eslint.config.js",
@@ -905,51 +905,51 @@
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/extension/src/components/ErrorBoundary.tsx",
-            "line": 31,
-            "column": 38,
+            "file": "packages/extension/src/agent/TabsController.ts",
+            "line": 220,
+            "column": 12,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/extension/src/entrypoints/main-world.ts",
-            "line": 72,
-            "column": 25,
+            "file": "packages/extension/src/entrypoints/content.ts",
+            "line": 134,
+            "column": 16,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/mcp/src/index.js",
-            "line": 56,
-            "column": 13,
+            "file": "packages/llms/src/utils.ts",
+            "line": 115,
+            "column": 27,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/page-controller/src/dom/index.ts",
-            "line": 451,
-            "column": 26,
+            "file": "packages/page-controller/src/dom/dom_tree/index.js",
+            "line": 1633,
+            "column": 59,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/website/src/components/JSConsole.tsx",
-            "line": 129,
-            "column": 71,
+            "file": "packages/website/src/components/Header.tsx",
+            "line": 7,
+            "column": 29,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/website/src/pages/docs/Layout.tsx",
-            "line": 48,
-            "column": 39,
+            "file": "packages/website/src/i18n/context.tsx",
+            "line": 15,
+            "column": 40,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/website/src/pages/docs/features/chrome-extension/page.tsx",
-            "line": 64,
-            "column": 15,
+            "file": "packages/website/src/pages/docs/advanced/security-permissions/page.tsx",
+            "line": 55,
+            "column": 23,
             "message": "Strings must use doublequote."
           },
           {
             "file": "packages/website/src/pages/docs/introduction/troubleshooting/page.tsx",
-            "line": 100,
-            "column": 44,
+            "line": 53,
+            "column": 16,
             "message": "Strings must use doublequote."
           },
           {
@@ -965,7 +965,7 @@
         "samples": [
           {
             "file": "packages/core/src/PageAgentCore.ts",
-            "line": 505,
+            "line": 543,
             "column": 6,
             "message": "Strings must use singlequote."
           },
@@ -989,7 +989,7 @@
           },
           {
             "file": "packages/page-controller/src/actions.ts",
-            "line": 390,
+            "line": 392,
             "column": 22,
             "message": "Strings must use singlequote."
           },
@@ -1222,7 +1222,7 @@
           },
           {
             "file": "packages/website/src/pages/docs/features/models/page.tsx",
-            "line": 58,
+            "line": 67,
             "column": 20,
             "message": "Function component is not a function declaration"
           }
@@ -1413,13 +1413,13 @@
           },
           {
             "file": "packages/website/src/pages/docs/features/models/page.tsx",
-            "line": 207,
+            "line": 216,
             "column": 7,
             "message": "Prefer React.Fragment over fragment shorthand"
           },
           {
             "file": "packages/website/src/pages/docs/features/models/page.tsx",
-            "line": 246,
+            "line": 255,
             "column": 7,
             "message": "Prefer React.Fragment over fragment shorthand"
           },
@@ -1452,7 +1452,7 @@
     },
     "semi": {
       "always": {
-        "count": 4610,
+        "count": 4878,
         "samples": [
           {
             "file": "eslint.config.js",
@@ -1461,51 +1461,51 @@
             "message": "Missing semicolon."
           },
           {
-            "file": "packages/extension/src/agent/TabsController.background.ts",
-            "line": 56,
-            "column": 7,
+            "file": "packages/core/src/utils/index.ts",
+            "line": 105,
+            "column": 36,
             "message": "Missing semicolon."
           },
           {
-            "file": "packages/extension/src/components/ui/hover-card.tsx",
-            "line": 1,
-            "column": 65,
+            "file": "packages/extension/src/components/HistoryList.tsx",
+            "line": 55,
+            "column": 26,
             "message": "Missing semicolon."
           },
           {
-            "file": "packages/llms/src/OpenAIClient.test.ts",
-            "line": 124,
-            "column": 21,
+            "file": "packages/extension/src/lib/db.ts",
+            "line": 4,
+            "column": 33,
             "message": "Missing semicolon."
           },
           {
-            "file": "packages/page-agent/src/PageAgent.ts",
-            "line": 14,
-            "column": 14,
+            "file": "packages/mcp/src/hub-bridge.js",
+            "line": 8,
+            "column": 86,
             "message": "Missing semicolon."
           },
           {
             "file": "packages/page-controller/src/dom/dom_tree/index.js",
-            "line": 490,
-            "column": 15,
+            "line": 285,
+            "column": 40,
             "message": "Missing semicolon."
           },
           {
             "file": "packages/page-controller/src/mask/SimulatorMask.ts",
-            "line": 214,
-            "column": 24,
+            "line": 113,
+            "column": 47,
             "message": "Missing semicolon."
           },
           {
-            "file": "packages/website/src/components/JSConsole.tsx",
-            "line": 138,
-            "column": 3,
+            "file": "packages/website/src/components/HighlightSyntax.tsx",
+            "line": 94,
+            "column": 17,
             "message": "Missing semicolon."
           },
           {
             "file": "packages/website/src/components/ui/typing-animation.tsx",
-            "line": 102,
-            "column": 71,
+            "line": 4,
+            "column": 33,
             "message": "Missing semicolon."
           },
           {

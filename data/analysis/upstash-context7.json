@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "96d58f23c7cc",
-  "analyzedCommit": "7dde3382b0223ed3022cf89542b23b95b4ea532e",
-  "analyzedCommitDate": "2026-06-05T13:39:37.000Z",
+  "analyzedCommit": "0647bb345173bee4eb48055b92f8439f48a06ebc",
+  "analyzedCommitDate": "2026-06-25T09:17:26.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -9,13 +9,13 @@
         "samples": [
           {
             "file": "packages/cli/src/commands/setup.ts",
-            "line": 441,
+            "line": 450,
             "column": 26,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
             "file": "packages/cli/src/commands/setup.ts",
-            "line": 492,
+            "line": 501,
             "column": 18,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
@@ -40,7 +40,7 @@
         ]
       },
       "generic": {
-        "count": 193,
+        "count": 194,
         "samples": [
           {
             "file": "packages/cli/src/__tests__/auth-commands.test.ts",
@@ -67,9 +67,9 @@
             "message": "Array type using 'AgentCleanupResult[]' is forbidden. Use 'Array<AgentCleanupResult>' instead."
           },
           {
-            "file": "packages/cli/src/commands/skill.ts",
-            "line": 957,
-            "column": 26,
+            "file": "packages/cli/src/commands/upgrade.ts",
+            "line": 33,
+            "column": 44,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
@@ -80,15 +80,15 @@
           },
           {
             "file": "packages/cli/src/utils/deps.ts",
-            "line": 38,
-            "column": 59,
+            "line": 42,
+            "column": 15,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
             "file": "packages/cli/src/utils/ide.ts",
-            "line": 143,
-            "column": 18,
-            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
+            "line": 162,
+            "column": 21,
+            "message": "Array type using 'IDE[]' is forbidden. Use 'Array<IDE>' instead."
           },
           {
             "file": "packages/pi/__tests__/extension.test.ts",
@@ -111,7 +111,7 @@
         "samples": [
           {
             "file": "packages/cli/src/commands/generate.ts",
-            "line": 515,
+            "line": 516,
             "column": 19,
             "message": "The generic type arguments should be specified as part of the constructor type arguments."
           },
@@ -152,19 +152,19 @@
           },
           {
             "file": "packages/mcp/src/index.ts",
-            "line": 78,
+            "line": 83,
             "column": 45,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
             "file": "packages/mcp/src/lib/jwt.ts",
-            "line": 9,
+            "line": 17,
             "column": 29,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
             "file": "packages/mcp/src/lib/jwt.ts",
-            "line": 28,
+            "line": 36,
             "column": 33,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
@@ -229,7 +229,7 @@
           },
           {
             "file": "packages/cli/src/utils/github.ts",
-            "line": 159,
+            "line": 168,
             "column": 12,
             "message": "An index signature is preferred over a record."
           },
@@ -297,7 +297,7 @@
         ]
       },
       "type": {
-        "count": 76,
+        "count": 75,
         "samples": [
           {
             "file": "packages/cli/src/commands/auth.ts",
@@ -313,7 +313,7 @@
           },
           {
             "file": "packages/cli/src/types.ts",
-            "line": 48,
+            "line": 41,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
@@ -330,20 +330,20 @@
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "packages/cli/src/utils/auth.ts",
-            "line": 10,
+            "file": "packages/cli/src/utils/api.ts",
+            "line": 312,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "packages/cli/src/utils/selectOrInput.ts",
-            "line": 13,
+            "file": "packages/cli/src/utils/prompts.ts",
+            "line": 68,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "packages/mcp/src/lib/types.ts",
-            "line": 1,
+            "line": 17,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
@@ -364,19 +364,25 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 10,
+        "count": 12,
         "samples": [
           {
             "file": "packages/cli/src/__tests__/update-check.test.ts",
-            "line": 164,
+            "line": 165,
             "column": 51,
             "message": "`import()` type annotations are forbidden."
           },
           {
-            "file": "packages/cli/src/commands/auth.ts",
-            "line": 1,
-            "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
+            "file": "packages/cli/src/__tests__/update-check.test.ts",
+            "line": 208,
+            "column": 51,
+            "message": "`import()` type annotations are forbidden."
+          },
+          {
+            "file": "packages/cli/src/__tests__/update-check.test.ts",
+            "line": 248,
+            "column": 51,
+            "message": "`import()` type annotations are forbidden."
           },
           {
             "file": "packages/cli/src/commands/docs.ts",
@@ -403,12 +409,6 @@
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "packages/cli/src/commands/skill.ts",
-            "line": 1,
-            "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
-          {
             "file": "packages/cli/src/commands/upgrade.ts",
             "line": 3,
             "column": 1,
@@ -429,7 +429,7 @@
         ]
       },
       "no-type-imports": {
-        "count": 45,
+        "count": 48,
         "samples": [
           {
             "file": "packages/cli/src/__tests__/auth-utils.test.ts",
@@ -438,39 +438,39 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/cli/src/commands/remove.ts",
-            "line": 7,
-            "column": 56,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "packages/cli/src/commands/upgrade.ts",
-            "line": 14,
-            "column": 3,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "packages/cli/src/utils/prompts.ts",
-            "line": 2,
-            "column": 20,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "packages/mcp/src/lib/encryption.ts",
-            "line": 3,
+            "file": "packages/cli/src/commands/docs.ts",
+            "line": 10,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/pi/lib/format.ts",
+            "file": "packages/cli/src/commands/setup.ts",
+            "line": 19,
+            "column": 3,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "packages/cli/src/utils/installer.ts",
             "line": 4,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/pi/lib/tools/resolve-library-id.ts",
-            "line": 2,
+            "file": "packages/mcp/src/lib/auth/auth-prompt.ts",
+            "line": 1,
             "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "packages/pi/lib/api.ts",
+            "line": 6,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "packages/pi/lib/tools/resolve-library-id.ts",
+            "line": 1,
+            "column": 16,
             "message": "Use an `import` instead of an `import type`."
           },
           {
@@ -496,7 +496,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 233,
+        "count": 254,
         "samples": [
           {
             "file": "packages/cli/src/__tests__/auth-commands.test.ts",
@@ -505,38 +505,38 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "packages/cli/src/commands/generate.ts",
-            "line": 58,
+            "file": "packages/cli/src/commands/remove.ts",
+            "line": 91,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "packages/cli/src/commands/setup.ts",
-            "line": 136,
+            "line": 211,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "packages/cli/src/commands/upgrade.ts",
-            "line": 45,
+            "file": "packages/cli/src/setup/agents.ts",
+            "line": 43,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "packages/cli/src/utils/api.ts",
+            "line": 35,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "packages/cli/src/setup/mcp-writer.ts",
-            "line": 250,
-            "column": 8,
+            "file": "packages/cli/src/utils/github.ts",
+            "line": 96,
+            "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "packages/cli/src/utils/auth.ts",
-            "line": 87,
-            "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "packages/cli/src/utils/installer.ts",
-            "line": 7,
+            "file": "packages/cli/src/utils/prompts.ts",
+            "line": 73,
             "column": 8,
             "message": "Expected a function expression."
           },
@@ -571,19 +571,19 @@
           },
           {
             "file": "packages/cli/src/commands/generate.ts",
-            "line": 300,
+            "line": 301,
             "column": 9,
             "message": "Expected a function declaration."
           },
           {
             "file": "packages/cli/src/commands/generate.ts",
-            "line": 347,
+            "line": 348,
             "column": 9,
             "message": "Expected a function declaration."
           },
           {
             "file": "packages/cli/src/commands/generate.ts",
-            "line": 447,
+            "line": 448,
             "column": 11,
             "message": "Expected a function declaration."
           },
@@ -601,19 +601,19 @@
           },
           {
             "file": "packages/cli/src/utils/update-check.ts",
-            "line": 69,
+            "line": 90,
             "column": 9,
             "message": "Expected a function declaration."
           },
           {
             "file": "packages/mcp/src/index.ts",
-            "line": 383,
+            "line": 400,
             "column": 11,
             "message": "Expected a function declaration."
           },
           {
             "file": "packages/mcp/src/index.ts",
-            "line": 613,
+            "line": 630,
             "column": 11,
             "message": "Expected a function declaration."
           },
@@ -693,11 +693,11 @@
         ]
       },
       "default": {
-        "count": 18,
+        "count": 20,
         "samples": [
           {
             "file": "packages/cli/src/commands/docs.ts",
-            "line": 209,
+            "line": 218,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -714,14 +714,14 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "packages/mcp/src/lib/encryption.ts",
-            "line": 36,
+            "file": "packages/cli/src/utils/tracking.ts",
+            "line": 3,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "packages/mcp/src/lib/sessionStore.ts",
-            "line": 11,
+            "file": "packages/mcp/src/lib/encryption.ts",
+            "line": 36,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -771,7 +771,7 @@
         ]
       },
       "4-space": {
-        "count": 91,
+        "count": 96,
         "samples": [
           {
             "file": "eslint.config.js",
@@ -780,38 +780,38 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/cli/src/commands/auth.ts",
-            "line": 7,
+            "file": "packages/cli/src/__tests__/upgrade-command.test.ts",
+            "line": 14,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/cli/src/setup/templates.ts",
-            "line": 2,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "packages/cli/src/utils/prompts.ts",
-            "line": 12,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "packages/mcp/src/lib/api.ts",
-            "line": 16,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "packages/pi/__tests__/extension.test.ts",
+            "file": "packages/cli/src/setup/mcp-writer.ts",
             "line": 6,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/pi/vitest.config.ts",
-            "line": 8,
+            "file": "packages/cli/src/utils/parse-input.ts",
+            "line": 2,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "packages/mcp/prettier.config.mjs",
+            "line": 5,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "packages/mcp/test/jwt.test.ts",
+            "line": 5,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "packages/pi/lib/types.ts",
+            "line": 5,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -822,8 +822,8 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/tools-ai-sdk/src/agents/context7.ts",
-            "line": 12,
+            "file": "packages/tools-ai-sdk/eslint.config.js",
+            "line": 6,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -836,7 +836,7 @@
         ]
       },
       "tab": {
-        "count": 91,
+        "count": 96,
         "samples": [
           {
             "file": "eslint.config.js",
@@ -845,38 +845,38 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/cli/src/commands/auth.ts",
-            "line": 7,
+            "file": "packages/cli/src/__tests__/upgrade-command.test.ts",
+            "line": 14,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/cli/src/setup/templates.ts",
-            "line": 2,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "packages/cli/src/utils/prompts.ts",
-            "line": 12,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "packages/mcp/src/lib/api.ts",
-            "line": 16,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "packages/pi/__tests__/extension.test.ts",
+            "file": "packages/cli/src/setup/mcp-writer.ts",
             "line": 6,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/pi/vitest.config.ts",
-            "line": 8,
+            "file": "packages/cli/src/utils/parse-input.ts",
+            "line": 2,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "packages/mcp/prettier.config.mjs",
+            "line": 5,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "packages/mcp/test/jwt.test.ts",
+            "line": 5,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "packages/pi/lib/types.ts",
+            "line": 5,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -887,8 +887,8 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/tools-ai-sdk/src/agents/context7.ts",
-            "line": 12,
+            "file": "packages/tools-ai-sdk/eslint.config.js",
+            "line": 6,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -903,7 +903,7 @@
     },
     "quotes": {
       "double": {
-        "count": 77,
+        "count": 76,
         "samples": [
           {
             "file": "packages/cli/src/__tests__/installer.test.ts",
@@ -931,8 +931,8 @@
           },
           {
             "file": "packages/cli/src/__tests__/setup.test.ts",
-            "line": 906,
-            "column": 33,
+            "line": 530,
+            "column": 27,
             "message": "Strings must use doublequote."
           },
           {
@@ -942,33 +942,33 @@
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/cli/src/commands/auth.ts",
-            "line": 139,
-            "column": 26,
+            "file": "packages/cli/src/__tests__/setup.test.ts",
+            "line": 1310,
+            "column": 37,
             "message": "Strings must use doublequote."
           },
           {
             "file": "packages/cli/src/commands/generate.ts",
-            "line": 123,
+            "line": 121,
             "column": 26,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/cli/src/index.ts",
-            "line": 55,
-            "column": 19,
+            "file": "packages/cli/src/commands/skill.ts",
+            "line": 789,
+            "column": 14,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/mcp/src/lib/auth/auth-prompt.ts",
-            "line": 42,
-            "column": 5,
+            "file": "packages/mcp/src/lib/api.ts",
+            "line": 92,
+            "column": 21,
             "message": "Strings must use doublequote."
           }
         ]
       },
       "single": {
-        "count": 4267,
+        "count": 4471,
         "samples": [
           {
             "file": "eslint.config.js",
@@ -978,50 +978,50 @@
           },
           {
             "file": "packages/cli/src/__tests__/remove.test.ts",
-            "line": 95,
-            "column": 38,
+            "line": 72,
+            "column": 40,
             "message": "Strings must use singlequote."
           },
           {
             "file": "packages/cli/src/__tests__/setup.test.ts",
-            "line": 471,
-            "column": 8,
+            "line": 445,
+            "column": 53,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "packages/cli/src/__tests__/skill-list.test.ts",
-            "line": 62,
-            "column": 42,
+            "file": "packages/cli/src/__tests__/storage-paths.test.ts",
+            "line": 13,
+            "column": 14,
             "message": "Strings must use singlequote."
           },
           {
             "file": "packages/cli/src/commands/generate.ts",
-            "line": 369,
-            "column": 49,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "packages/cli/src/commands/skill.ts",
-            "line": 182,
+            "line": 114,
             "column": 25,
             "message": "Strings must use singlequote."
           },
           {
+            "file": "packages/cli/src/commands/skill.ts",
+            "line": 146,
+            "column": 13,
+            "message": "Strings must use singlequote."
+          },
+          {
             "file": "packages/cli/src/setup/agents.ts",
-            "line": 264,
-            "column": 74,
+            "line": 251,
+            "column": 48,
             "message": "Strings must use singlequote."
           },
           {
             "file": "packages/cli/src/utils/update-check.ts",
-            "line": 160,
-            "column": 16,
+            "line": 145,
+            "column": 23,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "packages/pi/lib/prompts.ts",
-            "line": 6,
-            "column": 41,
+            "file": "packages/pi/lib/result.ts",
+            "line": 5,
+            "column": 23,
             "message": "Strings must use singlequote."
           },
           {
@@ -1087,7 +1087,7 @@
         "samples": []
       },
       "never": {
-        "count": 4706,
+        "count": 4950,
         "samples": [
           {
             "file": "eslint.config.js",
@@ -1097,44 +1097,44 @@
           },
           {
             "file": "packages/cli/src/__tests__/remove.test.ts",
-            "line": 265,
-            "column": 63,
+            "line": 198,
+            "column": 60,
             "message": "Extra semicolon."
           },
           {
             "file": "packages/cli/src/__tests__/setup.test.ts",
-            "line": 1040,
-            "column": 98,
+            "line": 1059,
+            "column": 5,
             "message": "Extra semicolon."
           },
           {
             "file": "packages/cli/src/commands/docs.ts",
-            "line": 159,
-            "column": 79,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "packages/cli/src/commands/setup.ts",
-            "line": 174,
-            "column": 50,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "packages/cli/src/commands/skill.ts",
-            "line": 948,
+            "line": 60,
             "column": 39,
             "message": "Extra semicolon."
           },
           {
+            "file": "packages/cli/src/commands/setup.ts",
+            "line": 103,
+            "column": 78,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "packages/cli/src/commands/skill.ts",
+            "line": 949,
+            "column": 11,
+            "message": "Extra semicolon."
+          },
+          {
             "file": "packages/cli/src/utils/deps.ts",
-            "line": 29,
-            "column": 49,
+            "line": 71,
+            "column": 24,
             "message": "Extra semicolon."
           },
           {
             "file": "packages/mcp/src/index.ts",
-            "line": 311,
-            "column": 36,
+            "line": 237,
+            "column": 68,
             "message": "Extra semicolon."
           },
           {

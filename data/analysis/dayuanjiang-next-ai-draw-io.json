@@ -1,12 +1,18 @@
 {
   "analyzedVersion": "96d58f23c7cc",
-  "analyzedCommit": "54ff8d982ce9e3902dd8451f937701fa8dec2cf6",
-  "analyzedCommitDate": "2026-06-09T12:11:02.000Z",
+  "analyzedCommit": "5bfd7b24680cbf807b5ea17d83f05edc33c6f5f2",
+  "analyzedCommitDate": "2026-06-28T03:41:29.000Z",
   "checks": {
     "array-type": {
       "array": {
-        "count": 8,
+        "count": 9,
         "samples": [
+          {
+            "file": "components/provider-credentials-fields.tsx",
+            "line": 29,
+            "column": 20,
+            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
+          },
           {
             "file": "edge-functions/api/edgeai/chat/completions.ts",
             "line": 16,
@@ -58,25 +64,25 @@
         ]
       },
       "generic": {
-        "count": 143,
+        "count": 178,
         "samples": [
           {
-            "file": "app/api/chat/route.ts",
-            "line": 396,
-            "column": 33,
-            "message": "Array type using 'any[]' is forbidden. Use 'Array<any>' instead."
+            "file": "app/[lang]/admin/admin-shared.ts",
+            "line": 39,
+            "column": 13,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
-            "file": "components/chat-message-display.tsx",
-            "line": 158,
+            "file": "components/chat-input.tsx",
+            "line": 161,
+            "column": 28,
+            "message": "Array type using 'File[]' is forbidden. Use 'Array<File>' instead."
+          },
+          {
+            "file": "components/chat-panel.tsx",
+            "line": 1119,
             "column": 16,
-            "message": "Array type using 'SessionMetadata[]' is forbidden. Use 'Array<SessionMetadata>' instead."
-          },
-          {
-            "file": "components/chat/TemplatePanel.tsx",
-            "line": 82,
-            "column": 48,
-            "message": "Array type using 'Template[]' is forbidden. Use 'Array<Template>' instead."
+            "message": "Array type using 'File[]' is forbidden. Use 'Array<File>' instead."
           },
           {
             "file": "electron/main/app-menu.ts",
@@ -85,34 +91,34 @@
             "message": "Array type using 'MenuItemConstructorOptions[]' is forbidden. Use 'Array<MenuItemConstructorOptions>' instead."
           },
           {
-            "file": "lib/cached-responses.ts",
-            "line": 7,
-            "column": 40,
-            "message": "Array type using 'CachedResponse[]' is forbidden. Use 'Array<CachedResponse>' instead."
+            "file": "lib/admin/providers.ts",
+            "line": 144,
+            "column": 4,
+            "message": "Array type using 'StoredAdminProvider[]' is forbidden. Use 'Array<StoredAdminProvider>' instead."
           },
           {
-            "file": "lib/session-storage.ts",
-            "line": 291,
-            "column": 44,
-            "message": "Array type using 'unknown[]' is forbidden. Use 'Array<unknown>' instead."
+            "file": "lib/diagram-validator.ts",
+            "line": 24,
+            "column": 18,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
-            "file": "lib/types/model-config.ts",
-            "line": 428,
-            "column": 19,
-            "message": "Array type using 'FlattenedModel[]' is forbidden. Use 'Array<FlattenedModel>' instead."
+            "file": "lib/template-storage.ts",
+            "line": 286,
+            "column": 16,
+            "message": "Array type using 'Template[]' is forbidden. Use 'Array<Template>' instead."
           },
           {
             "file": "lib/utils.ts",
-            "line": 1306,
-            "column": 21,
+            "line": 985,
+            "column": 66,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
             "file": "packages/mcp-server/src/xml-validation.ts",
-            "line": 214,
-            "column": 22,
-            "message": "Array type using 'number[]' is forbidden. Use 'Array<number>' instead."
+            "line": 45,
+            "column": 37,
+            "message": "Array type using 'ParsedTag[]' is forbidden. Use 'Array<ParsedTag>' instead."
           },
           {
             "file": "tests/unit/template-storage.test.ts",
@@ -125,11 +131,24 @@
     },
     "consistent-generic-constructors": {
       "constructor": {
-        "count": 0,
-        "samples": []
+        "count": 2,
+        "samples": [
+          {
+            "file": "lib/admin/settings-registry.ts",
+            "line": 220,
+            "column": 29,
+            "message": "The generic type arguments should be specified as part of the constructor type arguments."
+          },
+          {
+            "file": "lib/admin/settings-registry.ts",
+            "line": 224,
+            "column": 31,
+            "message": "The generic type arguments should be specified as part of the constructor type arguments."
+          }
+        ]
       },
       "type-annotation": {
-        "count": 23,
+        "count": 32,
         "samples": [
           {
             "file": "components/file-preview-list.tsx",
@@ -138,33 +157,33 @@
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "electron/main/next-server.ts",
-            "line": 133,
-            "column": 40,
+            "file": "lib/admin/providers.ts",
+            "line": 206,
+            "column": 36,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "lib/admin/settings.ts",
+            "line": 17,
+            "column": 27,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
             "file": "lib/utils.ts",
-            "line": 539,
+            "line": 120,
+            "column": 25,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "lib/utils.ts",
+            "line": 764,
+            "column": 24,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "lib/utils.ts",
+            "line": 1535,
             "column": 28,
-            "message": "The generic type arguments should be specified as part of the type annotation."
-          },
-          {
-            "file": "lib/utils.ts",
-            "line": 745,
-            "column": 35,
-            "message": "The generic type arguments should be specified as part of the type annotation."
-          },
-          {
-            "file": "lib/utils.ts",
-            "line": 1349,
-            "column": 30,
-            "message": "The generic type arguments should be specified as part of the type annotation."
-          },
-          {
-            "file": "lib/utils.ts",
-            "line": 1553,
-            "column": 35,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
@@ -175,20 +194,20 @@
           },
           {
             "file": "packages/mcp-server/src/xml-validation.ts",
-            "line": 106,
-            "column": 35,
+            "line": 151,
+            "column": 47,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
             "file": "packages/mcp-server/src/xml-validation.ts",
-            "line": 627,
+            "line": 693,
             "column": 30,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "packages/mcp-server/src/xml-validation.ts",
-            "line": 789,
-            "column": 35,
+            "file": "packages/mcp-server/tests/server-wiring.test.ts",
+            "line": 45,
+            "column": 24,
             "message": "The generic type arguments should be specified as part of the type annotation."
           }
         ]
@@ -200,17 +219,23 @@
         "samples": []
       },
       "index-signature": {
-        "count": 49,
+        "count": 71,
         "samples": [
           {
-            "file": "app/[lang]/layout.tsx",
-            "line": 49,
-            "column": 19,
+            "file": "app/[lang]/admin/admin-shared.ts",
+            "line": 20,
+            "column": 27,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "components/chat-message-display.tsx",
-            "line": 246,
+            "file": "app/[lang]/layout.tsx",
+            "line": 56,
+            "column": 25,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "components/chat-panel.tsx",
+            "line": 297,
             "column": 9,
             "message": "An index signature is preferred over a record."
           },
@@ -222,14 +247,8 @@
           },
           {
             "file": "electron/main/config-manager.ts",
-            "line": 105,
-            "column": 4,
-            "message": "An index signature is preferred over a record."
-          },
-          {
-            "file": "electron/main/config-manager.ts",
-            "line": 433,
-            "column": 16,
+            "line": 379,
+            "column": 23,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -239,26 +258,26 @@
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "lib/ai-providers.ts",
-            "line": 333,
+            "file": "lib/admin/settings.ts",
+            "line": 90,
             "column": 39,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "lib/ai-providers.ts",
-            "line": 788,
-            "column": 18,
+            "line": 430,
+            "column": 39,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "lib/types/model-config.ts",
-            "line": 89,
-            "column": 33,
+            "file": "lib/template-storage.ts",
+            "line": 323,
+            "column": 31,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "tests/unit/ai-providers.test.ts",
-            "line": 314,
+            "line": 320,
             "column": 21,
             "message": "An index signature is preferred over a record."
           }
@@ -267,8 +286,14 @@
     },
     "consistent-type-definitions": {
       "interface": {
-        "count": 6,
+        "count": 9,
         "samples": [
+          {
+            "file": "app/[lang]/admin/admin-shared.ts",
+            "line": 8,
+            "column": 8,
+            "message": "Use `interface` instead of `type`."
+          },
           {
             "file": "components/ai-elements/model-selector.tsx",
             "line": 216,
@@ -304,21 +329,33 @@
             "line": 30,
             "column": 1,
             "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "lib/aihubmix-models.ts",
+            "line": 12,
+            "column": 1,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "lib/aihubmix-models.ts",
+            "line": 16,
+            "column": 1,
+            "message": "Use `interface` instead of `type`."
           }
         ]
       },
       "type": {
-        "count": 75,
+        "count": 86,
         "samples": [
           {
-            "file": "app/api/validate-diagram/route.ts",
-            "line": 16,
-            "column": 1,
+            "file": "app/[lang]/admin/admin-shared.ts",
+            "line": 14,
+            "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "components/chat-message-display.tsx",
-            "line": 140,
+            "file": "components/chat-input.tsx",
+            "line": 154,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
@@ -335,33 +372,33 @@
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "components/settings-dialog.tsx",
-            "line": 64,
+            "file": "components/url-input-dialog.tsx",
+            "line": 17,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "hooks/use-model-config.ts",
-            "line": 104,
+            "file": "hooks/use-session-manager.ts",
+            "line": 27,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "lib/dynamo-quota-manager.ts",
-            "line": 49,
-            "column": 1,
+            "file": "lib/cached-responses.ts",
+            "line": 1,
+            "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "lib/template-storage.ts",
-            "line": 283,
-            "column": 8,
+            "line": 36,
+            "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "lib/utils.ts",
-            "line": 134,
-            "column": 1,
+            "line": 479,
+            "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
@@ -386,7 +423,7 @@
         ]
       },
       "no-type-imports": {
-        "count": 92,
+        "count": 115,
         "samples": [
           {
             "file": "app/[lang]/about/cn/page.tsx",
@@ -395,51 +432,51 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "app/manifest.ts",
-            "line": 1,
+            "file": "app/[lang]/admin/setting-field.tsx",
+            "line": 21,
+            "column": 5,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "components/ai-elements/model-selector.tsx",
+            "line": 2,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "components/button-with-tooltip.tsx",
-            "line": 3,
-            "column": 18,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "components/chat-panel.tsx",
-            "line": 35,
+            "file": "components/chat-message-display.tsx",
+            "line": 32,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "components/chat/ValidationCard.tsx",
-            "line": 16,
+            "file": "components/chat/ToolCallCard.tsx",
+            "line": 7,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "contexts/diagram-context.tsx",
-            "line": 5,
+            "file": "components/settings-dialog.tsx",
+            "line": 28,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "hooks/use-diagram-tool-handlers.ts",
-            "line": 8,
+            "line": 4,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "hooks/use-session-manager.ts",
-            "line": 15,
+            "file": "lib/admin/providers.ts",
+            "line": 4,
             "column": 5,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "lib/template-storage.ts",
+            "file": "lib/utils.ts",
             "line": 1,
-            "column": 25,
+            "column": 10,
             "message": "Use an `import` instead of an `import type`."
           },
           {
@@ -453,125 +490,125 @@
     },
     "func-style": {
       "expression": {
-        "count": 379,
+        "count": 449,
         "samples": [
           {
-            "file": "app/[lang]/layout.tsx",
-            "line": 33,
+            "file": "app/[lang]/admin/admin-shared.ts",
+            "line": 10,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "components/history-dialog.tsx",
-            "line": 23,
+            "file": "components/chat/TemplateCreateDialog.tsx",
+            "line": 31,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "components/ui/dialog.tsx",
-            "line": 52,
+            "line": 9,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "electron/main/config-manager.ts",
-            "line": 19,
+            "line": 65,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "electron/main/settings-window.ts",
-            "line": 9,
-            "column": 8,
+            "file": "electron/settings/settings.js",
+            "line": 137,
+            "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "lib/ai-providers.ts",
-            "line": 686,
-            "column": 8,
+            "line": 586,
+            "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "lib/session-storage.ts",
-            "line": 219,
+            "line": 245,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "lib/utils.ts",
-            "line": 379,
-            "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "packages/mcp-server/src/xml-validation.ts",
-            "line": 45,
+            "line": 832,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "tests/e2e/lib/helpers.ts",
-            "line": 63,
+            "file": "packages/mcp-server/src/pages.ts",
+            "line": 158,
             "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "tests/unit/admin-providers.test.ts",
+            "line": 33,
+            "column": 1,
             "message": "Expected a function expression."
           }
         ]
       },
       "declaration": {
-        "count": 129,
+        "count": 139,
         "samples": [
           {
-            "file": "app/[lang]/page.tsx",
-            "line": 93,
+            "file": "app/[lang]/admin/models-section.tsx",
+            "line": 78,
             "column": 11,
             "message": "Expected a function declaration."
           },
           {
             "file": "components/ai-elements/model-selector.tsx",
-            "line": 144,
+            "line": 39,
             "column": 14,
             "message": "Expected a function declaration."
           },
           {
+            "file": "components/ai-elements/reasoning.tsx",
+            "line": 119,
+            "column": 7,
+            "message": "Expected a function declaration."
+          },
+          {
             "file": "components/chat-input.tsx",
-            "line": 265,
-            "column": 19,
+            "line": 399,
+            "column": 15,
             "message": "Expected a function declaration."
           },
           {
-            "file": "components/chat-message-display.tsx",
-            "line": 311,
-            "column": 11,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "components/chat/TemplateCreateDialog.tsx",
-            "line": 56,
+            "file": "components/chat-panel.tsx",
+            "line": 1117,
             "column": 11,
             "message": "Expected a function declaration."
           },
           {
             "file": "components/chat/TemplatePanel.tsx",
-            "line": 207,
+            "line": 195,
             "column": 11,
             "message": "Expected a function declaration."
           },
           {
             "file": "components/model-config-dialog.tsx",
-            "line": 237,
+            "line": 252,
             "column": 11,
             "message": "Expected a function declaration."
           },
           {
-            "file": "components/url-input-dialog.tsx",
-            "line": 34,
+            "file": "components/settings-dialog.tsx",
+            "line": 262,
             "column": 11,
             "message": "Expected a function declaration."
           },
           {
-            "file": "electron/main/next-server.ts",
-            "line": 140,
-            "column": 19,
+            "file": "contexts/diagram-context.tsx",
+            "line": 367,
+            "column": 11,
             "message": "Expected a function declaration."
           },
           {
@@ -585,7 +622,7 @@
     },
     "import-export-preference": {
       "named": {
-        "count": 18,
+        "count": 20,
         "samples": [
           {
             "file": "app/[lang]/about/cn/page.tsx",
@@ -600,38 +637,38 @@
             "message": "Prefer named exports"
           },
           {
-            "file": "app/[lang]/page.tsx",
-            "line": 16,
+            "file": "app/[lang]/layout.tsx",
+            "line": 136,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "app/robots.ts",
+            "file": "app/manifest.ts",
             "line": 3,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "components/chat-example-panel.tsx",
-            "line": 70,
+            "file": "app/sitemap.ts",
+            "line": 3,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "components/chat-panel.tsx",
-            "line": 110,
+            "file": "components/image-with-basepath.tsx",
+            "line": 5,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "hooks/use-dictionary.ts",
-            "line": 29,
+            "file": "lib/i18n/utils.ts",
+            "line": 14,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "next.config.ts",
-            "line": 19,
+            "file": "open-next.config.ts",
+            "line": 5,
             "column": 8,
             "message": "Prefer named exports"
           },
@@ -650,47 +687,47 @@
         ]
       },
       "default": {
-        "count": 35,
+        "count": 38,
         "samples": [
           {
-            "file": "app/api/config/route.ts",
-            "line": 3,
+            "file": "app/[lang]/admin/models-section.tsx",
+            "line": 390,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "app/api/verify-access-code/route.ts",
-            "line": 1,
+            "file": "app/api/log-save/route.ts",
+            "line": 11,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "components/chat/TemplateCreateDialog.tsx",
-            "line": 31,
+            "file": "components/chat-message-display.tsx",
+            "line": 170,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "components/chat/ToolCallCard.tsx",
-            "line": 59,
+            "file": "components/chat/TemplatePanel.tsx",
+            "line": 76,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "components/file-preview-list.tsx",
-            "line": 30,
+            "file": "components/error-toast.tsx",
+            "line": 10,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "components/quota-limit-toast.tsx",
-            "line": 17,
+            "file": "components/provider-logo.tsx",
+            "line": 7,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "components/ui/switch.tsx",
-            "line": 31,
+            "file": "components/ui/label.tsx",
+            "line": 24,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -728,35 +765,35 @@
         ]
       },
       "4-space": {
-        "count": 34,
+        "count": 37,
         "samples": [
           {
-            "file": "app/[lang]/layout.tsx",
-            "line": 92,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 22-space indentation."
-          },
-          {
-            "file": "components/chat/TemplatePanel.tsx",
-            "line": 417,
+            "file": "app/[lang]/admin/models-section.tsx",
+            "line": 96,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 26-space indentation."
           },
           {
-            "file": "components/dev-xml-simulator.tsx",
+            "file": "components/chat-input.tsx",
+            "line": 287,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 22-space indentation."
+          },
+          {
+            "file": "components/chat/ValidationCard.tsx",
+            "line": 120,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 30-space indentation."
+          },
+          {
+            "file": "components/ui/alert-dialog.tsx",
             "line": 10,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "components/ui/button.tsx",
-            "line": 8,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "components/ui/input.tsx",
-            "line": 6,
+            "file": "components/ui/dialog.tsx",
+            "line": 10,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -779,10 +816,10 @@
             "message": "Expected 4-space indentation, but file uses 30-space indentation."
           },
           {
-            "file": "lib/dynamo-quota-manager.ts",
-            "line": 99,
+            "file": "lib/server-model-config.ts",
+            "line": 176,
             "column": 1,
-            "message": "Expected 4-space indentation, but file uses 21-space indentation."
+            "message": "Expected 4-space indentation, but file uses 14-space indentation."
           },
           {
             "file": "tests/e2e/fixtures/diagrams.ts",
@@ -793,7 +830,7 @@
         ]
       },
       "tab": {
-        "count": 150,
+        "count": 171,
         "samples": [
           {
             "file": "app/[lang]/about/cn/page.tsx",
@@ -802,19 +839,19 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "components/ai-elements/model-selector.tsx",
-            "line": 5,
+            "file": "app/api/validate-diagram/route.ts",
+            "line": 10,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "components/dev-xml-simulator.tsx",
-            "line": 9,
+            "file": "components/chat/ValidationCard.tsx",
+            "line": 4,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "components/ui/label.tsx",
+            "file": "components/ui/command.tsx",
             "line": 9,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
@@ -826,20 +863,20 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "lib/cached-responses.ts",
-            "line": 2,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "lib/types/model-config.ts",
-            "line": 4,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "proxy.ts",
+            "file": "lib/admin/settings.ts",
             "line": 9,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "lib/template-storage.ts",
+            "line": 11,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "packages/mcp-server/vitest.config.ts",
+            "line": 4,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -860,60 +897,60 @@
     },
     "quotes": {
       "double": {
-        "count": 142,
+        "count": 171,
         "samples": [
           {
-            "file": "app/api/chat/route.ts",
-            "line": 350,
-            "column": 29,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "hooks/use-diagram-tool-handlers.ts",
-            "line": 507,
-            "column": 32,
+            "file": "app/api/admin/settings/route.ts",
+            "line": 55,
+            "column": 19,
             "message": "Strings must use doublequote."
           },
           {
             "file": "lib/ai-providers.ts",
-            "line": 760,
+            "line": 651,
+            "column": 17,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "lib/ai-providers.ts",
+            "line": 787,
             "column": 25,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "lib/utils.ts",
-            "line": 994,
-            "column": 39,
+            "file": "packages/mcp-server/src/index.ts",
+            "line": 446,
+            "column": 13,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "packages/mcp-server/tests/multi-page.test.ts",
+            "line": 340,
+            "column": 30,
             "message": "Strings must use doublequote."
           },
           {
             "file": "scripts/test-diagram-operations.mjs",
-            "line": 219,
+            "line": 244,
+            "column": 22,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "tests/e2e/error-handling.spec.ts",
+            "line": 25,
+            "column": 22,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "tests/e2e/iframe-interaction.spec.ts",
+            "line": 37,
             "column": 26,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "tests/e2e/copy-paste.spec.ts",
-            "line": 58,
-            "column": 26,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "tests/e2e/file-upload.spec.ts",
-            "line": 94,
-            "column": 40,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "tests/e2e/language.spec.ts",
-            "line": 29,
-            "column": 32,
             "message": "Strings must use doublequote."
           },
           {
             "file": "tests/e2e/lib/fixtures.ts",
-            "line": 87,
-            "column": 31,
+            "line": 48,
+            "column": 25,
             "message": "Strings must use doublequote."
           },
           {
@@ -925,7 +962,7 @@
         ]
       },
       "single": {
-        "count": 5379,
+        "count": 6398,
         "samples": [
           {
             "file": "app/[lang]/about/cn/page.tsx",
@@ -934,51 +971,51 @@
             "message": "Strings must use singlequote."
           },
           {
-            "file": "components/chat-example-panel.tsx",
-            "line": 37,
-            "column": 23,
+            "file": "app/manifest.ts",
+            "line": 1,
+            "column": 36,
             "message": "Strings must use singlequote."
           },
           {
             "file": "components/chat/ValidationCard.tsx",
-            "line": 48,
-            "column": 59,
+            "line": 123,
+            "column": 28,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "contexts/diagram-context.tsx",
-            "line": 13,
-            "column": 8,
+            "file": "electron/main/app-menu.ts",
+            "line": 63,
+            "column": 25,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "electron/settings/settings.js",
-            "line": 303,
-            "column": 32,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "lib/session-storage.ts",
-            "line": 86,
-            "column": 51,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "lib/utils.ts",
-            "line": 1240,
-            "column": 9,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "scripts/electron-dev.mjs",
-            "line": 197,
+            "file": "lib/admin/settings-registry.ts",
+            "line": 78,
             "column": 16,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "tests/e2e/multi-turn.spec.ts",
-            "line": 61,
-            "column": 30,
+            "file": "lib/types/model-config.ts",
+            "line": 9,
+            "column": 7,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "packages/mcp-server/src/index.ts",
+            "line": 47,
+            "column": 28,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "scripts/electron-dev.mjs",
+            "line": 273,
+            "column": 23,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "tests/unit/admin-providers.test.ts",
+            "line": 69,
+            "column": 53,
             "message": "Strings must use singlequote."
           },
           {
@@ -992,59 +1029,59 @@
     },
     "react-destructuring-assignment": {
       "never": {
-        "count": 99,
+        "count": 105,
         "samples": [
           {
-            "file": "app/[lang]/layout.tsx",
-            "line": 136,
-            "column": 16,
+            "file": "app/[lang]/admin/models-section.tsx",
+            "line": 52,
+            "column": 1,
             "message": "Must never use destructuring props assignment in SFC argument"
           },
           {
-            "file": "components/chat-example-panel.tsx",
-            "line": 70,
-            "column": 16,
+            "file": "components/ai-elements/model-selector.tsx",
+            "line": 222,
+            "column": 43,
             "message": "Must never use destructuring props assignment in SFC argument"
           },
           {
-            "file": "components/dev-xml-simulator.tsx",
-            "line": 141,
-            "column": 8,
+            "file": "components/chat/ToolCallCard.tsx",
+            "line": 22,
+            "column": 1,
             "message": "Must never use destructuring props assignment in SFC argument"
           },
           {
-            "file": "components/save-dialog.tsx",
-            "line": 32,
+            "file": "components/provider-credentials-fields.tsx",
+            "line": 65,
             "column": 8,
             "message": "Must never use destructuring props assignment in SFC argument"
           },
           {
             "file": "components/ui/alert-dialog.tsx",
-            "line": 108,
+            "line": 47,
             "column": 1,
             "message": "Must never use destructuring props assignment in SFC argument"
           },
           {
             "file": "components/ui/command.tsx",
-            "line": 98,
+            "line": 32,
             "column": 1,
             "message": "Must never use destructuring props assignment in SFC argument"
           },
           {
             "file": "components/ui/dialog.tsx",
-            "line": 97,
+            "line": 33,
             "column": 1,
             "message": "Must never use destructuring props assignment in SFC argument"
           },
           {
             "file": "components/ui/resizable.tsx",
-            "line": 25,
+            "line": 9,
             "column": 1,
             "message": "Must never use destructuring props assignment in SFC argument"
           },
           {
             "file": "components/ui/select.tsx",
-            "line": 127,
+            "line": 103,
             "column": 1,
             "message": "Must never use destructuring props assignment in SFC argument"
           },
@@ -1175,7 +1212,7 @@
         ]
       },
       "arrow-function": {
-        "count": 96,
+        "count": 104,
         "samples": [
           {
             "file": "app/[lang]/about/cn/page.tsx",
@@ -1184,44 +1221,44 @@
             "message": "Function component is not an arrow function"
           },
           {
-            "file": "components/chat/TemplateCreateDialog.tsx",
-            "line": 31,
+            "file": "app/[lang]/page.tsx",
+            "line": 16,
+            "column": 16,
+            "message": "Function component is not an arrow function"
+          },
+          {
+            "file": "components/chat/ValidationCard.tsx",
+            "line": 42,
             "column": 8,
             "message": "Function component is not an arrow function"
           },
           {
-            "file": "components/history-dialog.tsx",
-            "line": 23,
-            "column": 8,
-            "message": "Function component is not an arrow function"
-          },
-          {
-            "file": "components/settings-dialog.tsx",
-            "line": 719,
+            "file": "components/provider-logo.tsx",
+            "line": 7,
             "column": 8,
             "message": "Function component is not an arrow function"
           },
           {
             "file": "components/ui/alert-dialog.tsx",
-            "line": 121,
+            "line": 66,
             "column": 1,
             "message": "Function component is not an arrow function"
           },
           {
             "file": "components/ui/command.tsx",
-            "line": 126,
+            "line": 32,
             "column": 1,
             "message": "Function component is not an arrow function"
           },
           {
             "file": "components/ui/dialog.tsx",
-            "line": 107,
+            "line": 52,
             "column": 1,
             "message": "Function component is not an arrow function"
           },
           {
             "file": "components/ui/resizable.tsx",
-            "line": 31,
+            "line": 9,
             "column": 1,
             "message": "Function component is not an arrow function"
           },
@@ -1253,37 +1290,37 @@
         ]
       },
       "always": {
-        "count": 19,
+        "count": 20,
         "samples": [
           {
-            "file": "app/[lang]/layout.tsx",
-            "line": 166,
-            "column": 32,
-            "message": "Value must be set for boolean attribute `suppressHydrationWarning`"
+            "file": "app/[lang]/admin/models-section.tsx",
+            "line": 189,
+            "column": 25,
+            "message": "Value must be set for boolean attribute `keepOnEmpty`"
           },
           {
             "file": "app/[lang]/page.tsx",
-            "line": 216,
-            "column": 34,
-            "message": "Value must be set for boolean attribute `withHandle`"
+            "line": 182,
+            "column": 41,
+            "message": "Value must be set for boolean attribute `autosave`"
           },
           {
-            "file": "components/chat-example-panel.tsx",
-            "line": 178,
-            "column": 25,
-            "message": "Value must be set for boolean attribute `isNew`"
+            "file": "components/button-with-tooltip.tsx",
+            "line": 27,
+            "column": 33,
+            "message": "Value must be set for boolean attribute `asChild`"
+          },
+          {
+            "file": "components/chat-input.tsx",
+            "line": 563,
+            "column": 33,
+            "message": "Value must be set for boolean attribute `multiple`"
           },
           {
             "file": "components/chat-panel.tsx",
-            "line": 1292,
+            "line": 1293,
             "column": 17,
-            "message": "Value must be set for boolean attribute `richColors`"
-          },
-          {
-            "file": "components/chat/ChatLobby.tsx",
-            "line": 314,
-            "column": 33,
-            "message": "Value must be set for boolean attribute `minimal`"
+            "message": "Value must be set for boolean attribute `expand`"
           },
           {
             "file": "components/chat/TemplateEditDialog.tsx",
@@ -1324,8 +1361,14 @@
         "samples": []
       },
       "element": {
-        "count": 21,
+        "count": 20,
         "samples": [
+          {
+            "file": "app/[lang]/admin/page.tsx",
+            "line": 357,
+            "column": 29,
+            "message": "Prefer React.Fragment over fragment shorthand"
+          },
           {
             "file": "components/ai-elements/reasoning.tsx",
             "line": 147,
@@ -1345,33 +1388,27 @@
             "message": "Prefer React.Fragment over fragment shorthand"
           },
           {
-            "file": "components/history-dialog.tsx",
-            "line": 89,
-            "column": 25,
-            "message": "Prefer React.Fragment over fragment shorthand"
-          },
-          {
-            "file": "components/model-config-dialog.tsx",
-            "line": 841,
-            "column": 65,
-            "message": "Prefer React.Fragment over fragment shorthand"
-          },
-          {
-            "file": "components/model-config-dialog.tsx",
-            "line": 953,
-            "column": 69,
-            "message": "Prefer React.Fragment over fragment shorthand"
-          },
-          {
-            "file": "components/model-config-dialog.tsx",
-            "line": 1076,
+            "file": "components/file-preview-list.tsx",
+            "line": 181,
             "column": 49,
             "message": "Prefer React.Fragment over fragment shorthand"
           },
           {
             "file": "components/model-selector.tsx",
-            "line": 327,
+            "line": 241,
             "column": 37,
+            "message": "Prefer React.Fragment over fragment shorthand"
+          },
+          {
+            "file": "components/provider-credentials-fields.tsx",
+            "line": 108,
+            "column": 17,
+            "message": "Prefer React.Fragment over fragment shorthand"
+          },
+          {
+            "file": "components/provider-credentials-fields.tsx",
+            "line": 210,
+            "column": 17,
             "message": "Prefer React.Fragment over fragment shorthand"
           },
           {
@@ -1391,7 +1428,7 @@
     },
     "semi": {
       "always": {
-        "count": 7252,
+        "count": 8734,
         "samples": [
           {
             "file": "app/[lang]/about/cn/page.tsx",
@@ -1400,51 +1437,51 @@
             "message": "Missing semicolon."
           },
           {
-            "file": "components/chat-message-display.tsx",
-            "line": 1,
-            "column": 13,
+            "file": "components/ai-elements/reasoning.tsx",
+            "line": 84,
+            "column": 37,
             "message": "Missing semicolon."
           },
           {
-            "file": "components/chat/TemplatePanel.tsx",
-            "line": 40,
-            "column": 58,
+            "file": "components/chat/TemplateEditDialog.tsx",
+            "line": 13,
+            "column": 32,
             "message": "Missing semicolon."
           },
           {
-            "file": "components/ui/tooltip.tsx",
-            "line": 28,
-            "column": 4,
+            "file": "contexts/diagram-context.tsx",
+            "line": 136,
+            "column": 6,
             "message": "Missing semicolon."
           },
           {
-            "file": "electron/settings/settings.js",
-            "line": 247,
-            "column": 47,
+            "file": "hooks/use-model-config.ts",
+            "line": 318,
+            "column": 16,
             "message": "Missing semicolon."
           },
           {
-            "file": "lib/pdf-utils.ts",
-            "line": 1,
-            "column": 54,
+            "file": "lib/ssrf-protection.ts",
+            "line": 31,
+            "column": 21,
             "message": "Missing semicolon."
           },
           {
-            "file": "lib/utils.ts",
-            "line": 1314,
-            "column": 44,
+            "file": "packages/mcp-server/src/http-server.ts",
+            "line": 184,
+            "column": 26,
             "message": "Missing semicolon."
           },
           {
-            "file": "packages/mcp-server/src/xml-validation.ts",
-            "line": 637,
-            "column": 55,
+            "file": "packages/mcp-server/tests/multi-page.test.ts",
+            "line": 298,
+            "column": 7,
             "message": "Missing semicolon."
           },
           {
-            "file": "tests/e2e/iframe-interaction.spec.ts",
-            "line": 107,
-            "column": 76,
+            "file": "tests/e2e/lib/fixtures.ts",
+            "line": 126,
+            "column": 25,
             "message": "Missing semicolon."
           },
           {

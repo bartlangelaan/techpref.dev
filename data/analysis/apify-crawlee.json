@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "96d58f23c7cc",
-  "analyzedCommit": "4225a1932061baa2d6088e6834e63772ed1a9abd",
-  "analyzedCommitDate": "2026-06-17T14:48:12.000Z",
+  "analyzedCommit": "4739d4886e3c52f90814b9e5342c4ec2cbaa7587",
+  "analyzedCommitDate": "2026-07-07T13:31:40.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -16,7 +16,7 @@
         ]
       },
       "generic": {
-        "count": 725,
+        "count": 726,
         "samples": [
           {
             "file": "docs/examples/cheerio_crawler.ts",
@@ -25,10 +25,10 @@
             "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           },
           {
-            "file": "packages/core/src/autoscaling/load_signal.ts",
-            "line": 198,
-            "column": 19,
-            "message": "Array type using 'number[]' is forbidden. Use 'Array<number>' instead."
+            "file": "packages/core/src/autoscaling/memory_load_signal.ts",
+            "line": 81,
+            "column": 47,
+            "message": "Array type using 'MemorySnapshot[]' is forbidden. Use 'Array<MemorySnapshot>' instead."
           },
           {
             "file": "packages/core/src/proxy_configuration.ts",
@@ -38,9 +38,9 @@
           },
           {
             "file": "packages/core/src/storages/sitemap_request_list.ts",
-            "line": 57,
-            "column": 15,
-            "message": "Array type using 'readonly RegExpInput[]' is forbidden. Use 'ReadonlyArray<RegExpInput>' instead."
+            "line": 64,
+            "column": 18,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
             "file": "packages/playwright-crawler/src/internals/adaptive-playwright-crawler.ts",
@@ -50,13 +50,13 @@
           },
           {
             "file": "packages/types/src/storages.ts",
-            "line": 177,
-            "column": 100,
-            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
+            "line": 229,
+            "column": 12,
+            "message": "Array type using 'RequestQueueHeadItem[]' is forbidden. Use 'Array<RequestQueueHeadItem>' instead."
           },
           {
             "file": "test/core/autoscaling/autoscaled_pool.test.ts",
-            "line": 50,
+            "line": 20,
             "column": 23,
             "message": "Array type using 'number[]' is forbidden. Use 'Array<number>' instead."
           },
@@ -68,9 +68,9 @@
           },
           {
             "file": "test/core/storages/key_value_store.test.ts",
-            "line": 623,
-            "column": 25,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+            "line": 587,
+            "column": 28,
+            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           },
           {
             "file": "website/versioned_docs/version-3.17/examples/puppeteer_crawler.ts",
@@ -87,13 +87,13 @@
         "samples": [
           {
             "file": "packages/core/src/router.ts",
-            "line": 87,
+            "line": 131,
             "column": 28,
             "message": "The generic type arguments should be specified as part of the constructor type arguments."
           },
           {
             "file": "packages/impit-client/src/index.ts",
-            "line": 36,
+            "line": 37,
             "column": 24,
             "message": "The generic type arguments should be specified as part of the constructor type arguments."
           },
@@ -197,14 +197,8 @@
     },
     "consistent-indexed-object-style": {
       "record": {
-        "count": 3,
+        "count": 2,
         "samples": [
-          {
-            "file": "packages/core/src/router.ts",
-            "line": 17,
-            "column": 66,
-            "message": "A record is preferred over an index signature."
-          },
           {
             "file": "packages/utils/src/internals/systemInfoV2/ps-tree.ts",
             "line": 113,
@@ -220,7 +214,7 @@
         ]
       },
       "index-signature": {
-        "count": 89,
+        "count": 140,
         "samples": [
           {
             "file": "docs/guides/custom-http-client/implementation.ts",
@@ -229,33 +223,33 @@
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "packages/core/src/autoscaling/system_status.ts",
-            "line": 244,
+            "file": "packages/cheerio-crawler/src/internals/cheerio-crawler.ts",
+            "line": 340,
+            "column": 85,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "packages/core/src/crawlers/error_tracker.ts",
+            "line": 112,
             "column": 29,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "packages/core/src/crawlers/error_tracker.ts",
-            "line": 91,
-            "column": 60,
-            "message": "An index signature is preferred over a record."
-          },
-          {
-            "file": "packages/core/src/crawlers/error_tracker.ts",
-            "line": 379,
-            "column": 40,
-            "message": "An index signature is preferred over a record."
-          },
-          {
             "file": "packages/core/src/http_clients/base-http-client.ts",
-            "line": 73,
-            "column": 22,
+            "line": 62,
+            "column": 18,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "packages/core/src/request.ts",
-            "line": 226,
-            "column": 30,
+            "file": "packages/core/src/router.ts",
+            "line": 36,
+            "column": 50,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "packages/http-crawler/src/internals/file-download.ts",
+            "line": 340,
+            "column": 34,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -265,15 +259,15 @@
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "packages/utils/src/internals/debug.ts",
-            "line": 20,
-            "column": 15,
+            "file": "packages/puppeteer-crawler/src/internals/utils/puppeteer_request_interception.ts",
+            "line": 43,
+            "column": 37,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "website/versioned_docs/version-3.12/guides/custom-http-client/implementation.ts",
-            "line": 71,
-            "column": 24,
+            "file": "test/core/router.test.ts",
+            "line": 209,
+            "column": 22,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -298,7 +292,7 @@
         ]
       },
       "type": {
-        "count": 286,
+        "count": 288,
         "samples": [
           {
             "file": "packages/basic-crawler/src/internals/basic-crawler.ts",
@@ -314,43 +308,43 @@
           },
           {
             "file": "packages/core/src/crawlers/error_snapshotter.ts",
-            "line": 12,
-            "column": 1,
+            "line": 16,
+            "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "packages/core/src/recoverable_state.ts",
-            "line": 6,
+            "line": 33,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "packages/core/src/storages/request_provider.ts",
-            "line": 979,
+            "line": 1029,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "packages/memory-storage/src/memory-storage.ts",
-            "line": 18,
+            "file": "packages/memory-storage/src/resource-clients/dataset-collection.ts",
+            "line": 11,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "packages/playwright-crawler/src/internals/utils/rendering-type-prediction.ts",
-            "line": 34,
-            "column": 8,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "packages/types/src/browser.ts",
-            "line": 61,
+            "file": "packages/puppeteer-crawler/src/internals/enqueue-links/click-elements.ts",
+            "line": 30,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "packages/types/src/storages.ts",
-            "line": 248,
+            "line": 7,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "packages/types/src/storages.ts",
+            "line": 257,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
@@ -430,7 +424,7 @@
         ]
       },
       "no-type-imports": {
-        "count": 517,
+        "count": 518,
         "samples": [
           {
             "file": "docs/examples/file_download_stream.ts",
@@ -457,7 +451,7 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/core/test/enqueue_links/protocol-matching-based-on-strategy.test.ts",
+            "file": "packages/core/test/enqueue_links/user-provided-patterns-with-enqueue-strategy.test.ts",
             "line": 2,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
@@ -469,20 +463,20 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/playwright-crawler/src/internals/utils/playwright-utils.ts",
-            "line": 44,
+            "file": "packages/playwright-crawler/src/internals/utils/rendering-type-prediction.ts",
+            "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "packages/utils/src/internals/robots.ts",
-            "line": 2,
+            "line": 3,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "test/core/enqueue_links/click_elements.test.ts",
-            "line": 3,
+            "line": 14,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -497,7 +491,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 355,
+        "count": 345,
         "samples": [
           {
             "file": "docs/examples/file_download_stream.ts",
@@ -507,49 +501,49 @@
           },
           {
             "file": "packages/core/src/enqueue_links/enqueue_links.ts",
-            "line": 466,
-            "column": 5,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "packages/linkedom-crawler/src/internals/linkedom-crawler.ts",
-            "line": 248,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "packages/memory-storage/test/async-iteration.test.ts",
-            "line": 436,
-            "column": 13,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "packages/puppeteer-crawler/src/internals/enqueue-links/click-elements.ts",
-            "line": 424,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "packages/utils/src/internals/debug.ts",
-            "line": 59,
+            "line": 525,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "packages/utils/src/internals/systemInfoV2/ps-tree.ts",
-            "line": 27,
+            "file": "packages/linkedom-crawler/src/internals/linkedom-crawler.ts",
+            "line": 300,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "packages/playwright-crawler/src/internals/enqueue-links/click-elements.ts",
+            "line": 225,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "packages/puppeteer-crawler/src/internals/enqueue-links/click-elements.ts",
+            "line": 536,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "packages/utils/src/internals/general.ts",
+            "line": 20,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "packages/utils/src/internals/typedefs.ts",
+            "line": 7,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "test/e2e/tools.mjs",
-            "line": 330,
+            "line": 412,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "website/src/theme/Navbar/Content/index.js",
-            "line": 18,
+            "line": 22,
             "column": 1,
             "message": "Expected a function expression."
           },
@@ -562,7 +556,7 @@
         ]
       },
       "declaration": {
-        "count": 249,
+        "count": 252,
         "samples": [
           {
             "file": "packages/basic-crawler/src/internals/basic-crawler.ts",
@@ -578,38 +572,38 @@
           },
           {
             "file": "packages/cheerio-crawler/test/migration.test.ts",
-            "line": 91,
+            "line": 92,
             "column": 19,
             "message": "Expected a function declaration."
           },
           {
             "file": "packages/core/src/storages/request_provider.ts",
-            "line": 300,
+            "line": 523,
             "column": 15,
             "message": "Expected a function declaration."
           },
           {
             "file": "packages/puppeteer-crawler/src/internals/utils/puppeteer_utils.ts",
-            "line": 206,
-            "column": 31,
+            "line": 491,
+            "column": 11,
             "message": "Expected a function declaration."
           },
           {
             "file": "test/core/autoscaling/autoscaled_pool.test.ts",
-            "line": 272,
+            "line": 290,
             "column": 19,
             "message": "Expected a function declaration."
           },
           {
             "file": "test/core/crawlers/basic_crawler.test.ts",
-            "line": 619,
+            "line": 654,
             "column": 15,
             "message": "Expected a function declaration."
           },
           {
-            "file": "test/core/crawlers/cheerio_crawler.test.ts",
-            "line": 1272,
-            "column": 19,
+            "file": "test/core/crawlers/playwright_crawler.test.ts",
+            "line": 284,
+            "column": 15,
             "message": "Expected a function declaration."
           },
           {
@@ -842,7 +836,7 @@
           },
           {
             "file": "packages/http-crawler/src/internals/http-crawler.ts",
-            "line": 612,
+            "line": 613,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 18-space indentation."
           },
@@ -885,7 +879,7 @@
         ]
       },
       "tab": {
-        "count": 1281,
+        "count": 1282,
         "samples": [
           {
             "file": "docs/deployment/apify_platform_init_exit.ts",
@@ -900,20 +894,20 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/utils/src/internals/chunk.ts",
-            "line": 29,
+            "file": "packages/utils/src/internals/debug.ts",
+            "line": 7,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "test/e2e/session-rotation/test.mjs",
-            "line": 10,
+            "file": "test/e2e/session-rotation/actor/main.js",
+            "line": 5,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "website/versioned_docs/version-3.10/guides/request_storage_queue_list.ts",
-            "line": 9,
+            "file": "website/versioned_docs/version-3.10/guides/request_storage_queue_crawler_explicit.ts",
+            "line": 8,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -930,8 +924,8 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "website/versioned_docs/version-3.15/examples/file_download_stream.ts",
-            "line": 7,
+            "file": "website/versioned_docs/version-3.15/examples/file_download.ts",
+            "line": 5,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -952,7 +946,7 @@
     },
     "quotes": {
       "double": {
-        "count": 16219,
+        "count": 16295,
         "samples": [
           {
             "file": "docs/deployment/apify_platform_init_exit.ts",
@@ -961,51 +955,51 @@
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/core/src/crawlers/index.ts",
-            "line": 2,
-            "column": 15,
+            "file": "packages/core/src/crawlers/statistics.ts",
+            "line": 3,
+            "column": 26,
             "message": "Strings must use doublequote."
           },
           {
             "file": "packages/memory-storage/test/write-metadata.test.ts",
-            "line": 4,
-            "column": 31,
+            "line": 8,
+            "column": 10,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "test/browser-pool/browser-pool.test.ts",
-            "line": 17,
-            "column": 51,
+            "file": "test/browser-pool/browser-plugins/plugins.test.ts",
+            "line": 675,
+            "column": 75,
             "message": "Strings must use doublequote."
           },
           {
             "file": "test/core/enqueue_links/enqueue_links.test.ts",
-            "line": 498,
-            "column": 37,
+            "line": 487,
+            "column": 45,
             "message": "Strings must use doublequote."
           },
           {
             "file": "test/core/storages/key_value_store.test.ts",
-            "line": 202,
-            "column": 67,
+            "line": 171,
+            "column": 58,
             "message": "Strings must use doublequote."
           },
           {
             "file": "test/utils/cheerio.test.ts",
-            "line": 67,
+            "line": 55,
             "column": 25,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "website/src/theme/Navbar/MobileSidebar/PrimaryMenu/index.js",
-            "line": 1,
-            "column": 29,
+            "file": "website/src/theme/Navbar/MobileSidebar/Header/index.js",
+            "line": 4,
+            "column": 27,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "website/versioned_docs/version-3.14/examples/crawl_all_links_playwright.ts",
-            "line": 13,
-            "column": 20,
+            "file": "website/versioned_docs/version-3.14/examples/cheerio_crawler.ts",
+            "line": 1,
+            "column": 47,
             "message": "Strings must use doublequote."
           },
           {
@@ -1017,7 +1011,7 @@
         ]
       },
       "single": {
-        "count": 140,
+        "count": 141,
         "samples": [
           {
             "file": "packages/basic-crawler/src/internals/basic-crawler.ts",
@@ -1027,7 +1021,7 @@
           },
           {
             "file": "packages/basic-crawler/test/migration.test.ts",
-            "line": 105,
+            "line": 106,
             "column": 21,
             "message": "Strings must use singlequote."
           },
@@ -1039,7 +1033,7 @@
           },
           {
             "file": "packages/cheerio-crawler/test/migration.test.ts",
-            "line": 105,
+            "line": 106,
             "column": 21,
             "message": "Strings must use singlequote."
           },
@@ -1050,9 +1044,9 @@
             "message": "Strings must use singlequote."
           },
           {
-            "file": "packages/utils/test/sitemap.test.ts",
-            "line": 465,
-            "column": 8,
+            "file": "scripts/copy.ts",
+            "line": 53,
+            "column": 40,
             "message": "Strings must use singlequote."
           },
           {
@@ -1062,9 +1056,9 @@
             "message": "Strings must use singlequote."
           },
           {
-            "file": "test/e2e/playwright-enqueue-links-base/test.mjs",
-            "line": 17,
-            "column": 41,
+            "file": "test/e2e/playwright-enqueue-links/test.mjs",
+            "line": 9,
+            "column": 23,
             "message": "Strings must use singlequote."
           },
           {
@@ -1615,7 +1609,7 @@
         ]
       },
       "never": {
-        "count": 29656,
+        "count": 29766,
         "samples": [
           {
             "file": "docs/deployment/apify_platform_init_exit.ts",
@@ -1625,50 +1619,50 @@
           },
           {
             "file": "packages/core/src/autoscaling/autoscaled_pool.ts",
-            "line": 537,
-            "column": 82,
+            "line": 562,
+            "column": 45,
             "message": "Extra semicolon."
           },
           {
             "file": "packages/http-crawler/src/internals/http-crawler.ts",
-            "line": 687,
-            "column": 62,
+            "line": 705,
+            "column": 53,
             "message": "Extra semicolon."
           },
           {
             "file": "packages/stagehand-crawler/src/internals/utils/stagehand-utils.ts",
-            "line": 124,
-            "column": 81,
+            "line": 105,
+            "column": 97,
             "message": "Extra semicolon."
           },
           {
             "file": "test/core/crawlers/basic_crawler.test.ts",
-            "line": 381,
-            "column": 30,
+            "line": 382,
+            "column": 41,
             "message": "Extra semicolon."
           },
           {
             "file": "test/core/enqueue_links/enqueue_links.test.ts",
-            "line": 956,
-            "column": 15,
+            "line": 970,
+            "column": 58,
             "message": "Extra semicolon."
           },
           {
             "file": "test/core/storages/request_queue.test.ts",
-            "line": 968,
-            "column": 11,
+            "line": 948,
+            "column": 75,
             "message": "Extra semicolon."
           },
           {
             "file": "website/src/components/LLMButtons.jsx",
-            "line": 304,
-            "column": 15,
+            "line": 216,
+            "column": 31,
             "message": "Extra semicolon."
           },
           {
-            "file": "website/versioned_docs/version-3.13/introduction/03-find-without-el.ts",
-            "line": 25,
-            "column": 3,
+            "file": "website/versioned_docs/version-3.13/introduction/03-filter-without-el.ts",
+            "line": 17,
+            "column": 83,
             "message": "Extra semicolon."
           },
           {

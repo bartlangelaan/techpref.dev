@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "96d58f23c7cc",
-  "analyzedCommit": "45607fddd1117a5a8847fe4d30d99a3b76ad65e9",
-  "analyzedCommitDate": "2026-06-18T19:07:23.000Z",
+  "analyzedCommit": "fbf39429060463c6f5c20d6e62dbf592a158caf3",
+  "analyzedCommitDate": "2026-07-02T11:56:05.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -33,7 +33,7 @@
           },
           {
             "file": "packages/turf-helpers/index.ts",
-            "line": 653,
+            "line": 645,
             "column": 15,
             "message": "Array type using 'Array<G>' is forbidden. Use 'G[]' instead."
           },
@@ -70,7 +70,7 @@
         ]
       },
       "generic": {
-        "count": 444,
+        "count": 445,
         "samples": [
           {
             "file": "packages/turf-area/index.ts",
@@ -86,9 +86,9 @@
           },
           {
             "file": "packages/turf-concave/lib/turf-line-dissolve.ts",
-            "line": 45,
-            "column": 17,
-            "message": "Array type using 'any[]' is forbidden. Use 'Array<any>' instead."
+            "line": 85,
+            "column": 25,
+            "message": "Array type using 'number[]' is forbidden. Use 'Array<number>' instead."
           },
           {
             "file": "packages/turf-hex-grid/index.ts",
@@ -103,22 +103,22 @@
             "message": "Array type using 'Position[][]' is forbidden. Use 'Array<Position[]>' instead."
           },
           {
-            "file": "packages/turf-line-offset/lib/intersection.ts",
-            "line": 14,
-            "column": 22,
+            "file": "packages/turf-line-offset/index.ts",
+            "line": 79,
+            "column": 17,
             "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           },
           {
-            "file": "packages/turf-moran-index/index.ts",
-            "line": 88,
-            "column": 12,
+            "file": "packages/turf-meta/types.ts",
+            "line": 89,
+            "column": 16,
             "message": "Array type using 'number[]' is forbidden. Use 'Array<number>' instead."
           },
           {
-            "file": "packages/turf-polygonize/lib/Node.ts",
-            "line": 13,
-            "column": 23,
-            "message": "Array type using 'number[]' is forbidden. Use 'Array<number>' instead."
+            "file": "packages/turf-polygonize/lib/Graph.ts",
+            "line": 294,
+            "column": 25,
+            "message": "Array type using 'EdgeRing[]' is forbidden. Use 'Array<EdgeRing>' instead."
           },
           {
             "file": "packages/turf-simplify/lib/simplify.ts",
@@ -137,16 +137,29 @@
     },
     "consistent-generic-constructors": {
       "constructor": {
-        "count": 0,
-        "samples": []
+        "count": 1,
+        "samples": [
+          {
+            "file": "packages/turf-polygonize/lib/Graph.ts",
+            "line": 45,
+            "column": 16,
+            "message": "The generic type arguments should be specified as part of the constructor type arguments."
+          }
+        ]
       },
       "type-annotation": {
-        "count": 3,
+        "count": 4,
         "samples": [
           {
             "file": "packages/turf-collect/index.ts",
             "line": 50,
             "column": 24,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "packages/turf-polygonize/lib/Graph.ts",
+            "line": 47,
+            "column": 26,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
@@ -166,7 +179,7 @@
     },
     "consistent-indexed-object-style": {
       "record": {
-        "count": 10,
+        "count": 9,
         "samples": [
           {
             "file": "packages/turf-clone/index.ts",
@@ -217,12 +230,6 @@
             "message": "A record is preferred over an index signature."
           },
           {
-            "file": "packages/turf-polygonize/lib/Graph.ts",
-            "line": 45,
-            "column": 20,
-            "message": "A record is preferred over an index signature."
-          },
-          {
             "file": "packages/turf-quadrat-analysis/index.ts",
             "line": 78,
             "column": 26,
@@ -253,13 +260,13 @@
           },
           {
             "file": "packages/turf-helpers/index.ts",
-            "line": 126,
+            "line": 123,
             "column": 23,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "packages/turf-helpers/index.ts",
-            "line": 161,
+            "line": 158,
             "column": 27,
             "message": "An index signature is preferred over a record."
           },
@@ -283,7 +290,7 @@
           },
           {
             "file": "packages/turf-line-intersect/index.ts",
-            "line": 76,
+            "line": 78,
             "column": 19,
             "message": "An index signature is preferred over a record."
           },
@@ -453,7 +460,7 @@
         ]
       },
       "no-type-imports": {
-        "count": 25,
+        "count": 26,
         "samples": [
           {
             "file": "packages/turf-buffer/test/types.tst.ts",
@@ -469,7 +476,7 @@
           },
           {
             "file": "packages/turf-flatten/index.ts",
-            "line": 3,
+            "line": 4,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -480,8 +487,8 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/turf-line-slice/index.ts",
-            "line": 4,
+            "file": "packages/turf-line-offset/test/types.tst.ts",
+            "line": 3,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -498,8 +505,8 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/turf-rewind/index.ts",
-            "line": 1,
+            "file": "packages/turf-polygon-tangents/index.ts",
+            "line": 9,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -520,7 +527,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 421,
+        "count": 428,
         "samples": [
           {
             "file": "packages/turf-along/index.ts",
@@ -535,38 +542,38 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "packages/turf-center/index.ts",
-            "line": 29,
+            "file": "packages/turf-circle/index.ts",
+            "line": 25,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "packages/turf-distance-weight/index.ts",
-            "line": 51,
+            "file": "packages/turf-ellipse/index.ts",
+            "line": 37,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "packages/turf-invariant/index.ts",
-            "line": 128,
+            "line": 237,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "packages/turf-line-offset/lib/intersection.ts",
-            "line": 115,
-            "column": 8,
+            "line": 64,
+            "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "packages/turf-moran-index/index.ts",
-            "line": 139,
+            "file": "packages/turf-midpoint/index.ts",
+            "line": 26,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "packages/turf-projection/index.ts",
-            "line": 103,
+            "line": 43,
             "column": 1,
             "message": "Expected a function expression."
           },
@@ -662,7 +669,7 @@
           },
           {
             "file": "packages/turf-boolean-contains/index.ts",
-            "line": 338,
+            "line": 367,
             "column": 8,
             "message": "Prefer named exports"
           },
@@ -692,13 +699,13 @@
           },
           {
             "file": "packages/turf-nearest-point/index.ts",
-            "line": 74,
+            "line": 75,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
             "file": "packages/turf-polygonize/lib/Node.ts",
-            "line": 129,
+            "line": 125,
             "column": 8,
             "message": "Prefer named exports"
           },
@@ -717,7 +724,7 @@
         ]
       },
       "default": {
-        "count": 10,
+        "count": 8,
         "samples": [
           {
             "file": "packages/turf-isobands/lib/grid-to-matrix.ts",
@@ -740,18 +747,6 @@
           {
             "file": "packages/turf-isolines/lib/matrix-to-grid.ts",
             "line": 35,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "packages/turf-kinks/lib/sweepline-intersections-export.ts",
-            "line": 7,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "packages/turf-line-intersect/lib/sweepline-intersections-export.ts",
-            "line": 7,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -788,7 +783,7 @@
         "samples": []
       },
       "4-space": {
-        "count": 421,
+        "count": 422,
         "samples": [
           {
             "file": ".monorepolint.config.mjs",
@@ -803,8 +798,8 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/turf-centroid/test.ts",
-            "line": 14,
+            "file": "packages/turf-centroid/types.ts",
+            "line": 5,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -833,8 +828,8 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/turf-rectangle-grid/test.ts",
-            "line": 14,
+            "file": "packages/turf-rectangle-grid/index.ts",
+            "line": 3,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -853,7 +848,7 @@
         ]
       },
       "tab": {
-        "count": 421,
+        "count": 422,
         "samples": [
           {
             "file": ".monorepolint.config.mjs",
@@ -868,8 +863,8 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/turf-centroid/test.ts",
-            "line": 14,
+            "file": "packages/turf-centroid/types.ts",
+            "line": 5,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -898,8 +893,8 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/turf-rectangle-grid/test.ts",
-            "line": 14,
+            "file": "packages/turf-rectangle-grid/index.ts",
+            "line": 3,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -943,7 +938,7 @@
         ]
       },
       "single": {
-        "count": 7069,
+        "count": 7085,
         "samples": [
           {
             "file": ".monorepolint.config.mjs",
@@ -953,20 +948,20 @@
           },
           {
             "file": "packages/turf-boolean-intersects/bench.ts",
-            "line": 4,
-            "column": 34,
+            "line": 1,
+            "column": 18,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "packages/turf-center-of-mass/types.ts",
-            "line": 1,
-            "column": 28,
+            "file": "packages/turf-center-of-mass/test.ts",
+            "line": 104,
+            "column": 30,
             "message": "Strings must use singlequote."
           },
           {
             "file": "packages/turf-directional-mean/index.ts",
-            "line": 3,
-            "column": 26,
+            "line": 1,
+            "column": 63,
             "message": "Strings must use singlequote."
           },
           {
@@ -977,26 +972,26 @@
           },
           {
             "file": "packages/turf-line-offset/test.ts",
-            "line": 67,
-            "column": 39,
+            "line": 15,
+            "column": 37,
             "message": "Strings must use singlequote."
           },
           {
             "file": "packages/turf-nearest-point-on-line/test.ts",
-            "line": 18,
-            "column": 8,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "packages/turf-quadrat-analysis/test.ts",
-            "line": 11,
+            "line": 6,
             "column": 35,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "packages/turf-transform-rotate/types.ts",
-            "line": 1,
-            "column": 60,
+            "file": "packages/turf-quadrat-analysis/test.ts",
+            "line": 8,
+            "column": 28,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "packages/turf-transform-rotate/test.ts",
+            "line": 148,
+            "column": 35,
             "message": "Strings must use singlequote."
           },
           {
@@ -1062,7 +1057,7 @@
         "samples": []
       },
       "never": {
-        "count": 13648,
+        "count": 13792,
         "samples": [
           {
             "file": ".monorepolint.config.mjs",
@@ -1072,50 +1067,50 @@
           },
           {
             "file": "packages/turf-boolean-point-in-polygon/test.ts",
-            "line": 82,
-            "column": 63,
+            "line": 203,
+            "column": 3,
             "message": "Extra semicolon."
           },
           {
             "file": "packages/turf-clusters-dbscan/index.ts",
-            "line": 126,
-            "column": 36,
+            "line": 166,
+            "column": 48,
             "message": "Extra semicolon."
           },
           {
-            "file": "packages/turf-flip/bench.ts",
-            "line": 4,
-            "column": 50,
+            "file": "packages/turf-flip/index.ts",
+            "line": 42,
+            "column": 17,
             "message": "Extra semicolon."
           },
           {
-            "file": "packages/turf-isobands/lib/matrix-to-grid.ts",
-            "line": 46,
-            "column": 26,
+            "file": "packages/turf-isobands/test.ts",
+            "line": 14,
+            "column": 38,
             "message": "Extra semicolon."
           },
           {
-            "file": "packages/turf-line-to-polygon/index.ts",
-            "line": 110,
-            "column": 31,
+            "file": "packages/turf-line-split/test.ts",
+            "line": 345,
+            "column": 32,
             "message": "Extra semicolon."
           },
           {
             "file": "packages/turf-nearest-point-on-line/test.ts",
-            "line": 218,
-            "column": 59,
+            "line": 102,
+            "column": 52,
             "message": "Extra semicolon."
           },
           {
-            "file": "packages/turf-projection/index.ts",
-            "line": 107,
-            "column": 35,
+            "file": "packages/turf-projection/bench.ts",
+            "line": 10,
+            "column": 53,
             "message": "Extra semicolon."
           },
           {
-            "file": "packages/turf-tin/bench.ts",
-            "line": 17,
-            "column": 9,
+            "file": "packages/turf-tesselate/test.ts",
+            "line": 3535,
+            "column": 4,
             "message": "Extra semicolon."
           },
           {

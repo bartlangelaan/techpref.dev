@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "96d58f23c7cc",
-  "analyzedCommit": "6ac7d809de0cf673ebbb5f627e07f462a621389c",
-  "analyzedCommitDate": "2026-06-21T06:32:42.000Z",
+  "analyzedCommit": "43f20b4426776e44caaf5f2b9c2c2f994101017f",
+  "analyzedCommitDate": "2026-07-11T18:58:30.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -26,8 +26,8 @@
         "samples": [
           {
             "file": "packages/api/src/v1/search.ts",
-            "line": 59,
-            "column": 34,
+            "line": 97,
+            "column": 24,
             "message": "Array type using 'searchUtils.SearchItemPkg[]' is forbidden. Use 'Array<searchUtils.SearchItemPkg>' instead."
           },
           {
@@ -407,7 +407,7 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 22,
+        "count": 17,
         "samples": [
           {
             "file": "packages/auth/test/auth.spec.ts",
@@ -419,6 +419,12 @@
             "file": "packages/plugins/htpasswd/tests/crypt3.test.ts",
             "line": 6,
             "column": 35,
+            "message": "`import()` type annotations are forbidden."
+          },
+          {
+            "file": "packages/plugins/htpasswd/tests/htpasswd.adduser.test.ts",
+            "line": 46,
+            "column": 43,
             "message": "`import()` type annotations are forbidden."
           },
           {
@@ -441,6 +447,12 @@
           },
           {
             "file": "packages/plugins/htpasswd/tests/htpasswd.adduser.test.ts",
+            "line": 213,
+            "column": 43,
+            "message": "`import()` type annotations are forbidden."
+          },
+          {
+            "file": "packages/plugins/htpasswd/tests/htpasswd.adduser.test.ts",
             "line": 236,
             "column": 43,
             "message": "`import()` type annotations are forbidden."
@@ -456,23 +468,11 @@
             "line": 1,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
-          {
-            "file": "packages/store/src/lib/versions-utils.ts",
-            "line": 3,
-            "column": 1,
-            "message": "Imports SemVer are only used as type."
-          },
-          {
-            "file": "packages/store/src/lib/versions-utils.ts",
-            "line": 6,
-            "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
           }
         ]
       },
       "no-type-imports": {
-        "count": 499,
+        "count": 504,
         "samples": [
           {
             "file": "packages/api/src/dist-tags.ts",
@@ -481,50 +481,50 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/auth/src/utils.ts",
-            "line": 10,
+            "file": "packages/auth/test/auth-utils-middleware.spec.ts",
+            "line": 15,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/loaders/test/plugin_loader_async.spec.ts",
-            "line": 5,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "packages/middleware/test/token-auth.spec.ts",
-            "line": 1,
-            "column": 70,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "packages/plugins/local-storage/tests/utils.test.ts",
+            "file": "packages/logger/src/formatter.ts",
             "line": 4,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/signature/src/jwt-token.ts",
-            "line": 5,
+            "file": "packages/middleware/test/token-auth.spec.ts",
+            "line": 6,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/ui-components/src/components/ActionBar/ActionBar.tsx",
+            "file": "packages/plugins/memory/src/local-memory.ts",
             "line": 7,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/ui-components/src/components/LoginForm/styles.tsx",
-            "line": 11,
+            "file": "packages/signature/src/token.ts",
+            "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/ui-components/src/sections/Detail/Detail.stories.tsx",
-            "line": 1,
+            "file": "packages/ui-components/src/api/use-data.ts",
+            "line": 5,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "packages/ui-components/src/components/LoginForm/UsernameField.tsx",
+            "line": 9,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "packages/ui-components/src/providers/VersionProvider/VersionProvider.tsx",
+            "line": 8,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -539,7 +539,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 522,
+        "count": 524,
         "samples": [
           {
             "file": "docker-examples/v6/plugins/docker-local-plugin/plugins/verdaccio-docker-memory/lib/index.js",
@@ -549,25 +549,25 @@
           },
           {
             "file": "packages/config/src/parse.ts",
-            "line": 45,
+            "line": 18,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "packages/core/core/src/validation-utils.ts",
-            "line": 101,
+            "line": 72,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "packages/logger/src/levels.ts",
-            "line": 7,
+            "file": "packages/logger/src/index.ts",
+            "line": 19,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "packages/middleware/test/token-auth.spec.ts",
-            "line": 33,
+            "line": 12,
             "column": 1,
             "message": "Expected a function expression."
           },
@@ -597,14 +597,14 @@
           },
           {
             "file": "vite.lib.config.mjs",
-            "line": 58,
+            "line": 55,
             "column": 8,
             "message": "Expected a function expression."
           }
         ]
       },
       "declaration": {
-        "count": 376,
+        "count": 381,
         "samples": [
           {
             "file": "docker-examples/v6/plugins/docker-local-plugin/plugins/verdaccio-docker-memory/lib/memory-handler.js",
@@ -620,38 +620,38 @@
           },
           {
             "file": "packages/plugins/htpasswd/tests/utils.test.ts",
-            "line": 225,
+            "line": 183,
             "column": 11,
             "message": "Expected a function declaration."
           },
           {
-            "file": "packages/ui-components/src/Theme/ResetStyles.tsx",
-            "line": 6,
+            "file": "packages/tools/helpers/src/utils.ts",
+            "line": 1,
+            "column": 14,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "packages/ui-components/src/components/Engines/Engines.test.tsx",
+            "line": 11,
             "column": 7,
             "message": "Expected a function declaration."
           },
           {
-            "file": "packages/ui-components/src/components/ErrorBoundary/ErrorBoundary.test.tsx",
-            "line": 19,
-            "column": 11,
+            "file": "packages/ui-components/src/components/NoItems/NoItems.stories.tsx",
+            "line": 9,
+            "column": 14,
             "message": "Expected a function declaration."
           },
           {
-            "file": "packages/ui-components/src/components/NotFound/NotFound.tsx",
-            "line": 13,
-            "column": 7,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "packages/ui-components/src/components/SettingsMenu/SettingsMenu.tsx",
-            "line": 26,
+            "file": "packages/ui-components/src/components/Search/SearchItem.tsx",
+            "line": 78,
             "column": 9,
             "message": "Expected a function declaration."
           },
           {
-            "file": "packages/ui-components/src/providers/VersionProvider/VersionProvider.tsx",
-            "line": 33,
-            "column": 7,
+            "file": "packages/ui-components/src/providers/TranslatorProvider/TranslatorProvider.tsx",
+            "line": 54,
+            "column": 14,
             "message": "Expected a function declaration."
           },
           {
@@ -662,7 +662,7 @@
           },
           {
             "file": "vite.lib.config.mjs",
-            "line": 75,
+            "line": 74,
             "column": 9,
             "message": "Expected a function declaration."
           }
@@ -671,7 +671,7 @@
     },
     "import-export-preference": {
       "named": {
-        "count": 297,
+        "count": 296,
         "samples": [
           {
             "file": "cypress.config.ts",
@@ -680,14 +680,14 @@
             "message": "Prefer named exports"
           },
           {
-            "file": "packages/middleware/src/middlewares/web/web-middleware.ts",
-            "line": 7,
+            "file": "packages/middleware/vite.config.mjs",
+            "line": 3,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "packages/plugins/ui-theme/src/i18n/config.ts",
-            "line": 40,
+            "file": "packages/plugins/ui-theme/src/i18n/load-dayjs-locale.ts",
+            "line": 74,
             "column": 8,
             "message": "Prefer named exports"
           },
@@ -704,15 +704,15 @@
             "message": "Prefer named exports"
           },
           {
-            "file": "packages/ui-components/src/components/LoginForm/UsernameField.tsx",
-            "line": 41,
+            "file": "packages/ui-components/src/components/LoginForm/styles.tsx",
+            "line": 50,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "packages/ui-components/src/components/Search/index.ts",
-            "line": 1,
-            "column": 10,
+            "file": "packages/ui-components/src/components/SettingsMenu/SettingsMenu.tsx",
+            "line": 129,
+            "column": 8,
             "message": "Prefer named exports"
           },
           {
@@ -794,7 +794,7 @@
           },
           {
             "file": "vite.lib.config.mjs",
-            "line": 58,
+            "line": 55,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           }
@@ -823,50 +823,50 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/config/test/config.path.spec.ts",
-            "line": 8,
+            "file": "packages/config/test/config.spec.ts",
+            "line": 6,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/loaders/test/partials/test-plugin-storage/verdaccio-es6-plugin/index.js",
-            "line": 5,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "packages/plugins/audit/src/audit.ts",
-            "line": 16,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "packages/proxy/src/proxy.ts",
-            "line": 12,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "packages/tools/verdaccio-auth-fake-plugin/index.js",
+            "file": "packages/loaders/test/partials/test-plugin-storage/verdaccio-plugin-store/index.js",
             "line": 2,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/ui-components/src/components/Icons/Icons.test.tsx",
+            "file": "packages/plugins/audit/src/types.ts",
+            "line": 2,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "packages/proxy/src/uplink-util.ts",
+            "line": 7,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "packages/tools/verdaccio-prefix-fake-plugin/index.js",
+            "line": 2,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "packages/ui-components/src/components/Icons/Law.tsx",
+            "line": 6,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "packages/ui-components/src/components/SideBarTitle/SideBarTitle.tsx",
+            "line": 14,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "packages/ui-components/src/store/storage.ts",
             "line": 5,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "packages/ui-components/src/components/SideBarTitle/SideBarTitle.stories.tsx",
-            "line": 7,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "packages/ui-components/src/store/routes.ts",
-            "line": 7,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -879,7 +879,7 @@
         ]
       },
       "tab": {
-        "count": 728,
+        "count": 727,
         "samples": [
           {
             "file": "cypress.config.ts",
@@ -888,8 +888,8 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/config/test/config.path.spec.ts",
-            "line": 8,
+            "file": "packages/config/test/config.spec.ts",
+            "line": 6,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -900,14 +900,14 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/plugins/audit/src/audit.ts",
-            "line": 16,
+            "file": "packages/plugins/audit/src/types.ts",
+            "line": 2,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/proxy/src/proxy.ts",
-            "line": 12,
+            "file": "packages/proxy/src/uplink-util.ts",
+            "line": 7,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -924,8 +924,8 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/ui-components/src/components/SideBarTitle/SideBarTitle.stories.tsx",
-            "line": 7,
+            "file": "packages/ui-components/src/components/SideBarTitle/SideBarTitle.tsx",
+            "line": 14,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -946,7 +946,7 @@
     },
     "quotes": {
       "double": {
-        "count": 18252,
+        "count": 18225,
         "samples": [
           {
             "file": "cypress.config.ts",
@@ -955,51 +955,51 @@
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/config/src/config-utils.ts",
-            "line": 34,
-            "column": 11,
+            "file": "packages/config/src/parse.ts",
+            "line": 46,
+            "column": 9,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/core/url/src/index.ts",
-            "line": 58,
-            "column": 32,
+            "file": "packages/core/url/tests/getPublicUrl.spec.ts",
+            "line": 48,
+            "column": 17,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/middleware/test/render.spec.ts",
-            "line": 210,
-            "column": 68,
+            "file": "packages/middleware/test/renderHTML.test.ts",
+            "line": 81,
+            "column": 8,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/plugins/package-filter/test/manifests.ts",
-            "line": 102,
-            "column": 12,
+            "file": "packages/plugins/package-filter/test/packageFilter.test.ts",
+            "line": 88,
+            "column": 36,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/store/src/lib/storage-utils.ts",
-            "line": 399,
-            "column": 12,
+            "file": "packages/store/src/storage.ts",
+            "line": 32,
+            "column": 76,
             "message": "Strings must use doublequote."
           },
           {
             "file": "packages/ui-components/src/AppTest/AppRoute.test.tsx",
-            "line": 79,
-            "column": 13,
+            "line": 94,
+            "column": 8,
             "message": "Strings must use doublequote."
           },
           {
             "file": "packages/ui-components/src/components/Repository/Repository.test.tsx",
-            "line": 32,
-            "column": 34,
+            "line": 56,
+            "column": 16,
             "message": "Strings must use doublequote."
           },
           {
             "file": "packages/ui-components/src/utils/__partials__/packageMeta.ts",
-            "line": 94,
-            "column": 7,
+            "line": 95,
+            "column": 18,
             "message": "Strings must use doublequote."
           },
           {
@@ -1011,7 +1011,7 @@
         ]
       },
       "single": {
-        "count": 174,
+        "count": 172,
         "samples": [
           {
             "file": "packages/api/src/publish.ts",
@@ -1032,26 +1032,26 @@
             "message": "Strings must use singlequote."
           },
           {
-            "file": "packages/core/url/tests/getPublicUrl.spec.ts",
-            "line": 48,
-            "column": 17,
+            "file": "packages/core/core/test/auth-utils.spec.ts",
+            "line": 15,
+            "column": 64,
             "message": "Strings must use singlequote."
           },
           {
             "file": "packages/logger/test/logger.spec.ts",
-            "line": 162,
+            "line": 81,
             "column": 9,
             "message": "Strings must use singlequote."
           },
           {
             "file": "packages/plugins/htpasswd/tests/utils.test.ts",
-            "line": 282,
+            "line": 300,
             "column": 9,
             "message": "Strings must use singlequote."
           },
           {
             "file": "packages/proxy/test/proxy.metadata.spec.ts",
-            "line": 215,
+            "line": 242,
             "column": 11,
             "message": "Strings must use singlequote."
           },
@@ -1507,7 +1507,7 @@
         ]
       },
       "never": {
-        "count": 21430,
+        "count": 21546,
         "samples": [
           {
             "file": "cypress.config.ts",
@@ -1516,51 +1516,51 @@
             "message": "Extra semicolon."
           },
           {
-            "file": "packages/cli/src/cli.ts",
-            "line": 34,
-            "column": 44,
+            "file": "packages/auth/test/partials/plugin/verdaccio-change-password/change.js",
+            "line": 29,
+            "column": 21,
             "message": "Extra semicolon."
           },
           {
-            "file": "packages/core/url/tests/getPublicUrl.spec.ts",
-            "line": 2,
-            "column": 48,
+            "file": "packages/core/url/src/index.ts",
+            "line": 144,
+            "column": 67,
             "message": "Extra semicolon."
           },
           {
             "file": "packages/middleware/test/render.spec.ts",
-            "line": 260,
-            "column": 60,
+            "line": 155,
+            "column": 7,
             "message": "Extra semicolon."
           },
           {
             "file": "packages/plugins/memory/src/memory-handler.ts",
-            "line": 280,
-            "column": 72,
+            "line": 193,
+            "column": 17,
             "message": "Extra semicolon."
           },
           {
             "file": "packages/server/express/src/server.ts",
-            "line": 118,
-            "column": 54,
+            "line": 46,
+            "column": 20,
             "message": "Extra semicolon."
           },
           {
             "file": "packages/tools/plugin-verifier/src/diagnostics.ts",
-            "line": 129,
-            "column": 9,
+            "line": 3,
+            "column": 44,
             "message": "Extra semicolon."
           },
           {
             "file": "packages/ui-components/src/components/Package/Package.tsx",
-            "line": 236,
-            "column": 23,
+            "line": 36,
+            "column": 18,
             "message": "Extra semicolon."
           },
           {
-            "file": "packages/ui-components/src/sections/Security/Success.test.tsx",
-            "line": 37,
-            "column": 5,
+            "file": "packages/ui-components/src/sections/Security/Security.stories.tsx",
+            "line": 94,
+            "column": 2,
             "message": "Extra semicolon."
           },
           {

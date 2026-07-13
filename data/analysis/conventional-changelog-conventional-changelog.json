@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "96d58f23c7cc",
-  "analyzedCommit": "00f4d7acc354349ca9831541039833f6796bde08",
-  "analyzedCommitDate": "2026-06-22T11:14:58.000Z",
+  "analyzedCommit": "74a977a970f0eb5cdf317538baec8290eb909a05",
+  "analyzedCommitDate": "2026-07-11T16:37:27.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -19,20 +19,14 @@
           },
           {
             "file": "packages/conventional-changelog-writer/src/context.ts",
-            "line": 97,
+            "line": 99,
             "column": 10,
             "message": "Array type using 'CommitNote[]' is forbidden. Use 'Array<CommitNote>' instead."
           },
           {
-            "file": "packages/conventional-changelog-writer/src/template.ts",
-            "line": 83,
-            "column": 18,
-            "message": "Array type using 'CommitNote[]' is forbidden. Use 'Array<CommitNote>' instead."
-          },
-          {
             "file": "packages/conventional-changelog-writer/src/types/options.ts",
-            "line": 102,
-            "column": 22,
+            "line": 114,
+            "column": 14,
             "message": "Array type using 'Commit[]' is forbidden. Use 'Array<Commit>' instead."
           },
           {
@@ -43,27 +37,33 @@
           },
           {
             "file": "packages/conventional-commits-parser/src/types.ts",
-            "line": 14,
-            "column": 25,
+            "line": 27,
+            "column": 26,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
-            "file": "packages/conventional-commits-parser/src/types.ts",
-            "line": 102,
-            "column": 15,
-            "message": "Array type using 'CommitReference[]' is forbidden. Use 'Array<CommitReference>' instead."
+            "file": "packages/conventional-commits-parser/src/utils.ts",
+            "line": 55,
+            "column": 10,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
-            "file": "packages/conventional-recommended-bump/src/bumper.spec.ts",
-            "line": 270,
-            "column": 20,
+            "file": "packages/conventional-recommended-bump/src/types.ts",
+            "line": 19,
+            "column": 12,
             "message": "Array type using 'Commit[]' is forbidden. Use 'Array<Commit>' instead."
           },
           {
             "file": "packages/git-client/src/GitClient.ts",
-            "line": 50,
+            "line": 63,
             "column": 23,
             "message": "Array type using 'Arg[]' is forbidden. Use 'Array<Arg>' instead."
+          },
+          {
+            "file": "packages/template/src/elements.ts",
+            "line": 153,
+            "column": 31,
+            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           },
           {
             "file": "tools/utils.ts",
@@ -102,7 +102,7 @@
           },
           {
             "file": "packages/conventional-commits-parser/src/CommitParser.ts",
-            "line": 382,
+            "line": 390,
             "column": 34,
             "message": "The generic type arguments should be specified as part of the type annotation."
           }
@@ -115,14 +115,14 @@
         "samples": [
           {
             "file": "packages/conventional-changelog-writer/src/types/utils.ts",
-            "line": 6,
+            "line": 3,
             "column": 47,
             "message": "A record is preferred over an index signature."
           }
         ]
       },
       "index-signature": {
-        "count": 22,
+        "count": 20,
         "samples": [
           {
             "file": "packages/conventional-changelog-preset-loader/src/types.ts",
@@ -132,32 +132,26 @@
           },
           {
             "file": "packages/conventional-changelog-writer/src/context.ts",
-            "line": 23,
+            "line": 25,
             "column": 42,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "packages/conventional-changelog-writer/src/types/utils.ts",
-            "line": 2,
-            "column": 25,
-            "message": "An index signature is preferred over a record."
-          },
-          {
             "file": "packages/conventional-changelog/src/cli/cli.ts",
-            "line": 146,
+            "line": 100,
             "column": 41,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "packages/conventional-changelog/src/cli/cli.ts",
-            "line": 158,
+            "line": 112,
             "column": 55,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "packages/conventional-changelog/src/cli/options.ts",
-            "line": 55,
-            "column": 46,
+            "line": 33,
+            "column": 43,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -173,15 +167,21 @@
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "packages/conventional-recommended-bump/src/cli/options.ts",
-            "line": 12,
-            "column": 43,
+            "file": "packages/conventional-commits-parser/src/utils.ts",
+            "line": 84,
+            "column": 11,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "packages/conventional-recommended-bump/src/cli/options.ts",
-            "line": 48,
-            "column": 45,
+            "line": 34,
+            "column": 46,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "packages/template/src/types/utils.ts",
+            "line": 2,
+            "column": 25,
             "message": "An index signature is preferred over a record."
           }
         ]
@@ -193,7 +193,7 @@
         "samples": []
       },
       "type": {
-        "count": 40,
+        "count": 37,
         "samples": [
           {
             "file": "packages/conventional-changelog-preset-loader/src/types.ts",
@@ -202,26 +202,14 @@
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "packages/conventional-changelog-writer/src/types/commit.ts",
-            "line": 24,
-            "column": 8,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "packages/conventional-changelog-writer/src/types/options.ts",
-            "line": 26,
-            "column": 8,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "packages/conventional-changelog/src/cli/cli.ts",
-            "line": 21,
+            "file": "packages/conventional-changelog/src/types.ts",
+            "line": 34,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "packages/conventional-changelog/src/types.ts",
-            "line": 54,
+            "line": 97,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
@@ -245,13 +233,25 @@
           },
           {
             "file": "packages/git-client/src/types.ts",
-            "line": 49,
+            "line": 47,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "packages/git-client/src/types.ts",
-            "line": 79,
+            "line": 75,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "packages/template/src/types/commit.ts",
+            "line": 17,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "packages/template/src/types/context.ts",
+            "line": 115,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           }
@@ -264,7 +264,7 @@
         "samples": []
       },
       "no-type-imports": {
-        "count": 70,
+        "count": 76,
         "samples": [
           {
             "file": "packages/conventional-changelog-preset-loader/src/presetLoader.ts",
@@ -273,14 +273,14 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/conventional-changelog-writer/src/template.ts",
+            "file": "packages/conventional-changelog-writer/src/options.ts",
             "line": 3,
-            "column": 1,
+            "column": 3,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/conventional-changelog-writer/src/utils.ts",
-            "line": 1,
+            "file": "packages/conventional-changelog-writer/src/writers.ts",
+            "line": 2,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -297,31 +297,31 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/conventional-changelog/src/types.ts",
-            "line": 15,
+            "file": "packages/conventional-changelog/src/utils.ts",
+            "line": 2,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/conventional-commits-parser/src/options.ts",
-            "line": 1,
+            "file": "packages/conventional-commits-parser/src/stream.ts",
+            "line": 2,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "packages/conventional-recommended-bump/src/bumper.ts",
-            "line": 13,
-            "column": 3,
+            "line": 18,
+            "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/conventional-recommended-bump/src/types.ts",
+            "file": "packages/git-client/src/ConventionalGitClient.ts",
             "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/standard-changelog/src/index.ts",
+            "file": "packages/template/src/types/context.ts",
             "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
@@ -331,7 +331,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 127,
+        "count": 145,
         "samples": [
           {
             "file": "packages/conventional-changelog-angular/src/parser.js",
@@ -340,32 +340,26 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "packages/conventional-changelog-conventionalcommits/src/writer.js",
-            "line": 164,
+            "file": "packages/conventional-changelog-conventionalcommits/src/templates.js",
+            "line": 39,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "packages/conventional-changelog-jshint/src/parser.js",
-            "line": 1,
-            "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "packages/conventional-changelog-writer/src/context.ts",
-            "line": 53,
+            "file": "packages/conventional-changelog-writer/src/cli/utils.ts",
+            "line": 19,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "packages/conventional-changelog-writer/src/utils.ts",
-            "line": 69,
+            "line": 13,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "packages/conventional-changelog/src/utils.ts",
-            "line": 10,
+            "file": "packages/conventional-changelog/src/cli/utils.ts",
+            "line": 15,
             "column": 8,
             "message": "Expected a function expression."
           },
@@ -377,26 +371,32 @@
           },
           {
             "file": "packages/conventional-commits-parser/src/utils.ts",
-            "line": 54,
+            "line": 72,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "packages/git-raw-commits/src/index.js",
-            "line": 4,
-            "column": 1,
+            "file": "packages/template/src/elements.ts",
+            "line": 37,
+            "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "tools/utils.ts",
-            "line": 15,
+            "file": "packages/template/src/templates.ts",
+            "line": 92,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "website/rehype.js",
+            "line": 45,
             "column": 8,
             "message": "Expected a function expression."
           }
         ]
       },
       "declaration": {
-        "count": 3,
+        "count": 4,
         "samples": [
           {
             "file": "packages/conventional-changelog-preset-loader/src/presetLoader.spec.ts",
@@ -412,8 +412,14 @@
           },
           {
             "file": "packages/conventional-changelog-writer/src/writers.spec.ts",
-            "line": 431,
+            "line": 437,
             "column": 17,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "packages/conventional-changelog/src/ConventionalChangelog.spec.ts",
+            "line": 307,
+            "column": 13,
             "message": "Expected a function declaration."
           }
         ]
@@ -421,7 +427,7 @@
     },
     "import-export-preference": {
       "named": {
-        "count": 23,
+        "count": 19,
         "samples": [
           {
             "file": ".commitlintrc.js",
@@ -430,31 +436,25 @@
             "message": "Prefer named exports"
           },
           {
-            "file": "packages/conventional-changelog-angular/src/index.js",
+            "file": "packages/conventional-changelog-angular/oxlint.config.ts",
             "line": 5,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "packages/conventional-changelog-conventionalcommits/src/index.js",
-            "line": 8,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "packages/conventional-changelog-eslint/src/index.js",
+            "file": "packages/conventional-changelog-conventionalcommits/oxlint.config.ts",
             "line": 5,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "packages/conventional-changelog-jshint/src/index.js",
-            "line": 5,
+            "file": "packages/conventional-changelog-preset-loader/oxlint.config.ts",
+            "line": 6,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "packages/conventional-changelog-writer/oxlint.config.ts",
+            "file": "packages/conventional-changelog/oxlint.config.ts",
             "line": 6,
             "column": 8,
             "message": "Prefer named exports"
@@ -466,13 +466,13 @@
             "message": "Prefer named exports"
           },
           {
-            "file": "packages/conventional-recommended-bump/oxlint.config.ts",
+            "file": "packages/git-client/oxlint.config.ts",
             "line": 6,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "packages/standard-changelog/oxlint.config.ts",
+            "file": "packages/template/oxlint.config.ts",
             "line": 6,
             "column": 8,
             "message": "Prefer named exports"
@@ -482,11 +482,17 @@
             "line": 3,
             "column": 8,
             "message": "Prefer named exports"
+          },
+          {
+            "file": "website/oxlint.config.ts",
+            "line": 6,
+            "column": 8,
+            "message": "Prefer named exports"
           }
         ]
       },
       "default": {
-        "count": 43,
+        "count": 23,
         "samples": [
           {
             "file": "packages/conventional-changelog-angular/src/parser.js",
@@ -495,38 +501,26 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "packages/conventional-changelog-atom/src/writer.js",
-            "line": 10,
+            "file": "packages/conventional-changelog-angular/src/writer.js",
+            "line": 16,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "packages/conventional-changelog-conventionalcommits/src/constants.js",
+            "file": "packages/conventional-changelog-conventionalcommits/src/whatBump.js",
+            "line": 8,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "packages/conventional-changelog-writer/src/commit.ts",
+            "line": 38,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "packages/conventional-changelog/src/hosts/github.ts",
             "line": 1,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "packages/conventional-changelog-ember/src/parser.js",
-            "line": 1,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "packages/conventional-changelog-eslint/src/writer.js",
-            "line": 9,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "packages/conventional-changelog-jquery/src/parser.js",
-            "line": 1,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "packages/conventional-changelog-jshint/src/writer.js",
-            "line": 11,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -537,13 +531,25 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "packages/conventional-commits-parser/src/regex.ts",
-            "line": 67,
+            "file": "packages/conventional-commits-parser/src/options.ts",
+            "line": 3,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "packages/conventional-recommended-bump/src/cli/utils.ts",
+            "line": 12,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
             "file": "tools/tmp.ts",
+            "line": 5,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "website/src/content.config.ts",
             "line": 5,
             "column": 1,
             "message": "Prefer default export on a file with single export."
@@ -557,7 +563,7 @@
         "samples": []
       },
       "4-space": {
-        "count": 158,
+        "count": 119,
         "samples": [
           {
             "file": ".commitlintrc.js",
@@ -566,63 +572,63 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/conventional-changelog-codemirror/src/writer.js",
+            "file": "packages/conventional-changelog-conventionalcommits/src/index.js",
+            "line": 9,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "packages/conventional-changelog-writer/src/cli/index.ts",
+            "line": 6,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "packages/conventional-changelog-writer/src/utils.ts",
             "line": 2,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/conventional-changelog-eslint/src/writer.js",
+            "file": "packages/conventional-changelog/src/hosts/github.ts",
             "line": 2,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/conventional-changelog-jshint/src/writer.js",
-            "line": 3,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "packages/conventional-changelog-writer/src/types/commit.ts",
-            "line": 4,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "packages/conventional-changelog/src/cli/cli.ts",
-            "line": 3,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "packages/conventional-commits-filter/src/types.ts",
-            "line": 5,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "packages/conventional-recommended-bump/oxlint.config.ts",
+            "file": "packages/conventional-commits-parser/oxlint.config.ts",
             "line": 7,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/git-raw-commits/src/index.js",
-            "line": 5,
+            "file": "packages/conventional-commits-parser/src/utils.ts",
+            "line": 11,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "vite.config.js",
-            "line": 4,
+            "file": "packages/git-client/src/GitClient.ts",
+            "line": 3,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "packages/template/src/templates.ts",
+            "line": 2,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "website/src/content.config.ts",
+            "line": 6,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           }
         ]
       },
       "tab": {
-        "count": 158,
+        "count": 119,
         "samples": [
           {
             "file": ".commitlintrc.js",
@@ -631,56 +637,56 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/conventional-changelog-codemirror/src/writer.js",
+            "file": "packages/conventional-changelog-conventionalcommits/src/index.js",
+            "line": 9,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "packages/conventional-changelog-writer/src/cli/index.ts",
+            "line": 6,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "packages/conventional-changelog-writer/src/utils.ts",
             "line": 2,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/conventional-changelog-eslint/src/writer.js",
+            "file": "packages/conventional-changelog/src/hosts/github.ts",
             "line": 2,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/conventional-changelog-jshint/src/writer.js",
-            "line": 3,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "packages/conventional-changelog-writer/src/types/commit.ts",
-            "line": 4,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "packages/conventional-changelog/src/cli/cli.ts",
-            "line": 3,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "packages/conventional-commits-filter/src/types.ts",
-            "line": 5,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "packages/conventional-recommended-bump/oxlint.config.ts",
+            "file": "packages/conventional-commits-parser/oxlint.config.ts",
             "line": 7,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/git-raw-commits/src/index.js",
-            "line": 5,
+            "file": "packages/conventional-commits-parser/src/utils.ts",
+            "line": 11,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "vite.config.js",
-            "line": 4,
+            "file": "packages/git-client/src/GitClient.ts",
+            "line": 3,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "packages/template/src/templates.ts",
+            "line": 2,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "website/src/content.config.ts",
+            "line": 6,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           }
@@ -689,7 +695,7 @@
     },
     "quotes": {
       "double": {
-        "count": 4731,
+        "count": 4614,
         "samples": [
           {
             "file": ".commitlintrc.js",
@@ -699,114 +705,102 @@
           },
           {
             "file": "packages/conventional-changelog-conventionalcommits/test/index.spec.js",
-            "line": 476,
+            "line": 491,
             "column": 33,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/conventional-changelog-writer/src/context.spec.ts",
-            "line": 223,
-            "column": 14,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "packages/conventional-changelog-writer/src/writers.spec.ts",
-            "line": 614,
-            "column": 22,
+            "file": "packages/conventional-changelog-writer/src/options.ts",
+            "line": 9,
+            "column": 8,
             "message": "Strings must use doublequote."
           },
           {
             "file": "packages/conventional-changelog/src/ConventionalChangelog.spec.ts",
-            "line": 978,
-            "column": 22,
+            "line": 117,
+            "column": 53,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/conventional-commits-filter/src/utils.ts",
-            "line": 23,
-            "column": 27,
+            "file": "packages/conventional-changelog/src/cli/index.spec.ts",
+            "line": 245,
+            "column": 38,
             "message": "Strings must use doublequote."
           },
           {
             "file": "packages/conventional-commits-parser/src/CommitParser.spec.ts",
-            "line": 1064,
-            "column": 32,
+            "line": 433,
+            "column": 13,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/conventional-commits-parser/src/regex.spec.ts",
-            "line": 435,
-            "column": 24,
+            "file": "packages/conventional-commits-parser/src/CommitParser.spec.ts",
+            "line": 1492,
+            "column": 13,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "packages/conventional-commits-parser/src/stream.spec.ts",
+            "line": 142,
+            "column": 11,
             "message": "Strings must use doublequote."
           },
           {
             "file": "packages/git-client/src/GitClient.ts",
-            "line": 116,
-            "column": 18,
+            "line": 336,
+            "column": 29,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "vite.config.js",
-            "line": 11,
-            "column": 30,
+            "file": "website/src/content.config.ts",
+            "line": 3,
+            "column": 28,
             "message": "Strings must use doublequote."
           }
         ]
       },
       "single": {
-        "count": 9,
+        "count": 7,
         "samples": [
           {
-            "file": "packages/conventional-changelog-conventionalcommits/src/templates.js",
-            "line": 68,
-            "column": 30,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "packages/conventional-changelog-jquery/test/index.spec.js",
-            "line": 30,
-            "column": 26,
-            "message": "Strings must use singlequote."
-          },
-          {
             "file": "packages/conventional-changelog-writer/src/writers.spec.ts",
-            "line": 892,
+            "line": 898,
             "column": 34,
             "message": "Strings must use singlequote."
           },
           {
             "file": "packages/conventional-commits-parser/src/CommitParser.spec.ts",
-            "line": 896,
+            "line": 1056,
             "column": 11,
             "message": "Strings must use singlequote."
           },
           {
             "file": "packages/conventional-commits-parser/src/CommitParser.spec.ts",
-            "line": 902,
+            "line": 1062,
             "column": 11,
             "message": "Strings must use singlequote."
           },
           {
             "file": "packages/conventional-commits-parser/src/CommitParser.spec.ts",
-            "line": 903,
+            "line": 1063,
             "column": 13,
             "message": "Strings must use singlequote."
           },
           {
             "file": "packages/conventional-commits-parser/src/CommitParser.spec.ts",
-            "line": 904,
+            "line": 1064,
             "column": 13,
             "message": "Strings must use singlequote."
           },
           {
             "file": "packages/conventional-commits-parser/src/CommitParser.spec.ts",
-            "line": 905,
+            "line": 1065,
             "column": 13,
             "message": "Strings must use singlequote."
           },
           {
             "file": "packages/conventional-commits-parser/src/CommitParser.spec.ts",
-            "line": 906,
+            "line": 1066,
             "column": 13,
             "message": "Strings must use singlequote."
           }
@@ -863,7 +857,7 @@
     },
     "semi": {
       "always": {
-        "count": 5058,
+        "count": 4673,
         "samples": [
           {
             "file": ".commitlintrc.js",
@@ -873,44 +867,44 @@
           },
           {
             "file": "packages/conventional-changelog-conventionalcommits/test/index.spec.js",
-            "line": 285,
-            "column": 15,
+            "line": 352,
+            "column": 17,
             "message": "Missing semicolon."
           },
           {
-            "file": "packages/conventional-changelog-preset-loader/src/presetLoader.ts",
-            "line": 124,
-            "column": 4,
+            "file": "packages/conventional-changelog-writer/src/context.ts",
+            "line": 91,
+            "column": 7,
             "message": "Missing semicolon."
           },
           {
-            "file": "packages/conventional-changelog-writer/src/writers.spec.ts",
-            "line": 434,
-            "column": 13,
+            "file": "packages/conventional-changelog-writer/src/writers.ts",
+            "line": 11,
+            "column": 55,
             "message": "Missing semicolon."
           },
           {
             "file": "packages/conventional-changelog/src/ConventionalChangelog.spec.ts",
-            "line": 375,
-            "column": 118,
+            "line": 1222,
+            "column": 38,
             "message": "Missing semicolon."
           },
           {
-            "file": "packages/conventional-changelog/src/cli/index.spec.ts",
-            "line": 73,
-            "column": 78,
+            "file": "packages/conventional-commits-filter/src/filters.spec.ts",
+            "line": 145,
+            "column": 39,
             "message": "Missing semicolon."
           },
           {
-            "file": "packages/conventional-commits-parser/src/CommitParser.ts",
-            "line": 54,
-            "column": 50,
+            "file": "packages/conventional-commits-parser/src/cli/index.spec.ts",
+            "line": 30,
+            "column": 128,
             "message": "Missing semicolon."
           },
           {
-            "file": "packages/conventional-commits-parser/src/stream.spec.ts",
-            "line": 133,
-            "column": 9,
+            "file": "packages/conventional-recommended-bump/oxlint.config.ts",
+            "line": 12,
+            "column": 3,
             "message": "Missing semicolon."
           },
           {
@@ -920,9 +914,9 @@
             "message": "Missing semicolon."
           },
           {
-            "file": "vite.config.js",
-            "line": 14,
-            "column": 3,
+            "file": "website/src/content.config.ts",
+            "line": 10,
+            "column": 2,
             "message": "Missing semicolon."
           }
         ]

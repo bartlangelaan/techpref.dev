@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "96d58f23c7cc",
-  "analyzedCommit": "dc950c134d98b202c3f281806bbcd2c7e534ed2f",
-  "analyzedCommitDate": "2026-06-23T10:08:57.000Z",
+  "analyzedCommit": "b7d671c81e26dd7841b7a8c6ec34c208e27b4d37",
+  "analyzedCommitDate": "2026-07-13T23:11:57.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -16,61 +16,61 @@
         ]
       },
       "generic": {
-        "count": 22,
+        "count": 26,
         "samples": [
           {
             "file": "docs/src/components/CodeSample.tsx",
-            "line": 10,
+            "line": 11,
             "column": 10,
             "message": "Array type using 'DriveStep[]' is forbidden. Use 'Array<DriveStep>' instead."
           },
           {
             "file": "docs/src/lib/guide.ts",
-            "line": 3,
-            "column": 62,
+            "line": 4,
+            "column": 20,
             "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           },
           {
             "file": "playground/src/examples/index.ts",
-            "line": 7,
-            "column": 29,
-            "message": "Array type using 'ExampleGroup[]' is forbidden. Use 'Array<ExampleGroup>' instead."
+            "line": 24,
+            "column": 24,
+            "message": "Array type using 'Example[]' is forbidden. Use 'Array<Example>' instead."
           },
           {
-            "file": "playground/src/examples/shared.ts",
-            "line": 5,
-            "column": 30,
-            "message": "Array type using 'DriveStep[]' is forbidden. Use 'Array<DriveStep>' instead."
+            "file": "playground/src/examples/types.ts",
+            "line": 14,
+            "column": 13,
+            "message": "Array type using 'Example[]' is forbidden. Use 'Array<Example>' instead."
           },
           {
             "file": "src/config.ts",
-            "line": 12,
-            "column": 11,
-            "message": "Array type using 'DriveStep[]' is forbidden. Use 'Array<DriveStep>' instead."
+            "line": 40,
+            "column": 20,
+            "message": "Array type using 'AllowedButtons[]' is forbidden. Use 'Array<AllowedButtons>' instead."
           },
           {
             "file": "src/driver.ts",
-            "line": 30,
-            "column": 21,
-            "message": "Array type using 'DriveStep[]' is forbidden. Use 'Array<DriveStep>' instead."
-          },
-          {
-            "file": "src/driver.ts",
-            "line": 236,
+            "line": 280,
             "column": 11,
             "message": "Array type using 'AllowedButtons[]' is forbidden. Use 'Array<AllowedButtons>' instead."
           },
           {
             "file": "src/popover.ts",
-            "line": 18,
-            "column": 17,
+            "line": 20,
+            "column": 20,
             "message": "Array type using 'AllowedButtons[]' is forbidden. Use 'Array<AllowedButtons>' instead."
           },
           {
             "file": "src/popover.ts",
-            "line": 117,
+            "line": 126,
             "column": 32,
             "message": "Array type using 'AllowedButtons[]' is forbidden. Use 'Array<AllowedButtons>' instead."
+          },
+          {
+            "file": "tests/backward-compat.test.ts",
+            "line": 209,
+            "column": 17,
+            "message": "Array type using 'Driver[]' is forbidden. Use 'Array<Driver>' instead."
           },
           {
             "file": "tests/utils.ts",
@@ -87,8 +87,15 @@
         "samples": []
       },
       "type-annotation": {
-        "count": 0,
-        "samples": []
+        "count": 1,
+        "samples": [
+          {
+            "file": "src/events.ts",
+            "line": 70,
+            "column": 40,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          }
+        ]
       }
     },
     "consistent-indexed-object-style": {
@@ -97,14 +104,14 @@
         "samples": [
           {
             "file": "src/emitter.ts",
-            "line": 10,
-            "column": 34,
+            "line": 17,
+            "column": 36,
             "message": "A record is preferred over an index signature."
           }
         ]
       },
       "index-signature": {
-        "count": 3,
+        "count": 4,
         "samples": [
           {
             "file": "docs/src/components/DocsHeader.tsx",
@@ -120,8 +127,14 @@
           },
           {
             "file": "docs/src/lib/guide.ts",
-            "line": 6,
+            "line": 7,
             "column": 36,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "src/driver.ts",
+            "line": 24,
+            "column": 10,
             "message": "An index signature is preferred over a record."
           }
         ]
@@ -129,17 +142,11 @@
     },
     "consistent-type-definitions": {
       "interface": {
-        "count": 12,
+        "count": 18,
         "samples": [
           {
             "file": "docs/src/components/CodeSample.tsx",
-            "line": 5,
-            "column": 1,
-            "message": "Use `interface` instead of `type`."
-          },
-          {
-            "file": "docs/src/components/DocsHeader.tsx",
-            "line": 4,
+            "line": 6,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
@@ -157,7 +164,13 @@
           },
           {
             "file": "src/config.ts",
-            "line": 11,
+            "line": 14,
+            "column": 8,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "src/context.ts",
+            "line": 8,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
@@ -169,20 +182,14 @@
           },
           {
             "file": "src/overlay.ts",
-            "line": 7,
+            "line": 5,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
             "file": "src/popover.ts",
-            "line": 39,
+            "line": 40,
             "column": 8,
-            "message": "Use `interface` instead of `type`."
-          },
-          {
-            "file": "src/popover.ts",
-            "line": 238,
-            "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
@@ -190,11 +197,17 @@
             "line": 5,
             "column": 8,
             "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "tests/events.test.ts",
+            "line": 12,
+            "column": 1,
+            "message": "Use `interface` instead of `type`."
           }
         ]
       },
       "type": {
-        "count": 9,
+        "count": 11,
         "samples": [
           {
             "file": "docs/src/components/Analytics/analytics.ts",
@@ -227,12 +240,6 @@
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "docs/src/pages/docs/[guideId].astro",
-            "line": 5,
-            "column": 8,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
             "file": "playground/src/components/Sidebar.astro",
             "line": 4,
             "column": 1,
@@ -245,8 +252,20 @@
             "message": "Use `type` instead of `interface`."
           },
           {
+            "file": "src/config.ts",
+            "line": 66,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
             "file": "src/driver.ts",
-            "line": 25,
+            "line": 27,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "src/state.ts",
+            "line": 38,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           }
@@ -255,17 +274,11 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 12,
+        "count": 20,
         "samples": [
           {
             "file": "src/config.ts",
             "line": 1,
-            "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
-          {
-            "file": "src/config.ts",
-            "line": 2,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
@@ -276,22 +289,28 @@
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
+            "file": "src/context.ts",
+            "line": 2,
+            "column": 1,
+            "message": "Imports GetState, SetState, and State are only used as type."
+          },
+          {
             "file": "src/driver.ts",
-            "line": 4,
+            "line": 1,
             "column": 1,
-            "message": "Imports Config and DriverHook are only used as type."
+            "message": "Imports AllowedButtons and Popover are only used as type."
           },
           {
-            "file": "src/highlight.ts",
+            "file": "src/events.ts",
             "line": 1,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "src/popover.ts",
-            "line": 1,
+            "file": "src/overlay.ts",
+            "line": 3,
             "column": 1,
-            "message": "Imports Config and DriverHook are only used as type."
+            "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
             "file": "src/popover.ts",
@@ -300,14 +319,14 @@
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "src/state.ts",
+            "file": "src/position.ts",
             "line": 1,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
             "file": "src/state.ts",
-            "line": 2,
+            "line": 1,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
@@ -320,17 +339,11 @@
         ]
       },
       "no-type-imports": {
-        "count": 13,
+        "count": 24,
         "samples": [
           {
             "file": "docs/src/components/CodeSample.tsx",
             "line": 1,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "docs/src/components/DocsHeader.tsx",
-            "line": 2,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -341,25 +354,19 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "docs/src/pages/docs/[guideId].astro",
-            "line": 2,
-            "column": 10,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
             "file": "playground/src/examples/api.ts",
             "line": 2,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "playground/src/examples/index.ts",
-            "line": 1,
+            "file": "playground/src/examples/highlight.ts",
+            "line": 2,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "playground/src/examples/popover.ts",
+            "file": "playground/src/examples/instances.ts",
             "line": 2,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
@@ -371,7 +378,19 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "tests/utils.ts",
+            "file": "playground/src/examples/tour.ts",
+            "line": 2,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "src/utils.ts",
+            "line": 1,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "tests/backward-compat.test.ts",
             "line": 2,
             "column": 18,
             "message": "Use an `import` instead of an `import type`."
@@ -387,7 +406,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 74,
+        "count": 95,
         "samples": [
           {
             "file": "docs/src/components/Analytics/Analytics.astro",
@@ -396,51 +415,51 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "docs/src/components/Examples.astro",
-            "line": 33,
-            "column": 3,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "playground/src/pages/[example].astro",
-            "line": 5,
+            "file": "docs/src/lib/github.ts",
+            "line": 9,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "src/driver.ts",
-            "line": 101,
-            "column": 3,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/emitter.ts",
-            "line": 16,
+            "line": 52,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/highlight.ts",
-            "line": 30,
+            "file": "src/driver.ts",
+            "line": 226,
+            "column": 3,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "src/events.ts",
+            "line": 129,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "src/overlay.ts",
-            "line": 92,
+            "line": 74,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/popover.ts",
-            "line": 310,
+            "file": "src/position.ts",
+            "line": 37,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "src/utils.ts",
-            "line": 10,
+            "line": 16,
             "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "tests/events.test.ts",
+            "line": 26,
+            "column": 1,
             "message": "Expected a function expression."
           },
           {
@@ -452,7 +471,7 @@
         ]
       },
       "declaration": {
-        "count": 8,
+        "count": 23,
         "samples": [
           {
             "file": "playground/src/examples/api.ts",
@@ -462,37 +481,49 @@
           },
           {
             "file": "src/events.ts",
-            "line": 82,
+            "line": 131,
             "column": 9,
             "message": "Expected a function declaration."
           },
           {
-            "file": "src/highlight.ts",
-            "line": 107,
+            "file": "src/events.ts",
+            "line": 134,
             "column": 9,
             "message": "Expected a function declaration."
           },
           {
-            "file": "tests/utils.ts",
-            "line": 46,
-            "column": 14,
+            "file": "src/popover.ts",
+            "line": 247,
+            "column": 11,
             "message": "Expected a function declaration."
           },
           {
-            "file": "tests/utils.ts",
-            "line": 47,
-            "column": 14,
+            "file": "tests/events.test.ts",
+            "line": 167,
+            "column": 9,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "tests/overlay.test.ts",
+            "line": 8,
+            "column": 7,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "tests/popover.test.ts",
+            "line": 246,
+            "column": 9,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "tests/scroll.test.ts",
+            "line": 6,
+            "column": 7,
             "message": "Expected a function declaration."
           },
           {
             "file": "tests/utils.ts",
             "line": 48,
-            "column": 14,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "tests/utils.ts",
-            "line": 49,
             "column": 14,
             "message": "Expected a function declaration."
           },
@@ -511,7 +542,7 @@
         "samples": [
           {
             "file": "docs/astro.config.mjs",
-            "line": 9,
+            "line": 18,
             "column": 8,
             "message": "Prefer named exports"
           },
@@ -530,11 +561,11 @@
         ]
       },
       "default": {
-        "count": 12,
+        "count": 17,
         "samples": [
           {
-            "file": "docs/src/components/DocsHeader.tsx",
-            "line": 9,
+            "file": "docs/src/components/CodeSample.tsx",
+            "line": 29,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -545,14 +576,8 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "docs/src/components/FeatureMarquee.tsx",
-            "line": 19,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
             "file": "docs/src/content.config.ts",
-            "line": 13,
+            "line": 16,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -563,8 +588,8 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "playground/src/examples/api.ts",
-            "line": 5,
+            "file": "playground/src/examples/arrow.ts",
+            "line": 6,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -575,14 +600,20 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "playground/src/examples/shared.ts",
-            "line": 5,
+            "file": "playground/src/examples/popover.ts",
+            "line": 4,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "playground/src/examples/tour.ts",
-            "line": 5,
+            "file": "playground/src/examples/scroll.ts",
+            "line": 16,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "playground/src/examples/skip-missing.ts",
+            "line": 4,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -601,17 +632,17 @@
         "samples": []
       },
       "4-space": {
-        "count": 46,
+        "count": 70,
         "samples": [
           {
             "file": "docs/astro.config.mjs",
-            "line": 10,
+            "line": 19,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "docs/src/components/Examples.astro",
-            "line": 29,
+            "file": "docs/src/components/FeatureMarquee.astro",
+            "line": 3,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -622,38 +653,38 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "docs/src/pages/docs/[guideId].astro",
-            "line": 6,
+            "file": "playground/src/components/Sidebar.astro",
+            "line": 5,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "playground/src/examples/index.ts",
-            "line": 12,
+            "file": "playground/src/examples/scroll.ts",
+            "line": 8,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "playground/src/layouts/PlaygroundLayout.astro",
+            "file": "playground/src/pages/[example].astro",
+            "line": 21,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "src/highlight.ts",
+            "line": 9,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "tests/config.test.ts",
             "line": 7,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/emitter.ts",
-            "line": 2,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "src/state.ts",
-            "line": 6,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "tests/keyboard.test.ts",
-            "line": 7,
+            "file": "tests/lifecycle.test.ts",
+            "line": 3,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -666,59 +697,59 @@
         ]
       },
       "tab": {
-        "count": 47,
+        "count": 71,
         "samples": [
           {
             "file": "docs/astro.config.mjs",
-            "line": 10,
+            "line": 19,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "docs/src/components/ExampleButton.tsx",
-            "line": 2,
+            "file": "docs/src/components/Examples.astro",
+            "line": 29,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "docs/src/components/UsecaseItem.astro",
-            "line": 3,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "docs/src/lib/guide.ts",
-            "line": 4,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "playground/src/examples/highlight.ts",
+            "file": "docs/src/content.config.ts",
             "line": 5,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "playground/src/layouts/PlaygroundLayout.astro",
-            "line": 7,
+            "file": "playground/astro.config.mjs",
+            "line": 11,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/emitter.ts",
-            "line": 2,
+            "file": "playground/src/examples/popover.ts",
+            "line": 5,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/state.ts",
-            "line": 6,
+            "file": "playground/src/pages/[example].astro",
+            "line": 21,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "tests/keyboard.test.ts",
-            "line": 7,
+            "file": "src/highlight.ts",
+            "line": 9,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "tests/backward-compat.test.ts",
+            "line": 14,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "tests/lifecycle.test.ts",
+            "line": 3,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -733,7 +764,7 @@
     },
     "quotes": {
       "double": {
-        "count": 64,
+        "count": 68,
         "samples": [
           {
             "file": "docs/src/components/Analytics/Analytics.astro",
@@ -749,44 +780,44 @@
           },
           {
             "file": "docs/src/components/Examples.astro",
-            "line": 314,
-            "column": 36,
+            "line": 356,
+            "column": 54,
             "message": "Strings must use doublequote."
           },
           {
             "file": "docs/src/components/Examples.astro",
-            "line": 373,
-            "column": 21,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "docs/src/components/Examples.astro",
-            "line": 407,
-            "column": 36,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "docs/src/components/Examples.astro",
-            "line": 471,
-            "column": 39,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "docs/src/components/Examples.astro",
-            "line": 499,
+            "line": 380,
             "column": 16,
             "message": "Strings must use doublequote."
           },
           {
             "file": "docs/src/components/Examples.astro",
-            "line": 523,
+            "line": 451,
+            "column": 36,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "docs/src/components/Examples.astro",
+            "line": 483,
             "column": 15,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/popover.ts",
-            "line": 427,
-            "column": 36,
+            "file": "docs/src/components/Examples.astro",
+            "line": 509,
+            "column": 54,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "docs/src/components/OpenSourceLove.astro",
+            "line": 5,
+            "column": 37,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "src/position.ts",
+            "line": 183,
+            "column": 33,
             "message": "Strings must use doublequote."
           },
           {
@@ -798,7 +829,7 @@
         ]
       },
       "single": {
-        "count": 1377,
+        "count": 2337,
         "samples": [
           {
             "file": "docs/astro.config.mjs",
@@ -807,51 +838,51 @@
             "message": "Strings must use singlequote."
           },
           {
-            "file": "docs/src/components/Examples.astro",
-            "line": 273,
-            "column": 20,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "playground/astro.config.mjs",
-            "line": 21,
-            "column": 17,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "playground/src/examples/popover.ts",
-            "line": 43,
-            "column": 20,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "playground/src/examples/tour.ts",
-            "line": 49,
-            "column": 30,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "src/driver.ts",
-            "line": 200,
-            "column": 21,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "src/overlay.ts",
-            "line": 66,
+            "file": "docs/src/components/FormHelp.tsx",
+            "line": 35,
             "column": 18,
             "message": "Strings must use singlequote."
           },
           {
+            "file": "playground/src/examples/arrow.ts",
+            "line": 169,
+            "column": 11,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "playground/src/examples/popover.ts",
+            "line": 186,
+            "column": 20,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "src/driver.ts",
+            "line": 73,
+            "column": 42,
+            "message": "Strings must use singlequote."
+          },
+          {
             "file": "src/popover.ts",
-            "line": 445,
-            "column": 36,
+            "line": 4,
+            "column": 51,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "tests/backward-compat.test.ts",
+            "line": 158,
+            "column": 6,
             "message": "Strings must use singlequote."
           },
           {
             "file": "tests/interactions.test.ts",
-            "line": 58,
+            "line": 171,
             "column": 48,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "tests/popover.test.ts",
+            "line": 190,
+            "column": 10,
             "message": "Strings must use singlequote."
           },
           {
@@ -869,7 +900,7 @@
         "samples": [
           {
             "file": "docs/src/components/CodeSample.tsx",
-            "line": 53,
+            "line": 30,
             "column": 9,
             "message": "Must never use destructuring props assignment"
           },
@@ -896,7 +927,7 @@
         "samples": [
           {
             "file": "docs/src/components/CodeSample.tsx",
-            "line": 53,
+            "line": 30,
             "column": 9,
             "message": "Must destructure props in the function signature."
           },
@@ -925,11 +956,11 @@
         "samples": []
       },
       "arrow-function": {
-        "count": 5,
+        "count": 4,
         "samples": [
           {
             "file": "docs/src/components/CodeSample.tsx",
-            "line": 52,
+            "line": 29,
             "column": 8,
             "message": "Function component is not an arrow function"
           },
@@ -942,12 +973,6 @@
           {
             "file": "docs/src/components/ExampleButton.tsx",
             "line": 7,
-            "column": 8,
-            "message": "Function component is not an arrow function"
-          },
-          {
-            "file": "docs/src/components/FeatureMarquee.tsx",
-            "line": 19,
             "column": 8,
             "message": "Function component is not an arrow function"
           },
@@ -966,15 +991,8 @@
         "samples": []
       },
       "always": {
-        "count": 1,
-        "samples": [
-          {
-            "file": "docs/src/components/FeatureMarquee.tsx",
-            "line": 21,
-            "column": 14,
-            "message": "Value must be set for boolean attribute `autoFill`"
-          }
-        ]
+        "count": 0,
+        "samples": []
       }
     },
     "react-jsx-fragments": {
@@ -1013,7 +1031,7 @@
         ]
       },
       "never": {
-        "count": 1381,
+        "count": 2647,
         "samples": [
           {
             "file": "docs/astro.config.mjs",
@@ -1022,51 +1040,51 @@
             "message": "Extra semicolon."
           },
           {
-            "file": "docs/src/components/Examples.astro",
-            "line": 486,
-            "column": 7,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "playground/src/examples/highlight.ts",
-            "line": 142,
-            "column": 77,
+            "file": "docs/src/pages/index.astro",
+            "line": 7,
+            "column": 60,
             "message": "Extra semicolon."
           },
           {
             "file": "src/driver.ts",
-            "line": 127,
-            "column": 61,
+            "line": 73,
+            "column": 60,
             "message": "Extra semicolon."
           },
           {
             "file": "src/highlight.ts",
-            "line": 9,
-            "column": 72,
+            "line": 175,
+            "column": 41,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/overlay.ts",
-            "line": 153,
-            "column": 52,
+            "file": "src/position.ts",
+            "line": 207,
+            "column": 6,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/popover.ts",
-            "line": 444,
+            "file": "tests/config.test.ts",
+            "line": 18,
             "column": 48,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/utils.ts",
-            "line": 55,
-            "column": 47,
+            "file": "tests/hooks.test.ts",
+            "line": 16,
+            "column": 93,
             "message": "Extra semicolon."
           },
           {
             "file": "tests/lifecycle.test.ts",
-            "line": 8,
-            "column": 29,
+            "line": 18,
+            "column": 37,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "tests/popover.test.ts",
+            "line": 196,
+            "column": 7,
             "message": "Extra semicolon."
           },
           {

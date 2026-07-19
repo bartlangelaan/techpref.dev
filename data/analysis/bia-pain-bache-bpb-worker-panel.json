@@ -1,15 +1,15 @@
 {
   "analyzedVersion": "96d58f23c7cc",
-  "analyzedCommit": "3de7579139380106f6423db09c1c325515f0ca79",
-  "analyzedCommitDate": "2026-06-16T20:40:35.000Z",
+  "analyzedCommit": "0ba58393d0723ed109fcd737792554612aab0bb1",
+  "analyzedCommitDate": "2026-07-19T18:29:48.000Z",
   "checks": {
     "array-type": {
       "array": {
-        "count": 3,
+        "count": 4,
         "samples": [
           {
             "file": "src/cores/sing-box/dns.ts",
-            "line": 189,
+            "line": 191,
             "column": 18,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
@@ -20,75 +20,81 @@
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
-            "file": "src/kv.ts",
-            "line": 59,
+            "file": "src/settings/kv.ts",
+            "line": 84,
             "column": 19,
+            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
+          },
+          {
+            "file": "src/settings/main.ts",
+            "line": 48,
+            "column": 47,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           }
         ]
       },
       "generic": {
-        "count": 100,
+        "count": 144,
         "samples": [
           {
-            "file": "src/common/handlers.ts",
-            "line": 507,
-            "column": 29,
-            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
-          },
-          {
-            "file": "src/cores/clash/configs.ts",
-            "line": 10,
-            "column": 16,
-            "message": "Array type using 'Outbound[]' is forbidden. Use 'Array<Outbound>' instead."
-          },
-          {
-            "file": "src/cores/clash/outbounds.ts",
-            "line": 208,
-            "column": 14,
+            "file": "src/api/pages.ts",
+            "line": 29,
+            "column": 50,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
             "file": "src/cores/sing-box/configs.ts",
-            "line": 153,
-            "column": 22,
-            "message": "Array type using 'WireguardEndpoint[]' is forbidden. Use 'Array<WireguardEndpoint>' instead."
+            "line": 12,
+            "column": 16,
+            "message": "Array type using 'Outbound[]' is forbidden. Use 'Array<Outbound>' instead."
           },
           {
             "file": "src/cores/sing-box/routing.ts",
-            "line": 79,
-            "column": 21,
-            "message": "Array type using 'RuleSet[]' is forbidden. Use 'Array<RuleSet>' instead."
-          },
-          {
-            "file": "src/cores/utils.ts",
-            "line": 134,
-            "column": 50,
-            "message": "Array type using 'number[]' is forbidden. Use 'Array<number>' instead."
-          },
-          {
-            "file": "src/cores/xray/configs.ts",
-            "line": 165,
-            "column": 14,
-            "message": "Array type using 'Config[]' is forbidden. Use 'Array<Config>' instead."
-          },
-          {
-            "file": "src/cores/xray/dns.ts",
-            "line": 11,
-            "column": 22,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
-          },
-          {
-            "file": "src/cores/xray/routing.ts",
-            "line": 99,
+            "line": 93,
             "column": 12,
             "message": "Array type using 'RoutingRule[]' is forbidden. Use 'Array<RoutingRule>' instead."
           },
           {
-            "file": "src/protocols/websocket/vless.ts",
-            "line": 201,
-            "column": 22,
+            "file": "src/cores/xray/configs.ts",
+            "line": 35,
+            "column": 16,
+            "message": "Array type using 'Outbound[]' is forbidden. Use 'Array<Outbound>' instead."
+          },
+          {
+            "file": "src/cores/xray/configs.ts",
+            "line": 356,
+            "column": 19,
+            "message": "Array type using 'Outbound[]' is forbidden. Use 'Array<Outbound>' instead."
+          },
+          {
+            "file": "src/cores/xray/routing.ts",
+            "line": 101,
+            "column": 18,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+          },
+          {
+            "file": "src/settings/kv.ts",
+            "line": 11,
+            "column": 19,
+            "message": "Array type using 'WarpAccount[]' is forbidden. Use 'Array<WarpAccount>' instead."
+          },
+          {
+            "file": "src/settings/validators.ts",
+            "line": 267,
+            "column": 58,
+            "message": "Array type using 'ValidationError[]' is forbidden. Use 'Array<ValidationError>' instead."
+          },
+          {
+            "file": "src/types/settings.ts",
+            "line": 16,
+            "column": 21,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+          },
+          {
+            "file": "src/types/settings.ts",
+            "line": 181,
+            "column": 17,
+            "message": "Array type using 'ClientCategory[]' is forbidden. Use 'Array<ClientCategory>' instead."
           }
         ]
       }
@@ -99,8 +105,15 @@
         "samples": []
       },
       "type-annotation": {
-        "count": 0,
-        "samples": []
+        "count": 1,
+        "samples": [
+          {
+            "file": "src/handlers/proxy-ip.ts",
+            "line": 131,
+            "column": 32,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          }
+        ]
       }
     },
     "consistent-indexed-object-style": {
@@ -109,48 +122,66 @@
         "samples": []
       },
       "index-signature": {
-        "count": 7,
+        "count": 10,
         "samples": [
           {
             "file": "src/common/common.ts",
-            "line": 33,
+            "line": 51,
             "column": 21,
             "message": "An index signature is preferred over a record."
           },
           {
+            "file": "src/cores/clash/configs.ts",
+            "line": 9,
+            "column": 17,
+            "message": "An index signature is preferred over a record."
+          },
+          {
             "file": "src/cores/clash/dns.ts",
-            "line": 26,
+            "line": 27,
             "column": 29,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "src/cores/clash/routing.ts",
-            "line": 31,
+            "line": 32,
             "column": 39,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "src/cores/clash/routing.ts",
-            "line": 40,
+            "line": 41,
             "column": 20,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "src/cores/xray/outbounds.ts",
-            "line": 302,
-            "column": 4,
+            "file": "src/cores/sing-box/configs.ts",
+            "line": 9,
+            "column": 17,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "src/kv.ts",
-            "line": 203,
+            "file": "src/cores/utils.ts",
+            "line": 349,
             "column": 25,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "src/kv.ts",
-            "line": 209,
+            "file": "src/cores/utils.ts",
+            "line": 355,
             "column": 62,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "src/cores/xray/outbounds.ts",
+            "line": 305,
+            "column": 4,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "src/types/settings.ts",
+            "line": 184,
+            "column": 28,
             "message": "An index signature is preferred over a record."
           }
         ]
@@ -162,24 +193,66 @@
         "samples": []
       },
       "type": {
-        "count": 3,
+        "count": 26,
         "samples": [
           {
-            "file": "src/common/handlers.ts",
-            "line": 489,
+            "file": "src/api/telegram.ts",
+            "line": 110,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "src/common/handlers.ts",
-            "line": 499,
+            "file": "src/api/telegram.ts",
+            "line": 131,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "src/protocols/warp.ts",
-            "line": 1,
+            "file": "src/cores/utils.ts",
+            "line": 5,
             "column": 1,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "src/handlers/proxy-ip.ts",
+            "line": 54,
+            "column": 1,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "src/settings/validators.ts",
+            "line": 6,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "src/types/settings.ts",
+            "line": 85,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "src/types/settings.ts",
+            "line": 122,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "src/types/settings.ts",
+            "line": 148,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "src/types/settings.ts",
+            "line": 167,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "src/types/settings.ts",
+            "line": 186,
+            "column": 8,
             "message": "Use `type` instead of `interface`."
           }
         ]
@@ -187,35 +260,29 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 12,
+        "count": 31,
         "samples": [
           {
-            "file": "src/cores/clash/dns.ts",
-            "line": 2,
-            "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
-          {
-            "file": "src/cores/clash/inbounds.ts",
-            "line": 1,
-            "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
-          {
-            "file": "src/cores/clash/outbounds.ts",
-            "line": 2,
-            "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
-          {
-            "file": "src/cores/sing-box/configs.ts",
+            "file": "src/api/telegram.ts",
             "line": 5,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "src/cores/sing-box/dns.ts",
+            "file": "src/cores/clash/geo-assets.ts",
             "line": 2,
+            "column": 1,
+            "message": "All imports in the declaration are only used as types. Use `import type`."
+          },
+          {
+            "file": "src/cores/clash/outbounds.ts",
+            "line": 25,
+            "column": 1,
+            "message": "All imports in the declaration are only used as types. Use `import type`."
+          },
+          {
+            "file": "src/cores/sing-box/configs.ts",
+            "line": 1,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
@@ -226,10 +293,10 @@
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "src/cores/sing-box/outbounds.ts",
-            "line": 10,
+            "file": "src/cores/sing-box/routing.ts",
+            "line": 3,
             "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
+            "message": "Imports GeoAsset are only used as type."
           },
           {
             "file": "src/cores/xray/inbounds.ts",
@@ -238,14 +305,20 @@
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "src/cores/xray/outbounds.ts",
-            "line": 9,
+            "file": "src/cores/xray/routing.ts",
+            "line": 1,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "src/cores/xray/routing.ts",
-            "line": 2,
+            "file": "src/settings/kv.ts",
+            "line": 1,
+            "column": 1,
+            "message": "All imports in the declaration are only used as types. Use `import type`."
+          },
+          {
+            "file": "src/settings/validators.ts",
+            "line": 1,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           }
@@ -256,19 +329,19 @@
         "samples": [
           {
             "file": "src/cores/clash/configs.ts",
-            "line": 5,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "src/cores/xray/configs.ts",
             "line": 4,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
+            "file": "src/cores/xray/configs.ts",
+            "line": 1,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
             "file": "src/cores/xray/dns.ts",
-            "line": 2,
+            "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           }
@@ -277,131 +350,131 @@
     },
     "func-style": {
       "expression": {
-        "count": 214,
+        "count": 278,
         "samples": [
           {
             "file": "scripts/build.js",
-            "line": 31,
+            "line": 24,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/assets/panel/script.js",
-            "line": 327,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/assets/panel/script.js",
-            "line": 738,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/auth.ts",
-            "line": 38,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/common/handlers.ts",
-            "line": 400,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/cores/clash/outbounds.ts",
-            "line": 141,
+            "file": "src/api/workers.ts",
+            "line": 48,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/cores/sing-box/routing.ts",
-            "line": 92,
+            "file": "src/assets/panel/script.js",
+            "line": 658,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/cores/xray/configs.ts",
-            "line": 164,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/kv.ts",
-            "line": 39,
+            "file": "src/auth/auth.ts",
+            "line": 5,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/protocols/websocket/vless.ts",
-            "line": 241,
+            "file": "src/cores/sing-box/configs.ts",
+            "line": 173,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "src/cores/utils.ts",
+            "line": 176,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "src/cores/xray/outbounds.ts",
+            "line": 371,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "src/handlers/qrcode.ts",
+            "line": 61,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "src/settings/main.ts",
+            "line": 145,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "src/settings/validators.ts",
+            "line": 591,
             "column": 1,
             "message": "Expected a function expression."
           }
         ]
       },
       "declaration": {
-        "count": 25,
+        "count": 23,
         "samples": [
           {
             "file": "scripts/build.js",
-            "line": 37,
+            "line": 30,
             "column": 15,
             "message": "Expected a function declaration."
           },
           {
             "file": "src/assets/panel/script.js",
-            "line": 176,
+            "line": 233,
             "column": 11,
             "message": "Expected a function declaration."
           },
           {
             "file": "src/assets/panel/script.js",
-            "line": 772,
-            "column": 11,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "src/assets/panel/script.js",
-            "line": 1243,
-            "column": 11,
+            "line": 995,
+            "column": 7,
             "message": "Expected a function declaration."
           },
           {
             "file": "src/cores/clash/routing.ts",
-            "line": 46,
+            "line": 47,
             "column": 11,
             "message": "Expected a function declaration."
           },
           {
             "file": "src/cores/utils.ts",
-            "line": 208,
+            "line": 231,
             "column": 7,
             "message": "Expected a function declaration."
           },
           {
-            "file": "src/kv.ts",
-            "line": 51,
+            "file": "src/cores/utils.ts",
+            "line": 355,
             "column": 11,
             "message": "Expected a function declaration."
           },
           {
-            "file": "src/protocols/websocket/common.ts",
-            "line": 42,
-            "column": 15,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "src/protocols/websocket/trojan.ts",
-            "line": 16,
+            "file": "src/protocols/trojan.ts",
+            "line": 14,
             "column": 11,
             "message": "Expected a function declaration."
           },
           {
-            "file": "src/protocols/websocket/vless.ts",
-            "line": 18,
+            "file": "src/settings/kv.ts",
+            "line": 66,
             "column": 11,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "src/settings/settings.ts",
+            "line": 71,
+            "column": 14,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "src/settings/settings.ts",
+            "line": 104,
+            "column": 14,
             "message": "Expected a function declaration."
           }
         ]
@@ -413,72 +486,72 @@
         "samples": [
           {
             "file": "src/worker.ts",
-            "line": 16,
+            "line": 13,
             "column": 8,
             "message": "Prefer named exports"
           }
         ]
       },
       "default": {
-        "count": 11,
+        "count": 23,
         "samples": [
           {
-            "file": "src/cores/clash/dns.ts",
-            "line": 5,
+            "file": "src/api/warp.ts",
+            "line": 10,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
             "file": "src/cores/clash/geo-assets.ts",
-            "line": 1,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "src/cores/sing-box/dns.ts",
-            "line": 5,
+            "line": 4,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
             "file": "src/cores/sing-box/geo-assets.ts",
-            "line": 1,
+            "line": 4,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/cores/sing-box/routing.ts",
+            "file": "src/cores/wireguard.ts",
             "line": 5,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "src/cores/xray/geo-assets.ts",
-            "line": 1,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
             "file": "src/cores/xray/routing.ts",
-            "line": 5,
+            "line": 6,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/protocols/warp.ts",
-            "line": 21,
+            "file": "src/handlers/error.ts",
+            "line": 3,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/protocols/websocket/trojan.ts",
+            "file": "src/handlers/proxy-ip.ts",
+            "line": 8,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "src/handlers/subscription.ts",
+            "line": 11,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "src/handlers/websocket.ts",
             "line": 7,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/protocols/websocket/vless.ts",
-            "line": 9,
+            "file": "src/protocols/vless.ts",
+            "line": 10,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           }
@@ -491,7 +564,7 @@
         "samples": [
           {
             "file": "src/worker.ts",
-            "line": 3,
+            "line": 14,
             "column": 1,
             "message": "Expected spaces for indentation, but found tabs."
           }
@@ -502,14 +575,14 @@
         "samples": [
           {
             "file": "src/worker.ts",
-            "line": 3,
+            "line": 14,
             "column": 1,
             "message": "Expected spaces for indentation, but found tabs."
           }
         ]
       },
       "tab": {
-        "count": 34,
+        "count": 52,
         "samples": [
           {
             "file": "docs/assets/scripts/lang-switch.js",
@@ -518,56 +591,56 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/assets/proxy-ip/script.js",
+            "file": "src/api/warp.ts",
+            "line": 6,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "src/auth/auth.ts",
+            "line": 6,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "src/cores/clash/outbounds.ts",
             "line": 5,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/common/common.ts",
-            "line": 2,
+            "file": "src/cores/sing-box/inbounds.ts",
+            "line": 5,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/cores/clash/dns.ts",
-            "line": 6,
+            "file": "src/cores/xray/configs.ts",
+            "line": 7,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/cores/clash/routing.ts",
-            "line": 6,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "src/cores/sing-box/geo-assets.ts",
-            "line": 2,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "src/cores/utils.ts",
+            "file": "src/handlers/doh.ts",
             "line": 4,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/cores/xray/inbounds.ts",
-            "line": 4,
+            "file": "src/handlers/subscription.ts",
+            "line": 12,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/kv.ts",
+            "file": "src/protocols/trojan.ts",
             "line": 6,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/protocols/websocket/vless.ts",
-            "line": 3,
+            "file": "src/types/settings.ts",
+            "line": 2,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           }
@@ -576,7 +649,7 @@
     },
     "quotes": {
       "double": {
-        "count": 868,
+        "count": 2825,
         "samples": [
           {
             "file": "docs/assets/scripts/lang-switch.js",
@@ -586,62 +659,62 @@
           },
           {
             "file": "src/assets/panel/script.js",
-            "line": 148,
-            "column": 53,
+            "line": 26,
+            "column": 85,
             "message": "Strings must use doublequote."
           },
           {
             "file": "src/assets/panel/script.js",
-            "line": 641,
-            "column": 13,
+            "line": 932,
+            "column": 35,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/assets/panel/script.js",
-            "line": 939,
-            "column": 18,
+            "file": "src/cores/clash/configs.ts",
+            "line": 211,
+            "column": 23,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/auth.ts",
-            "line": 2,
-            "column": 37,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "src/common/handlers.ts",
-            "line": 446,
-            "column": 56,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "src/cores/clash/geo-assets.ts",
-            "line": 116,
-            "column": 19,
+            "file": "src/cores/clash/outbounds.ts",
+            "line": 338,
+            "column": 17,
             "message": "Strings must use doublequote."
           },
           {
             "file": "src/cores/sing-box/outbounds.ts",
-            "line": 8,
-            "column": 8,
+            "line": 197,
+            "column": 27,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/cores/xray/geo-assets.ts",
-            "line": 40,
-            "column": 40,
+            "file": "src/cores/xray/inbounds.ts",
+            "line": 51,
+            "column": 38,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "src/handlers/telegram.ts",
+            "line": 8,
+            "column": 33,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "src/settings/settings.ts",
+            "line": 169,
+            "column": 69,
             "message": "Strings must use doublequote."
           },
           {
             "file": "src/worker.ts",
-            "line": 52,
-            "column": 11,
+            "line": 19,
+            "column": 55,
             "message": "Strings must use doublequote."
           }
         ]
       },
       "single": {
-        "count": 1055,
+        "count": 20,
         "samples": [
           {
             "file": "docs/assets/scripts/lang-switch.js",
@@ -650,56 +723,56 @@
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/common/handlers.ts",
-            "line": 6,
-            "column": 54,
+            "file": "docs/assets/scripts/lang-switch.js",
+            "line": 14,
+            "column": 27,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/cores/clash/dns.ts",
-            "line": 22,
-            "column": 45,
+            "file": "src/api/telegram.ts",
+            "line": 200,
+            "column": 9,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/cores/clash/inbounds.ts",
-            "line": 23,
-            "column": 13,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "src/cores/clash/outbounds.ts",
-            "line": 288,
+            "file": "src/assets/panel/script.js",
+            "line": 135,
             "column": 28,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/cores/sing-box/geo-assets.ts",
-            "line": 115,
-            "column": 22,
+            "file": "src/assets/panel/script.js",
+            "line": 253,
+            "column": 42,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "src/assets/proxy-ip/script.js",
+            "line": 4,
+            "column": 46,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "src/cores/clash/routing.ts",
+            "line": 10,
+            "column": 20,
             "message": "Strings must use singlequote."
           },
           {
             "file": "src/cores/xray/configs.ts",
-            "line": 57,
-            "column": 60,
+            "line": 249,
+            "column": 9,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/cores/xray/outbounds.ts",
-            "line": 225,
-            "column": 39,
+            "file": "src/protocols/common.ts",
+            "line": 120,
+            "column": 13,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/kv.ts",
-            "line": 93,
-            "column": 14,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "src/protocols/websocket/vless.ts",
-            "line": 288,
+            "file": "src/protocols/vless.ts",
+            "line": 90,
             "column": 17,
             "message": "Strings must use singlequote."
           }
@@ -756,72 +829,72 @@
     },
     "semi": {
       "always": {
-        "count": 23,
+        "count": 27,
         "samples": [
           {
-            "file": "scripts/build.js",
-            "line": 129,
-            "column": 6,
+            "file": "src/api/pages.ts",
+            "line": 72,
+            "column": 28,
             "message": "Missing semicolon."
           },
           {
             "file": "src/assets/panel/script.js",
-            "line": 169,
-            "column": 68,
+            "line": 432,
+            "column": 86,
             "message": "Missing semicolon."
           },
           {
             "file": "src/assets/panel/script.js",
-            "line": 352,
-            "column": 78,
+            "line": 892,
+            "column": 56,
             "message": "Missing semicolon."
           },
           {
             "file": "src/assets/panel/script.js",
-            "line": 1241,
+            "line": 1052,
+            "column": 72,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "src/cores/sing-box/dns.ts",
+            "line": 154,
             "column": 6,
             "message": "Missing semicolon."
           },
           {
-            "file": "src/common/handlers.ts",
-            "line": 609,
-            "column": 6,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "src/cores/sing-box/inbounds.ts",
-            "line": 11,
+            "file": "src/cores/utils.ts",
+            "line": 314,
             "column": 2,
             "message": "Missing semicolon."
           },
           {
             "file": "src/cores/utils.ts",
-            "line": 296,
-            "column": 2,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "src/cores/xray/outbounds.ts",
-            "line": 384,
-            "column": 72,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "src/cores/xray/outbounds.ts",
-            "line": 476,
+            "line": 366,
             "column": 6,
             "message": "Missing semicolon."
           },
           {
+            "file": "src/cores/xray/outbounds.ts",
+            "line": 409,
+            "column": 6,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "src/handlers/login.ts",
+            "line": 26,
+            "column": 57,
+            "message": "Missing semicolon."
+          },
+          {
             "file": "src/worker.ts",
-            "line": 63,
+            "line": 50,
             "column": 2,
             "message": "Missing semicolon."
           }
         ]
       },
       "never": {
-        "count": 1957,
+        "count": 2611,
         "samples": [
           {
             "file": "docs/assets/scripts/lang-switch.js",
@@ -830,57 +903,57 @@
             "message": "Extra semicolon."
           },
           {
-            "file": "src/assets/panel/script.js",
-            "line": 247,
-            "column": 43,
+            "file": "src/api/warp.ts",
+            "line": 66,
+            "column": 92,
             "message": "Extra semicolon."
           },
           {
             "file": "src/assets/panel/script.js",
-            "line": 877,
-            "column": 54,
+            "line": 529,
+            "column": 26,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/auth.ts",
-            "line": 86,
-            "column": 36,
+            "file": "src/assets/proxy-ip/script.js",
+            "line": 29,
+            "column": 76,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/common/handlers.ts",
-            "line": 635,
-            "column": 94,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "src/cores/sing-box/configs.ts",
-            "line": 71,
-            "column": 63,
+            "file": "src/cores/common.ts",
+            "line": 67,
+            "column": 53,
             "message": "Extra semicolon."
           },
           {
             "file": "src/cores/utils.ts",
-            "line": 194,
-            "column": 66,
+            "line": 231,
+            "column": 53,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/cores/xray/routing.ts",
-            "line": 38,
-            "column": 117,
+            "file": "src/handlers/doh.ts",
+            "line": 5,
+            "column": 38,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/protocols/websocket/trojan.ts",
-            "line": 47,
-            "column": 36,
+            "file": "src/handlers/telegram.ts",
+            "line": 15,
+            "column": 51,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "src/settings/kv.ts",
+            "line": 1,
+            "column": 95,
             "message": "Extra semicolon."
           },
           {
             "file": "src/worker.ts",
-            "line": 60,
-            "column": 35,
+            "line": 47,
+            "column": 29,
             "message": "Extra semicolon."
           }
         ]

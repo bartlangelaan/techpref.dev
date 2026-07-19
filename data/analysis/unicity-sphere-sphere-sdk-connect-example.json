@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "96d58f23c7cc",
-  "analyzedCommit": "e5dc90bcbe4498e6c10e771bcd1dc2cf859de5b2",
-  "analyzedCommitDate": "2026-06-19T14:51:55.000Z",
+  "analyzedCommit": "209d8e4b01cb94d0bf241e791a9da4c662d268f9",
+  "analyzedCommitDate": "2026-07-19T19:03:51.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -9,7 +9,7 @@
         "samples": []
       },
       "generic": {
-        "count": 26,
+        "count": 28,
         "samples": [
           {
             "file": "browser/src/components/chat/ChatPanel.tsx",
@@ -18,14 +18,14 @@
             "message": "Array type using 'ConversationSummary[]' is forbidden. Use 'Array<ConversationSummary>' instead."
           },
           {
-            "file": "browser/src/components/events/EventLogPanel.tsx",
-            "line": 104,
-            "column": 42,
-            "message": "Array type using 'LogEntry[]' is forbidden. Use 'Array<LogEntry>' instead."
+            "file": "browser/src/components/docs/DocsPanel.tsx",
+            "line": 1,
+            "column": 14,
+            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           },
           {
             "file": "browser/src/components/layout/PageShell.tsx",
-            "line": 23,
+            "line": 15,
             "column": 16,
             "message": "Array type using 'NavItem[]' is forbidden. Use 'Array<NavItem>' instead."
           },
@@ -37,21 +37,21 @@
           },
           {
             "file": "browser/src/components/queries/AssetsPanel.tsx",
-            "line": 25,
-            "column": 34,
+            "line": 14,
+            "column": 40,
             "message": "Array type using 'Asset[]' is forbidden. Use 'Array<Asset>' instead."
           },
           {
-            "file": "browser/src/components/queries/HistoryPanel.tsx",
-            "line": 23,
-            "column": 42,
-            "message": "Array type using 'HistoryEntry[]' is forbidden. Use 'Array<HistoryEntry>' instead."
+            "file": "browser/src/components/queries/BalancePanel.tsx",
+            "line": 30,
+            "column": 15,
+            "message": "Array type using 'BalanceItem[]' is forbidden. Use 'Array<BalanceItem>' instead."
           },
           {
             "file": "browser/src/components/queries/HistoryPanel.tsx",
-            "line": 132,
-            "column": 56,
-            "message": "Array type using 'HistoryEntry[]' is forbidden. Use 'Array<HistoryEntry>' instead."
+            "line": 41,
+            "column": 15,
+            "message": "Array type using 'Asset[]' is forbidden. Use 'Array<Asset>' instead."
           },
           {
             "file": "browser/src/components/queries/TokensPanel.tsx",
@@ -80,8 +80,15 @@
         "samples": []
       },
       "type-annotation": {
-        "count": 0,
-        "samples": []
+        "count": 1,
+        "samples": [
+          {
+            "file": "backend-auth/backend/src/server.ts",
+            "line": 62,
+            "column": 27,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          }
+        ]
       }
     },
     "consistent-indexed-object-style": {
@@ -90,54 +97,54 @@
         "samples": []
       },
       "index-signature": {
-        "count": 34,
+        "count": 39,
         "samples": [
           {
-            "file": "browser/src/App.tsx",
-            "line": 64,
-            "column": 17,
+            "file": "backend-auth/frontend/src/App.tsx",
+            "line": 61,
+            "column": 19,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "browser/src/components/intents/DMPanel.tsx",
-            "line": 7,
-            "column": 39,
+            "file": "bot/src/sgwChallenge.ts",
+            "line": 44,
+            "column": 24,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "browser/src/components/events/EventLogPanel.tsx",
+            "line": 58,
+            "column": 21,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "browser/src/components/intents/PaymentRequestPanel.tsx",
-            "line": 10,
-            "column": 39,
+            "line": 32,
+            "column": 21,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "browser/src/components/intents/SendPanel.tsx",
-            "line": 10,
-            "column": 39,
-            "message": "An index signature is preferred over a record."
-          },
-          {
-            "file": "browser/src/components/queries/BalancePanel.tsx",
-            "line": 15,
-            "column": 39,
+            "line": 37,
+            "column": 21,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "browser/src/components/queries/HistoryPanel.tsx",
-            "line": 44,
-            "column": 18,
-            "message": "An index signature is preferred over a record."
-          },
-          {
-            "file": "browser/src/components/queries/TokensPanel.tsx",
             "line": 11,
             "column": 39,
             "message": "An index signature is preferred over a record."
           },
           {
+            "file": "browser/src/components/queries/IdentityPanel.tsx",
+            "line": 7,
+            "column": 39,
+            "message": "An index signature is preferred over a record."
+          },
+          {
             "file": "browser/src/hooks/useWalletConnect.ts",
-            "line": 23,
-            "column": 64,
+            "line": 22,
+            "column": 61,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -161,59 +168,59 @@
         "samples": []
       },
       "type": {
-        "count": 36,
+        "count": 50,
         "samples": [
           {
-            "file": "browser/src/components/ConnectButton.tsx",
-            "line": 4,
-            "column": 1,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "browser/src/components/intents/DMPanel.tsx",
-            "line": 6,
-            "column": 1,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "browser/src/components/intents/SendPanel.tsx",
-            "line": 8,
-            "column": 1,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "browser/src/components/layout/WalletHeader.tsx",
-            "line": 6,
-            "column": 1,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "browser/src/components/queries/HistoryPanel.tsx",
-            "line": 10,
-            "column": 1,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "browser/src/components/queries/IdentityPanel.tsx",
-            "line": 10,
-            "column": 1,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "browser/src/components/ui/CoinSelect.tsx",
-            "line": 5,
-            "column": 1,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "browser/src/hooks/useWalletConnect.ts",
-            "line": 8,
+            "file": "backend-auth/backend/src/challenge.ts",
+            "line": 21,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
+            "file": "backend-auth/frontend/src/App.tsx",
+            "line": 47,
+            "column": 1,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "bot/src/provisionAggregatorKey.ts",
+            "line": 26,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "browser/src/components/events/EventLogPanel.tsx",
+            "line": 11,
+            "column": 1,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "browser/src/components/intents/SignMessagePanel.tsx",
+            "line": 6,
+            "column": 1,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "browser/src/components/queries/BalancePanel.tsx",
+            "line": 8,
+            "column": 1,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "browser/src/components/queries/ResolvePanel.tsx",
+            "line": 7,
+            "column": 1,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "browser/src/components/ui/ResultDisplay.tsx",
+            "line": 3,
+            "column": 1,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
             "file": "browser/src/lib/types.ts",
-            "line": 33,
+            "line": 20,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
@@ -232,12 +239,30 @@
         "samples": []
       },
       "no-type-imports": {
-        "count": 13,
+        "count": 22,
         "samples": [
           {
-            "file": "browser/src/App.tsx",
-            "line": 5,
+            "file": "backend-auth/backend/src/server.ts",
+            "line": 30,
             "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "backend-auth/frontend/src/App.tsx",
+            "line": 3,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "bot/src/index.ts",
+            "line": 54,
+            "column": 62,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "bot/src/sphere.ts",
+            "line": 62,
+            "column": 18,
             "message": "Use an `import` instead of an `import type`."
           },
           {
@@ -249,12 +274,6 @@
           {
             "file": "browser/src/components/layout/PageShell.tsx",
             "line": 2,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "browser/src/components/layout/WalletHeader.tsx",
-            "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -271,20 +290,8 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "browser/src/components/queries/ResolvePanel.tsx",
-            "line": 5,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "browser/src/components/queries/TokensPanel.tsx",
-            "line": 8,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
             "file": "browser/src/hooks/useWalletConnect.ts",
-            "line": 5,
+            "line": 4,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -299,59 +306,59 @@
     },
     "func-style": {
       "expression": {
-        "count": 48,
+        "count": 71,
         "samples": [
           {
-            "file": "browser/src/components/ConnectButton.tsx",
-            "line": 13,
+            "file": "backend-auth/backend/src/challenge.ts",
+            "line": 48,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "browser/src/components/intents/DMPanel.tsx",
-            "line": 10,
-            "column": 8,
+            "file": "bot/src/aggregatorKey.ts",
+            "line": 42,
+            "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "browser/src/components/intents/SignMessagePanel.tsx",
-            "line": 10,
-            "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "browser/src/components/queries/HistoryPanel.tsx",
+            "file": "bot/src/sgwChallenge.ts",
             "line": 22,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
+            "file": "browser/src/components/docs/DocsPanel.tsx",
+            "line": 42,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "browser/src/components/intents/SendPanel.tsx",
+            "line": 103,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
             "file": "browser/src/components/queries/HistoryPanel.tsx",
-            "line": 185,
+            "line": 110,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "browser/src/components/ui/CoinBadge.tsx",
-            "line": 22,
-            "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "browser/src/hooks/useWalletConnect.ts",
-            "line": 47,
+            "line": 10,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "browser/src/lib/format.ts",
-            "line": 1,
-            "column": 8,
+            "file": "browser/src/hooks/useWalletConnect.ts",
+            "line": 54,
+            "column": 5,
             "message": "Expected a function expression."
           },
           {
             "file": "browser/src/lib/format.ts",
-            "line": 52,
+            "line": 38,
             "column": 8,
             "message": "Expected a function expression."
           },
@@ -364,29 +371,29 @@
         ]
       },
       "declaration": {
-        "count": 20,
+        "count": 21,
         "samples": [
           {
-            "file": "browser/src/components/chat/ChatPanel.tsx",
-            "line": 96,
-            "column": 9,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "browser/src/components/intents/DMPanel.tsx",
-            "line": 17,
-            "column": 9,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "browser/src/components/intents/PaymentRequestPanel.tsx",
+            "file": "bot/src/aggregatorKey.test.ts",
             "line": 23,
+            "column": 9,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "browser/src/components/chat/ChatPanel.tsx",
+            "line": 111,
+            "column": 9,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "browser/src/components/intents/MintPanel.tsx",
+            "line": 43,
             "column": 9,
             "message": "Expected a function declaration."
           },
           {
             "file": "browser/src/components/intents/SendPanel.tsx",
-            "line": 23,
+            "line": 26,
             "column": 9,
             "message": "Expected a function declaration."
           },
@@ -397,14 +404,14 @@
             "message": "Expected a function declaration."
           },
           {
-            "file": "browser/src/components/queries/IdentityPanel.tsx",
-            "line": 22,
+            "file": "browser/src/components/queries/HistoryPanel.tsx",
+            "line": 32,
             "column": 9,
             "message": "Expected a function declaration."
           },
           {
-            "file": "browser/src/components/queries/TokensPanel.tsx",
-            "line": 21,
+            "file": "browser/src/components/queries/ResolvePanel.tsx",
+            "line": 18,
             "column": 9,
             "message": "Expected a function declaration."
           },
@@ -431,11 +438,23 @@
     },
     "import-export-preference": {
       "named": {
-        "count": 2,
+        "count": 4,
         "samples": [
           {
+            "file": "backend-auth/frontend/src/App.tsx",
+            "line": 107,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "backend-auth/frontend/vite.config.ts",
+            "line": 4,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
             "file": "browser/src/App.tsx",
-            "line": 29,
+            "line": 32,
             "column": 8,
             "message": "Prefer named exports"
           },
@@ -448,7 +467,7 @@
         ]
       },
       "default": {
-        "count": 22,
+        "count": 23,
         "samples": [
           {
             "file": "browser/src/components/ConnectButton.tsx",
@@ -463,14 +482,14 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "browser/src/components/intents/MintPanel.tsx",
-            "line": 24,
+            "file": "browser/src/components/intents/DMPanel.tsx",
+            "line": 10,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "browser/src/components/intents/ReceivePanel.tsx",
-            "line": 10,
+            "file": "browser/src/components/intents/PaymentRequestPanel.tsx",
+            "line": 13,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -481,8 +500,8 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "browser/src/components/queries/AssetsPanel.tsx",
-            "line": 13,
+            "file": "browser/src/components/layout/WalletHeader.tsx",
+            "line": 11,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -519,23 +538,35 @@
         "samples": []
       },
       "4-space": {
-        "count": 31,
+        "count": 50,
         "samples": [
           {
+            "file": "backend-auth/backend/src/challenge.test.ts",
+            "line": 13,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "backend-auth/frontend/vite.config.ts",
+            "line": 5,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "bot/src/provisionAggregatorKey.ts",
+            "line": 27,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
             "file": "browser/src/App.tsx",
-            "line": 30,
+            "line": 33,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "browser/src/components/chat/ChatPanel.tsx",
-            "line": 8,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "browser/src/components/intents/PaymentRequestPanel.tsx",
-            "line": 9,
+            "file": "browser/src/components/intents/DMPanel.tsx",
+            "line": 7,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -546,32 +577,20 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "browser/src/components/queries/AssetsPanel.tsx",
-            "line": 10,
+            "file": "browser/src/components/queries/IdentityPanel.tsx",
+            "line": 7,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "browser/src/components/queries/ResolvePanel.tsx",
-            "line": 8,
+            "file": "browser/src/components/ui/ResultDisplay.tsx",
+            "line": 4,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "browser/src/components/ui/CoinSelect.tsx",
-            "line": 6,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "browser/src/hooks/useWalletConnect.ts",
-            "line": 9,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "browser/src/main.tsx",
-            "line": 8,
+            "file": "browser/src/lib/sendResult.ts",
+            "line": 11,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -584,23 +603,35 @@
         ]
       },
       "tab": {
-        "count": 31,
+        "count": 50,
         "samples": [
           {
+            "file": "backend-auth/backend/src/challenge.test.ts",
+            "line": 13,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "backend-auth/frontend/vite.config.ts",
+            "line": 5,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "bot/src/provisionAggregatorKey.ts",
+            "line": 27,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
             "file": "browser/src/App.tsx",
-            "line": 30,
+            "line": 33,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "browser/src/components/chat/ChatPanel.tsx",
-            "line": 8,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "browser/src/components/intents/PaymentRequestPanel.tsx",
-            "line": 9,
+            "file": "browser/src/components/intents/DMPanel.tsx",
+            "line": 7,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -611,32 +642,20 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "browser/src/components/queries/AssetsPanel.tsx",
-            "line": 10,
+            "file": "browser/src/components/queries/IdentityPanel.tsx",
+            "line": 7,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "browser/src/components/queries/ResolvePanel.tsx",
-            "line": 8,
+            "file": "browser/src/components/ui/ResultDisplay.tsx",
+            "line": 4,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "browser/src/components/ui/CoinSelect.tsx",
-            "line": 6,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "browser/src/hooks/useWalletConnect.ts",
-            "line": 9,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "browser/src/main.tsx",
-            "line": 8,
+            "file": "browser/src/lib/sendResult.ts",
+            "line": 11,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -651,42 +670,48 @@
     },
     "quotes": {
       "double": {
-        "count": 764,
+        "count": 1141,
         "samples": [
           {
-            "file": "browser/src/App.tsx",
+            "file": "backend-auth/backend/src/challenge.test.ts",
             "line": 1,
-            "column": 26,
+            "column": 38,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "bot/src/aggregatorKey.test.ts",
+            "line": 75,
+            "column": 6,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "bot/src/sgwChallenge.test.ts",
+            "line": 5,
+            "column": 32,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "browser/src/components/chat/ChatPanel.tsx",
+            "line": 172,
+            "column": 56,
             "message": "Strings must use doublequote."
           },
           {
             "file": "browser/src/components/events/EventLogPanel.tsx",
-            "line": 21,
-            "column": 3,
+            "line": 98,
+            "column": 27,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "browser/src/components/events/EventLogPanel.tsx",
-            "line": 93,
-            "column": 23,
+            "file": "browser/src/components/layout/WalletHeader.tsx",
+            "line": 2,
+            "column": 24,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "browser/src/components/intents/SendPanel.tsx",
-            "line": 68,
-            "column": 37,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "browser/src/components/queries/HistoryPanel.tsx",
-            "line": 151,
-            "column": 46,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "browser/src/components/ui/StatusBadge.tsx",
-            "line": 16,
-            "column": 17,
+            "file": "browser/src/hooks/useWalletConnect.ts",
+            "line": 1,
+            "column": 58,
             "message": "Strings must use doublequote."
           },
           {
@@ -696,15 +721,9 @@
             "message": "Strings must use doublequote."
           },
           {
-            "file": "nodejs/src/index.ts",
-            "line": 216,
-            "column": 25,
-            "message": "Strings must use doublequote."
-          },
-          {
             "file": "nodejs/src/mock-wallet-server.ts",
-            "line": 94,
-            "column": 33,
+            "line": 57,
+            "column": 41,
             "message": "Strings must use doublequote."
           },
           {
@@ -722,7 +741,7 @@
     },
     "react-destructuring-assignment": {
       "never": {
-        "count": 27,
+        "count": 28,
         "samples": [
           {
             "file": "browser/src/components/ConnectButton.tsx",
@@ -743,14 +762,14 @@
             "message": "Must never use destructuring props assignment in SFC argument"
           },
           {
-            "file": "browser/src/components/layout/PageShell.tsx",
-            "line": 38,
-            "column": 1,
+            "file": "browser/src/components/intents/SignMessagePanel.tsx",
+            "line": 10,
+            "column": 8,
             "message": "Must never use destructuring props assignment in SFC argument"
           },
           {
-            "file": "browser/src/components/queries/AssetsPanel.tsx",
-            "line": 13,
+            "file": "browser/src/components/layout/WalletHeader.tsx",
+            "line": 11,
             "column": 8,
             "message": "Must never use destructuring props assignment in SFC argument"
           },
@@ -805,11 +824,11 @@
         "samples": []
       },
       "arrow-function": {
-        "count": 30,
+        "count": 33,
         "samples": [
           {
-            "file": "browser/src/App.tsx",
-            "line": 29,
+            "file": "backend-auth/frontend/src/App.tsx",
+            "line": 107,
             "column": 16,
             "message": "Function component is not an arrow function"
           },
@@ -820,44 +839,44 @@
             "message": "Function component is not an arrow function"
           },
           {
-            "file": "browser/src/components/intents/DMPanel.tsx",
+            "file": "browser/src/components/events/EventLogPanel.tsx",
+            "line": 103,
+            "column": 8,
+            "message": "Function component is not an arrow function"
+          },
+          {
+            "file": "browser/src/components/intents/ReceivePanel.tsx",
             "line": 10,
             "column": 8,
             "message": "Function component is not an arrow function"
           },
           {
-            "file": "browser/src/components/intents/SendPanel.tsx",
+            "file": "browser/src/components/intents/SignMessagePanel.tsx",
+            "line": 10,
+            "column": 8,
+            "message": "Function component is not an arrow function"
+          },
+          {
+            "file": "browser/src/components/queries/AssetsPanel.tsx",
             "line": 13,
             "column": 8,
             "message": "Function component is not an arrow function"
           },
           {
-            "file": "browser/src/components/layout/PageShell.tsx",
-            "line": 61,
-            "column": 8,
-            "message": "Function component is not an arrow function"
-          },
-          {
-            "file": "browser/src/components/queries/BalancePanel.tsx",
-            "line": 18,
-            "column": 8,
-            "message": "Function component is not an arrow function"
-          },
-          {
             "file": "browser/src/components/queries/HistoryPanel.tsx",
-            "line": 121,
+            "line": 110,
             "column": 1,
             "message": "Function component is not an arrow function"
           },
           {
-            "file": "browser/src/components/queries/ResolvePanel.tsx",
-            "line": 11,
+            "file": "browser/src/components/queries/IdentityPanel.tsx",
+            "line": 16,
             "column": 8,
             "message": "Function component is not an arrow function"
           },
           {
-            "file": "browser/src/components/ui/CoinSelect.tsx",
-            "line": 21,
+            "file": "browser/src/components/ui/CoinBadge.tsx",
+            "line": 22,
             "column": 8,
             "message": "Function component is not an arrow function"
           },
@@ -886,8 +905,14 @@
         "samples": []
       },
       "element": {
-        "count": 2,
+        "count": 3,
         "samples": [
+          {
+            "file": "backend-auth/frontend/src/App.tsx",
+            "line": 206,
+            "column": 11,
+            "message": "Prefer React.Fragment over fragment shorthand"
+          },
           {
             "file": "browser/src/components/queries/HistoryPanel.tsx",
             "line": 89,
@@ -909,60 +934,60 @@
         "samples": []
       },
       "never": {
-        "count": 929,
+        "count": 1432,
         "samples": [
           {
-            "file": "browser/src/App.tsx",
+            "file": "backend-auth/backend/src/challenge.test.ts",
             "line": 1,
-            "column": 33,
+            "column": 46,
             "message": "Extra semicolon."
           },
           {
-            "file": "browser/src/components/chat/ChatPanel.tsx",
-            "line": 140,
-            "column": 43,
+            "file": "bot/src/aggregatorKey.test.ts",
+            "line": 5,
+            "column": 55,
             "message": "Extra semicolon."
           },
           {
-            "file": "browser/src/components/intents/PaymentRequestPanel.tsx",
-            "line": 29,
-            "column": 73,
+            "file": "bot/src/index.ts",
+            "line": 91,
+            "column": 82,
             "message": "Extra semicolon."
           },
           {
-            "file": "browser/src/components/queries/AssetsPanel.tsx",
-            "line": 27,
-            "column": 21,
+            "file": "browser/src/App.tsx",
+            "line": 24,
+            "column": 56,
             "message": "Extra semicolon."
           },
           {
-            "file": "browser/src/components/queries/ResolvePanel.tsx",
+            "file": "browser/src/components/intents/MintPanel.tsx",
+            "line": 32,
+            "column": 78,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "browser/src/components/queries/BalancePanel.tsx",
             "line": 2,
             "column": 62,
             "message": "Extra semicolon."
           },
           {
-            "file": "browser/src/hooks/useWalletConnect.ts",
-            "line": 57,
-            "column": 55,
+            "file": "browser/src/components/ui/CoinSelect.tsx",
+            "line": 42,
+            "column": 6,
             "message": "Extra semicolon."
           },
           {
             "file": "browser/src/hooks/useWalletConnect.ts",
-            "line": 296,
-            "column": 48,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "browser/src/lib/format.ts",
-            "line": 21,
-            "column": 80,
+            "line": 324,
+            "column": 37,
             "message": "Extra semicolon."
           },
           {
             "file": "nodejs/src/index.ts",
-            "line": 139,
-            "column": 15,
+            "line": 23,
+            "column": 5,
             "message": "Extra semicolon."
           },
           {

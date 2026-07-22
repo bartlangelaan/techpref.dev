@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "96d58f23c7cc",
-  "analyzedCommit": "f5aa1b916e74a2012aa26b1179fe7277e5d2f7a7",
-  "analyzedCommitDate": "2026-07-01T21:33:26.000Z",
+  "analyzedCommit": "15250cfb1f22334582ed77e1e1b1e580ce2d7134",
+  "analyzedCommitDate": "2026-07-12T01:24:51.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -9,7 +9,7 @@
         "samples": [
           {
             "file": "test/content-security-policy.test.ts",
-            "line": 641,
+            "line": 753,
             "column": 24,
             "message": "Array type using 'Array<string>' is forbidden. Use 'string[]' instead."
           },
@@ -44,7 +44,7 @@
           },
           {
             "file": "middlewares/content-security-policy/index.ts",
-            "line": 221,
+            "line": 231,
             "column": 17,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
@@ -63,18 +63,12 @@
         "samples": []
       },
       "type-annotation": {
-        "count": 4,
+        "count": 3,
         "samples": [
           {
             "file": "middlewares/content-security-policy/index.ts",
-            "line": 114,
+            "line": 134,
             "column": 37,
-            "message": "The generic type arguments should be specified as part of the type annotation."
-          },
-          {
-            "file": "middlewares/content-security-policy/index.ts",
-            "line": 115,
-            "column": 47,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
@@ -127,19 +121,19 @@
         "samples": [
           {
             "file": "middlewares/content-security-policy/index.ts",
-            "line": 13,
-            "column": 16,
+            "line": 12,
+            "column": 40,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "middlewares/content-security-policy/index.ts",
-            "line": 53,
+            "line": 55,
             "column": 34,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "test/helpers.ts",
-            "line": 14,
+            "line": 17,
             "column": 29,
             "message": "An index signature is preferred over a record."
           }
@@ -148,7 +142,7 @@
     },
     "consistent-type-definitions": {
       "interface": {
-        "count": 11,
+        "count": 10,
         "samples": [
           {
             "file": "index.ts",
@@ -158,13 +152,7 @@
           },
           {
             "file": "middlewares/content-security-policy/index.ts",
-            "line": 11,
-            "column": 8,
-            "message": "Use `interface` instead of `type`."
-          },
-          {
-            "file": "middlewares/content-security-policy/index.ts",
-            "line": 27,
+            "line": 29,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
@@ -176,6 +164,12 @@
           },
           {
             "file": "middlewares/cross-origin-opener-policy/index.ts",
+            "line": 3,
+            "column": 8,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "middlewares/cross-origin-resource-policy/index.ts",
             "line": 3,
             "column": 8,
             "message": "Use `interface` instead of `type`."
@@ -223,7 +217,7 @@
         "samples": []
       },
       "no-type-imports": {
-        "count": 33,
+        "count": 38,
         "samples": [
           {
             "file": "index.ts",
@@ -239,24 +233,18 @@
           },
           {
             "file": "index.ts",
-            "line": 23,
+            "line": 27,
             "column": 3,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "middlewares/cross-origin-embedder-policy/index.ts",
+            "file": "middlewares/cross-origin-opener-policy/index.ts",
             "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "middlewares/origin-agent-cluster/index.ts",
-            "line": 1,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "middlewares/x-dns-prefetch-control/index.ts",
+            "file": "middlewares/strict-transport-security/index.ts",
             "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
@@ -268,21 +256,27 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "test/index.test.ts",
-            "line": 3,
-            "column": 1,
+            "file": "test/helpers.ts",
+            "line": 4,
+            "column": 3,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "test/project-setups/typescript-commonjs-nodenext-moduleResolution/check.ts",
-            "line": 3,
-            "column": 1,
+            "line": 5,
+            "column": 3,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "test/project-setups/typescript-esnext/check.ts",
+            "line": 5,
+            "column": 3,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "test/project-setups/typescript-nodenext-esm/check.ts",
-            "line": 3,
-            "column": 1,
+            "line": 5,
+            "column": 3,
             "message": "Use an `import` instead of an `import type`."
           }
         ]
@@ -290,7 +284,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 58,
+        "count": 56,
         "samples": [
           {
             "file": "index.ts",
@@ -299,8 +293,8 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "middlewares/cross-origin-opener-policy/index.ts",
-            "line": 32,
+            "file": "middlewares/cross-origin-resource-policy/index.ts",
+            "line": 9,
             "column": 1,
             "message": "Expected a function expression."
           },
@@ -318,54 +312,48 @@
           },
           {
             "file": "test/helpers.ts",
-            "line": 12,
+            "line": 15,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "test/project-setups/javascript-commonjs/check.js",
-            "line": 15,
+            "line": 33,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "test/project-setups/typescript-commonjs-nodenext-moduleResolution/check.ts",
-            "line": 10,
+            "line": 35,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "test/project-setups/typescript-commonjs/check.ts",
-            "line": 26,
+            "line": 51,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "test/project-setups/typescript-nodenext-commonjs/check.ts",
-            "line": 18,
+            "line": 35,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "test/project-setups/typescript-nodenext-esm/check.ts",
-            "line": 34,
+            "line": 51,
             "column": 1,
             "message": "Expected a function expression."
           }
         ]
       },
       "declaration": {
-        "count": 19,
+        "count": 25,
         "samples": [
           {
             "file": "middlewares/content-security-policy/index.ts",
-            "line": 246,
-            "column": 7,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "middlewares/content-security-policy/index.ts",
-            "line": 70,
+            "line": 269,
             "column": 7,
             "message": "Expected a function declaration."
           },
@@ -376,15 +364,27 @@
             "message": "Expected a function declaration."
           },
           {
-            "file": "test/index.test.ts",
-            "line": 214,
-            "column": 11,
+            "file": "middlewares/content-security-policy/index.ts",
+            "line": 114,
+            "column": 7,
             "message": "Expected a function declaration."
           },
           {
-            "file": "test/project-setups/javascript-commonjs-default-member/check.js",
-            "line": 5,
+            "file": "middlewares/content-security-policy/util.ts",
+            "line": 4,
+            "column": 14,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "test/content-security-policy.test.ts",
+            "line": 28,
             "column": 7,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "test/index.test.ts",
+            "line": 212,
+            "column": 11,
             "message": "Expected a function declaration."
           },
           {
@@ -394,20 +394,14 @@
             "message": "Expected a function declaration."
           },
           {
-            "file": "test/project-setups/typescript-commonjs/check.ts",
-            "line": 6,
+            "file": "test/project-setups/typescript-esnext/check.ts",
+            "line": 9,
             "column": 7,
             "message": "Expected a function declaration."
           },
           {
-            "file": "test/project-setups/typescript-nodenext-commonjs/check.ts",
-            "line": 6,
-            "column": 7,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "test/source-files.test.ts",
-            "line": 36,
+            "file": "test/project-setups/typescript-nodenext-esm/check.ts",
+            "line": 9,
             "column": 7,
             "message": "Expected a function declaration."
           },
@@ -432,7 +426,7 @@
           },
           {
             "file": "middlewares/content-security-policy/index.ts",
-            "line": 278,
+            "line": 313,
             "column": 8,
             "message": "Prefer named exports"
           },
@@ -491,7 +485,7 @@
         "samples": [
           {
             "file": "test/helpers.ts",
-            "line": 12,
+            "line": 15,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           }
@@ -504,7 +498,7 @@
         "samples": []
       },
       "4-space": {
-        "count": 42,
+        "count": 43,
         "samples": [
           {
             "file": "eslint.config.js",
@@ -513,19 +507,19 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "middlewares/cross-origin-resource-policy/index.ts",
+            "file": "middlewares/cross-origin-opener-policy/index.ts",
             "line": 4,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "middlewares/x-content-type-options/index.ts",
-            "line": 4,
+            "file": "middlewares/strict-transport-security/index.ts",
+            "line": 6,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "middlewares/x-powered-by/index.ts",
+            "file": "middlewares/x-permitted-cross-domain-policies/index.ts",
             "line": 4,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
@@ -537,14 +531,14 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "test/project-setups.test.ts",
-            "line": 12,
+            "file": "test/origin-agent-cluster.test.ts",
+            "line": 6,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
             "file": "test/project-setups/typescript-commonjs-nodenext-moduleResolution/check.ts",
-            "line": 7,
+            "line": 3,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -569,7 +563,7 @@
         ]
       },
       "tab": {
-        "count": 42,
+        "count": 43,
         "samples": [
           {
             "file": "eslint.config.js",
@@ -578,19 +572,19 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "middlewares/cross-origin-resource-policy/index.ts",
+            "file": "middlewares/cross-origin-opener-policy/index.ts",
             "line": 4,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "middlewares/x-content-type-options/index.ts",
-            "line": 4,
+            "file": "middlewares/strict-transport-security/index.ts",
+            "line": 6,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "middlewares/x-powered-by/index.ts",
+            "file": "middlewares/x-permitted-cross-domain-policies/index.ts",
             "line": 4,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
@@ -602,14 +596,14 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "test/project-setups.test.ts",
-            "line": 12,
+            "file": "test/origin-agent-cluster.test.ts",
+            "line": 6,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
             "file": "test/project-setups/typescript-commonjs-nodenext-moduleResolution/check.ts",
-            "line": 7,
+            "line": 3,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -646,8 +640,8 @@
           },
           {
             "file": "test/content-security-policy.test.ts",
-            "line": 436,
-            "column": 17,
+            "line": 531,
+            "column": 15,
             "message": "Strings must use doublequote."
           },
           {
@@ -701,7 +695,7 @@
         ]
       },
       "single": {
-        "count": 1033,
+        "count": 1061,
         "samples": [
           {
             "file": "eslint.config.js",
@@ -710,51 +704,51 @@
             "message": "Strings must use singlequote."
           },
           {
-            "file": "index.ts",
-            "line": 361,
-            "column": 39,
+            "file": "middlewares/content-security-policy/index.ts",
+            "line": 2,
+            "column": 63,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "middlewares/referrer-policy/index.ts",
-            "line": 36,
-            "column": 21,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "test/content-security-policy.test.ts",
-            "line": 170,
-            "column": 13,
+            "file": "middlewares/strict-transport-security/index.ts",
+            "line": 1,
+            "column": 54,
             "message": "Strings must use singlequote."
           },
           {
             "file": "test/content-security-policy.test.ts",
-            "line": 614,
-            "column": 10,
+            "line": 184,
+            "column": 58,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "test/content-security-policy.test.ts",
+            "line": 618,
+            "column": 6,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "test/helpers.ts",
+            "line": 31,
+            "column": 45,
             "message": "Strings must use singlequote."
           },
           {
             "file": "test/index.test.ts",
-            "line": 21,
-            "column": 43,
+            "line": 304,
+            "column": 56,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "test/index.test.ts",
-            "line": 365,
-            "column": 7,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "test/project-setups/typescript-esnext/check.ts",
-            "line": 13,
-            "column": 10,
+            "file": "test/project-setups/typescript-commonjs/check.ts",
+            "line": 40,
+            "column": 32,
             "message": "Strings must use singlequote."
           },
           {
             "file": "test/strict-transport-security.test.ts",
-            "line": 39,
-            "column": 6,
+            "line": 32,
+            "column": 36,
             "message": "Strings must use singlequote."
           },
           {
@@ -820,7 +814,7 @@
         "samples": []
       },
       "never": {
-        "count": 954,
+        "count": 1029,
         "samples": [
           {
             "file": "eslint.config.js",
@@ -830,50 +824,50 @@
           },
           {
             "file": "index.ts",
-            "line": 329,
+            "line": 350,
             "column": 12,
             "message": "Extra semicolon."
           },
           {
             "file": "middlewares/cross-origin-opener-policy/index.ts",
-            "line": 42,
-            "column": 61,
+            "line": 16,
+            "column": 3,
             "message": "Extra semicolon."
           },
           {
             "file": "test/content-security-policy.test.ts",
-            "line": 24,
-            "column": 2,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "test/cross-origin-embedder-policy.test.ts",
-            "line": 31,
+            "line": 47,
             "column": 4,
             "message": "Extra semicolon."
           },
           {
-            "file": "test/index.test.ts",
-            "line": 168,
+            "file": "test/content-security-policy.test.ts",
+            "line": 741,
             "column": 5,
             "message": "Extra semicolon."
           },
           {
+            "file": "test/index.test.ts",
+            "line": 122,
+            "column": 6,
+            "message": "Extra semicolon."
+          },
+          {
             "file": "test/project-setups.test.ts",
-            "line": 9,
-            "column": 42,
+            "line": 3,
+            "column": 34,
             "message": "Extra semicolon."
           },
           {
             "file": "test/project-setups/typescript-esnext/check.ts",
-            "line": 31,
-            "column": 45,
+            "line": 6,
+            "column": 19,
             "message": "Extra semicolon."
           },
           {
             "file": "test/strict-transport-security.test.ts",
-            "line": 36,
-            "column": 7,
+            "line": 14,
+            "column": 60,
             "message": "Extra semicolon."
           },
           {

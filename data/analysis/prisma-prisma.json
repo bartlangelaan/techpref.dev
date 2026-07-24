@@ -1,11 +1,11 @@
 {
   "analyzedVersion": "96d58f23c7cc",
-  "analyzedCommit": "cdca3335b392483aeb4ee5483cda436e4aaffb1a",
-  "analyzedCommitDate": "2026-07-03T11:22:57.000Z",
+  "analyzedCommit": "dcb3e9d524a4c826232763a8718834aa461d92b3",
+  "analyzedCommitDate": "2026-07-24T09:20:45.000Z",
   "checks": {
     "array-type": {
       "array": {
-        "count": 69,
+        "count": 70,
         "samples": [
           {
             "file": "packages/adapter-better-sqlite3/src/better-sqlite3.ts",
@@ -32,10 +32,10 @@
             "message": "Array type using 'ReadonlyArray<T>' is forbidden. Use 'readonly T[]' instead."
           },
           {
-            "file": "packages/client/src/runtime/core/types/exported/Result.ts",
-            "line": 103,
-            "column": 7,
-            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
+            "file": "packages/client/src/runtime/core/types/exported/itxClientDenyList.ts",
+            "line": 3,
+            "column": 46,
+            "message": "Array type using 'ReadonlyArray<T>' is forbidden. Use 'readonly T[]' instead."
           },
           {
             "file": "packages/client/tests/e2e/sqlcommenter-query-insights/src/index.ts",
@@ -45,14 +45,14 @@
           },
           {
             "file": "packages/client/tests/functional/issues/20261-group-by-shortcut/tests.ts",
-            "line": 67,
+            "line": 89,
             "column": 7,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
-            "file": "packages/client/tests/functional/raw-queries/typed-results/tests.ts",
-            "line": 24,
-            "column": 64,
+            "file": "packages/client/tests/functional/relationMode-in-separate-gh-action/tests_1-to-n.ts",
+            "line": 16,
+            "column": 32,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
@@ -70,7 +70,7 @@
         ]
       },
       "generic": {
-        "count": 1256,
+        "count": 1343,
         "samples": [
           {
             "file": "helpers/blaze/concat.ts",
@@ -79,52 +79,52 @@
             "message": "Array type using 'any[]' is forbidden. Use 'Array<any>' instead."
           },
           {
-            "file": "packages/cli/src/Generate.ts",
-            "line": 109,
-            "column": 11,
+            "file": "packages/cli/src/Init.ts",
+            "line": 322,
+            "column": 21,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
             "file": "packages/client-engine-runtime/src/interpreter/render-query.ts",
-            "line": 293,
-            "column": 22,
-            "message": "Array type using 'unknown[][]' is forbidden. Use 'Array<unknown[]>' instead."
+            "line": 174,
+            "column": 9,
+            "message": "Array type using 'readonly unknown[]' is forbidden. Use 'ReadonlyArray<unknown>' instead."
           },
           {
-            "file": "packages/client/helpers/functional-test/run-tests.ts",
-            "line": 154,
-            "column": 51,
-            "message": "Array type using 'AdapterProviders[]' is forbidden. Use 'Array<AdapterProviders>' instead."
+            "file": "packages/client-generator-ts/src/typedSql/typedSql.ts",
+            "line": 15,
+            "column": 12,
+            "message": "Array type using 'SqlQueryOutput[]' is forbidden. Use 'Array<SqlQueryOutput>' instead."
           },
           {
-            "file": "packages/client/src/runtime/core/errorRendering/applyValidationError.ts",
-            "line": 519,
-            "column": 26,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+            "file": "packages/client/src/runtime/core/errorRendering/applyUnionError.ts",
+            "line": 83,
+            "column": 49,
+            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           },
           {
-            "file": "packages/client/tests/e2e/typed-sql-query-compiler-adapter-libsql/prisma/seed.ts",
-            "line": 54,
-            "column": 17,
-            "message": "Array type using 'User[]' is forbidden. Use 'Array<User>' instead."
+            "file": "packages/client/tests/functional/0-legacy-ports/query-raw/tests.ts",
+            "line": 191,
+            "column": 19,
+            "message": "Array type using 'any[]' is forbidden. Use 'Array<any>' instead."
           },
           {
             "file": "packages/dmmf/src/dmmf.ts",
-            "line": 13,
-            "column": 12,
+            "line": 59,
+            "column": 17,
+            "message": "Array type using 'string[][]' is forbidden. Use 'Array<string[]>' instead."
+          },
+          {
+            "file": "packages/internals/src/get-generators/getGenerators.ts",
+            "line": 84,
+            "column": 76,
+            "message": "Array type using 'Generator[]' is forbidden. Use 'Array<Generator>' instead."
+          },
+          {
+            "file": "packages/param-graph/src/serialization.ts",
+            "line": 155,
+            "column": 14,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
-          },
-          {
-            "file": "packages/internals/src/get-generators/utils/printGeneratorConfig.ts",
-            "line": 29,
-            "column": 62,
-            "message": "Array type using 'BinaryTargetsEnvValue[]' is forbidden. Use 'Array<BinaryTargetsEnvValue>' instead."
-          },
-          {
-            "file": "packages/query-plan-executor/src/log/format.ts",
-            "line": 35,
-            "column": 28,
-            "message": "Array type using 'unknown[]' is forbidden. Use 'Array<unknown>' instead."
           },
           {
             "file": "scripts/graph-dependencies.ts",
@@ -137,7 +137,7 @@
     },
     "consistent-generic-constructors": {
       "constructor": {
-        "count": 7,
+        "count": 10,
         "samples": [
           {
             "file": "packages/client-engine-runtime/bench/mock-adapter.ts",
@@ -147,8 +147,14 @@
           },
           {
             "file": "packages/client-engine-runtime/src/transaction-manager/transaction-manager.ts",
-            "line": 59,
+            "line": 94,
             "column": 23,
+            "message": "The generic type arguments should be specified as part of the constructor type arguments."
+          },
+          {
+            "file": "packages/client-engine-runtime/src/transaction-manager/transaction-manager.ts",
+            "line": 100,
+            "column": 33,
             "message": "The generic type arguments should be specified as part of the constructor type arguments."
           },
           {
@@ -170,6 +176,12 @@
             "message": "Identifier `LogPrismaClient` has already been declared"
           },
           {
+            "file": "packages/client/tests/functional/tracing-event-context/tests.ts",
+            "line": 20,
+            "column": 6,
+            "message": "Identifier `LogPrismaClient` has already been declared"
+          },
+          {
             "file": "packages/config/src/__tests__/fixtures/loadConfigFromFile/invalid/syntax-error/prisma.config.ts",
             "line": 5,
             "column": 1,
@@ -180,11 +192,17 @@
             "line": 81,
             "column": 61,
             "message": "The generic type arguments should be specified as part of the constructor type arguments."
+          },
+          {
+            "file": "packages/schema-files-loader/src/loadSchemaFiles.ts",
+            "line": 23,
+            "column": 14,
+            "message": "The generic type arguments should be specified as part of the constructor type arguments."
           }
         ]
       },
       "type-annotation": {
-        "count": 55,
+        "count": 66,
         "samples": [
           {
             "file": "packages/adapter-better-sqlite3/src/conversion.ts",
@@ -193,51 +211,51 @@
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "packages/client-common/src/Cache.test.ts",
-            "line": 13,
-            "column": 26,
-            "message": "The generic type arguments should be specified as part of the type annotation."
-          },
-          {
-            "file": "packages/client-engine-runtime/src/interpreter/in-memory-processing.ts",
-            "line": 85,
-            "column": 34,
-            "message": "The generic type arguments should be specified as part of the type annotation."
-          },
-          {
-            "file": "packages/client-generator-js/src/TSClient/DefaultArgsAliases.ts",
-            "line": 2,
-            "column": 37,
-            "message": "The generic type arguments should be specified as part of the type annotation."
-          },
-          {
-            "file": "packages/client-generator-ts/src/dmmf.ts",
-            "line": 129,
-            "column": 27,
-            "message": "The generic type arguments should be specified as part of the type annotation."
-          },
-          {
-            "file": "packages/client/src/runtime/core/compositeProxy/createCompositeProxy.ts",
-            "line": 44,
-            "column": 34,
-            "message": "The generic type arguments should be specified as part of the type annotation."
-          },
-          {
-            "file": "packages/client/src/runtime/core/extensions/resultUtils.ts",
-            "line": 53,
-            "column": 26,
-            "message": "The generic type arguments should be specified as part of the type annotation."
-          },
-          {
-            "file": "packages/config/src/__tests__/fixtures/loadConfigFromFile/invalid/syntax-error/prisma.config.ts",
-            "line": 5,
-            "column": 1,
-            "message": "Expected `)` but found `EOF`"
-          },
-          {
-            "file": "packages/param-graph-builder/src/param-graph-builder.ts",
-            "line": 26,
+            "file": "packages/cli/src/__tests__/studio-server.vitest.ts",
+            "line": 64,
             "column": 36,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "packages/client-common/src/Cache.test.ts",
+            "line": 30,
+            "column": 26,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "packages/client-engine-runtime/src/transaction-manager/transaction-manager.ts",
+            "line": 70,
+            "column": 30,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "packages/client-generator-ts/src/GenericsArgsInfo.ts",
+            "line": 12,
+            "column": 29,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "packages/client/src/__tests__/benchmarks/query-performance/seed-data.ts",
+            "line": 736,
+            "column": 30,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "packages/client/src/runtime/core/extensions/MergedExtensionsList.ts",
+            "line": 10,
+            "column": 43,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "packages/client/tests/functional/tracing-event-context/tests.ts",
+            "line": 20,
+            "column": 6,
+            "message": "Identifier `LogPrismaClient` has already been declared"
+          },
+          {
+            "file": "packages/param-graph-builder/src/dmmf-traverser.ts",
+            "line": 241,
+            "column": 33,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
@@ -251,7 +269,7 @@
     },
     "consistent-indexed-object-style": {
       "record": {
-        "count": 110,
+        "count": 111,
         "samples": [
           {
             "file": "helpers/blaze/omit.ts",
@@ -267,19 +285,19 @@
           },
           {
             "file": "packages/client/src/runtime/core/model/applyFluent.ts",
-            "line": 90,
-            "column": 13,
+            "line": 89,
+            "column": 28,
             "message": "A record is preferred over an index signature."
           },
           {
             "file": "packages/client/src/runtime/core/types/exported/Extensions.ts",
-            "line": 15,
-            "column": 24,
+            "line": 16,
+            "column": 7,
             "message": "A record is preferred over an index signature."
           },
           {
             "file": "packages/client/src/runtime/core/types/exported/Extensions.ts",
-            "line": 320,
+            "line": 322,
             "column": 16,
             "message": "A record is preferred over an index signature."
           },
@@ -316,7 +334,7 @@
         ]
       },
       "index-signature": {
-        "count": 279,
+        "count": 287,
         "samples": [
           {
             "file": "helpers/blaze/record.ts",
@@ -326,50 +344,50 @@
           },
           {
             "file": "packages/client-common/src/runtimeDataModel.ts",
-            "line": 50,
-            "column": 78,
+            "line": 9,
+            "column": 19,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "packages/client-engine-runtime/src/interpreter/in-memory-processing.ts",
             "line": 20,
-            "column": 79,
+            "column": 35,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "packages/client-engine-runtime/src/parameterization/parameterize.ts",
             "line": 168,
-            "column": 83,
+            "column": 28,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "packages/client-runtime-utils/src/errors/PrismaClientKnownRequestError.ts",
-            "line": 7,
-            "column": 10,
+            "file": "packages/client-generator-ts/tests/module-format.test.ts",
+            "line": 28,
+            "column": 44,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "packages/client/src/runtime/core/engines/common/types/RequestError.ts",
-            "line": 6,
-            "column": 12,
+            "file": "packages/client/src/runtime/core/errorRendering/ArgumentsRenderingTree.ts",
+            "line": 47,
+            "column": 51,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "packages/client/src/runtime/core/types/exported/Result.ts",
-            "line": 54,
-            "column": 24,
+            "file": "packages/client/src/runtime/core/types/exported/Utils.ts",
+            "line": 99,
+            "column": 42,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "packages/client/tests/functional/_utils/setupTestSuiteClient.ts",
-            "line": 133,
-            "column": 31,
+            "file": "packages/client/tests/functional/_utils/setupTestSuiteEnv.ts",
+            "line": 73,
+            "column": 16,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "packages/internals/src/utils/mapObjectValues.ts",
-            "line": 5,
-            "column": 24,
+            "file": "packages/migrate/src/__tests__/__helpers__/conditionalTests.ts",
+            "line": 21,
+            "column": 13,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -383,7 +401,7 @@
     },
     "consistent-type-definitions": {
       "interface": {
-        "count": 427,
+        "count": 441,
         "samples": [
           {
             "file": "helpers/blaze/omit.ts",
@@ -392,50 +410,50 @@
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "packages/client-common/src/QueryEngine.ts",
-            "line": 31,
-            "column": 8,
+            "file": "packages/cli/src/utils/prompts.ts",
+            "line": 9,
+            "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "packages/client-generator-ts/src/GenericsArgsInfo.ts",
-            "line": 6,
+            "file": "packages/client-generator-js/src/TSClient/SelectIncludeOmit.ts",
+            "line": 56,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
             "file": "packages/client/src/runtime/core/engines/common/types/EngineValidationError.ts",
-            "line": 204,
+            "line": 88,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "packages/client/src/runtime/core/raw-query/rawQueryArgsMapper.ts",
-            "line": 32,
+            "file": "packages/client/src/runtime/core/extensions/visitQueryResult.ts",
+            "line": 61,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "packages/client/src/utils/setupMysql.ts",
-            "line": 6,
+            "file": "packages/client/src/runtime/utils/getRuntime.ts",
+            "line": 70,
+            "column": 1,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "packages/driver-adapter-utils/src/types.ts",
+            "line": 60,
             "column": 8,
-            "message": "Use `interface` instead of `type`."
-          },
-          {
-            "file": "packages/engines/src/index.ts",
-            "line": 13,
-            "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
             "file": "packages/internals/src/cli/types.ts",
-            "line": 19,
+            "line": 13,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
             "file": "packages/json-protocol/src/index.ts",
-            "line": 74,
+            "line": 72,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
@@ -448,7 +466,7 @@
         ]
       },
       "type": {
-        "count": 230,
+        "count": 235,
         "samples": [
           {
             "file": "helpers/compile/plugins/fill-plugin/fillers/buffer-small.ts",
@@ -457,32 +475,32 @@
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "packages/client-engine-runtime/src/interpreter/generators.ts",
-            "line": 43,
+            "file": "packages/client-engine-runtime/src/parameterization/parameterize.ts",
+            "line": 29,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "packages/client/src/__tests__/benchmarks/query-performance/seed-data.ts",
-            "line": 556,
+            "line": 569,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "packages/client/src/runtime/core/engines/common/Engine.ts",
-            "line": 180,
+            "file": "packages/client/src/runtime/core/engines/common/types/RequestError.ts",
+            "line": 1,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "packages/client/tests/functional/_utils/defineMatrix.ts",
-            "line": 33,
+            "file": "packages/client/tests/functional/_utils/idForProvider.ts",
+            "line": 31,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "packages/driver-adapter-utils/src/types.ts",
-            "line": 325,
+            "line": 337,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
@@ -494,14 +512,14 @@
           },
           {
             "file": "packages/migrate/src/types.ts",
-            "line": 178,
+            "line": 183,
             "column": 10,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "packages/param-graph/src/param-graph.ts",
-            "line": 34,
-            "column": 8,
+            "file": "packages/param-graph-builder/src/dmmf-traverser.ts",
+            "line": 21,
+            "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
@@ -515,7 +533,7 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 839,
+        "count": 845,
         "samples": [
           {
             "file": "eslint-local-rules/imports-from-same-directory.ts",
@@ -525,49 +543,49 @@
           },
           {
             "file": "packages/client-engine-runtime/src/interpreter/render-query.ts",
-            "line": 16,
-            "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
-          {
-            "file": "packages/client-generator-ts/src/TSClient/file-generators/ClientFile.ts",
-            "line": 3,
-            "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
-          {
-            "file": "packages/client/src/runtime/core/errorRendering/ArgumentsRenderingTree.test.ts",
-            "line": 7,
-            "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
-          {
-            "file": "packages/client/src/runtime/core/types/ValidationError.ts",
             "line": 1,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
+            "file": "packages/client-generator-ts/src/TSClient/file-generators/ClassFile.ts",
+            "line": 2,
+            "column": 1,
+            "message": "All imports in the declaration are only used as types. Use `import type`."
+          },
+          {
+            "file": "packages/client/src/runtime/core/engines/common/utils/getInteractiveTransactionId.ts",
+            "line": 1,
+            "column": 1,
+            "message": "All imports in the declaration are only used as types. Use `import type`."
+          },
+          {
+            "file": "packages/client/src/runtime/core/runtimeDataModel.ts",
+            "line": 1,
+            "column": 1,
+            "message": "Imports BaseDMMF and RuntimeDataModel are only used as type."
+          },
+          {
             "file": "packages/client/tests/functional/_utils/setupTestSuiteClient.ts",
-            "line": 189,
-            "column": 74,
+            "line": 179,
+            "column": 66,
             "message": "`import()` type annotations are forbidden."
           },
           {
-            "file": "packages/client/tests/functional/unixepoch-ms-datetime/tests.ts",
-            "line": 6,
+            "file": "packages/client/tests/functional/typed-sql/sqlite-scalars/test.ts",
+            "line": 7,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
             "file": "packages/migrate/src/utils/ensureDatabaseExists.ts",
-            "line": 8,
+            "line": 3,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
             "file": "packages/ts-builders/src/AnyDeclarationBuilder.ts",
-            "line": 3,
+            "line": 2,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
@@ -580,7 +598,7 @@
         ]
       },
       "no-type-imports": {
-        "count": 847,
+        "count": 899,
         "samples": [
           {
             "file": "helpers/blaze/_.ts",
@@ -589,32 +607,32 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/cli/src/bootstrap/Bootstrap.ts",
-            "line": 6,
+            "file": "packages/cli/src/__tests__/skills-offer.vitest.ts",
+            "line": 9,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/client-generator-js/src/TSClient/Output.ts",
-            "line": 5,
+            "file": "packages/client-engine-runtime/src/tracing.ts",
+            "line": 1,
+            "column": 45,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "packages/client/src/runtime/core/compositeProxy/addObjectProperties.ts",
+            "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/client/src/runtime/core/engines/client/Executor.ts",
-            "line": 2,
+            "file": "packages/client/tests/e2e/prisma-config/src/export-config-with-@prisma-config.ts",
+            "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/client/tests/functional/0-legacy-ports/optional-relation-filters/tests.ts",
-            "line": 7,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "packages/client/tests/functional/extensions/client.ts",
-            "line": 5,
+            "file": "packages/client/tests/functional/extended-where/findMany.ts",
+            "line": 4,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -625,14 +643,14 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/config/src/__tests__/defineConfig.test.ts",
-            "line": 6,
+            "file": "packages/config/src/__tests__/fixtures/loadConfigFromFile/no-define-config/prisma.config.ts",
+            "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/internals/src/utils/schemaFileInput.ts",
-            "line": 1,
+            "file": "packages/migrate/src/Migrate.ts",
+            "line": 5,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -647,7 +665,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 2090,
+        "count": 2153,
         "samples": [
           {
             "file": ".github/scripts/create-git-tag.mjs",
@@ -657,50 +675,50 @@
           },
           {
             "file": "packages/adapter-ppg/src/conversion.ts",
-            "line": 365,
+            "line": 361,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "packages/client-engine-runtime/src/interpreter/query-interpreter.ts",
-            "line": 408,
+            "file": "packages/client-engine-runtime/bench/interpreter.bench.ts",
+            "line": 14,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "packages/client-generator-js/src/utils/types/dmmfToTypes.ts",
-            "line": 12,
+            "file": "packages/client-generator-js/src/utils.ts",
+            "line": 48,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "packages/client/src/__tests__/integration/happy/json-filtering-postgres/test.ts",
-            "line": 278,
+            "file": "packages/client/src/__tests__/benchmarks/query-performance/caching.bench.ts",
+            "line": 25,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "packages/client/src/runtime/utils/date.ts",
-            "line": 9,
-            "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "packages/client/tests/functional/extensions/query.ts",
-            "line": 15,
-            "column": 6,
-            "message": "Identifier `LogPrismaClient` has already been declared"
-          },
-          {
-            "file": "packages/integration-tests/src/__tests__/__helpers__/integrationTest.ts",
-            "line": 171,
-            "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "packages/migrate/src/utils/introspectSql.ts",
-            "line": 117,
+            "file": "packages/client/src/runtime/getPrismaClient.ts",
+            "line": 337,
             "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "packages/client/tests/functional/extensions/defineExtension.ts",
+            "line": 69,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "packages/instrumentation-contract/src/global.ts",
+            "line": 40,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "packages/migrate/src/utils/ensureDatabaseExists.ts",
+            "line": 131,
+            "column": 8,
             "message": "Expected a function expression."
           },
           {
@@ -712,7 +730,7 @@
         ]
       },
       "declaration": {
-        "count": 289,
+        "count": 297,
         "samples": [
           {
             "file": "eslint-local-rules/imports-from-same-directory.ts",
@@ -721,20 +739,20 @@
             "message": "Expected a function declaration."
           },
           {
-            "file": "packages/adapter-pg/src/conversion.ts",
-            "line": 471,
-            "column": 9,
+            "file": "packages/adapter-pg/src/pg.ts",
+            "line": 223,
+            "column": 11,
             "message": "Expected a function declaration."
           },
           {
             "file": "packages/client-engine-runtime/src/sql-commenter.test.ts",
-            "line": 111,
+            "line": 105,
             "column": 11,
             "message": "Expected a function declaration."
           },
           {
             "file": "packages/client/scripts/colors.js",
-            "line": 10,
+            "line": 3,
             "column": 7,
             "message": "Expected a function declaration."
           },
@@ -758,13 +776,13 @@
           },
           {
             "file": "packages/internals/src/utils/fs-functional.ts",
-            "line": 17,
+            "line": 20,
             "column": 14,
             "message": "Expected a function declaration."
           },
           {
-            "file": "packages/type-benchmark-tests/basic/client-options.bench.ts",
-            "line": 39,
+            "file": "packages/schema-files-loader/src/loadSchemaFiles.test.ts",
+            "line": 54,
             "column": 9,
             "message": "Expected a function declaration."
           },
@@ -779,7 +797,7 @@
     },
     "import-export-preference": {
       "named": {
-        "count": 918,
+        "count": 923,
         "samples": [
           {
             "file": "eslint-local-rules/all-types-are-exported.ts",
@@ -794,37 +812,37 @@
             "message": "Prefer named exports"
           },
           {
-            "file": "packages/client/tests/e2e/nextjs-schema-not-found/10_monorepo-serverComponents-customOutput-noReExport/packages/service/app/test/[id]/page.jsx",
-            "line": 21,
+            "file": "packages/client/tests/e2e/nextjs-schema-not-found/10_monorepo-serverComponents-customOutput-noReExport/packages/service/prisma.config.ts",
+            "line": 3,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "packages/client/tests/e2e/unsupported-edge-error/src/worker.ts",
-            "line": 7,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "packages/client/tests/functional/fulltext-search/_matrix.ts",
+            "file": "packages/client/tests/functional/0-legacy-ports/aggregate-raw/_matrix.ts",
             "line": 4,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "packages/client/tests/functional/issues/19997-select-include-undefined/prisma/_schema.ts",
+            "file": "packages/client/tests/functional/globalOmit/_matrix.ts",
             "line": 4,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "packages/client/tests/functional/json-null-types/prisma/_schema.ts",
+            "file": "packages/client/tests/functional/issues/20422-cannot-assign-type-to-itself/_matrix.ts",
             "line": 4,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "packages/client/tests/functional/tracing-disabled/prisma/_schema.ts",
+            "file": "packages/client/tests/functional/large-floats/prisma/_schema.ts",
+            "line": 4,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "packages/client/tests/functional/tracing-event-context/prisma/_schema.ts",
             "line": 4,
             "column": 8,
             "message": "Prefer named exports"
@@ -844,7 +862,7 @@
         ]
       },
       "default": {
-        "count": 419,
+        "count": 444,
         "samples": [
           {
             "file": ".github/scripts/create-git-tag.mjs",
@@ -853,50 +871,50 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "packages/cli/helpers/run-tests.ts",
-            "line": 5,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "packages/client-generator-js/src/TSClient/Enum.ts",
-            "line": 8,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "packages/client-generator-ts/src/generator.ts",
-            "line": 30,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "packages/client/src/runtime/core/errorRendering/ObjectField.ts",
-            "line": 7,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "packages/client/src/runtime/utils/log.ts",
+            "file": "packages/cli/src/Status.ts",
             "line": 9,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "packages/config/src/__tests__/fixtures/loadConfigFromFile/invalid/syntax-error/prisma.config.ts",
-            "line": 5,
-            "column": 1,
-            "message": "Expected `)` but found `EOF`"
-          },
-          {
-            "file": "packages/internals/src/sendPanic.ts",
-            "line": 25,
+            "file": "packages/client-common/src/uniqueBy.ts",
+            "line": 6,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "packages/migrate/src/commands/MigrateDeploy.ts",
-            "line": 26,
+            "file": "packages/client-generator-ts/src/TSClient/file-generators/PrismaNamespaceFile.ts",
+            "line": 23,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "packages/client/src/runtime/core/errorRendering/ArrayField.ts",
+            "line": 5,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "packages/client/src/runtime/utils/mssqlPreparedStatement.ts",
+            "line": 4,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "packages/config/src/defaultTestConfig.ts",
+            "line": 6,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "packages/internals/src/utils/chmodPlusX.ts",
+            "line": 6,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "packages/migrate/src/commands/db-push-completion.ts",
+            "line": 8,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -911,7 +929,7 @@
     },
     "indent": {
       "2-space": {
-        "count": 80,
+        "count": 81,
         "samples": [
           {
             "file": "packages/cli/src/CLI.ts",
@@ -932,16 +950,16 @@
             "message": "Expected 2-space indentation, but file uses 3-space indentation."
           },
           {
-            "file": "packages/client-generator-ts/src/TSClient/file-generators/PrismaNamespaceBrowserFile.ts",
-            "line": 8,
+            "file": "packages/client-generator-ts/src/TSClient/file-generators/PrismaNamespaceFile.ts",
+            "line": 12,
             "column": 1,
             "message": "Expected 2-space indentation, but file uses 1-space indentation."
           },
           {
-            "file": "packages/client/src/runtime/core/types/exported/Utils.ts",
-            "line": 101,
+            "file": "packages/client/src/runtime/utils/createErrorMessageWithContext.test.ts",
+            "line": 283,
             "column": 1,
-            "message": "Expected 2-space indentation, but file uses 19-space indentation."
+            "message": "Expected 2-space indentation, but file uses 7-space indentation."
           },
           {
             "file": "packages/client/tests/functional/json-null-types/tests.ts",
@@ -950,10 +968,10 @@
             "message": "Expected 2-space indentation, but file uses 21-space indentation."
           },
           {
-            "file": "packages/client/tests/functional/unsupported-action/tests.ts",
-            "line": 18,
-            "column": 1,
-            "message": "Expected 2-space indentation, but file uses 11-space indentation."
+            "file": "packages/client/tests/functional/tracing-event-context/tests.ts",
+            "line": 20,
+            "column": 6,
+            "message": "Identifier `LogPrismaClient` has already been declared"
           },
           {
             "file": "packages/migrate/src/__tests__/DbPull/sqlite.test.ts",
@@ -976,7 +994,7 @@
         ]
       },
       "4-space": {
-        "count": 2498,
+        "count": 2551,
         "samples": [
           {
             "file": ".github/scripts/create-git-tag.mjs",
@@ -985,50 +1003,50 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/client-engine-runtime/src/batch.ts",
-            "line": 9,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "packages/client/src/__tests__/integration/happy/insensitive-postgresql-feature-flag/prisma.config.ts",
+            "file": "packages/client-common/src/Cache.test.ts",
             "line": 6,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/client/src/runtime/core/types/exported/Skip.ts",
-            "line": 5,
+            "file": "packages/client/src/__tests__/integration/happy/custom-engine-binary/prisma.config.ts",
+            "line": 4,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/client/tests/e2e/prisma-client-imports-mysql/prisma/custom-output.config.ts",
-            "line": 9,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "packages/client/tests/functional/extensions/itx.ts",
-            "line": 16,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "packages/client/tests/functional/large-floats/prisma/_schema.ts",
+            "file": "packages/client/src/runtime/core/tracing/TracingHelper.test.ts",
             "line": 6,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/get-platform/src/link.ts",
-            "line": 5,
+            "file": "packages/client/tests/e2e/prisma-client-generator/node-tsx-cjs/prisma.config.ts",
+            "line": 4,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/migrate/src/__tests__/fixtures/schema-sqlite-d1-migrations-do-not-cause-data-loss/d1.config.ts",
-            "line": 5,
+            "file": "packages/client/tests/functional/extensions/defineExtension.ts",
+            "line": 15,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "packages/client/tests/functional/large-floats/tests.ts",
+            "line": 9,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "packages/get-platform/src/test-utils/jestContext.ts",
+            "line": 15,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "packages/migrate/src/__tests__/fixtures/seed-from-package-json/seed-sqlite-legacy-custom-ts-node/prisma.config.ts",
+            "line": 4,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -1041,7 +1059,7 @@
         ]
       },
       "tab": {
-        "count": 2497,
+        "count": 2550,
         "samples": [
           {
             "file": ".github/scripts/create-git-tag.mjs",
@@ -1050,49 +1068,49 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/client-engine-runtime/src/batch.ts",
-            "line": 9,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "packages/client/src/__tests__/integration/happy/insensitive-postgresql-feature-flag/prisma.config.ts",
+            "file": "packages/client-common/src/Cache.test.ts",
             "line": 6,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/client/src/runtime/core/types/exported/Skip.ts",
-            "line": 5,
+            "file": "packages/client/src/__tests__/integration/happy/chmod/prisma.config.ts",
+            "line": 4,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/client/tests/e2e/prisma-client-imports-mysql/_steps.ts",
+            "file": "packages/client/src/runtime/core/tracing/TracingHelper.test.ts",
             "line": 6,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/client/tests/functional/extensions/itx.ts",
-            "line": 16,
+            "file": "packages/client/tests/e2e/prisma-client-generator/node-tsx-cjs/prisma.config.ts",
+            "line": 4,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/client/tests/functional/json-null-types/tests.ts",
-            "line": 9,
+            "file": "packages/client/tests/functional/extensions/client.ts",
+            "line": 11,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/get-platform/src/getPlatform.ts",
-            "line": 24,
+            "file": "packages/client/tests/functional/large-floats/prisma/_schema.ts",
+            "line": 6,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/migrate/src/__tests__/fixtures/schema-sqlite-d1-change-all-referenced-columns/prisma.config.ts",
+            "file": "packages/get-platform/src/test-utils/jestContext.ts",
+            "line": 15,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "packages/migrate/src/__tests__/fixtures/seed-from-package-json/seed-sqlite-js/prisma.config.ts",
             "line": 4,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
@@ -1108,7 +1126,7 @@
     },
     "quotes": {
       "double": {
-        "count": 48065,
+        "count": 49994,
         "samples": [
           {
             "file": ".github/scripts/create-git-tag.mjs",
@@ -1117,51 +1135,51 @@
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/cli/src/__tests__/nps.test.ts",
-            "line": 189,
-            "column": 27,
+            "file": "packages/cli/src/__tests__/fixtures/no-models-prisma-client-js/mysql/prisma.config.ts",
+            "line": 1,
+            "column": 35,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/client-generator-js/src/TSClient/PrismaClient.ts",
-            "line": 86,
-            "column": 18,
+            "file": "packages/client-engine-runtime/src/sql-commenter.test.ts",
+            "line": 286,
+            "column": 49,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/client/src/__tests__/buffer-small.test.ts",
-            "line": 96,
-            "column": 30,
+            "file": "packages/client/src/__tests__/__helpers__/dmmf-types.ts",
+            "line": 7283,
+            "column": 21,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/client/src/runtime/core/errorRendering/applyValidationError.test.ts",
-            "line": 2893,
-            "column": 28,
+            "file": "packages/client/src/runtime/core/errorRendering/ObjectValue.ts",
+            "line": 12,
+            "column": 9,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/client/tests/functional/composites/object/updateMany.ts",
-            "line": 102,
-            "column": 29,
+            "file": "packages/client/tests/functional/composites/list/updateMany.ts",
+            "line": 196,
+            "column": 21,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/client/tests/functional/relationMode-17255-same-actions/tests.ts",
-            "line": 95,
-            "column": 50,
+            "file": "packages/client/tests/functional/relationMode-17255-mixed-actions/prisma/_schema.ts",
+            "line": 3,
+            "column": 37,
             "message": "Strings must use doublequote."
           },
           {
             "file": "packages/integration-tests/src/__tests__/integration/mssql/__scenarios.ts",
-            "line": 1323,
-            "column": 13,
+            "line": 1400,
+            "column": 14,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/migrate/src/__tests__/fixtures/schema-only-mongodb/prisma.config.ts",
-            "line": 5,
-            "column": 14,
+            "file": "packages/migrate/src/__tests__/fixtures/transition-db-push-migrate/prisma.config.ts",
+            "line": 1,
+            "column": 30,
             "message": "Strings must use doublequote."
           },
           {
@@ -1173,7 +1191,7 @@
         ]
       },
       "single": {
-        "count": 1280,
+        "count": 1297,
         "samples": [
           {
             "file": "helpers/compile/plugins/tscPlugin.ts",
@@ -1182,51 +1200,51 @@
             "message": "Strings must use singlequote."
           },
           {
-            "file": "packages/cli/src/__tests__/incomplete-schemas.test.ts",
-            "line": 95,
-            "column": 11,
+            "file": "packages/cli/src/__tests__/config.test.ts",
+            "line": 32,
+            "column": 34,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "packages/client-generator-ts/src/TSClient/jsdoc.ts",
-            "line": 48,
-            "column": 29,
+            "file": "packages/client-generator-ts/src/TSClient/file-generators/PrismaNamespaceFile.ts",
+            "line": 41,
+            "column": 46,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "packages/client/tests/functional/0-legacy-ports/batch-find-unique/tests.ts",
-            "line": 106,
-            "column": 13,
+            "file": "packages/client/tests/e2e/sqlcommenter-query-tags/src/index.ts",
+            "line": 85,
+            "column": 3,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "packages/config/src/__tests__/fixtures/loadConfigFromFile/setup-external-tables/prisma.config.ts",
-            "line": 8,
-            "column": 19,
-            "message": "Strings must use singlequote."
+            "file": "packages/client/tests/functional/tracing-event-context/tests.ts",
+            "line": 20,
+            "column": 6,
+            "message": "Identifier `LogPrismaClient` has already been declared"
           },
           {
             "file": "packages/internals/src/__tests__/getGenerators/getGenerators.test.ts",
-            "line": 554,
+            "line": 470,
             "column": 84,
             "message": "Strings must use singlequote."
           },
           {
             "file": "packages/migrate/src/__tests__/DbPull/postgresql.test.ts",
-            "line": 103,
-            "column": 68,
+            "line": 51,
+            "column": 57,
             "message": "Strings must use singlequote."
           },
           {
             "file": "packages/migrate/src/__tests__/MigrateDiff.test.ts",
-            "line": 267,
-            "column": 59,
+            "line": 98,
+            "column": 87,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "packages/migrate/src/utils/ensureDatabaseExists.ts",
-            "line": 152,
-            "column": 14,
+            "file": "packages/migrate/src/commands/MigrateStatus.ts",
+            "line": 232,
+            "column": 16,
             "message": "Strings must use singlequote."
           },
           {
@@ -1240,7 +1258,7 @@
     },
     "react-destructuring-assignment": {
       "never": {
-        "count": 22,
+        "count": 23,
         "samples": [
           {
             "file": "packages/client/tests/e2e/nextjs-schema-not-found/10_monorepo-serverComponents-customOutput-noReExport/packages/service/app/layout.jsx",
@@ -1267,8 +1285,8 @@
             "message": "Must never use destructuring props assignment in SFC argument"
           },
           {
-            "file": "packages/client/tests/e2e/nextjs-schema-not-found/18_monorepo-serverComponents-customOutput-reExportIndirect-ts/packages/service/app/test/[id]/page.tsx",
-            "line": 15,
+            "file": "packages/client/tests/e2e/nextjs-schema-not-found/20_monorepo-serverComponents-newGenerator-reExportIndirect-ts/packages/service/app/layout.tsx",
+            "line": 5,
             "column": 16,
             "message": "Must never use destructuring props assignment in SFC argument"
           },
@@ -1279,20 +1297,20 @@
             "message": "Must never use destructuring props assignment in SFC argument"
           },
           {
-            "file": "packages/client/tests/e2e/nextjs-schema-not-found/6_simplerepo-serverComponents-customOutput-noReExport/app/layout.jsx",
-            "line": 1,
+            "file": "packages/client/tests/e2e/nextjs-schema-not-found/6_simplerepo-serverComponents-customOutput-noReExport/app/test/[id]/page.jsx",
+            "line": 17,
             "column": 16,
             "message": "Must never use destructuring props assignment in SFC argument"
           },
           {
-            "file": "packages/client/tests/e2e/nextjs-schema-not-found/8_monorepo-serverComponents-noCustomOutput-noReExport/packages/service/app/layout.jsx",
-            "line": 1,
+            "file": "packages/client/tests/e2e/nextjs-schema-not-found/8_monorepo-serverComponents-noCustomOutput-noReExport/packages/service/app/test/[id]/page.jsx",
+            "line": 21,
             "column": 16,
             "message": "Must never use destructuring props assignment in SFC argument"
           },
           {
-            "file": "packages/client/tests/functional/logging-types/tests.ts",
-            "line": 9,
+            "file": "packages/client/tests/functional/logging/tests.ts",
+            "line": 10,
             "column": 6,
             "message": "Identifier `LogPrismaClient` has already been declared"
           },
@@ -1305,7 +1323,7 @@
         ]
       },
       "always": {
-        "count": 4,
+        "count": 5,
         "samples": [
           {
             "file": "packages/client/tests/functional/extensions/query.ts",
@@ -1322,6 +1340,12 @@
           {
             "file": "packages/client/tests/functional/logging/tests.ts",
             "line": 10,
+            "column": 6,
+            "message": "Identifier `LogPrismaClient` has already been declared"
+          },
+          {
+            "file": "packages/client/tests/functional/tracing-event-context/tests.ts",
+            "line": 20,
             "column": 6,
             "message": "Identifier `LogPrismaClient` has already been declared"
           },
@@ -1334,7 +1358,7 @@
         ]
       },
       "always-in-signature": {
-        "count": 4,
+        "count": 5,
         "samples": [
           {
             "file": "packages/client/tests/functional/extensions/query.ts",
@@ -1351,6 +1375,12 @@
           {
             "file": "packages/client/tests/functional/logging/tests.ts",
             "line": 10,
+            "column": 6,
+            "message": "Identifier `LogPrismaClient` has already been declared"
+          },
+          {
+            "file": "packages/client/tests/functional/tracing-event-context/tests.ts",
+            "line": 20,
             "column": 6,
             "message": "Identifier `LogPrismaClient` has already been declared"
           },
@@ -1363,7 +1393,7 @@
         ]
       },
       "always-outside-signature": {
-        "count": 4,
+        "count": 5,
         "samples": [
           {
             "file": "packages/client/tests/functional/extensions/query.ts",
@@ -1380,6 +1410,12 @@
           {
             "file": "packages/client/tests/functional/logging/tests.ts",
             "line": 10,
+            "column": 6,
+            "message": "Identifier `LogPrismaClient` has already been declared"
+          },
+          {
+            "file": "packages/client/tests/functional/tracing-event-context/tests.ts",
+            "line": 20,
             "column": 6,
             "message": "Identifier `LogPrismaClient` has already been declared"
           },
@@ -1394,7 +1430,7 @@
     },
     "react-function-component-definition": {
       "function-declaration": {
-        "count": 4,
+        "count": 5,
         "samples": [
           {
             "file": "packages/client/tests/functional/extensions/query.ts",
@@ -1415,6 +1451,12 @@
             "message": "Identifier `LogPrismaClient` has already been declared"
           },
           {
+            "file": "packages/client/tests/functional/tracing-event-context/tests.ts",
+            "line": 20,
+            "column": 6,
+            "message": "Identifier `LogPrismaClient` has already been declared"
+          },
+          {
             "file": "packages/config/src/__tests__/fixtures/loadConfigFromFile/invalid/syntax-error/prisma.config.ts",
             "line": 5,
             "column": 1,
@@ -1423,7 +1465,7 @@
         ]
       },
       "arrow-function": {
-        "count": 31,
+        "count": 32,
         "samples": [
           {
             "file": "packages/client/tests/e2e/nextjs-schema-not-found/10_monorepo-serverComponents-customOutput-noReExport/packages/service/app/head.jsx",
@@ -1450,8 +1492,8 @@
             "message": "Function component is not an arrow function"
           },
           {
-            "file": "packages/client/tests/e2e/nextjs-schema-not-found/18_monorepo-serverComponents-customOutput-reExportIndirect-ts/packages/service/app/layout.tsx",
-            "line": 1,
+            "file": "packages/client/tests/e2e/nextjs-schema-not-found/18_monorepo-serverComponents-customOutput-reExportIndirect-ts/packages/service/app/test/[id]/page.tsx",
+            "line": 15,
             "column": 16,
             "message": "Function component is not an arrow function"
           },
@@ -1462,20 +1504,20 @@
             "message": "Function component is not an arrow function"
           },
           {
-            "file": "packages/client/tests/e2e/nextjs-schema-not-found/4_simplerepo-serverComponents-noCustomOutput-noReExport/app/test/[id]/page.jsx",
-            "line": 21,
+            "file": "packages/client/tests/e2e/nextjs-schema-not-found/6_simplerepo-serverComponents-customOutput-noReExport/app/head.jsx",
+            "line": 1,
             "column": 16,
             "message": "Function component is not an arrow function"
           },
           {
-            "file": "packages/client/tests/e2e/nextjs-schema-not-found/6_simplerepo-serverComponents-customOutput-noReExport/app/test/[id]/page.jsx",
-            "line": 17,
+            "file": "packages/client/tests/e2e/nextjs-schema-not-found/8_monorepo-serverComponents-noCustomOutput-noReExport/packages/service/app/head.jsx",
+            "line": 1,
             "column": 16,
             "message": "Function component is not an arrow function"
           },
           {
-            "file": "packages/client/tests/functional/extensions/query.ts",
-            "line": 15,
+            "file": "packages/client/tests/functional/logging-types/tests.ts",
+            "line": 9,
             "column": 6,
             "message": "Identifier `LogPrismaClient` has already been declared"
           },
@@ -1490,7 +1532,7 @@
     },
     "react-jsx-boolean-value": {
       "never": {
-        "count": 4,
+        "count": 5,
         "samples": [
           {
             "file": "packages/client/tests/functional/extensions/query.ts",
@@ -1507,6 +1549,12 @@
           {
             "file": "packages/client/tests/functional/logging/tests.ts",
             "line": 10,
+            "column": 6,
+            "message": "Identifier `LogPrismaClient` has already been declared"
+          },
+          {
+            "file": "packages/client/tests/functional/tracing-event-context/tests.ts",
+            "line": 20,
             "column": 6,
             "message": "Identifier `LogPrismaClient` has already been declared"
           },
@@ -1519,7 +1567,7 @@
         ]
       },
       "always": {
-        "count": 4,
+        "count": 5,
         "samples": [
           {
             "file": "packages/client/tests/functional/extensions/query.ts",
@@ -1536,6 +1584,12 @@
           {
             "file": "packages/client/tests/functional/logging/tests.ts",
             "line": 10,
+            "column": 6,
+            "message": "Identifier `LogPrismaClient` has already been declared"
+          },
+          {
+            "file": "packages/client/tests/functional/tracing-event-context/tests.ts",
+            "line": 20,
             "column": 6,
             "message": "Identifier `LogPrismaClient` has already been declared"
           },
@@ -1550,7 +1604,7 @@
     },
     "react-jsx-fragments": {
       "syntax": {
-        "count": 4,
+        "count": 5,
         "samples": [
           {
             "file": "packages/client/tests/functional/extensions/query.ts",
@@ -1571,6 +1625,12 @@
             "message": "Identifier `LogPrismaClient` has already been declared"
           },
           {
+            "file": "packages/client/tests/functional/tracing-event-context/tests.ts",
+            "line": 20,
+            "column": 6,
+            "message": "Identifier `LogPrismaClient` has already been declared"
+          },
+          {
             "file": "packages/config/src/__tests__/fixtures/loadConfigFromFile/invalid/syntax-error/prisma.config.ts",
             "line": 5,
             "column": 1,
@@ -1579,7 +1639,7 @@
         ]
       },
       "element": {
-        "count": 13,
+        "count": 14,
         "samples": [
           {
             "file": "packages/client/tests/e2e/nextjs-schema-not-found/10_monorepo-serverComponents-customOutput-noReExport/packages/service/app/head.jsx",
@@ -1606,7 +1666,7 @@
             "message": "Prefer React.Fragment over fragment shorthand"
           },
           {
-            "file": "packages/client/tests/e2e/nextjs-schema-not-found/20_monorepo-serverComponents-newGenerator-reExportIndirect-ts/packages/service/app/head.tsx",
+            "file": "packages/client/tests/e2e/nextjs-schema-not-found/4_simplerepo-serverComponents-noCustomOutput-noReExport/app/head.jsx",
             "line": 3,
             "column": 5,
             "message": "Prefer React.Fragment over fragment shorthand"
@@ -1618,20 +1678,20 @@
             "message": "Prefer React.Fragment over fragment shorthand"
           },
           {
-            "file": "packages/client/tests/e2e/nextjs-schema-not-found/8_monorepo-serverComponents-noCustomOutput-noReExport/packages/service/app/head.jsx",
-            "line": 3,
-            "column": 5,
-            "message": "Prefer React.Fragment over fragment shorthand"
-          },
-          {
             "file": "packages/client/tests/functional/extensions/query.ts",
             "line": 15,
             "column": 6,
             "message": "Identifier `LogPrismaClient` has already been declared"
           },
           {
-            "file": "packages/client/tests/functional/logging/tests.ts",
-            "line": 10,
+            "file": "packages/client/tests/functional/logging-types/tests.ts",
+            "line": 9,
+            "column": 6,
+            "message": "Identifier `LogPrismaClient` has already been declared"
+          },
+          {
+            "file": "packages/client/tests/functional/tracing-event-context/tests.ts",
+            "line": 20,
             "column": 6,
             "message": "Identifier `LogPrismaClient` has already been declared"
           },
@@ -1646,7 +1706,7 @@
     },
     "semi": {
       "always": {
-        "count": 56860,
+        "count": 58685,
         "samples": [
           {
             "file": ".github/scripts/create-git-tag.mjs",
@@ -1655,51 +1715,51 @@
             "message": "Missing semicolon."
           },
           {
-            "file": "packages/cli/src/__tests__/update-message.test.ts",
-            "line": 33,
-            "column": 63,
+            "file": "packages/cli/src/__tests__/incomplete-schemas.test.ts",
+            "line": 232,
+            "column": 74,
             "message": "Missing semicolon."
           },
           {
-            "file": "packages/client-generator-js/src/typedSql/typedSql.ts",
-            "line": 15,
-            "column": 2,
+            "file": "packages/client-generator-js/src/TSClient/Args.ts",
+            "line": 89,
+            "column": 16,
             "message": "Missing semicolon."
           },
           {
-            "file": "packages/client/src/__tests__/integration/errors/multi-schema/test.ts",
-            "line": 143,
-            "column": 5,
+            "file": "packages/client/src/__tests__/buffer-small.test.ts",
+            "line": 5210,
+            "column": 91,
             "message": "Missing semicolon."
           },
           {
-            "file": "packages/client/src/utils/setupMysql.ts",
-            "line": 29,
-            "column": 25,
+            "file": "packages/client/src/runtime/utils/CallSite.ts",
+            "line": 49,
+            "column": 44,
             "message": "Missing semicolon."
           },
           {
-            "file": "packages/client/tests/functional/extensions/model.ts",
-            "line": 132,
-            "column": 36,
+            "file": "packages/client/tests/functional/extensions/client.ts",
+            "line": 361,
+            "column": 3,
             "message": "Missing semicolon."
           },
           {
-            "file": "packages/client/tests/functional/relationMode-17255-mixed-actions/tests.ts",
-            "line": 95,
-            "column": 56,
+            "file": "packages/client/tests/functional/referentialActions-setDefault/tests_1-to-1.ts",
+            "line": 27,
+            "column": 44,
             "message": "Missing semicolon."
           },
           {
-            "file": "packages/internals/src/__tests__/engine-commands/lintSchema.test.ts",
-            "line": 41,
-            "column": 61,
+            "file": "packages/internals/src/__tests__/directoryConfig.test.ts",
+            "line": 151,
+            "column": 75,
             "message": "Missing semicolon."
           },
           {
-            "file": "packages/migrate/src/commands/MigrateCommand.ts",
-            "line": 94,
-            "column": 83,
+            "file": "packages/migrate/src/commands/DbPush.ts",
+            "line": 19,
+            "column": 69,
             "message": "Missing semicolon."
           },
           {
@@ -1711,7 +1771,7 @@
         ]
       },
       "never": {
-        "count": 23,
+        "count": 24,
         "samples": [
           {
             "file": "packages/client/src/runtime/core/types/exported/Result.ts",
@@ -1720,16 +1780,16 @@
             "message": "Extra semicolon."
           },
           {
-            "file": "packages/client/tests/functional/issues/17405-extensions-casing/tests.ts",
-            "line": 15,
-            "column": 7,
-            "message": "Extra semicolon."
+            "file": "packages/client/tests/functional/logging-types/tests.ts",
+            "line": 9,
+            "column": 6,
+            "message": "Identifier `LogPrismaClient` has already been declared"
           },
           {
-            "file": "packages/config/src/__tests__/fixtures/loadConfigFromFile/invalid/syntax-error/prisma.config.ts",
-            "line": 5,
-            "column": 1,
-            "message": "Expected `)` but found `EOF`"
+            "file": "packages/client/tests/functional/tracing-event-context/tests.ts",
+            "line": 20,
+            "column": 6,
+            "message": "Identifier `LogPrismaClient` has already been declared"
           },
           {
             "file": "sandbox/basic-postgres/prisma.config.ts",
@@ -1738,9 +1798,9 @@
             "message": "Extra semicolon."
           },
           {
-            "file": "sandbox/d1/src/index.ts",
-            "line": 11,
-            "column": 34,
+            "file": "sandbox/basic-sqlite/prisma.config.ts",
+            "line": 2,
+            "column": 23,
             "message": "Extra semicolon."
           },
           {
@@ -1751,8 +1811,8 @@
           },
           {
             "file": "sandbox/d1/src/index.ts",
-            "line": 26,
-            "column": 48,
+            "line": 143,
+            "column": 2,
             "message": "Extra semicolon."
           },
           {
@@ -1763,8 +1823,8 @@
           },
           {
             "file": "sandbox/d1/src/index.ts",
-            "line": 40,
-            "column": 22,
+            "line": 39,
+            "column": 4,
             "message": "Extra semicolon."
           },
           {

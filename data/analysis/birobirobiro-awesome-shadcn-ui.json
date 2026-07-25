@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "96d58f23c7cc",
-  "analyzedCommit": "1379a367a914a6650c52356f7024ba8f210aeabf",
-  "analyzedCommitDate": "2026-07-04T01:30:39.000Z",
+  "analyzedCommit": "95590fc1cd36f64db334e910589bd35a02ba7cd8",
+  "analyzedCommitDate": "2026-07-20T12:10:47.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -22,37 +22,37 @@
         ]
       },
       "generic": {
-        "count": 45,
+        "count": 46,
         "samples": [
           {
             "file": "src/app/api/submit-resource/route.ts",
-            "line": 30,
-            "column": 10,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+            "line": 22,
+            "column": 39,
+            "message": "Array type using 'number[]' is forbidden. Use 'Array<number>' instead."
           },
           {
             "file": "src/app/categories/page.tsx",
-            "line": 58,
-            "column": 21,
-            "message": "Array type using 'Category[]' is forbidden. Use 'Array<Category>' instead."
+            "line": 55,
+            "column": 26,
+            "message": "Array type using 'Resource[]' is forbidden. Use 'Array<Resource>' instead."
           },
           {
             "file": "src/components/category-page-content.tsx",
-            "line": 51,
-            "column": 54,
+            "line": 40,
+            "column": 10,
             "message": "Array type using 'Resource[]' is forbidden. Use 'Array<Resource>' instead."
           },
           {
             "file": "src/components/item-grid.tsx",
-            "line": 12,
-            "column": 20,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+            "line": 11,
+            "column": 10,
+            "message": "Array type using 'Resource[]' is forbidden. Use 'Array<Resource>' instead."
           },
           {
             "file": "src/components/items-list.tsx",
-            "line": 34,
-            "column": 15,
-            "message": "Array type using 'Category[]' is forbidden. Use 'Array<Category>' instead."
+            "line": 33,
+            "column": 10,
+            "message": "Array type using 'Resource[]' is forbidden. Use 'Array<Resource>' instead."
           },
           {
             "file": "src/components/items-list.tsx",
@@ -74,7 +74,7 @@
           },
           {
             "file": "src/hooks/use-readme.ts",
-            "line": 157,
+            "line": 216,
             "column": 22,
             "message": "Array type using 'Resource[]' is forbidden. Use 'Array<Resource>' instead."
           },
@@ -93,8 +93,14 @@
         "samples": []
       },
       "type-annotation": {
-        "count": 5,
+        "count": 6,
         "samples": [
+          {
+            "file": "src/app/api/submit-resource/route.ts",
+            "line": 22,
+            "column": 30,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
           {
             "file": "src/components/ui/marquee.tsx",
             "line": 33,
@@ -121,7 +127,7 @@
           },
           {
             "file": "src/hooks/use-readme.ts",
-            "line": 158,
+            "line": 217,
             "column": 32,
             "message": "The generic type arguments should be specified as part of the type annotation."
           }
@@ -141,7 +147,7 @@
         ]
       },
       "index-signature": {
-        "count": 11,
+        "count": 12,
         "samples": [
           {
             "file": "src/app/categories/page.tsx",
@@ -162,27 +168,27 @@
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "src/components/category-page-content.tsx",
-            "line": 13,
+            "file": "src/components/item-page-content.tsx",
+            "line": 23,
             "column": 30,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "src/components/item-page-content.tsx",
-            "line": 16,
-            "column": 30,
+            "file": "src/components/ui/chart.tsx",
+            "line": 17,
+            "column": 31,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "src/hooks/use-readme.ts",
+            "line": 73,
+            "column": 43,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "src/lib/slugs.ts",
             "line": 17,
             "column": 28,
-            "message": "An index signature is preferred over a record."
-          },
-          {
-            "file": "src/lib/slugs.ts",
-            "line": 37,
-            "column": 4,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -259,7 +265,7 @@
           },
           {
             "file": "src/components/sort.tsx",
-            "line": 13,
+            "line": 18,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
@@ -283,13 +289,13 @@
           },
           {
             "file": "src/hooks/use-github-auth.ts",
-            "line": 50,
+            "line": 54,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "src/hooks/use-website-preview.ts",
-            "line": 14,
+            "line": 11,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           }
@@ -298,7 +304,7 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 12,
+        "count": 13,
         "samples": [
           {
             "file": "src/app/api/github/callback/route.ts",
@@ -319,14 +325,14 @@
             "message": "Imports NextRequest are only used as type."
           },
           {
-            "file": "src/components/item-grid.tsx",
-            "line": 2,
+            "file": "src/app/categories/page.tsx",
+            "line": 10,
             "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
+            "message": "Imports Resource are only used as type."
           },
           {
-            "file": "src/components/items-list.tsx",
-            "line": 8,
+            "file": "src/components/item-grid.tsx",
+            "line": 2,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
@@ -343,10 +349,10 @@
             "message": "Imports ReactNode are only used as type."
           },
           {
-            "file": "src/components/search-filter-controls.tsx",
-            "line": 1,
+            "file": "src/components/pr-submission-dialog.tsx",
+            "line": 23,
             "column": 1,
-            "message": "Imports SortOption are only used as type."
+            "message": "Imports SubmissionData are only used as type."
           },
           {
             "file": "src/components/sponsor-card.tsx",
@@ -430,7 +436,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 365,
+        "count": 379,
         "samples": [
           {
             "file": "scripts/add-dates.js",
@@ -439,38 +445,38 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "src/components/ui/alert-dialog.tsx",
-            "line": 102,
+            "file": "src/components/ui/accordion.tsx",
+            "line": 35,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/components/ui/carousel.tsx",
-            "line": 174,
+            "file": "src/components/ui/card.tsx",
+            "line": 49,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/components/ui/context-menu.tsx",
-            "line": 44,
+            "file": "src/components/ui/command.tsx",
+            "line": 146,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "src/components/ui/dropdown-menu.tsx",
-            "line": 162,
+            "line": 56,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "src/components/ui/item.tsx",
-            "line": 110,
+            "line": 22,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/components/ui/navigation-menu.tsx",
-            "line": 8,
+            "file": "src/components/ui/native-select.tsx",
+            "line": 39,
             "column": 1,
             "message": "Expected a function expression."
           },
@@ -482,7 +488,7 @@
           },
           {
             "file": "src/components/ui/table.tsx",
-            "line": 32,
+            "line": 42,
             "column": 1,
             "message": "Expected a function expression."
           },
@@ -495,30 +501,30 @@
         ]
       },
       "declaration": {
-        "count": 22,
+        "count": 23,
         "samples": [
           {
             "file": "src/components/item-card.tsx",
-            "line": 35,
+            "line": 36,
             "column": 7,
             "message": "Expected a function declaration."
           },
           {
             "file": "src/components/item-page-content.tsx",
-            "line": 53,
+            "line": 60,
             "column": 9,
             "message": "Expected a function declaration."
           },
           {
-            "file": "src/components/sort.tsx",
-            "line": 54,
+            "file": "src/components/pr-submission-dialog.tsx",
+            "line": 335,
             "column": 9,
             "message": "Expected a function declaration."
           },
           {
             "file": "src/components/sponsor-card.tsx",
-            "line": 27,
-            "column": 9,
+            "line": 26,
+            "column": 7,
             "message": "Expected a function declaration."
           },
           {
@@ -529,7 +535,7 @@
           },
           {
             "file": "src/components/ui/multi-select.tsx",
-            "line": 158,
+            "line": 153,
             "column": 11,
             "message": "Expected a function declaration."
           },
@@ -546,14 +552,14 @@
             "message": "Expected a function declaration."
           },
           {
-            "file": "src/hooks/use-website-preview.ts",
-            "line": 69,
+            "file": "src/hooks/use-mobile.ts",
+            "line": 27,
             "column": 11,
             "message": "Expected a function declaration."
           },
           {
             "file": "src/hooks/use-website-preview.ts",
-            "line": 97,
+            "line": 87,
             "column": 11,
             "message": "Expected a function declaration."
           }
@@ -608,7 +614,7 @@
           },
           {
             "file": "src/components/item-card.tsx",
-            "line": 134,
+            "line": 142,
             "column": 8,
             "message": "Prefer named exports"
           },
@@ -627,7 +633,7 @@
         ]
       },
       "default": {
-        "count": 33,
+        "count": 34,
         "samples": [
           {
             "file": "src/app/api/github/callback/route.ts",
@@ -636,20 +642,20 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/components/cta-submit.tsx",
-            "line": 11,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "src/components/item-page-content.tsx",
-            "line": 42,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "src/components/pr-submission-dialog.tsx",
+            "file": "src/components/category-page-content.tsx",
             "line": 45,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "src/components/home-content.tsx",
+            "line": 43,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "src/components/pagination-controls.tsx",
+            "line": 27,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -660,8 +666,8 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/components/ui/label.tsx",
-            "line": 24,
+            "file": "src/components/ui/input.tsx",
+            "line": 19,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -679,7 +685,7 @@
           },
           {
             "file": "src/components/website-preview.tsx",
-            "line": 12,
+            "line": 13,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -698,7 +704,7 @@
         "samples": []
       },
       "4-space": {
-        "count": 122,
+        "count": 124,
         "samples": [
           {
             "file": "next.config.mjs",
@@ -707,38 +713,38 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/app/categories/[category]/[id]/error.tsx",
-            "line": 9,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "src/components/category-page-content.tsx",
-            "line": 14,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "src/components/pagination-controls.tsx",
-            "line": 2,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "src/components/ui/aspect-ratio.tsx",
-            "line": 6,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "src/components/ui/command.tsx",
+            "file": "src/app/bookmarks/page.tsx",
             "line": 8,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/components/ui/label.tsx",
+            "file": "src/app/not-found.tsx",
+            "line": 5,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "src/components/logo.tsx",
+            "line": 5,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "src/components/ui/alert.tsx",
+            "line": 7,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "src/components/ui/combobox.tsx",
             "line": 9,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "src/components/ui/kbd.tsx",
+            "line": 4,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -749,8 +755,8 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/components/website-preview.tsx",
-            "line": 8,
+            "file": "src/components/ui/tooltip.tsx",
+            "line": 9,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -763,7 +769,7 @@
         ]
       },
       "tab": {
-        "count": 122,
+        "count": 124,
         "samples": [
           {
             "file": "next.config.mjs",
@@ -772,38 +778,38 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/app/categories/[category]/[id]/error.tsx",
-            "line": 9,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "src/components/category-page-content.tsx",
-            "line": 14,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "src/components/pagination-controls.tsx",
-            "line": 2,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "src/components/ui/aspect-ratio.tsx",
-            "line": 6,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "src/components/ui/command.tsx",
+            "file": "src/app/bookmarks/page.tsx",
             "line": 8,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/components/ui/label.tsx",
+            "file": "src/app/not-found.tsx",
+            "line": 5,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "src/components/logo.tsx",
+            "line": 5,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "src/components/ui/alert.tsx",
+            "line": 7,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "src/components/ui/combobox.tsx",
             "line": 9,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "src/components/ui/kbd.tsx",
+            "line": 4,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -814,8 +820,8 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/components/website-preview.tsx",
-            "line": 8,
+            "file": "src/components/ui/tooltip.tsx",
+            "line": 9,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -830,7 +836,7 @@
     },
     "quotes": {
       "double": {
-        "count": 84,
+        "count": 123,
         "samples": [
           {
             "file": "scripts/add-dates.js",
@@ -840,62 +846,62 @@
           },
           {
             "file": "scripts/add-dates.js",
-            "line": 70,
-            "column": 32,
+            "line": 105,
+            "column": 17,
             "message": "Strings must use doublequote."
           },
           {
             "file": "scripts/backfill-dates.js",
-            "line": 4,
-            "column": 13,
+            "line": 29,
+            "column": 48,
             "message": "Strings must use doublequote."
           },
           {
             "file": "scripts/backfill-dates.js",
-            "line": 32,
-            "column": 27,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "scripts/backfill-dates.js",
-            "line": 70,
-            "column": 30,
+            "line": 96,
+            "column": 25,
             "message": "Strings must use doublequote."
           },
           {
             "file": "scripts/format-readme.js",
-            "line": 6,
-            "column": 35,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "scripts/format-readme.js",
-            "line": 39,
-            "column": 44,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "scripts/format-readme.js",
-            "line": 103,
-            "column": 28,
+            "line": 26,
+            "column": 125,
             "message": "Strings must use doublequote."
           },
           {
             "file": "scripts/normalize-dates.js",
-            "line": 28,
-            "column": 52,
+            "line": 3,
+            "column": 32,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "scripts/update-stars.js",
+            "line": 1,
+            "column": 20,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "scripts/update-stars.js",
+            "line": 25,
+            "column": 3,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "scripts/update-stars.js",
+            "line": 90,
+            "column": 40,
             "message": "Strings must use doublequote."
           },
           {
             "file": "src/components/item-grid.tsx",
-            "line": 93,
+            "line": 94,
             "column": 22,
             "message": "Strings must use doublequote."
           }
         ]
       },
       "single": {
-        "count": 1923,
+        "count": 1993,
         "samples": [
           {
             "file": "next.config.mjs",
@@ -904,51 +910,51 @@
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/app/layout.tsx",
-            "line": 61,
-            "column": 11,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "src/components/layout/footer.tsx",
-            "line": 44,
-            "column": 13,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "src/components/ui/aspect-ratio.tsx",
+            "file": "src/app/error.tsx",
             "line": 3,
-            "column": 53,
+            "column": 24,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/components/ui/chart.tsx",
-            "line": 31,
-            "column": 21,
+            "file": "src/components/items-list.tsx",
+            "line": 85,
+            "column": 38,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/components/ui/field.tsx",
-            "line": 67,
-            "column": 20,
+            "file": "src/components/ui/alert-dialog.tsx",
+            "line": 39,
+            "column": 9,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "src/components/ui/carousel.tsx",
+            "line": 135,
+            "column": 72,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "src/components/ui/empty.tsx",
+            "line": 86,
+            "column": 9,
             "message": "Strings must use singlequote."
           },
           {
             "file": "src/components/ui/marquee.tsx",
-            "line": 614,
-            "column": 11,
+            "line": 552,
+            "column": 17,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/components/ui/sidebar.tsx",
+            "file": "src/components/ui/sheet.tsx",
+            "line": 102,
+            "column": 21,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "src/components/ui/toggle.tsx",
             "line": 4,
             "column": 40,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "src/components/ui/toggle-group.tsx",
-            "line": 62,
-            "column": 10,
             "message": "Strings must use singlequote."
           },
           {
@@ -1070,7 +1076,7 @@
         "samples": [
           {
             "file": "src/components/item-card.tsx",
-            "line": 35,
+            "line": 36,
             "column": 43,
             "message": "Function component is not a function declaration"
           },
@@ -1166,7 +1172,7 @@
         "samples": []
       },
       "always": {
-        "count": 52,
+        "count": 53,
         "samples": [
           {
             "file": "src/app/bookmarks/error.tsx",
@@ -1181,14 +1187,14 @@
             "message": "Value must be set for boolean attribute `asChild`"
           },
           {
-            "file": "src/components/category-page-content.tsx",
-            "line": 118,
+            "file": "src/components/cta-submit.tsx",
+            "line": 75,
             "column": 17,
-            "message": "Value must be set for boolean attribute `autoFocus`"
+            "message": "Value must be set for boolean attribute `asChild`"
           },
           {
             "file": "src/components/item-grid.tsx",
-            "line": 97,
+            "line": 98,
             "column": 11,
             "message": "Value must be set for boolean attribute `layout`"
           },
@@ -1200,7 +1206,7 @@
           },
           {
             "file": "src/components/pr-submission-dialog.tsx",
-            "line": 233,
+            "line": 353,
             "column": 19,
             "message": "Value must be set for boolean attribute `asChild`"
           },
@@ -1211,9 +1217,9 @@
             "message": "Value must be set for boolean attribute `pauseOnHover`"
           },
           {
-            "file": "src/components/ui/combobox.tsx",
-            "line": 74,
-            "column": 13,
+            "file": "src/components/ui/alert-dialog.tsx",
+            "line": 176,
+            "column": 43,
             "message": "Value must be set for boolean attribute `asChild`"
           },
           {
@@ -1237,8 +1243,14 @@
         "samples": []
       },
       "element": {
-        "count": 7,
+        "count": 8,
         "samples": [
+          {
+            "file": "src/components/item-page-content.tsx",
+            "line": 110,
+            "column": 15,
+            "message": "Prefer React.Fragment over fragment shorthand"
+          },
           {
             "file": "src/components/layout/header.tsx",
             "line": 59,
@@ -1247,7 +1259,7 @@
           },
           {
             "file": "src/components/pr-submission-dialog.tsx",
-            "line": 204,
+            "line": 324,
             "column": 11,
             "message": "Prefer React.Fragment over fragment shorthand"
           },
@@ -1271,13 +1283,13 @@
           },
           {
             "file": "src/components/website-preview.tsx",
-            "line": 28,
+            "line": 37,
             "column": 7,
             "message": "Prefer React.Fragment over fragment shorthand"
           },
           {
             "file": "src/components/website-preview.tsx",
-            "line": 56,
+            "line": 65,
             "column": 7,
             "message": "Prefer React.Fragment over fragment shorthand"
           }
@@ -1290,7 +1302,7 @@
         "samples": []
       },
       "never": {
-        "count": 2133,
+        "count": 2287,
         "samples": [
           {
             "file": "next.config.mjs",
@@ -1299,51 +1311,51 @@
             "message": "Extra semicolon."
           },
           {
-            "file": "src/app/api/submit-resource/route.ts",
-            "line": 33,
-            "column": 54,
+            "file": "scripts/update-stars.js",
+            "line": 142,
+            "column": 74,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/app/page.tsx",
-            "line": 2,
-            "column": 72,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "src/components/items-list.tsx",
-            "line": 217,
+            "file": "src/app/categories/[category]/[id]/page.tsx",
+            "line": 41,
             "column": 4,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/components/ui/breadcrumb.tsx",
-            "line": 4,
-            "column": 33,
+            "file": "src/components/items-list.tsx",
+            "line": 47,
+            "column": 51,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/components/ui/context-menu.tsx",
-            "line": 248,
+            "file": "src/components/theme-toggle.tsx",
+            "line": 46,
+            "column": 6,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "src/components/ui/combobox.tsx",
+            "line": 162,
             "column": 4,
             "message": "Extra semicolon."
           },
           {
             "file": "src/components/ui/marquee.tsx",
-            "line": 184,
-            "column": 61,
+            "line": 97,
+            "column": 32,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/components/ui/separator.tsx",
-            "line": 3,
-            "column": 31,
+            "file": "src/components/ui/select.tsx",
+            "line": 7,
+            "column": 73,
             "message": "Extra semicolon."
           },
           {
             "file": "src/hooks/use-debounce.ts",
-            "line": 30,
-            "column": 31,
+            "line": 34,
+            "column": 21,
             "message": "Extra semicolon."
           },
           {

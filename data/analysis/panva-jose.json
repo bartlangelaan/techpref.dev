@@ -1,27 +1,15 @@
 {
   "analyzedVersion": "96d58f23c7cc",
-  "analyzedCommit": "c386300a1dc1afa78c31a41451307ca9cf07ffe5",
-  "analyzedCommitDate": "2026-07-21T21:25:53.000Z",
+  "analyzedCommit": "944840d16704db727fad2bfaa8385e95b0a52bfe",
+  "analyzedCommitDate": "2026-08-09T20:55:06.000Z",
   "checks": {
     "array-type": {
       "array": {
-        "count": 11,
+        "count": 9,
         "samples": [
           {
-            "file": "src/lib/invalid_key_input.ts",
-            "line": 1,
-            "column": 58,
-            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
-          },
-          {
-            "file": "src/lib/invalid_key_input.ts",
-            "line": 28,
-            "column": 65,
-            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
-          },
-          {
             "file": "src/lib/type_checks.ts",
-            "line": 19,
+            "line": 22,
             "column": 40,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
@@ -36,6 +24,12 @@
             "line": 14,
             "column": 12,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
+          },
+          {
+            "file": "tap/encrypt.ts",
+            "line": 19,
+            "column": 12,
+            "message": "Array type using 'Array<jose.JWK>' is forbidden. Use 'jose.JWK[]' instead."
           },
           {
             "file": "tap/encrypt.ts",
@@ -70,60 +64,48 @@
         ]
       },
       "generic": {
-        "count": 24,
+        "count": 30,
         "samples": [
           {
             "file": "src/jwe/general/encrypt.ts",
-            "line": 115,
+            "line": 137,
             "column": 16,
             "message": "Array type using 'IndividualRecipient[]' is forbidden. Use 'Array<IndividualRecipient>' instead."
           },
           {
-            "file": "src/key/generate_secret.ts",
-            "line": 53,
-            "column": 18,
-            "message": "Array type using 'KeyUsage[]' is forbidden. Use 'Array<KeyUsage>' instead."
-          },
-          {
-            "file": "src/lib/asn1.ts",
-            "line": 205,
-            "column": 18,
-            "message": "Array type using 'KeyUsage[]' is forbidden. Use 'Array<KeyUsage>' instead."
+            "file": "src/jws/general/sign.ts",
+            "line": 115,
+            "column": 16,
+            "message": "Array type using 'IndividualSignature[]' is forbidden. Use 'Array<IndividualSignature>' instead."
           },
           {
             "file": "src/lib/buffer_utils.ts",
-            "line": 6,
+            "line": 13,
             "column": 36,
             "message": "Array type using 'Uint8Array[]' is forbidden. Use 'Array<Uint8Array>' instead."
           },
           {
-            "file": "src/lib/deflate.ts",
-            "line": 39,
-            "column": 17,
-            "message": "Array type using 'Uint8Array[]' is forbidden. Use 'Array<Uint8Array>' instead."
-          },
-          {
-            "file": "src/lib/jwk_to_key.ts",
-            "line": 11,
-            "column": 18,
-            "message": "Array type using 'KeyUsage[]' is forbidden. Use 'Array<KeyUsage>' instead."
+            "file": "src/lib/invalid_key_input.ts",
+            "line": 24,
+            "column": 60,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
             "file": "src/lib/jwt_claims_set.ts",
-            "line": 90,
+            "line": 60,
             "column": 64,
             "message": "Array type using 'unknown[]' is forbidden. Use 'Array<unknown>' instead."
           },
           {
-            "file": "src/lib/type_checks.ts",
-            "line": 20,
-            "column": 46,
-            "message": "Array type using 'object[]' is forbidden. Use 'Array<object>' instead."
+            "file": "src/lib/key_descriptor.ts",
+            "line": 9,
+            "column": 8,
+            "message": "Array type using 'readonly string[]' is forbidden. Use 'ReadonlyArray<string>' instead."
           },
           {
-            "file": "src/lib/validate_crit.ts",
-            "line": 5,
-            "column": 10,
+            "file": "src/lib/options.ts",
+            "line": 15,
+            "column": 65,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
@@ -131,6 +113,18 @@
             "line": 19,
             "column": 21,
             "message": "Array type using 'Vector[]' is forbidden. Use 'Array<Vector>' instead."
+          },
+          {
+            "file": "test-d/api.ts",
+            "line": 401,
+            "column": 26,
+            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
+          },
+          {
+            "file": "test-d/fallback.ts",
+            "line": 42,
+            "column": 49,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           }
         ]
       }
@@ -141,19 +135,25 @@
         "samples": [
           {
             "file": "src/jwks/local.ts",
-            "line": 55,
+            "line": 47,
             "column": 10,
             "message": "The generic type arguments should be specified as part of the constructor type arguments."
           }
         ]
       },
       "type-annotation": {
-        "count": 1,
+        "count": 2,
         "samples": [
           {
-            "file": "src/lib/normalize_key.ts",
-            "line": 152,
-            "column": 25,
+            "file": "src/lib/type_checks.ts",
+            "line": 23,
+            "column": 29,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "test/jwk/key_input.test.ts",
+            "line": 17,
+            "column": 30,
             "message": "The generic type arguments should be specified as part of the type annotation."
           }
         ]
@@ -161,65 +161,95 @@
     },
     "consistent-indexed-object-style": {
       "record": {
-        "count": 4,
+        "count": 7,
         "samples": [
           {
-            "file": "src/jwe/flattened/encrypt.ts",
-            "line": 222,
-            "column": 25,
-            "message": "A record is preferred over an index signature."
-          },
-          {
             "file": "src/jwks/local.ts",
-            "line": 34,
+            "line": 33,
             "column": 3,
             "message": "A record is preferred over an index signature."
           },
           {
+            "file": "src/lib/jwe_encrypt.ts",
+            "line": 23,
+            "column": 11,
+            "message": "A record is preferred over an index signature."
+          },
+          {
+            "file": "src/lib/jws_sign.ts",
+            "line": 15,
+            "column": 12,
+            "message": "A record is preferred over an index signature."
+          },
+          {
+            "file": "src/lib/jws_verify.ts",
+            "line": 19,
+            "column": 11,
+            "message": "A record is preferred over an index signature."
+          },
+          {
             "file": "src/lib/jwt_claims_set.ts",
-            "line": 109,
+            "line": 75,
+            "column": 14,
+            "message": "A record is preferred over an index signature."
+          },
+          {
+            "file": "src/lib/jwt_claims_set.ts",
+            "line": 106,
             "column": 19,
             "message": "A record is preferred over an index signature."
           },
           {
-            "file": "src/lib/validate_crit.ts",
-            "line": 12,
+            "file": "src/lib/options.ts",
+            "line": 48,
             "column": 23,
             "message": "A record is preferred over an index signature."
           }
         ]
       },
       "index-signature": {
-        "count": 10,
+        "count": 25,
         "samples": [
           {
             "file": "src/jwe/general/encrypt.ts",
-            "line": 275,
+            "line": 282,
             "column": 21,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "src/jwks/remote.ts",
-            "line": 274,
+            "file": "src/lib/jwe_algorithms.ts",
+            "line": 71,
+            "column": 19,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "src/lib/jws_algorithms.ts",
+            "line": 69,
+            "column": 19,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "src/lib/key.ts",
+            "line": 126,
             "column": 13,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "src/jwks/remote.ts",
-            "line": 292,
-            "column": 50,
+            "file": "src/lib/key_descriptor.ts",
+            "line": 45,
+            "column": 4,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "src/lib/normalize_key.ts",
-            "line": 9,
-            "column": 28,
+            "file": "src/lib/key_descriptor.ts",
+            "line": 46,
+            "column": 68,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "src/lib/normalize_key.ts",
-            "line": 163,
-            "column": 26,
+            "file": "src/lib/options.ts",
+            "line": 47,
+            "column": 22,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -229,20 +259,8 @@
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "tap/env.ts",
-            "line": 51,
-            "column": 40,
-            "message": "An index signature is preferred over a record."
-          },
-          {
             "file": "tap/jws.ts",
             "line": 31,
-            "column": 14,
-            "message": "An index signature is preferred over a record."
-          },
-          {
-            "file": "tap/rsaes.ts",
-            "line": 14,
             "column": 14,
             "message": "An index signature is preferred over a record."
           },
@@ -261,60 +279,60 @@
         "samples": []
       },
       "type": {
-        "count": 29,
+        "count": 46,
         "samples": [
           {
             "file": "src/jwe/compact/decrypt.ts",
-            "line": 16,
+            "line": 18,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "src/jwe/general/encrypt.ts",
-            "line": 20,
+            "file": "src/jwks/local.ts",
+            "line": 127,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "src/jwks/remote.ts",
-            "line": 284,
+            "file": "src/jws/flattened/verify.ts",
+            "line": 21,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "src/jws/general/sign.ts",
-            "line": 13,
-            "column": 8,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "src/jwt/decrypt.ts",
+            "file": "src/jwt/unsecured.ts",
             "line": 20,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "src/key/generate_key_pair.ts",
-            "line": 12,
-            "column": 8,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "src/key/import.ts",
-            "line": 16,
+            "line": 44,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "src/lib/asn1.ts",
-            "line": 76,
+            "line": 28,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "src/lib/normalize_key.ts",
-            "line": 11,
-            "column": 1,
+            "file": "src/lib/jws_algorithms.ts",
+            "line": 10,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "src/util/errors.ts",
+            "line": 55,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "test-d/fallback.ts",
+            "line": 8,
+            "column": 3,
             "message": "Use `type` instead of `interface`."
           },
           {
@@ -331,7 +349,7 @@
         "count": 3,
         "samples": [
           {
-            "file": "src/lib/validate_crit.ts",
+            "file": "src/lib/options.ts",
             "line": 1,
             "column": 1,
             "message": "Imports JWEInvalid and JWSInvalid are only used as type."
@@ -351,59 +369,59 @@
         ]
       },
       "no-type-imports": {
-        "count": 84,
+        "count": 106,
         "samples": [
           {
             "file": "src/jwe/compact/decrypt.ts",
+            "line": 8,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "src/jwks/local.ts",
             "line": 10,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/jwks/remote.ts",
+            "file": "src/jwt/decrypt.ts",
             "line": 7,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/jwt/sign.ts",
-            "line": 9,
+            "file": "src/lib/asn1.ts",
+            "line": 8,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/lib/check_key_type.ts",
-            "line": 4,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "src/lib/key_to_jwk.ts",
+            "file": "src/lib/jws_sign.ts",
             "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "tap/.browser.ts",
-            "line": 21,
-            "column": 37,
-            "message": "`import()` type annotations are forbidden."
-          },
-          {
-            "file": "tap/encrypt.ts",
+            "file": "src/lib/type_checks.ts",
             "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "tap/jws.ts",
-            "line": 1,
+            "file": "tap/ecdh.ts",
+            "line": 3,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "tap/jwks.ts",
+            "line": 2,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "tap/rsaes.ts",
-            "line": 1,
+            "line": 2,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -418,72 +436,72 @@
     },
     "func-style": {
       "expression": {
-        "count": 149,
+        "count": 196,
         "samples": [
           {
-            "file": "src/jwk/embedded.ts",
-            "line": 36,
-            "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/key/generate_key_pair.ts",
-            "line": 83,
-            "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/lib/base64.ts",
-            "line": 17,
-            "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/lib/content_encryption.ts",
-            "line": 212,
+            "file": "src/jwe/general/encrypt.ts",
+            "line": 100,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/lib/ecdhes.ts",
-            "line": 101,
-            "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/lib/normalize_key.ts",
-            "line": 199,
-            "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/util/base64url.ts",
-            "line": 33,
-            "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "tap/env.ts",
-            "line": 29,
+            "file": "src/lib/asn1.ts",
+            "line": 144,
             "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "src/lib/crypto_key.ts",
+            "line": 21,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "src/lib/jwe_decrypt.ts",
+            "line": 89,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "src/lib/jwt_claims_set.ts",
+            "line": 21,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "src/lib/key_management.ts",
+            "line": 215,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "tap/cookbook.ts",
+            "line": 134,
+            "column": 5,
             "message": "Expected a function expression."
           },
           {
             "file": "tap/sign.ts",
-            "line": 112,
-            "column": 8,
+            "line": 6,
+            "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "tools/postbump.cjs",
-            "line": 88,
+            "file": "test/jws/restrictions.test.ts",
+            "line": 47,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "tools/postchangelog.cjs",
+            "line": 7,
             "column": 1,
             "message": "Expected a function expression."
           }
         ]
       },
       "declaration": {
-        "count": 66,
+        "count": 77,
         "samples": [
           {
             "file": "src/jwk/thumbprint.ts",
@@ -493,44 +511,32 @@
           },
           {
             "file": "src/lib/asn1.ts",
-            "line": 67,
+            "line": 83,
             "column": 7,
             "message": "Expected a function declaration."
           },
           {
             "file": "src/lib/asn1.ts",
-            "line": 166,
+            "line": 227,
             "column": 7,
             "message": "Expected a function declaration."
           },
           {
-            "file": "src/lib/check_key_type.ts",
-            "line": 7,
-            "column": 7,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "src/lib/crypto_key.ts",
-            "line": 6,
-            "column": 7,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "src/lib/jwt_claims_set.ts",
-            "line": 82,
-            "column": 7,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "src/lib/type_checks.ts",
-            "line": 45,
+            "file": "src/lib/invalid_key_input.ts",
+            "line": 27,
             "column": 14,
             "message": "Expected a function declaration."
           },
           {
-            "file": "tap/cookbook.ts",
-            "line": 19,
-            "column": 9,
+            "file": "src/lib/key.ts",
+            "line": 149,
+            "column": 7,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "tap/aeskw.ts",
+            "line": 33,
+            "column": 11,
             "message": "Expected a function declaration."
           },
           {
@@ -540,8 +546,20 @@
             "message": "Expected a function declaration."
           },
           {
-            "file": "test/jwks/remote.test.ts",
-            "line": 12,
+            "file": "test-d/api.ts",
+            "line": 181,
+            "column": 9,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "test-d/api.ts",
+            "line": 432,
+            "column": 9,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "tools/bundle-report.js",
+            "line": 158,
             "column": 7,
             "message": "Expected a function declaration."
           }
@@ -550,7 +568,7 @@
     },
     "import-export-preference": {
       "named": {
-        "count": 19,
+        "count": 20,
         "samples": [
           {
             "file": "ava.config.mjs",
@@ -577,7 +595,7 @@
             "message": "Prefer named exports"
           },
           {
-            "file": "tap/generate_options.ts",
+            "file": "tap/general.ts",
             "line": 4,
             "column": 8,
             "message": "Prefer named exports"
@@ -615,7 +633,7 @@
         ]
       },
       "default": {
-        "count": 18,
+        "count": 12,
         "samples": [
           {
             "file": "src/jwe/compact/encrypt.ts",
@@ -624,14 +642,20 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/jwk/embedded.ts",
-            "line": 36,
+            "file": "src/jwe/flattened/encrypt.ts",
+            "line": 32,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/jws/compact/sign.ts",
-            "line": 28,
+            "file": "src/jwk/embedded.ts",
+            "line": 43,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "src/jws/flattened/sign.ts",
+            "line": 29,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -642,32 +666,26 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/lib/check_key_type.ts",
-            "line": 144,
+            "file": "src/jwt/sign.ts",
+            "line": 117,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
             "file": "src/lib/jwk_to_key.ts",
-            "line": 105,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "src/lib/normalize_key.ts",
-            "line": 199,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "src/lib/validate_crit.ts",
-            "line": 9,
+            "line": 5,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
             "file": "tap/fixtures.ts",
             "line": 1,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "tap/keyobject-stub.ts",
+            "line": 119,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -682,11 +700,18 @@
     },
     "indent": {
       "2-space": {
-        "count": 0,
-        "samples": []
+        "count": 1,
+        "samples": [
+          {
+            "file": "test/unit/declaration_comments.test.ts",
+            "line": 17,
+            "column": 1,
+            "message": "Expected 2-space indentation, but file uses 1-space indentation."
+          }
+        ]
       },
       "4-space": {
-        "count": 121,
+        "count": 134,
         "samples": [
           {
             "file": "ava.config.mjs",
@@ -695,63 +720,63 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/jwks/local.ts",
-            "line": 10,
+            "file": "src/jws/compact/sign.ts",
+            "line": 30,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/key/generate_key_pair.ts",
-            "line": 14,
+            "file": "src/lib/asn1.ts",
+            "line": 19,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/lib/helpers.ts",
-            "line": 6,
+            "file": "src/lib/jws_sign.ts",
+            "line": 12,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/lib/validate_crit.ts",
+            "file": "tap/aes.ts",
+            "line": 7,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "tap/pem.ts",
+            "line": 7,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "test/jwe/flattened.encrypt.test.ts",
             "line": 4,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "tap/hmac.ts",
-            "line": 6,
+            "file": "test/jws/crit.test.ts",
+            "line": 8,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "tap/run-workerd.ts",
-            "line": 6,
+            "file": "test/unit/check_key_type.test.ts",
+            "line": 11,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "test/jwks/local.test.ts",
-            "line": 6,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "test/jwt/unsecured.test.ts",
-            "line": 10,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "tools/release-notes.cjs",
-            "line": 9,
+            "file": "tools/postchangelog.cjs",
+            "line": 4,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           }
         ]
       },
       "tab": {
-        "count": 121,
+        "count": 134,
         "samples": [
           {
             "file": "ava.config.mjs",
@@ -760,56 +785,56 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/jwks/local.ts",
-            "line": 10,
+            "file": "src/jws/compact/sign.ts",
+            "line": 30,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/key/generate_key_pair.ts",
-            "line": 14,
+            "file": "src/lib/asn1.ts",
+            "line": 19,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/lib/helpers.ts",
-            "line": 6,
+            "file": "src/lib/jws_sign.ts",
+            "line": 12,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/lib/validate_crit.ts",
+            "file": "tap/aes.ts",
+            "line": 7,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "tap/pem.ts",
+            "line": 7,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "test/jwe/flattened.encrypt.test.ts",
             "line": 4,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "tap/hmac.ts",
-            "line": 6,
+            "file": "test/jws/crit.test.ts",
+            "line": 8,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "tap/run-workerd.ts",
-            "line": 6,
+            "file": "test/unit/check_key_type.test.ts",
+            "line": 11,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "test/jwks/local.test.ts",
-            "line": 6,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "test/jwt/unsecured.test.ts",
-            "line": 10,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "tools/release-notes.cjs",
-            "line": 9,
+            "file": "tools/postchangelog.cjs",
+            "line": 4,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           }
@@ -818,7 +843,7 @@
     },
     "quotes": {
       "double": {
-        "count": 4542,
+        "count": 4990,
         "samples": [
           {
             "file": "ava.config.mjs",
@@ -827,63 +852,63 @@
             "message": "Strings must use doublequote."
           },
           {
-            "file": "playwright.config.ts",
-            "line": 5,
-            "column": 14,
+            "file": "src/index.ts",
+            "line": 67,
+            "column": 8,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/key/generate_key_pair.ts",
-            "line": 131,
-            "column": 28,
+            "file": "src/lib/jwe_algorithms.ts",
+            "line": 28,
+            "column": 22,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/lib/jwt_claims_set.ts",
-            "line": 38,
-            "column": 10,
+            "file": "src/util/errors.ts",
+            "line": 561,
+            "column": 57,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "tap/encrypt.ts",
-            "line": 18,
-            "column": 27,
+            "file": "tap/jwks.ts",
+            "line": 116,
+            "column": 54,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "tap/keyobject-stub.ts",
-            "line": 97,
-            "column": 37,
+            "file": "test/jwe/flattened.decrypt.test.ts",
+            "line": 184,
+            "column": 30,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "test/jwe/zip.test.ts",
-            "line": 56,
-            "column": 45,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "test/jws/crit.test.ts",
-            "line": 23,
-            "column": 13,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "test/jwt/verify.test.ts",
-            "line": 51,
-            "column": 14,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "tools/release-notes.cjs",
+            "file": "test/jwk/thumbprint.test.ts",
             "line": 17,
-            "column": 11,
+            "column": 5,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "test/jws/unencoded.test.ts",
+            "line": 24,
+            "column": 34,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "test/unit/check_key_type.test.ts",
+            "line": 24,
+            "column": 43,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "tools/publish.cjs",
+            "line": 9,
+            "column": 12,
             "message": "Strings must use doublequote."
           }
         ]
       },
       "single": {
-        "count": 20,
+        "count": 18,
         "samples": [
           {
             "file": "ava.config.mjs",
@@ -905,43 +930,43 @@
           },
           {
             "file": "cookbook/jws.mjs",
-            "line": 288,
+            "line": 289,
             "column": 9,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/lib/check_key_type.ts",
-            "line": 97,
-            "column": 29,
+            "file": "src/lib/key_management.ts",
+            "line": 259,
+            "column": 30,
             "message": "Strings must use singlequote."
           },
           {
             "file": "src/lib/key_management.ts",
-            "line": 66,
+            "line": 269,
             "column": 32,
             "message": "Strings must use singlequote."
           },
           {
             "file": "src/lib/key_management.ts",
-            "line": 108,
+            "line": 307,
             "column": 30,
             "message": "Strings must use singlequote."
           },
           {
             "file": "src/lib/key_management.ts",
-            "line": 116,
+            "line": 315,
             "column": 30,
             "message": "Strings must use singlequote."
           },
           {
             "file": "src/lib/key_management.ts",
-            "line": 140,
+            "line": 333,
             "column": 30,
             "message": "Strings must use singlequote."
           },
           {
             "file": "test/jwt/verify.test.ts",
-            "line": 459,
+            "line": 472,
             "column": 14,
             "message": "Strings must use singlequote."
           }
@@ -998,7 +1023,7 @@
     },
     "semi": {
       "always": {
-        "count": 3932,
+        "count": 4571,
         "samples": [
           {
             "file": "ava.config.mjs",
@@ -1007,57 +1032,57 @@
             "message": "Missing semicolon."
           },
           {
-            "file": "src/jwks/local.ts",
-            "line": 130,
-            "column": 35,
+            "file": "src/jws/general/verify.ts",
+            "line": 132,
+            "column": 84,
             "message": "Missing semicolon."
           },
           {
-            "file": "src/key/generate_key_pair.ts",
-            "line": 161,
-            "column": 16,
+            "file": "src/lib/jwe_algorithms.ts",
+            "line": 1,
+            "column": 53,
             "message": "Missing semicolon."
           },
           {
-            "file": "src/lib/deflate.ts",
-            "line": 15,
-            "column": 50,
+            "file": "src/lib/key_management.ts",
+            "line": 257,
+            "column": 64,
             "message": "Missing semicolon."
           },
           {
-            "file": "src/lib/signing.ts",
-            "line": 36,
-            "column": 33,
+            "file": "tap/general.ts",
+            "line": 63,
+            "column": 87,
             "message": "Missing semicolon."
           },
           {
-            "file": "tap/jwk.ts",
-            "line": 4,
-            "column": 45,
+            "file": "test-d/api.ts",
+            "line": 296,
+            "column": 55,
             "message": "Missing semicolon."
           },
           {
-            "file": "test/jwe/flattened.decrypt.test.ts",
-            "line": 222,
-            "column": 41,
+            "file": "test/jwe/zip.test.ts",
+            "line": 252,
+            "column": 5,
             "message": "Missing semicolon."
           },
           {
-            "file": "test/jwks/remote.test.ts",
-            "line": 299,
-            "column": 35,
+            "file": "test/jws/flattened.verify.test.ts",
+            "line": 106,
+            "column": 28,
             "message": "Missing semicolon."
           },
           {
-            "file": "test/jwt/encrypt.test.ts",
-            "line": 133,
-            "column": 3,
+            "file": "test/unit/check_iv_length.test.ts",
+            "line": 11,
+            "column": 5,
             "message": "Missing semicolon."
           },
           {
-            "file": "tools/release-notes.cjs",
-            "line": 20,
-            "column": 95,
+            "file": "tools/publish.cjs",
+            "line": 9,
+            "column": 29,
             "message": "Missing semicolon."
           }
         ]

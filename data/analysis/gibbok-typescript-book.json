@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "96d58f23c7cc",
-  "analyzedCommit": "a743d7ff850058cf5689d00971d306947bedf60b",
-  "analyzedCommitDate": "2026-07-21T07:42:38.000Z",
+  "analyzedCommit": "082eb4ff4ca8b48cd3e7896cbab4752b6c801fb4",
+  "analyzedCommitDate": "2026-08-08T11:37:32.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -22,7 +22,7 @@
         ]
       },
       "generic": {
-        "count": 2,
+        "count": 4,
         "samples": [
           {
             "file": "tools/compile.ts",
@@ -35,6 +35,18 @@
             "line": 66,
             "column": 34,
             "message": "Array type using 'marked.Token[]' is forbidden. Use 'Array<marked.Token>' instead."
+          },
+          {
+            "file": "website/src/lib/llms.ts",
+            "line": 64,
+            "column": 43,
+            "message": "Array type using 'DocsEntry[]' is forbidden. Use 'Array<DocsEntry>' instead."
+          },
+          {
+            "file": "website/src/lib/llms.ts",
+            "line": 68,
+            "column": 43,
+            "message": "Array type using 'DocsEntry[]' is forbidden. Use 'Array<DocsEntry>' instead."
           }
         ]
       }
@@ -204,7 +216,7 @@
         ]
       },
       "no-type-imports": {
-        "count": 4,
+        "count": 10,
         "samples": [
           {
             "file": "website/src/components/Hero.astro",
@@ -229,13 +241,49 @@
             "line": 2,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "website/src/lib/llms.ts",
+            "line": 1,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "website/src/lib/llms.ts",
+            "line": 2,
+            "column": 34,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "website/src/pages/[...slug].md.ts",
+            "line": 2,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "website/src/pages/[locale]/llms.txt.ts",
+            "line": 2,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "website/src/pages/[locale]/llms.txt.ts",
+            "line": 3,
+            "column": 34,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "website/src/pages/llms.txt.ts",
+            "line": 2,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
           }
         ]
       }
     },
     "func-style": {
       "expression": {
-        "count": 16,
+        "count": 18,
         "samples": [
           {
             "file": "website/public/cookie-banner/silktide-consent-manager.js",
@@ -251,13 +299,19 @@
           },
           {
             "file": "website/src/data/plusEdition.ts",
-            "line": 38,
+            "line": 45,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "website/src/data/plusEdition.ts",
-            "line": 50,
+            "line": 756,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "website/src/pages/[locale]/llms.txt.ts",
+            "line": 12,
             "column": 8,
             "message": "Expected a function expression."
           },
@@ -269,19 +323,13 @@
           },
           {
             "file": "website/src/scripts/amazonPurchase.ts",
-            "line": 44,
-            "column": 1,
+            "line": 67,
+            "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "website/src/scripts/plusEditionAnalytics.ts",
-            "line": 19,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "website/src/scripts/plusEditionAnalytics.ts",
-            "line": 27,
+            "line": 23,
             "column": 1,
             "message": "Expected a function expression."
           },
@@ -300,17 +348,11 @@
         ]
       },
       "declaration": {
-        "count": 14,
+        "count": 27,
         "samples": [
           {
             "file": "tools/compile.ts",
             "line": 21,
-            "column": 7,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "tools/compile.ts",
-            "line": 29,
             "column": 7,
             "message": "Expected a function declaration."
           },
@@ -322,19 +364,7 @@
           },
           {
             "file": "tools/compile.ts",
-            "line": 58,
-            "column": 7,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "tools/compile.ts",
             "line": 82,
-            "column": 7,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "tools/compile.ts",
-            "line": 93,
             "column": 7,
             "message": "Expected a function declaration."
           },
@@ -345,20 +375,38 @@
             "message": "Expected a function declaration."
           },
           {
-            "file": "tools/lint.ts",
-            "line": 7,
-            "column": 7,
-            "message": "Expected a function declaration."
-          },
-          {
             "file": "tools/utils.ts",
             "line": 15,
             "column": 14,
             "message": "Expected a function declaration."
           },
           {
-            "file": "tools/utils.ts",
-            "line": 19,
+            "file": "website/src/lib/llms.ts",
+            "line": 10,
+            "column": 7,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "website/src/lib/llms.ts",
+            "line": 37,
+            "column": 14,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "website/src/lib/llms.ts",
+            "line": 56,
+            "column": 14,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "website/src/lib/llms.ts",
+            "line": 68,
+            "column": 14,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "website/src/pages/llms.txt.ts",
+            "line": 11,
             "column": 14,
             "message": "Expected a function declaration."
           }
@@ -367,10 +415,16 @@
     },
     "import-export-preference": {
       "named": {
-        "count": 1,
+        "count": 2,
         "samples": [
           {
             "file": "website/astro.config.mjs",
+            "line": 6,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "website/playwright.config.ts",
             "line": 5,
             "column": 8,
             "message": "Prefer named exports"
@@ -378,11 +432,17 @@
         ]
       },
       "default": {
-        "count": 2,
+        "count": 3,
         "samples": [
           {
             "file": "website/src/content/config.ts",
             "line": 4,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "website/src/pages/llms.txt.ts",
+            "line": 11,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -462,10 +522,16 @@
         ]
       },
       "4-space": {
-        "count": 17,
+        "count": 25,
         "samples": [
           {
             "file": "website/astro.config.mjs",
+            "line": 7,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "website/playwright.config.ts",
             "line": 6,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
@@ -477,12 +543,6 @@
             "message": "Expected spaces for indentation, but found tabs."
           },
           {
-            "file": "website/src/components/PlusEditionHomePromotion.astro",
-            "line": 46,
-            "column": 1,
-            "message": "Expected spaces for indentation, but found tabs."
-          },
-          {
             "file": "website/src/components/PlusEditionLanding.astro",
             "line": 6,
             "column": 1,
@@ -490,33 +550,33 @@
           },
           {
             "file": "website/src/components/PlusEditionSidebarCard.astro",
-            "line": 5,
+            "line": 47,
             "column": 1,
             "message": "Expected spaces for indentation, but found tabs."
           },
           {
             "file": "website/src/components/PlusEditionTopBanner.astro",
+            "line": 32,
+            "column": 1,
+            "message": "Expected spaces for indentation, but found tabs."
+          },
+          {
+            "file": "website/src/config/locales.ts",
+            "line": 4,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "website/src/lib/llms.ts",
+            "line": 11,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "website/src/pages/[locale]/llms.txt.ts",
             "line": 5,
             "column": 1,
-            "message": "Expected spaces for indentation, but found tabs."
-          },
-          {
-            "file": "website/src/components/RegionalAmazonLinks.astro",
-            "line": 5,
-            "column": 1,
-            "message": "Expected spaces for indentation, but found tabs."
-          },
-          {
-            "file": "website/src/components/RegionalAmazonLinks.astro",
-            "line": 70,
-            "column": 1,
-            "message": "Expected spaces for indentation, but found tabs."
-          },
-          {
-            "file": "website/src/data/plusEdition.ts",
-            "line": 6,
-            "column": 1,
-            "message": "Expected spaces for indentation, but found tabs."
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
             "file": "website/src/scripts/plusEditionAnalytics.ts",
@@ -527,17 +587,11 @@
         ]
       },
       "tab": {
-        "count": 7,
+        "count": 15,
         "samples": [
           {
             "file": "tools/compile.ts",
             "line": 13,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "tools/format.ts",
-            "line": 8,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -554,13 +608,19 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "tools/utils.ts",
-            "line": 6,
+            "file": "website/astro.config.mjs",
+            "line": 7,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "website/astro.config.mjs",
+            "file": "website/e2e/llms.spec.ts",
+            "line": 4,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "website/playwright.config.ts",
             "line": 6,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
@@ -570,13 +630,31 @@
             "line": 4,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "website/src/lib/llms.ts",
+            "line": 11,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "website/src/pages/[...slug].md.ts",
+            "line": 4,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "website/src/pages/llms.txt.ts",
+            "line": 4,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
           }
         ]
       }
     },
     "quotes": {
       "double": {
-        "count": 864,
+        "count": 987,
         "samples": [
           {
             "file": "tools/compile.ts",
@@ -585,50 +663,50 @@
             "message": "Strings must use doublequote."
           },
           {
-            "file": "website/public/cookie-banner/silktide-consent-manager.js",
-            "line": 59,
-            "column": 23,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "website/public/cookie-banner/silktide-consent-manager.js",
-            "line": 770,
-            "column": 12,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "website/src/data/plusEdition.ts",
-            "line": 61,
-            "column": 11,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "website/src/data/plusEdition.ts",
-            "line": 197,
+            "file": "website/e2e/reader.spec.ts",
+            "line": 9,
             "column": 18,
             "message": "Strings must use doublequote."
           },
           {
+            "file": "website/public/cookie-banner/silktide-consent-manager.js",
+            "line": 621,
+            "column": 59,
+            "message": "Strings must use doublequote."
+          },
+          {
             "file": "website/src/data/plusEdition.ts",
-            "line": 326,
+            "line": 7,
+            "column": 2,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "website/src/data/plusEdition.ts",
+            "line": 170,
+            "column": 14,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "website/src/data/plusEdition.ts",
+            "line": 315,
             "column": 7,
             "message": "Strings must use doublequote."
           },
           {
             "file": "website/src/data/plusEdition.ts",
-            "line": 460,
-            "column": 4,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "website/src/data/plusEdition.ts",
-            "line": 589,
+            "line": 470,
             "column": 15,
             "message": "Strings must use doublequote."
           },
           {
             "file": "website/src/data/plusEdition.ts",
-            "line": 731,
+            "line": 624,
+            "column": 7,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "website/src/data/plusEdition.ts",
+            "line": 777,
             "column": 6,
             "message": "Strings must use doublequote."
           },
@@ -641,7 +719,7 @@
         ]
       },
       "single": {
-        "count": 16,
+        "count": 13,
         "samples": [
           {
             "file": "tools/compile.ts",
@@ -651,8 +729,8 @@
           },
           {
             "file": "tools/compile.ts",
-            "line": 50,
-            "column": 81,
+            "line": 47,
+            "column": 85,
             "message": "Strings must use singlequote."
           },
           {
@@ -663,25 +741,25 @@
           },
           {
             "file": "tools/utils.ts",
+            "line": 1,
+            "column": 43,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "tools/utils.ts",
             "line": 2,
             "column": 26,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "website/astro.config.mjs",
-            "line": 160,
-            "column": 9,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "website/astro.config.mjs",
-            "line": 161,
-            "column": 18,
+            "file": "website/public/cookie-banner/silktide-consent-manager.js",
+            "line": 276,
+            "column": 7,
             "message": "Strings must use singlequote."
           },
           {
             "file": "website/public/cookie-banner/silktide-consent-manager.js",
-            "line": 276,
+            "line": 379,
             "column": 7,
             "message": "Strings must use singlequote."
           },
@@ -693,8 +771,8 @@
           },
           {
             "file": "website/src/data/plusEdition.ts",
-            "line": 282,
-            "column": 12,
+            "line": 295,
+            "column": 17,
             "message": "Strings must use singlequote."
           },
           {
@@ -821,7 +899,7 @@
         ]
       },
       "never": {
-        "count": 447,
+        "count": 552,
         "samples": [
           {
             "file": "tools/compile.ts",
@@ -830,51 +908,51 @@
             "message": "Extra semicolon."
           },
           {
-            "file": "tools/utils.ts",
-            "line": 2,
-            "column": 34,
+            "file": "website/e2e/llms.spec.ts",
+            "line": 12,
+            "column": 4,
             "message": "Extra semicolon."
           },
           {
             "file": "website/public/cookie-banner/silktide-consent-manager.js",
-            "line": 127,
-            "column": 46,
+            "line": 47,
+            "column": 24,
             "message": "Extra semicolon."
           },
           {
             "file": "website/public/cookie-banner/silktide-consent-manager.js",
-            "line": 297,
-            "column": 99,
+            "line": 258,
+            "column": 7,
             "message": "Extra semicolon."
           },
           {
             "file": "website/public/cookie-banner/silktide-consent-manager.js",
-            "line": 506,
-            "column": 37,
+            "line": 500,
+            "column": 38,
             "message": "Extra semicolon."
           },
           {
             "file": "website/public/cookie-banner/silktide-consent-manager.js",
-            "line": 672,
-            "column": 52,
+            "line": 691,
+            "column": 33,
             "message": "Extra semicolon."
           },
           {
-            "file": "website/public/cookie-banner/silktide-consent-manager.js",
-            "line": 813,
-            "column": 54,
+            "file": "website/src/components/Hero.astro",
+            "line": 19,
+            "column": 41,
             "message": "Extra semicolon."
           },
           {
-            "file": "website/src/components/PlusEditionLanding.astro",
-            "line": 116,
-            "column": 34,
+            "file": "website/src/data/plusEdition.ts",
+            "line": 3,
+            "column": 47,
             "message": "Extra semicolon."
           },
           {
-            "file": "website/src/scripts/amazonPurchase.ts",
-            "line": 26,
-            "column": 52,
+            "file": "website/src/pages/llms.txt.ts",
+            "line": 13,
+            "column": 69,
             "message": "Extra semicolon."
           },
           {

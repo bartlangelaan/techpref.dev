@@ -1,11 +1,11 @@
 {
   "analyzedVersion": "96d58f23c7cc",
-  "analyzedCommit": "6573a29dc531aa0f0daac26d03f3d0658870e6a1",
-  "analyzedCommitDate": "2026-07-22T00:26:15.000Z",
+  "analyzedCommit": "6c051a99bd937c7d5b1a01f69d7b1940ef111190",
+  "analyzedCommitDate": "2026-08-11T23:29:57.000Z",
   "checks": {
     "array-type": {
       "array": {
-        "count": 10,
+        "count": 14,
         "samples": [
           {
             "file": "components/__tests__/render-message.test.tsx",
@@ -20,21 +20,27 @@
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
-            "file": "lib/render/__tests__/llm-image-output.e2e.test.ts",
-            "line": 109,
+            "file": "lib/streaming/__tests__/compact-historical-messages.test.ts",
+            "line": 203,
             "column": 56,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
-            "file": "lib/tools/search.ts",
-            "line": 124,
-            "column": 49,
+            "file": "lib/streaming/__tests__/create-chat-stream-response.test.ts",
+            "line": 81,
+            "column": 14,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
-            "file": "lib/tools/search/providers/base.ts",
-            "line": 12,
-            "column": 23,
+            "file": "lib/streaming/__tests__/create-ephemeral-chat-stream-response.test.ts",
+            "line": 77,
+            "column": 11,
+            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
+          },
+          {
+            "file": "lib/tools/search.ts",
+            "line": 125,
+            "column": 49,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
@@ -47,12 +53,6 @@
             "file": "lib/tools/search/providers/brave.ts",
             "line": 67,
             "column": 23,
-            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
-          },
-          {
-            "file": "lib/tools/search/providers/tavily.ts",
-            "line": 63,
-            "column": 45,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
@@ -70,7 +70,7 @@
         ]
       },
       "generic": {
-        "count": 283,
+        "count": 333,
         "samples": [
           {
             "file": "app/api/advanced-search/route.ts",
@@ -79,52 +79,52 @@
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
-            "file": "components/chat.tsx",
-            "line": 93,
-            "column": 56,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+            "file": "components/file-upload-button.tsx",
+            "line": 21,
+            "column": 25,
+            "message": "Array type using 'File[]' is forbidden. Use 'Array<File>' instead."
           },
           {
             "file": "components/research-process-section.tsx",
-            "line": 75,
-            "column": 45,
-            "message": "Array type using 'MessagePart[][]' is forbidden. Use 'Array<MessagePart[]>' instead."
+            "line": 253,
+            "column": 13,
+            "message": "Array type using 'MessagePart[]' is forbidden. Use 'Array<MessagePart>' instead."
           },
           {
-            "file": "components/theme-provider.tsx",
-            "line": 453,
-            "column": 11,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+            "file": "hooks/use-file-dropzone.ts",
+            "line": 58,
+            "column": 27,
+            "message": "Array type using 'UploadedFile[]' is forbidden. Use 'Array<UploadedFile>' instead."
           },
           {
-            "file": "lib/analytics/__tests__/dispatch.test.ts",
-            "line": 7,
-            "column": 33,
-            "message": "Array type using 'unknown[]' is forbidden. Use 'Array<unknown>' instead."
-          },
-          {
-            "file": "lib/firecrawl/types.ts",
-            "line": 44,
-            "column": 10,
-            "message": "Array type using 'FirecrawlNewsResult[]' is forbidden. Use 'Array<FirecrawlNewsResult>' instead."
+            "file": "lib/db/actions.ts",
+            "line": 461,
+            "column": 12,
+            "message": "Array type using 'Note[]' is forbidden. Use 'Array<Note>' instead."
           },
           {
             "file": "lib/models/fetch-models.ts",
-            "line": 425,
-            "column": 53,
+            "line": 262,
+            "column": 52,
             "message": "Array type using 'Model[]' is forbidden. Use 'Array<Model>' instead."
           },
           {
-            "file": "lib/streaming/helpers/strip-reasoning-parts.ts",
-            "line": 15,
-            "column": 47,
+            "file": "lib/streaming/__tests__/compact-historical-messages.test.ts",
+            "line": 306,
+            "column": 21,
+            "message": "Array type using 'UIMessage[]' is forbidden. Use 'Array<UIMessage>' instead."
+          },
+          {
+            "file": "lib/streaming/helpers/compact-historical-messages.ts",
+            "line": 201,
+            "column": 53,
             "message": "Array type using 'UIMessage[]' is forbidden. Use 'Array<UIMessage>' instead."
           },
           {
             "file": "lib/types/index.ts",
-            "line": 85,
-            "column": 12,
-            "message": "Array type using 'SearXNGResult[]' is forbidden. Use 'Array<SearXNGResult>' instead."
+            "line": 5,
+            "column": 11,
+            "message": "Array type using 'SearchResultImage[]' is forbidden. Use 'Array<SearchResultImage>' instead."
           },
           {
             "file": "scripts/test-cache-performance.ts",
@@ -141,8 +141,14 @@
         "samples": []
       },
       "type-annotation": {
-        "count": 7,
+        "count": 10,
         "samples": [
+          {
+            "file": "app/api/upload/__tests__/route.test.ts",
+            "line": 64,
+            "column": 27,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
           {
             "file": "components/chat.tsx",
             "line": 275,
@@ -174,6 +180,18 @@
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
+            "file": "lib/streaming/helpers/compact-historical-messages.ts",
+            "line": 64,
+            "column": 27,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "lib/streaming/helpers/dedupe-attachments.ts",
+            "line": 66,
+            "column": 23,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
             "file": "lib/tools/search/providers/tavily.ts",
             "line": 62,
             "column": 37,
@@ -181,7 +199,7 @@
           },
           {
             "file": "lib/utils/context-window.ts",
-            "line": 46,
+            "line": 49,
             "column": 29,
             "message": "The generic type arguments should be specified as part of the type annotation."
           }
@@ -201,7 +219,7 @@
         ]
       },
       "index-signature": {
-        "count": 88,
+        "count": 105,
         "samples": [
           {
             "file": "components/action-buttons.tsx",
@@ -210,51 +228,51 @@
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "components/message-actions.tsx",
-            "line": 50,
+            "file": "components/message.tsx",
+            "line": 35,
             "column": 18,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "components/spec-block.tsx",
+            "file": "lib/analytics/providers/posthog-server.ts",
+            "line": 23,
+            "column": 16,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "lib/errors/tool-error.ts",
             "line": 27,
-            "column": 29,
+            "column": 27,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "lib/errors/public-error.ts",
-            "line": 184,
-            "column": 10,
+            "file": "lib/render/__tests__/llm-image-output.e2e.test.ts",
+            "line": 111,
+            "column": 16,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "lib/models/fetch-models.ts",
-            "line": 168,
-            "column": 12,
+            "file": "lib/render/migrations.ts",
+            "line": 35,
+            "column": 11,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "lib/render/__tests__/migrations.test.ts",
-            "line": 91,
-            "column": 50,
-            "message": "An index signature is preferred over a record."
-          },
-          {
-            "file": "lib/tools/search.ts",
-            "line": 178,
-            "column": 24,
+            "file": "lib/streaming/helpers/data-part-nonce.ts",
+            "line": 84,
+            "column": 26,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "lib/utils/__tests__/citation.test.ts",
-            "line": 174,
-            "column": 12,
+            "line": 30,
+            "column": 10,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "lib/utils/citation.ts",
-            "line": 82,
-            "column": 5,
+            "line": 79,
+            "column": 19,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -268,7 +286,7 @@
     },
     "consistent-type-definitions": {
       "interface": {
-        "count": 68,
+        "count": 75,
         "samples": [
           {
             "file": "components/answer-section.tsx",
@@ -278,49 +296,49 @@
           },
           {
             "file": "components/research-process-section.tsx",
-            "line": 25,
+            "line": 58,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "components/ui/sidebar.tsx",
-            "line": 40,
+            "file": "hooks/use-file-dropzone.ts",
+            "line": 7,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "lib/errors/public-error.ts",
-            "line": 17,
+            "file": "lib/firecrawl/types.ts",
+            "line": 3,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
             "file": "lib/firecrawl/types.ts",
-            "line": 42,
+            "line": 56,
+            "column": 8,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "lib/storage/r2-client.ts",
+            "line": 52,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "lib/render/migrations.ts",
-            "line": 33,
-            "column": 1,
-            "message": "Use `interface` instead of `type`."
-          },
-          {
-            "file": "lib/types/index.ts",
-            "line": 4,
+            "file": "lib/types/ai.ts",
+            "line": 28,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
             "file": "lib/types/index.ts",
-            "line": 90,
+            "line": 67,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
             "file": "lib/utils/message-mapping.ts",
-            "line": 22,
+            "line": 17,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
@@ -333,7 +351,7 @@
         ]
       },
       "type": {
-        "count": 108,
+        "count": 109,
         "samples": [
           {
             "file": "app/api/chats/route.ts",
@@ -366,8 +384,8 @@
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "components/uploaded-file-list.tsx",
-            "line": 9,
+            "file": "components/user-file-section.tsx",
+            "line": 5,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
@@ -400,7 +418,7 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 98,
+        "count": 97,
         "samples": [
           {
             "file": "app/api/advanced-search/route.ts",
@@ -415,8 +433,8 @@
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "components/model-selector-client.tsx",
-            "line": 15,
+            "file": "components/message-actions.tsx",
+            "line": 6,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
@@ -433,22 +451,22 @@
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "lib/model-selector/get-model-selector-data.ts",
-            "line": 9,
-            "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
-          {
-            "file": "lib/streaming/helpers/prepare-messages.ts",
+            "file": "lib/firecrawl/client.ts",
             "line": 1,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "lib/tools/search.ts",
-            "line": 12,
+            "file": "lib/streaming/helpers/persist-stream-results.ts",
+            "line": 5,
             "column": 1,
-            "message": "Imports SearchProviderType are only used as type."
+            "message": "All imports in the declaration are only used as types. Use `import type`."
+          },
+          {
+            "file": "lib/tools/search/providers/base.ts",
+            "line": 1,
+            "column": 1,
+            "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
             "file": "lib/types/ai.ts",
@@ -465,47 +483,47 @@
         ]
       },
       "no-type-imports": {
-        "count": 149,
+        "count": 167,
         "samples": [
           {
-            "file": "app/auth/confirm/route.ts",
-            "line": 2,
-            "column": 10,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "components/chat-panel.tsx",
-            "line": 35,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "components/message-actions.tsx",
-            "line": 18,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "components/search-results-image.tsx",
-            "line": 20,
+            "file": "app/api/upload/route.ts",
+            "line": 12,
             "column": 3,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "components/video-carousel-dialog.tsx",
+            "file": "components/chat-panel.tsx",
+            "line": 36,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "components/message.tsx",
             "line": 9,
             "column": 3,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "lib/contexts/chat-context.tsx",
+            "file": "components/theme-provider.tsx",
             "line": 3,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "lib/render/components/image.tsx",
-            "line": 21,
+            "file": "lib/actions/files.ts",
+            "line": 5,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "lib/errors/tool-error.ts",
+            "line": 1,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "lib/streaming/create-chat-stream-response.ts",
+            "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -516,8 +534,8 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "lib/types/message-persistence.ts",
-            "line": 4,
+            "file": "lib/types/ai.ts",
+            "line": 8,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -532,7 +550,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 516,
+        "count": 609,
         "samples": [
           {
             "file": "app/api/advanced-search/route.ts",
@@ -541,51 +559,51 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "components/drag-overlay.tsx",
-            "line": 6,
+            "file": "components/forgot-password-form.tsx",
+            "line": 20,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "components/research-process-section.tsx",
-            "line": 33,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "components/ui/dropdown-menu.tsx",
-            "line": 127,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "lib/actions/site-feedback.ts",
-            "line": 9,
+            "file": "components/sidebar/chat-history-section.tsx",
+            "line": 3,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "lib/db/actions.ts",
-            "line": 170,
+            "file": "lib/actions/account.ts",
+            "line": 19,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "lib/models/fetch-models.ts",
-            "line": 105,
+            "file": "lib/config/load-models-config.ts",
+            "line": 19,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "lib/storage/r2-client.ts",
-            "line": 215,
+            "file": "lib/errors/public-error.ts",
+            "line": 545,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "lib/utils/message-mapping.ts",
-            "line": 78,
-            "column": 1,
+            "file": "lib/render/prompt.ts",
+            "line": 73,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "lib/streaming/helpers/data-part-nonce.ts",
+            "line": 46,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "lib/utils/cookies.ts",
+            "line": 3,
+            "column": 8,
             "message": "Expected a function expression."
           },
           {
@@ -597,7 +615,7 @@
         ]
       },
       "declaration": {
-        "count": 160,
+        "count": 170,
         "samples": [
           {
             "file": "components/account-settings-dialog.tsx",
@@ -607,49 +625,49 @@
           },
           {
             "file": "components/chat-messages.tsx",
-            "line": 154,
+            "line": 190,
             "column": 9,
             "message": "Expected a function declaration."
           },
           {
-            "file": "components/citation-link.tsx",
-            "line": 25,
-            "column": 7,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "components/header.tsx",
-            "line": 26,
-            "column": 14,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "components/render-message.tsx",
-            "line": 53,
+            "file": "components/dynamic-tool-display.tsx",
+            "line": 46,
             "column": 9,
             "message": "Expected a function declaration."
           },
           {
-            "file": "components/sidebar/chat-menu-item.tsx",
-            "line": 44,
-            "column": 7,
+            "file": "components/inspector/inspector-drawer.tsx",
+            "line": 23,
+            "column": 9,
             "message": "Expected a function declaration."
           },
           {
-            "file": "components/ui/drawer.tsx",
-            "line": 70,
-            "column": 7,
+            "file": "components/search-mode-selector.tsx",
+            "line": 77,
+            "column": 9,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "components/todo-list-content.tsx",
+            "line": 39,
+            "column": 9,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "components/ui/icons.tsx",
+            "line": 124,
+            "column": 11,
             "message": "Expected a function declaration."
           },
           {
             "file": "components/user-text-section.tsx",
-            "line": 51,
-            "column": 14,
+            "line": 172,
+            "column": 9,
             "message": "Expected a function declaration."
           },
           {
-            "file": "lib/actions/chat.ts",
-            "line": 18,
+            "file": "lib/errors/tool-error.ts",
+            "line": 72,
             "column": 7,
             "message": "Expected a function declaration."
           },
@@ -729,7 +747,7 @@
         ]
       },
       "default": {
-        "count": 132,
+        "count": 135,
         "samples": [
           {
             "file": "app/api/advanced-search/route.ts",
@@ -744,44 +762,44 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "components/external-link-items.tsx",
-            "line": 31,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "components/posthog-provider.tsx",
-            "line": 14,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "components/sign-up-form.tsx",
-            "line": 22,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "components/ui/sonner.tsx",
+            "file": "components/feedback-modal.tsx",
             "line": 32,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "hooks/use-keyboard-shortcut.ts",
-            "line": 10,
+            "file": "components/process-rail.tsx",
+            "line": 9,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "lib/rate-limit/chat-limits.ts",
-            "line": 84,
+            "file": "components/spec-block.tsx",
+            "line": 22,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "lib/streaming/helpers/persist-stream-results.ts",
+            "file": "components/ui/status-indicator.tsx",
             "line": 11,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "lib/actions/account.ts",
+            "line": 19,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "lib/render/catalog.ts",
+            "line": 7,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "lib/streaming/helpers/describe-stream-error.ts",
+            "line": 7,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -806,20 +824,20 @@
           },
           {
             "file": "lib/agents/prompts/search-mode-prompts.ts",
-            "line": 50,
+            "line": 52,
             "column": 1,
             "message": "Expected 2-space indentation, but file uses 3-space indentation."
           },
           {
             "file": "lib/render/prompt.ts",
-            "line": 90,
+            "line": 94,
             "column": 1,
             "message": "Expected 2-space indentation, but file uses 3-space indentation."
           }
         ]
       },
       "4-space": {
-        "count": 313,
+        "count": 345,
         "samples": [
           {
             "file": "app/api/advanced-search/route.ts",
@@ -828,50 +846,50 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "components/attachment-preview.tsx",
-            "line": 6,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "components/message-navigation-dots.tsx",
-            "line": 6,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "components/ui/avatar.tsx",
-            "line": 10,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "components/video-carousel-dialog.tsx",
+            "file": "components/chat-error.tsx",
             "line": 8,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "lib/analytics/__tests__/utils.test.ts",
-            "line": 5,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "lib/keyboard-shortcuts.ts",
-            "line": 2,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "lib/search-mode-availability.ts",
+            "file": "components/process-rail.tsx",
             "line": 4,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "lib/types/ai.ts",
-            "line": 15,
+            "file": "components/ui/hover-card.tsx",
+            "line": 14,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "hooks/use-typewriter-cycle.ts",
+            "line": 6,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "lib/config/model-selection-cookie.ts",
+            "line": 4,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "lib/render/__tests__/migrations.test.ts",
+            "line": 9,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "lib/streaming/helpers/__tests__/log-api-call-error.test.ts",
+            "line": 5,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "lib/types/agent.ts",
+            "line": 2,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -884,7 +902,7 @@
         ]
       },
       "tab": {
-        "count": 313,
+        "count": 345,
         "samples": [
           {
             "file": "app/api/advanced-search/route.ts",
@@ -893,50 +911,50 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "components/attachment-preview.tsx",
-            "line": 6,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "components/message-navigation-dots.tsx",
-            "line": 6,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "components/ui/avatar.tsx",
-            "line": 10,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "components/video-carousel-dialog.tsx",
+            "file": "components/chat-error.tsx",
             "line": 8,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "lib/analytics/__tests__/utils.test.ts",
-            "line": 5,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "lib/keyboard-shortcuts.ts",
-            "line": 2,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "lib/search-mode-availability.ts",
+            "file": "components/process-rail.tsx",
             "line": 4,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "lib/types/ai.ts",
-            "line": 15,
+            "file": "components/ui/hover-card.tsx",
+            "line": 14,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "hooks/use-typewriter-cycle.ts",
+            "line": 6,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "lib/config/model-selection-cookie.ts",
+            "line": 4,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "lib/render/__tests__/migrations.test.ts",
+            "line": 9,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "lib/streaming/helpers/__tests__/log-api-call-error.test.ts",
+            "line": 5,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "lib/types/agent.ts",
+            "line": 2,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -951,7 +969,7 @@
     },
     "quotes": {
       "double": {
-        "count": 7406,
+        "count": 8797,
         "samples": [
           {
             "file": "app/api/advanced-search/route.ts",
@@ -960,51 +978,51 @@
             "message": "Strings must use doublequote."
           },
           {
-            "file": "components/artifact/tool-invocation-content.tsx",
-            "line": 10,
-            "column": 60,
+            "file": "components/chat-panel.tsx",
+            "line": 240,
+            "column": 30,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "components/library/library-panel.tsx",
-            "line": 551,
-            "column": 15,
+            "file": "components/question-confirmation.tsx",
+            "line": 1,
+            "column": 1,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "components/ui/card.tsx",
-            "line": 18,
-            "column": 20,
+            "file": "components/ui/sidebar.tsx",
+            "line": 732,
+            "column": 34,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "hooks/use-current-user-name.ts",
+            "file": "lib/actions/site-feedback.ts",
+            "line": 89,
+            "column": 21,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "lib/errors/public-error.ts",
+            "line": 238,
+            "column": 68,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "lib/schema/question.ts",
             "line": 15,
-            "column": 63,
+            "column": 46,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "lib/config/search-modes.ts",
-            "line": 5,
-            "column": 33,
+            "file": "lib/streaming/helpers/__tests__/is-empty-response.test.ts",
+            "line": 17,
+            "column": 54,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "lib/models/fetch-models.ts",
-            "line": 154,
-            "column": 10,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "lib/streaming/create-ephemeral-chat-stream-response.ts",
-            "line": 26,
-            "column": 37,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "lib/utils/__tests__/context-window.test.ts",
-            "line": 116,
-            "column": 31,
+            "file": "lib/utils/__tests__/citation.test.ts",
+            "line": 60,
+            "column": 20,
             "message": "Strings must use doublequote."
           },
           {
@@ -1050,7 +1068,7 @@
           },
           {
             "file": "lib/agents/title-generator.ts",
-            "line": 27,
+            "line": 39,
             "column": 26,
             "message": "Strings must use singlequote."
           },
@@ -1062,7 +1080,7 @@
           },
           {
             "file": "lib/errors/__tests__/public-error.test.ts",
-            "line": 56,
+            "line": 57,
             "column": 9,
             "message": "Strings must use singlequote."
           },
@@ -1480,7 +1498,7 @@
           },
           {
             "file": "lib/render/components/image.tsx",
-            "line": 52,
+            "line": 54,
             "column": 22,
             "message": "Value must be set for boolean attribute `asChild`"
           }
@@ -1560,7 +1578,7 @@
     },
     "semi": {
       "always": {
-        "count": 9022,
+        "count": 10549,
         "samples": [
           {
             "file": "app/api/advanced-search/route.ts",
@@ -1569,51 +1587,51 @@
             "message": "Missing semicolon."
           },
           {
-            "file": "components/artifact/chat-artifact-container.tsx",
-            "line": 56,
-            "column": 57,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "components/library/library-context.tsx",
-            "line": 74,
-            "column": 72,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "components/sidebar/chat-history-client.tsx",
-            "line": 113,
-            "column": 76,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "components/user-file-section.tsx",
+            "file": "components/artifact/tool-invocation-content.tsx",
             "line": 3,
-            "column": 57,
+            "column": 47,
             "message": "Missing semicolon."
           },
           {
-            "file": "lib/actions/feedback.ts",
+            "file": "components/library/library-picker-dialog.tsx",
             "line": 3,
-            "column": 50,
+            "column": 61,
             "message": "Missing semicolon."
           },
           {
-            "file": "lib/db/schema.ts",
-            "line": 70,
-            "column": 50,
+            "file": "components/ui/avatar.tsx",
+            "line": 51,
+            "column": 47,
             "message": "Missing semicolon."
           },
           {
-            "file": "lib/render/components/grid.tsx",
-            "line": 23,
-            "column": 2,
+            "file": "lib/actions/__tests__/chat.test.ts",
+            "line": 291,
+            "column": 38,
             "message": "Missing semicolon."
           },
           {
-            "file": "lib/types/ai.ts",
-            "line": 8,
-            "column": 53,
+            "file": "lib/db/__tests__/with-rls.test.ts",
+            "line": 33,
+            "column": 36,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "lib/rate-limit/chat-limits.ts",
+            "line": 35,
+            "column": 36,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "lib/streaming/helpers/__tests__/attachment-sizes.test.ts",
+            "line": 41,
+            "column": 4,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "lib/tools/search/providers/brave.ts",
+            "line": 185,
+            "column": 56,
             "message": "Missing semicolon."
           },
           {

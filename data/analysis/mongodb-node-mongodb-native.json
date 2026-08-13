@@ -1,11 +1,11 @@
 {
   "analyzedVersion": "96d58f23c7cc",
-  "analyzedCommit": "16f6fb321ccfa2e1f21eb281befdae4e07ad736c",
-  "analyzedCommitDate": "2026-07-23T08:49:32.000Z",
+  "analyzedCommit": "dce7939f86fb283e167ad709955abedb7bf23124",
+  "analyzedCommitDate": "2026-08-10T20:36:19.000Z",
   "checks": {
     "array-type": {
       "array": {
-        "count": 114,
+        "count": 115,
         "samples": [
           {
             "file": "src/change_stream.ts",
@@ -32,10 +32,10 @@
             "message": "Array type using 'ReadonlyArray<T>' is forbidden. Use 'readonly T[]' instead."
           },
           {
-            "file": "src/operations/search_indexes/create.ts",
-            "line": 30,
-            "column": 53,
-            "message": "Array type using 'ReadonlyArray<SearchIndexDescription>' is forbidden. Use 'readonly SearchIndexDescription[]' instead."
+            "file": "src/sort.ts",
+            "line": 70,
+            "column": 32,
+            "message": "Array type using 'ReadonlyArray<T>' is forbidden. Use 'readonly T[]' instead."
           },
           {
             "file": "test/integration/command-logging-and-monitoring/command_logging_and_monitoring.prose.test.ts",
@@ -44,15 +44,15 @@
             "message": "Array type using 'Array<Document>' is forbidden. Use 'Document[]' instead."
           },
           {
-            "file": "test/integration/node-specific/operation_examples.test.ts",
-            "line": 4013,
-            "column": 17,
+            "file": "test/integration/retryable-reads/retryable_reads.spec.prose.test.ts",
+            "line": 34,
+            "column": 21,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
             "file": "test/manual/search-index-management.prose.test.ts",
-            "line": 59,
-            "column": 25,
+            "line": 62,
+            "column": 17,
             "message": "Array type using 'Array<Document>' is forbidden. Use 'Document[]' instead."
           },
           {
@@ -70,7 +70,7 @@
         ]
       },
       "generic": {
-        "count": 598,
+        "count": 609,
         "samples": [
           {
             "file": "etc/docs/build.ts",
@@ -80,51 +80,51 @@
           },
           {
             "file": "src/collection.ts",
-            "line": 1059,
-            "column": 15,
+            "line": 914,
+            "column": 20,
+            "message": "Array type using 'IndexDescriptionInfo[]' is forbidden. Use 'Array<IndexDescriptionInfo>' instead."
+          },
+          {
+            "file": "src/operations/client_bulk_write/results_merger.ts",
+            "line": 76,
+            "column": 23,
             "message": "Array type using 'Document[]' is forbidden. Use 'Array<Document>' instead."
           },
           {
-            "file": "src/operations/create_collection.ts",
-            "line": 89,
-            "column": 14,
-            "message": "Array type using 'Document[]' is forbidden. Use 'Array<Document>' instead."
-          },
-          {
-            "file": "test/benchmarks/driver_bench/src/main.mts",
-            "line": 162,
-            "column": 27,
-            "message": "Array type using 'MetricInfo[]' is forbidden. Use 'Array<MetricInfo>' instead."
+            "file": "test/action/dependency.test.ts",
+            "line": 147,
+            "column": 18,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
             "file": "test/integration/crud/crud.prose.test.ts",
-            "line": 474,
+            "line": 246,
             "column": 21,
             "message": "Array type using 'CommandStartedEvent[]' is forbidden. Use 'Array<CommandStartedEvent>' instead."
           },
           {
-            "file": "test/integration/sessions/sessions.prose.test.ts",
-            "line": 92,
-            "column": 21,
-            "message": "Array type using 'CommandStartedEvent[]' is forbidden. Use 'Array<CommandStartedEvent>' instead."
+            "file": "test/integration/server-selection/server_selection.prose.sharded_retryable_reads.test.ts",
+            "line": 102,
+            "column": 32,
+            "message": "Array type using 'CommandFailedEvent[]' is forbidden. Use 'Array<CommandFailedEvent>' instead."
           },
           {
             "file": "test/tools/unified-spec-runner/schema.ts",
-            "line": 292,
-            "column": 13,
-            "message": "Array type using 'CollectionData[]' is forbidden. Use 'Array<CollectionData>' instead."
+            "line": 287,
+            "column": 23,
+            "message": "Array type using 'RunOnRequirement[]' is forbidden. Use 'Array<RunOnRequirement>' instead."
           },
           {
             "file": "test/types/community/collection/distinct.test-d.ts",
-            "line": 33,
+            "line": 30,
             "column": 12,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
             "file": "test/types/community/slow-model.test-d.ts",
-            "line": 115,
+            "line": 112,
             "column": 11,
-            "message": "Array type using 'ExtraType8[]' is forbidden. Use 'Array<ExtraType8>' instead."
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
             "file": "test/unit/sdam/topology.test.ts",
@@ -153,7 +153,7 @@
           },
           {
             "file": "src/error.ts",
-            "line": 132,
+            "line": 131,
             "column": 33,
             "message": "The generic type arguments should be specified as part of the constructor type arguments."
           },
@@ -165,7 +165,7 @@
           },
           {
             "file": "src/operations/indexes.ts",
-            "line": 175,
+            "line": 174,
             "column": 12,
             "message": "The generic type arguments should be specified as part of the constructor type arguments."
           },
@@ -218,7 +218,7 @@
           },
           {
             "file": "src/error.ts",
-            "line": 1486,
+            "line": 1471,
             "column": 39,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
@@ -230,7 +230,7 @@
           },
           {
             "file": "src/utils.ts",
-            "line": 582,
+            "line": 580,
             "column": 29,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
@@ -273,13 +273,13 @@
         "samples": [
           {
             "file": "src/bulk/common.ts",
-            "line": 191,
+            "line": 193,
             "column": 27,
             "message": "A record is preferred over an index signature."
           },
           {
             "file": "src/bulk/common.ts",
-            "line": 665,
+            "line": 695,
             "column": 24,
             "message": "A record is preferred over an index signature."
           },
@@ -303,7 +303,7 @@
           },
           {
             "file": "src/operations/indexes.ts",
-            "line": 222,
+            "line": 221,
             "column": 10,
             "message": "A record is preferred over an index signature."
           },
@@ -368,7 +368,7 @@
           },
           {
             "file": "test/integration/retryable-reads/retryable_reads.spec.prose.test.ts",
-            "line": 535,
+            "line": 534,
             "column": 40,
             "message": "An index signature is preferred over a record."
           },
@@ -392,7 +392,7 @@
           },
           {
             "file": "test/unit/assorted/server_discovery_and_monitoring.spec.test.ts",
-            "line": 130,
+            "line": 131,
             "column": 13,
             "message": "An index signature is preferred over a record."
           }
@@ -401,7 +401,7 @@
     },
     "consistent-type-definitions": {
       "interface": {
-        "count": 70,
+        "count": 71,
         "samples": [
           {
             "file": "src/change_stream.ts",
@@ -417,7 +417,7 @@
           },
           {
             "file": "src/mongo_logger.ts",
-            "line": 347,
+            "line": 364,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
@@ -429,7 +429,7 @@
           },
           {
             "file": "src/utils.ts",
-            "line": 625,
+            "line": 623,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
@@ -446,8 +446,8 @@
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "test/types/community/collection/filterQuery.test-d.ts",
-            "line": 416,
+            "file": "test/types/client_bulk_write.test-d.ts",
+            "line": 211,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
@@ -591,14 +591,14 @@
           },
           {
             "file": "test/unit/assorted/server_discovery_and_monitoring.spec.test.ts",
-            "line": 372,
+            "line": 390,
             "column": 35,
             "message": "`import()` type annotations are forbidden."
           }
         ]
       },
       "no-type-imports": {
-        "count": 1495,
+        "count": 1507,
         "samples": [
           {
             "file": "etc/docs/build.ts",
@@ -607,50 +607,50 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/cmap/command_monitoring_events.ts",
-            "line": 1,
+            "file": "src/cmap/auth/scram.ts",
+            "line": 11,
             "column": 10,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "src/cursor/aggregation_cursor.ts",
-            "line": 17,
-            "column": 3,
+            "line": 11,
+            "column": 30,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/mongo_client_auth_providers.ts",
-            "line": 1,
-            "column": 10,
+            "file": "src/mongo_client.ts",
+            "line": 64,
+            "column": 3,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "src/operations/insert.ts",
             "line": 9,
-            "column": 33,
+            "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "src/sessions.ts",
-            "line": 6,
-            "column": 10,
+            "line": 8,
+            "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "test/integration/crud/abstract_operation.test.ts",
-            "line": 5,
+            "line": 4,
             "column": 3,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "test/integration/transactions-convenient-api/transactions-convenient-api.prose.test.ts",
-            "line": 4,
-            "column": 10,
+            "file": "test/integration/sessions/sessions.test.ts",
+            "line": 10,
+            "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "test/types/community/changes_from_36.test-d.ts",
-            "line": 8,
+            "line": 7,
             "column": 3,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -665,7 +665,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 811,
+        "count": 822,
         "samples": [
           {
             "file": ".evergreen/generate_evergreen_tasks.js",
@@ -676,42 +676,42 @@
           {
             "file": "etc/docs/template/static/s/js/jquery.js",
             "line": 2,
-            "column": 74317,
+            "column": 74532,
             "message": "Expected a function expression."
           },
           {
             "file": "src/cmap/connect.ts",
-            "line": 90,
-            "column": 8,
+            "line": 190,
+            "column": 3,
             "message": "Expected a function expression."
           },
           {
             "file": "src/operations/client_bulk_write/command_builder.ts",
-            "line": 307,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/utils.ts",
-            "line": 57,
+            "line": 467,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "test/benchmarks/driver_bench/src/suites/parallel_bench/gridfs_multi_file_download.mts",
-            "line": 39,
+            "file": "src/utils.ts",
+            "line": 136,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "test/benchmarks/driver_bench/src/suites/parallel_bench/gridfs_multi_file_upload.mts",
+            "line": 31,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "test/integration/mongodb-handshake/mongodb-handshake.prose.test.ts",
-            "line": 21,
-            "column": 1,
+            "line": 181,
+            "column": 11,
             "message": "Expected a function expression."
           },
           {
-            "file": "test/tools/runner/vm_context_helper.ts",
-            "line": 58,
+            "file": "test/tools/runner/plugins/deferred.js",
+            "line": 8,
             "column": 1,
             "message": "Expected a function expression."
           },
@@ -730,11 +730,11 @@
         ]
       },
       "declaration": {
-        "count": 225,
+        "count": 226,
         "samples": [
           {
             "file": ".evergreen/generate_evergreen_tasks.js",
-            "line": 337,
+            "line": 349,
             "column": 9,
             "message": "Expected a function declaration."
           },
@@ -763,26 +763,26 @@
             "message": "Expected a function declaration."
           },
           {
-            "file": "test/integration/client-side-operations-timeout/client_side_operations_timeout.unit.test.ts",
-            "line": 172,
-            "column": 17,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "test/integration/node-specific/client_close.test.ts",
-            "line": 465,
+            "file": "test/integration/connection-monitoring-and-pooling/connection_pool.test.ts",
+            "line": 115,
             "column": 19,
             "message": "Expected a function declaration."
           },
           {
+            "file": "test/integration/node-specific/client_close.test.ts",
+            "line": 874,
+            "column": 15,
+            "message": "Expected a function declaration."
+          },
+          {
             "file": "test/tools/mongodb-mock/src/request.js",
-            "line": 266,
+            "line": 274,
             "column": 7,
             "message": "Expected a function declaration."
           },
           {
             "file": "test/tools/utils.ts",
-            "line": 213,
+            "line": 305,
             "column": 14,
             "message": "Expected a function declaration."
           },
@@ -879,7 +879,7 @@
         ]
       },
       "4-space": {
-        "count": 549,
+        "count": 554,
         "samples": [
           {
             "file": ".evergreen/ci_matrix_constants.js",
@@ -888,8 +888,8 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/cmap/connection.ts",
-            "line": 5,
+            "file": "src/cmap/connect.ts",
+            "line": 10,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -912,26 +912,26 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "test/integration/node-specific/examples/remove_documents.test.js",
-            "line": 7,
+            "file": "test/integration/node-specific/examples/run_command.test.js",
+            "line": 6,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "test/mocha_mongodb.js",
-            "line": 8,
+            "file": "test/mocha_root_hooks.ts",
+            "line": 4,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "test/types/community/changes_from_36.test-d.ts",
-            "line": 5,
+            "file": "test/types/community/client.test-d.ts",
+            "line": 4,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "test/unit/client-side-encryption/state_machine.test.ts",
-            "line": 12,
+            "file": "test/unit/cmap/auth/gssapi.test.ts",
+            "line": 6,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -944,7 +944,7 @@
         ]
       },
       "tab": {
-        "count": 549,
+        "count": 554,
         "samples": [
           {
             "file": ".evergreen/ci_matrix_constants.js",
@@ -953,8 +953,8 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/cmap/connection.ts",
-            "line": 5,
+            "file": "src/cmap/connect.ts",
+            "line": 10,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -977,26 +977,26 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "test/integration/node-specific/examples/remove_documents.test.js",
-            "line": 7,
+            "file": "test/integration/node-specific/examples/run_command.test.js",
+            "line": 6,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "test/mocha_mongodb.js",
-            "line": 8,
+            "file": "test/mocha_root_hooks.ts",
+            "line": 4,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "test/types/community/changes_from_36.test-d.ts",
-            "line": 5,
+            "file": "test/types/community/client.test-d.ts",
+            "line": 4,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "test/unit/client-side-encryption/state_machine.test.ts",
-            "line": 12,
+            "file": "test/unit/cmap/auth/gssapi.test.ts",
+            "line": 6,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -1011,7 +1011,7 @@
     },
     "quotes": {
       "double": {
-        "count": 28437,
+        "count": 28598,
         "samples": [
           {
             "file": ".evergreen/ci_matrix_constants.js",
@@ -1021,49 +1021,49 @@
           },
           {
             "file": "src/mongo_client.ts",
-            "line": 70,
-            "column": 60,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "test/integration/change-streams/change_stream.test.ts",
-            "line": 2913,
-            "column": 43,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "test/integration/command-logging-and-monitoring/command_monitoring.test.ts",
-            "line": 467,
+            "line": 431,
             "column": 51,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "test/integration/enumerate_indexes.test.ts",
-            "line": 1,
+            "file": "test/integration/change-streams/change_stream.test.ts",
+            "line": 3015,
+            "column": 33,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "test/integration/command-logging-and-monitoring/command_monitoring.test.ts",
+            "line": 468,
             "column": 54,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "test/integration/node-specific/examples/query_embedded_documents.test.js",
-            "line": 22,
-            "column": 15,
+            "file": "test/integration/enumerate_indexes.test.ts",
+            "line": 50,
+            "column": 19,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "test/tools/fixtures/process_resource_script.in.js",
-            "line": 85,
-            "column": 80,
+            "file": "test/integration/node-specific/examples/query_for_null_fields.test.js",
+            "line": 34,
+            "column": 36,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "test/unit/assorted/polling_srv_records_for_mongos_discovery.prose.test.ts",
-            "line": 21,
-            "column": 60,
+            "file": "test/tools/mongodb-mock/src/request.js",
+            "line": 29,
+            "column": 54,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "test/unit/assorted/scram_iterations.test.ts",
+            "line": 12,
+            "column": 10,
             "message": "Strings must use doublequote."
           },
           {
             "file": "test/unit/index.test.ts",
-            "line": 73,
+            "line": 67,
             "column": 3,
             "message": "Strings must use doublequote."
           },
@@ -1087,43 +1087,43 @@
           {
             "file": "etc/docs/template/static/s/js/jquery.js",
             "line": 2,
-            "column": 8487,
+            "column": 8295,
             "message": "Strings must use singlequote."
           },
           {
             "file": "etc/docs/template/static/s/js/jquery.js",
             "line": 2,
-            "column": 21470,
+            "column": 21263,
             "message": "Strings must use singlequote."
           },
           {
             "file": "etc/docs/template/static/s/js/jquery.js",
             "line": 2,
-            "column": 38258,
+            "column": 38239,
             "message": "Strings must use singlequote."
           },
           {
             "file": "etc/docs/template/static/s/js/jquery.js",
             "line": 2,
-            "column": 54557,
+            "column": 54534,
             "message": "Strings must use singlequote."
           },
           {
             "file": "etc/docs/template/static/s/js/jquery.js",
             "line": 2,
-            "column": 68293,
+            "column": 68250,
             "message": "Strings must use singlequote."
           },
           {
             "file": "etc/docs/template/static/s/js/jquery.js",
             "line": 2,
-            "column": 79321,
+            "column": 79287,
             "message": "Strings must use singlequote."
           },
           {
             "file": "etc/docs/template/static/s/js/searchtools.js",
             "line": 86,
-            "column": 25,
+            "column": 14,
             "message": "Strings must use singlequote."
           },
           {
@@ -1256,60 +1256,60 @@
         ]
       },
       "never": {
-        "count": 47243,
+        "count": 47654,
         "samples": [
           {
             "file": ".evergreen/ci_matrix_constants.js",
             "line": 1,
-            "column": 87,
+            "column": 80,
             "message": "Extra semicolon."
           },
           {
             "file": "src/cursor/find_cursor.ts",
-            "line": 342,
-            "column": 90,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "test/benchmarks/driver_bench/src/runner.mts",
-            "line": 53,
-            "column": 14,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "test/integration/client-side-operations-timeout/client_side_operations_timeout.prose.test.ts",
-            "line": 1198,
-            "column": 7,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "test/integration/crud/find_cursor_methods.test.ts",
-            "line": 47,
-            "column": 41,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "test/integration/node-specific/bson-options/utf8_validation.test.ts",
-            "line": 217,
-            "column": 7,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "test/integration/transactions-convenient-api/transactions-convenient-api.prose.test.ts",
-            "line": 89,
+            "line": 313,
             "column": 57,
             "message": "Extra semicolon."
           },
           {
-            "file": "test/types/community/collection/distinct.test-d.ts",
-            "line": 22,
-            "column": 69,
+            "file": "test/benchmarks/driver_bench/src/suites/multi_bench/grid_fs_download.mts",
+            "line": 19,
+            "column": 24,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "test/integration/client-side-operations-timeout/client_side_operations_timeout.prose.test.ts",
+            "line": 1115,
+            "column": 70,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "test/integration/crud/find_cursor_methods.test.ts",
+            "line": 65,
+            "column": 47,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "test/integration/node-specific/client_close.test.ts",
+            "line": 74,
+            "column": 35,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "test/integration/transactions/transactions.spec.test.ts",
+            "line": 21,
+            "column": 5,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "test/types/community/collection/filterQuery.test-d.ts",
+            "line": 257,
+            "column": 61,
             "message": "Extra semicolon."
           },
           {
             "file": "test/unit/connection_string.test.ts",
-            "line": 516,
-            "column": 82,
+            "line": 570,
+            "column": 5,
             "message": "Extra semicolon."
           },
           {

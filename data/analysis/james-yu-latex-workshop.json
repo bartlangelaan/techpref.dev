@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "96d58f23c7cc",
-  "analyzedCommit": "4c89e4dd711198217337883d2ca9055c5b339fa9",
-  "analyzedCommitDate": "2026-07-27T05:56:31.000Z",
+  "analyzedCommit": "89317d3a30a385512a9e0ef3c71639ae6adbe46e",
+  "analyzedCommitDate": "2026-08-13T04:52:26.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -9,7 +9,7 @@
         "samples": []
       },
       "generic": {
-        "count": 572,
+        "count": 612,
         "samples": [
           {
             "file": "dev/createSymbolSvgs.ts",
@@ -18,46 +18,46 @@
             "message": "Array type using 'SupportedExtension[]' is forbidden. Use 'Array<SupportedExtension>' instead."
           },
           {
-            "file": "src/completion/completer/completerutils.ts",
-            "line": 55,
-            "column": 117,
-            "message": "Array type using 'CompletionItem[]' is forbidden. Use 'Array<CompletionItem>' instead."
+            "file": "src/completion/completer/closeenv.ts",
+            "line": 6,
+            "column": 65,
+            "message": "Array type using 'vscode.CompletionItem[]' is forbidden. Use 'Array<vscode.CompletionItem>' instead."
           },
           {
             "file": "src/completion/completer/macro.ts",
-            "line": 315,
-            "column": 17,
-            "message": "Array type using 'CmdEnvSuggestion[]' is forbidden. Use 'Array<CmdEnvSuggestion>' instead."
+            "line": 444,
+            "column": 54,
+            "message": "Array type using 'MacroRaw[]' is forbidden. Use 'Array<MacroRaw>' instead."
           },
           {
-            "file": "src/core/file.ts",
-            "line": 10,
-            "column": 19,
+            "file": "src/core/root.ts",
+            "line": 168,
+            "column": 22,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
             "file": "src/language/folding.ts",
-            "line": 4,
-            "column": 36,
-            "message": "Array type using 'RegExp[]' is forbidden. Use 'Array<RegExp>' instead."
+            "line": 87,
+            "column": 24,
+            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           },
           {
-            "file": "src/lint/latex-formatter/latexindent.ts",
-            "line": 158,
-            "column": 29,
-            "message": "Array type using 'Buffer[]' is forbidden. Use 'Array<Buffer>' instead."
+            "file": "src/lint/latex-linter/chktex.ts",
+            "line": 268,
+            "column": 69,
+            "message": "Array type using 'vscode.Diagnostic[]' is forbidden. Use 'Array<vscode.Diagnostic>' instead."
           },
           {
-            "file": "src/outline/structure/bibtex.ts",
-            "line": 37,
-            "column": 15,
-            "message": "Array type using 'TeXElement[]' is forbidden. Use 'Array<TeXElement>' instead."
-          },
-          {
-            "file": "src/parse/parser/unified-defs.ts",
-            "line": 45,
-            "column": 58,
+            "file": "src/outline/structure/latex.ts",
+            "line": 263,
+            "column": 88,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+          },
+          {
+            "file": "src/types.ts",
+            "line": 23,
+            "column": 17,
+            "message": "Array type using 'CmdEnvSuggestion[]' is forbidden. Use 'Array<CmdEnvSuggestion>' instead."
           },
           {
             "file": "test/units/05_completion/citation.test.ts",
@@ -67,7 +67,7 @@
           },
           {
             "file": "viewer/latexworkshop.ts",
-            "line": 82,
+            "line": 77,
             "column": 23,
             "message": "Array type using 'PdfjsEventName[]' is forbidden. Use 'Array<PdfjsEventName>' instead."
           }
@@ -76,7 +76,7 @@
     },
     "consistent-generic-constructors": {
       "constructor": {
-        "count": 14,
+        "count": 13,
         "samples": [
           {
             "file": "src/completion/completer/input.ts",
@@ -103,14 +103,20 @@
             "message": "The generic type arguments should be specified as part of the constructor type arguments."
           },
           {
-            "file": "src/core/watcher.ts",
-            "line": 23,
-            "column": 39,
+            "file": "src/core/cache.ts",
+            "line": 656,
+            "column": 22,
             "message": "The generic type arguments should be specified as part of the constructor type arguments."
           },
           {
             "file": "src/core/watcher.ts",
             "line": 30,
+            "column": 39,
+            "message": "The generic type arguments should be specified as part of the constructor type arguments."
+          },
+          {
+            "file": "src/core/watcher.ts",
+            "line": 37,
             "column": 39,
             "message": "The generic type arguments should be specified as part of the constructor type arguments."
           },
@@ -121,27 +127,21 @@
             "message": "The generic type arguments should be specified as part of the constructor type arguments."
           },
           {
-            "file": "src/extras/texdoc.ts",
-            "line": 58,
-            "column": 20,
+            "file": "src/outline/structure.ts",
+            "line": 94,
+            "column": 50,
             "message": "The generic type arguments should be specified as part of the constructor type arguments."
           },
           {
             "file": "test/units/utils.ts",
-            "line": 103,
+            "line": 106,
             "column": 14,
-            "message": "The generic type arguments should be specified as part of the constructor type arguments."
-          },
-          {
-            "file": "test/units/utils.ts",
-            "line": 104,
-            "column": 21,
             "message": "The generic type arguments should be specified as part of the constructor type arguments."
           }
         ]
       },
       "type-annotation": {
-        "count": 21,
+        "count": 23,
         "samples": [
           {
             "file": "dev/createSymbolSvgs.ts",
@@ -150,9 +150,9 @@
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "src/completion/completer/macro.ts",
-            "line": 101,
-            "column": 26,
+            "file": "src/compile/executor.ts",
+            "line": 18,
+            "column": 50,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
@@ -162,9 +162,9 @@
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "src/lint/bibtex-formatter.ts",
-            "line": 83,
-            "column": 31,
+            "file": "src/extras/snippet-view.ts",
+            "line": 28,
+            "column": 32,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
@@ -181,14 +181,14 @@
           },
           {
             "file": "src/preview/viewer/pdfviewermanager.ts",
-            "line": 13,
-            "column": 32,
+            "line": 14,
+            "column": 26,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "test/units/06_linter/bibtex-formatter.test.ts",
-            "line": 381,
-            "column": 39,
+            "file": "test/units/02_compile/executor.test.ts",
+            "line": 59,
+            "column": 32,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
@@ -199,7 +199,7 @@
           },
           {
             "file": "viewer/latexworkshop.ts",
-            "line": 18,
+            "line": 17,
             "column": 36,
             "message": "The generic type arguments should be specified as part of the type annotation."
           }
@@ -254,8 +254,8 @@
           },
           {
             "file": "src/parse/parser/parserutils.ts",
-            "line": 48,
-            "column": 54,
+            "line": 39,
+            "column": 30,
             "message": "A record is preferred over an index signature."
           },
           {
@@ -266,15 +266,27 @@
           },
           {
             "file": "viewer/components/l10n.ts",
-            "line": 471,
+            "line": 357,
             "column": 20,
             "message": "A record is preferred over an index signature."
           }
         ]
       },
       "index-signature": {
-        "count": 2,
+        "count": 6,
         "samples": [
+          {
+            "file": "src/compile/step.ts",
+            "line": 19,
+            "column": 20,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "src/compile/types.ts",
+            "line": 7,
+            "column": 11,
+            "message": "An index signature is preferred over a record."
+          },
           {
             "file": "test/units/01_core/utils.test.ts",
             "line": 84,
@@ -282,7 +294,19 @@
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "test/units/99_extras/cleaner.test.ts",
+            "file": "test/units/02_compile/executor.test.ts",
+            "line": 640,
+            "column": 19,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "test/units/02_compile/recipe.test.ts",
+            "line": 387,
+            "column": 49,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "test/units/98_extras/cleaner.test.ts",
             "line": 21,
             "column": 32,
             "message": "An index signature is preferred over a record."
@@ -301,6 +325,12 @@
             "message": "Use `interface` instead of `type`."
           },
           {
+            "file": "src/completion/completer/class.ts",
+            "line": 12,
+            "column": 1,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
             "file": "src/extras/snippet-view.ts",
             "line": 17,
             "column": 1,
@@ -308,7 +338,7 @@
           },
           {
             "file": "src/locate/synctex/synctexjs.ts",
-            "line": 55,
+            "line": 57,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
@@ -319,26 +349,20 @@
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "src/parse/parser/parserutils.ts",
-            "line": 11,
+            "file": "src/parse/parser/unified.ts",
+            "line": 10,
+            "column": 1,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "src/types.ts",
+            "line": 58,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
             "file": "src/types.ts",
-            "line": 61,
-            "column": 8,
-            "message": "Use `interface` instead of `type`."
-          },
-          {
-            "file": "src/types.ts",
-            "line": 109,
-            "column": 8,
-            "message": "Use `interface` instead of `type`."
-          },
-          {
-            "file": "src/types.ts",
-            "line": 167,
+            "line": 117,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
@@ -385,25 +409,25 @@
           },
           {
             "file": "src/types.ts",
-            "line": 130,
+            "line": 79,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "src/types.ts",
-            "line": 211,
+            "line": 161,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "src/types.ts",
-            "line": 224,
+            "line": 174,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "src/types.ts",
-            "line": 233,
+            "line": 183,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
@@ -424,7 +448,7 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 20,
+        "count": 19,
         "samples": [
           {
             "file": "dev/createSymbolSvgs.ts",
@@ -457,22 +481,22 @@
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "src/parse/newcommandfinder.ts",
-            "line": 3,
+            "file": "src/locate/synctex/worker.ts",
+            "line": 8,
+            "column": 1,
+            "message": "Imports PdfSyncObject and Block are only used as type."
+          },
+          {
+            "file": "src/preview/viewer.ts",
+            "line": 2,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
             "file": "src/preview/viewer/pdfviewermanager.ts",
-            "line": 1,
-            "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
-          {
-            "file": "test/units/02_compile/recipe.test.ts",
             "line": 3,
             "column": 1,
-            "message": "Imports Sinon are only used as type."
+            "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
             "file": "test/units/07_outline/bibtex.test.ts",
@@ -481,7 +505,7 @@
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "viewer/components/trimming.ts",
+            "file": "test/units/99_multiroot/root.test.ts",
             "line": 1,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
@@ -489,7 +513,7 @@
         ]
       },
       "no-type-imports": {
-        "count": 151,
+        "count": 156,
         "samples": [
           {
             "file": "dev/createSymbolSvgs.ts",
@@ -498,10 +522,10 @@
             "message": "`import()` type annotations are forbidden."
           },
           {
-            "file": "src/completion/completer/citation.ts",
-            "line": 4,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
+            "file": "src/completion/completer/atsuggestion.ts",
+            "line": 44,
+            "column": 162,
+            "message": "`import()` type annotations are forbidden."
           },
           {
             "file": "src/completion/completer/package.ts",
@@ -511,38 +535,38 @@
           },
           {
             "file": "src/lint/latex-linter/chktex.ts",
-            "line": 4,
+            "line": 6,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "src/lw.ts",
-            "line": 12,
+            "line": 13,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/parse/parser.ts",
+            "file": "src/parse/parser/biberlog.ts",
+            "line": 3,
+            "column": 24,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "src/preview/mathjax/mathjax.ts",
+            "line": 8,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "test/units/02_compile/plan.test.ts",
             "line": 7,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/preview/mathjax.ts",
-            "line": 5,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "src/utils/parser.ts",
-            "line": 1,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
             "file": "test/units/07_outline/integration.test.ts",
-            "line": 5,
-            "column": 34,
+            "line": 6,
+            "column": 10,
             "message": "Use an `import` instead of an `import type`."
           },
           {
@@ -556,7 +580,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 895,
+        "count": 865,
         "samples": [
           {
             "file": "dev/createSymbolSvgs.ts",
@@ -565,121 +589,121 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "src/completion/completer/environment.ts",
-            "line": 202,
+            "file": "src/completion/completer/macro.ts",
+            "line": 397,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/core/commands.ts",
-            "line": 291,
+            "file": "src/core/file.ts",
+            "line": 43,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "src/lint/bibtex-formatter/utils.ts",
+            "line": 46,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/extras/texdoc.ts",
-            "line": 11,
-            "column": 1,
+            "file": "src/outline/structure/bibtex.ts",
+            "line": 14,
+            "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/main.ts",
-            "line": 341,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/preview/hover/onref.ts",
-            "line": 41,
-            "column": 1,
+            "file": "src/preview/hover/utils.ts",
+            "line": 8,
+            "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "src/utils/utils.ts",
+            "line": 106,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "test/units/utils.ts",
             "line": 68,
-            "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "viewer/components/connection.ts",
-            "line": 39,
-            "column": 8,
+            "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "viewer/viewer.mjs",
-            "line": 7484,
-            "column": 5,
+            "line": 6838,
+            "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "viewer/viewer.mjs",
-            "line": 26053,
+            "line": 26361,
             "column": 1,
             "message": "Expected a function expression."
           }
         ]
       },
       "declaration": {
-        "count": 87,
+        "count": 89,
         "samples": [
           {
             "file": "src/compile/build.ts",
-            "line": 78,
+            "line": 59,
             "column": 11,
             "message": "Expected a function declaration."
           },
           {
             "file": "src/lint/latex-formatter/latexindent.ts",
-            "line": 138,
-            "column": 15,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "src/preview/viewer.ts",
-            "line": 228,
+            "line": 85,
             "column": 11,
             "message": "Expected a function declaration."
           },
           {
-            "file": "test/units/02_compile/recipe.test.ts",
-            "line": 665,
-            "column": 15,
+            "file": "src/preview/viewer.ts",
+            "line": 229,
+            "column": 11,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "test/units/01_core/watcher.test.ts",
+            "line": 23,
+            "column": 11,
             "message": "Expected a function declaration."
           },
           {
             "file": "viewer/viewer.mjs",
-            "line": 389,
+            "line": 272,
             "column": 5,
             "message": "Expected a function declaration."
           },
           {
             "file": "viewer/viewer.mjs",
-            "line": 1453,
+            "line": 1371,
             "column": 5,
             "message": "Expected a function declaration."
           },
           {
             "file": "viewer/viewer.mjs",
-            "line": 2342,
+            "line": 2161,
             "column": 5,
             "message": "Expected a function declaration."
           },
           {
             "file": "viewer/viewer.mjs",
-            "line": 4002,
+            "line": 3680,
             "column": 5,
             "message": "Expected a function declaration."
           },
           {
             "file": "viewer/viewer.mjs",
-            "line": 4827,
-            "column": 5,
+            "line": 14138,
+            "column": 9,
             "message": "Expected a function declaration."
           },
           {
             "file": "viewer/viewer.mjs",
-            "line": 24135,
+            "line": 24384,
             "column": 11,
             "message": "Expected a function declaration."
           }
@@ -726,32 +750,32 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/lint/index.ts",
+            "file": "src/lint/duplicate-label.ts",
             "line": 7,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/lint/latex-linter/lacheck.ts",
-            "line": 13,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "src/outline/structure/doctex.ts",
-            "line": 9,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "src/parse/parser/dvipdfmxlog.ts",
-            "line": 25,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "src/utils/parser.ts",
+            "file": "src/lint/latex-linter/chktex.ts",
             "line": 14,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "src/outline/index.ts",
+            "line": 1,
+            "column": 10,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "src/parse/parser/bibtexlog.ts",
+            "line": 19,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "src/utils/logger.ts",
+            "line": 15,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -766,7 +790,7 @@
     },
     "indent": {
       "2-space": {
-        "count": 16,
+        "count": 14,
         "samples": [
           {
             "file": "src/completion/completer/completerutils.ts",
@@ -775,10 +799,10 @@
             "message": "Expected 2-space indentation, but file uses 1-space indentation."
           },
           {
-            "file": "src/extras/cleaner.ts",
-            "line": 30,
+            "file": "src/completion/completer/reference.ts",
+            "line": 139,
             "column": 1,
-            "message": "Expected 2-space indentation, but file uses 13-space indentation."
+            "message": "Expected 2-space indentation, but file uses 9-space indentation."
           },
           {
             "file": "src/language/folding.ts",
@@ -787,16 +811,16 @@
             "message": "Expected 2-space indentation, but file uses 5-space indentation."
           },
           {
-            "file": "src/main.ts",
-            "line": 351,
+            "file": "src/lw.ts",
+            "line": 106,
             "column": 1,
-            "message": "Expected 2-space indentation, but file uses 3-space indentation."
+            "message": "Expected 2-space indentation, but file uses 13-space indentation."
           },
           {
-            "file": "src/types.ts",
-            "line": 86,
+            "file": "src/preview/hover/utils.ts",
+            "line": 23,
             "column": 1,
-            "message": "Expected 2-space indentation, but file uses 5-space indentation."
+            "message": "Expected 2-space indentation, but file uses 9-space indentation."
           },
           {
             "file": "src/utils/inputfilepath.ts",
@@ -805,8 +829,8 @@
             "message": "Expected 2-space indentation, but file uses 15-space indentation."
           },
           {
-            "file": "test/units/02_compile/terminate.test.ts",
-            "line": 10,
+            "file": "test/units/06_linter/lacheck.test.ts",
+            "line": 12,
             "column": 1,
             "message": "Expected spaces for indentation, but found tabs."
           },
@@ -817,8 +841,8 @@
             "message": "Expected spaces for indentation, but found tabs."
           },
           {
-            "file": "test/units/07_outline/doctex.test.ts",
-            "line": 9,
+            "file": "test/units/07_outline/latex.test.ts",
+            "line": 13,
             "column": 1,
             "message": "Expected spaces for indentation, but found tabs."
           },
@@ -831,7 +855,7 @@
         ]
       },
       "4-space": {
-        "count": 26,
+        "count": 24,
         "samples": [
           {
             "file": "resources/mathpreviewpanel/mathpreview.js",
@@ -846,22 +870,22 @@
             "message": "Expected 4-space indentation, but file uses 9-space indentation."
           },
           {
-            "file": "src/language/folding.ts",
-            "line": 243,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 5-space indentation."
-          },
-          {
-            "file": "src/lw.ts",
-            "line": 110,
+            "file": "src/extras/cleaner.ts",
+            "line": 30,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 13-space indentation."
           },
           {
-            "file": "src/preview/hover/utils.ts",
-            "line": 23,
+            "file": "src/lw.ts",
+            "line": 106,
             "column": 1,
-            "message": "Expected 4-space indentation, but file uses 9-space indentation."
+            "message": "Expected 4-space indentation, but file uses 13-space indentation."
+          },
+          {
+            "file": "src/outline/structure.ts",
+            "line": 122,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 42-space indentation."
           },
           {
             "file": "test/units/01_core/utils.test.ts",
@@ -876,14 +900,14 @@
             "message": "Expected spaces for indentation, but found tabs."
           },
           {
-            "file": "test/units/07_outline/doctex.test.ts",
-            "line": 9,
+            "file": "test/units/07_outline/latex.test.ts",
+            "line": 13,
             "column": 1,
             "message": "Expected spaces for indentation, but found tabs."
           },
           {
             "file": "viewer/components/gui.ts",
-            "line": 98,
+            "line": 89,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -896,7 +920,7 @@
         ]
       },
       "tab": {
-        "count": 179,
+        "count": 172,
         "samples": [
           {
             "file": "dev/createSymbolSvgs.ts",
@@ -905,50 +929,50 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/completion/completer/completerutils.ts",
-            "line": 6,
+            "file": "src/completion/completer/class.ts",
+            "line": 9,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/extras/index.ts",
-            "line": 12,
+            "file": "src/extras/checkcites.ts",
+            "line": 9,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/lint/latex-code-actions.ts",
-            "line": 5,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "src/parse/index.ts",
-            "line": 6,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "src/preview/server.ts",
+            "file": "src/lint/bibtex-formatter.ts",
             "line": 11,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "test/suites/04_intellisense.test.ts",
+            "file": "src/outline/structure.ts",
+            "line": 11,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "src/preview/hover/onref.ts",
             "line": 10,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "test/units/02_compile/queue.test.ts",
-            "line": 8,
+            "file": "src/utils/tokenizer.ts",
+            "line": 12,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "test/units/06_linter/latex-linter.test.ts",
-            "line": 15,
+            "file": "test/units/05_completion/argument.test.ts",
+            "line": 9,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "test/units/98_extras/cleaner.test.ts",
+            "line": 12,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -963,7 +987,7 @@
     },
     "quotes": {
       "double": {
-        "count": 14166,
+        "count": 12890,
         "samples": [
           {
             "file": "dev/createSymbolSvgs.ts",
@@ -972,63 +996,63 @@
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/extras/counter.ts",
-            "line": 27,
-            "column": 20,
+            "file": "src/core/root.ts",
+            "line": 307,
+            "column": 61,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/parse/parser/unified-defs.ts",
-            "line": 22,
-            "column": 36,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "test/suites/04_intellisense.test.ts",
-            "line": 287,
-            "column": 47,
+            "file": "src/outline/structure/latex.ts",
+            "line": 186,
+            "column": 42,
             "message": "Strings must use doublequote."
           },
           {
             "file": "test/units/01_core/cache.test.ts",
-            "line": 687,
+            "line": 756,
             "column": 64,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "test/units/02_compile/recipe.test.ts",
-            "line": 86,
-            "column": 68,
+            "file": "test/units/02_compile/executor.test.ts",
+            "line": 270,
+            "column": 12,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "test/units/05_completion/environment.test.ts",
-            "line": 65,
-            "column": 29,
+            "file": "test/units/03_viewer/pdf-viewer.test.ts",
+            "line": 204,
+            "column": 52,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "test/units/07_outline/bibtex.test.ts",
-            "line": 58,
-            "column": 30,
+            "file": "test/units/06_linter/bibtex-formatter.test.ts",
+            "line": 22,
+            "column": 48,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "test/units/07_outline/latex.test.ts",
+            "line": 197,
+            "column": 25,
             "message": "Strings must use doublequote."
           },
           {
             "file": "viewer/components/l10n.ts",
-            "line": 126,
-            "column": 3,
+            "line": 50,
+            "column": 9,
             "message": "Strings must use doublequote."
           },
           {
             "file": "viewer/viewer.mjs",
-            "line": 25281,
+            "line": 25570,
             "column": 21,
             "message": "Strings must use doublequote."
           }
         ]
       },
       "single": {
-        "count": 2827,
+        "count": 3082,
         "samples": [
           {
             "file": "eslint.config.mjs",
@@ -1038,55 +1062,55 @@
           },
           {
             "file": "viewer/viewer.mjs",
-            "line": 6706,
-            "column": 12,
+            "line": 5720,
+            "column": 6,
             "message": "Strings must use singlequote."
           },
           {
             "file": "viewer/viewer.mjs",
-            "line": 9040,
-            "column": 54,
+            "line": 8332,
+            "column": 57,
             "message": "Strings must use singlequote."
           },
           {
             "file": "viewer/viewer.mjs",
-            "line": 11125,
-            "column": 15,
+            "line": 10593,
+            "column": 13,
             "message": "Strings must use singlequote."
           },
           {
             "file": "viewer/viewer.mjs",
-            "line": 14332,
+            "line": 13989,
+            "column": 39,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "viewer/viewer.mjs",
+            "line": 16545,
+            "column": 35,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "viewer/viewer.mjs",
+            "line": 20152,
             "column": 29,
             "message": "Strings must use singlequote."
           },
           {
             "file": "viewer/viewer.mjs",
-            "line": 16712,
-            "column": 18,
+            "line": 22918,
+            "column": 43,
             "message": "Strings must use singlequote."
           },
           {
             "file": "viewer/viewer.mjs",
-            "line": 19500,
-            "column": 42,
+            "line": 24951,
+            "column": 16,
             "message": "Strings must use singlequote."
           },
           {
             "file": "viewer/viewer.mjs",
-            "line": 22709,
-            "column": 12,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "viewer/viewer.mjs",
-            "line": 24948,
-            "column": 18,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "viewer/viewer.mjs",
-            "line": 26074,
+            "line": 26382,
             "column": 29,
             "message": "Strings must use singlequote."
           }
@@ -1099,7 +1123,7 @@
         "samples": [
           {
             "file": "viewer/viewer.mjs",
-            "line": 17523,
+            "line": 17165,
             "column": 1,
             "message": "Must never use destructuring props assignment in SFC argument"
           }
@@ -1110,19 +1134,19 @@
         "samples": [
           {
             "file": "viewer/viewer.mjs",
-            "line": 17532,
+            "line": 17174,
             "column": 19,
             "message": "Must use destructuring pdfPageView assignment"
           },
           {
             "file": "viewer/viewer.mjs",
-            "line": 17533,
+            "line": 17175,
             "column": 22,
             "message": "Must use destructuring pdfPageView assignment"
           },
           {
             "file": "viewer/viewer.mjs",
-            "line": 17534,
+            "line": 17176,
             "column": 20,
             "message": "Must use destructuring pdfPageView assignment"
           }
@@ -1133,19 +1157,19 @@
         "samples": [
           {
             "file": "viewer/viewer.mjs",
-            "line": 17532,
+            "line": 17174,
             "column": 19,
             "message": "Must use destructuring pdfPageView assignment"
           },
           {
             "file": "viewer/viewer.mjs",
-            "line": 17533,
+            "line": 17175,
             "column": 22,
             "message": "Must use destructuring pdfPageView assignment"
           },
           {
             "file": "viewer/viewer.mjs",
-            "line": 17534,
+            "line": 17176,
             "column": 20,
             "message": "Must use destructuring pdfPageView assignment"
           }
@@ -1156,19 +1180,19 @@
         "samples": [
           {
             "file": "viewer/viewer.mjs",
-            "line": 17532,
+            "line": 17174,
             "column": 19,
             "message": "Must use destructuring pdfPageView assignment"
           },
           {
             "file": "viewer/viewer.mjs",
-            "line": 17533,
+            "line": 17175,
             "column": 22,
             "message": "Must use destructuring pdfPageView assignment"
           },
           {
             "file": "viewer/viewer.mjs",
-            "line": 17534,
+            "line": 17176,
             "column": 20,
             "message": "Must use destructuring pdfPageView assignment"
           }
@@ -1185,7 +1209,7 @@
         "samples": [
           {
             "file": "viewer/viewer.mjs",
-            "line": 17523,
+            "line": 17165,
             "column": 1,
             "message": "Function component is not an arrow function"
           }
@@ -1214,7 +1238,7 @@
     },
     "semi": {
       "always": {
-        "count": 16814,
+        "count": 16906,
         "samples": [
           {
             "file": "dev/createSymbolSvgs.ts",
@@ -1223,63 +1247,63 @@
             "message": "Missing semicolon."
           },
           {
-            "file": "src/completion/latex.ts",
-            "line": 195,
-            "column": 11,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "src/lint/latex-code-actions.ts",
-            "line": 103,
-            "column": 45,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "src/parse/parser/bibtexlog.ts",
-            "line": 93,
-            "column": 50,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "test/suites/04_intellisense.test.ts",
-            "line": 42,
+            "file": "src/completion/completer/subsuperscript.ts",
+            "line": 21,
             "column": 7,
             "message": "Missing semicolon."
           },
           {
+            "file": "src/lint/bibtex-formatter.ts",
+            "line": 126,
+            "column": 23,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "src/parse/newcommandfinder.ts",
+            "line": 87,
+            "column": 29,
+            "message": "Missing semicolon."
+          },
+          {
             "file": "test/units/01_core/cache.test.ts",
-            "line": 816,
-            "column": 73,
+            "line": 243,
+            "column": 64,
             "message": "Missing semicolon."
           },
           {
-            "file": "test/units/02_compile/recipe.test.ts",
-            "line": 408,
-            "column": 11,
+            "file": "test/units/02_compile/build.test.ts",
+            "line": 109,
+            "column": 51,
             "message": "Missing semicolon."
           },
           {
-            "file": "test/units/05_completion/latex.test.ts",
-            "line": 164,
-            "column": 14,
+            "file": "test/units/03_viewer/pdf-server.test.ts",
+            "line": 95,
+            "column": 30,
             "message": "Missing semicolon."
           },
           {
-            "file": "test/units/07_outline/doctex.test.ts",
-            "line": 93,
-            "column": 48,
+            "file": "test/units/06_linter/bibtex-formatter.test.ts",
+            "line": 268,
+            "column": 64,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "test/units/07_outline/latex.test.ts",
+            "line": 395,
+            "column": 46,
             "message": "Missing semicolon."
           },
           {
             "file": "viewer/viewer.mjs",
-            "line": 23236,
+            "line": 23475,
             "column": 11,
             "message": "Missing semicolon."
           }
         ]
       },
       "never": {
-        "count": 10819,
+        "count": 10987,
         "samples": [
           {
             "file": "eslint.config.mjs",
@@ -1289,55 +1313,55 @@
           },
           {
             "file": "viewer/viewer.mjs",
-            "line": 2893,
+            "line": 2972,
+            "column": 38,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "viewer/viewer.mjs",
+            "line": 6187,
+            "column": 31,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "viewer/viewer.mjs",
+            "line": 9205,
+            "column": 44,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "viewer/viewer.mjs",
+            "line": 11748,
+            "column": 43,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "viewer/viewer.mjs",
+            "line": 14566,
+            "column": 16,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "viewer/viewer.mjs",
+            "line": 17120,
+            "column": 50,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "viewer/viewer.mjs",
+            "line": 20029,
             "column": 25,
             "message": "Extra semicolon."
           },
           {
             "file": "viewer/viewer.mjs",
-            "line": 5704,
-            "column": 39,
+            "line": 22939,
+            "column": 16,
             "message": "Extra semicolon."
           },
           {
             "file": "viewer/viewer.mjs",
-            "line": 9209,
-            "column": 77,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "viewer/viewer.mjs",
-            "line": 11650,
-            "column": 7,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "viewer/viewer.mjs",
-            "line": 14406,
-            "column": 39,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "viewer/viewer.mjs",
-            "line": 16953,
-            "column": 33,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "viewer/viewer.mjs",
-            "line": 19812,
-            "column": 46,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "viewer/viewer.mjs",
-            "line": 22678,
-            "column": 49,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "viewer/viewer.mjs",
-            "line": 26077,
+            "line": 26385,
             "column": 122,
             "message": "Extra semicolon."
           }

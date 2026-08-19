@@ -1,11 +1,11 @@
 {
   "analyzedVersion": "96d58f23c7cc",
-  "analyzedCommit": "b712d5b88a2e72495f5b8f3f0d97d52ee50d3836",
-  "analyzedCommitDate": "2026-07-23T14:31:44.000Z",
+  "analyzedCommit": "e872906cdc8026bbd65337dea4affdaf4511f5e8",
+  "analyzedCommitDate": "2026-08-19T13:48:10.000Z",
   "checks": {
     "array-type": {
       "array": {
-        "count": 4,
+        "count": 7,
         "samples": [
           {
             "file": "playground/utils/font.ts",
@@ -30,11 +30,29 @@
             "line": 495,
             "column": 52,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
+          },
+          {
+            "file": "src/handler/url-safety.ts",
+            "line": 221,
+            "column": 14,
+            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
+          },
+          {
+            "file": "src/handler/url-safety.ts",
+            "line": 221,
+            "column": 14,
+            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
+          },
+          {
+            "file": "src/handler/url-safety.ts",
+            "line": 277,
+            "column": 16,
+            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           }
         ]
       },
       "generic": {
-        "count": 102,
+        "count": 104,
         "samples": [
           {
             "file": "playground/pages/api/font.ts",
@@ -49,10 +67,10 @@
             "message": "Array type using 'Arc[]' is forbidden. Use 'Array<Arc>' instead."
           },
           {
-            "file": "src/builder/gradient/utils.ts",
-            "line": 19,
-            "column": 16,
-            "message": "Array type using 'Stop[]' is forbidden. Use 'Array<Stop>' instead."
+            "file": "src/builder/mask-image.ts",
+            "line": 20,
+            "column": 51,
+            "message": "Array type using 'MaskProperty[]' is forbidden. Use 'Array<MaskProperty>' instead."
           },
           {
             "file": "src/builder/text-decoration.ts",
@@ -62,14 +80,14 @@
           },
           {
             "file": "src/font.ts",
-            "line": 113,
-            "column": 33,
+            "line": 117,
+            "column": 17,
             "message": "Array type using 'BandPoint[]' is forbidden. Use 'Array<BandPoint>' instead."
           },
           {
             "file": "src/font.ts",
-            "line": 705,
-            "column": 29,
+            "line": 715,
+            "column": 20,
             "message": "Array type using 'GlyphBox[]' is forbidden. Use 'Array<GlyphBox>' instead."
           },
           {
@@ -81,7 +99,7 @@
           {
             "file": "src/satori.ts",
             "line": 248,
-            "column": 31,
+            "column": 25,
             "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           },
           {
@@ -299,7 +317,7 @@
     },
     "consistent-type-definitions": {
       "interface": {
-        "count": 7,
+        "count": 8,
         "samples": [
           {
             "file": "playground/cards/playground-data.ts",
@@ -334,6 +352,12 @@
           {
             "file": "src/handler/expand.ts",
             "line": 263,
+            "column": 1,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "src/handler/url-safety.ts",
+            "line": 223,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
@@ -413,7 +437,7 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 24,
+        "count": 25,
         "samples": [
           {
             "file": "playground/pages/_app.tsx",
@@ -440,16 +464,16 @@
             "message": "Imports MaskProperty are only used as type."
           },
           {
-            "file": "src/handler/expand.ts",
-            "line": 18,
+            "file": "src/handler/inheritable.ts",
+            "line": 1,
             "column": 1,
-            "message": "Imports CSSVariables are only used as type."
+            "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
             "file": "src/layout.ts",
-            "line": 18,
+            "line": 15,
             "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
+            "message": "Imports YogaNode are only used as type."
           },
           {
             "file": "src/layout.ts",
@@ -478,7 +502,7 @@
         ]
       },
       "no-type-imports": {
-        "count": 26,
+        "count": 30,
         "samples": [
           {
             "file": "playground/pages/api/font.ts",
@@ -499,32 +523,26 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/handler/tailwind.ts",
-            "line": 1,
+            "file": "src/jsx/index.ts",
+            "line": 2,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "src/jsx/jsx-runtime.ts",
-            "line": 15,
+            "line": 16,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "src/satori.ts",
-            "line": 1,
+            "line": 2,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "src/text/index.ts",
-            "line": 5,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "src/utils.ts",
-            "line": 1,
+            "line": 19,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -532,6 +550,12 @@
             "file": "src/yoga.ts",
             "line": 2,
             "column": 10,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "test/url-safety.test.ts",
+            "line": 3,
+            "column": 3,
             "message": "Use an `import` instead of an `import type`."
           },
           {
@@ -545,7 +569,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 188,
+        "count": 197,
         "samples": [
           {
             "file": "playground/pages/api/font.ts",
@@ -554,44 +578,44 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "src/builder/border-radius.ts",
-            "line": 263,
-            "column": 5,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/builder/rect.ts",
-            "line": 19,
+            "file": "src/builder/border.ts",
+            "line": 4,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/handler/expand.ts",
-            "line": 553,
+            "file": "src/builder/shadow.ts",
+            "line": 25,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "src/handler/image.ts",
+            "line": 18,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "src/handler/url-safety.ts",
-            "line": 102,
-            "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/parser/shape.ts",
             "line": 207,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
+            "file": "src/parser/shape.ts",
+            "line": 100,
+            "column": 3,
+            "message": "Expected a function expression."
+          },
+          {
             "file": "src/text/processor.ts",
-            "line": 114,
+            "line": 49,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "src/utils.ts",
-            "line": 283,
+            "line": 273,
             "column": 3,
             "message": "Expected a function expression."
           },
@@ -610,7 +634,7 @@
         ]
       },
       "declaration": {
-        "count": 23,
+        "count": 25,
         "samples": [
           {
             "file": "playground/pages/index.tsx",
@@ -620,7 +644,7 @@
           },
           {
             "file": "playground/pages/index.tsx",
-            "line": 436,
+            "line": 467,
             "column": 17,
             "message": "Expected a function declaration."
           },
@@ -631,27 +655,27 @@
             "message": "Expected a function declaration."
           },
           {
-            "file": "src/builder/mask-image.ts",
-            "line": 5,
-            "column": 7,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "src/font.ts",
-            "line": 67,
+            "file": "src/builder/rect.ts",
+            "line": 27,
             "column": 9,
             "message": "Expected a function declaration."
           },
           {
             "file": "src/font.ts",
-            "line": 525,
+            "line": 493,
             "column": 11,
             "message": "Expected a function declaration."
           },
           {
             "file": "src/font.ts",
-            "line": 553,
+            "line": 532,
             "column": 11,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "src/handler/preprocess.ts",
+            "line": 159,
+            "column": 9,
             "message": "Expected a function declaration."
           },
           {
@@ -661,9 +685,9 @@
             "message": "Expected a function declaration."
           },
           {
-            "file": "src/vendor/parse-css-dimension/index.js",
-            "line": 1,
-            "column": 5,
+            "file": "src/utils.ts",
+            "line": 411,
+            "column": 14,
             "message": "Expected a function declaration."
           },
           {
@@ -927,7 +951,7 @@
     },
     "quotes": {
       "double": {
-        "count": 5540,
+        "count": 5619,
         "samples": [
           {
             "file": "playground/cards/playground-data.ts",
@@ -936,51 +960,51 @@
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/builder/rect.ts",
-            "line": 527,
-            "column": 42,
+            "file": "src/builder/shadow.ts",
+            "line": 40,
+            "column": 35,
             "message": "Strings must use doublequote."
           },
           {
             "file": "src/handler/presets.ts",
-            "line": 94,
-            "column": 17,
+            "line": 139,
+            "column": 21,
             "message": "Strings must use doublequote."
           },
           {
             "file": "src/jsx/intrinsic-elements.ts",
-            "line": 1251,
-            "column": 18,
+            "line": 1276,
+            "column": 7,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "test/benchmark/index.ts",
-            "line": 214,
-            "column": 37,
+            "file": "test/border.test.tsx",
+            "line": 4,
+            "column": 20,
             "message": "Strings must use doublequote."
           },
           {
             "file": "test/flexbox-advanced.test.tsx",
-            "line": 158,
-            "column": 25,
+            "line": 261,
+            "column": 27,
             "message": "Strings must use doublequote."
           },
           {
             "file": "test/image.test.tsx",
-            "line": 723,
-            "column": 19,
+            "line": 823,
+            "column": 30,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "test/opacity.test.tsx",
-            "line": 200,
+            "file": "test/overflow.test.tsx",
+            "line": 10,
             "column": 6,
             "message": "Strings must use doublequote."
           },
           {
             "file": "test/text-decoration.test.tsx",
-            "line": 56,
-            "column": 20,
+            "line": 200,
+            "column": 27,
             "message": "Strings must use doublequote."
           },
           {
@@ -1255,7 +1279,7 @@
     },
     "semi": {
       "always": {
-        "count": 4577,
+        "count": 4720,
         "samples": [
           {
             "file": "playground/cards/playground-data.ts",
@@ -1265,50 +1289,50 @@
           },
           {
             "file": "src/builder/border.ts",
-            "line": 61,
-            "column": 4,
+            "line": 149,
+            "column": 11,
             "message": "Missing semicolon."
           },
           {
             "file": "src/builder/transform.ts",
-            "line": 38,
-            "column": 14,
+            "line": 115,
+            "column": 28,
             "message": "Missing semicolon."
           },
           {
-            "file": "src/handler/expand.ts",
-            "line": 530,
-            "column": 33,
+            "file": "src/handler/image.ts",
+            "line": 123,
+            "column": 39,
             "message": "Missing semicolon."
           },
           {
             "file": "src/parser/shape.ts",
-            "line": 145,
-            "column": 26,
+            "line": 30,
+            "column": 70,
             "message": "Missing semicolon."
           },
           {
             "file": "src/utils.ts",
-            "line": 162,
-            "column": 15,
+            "line": 158,
+            "column": 8,
             "message": "Missing semicolon."
           },
           {
-            "file": "test/embed-font.test.tsx",
-            "line": 60,
-            "column": 47,
+            "file": "test/emoji.test.tsx",
+            "line": 20,
+            "column": 136,
             "message": "Missing semicolon."
           },
           {
-            "file": "test/image.test.tsx",
-            "line": 1193,
-            "column": 7,
+            "file": "test/language.test.tsx",
+            "line": 4,
+            "column": 37,
             "message": "Missing semicolon."
           },
           {
-            "file": "test/react.test.tsx",
-            "line": 14,
-            "column": 7,
+            "file": "test/shadow.test.tsx",
+            "line": 212,
+            "column": 8,
             "message": "Missing semicolon."
           },
           {

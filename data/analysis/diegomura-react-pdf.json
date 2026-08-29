@@ -1,94 +1,113 @@
 {
   "analyzedVersion": "96d58f23c7cc",
-  "analyzedCommit": "db681b1679d3850e0cb3f5a210aa075d56e98fcb",
-  "analyzedCommitDate": "2026-08-08T19:22:35.000Z",
+  "analyzedCommit": "56f40997cd5d96c9f5cbce660008444ef6da9f40",
+  "analyzedCommitDate": "2026-08-27T23:35:11.000Z",
   "checks": {
     "array-type": {
       "array": {
-        "count": 1,
+        "count": 2,
         "samples": [
           {
             "file": "packages/fns/tests/mapValues.test.ts",
             "line": 14,
             "column": 20,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
+          },
+          {
+            "file": "packages/stylesheet/src/types.ts",
+            "line": 524,
+            "column": 26,
+            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           }
         ]
       },
       "generic": {
-        "count": 487,
+        "count": 792,
         "samples": [
           {
-            "file": "packages/fns/src/adjust.ts",
-            "line": 12,
-            "column": 15,
-            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
+            "file": "apps/examples/src/svg-render.ts",
+            "line": 23,
+            "column": 66,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
-            "file": "packages/layout/src/steps/resolvePagination.ts",
-            "line": 58,
-            "column": 65,
-            "message": "Array type using 'SafeNode[]' is forbidden. Use 'Array<SafeNode>' instead."
+            "file": "packages/image/tests/types.ts",
+            "line": 57,
+            "column": 13,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
-            "file": "packages/layout/src/types/svg.ts",
-            "line": 87,
+            "file": "packages/layout/src/types/rect.ts",
+            "line": 36,
             "column": 14,
-            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
+            "message": "Array type using 'never[]' is forbidden. Use 'Array<never>' instead."
           },
           {
-            "file": "packages/stylesheet/src/types.ts",
-            "line": 209,
-            "column": 15,
-            "message": "Array type using 'Transform[]' is forbidden. Use 'Array<Transform>' instead."
+            "file": "packages/paginate/src/types.ts",
+            "line": 27,
+            "column": 13,
+            "message": "Array type using 'Item[]' is forbidden. Use 'Array<Item>' instead."
           },
           {
-            "file": "packages/textkit/src/layout/bidiMirroring.ts",
-            "line": 12,
-            "column": 28,
+            "file": "packages/paginate/tests/paginate.test.ts",
+            "line": 1588,
+            "column": 20,
+            "message": "Array type using 'Item[]' is forbidden. Use 'Array<Item>' instead."
+          },
+          {
+            "file": "packages/svgkit/src/document.ts",
+            "line": 128,
+            "column": 29,
             "message": "Array type using 'number[]' is forbidden. Use 'Array<number>' instead."
           },
           {
-            "file": "packages/textkit/src/utils/normalize.ts",
-            "line": 7,
-            "column": 27,
-            "message": "Array type using 'number[]' is forbidden. Use 'Array<number>' instead."
+            "file": "packages/textkit/src/positions/advanceWidth.ts",
+            "line": 9,
+            "column": 34,
+            "message": "Array type using 'Position[]' is forbidden. Use 'Array<Position>' instead."
           },
           {
-            "file": "packages/textkit/tests/attributedString/leadingOffset.test.ts",
-            "line": 22,
+            "file": "packages/textkit/tests/attributedString/insertGlyph.test.ts",
+            "line": 668,
             "column": 16,
             "message": "Array type using 'Glyph[]' is forbidden. Use 'Array<Glyph>' instead."
           },
           {
-            "file": "packages/textkit/tests/internal/bidiEngine.ts",
-            "line": 16,
-            "column": 15,
-            "message": "Array type using 'Run[]' is forbidden. Use 'Array<Run>' instead."
-          },
-          {
-            "file": "packages/textkit/tests/run/insert.test.ts",
-            "line": 662,
+            "file": "packages/textkit/tests/run/append.test.ts",
+            "line": 283,
             "column": 12,
             "message": "Array type using 'Glyph[]' is forbidden. Use 'Array<Glyph>' instead."
           },
           {
-            "file": "packages/textkit/tests/run/trailingOffset.test.ts",
-            "line": 81,
-            "column": 12,
-            "message": "Array type using 'Glyph[]' is forbidden. Use 'Array<Glyph>' instead."
+            "file": "packages/ui/src/types.ts",
+            "line": 17,
+            "column": 10,
+            "message": "Array type using 'PlaygroundFile[]' is forbidden. Use 'Array<PlaygroundFile>' instead."
           }
         ]
       }
     },
     "consistent-generic-constructors": {
       "constructor": {
-        "count": 0,
-        "samples": []
+        "count": 1,
+        "samples": [
+          {
+            "file": "packages/hyphenate/src/index.ts",
+            "line": 143,
+            "column": 14,
+            "message": "The generic type arguments should be specified as part of the constructor type arguments."
+          }
+        ]
       },
       "type-annotation": {
-        "count": 2,
+        "count": 8,
         "samples": [
+          {
+            "file": "apps/site/components/text-lab/font.ts",
+            "line": 39,
+            "column": 24,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
           {
             "file": "packages/fns/src/repeat.ts",
             "line": 14,
@@ -96,9 +115,39 @@
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
+            "file": "packages/font/src/standard-font.ts",
+            "line": 72,
+            "column": 23,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
             "file": "packages/image/src/cache.ts",
             "line": 2,
             "column": 22,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "packages/svgkit/src/image.ts",
+            "line": 40,
+            "column": 30,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "packages/tailwind/src/index.ts",
+            "line": 67,
+            "column": 24,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "packages/tailwind/tests/index.test.ts",
+            "line": 1747,
+            "column": 26,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "packages/tailwind/tests/index.test.ts",
+            "line": 1748,
+            "column": 27,
             "message": "The generic type arguments should be specified as part of the type annotation."
           }
         ]
@@ -106,7 +155,7 @@
     },
     "consistent-indexed-object-style": {
       "record": {
-        "count": 3,
+        "count": 4,
         "samples": [
           {
             "file": "packages/image/tests/types.ts",
@@ -122,73 +171,79 @@
           },
           {
             "file": "packages/stylesheet/src/types.ts",
-            "line": 448,
+            "line": 518,
             "column": 24,
+            "message": "A record is preferred over an index signature."
+          },
+          {
+            "file": "packages/tailwind/src/index.ts",
+            "line": 35,
+            "column": 5,
             "message": "A record is preferred over an index signature."
           }
         ]
       },
       "index-signature": {
-        "count": 61,
+        "count": 122,
         "samples": [
           {
-            "file": "packages/fns/src/evolve.ts",
-            "line": 12,
-            "column": 27,
+            "file": "apps/site/app/(home)/changelog/page.tsx",
+            "line": 22,
+            "column": 14,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "packages/fns/src/pick.ts",
-            "line": 14,
+            "file": "packages/fns/src/omit.ts",
+            "line": 16,
             "column": 11,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "packages/image/src/types.ts",
-            "line": 43,
-            "column": 13,
-            "message": "An index signature is preferred over a record."
-          },
-          {
-            "file": "packages/math/src/mapSvg.tsx",
-            "line": 73,
-            "column": 10,
-            "message": "An index signature is preferred over a record."
-          },
-          {
-            "file": "packages/mermaid/src/mapSvg.tsx",
-            "line": 80,
-            "column": 17,
+            "file": "packages/layout/tests/image/getSource.test.ts",
+            "line": 5,
+            "column": 22,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "packages/mermaid/src/preprocessSvg.ts",
-            "line": 155,
-            "column": 23,
+            "line": 69,
+            "column": 9,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "packages/render/src/primitives/renderSvg.ts",
-            "line": 306,
-            "column": 26,
-            "message": "An index signature is preferred over a record."
-          },
-          {
-            "file": "packages/stylesheet/src/resolve/transform.ts",
-            "line": 126,
-            "column": 26,
+            "file": "packages/render/src/utils/parseFormOptions.ts",
+            "line": 9,
+            "column": 25,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "packages/svg/src/svg.ts",
-            "line": 72,
-            "column": 16,
+            "line": 71,
+            "column": 4,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "packages/textkit/src/engines/wordHyphenation/index.ts",
-            "line": 16,
-            "column": 14,
+            "file": "packages/svgkit/src/document.ts",
+            "line": 314,
+            "column": 35,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "packages/svgkit/src/element.ts",
+            "line": 3,
+            "column": 15,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "packages/tailwind/src/utils.ts",
+            "line": 10,
+            "column": 5,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "packages/ui/src/render/render.ts",
+            "line": 29,
+            "column": 15,
             "message": "An index signature is preferred over a record."
           }
         ]
@@ -196,89 +251,89 @@
     },
     "consistent-type-definitions": {
       "interface": {
-        "count": 110,
+        "count": 152,
         "samples": [
           {
-            "file": "packages/font/src/types.ts",
-            "line": 27,
-            "column": 8,
-            "message": "Use `interface` instead of `type`."
-          },
-          {
-            "file": "packages/layout/src/steps/resolveSvg.ts",
-            "line": 31,
-            "column": 1,
-            "message": "Use `interface` instead of `type`."
-          },
-          {
-            "file": "packages/layout/src/types/defs.ts",
-            "line": 7,
-            "column": 8,
-            "message": "Use `interface` instead of `type`."
-          },
-          {
-            "file": "packages/layout/src/types/linear-gradient.ts",
-            "line": 27,
-            "column": 8,
-            "message": "Use `interface` instead of `type`."
-          },
-          {
-            "file": "packages/layout/src/types/stop.ts",
-            "line": 15,
-            "column": 8,
-            "message": "Use `interface` instead of `type`."
-          },
-          {
-            "file": "packages/render/src/utils/resolveHitSlop.ts",
-            "line": 3,
-            "column": 1,
-            "message": "Use `interface` instead of `type`."
-          },
-          {
-            "file": "packages/stylesheet/src/types.ts",
-            "line": 163,
-            "column": 8,
-            "message": "Use `interface` instead of `type`."
-          },
-          {
-            "file": "packages/stylesheet/src/types.ts",
-            "line": 354,
-            "column": 8,
-            "message": "Use `interface` instead of `type`."
-          },
-          {
-            "file": "packages/textkit/src/engines/linebreaker/types.ts",
+            "file": "apps/examples/src/svg-viewer.tsx",
             "line": 5,
+            "column": 1,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "packages/hyphenate/src/index.ts",
+            "line": 32,
+            "column": 1,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "packages/layout/src/types/base.ts",
+            "line": 53,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "packages/textkit/src/types.ts",
-            "line": 132,
+            "file": "packages/layout/src/types/image.ts",
+            "line": 17,
+            "column": 1,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "packages/layout/src/types/svg.ts",
+            "line": 25,
+            "column": 8,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "packages/stylesheet/src/types.ts",
+            "line": 27,
+            "column": 8,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "packages/stylesheet/src/types.ts",
+            "line": 300,
+            "column": 8,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "packages/svgkit/src/document.ts",
+            "line": 76,
+            "column": 1,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "packages/textkit/src/shape/bandInterval.ts",
+            "line": 3,
+            "column": 8,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "packages/ui/src/utils/swr.ts",
+            "line": 8,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           }
         ]
       },
       "type": {
-        "count": 71,
+        "count": 114,
         "samples": [
           {
-            "file": "packages/fns/src/matchPercent.ts",
-            "line": 1,
+            "file": "apps/examples/src/examples/page-wrap/index.tsx",
+            "line": 108,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "packages/image/tests/types.ts",
-            "line": 54,
+            "file": "apps/site/components/usage/usage-preview.tsx",
+            "line": 14,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "packages/layout/src/types/clip-path.ts",
-            "line": 11,
-            "column": 1,
+            "file": "packages/layout/src/types/base.ts",
+            "line": 42,
+            "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
@@ -288,38 +343,38 @@
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "packages/layout/src/types/linear-gradient.ts",
-            "line": 5,
+            "file": "packages/layout/src/types/marker.ts",
+            "line": 26,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "packages/layout/src/types/polygon.ts",
-            "line": 9,
+            "file": "packages/layout/src/types/stop.ts",
+            "line": 3,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "packages/layout/src/types/select.ts",
-            "line": 7,
+            "file": "packages/math/src/mathjax.ts",
+            "line": 15,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "packages/layout/src/types/text.ts",
+            "file": "packages/paginate/src/types.ts",
             "line": 12,
-            "column": 1,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "packages/mermaid/src/mapSvg.tsx",
-            "line": 21,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "packages/svg/src/types.ts",
+            "file": "packages/reconciler/src/types.ts",
             "line": 1,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "packages/ui/src/parts/status/status.tsx",
+            "line": 7,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           }
@@ -328,7 +383,7 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 618,
+        "count": 695,
         "samples": [
           {
             "file": "packages/font/src/font-family.ts",
@@ -337,50 +392,50 @@
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "packages/layout/src/steps/resolvePercentHeight.ts",
+            "file": "packages/layout/src/steps/resolveInheritance.ts",
             "line": 3,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "packages/layout/src/types/document.ts",
+            "file": "packages/layout/src/types/defs.ts",
             "line": 3,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
             "file": "packages/layout/src/types/marker.ts",
-            "line": 7,
+            "line": 11,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "packages/layout/src/types/select.ts",
-            "line": 1,
+            "file": "packages/layout/src/types/svg.ts",
+            "line": 16,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "packages/layout/tests/node/setOverflow.test.ts",
+            "file": "packages/paginate/src/fit/column.ts",
             "line": 6,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "packages/render/src/primitives/renderPolyline.ts",
-            "line": 4,
-            "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
-          {
-            "file": "packages/textkit/src/attributedString/prepend.ts",
-            "line": 4,
-            "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
-          {
-            "file": "packages/textkit/src/run/advanceWidthBetween.ts",
+            "file": "packages/render/src/primitives/renderList.ts",
             "line": 3,
+            "column": 1,
+            "message": "All imports in the declaration are only used as types. Use `import type`."
+          },
+          {
+            "file": "packages/textkit/src/attributedString/advanceWidthBetween.ts",
+            "line": 3,
+            "column": 1,
+            "message": "All imports in the declaration are only used as types. Use `import type`."
+          },
+          {
+            "file": "packages/textkit/src/rect/maxX.ts",
+            "line": 1,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
@@ -393,41 +448,41 @@
         ]
       },
       "no-type-imports": {
-        "count": 13,
+        "count": 71,
         "samples": [
           {
-            "file": "packages/image/src/types.ts",
+            "file": "apps/examples/src/svg-render.ts",
             "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/image/tests/types.ts",
+            "file": "apps/site/components/editor/cm-theme.ts",
+            "line": 5,
+            "column": 23,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "apps/site/components/hero/mini-playground.tsx",
             "line": 6,
-            "column": 1,
+            "column": 3,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/layout/src/yoga/index.ts",
+            "file": "apps/site/components/playground/status.tsx",
             "line": 1,
-            "column": 10,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "packages/math/src/mapSvg.tsx",
-            "line": 15,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/mermaid/src/Mermaid.tsx",
-            "line": 6,
+            "file": "apps/site/components/viewer/pager.tsx",
+            "line": 3,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/render/src/index.ts",
-            "line": 1,
+            "file": "packages/layout/src/paginate/toFlow.ts",
+            "line": 2,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -438,21 +493,21 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/textkit/src/layout/preprocessRuns.ts",
+            "file": "packages/ui/src/atoms/files.ts",
+            "line": 3,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "packages/ui/src/parts/pagination/pagination.tsx",
             "line": 7,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/textkit/src/types.ts",
-            "line": 2,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "packages/textkit/tests/index.test.ts",
-            "line": 13,
-            "column": 1,
+            "file": "packages/ui/src/utils/swr.ts",
+            "line": 1,
+            "column": 16,
             "message": "Use an `import` instead of an `import type`."
           }
         ]
@@ -460,131 +515,131 @@
     },
     "func-style": {
       "expression": {
-        "count": 97,
+        "count": 174,
         "samples": [
           {
-            "file": "packages/examples/vite/generate-pdfs.mjs",
-            "line": 73,
+            "file": "apps/examples/generate-pdfs.mjs",
+            "line": 74,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "packages/mermaid/src/colorMix.ts",
-            "line": 4,
+            "file": "apps/site/app/llms.txt/route.ts",
+            "line": 6,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "apps/site/components/hero/hero.tsx",
+            "line": 41,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "apps/site/components/playground/url.ts",
+            "line": 7,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "apps/site/components/text-lab/runs-strip.tsx",
+            "line": 66,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "packages/image/src/svg.ts",
+            "line": 26,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "packages/mermaid/src/preprocessSvg.ts",
-            "line": 144,
+            "line": 199,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "packages/pdfkit/src/mixins/attachments.js",
-            "line": 115,
-            "column": 1,
+            "file": "packages/tailwind/src/index.ts",
+            "line": 139,
+            "column": 3,
             "message": "Expected a function expression."
           },
           {
-            "file": "packages/pdfkit/src/security.js",
-            "line": 392,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "packages/pdfkit/src/table/accessibility.js",
-            "line": 47,
+            "file": "packages/tailwind/src/utils.ts",
+            "line": 51,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "packages/pdfkit/src/table/size.js",
-            "line": 37,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "packages/pdfkit/src/table/utils.js",
-            "line": 361,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "packages/svg/src/svg.ts",
-            "line": 49,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "packages/textkit/src/engines/linebreaker/knuthPlass.ts",
-            "line": 170,
-            "column": 3,
+            "file": "packages/ui/src/utils/swr.ts",
+            "line": 19,
+            "column": 8,
             "message": "Expected a function expression."
           }
         ]
       },
       "declaration": {
-        "count": 934,
+        "count": 1314,
         "samples": [
           {
-            "file": "packages/examples/vite/src/examples/duplicated-images/index.tsx",
+            "file": "apps/examples/src/examples/duplicated-images/index.tsx",
             "line": 86,
             "column": 7,
             "message": "Expected a function declaration."
           },
           {
-            "file": "packages/fns/tests/compose.test.ts",
-            "line": 17,
-            "column": 11,
+            "file": "apps/site/content/docs/v4/form/select.usage.jsx",
+            "line": 6,
+            "column": 7,
             "message": "Expected a function declaration."
           },
           {
-            "file": "packages/layout/src/page/getSize.ts",
+            "file": "packages/layout/src/node/getOrigin.ts",
+            "line": 14,
+            "column": 7,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "packages/layout/src/steps/resolvePagePaddings.ts",
+            "line": 62,
+            "column": 7,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "packages/layout/tests/node/getPosition.test.ts",
+            "line": 7,
+            "column": 7,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "packages/paginate/tests/paginate.test.ts",
             "line": 139,
             "column": 7,
             "message": "Expected a function declaration."
           },
           {
-            "file": "packages/layout/src/steps/resolveSvg.ts",
-            "line": 270,
+            "file": "packages/render/src/svg/parsePoints.ts",
+            "line": 1,
             "column": 7,
             "message": "Expected a function declaration."
           },
           {
-            "file": "packages/pdfkit/src/document.js",
-            "line": 373,
+            "file": "packages/stylesheet/src/resolve/positioning.ts",
+            "line": 6,
             "column": 7,
             "message": "Expected a function declaration."
           },
           {
-            "file": "packages/render/src/primitives/renderPage.ts",
-            "line": 4,
-            "column": 7,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "packages/renderer/src/dom/index.js",
-            "line": 27,
-            "column": 14,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "packages/stylesheet/src/resolve/utils.ts",
-            "line": 31,
-            "column": 14,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "packages/textkit/src/layout/generateLineRects.ts",
-            "line": 19,
-            "column": 7,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "packages/textkit/tests/layout/layoutParagraph.test.ts",
+            "file": "packages/textkit/src/layout/applyDefaultStyles.ts",
             "line": 7,
-            "column": 11,
+            "column": 7,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "packages/ui/src/render/transpile.ts",
+            "line": 3,
+            "column": 14,
             "message": "Expected a function declaration."
           }
         ]
@@ -592,59 +647,59 @@
     },
     "import-export-preference": {
       "named": {
-        "count": 442,
+        "count": 536,
         "samples": [
           {
-            "file": "babel.config.js",
-            "line": 1,
+            "file": "apps/examples/src/examples/duplicated-images/index.tsx",
+            "line": 128,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "packages/examples/vite/src/examples/svg/index.tsx",
-            "line": 126,
+            "file": "apps/site/app/sitemap.ts",
+            "line": 7,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "packages/layout/src/node/getDimension.ts",
-            "line": 25,
+            "file": "packages/fns/src/evolve.ts",
+            "line": 38,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "packages/layout/src/steps/resolveTextLayout.ts",
-            "line": 47,
+            "file": "packages/layout/src/node/setFlexGrow.ts",
+            "line": 14,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "packages/pdfkit/src/line_wrapper.js",
-            "line": 391,
+            "file": "packages/layout/src/text/splitText.ts",
+            "line": 83,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "packages/render/src/operations/drawImage.ts",
-            "line": 73,
+            "file": "packages/render/src/operations/encodeGlyphs.ts",
+            "line": 35,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "packages/renderer/tests/environment/jsdom.js",
-            "line": 22,
+            "file": "packages/stylesheet/src/resolve/boxModel.ts",
+            "line": 116,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "packages/textkit/src/attributedString/runIndexAt.ts",
-            "line": 15,
+            "file": "packages/textkit/src/engines/linebreaker/bestFit.ts",
+            "line": 123,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "packages/textkit/src/rect/crop.ts",
-            "line": 16,
+            "file": "packages/textkit/src/run/insert.ts",
+            "line": 41,
             "column": 8,
             "message": "Prefer named exports"
           },
@@ -657,11 +712,47 @@
         ]
       },
       "default": {
-        "count": 9,
+        "count": 40,
         "samples": [
           {
-            "file": "packages/layout/src/yoga/index.ts",
-            "line": 5,
+            "file": "apps/examples/src/svg-render.ts",
+            "line": 23,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "apps/site/components/editor/completions.ts",
+            "line": 211,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "apps/site/components/overview-timeline/index.ts",
+            "line": 1,
+            "column": 10,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "apps/site/components/playground/status.tsx",
+            "line": 10,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "apps/site/components/text-lab/glyph-lab.tsx",
+            "line": 79,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "apps/site/components/viewer/pager.tsx",
+            "line": 9,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "apps/site/lib/nav/nav.tsx",
+            "line": 17,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -672,44 +763,14 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "packages/math/src/mathjax.ts",
-            "line": 19,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "packages/mermaid/src/colorMix.ts",
-            "line": 40,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "packages/mermaid/src/index.ts",
-            "line": 1,
-            "column": 10,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "packages/pdfkit/src/saslprep/lib/util.js",
-            "line": 36,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "packages/pdfkit/src/table/render.js",
-            "line": 12,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "packages/renderer/src/utils.js",
-            "line": 1,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
             "file": "packages/svg/src/svg.ts",
             "line": 166,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "packages/ui/src/render/transpile.ts",
+            "line": 3,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           }
@@ -718,57 +779,64 @@
     },
     "indent": {
       "2-space": {
-        "count": 0,
-        "samples": []
-      },
-      "4-space": {
-        "count": 725,
+        "count": 1,
         "samples": [
           {
-            "file": "babel.config.js",
+            "file": "apps/site/lib/examples/checkbox.ts",
+            "line": 35,
+            "column": 1,
+            "message": "Expected spaces for indentation, but found tabs."
+          }
+        ]
+      },
+      "4-space": {
+        "count": 933,
+        "samples": [
+          {
+            "file": "apps/examples/generate-pdfs.mjs",
+            "line": 23,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "apps/site/components/text-lab/index.tsx",
+            "line": 10,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "packages/fns/jest.config.js",
             "line": 2,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/fns/tests/castArray.test.ts",
+            "file": "packages/layout/src/node/splitNode.ts",
+            "line": 10,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "packages/layout/tests/node/setFlexWrap.test.ts",
+            "line": 9,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "packages/reconciler/tests/propsEqual.test.ts",
             "line": 6,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/layout/src/steps/resolveLinkSubstitution.ts",
-            "line": 37,
+            "file": "packages/renderer/vitest.setup.js",
+            "line": 13,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/layout/tests/node/setFlexBasis.test.ts",
-            "line": 6,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "packages/pdfkit/src/mixins/images.js",
-            "line": 4,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "packages/render/src/primitives/renderSelect.ts",
-            "line": 7,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "packages/stylesheet/src/resolve/positioning.ts",
-            "line": 7,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "packages/textkit/src/layout/finalizeFragments.ts",
-            "line": 23,
+            "file": "packages/textkit/src/engines/justification/types.ts",
+            "line": 2,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -787,53 +855,53 @@
         ]
       },
       "tab": {
-        "count": 725,
+        "count": 933,
         "samples": [
           {
-            "file": "babel.config.js",
+            "file": "apps/examples/generate-pdfs.mjs",
+            "line": 23,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "apps/site/components/text-lab/index.tsx",
+            "line": 10,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "packages/fns/jest.config.js",
             "line": 2,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/fns/tests/castArray.test.ts",
+            "file": "packages/layout/src/node/splitNode.ts",
+            "line": 10,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "packages/layout/tests/node/setFlexWrap.test.ts",
+            "line": 9,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "packages/reconciler/tests/propsEqual.test.ts",
             "line": 6,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/layout/src/steps/resolveLinkSubstitution.ts",
-            "line": 37,
+            "file": "packages/renderer/vitest.setup.js",
+            "line": 13,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/layout/tests/node/setFlexBasis.test.ts",
-            "line": 6,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "packages/pdfkit/src/mixins/images.js",
-            "line": 4,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "packages/render/src/primitives/renderSelect.ts",
-            "line": 7,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "packages/stylesheet/src/resolve/positioning.ts",
-            "line": 7,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "packages/textkit/src/layout/finalizeFragments.ts",
-            "line": 23,
+            "file": "packages/textkit/src/engines/justification/types.ts",
+            "line": 2,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -854,83 +922,101 @@
     },
     "quotes": {
       "double": {
-        "count": 13508,
+        "count": 19812,
         "samples": [
           {
-            "file": "babel.config.js",
-            "line": 4,
-            "column": 7,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "packages/examples/vite/src/examples/transform-origin/index.tsx",
-            "line": 20,
-            "column": 20,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "packages/layout/src/node/setYogaValue.ts",
-            "line": 2,
+            "file": "apps/examples/generate-pdfs.mjs",
+            "line": 9,
             "column": 23,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/layout/tests/node/shouldBreak.test.ts",
-            "line": 65,
-            "column": 8,
+            "file": "apps/site/components/section-index/v4-splits.ts",
+            "line": 61,
+            "column": 7,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/pdfkit/src/mixins/acroform.js",
-            "line": 21,
-            "column": 47,
+            "file": "packages/font/tests/standard-fonts.test.ts",
+            "line": 134,
+            "column": 6,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/renderer/tests/borders.test.jsx",
-            "line": 54,
-            "column": 8,
+            "file": "packages/layout/tests/node/setPadding.test.ts",
+            "line": 142,
+            "column": 12,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/stylesheet/tests/flatten.test.ts",
-            "line": 190,
-            "column": 16,
+            "file": "packages/paginate/tests/paginate.test.ts",
+            "line": 961,
+            "column": 18,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/textkit/src/layout/applyDefaultStyles.ts",
-            "line": 11,
-            "column": 71,
+            "file": "packages/renderer/tests/svg.test.jsx",
+            "line": 23,
+            "column": 10,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/textkit/tests/layout/applyDefaultStyles.test.ts",
-            "line": 132,
-            "column": 8,
+            "file": "packages/stylesheet/tests/transform.test.ts",
+            "line": 182,
+            "column": 20,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "packages/tailwind/tests/index.test.ts",
+            "line": 71,
+            "column": 12,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "packages/textkit/tests/attributedString/trim.test.ts",
+            "line": 103,
+            "column": 15,
             "message": "Strings must use doublequote."
           },
           {
             "file": "vitest.workspace.js",
-            "line": 17,
+            "line": 19,
             "column": 3,
             "message": "Strings must use doublequote."
           }
         ]
       },
       "single": {
-        "count": 27,
+        "count": 35,
         "samples": [
           {
-            "file": "packages/examples/vite/src/examples/resume/index.tsx",
+            "file": "apps/examples/src/examples/resume/index.tsx",
             "line": 61,
             "column": 8,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "packages/examples/vite/src/examples/resume/index.tsx",
-            "line": 76,
-            "column": 8,
+            "file": "apps/site/components/post-cover/post-cover.tsx",
+            "line": 271,
+            "column": 19,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "apps/site/components/text-lab/runs-strip.tsx",
+            "line": 53,
+            "column": 26,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "packages/hyphenate/scripts/generate-languages.mjs",
+            "line": 48,
+            "column": 7,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "packages/hyphenate/scripts/generate-languages.mjs",
+            "line": 56,
+            "column": 7,
             "message": "Strings must use singlequote."
           },
           {
@@ -941,37 +1027,19 @@
           },
           {
             "file": "packages/layout/src/svg/replaceDefs.ts",
-            "line": 47,
+            "line": 52,
             "column": 7,
             "message": "Strings must use singlequote."
           },
           {
             "file": "packages/math/tests/math.test.jsx",
-            "line": 31,
-            "column": 12,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "packages/pdfkit/src/mixins/acroform.js",
-            "line": 234,
-            "column": 23,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "packages/pdfkit/src/structure_element.js",
-            "line": 60,
-            "column": 23,
+            "line": 105,
+            "column": 7,
             "message": "Strings must use singlequote."
           },
           {
             "file": "packages/render/tests/utils/parseColor.test.ts",
-            "line": 11,
-            "column": 8,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "packages/render/tests/utils/parseColor.test.ts",
-            "line": 26,
+            "line": 21,
             "column": 8,
             "message": "Strings must use singlequote."
           },
@@ -986,139 +1054,232 @@
     },
     "react-destructuring-assignment": {
       "never": {
-        "count": 26,
+        "count": 86,
         "samples": [
           {
-            "file": "packages/examples/next-14/app/layout.js",
-            "line": 8,
-            "column": 16,
+            "file": "apps/examples/src/examples/float/index.tsx",
+            "line": 113,
+            "column": 18,
             "message": "Must never use destructuring props assignment in SFC argument"
           },
           {
-            "file": "packages/examples/vite/src/examples/media-queries/index.tsx",
-            "line": 56,
-            "column": 24,
-            "message": "Must never use destructuring props assignment in SFC argument"
-          },
-          {
-            "file": "packages/examples/vite/src/examples/page-wrap/index.tsx",
-            "line": 125,
-            "column": 24,
-            "message": "Must never use destructuring props assignment in SFC argument"
-          },
-          {
-            "file": "packages/examples/vite/src/examples/resume/Experience.tsx",
+            "file": "apps/examples/src/examples/resume/Experience.tsx",
             "line": 62,
             "column": 25,
             "message": "Must never use destructuring props assignment in SFC argument"
           },
           {
-            "file": "packages/examples/vite/src/examples/resume/Title.tsx",
-            "line": 13,
-            "column": 15,
+            "file": "apps/site/app/(home)/blog/page.tsx",
+            "line": 37,
+            "column": 1,
             "message": "Must never use destructuring props assignment in SFC argument"
           },
           {
-            "file": "packages/renderer/src/dom/BlobProvider.js",
+            "file": "apps/site/app/docs/layout.tsx",
+            "line": 6,
+            "column": 16,
+            "message": "Must never use destructuring props assignment in SFC argument"
+          },
+          {
+            "file": "apps/site/components/hero/mini-playground.tsx",
+            "line": 60,
+            "column": 9,
+            "message": "Must never use destructuring props assignment"
+          },
+          {
+            "file": "apps/site/components/playground/status.tsx",
+            "line": 10,
+            "column": 8,
+            "message": "Must never use destructuring props assignment in SFC argument"
+          },
+          {
+            "file": "apps/site/components/text-lab/ui.tsx",
+            "line": 172,
+            "column": 8,
+            "message": "Must never use destructuring props assignment in SFC argument"
+          },
+          {
+            "file": "packages/renderer/src/dom/PDFViewer.js",
             "line": 5,
-            "column": 29,
+            "column": 26,
             "message": "Must never use destructuring props assignment in SFC argument"
           },
           {
-            "file": "packages/renderer/tests/components.test.jsx",
-            "line": 13,
+            "file": "packages/renderer/tests/transform.test.jsx",
+            "line": 6,
             "column": 22,
             "message": "Must never use destructuring props assignment in SFC argument"
           },
           {
-            "file": "packages/renderer/tests/pageWrap.test.jsx",
-            "line": 73,
-            "column": 18,
-            "message": "Must never use destructuring props assignment in SFC argument"
-          },
-          {
-            "file": "packages/renderer/tests/resume.test.jsx",
-            "line": 119,
-            "column": 20,
-            "message": "Must never use destructuring props assignment in SFC argument"
-          },
-          {
-            "file": "packages/renderer/tests/usePDF.test.jsx",
-            "line": 7,
-            "column": 22,
+            "file": "packages/ui/src/parts/status/status.tsx",
+            "line": 12,
+            "column": 1,
             "message": "Must never use destructuring props assignment in SFC argument"
           }
         ]
       },
       "always": {
-        "count": 0,
-        "samples": []
+        "count": 5,
+        "samples": [
+          {
+            "file": "apps/site/app/(home)/blog/[slug]/page.tsx",
+            "line": 25,
+            "column": 24,
+            "message": "Must use destructuring props assignment"
+          },
+          {
+            "file": "apps/site/app/docs/[[...slug]]/page.tsx",
+            "line": 24,
+            "column": 24,
+            "message": "Must use destructuring props assignment"
+          },
+          {
+            "file": "apps/site/components/example/example-block.tsx",
+            "line": 32,
+            "column": 42,
+            "message": "Must use destructuring props assignment"
+          },
+          {
+            "file": "apps/site/components/pdf-preview/pdf-preview.tsx",
+            "line": 12,
+            "column": 7,
+            "message": "Must use destructuring props assignment"
+          },
+          {
+            "file": "apps/site/components/pdf-preview/pdf-preview.tsx",
+            "line": 12,
+            "column": 23,
+            "message": "Must use destructuring props assignment"
+          }
+        ]
       },
       "always-in-signature": {
-        "count": 0,
-        "samples": []
+        "count": 5,
+        "samples": [
+          {
+            "file": "apps/site/app/(home)/blog/[slug]/page.tsx",
+            "line": 25,
+            "column": 24,
+            "message": "Must use destructuring props assignment"
+          },
+          {
+            "file": "apps/site/app/docs/[[...slug]]/page.tsx",
+            "line": 24,
+            "column": 24,
+            "message": "Must use destructuring props assignment"
+          },
+          {
+            "file": "apps/site/components/example/example-block.tsx",
+            "line": 32,
+            "column": 42,
+            "message": "Must use destructuring props assignment"
+          },
+          {
+            "file": "apps/site/components/pdf-preview/pdf-preview.tsx",
+            "line": 12,
+            "column": 7,
+            "message": "Must use destructuring props assignment"
+          },
+          {
+            "file": "apps/site/components/pdf-preview/pdf-preview.tsx",
+            "line": 12,
+            "column": 23,
+            "message": "Must use destructuring props assignment"
+          }
+        ]
       },
       "always-outside-signature": {
-        "count": 0,
-        "samples": []
+        "count": 5,
+        "samples": [
+          {
+            "file": "apps/site/app/(home)/blog/[slug]/page.tsx",
+            "line": 25,
+            "column": 24,
+            "message": "Must use destructuring props assignment"
+          },
+          {
+            "file": "apps/site/app/docs/[[...slug]]/page.tsx",
+            "line": 24,
+            "column": 24,
+            "message": "Must use destructuring props assignment"
+          },
+          {
+            "file": "apps/site/components/example/example-block.tsx",
+            "line": 32,
+            "column": 42,
+            "message": "Must use destructuring props assignment"
+          },
+          {
+            "file": "apps/site/components/pdf-preview/pdf-preview.tsx",
+            "line": 12,
+            "column": 7,
+            "message": "Must use destructuring props assignment"
+          },
+          {
+            "file": "apps/site/components/pdf-preview/pdf-preview.tsx",
+            "line": 12,
+            "column": 23,
+            "message": "Must use destructuring props assignment"
+          }
+        ]
       }
     },
     "react-function-component-definition": {
       "function-declaration": {
-        "count": 92,
+        "count": 143,
         "samples": [
           {
-            "file": "packages/examples/vite/src/examples/duplicated-images/index.tsx",
+            "file": "apps/examples/src/examples/duplicated-images/index.tsx",
             "line": 86,
             "column": 26,
             "message": "Function component is not a function declaration"
           },
           {
-            "file": "packages/examples/vite/src/examples/go-to/index.tsx",
-            "line": 115,
-            "column": 14,
+            "file": "apps/examples/src/examples/image-stress-test/index.tsx",
+            "line": 91,
+            "column": 25,
             "message": "Function component is not a function declaration"
           },
           {
-            "file": "packages/examples/vite/src/examples/mermaid/index.tsx",
-            "line": 73,
-            "column": 16,
+            "file": "apps/examples/src/examples/page-wrap/index.tsx",
+            "line": 116,
+            "column": 20,
             "message": "Function component is not a function declaration"
           },
           {
-            "file": "packages/examples/vite/src/examples/password-protection/index.tsx",
+            "file": "apps/examples/src/examples/resume/index.tsx",
             "line": 97,
-            "column": 23,
+            "column": 24,
             "message": "Function component is not a function declaration"
           },
           {
-            "file": "packages/examples/vite/src/examples/resume/Title.tsx",
-            "line": 13,
+            "file": "apps/examples/src/examples/svg/svg.tsx",
+            "line": 4,
             "column": 15,
             "message": "Function component is not a function declaration"
           },
           {
-            "file": "packages/examples/vite/src/examples/svg/Markers.tsx",
-            "line": 96,
-            "column": 21,
-            "message": "Function component is not a function declaration"
-          },
-          {
-            "file": "packages/examples/vite/src/index.tsx",
-            "line": 9,
-            "column": 22,
-            "message": "Function component is not a function declaration"
-          },
-          {
-            "file": "packages/renderer/tests/resume.test.jsx",
-            "line": 53,
+            "file": "apps/site/content/docs/v4/components/link.usage.jsx",
+            "line": 3,
             "column": 16,
             "message": "Function component is not a function declaration"
           },
           {
-            "file": "packages/renderer/tests/svgs.jsx",
-            "line": 187,
-            "column": 22,
+            "file": "apps/site/content/docs/v4/svg/ellipse.usage.jsx",
+            "line": 3,
+            "column": 16,
+            "message": "Function component is not a function declaration"
+          },
+          {
+            "file": "packages/mermaid/src/Mermaid.tsx",
+            "line": 89,
+            "column": 17,
+            "message": "Function component is not a function declaration"
+          },
+          {
+            "file": "packages/renderer/tests/resume.test.jsx",
+            "line": 130,
+            "column": 16,
             "message": "Function component is not a function declaration"
           },
           {
@@ -1130,30 +1291,66 @@
         ]
       },
       "arrow-function": {
-        "count": 4,
+        "count": 90,
         "samples": [
           {
-            "file": "packages/examples/next-14/app/layout.js",
-            "line": 8,
+            "file": "apps/site/app/(home)/blog/[slug]/page.tsx",
+            "line": 22,
             "column": 16,
             "message": "Function component is not an arrow function"
           },
           {
-            "file": "packages/examples/next-14/app/page.js",
-            "line": 11,
+            "file": "apps/site/app/(home)/changelog/page.tsx",
+            "line": 143,
             "column": 16,
             "message": "Function component is not an arrow function"
           },
           {
-            "file": "packages/examples/next-15/app/layout.js",
-            "line": 8,
-            "column": 16,
+            "file": "apps/site/app/playground/loader.tsx",
+            "line": 39,
+            "column": 8,
             "message": "Function component is not an arrow function"
           },
           {
-            "file": "packages/examples/next-15/app/page.js",
-            "line": 11,
-            "column": 16,
+            "file": "apps/site/components/example/example-body.tsx",
+            "line": 42,
+            "column": 8,
+            "message": "Function component is not an arrow function"
+          },
+          {
+            "file": "apps/site/components/hero/mini-playground.tsx",
+            "line": 85,
+            "column": 8,
+            "message": "Function component is not an arrow function"
+          },
+          {
+            "file": "apps/site/components/playground/example-picker.tsx",
+            "line": 13,
+            "column": 8,
+            "message": "Function component is not an arrow function"
+          },
+          {
+            "file": "apps/site/components/section-index/section-index.tsx",
+            "line": 9,
+            "column": 8,
+            "message": "Function component is not an arrow function"
+          },
+          {
+            "file": "apps/site/components/text-lab/line-break-lab.tsx",
+            "line": 156,
+            "column": 8,
+            "message": "Function component is not an arrow function"
+          },
+          {
+            "file": "apps/site/components/usage/usage.tsx",
+            "line": 27,
+            "column": 8,
+            "message": "Function component is not an arrow function"
+          },
+          {
+            "file": "packages/ui/src/parts/status/status.tsx",
+            "line": 12,
+            "column": 1,
             "message": "Function component is not an arrow function"
           }
         ]
@@ -1164,7 +1361,7 @@
         "count": 1,
         "samples": [
           {
-            "file": "packages/examples/vite/src/examples/password-protection/index.tsx",
+            "file": "apps/examples/src/examples/password-protection/index.tsx",
             "line": 173,
             "column": 56,
             "message": "Value must be omitted for boolean attribute `allowed`"
@@ -1172,61 +1369,61 @@
         ]
       },
       "always": {
-        "count": 21,
+        "count": 44,
         "samples": [
           {
-            "file": "packages/examples/vite/src/examples/forms/index.tsx",
-            "line": 99,
-            "column": 13,
-            "message": "Value must be set for boolean attribute `password`"
+            "file": "apps/examples/src/examples/float/index.tsx",
+            "line": 147,
+            "column": 41,
+            "message": "Value must be set for boolean attribute `experimentalPagination`"
           },
           {
-            "file": "packages/examples/vite/src/examples/forms/index.tsx",
-            "line": 145,
-            "column": 13,
-            "message": "Value must be set for boolean attribute `multiline`"
+            "file": "apps/examples/src/examples/forms/index.tsx",
+            "line": 111,
+            "column": 45,
+            "message": "Value must be set for boolean attribute `checked`"
           },
           {
-            "file": "packages/examples/vite/src/examples/math/index.tsx",
-            "line": 139,
-            "column": 17,
-            "message": "Value must be set for boolean attribute `inline`"
+            "file": "apps/site/app/(home)/blog/page.tsx",
+            "line": 75,
+            "column": 35,
+            "message": "Value must be set for boolean attribute `aria-hidden`"
           },
           {
-            "file": "packages/examples/vite/src/examples/page-wrap/index.tsx",
-            "line": 280,
-            "column": 9,
-            "message": "Value must be set for boolean attribute `fixed`"
-          },
-          {
-            "file": "packages/renderer/tests/debug.test.jsx",
-            "line": 17,
-            "column": 17,
-            "message": "Value must be set for boolean attribute `debug`"
-          },
-          {
-            "file": "packages/renderer/tests/debug.test.jsx",
-            "line": 33,
-            "column": 43,
-            "message": "Value must be set for boolean attribute `debug`"
-          },
-          {
-            "file": "packages/renderer/tests/debug.test.jsx",
+            "file": "apps/site/app/layout.tsx",
             "line": 49,
-            "column": 57,
+            "column": 7,
+            "message": "Value must be set for boolean attribute `suppressHydrationWarning`"
+          },
+          {
+            "file": "apps/site/components/docs-pager/docs-pager.tsx",
+            "line": 102,
+            "column": 51,
+            "message": "Value must be set for boolean attribute `aria-hidden`"
+          },
+          {
+            "file": "apps/site/components/post-cover/post-cover.tsx",
+            "line": 313,
+            "column": 7,
+            "message": "Value must be set for boolean attribute `aria-hidden`"
+          },
+          {
+            "file": "apps/site/content/docs/v4/form/common-form-attributes.usage.jsx",
+            "line": 13,
+            "column": 7,
+            "message": "Value must be set for boolean attribute `required`"
+          },
+          {
+            "file": "packages/renderer/tests/debug.test.jsx",
+            "line": 30,
+            "column": 42,
             "message": "Value must be set for boolean attribute `debug`"
           },
           {
-            "file": "packages/renderer/tests/namedDestinations.test.jsx",
-            "line": 23,
-            "column": 35,
-            "message": "Value must be set for boolean attribute `break`"
-          },
-          {
-            "file": "packages/renderer/tests/pageWrap.test.jsx",
-            "line": 82,
-            "column": 35,
-            "message": "Value must be set for boolean attribute `fixed`"
+            "file": "packages/renderer/tests/link.test.jsx",
+            "line": 74,
+            "column": 9,
+            "message": "Value must be set for boolean attribute `debug`"
           },
           {
             "file": "packages/renderer/tests/pageWrap.test.jsx",
@@ -1243,30 +1440,48 @@
         "samples": []
       },
       "element": {
-        "count": 9,
+        "count": 23,
         "samples": [
           {
-            "file": "packages/examples/vite/src/examples/media-queries/index.tsx",
+            "file": "apps/examples/src/examples/media-queries/index.tsx",
             "line": 65,
             "column": 3,
             "message": "Prefer React.Fragment over fragment shorthand"
           },
           {
-            "file": "packages/examples/vite/src/examples/svg/Markers.tsx",
+            "file": "apps/examples/src/examples/svg/Markers.tsx",
             "line": 125,
             "column": 3,
+            "message": "Prefer React.Fragment over fragment shorthand"
+          },
+          {
+            "file": "apps/site/components/example/example-block.tsx",
+            "line": 11,
+            "column": 5,
+            "message": "Prefer React.Fragment over fragment shorthand"
+          },
+          {
+            "file": "apps/site/components/post-cover/post-cover.tsx",
+            "line": 73,
+            "column": 5,
+            "message": "Prefer React.Fragment over fragment shorthand"
+          },
+          {
+            "file": "apps/site/components/section-index/section-index.tsx",
+            "line": 13,
+            "column": 5,
+            "message": "Prefer React.Fragment over fragment shorthand"
+          },
+          {
+            "file": "apps/site/components/text-lab/line-box-lab.tsx",
+            "line": 60,
+            "column": 5,
             "message": "Prefer React.Fragment over fragment shorthand"
           },
           {
             "file": "packages/renderer/tests/node.test.jsx",
             "line": 100,
             "column": 13,
-            "message": "Prefer React.Fragment over fragment shorthand"
-          },
-          {
-            "file": "packages/renderer/tests/node.test.jsx",
-            "line": 116,
-            "column": 7,
             "message": "Prefer React.Fragment over fragment shorthand"
           },
           {
@@ -1277,26 +1492,14 @@
           },
           {
             "file": "packages/renderer/tests/orphanTexts.test.jsx",
-            "line": 26,
-            "column": 31,
-            "message": "Prefer React.Fragment over fragment shorthand"
-          },
-          {
-            "file": "packages/renderer/tests/orphanTexts.test.jsx",
-            "line": 32,
-            "column": 31,
-            "message": "Prefer React.Fragment over fragment shorthand"
-          },
-          {
-            "file": "packages/renderer/tests/orphanTexts.test.jsx",
             "line": 38,
             "column": 31,
             "message": "Prefer React.Fragment over fragment shorthand"
           },
           {
-            "file": "packages/renderer/tests/orphanTexts.test.jsx",
-            "line": 44,
-            "column": 31,
+            "file": "packages/renderer/tests/pageLayout.test.jsx",
+            "line": 7,
+            "column": 3,
             "message": "Prefer React.Fragment over fragment shorthand"
           }
         ]
@@ -1308,54 +1511,54 @@
         "samples": []
       },
       "never": {
-        "count": 21801,
+        "count": 25647,
         "samples": [
           {
-            "file": "babel.config.js",
-            "line": 20,
+            "file": "apps/examples/generate-pdfs.mjs",
+            "line": 9,
+            "column": 32,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "packages/font/tests/fallback-weights.test.ts",
+            "line": 46,
+            "column": 7,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "packages/layout/src/types/base.ts",
+            "line": 135,
             "column": 2,
             "message": "Extra semicolon."
           },
           {
-            "file": "packages/layout/src/node/getPadding.ts",
-            "line": 35,
-            "column": 6,
+            "file": "packages/layout/tests/text/layoutText.test.ts",
+            "line": 1,
+            "column": 52,
             "message": "Extra semicolon."
           },
           {
-            "file": "packages/layout/tests/node/setFlexDirection.test.ts",
-            "line": 73,
-            "column": 30,
+            "file": "packages/render/src/primitives/renderDebug.ts",
+            "line": 3,
+            "column": 53,
             "message": "Extra semicolon."
           },
           {
-            "file": "packages/pdfkit/src/gradient.js",
-            "line": 240,
-            "column": 17,
+            "file": "packages/renderer/tests/svg.test.jsx",
+            "line": 15,
+            "column": 16,
             "message": "Extra semicolon."
           },
           {
-            "file": "packages/pdfkit/src/table/style.js",
-            "line": 128,
-            "column": 6,
+            "file": "packages/svgkit/src/document.ts",
+            "line": 621,
+            "column": 13,
             "message": "Extra semicolon."
           },
           {
-            "file": "packages/render/tests/svg/parsePoints.test.ts",
-            "line": 17,
-            "column": 75,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "packages/stylesheet/tests/mediaQueries.test.ts",
-            "line": 168,
-            "column": 43,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "packages/textkit/src/run/ascent.ts",
-            "line": 18,
-            "column": 22,
+            "file": "packages/textkit/src/layout/generateGlyphs.ts",
+            "line": 3,
+            "column": 59,
             "message": "Extra semicolon."
           },
           {
@@ -1366,7 +1569,7 @@
           },
           {
             "file": "vitest.workspace.js",
-            "line": 18,
+            "line": 20,
             "column": 2,
             "message": "Extra semicolon."
           }

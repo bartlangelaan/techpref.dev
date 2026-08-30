@@ -1,12 +1,30 @@
 {
   "analyzedVersion": "96d58f23c7cc",
-  "analyzedCommit": "f722bcddab2bb02bb7c2d801d736f042b99a2cfb",
-  "analyzedCommitDate": "2026-08-08T23:43:37.000Z",
+  "analyzedCommit": "93f3ab321211f52f1963b63d5d3503c645c38371",
+  "analyzedCommitDate": "2026-08-29T23:34:23.000Z",
   "checks": {
     "array-type": {
       "array": {
-        "count": 21,
+        "count": 35,
         "samples": [
+          {
+            "file": "packages/bench/memory/calibrate.ts",
+            "line": 10,
+            "column": 17,
+            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
+          },
+          {
+            "file": "packages/bench/memory/own-props.ts",
+            "line": 10,
+            "column": 17,
+            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
+          },
+          {
+            "file": "packages/bench/memory/survey.ts",
+            "line": 33,
+            "column": 14,
+            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
+          },
           {
             "file": "packages/tsc/generate.ts",
             "line": 67,
@@ -15,32 +33,20 @@
           },
           {
             "file": "packages/zod/src/v3/types.ts",
-            "line": 3810,
-            "column": 28,
-            "message": "Array type using 'Array<any>' is forbidden. Use 'any[]' instead."
-          },
-          {
-            "file": "packages/zod/src/v3/types.ts",
             "line": 4861,
             "column": 19,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
-            "file": "packages/zod/src/v4/classic/tests/assignability.test.ts",
-            "line": 61,
-            "column": 43,
-            "message": "Array type using 'Array<unknown>' is forbidden. Use 'unknown[]' instead."
+            "file": "packages/zod/src/v4/classic/tests/detached-methods.test.ts",
+            "line": 171,
+            "column": 17,
+            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
-            "file": "packages/zod/src/v4/classic/tests/hash.test.ts",
-            "line": 20,
-            "column": 15,
-            "message": "Array type using 'ReadonlyArray<Alg>' is forbidden. Use 'readonly Alg[]' instead."
-          },
-          {
-            "file": "packages/zod/src/v4/core/errors.ts",
-            "line": 337,
-            "column": 32,
+            "file": "packages/zod/src/v4/core/compile.ts",
+            "line": 1864,
+            "column": 22,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
@@ -51,80 +57,74 @@
           },
           {
             "file": "packages/zod/src/v4/core/util.ts",
-            "line": 152,
+            "line": 186,
             "column": 26,
             "message": "Array type using 'ReadonlyArray<schemas.SomeType>' is forbidden. Use 'readonly schemas.SomeType[]' instead."
           },
           {
-            "file": "packages/zod/src/v4/core/util.ts",
-            "line": 176,
-            "column": 30,
-            "message": "Array type using 'Array<Primitive>' is forbidden. Use 'Primitive[]' instead."
-          },
-          {
             "file": "packages/zod/src/v4/mini/schemas.ts",
-            "line": 1277,
+            "line": 1357,
             "column": 12,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           }
         ]
       },
       "generic": {
-        "count": 342,
+        "count": 560,
         "samples": [
           {
-            "file": "packages/bench/benchUtil.ts",
-            "line": 23,
-            "column": 37,
-            "message": "Array type using 'any[]' is forbidden. Use 'Array<any>' instead."
+            "file": "packages/bench/bench-invalid.ts",
+            "line": 6,
+            "column": 11,
+            "message": "Array type using 'unknown[]' is forbidden. Use 'Array<unknown>' instead."
           },
           {
-            "file": "packages/tsc/generate.ts",
-            "line": 189,
-            "column": 13,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+            "file": "packages/bench/memory/throughput.ts",
+            "line": 33,
+            "column": 35,
+            "message": "Array type using 'number[]' is forbidden. Use 'Array<number>' instead."
           },
           {
-            "file": "packages/zod/src/v3/tests/all-errors.test.ts",
-            "line": 29,
-            "column": 17,
-            "message": "Array type using 'ErrorType[]' is forbidden. Use 'Array<ErrorType>' instead."
+            "file": "packages/zod/src/v3/ZodError.ts",
+            "line": 302,
+            "column": 22,
+            "message": "Array type using 'ZodIssue[]' is forbidden. Use 'Array<ZodIssue>' instead."
           },
           {
             "file": "packages/zod/src/v3/types.ts",
-            "line": 3448,
-            "column": 54,
-            "message": "Array type using 'SyncParseReturnType[]' is forbidden. Use 'Array<SyncParseReturnType>' instead."
-          },
-          {
-            "file": "packages/zod/src/v4/classic/tests/error-utils.test.ts",
-            "line": 129,
-            "column": 21,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
-          },
-          {
-            "file": "packages/zod/src/v4/classic/tests/registries.test.ts",
-            "line": 103,
-            "column": 52,
-            "message": "Array type using 'z.$output[]' is forbidden. Use 'Array<z.$output>' instead."
-          },
-          {
-            "file": "packages/zod/src/v4/core/errors.ts",
-            "line": 335,
-            "column": 17,
-            "message": "Array type using 'U[]' is forbidden. Use 'Array<U>' instead."
-          },
-          {
-            "file": "packages/zod/src/v4/core/schemas.ts",
-            "line": 2226,
-            "column": 20,
+            "line": 3736,
+            "column": 36,
             "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           },
           {
+            "file": "packages/zod/src/v4/classic/tests/error-utils.test.ts",
+            "line": 348,
+            "column": 11,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+          },
+          {
+            "file": "packages/zod/src/v4/core/compile.ts",
+            "line": 1321,
+            "column": 15,
+            "message": "Array type using 'SomeType[]' is forbidden. Use 'Array<SomeType>' instead."
+          },
+          {
+            "file": "packages/zod/src/v4/core/memoizer.ts",
+            "line": 31,
+            "column": 30,
+            "message": "Array type using 'errors.$ZodRawIssue[]' is forbidden. Use 'Array<errors.$ZodRawIssue>' instead."
+          },
+          {
             "file": "packages/zod/src/v4/core/schemas.ts",
-            "line": 4366,
-            "column": 42,
-            "message": "Array type using 'never[]' is forbidden. Use 'Array<never>' instead."
+            "line": 4579,
+            "column": 20,
+            "message": "Array type using '$ZodTemplateLiteralPart[]' is forbidden. Use 'Array<$ZodTemplateLiteralPart>' instead."
+          },
+          {
+            "file": "packages/zod/src/v4/core/zsf.ts",
+            "line": 103,
+            "column": 13,
+            "message": "Array type using '$ZSF[]' is forbidden. Use 'Array<$ZSF>' instead."
           },
           {
             "file": "scripts/write-stub-package-jsons.ts",
@@ -137,12 +137,24 @@
     },
     "consistent-generic-constructors": {
       "constructor": {
-        "count": 6,
+        "count": 8,
         "samples": [
           {
             "file": "packages/zod/src/v3/types.ts",
             "line": 3194,
             "column": 21,
+            "message": "The generic type arguments should be specified as part of the constructor type arguments."
+          },
+          {
+            "file": "packages/zod/src/v4/core/compile.ts",
+            "line": 684,
+            "column": 26,
+            "message": "The generic type arguments should be specified as part of the constructor type arguments."
+          },
+          {
+            "file": "packages/zod/src/v4/core/memoizer.ts",
+            "line": 35,
+            "column": 16,
             "message": "The generic type arguments should be specified as part of the constructor type arguments."
           },
           {
@@ -159,79 +171,79 @@
           },
           {
             "file": "packages/zod/src/v4/core/schemas.ts",
-            "line": 2386,
+            "line": 2630,
             "column": 16,
             "message": "The generic type arguments should be specified as part of the constructor type arguments."
           },
           {
             "file": "packages/zod/src/v4/core/util.ts",
-            "line": 479,
+            "line": 518,
             "column": 30,
             "message": "The generic type arguments should be specified as part of the constructor type arguments."
           },
           {
             "file": "packages/zod/src/v4/core/util.ts",
-            "line": 480,
+            "line": 519,
             "column": 28,
             "message": "The generic type arguments should be specified as part of the constructor type arguments."
           }
         ]
       },
       "type-annotation": {
-        "count": 10,
+        "count": 32,
         "samples": [
           {
-            "file": "packages/docs/app/llms-full.txt/route.ts",
-            "line": 16,
-            "column": 28,
+            "file": "packages/bench/compile-vs-arktype.ts",
+            "line": 86,
+            "column": 32,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "packages/bench/memory/retainers.ts",
+            "line": 98,
+            "column": 24,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
             "file": "packages/docs/loaders/stars.ts",
-            "line": 58,
+            "line": 64,
             "column": 29,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "packages/zod/src/v4/classic/schemas.ts",
-            "line": 21,
-            "column": 53,
+            "file": "packages/zod/src/v4/classic/tests/recursive-types.test.ts",
+            "line": 509,
+            "column": 35,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "packages/zod/src/v4/classic/tests/recursive-types.test.ts",
-            "line": 510,
+            "file": "packages/zod/src/v4/core/json-schema-processors.ts",
+            "line": 531,
             "column": 35,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
             "file": "packages/zod/src/v4/core/schemas.ts",
-            "line": 2555,
+            "line": 2081,
+            "column": 31,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "packages/zod/src/v4/core/schemas.ts",
+            "line": 3520,
             "column": 28,
-            "message": "The generic type arguments should be specified as part of the type annotation."
-          },
-          {
-            "file": "packages/zod/src/v4/core/schemas.ts",
-            "line": 2897,
-            "column": 33,
-            "message": "The generic type arguments should be specified as part of the type annotation."
-          },
-          {
-            "file": "packages/zod/src/v4/core/schemas.ts",
-            "line": 3224,
-            "column": 28,
-            "message": "The generic type arguments should be specified as part of the type annotation."
-          },
-          {
-            "file": "packages/zod/src/v4/core/schemas.ts",
-            "line": 3282,
-            "column": 27,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
             "file": "packages/zod/src/v4/core/to-json-schema.ts",
-            "line": 228,
-            "column": 29,
+            "line": 489,
+            "column": 27,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "scripts/check-comments.ts",
+            "line": 83,
+            "column": 24,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
@@ -245,7 +257,7 @@
     },
     "consistent-indexed-object-style": {
       "record": {
-        "count": 125,
+        "count": 146,
         "samples": [
           {
             "file": "packages/bench/metabench.ts",
@@ -254,122 +266,122 @@
             "message": "A record is preferred over an index signature."
           },
           {
-            "file": "packages/zod/src/v4/core/api.ts",
-            "line": 1104,
-            "column": 29,
+            "file": "packages/zod/src/v4/core/errors.ts",
+            "line": 343,
+            "column": 9,
             "message": "A record is preferred over an index signature."
           },
           {
-            "file": "packages/zod/src/v4/locales/az.ts",
-            "line": 50,
-            "column": 25,
-            "message": "A record is preferred over an index signature."
-          },
-          {
-            "file": "packages/zod/src/v4/locales/el.ts",
+            "file": "packages/zod/src/v4/locales/bn.ts",
             "line": 18,
             "column": 27,
             "message": "A record is preferred over an index signature."
           },
           {
-            "file": "packages/zod/src/v4/locales/fr.ts",
-            "line": 17,
+            "file": "packages/zod/src/v4/locales/eo.ts",
+            "line": 18,
             "column": 27,
             "message": "A record is preferred over an index signature."
           },
           {
-            "file": "packages/zod/src/v4/locales/it.ts",
-            "line": 17,
+            "file": "packages/zod/src/v4/locales/hi.ts",
+            "line": 18,
             "column": 27,
             "message": "A record is preferred over an index signature."
           },
           {
-            "file": "packages/zod/src/v4/locales/ms.ts",
-            "line": 17,
-            "column": 27,
-            "message": "A record is preferred over an index signature."
-          },
-          {
-            "file": "packages/zod/src/v4/locales/pt.ts",
-            "line": 50,
+            "file": "packages/zod/src/v4/locales/ka.ts",
+            "line": 53,
             "column": 25,
             "message": "A record is preferred over an index signature."
           },
           {
-            "file": "packages/zod/src/v4/locales/tr.ts",
-            "line": 50,
+            "file": "packages/zod/src/v4/locales/nl.ts",
+            "line": 53,
+            "column": 25,
+            "message": "A record is preferred over an index signature."
+          },
+          {
+            "file": "packages/zod/src/v4/locales/pt.ts",
+            "line": 61,
+            "column": 25,
+            "message": "A record is preferred over an index signature."
+          },
+          {
+            "file": "packages/zod/src/v4/locales/tk.ts",
+            "line": 53,
             "column": 25,
             "message": "A record is preferred over an index signature."
           },
           {
             "file": "packages/zod/src/v4/locales/zh-TW.ts",
-            "line": 50,
+            "line": 53,
             "column": 25,
             "message": "A record is preferred over an index signature."
           }
         ]
       },
       "index-signature": {
-        "count": 197,
+        "count": 326,
         "samples": [
           {
-            "file": "packages/docs/components/sidebar-item.tsx",
-            "line": 9,
-            "column": 13,
+            "file": "packages/bench/compile-object-build.ts",
+            "line": 36,
+            "column": 28,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "packages/zod/src/v4/classic/schemas.ts",
-            "line": 1942,
-            "column": 23,
+            "file": "packages/bench/compile-validate-vs-parse.ts",
+            "line": 33,
+            "column": 24,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "packages/zod/src/v4/classic/from-json-schema.ts",
+            "line": 25,
+            "column": 9,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "packages/zod/src/v4/classic/tests/object.test.ts",
-            "line": 227,
-            "column": 44,
+            "line": 83,
+            "column": 57,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "packages/zod/src/v4/classic/tests/record.test.ts",
-            "line": 625,
-            "column": 60,
-            "message": "An index signature is preferred over a record."
-          },
-          {
-            "file": "packages/zod/src/v4/core/schemas.ts",
-            "line": 1692,
-            "column": 72,
-            "message": "An index signature is preferred over a record."
-          },
-          {
-            "file": "packages/zod/src/v4/core/standard-schema.ts",
-            "line": 137,
-            "column": 31,
-            "message": "An index signature is preferred over a record."
-          },
-          {
-            "file": "packages/zod/src/v4/core/util.ts",
-            "line": 601,
+            "line": 102,
             "column": 56,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "packages/zod/src/v4/locales/hu.ts",
+            "file": "packages/zod/src/v4/core/json-schema.ts",
+            "line": 96,
+            "column": 23,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "packages/zod/src/v4/core/tests/compile.test.ts",
+            "line": 1109,
+            "column": 71,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "packages/zod/src/v4/locales/da.ts",
             "line": 6,
             "column": 18,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "packages/zod/src/v4/locales/sl.ts",
+            "file": "packages/zod/src/v4/locales/ps.ts",
             "line": 6,
             "column": 18,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "scripts/fail-on-console.ts",
-            "line": 3,
-            "column": 36,
+            "file": "scripts/triage-signal.ts",
+            "line": 351,
+            "column": 27,
             "message": "An index signature is preferred over a record."
           }
         ]
@@ -377,17 +389,17 @@
     },
     "consistent-type-definitions": {
       "interface": {
-        "count": 87,
+        "count": 103,
         "samples": [
           {
-            "file": "packages/bench/metabench.ts",
-            "line": 13,
+            "file": "packages/bench/compile-output.ts",
+            "line": 175,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "packages/zod/src/v3/ZodError.ts",
-            "line": 150,
+            "file": "packages/docs/loaders/source.ts",
+            "line": 28,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
@@ -399,109 +411,109 @@
           },
           {
             "file": "packages/zod/src/v3/tests/partials.test.ts",
-            "line": 114,
+            "line": 155,
             "column": 3,
             "message": "Use `interface` instead of `type`."
           },
           {
             "file": "packages/zod/src/v3/types.ts",
-            "line": 150,
+            "line": 4291,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "packages/zod/src/v4/classic/tests/codec.test.ts",
-            "line": 460,
+            "file": "packages/zod/src/v4/classic/tests/error-utils.test.ts",
+            "line": 165,
             "column": 3,
             "message": "Use `interface` instead of `type`."
           },
           {
             "file": "packages/zod/src/v4/classic/tests/recursive-types.test.ts",
-            "line": 223,
+            "line": 425,
             "column": 3,
-            "message": "Use `interface` instead of `type`."
-          },
-          {
-            "file": "packages/zod/src/v4/core/parse.ts",
-            "line": 6,
-            "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
             "file": "packages/zod/src/v4/core/schemas.ts",
-            "line": 2869,
+            "line": 1847,
+            "column": 1,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "packages/zod/src/v4/core/util.ts",
+            "line": 215,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "packages/zod/src/v4/mini/tests/recursive-types.test.ts",
-            "line": 184,
-            "column": 3,
+            "file": "scripts/compile-fuzz.ts",
+            "line": 20,
+            "column": 1,
             "message": "Use `interface` instead of `type`."
           }
         ]
       },
       "type": {
-        "count": 641,
+        "count": 684,
         "samples": [
           {
-            "file": "packages/bench/metabench.ts",
-            "line": 29,
+            "file": "packages/bench/compile-matrix.ts",
+            "line": 9,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "packages/zod/src/v3/types.ts",
-            "line": 4771,
+            "line": 4301,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "packages/zod/src/v4/classic/schemas.ts",
-            "line": 1881,
+            "line": 1774,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "packages/zod/src/v4/core/checks.ts",
-            "line": 651,
+            "line": 656,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "packages/zod/src/v4/core/schemas.ts",
-            "line": 16,
-            "column": 8,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "packages/zod/src/v4/core/schemas.ts",
-            "line": 874,
-            "column": 8,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "packages/zod/src/v4/core/schemas.ts",
-            "line": 2458,
-            "column": 8,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "packages/zod/src/v4/core/schemas.ts",
-            "line": 4243,
+            "file": "packages/zod/src/v4/core/registries.ts",
+            "line": 94,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "packages/zod/src/v4/mini/schemas.ts",
-            "line": 214,
+            "file": "packages/zod/src/v4/core/schemas.ts",
+            "line": 974,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "packages/zod/src/v4/mini/tests/recursive-types.test.ts",
-            "line": 146,
-            "column": 3,
+            "file": "packages/zod/src/v4/core/schemas.ts",
+            "line": 2901,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "packages/zod/src/v4/core/schemas.ts",
+            "line": 4861,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "packages/zod/src/v4/mini/schemas.ts",
+            "line": 418,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "scripts/triage-signal.ts",
+            "line": 635,
+            "column": 1,
             "message": "Use `type` instead of `interface`."
           }
         ]
@@ -513,7 +525,7 @@
         "samples": []
       },
       "no-type-imports": {
-        "count": 207,
+        "count": 253,
         "samples": [
           {
             "file": "packages/docs/app/(doc)/layout.tsx",
@@ -522,50 +534,50 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/zod/src/v3/helpers/parseUtil.ts",
+            "file": "packages/zod/src/v3/benchmarks/index.ts",
             "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/zod/src/v3/types.ts",
-            "line": 35,
+            "file": "packages/zod/src/v4/classic/from-json-schema.ts",
+            "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/zod/src/v4/core/errors.ts",
-            "line": 4,
+            "file": "packages/zod/src/v4/core/json-schema-generator.ts",
+            "line": 3,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "packages/zod/src/v4/core/schemas.ts",
-            "line": 10,
+            "line": 11,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/zod/src/v4/locales/da.ts",
+            "file": "packages/zod/src/v4/locales/de.ts",
             "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/zod/src/v4/locales/hr.ts",
-            "line": 2,
+            "file": "packages/zod/src/v4/locales/hy.ts",
+            "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/zod/src/v4/locales/mk.ts",
+            "file": "packages/zod/src/v4/locales/nl.ts",
             "line": 2,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "packages/zod/src/v4/locales/ta.ts",
-            "line": 1,
+            "line": 2,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -580,59 +592,59 @@
     },
     "func-style": {
       "expression": {
-        "count": 570,
+        "count": 905,
         "samples": [
           {
-            "file": "packages/bench/benchUtil.ts",
-            "line": 6,
-            "column": 8,
+            "file": ".claude/skills/triage/scripts/reindex.mjs",
+            "line": 24,
+            "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "packages/tsc/generate.ts",
-            "line": 198,
-            "column": 8,
+            "file": "packages/bench/memory/realworld.ts",
+            "line": 11,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "packages/zod/src/v3/tests/generics.test.ts",
+            "line": 8,
+            "column": 3,
             "message": "Expected a function expression."
           },
           {
             "file": "packages/zod/src/v4/classic/schemas.ts",
-            "line": 827,
-            "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "packages/zod/src/v4/classic/schemas.ts",
-            "line": 2513,
+            "line": 1761,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "packages/zod/src/v4/core/api.ts",
-            "line": 825,
+            "line": 918,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "packages/zod/src/v4/core/config.ts",
-            "line": 12,
-            "column": 8,
+            "file": "packages/zod/src/v4/core/compile.ts",
+            "line": 1463,
+            "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "packages/zod/src/v4/core/util.ts",
-            "line": 347,
-            "column": 8,
+            "file": "packages/zod/src/v4/core/tests/compile.test.ts",
+            "line": 7,
+            "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "packages/zod/src/v4/locales/mk.ts",
-            "line": 13,
+            "file": "packages/zod/src/v4/locales/en.ts",
+            "line": 14,
             "column": 3,
             "message": "Expected a function expression."
           },
           {
             "file": "packages/zod/src/v4/mini/schemas.ts",
-            "line": 581,
+            "line": 628,
             "column": 8,
             "message": "Expected a function expression."
           },
@@ -645,65 +657,65 @@
         ]
       },
       "declaration": {
-        "count": 309,
+        "count": 418,
         "samples": [
           {
-            "file": "packages/bench/instanceof.ts",
-            "line": 21,
+            "file": ".claude/skills/triage/scripts/reindex.mjs",
+            "line": 57,
             "column": 7,
             "message": "Expected a function declaration."
           },
           {
-            "file": "packages/zod/src/v3/helpers/util.ts",
-            "line": 33,
-            "column": 16,
+            "file": "packages/docs/components/copy-markdown-button.tsx",
+            "line": 14,
+            "column": 9,
             "message": "Expected a function declaration."
           },
           {
-            "file": "packages/zod/src/v3/tests/primitive.test.ts",
-            "line": 87,
+            "file": "packages/zod/src/v3/tests/pickomit.test.ts",
+            "line": 66,
             "column": 9,
             "message": "Expected a function declaration."
           },
           {
             "file": "packages/zod/src/v3/tests/primitive.test.ts",
-            "line": 307,
+            "line": 302,
             "column": 9,
             "message": "Expected a function declaration."
           },
           {
-            "file": "packages/zod/src/v4/classic/tests/catch.test.ts",
-            "line": 10,
-            "column": 9,
+            "file": "packages/zod/src/v4/classic/tests/codec-examples.test.ts",
+            "line": 208,
+            "column": 7,
             "message": "Expected a function declaration."
           },
           {
-            "file": "packages/zod/src/v4/classic/tests/pickomit.test.ts",
-            "line": 37,
+            "file": "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+            "line": 3096,
             "column": 9,
             "message": "Expected a function declaration."
           },
           {
             "file": "packages/zod/src/v4/core/json-schema-processors.ts",
-            "line": 276,
-            "column": 14,
+            "line": 399,
+            "column": 9,
             "message": "Expected a function declaration."
           },
           {
-            "file": "packages/zod/src/v4/core/schemas.ts",
-            "line": 1994,
-            "column": 13,
+            "file": "packages/zod/src/v4/core/tests/compile-differential.test.ts",
+            "line": 895,
+            "column": 9,
             "message": "Expected a function declaration."
           },
           {
-            "file": "packages/zod/src/v4/locales/it.ts",
+            "file": "packages/zod/src/v4/locales/lt.ts",
             "line": 5,
             "column": 7,
             "message": "Expected a function declaration."
           },
           {
-            "file": "packages/zod/src/v4/mini/tests/index.test.ts",
-            "line": 802,
+            "file": "scripts/triage-signal.ts",
+            "line": 481,
             "column": 9,
             "message": "Expected a function declaration."
           }
@@ -712,7 +724,7 @@
     },
     "import-export-preference": {
       "named": {
-        "count": 85,
+        "count": 98,
         "samples": [
           {
             "file": ".configs/rollup.config.js",
@@ -721,50 +733,50 @@
             "message": "Prefer named exports"
           },
           {
-            "file": "packages/docs/components/scroller.tsx",
-            "line": 7,
+            "file": "packages/docs/next.config.mjs",
+            "line": 271,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "packages/zod/src/v3/benchmarks/discriminatedUnion.ts",
-            "line": 78,
+            "file": "packages/zod/src/v3/benchmarks/ipv4.ts",
+            "line": 51,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "packages/zod/src/v4/classic/index.ts",
+            "file": "packages/zod/src/v4/locales/ar.ts",
+            "line": 114,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "packages/zod/src/v4/locales/en.ts",
+            "line": 130,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "packages/zod/src/v4/locales/hu.ts",
+            "line": 116,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "packages/zod/src/v4/locales/lt.ts",
+            "line": 237,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "packages/zod/src/v4/locales/pt-BR.ts",
+            "line": 155,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "packages/zod/src/v4/locales/ua.ts",
             "line": 5,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "packages/zod/src/v4/locales/de.ts",
-            "line": 112,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "packages/zod/src/v4/locales/hr.ts",
-            "line": 127,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "packages/zod/src/v4/locales/km.ts",
-            "line": 115,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "packages/zod/src/v4/locales/ps.ts",
-            "line": 122,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "packages/zod/src/v4/locales/uk.ts",
-            "line": 113,
             "column": 8,
             "message": "Prefer named exports"
           },
@@ -777,59 +789,59 @@
         ]
       },
       "default": {
-        "count": 28,
+        "count": 34,
         "samples": [
           {
-            "file": "packages/docs/app/api/search/route.ts",
-            "line": 4,
+            "file": "packages/bench/bench-invalid.ts",
+            "line": 73,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "packages/docs/components/codec-image.tsx",
-            "line": 12,
+            "file": "packages/docs/components/blog-feed.tsx",
+            "line": 7,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "packages/docs/components/gold.tsx",
+            "file": "packages/docs/components/copy-markdown-button.tsx",
             "line": 11,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "packages/docs/components/if.tsx",
-            "line": 3,
+            "file": "packages/docs/components/heading.tsx",
+            "line": 12,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "packages/docs/components/sidebar-logo.tsx",
-            "line": 6,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "packages/docs/loaders/get-llm-text.ts",
-            "line": 14,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "packages/treeshake/zod-mini-full.ts",
-            "line": 3,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "packages/zod/src/v3/helpers/errorUtil.ts",
+            "file": "packages/docs/components/platinum.tsx",
             "line": 1,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "packages/zod/src/v4/classic/from-json-schema.ts",
-            "line": 629,
+            "file": "packages/docs/components/themed-image.tsx",
+            "line": 14,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "packages/integration/fixtures/internal-types/mini.ts",
+            "line": 33,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "packages/zod/src/v3/helpers/enumUtil.ts",
+            "line": 1,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "packages/zod/src/v3/tests/Mocker.ts",
+            "line": 7,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -844,13 +856,19 @@
     },
     "indent": {
       "2-space": {
-        "count": 4,
+        "count": 5,
         "samples": [
           {
             "file": "packages/docs/components/inkeep-bubble.tsx",
             "line": 35,
             "column": 1,
             "message": "Expected 2-space indentation, but file uses 13-space indentation."
+          },
+          {
+            "file": "packages/treeshake/default-locale.test.ts",
+            "line": 70,
+            "column": 1,
+            "message": "Expected 2-space indentation, but file uses 5-space indentation."
           },
           {
             "file": "packages/treeshake/example-mini.ts",
@@ -873,40 +891,40 @@
         ]
       },
       "4-space": {
-        "count": 383,
+        "count": 479,
         "samples": [
           {
-            "file": ".configs/rollup.config.js",
+            "file": ".claude/skills/triage/scripts/reindex.mjs",
+            "line": 10,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "packages/bench/memory/throughput.ts",
             "line": 9,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/docs/app/llms.txt/route.ts",
-            "line": 7,
+            "file": "packages/docs/components/silver.tsx",
+            "line": 2,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/treeshake/rollup.config.js",
-            "line": 11,
+            "file": "packages/zod/src/v3/benchmarks/index.ts",
+            "line": 16,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/zod/src/v3/tests/base.test.ts",
+            "file": "packages/zod/src/v3/tests/parseUtil.test.ts",
             "line": 8,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/zod/src/v3/tests/refine.test.ts",
-            "line": 9,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "packages/zod/src/v4/classic/tests/discriminated-unions.test.ts",
+            "file": "packages/zod/src/v4/classic/tests/default-locale.test.ts",
             "line": 6,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
@@ -918,13 +936,13 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/zod/src/v4/core/tests/recursive-tuples.test.ts",
+            "file": "packages/zod/src/v4/core/tests/url-no-canparse.test.ts",
             "line": 5,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/zod/src/v4/locales/ru.ts",
+            "file": "packages/zod/src/v4/locales/sk.ts",
             "line": 6,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
@@ -938,40 +956,40 @@
         ]
       },
       "tab": {
-        "count": 383,
+        "count": 479,
         "samples": [
           {
-            "file": ".configs/rollup.config.js",
+            "file": ".claude/skills/triage/scripts/reindex.mjs",
+            "line": 10,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "packages/bench/memory/throughput.ts",
             "line": 9,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/docs/app/llms.txt/route.ts",
-            "line": 7,
+            "file": "packages/docs/components/silver.tsx",
+            "line": 2,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/treeshake/rollup.config.js",
-            "line": 11,
+            "file": "packages/zod/src/v3/benchmarks/index.ts",
+            "line": 16,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/zod/src/v3/tests/base.test.ts",
+            "file": "packages/zod/src/v3/tests/parseUtil.test.ts",
             "line": 8,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/zod/src/v3/tests/refine.test.ts",
-            "line": 9,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "packages/zod/src/v4/classic/tests/discriminated-unions.test.ts",
+            "file": "packages/zod/src/v4/classic/tests/default-locale.test.ts",
             "line": 6,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
@@ -983,13 +1001,13 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/zod/src/v4/core/tests/recursive-tuples.test.ts",
+            "file": "packages/zod/src/v4/core/tests/url-no-canparse.test.ts",
             "line": 5,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/zod/src/v4/locales/ru.ts",
+            "file": "packages/zod/src/v4/locales/sk.ts",
             "line": 6,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
@@ -1005,125 +1023,125 @@
     },
     "quotes": {
       "double": {
-        "count": 529,
+        "count": 643,
         "samples": [
           {
-            "file": "packages/bench/metabench.ts",
-            "line": 97,
-            "column": 27,
+            "file": ".claude/skills/triage/scripts/reindex.mjs",
+            "line": 83,
+            "column": 3,
             "message": "Strings must use doublequote."
           },
           {
             "file": "packages/zod/src/v3/locales/en.ts",
-            "line": 89,
-            "column": 67,
+            "line": 93,
+            "column": 25,
             "message": "Strings must use doublequote."
           },
           {
             "file": "packages/zod/src/v3/tests/string.test.ts",
-            "line": 91,
+            "line": 104,
             "column": 5,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/zod/src/v3/types.ts",
-            "line": 653,
-            "column": 28,
+            "file": "packages/zod/src/v4/classic/tests/codec.test.ts",
+            "line": 161,
+            "column": 67,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/zod/src/v4/classic/tests/registries.test.ts",
-            "line": 230,
+            "file": "packages/zod/src/v4/classic/tests/string.test.ts",
+            "line": 79,
             "column": 5,
             "message": "Strings must use doublequote."
           },
           {
             "file": "packages/zod/src/v4/classic/tests/string.test.ts",
-            "line": 138,
+            "line": 169,
             "column": 5,
             "message": "Strings must use doublequote."
           },
           {
             "file": "packages/zod/src/v4/classic/tests/template-literal.test.ts",
-            "line": 130,
-            "column": 78,
+            "line": 586,
+            "column": 64,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/zod/src/v4/classic/tests/tuple.test.ts",
-            "line": 262,
-            "column": 37,
+            "file": "packages/zod/src/v4/core/schemas.ts",
+            "line": 907,
+            "column": 26,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/zod/src/v4/locales/es.ts",
-            "line": 132,
+            "file": "packages/zod/src/v4/locales/hi.ts",
+            "line": 115,
             "column": 16,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "scripts/check-versions.ts",
-            "line": 49,
-            "column": 17,
+            "file": "scripts/triage-signal.ts",
+            "line": 207,
+            "column": 27,
             "message": "Strings must use doublequote."
           }
         ]
       },
       "single": {
-        "count": 19019,
+        "count": 26755,
         "samples": [
           {
-            "file": ".configs/rollup.config.js",
-            "line": 1,
-            "column": 22,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "packages/zod/src/v3/tests/catch.test.ts",
+            "file": ".claude/skills/triage/scripts/reindex.mjs",
             "line": 4,
-            "column": 19,
+            "column": 70,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "packages/zod/src/v3/types.ts",
-            "line": 649,
-            "column": 25,
+            "file": "packages/resolution/attw.test.ts",
+            "line": 11,
+            "column": 6,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "packages/zod/src/v4/classic/tests/discriminated-unions.test.ts",
-            "line": 645,
-            "column": 21,
+            "file": "packages/zod/src/v3/tests/transformer.test.ts",
+            "line": 136,
+            "column": 6,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "packages/zod/src/v4/classic/tests/pickomit.test.ts",
-            "line": 48,
-            "column": 10,
+            "file": "packages/zod/src/v4/classic/tests/enum.test.ts",
+            "line": 193,
+            "column": 6,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "packages/zod/src/v4/classic/tests/template-literal.test.ts",
-            "line": 728,
-            "column": 36,
+            "file": "packages/zod/src/v4/classic/tests/partial.test.ts",
+            "line": 125,
+            "column": 27,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "packages/zod/src/v4/core/schemas.ts",
-            "line": 3471,
-            "column": 22,
+            "file": "packages/zod/src/v4/classic/tests/to-json-schema.test.ts",
+            "line": 2742,
+            "column": 55,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "packages/zod/src/v4/locales/fa.ts",
-            "line": 8,
-            "column": 19,
+            "file": "packages/zod/src/v4/core/tests/compile-differential.test.ts",
+            "line": 338,
+            "column": 13,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "packages/zod/src/v4/locales/sl.ts",
-            "line": 20,
-            "column": 12,
+            "file": "packages/zod/src/v4/locales/de.ts",
+            "line": 39,
+            "column": 11,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "packages/zod/src/v4/locales/ro.ts",
+            "line": 107,
+            "column": 31,
             "message": "Strings must use singlequote."
           },
           {
@@ -1137,17 +1155,17 @@
     },
     "react-destructuring-assignment": {
       "never": {
-        "count": 15,
+        "count": 22,
         "samples": [
           {
             "file": "packages/docs/app/(doc)/layout.tsx",
-            "line": 68,
+            "line": 76,
             "column": 16,
             "message": "Must never use destructuring props assignment in SFC argument"
           },
           {
-            "file": "packages/docs/app/layout.tsx",
-            "line": 16,
+            "file": "packages/docs/app/blog/layout.tsx",
+            "line": 7,
             "column": 16,
             "message": "Must never use destructuring props assignment in SFC argument"
           },
@@ -1159,19 +1177,19 @@
           },
           {
             "file": "packages/docs/components/ecosystem.tsx",
-            "line": 376,
+            "line": 450,
             "column": 1,
             "message": "Must never use destructuring props assignment in SFC argument"
           },
           {
-            "file": "packages/docs/components/featured.tsx",
-            "line": 9,
-            "column": 9,
-            "message": "Must never use destructuring props assignment"
+            "file": "packages/docs/components/github-star-pill.tsx",
+            "line": 4,
+            "column": 1,
+            "message": "Must never use destructuring props assignment in SFC argument"
           },
           {
-            "file": "packages/docs/components/hero-logo.tsx",
-            "line": 10,
+            "file": "packages/docs/components/heading.tsx",
+            "line": 12,
             "column": 8,
             "message": "Must never use destructuring props assignment in SFC argument"
           },
@@ -1183,19 +1201,19 @@
           },
           {
             "file": "packages/docs/components/sidebar-item.tsx",
-            "line": 36,
-            "column": 33,
+            "line": 13,
+            "column": 28,
             "message": "Must never use destructuring props assignment in SFC argument"
           },
           {
-            "file": "packages/docs/components/sidebar-logo.tsx",
-            "line": 6,
-            "column": 8,
+            "file": "packages/docs/components/tabs.tsx",
+            "line": 7,
+            "column": 14,
             "message": "Must never use destructuring props assignment in SFC argument"
           },
           {
             "file": "packages/docs/components/themed-image.tsx",
-            "line": 12,
+            "line": 14,
             "column": 8,
             "message": "Must never use destructuring props assignment in SFC argument"
           }
@@ -1206,19 +1224,19 @@
         "samples": [
           {
             "file": "packages/docs/app/(doc)/[[...slug]]/page.tsx",
-            "line": 18,
+            "line": 20,
             "column": 24,
             "message": "Must use destructuring props assignment"
           },
           {
             "file": "packages/docs/app/blog/[slug]/page.tsx",
-            "line": 10,
+            "line": 37,
             "column": 24,
             "message": "Must use destructuring props assignment"
           },
           {
             "file": "packages/docs/components/ecosystem.tsx",
-            "line": 355,
+            "line": 429,
             "column": 10,
             "message": "Must use destructuring props assignment"
           },
@@ -1247,19 +1265,19 @@
         "samples": [
           {
             "file": "packages/docs/app/(doc)/[[...slug]]/page.tsx",
-            "line": 18,
+            "line": 20,
             "column": 24,
             "message": "Must use destructuring props assignment"
           },
           {
             "file": "packages/docs/app/blog/[slug]/page.tsx",
-            "line": 10,
+            "line": 37,
             "column": 24,
             "message": "Must use destructuring props assignment"
           },
           {
             "file": "packages/docs/components/ecosystem.tsx",
-            "line": 355,
+            "line": 429,
             "column": 10,
             "message": "Must use destructuring props assignment"
           },
@@ -1300,19 +1318,19 @@
         "samples": [
           {
             "file": "packages/docs/app/(doc)/[[...slug]]/page.tsx",
-            "line": 18,
+            "line": 20,
             "column": 24,
             "message": "Must use destructuring props assignment"
           },
           {
             "file": "packages/docs/app/blog/[slug]/page.tsx",
-            "line": 10,
+            "line": 37,
             "column": 24,
             "message": "Must use destructuring props assignment"
           },
           {
             "file": "packages/docs/components/ecosystem.tsx",
-            "line": 355,
+            "line": 429,
             "column": 10,
             "message": "Must use destructuring props assignment"
           },
@@ -1339,7 +1357,7 @@
     },
     "react-function-component-definition": {
       "function-declaration": {
-        "count": 7,
+        "count": 8,
         "samples": [
           {
             "file": "packages/docs/components/bronze.tsx",
@@ -1361,13 +1379,13 @@
           },
           {
             "file": "packages/docs/components/sidebar-item.tsx",
-            "line": 12,
+            "line": 13,
             "column": 28,
             "message": "Function component is not a function declaration"
           },
           {
             "file": "packages/docs/components/sidebar-item.tsx",
-            "line": 36,
+            "line": 35,
             "column": 33,
             "message": "Function component is not a function declaration"
           },
@@ -1379,24 +1397,30 @@
           },
           {
             "file": "packages/docs/components/tabs.tsx",
-            "line": 11,
+            "line": 7,
             "column": 14,
+            "message": "Function component is not a function declaration"
+          },
+          {
+            "file": "packages/docs/components/tabs.tsx",
+            "line": 25,
+            "column": 13,
             "message": "Function component is not a function declaration"
           }
         ]
       },
       "arrow-function": {
-        "count": 27,
+        "count": 35,
         "samples": [
           {
             "file": "packages/docs/app/(doc)/[[...slug]]/page.tsx",
-            "line": 15,
+            "line": 17,
             "column": 16,
             "message": "Function component is not an arrow function"
           },
           {
-            "file": "packages/docs/app/blog/layout.tsx",
-            "line": 5,
+            "file": "packages/docs/app/blog/[slug]/page.tsx",
+            "line": 36,
             "column": 16,
             "message": "Function component is not an arrow function"
           },
@@ -1407,32 +1431,32 @@
             "message": "Function component is not an arrow function"
           },
           {
-            "file": "packages/docs/components/ecosystem.tsx",
-            "line": 343,
+            "file": "packages/docs/components/codec-image.tsx",
+            "line": 12,
             "column": 8,
             "message": "Function component is not an arrow function"
           },
           {
             "file": "packages/docs/components/ecosystem.tsx",
-            "line": 386,
+            "line": 456,
             "column": 8,
             "message": "Function component is not an arrow function"
           },
           {
             "file": "packages/docs/components/ecosystem.tsx",
-            "line": 394,
+            "line": 472,
             "column": 8,
             "message": "Function component is not an arrow function"
           },
           {
-            "file": "packages/docs/components/ecosystem.tsx",
-            "line": 406,
-            "column": 8,
+            "file": "packages/docs/components/github-star-pill.tsx",
+            "line": 4,
+            "column": 1,
             "message": "Function component is not an arrow function"
           },
           {
-            "file": "packages/docs/components/hero-logo.tsx",
-            "line": 10,
+            "file": "packages/docs/components/heading.tsx",
+            "line": 12,
             "column": 8,
             "message": "Function component is not an arrow function"
           },
@@ -1444,7 +1468,7 @@
           },
           {
             "file": "packages/docs/components/themed-image.tsx",
-            "line": 12,
+            "line": 14,
             "column": 8,
             "message": "Function component is not an arrow function"
           }
@@ -1472,6 +1496,12 @@
             "message": "Value must be set for boolean attribute `forceMount`"
           },
           {
+            "file": "packages/docs/components/blog-toc.tsx",
+            "line": 102,
+            "column": 13,
+            "message": "Value must be set for boolean attribute `aria-hidden`"
+          },
+          {
             "file": "packages/docs/components/hero-logo.tsx",
             "line": 23,
             "column": 9,
@@ -1482,12 +1512,6 @@
             "line": 37,
             "column": 9,
             "message": "Value must be set for boolean attribute `priority`"
-          },
-          {
-            "file": "packages/docs/components/tabs.tsx",
-            "line": 47,
-            "column": 13,
-            "message": "Value must be set for boolean attribute `forceMount`"
           }
         ]
       }
@@ -1498,24 +1522,12 @@
         "samples": []
       },
       "element": {
-        "count": 5,
+        "count": 4,
         "samples": [
           {
             "file": "packages/docs/app/blog/[slug]/page.tsx",
-            "line": 22,
-            "column": 5,
-            "message": "Prefer React.Fragment over fragment shorthand"
-          },
-          {
-            "file": "packages/docs/app/blog/[slug]/page.tsx",
-            "line": 26,
-            "column": 13,
-            "message": "Prefer React.Fragment over fragment shorthand"
-          },
-          {
-            "file": "packages/docs/app/blog/[slug]/page.tsx",
-            "line": 61,
-            "column": 17,
+            "line": 27,
+            "column": 9,
             "message": "Prefer React.Fragment over fragment shorthand"
           },
           {
@@ -1527,6 +1539,12 @@
           {
             "file": "packages/docs/components/featured.tsx",
             "line": 11,
+            "column": 5,
+            "message": "Prefer React.Fragment over fragment shorthand"
+          },
+          {
+            "file": "packages/docs/components/inline-code-title.tsx",
+            "line": 7,
             "column": 5,
             "message": "Prefer React.Fragment over fragment shorthand"
           }
@@ -1588,60 +1606,60 @@
         ]
       },
       "never": {
-        "count": 23732,
+        "count": 33146,
         "samples": [
           {
-            "file": ".configs/rollup.config.js",
-            "line": 1,
-            "column": 47,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "packages/zod/src/v3/tests/coerce.test.ts",
-            "line": 92,
-            "column": 51,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "packages/zod/src/v3/tests/string.test.ts",
-            "line": 646,
-            "column": 55,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "packages/zod/src/v4/classic/tests/assignability.test.ts",
-            "line": 140,
-            "column": 29,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "packages/zod/src/v4/classic/tests/from-json-schema.test.ts",
-            "line": 619,
-            "column": 42,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "packages/zod/src/v4/classic/tests/readonly.test.ts",
-            "line": 225,
+            "file": ".claude/skills/triage/scripts/reindex.mjs",
+            "line": 4,
             "column": 79,
             "message": "Extra semicolon."
           },
           {
-            "file": "packages/zod/src/v4/classic/tests/transform.test.ts",
-            "line": 333,
-            "column": 9,
+            "file": "packages/zod/src/v3/ZodError.ts",
+            "line": 313,
+            "column": 37,
             "message": "Extra semicolon."
           },
           {
-            "file": "packages/zod/src/v4/core/tests/locales/el.test.ts",
-            "line": 57,
-            "column": 129,
+            "file": "packages/zod/src/v3/tests/string.test.ts",
+            "line": 533,
+            "column": 48,
             "message": "Extra semicolon."
           },
           {
-            "file": "packages/zod/src/v4/locales/pl.ts",
-            "line": 95,
-            "column": 122,
+            "file": "packages/zod/src/v4/classic/tests/codec-examples.test.ts",
+            "line": 542,
+            "column": 48,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "packages/zod/src/v4/classic/tests/index.test.ts",
+            "line": 328,
+            "column": 3,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "packages/zod/src/v4/classic/tests/set.test.ts",
+            "line": 161,
+            "column": 56,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "packages/zod/src/v4/core/compile.ts",
+            "line": 771,
+            "column": 118,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "packages/zod/src/v4/core/tests/compile.test.ts",
+            "line": 859,
+            "column": 34,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "packages/zod/src/v4/locales/no.ts",
+            "line": 3,
+            "column": 40,
             "message": "Extra semicolon."
           },
           {

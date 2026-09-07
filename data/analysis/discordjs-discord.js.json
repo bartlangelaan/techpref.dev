@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "96d58f23c7cc",
-  "analyzedCommit": "99af6d8bec96e6b6c371b04bcbcd65ee9307ad0b",
-  "analyzedCommitDate": "2026-08-17T10:13:35.000Z",
+  "analyzedCommit": "5f6cbf111e0973a225b34fc242a48ef663571601",
+  "analyzedCommitDate": "2026-09-06T11:08:01.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -9,7 +9,7 @@
         "samples": []
       },
       "generic": {
-        "count": 661,
+        "count": 662,
         "samples": [
           {
             "file": "apps/guide/src/app/[[...slug]]/page.tsx",
@@ -37,9 +37,9 @@
           },
           {
             "file": "packages/api-extractor/src/collector/MessageRouter.ts",
-            "line": 195,
+            "line": 324,
             "column": 25,
-            "message": "Array type using 'readonly ExtractorMessage[]' is forbidden. Use 'ReadonlyArray<ExtractorMessage>' instead."
+            "message": "Array type using 'any[]' is forbidden. Use 'Array<any>' instead."
           },
           {
             "file": "packages/api-extractor/src/generators/ApiModelGenerator.ts",
@@ -51,13 +51,13 @@
             "file": "packages/brokers/src/brokers/redis/BaseRedis.ts",
             "line": 161,
             "column": 19,
-            "message": "Array type using 'unknown[][]' is forbidden. Use 'Array<unknown[]>' instead."
+            "message": "Array type using 'unknown[]' is forbidden. Use 'Array<unknown>' instead."
           },
           {
-            "file": "packages/core/src/api/webhook.ts",
-            "line": 28,
-            "column": 11,
-            "message": "Array type using 'RawFile[]' is forbidden. Use 'Array<RawFile>' instead."
+            "file": "packages/core/src/util/files.ts",
+            "line": 14,
+            "column": 34,
+            "message": "Array type using 'DescriptiveRawFile[]' is forbidden. Use 'Array<DescriptiveRawFile>' instead."
           },
           {
             "file": "packages/rpc/src/client.ts",
@@ -145,7 +145,7 @@
         "samples": [
           {
             "file": "packages/actions/src/releasePackages/generateReleaseTree.ts",
-            "line": 151,
+            "line": 156,
             "column": 28,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
@@ -237,7 +237,7 @@
         ]
       },
       "index-signature": {
-        "count": 73,
+        "count": 75,
         "samples": [
           {
             "file": "apps/website/src/util/shiki.bundle.ts",
@@ -258,21 +258,21 @@
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "packages/brokers/src/brokers/redis/RPCRedis.ts",
-            "line": 56,
-            "column": 87,
+            "file": "packages/builders/src/Assertions.ts",
+            "line": 16,
+            "column": 90,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "packages/docgen/src/util/parseType.ts",
-            "line": 57,
-            "column": 14,
+            "file": "packages/formatters/src/formatters.ts",
+            "line": 687,
+            "column": 11,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "packages/rest/__tests__/REST.test.ts",
-            "line": 229,
-            "column": 41,
+            "file": "packages/rest/__tests__/RequestHandler.test.ts",
+            "line": 198,
+            "column": 52,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -284,13 +284,13 @@
           {
             "file": "packages/scripts/turbo/generators/config.ts",
             "line": 74,
-            "column": 48,
+            "column": 63,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "packages/structures/src/utils/optimization.ts",
-            "line": 1,
-            "column": 54,
+            "line": 3,
+            "column": 13,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -429,7 +429,7 @@
         ]
       },
       "no-type-imports": {
-        "count": 1690,
+        "count": 1720,
         "samples": [
           {
             "file": "apps/guide/next.config.ts",
@@ -439,49 +439,49 @@
           },
           {
             "file": "packages/api-extractor-model/src/model/ApiIndexSignature.ts",
-            "line": 7,
+            "line": 10,
             "column": 10,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/api-extractor-utils/src/tsdoc/LinkTagCommentNode.ts",
+            "file": "packages/api-extractor-utils/src/tsdoc/RootComment.ts",
+            "line": 2,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "packages/builders/__tests__/interactions/ChatInputCommands/Options.test.ts",
             "line": 4,
-            "column": 10,
+            "column": 2,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/builders/__tests__/components/components.test.ts",
+            "file": "packages/core/src/api/channel.ts",
+            "line": 3,
+            "column": 31,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "packages/core/src/api/poll.ts",
             "line": 8,
             "column": 2,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/core/src/api/applications.ts",
-            "line": 3,
+            "file": "packages/discord.js/typings/index.test-d.ts",
+            "line": 18,
+            "column": 3,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "packages/structures/src/channels/ForumChannel.ts",
+            "line": 5,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/core/src/api/oauth2.ts",
-            "line": 3,
-            "column": 28,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "packages/create-discord-bot/template/Deno/src/events/index.ts",
-            "line": 3,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "packages/structures/src/channels/Channel.ts",
-            "line": 11,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "packages/structures/src/polls/PollMedia.ts",
-            "line": 4,
+            "file": "packages/structures/src/presences/activities/ActivityParty.ts",
+            "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -496,7 +496,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 505,
+        "count": 508,
         "samples": [
           {
             "file": "apps/guide/src/app/[[...slug]]/page.tsx",
@@ -512,31 +512,31 @@
           },
           {
             "file": "apps/website/src/components/ui/Sidebar.tsx",
-            "line": 396,
+            "line": 410,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "packages/api-extractor-utils/src/parse.ts",
-            "line": 175,
+            "line": 182,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "packages/create-discord-bot/template/JavaScript/src/util/loaders.js",
-            "line": 23,
+            "line": 64,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "packages/docgen/src/util/splitVarName.ts",
-            "line": 3,
+            "file": "packages/docgen/src/util/types.ts",
+            "line": 12,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "packages/rest/__tests__/util.ts",
-            "line": 7,
+            "file": "packages/rest/src/environment.ts",
+            "line": 5,
             "column": 8,
             "message": "Expected a function expression."
           },
@@ -693,7 +693,7 @@
         ]
       },
       "default": {
-        "count": 273,
+        "count": 282,
         "samples": [
           {
             "file": "apps/guide/src/app/api/search/route.ts",
@@ -702,50 +702,50 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "apps/website/src/components/Outline.tsx",
+            "file": "apps/website/src/components/OverlayScrollbars.tsx",
             "line": 10,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "apps/website/src/util/fetchVersions.ts",
-            "line": 4,
+            "file": "apps/website/src/util/resolveNodeKind.tsx",
+            "line": 11,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "packages/builders/src/components/label/Assertions.ts",
+            "file": "packages/builders/src/components/selectMenu/MentionableSelectMenu.ts",
+            "line": 16,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "packages/builders/src/messages/poll/PollAnswerMedia.ts",
+            "line": 9,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "packages/docgen/src/types/method.ts",
+            "line": 9,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "packages/structures/src/entitlements/Entitlement.ts",
             "line": 14,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "packages/builders/src/messages/SharedClientTheme.ts",
-            "line": 10,
+            "file": "packages/structures/src/messages/components/SelectMenuDefaultValue.ts",
+            "line": 6,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "packages/docgen/src/types/external.ts",
-            "line": 5,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "packages/structures/src/channels/PermissionOverwrite.ts",
-            "line": 12,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "packages/structures/src/messages/components/MediaGalleryItem.ts",
-            "line": 12,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "packages/structures/src/stageInstances/StageInstance.ts",
-            "line": 13,
+            "file": "packages/structures/src/soundboards/SoundboardSound.ts",
+            "line": 14,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -760,7 +760,7 @@
     },
     "indent": {
       "2-space": {
-        "count": 745,
+        "count": 756,
         "samples": [
           {
             "file": "apps/guide/.prettierrc.cjs",
@@ -769,50 +769,50 @@
             "message": "Expected spaces for indentation, but found tabs."
           },
           {
-            "file": "apps/website/src/styles/cva.ts",
+            "file": "apps/website/src/styles/ui/button.ts",
             "line": 5,
             "column": 1,
             "message": "Expected spaces for indentation, but found tabs."
           },
           {
-            "file": "packages/api-extractor-utils/src/tsdoc/CommentBlockTag.ts",
-            "line": 5,
+            "file": "packages/api-extractor-utils/src/tsdoc/CommentNodeContainer.ts",
+            "line": 7,
             "column": 1,
             "message": "Expected spaces for indentation, but found tabs."
           },
           {
-            "file": "packages/builders/__tests__/interactions/ChatInputCommands/Options.test.ts",
-            "line": 2,
+            "file": "packages/builders/__tests__/messages/fileBody.test.ts",
+            "line": 7,
             "column": 1,
             "message": "Expected spaces for indentation, but found tabs."
           },
           {
-            "file": "packages/builders/src/messages/poll/PollAnswerMedia.ts",
+            "file": "packages/builders/src/util/resolveBuilder.ts",
+            "line": 10,
+            "column": 1,
+            "message": "Expected spaces for indentation, but found tabs."
+          },
+          {
+            "file": "packages/docgen/src/documentation.ts",
             "line": 15,
             "column": 1,
             "message": "Expected spaces for indentation, but found tabs."
           },
           {
-            "file": "packages/create-discord-bot/template/TypeScript/src/events/interactionCreate.ts",
-            "line": 8,
+            "file": "packages/scripts/src/generateSplitDocumentation.ts",
+            "line": 5,
             "column": 1,
             "message": "Expected spaces for indentation, but found tabs."
           },
           {
-            "file": "packages/rpc/src/util.ts",
-            "line": 4,
-            "column": 1,
-            "message": "Expected spaces for indentation, but found tabs."
-          },
-          {
-            "file": "packages/structures/src/messages/components/ActionRowComponent.ts",
+            "file": "packages/structures/src/messages/components/ContainerComponent.ts",
             "line": 13,
             "column": 1,
             "message": "Expected spaces for indentation, but found tabs."
           },
           {
-            "file": "packages/util/__tests__/Equatable.test.ts",
-            "line": 5,
+            "file": "packages/ui/vite.config.ts",
+            "line": 7,
             "column": 1,
             "message": "Expected spaces for indentation, but found tabs."
           },
@@ -825,7 +825,7 @@
         ]
       },
       "4-space": {
-        "count": 1077,
+        "count": 1088,
         "samples": [
           {
             "file": "apps/guide/.prettierrc.cjs",
@@ -834,50 +834,50 @@
             "message": "Expected spaces for indentation, but found tabs."
           },
           {
-            "file": "packages/api-extractor-model/src/mixins/ApiInitializerMixin.ts",
-            "line": 16,
+            "file": "packages/api-extractor-model/src/mixins/ApiItemContainerMixin.ts",
+            "line": 6,
             "column": 1,
             "message": "Expected spaces for indentation, but found tabs."
           },
           {
-            "file": "packages/builders/__tests__/components/v2/container.test.ts",
-            "line": 2,
+            "file": "packages/builders/__tests__/components/v2/mediaGalleryItem.test.ts",
+            "line": 5,
             "column": 1,
             "message": "Expected spaces for indentation, but found tabs."
           },
           {
-            "file": "packages/core/src/api/soundboardSounds.ts",
-            "line": 7,
+            "file": "packages/core/src/api/thread.ts",
+            "line": 5,
             "column": 1,
             "message": "Expected spaces for indentation, but found tabs."
           },
           {
-            "file": "packages/discord.js/src/client/websocket/handlers/GUILD_CREATE.js",
-            "line": 7,
+            "file": "packages/discord.js/src/client/websocket/handlers/GUILD_MEMBER_ADD.js",
+            "line": 6,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/discord.js/src/structures/BaseGuildTextChannel.js",
-            "line": 15,
+            "file": "packages/discord.js/src/structures/CategoryChannel.js",
+            "line": 45,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/discord.js/src/util/DataResolver.js",
-            "line": 39,
+            "file": "packages/discord.js/src/util/MessageFlagsBitField.js",
+            "line": 19,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/scripts/src/shared.ts",
-            "line": 4,
+            "file": "packages/structures/__tests__/invite.test.ts",
+            "line": 11,
             "column": 1,
             "message": "Expected spaces for indentation, but found tabs."
           },
           {
-            "file": "packages/structures/src/stickers/StickerPack.ts",
-            "line": 18,
+            "file": "packages/structures/src/stickers/Sticker.ts",
+            "line": 17,
             "column": 1,
             "message": "Expected spaces for indentation, but found tabs."
           },
@@ -957,7 +957,7 @@
     },
     "quotes": {
       "double": {
-        "count": 16754,
+        "count": 16956,
         "samples": [
           {
             "file": "apps/guide/.lintstagedrc.cjs",
@@ -967,55 +967,55 @@
           },
           {
             "file": "packages/api-extractor-model/src/items/ApiItem.ts",
-            "line": 35,
+            "line": 68,
+            "column": 11,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "packages/builders/__tests__/components/button.test.ts",
+            "line": 59,
+            "column": 66,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "packages/collection/__tests__/collection.test.ts",
+            "line": 94,
             "column": 10,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/builders/__tests__/components/actionRow.test.ts",
-            "line": 122,
-            "column": 67,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "packages/builders/src/messages/poll/Poll.ts",
-            "line": 152,
-            "column": 25,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "packages/discord.js/src/client/actions/MessageDelete.js",
+            "file": "packages/discord.js/src/client/websocket/handlers/GUILD_AUDIT_LOG_ENTRY_CREATE.js",
             "line": 1,
             "column": 1,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/discord.js/src/structures/GuildMember.js",
-            "line": 3,
-            "column": 41,
+            "file": "packages/discord.js/src/structures/IntegrationApplication.js",
+            "line": 47,
+            "column": 9,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/discord.js/typings/index.test-d.ts",
-            "line": 2355,
-            "column": 75,
+            "file": "packages/docgen/src/documentation.ts",
+            "line": 119,
+            "column": 11,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/rest/src/lib/REST.ts",
-            "line": 2,
+            "file": "packages/rest/src/lib/utils/constants.ts",
+            "line": 45,
+            "column": 10,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "packages/structures/src/presences/activities/ActivityTimestamps.ts",
+            "line": 53,
             "column": 34,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/structures/src/skus/SKU.ts",
-            "line": 67,
-            "column": 43,
-            "message": "Strings must use doublequote."
-          },
-          {
             "file": "vitest.config.ts",
-            "line": 23,
+            "line": 25,
             "column": 5,
             "message": "Strings must use doublequote."
           }
@@ -1032,7 +1032,7 @@
           },
           {
             "file": "packages/actions/src/releasePackages/generateReleaseTree.ts",
-            "line": 106,
+            "line": 111,
             "column": 66,
             "message": "Strings must use singlequote."
           },
@@ -1074,7 +1074,7 @@
           },
           {
             "file": "packages/formatters/__tests__/formatters.test.ts",
-            "line": 219,
+            "line": 226,
             "column": 11,
             "message": "Strings must use singlequote."
           },
@@ -1568,7 +1568,7 @@
         "samples": []
       },
       "never": {
-        "count": 29310,
+        "count": 29674,
         "samples": [
           {
             "file": "apps/guide/.lintstagedrc.cjs",
@@ -1578,55 +1578,55 @@
           },
           {
             "file": "packages/api-extractor/src/analyzer/AstSymbolTable.ts",
-            "line": 422,
-            "column": 10,
+            "line": 571,
+            "column": 100,
             "message": "Extra semicolon."
           },
           {
-            "file": "packages/brokers/src/brokers/redis/RPCRedis.ts",
-            "line": 131,
-            "column": 28,
+            "file": "packages/builders/__tests__/components/button.test.ts",
+            "line": 52,
+            "column": 25,
             "message": "Extra semicolon."
           },
           {
             "file": "packages/collection/__tests__/collection.test.ts",
-            "line": 543,
-            "column": 3,
+            "line": 741,
+            "column": 39,
             "message": "Extra semicolon."
           },
           {
-            "file": "packages/discord.js/src/managers/ApplicationCommandPermissionsManager.js",
-            "line": 319,
-            "column": 98,
+            "file": "packages/discord.js/src/managers/ChannelManager.js",
+            "line": 61,
+            "column": 18,
             "message": "Extra semicolon."
           },
           {
-            "file": "packages/discord.js/src/structures/GuildPreview.js",
-            "line": 139,
-            "column": 51,
+            "file": "packages/discord.js/src/structures/InteractionCallbackResource.js",
+            "line": 52,
+            "column": 26,
             "message": "Extra semicolon."
           },
           {
             "file": "packages/discord.js/typings/index.test-d.ts",
-            "line": 798,
-            "column": 37,
+            "line": 1491,
+            "column": 43,
             "message": "Extra semicolon."
           },
           {
-            "file": "packages/rest/src/strategies/undiciRequest.ts",
-            "line": 25,
-            "column": 34,
+            "file": "packages/rpc/src/ipc.ts",
+            "line": 172,
+            "column": 29,
             "message": "Extra semicolon."
           },
           {
-            "file": "packages/voice/__tests__/AudioPlayer.test.ts",
-            "line": 86,
-            "column": 47,
+            "file": "packages/voice/__mocks__/rtp.ts",
+            "line": 71,
+            "column": 2,
             "message": "Extra semicolon."
           },
           {
             "file": "vitest.config.ts",
-            "line": 27,
+            "line": 29,
             "column": 3,
             "message": "Extra semicolon."
           }

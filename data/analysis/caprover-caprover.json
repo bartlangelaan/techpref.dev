@@ -1,19 +1,26 @@
 {
   "analyzedVersion": "96d58f23c7cc",
-  "analyzedCommit": "c352c9785464caf75166274867f00bc054fa6ce2",
-  "analyzedCommitDate": "2026-08-20T18:30:54.000Z",
+  "analyzedCommit": "468e925eac2f4db29af07d999ba61c640fa32132",
+  "analyzedCommitDate": "2026-09-07T15:39:50.000Z",
   "checks": {
     "array-type": {
       "array": {
-        "count": 0,
-        "samples": []
+        "count": 1,
+        "samples": [
+          {
+            "file": "src/user/system/VersionManager.ts",
+            "line": 83,
+            "column": 45,
+            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
+          }
+        ]
       },
       "generic": {
         "count": 172,
         "samples": [
           {
             "file": "src/datastore/AppsDataStore.ts",
-            "line": 410,
+            "line": 407,
             "column": 29,
             "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           },
@@ -91,7 +98,7 @@
         "samples": [
           {
             "file": "src/datastore/ProjectsDataStore.ts",
-            "line": 146,
+            "line": 145,
             "column": 35,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
@@ -159,7 +166,7 @@
         ]
       },
       "index-signature": {
-        "count": 2,
+        "count": 3,
         "samples": [
           {
             "file": "src/handlers/users/apps/appdefinition/AppDefinitionHandler.ts",
@@ -171,6 +178,12 @@
             "file": "src/user/system/CertbotManager.ts",
             "line": 533,
             "column": 26,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "tests/EjsTemplates.test.ts",
+            "line": 5,
+            "column": 27,
             "message": "An index signature is preferred over a record."
           }
         ]
@@ -302,7 +315,7 @@
           },
           {
             "file": "src/user/system/BackupManager.ts",
-            "line": 13,
+            "line": 12,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
@@ -327,59 +340,59 @@
     },
     "func-style": {
       "expression": {
-        "count": 81,
+        "count": 85,
         "samples": [
           {
-            "file": "dev-scripts/validate-build-version-docker-hub.js",
-            "line": 13,
-            "column": 1,
+            "file": "src/app.ts",
+            "line": 249,
+            "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/datastore/ProjectsDataStore.ts",
-            "line": 9,
-            "column": 1,
+            "file": "src/docker/DockerApi.ts",
+            "line": 45,
+            "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "src/docker/DockerBuildOutput.ts",
-            "line": 204,
+            "line": 234,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "src/handlers/users/apps/appdefinition/AppDefinitionHandler.ts",
-            "line": 26,
+            "line": 235,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/routes/user/apps/appdefinition/AppDefinitionRouter.ts",
-            "line": 19,
-            "column": 8,
+            "file": "src/server.ts",
+            "line": 16,
+            "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/user/ImageMaker.ts",
-            "line": 488,
+            "file": "src/user/system/CaptainManager.ts",
+            "line": 304,
             "column": 9,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/user/system/CertbotManager.ts",
-            "line": 22,
-            "column": 8,
+            "file": "src/utils/CaptainConstants.ts",
+            "line": 10,
+            "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/utils/CaptainInstaller.ts",
-            "line": 197,
-            "column": 5,
+            "file": "src/utils/DateUtils.ts",
+            "line": 16,
+            "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "src/utils/TemplateHelperVersionPrinter.ts",
-            "line": 65,
+            "line": 68,
             "column": 1,
             "message": "Expected a function expression."
           },
@@ -396,7 +409,7 @@
         "samples": [
           {
             "file": "src/datastore/ProjectsDataStore.ts",
-            "line": 150,
+            "line": 149,
             "column": 15,
             "message": "Expected a function declaration."
           },
@@ -494,7 +507,7 @@
         ]
       },
       "default": {
-        "count": 9,
+        "count": 10,
         "samples": [
           {
             "file": "src/api/CaptainError.ts",
@@ -546,7 +559,13 @@
           },
           {
             "file": "src/utils/CaptainInstaller.ts",
-            "line": 286,
+            "line": 293,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "src/utils/HttpUtils.ts",
+            "line": 3,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           }
@@ -566,7 +585,7 @@
         ]
       },
       "4-space": {
-        "count": 6,
+        "count": 7,
         "samples": [
           {
             "file": "src/docker/DockerApi.ts",
@@ -599,6 +618,12 @@
             "message": "Expected 4-space indentation, but file uses 30-space indentation."
           },
           {
+            "file": "src/user/system/VersionManager.ts",
+            "line": 83,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 18-space indentation."
+          },
+          {
             "file": "tests/utilsJsonYaml.test.ts",
             "line": 17,
             "column": 1,
@@ -607,7 +632,7 @@
         ]
       },
       "tab": {
-        "count": 122,
+        "count": 127,
         "samples": [
           {
             "file": "dev-scripts/clear-custom-nginx.js",
@@ -616,50 +641,50 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/datastore/ProjectsDataStore.ts",
-            "line": 10,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "src/models/CapRoverTheme.ts",
-            "line": 2,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "src/models/InjectionInterfaces.ts",
-            "line": 7,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "src/routes/user/apps/appdefinition/AppDefinitionRouter.ts",
+            "file": "src/docker/DockerApi.ts",
             "line": 5,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/user/FeatureFlags.ts",
-            "line": 7,
+            "file": "src/models/DockerSecret.ts",
+            "line": 2,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/user/oneclick/OneClickDeploymentJobRegistry.ts",
-            "line": 4,
+            "file": "src/models/OneClickApp.ts",
+            "line": 2,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/utils/CaptainConstants.ts",
+            "file": "src/routes/user/pro/ProRouter.ts",
+            "line": 6,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "src/user/ThemeManager.ts",
+            "line": 35,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "src/user/system/BackupManager.ts",
+            "line": 30,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "src/utils/Encryptor.ts",
             "line": 11,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "tests/CircularQueue.test.ts",
-            "line": 4,
+            "file": "tests/DockerBuildOutput.test.ts",
+            "line": 2,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -674,7 +699,7 @@
     },
     "quotes": {
       "double": {
-        "count": 2723,
+        "count": 2852,
         "samples": [
           {
             "file": "dev-scripts/clear-custom-nginx.js",
@@ -684,50 +709,50 @@
           },
           {
             "file": "src/docker/DockerApi.ts",
-            "line": 41,
-            "column": 42,
+            "line": 482,
+            "column": 31,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/routes/user/UserRouter.ts",
-            "line": 9,
-            "column": 24,
+            "file": "src/routes/user/apps/appdata/AppDataRouter.ts",
+            "line": 38,
+            "column": 12,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/routes/user/system/SystemRouter.ts",
-            "line": 577,
-            "column": 17,
+            "file": "src/server.ts",
+            "line": 47,
+            "column": 15,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/user/events/ICapRoverEvent.ts",
-            "line": 2,
+            "file": "src/user/pro/ProManager.ts",
+            "line": 7,
             "column": 20,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/user/system/CertbotManager.ts",
-            "line": 157,
-            "column": 30,
+            "file": "src/user/system/LoadBalancerManager.ts",
+            "line": 34,
+            "column": 21,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/utils/CaptainConstants.ts",
-            "line": 223,
-            "column": 9,
+            "file": "src/utils/CircularQueue.ts",
+            "line": 7,
+            "column": 49,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "tests/CircularQueue.test.ts",
-            "line": 25,
-            "column": 6,
+            "file": "tests/DockerBuildOutput.test.ts",
+            "line": 156,
+            "column": 26,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "tests/PatchAppDefinition.test.ts",
-            "line": 125,
-            "column": 24,
+            "file": "tests/ProjectSorter.test.ts",
+            "line": 20,
+            "column": 12,
             "message": "Strings must use doublequote."
           },
           {
@@ -739,24 +764,24 @@
         ]
       },
       "single": {
-        "count": 57,
+        "count": 56,
         "samples": [
           {
-            "file": "dev-scripts/validate-build-version-docker-hub.js",
-            "line": 94,
-            "column": 27,
-            "message": "Strings must use singlequote."
-          },
-          {
             "file": "jest.config.js",
-            "line": 10,
-            "column": 30,
+            "line": 6,
+            "column": 9,
             "message": "Strings must use singlequote."
           },
           {
             "file": "jest.config.js",
             "line": 11,
-            "column": 62,
+            "column": 28,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "src/app.ts",
+            "line": 163,
+            "column": 13,
             "message": "Strings must use singlequote."
           },
           {
@@ -772,14 +797,14 @@
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/utils/DockerComposeToServiceOverride.ts",
-            "line": 92,
-            "column": 47,
+            "file": "tests/GitHelper.test.ts",
+            "line": 32,
+            "column": 17,
             "message": "Strings must use singlequote."
           },
           {
             "file": "tests/GitHelper.test.ts",
-            "line": 38,
+            "line": 55,
             "column": 15,
             "message": "Strings must use singlequote."
           },
@@ -854,7 +879,7 @@
     },
     "semi": {
       "always": {
-        "count": 6088,
+        "count": 6169,
         "samples": [
           {
             "file": "dev-scripts/clear-pro-config.js",
@@ -864,50 +889,50 @@
           },
           {
             "file": "src/datastore/ProjectsDataStore.ts",
-            "line": 7,
-            "column": 51,
+            "line": 178,
+            "column": 38,
             "message": "Missing semicolon."
           },
           {
             "file": "src/docker/DockerBuildOutput.ts",
-            "line": 155,
-            "column": 34,
+            "line": 288,
+            "column": 66,
             "message": "Missing semicolon."
           },
           {
-            "file": "src/routes/user/apps/appdefinition/AppDefinitionRouter.ts",
-            "line": 302,
-            "column": 37,
+            "file": "src/routes/user/apps/webhooks/WebhooksRouter.ts",
+            "line": 73,
+            "column": 66,
             "message": "Missing semicolon."
           },
           {
-            "file": "src/user/Authenticator.ts",
-            "line": 90,
-            "column": 18,
+            "file": "src/user/BuildLog.ts",
+            "line": 6,
+            "column": 28,
             "message": "Missing semicolon."
           },
           {
-            "file": "src/user/ThemeManager.ts",
-            "line": 108,
-            "column": 15,
+            "file": "src/user/events/EventLogger.ts",
+            "line": 20,
+            "column": 48,
             "message": "Missing semicolon."
           },
           {
             "file": "src/user/system/CaptainManager.ts",
-            "line": 47,
-            "column": 53,
+            "line": 314,
+            "column": 19,
             "message": "Missing semicolon."
           },
           {
             "file": "src/user/system/LoadBalancerManager.ts",
-            "line": 478,
-            "column": 22,
+            "line": 937,
+            "column": 26,
             "message": "Missing semicolon."
           },
           {
-            "file": "src/utils/Utils.ts",
-            "line": 134,
-            "column": 33,
+            "file": "tests/CircularQueue.test.ts",
+            "line": 33,
+            "column": 3,
             "message": "Missing semicolon."
           },
           {

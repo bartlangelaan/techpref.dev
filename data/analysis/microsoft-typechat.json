@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "96d58f23c7cc",
-  "analyzedCommit": "1100e7c653210e07519592c56b8bced9d1053d84",
-  "analyzedCommitDate": "2026-08-21T16:55:26.000Z",
+  "analyzedCommit": "83caa1242d9a9a707a4a66bfbc5fe6174cbcb8dc",
+  "analyzedCommitDate": "2026-08-21T19:55:36.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -34,7 +34,7 @@
         ]
       },
       "generic": {
-        "count": 80,
+        "count": 81,
         "samples": [
           {
             "file": "typescript/examples/calendar/src/calendarActionsSchema.ts",
@@ -55,16 +55,16 @@
             "message": "Array type using 'TaskClassification[]' is forbidden. Use 'Array<TaskClassification>' instead."
           },
           {
-            "file": "typescript/examples/music/src/endpoints.ts",
-            "line": 526,
-            "column": 11,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+            "file": "typescript/examples/music/src/main.ts",
+            "line": 69,
+            "column": 21,
+            "message": "Array type using 'SpotifyApi.TrackObjectFull[]' is forbidden. Use 'Array<SpotifyApi.TrackObjectFull>' instead."
           },
           {
             "file": "typescript/examples/music/src/trackCollections.ts",
-            "line": 38,
+            "line": 51,
             "column": 17,
-            "message": "Array type using 'SpotifyApi.TrackObjectFull[]' is forbidden. Use 'Array<SpotifyApi.TrackObjectFull>' instead."
+            "message": "Array type using 'SpotifyApi.TrackObjectSimplified[]' is forbidden. Use 'Array<SpotifyApi.TrackObjectSimplified>' instead."
           },
           {
             "file": "typescript/examples/music/src/trackFilter.ts",
@@ -80,15 +80,15 @@
           },
           {
             "file": "typescript/src/model.ts",
-            "line": 287,
-            "column": 94,
-            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
+            "line": 348,
+            "column": 72,
+            "message": "Array type using 'PromptSection[]' is forbidden. Use 'Array<PromptSection>' instead."
           },
           {
-            "file": "typescript/src/ts/program.ts",
-            "line": 202,
-            "column": 35,
-            "message": "Array type using 'unknown[]' is forbidden. Use 'Array<unknown>' instead."
+            "file": "typescript/src/ts/validate.ts",
+            "line": 127,
+            "column": 25,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
             "file": "typescript/test/program.test.ts",
@@ -340,7 +340,7 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 36,
+        "count": 41,
         "samples": [
           {
             "file": "typescript/examples/calendar/src/main.ts",
@@ -355,32 +355,26 @@
             "message": "Imports TypeChatLanguageModel, TypeChatJsonTranslator, MultimodalPromptContent, and PromptContent are only used as type."
           },
           {
-            "file": "typescript/examples/healthData/src/main.ts",
-            "line": 8,
+            "file": "typescript/examples/healthData/src/translator.ts",
+            "line": 1,
             "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
+            "message": "Imports Result, TypeChatLanguageModel, and TypeChatJsonTranslator are only used as type."
           },
           {
             "file": "typescript/examples/multiSchema/src/router.ts",
-            "line": 1,
-            "column": 1,
-            "message": "Imports Result, TypeChatJsonTranslator, and TypeChatLanguageModel are only used as type."
-          },
-          {
-            "file": "typescript/examples/music/src/endpoints.ts",
-            "line": 2,
+            "line": 3,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
             "file": "typescript/examples/music/src/main.ts",
-            "line": 47,
+            "line": 18,
             "column": 1,
-            "message": "Imports User are only used as type."
+            "message": "Imports ITrackCollection are only used as type."
           },
           {
             "file": "typescript/examples/music/src/trackFilter.ts",
-            "line": 3,
+            "line": 1,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
@@ -397,6 +391,12 @@
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
+            "file": "typescript/src/ts/validate.ts",
+            "line": 15,
+            "column": 19,
+            "message": "`import()` type annotations are forbidden."
+          },
+          {
             "file": "typescript/test/program.test.ts",
             "line": 3,
             "column": 1,
@@ -405,8 +405,39 @@
         ]
       },
       "no-type-imports": {
-        "count": 0,
-        "samples": []
+        "count": 5,
+        "samples": [
+          {
+            "file": "typescript/src/ts/validate.ts",
+            "line": 9,
+            "column": 26,
+            "message": "`import()` type annotations are forbidden."
+          },
+          {
+            "file": "typescript/src/ts/validate.ts",
+            "line": 10,
+            "column": 32,
+            "message": "`import()` type annotations are forbidden."
+          },
+          {
+            "file": "typescript/src/ts/validate.ts",
+            "line": 11,
+            "column": 27,
+            "message": "`import()` type annotations are forbidden."
+          },
+          {
+            "file": "typescript/src/ts/validate.ts",
+            "line": 14,
+            "column": 19,
+            "message": "`import()` type annotations are forbidden."
+          },
+          {
+            "file": "typescript/src/ts/validate.ts",
+            "line": 15,
+            "column": 19,
+            "message": "`import()` type annotations are forbidden."
+          }
+        ]
       }
     },
     "func-style": {
@@ -469,7 +500,7 @@
           },
           {
             "file": "typescript/tests/model.test.mjs",
-            "line": 392,
+            "line": 416,
             "column": 1,
             "message": "Expected a function expression."
           }
@@ -685,7 +716,7 @@
     },
     "quotes": {
       "double": {
-        "count": 194,
+        "count": 213,
         "samples": [
           {
             "file": "tools/scripts/fix-dependabot-alerts.mjs",
@@ -696,49 +727,49 @@
           {
             "file": "typescript/examples/coffeeShop-zod/src/coffeeShopSchema.ts",
             "line": 18,
-            "column": 19,
+            "column": 86,
             "message": "Strings must use doublequote."
           },
           {
             "file": "typescript/examples/coffeeShop-zod/src/coffeeShopSchema.ts",
             "line": 33,
-            "column": 28,
+            "column": 77,
             "message": "Strings must use doublequote."
           },
           {
             "file": "typescript/examples/coffeeShop-zod/src/coffeeShopSchema.ts",
-            "line": 46,
-            "column": 46,
+            "line": 52,
+            "column": 60,
             "message": "Strings must use doublequote."
           },
           {
             "file": "typescript/examples/coffeeShop-zod/src/coffeeShopSchema.ts",
-            "line": 62,
-            "column": 84,
+            "line": 72,
+            "column": 69,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "typescript/examples/coffeeShop-zod/src/coffeeShopSchema.ts",
-            "line": 85,
-            "column": 21,
+            "file": "typescript/examples/music/src/main.ts",
+            "line": 254,
+            "column": 25,
             "message": "Strings must use doublequote."
           },
           {
             "file": "typescript/examples/music/src/trackFilter.ts",
-            "line": 38,
-            "column": 28,
+            "line": 68,
+            "column": 10,
             "message": "Strings must use doublequote."
           },
           {
             "file": "typescript/examples/music/src/trackFilter.ts",
-            "line": 129,
-            "column": 13,
+            "line": 435,
+            "column": 5,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "typescript/src/interactive/index.ts",
-            "line": 1,
-            "column": 15,
+            "file": "typescript/src/ts/validate.ts",
+            "line": 9,
+            "column": 90,
             "message": "Strings must use doublequote."
           },
           {
@@ -750,7 +781,7 @@
         ]
       },
       "single": {
-        "count": 1748,
+        "count": 1755,
         "samples": [
           {
             "file": "site/.eleventy.js",
@@ -760,55 +791,55 @@
           },
           {
             "file": "tools/scripts/fix-dependabot-alerts.mjs",
-            "line": 680,
-            "column": 61,
+            "line": 682,
+            "column": 13,
             "message": "Strings must use singlequote."
           },
           {
             "file": "typescript/examples/crossword/src/main.ts",
-            "line": 5,
-            "column": 18,
+            "line": 7,
+            "column": 33,
             "message": "Strings must use singlequote."
           },
           {
             "file": "typescript/examples/multiSchema/src/main.ts",
-            "line": 38,
-            "column": 5,
+            "line": 43,
+            "column": 59,
             "message": "Strings must use singlequote."
           },
           {
             "file": "typescript/examples/music/src/main.ts",
-            "line": 556,
-            "column": 14,
+            "line": 581,
+            "column": 31,
             "message": "Strings must use singlequote."
           },
           {
             "file": "typescript/src/model.ts",
-            "line": 422,
-            "column": 45,
+            "line": 458,
+            "column": 43,
             "message": "Strings must use singlequote."
           },
           {
             "file": "typescript/test/program.test.ts",
-            "line": 54,
-            "column": 50,
+            "line": 69,
+            "column": 19,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "typescript/test/validate.test.ts",
-            "line": 191,
-            "column": 39,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "typescript/tests/model.test.mjs",
-            "line": 137,
-            "column": 49,
+            "file": "typescript/test/zod.test.ts",
+            "line": 3,
+            "column": 19,
             "message": "Strings must use singlequote."
           },
           {
             "file": "typescript/tests/model.test.mjs",
-            "line": 485,
+            "line": 141,
+            "column": 38,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "typescript/tests/model.test.mjs",
+            "line": 509,
             "column": 35,
             "message": "Strings must use singlequote."
           }
@@ -930,7 +961,7 @@
         ]
       },
       "never": {
-        "count": 2422,
+        "count": 2461,
         "samples": [
           {
             "file": "site/.eleventy.js",
@@ -939,56 +970,56 @@
             "message": "Extra semicolon."
           },
           {
-            "file": "typescript/examples/calendar/src/calendarActionsSchema.ts",
-            "line": 54,
-            "column": 2,
+            "file": "typescript/examples/calendar/src/main.ts",
+            "line": 1,
+            "column": 28,
             "message": "Extra semicolon."
           },
           {
             "file": "typescript/examples/math/src/main.ts",
-            "line": 15,
-            "column": 78,
+            "line": 28,
+            "column": 66,
             "message": "Extra semicolon."
           },
           {
             "file": "typescript/examples/music/src/endpoints.ts",
-            "line": 399,
+            "line": 444,
             "column": 21,
             "message": "Extra semicolon."
           },
           {
             "file": "typescript/examples/music/src/main.ts",
-            "line": 528,
-            "column": 38,
+            "line": 572,
+            "column": 52,
             "message": "Extra semicolon."
           },
           {
             "file": "typescript/examples/restaurant/src/main.ts",
-            "line": 74,
-            "column": 3,
+            "line": 138,
+            "column": 27,
             "message": "Extra semicolon."
           },
           {
-            "file": "typescript/src/ts/program.ts",
-            "line": 163,
-            "column": 43,
+            "file": "typescript/src/ts/validate.ts",
+            "line": 3,
+            "column": 52,
             "message": "Extra semicolon."
           },
           {
             "file": "typescript/test/program.test.ts",
-            "line": 180,
-            "column": 79,
+            "line": 198,
+            "column": 11,
             "message": "Extra semicolon."
           },
           {
             "file": "typescript/test/zod.test.ts",
-            "line": 419,
-            "column": 83,
+            "line": 443,
+            "column": 66,
             "message": "Extra semicolon."
           },
           {
             "file": "typescript/tests/model.test.mjs",
-            "line": 485,
+            "line": 509,
             "column": 47,
             "message": "Extra semicolon."
           }

@@ -1,11 +1,11 @@
 {
   "analyzedVersion": "96d58f23c7cc",
-  "analyzedCommit": "9de14c1b53ee1aba8e85cb5aaa55ad07ba579220",
-  "analyzedCommitDate": "2026-08-24T17:22:06.000Z",
+  "analyzedCommit": "89ed5e367f26422a232e76b169ce5ca9734f2e05",
+  "analyzedCommitDate": "2026-09-11T20:15:58.000Z",
   "checks": {
     "array-type": {
       "array": {
-        "count": 3,
+        "count": 4,
         "samples": [
           {
             "file": "src/commands/generate.ts",
@@ -24,41 +24,47 @@
             "line": 301,
             "column": 37,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
+          },
+          {
+            "file": "src/commands/manifest.ts",
+            "line": 114,
+            "column": 44,
+            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           }
         ]
       },
       "generic": {
-        "count": 28,
+        "count": 27,
         "samples": [
           {
             "file": "src/commands/manifest.ts",
-            "line": 40,
+            "line": 41,
             "column": 29,
             "message": "Array type using 'Interfaces.Manifest[]' is forbidden. Use 'Array<Interfaces.Manifest>' instead."
           },
           {
-            "file": "src/commands/pack/win.ts",
-            "line": 17,
-            "column": 74,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+            "file": "src/log.ts",
+            "line": 9,
+            "column": 46,
+            "message": "Array type using 'unknown[]' is forbidden. Use 'Array<unknown>' instead."
           },
           {
             "file": "src/readme-generator.ts",
-            "line": 87,
-            "column": 84,
+            "line": 136,
+            "column": 15,
             "message": "Array type using 'Command.Cached[]' is forbidden. Use 'Array<Command.Cached>' instead."
           },
           {
             "file": "src/tarballs/config.ts",
-            "line": 40,
-            "column": 16,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+            "line": 45,
+            "column": 12,
+            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           },
           {
-            "file": "src/tarballs/config.ts",
-            "line": 116,
-            "column": 21,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+            "file": "src/util.ts",
+            "line": 11,
+            "column": 48,
+            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           },
           {
             "file": "src/util.ts",
@@ -261,7 +267,7 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 39,
+        "count": 37,
         "samples": [
           {
             "file": "src/aws.ts",
@@ -270,40 +276,40 @@
             "message": "Imports CloudFrontClient, CreateInvalidationCommandOutput, and CreateInvalidationRequest are only used as type."
           },
           {
-            "file": "src/commands/manifest.ts",
+            "file": "src/commands/pack/deb.ts",
             "line": 1,
             "column": 1,
             "message": "Imports Interfaces are only used as type."
           },
           {
-            "file": "src/commands/pack/win.ts",
-            "line": 1,
+            "file": "src/commands/upload/deb.ts",
+            "line": 8,
             "column": 1,
-            "message": "Imports Interfaces are only used as type."
+            "message": "Imports DebArch are only used as type."
           },
           {
             "file": "src/generator.ts",
+            "line": 5,
+            "column": 1,
+            "message": "Imports ExecOptions are only used as type."
+          },
+          {
+            "file": "src/tarballs/build.ts",
             "line": 1,
-            "column": 1,
-            "message": "Imports Args and Interfaces are only used as type."
-          },
-          {
-            "file": "src/tarballs/bin.ts",
-            "line": 2,
-            "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
-          {
-            "file": "src/tarballs/config.ts",
-            "line": 2,
             "column": 1,
             "message": "Imports Interfaces are only used as type."
           },
           {
-            "file": "src/version-indexes.ts",
-            "line": 7,
+            "file": "src/tarballs/node.ts",
+            "line": 1,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
+          },
+          {
+            "file": "test/fixtures/cli-command-with-alias/src/help.ts",
+            "line": 1,
+            "column": 1,
+            "message": "Imports Command are only used as type."
           },
           {
             "file": "test/fixtures/cli-with-malicious-jit-plugin/src/help.ts",
@@ -326,8 +332,21 @@
         ]
       },
       "no-type-imports": {
-        "count": 0,
-        "samples": []
+        "count": 2,
+        "samples": [
+          {
+            "file": "src/commands/manifest.ts",
+            "line": 1,
+            "column": 31,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "src/commands/manifest.ts",
+            "line": 4,
+            "column": 9,
+            "message": "Use an `import` instead of an `import type`."
+          }
+        ]
       }
     },
     "func-style": {
@@ -733,7 +752,7 @@
     },
     "quotes": {
       "double": {
-        "count": 1870,
+        "count": 1866,
         "samples": [
           {
             "file": "bin/dev.js",
@@ -743,8 +762,8 @@
           },
           {
             "file": "src/commands/generate/command.ts",
-            "line": 42,
-            "column": 51,
+            "line": 41,
+            "column": 64,
             "message": "Strings must use doublequote."
           },
           {
@@ -761,31 +780,31 @@
           },
           {
             "file": "src/commands/upload/tarballs.ts",
-            "line": 4,
-            "column": 17,
+            "line": 6,
+            "column": 27,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/tarballs/bin.ts",
-            "line": 107,
-            "column": 28,
+            "file": "src/tarballs/build.ts",
+            "line": 1,
+            "column": 30,
             "message": "Strings must use doublequote."
           },
           {
             "file": "src/util.ts",
-            "line": 6,
-            "column": 25,
+            "line": 8,
+            "column": 19,
             "message": "Strings must use doublequote."
           },
           {
             "file": "test/integration/deb.test.ts",
-            "line": 53,
-            "column": 134,
+            "line": 54,
+            "column": 17,
             "message": "Strings must use doublequote."
           },
           {
             "file": "test/unit/manifest.test.ts",
-            "line": 13,
+            "line": 17,
             "column": 14,
             "message": "Strings must use doublequote."
           },
@@ -877,7 +896,7 @@
     },
     "semi": {
       "always": {
-        "count": 1940,
+        "count": 1934,
         "samples": [
           {
             "file": "bin/dev.js",
@@ -892,45 +911,45 @@
             "message": "Missing semicolon."
           },
           {
-            "file": "src/commands/pack/macos.ts",
-            "line": 247,
-            "column": 51,
+            "file": "src/commands/pack/tarballs.ts",
+            "line": 3,
+            "column": 43,
             "message": "Missing semicolon."
           },
           {
             "file": "src/commands/upload/tarballs.ts",
-            "line": 66,
-            "column": 101,
+            "line": 84,
+            "column": 37,
             "message": "Missing semicolon."
           },
           {
             "file": "src/readme-generator.ts",
-            "line": 296,
-            "column": 75,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "src/tarballs/config.ts",
-            "line": 129,
-            "column": 121,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "test/fixtures/cli-with-nested-topics-with-space-separator/src/commands/roottopic/subtopic1/hello.ts",
-            "line": 5,
+            "line": 305,
             "column": 42,
             "message": "Missing semicolon."
           },
           {
+            "file": "src/tarballs/index.ts",
+            "line": 3,
+            "column": 25,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "test/fixtures/cli-with-nested-topics-with-space-separator/src/commands/roottopic/subtopic2/hello.ts",
+            "line": 1,
+            "column": 36,
+            "message": "Missing semicolon."
+          },
+          {
             "file": "test/integration/init.test.ts",
-            "line": 10,
-            "column": 68,
+            "line": 15,
+            "column": 56,
             "message": "Missing semicolon."
           },
           {
             "file": "test/integration/win.test.ts",
-            "line": 14,
-            "column": 77,
+            "line": 61,
+            "column": 3,
             "message": "Missing semicolon."
           },
           {

@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "96d58f23c7cc",
-  "analyzedCommit": "aa2d7824289241837bd1eabf981f29db2e675b74",
-  "analyzedCommitDate": "2026-08-31T20:01:36.000Z",
+  "analyzedCommit": "aae77c654b9b437ea5f6e635e6df7fc28924e606",
+  "analyzedCommitDate": "2026-09-22T19:38:46.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -9,7 +9,7 @@
         "samples": []
       },
       "generic": {
-        "count": 187,
+        "count": 188,
         "samples": [
           {
             "file": "docs/components/NavbarWrapper.tsx",
@@ -30,16 +30,16 @@
             "message": "Array type using 'webpack.WebpackPluginInstance[]' is forbidden. Use 'Array<webpack.WebpackPluginInstance>' instead."
           },
           {
-            "file": "packages/react-cosmos-renderer/src/testHelpers/createRendererConnectTestApi.ts",
-            "line": 35,
-            "column": 23,
-            "message": "Array type using 'RendererResponse[]' is forbidden. Use 'Array<RendererResponse>' instead."
+            "file": "packages/react-cosmos-renderer/src/rendererConnect/createWebSocketsConnect.ts",
+            "line": 9,
+            "column": 24,
+            "message": "Array type using 'SocketMessage[]' is forbidden. Use 'Array<SocketMessage>' instead."
           },
           {
-            "file": "packages/react-cosmos-ui/src/plugins/Notifications/Notifications.tsx",
-            "line": 14,
-            "column": 18,
-            "message": "Array type using 'NotificationItem[]' is forbidden. Use 'Array<NotificationItem>' instead."
+            "file": "packages/react-cosmos-ui/src/plugins/MessageHandler/socket.ts",
+            "line": 7,
+            "column": 22,
+            "message": "Array type using 'SocketMessage[]' is forbidden. Use 'Array<SocketMessage>' instead."
           },
           {
             "file": "packages/react-cosmos-ui/src/plugins/Root/Root.tsx",
@@ -54,10 +54,10 @@
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
-            "file": "packages/react-cosmos/src/shared/getServerPlugins.ts",
-            "line": 6,
+            "file": "packages/react-cosmos/src/shared/applyServerConfigPlugins.ts",
+            "line": 10,
             "column": 18,
-            "message": "Array type using 'CosmosPluginConfig[]' is forbidden. Use 'Array<CosmosPluginConfig>' instead."
+            "message": "Array type using 'CosmosServerPlugin[]' is forbidden. Use 'Array<CosmosServerPlugin>' instead."
           },
           {
             "file": "packages/react-cosmos/src/userModules/shared.ts",
@@ -67,7 +67,7 @@
           },
           {
             "file": "tests/helpers/webTests.ts",
-            "line": 205,
+            "line": 240,
             "column": 14,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           }
@@ -93,7 +93,7 @@
         ]
       },
       "type-annotation": {
-        "count": 2,
+        "count": 3,
         "samples": [
           {
             "file": "packages/react-cosmos-core/src/utils/isEqual.test.ts",
@@ -105,6 +105,12 @@
             "file": "packages/react-cosmos-core/src/utils/isEqual.test.ts",
             "line": 169,
             "column": 22,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "packages/react-cosmos-renderer/src/rendererConnect/createWindowRendererConnect.ts",
+            "line": 19,
+            "column": 32,
             "message": "The generic type arguments should be specified as part of the type annotation."
           }
         ]
@@ -244,7 +250,7 @@
     },
     "consistent-type-definitions": {
       "interface": {
-        "count": 262,
+        "count": 263,
         "samples": [
           {
             "file": "docs/components/Features.tsx",
@@ -260,19 +266,19 @@
           },
           {
             "file": "packages/react-cosmos-core/src/renderer/rendererQueryString.ts",
-            "line": 9,
+            "line": 4,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "packages/react-cosmos-plugin-webpack/src/server/cosmosConfig/createWebpackCosmosConfig.ts",
-            "line": 6,
+            "file": "packages/react-cosmos-plugin-webpack/src/client/errorOverlay/reactErrorOverlay.ts",
+            "line": 4,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "packages/react-cosmos-renderer/src/moduleLoaders/LazyModuleLoader.tsx",
-            "line": 11,
+            "file": "packages/react-cosmos-renderer/src/moduleLoaders/AsyncModuleLoader.tsx",
+            "line": 6,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
@@ -357,7 +363,7 @@
         ]
       },
       "no-type-imports": {
-        "count": 635,
+        "count": 639,
         "samples": [
           {
             "file": "docs/components/Features.tsx",
@@ -366,49 +372,49 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/react-cosmos-dom/src/useDomRendererId.ts",
-            "line": 2,
+            "file": "packages/react-cosmos-dom/src/mountDomRenderer.tsx",
+            "line": 5,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/react-cosmos-renderer/src/fixture/FixtureCapture/classState/shared.ts",
-            "line": 1,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "packages/react-cosmos-ui/src/components/ValueInputTree/ExpandCollapseValues.tsx",
-            "line": 2,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "packages/react-cosmos-ui/src/plugins/FixtureTree/FixtureSelectContext.tsx",
+            "file": "packages/react-cosmos-renderer/src/fixture/FixtureCapture/classState/index.ts",
             "line": 3,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/react-cosmos-ui/src/plugins/PropsPanel/PropsPanel/ComponentProps.tsx",
-            "line": 21,
+            "file": "packages/react-cosmos-ui/src/components/TreeView.tsx",
+            "line": 3,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/react-cosmos-ui/src/plugins/RendererCore/setFixtureState.ts",
-            "line": 1,
+            "file": "packages/react-cosmos-ui/src/plugins/FixtureSearch/index.tsx",
+            "line": 12,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/react-cosmos-ui/src/plugins/Root/persistentState/controlPanelWidth.ts",
-            "line": 1,
+            "file": "packages/react-cosmos-ui/src/plugins/PluginList/index.tsx",
+            "line": 4,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "packages/react-cosmos/src/cosmosConfig/getCosmosConfigAtPath.ts",
+            "file": "packages/react-cosmos-ui/src/plugins/RendererCore/receiveResponse/rendererReady.ts",
+            "line": 5,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "packages/react-cosmos-ui/src/plugins/Root/persistentState/controlPanelOpen.tsx",
+            "line": 2,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "packages/react-cosmos/src/cosmosConfig/createCosmosConfig.ts",
             "line": 4,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
@@ -424,7 +430,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 1010,
+        "count": 1015,
         "samples": [
           {
             "file": ".agents/skills/review-dep-upgrade/scripts/collect-dep-upgrades.mjs",
@@ -434,37 +440,37 @@
           },
           {
             "file": "packages/react-cosmos-core/src/renderer/rendererQueryString.ts",
-            "line": 18,
-            "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "packages/react-cosmos-plugin-vite/src/reactCosmosViteRollupPlugin.ts",
-            "line": 22,
-            "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "packages/react-cosmos-renderer/src/fixture/FixtureCapture/classState/useReadClassState.ts",
-            "line": 50,
-            "column": 3,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "packages/react-cosmos-ui/src/components/ValueInputTree/ValueInputDir.tsx",
-            "line": 22,
-            "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "packages/react-cosmos-ui/src/plugins/Notifications/__tests__/sticky.tsx",
-            "line": 16,
+            "line": 20,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "packages/react-cosmos-ui/src/plugins/RendererPreview/RendererOverlay/RemoteRendererOverlay.tsx",
-            "line": 8,
+            "file": "packages/react-cosmos-plugin-vite/src/viteConfigPlugin.ts",
+            "line": 7,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "packages/react-cosmos-renderer/src/fixture/FixtureCapture/props/index.ts",
+            "line": 22,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "packages/react-cosmos-ui/src/components/ValueInputTree/ValueInput/ValueInput.tsx",
+            "line": 34,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "packages/react-cosmos-ui/src/plugins/Notifications/Notifications.tsx",
+            "line": 17,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "packages/react-cosmos-ui/src/plugins/RendererPreview/RendererOverlay/RemoteRendererConnected.tsx",
+            "line": 11,
             "column": 8,
             "message": "Expected a function expression."
           },
@@ -636,20 +642,20 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "packages/react-cosmos-plugin-vite/src/indexHtml/findMainScriptUrl.ts",
-            "line": 6,
+            "file": "packages/react-cosmos-plugin-vite/src/indexHtml/getHtmlScriptUrls.ts",
+            "line": 5,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "packages/react-cosmos-renderer/src/fixture/FixtureCapture/classState/useReadClassState.ts",
-            "line": 23,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "packages/react-cosmos-renderer/src/rendererConnect/RendererProvider.tsx",
+            "file": "packages/react-cosmos-renderer/src/fixture/FixtureCapture/props/index.ts",
             "line": 22,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "packages/react-cosmos-renderer/src/rendererConnect/StatefulRendererProvider.tsx",
+            "line": 18,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -679,7 +685,7 @@
           },
           {
             "file": "tests/helpers/webTests.ts",
-            "line": 13,
+            "line": 14,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           }
@@ -692,7 +698,7 @@
         "samples": []
       },
       "4-space": {
-        "count": 664,
+        "count": 668,
         "samples": [
           {
             "file": ".agents/skills/review-dep-upgrade/scripts/collect-dep-upgrades.mjs",
@@ -707,38 +713,38 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/react-cosmos-plugin-vite/src/indexHtml/defaultMainScriptUrl.ts",
+            "file": "packages/react-cosmos-plugin-vite/src/indexHtml/createIndexHtml.ts",
+            "line": 5,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "packages/react-cosmos-renderer/src/__tests__/propsAndStateRef.tsx",
+            "line": 5,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "packages/react-cosmos-renderer/src/rendererConnect/createNoopRendererConnect.ts",
             "line": 4,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/react-cosmos-renderer/src/__tests__/propsFnChildren.tsx",
-            "line": 11,
+            "file": "packages/react-cosmos-ui/src/plugins/FixtureSearch/FixtureSearchResult.tsx",
+            "line": 5,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/react-cosmos-renderer/src/rendererConnect/createWebSocketsConnect.ts",
-            "line": 2,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "packages/react-cosmos-ui/src/plugins/FixtureSearch/FixtureSearchShortcuts.tsx",
-            "line": 7,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "packages/react-cosmos-ui/src/plugins/RendererCore/__tests__/setGlobalFixtureState.ts",
+            "file": "packages/react-cosmos-ui/src/plugins/RendererCore/__tests__/setFixtureState.ts",
             "line": 4,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/react-cosmos-ui/src/plugins/Root/persistentState/navPanelWidth.ts",
-            "line": 13,
+            "file": "packages/react-cosmos-ui/src/plugins/Root/persistentState/navPanelOpen.ts",
+            "line": 8,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -757,7 +763,7 @@
         ]
       },
       "tab": {
-        "count": 664,
+        "count": 668,
         "samples": [
           {
             "file": ".agents/skills/review-dep-upgrade/scripts/collect-dep-upgrades.mjs",
@@ -772,38 +778,38 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/react-cosmos-plugin-vite/src/indexHtml/defaultMainScriptUrl.ts",
+            "file": "packages/react-cosmos-plugin-vite/src/indexHtml/createIndexHtml.ts",
+            "line": 5,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "packages/react-cosmos-renderer/src/__tests__/propsAndStateRef.tsx",
+            "line": 5,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "packages/react-cosmos-renderer/src/rendererConnect/createNoopRendererConnect.ts",
             "line": 4,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/react-cosmos-renderer/src/__tests__/propsFnChildren.tsx",
-            "line": 11,
+            "file": "packages/react-cosmos-ui/src/plugins/FixtureSearch/FixtureSearchResult.tsx",
+            "line": 5,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/react-cosmos-renderer/src/rendererConnect/createWebSocketsConnect.ts",
-            "line": 2,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "packages/react-cosmos-ui/src/plugins/FixtureSearch/FixtureSearchShortcuts.tsx",
-            "line": 7,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "packages/react-cosmos-ui/src/plugins/RendererCore/__tests__/setGlobalFixtureState.ts",
+            "file": "packages/react-cosmos-ui/src/plugins/RendererCore/__tests__/setFixtureState.ts",
             "line": 4,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/react-cosmos-ui/src/plugins/Root/persistentState/navPanelWidth.ts",
-            "line": 13,
+            "file": "packages/react-cosmos-ui/src/plugins/Root/persistentState/navPanelOpen.ts",
+            "line": 8,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -824,7 +830,7 @@
     },
     "quotes": {
       "double": {
-        "count": 7064,
+        "count": 7136,
         "samples": [
           {
             "file": ".agents/skills/review-dep-upgrade/scripts/collect-dep-upgrades.mjs",
@@ -834,44 +840,44 @@
           },
           {
             "file": "packages/react-cosmos-core/src/fixtureTree/flattenFixtureTree.test.ts",
-            "line": 9,
-            "column": 11,
+            "line": 24,
+            "column": 17,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/react-cosmos-plugin-webpack/src/server/utils/resolveLoose.ts",
-            "line": 1,
-            "column": 18,
+            "file": "packages/react-cosmos-plugin-webpack/src/client/errorOverlay/index.ts",
+            "line": 4,
+            "column": 17,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/react-cosmos-renderer/src/__tests__/props.tsx",
-            "line": 177,
-            "column": 28,
+            "file": "packages/react-cosmos-renderer/src/__tests__/fragmentTransition.tsx",
+            "line": 22,
+            "column": 3,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/react-cosmos-renderer/src/testHelpers/createRendererConnectTestApi.ts",
-            "line": 21,
-            "column": 53,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "packages/react-cosmos-ui/src/plugins/FixtureTree/FixtureTree/FixtureTree.tsx",
+            "file": "packages/react-cosmos-renderer/src/rendererConnect/__tests__/createWindowRendererConnect.test.ts",
             "line": 7,
-            "column": 36,
+            "column": 17,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "packages/react-cosmos-ui/src/plugins/FixtureTree/FixtureTree/FixtureTree.test.tsx",
+            "line": 16,
+            "column": 20,
             "message": "Strings must use doublequote."
           },
           {
             "file": "packages/react-cosmos-ui/src/plugins/RendererCore/__tests__/setGlobalFixtureState.ts",
-            "line": 66,
-            "column": 16,
+            "line": 21,
+            "column": 42,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/react-cosmos-ui/src/plugins/Root/persistentState/navPanelOpen.ts",
-            "line": 1,
-            "column": 34,
+            "file": "packages/react-cosmos-ui/src/plugins/Root/persistentState/controlPanelWidth.ts",
+            "line": 15,
+            "column": 27,
             "message": "Strings must use doublequote."
           },
           {
@@ -1533,7 +1539,7 @@
         "samples": []
       },
       "never": {
-        "count": 10543,
+        "count": 10665,
         "samples": [
           {
             "file": ".agents/skills/review-dep-upgrade/scripts/collect-dep-upgrades.mjs",
@@ -1542,51 +1548,51 @@
             "message": "Extra semicolon."
           },
           {
-            "file": "packages/react-cosmos-core/src/userModules/userModuleTypes.ts",
-            "line": 24,
-            "column": 2,
+            "file": "packages/react-cosmos-core/src/userModules/getFixtureList.ts",
+            "line": 39,
+            "column": 25,
             "message": "Extra semicolon."
           },
           {
-            "file": "packages/react-cosmos-plugin-webpack/src/server/webpackConfig/__tests__/reactAliases.ts",
-            "line": 82,
-            "column": 7,
+            "file": "packages/react-cosmos-plugin-webpack/src/server/webpackConfig/__tests__/moduleScopePlugin.ts",
+            "line": 13,
+            "column": 6,
             "message": "Extra semicolon."
           },
           {
-            "file": "packages/react-cosmos-renderer/src/__tests__/valuesArray.tsx",
-            "line": 1,
-            "column": 49,
+            "file": "packages/react-cosmos-renderer/src/__tests__/selectsNoDefault.tsx",
+            "line": 37,
+            "column": 6,
             "message": "Extra semicolon."
           },
           {
-            "file": "packages/react-cosmos-ui/src/components/ValueInputTree/ValueInputTree.tsx",
-            "line": 1,
-            "column": 26,
+            "file": "packages/react-cosmos-ui/src/components/ValueInputTree/ValueInput/StringValueInput.tsx",
+            "line": 39,
+            "column": 4,
             "message": "Extra semicolon."
           },
           {
-            "file": "packages/react-cosmos-ui/src/plugins/FixtureTree/revealFixture.ts",
-            "line": 31,
-            "column": 65,
+            "file": "packages/react-cosmos-ui/src/plugins/FixtureTree/index.tsx",
+            "line": 9,
+            "column": 54,
             "message": "Extra semicolon."
           },
           {
-            "file": "packages/react-cosmos-ui/src/plugins/RendererCore/receiveResponse/__tests__/rendererReady.ts",
-            "line": 72,
-            "column": 3,
+            "file": "packages/react-cosmos-ui/src/plugins/RendererCore/receiveResponse/__tests__/fixtureStateChange.ts",
+            "line": 69,
+            "column": 20,
             "message": "Extra semicolon."
           },
           {
-            "file": "packages/react-cosmos-ui/src/plugins/Router/__tests__/getSelectedFixtureId.ts",
-            "line": 17,
-            "column": 38,
+            "file": "packages/react-cosmos-ui/src/plugins/Root/persistentState/navPanelWidth.ts",
+            "line": 20,
+            "column": 53,
             "message": "Extra semicolon."
           },
           {
             "file": "packages/react-cosmos/src/devServer/__tests__/startDevServer.ts",
-            "line": 138,
-            "column": 50,
+            "line": 135,
+            "column": 31,
             "message": "Extra semicolon."
           },
           {

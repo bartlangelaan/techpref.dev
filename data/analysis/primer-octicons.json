@@ -1,11 +1,11 @@
 {
   "analyzedVersion": "96d58f23c7cc",
-  "analyzedCommit": "c869f20476a7b496dee611898a52b14b3df21661",
-  "analyzedCommitDate": "2026-09-03T21:33:39.000Z",
+  "analyzedCommit": "90af1f14984832de34e94b2d530043fbcf85eb7f",
+  "analyzedCommitDate": "2026-09-18T20:47:53.000Z",
   "checks": {
     "array-type": {
       "array": {
-        "count": 11,
+        "count": 20,
         "samples": [
           {
             "file": "examples/octicons-react-nextjs/app/page.tsx",
@@ -15,21 +15,9 @@
           },
           {
             "file": "lib/octicons-react-symbols/script/build.ts",
-            "line": 159,
-            "column": 13,
-            "message": "Array type using 'Array<SVGASTNode>' is forbidden. Use 'SVGASTNode[]' instead."
-          },
-          {
-            "file": "lib/octicons-react-symbols/script/build.ts",
-            "line": 162,
+            "line": 181,
             "column": 38,
             "message": "Array type using 'Array<babel.types.JSXElement>' is forbidden. Use 'babel.types.JSXElement[]' instead."
-          },
-          {
-            "file": "lib/octicons-react-symbols/src/Icon.tsx",
-            "line": 76,
-            "column": 47,
-            "message": "Array type using 'Array<string>' is forbidden. Use 'string[]' instead."
           },
           {
             "file": "lib/octicons-react-symbols/src/OcticonSymbols.tsx",
@@ -39,14 +27,8 @@
           },
           {
             "file": "lib/octicons_node/index.ts",
-            "line": 90,
+            "line": 94,
             "column": 47,
-            "message": "Array type using 'Array<string>' is forbidden. Use 'string[]' instead."
-          },
-          {
-            "file": "lib/octicons_react/src/renderOcticon.tsx",
-            "line": 40,
-            "column": 12,
             "message": "Array type using 'Array<string>' is forbidden. Use 'string[]' instead."
           },
           {
@@ -56,16 +38,34 @@
             "message": "Array type using 'Array<string>' is forbidden. Use 'string[]' instead."
           },
           {
-            "file": "script/build.ts",
-            "line": 14,
+            "file": "script/icon-metadata.ts",
+            "line": 6,
             "column": 13,
             "message": "Array type using 'Array<string>' is forbidden. Use 'string[]' instead."
           },
           {
-            "file": "script/build.ts",
-            "line": 45,
-            "column": 18,
+            "file": "script/icon-metadata.ts",
+            "line": 49,
+            "column": 66,
             "message": "Array type using 'Array<string>' is forbidden. Use 'string[]' instead."
+          },
+          {
+            "file": "script/optimization-inputs.ts",
+            "line": 8,
+            "column": 40,
+            "message": "Array type using 'Array<number>' is forbidden. Use 'number[]' instead."
+          },
+          {
+            "file": "script/optimization-inputs.ts",
+            "line": 14,
+            "column": 99,
+            "message": "Array type using 'Array<string>' is forbidden. Use 'string[]' instead."
+          },
+          {
+            "file": "tests/icon-metadata.ts",
+            "line": 24,
+            "column": 44,
+            "message": "Array type using 'Array<number>' is forbidden. Use 'number[]' instead."
           }
         ]
       },
@@ -80,8 +80,21 @@
         "samples": []
       },
       "type-annotation": {
-        "count": 0,
-        "samples": []
+        "count": 2,
+        "samples": [
+          {
+            "file": "lib/octicons_styled/script/build.ts",
+            "line": 18,
+            "column": 32,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "script/optimization-inputs.ts",
+            "line": 15,
+            "column": 28,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          }
+        ]
       }
     },
     "consistent-indexed-object-style": {
@@ -90,48 +103,36 @@
         "samples": []
       },
       "index-signature": {
-        "count": 15,
+        "count": 32,
         "samples": [
           {
             "file": "lib/octicons-react-symbols/script/build.ts",
-            "line": 158,
-            "column": 15,
+            "line": 17,
+            "column": 17,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "lib/octicons-react-symbols/src/IconReference.tsx",
-            "line": 45,
-            "column": 28,
-            "message": "An index signature is preferred over a record."
-          },
-          {
-            "file": "lib/octicons_node/index.ts",
-            "line": 6,
-            "column": 16,
+            "file": "lib/octicons-react-symbols/src/Icon.tsx",
+            "line": 15,
+            "column": 5,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "lib/octicons_node/index.ts",
-            "line": 18,
+            "line": 19,
             "column": 26,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "lib/octicons_node/tests/index.ts",
-            "line": 3,
+            "file": "lib/octicons_node/tests/aliases.ts",
+            "line": 7,
             "column": 19,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "lib/octicons_react/script/build.ts",
-            "line": 12,
+            "line": 13,
             "column": 12,
-            "message": "An index signature is preferred over a record."
-          },
-          {
-            "file": "lib/octicons_react/script/build.ts",
-            "line": 18,
-            "column": 35,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -141,9 +142,21 @@
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "script/build.ts",
-            "line": 138,
-            "column": 11,
+            "file": "script/icon-metadata.ts",
+            "line": 17,
+            "column": 15,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "script/icon-metadata.ts",
+            "line": 58,
+            "column": 10,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "script/optimization-inputs.ts",
+            "line": 8,
+            "column": 15,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -157,11 +170,11 @@
     },
     "consistent-type-definitions": {
       "interface": {
-        "count": 7,
+        "count": 10,
         "samples": [
           {
             "file": "lib/octicons-react-symbols/script/build.ts",
-            "line": 155,
+            "line": 174,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
@@ -178,6 +191,12 @@
             "message": "Use `interface` instead of `type`."
           },
           {
+            "file": "lib/octicons_node/tests/aliases.ts",
+            "line": 1,
+            "column": 1,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
             "file": "lib/octicons_node/tests/index.ts",
             "line": 1,
             "column": 1,
@@ -185,13 +204,25 @@
           },
           {
             "file": "lib/octicons_react/script/build.ts",
-            "line": 11,
+            "line": 12,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
             "file": "script/build.ts",
-            "line": 12,
+            "line": 13,
+            "column": 1,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "script/icon-metadata.ts",
+            "line": 4,
+            "column": 8,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "script/icon-metadata.ts",
+            "line": 13,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           },
@@ -239,13 +270,13 @@
         "samples": [
           {
             "file": "lib/octicons_react/__tests__/codesplitting.test.ts",
-            "line": 5,
+            "line": 7,
             "column": 15,
             "message": "`import()` type annotations are forbidden."
           },
           {
             "file": "lib/octicons_react/__tests__/codesplitting.test.ts",
-            "line": 5,
+            "line": 7,
             "column": 48,
             "message": "`import()` type annotations are forbidden."
           },
@@ -257,20 +288,20 @@
           },
           {
             "file": "lib/octicons_react/script/build.ts",
-            "line": 14,
+            "line": 17,
             "column": 19,
             "message": "`import()` type annotations are forbidden."
           },
           {
             "file": "lib/octicons_react/script/build.ts",
-            "line": 14,
+            "line": 17,
             "column": 55,
             "message": "`import()` type annotations are forbidden."
           }
         ]
       },
       "no-type-imports": {
-        "count": 21,
+        "count": 24,
         "samples": [
           {
             "file": "lib/octicons-react-symbols/script/build.ts",
@@ -280,33 +311,27 @@
           },
           {
             "file": "lib/octicons-react-symbols/src/IconReference.tsx",
-            "line": 4,
+            "line": 5,
             "column": 3,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "lib/octicons-react-symbols/src/IconReference.tsx",
-            "line": 6,
+            "line": 7,
             "column": 3,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "lib/octicons-react-symbols/src/IconReference.tsx",
-            "line": 11,
-            "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "lib/octicons-react-symbols/src/OcticonSymbols.tsx",
-            "line": 3,
+            "line": 2,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "lib/octicons_react/__tests__/codesplitting.test.ts",
-            "line": 5,
-            "column": 15,
-            "message": "`import()` type annotations are forbidden."
+            "file": "lib/octicons-react-symbols/src/types.ts",
+            "line": 1,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "lib/octicons_react/__tests__/tree-shaking.test.ts",
@@ -316,8 +341,8 @@
           },
           {
             "file": "lib/octicons_react/script/build.ts",
-            "line": 14,
-            "column": 55,
+            "line": 17,
+            "column": 19,
             "message": "`import()` type annotations are forbidden."
           },
           {
@@ -331,29 +356,29 @@
             "line": 3,
             "column": 17,
             "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "tests/icon-metadata.ts",
+            "line": 7,
+            "column": 61,
+            "message": "Use an `import` instead of an `import type`."
           }
         ]
       }
     },
     "func-style": {
       "expression": {
-        "count": 18,
+        "count": 26,
         "samples": [
           {
             "file": "lib/octicons-react-symbols/script/build.ts",
-            "line": 162,
+            "line": 181,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "lib/octicons-react-symbols/src/IconReference.tsx",
-            "line": 54,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "lib/octicons_node/index.ts",
-            "line": 90,
+            "file": "lib/octicons-react-symbols/src/OcticonSymbols.tsx",
+            "line": 12,
             "column": 1,
             "message": "Expected a function expression."
           },
@@ -365,26 +390,14 @@
           },
           {
             "file": "lib/octicons_react/script/build.ts",
-            "line": 22,
+            "line": 122,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "lib/octicons_react/script/build.ts",
-            "line": 119,
+            "file": "lib/octicons_react/script/types.ts",
+            "line": 13,
             "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "lib/octicons_react/script/build.ts",
-            "line": 202,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "lib/octicons_react/src/createIconComponent.tsx",
-            "line": 4,
-            "column": 8,
             "message": "Expected a function expression."
           },
           {
@@ -394,8 +407,26 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "lib/octicons_styled/ts-tests/index.test-d.tsx",
-            "line": 4,
+            "file": "script/icon-metadata.ts",
+            "line": 21,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "script/icon-metadata.ts",
+            "line": 26,
+            "column": 3,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "script/icon-metadata.ts",
+            "line": 57,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "tests/icon-metadata.ts",
+            "line": 24,
             "column": 1,
             "message": "Expected a function expression."
           }
@@ -406,7 +437,7 @@
         "samples": [
           {
             "file": "lib/octicons_node/index.ts",
-            "line": 22,
+            "line": 23,
             "column": 9,
             "message": "Expected a function declaration."
           },
@@ -492,7 +523,7 @@
         ]
       },
       "default": {
-        "count": 2,
+        "count": 3,
         "samples": [
           {
             "file": "lib/octicons_react/__tests__/__fixtures__/dynamic-imports.mts",
@@ -505,6 +536,12 @@
             "line": 4,
             "column": 1,
             "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "script/optimization-inputs.ts",
+            "line": 14,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
           }
         ]
       }
@@ -515,7 +552,7 @@
         "samples": []
       },
       "4-space": {
-        "count": 40,
+        "count": 49,
         "samples": [
           {
             "file": "eslint.config.mjs",
@@ -524,50 +561,50 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "lib/octicons-react-symbols/rolldown.config.ts",
-            "line": 7,
+            "file": "lib/octicons-react-symbols/script/build.ts",
+            "line": 18,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "lib/octicons-react-symbols/src/__tests__/Icon.test.tsx",
-            "line": 7,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "lib/octicons_node/index.ts",
-            "line": 8,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "lib/octicons_react/__tests__/codesplitting.test.ts",
-            "line": 11,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "lib/octicons_react/script/build.ts",
-            "line": 12,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "lib/octicons_react/src/renderOcticon.tsx",
+            "file": "lib/octicons-react-symbols/src/__tests__/aliases.test.tsx",
             "line": 5,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "lib/octicons_styled/rolldown.config.mts",
-            "line": 8,
+            "file": "lib/octicons_node/tests/index.ts",
+            "line": 2,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "script/build.ts",
-            "line": 13,
+            "file": "lib/octicons_react/__tests__/tree-shaking.test.ts",
+            "line": 7,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "lib/octicons_react/src/__tests__/octicon.tsx",
+            "line": 7,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "lib/octicons_react/vitest.config.mts",
+            "line": 4,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "lib/octicons_styled/ts-tests/index.test-d.tsx",
+            "line": 5,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "tests/build.ts",
+            "line": 5,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -580,7 +617,7 @@
         ]
       },
       "tab": {
-        "count": 40,
+        "count": 49,
         "samples": [
           {
             "file": "eslint.config.mjs",
@@ -589,50 +626,50 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "lib/octicons-react-symbols/rolldown.config.ts",
-            "line": 7,
+            "file": "lib/octicons-react-symbols/script/build.ts",
+            "line": 18,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "lib/octicons-react-symbols/src/__tests__/Icon.test.tsx",
-            "line": 7,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "lib/octicons_node/index.ts",
-            "line": 8,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "lib/octicons_react/__tests__/codesplitting.test.ts",
-            "line": 11,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "lib/octicons_react/script/build.ts",
-            "line": 12,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "lib/octicons_react/src/renderOcticon.tsx",
+            "file": "lib/octicons-react-symbols/src/__tests__/aliases.test.tsx",
             "line": 5,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "lib/octicons_styled/rolldown.config.mts",
-            "line": 8,
+            "file": "lib/octicons_node/tests/index.ts",
+            "line": 2,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "script/build.ts",
-            "line": 13,
+            "file": "lib/octicons_react/__tests__/tree-shaking.test.ts",
+            "line": 7,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "lib/octicons_react/src/__tests__/octicon.tsx",
+            "line": 7,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "lib/octicons_react/vitest.config.mts",
+            "line": 4,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "lib/octicons_styled/ts-tests/index.test-d.tsx",
+            "line": 5,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "tests/build.ts",
+            "line": 5,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -647,7 +684,7 @@
     },
     "quotes": {
       "double": {
-        "count": 1042,
+        "count": 1391,
         "samples": [
           {
             "file": "eslint.config.mjs",
@@ -656,51 +693,51 @@
             "message": "Strings must use doublequote."
           },
           {
-            "file": "lib/octicons-react-symbols/config/vitest/browser/setup.ts",
-            "line": 1,
-            "column": 26,
+            "file": "lib/octicons-react-symbols/script/build.ts",
+            "line": 62,
+            "column": 43,
             "message": "Strings must use doublequote."
           },
           {
             "file": "lib/octicons-react-symbols/src/__tests__/Icon.test.tsx",
-            "line": 26,
-            "column": 47,
+            "line": 103,
+            "column": 57,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "lib/octicons-react-symbols/src/__tests__/OcticonSymbols.test.tsx",
-            "line": 81,
-            "column": 11,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "lib/octicons_react/__tests__/codesplitting.test.ts",
-            "line": 39,
-            "column": 6,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "lib/octicons_react/script/types.ts",
-            "line": 2,
-            "column": 16,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "lib/octicons_react/src/__tests__/octicon.tsx",
-            "line": 117,
+            "file": "lib/octicons_node/tests/aliases.ts",
+            "line": 60,
             "column": 62,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "lib/octicons_styled/src/__tests__/octicon.tsx",
-            "line": 17,
-            "column": 56,
+            "file": "lib/octicons_react/script/build.ts",
+            "line": 19,
+            "column": 45,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "lib/octicons_react/src/__tests__/octicon.tsx",
+            "line": 72,
+            "column": 36,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "lib/octicons_styled/src/__tests__/aliases.tsx",
+            "line": 15,
+            "column": 10,
             "message": "Strings must use doublequote."
           },
           {
             "file": "script/build.ts",
-            "line": 8,
-            "column": 26,
+            "line": 39,
+            "column": 11,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "tests/icon-metadata.ts",
+            "line": 73,
+            "column": 5,
             "message": "Strings must use doublequote."
           },
           {
@@ -716,13 +753,13 @@
         "samples": [
           {
             "file": "lib/octicons-react-symbols/script/build.ts",
-            "line": 84,
+            "line": 103,
             "column": 5,
             "message": "Strings must use singlequote."
           },
           {
             "file": "lib/octicons-react-symbols/script/build.ts",
-            "line": 150,
+            "line": 169,
             "column": 3,
             "message": "Strings must use singlequote."
           },
@@ -836,7 +873,7 @@
           },
           {
             "file": "lib/octicons_react/ts-tests/index.test-d.tsx",
-            "line": 5,
+            "line": 17,
             "column": 1,
             "message": "Function component is not an arrow function"
           },
@@ -865,7 +902,7 @@
         "samples": []
       },
       "element": {
-        "count": 2,
+        "count": 4,
         "samples": [
           {
             "file": "lib/octicons-react-symbols/src/__tests__/Icon.test.tsx",
@@ -874,8 +911,20 @@
             "message": "Prefer React.Fragment over fragment shorthand"
           },
           {
+            "file": "lib/octicons_react/src/__tests__/aliases.tsx",
+            "line": 28,
+            "column": 7,
+            "message": "Prefer React.Fragment over fragment shorthand"
+          },
+          {
             "file": "lib/octicons_react/src/__tests__/octicon.tsx",
             "line": 44,
+            "column": 7,
+            "message": "Prefer React.Fragment over fragment shorthand"
+          },
+          {
+            "file": "lib/octicons_styled/src/__tests__/aliases.tsx",
+            "line": 21,
             "column": 7,
             "message": "Prefer React.Fragment over fragment shorthand"
           }
@@ -884,7 +933,7 @@
     },
     "semi": {
       "always": {
-        "count": 779,
+        "count": 1060,
         "samples": [
           {
             "file": "eslint.config.mjs",
@@ -893,51 +942,51 @@
             "message": "Missing semicolon."
           },
           {
-            "file": "lib/octicons-react-symbols/src/Icon.tsx",
-            "line": 23,
-            "column": 2,
+            "file": "lib/octicons-react-symbols/src/IconReference.tsx",
+            "line": 77,
+            "column": 35,
             "message": "Missing semicolon."
           },
           {
-            "file": "lib/octicons-react-symbols/src/__tests__/Icon.test.tsx",
-            "line": 73,
-            "column": 52,
+            "file": "lib/octicons-react-symbols/src/__tests__/aliases.test.tsx",
+            "line": 17,
+            "column": 22,
             "message": "Missing semicolon."
           },
           {
-            "file": "lib/octicons_node/index.ts",
-            "line": 83,
-            "column": 13,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "lib/octicons_react/__tests__/codesplitting.test.ts",
-            "line": 54,
-            "column": 47,
+            "file": "lib/octicons_node/tests/index.ts",
+            "line": 56,
+            "column": 105,
             "message": "Missing semicolon."
           },
           {
             "file": "lib/octicons_react/script/build.ts",
-            "line": 234,
-            "column": 48,
+            "line": 120,
+            "column": 46,
             "message": "Missing semicolon."
           },
           {
             "file": "lib/octicons_react/src/__tests__/octicon.tsx",
-            "line": 118,
-            "column": 7,
+            "line": 56,
+            "column": 5,
             "message": "Missing semicolon."
           },
           {
-            "file": "lib/octicons_styled/src/__tests__/octicon.tsx",
-            "line": 11,
-            "column": 78,
+            "file": "lib/octicons_styled/script/build.ts",
+            "line": 62,
+            "column": 42,
             "message": "Missing semicolon."
           },
           {
             "file": "script/build.ts",
-            "line": 57,
-            "column": 47,
+            "line": 134,
+            "column": 3,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "tests/build.ts",
+            "line": 129,
+            "column": 3,
             "message": "Missing semicolon."
           },
           {

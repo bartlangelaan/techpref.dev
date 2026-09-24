@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "96d58f23c7cc",
-  "analyzedCommit": "400f097becba5db0fbc305d5a65348cb81c20356",
-  "analyzedCommitDate": "2026-08-01T20:28:02.000Z",
+  "analyzedCommit": "e668010778568641babef2cc40be4703ae6916d6",
+  "analyzedCommitDate": "2026-09-24T08:58:46.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -16,13 +16,31 @@
         ]
       },
       "generic": {
-        "count": 1,
+        "count": 4,
         "samples": [
           {
             "file": "apps/web/src/lib/utils.ts",
             "line": 4,
             "column": 31,
             "message": "Array type using 'ClassValue[]' is forbidden. Use 'Array<ClassValue>' instead."
+          },
+          {
+            "file": "crates/media/setup/setup.ts",
+            "line": 69,
+            "column": 23,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+          },
+          {
+            "file": "crates/media/setup/setup.ts",
+            "line": 88,
+            "column": 60,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+          },
+          {
+            "file": "crates/media/setup/setup.ts",
+            "line": 142,
+            "column": 74,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           }
         ]
       }
@@ -43,7 +61,7 @@
         "samples": []
       },
       "index-signature": {
-        "count": 2,
+        "count": 3,
         "samples": [
           {
             "file": "apps/web/src/components/ui/chart.tsx",
@@ -56,13 +74,19 @@
             "line": 20,
             "column": 31,
             "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "crates/media/setup/setup.ts",
+            "line": 198,
+            "column": 43,
+            "message": "An index signature is preferred over a record."
           }
         ]
       }
     },
     "consistent-type-definitions": {
       "interface": {
-        "count": 5,
+        "count": 7,
         "samples": [
           {
             "file": "apps/web/src/components/ui/carousel.tsx",
@@ -91,6 +115,18 @@
           {
             "file": "apps/web/src/components/ui/sidebar.tsx",
             "line": 36,
+            "column": 1,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "crates/media/setup/setup.ts",
+            "line": 29,
+            "column": 1,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "crates/media/setup/setup.ts",
+            "line": 30,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           }
@@ -181,7 +217,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 312,
+        "count": 322,
         "samples": [
           {
             "file": "apps/web/src/components/ui/accordion.tsx",
@@ -191,62 +227,62 @@
           },
           {
             "file": "apps/web/src/components/ui/button-group.tsx",
-            "line": 25,
+            "line": 41,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "apps/web/src/components/ui/combobox.tsx",
-            "line": 133,
+            "line": 169,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "apps/web/src/components/ui/dialog.tsx",
-            "line": 13,
+            "line": 25,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "apps/web/src/components/ui/empty.tsx",
-            "line": 5,
+            "line": 84,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "apps/web/src/components/ui/item.tsx",
-            "line": 9,
+            "line": 128,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "apps/web/src/components/ui/navigation-menu.tsx",
-            "line": 46,
+            "file": "apps/web/src/components/ui/pagination.tsx",
+            "line": 20,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "apps/web/src/components/ui/select.tsx",
-            "line": 99,
+            "file": "apps/web/src/components/ui/sheet.tsx",
+            "line": 19,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "apps/web/src/components/ui/sidebar.tsx",
-            "line": 560,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "apps/web/src/routes/index.tsx",
+            "file": "apps/web/src/components/ui/switch.tsx",
             "line": 5,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "crates/media/setup/setup.ts",
+            "line": 194,
             "column": 1,
             "message": "Expected a function expression."
           }
         ]
       },
       "declaration": {
-        "count": 6,
+        "count": 7,
         "samples": [
           {
             "file": "apps/web/src/components/ui/chart.tsx",
@@ -282,6 +318,12 @@
             "file": "apps/web/src/hooks/use-mobile.ts",
             "line": 10,
             "column": 11,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "crates/media/setup/setup.ts",
+            "line": 50,
+            "column": 7,
             "message": "Expected a function declaration."
           }
         ]
@@ -384,7 +426,7 @@
         ]
       },
       "4-space": {
-        "count": 64,
+        "count": 65,
         "samples": [
           {
             "file": "apps/api/src/index.ts",
@@ -417,39 +459,39 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "apps/web/src/components/ui/navigation-menu.tsx",
+            "file": "apps/web/src/components/ui/pagination.tsx",
             "line": 9,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "apps/web/src/components/ui/select.tsx",
-            "line": 13,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "apps/web/src/components/ui/spinner.tsx",
+            "file": "apps/web/src/components/ui/separator.tsx",
             "line": 6,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "apps/web/src/components/ui/tooltip.tsx",
+            "file": "apps/web/src/components/ui/switch.tsx",
             "line": 6,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "apps/web/vite.config.ts",
-            "line": 11,
+            "file": "apps/web/src/hooks/use-mobile.ts",
+            "line": 6,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "crates/media/setup/setup.ts",
+            "line": 17,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           }
         ]
       },
       "tab": {
-        "count": 63,
+        "count": 64,
         "samples": [
           {
             "file": "apps/api/src/index.ts",
@@ -482,32 +524,32 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "apps/web/src/components/ui/native-select.tsx",
-            "line": 8,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "apps/web/src/components/ui/scroll-area.tsx",
-            "line": 7,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "apps/web/src/components/ui/sonner.tsx",
+            "file": "apps/web/src/components/ui/navigation-menu.tsx",
             "line": 9,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "apps/web/src/components/ui/toggle.tsx",
-            "line": 9,
+            "file": "apps/web/src/components/ui/select.tsx",
+            "line": 13,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "apps/web/vite.config.ts",
-            "line": 11,
+            "file": "apps/web/src/components/ui/spinner.tsx",
+            "line": 6,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "apps/web/src/components/ui/tooltip.tsx",
+            "line": 6,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "crates/media/setup/setup.ts",
+            "line": 17,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           }
@@ -581,7 +623,7 @@
         ]
       },
       "single": {
-        "count": 1077,
+        "count": 1177,
         "samples": [
           {
             "file": "apps/api/src/index.ts",
@@ -590,57 +632,57 @@
             "message": "Strings must use singlequote."
           },
           {
-            "file": "apps/web/src/components/ui/button-group.tsx",
-            "line": 20,
+            "file": "apps/web/src/components/ui/button.tsx",
+            "line": 4,
             "column": 20,
             "message": "Strings must use singlequote."
           },
           {
             "file": "apps/web/src/components/ui/carousel.tsx",
-            "line": 104,
-            "column": 16,
+            "line": 208,
+            "column": 10,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "apps/web/src/components/ui/command.tsx",
-            "line": 4,
-            "column": 45,
+            "file": "apps/web/src/components/ui/context-menu.tsx",
+            "line": 82,
+            "column": 9,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "apps/web/src/components/ui/field.tsx",
-            "line": 6,
-            "column": 27,
+            "file": "apps/web/src/components/ui/form.tsx",
+            "line": 148,
+            "column": 21,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "apps/web/src/components/ui/item.tsx",
-            "line": 3,
-            "column": 27,
+            "file": "apps/web/src/components/ui/menubar.tsx",
+            "line": 7,
+            "column": 20,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "apps/web/src/components/ui/pagination.tsx",
-            "line": 50,
-            "column": 39,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "apps/web/src/components/ui/sidebar.tsx",
-            "line": 109,
-            "column": 29,
+            "file": "apps/web/src/components/ui/select.tsx",
+            "line": 121,
+            "column": 9,
             "message": "Strings must use singlequote."
           },
           {
             "file": "apps/web/src/components/ui/sidebar.tsx",
-            "line": 698,
-            "column": 16,
+            "line": 494,
+            "column": 18,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "apps/web/src/routes/index.tsx",
-            "line": 3,
-            "column": 38,
+            "file": "apps/web/src/components/ui/toggle-group.tsx",
+            "line": 61,
+            "column": 10,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "crates/media/setup/setup.ts",
+            "line": 208,
+            "column": 36,
             "message": "Strings must use singlequote."
           }
         ]
@@ -916,7 +958,7 @@
         ]
       },
       "never": {
-        "count": 6,
+        "count": 98,
         "samples": [
           {
             "file": "apps/api/src/index.ts",
@@ -925,33 +967,57 @@
             "message": "Extra semicolon."
           },
           {
-            "file": "apps/api/src/index.ts",
-            "line": 2,
-            "column": 69,
+            "file": "crates/media/setup/setup.ts",
+            "line": 29,
+            "column": 48,
             "message": "Extra semicolon."
           },
           {
-            "file": "apps/api/src/index.ts",
-            "line": 15,
-            "column": 13,
+            "file": "crates/media/setup/setup.ts",
+            "line": 50,
+            "column": 72,
             "message": "Extra semicolon."
           },
           {
-            "file": "apps/web/src/routes/index.tsx",
-            "line": 1,
-            "column": 57,
+            "file": "crates/media/setup/setup.ts",
+            "line": 70,
+            "column": 90,
             "message": "Extra semicolon."
           },
           {
-            "file": "apps/web/src/routes/index.tsx",
-            "line": 3,
-            "column": 63,
+            "file": "crates/media/setup/setup.ts",
+            "line": 115,
+            "column": 12,
             "message": "Extra semicolon."
           },
           {
-            "file": "apps/web/src/routes/index.tsx",
-            "line": 10,
-            "column": 3,
+            "file": "crates/media/setup/setup.ts",
+            "line": 136,
+            "column": 15,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "crates/media/setup/setup.ts",
+            "line": 159,
+            "column": 71,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "crates/media/setup/setup.ts",
+            "line": 195,
+            "column": 30,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "crates/media/setup/setup.ts",
+            "line": 216,
+            "column": 43,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "crates/media/setup/setup.ts",
+            "line": 232,
+            "column": 18,
             "message": "Extra semicolon."
           }
         ]

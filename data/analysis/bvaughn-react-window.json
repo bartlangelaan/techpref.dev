@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "96d58f23c7cc",
-  "analyzedCommit": "a9500938d1a8b9abba78a658c438dc60bdcaf29c",
-  "analyzedCommitDate": "2026-09-22T21:56:27.000Z",
+  "analyzedCommit": "439cfee4148ca924584801387bbf7fecaa5f4f5e",
+  "analyzedCommitDate": "2026-10-10T21:43:42.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -16,10 +16,10 @@
         ]
       },
       "generic": {
-        "count": 75,
+        "count": 77,
         "samples": [
           {
-            "file": "integrations/tests/src/components/LayoutShiftDetecter.tsx",
+            "file": "integrations/tests/src/components/LayoutShiftDetector.tsx",
             "line": 7,
             "column": 12,
             "message": "Array type using 'unknown[]' is forbidden. Use 'Array<unknown>' instead."
@@ -31,28 +31,28 @@
             "message": "Array type using 'EncodedElement[]' is forbidden. Use 'Array<EncodedElement>' instead."
           },
           {
-            "file": "lib/components/grid/Grid.tsx",
-            "line": 236,
-            "column": 24,
-            "message": "Array type using 'ReactNode[]' is forbidden. Use 'Array<ReactNode>' instead."
+            "file": "lib/components/list/List.test.tsx",
+            "line": 992,
+            "column": 37,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
             "file": "lib/utils/areArraysEqual.ts",
             "line": 1,
-            "column": 49,
+            "column": 35,
             "message": "Array type using 'unknown[]' is forbidden. Use 'Array<unknown>' instead."
           },
           {
             "file": "src/App.tsx",
-            "line": 95,
+            "line": 101,
             "column": 24,
             "message": "Array type using 'CommonQuestion[]' is forbidden. Use 'Array<CommonQuestion>' instead."
           },
           {
             "file": "src/routes/grid/ScrollToCellRoute.tsx",
-            "line": 46,
-            "column": 16,
-            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
+            "line": 38,
+            "column": 43,
+            "message": "Array type using 'ScrollBehavior[]' is forbidden. Use 'Array<ScrollBehavior>' instead."
           },
           {
             "file": "src/routes/grid/examples/RtlGrid.tsx",
@@ -62,8 +62,8 @@
           },
           {
             "file": "src/routes/list/ScrollToRowRoute.tsx",
-            "line": 54,
-            "column": 20,
+            "line": 52,
+            "column": 32,
             "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           },
           {
@@ -93,7 +93,7 @@
           },
           {
             "file": "lib/components/list/List.test.tsx",
-            "line": 19,
+            "line": 20,
             "column": 18,
             "message": "The generic type arguments should be specified as part of the constructor type arguments."
           },
@@ -106,12 +106,24 @@
         ]
       },
       "type-annotation": {
-        "count": 2,
+        "count": 4,
         "samples": [
           {
             "file": "lib/core/createCachedBounds.ts",
             "line": 13,
             "column": 24,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "lib/utils/getRTLOffsetType.ts",
+            "line": 7,
+            "column": 26,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "lib/utils/getScrollbarSize.ts",
+            "line": 2,
+            "column": 26,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
@@ -164,7 +176,7 @@
         "count": 12,
         "samples": [
           {
-            "file": "integrations/tests/src/components/LayoutShiftDetecter.tsx",
+            "file": "integrations/tests/src/components/LayoutShiftDetector.tsx",
             "line": 5,
             "column": 1,
             "message": "Use `interface` instead of `type`."
@@ -280,7 +292,7 @@
         ]
       },
       "no-type-imports": {
-        "count": 126,
+        "count": 124,
         "samples": [
           {
             "file": "integrations/next/app/grid/components/CellComponent.tsx",
@@ -295,39 +307,39 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "lib/components/grid/Grid.tsx",
-            "line": 10,
-            "column": 3,
+            "file": "lib/components/grid/Grid.test.tsx",
+            "line": 11,
+            "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "lib/components/list/isDynamicRowHeight.ts",
-            "line": 1,
+            "file": "lib/components/list/List.tsx",
+            "line": 20,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "lib/core/getOffsetForIndex.ts",
-            "line": 3,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "lib/virtualization.test.tsx",
-            "line": 5,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "src/routes/examples/BasicRow.tsx",
             "line": 1,
-            "column": 10,
+            "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/routes/grid/examples/RtlGrid.tsx",
-            "line": 26,
-            "column": 10,
+            "file": "lib/utils/parseNumericStyleValue.ts",
+            "line": 1,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "src/routes/examples/RefComposition.tsx",
+            "line": 1,
+            "column": 23,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "src/routes/grid/examples/gridRefClickEventHandler.ts",
+            "line": 2,
+            "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
@@ -347,7 +359,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 145,
+        "count": 150,
         "samples": [
           {
             "file": "integrations/next/app/decoder/[encoded]/Decoder.tsx",
@@ -356,50 +368,50 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "integrations/tests/src/utils/serializer/decode.ts",
-            "line": 71,
-            "column": 1,
+            "file": "integrations/tests/src/utils/serializer/encode.ts",
+            "line": 15,
+            "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "integrations/vite/src/routes/Home.tsx",
-            "line": 3,
+            "file": "integrations/vite/src/routes/List.tsx",
+            "line": 8,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "lib/components/list/List.test.tsx",
-            "line": 917,
+            "line": 1024,
             "column": 7,
             "message": "Expected a function expression."
           },
           {
-            "file": "lib/core/useVirtualizer.ts",
-            "line": 21,
+            "file": "lib/core/useItemSize.ts",
+            "line": 4,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "lib/utils/test/mockResizeObserver.ts",
-            "line": 14,
+            "file": "lib/utils/parseNumericStyleValue.ts",
+            "line": 3,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/routes/HowDoesItWorkRoute.tsx",
-            "line": 88,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/routes/grid/examples/useGridCallbackRef.tsx",
+            "file": "src/components/Link.tsx",
             "line": 5,
-            "column": 1,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "src/routes/grid/examples/shared.ts",
+            "line": 18,
+            "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "src/routes/list/examples/ListVariableRowHeights.tsx",
-            "line": 30,
+            "line": 19,
             "column": 1,
             "message": "Expected a function expression."
           },
@@ -412,7 +424,7 @@
         ]
       },
       "declaration": {
-        "count": 22,
+        "count": 28,
         "samples": [
           {
             "file": "lib/components/grid/Grid.test.tsx",
@@ -422,20 +434,14 @@
           },
           {
             "file": "lib/components/list/List.test.tsx",
-            "line": 556,
+            "line": 1199,
             "column": 13,
             "message": "Expected a function declaration."
           },
           {
-            "file": "lib/core/getEstimatedSize.test.ts",
-            "line": 8,
-            "column": 11,
-            "message": "Expected a function declaration."
-          },
-          {
             "file": "lib/core/getOffsetForIndex.test.ts",
-            "line": 35,
-            "column": 15,
+            "line": 14,
+            "column": 9,
             "message": "Expected a function declaration."
           },
           {
@@ -452,20 +458,26 @@
           },
           {
             "file": "lib/virtualization.test.tsx",
-            "line": 170,
+            "line": 200,
+            "column": 9,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "src/routes/components/animated/AnimatedList.tsx",
+            "line": 36,
             "column": 11,
             "message": "Expected a function declaration."
           },
           {
-            "file": "src/constants.ts",
-            "line": 3,
-            "column": 14,
+            "file": "src/routes/components/animated/AnimatedList.tsx",
+            "line": 89,
+            "column": 13,
             "message": "Expected a function declaration."
           },
           {
-            "file": "src/routes/grid/examples/gridRefClickEventHandler.ts",
-            "line": 8,
-            "column": 7,
+            "file": "src/routes/grid/ScrollToCellRoute.tsx",
+            "line": 86,
+            "column": 9,
             "message": "Expected a function declaration."
           },
           {
@@ -513,7 +525,7 @@
           },
           {
             "file": "src/routes/HowDoesItWorkRoute.tsx",
-            "line": 15,
+            "line": 5,
             "column": 8,
             "message": "Prefer named exports"
           },
@@ -525,7 +537,7 @@
           },
           {
             "file": "src/routes/list/DynamicRowHeightsRoute.tsx",
-            "line": 15,
+            "line": 14,
             "column": 8,
             "message": "Prefer named exports"
           },
@@ -544,7 +556,7 @@
         ]
       },
       "default": {
-        "count": 81,
+        "count": 84,
         "samples": [
           {
             "file": "integrations/next/app/decoder/[encoded]/Decoder.tsx",
@@ -553,7 +565,7 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "integrations/tests/src/components/LayoutShiftDetecter.tsx",
+            "file": "integrations/tests/src/components/LayoutShiftDetector.tsx",
             "line": 11,
             "column": 1,
             "message": "Prefer default export on a file with single export."
@@ -565,26 +577,26 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "lib/components/list/useListRef.ts",
-            "line": 7,
+            "file": "lib/components/list/useScrollToRow.ts",
+            "line": 10,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "lib/core/useVirtualizer.ts",
-            "line": 21,
+            "file": "lib/hooks/useIsomorphicLayoutEffect.ts",
+            "line": 3,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "lib/utils/colors/getContrastColor.ts",
-            "line": 1,
+            "file": "lib/utils/debug.ts",
+            "line": 4,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/components/NavLink.tsx",
-            "line": 5,
+            "file": "src/routes/components/animated/AnimatedList.tsx",
+            "line": 9,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -615,7 +627,7 @@
         "samples": []
       },
       "4-space": {
-        "count": 169,
+        "count": 174,
         "samples": [
           {
             "file": "eslint.config.js",
@@ -630,26 +642,26 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "integrations/vike/pages/list/+Page.tsx",
-            "line": 3,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "lib/components/list/useDynamicRowHeight.test.ts",
-            "line": 9,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "lib/core/useVirtualizer.test.ts",
-            "line": 8,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "lib/utils/getScrollbarSize.ts",
+            "file": "integrations/vike/pages/list/RowComponent.tsx",
             "line": 4,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "lib/components/list/useListCallbackRef.ts",
+            "line": 10,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "lib/hooks/useIsomorphicLayoutEffect.ts",
+            "line": 4,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "lib/utils/getScrollbarSize.test.ts",
+            "line": 6,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -660,8 +672,8 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/routes/grid/examples/gridRefClickEventHandler.ts",
-            "line": 9,
+            "file": "src/routes/grid/examples/columnWidth.ts",
+            "line": 6,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -680,7 +692,7 @@
         ]
       },
       "tab": {
-        "count": 169,
+        "count": 174,
         "samples": [
           {
             "file": "eslint.config.js",
@@ -695,26 +707,26 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "integrations/vike/pages/list/+Page.tsx",
-            "line": 3,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "lib/components/list/useDynamicRowHeight.test.ts",
-            "line": 9,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "lib/core/useVirtualizer.test.ts",
-            "line": 8,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "lib/utils/getScrollbarSize.ts",
+            "file": "integrations/vike/pages/list/RowComponent.tsx",
             "line": 4,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "lib/components/list/useListCallbackRef.ts",
+            "line": 10,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "lib/hooks/useIsomorphicLayoutEffect.ts",
+            "line": 4,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "lib/utils/getScrollbarSize.test.ts",
+            "line": 6,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -725,8 +737,8 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/routes/grid/examples/gridRefClickEventHandler.ts",
-            "line": 9,
+            "file": "src/routes/grid/examples/columnWidth.ts",
+            "line": 6,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -787,32 +799,32 @@
           },
           {
             "file": "lib/components/list/List.test.tsx",
-            "line": 92,
+            "line": 93,
             "column": 64,
             "message": "Strings must use doublequote."
           },
           {
             "file": "lib/components/list/List.test.tsx",
-            "line": 137,
+            "line": 138,
             "column": 64,
             "message": "Strings must use doublequote."
           },
           {
             "file": "lib/components/list/List.test.tsx",
-            "line": 568,
+            "line": 569,
             "column": 41,
             "message": "Strings must use doublequote."
           },
           {
             "file": "lib/components/list/List.test.tsx",
-            "line": 1117,
+            "line": 1231,
             "column": 48,
             "message": "Strings must use doublequote."
           }
         ]
       },
       "single": {
-        "count": 1559,
+        "count": 1640,
         "samples": [
           {
             "file": "eslint.config.js",
@@ -821,51 +833,51 @@
             "message": "Strings must use singlequote."
           },
           {
-            "file": "integrations/tests/tests/layout-shift.spec.tsx",
-            "line": 64,
-            "column": 35,
+            "file": "integrations/vike/pages/+config.ts",
+            "line": 1,
+            "column": 29,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "lib/components/grid/Grid.test.tsx",
-            "line": 811,
-            "column": 58,
+            "file": "lib/components/grid/Grid.tsx",
+            "line": 16,
+            "column": 38,
             "message": "Strings must use singlequote."
           },
           {
             "file": "lib/components/list/List.test.tsx",
-            "line": 424,
-            "column": 10,
+            "line": 659,
+            "column": 13,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "lib/components/list/useListRef.ts",
-            "line": 2,
-            "column": 40,
+            "file": "lib/components/list/useScrollToRow.ts",
+            "line": 128,
+            "column": 14,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "lib/core/useVirtualizer.test.ts",
-            "line": 11,
-            "column": 16,
+            "file": "lib/core/useVirtualizer.ts",
+            "line": 12,
+            "column": 42,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "lib/utils/parseNumericStyleValue.ts",
-            "line": 4,
-            "column": 24,
+            "file": "lib/utils/test/createElementInOtherWindow.ts",
+            "line": 1,
+            "column": 36,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/routes/HowDoesItWorkRoute.tsx",
-            "line": 10,
-            "column": 8,
+            "file": "src/routes.ts",
+            "line": 22,
+            "column": 3,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/routes/list/ImagesRoute.tsx",
-            "line": 3,
-            "column": 28,
+            "file": "src/routes/list/DynamicRowHeightsRoute.tsx",
+            "line": 12,
+            "column": 26,
             "message": "Strings must use singlequote."
           },
           {
@@ -879,7 +891,7 @@
     },
     "react-destructuring-assignment": {
       "never": {
-        "count": 64,
+        "count": 62,
         "samples": [
           {
             "file": "integrations/next/app/decoder/[encoded]/Decoder.tsx",
@@ -901,25 +913,25 @@
           },
           {
             "file": "lib/components/list/List.test.tsx",
-            "line": 874,
-            "column": 7,
+            "line": 387,
+            "column": 5,
             "message": "Must never use destructuring props assignment in SFC argument"
           },
           {
             "file": "lib/virtualization.test.tsx",
-            "line": 113,
+            "line": 27,
             "column": 3,
             "message": "Must never use destructuring props assignment in SFC argument"
           },
           {
-            "file": "src/routes/HowDoesItWorkRoute.tsx",
-            "line": 88,
+            "file": "src/routes/ScratchpadRoute.tsx",
+            "line": 79,
             "column": 1,
             "message": "Must never use destructuring props assignment in SFC argument"
           },
           {
-            "file": "src/routes/grid/examples/CellComponentAriaRoles.tsx",
-            "line": 3,
+            "file": "src/routes/grid/examples/Grid.tsx",
+            "line": 11,
             "column": 1,
             "message": "Must never use destructuring props assignment in SFC argument"
           },
@@ -952,7 +964,7 @@
         "samples": [
           {
             "file": "lib/components/list/List.test.tsx",
-            "line": 1086,
+            "line": 1200,
             "column": 15,
             "message": "Must destructure props in the function signature."
           }
@@ -969,7 +981,7 @@
         "samples": [
           {
             "file": "lib/components/list/List.test.tsx",
-            "line": 1085,
+            "line": 1199,
             "column": 33,
             "message": "Function component is not a function declaration"
           }
@@ -1004,14 +1016,14 @@
           },
           {
             "file": "lib/virtualization.test.tsx",
-            "line": 149,
-            "column": 5,
+            "line": 27,
+            "column": 3,
             "message": "Function component is not an arrow function"
           },
           {
             "file": "src/routes/ScratchpadRoute.tsx",
-            "line": 16,
-            "column": 16,
+            "line": 127,
+            "column": 1,
             "message": "Function component is not an arrow function"
           },
           {
@@ -1022,7 +1034,7 @@
           },
           {
             "file": "src/routes/list/ScrollToRowRoute.tsx",
-            "line": 44,
+            "line": 43,
             "column": 16,
             "message": "Function component is not an arrow function"
           },
@@ -1063,13 +1075,13 @@
           },
           {
             "file": "lib/components/list/List.tsx",
-            "line": 220,
+            "line": 221,
             "column": 7,
             "message": "Value must be set for boolean attribute `aria-hidden`"
           },
           {
             "file": "src/App.tsx",
-            "line": 19,
+            "line": 20,
             "column": 7,
             "message": "Value must be set for boolean attribute `enableSiteSearch`"
           }
@@ -1082,7 +1094,7 @@
         "samples": []
       },
       "element": {
-        "count": 9,
+        "count": 8,
         "samples": [
           {
             "file": "integrations/vike/pages/_error/+Page.tsx",
@@ -1104,37 +1116,31 @@
           },
           {
             "file": "src/App.tsx",
-            "line": 21,
+            "line": 28,
             "column": 9,
             "message": "Prefer React.Fragment over fragment shorthand"
           },
           {
             "file": "src/App.tsx",
-            "line": 68,
-            "column": 9,
-            "message": "Prefer React.Fragment over fragment shorthand"
-          },
-          {
-            "file": "src/App.tsx",
-            "line": 100,
+            "line": 106,
             "column": 7,
             "message": "Prefer React.Fragment over fragment shorthand"
           },
           {
             "file": "src/App.tsx",
-            "line": 112,
+            "line": 118,
             "column": 7,
             "message": "Prefer React.Fragment over fragment shorthand"
           },
           {
             "file": "src/App.tsx",
-            "line": 117,
+            "line": 123,
             "column": 7,
             "message": "Prefer React.Fragment over fragment shorthand"
           },
           {
             "file": "src/App.tsx",
-            "line": 129,
+            "line": 135,
             "column": 7,
             "message": "Prefer React.Fragment over fragment shorthand"
           }
@@ -1147,7 +1153,7 @@
         "samples": []
       },
       "never": {
-        "count": 2632,
+        "count": 2853,
         "samples": [
           {
             "file": "eslint.config.js",
@@ -1156,51 +1162,51 @@
             "message": "Extra semicolon."
           },
           {
-            "file": "integrations/tests/tests/layout-shift.spec.tsx",
-            "line": 52,
-            "column": 68,
+            "file": "integrations/vike/pages/decoder/+Page.tsx",
+            "line": 1,
+            "column": 33,
             "message": "Extra semicolon."
           },
           {
-            "file": "lib/components/grid/Grid.test.tsx",
-            "line": 811,
-            "column": 62,
+            "file": "lib/components/grid/types.ts",
+            "line": 14,
+            "column": 2,
             "message": "Extra semicolon."
           },
           {
             "file": "lib/components/list/List.test.tsx",
-            "line": 870,
-            "column": 8,
+            "line": 1113,
+            "column": 11,
             "message": "Extra semicolon."
           },
           {
             "file": "lib/components/list/useScrollToRow.ts",
-            "line": 43,
-            "column": 5,
+            "line": 86,
+            "column": 33,
             "message": "Extra semicolon."
           },
           {
-            "file": "lib/core/getStartStopIndices.test.ts",
-            "line": 281,
-            "column": 16,
+            "file": "lib/core/getStartStopIndices.ts",
+            "line": 59,
+            "column": 25,
             "message": "Extra semicolon."
           },
           {
-            "file": "lib/hooks/useResizeObserver.test.ts",
-            "line": 87,
-            "column": 9,
+            "file": "lib/hooks/useStableCallback.test.tsx",
+            "line": 2,
+            "column": 52,
             "message": "Extra semicolon."
           },
           {
             "file": "lib/virtualization.test.tsx",
-            "line": 73,
-            "column": 5,
+            "line": 102,
+            "column": 14,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/routes/grid/examples/gridRefClickEventHandler.ts",
-            "line": 2,
-            "column": 54,
+            "file": "src/routes/grid/examples/Grid.tsx",
+            "line": 26,
+            "column": 34,
             "message": "Extra semicolon."
           },
           {

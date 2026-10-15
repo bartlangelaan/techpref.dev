@@ -1,16 +1,28 @@
 {
   "analyzedVersion": "96d58f23c7cc",
-  "analyzedCommit": "0f847cb9b059debdfd125dd62e967cb3b3ca3a62",
-  "analyzedCommitDate": "2026-09-24T22:39:50.000Z",
+  "analyzedCommit": "d327d58e819cc7ef486ff9d03dc171ac772f21db",
+  "analyzedCommitDate": "2026-10-15T23:00:53.000Z",
   "checks": {
     "array-type": {
       "array": {
-        "count": 2,
+        "count": 4,
         "samples": [
           {
             "file": "packages/slate-react/src/chunking/children-helper.ts",
             "line": 20,
             "column": 23,
+            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
+          },
+          {
+            "file": "packages/slate-react/test/native-insert-text.spec.tsx",
+            "line": 21,
+            "column": 45,
+            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
+          },
+          {
+            "file": "site/examples/ts/markdown-preview.tsx",
+            "line": 57,
+            "column": 15,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
@@ -22,31 +34,25 @@
         ]
       },
       "generic": {
-        "count": 196,
+        "count": 303,
         "samples": [
           {
-            "file": "packages/slate-dom/src/plugin/with-dom.ts",
-            "line": 123,
-            "column": 20,
-            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
+            "file": "packages/slate-dom/src/custom-types.ts",
+            "line": 37,
+            "column": 19,
+            "message": "Array type using 'ShadowRoot[]' is forbidden. Use 'Array<ShadowRoot>' instead."
           },
           {
             "file": "packages/slate-hyperscript/src/creators.ts",
-            "line": 123,
-            "column": 13,
+            "line": 234,
+            "column": 15,
             "message": "Array type using 'any[]' is forbidden. Use 'Array<any>' instead."
           },
           {
-            "file": "packages/slate-react/src/chunking/chunk-tree-helper.ts",
-            "line": 72,
-            "column": 30,
-            "message": "Array type using 'number[]' is forbidden. Use 'Array<number>' instead."
-          },
-          {
-            "file": "packages/slate-react/src/components/slate.tsx",
-            "line": 25,
-            "column": 27,
-            "message": "Array type using 'Descendant[]' is forbidden. Use 'Array<Descendant>' instead."
+            "file": "packages/slate-react/src/components/element.tsx",
+            "line": 58,
+            "column": 16,
+            "message": "Array type using 'DecoratedRange[]' is forbidden. Use 'Array<DecoratedRange>' instead."
           },
           {
             "file": "packages/slate-react/test/decorations.spec.tsx",
@@ -55,52 +61,58 @@
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
-            "file": "packages/slate/src/interfaces/operation.ts",
-            "line": 154,
-            "column": 45,
-            "message": "Array type using 'Operation[]' is forbidden. Use 'Array<Operation>' instead."
-          },
-          {
-            "file": "packages/slate/src/transforms-text/insert-fragment.ts",
-            "line": 136,
-            "column": 20,
-            "message": "Array type using 'Element[]' is forbidden. Use 'Array<Element>' instead."
-          },
-          {
-            "file": "site/examples/ts/code-highlighting.tsx",
-            "line": 263,
-            "column": 39,
-            "message": "Array type using 'CustomText[]' is forbidden. Use 'Array<CustomText>' instead."
-          },
-          {
-            "file": "site/examples/ts/markdown-preview.tsx",
-            "line": 119,
+            "file": "packages/slate-react/test/slate-initial-value.spec.tsx",
+            "line": 6,
             "column": 21,
             "message": "Array type using 'Descendant[]' is forbidden. Use 'Array<Descendant>' instead."
           },
           {
-            "file": "site/pages/examples/[example].tsx",
-            "line": 15,
-            "column": 17,
-            "message": "Array type using 'ExampleTuple[]' is forbidden. Use 'Array<ExampleTuple>' instead."
+            "file": "packages/slate/src/interfaces/text.ts",
+            "line": 54,
+            "column": 40,
+            "message": "Array type using 'Text[]' is forbidden. Use 'Array<Text>' instead."
+          },
+          {
+            "file": "packages/slate/test/interfaces/Editor/is-isolated.spec.ts",
+            "line": 12,
+            "column": 40,
+            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
+          },
+          {
+            "file": "playwright/integration/examples/shadow-dom.test.ts",
+            "line": 40,
+            "column": 23,
+            "message": "Array type using 'Error[]' is forbidden. Use 'Array<Error>' instead."
+          },
+          {
+            "file": "site/examples/ts/insert-text-noop.tsx",
+            "line": 52,
+            "column": 21,
+            "message": "Array type using 'Descendant[]' is forbidden. Use 'Array<Descendant>' instead."
+          },
+          {
+            "file": "support/types.ts",
+            "line": 79,
+            "column": 16,
+            "message": "Array type using 'number[]' is forbidden. Use 'Array<number>' instead."
           }
         ]
       }
     },
     "consistent-generic-constructors": {
       "constructor": {
-        "count": 34,
+        "count": 36,
         "samples": [
           {
-            "file": "packages/slate-dom/src/utils/weak-maps.ts",
-            "line": 20,
-            "column": 31,
+            "file": "packages/slate-dom/src/utils/node-identity.ts",
+            "line": 4,
+            "column": 21,
             "message": "The generic type arguments should be specified as part of the constructor type arguments."
           },
           {
             "file": "packages/slate-dom/src/utils/weak-maps.ts",
-            "line": 29,
-            "column": 31,
+            "line": 28,
+            "column": 30,
             "message": "The generic type arguments should be specified as part of the constructor type arguments."
           },
           {
@@ -141,20 +153,20 @@
           },
           {
             "file": "packages/slate/src/utils/weak-maps.ts",
-            "line": 5,
-            "column": 22,
+            "line": 6,
+            "column": 25,
             "message": "The generic type arguments should be specified as part of the constructor type arguments."
           },
           {
             "file": "packages/slate/src/utils/weak-maps.ts",
-            "line": 9,
-            "column": 24,
+            "line": 10,
+            "column": 28,
             "message": "The generic type arguments should be specified as part of the constructor type arguments."
           }
         ]
       },
       "type-annotation": {
-        "count": 8,
+        "count": 11,
         "samples": [
           {
             "file": "packages/slate-dom/src/utils/range-list.ts",
@@ -187,15 +199,15 @@
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "packages/slate-history/src/history-editor.ts",
-            "line": 11,
-            "column": 42,
-            "message": "The generic type arguments should be specified as part of the type annotation."
-          },
-          {
             "file": "packages/slate-react/src/chunking/get-chunk-tree-for-node.ts",
             "line": 7,
             "column": 45,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "packages/slate-react/src/hooks/android-input-manager/android-input-manager.ts",
+            "line": 64,
+            "column": 58,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
@@ -203,13 +215,25 @@
             "line": 29,
             "column": 32,
             "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "packages/slate-react/src/plugin/with-react.ts",
+            "line": 9,
+            "column": 39,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "packages/slate-react/test/trailing-newline.spec.tsx",
+            "line": 67,
+            "column": 25,
+            "message": "The generic type arguments should be specified as part of the type annotation."
           }
         ]
       }
     },
     "consistent-indexed-object-style": {
       "record": {
-        "count": 14,
+        "count": 15,
         "samples": [
           {
             "file": "packages/slate-dom/src/utils/range-list.ts",
@@ -218,9 +242,9 @@
             "message": "A record is preferred over an index signature."
           },
           {
-            "file": "packages/slate-dom/src/utils/range-list.ts",
-            "line": 7,
-            "column": 11,
+            "file": "packages/slate-hyperscript/src/creators.ts",
+            "line": 86,
+            "column": 17,
             "message": "A record is preferred over an index signature."
           },
           {
@@ -231,7 +255,7 @@
           },
           {
             "file": "packages/slate-hyperscript/src/creators.ts",
-            "line": 110,
+            "line": 122,
             "column": 17,
             "message": "A record is preferred over an index signature."
           },
@@ -243,7 +267,7 @@
           },
           {
             "file": "packages/slate-hyperscript/src/creators.ts",
-            "line": 146,
+            "line": 158,
             "column": 17,
             "message": "A record is preferred over an index signature."
           },
@@ -254,27 +278,27 @@
             "message": "A record is preferred over an index signature."
           },
           {
-            "file": "packages/slate-hyperscript/src/creators.ts",
-            "line": 233,
-            "column": 19,
+            "file": "packages/slate-hyperscript/src/hyperscript.ts",
+            "line": 37,
+            "column": 35,
             "message": "A record is preferred over an index signature."
           },
           {
             "file": "packages/slate-hyperscript/src/hyperscript.ts",
-            "line": 125,
+            "line": 136,
             "column": 21,
             "message": "A record is preferred over an index signature."
           },
           {
-            "file": "packages/slate/src/types/custom-types.ts",
-            "line": 24,
-            "column": 3,
+            "file": "support/types.ts",
+            "line": 44,
+            "column": 26,
             "message": "A record is preferred over an index signature."
           }
         ]
       },
       "index-signature": {
-        "count": 16,
+        "count": 28,
         "samples": [
           {
             "file": "packages/slate-hyperscript/src/hyperscript.ts",
@@ -284,26 +308,32 @@
           },
           {
             "file": "packages/slate-hyperscript/src/hyperscript.ts",
-            "line": 46,
-            "column": 45,
+            "line": 62,
+            "column": 58,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "packages/slate-react/test/decorations.spec.tsx",
-            "line": 33,
-            "column": 50,
+            "file": "packages/slate-hyperscript/test/index.ts",
+            "line": 14,
+            "column": 17,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "packages/slate/src/interfaces/text.ts",
-            "line": 82,
-            "column": 28,
+            "file": "packages/slate-react/test/copy-inline-void-plain-text.spec.tsx",
+            "line": 40,
+            "column": 15,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "packages/slate/src/transforms-node/set-nodes.ts",
-            "line": 84,
-            "column": 28,
+            "file": "packages/slate-react/test/insert-data-fragment.spec.ts",
+            "line": 4,
+            "column": 29,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "packages/slate-react/test/use-selected.spec.tsx",
+            "line": 16,
+            "column": 29,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -325,14 +355,8 @@
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "site/examples/ts/paste-html.tsx",
-            "line": 55,
-            "column": 18,
-            "message": "An index signature is preferred over a record."
-          },
-          {
             "file": "site/examples/ts/richtext.tsx",
-            "line": 29,
+            "line": 30,
             "column": 16,
             "message": "An index signature is preferred over a record."
           }
@@ -341,7 +365,7 @@
     },
     "consistent-type-definitions": {
       "interface": {
-        "count": 22,
+        "count": 30,
         "samples": [
           {
             "file": "packages/slate-dom/src/utils/diff-text.ts",
@@ -350,32 +374,26 @@
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "packages/slate-dom/src/utils/weak-maps.ts",
-            "line": 14,
+            "file": "packages/slate-react/src/components/editable.tsx",
+            "line": 2432,
             "column": 8,
-            "message": "Use `interface` instead of `type`."
-          },
-          {
-            "file": "packages/slate-react/src/components/restore-dom/restore-dom.tsx",
-            "line": 22,
-            "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
             "file": "packages/slate-react/src/hooks/android-input-manager/android-input-manager.ts",
-            "line": 57,
+            "line": 31,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "packages/slate/src/interfaces/operation.ts",
-            "line": 3,
-            "column": 8,
+            "file": "packages/slate/src/editor/word.ts",
+            "line": 9,
+            "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
             "file": "packages/slate/src/interfaces/operation.ts",
-            "line": 38,
+            "line": 26,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           },
@@ -386,15 +404,21 @@
             "message": "Use `interface` instead of `type`."
           },
           {
-            "file": "packages/slate/src/interfaces/operation.ts",
-            "line": 106,
-            "column": 8,
+            "file": "packages/slate/test/index.ts",
+            "line": 107,
+            "column": 3,
             "message": "Use `interface` instead of `type`."
           },
           {
             "file": "packages/slate/test/interfaces/CustomTypes/custom-types.ts",
-            "line": 22,
+            "line": 29,
             "column": 8,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "playwright/integration/examples/composition-multiline.test.ts",
+            "line": 10,
+            "column": 1,
             "message": "Use `interface` instead of `type`."
           },
           {
@@ -406,7 +430,7 @@
         ]
       },
       "type": {
-        "count": 124,
+        "count": 138,
         "samples": [
           {
             "file": "packages/slate-dom/src/custom-types.ts",
@@ -415,9 +439,9 @@
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "packages/slate-react/src/chunking/reconcile-children.ts",
-            "line": 6,
-            "column": 8,
+            "file": "packages/slate-hyperscript/test/fixtures/element-custom.tsx",
+            "line": 5,
+            "column": 3,
             "message": "Use `type` instead of `interface`."
           },
           {
@@ -428,44 +452,44 @@
           },
           {
             "file": "packages/slate/src/interfaces/editor.ts",
-            "line": 232,
+            "line": 254,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "packages/slate/src/interfaces/editor.ts",
-            "line": 310,
+            "line": 335,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "packages/slate/src/interfaces/node.ts",
-            "line": 39,
+            "line": 57,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "packages/slate/src/interfaces/point.ts",
+            "file": "packages/slate/src/interfaces/range.ts",
             "line": 18,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "packages/slate/src/interfaces/transforms/node.ts",
-            "line": 5,
+            "file": "packages/slate/src/interfaces/transforms/text.ts",
+            "line": 13,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "site/examples/ts/android-tests.tsx",
-            "line": 7,
+            "file": "site/examples/ts/iframe.tsx",
+            "line": 109,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "site/examples/ts/search-highlighting.tsx",
-            "line": 102,
-            "column": 1,
+            "file": "support/types.ts",
+            "line": 83,
+            "column": 3,
             "message": "Use `type` instead of `interface`."
           }
         ]
@@ -473,7 +497,7 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 350,
+        "count": 431,
         "samples": [
           {
             "file": "packages/slate-dom/src/custom-types.ts",
@@ -482,55 +506,55 @@
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "packages/slate-react/src/components/editable.tsx",
-            "line": 16,
+            "file": "packages/slate-react/src/components/leaf.tsx",
+            "line": 1,
             "column": 1,
-            "message": "Imports Element, NodeEntry, DecoratedRange, and LeafPosition are only used as type."
+            "message": "Imports MutableRefObject are only used as type."
           },
           {
-            "file": "packages/slate-react/test/chunking.spec.ts",
-            "line": 14,
-            "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
-          },
-          {
-            "file": "packages/slate/src/editor/insert-break.ts",
+            "file": "packages/slate-react/test/editable-props.spec.ts",
             "line": 2,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "packages/slate/src/editor/range-ref.ts",
-            "line": 2,
+            "file": "packages/slate/src/editor/edges.ts",
+            "line": 1,
             "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
+            "message": "Imports EditorInterface are only used as type."
           },
           {
-            "file": "packages/slate/src/transforms-node/insert-nodes.ts",
-            "line": 9,
+            "file": "packages/slate/src/editor/previous.ts",
+            "line": 1,
             "column": 1,
-            "message": "Imports BaseInsertNodeOperation are only used as type."
+            "message": "Imports EditorInterface are only used as type."
           },
           {
-            "file": "packages/slate/test/interfaces/CustomTypes/customOperation-true.tsx",
+            "file": "packages/slate/src/transforms-node/merge-nodes.ts",
             "line": 1,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "playwright/integration/examples/code-highlighting.test.ts",
+            "file": "packages/slate/test/interfaces/Editor/disposable-refs.spec.ts",
+            "line": 73,
+            "column": 17,
+            "message": "`import()` type annotations are forbidden."
+          },
+          {
+            "file": "playwright/integration/examples/paste-html.test.ts",
             "line": 1,
             "column": 1,
             "message": "Imports Page are only used as type."
           },
           {
             "file": "site/examples/ts/iframe.tsx",
-            "line": 6,
+            "line": 17,
             "column": 1,
-            "message": "Imports RenderElementProps and RenderLeafProps are only used as type."
+            "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "site/pages/_app.tsx",
+            "file": "support/types.ts",
             "line": 2,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
@@ -538,7 +562,7 @@
         ]
       },
       "no-type-imports": {
-        "count": 2,
+        "count": 14,
         "samples": [
           {
             "file": "packages/slate-react/src/plugin/react-editor.ts",
@@ -547,8 +571,56 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "playwright/docker/playwright.config.docker.ts",
-            "line": 1,
+            "file": "packages/slate/test/interfaces/Editor/disposable-refs.spec.ts",
+            "line": 73,
+            "column": 17,
+            "message": "`import()` type annotations are forbidden."
+          },
+          {
+            "file": "playwright/integration/copy-list-html.test.ts",
+            "line": 2,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "playwright/integration/examples/check-lists.test.ts",
+            "line": 2,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "playwright/integration/examples/composition-multiline.test.ts",
+            "line": 3,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "playwright/integration/examples/composition-replace-selection.test.ts",
+            "line": 2,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "playwright/integration/examples/images.test.ts",
+            "line": 3,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "playwright/integration/examples/list-paste.test.ts",
+            "line": 2,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "playwright/integration/examples/void-drag.test.ts",
+            "line": 2,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "playwright/integration/support/editor.ts",
+            "line": 2,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           }
@@ -557,59 +629,59 @@
     },
     "func-style": {
       "expression": {
-        "count": 67,
+        "count": 70,
         "samples": [
           {
-            "file": "config/rollup/rollup.config.js",
-            "line": 22,
-            "column": 1,
+            "file": ".yarn/sdks/typescript/lib/tsserver.js",
+            "line": 55,
+            "column": 3,
             "message": "Expected a function expression."
           },
           {
             "file": "packages/slate-dom/src/utils/diff-text.ts",
-            "line": 87,
+            "line": 46,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "packages/slate-dom/src/utils/diff-text.ts",
+            "line": 194,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "packages/slate-hyperscript/src/creators.ts",
-            "line": 22,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "packages/slate-hyperscript/src/creators.ts",
-            "line": 144,
+            "line": 108,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "packages/slate-hyperscript/src/tokens.ts",
-            "line": 135,
+            "line": 105,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "packages/slate-react/src/hooks/android-input-manager/android-input-manager.ts",
-            "line": 85,
-            "column": 8,
+            "file": "packages/slate-react/src/components/leaf.tsx",
+            "line": 22,
+            "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "packages/slate-react/src/hooks/use-slate-selector.tsx",
-            "line": 125,
+            "line": 48,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "packages/slate/src/editor/positions.ts",
-            "line": 207,
-            "column": 3,
+            "line": 71,
+            "column": 5,
             "message": "Expected a function expression."
           },
           {
             "file": "site/components/ComponentLoader.tsx",
-            "line": 12,
+            "line": 3,
             "column": 8,
             "message": "Expected a function expression."
           },
@@ -622,65 +694,65 @@
         ]
       },
       "declaration": {
-        "count": 1556,
+        "count": 1961,
         "samples": [
           {
-            "file": "config/rollup/rollup.config.js",
-            "line": 33,
-            "column": 9,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "packages/slate/src/create-editor.ts",
-            "line": 91,
-            "column": 14,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "packages/slate/test/interfaces/Editor/isStart/path-end.tsx",
-            "line": 13,
-            "column": 14,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "packages/slate/test/interfaces/Location/isRange/customRange.tsx",
-            "line": 8,
-            "column": 14,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "packages/slate/test/interfaces/Path/isPath/full.tsx",
-            "line": 4,
-            "column": 14,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "packages/slate/test/transforms/delete/point/inline-end.tsx",
-            "line": 5,
-            "column": 14,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "packages/slate/test/transforms/insertText/selection/inline-end.tsx",
-            "line": 4,
-            "column": 14,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "packages/slate/test/transforms/unwrapNodes/match-block/block-nested.tsx",
-            "line": 5,
-            "column": 14,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "site/examples/js/paste-html.jsx",
-            "line": 73,
+            "file": ".yarn/sdks/typescript/lib/tsserver.js",
+            "line": 31,
             "column": 7,
             "message": "Expected a function declaration."
           },
           {
-            "file": "support/fixtures.js",
+            "file": "packages/slate-react/test/copy-inline-void-plain-text.spec.tsx",
+            "line": 28,
+            "column": 7,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "packages/slate/test/interfaces/Editor/above/point.tsx",
+            "line": 14,
+            "column": 14,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "packages/slate/test/interfaces/Element/isElement/editor.tsx",
+            "line": 27,
+            "column": 14,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "packages/slate/test/interfaces/Path/levels/success.tsx",
             "line": 4,
+            "column": 14,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "packages/slate/test/transforms/delete/selection/inline-over.tsx",
+            "line": 5,
+            "column": 14,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "packages/slate/test/transforms/move/both/backward.tsx",
+            "line": 5,
+            "column": 14,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "packages/slate/test/transforms/wrapNodes/split-inline/text-out-of-inline-forward.ts",
+            "line": 22,
+            "column": 14,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "site/examples/js/inlines.jsx",
+            "line": 261,
+            "column": 7,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "support/fixtures.ts",
+            "line": 18,
             "column": 14,
             "message": "Expected a function declaration."
           }
@@ -689,11 +761,11 @@
     },
     "import-export-preference": {
       "named": {
-        "count": 65,
+        "count": 76,
         "samples": [
           {
             "file": "config/rollup/rollup.config.js",
-            "line": 203,
+            "line": 197,
             "column": 8,
             "message": "Prefer named exports"
           },
@@ -704,96 +776,96 @@
             "message": "Prefer named exports"
           },
           {
-            "file": "site/examples/js/decorations-async.jsx",
-            "line": 144,
+            "file": "site/examples/js/editable-voids.jsx",
+            "line": 147,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "site/examples/js/images.jsx",
-            "line": 189,
+            "file": "site/examples/js/insert-text-noop.jsx",
+            "line": 49,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "site/examples/js/read-only.jsx",
-            "line": 23,
+            "file": "site/examples/js/scroll-into-view.jsx",
+            "line": 67,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "site/examples/ts/check-lists.tsx",
-            "line": 198,
+            "file": "site/examples/ts/custom-placeholder.tsx",
+            "line": 37,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "site/examples/ts/hovering-toolbar.tsx",
-            "line": 178,
+            "file": "site/examples/ts/images.tsx",
+            "line": 255,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "site/examples/ts/mentions.tsx",
-            "line": 746,
+            "file": "site/examples/ts/read-only.tsx",
+            "line": 25,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "site/examples/ts/shadow-dom.tsx",
-            "line": 48,
+            "file": "site/pages/examples/[example].tsx",
+            "line": 77,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "site/pages/index.tsx",
-            "line": 14,
+            "file": "site/pages/playwright/triple-click.tsx",
+            "line": 25,
             "column": 8,
             "message": "Prefer named exports"
           }
         ]
       },
       "default": {
-        "count": 110,
+        "count": 120,
         "samples": [
           {
             "file": "packages/slate-dom/src/plugin/with-dom.ts",
-            "line": 49,
+            "line": 83,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "packages/slate-react/src/hooks/use-is-mounted.tsx",
+            "file": "packages/slate-react/src/hooks/use-generic-selector.tsx",
+            "line": 22,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "packages/slate/src/core/apply.ts",
+            "line": 12,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "packages/slate/src/editor/edges.ts",
             "line": 3,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "packages/slate/src/core/should-normalize.ts",
+            "file": "packages/slate/src/editor/insert-soft-break.ts",
             "line": 4,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "packages/slate/src/editor/end.ts",
-            "line": 3,
+            "file": "packages/slate/src/editor/marks.ts",
+            "line": 8,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "packages/slate/src/editor/is-block.ts",
-            "line": 3,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "packages/slate/src/editor/nodes.ts",
-            "line": 6,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "packages/slate/src/editor/range-refs.ts",
+            "file": "packages/slate/src/editor/previous.ts",
             "line": 4,
             "column": 1,
             "message": "Prefer default export on a file with single export."
@@ -805,14 +877,14 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "packages/slate/src/transforms-selection/set-point.ts",
-            "line": 5,
+            "file": "packages/slate/src/transforms-selection/set-selection.ts",
+            "line": 6,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "support/fixtures.js",
-            "line": 4,
+            "file": "support/fixtures.ts",
+            "line": 18,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           }
@@ -821,147 +893,153 @@
     },
     "indent": {
       "2-space": {
-        "count": 2,
+        "count": 3,
         "samples": [
           {
+            "file": "playwright/integration/examples/tables.test.ts",
+            "line": 76,
+            "column": 1,
+            "message": "Expected 2-space indentation, but file uses 7-space indentation."
+          },
+          {
             "file": "site/examples/js/code-highlighting.jsx",
-            "line": 277,
+            "line": 279,
             "column": 1,
             "message": "Expected 2-space indentation, but file uses 1-space indentation."
           },
           {
             "file": "site/examples/ts/code-highlighting.tsx",
-            "line": 332,
+            "line": 334,
             "column": 1,
             "message": "Expected 2-space indentation, but file uses 1-space indentation."
           }
         ]
       },
       "4-space": {
-        "count": 1365,
+        "count": 1599,
         "samples": [
           {
-            "file": "babel.config.js",
-            "line": 3,
+            "file": ".yarn/sdks/eslint/bin/eslint.js",
+            "line": 18,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/slate/src/editor/is-end.ts",
+            "file": "packages/slate/src/core/apply.ts",
+            "line": 13,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "packages/slate/test/interfaces/Editor/isBlock/block.tsx",
+            "line": 6,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "packages/slate/test/interfaces/Element/isElementList/not-full-element.tsx",
+            "line": 4,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "packages/slate/test/interfaces/Path/isChild/equal.tsx",
+            "line": 4,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "packages/slate/test/normalization/block/insert-custom-block.tsx",
+            "line": 6,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "packages/slate/test/transforms/delete/voids-false/inline-start-across.tsx",
+            "line": 6,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "packages/slate/test/transforms/move/end/to-backward-reverse.tsx",
+            "line": 6,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "packages/slate/test/transforms/wrapNodes/split-inline/default-out-of-inline.ts",
             "line": 5,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "packages/slate/test/interfaces/Editor/isStart/path-middle.tsx",
+            "file": "support/types.ts",
             "line": 6,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "packages/slate/test/interfaces/Element/isElementList/full-element.tsx",
-            "line": 4,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "packages/slate/test/interfaces/Path/equals/root.tsx",
-            "line": 4,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "packages/slate/test/interfaces/Range/isRange/custom-property.tsx",
-            "line": 4,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "packages/slate/test/transforms/delete/unit-character/inline-after.tsx",
-            "line": 6,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "packages/slate/test/transforms/mergeNodes/path/non-selectable-ancestor.ts",
-            "line": 6,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "packages/slate/test/transforms/unwrapNodes/match-block/block-end.tsx",
-            "line": 6,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "support/fixtures.js",
-            "line": 5,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           }
         ]
       },
       "tab": {
-        "count": 1365,
+        "count": 1599,
         "samples": [
           {
-            "file": "babel.config.js",
-            "line": 3,
+            "file": ".yarn/sdks/eslint/bin/eslint.js",
+            "line": 18,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/slate/src/editor/is-end.ts",
+            "file": "packages/slate/src/core/apply.ts",
+            "line": 13,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "packages/slate/test/interfaces/Editor/isBlock/block.tsx",
+            "line": 6,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "packages/slate/test/interfaces/Element/isElementList/not-full-element.tsx",
+            "line": 4,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "packages/slate/test/interfaces/Path/isChild/equal.tsx",
+            "line": 4,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "packages/slate/test/normalization/block/insert-custom-block.tsx",
+            "line": 6,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "packages/slate/test/transforms/delete/voids-false/inline-start-across.tsx",
+            "line": 6,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "packages/slate/test/transforms/move/end/to-backward-reverse.tsx",
+            "line": 6,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "packages/slate/test/transforms/wrapNodes/split-inline/default-out-of-inline.ts",
             "line": 5,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "packages/slate/test/interfaces/Editor/isStart/path-middle.tsx",
+            "file": "support/types.ts",
             "line": 6,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "packages/slate/test/interfaces/Element/isElementList/full-element.tsx",
-            "line": 4,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "packages/slate/test/interfaces/Path/equals/root.tsx",
-            "line": 4,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "packages/slate/test/interfaces/Range/isRange/custom-property.tsx",
-            "line": 4,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "packages/slate/test/transforms/delete/unit-character/inline-after.tsx",
-            "line": 6,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "packages/slate/test/transforms/mergeNodes/path/non-selectable-ancestor.ts",
-            "line": 6,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "packages/slate/test/transforms/unwrapNodes/match-block/block-end.tsx",
-            "line": 6,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "support/fixtures.js",
-            "line": 5,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           }
@@ -970,89 +1048,113 @@
     },
     "quotes": {
       "double": {
-        "count": 8461,
+        "count": 14505,
         "samples": [
           {
-            "file": "babel.config.js",
-            "line": 5,
-            "column": 5,
+            "file": ".yarn/sdks/eslint/bin/eslint.js",
+            "line": 3,
+            "column": 30,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/slate-react/src/hooks/use-editor.tsx",
-            "line": 15,
-            "column": 7,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "packages/slate-react/test/use-selected.spec.tsx",
-            "line": 131,
-            "column": 9,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "packages/slate/src/types/custom-types.ts",
-            "line": 20,
-            "column": 5,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "packages/slate/test/interfaces/Point/equals/path-after-offset-equal.tsx",
+            "file": "packages/slate-react/test/android-input-manager.spec.ts",
             "line": 1,
+            "column": 26,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "packages/slate-react/test/optional-initial-value.spec.tsx",
+            "line": 1,
+            "column": 19,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "packages/slate/test/interfaces/Editor/after/non-selectable-inline.tsx",
+            "line": 3,
+            "column": 24,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "packages/slate/test/properties/high-level.ts",
+            "line": 115,
+            "column": 10,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "packages/slate/test/transforms/wrapNodes/split-block/block-across.tsx",
+            "line": 2,
+            "column": 28,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "playwright/integration/examples/check-lists.test.ts",
+            "line": 16,
             "column": 23,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "packages/slate/test/transforms/move/anchor/backward.tsx",
-            "line": 6,
-            "column": 35,
+            "file": "playwright/integration/examples/void-drag.test.ts",
+            "line": 65,
+            "column": 59,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "playwright/integration/examples/markdown-shortcuts.test.ts",
-            "line": 10,
-            "column": 47,
+            "file": "site/examples/js/richtext.jsx",
+            "line": 21,
+            "column": 21,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "site/examples/js/mentions.jsx",
-            "line": 338,
-            "column": 3,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "site/examples/ts/iframe.tsx",
-            "line": 2,
-            "column": 69,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "support/fixtures.js",
-            "line": 36,
-            "column": 18,
+            "file": "support/types.ts",
+            "line": 86,
+            "column": 19,
             "message": "Strings must use doublequote."
           }
         ]
       },
       "single": {
-        "count": 57,
+        "count": 221,
         "samples": [
           {
-            "file": "packages/slate-dom/src/plugin/dom-editor.ts",
-            "line": 503,
-            "column": 36,
+            "file": ".yarn/sdks/eslint/bin/eslint.js",
+            "line": 3,
+            "column": 30,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "packages/slate-hyperscript/src/creators.ts",
-            "line": 278,
-            "column": 9,
+            "file": ".yarn/sdks/prettier/bin/prettier.cjs",
+            "line": 3,
+            "column": 30,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "packages/slate-react/test/editable.spec.tsx",
-            "line": 276,
-            "column": 13,
+            "file": ".yarn/sdks/typescript/lib/tsserver.js",
+            "line": 4,
+            "column": 43,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": ".yarn/sdks/typescript/lib/tsserver.js",
+            "line": 150,
+            "column": 37,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": ".yarn/sdks/typescript/lib/tsserverlibrary.js",
+            "line": 6,
+            "column": 33,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": ".yarn/sdks/typescript/lib/tsserverlibrary.js",
+            "line": 152,
+            "column": 40,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": ".yarn/sdks/typescript/lib/typescript.js",
+            "line": 11,
+            "column": 47,
             "message": "Strings must use singlequote."
           },
           {
@@ -1062,33 +1164,9 @@
             "message": "Strings must use singlequote."
           },
           {
-            "file": "packages/slate/test/utils/string.ts",
-            "line": 166,
-            "column": 4,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "packages/slate/test/utils/string.ts",
-            "line": 187,
-            "column": 10,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "site/examples/js/paste-html.jsx",
-            "line": 213,
-            "column": 15,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "site/examples/ts/check-lists.tsx",
-            "line": 66,
-            "column": 24,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "site/examples/ts/paste-html.tsx",
-            "line": 287,
-            "column": 15,
+            "file": "playwright/integration/examples/collaboration.test.ts",
+            "line": 100,
+            "column": 49,
             "message": "Strings must use singlequote."
           },
           {
@@ -1102,66 +1180,66 @@
     },
     "react-destructuring-assignment": {
       "never": {
-        "count": 106,
+        "count": 111,
         "samples": [
           {
             "file": "packages/slate-react/src/components/editable.tsx",
-            "line": 1921,
+            "line": 2499,
             "column": 35,
             "message": "Must never use destructuring props assignment in SFC argument"
           },
           {
-            "file": "site/components/ExampleLayout.tsx",
-            "line": 26,
-            "column": 17,
+            "file": "packages/slate-react/test/use-selected.spec.tsx",
+            "line": 209,
+            "column": 27,
             "message": "Must never use destructuring props assignment in SFC argument"
           },
           {
-            "file": "site/examples/js/editable-voids.jsx",
-            "line": 54,
-            "column": 22,
+            "file": "site/examples/js/decorations-async.jsx",
+            "line": 113,
+            "column": 14,
             "message": "Must never use destructuring props assignment in SFC argument"
           },
           {
             "file": "site/examples/js/iframe.jsx",
-            "line": 93,
-            "column": 16,
+            "line": 80,
+            "column": 20,
             "message": "Must never use destructuring props assignment in SFC argument"
           },
           {
             "file": "site/examples/js/mentions.jsx",
-            "line": 196,
-            "column": 17,
-            "message": "Must never use destructuring props assignment in SFC argument"
+            "line": 214,
+            "column": 9,
+            "message": "Must never use destructuring props assignment"
           },
           {
             "file": "site/examples/js/tables.jsx",
-            "line": 89,
+            "line": 121,
             "column": 14,
             "message": "Must never use destructuring props assignment in SFC argument"
           },
           {
             "file": "site/examples/ts/embeds.tsx",
-            "line": 116,
-            "column": 18,
+            "line": 53,
+            "column": 22,
             "message": "Must never use destructuring props assignment in SFC argument"
           },
           {
             "file": "site/examples/ts/inlines.tsx",
-            "line": 257,
+            "line": 283,
             "column": 23,
             "message": "Must never use destructuring props assignment in SFC argument"
           },
           {
             "file": "site/examples/ts/paste-html.tsx",
-            "line": 209,
-            "column": 18,
+            "line": 290,
+            "column": 22,
             "message": "Must never use destructuring props assignment in SFC argument"
           },
           {
-            "file": "site/pages/examples/[example].tsx",
-            "line": 27,
-            "column": 21,
+            "file": "site/pages/playwright/triple-click.tsx",
+            "line": 7,
+            "column": 23,
             "message": "Must never use destructuring props assignment in SFC argument"
           }
         ]
@@ -1212,7 +1290,7 @@
           },
           {
             "file": "packages/slate-react/src/components/element.tsx",
-            "line": 166,
+            "line": 192,
             "column": 9,
             "message": "Must destructure props in the function signature."
           },
@@ -1236,25 +1314,25 @@
           },
           {
             "file": "packages/slate-react/src/components/string.tsx",
-            "line": 130,
+            "line": 144,
             "column": 9,
             "message": "Must destructure props in the function signature."
           },
           {
             "file": "site/examples/js/code-highlighting.jsx",
-            "line": 47,
+            "line": 48,
             "column": 9,
             "message": "Must destructure props in the function signature."
           },
           {
             "file": "site/examples/js/inlines.jsx",
-            "line": 306,
+            "line": 328,
             "column": 9,
             "message": "Must destructure props in the function signature."
           },
           {
             "file": "site/examples/ts/inlines.tsx",
-            "line": 372,
+            "line": 398,
             "column": 9,
             "message": "Must destructure props in the function signature."
           }
@@ -1292,7 +1370,7 @@
     },
     "react-function-component-definition": {
       "function-declaration": {
-        "count": 190,
+        "count": 199,
         "samples": [
           {
             "file": "packages/slate-react/src/components/chunk-tree.tsx",
@@ -1302,38 +1380,38 @@
           },
           {
             "file": "site/components/ExampleLayout.tsx",
-            "line": 80,
-            "column": 23,
+            "line": 58,
+            "column": 13,
             "message": "Function component is not a function declaration"
           },
           {
             "file": "site/examples/js/editable-voids.jsx",
-            "line": 54,
-            "column": 22,
+            "line": 9,
+            "column": 30,
             "message": "Function component is not a function declaration"
           },
           {
             "file": "site/examples/js/images.jsx",
-            "line": 80,
+            "line": 19,
+            "column": 23,
+            "message": "Function component is not a function declaration"
+          },
+          {
+            "file": "site/examples/js/mentions.jsx",
+            "line": 222,
             "column": 17,
             "message": "Function component is not a function declaration"
           },
           {
-            "file": "site/examples/js/paste-html.jsx",
-            "line": 73,
-            "column": 26,
-            "message": "Function component is not a function declaration"
-          },
-          {
             "file": "site/examples/js/tables.jsx",
-            "line": 89,
+            "line": 121,
             "column": 14,
             "message": "Function component is not a function declaration"
           },
           {
             "file": "site/examples/ts/embeds.tsx",
-            "line": 40,
-            "column": 17,
+            "line": 22,
+            "column": 23,
             "message": "Function component is not a function declaration"
           },
           {
@@ -1344,20 +1422,20 @@
           },
           {
             "file": "site/examples/ts/paste-html.tsx",
-            "line": 229,
+            "line": 290,
             "column": 22,
             "message": "Function component is not a function declaration"
           },
           {
-            "file": "site/pages/index.tsx",
-            "line": 4,
-            "column": 14,
+            "file": "site/pages/playwright/triple-click.tsx",
+            "line": 7,
+            "column": 23,
             "message": "Function component is not a function declaration"
           }
         ]
       },
       "arrow-function": {
-        "count": 7,
+        "count": 13,
         "samples": [
           {
             "file": "packages/slate-hyperscript/test/fixtures/components.tsx",
@@ -1372,32 +1450,50 @@
             "message": "Function component is not an arrow function"
           },
           {
-            "file": "site/components/ComponentLoader.tsx",
-            "line": 12,
-            "column": 8,
-            "message": "Function component is not an arrow function"
-          },
-          {
             "file": "site/components/ExampleLayout.tsx",
-            "line": 104,
+            "line": 102,
             "column": 8,
             "message": "Function component is not an arrow function"
           },
           {
             "file": "site/pages/_app.tsx",
-            "line": 14,
+            "line": 11,
             "column": 1,
             "message": "Function component is not an arrow function"
           },
           {
             "file": "site/pages/_app.tsx",
-            "line": 32,
+            "line": 29,
             "column": 16,
             "message": "Function component is not an arrow function"
           },
           {
-            "file": "site/pages/_document.tsx",
-            "line": 4,
+            "file": "site/pages/playwright/editable-islands.tsx",
+            "line": 18,
+            "column": 16,
+            "message": "Function component is not an arrow function"
+          },
+          {
+            "file": "site/pages/playwright/inline-boundaries.tsx",
+            "line": 16,
+            "column": 16,
+            "message": "Function component is not an arrow function"
+          },
+          {
+            "file": "site/pages/playwright/keyboard-focus.tsx",
+            "line": 5,
+            "column": 16,
+            "message": "Function component is not an arrow function"
+          },
+          {
+            "file": "site/pages/playwright/scroll-selection.tsx",
+            "line": 19,
+            "column": 16,
+            "message": "Function component is not an arrow function"
+          },
+          {
+            "file": "site/pages/playwright/triple-click.tsx",
+            "line": 25,
             "column": 16,
             "message": "Function component is not an arrow function"
           }
@@ -1410,7 +1506,7 @@
         "samples": []
       },
       "always": {
-        "count": 562,
+        "count": 641,
         "samples": [
           {
             "file": "packages/slate-history/test/undo/delete_backward/custom-prop.tsx",
@@ -1419,58 +1515,58 @@
             "message": "Value must be set for boolean attribute `a`"
           },
           {
-            "file": "packages/slate/test/interfaces/Editor/marks/markable-voids-mixed.tsx",
-            "line": 20,
-            "column": 18,
-            "message": "Value must be set for boolean attribute `italic`"
-          },
-          {
-            "file": "packages/slate/test/interfaces/Editor/nodes/no-match/inline-void.tsx",
-            "line": 19,
-            "column": 18,
-            "message": "Value must be set for boolean attribute `void`"
-          },
-          {
-            "file": "packages/slate/test/transforms/delete/voids-false/block-across-backward.tsx",
-            "line": 10,
-            "column": 12,
-            "message": "Value must be set for boolean attribute `void`"
-          },
-          {
-            "file": "packages/slate/test/transforms/insertText/selection/block-void.tsx",
-            "line": 10,
-            "column": 12,
-            "message": "Value must be set for boolean attribute `void`"
-          },
-          {
-            "file": "packages/slate/test/transforms/setNodes/marks/mark-across-range.tsx",
-            "line": 41,
+            "file": "packages/slate/test/interfaces/Editor/marks/text-collapsed.tsx",
+            "line": 9,
             "column": 13,
-            "message": "Value must be set for boolean attribute `underline`"
+            "message": "Value must be set for boolean attribute `bold`"
           },
           {
-            "file": "packages/slate/test/transforms/splitNodes/point/block-void.tsx",
+            "file": "packages/slate/test/interfaces/Editor/positions/voids-true/block-all-reverse.tsx",
+            "line": 7,
+            "column": 12,
+            "message": "Value must be set for boolean attribute `void`"
+          },
+          {
+            "file": "packages/slate/test/transforms/delete/voids-false/block-end.tsx",
             "line": 15,
             "column": 12,
             "message": "Value must be set for boolean attribute `void`"
           },
           {
-            "file": "packages/slate/test/transforms/unwrapNodes/split-block/block-all-nested.tsx",
-            "line": 37,
+            "file": "packages/slate/test/transforms/insertNodes/inline/inline-middle.tsx",
+            "line": 8,
+            "column": 13,
+            "message": "Value must be set for boolean attribute `void`"
+          },
+          {
+            "file": "packages/slate/test/transforms/setNodes/marks/mark-across-range.tsx",
+            "line": 20,
+            "column": 13,
+            "message": "Value must be set for boolean attribute `underline`"
+          },
+          {
+            "file": "packages/slate/test/transforms/splitNodes/point/inline-void.tsx",
+            "line": 12,
+            "column": 15,
+            "message": "Value must be set for boolean attribute `void`"
+          },
+          {
+            "file": "packages/slate/test/transforms/unwrapNodes/split-block/block-middle.tsx",
+            "line": 40,
             "column": 12,
             "message": "Value must be set for boolean attribute `a`"
           },
           {
             "file": "packages/slate/test/transforms/wrapNodes/split-block/block-mark.tsx",
-            "line": 35,
-            "column": 12,
-            "message": "Value must be set for boolean attribute `old`"
+            "line": 12,
+            "column": 13,
+            "message": "Value must be set for boolean attribute `bold`"
           },
           {
-            "file": "site/examples/ts/styling.tsx",
-            "line": 41,
-            "column": 37,
-            "message": "Value must be set for boolean attribute `disableDefaultStyles`"
+            "file": "site/pages/playwright/triple-click.tsx",
+            "line": 39,
+            "column": 22,
+            "message": "Value must be set for boolean attribute `isolated`"
           }
         ]
       }
@@ -1481,44 +1577,44 @@
         "samples": [
           {
             "file": "packages/slate-react/src/components/editable.tsx",
-            "line": 86,
+            "line": 112,
             "column": 3,
             "message": "Prefer fragment shorthand over React.Fragment"
           },
           {
             "file": "packages/slate-react/src/components/leaf.tsx",
-            "line": 144,
+            "line": 147,
             "column": 7,
             "message": "Prefer fragment shorthand over React.Fragment"
           },
           {
             "file": "site/examples/js/mentions.jsx",
-            "line": 228,
+            "line": 254,
             "column": 11,
             "message": "Prefer fragment shorthand over React.Fragment"
           },
           {
             "file": "site/examples/js/mentions.jsx",
-            "line": 233,
+            "line": 259,
             "column": 11,
             "message": "Prefer fragment shorthand over React.Fragment"
           },
           {
             "file": "site/examples/ts/mentions.tsx",
-            "line": 275,
+            "line": 294,
             "column": 11,
             "message": "Prefer fragment shorthand over React.Fragment"
           },
           {
             "file": "site/examples/ts/mentions.tsx",
-            "line": 280,
+            "line": 299,
             "column": 11,
             "message": "Prefer fragment shorthand over React.Fragment"
           }
         ]
       },
       "element": {
-        "count": 9,
+        "count": 14,
         "samples": [
           {
             "file": "packages/slate-react/src/components/restore-dom/restore-dom.tsx",
@@ -1527,9 +1623,9 @@
             "message": "Prefer React.Fragment over fragment shorthand"
           },
           {
-            "file": "packages/slate-react/test/use-slate.spec.tsx",
-            "line": 11,
-            "column": 12,
+            "file": "packages/slate-react/test/shared-initial-value.spec.tsx",
+            "line": 13,
+            "column": 5,
             "message": "Prefer React.Fragment over fragment shorthand"
           },
           {
@@ -1539,14 +1635,14 @@
             "message": "Prefer React.Fragment over fragment shorthand"
           },
           {
-            "file": "site/examples/js/huge-document.jsx",
-            "line": 153,
+            "file": "site/examples/js/collaboration.jsx",
+            "line": 57,
             "column": 5,
             "message": "Prefer React.Fragment over fragment shorthand"
           },
           {
             "file": "site/examples/js/huge-document.jsx",
-            "line": 316,
+            "line": 317,
             "column": 11,
             "message": "Prefer React.Fragment over fragment shorthand"
           },
@@ -1558,19 +1654,25 @@
           },
           {
             "file": "site/examples/ts/huge-document.tsx",
-            "line": 211,
+            "line": 212,
             "column": 5,
             "message": "Prefer React.Fragment over fragment shorthand"
           },
           {
             "file": "site/examples/ts/huge-document.tsx",
-            "line": 409,
+            "line": 410,
             "column": 11,
             "message": "Prefer React.Fragment over fragment shorthand"
           },
           {
-            "file": "site/pages/examples/[example].tsx",
-            "line": 32,
+            "file": "site/pages/playwright/keyboard-focus.tsx",
+            "line": 8,
+            "column": 5,
+            "message": "Prefer React.Fragment over fragment shorthand"
+          },
+          {
+            "file": "site/pages/playwright/scroll-selection.tsx",
+            "line": 25,
             "column": 5,
             "message": "Prefer React.Fragment over fragment shorthand"
           }
@@ -1579,73 +1681,134 @@
     },
     "semi": {
       "always": {
-        "count": 14971,
+        "count": 22467,
         "samples": [
           {
-            "file": "babel.config.js",
-            "line": 9,
-            "column": 2,
+            "file": ".yarn/sdks/typescript/lib/tsserver.js",
+            "line": 163,
+            "column": 112,
             "message": "Missing semicolon."
           },
           {
-            "file": "packages/slate-react/src/components/editable.tsx",
-            "line": 523,
+            "file": "packages/slate-react/src/components/element.tsx",
+            "line": 37,
+            "column": 45,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "packages/slate-react/test/move-range.spec.ts",
+            "line": 197,
+            "column": 6,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "packages/slate/src/transforms-node/merge-nodes.ts",
+            "line": 79,
+            "column": 33,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "packages/slate/test/interfaces/Editor/refs.spec.ts",
+            "line": 62,
+            "column": 46,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "packages/slate/test/properties/core.spec.ts",
+            "line": 282,
+            "column": 49,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "packages/slate/test/transforms/normalization/set_node.tsx",
+            "line": 15,
+            "column": 46,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "playwright/integration/examples/android-placeholder-composition.test.ts",
+            "line": 11,
+            "column": 6,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "site/examples/js/embeds.jsx",
+            "line": 51,
             "column": 12,
             "message": "Missing semicolon."
           },
           {
-            "file": "packages/slate-react/test/decorations.spec.tsx",
-            "line": 408,
-            "column": 11,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "packages/slate/src/interfaces/text.ts",
-            "line": 15,
-            "column": 50,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "packages/slate/test/interfaces/Editor/marks/markable-voids-mixed.tsx",
-            "line": 27,
+            "file": "support/types.ts",
+            "line": 46,
             "column": 2,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "packages/slate/test/interfaces/Path/isAncestor/after.tsx",
-            "line": 8,
-            "column": 40,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "packages/slate/test/transforms/delete/voids-false/block-before.tsx",
-            "line": 2,
-            "column": 35,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "packages/slate/test/transforms/splitNodes/voids-true/block.tsx",
-            "line": 15,
-            "column": 2,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "site/examples/js/mentions.jsx",
-            "line": 94,
-            "column": 38,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "support/fixtures.js",
-            "line": 57,
-            "column": 36,
             "message": "Missing semicolon."
           }
         ]
       },
       "never": {
-        "count": 0,
-        "samples": []
+        "count": 252,
+        "samples": [
+          {
+            "file": ".yarn/sdks/eslint/bin/eslint.js",
+            "line": 3,
+            "column": 35,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": ".yarn/sdks/eslint/lib/unsupported-api.js",
+            "line": 3,
+            "column": 35,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": ".yarn/sdks/prettier/index.cjs",
+            "line": 3,
+            "column": 35,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": ".yarn/sdks/typescript/lib/tsserver.js",
+            "line": 3,
+            "column": 35,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": ".yarn/sdks/typescript/lib/tsserver.js",
+            "line": 100,
+            "column": 32,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": ".yarn/sdks/typescript/lib/tsserver.js",
+            "line": 180,
+            "column": 4,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": ".yarn/sdks/typescript/lib/tsserverlibrary.js",
+            "line": 11,
+            "column": 64,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": ".yarn/sdks/typescript/lib/tsserverlibrary.js",
+            "line": 112,
+            "column": 33,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": ".yarn/sdks/typescript/lib/tsserverlibrary.js",
+            "line": 192,
+            "column": 58,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": ".yarn/sdks/typescript/lib/typescript.js",
+            "line": 32,
+            "column": 63,
+            "message": "Extra semicolon."
+          }
+        ]
       }
     }
   }

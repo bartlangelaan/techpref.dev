@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "96d58f23c7cc",
-  "analyzedCommit": "9f6408aef75b682ca46ff99d59681ea2418af497",
-  "analyzedCommitDate": "2026-09-27T14:42:15.000Z",
+  "analyzedCommit": "b00fa0321a42947bb4113bc7906021f04131d0db",
+  "analyzedCommitDate": "2026-10-12T17:01:39.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -28,11 +28,11 @@
         ]
       },
       "generic": {
-        "count": 318,
+        "count": 320,
         "samples": [
           {
             "file": "libs/child-process/src/index.ts",
-            "line": 31,
+            "line": 43,
             "column": 45,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
@@ -43,10 +43,10 @@
             "message": "Array type using 'Package[]' is forbidden. Use 'Array<Package>' instead."
           },
           {
-            "file": "libs/commands/publish/src/lib/verify-npm-package-access.ts",
-            "line": 10,
-            "column": 13,
-            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
+            "file": "libs/commands/run/src/index.ts",
+            "line": 45,
+            "column": 10,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
             "file": "libs/core/src/lib/add-dependents.ts",
@@ -58,7 +58,7 @@
             "file": "libs/core/src/lib/cycles/get-cycles.ts",
             "line": 7,
             "column": 17,
-            "message": "Array type using 'string[][]' is forbidden. Use 'Array<string[]>' instead."
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
             "file": "libs/core/src/lib/listable-format-projects.ts",
@@ -68,15 +68,15 @@
           },
           {
             "file": "libs/core/src/lib/npmlog/index.ts",
-            "line": 54,
-            "column": 45,
+            "line": 215,
+            "column": 52,
             "message": "Array type using 'any[]' is forbidden. Use 'Array<any>' instead."
           },
           {
             "file": "libs/core/src/lib/run-projects-topologically.spec.ts",
-            "line": 79,
-            "column": 25,
-            "message": "Array type using 'ProjectGraphWorkspacePackageDependency[]' is forbidden. Use 'Array<ProjectGraphWorkspacePackageDependency>' instead."
+            "line": 11,
+            "column": 21,
+            "message": "Array type using 'ProjectGraphProjectNodeWithPackage[]' is forbidden. Use 'Array<ProjectGraphProjectNodeWithPackage>' instead."
           },
           {
             "file": "libs/core/src/lib/toposort-projects.spec.ts",
@@ -122,13 +122,13 @@
         "samples": [
           {
             "file": "libs/child-process/src/index.ts",
-            "line": 15,
+            "line": 27,
             "column": 25,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
             "file": "libs/commands/version/src/index.ts",
-            "line": 664,
+            "line": 665,
             "column": 33,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
@@ -250,7 +250,7 @@
         ]
       },
       "index-signature": {
-        "count": 69,
+        "count": 70,
         "samples": [
           {
             "file": "e2e/publish/src/publish-npm-workspace-prefix.spec.ts",
@@ -260,7 +260,7 @@
           },
           {
             "file": "libs/commands/init/src/index.ts",
-            "line": 281,
+            "line": 280,
             "column": 30,
             "message": "An index signature is preferred over a record."
           },
@@ -284,8 +284,8 @@
           },
           {
             "file": "libs/core/src/lib/package.ts",
-            "line": 67,
-            "column": 19,
+            "line": 66,
+            "column": 22,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -302,7 +302,7 @@
           },
           {
             "file": "libs/e2e-utils/src/lib/fixture.ts",
-            "line": 466,
+            "line": 471,
             "column": 51,
             "message": "An index signature is preferred over a record."
           },
@@ -362,7 +362,7 @@
           },
           {
             "file": "libs/commands/version/src/index.ts",
-            "line": 59,
+            "line": 60,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
@@ -413,28 +413,28 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 154,
+        "count": 150,
         "samples": [
           {
-            "file": "libs/child-process/src/index.ts",
-            "line": 44,
-            "column": 66,
-            "message": "`import()` type annotations are forbidden."
-          },
-          {
-            "file": "libs/commands/init/src/index.ts",
-            "line": 21,
+            "file": "libs/commands/changed/src/index.ts",
+            "line": 1,
             "column": 1,
-            "message": "Imports Tree are only used as type."
+            "message": "Imports Arguments and CommandConfigOptions are only used as type."
           },
           {
-            "file": "libs/commands/publish/src/lib/get-projects-with-unpublished-packages.ts",
-            "line": 5,
+            "file": "libs/commands/list/src/index.ts",
+            "line": 1,
             "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
+            "message": "Imports Arguments and CommandConfigOptions are only used as type."
           },
           {
-            "file": "libs/commands/version/src/lib/git-tag.ts",
+            "file": "libs/commands/publish/src/lib/get-two-factor-auth-required.spec.ts",
+            "line": 6,
+            "column": 1,
+            "message": "Imports ProfileData are only used as type."
+          },
+          {
+            "file": "libs/commands/version/src/lib/is-anything-committed.ts",
             "line": 2,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
@@ -446,20 +446,20 @@
             "message": "Imports ProjectGraphProjectNodeWithPackage are only used as type."
           },
           {
-            "file": "libs/core/src/lib/conventional-commits/make-bump-only-filter.ts",
-            "line": 1,
+            "file": "libs/core/src/lib/conventional-commits/read-existing-changelog.ts",
+            "line": 3,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
-            "file": "libs/core/src/lib/git-checkout.ts",
-            "line": 1,
+            "file": "libs/core/src/lib/listable-format-projects.spec.ts",
+            "line": 9,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
             "file": "libs/core/src/lib/project-graph-with-packages.ts",
-            "line": 1,
+            "line": 2,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
@@ -478,22 +478,22 @@
         ]
       },
       "no-type-imports": {
-        "count": 49,
+        "count": 63,
         "samples": [
           {
             "file": "libs/child-process/src/index.ts",
-            "line": 44,
-            "column": 66,
-            "message": "`import()` type annotations are forbidden."
+            "line": 6,
+            "column": 3,
+            "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "libs/commands/diff/src/lib/diff-command.spec.ts",
-            "line": 23,
-            "column": 36,
-            "message": "`import()` type annotations are forbidden."
+            "file": "libs/commands/create/src/command.ts",
+            "line": 1,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "libs/commands/init/src/lib/init-command.spec.ts",
+            "file": "libs/commands/info/src/command.ts",
             "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
@@ -505,34 +505,34 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "libs/core/src/lib/collect-uncommitted.ts",
-            "line": 1,
-            "column": 20,
+            "file": "libs/core/src/lib/cli.ts",
+            "line": 11,
+            "column": 17,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "libs/core/src/lib/npm-install.spec.ts",
-            "line": 1,
+            "file": "libs/core/src/lib/command/index.ts",
+            "line": 7,
+            "column": 17,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "libs/core/src/lib/npm-publish.ts",
+            "line": 7,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "libs/core/src/lib/npmlog/gauge/tests/has-unicode.spec.ts",
-            "line": 1,
-            "column": 1,
+            "file": "libs/e2e-utils/src/lib/fixture.ts",
+            "line": 3,
+            "column": 41,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "libs/test-helpers/src/lib/serializers/serialize-changelog.ts",
-            "line": 1,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "packages/lerna/src/commands/add-caching/command.ts",
-            "line": 1,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
+            "file": "packages/lerna/src/cli.ts",
+            "line": 11,
+            "column": 22,
+            "message": "`import()` type annotations are forbidden."
           },
           {
             "file": "website/src/components/hero-upgrade.tsx",
@@ -545,7 +545,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 376,
+        "count": 380,
         "samples": [
           {
             "file": "integration/__tests__/lerna-exec.spec.ts",
@@ -560,20 +560,20 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "libs/commands/version/src/lib/prompt-version.ts",
-            "line": 21,
-            "column": 1,
+            "file": "libs/commands/version/src/lib/remote-branch-exists.ts",
+            "line": 6,
+            "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "libs/core/src/lib/conventional-commits/get-changelog-config.ts",
-            "line": 12,
+            "line": 19,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "libs/core/src/lib/listable-format-projects.ts",
-            "line": 43,
+            "file": "libs/core/src/lib/has-npm-version.ts",
+            "line": 13,
             "column": 1,
             "message": "Expected a function expression."
           },
@@ -591,8 +591,8 @@
           },
           {
             "file": "libs/core/src/lib/scm-clients/gitlab/create-gitlab-client.ts",
-            "line": 8,
-            "column": 8,
+            "line": 4,
+            "column": 1,
             "message": "Expected a function expression."
           },
           {
@@ -610,7 +610,7 @@
         ]
       },
       "declaration": {
-        "count": 155,
+        "count": 158,
         "samples": [
           {
             "file": "e2e/publish/src/custom-publish-directories.spec.ts",
@@ -626,31 +626,31 @@
           },
           {
             "file": "e2e/publish/src/publish-private-packages.spec.ts",
-            "line": 198,
+            "line": 205,
             "column": 15,
             "message": "Expected a function declaration."
           },
           {
-            "file": "libs/commands/clean/src/index.ts",
-            "line": 50,
-            "column": 11,
+            "file": "libs/commands/clean/src/lib/clean-command.spec.ts",
+            "line": 23,
+            "column": 7,
             "message": "Expected a function declaration."
           },
           {
             "file": "libs/commands/publish/src/index.ts",
-            "line": 1048,
+            "line": 1169,
             "column": 11,
             "message": "Expected a function declaration."
           },
           {
             "file": "libs/commands/version/src/lib/version-command.spec.ts",
-            "line": 255,
+            "line": 346,
             "column": 11,
             "message": "Expected a function declaration."
           },
           {
-            "file": "libs/core/src/lib/collect-updates/make-diff-predicate.spec.ts",
-            "line": 103,
+            "file": "libs/core/src/lib/command/create-project-graph-with-packages.spec.ts",
+            "line": 416,
             "column": 7,
             "message": "Expected a function declaration."
           },
@@ -677,72 +677,72 @@
     },
     "import-export-preference": {
       "named": {
-        "count": 133,
+        "count": 99,
         "samples": [
           {
-            "file": "e2e/changed/eslint.config.mjs",
-            "line": 3,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "e2e/list/vitest.config.ts",
+            "file": "e2e/changed/vitest.config.ts",
             "line": 4,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "integration/eslint.config.mjs",
+            "file": "e2e/run/task-runner/vitest.config.ts",
+            "line": 4,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "libs/commands/create/src/index.ts",
+            "line": 575,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "libs/commands/init/vitest.config.ts",
+            "line": 4,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "libs/core/src/lib/byte-size.ts",
+            "line": 133,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "libs/nx-plugin/vitest.config.ts",
+            "line": 4,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "packages/lerna/src/commands/exec/command.ts",
             "line": 3,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "libs/commands/diff/eslint.config.mjs",
-            "line": 3,
+            "file": "packages/lerna/src/commands/version/index.ts",
+            "line": 4,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "libs/commands/list/eslint.config.mjs",
-            "line": 3,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "libs/core/eslint.config.mjs",
-            "line": 3,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "libs/test-helpers/eslint.config.mjs",
-            "line": 3,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "packages/lerna/src/commands/list/command.ts",
-            "line": 3,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "packages/lerna/src/migrations/remove-invalid-use-workspaces/remove-invalid-use-workspaces.ts",
-            "line": 3,
+            "file": "website/src/components/about-lerna.tsx",
+            "line": 111,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
             "file": "website/src/pages/upgrade.tsx",
-            "line": 9,
+            "line": 8,
             "column": 8,
             "message": "Prefer named exports"
           }
         ]
       },
       "default": {
-        "count": 106,
+        "count": 105,
         "samples": [
           {
             "file": "libs/child-process/src/set-exit-code.ts",
@@ -769,14 +769,14 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "libs/core/src/lib/cycles/get-cycles.ts",
-            "line": 6,
+            "file": "libs/core/src/lib/corepack/is-corepack-enabled.ts",
+            "line": 1,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "libs/core/src/lib/glob-utils/is-glob.ts",
-            "line": 11,
+            "file": "libs/core/src/lib/has-npm-version.ts",
+            "line": 5,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -874,130 +874,130 @@
         ]
       },
       "4-space": {
-        "count": 555,
+        "count": 522,
         "samples": [
           {
-            "file": "e2e/changed/eslint.config.mjs",
+            "file": "e2e/changed/src/changed.spec.ts",
             "line": 4,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "e2e/run/task-runner/src/env-files/init.ts",
+            "file": "e2e/run/task-runner/src/include-dependencies-without-target-defaults/init.ts",
+            "line": 4,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "integration/__tests__/lerna-publish-transitive.spec.ts",
+            "line": 2,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "libs/commands/publish/src/lib/create-temp-licenses.ts",
+            "line": 10,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "libs/commands/version/src/lib/prompt-version.ts",
             "line": 5,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "integration/__tests__/lerna-publish-error.spec.ts",
-            "line": 7,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "libs/commands/init/src/command.ts",
-            "line": 7,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "libs/commands/version/src/lib/get-current-branch.ts",
-            "line": 10,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "libs/core/src/lib/command/detect-projects.ts",
-            "line": 6,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "libs/core/src/lib/log-packed.ts",
-            "line": 10,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "libs/core/src/lib/otplease.ts",
-            "line": 4,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "libs/test-helpers/__mocks__/@lerna/core/run-lifecycle.ts",
+            "file": "libs/core/src/lib/conventional-commits/__fixtures__/fixed/scripts/local-preset.js",
             "line": 9,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
+            "file": "libs/core/src/lib/npm-conf/config-chain/tests/find-file.spec.ts",
+            "line": 8,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "libs/core/src/lib/package.spec.ts",
+            "line": 12,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "libs/test-helpers/src/index.ts",
+            "line": 21,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
             "file": "website/src/pages/upgrade.tsx",
-            "line": 10,
+            "line": 9,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           }
         ]
       },
       "tab": {
-        "count": 555,
+        "count": 522,
         "samples": [
           {
-            "file": "e2e/changed/eslint.config.mjs",
+            "file": "e2e/changed/src/changed.spec.ts",
             "line": 4,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "e2e/run/task-runner/src/env-files/init.ts",
+            "file": "e2e/run/task-runner/src/include-dependencies-without-target-defaults/init.ts",
+            "line": 4,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "integration/__tests__/lerna-publish-transitive.spec.ts",
+            "line": 2,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "libs/commands/publish/src/lib/create-temp-licenses.ts",
+            "line": 10,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "libs/commands/version/src/lib/prompt-version.ts",
             "line": 5,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "integration/__tests__/lerna-publish-error.spec.ts",
-            "line": 7,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "libs/commands/init/src/command.ts",
-            "line": 7,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "libs/commands/version/src/lib/get-current-branch.ts",
-            "line": 10,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "libs/core/src/lib/command/detect-projects.ts",
-            "line": 6,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "libs/core/src/lib/log-packed.ts",
-            "line": 10,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "libs/core/src/lib/otplease.ts",
-            "line": 4,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "libs/test-helpers/__mocks__/@lerna/core/run-lifecycle.ts",
+            "file": "libs/core/src/lib/conventional-commits/__fixtures__/fixed/scripts/local-preset.js",
             "line": 9,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
+            "file": "libs/core/src/lib/npm-conf/config-chain/tests/find-file.spec.ts",
+            "line": 8,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "libs/core/src/lib/package.spec.ts",
+            "line": 12,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "libs/test-helpers/src/index.ts",
+            "line": 21,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
             "file": "website/src/pages/upgrade.tsx",
-            "line": 10,
+            "line": 9,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           }
@@ -1058,20 +1058,20 @@
           },
           {
             "file": "libs/core/src/lib/project/index.ts",
-            "line": 364,
+            "line": 360,
             "column": 9,
             "message": "Strings must use doublequote."
           },
           {
             "file": "website/src/components/hero-lerna.tsx",
-            "line": 69,
+            "line": 71,
             "column": 43,
             "message": "Strings must use doublequote."
           }
         ]
       },
       "single": {
-        "count": 19344,
+        "count": 19093,
         "samples": [
           {
             "file": "__fixtures__/pack-directory/packages/a/prepare.js",
@@ -1081,55 +1081,55 @@
           },
           {
             "file": "e2e/version/src/conventional-commits.spec.ts",
-            "line": 377,
-            "column": 8,
+            "line": 824,
+            "column": 48,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "libs/commands/create/src/index.ts",
-            "line": 403,
-            "column": 36,
+            "file": "libs/commands/diff/src/lib/diff-command.spec.ts",
+            "line": 115,
+            "column": 26,
             "message": "Strings must use singlequote."
           },
           {
             "file": "libs/commands/publish/src/lib/publish-command.spec.ts",
-            "line": 114,
-            "column": 20,
+            "line": 551,
+            "column": 37,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "libs/commands/version/src/lib/update-lockfile-version.spec.ts",
-            "line": 61,
-            "column": 77,
+            "file": "libs/commands/version/src/lib/version-build-metadata.spec.ts",
+            "line": 161,
+            "column": 6,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "libs/core/src/lib/byte-size.spec.ts",
-            "line": 233,
-            "column": 8,
+            "file": "libs/core/src/lib/byte-size.ts",
+            "line": 45,
+            "column": 47,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "libs/core/src/lib/describe-ref.ts",
-            "line": 113,
-            "column": 64,
+            "file": "libs/core/src/lib/get-npm-exec-opts.ts",
+            "line": 42,
+            "column": 13,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "libs/core/src/lib/npmlog/gauge/tests/plumbing.spec.ts",
-            "line": 10,
-            "column": 63,
+            "file": "libs/core/src/lib/npmlog/gauge/tests/progress-bar.spec.ts",
+            "line": 29,
+            "column": 25,
             "message": "Strings must use singlequote."
           },
           {
             "file": "libs/core/src/lib/run-projects-topologically.spec.ts",
-            "line": 745,
+            "line": 716,
             "column": 15,
             "message": "Strings must use singlequote."
           },
           {
             "file": "website/src/pages/upgrade.tsx",
-            "line": 7,
+            "line": 6,
             "column": 18,
             "message": "Strings must use singlequote."
           }
@@ -1282,7 +1282,7 @@
           },
           {
             "file": "website/src/pages/upgrade.tsx",
-            "line": 9,
+            "line": 8,
             "column": 16,
             "message": "Function component is not an arrow function"
           }
@@ -1334,7 +1334,7 @@
         "samples": []
       },
       "never": {
-        "count": 18633,
+        "count": 18645,
         "samples": [
           {
             "file": "__fixtures__/pack-directory/packages/a/prepare.js",
@@ -1343,56 +1343,56 @@
             "message": "Extra semicolon."
           },
           {
-            "file": "e2e/run/task-runner/src/with-nx-config/assertions.spec.ts",
-            "line": 18,
-            "column": 75,
+            "file": "e2e/run/task-runner/src/with-nx-config/init.ts",
+            "line": 44,
+            "column": 5,
             "message": "Extra semicolon."
           },
           {
             "file": "libs/commands/changed/src/lib/changed-command.spec.ts",
-            "line": 67,
+            "line": 188,
             "column": 3,
             "message": "Extra semicolon."
           },
           {
             "file": "libs/commands/publish/src/index.ts",
-            "line": 1080,
-            "column": 27,
+            "line": 1248,
+            "column": 54,
             "message": "Extra semicolon."
           },
           {
-            "file": "libs/commands/version/src/lib/git-add.spec.ts",
-            "line": 46,
-            "column": 84,
+            "file": "libs/commands/version/src/lib/git-commit.spec.ts",
+            "line": 16,
+            "column": 53,
             "message": "Extra semicolon."
           },
           {
             "file": "libs/core/src/lib/byte-size.spec.ts",
-            "line": 182,
-            "column": 36,
+            "line": 262,
+            "column": 42,
             "message": "Extra semicolon."
           },
           {
             "file": "libs/core/src/lib/describe-ref.spec.ts",
-            "line": 58,
-            "column": 67,
+            "line": 227,
+            "column": 3,
             "message": "Extra semicolon."
           },
           {
             "file": "libs/core/src/lib/npmlog/gauge/tests/console-control-strings.spec.ts",
-            "line": 20,
-            "column": 9,
+            "line": 67,
+            "column": 5,
             "message": "Extra semicolon."
           },
           {
             "file": "libs/core/src/lib/project/index.spec.ts",
-            "line": 443,
-            "column": 8,
+            "line": 468,
+            "column": 82,
             "message": "Extra semicolon."
           },
           {
             "file": "website/src/pages/upgrade.tsx",
-            "line": 22,
+            "line": 20,
             "column": 4,
             "message": "Extra semicolon."
           }

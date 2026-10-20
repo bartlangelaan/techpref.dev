@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "96d58f23c7cc",
-  "analyzedCommit": "9b118a1a737662fa118d591b5687340b86005d5c",
-  "analyzedCommitDate": "2026-06-10T00:14:06.000Z",
+  "analyzedCommit": "b1a5903c5b633b8c9f843ad7b629c2a78437040c",
+  "analyzedCommitDate": "2026-10-19T21:35:05.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -9,12 +9,24 @@
         "samples": []
       },
       "generic": {
-        "count": 1,
+        "count": 3,
         "samples": [
           {
             "file": "tests/integration.spec.ts",
-            "line": 27,
-            "column": 32,
+            "line": 34,
+            "column": 13,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+          },
+          {
+            "file": "tests/integration.spec.ts",
+            "line": 74,
+            "column": 29,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+          },
+          {
+            "file": "tests/integration.spec.ts",
+            "line": 169,
+            "column": 16,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           }
         ]
@@ -36,17 +48,36 @@
         "samples": []
       },
       "index-signature": {
-        "count": 0,
-        "samples": []
+        "count": 2,
+        "samples": [
+          {
+            "file": "tests/integration.spec.ts",
+            "line": 62,
+            "column": 52,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "tests/integration.spec.ts",
+            "line": 74,
+            "column": 44,
+            "message": "An index signature is preferred over a record."
+          }
+        ]
       }
     },
     "consistent-type-definitions": {
       "interface": {
-        "count": 1,
+        "count": 2,
         "samples": [
           {
             "file": "tests/integration.spec.ts",
-            "line": 21,
+            "line": 24,
+            "column": 1,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "tests/integration.spec.ts",
+            "line": 30,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           }
@@ -63,14 +94,45 @@
         "samples": []
       },
       "no-type-imports": {
-        "count": 0,
-        "samples": []
+        "count": 1,
+        "samples": [
+          {
+            "file": "tests/integration.spec.ts",
+            "line": 22,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          }
+        ]
       }
     },
     "func-style": {
       "expression": {
-        "count": 3,
+        "count": 16,
         "samples": [
+          {
+            "file": "playwright-cli.js",
+            "line": 36,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "playwright-cli.js",
+            "line": 66,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "playwright-cli.js",
+            "line": 103,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "playwright-cli.js",
+            "line": 116,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
           {
             "file": "scripts/update.js",
             "line": 8,
@@ -84,16 +146,41 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "tests/integration.spec.ts",
+            "file": "skillCheck.js",
             "line": 27,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "skillCheck.js",
+            "line": 48,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "skillCheck.js",
+            "line": 56,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "tests/integration.spec.ts",
+            "line": 74,
             "column": 1,
             "message": "Expected a function expression."
           }
         ]
       },
       "declaration": {
-        "count": 0,
-        "samples": []
+        "count": 1,
+        "samples": [
+          {
+            "file": "tests/integration.spec.ts",
+            "line": 170,
+            "column": 9,
+            "message": "Expected a function declaration."
+          }
+        ]
       }
     },
     "import-export-preference": {
@@ -119,8 +206,14 @@
         "samples": []
       },
       "4-space": {
-        "count": 3,
+        "count": 5,
         "samples": [
+          {
+            "file": "playwright-cli.js",
+            "line": 37,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
           {
             "file": "playwright.config.ts",
             "line": 20,
@@ -134,16 +227,28 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
+            "file": "skillCheck.js",
+            "line": 23,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
             "file": "tests/integration.spec.ts",
-            "line": 22,
+            "line": 25,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           }
         ]
       },
       "tab": {
-        "count": 3,
+        "count": 5,
         "samples": [
+          {
+            "file": "playwright-cli.js",
+            "line": 37,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
           {
             "file": "playwright.config.ts",
             "line": 20,
@@ -157,8 +262,14 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
+            "file": "skillCheck.js",
+            "line": 23,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
             "file": "tests/integration.spec.ts",
-            "line": 22,
+            "line": 25,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           }
@@ -167,30 +278,18 @@
     },
     "quotes": {
       "double": {
-        "count": 39,
+        "count": 190,
         "samples": [
           {
             "file": "playwright-cli.js",
-            "line": 18,
-            "column": 29,
+            "line": 20,
+            "column": 20,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "playwright.config.ts",
-            "line": 24,
-            "column": 13,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "scripts/update.js",
-            "line": 5,
-            "column": 41,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "scripts/update.js",
-            "line": 19,
-            "column": 15,
+            "file": "playwright-cli.js",
+            "line": 90,
+            "column": 50,
             "message": "Strings must use doublequote."
           },
           {
@@ -200,40 +299,71 @@
             "message": "Strings must use doublequote."
           },
           {
-            "file": "scripts/update.js",
-            "line": 40,
-            "column": 17,
+            "file": "skillCheck.js",
+            "line": 41,
+            "column": 54,
             "message": "Strings must use doublequote."
           },
           {
             "file": "tests/integration.spec.ts",
-            "line": 28,
-            "column": 40,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "tests/integration.spec.ts",
-            "line": 50,
+            "line": 45,
             "column": 21,
             "message": "Strings must use doublequote."
           },
           {
             "file": "tests/integration.spec.ts",
-            "line": 63,
-            "column": 31,
+            "line": 69,
+            "column": 55,
             "message": "Strings must use doublequote."
           },
           {
             "file": "tests/integration.spec.ts",
-            "line": 69,
-            "column": 37,
+            "line": 127,
+            "column": 57,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "tests/integration.spec.ts",
+            "line": 153,
+            "column": 6,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "tests/integration.spec.ts",
+            "line": 205,
+            "column": 78,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "tests/integration.spec.ts",
+            "line": 239,
+            "column": 12,
             "message": "Strings must use doublequote."
           }
         ]
       },
       "single": {
-        "count": 0,
-        "samples": []
+        "count": 3,
+        "samples": [
+          {
+            "file": "skillCheck.js",
+            "line": 68,
+            "column": 11,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "skillCheck.js",
+            "line": 69,
+            "column": 11,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "skillCheck.js",
+            "line": 71,
+            "column": 11,
+            "message": "Strings must use singlequote."
+          }
+        ]
       }
     },
     "react-destructuring-assignment": {
@@ -290,66 +420,66 @@
         "samples": []
       },
       "never": {
-        "count": 47,
+        "count": 184,
         "samples": [
           {
             "file": "playwright-cli.js",
-            "line": 18,
-            "column": 76,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "scripts/update.js",
-            "line": 1,
-            "column": 46,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "scripts/update.js",
-            "line": 9,
-            "column": 37,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "scripts/update.js",
             "line": 20,
-            "column": 87,
+            "column": 25,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "playwright-cli.js",
+            "line": 57,
+            "column": 27,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "playwright-cli.js",
+            "line": 112,
+            "column": 102,
             "message": "Extra semicolon."
           },
           {
             "file": "scripts/update.js",
-            "line": 28,
-            "column": 82,
+            "line": 19,
+            "column": 52,
             "message": "Extra semicolon."
           },
           {
-            "file": "scripts/update.js",
-            "line": 40,
-            "column": 31,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "tests/integration.spec.ts",
-            "line": 25,
-            "column": 2,
+            "file": "skillCheck.js",
+            "line": 41,
+            "column": 91,
             "message": "Extra semicolon."
           },
           {
             "file": "tests/integration.spec.ts",
-            "line": 40,
+            "line": 39,
+            "column": 86,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "tests/integration.spec.ts",
+            "line": 96,
             "column": 7,
             "message": "Extra semicolon."
           },
           {
             "file": "tests/integration.spec.ts",
-            "line": 56,
-            "column": 7,
+            "line": 183,
+            "column": 3,
             "message": "Extra semicolon."
           },
           {
             "file": "tests/integration.spec.ts",
-            "line": 71,
-            "column": 6,
+            "line": 205,
+            "column": 107,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "tests/integration.spec.ts",
+            "line": 242,
+            "column": 49,
             "message": "Extra semicolon."
           }
         ]

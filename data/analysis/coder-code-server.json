@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "96d58f23c7cc",
-  "analyzedCommit": "78aad47ce67e454a7eb3fc569e3b4284262882e2",
-  "analyzedCommitDate": "2026-10-08T10:35:52.000Z",
+  "analyzedCommit": "68810a6bd6f34356dc579214bc75a30b699500c4",
+  "analyzedCommitDate": "2026-10-29T21:35:10.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -44,7 +44,7 @@
           },
           {
             "file": "src/node/cli.ts",
-            "line": 738,
+            "line": 742,
             "column": 67,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
@@ -93,7 +93,7 @@
         "samples": []
       },
       "type-annotation": {
-        "count": 21,
+        "count": 23,
         "samples": [
           {
             "file": "src/common/emitter.ts",
@@ -103,31 +103,31 @@
           },
           {
             "file": "src/node/http.ts",
-            "line": 252,
+            "line": 261,
             "column": 26,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
-            "file": "src/node/socket.ts",
-            "line": 15,
-            "column": 48,
-            "message": "The generic type arguments should be specified as part of the type annotation."
-          },
-          {
-            "file": "src/node/wrapper.ts",
-            "line": 99,
-            "column": 46,
-            "message": "The generic type arguments should be specified as part of the type annotation."
-          },
-          {
-            "file": "test/e2e/codeServer.test.ts",
-            "line": 10,
+            "file": "src/node/vscodeSocket.ts",
+            "line": 87,
             "column": 28,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
+            "file": "src/node/wrapper.ts",
+            "line": 102,
+            "column": 46,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "test/integration/socketFd.test.ts",
+            "line": 49,
+            "column": 31,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
             "file": "test/unit/common/emitter.test.ts",
-            "line": 66,
+            "line": 20,
             "column": 32,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
@@ -139,8 +139,8 @@
           },
           {
             "file": "test/unit/node/socket.test.ts",
-            "line": 16,
-            "column": 35,
+            "line": 15,
+            "column": 36,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
@@ -151,7 +151,7 @@
           },
           {
             "file": "test/unit/node/util.test.ts",
-            "line": 397,
+            "line": 398,
             "column": 33,
             "message": "The generic type arguments should be specified as part of the type annotation."
           }
@@ -160,8 +160,14 @@
     },
     "consistent-indexed-object-style": {
       "record": {
-        "count": 3,
+        "count": 4,
         "samples": [
+          {
+            "file": "src/node/http.ts",
+            "line": 421,
+            "column": 23,
+            "message": "A record is preferred over an index signature."
+          },
           {
             "file": "src/node/util.ts",
             "line": 304,
@@ -187,13 +193,13 @@
         "samples": [
           {
             "file": "src/node/cli.ts",
-            "line": 971,
+            "line": 975,
             "column": 56,
             "message": "An index signature is preferred over a record."
           },
           {
             "file": "src/node/cli.ts",
-            "line": 972,
+            "line": 976,
             "column": 17,
             "message": "An index signature is preferred over a record."
           }
@@ -271,7 +277,7 @@
           },
           {
             "file": "src/node/cli.ts",
-            "line": 761,
+            "line": 765,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
@@ -322,7 +328,7 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 57,
+        "count": 58,
         "samples": [
           {
             "file": "ci/dev/watch.ts",
@@ -338,9 +344,9 @@
           },
           {
             "file": "src/node/http.ts",
-            "line": 13,
+            "line": 14,
             "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
+            "message": "Imports IsCookieValidArgs are only used as type."
           },
           {
             "file": "src/node/routes/index.ts",
@@ -356,21 +362,21 @@
           },
           {
             "file": "src/node/util.ts",
-            "line": 100,
-            "column": 42,
+            "line": 101,
+            "column": 37,
             "message": "`import()` type annotations are forbidden."
           },
           {
-            "file": "test/e2e/codeServer.test.ts",
-            "line": 5,
+            "file": "test/e2e/models/CodeServer.ts",
+            "line": 1,
             "column": 1,
-            "message": "All imports in the declaration are only used as types. Use `import type`."
+            "message": "Imports Logger are only used as type."
           },
           {
             "file": "test/unit/node/routes/errors.test.ts",
-            "line": 2,
+            "line": 1,
             "column": 1,
-            "message": "Imports UserProvidedArgs are only used as type."
+            "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
             "file": "test/unit/node/socket.test.ts",
@@ -448,7 +454,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 62,
+        "count": 66,
         "samples": [
           {
             "file": "ci/dev/watch.ts",
@@ -458,7 +464,7 @@
           },
           {
             "file": "src/node/cli.ts",
-            "line": 770,
+            "line": 774,
             "column": 8,
             "message": "Expected a function expression."
           },
@@ -470,25 +476,25 @@
           },
           {
             "file": "src/node/http.ts",
-            "line": 376,
+            "line": 445,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "src/node/routes/vscode.ts",
-            "line": 255,
-            "column": 8,
+            "line": 55,
+            "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "src/node/util.ts",
-            "line": 450,
+            "line": 407,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/node/wsRouter.ts",
-            "line": 64,
+            "file": "src/node/wrapper.ts",
+            "line": 21,
             "column": 8,
             "message": "Expected a function expression."
           },
@@ -513,7 +519,7 @@
         ]
       },
       "declaration": {
-        "count": 85,
+        "count": 86,
         "samples": [
           {
             "file": "src/common/util.ts",
@@ -535,14 +541,14 @@
           },
           {
             "file": "src/node/http.ts",
-            "line": 302,
+            "line": 311,
             "column": 14,
             "message": "Expected a function declaration."
           },
           {
-            "file": "src/node/routes/domainProxy.ts",
-            "line": 37,
-            "column": 7,
+            "file": "src/node/routes/errors.ts",
+            "line": 20,
+            "column": 14,
             "message": "Expected a function declaration."
           },
           {
@@ -553,13 +559,13 @@
           },
           {
             "file": "src/node/util.ts",
-            "line": 361,
+            "line": 372,
             "column": 14,
             "message": "Expected a function declaration."
           },
           {
             "file": "src/node/wrapper.ts",
-            "line": 41,
+            "line": 49,
             "column": 11,
             "message": "Expected a function declaration."
           },
@@ -590,7 +596,7 @@
           },
           {
             "file": "src/node/i18n/index.ts",
-            "line": 59,
+            "line": 63,
             "column": 8,
             "message": "Prefer named exports"
           },
@@ -686,14 +692,14 @@
         "samples": [
           {
             "file": "test/unit/node/cli.test.ts",
-            "line": 1180,
+            "line": 1205,
             "column": 1,
             "message": "Expected 2-space indentation, but file uses 23-space indentation."
           }
         ]
       },
       "4-space": {
-        "count": 82,
+        "count": 83,
         "samples": [
           {
             "file": "ci/dev/preinstall.js",
@@ -726,8 +732,8 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "test/e2e/terminal.test.ts",
-            "line": 9,
+            "file": "test/e2e/typescript.test.ts",
+            "line": 8,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -745,7 +751,7 @@
           },
           {
             "file": "test/unit/node/util.test.ts",
-            "line": 10,
+            "line": 11,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -758,7 +764,7 @@
         ]
       },
       "tab": {
-        "count": 82,
+        "count": 83,
         "samples": [
           {
             "file": "ci/dev/preinstall.js",
@@ -791,8 +797,8 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "test/e2e/terminal.test.ts",
-            "line": 9,
+            "file": "test/e2e/typescript.test.ts",
+            "line": 8,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -810,7 +816,7 @@
           },
           {
             "file": "test/unit/node/util.test.ts",
-            "line": 10,
+            "line": 11,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -853,19 +859,19 @@
           },
           {
             "file": "test/unit/node/app.test.ts",
-            "line": 158,
+            "line": 161,
             "column": 37,
             "message": "Strings must use doublequote."
           },
           {
             "file": "test/unit/node/app.test.ts",
-            "line": 168,
+            "line": 171,
             "column": 37,
             "message": "Strings must use doublequote."
           },
           {
             "file": "test/unit/node/routes/login.test.ts",
-            "line": 147,
+            "line": 158,
             "column": 37,
             "message": "Strings must use doublequote."
           },
@@ -877,20 +883,20 @@
           },
           {
             "file": "test/unit/node/util.test.ts",
-            "line": 388,
+            "line": 389,
             "column": 36,
             "message": "Strings must use doublequote."
           },
           {
             "file": "test/unit/node/util.test.ts",
-            "line": 583,
+            "line": 584,
             "column": 48,
             "message": "Strings must use doublequote."
           }
         ]
       },
       "single": {
-        "count": 3523,
+        "count": 3734,
         "samples": [
           {
             "file": "ci/dev/preinstall.js",
@@ -900,50 +906,50 @@
           },
           {
             "file": "src/node/cli.ts",
-            "line": 512,
-            "column": 52,
+            "line": 574,
+            "column": 10,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/node/routes/index.ts",
-            "line": 139,
-            "column": 5,
+            "file": "src/node/routes/login.ts",
+            "line": 32,
+            "column": 59,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "src/node/vscodeSocket.ts",
-            "line": 65,
-            "column": 61,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "test/e2e/routes.test.ts",
-            "line": 26,
-            "column": 20,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "test/unit/node/cli.test.ts",
-            "line": 130,
-            "column": 31,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "test/unit/node/cli.test.ts",
-            "line": 1080,
-            "column": 7,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "test/unit/node/proxy.test.ts",
-            "line": 201,
+            "file": "src/node/wrapper.ts",
+            "line": 241,
             "column": 16,
             "message": "Strings must use singlequote."
           },
           {
+            "file": "test/e2e/terminal.test.ts",
+            "line": 4,
+            "column": 18,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "test/unit/node/cli.test.ts",
+            "line": 224,
+            "column": 19,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "test/unit/node/constants.test.ts",
+            "line": 79,
+            "column": 38,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "test/unit/node/proxy.test.ts",
+            "line": 156,
+            "column": 23,
+            "message": "Strings must use singlequote."
+          },
+          {
             "file": "test/unit/node/util.test.ts",
-            "line": 58,
-            "column": 35,
+            "line": 41,
+            "column": 37,
             "message": "Strings must use singlequote."
           },
           {
@@ -1005,7 +1011,7 @@
     },
     "semi": {
       "always": {
-        "count": 4448,
+        "count": 4570,
         "samples": [
           {
             "file": "ci/dev/preinstall.js",
@@ -1015,50 +1021,50 @@
           },
           {
             "file": "src/node/http.ts",
-            "line": 275,
-            "column": 29,
+            "line": 340,
+            "column": 86,
             "message": "Missing semicolon."
           },
           {
             "file": "src/node/routes/vscode.ts",
-            "line": 238,
+            "line": 233,
+            "column": 19,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "test/e2e/baseFixture.ts",
+            "line": 61,
             "column": 3,
             "message": "Missing semicolon."
           },
           {
-            "file": "src/node/wsRouter.ts",
-            "line": 58,
-            "column": 23,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "test/e2e/terminal.test.ts",
-            "line": 9,
-            "column": 41,
+            "file": "test/e2e/typescript.test.ts",
+            "line": 18,
+            "column": 5,
             "message": "Missing semicolon."
           },
           {
             "file": "test/unit/node/cli.test.ts",
-            "line": 237,
-            "column": 46,
+            "line": 230,
+            "column": 35,
             "message": "Missing semicolon."
           },
           {
             "file": "test/unit/node/heart.test.ts",
-            "line": 91,
-            "column": 26,
+            "line": 93,
+            "column": 17,
             "message": "Missing semicolon."
           },
           {
             "file": "test/unit/node/routes/login.test.ts",
-            "line": 37,
-            "column": 49,
+            "line": 8,
+            "column": 17,
             "message": "Missing semicolon."
           },
           {
             "file": "test/unit/node/util.test.ts",
-            "line": 142,
-            "column": 59,
+            "line": 138,
+            "column": 31,
             "message": "Missing semicolon."
           },
           {

@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "96d58f23c7cc",
-  "analyzedCommit": "eb0660667b0deb9ca7a3807ceda1c71d7b034d99",
-  "analyzedCommitDate": "2026-10-09T15:25:32.000Z",
+  "analyzedCommit": "02a7cf9d2461ae6e19d61a49c715ba5e29a8ffcf",
+  "analyzedCommitDate": "2026-10-30T11:52:17.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -9,7 +9,7 @@
         "samples": []
       },
       "generic": {
-        "count": 210,
+        "count": 224,
         "samples": [
           {
             "file": "cli/src/android/common.ts",
@@ -19,51 +19,51 @@
           },
           {
             "file": "cli/src/android/update.ts",
-            "line": 230,
-            "column": 21,
-            "message": "Array type using 'any[]' is forbidden. Use 'Array<any>' instead."
-          },
-          {
-            "file": "cli/src/cordova.ts",
-            "line": 40,
-            "column": 21,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
-          },
-          {
-            "file": "cli/src/cordova.ts",
-            "line": 623,
-            "column": 19,
+            "line": 325,
+            "column": 71,
             "message": "Array type using 'Plugin[]' is forbidden. Use 'Array<Plugin>' instead."
           },
           {
-            "file": "cli/src/framework-configs.ts",
-            "line": 98,
-            "column": 43,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
-          },
-          {
-            "file": "cli/src/ios/update.ts",
-            "line": 447,
+            "file": "cli/src/cordova.ts",
+            "line": 201,
             "column": 27,
             "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           },
           {
-            "file": "cli/src/tasks/list.ts",
-            "line": 27,
-            "column": 16,
+            "file": "cli/src/cordova.ts",
+            "line": 632,
+            "column": 19,
+            "message": "Array type using 'any[]' is forbidden. Use 'Array<any>' instead."
+          },
+          {
+            "file": "cli/src/ios/common.ts",
+            "line": 73,
+            "column": 68,
             "message": "Array type using 'Plugin[]' is forbidden. Use 'Array<Plugin>' instead."
+          },
+          {
+            "file": "cli/src/ios/update.ts",
+            "line": 703,
+            "column": 70,
+            "message": "Array type using 'any[]' is forbidden. Use 'Array<any>' instead."
+          },
+          {
+            "file": "cli/src/tasks/update.ts",
+            "line": 70,
+            "column": 68,
+            "message": "Array type using 'CheckFunction[]' is forbidden. Use 'Array<CheckFunction>' instead."
           },
           {
             "file": "cli/src/util/iosplugin.ts",
-            "line": 12,
-            "column": 66,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+            "line": 65,
+            "column": 71,
+            "message": "Array type using 'Plugin[]' is forbidden. Use 'Array<Plugin>' instead."
           },
           {
-            "file": "cli/src/util/spm.ts",
-            "line": 337,
-            "column": 68,
-            "message": "Array type using 'Plugin[]' is forbidden. Use 'Array<Plugin>' instead."
+            "file": "cli/src/util/subprocess.ts",
+            "line": 9,
+            "column": 9,
+            "message": "Array type using 'readonly string[]' is forbidden. Use 'ReadonlyArray<string>' instead."
           },
           {
             "file": "core/src/web-plugin.ts",
@@ -87,12 +87,18 @@
         ]
       },
       "type-annotation": {
-        "count": 2,
+        "count": 3,
         "samples": [
           {
             "file": "cli/src/ios/update.ts",
             "line": 201,
             "column": 27,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "cli/src/telemetry.ts",
+            "line": 67,
+            "column": 37,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
@@ -106,7 +112,7 @@
     },
     "consistent-indexed-object-style": {
       "record": {
-        "count": 28,
+        "count": 29,
         "samples": [
           {
             "file": "cli/src/cordova.ts",
@@ -139,9 +145,9 @@
             "message": "A record is preferred over an index signature."
           },
           {
-            "file": "cli/src/tasks/migrate.ts",
-            "line": 488,
-            "column": 23,
+            "file": "cli/src/util/js.ts",
+            "line": 3,
+            "column": 37,
             "message": "A record is preferred over an index signature."
           },
           {
@@ -171,8 +177,39 @@
         ]
       },
       "index-signature": {
-        "count": 0,
-        "samples": []
+        "count": 5,
+        "samples": [
+          {
+            "file": "cli/src/telemetry.ts",
+            "line": 65,
+            "column": 22,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "cli/src/telemetry.ts",
+            "line": 181,
+            "column": 52,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "cli/src/telemetry.ts",
+            "line": 227,
+            "column": 12,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "cli/test/telemetry.spec.ts",
+            "line": 24,
+            "column": 29,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "cli/test/telemetry.spec.ts",
+            "line": 24,
+            "column": 59,
+            "message": "An index signature is preferred over a record."
+          }
+        ]
       }
     },
     "consistent-type-definitions": {
@@ -188,7 +225,7 @@
         ]
       },
       "type": {
-        "count": 71,
+        "count": 72,
         "samples": [
           {
             "file": "cli/src/android/update.ts",
@@ -210,25 +247,25 @@
           },
           {
             "file": "cli/src/tasks/copy.ts",
-            "line": 276,
+            "line": 284,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "cli/src/util/fs.ts",
-            "line": 24,
+            "line": 33,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "core/src/core-plugins.ts",
-            "line": 36,
+            "line": 13,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "core/src/core-plugins.ts",
-            "line": 265,
+            "line": 258,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
@@ -326,7 +363,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 342,
+        "count": 359,
         "samples": [
           {
             "file": "cli/src/android/add.ts",
@@ -336,50 +373,50 @@
           },
           {
             "file": "cli/src/common.ts",
-            "line": 113,
+            "line": 138,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "cli/src/config.ts",
-            "line": 322,
+            "line": 421,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "cli/src/ios/add.ts",
-            "line": 6,
+            "file": "cli/src/ios/common.ts",
+            "line": 46,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "cli/src/ios/update.ts",
-            "line": 695,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "cli/src/tasks/copy.ts",
-            "line": 221,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "cli/src/tasks/migrate.ts",
-            "line": 456,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "cli/src/util/js.ts",
-            "line": 3,
+            "file": "cli/src/plugin.ts",
+            "line": 56,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "cli/test/framework-detection.spec.ts",
-            "line": 158,
+            "file": "cli/src/tasks/init.ts",
+            "line": 72,
             "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "cli/src/tasks/run.ts",
+            "line": 40,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "cli/src/util/native-run.ts",
+            "line": 12,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "cli/test/npm.spec.ts",
+            "line": 98,
+            "column": 3,
             "message": "Expected a function expression."
           },
           {
@@ -559,7 +596,7 @@
         ]
       },
       "4-space": {
-        "count": 105,
+        "count": 107,
         "samples": [
           {
             "file": "cli/src/android/add.ts",
@@ -574,8 +611,8 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "cli/src/ipc.ts",
-            "line": 13,
+            "file": "cli/src/log.ts",
+            "line": 2,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -586,8 +623,8 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "cli/src/telemetry.ts",
-            "line": 17,
+            "file": "cli/src/util/cli.ts",
+            "line": 11,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -598,14 +635,14 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "cli/test/migrate-uiscene-detect.spec.ts",
-            "line": 6,
+            "file": "cli/test/migrate-uiscene-plist.spec.ts",
+            "line": 15,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "core/rollup.config.js",
-            "line": 7,
+            "file": "core/rollup.bridge.config.js",
+            "line": 9,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -624,7 +661,7 @@
         ]
       },
       "tab": {
-        "count": 105,
+        "count": 107,
         "samples": [
           {
             "file": "cli/src/android/add.ts",
@@ -639,8 +676,8 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "cli/src/ipc.ts",
-            "line": 13,
+            "file": "cli/src/log.ts",
+            "line": 2,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -651,8 +688,8 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "cli/src/telemetry.ts",
-            "line": 17,
+            "file": "cli/src/util/cli.ts",
+            "line": 11,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -663,14 +700,14 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "cli/test/migrate-uiscene-detect.spec.ts",
-            "line": 6,
+            "file": "cli/test/migrate-uiscene-plist.spec.ts",
+            "line": 15,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "core/rollup.config.js",
-            "line": 7,
+            "file": "core/rollup.bridge.config.js",
+            "line": 9,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -691,7 +728,7 @@
     },
     "quotes": {
       "double": {
-        "count": 3471,
+        "count": 3777,
         "samples": [
           {
             "file": "cli/src/android/add.ts",
@@ -701,50 +738,50 @@
           },
           {
             "file": "cli/src/config.ts",
-            "line": 53,
-            "column": 41,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "cli/src/index.ts",
-            "line": 12,
+            "line": 280,
             "column": 29,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "cli/src/ios/update.ts",
-            "line": 346,
-            "column": 51,
+            "file": "cli/src/index.ts",
+            "line": 162,
+            "column": 9,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "cli/src/tasks/migrate-spm.ts",
-            "line": 1,
-            "column": 23,
+            "file": "cli/src/ipc.ts",
+            "line": 2,
+            "column": 19,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "cli/src/tasks/sync.ts",
-            "line": 4,
-            "column": 24,
+            "file": "cli/src/tasks/migrate.ts",
+            "line": 59,
+            "column": 11,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "cli/test/framework-detection.spec.ts",
-            "line": 103,
-            "column": 20,
+            "file": "cli/src/util/native-run.ts",
+            "line": 20,
+            "column": 38,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "cli/test/migrate-uiscene-scene-delegate.spec.ts",
+            "line": 12,
+            "column": 10,
             "message": "Strings must use doublequote."
           },
           {
             "file": "core/cordova.js",
-            "line": 684,
-            "column": 77,
+            "line": 21,
+            "column": 38,
             "message": "Strings must use doublequote."
           },
           {
             "file": "core/src/core-plugins.ts",
-            "line": 417,
-            "column": 22,
+            "line": 113,
+            "column": 90,
             "message": "Strings must use doublequote."
           },
           {
@@ -756,7 +793,7 @@
         ]
       },
       "single": {
-        "count": 143,
+        "count": 145,
         "samples": [
           {
             "file": "cli/src/android/add.ts",
@@ -778,32 +815,32 @@
           },
           {
             "file": "cli/src/ios/update.ts",
-            "line": 534,
-            "column": 65,
+            "line": 537,
+            "column": 67,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "cli/src/tasks/copy.ts",
-            "line": 254,
-            "column": 11,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "cli/src/tasks/migrate.ts",
-            "line": 98,
-            "column": 18,
+            "file": "cli/src/tasks/create.ts",
+            "line": 5,
+            "column": 9,
             "message": "Strings must use singlequote."
           },
           {
             "file": "cli/src/tasks/migrate.ts",
-            "line": 250,
-            "column": 30,
+            "line": 109,
+            "column": 13,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "cli/src/tasks/serve.ts",
-            "line": 6,
-            "column": 5,
+            "file": "cli/src/tasks/migrate.ts",
+            "line": 307,
+            "column": 74,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "cli/src/telemetry.ts",
+            "line": 17,
+            "column": 3,
             "message": "Strings must use singlequote."
           },
           {
@@ -875,7 +912,7 @@
         "samples": []
       },
       "never": {
-        "count": 5289,
+        "count": 5494,
         "samples": [
           {
             "file": "cli/src/android/add.ts",
@@ -885,50 +922,50 @@
           },
           {
             "file": "cli/src/config.ts",
-            "line": 222,
-            "column": 56,
+            "line": 286,
+            "column": 4,
             "message": "Extra semicolon."
           },
           {
-            "file": "cli/src/ios/common.ts",
-            "line": 126,
-            "column": 95,
+            "file": "cli/src/ios/run.ts",
+            "line": 77,
+            "column": 73,
             "message": "Extra semicolon."
           },
           {
-            "file": "cli/src/tasks/copy.ts",
-            "line": 147,
-            "column": 51,
+            "file": "cli/src/tasks/doctor.ts",
+            "line": 45,
+            "column": 39,
             "message": "Extra semicolon."
           },
           {
-            "file": "cli/src/tasks/sourcemaps.ts",
-            "line": 1,
-            "column": 103,
+            "file": "cli/src/tasks/update.ts",
+            "line": 54,
+            "column": 15,
             "message": "Extra semicolon."
           },
           {
-            "file": "cli/test/add.android.spec.ts",
-            "line": 13,
-            "column": 56,
+            "file": "cli/test/framework-detection.spec.ts",
+            "line": 7,
+            "column": 21,
             "message": "Extra semicolon."
           },
           {
-            "file": "core/cordova.js",
-            "line": 41,
-            "column": 29,
+            "file": "cli/test/xcode.spec.ts",
+            "line": 10,
+            "column": 97,
             "message": "Extra semicolon."
           },
           {
             "file": "core/native-bridge.ts",
-            "line": 199,
-            "column": 45,
+            "line": 72,
+            "column": 33,
             "message": "Extra semicolon."
           },
           {
             "file": "core/src/tests/bridge.spec.ts",
-            "line": 121,
-            "column": 32,
+            "line": 79,
+            "column": 20,
             "message": "Extra semicolon."
           },
           {

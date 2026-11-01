@@ -1,12 +1,18 @@
 {
   "analyzedVersion": "96d58f23c7cc",
-  "analyzedCommit": "866f646fe9989f604a0d26dba756fab630f07d23",
-  "analyzedCommitDate": "2026-10-05T17:44:56.000Z",
+  "analyzedCommit": "11390f01a0c921fbee1b9a63eab6efe6fe3f3af7",
+  "analyzedCommitDate": "2026-10-31T23:25:25.000Z",
   "checks": {
     "array-type": {
       "array": {
-        "count": 4,
+        "count": 5,
         "samples": [
+          {
+            "file": "test/golden/cases/harness.golden-test.ts",
+            "line": 43,
+            "column": 18,
+            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
+          },
           {
             "file": "test/spec/hooks-test.tsx",
             "line": 155,
@@ -34,7 +40,7 @@
         ]
       },
       "generic": {
-        "count": 83,
+        "count": 189,
         "samples": [
           {
             "file": "src/core/collision.ts",
@@ -43,52 +49,52 @@
             "message": "Array type using 'LayoutItem[]' is forbidden. Use 'Array<LayoutItem>' instead."
           },
           {
-            "file": "src/core/layout.ts",
-            "line": 64,
-            "column": 45,
-            "message": "Array type using 'LayoutItem[]' is forbidden. Use 'Array<LayoutItem>' instead."
-          },
-          {
-            "file": "src/core/layout.ts",
-            "line": 325,
-            "column": 21,
-            "message": "Array type using 'LayoutItem[]' is forbidden. Use 'Array<LayoutItem>' instead."
-          },
-          {
-            "file": "src/core/types.ts",
-            "line": 106,
-            "column": 17,
-            "message": "Array type using 'LayoutConstraint[]' is forbidden. Use 'Array<LayoutConstraint>' instead."
-          },
-          {
-            "file": "src/extras/fastHorizontalCompactor.ts",
-            "line": 124,
-            "column": 15,
-            "message": "Array type using 'number[]' is forbidden. Use 'Array<number>' instead."
-          },
-          {
-            "file": "src/legacy/ReactGridLayout.tsx",
-            "line": 75,
-            "column": 19,
-            "message": "Array type using 'ResizeHandleAxis[]' is forbidden. Use 'Array<ResizeHandleAxis>' instead."
-          },
-          {
-            "file": "src/react/hooks/useResponsiveLayout.ts",
-            "line": 211,
-            "column": 49,
+            "file": "src/core/responsive.ts",
+            "line": 193,
+            "column": 46,
             "message": "Array type using 'B[]' is forbidden. Use 'Array<B>' instead."
           },
           {
-            "file": "test/spec/hooks-test.tsx",
-            "line": 294,
-            "column": 27,
-            "message": "Array type using 'number[]' is forbidden. Use 'Array<number>' instead."
+            "file": "src/extras/wrapCompactor.ts",
+            "line": 36,
+            "column": 43,
+            "message": "Array type using 'LayoutItem[]' is forbidden. Use 'Array<LayoutItem>' instead."
           },
           {
-            "file": "test/spec/responsive-gap-collapse-test.tsx",
-            "line": 208,
-            "column": 26,
-            "message": "Array type using 'Layout[]' is forbidden. Use 'Array<Layout>' instead."
+            "file": "test/golden-react/expectGolden.ts",
+            "line": 8,
+            "column": 10,
+            "message": "Array type using 'object[]' is forbidden. Use 'Array<object>' instead."
+          },
+          {
+            "file": "test/golden/cases/calculate.golden-test.ts",
+            "line": 36,
+            "column": 14,
+            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
+          },
+          {
+            "file": "test/golden/cases/constraints.golden-test.ts",
+            "line": 124,
+            "column": 18,
+            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
+          },
+          {
+            "file": "test/golden/cases/moveElement.golden-test.ts",
+            "line": 15,
+            "column": 14,
+            "message": "Array type using 'CompactType[]' is forbidden. Use 'Array<CompactType>' instead."
+          },
+          {
+            "file": "test/golden/generators.ts",
+            "line": 31,
+            "column": 4,
+            "message": "Array type using 'LayoutItem[]' is forbidden. Use 'Array<LayoutItem>' instead."
+          },
+          {
+            "file": "test/spec/margin-consistency.test.ts",
+            "line": 28,
+            "column": 17,
+            "message": "Array type using 'number[]' is forbidden. Use 'Array<number>' instead."
           },
           {
             "file": "test/spec/touch-drop-test.tsx",
@@ -105,8 +111,20 @@
         "samples": []
       },
       "type-annotation": {
-        "count": 3,
+        "count": 14,
         "samples": [
+          {
+            "file": "src/core/compaction/classic.ts",
+            "line": 16,
+            "column": 28,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "src/core/interaction/dragCollisionIndex.ts",
+            "line": 16,
+            "column": 36,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
           {
             "file": "src/extras/wrapCompactor.ts",
             "line": 67,
@@ -115,7 +133,7 @@
           },
           {
             "file": "src/react/components/GridLayout.tsx",
-            "line": 234,
+            "line": 233,
             "column": 28,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
@@ -123,6 +141,36 @@
             "file": "test/e2e/grid-smoke.spec.ts",
             "line": 33,
             "column": 30,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "test/golden-react/geometry.ts",
+            "line": 65,
+            "column": 24,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "test/golden/capture.ts",
+            "line": 5,
+            "column": 49,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "test/golden/capture.ts",
+            "line": 28,
+            "column": 18,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "test/golden/cases/collision.golden-test.ts",
+            "line": 178,
+            "column": 29,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "test/golden/cases/sort.golden-test.ts",
+            "line": 71,
+            "column": 29,
             "message": "The generic type arguments should be specified as part of the type annotation."
           }
         ]
@@ -134,18 +182,12 @@
         "samples": []
       },
       "index-signature": {
-        "count": 24,
+        "count": 46,
         "samples": [
           {
             "file": "src/core/position.ts",
             "line": 33,
             "column": 15,
-            "message": "An index signature is preferred over a record."
-          },
-          {
-            "file": "src/core/responsive.ts",
-            "line": 164,
-            "column": 13,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -156,20 +198,8 @@
           },
           {
             "file": "src/legacy/ResponsiveReactGridLayout.tsx",
-            "line": 68,
-            "column": 15,
-            "message": "An index signature is preferred over a record."
-          },
-          {
-            "file": "src/legacy/ResponsiveReactGridLayout.tsx",
             "line": 258,
             "column": 21,
-            "message": "An index signature is preferred over a record."
-          },
-          {
-            "file": "src/react/components/ResponsiveGridLayout.tsx",
-            "line": 59,
-            "column": 15,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -179,15 +209,33 @@
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "src/react/hooks/useResponsiveLayout.ts",
-            "line": 214,
-            "column": 20,
+            "file": "test/bench/opcounts.bench-test.ts",
+            "line": 39,
+            "column": 14,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "test/spec/resize-event-test.tsx",
-            "line": 29,
-            "column": 24,
+            "file": "test/bench/scenarios.ts",
+            "line": 272,
+            "column": 33,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "test/golden-react/fixture.tsx",
+            "line": 203,
+            "column": 26,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "test/golden/capture.ts",
+            "line": 8,
+            "column": 17,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "test/golden/serialize.ts",
+            "line": 22,
+            "column": 49,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -201,28 +249,64 @@
     },
     "consistent-type-definitions": {
       "interface": {
-        "count": 1,
+        "count": 7,
         "samples": [
+          {
+            "file": "src/core/interaction/dragCollisionIndex.ts",
+            "line": 5,
+            "column": 1,
+            "message": "Use `interface` instead of `type`."
+          },
           {
             "file": "src/react/components/GridItem.tsx",
             "line": 61,
+            "column": 1,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "test/bench/counters.ts",
+            "line": 53,
+            "column": 1,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "test/bench/opcounts.bench-test.ts",
+            "line": 38,
+            "column": 1,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "test/golden-react/fixture.tsx",
+            "line": 19,
+            "column": 8,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "test/golden-react/scenarios/differential.golden-test.tsx",
+            "line": 24,
+            "column": 1,
+            "message": "Use `interface` instead of `type`."
+          },
+          {
+            "file": "test/golden/cases/moveElement.golden-test.ts",
+            "line": 385,
             "column": 1,
             "message": "Use `interface` instead of `type`."
           }
         ]
       },
       "type": {
-        "count": 42,
+        "count": 49,
         "samples": [
           {
             "file": "src/core/calculate.ts",
-            "line": 16,
+            "line": 19,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "src/core/types.ts",
-            "line": 132,
+            "line": 37,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
@@ -240,31 +324,31 @@
           },
           {
             "file": "src/core/types.ts",
-            "line": 521,
+            "line": 550,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "src/react/components/GridItem.tsx",
-            "line": 78,
-            "column": 1,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "src/react/components/WidthProvider.tsx",
-            "line": 15,
+            "file": "src/react/components/GridLayout.tsx",
+            "line": 65,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "src/react/hooks/useContainerWidth.ts",
-            "line": 83,
+            "file": "src/react/components/edgeScroll.ts",
+            "line": 18,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "src/react/hooks/useGridLayout.ts",
-            "line": 56,
+            "line": 49,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "test/golden-react/hookHarness.tsx",
+            "line": 24,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
@@ -279,8 +363,14 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 1,
+        "count": 2,
         "samples": [
+          {
+            "file": "test/bench/opcounts.bench-test.ts",
+            "line": 17,
+            "column": 55,
+            "message": "`import()` type annotations are forbidden."
+          },
           {
             "file": "test/e2e/grid-smoke.spec.ts",
             "line": 13,
@@ -290,7 +380,7 @@
         ]
       },
       "no-type-imports": {
-        "count": 60,
+        "count": 100,
         "samples": [
           {
             "file": "src/core/calculate.ts",
@@ -305,44 +395,44 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/legacy/ReactGridLayout.tsx",
-            "line": 12,
-            "column": 3,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
             "file": "src/react/components/GridItem.tsx",
-            "line": 20,
+            "line": 14,
             "column": 3,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/react/components/GridLayout.tsx",
-            "line": 17,
+            "file": "src/react/components/ResponsiveGridLayout.tsx",
+            "line": 13,
             "column": 3,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/react/components/dropMath.ts",
+            "file": "test/bench/opcounts.bench-test.ts",
             "line": 11,
+            "column": 47,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "test/golden-react/hookHarness.tsx",
+            "line": 13,
+            "column": 18,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "test/golden/cases/calculate.golden-test.ts",
+            "line": 14,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "test/e2e/touch-drop.spec.ts",
+            "file": "test/golden/generators.ts",
             "line": 1,
-            "column": 24,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "test/spec/hooks-test.tsx",
-            "line": 23,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "test/spec/responsive-seeding-test.tsx",
-            "line": 16,
+            "file": "test/spec/resize-event-test.tsx",
+            "line": 14,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -357,7 +447,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 150,
+        "count": 233,
         "samples": [
           {
             "file": "scripts/check-release.cjs",
@@ -366,14 +456,8 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "src/core/compact-compat.ts",
-            "line": 214,
-            "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/core/layout.ts",
-            "line": 110,
+            "file": "src/core/constraints.ts",
+            "line": 326,
             "column": 8,
             "message": "Expected a function expression."
           },
@@ -384,33 +468,39 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "src/extras/wrapCompactor.ts",
-            "line": 59,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/react/hooks/useGridLayout.ts",
-            "line": 153,
+            "file": "src/react/components/WidthProvider.tsx",
+            "line": 57,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "test/spec/benchmark-test.js",
-            "line": 45,
+            "file": "test/examples/08-localstorage-responsive.jsx",
+            "line": 70,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "test/spec/fast-horizontal-compactor-test.js",
-            "line": 21,
+            "file": "test/golden-react/hookHarness.tsx",
+            "line": 211,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "test/golden/cases/collision.golden-test.ts",
+            "line": 24,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "test/spec/resize-constraints-test.tsx",
-            "line": 237,
-            "column": 3,
+            "file": "test/spec/constraints-test.ts",
+            "line": 42,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "test/spec/lifecycle-test.js",
+            "line": 573,
+            "column": 7,
             "message": "Expected a function expression."
           },
           {
@@ -422,7 +512,7 @@
         ]
       },
       "declaration": {
-        "count": 38,
+        "count": 64,
         "samples": [
           {
             "file": "scripts/check-release.cjs",
@@ -432,49 +522,49 @@
           },
           {
             "file": "src/core/position.ts",
-            "line": 156,
-            "column": 7,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "src/core/position.ts",
-            "line": 202,
+            "line": 195,
             "column": 7,
             "message": "Expected a function declaration."
           },
           {
             "file": "src/react/components/GridLayout.tsx",
-            "line": 1082,
+            "line": 1098,
             "column": 11,
             "message": "Expected a function declaration."
           },
           {
-            "file": "src/react/components/GridLayout.tsx",
-            "line": 1121,
+            "file": "test/bench/counters.ts",
+            "line": 64,
+            "column": 14,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "test/bench/scenarios.ts",
+            "line": 237,
             "column": 11,
             "message": "Expected a function declaration."
           },
           {
-            "file": "test/examples/21-custom-constraints.jsx",
-            "line": 66,
-            "column": 7,
+            "file": "test/golden-react/geometry.ts",
+            "line": 91,
+            "column": 11,
             "message": "Expected a function declaration."
           },
           {
-            "file": "test/spec/fast-compactor-test.js",
-            "line": 169,
-            "column": 13,
+            "file": "test/golden-react/pointer.ts",
+            "line": 62,
+            "column": 11,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "test/spec/drag-resolution-test.ts",
+            "line": 74,
+            "column": 11,
             "message": "Expected a function declaration."
           },
           {
             "file": "test/spec/responsive-gap-collapse-test.tsx",
-            "line": 85,
-            "column": 11,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "test/spec/responsive-seeding-test.tsx",
-            "line": 24,
+            "line": 151,
             "column": 11,
             "message": "Expected a function declaration."
           },
@@ -505,7 +595,7 @@
           },
           {
             "file": "src/react/components/GridLayout.tsx",
-            "line": 1346,
+            "line": 1345,
             "column": 8,
             "message": "Prefer named exports"
           },
@@ -554,11 +644,53 @@
         ]
       },
       "default": {
-        "count": 1,
+        "count": 8,
         "samples": [
+          {
+            "file": "src/core/geometry/rect.ts",
+            "line": 9,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "src/core/interaction/dragCollisionIndex.ts",
+            "line": 13,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "src/core/interaction/resolveDrag.ts",
+            "line": 7,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
           {
             "file": "test/examples/test_demo.jsx",
             "line": 7,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "test/golden-react/drop.ts",
+            "line": 6,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "test/golden-react/expectGolden.ts",
+            "line": 5,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "test/golden-react/formatTrace.ts",
+            "line": 4,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "test/golden/expectGolden.ts",
+            "line": 5,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           }
@@ -571,7 +703,7 @@
         "samples": []
       },
       "4-space": {
-        "count": 101,
+        "count": 144,
         "samples": [
           {
             "file": ".babelrc.js",
@@ -580,50 +712,50 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/core/compactors.ts",
-            "line": 9,
+            "file": "src/core/interaction/dragCollisionIndex.ts",
+            "line": 6,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/extras/index.ts",
-            "line": 12,
+            "file": "src/legacy/index.ts",
+            "line": 17,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/react/components/dropMath.ts",
+            "file": "test/bench/scenarios.ts",
+            "line": 5,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "test/examples/10-dynamic-min-max-wh.jsx",
             "line": 14,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "test/e2e/webpack.harness.config.js",
+            "file": "test/golden-react/fixture.tsx",
             "line": 9,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "test/examples/11-toolbox.jsx",
-            "line": 7,
+            "file": "test/golden/cases/extras-fast.golden-test.ts",
+            "line": 3,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "test/examples/test_demo.jsx",
-            "line": 9,
+            "file": "test/spec/constraints-test.ts",
+            "line": 8,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "test/spec/hooks-test.tsx",
+            "file": "test/spec/responsive-generation-test.ts",
             "line": 11,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "test/spec/touch-drag-props-test.tsx",
-            "line": 13,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -636,7 +768,7 @@
         ]
       },
       "tab": {
-        "count": 101,
+        "count": 144,
         "samples": [
           {
             "file": ".babelrc.js",
@@ -645,50 +777,50 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/core/compactors.ts",
-            "line": 9,
+            "file": "src/core/interaction/dragCollisionIndex.ts",
+            "line": 6,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/extras/index.ts",
-            "line": 12,
+            "file": "src/legacy/index.ts",
+            "line": 17,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/react/components/dropMath.ts",
+            "file": "test/bench/scenarios.ts",
+            "line": 5,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "test/examples/10-dynamic-min-max-wh.jsx",
             "line": 14,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "test/e2e/webpack.harness.config.js",
+            "file": "test/golden-react/fixture.tsx",
             "line": 9,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "test/examples/11-toolbox.jsx",
-            "line": 7,
+            "file": "test/golden/cases/extras-fast.golden-test.ts",
+            "line": 3,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "test/examples/test_demo.jsx",
-            "line": 9,
+            "file": "test/spec/constraints-test.ts",
+            "line": 8,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "test/spec/hooks-test.tsx",
+            "file": "test/spec/responsive-generation-test.ts",
             "line": 11,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "test/spec/touch-drag-props-test.tsx",
-            "line": 13,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -703,7 +835,7 @@
     },
     "quotes": {
       "double": {
-        "count": 31,
+        "count": 36,
         "samples": [
           {
             "file": "__mocks__/react-grid-layout.js",
@@ -712,51 +844,51 @@
             "message": "Strings must use doublequote."
           },
           {
-            "file": "examples/util/generate.js",
-            "line": 35,
-            "column": 44,
+            "file": "examples/util/vars.js",
+            "line": 60,
+            "column": 7,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/legacy/ResponsiveReactGridLayout.tsx",
-            "line": 214,
-            "column": 11,
+            "file": "test/bench/scenarios.ts",
+            "line": 208,
+            "column": 7,
             "message": "Strings must use doublequote."
           },
           {
             "file": "test/examples/00-showcase.jsx",
+            "line": 4,
+            "column": 27,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "test/examples/03-messy.jsx",
             "line": 3,
-            "column": 24,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "test/examples/00-showcase.jsx",
-            "line": 23,
-            "column": 36,
+            "column": 17,
             "message": "Strings must use doublequote."
           },
           {
             "file": "test/examples/12-drag-from-outside.jsx",
             "line": 72,
-            "column": 66,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "test/examples/12-drag-from-outside.jsx",
-            "line": 72,
-            "column": 81,
+            "column": 71,
             "message": "Strings must use doublequote."
           },
           {
             "file": "test/examples/test_demo.jsx",
-            "line": 2,
-            "column": 36,
+            "line": 1,
+            "column": 19,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "test/golden-react/scenarios/tooling.golden-test.tsx",
+            "line": 10,
+            "column": 5,
             "message": "Strings must use doublequote."
           },
           {
             "file": "test/spec/utils-test.js",
-            "line": 970,
-            "column": 35,
+            "line": 947,
+            "column": 51,
             "message": "Strings must use doublequote."
           },
           {
@@ -768,7 +900,7 @@
         ]
       },
       "single": {
-        "count": 3501,
+        "count": 5408,
         "samples": [
           {
             "file": ".babelrc.js",
@@ -777,51 +909,51 @@
             "message": "Strings must use singlequote."
           },
           {
-            "file": "scripts/check-release.cjs",
-            "line": 67,
-            "column": 25,
+            "file": "src/legacy/ReactGridLayout.tsx",
+            "line": 32,
+            "column": 53,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "test/e2e/harness-app.jsx",
-            "line": 12,
-            "column": 8,
+            "file": "test/examples/07-localstorage.jsx",
+            "line": 86,
+            "column": 7,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "test/golden-react/scenarios/interaction.golden-test.tsx",
+            "line": 162,
+            "column": 10,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "test/golden/cases/extras-fast.golden-test.ts",
+            "line": 28,
+            "column": 3,
             "message": "Strings must use singlequote."
           },
           {
             "file": "test/spec/backcompat-test.js",
-            "line": 11,
-            "column": 24,
+            "line": 326,
+            "column": 12,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "test/spec/constraints-test.ts",
-            "line": 244,
-            "column": 8,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "test/spec/fast-compactor-test.js",
-            "line": 378,
+            "file": "test/spec/core-functions-test.ts",
+            "line": 658,
             "column": 8,
             "message": "Strings must use singlequote."
           },
           {
             "file": "test/spec/lifecycle-test.js",
-            "line": 849,
-            "column": 46,
+            "line": 1462,
+            "column": 10,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "test/spec/static-compaction.test.ts",
-            "line": 74,
-            "column": 40,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "test/spec/utils-test.js",
-            "line": 385,
-            "column": 36,
+            "file": "test/spec/typescript-components-test.tsx",
+            "line": 230,
+            "column": 8,
             "message": "Strings must use singlequote."
           },
           {
@@ -835,7 +967,7 @@
     },
     "react-destructuring-assignment": {
       "never": {
-        "count": 15,
+        "count": 17,
         "samples": [
           {
             "file": "src/extras/GridBackground.tsx",
@@ -850,8 +982,8 @@
             "message": "Must never use destructuring props assignment"
           },
           {
-            "file": "src/react/components/GridLayout.tsx",
-            "line": 294,
+            "file": "src/react/components/ResponsiveGridLayout.tsx",
+            "line": 203,
             "column": 9,
             "message": "Must never use destructuring props assignment"
           },
@@ -862,16 +994,10 @@
             "message": "Must never use destructuring props assignment"
           },
           {
-            "file": "test/examples/00-showcase.jsx",
-            "line": 56,
+            "file": "test/examples/03-messy.jsx",
+            "line": 52,
             "column": 11,
-            "message": "Must never use destructuring state assignment"
-          },
-          {
-            "file": "test/examples/11-toolbox.jsx",
-            "line": 94,
-            "column": 11,
-            "message": "Must never use destructuring state assignment"
+            "message": "Must never use destructuring props assignment"
           },
           {
             "file": "test/examples/12-drag-from-outside.jsx",
@@ -880,9 +1006,15 @@
             "message": "Must never use destructuring state assignment"
           },
           {
-            "file": "test/spec/hooks-test.tsx",
-            "line": 74,
-            "column": 1,
+            "file": "test/golden-react/hookHarness.tsx",
+            "line": 39,
+            "column": 8,
+            "message": "Must never use destructuring props assignment in SFC argument"
+          },
+          {
+            "file": "test/golden-react/scenarios/differential.golden-test.tsx",
+            "line": 335,
+            "column": 7,
             "message": "Must never use destructuring props assignment in SFC argument"
           },
           {
@@ -900,7 +1032,7 @@
         ]
       },
       "always": {
-        "count": 96,
+        "count": 102,
         "samples": [
           {
             "file": "test/examples/00-showcase.jsx",
@@ -915,46 +1047,46 @@
             "message": "Must use destructuring state assignment"
           },
           {
-            "file": "test/examples/03-messy.jsx",
-            "line": 55,
-            "column": 17,
-            "message": "Must use destructuring state assignment"
+            "file": "test/examples/04-grid-property.jsx",
+            "line": 20,
+            "column": 26,
+            "message": "Must use destructuring props assignment"
           },
           {
-            "file": "test/examples/06-dynamic-add-remove.jsx",
-            "line": 101,
-            "column": 37,
-            "message": "Must use destructuring state assignment"
-          },
-          {
-            "file": "test/examples/11-toolbox.jsx",
-            "line": 24,
-            "column": 12,
+            "file": "test/examples/07-localstorage.jsx",
+            "line": 38,
+            "column": 5,
             "message": "Must use destructuring props assignment"
           },
           {
             "file": "test/examples/11-toolbox.jsx",
-            "line": 170,
-            "column": 37,
+            "line": 59,
+            "column": 18,
+            "message": "Must use destructuring state assignment"
+          },
+          {
+            "file": "test/examples/11-toolbox.jsx",
+            "line": 184,
+            "column": 24,
             "message": "Must use destructuring state assignment"
           },
           {
             "file": "test/examples/12-drag-from-outside.jsx",
-            "line": 84,
-            "column": 25,
+            "line": 118,
+            "column": 30,
             "message": "Must use destructuring state assignment"
           },
           {
-            "file": "test/examples/14-responsive-bootstrap-style.jsx",
-            "line": 42,
-            "column": 20,
+            "file": "test/examples/16-allow-overlap.jsx",
+            "line": 24,
+            "column": 26,
             "message": "Must use destructuring props assignment"
           },
           {
-            "file": "test/examples/17-resizable-handles.jsx",
-            "line": 57,
-            "column": 17,
-            "message": "Must use destructuring state assignment"
+            "file": "test/golden-react/recorder.ts",
+            "line": 13,
+            "column": 24,
+            "message": "Must use destructuring props assignment"
           },
           {
             "file": "test/test-hook.jsx",
@@ -965,7 +1097,7 @@
         ]
       },
       "always-in-signature": {
-        "count": 101,
+        "count": 107,
         "samples": [
           {
             "file": "src/legacy/ReactGridLayout.tsx",
@@ -975,51 +1107,51 @@
           },
           {
             "file": "test/examples/00-showcase.jsx",
-            "line": 91,
-            "column": 28,
-            "message": "Must use destructuring state assignment"
-          },
-          {
-            "file": "test/examples/02-no-dragging.jsx",
-            "line": 50,
-            "column": 5,
-            "message": "Must use destructuring props assignment"
-          },
-          {
-            "file": "test/examples/06-dynamic-add-remove.jsx",
-            "line": 76,
-            "column": 13,
-            "message": "Must use destructuring state assignment"
-          },
-          {
-            "file": "test/examples/11-toolbox.jsx",
-            "line": 11,
-            "column": 18,
-            "message": "Must use destructuring props assignment"
-          },
-          {
-            "file": "test/examples/11-toolbox.jsx",
-            "line": 162,
+            "line": 95,
             "column": 25,
             "message": "Must use destructuring state assignment"
           },
           {
-            "file": "test/examples/12-drag-from-outside.jsx",
-            "line": 80,
-            "column": 28,
-            "message": "Must use destructuring state assignment"
-          },
-          {
-            "file": "test/examples/14-responsive-bootstrap-style.jsx",
-            "line": 38,
-            "column": 29,
+            "file": "test/examples/03-messy.jsx",
+            "line": 22,
+            "column": 26,
             "message": "Must use destructuring props assignment"
           },
           {
-            "file": "test/examples/17-resizable-handles.jsx",
-            "line": 57,
-            "column": 17,
+            "file": "test/examples/06-dynamic-add-remove.jsx",
+            "line": 82,
+            "column": 19,
             "message": "Must use destructuring state assignment"
+          },
+          {
+            "file": "test/examples/11-toolbox.jsx",
+            "line": 24,
+            "column": 12,
+            "message": "Must use destructuring props assignment"
+          },
+          {
+            "file": "test/examples/11-toolbox.jsx",
+            "line": 176,
+            "column": 20,
+            "message": "Must use destructuring state assignment"
+          },
+          {
+            "file": "test/examples/12-drag-from-outside.jsx",
+            "line": 117,
+            "column": 24,
+            "message": "Must use destructuring state assignment"
+          },
+          {
+            "file": "test/examples/15-scale.jsx",
+            "line": 49,
+            "column": 5,
+            "message": "Must use destructuring props assignment"
+          },
+          {
+            "file": "test/golden-react/recorder.ts",
+            "line": 12,
+            "column": 16,
+            "message": "Must use destructuring props assignment"
           },
           {
             "file": "test/test-hook.jsx",
@@ -1030,7 +1162,7 @@
         ]
       },
       "always-outside-signature": {
-        "count": 96,
+        "count": 102,
         "samples": [
           {
             "file": "test/examples/00-showcase.jsx",
@@ -1045,46 +1177,46 @@
             "message": "Must use destructuring state assignment"
           },
           {
-            "file": "test/examples/03-messy.jsx",
-            "line": 55,
-            "column": 17,
-            "message": "Must use destructuring state assignment"
+            "file": "test/examples/04-grid-property.jsx",
+            "line": 20,
+            "column": 26,
+            "message": "Must use destructuring props assignment"
           },
           {
-            "file": "test/examples/06-dynamic-add-remove.jsx",
-            "line": 101,
-            "column": 37,
-            "message": "Must use destructuring state assignment"
-          },
-          {
-            "file": "test/examples/11-toolbox.jsx",
-            "line": 24,
-            "column": 12,
+            "file": "test/examples/07-localstorage.jsx",
+            "line": 38,
+            "column": 5,
             "message": "Must use destructuring props assignment"
           },
           {
             "file": "test/examples/11-toolbox.jsx",
-            "line": 170,
-            "column": 37,
+            "line": 59,
+            "column": 18,
+            "message": "Must use destructuring state assignment"
+          },
+          {
+            "file": "test/examples/11-toolbox.jsx",
+            "line": 184,
+            "column": 24,
             "message": "Must use destructuring state assignment"
           },
           {
             "file": "test/examples/12-drag-from-outside.jsx",
-            "line": 84,
-            "column": 25,
+            "line": 118,
+            "column": 30,
             "message": "Must use destructuring state assignment"
           },
           {
-            "file": "test/examples/14-responsive-bootstrap-style.jsx",
-            "line": 42,
-            "column": 20,
+            "file": "test/examples/16-allow-overlap.jsx",
+            "line": 24,
+            "column": 26,
             "message": "Must use destructuring props assignment"
           },
           {
-            "file": "test/examples/17-resizable-handles.jsx",
-            "line": 57,
-            "column": 17,
-            "message": "Must use destructuring state assignment"
+            "file": "test/golden-react/recorder.ts",
+            "line": 13,
+            "column": 24,
+            "message": "Must use destructuring props assignment"
           },
           {
             "file": "test/test-hook.jsx",
@@ -1097,12 +1229,18 @@
     },
     "react-function-component-definition": {
       "function-declaration": {
-        "count": 3,
+        "count": 4,
         "samples": [
           {
             "file": "test/examples/test_demo.jsx",
             "line": 7,
             "column": 26,
+            "message": "Function component is not a function declaration"
+          },
+          {
+            "file": "test/golden-react/recorder.ts",
+            "line": 11,
+            "column": 17,
             "message": "Function component is not a function declaration"
           },
           {
@@ -1120,7 +1258,7 @@
         ]
       },
       "arrow-function": {
-        "count": 18,
+        "count": 21,
         "samples": [
           {
             "file": "src/extras/GridBackground.tsx",
@@ -1141,14 +1279,8 @@
             "message": "Function component is not an arrow function"
           },
           {
-            "file": "test/e2e/harness-app.jsx",
-            "line": 25,
-            "column": 1,
-            "message": "Function component is not an arrow function"
-          },
-          {
-            "file": "test/examples/19-constraints.jsx",
-            "line": 54,
+            "file": "test/examples/18-compactors.jsx",
+            "line": 45,
             "column": 16,
             "message": "Function component is not an arrow function"
           },
@@ -1159,9 +1291,15 @@
             "message": "Function component is not an arrow function"
           },
           {
-            "file": "test/spec/hooks-test.tsx",
-            "line": 74,
-            "column": 1,
+            "file": "test/golden-react/hookHarness.tsx",
+            "line": 39,
+            "column": 8,
+            "message": "Function component is not an arrow function"
+          },
+          {
+            "file": "test/golden-react/scenarios/differential.golden-test.tsx",
+            "line": 335,
+            "column": 7,
             "message": "Function component is not an arrow function"
           },
           {
@@ -1316,7 +1454,7 @@
         ]
       },
       "never": {
-        "count": 6762,
+        "count": 8999,
         "samples": [
           {
             "file": ".babelrc.js",
@@ -1326,50 +1464,50 @@
           },
           {
             "file": "src/react/components/GridItem.tsx",
-            "line": 247,
-            "column": 50,
+            "line": 979,
+            "column": 14,
             "message": "Extra semicolon."
           },
           {
-            "file": "src/react/hooks/useContainerWidth.ts",
-            "line": 194,
-            "column": 68,
+            "file": "test/bench/scenarios.ts",
+            "line": 91,
+            "column": 29,
             "message": "Extra semicolon."
           },
           {
-            "file": "test/spec/backcompat-test.js",
-            "line": 45,
-            "column": 6,
+            "file": "test/golden-react/pointer.ts",
+            "line": 121,
+            "column": 4,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "test/golden/cases/moveElement.golden-test.ts",
+            "line": 2,
+            "column": 79,
             "message": "Extra semicolon."
           },
           {
             "file": "test/spec/constraints-test.ts",
-            "line": 348,
-            "column": 32,
+            "line": 277,
+            "column": 7,
             "message": "Extra semicolon."
           },
           {
-            "file": "test/spec/edgeScroll-test.ts",
-            "line": 132,
-            "column": 43,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "test/spec/hooks-test.tsx",
-            "line": 641,
-            "column": 8,
+            "file": "test/spec/fast-compactor-test.js",
+            "line": 312,
+            "column": 65,
             "message": "Extra semicolon."
           },
           {
             "file": "test/spec/lifecycle-test.js",
-            "line": 2460,
-            "column": 38,
+            "line": 1031,
+            "column": 78,
             "message": "Extra semicolon."
           },
           {
-            "file": "test/spec/touch-drop-test.tsx",
-            "line": 485,
-            "column": 63,
+            "file": "test/spec/subpixel-width-test.tsx",
+            "line": 54,
+            "column": 11,
             "message": "Extra semicolon."
           },
           {

@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "96d58f23c7cc",
-  "analyzedCommit": "5a0520ac7d0567777d6931eee53f81bbfcae1453",
-  "analyzedCommitDate": "2025-12-21T19:49:37.000Z",
+  "analyzedCommit": "f20295c820eaf7318a152235ba42ca8cbecd8d08",
+  "analyzedCommitDate": "2026-11-07T02:27:55.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -34,7 +34,7 @@
         ]
       },
       "generic": {
-        "count": 100,
+        "count": 102,
         "samples": [
           {
             "file": "bin/puppet-install.ts",
@@ -44,15 +44,15 @@
           },
           {
             "file": "src/schemas/wechaty-events.ts",
-            "line": 45,
-            "column": 73,
+            "line": 44,
+            "column": 74,
             "message": "Array type using 'ContactInterface[]' is forbidden. Use 'Array<ContactInterface>' instead."
           },
           {
             "file": "src/user-modules/contact.ts",
-            "line": 448,
-            "column": 27,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+            "line": 217,
+            "column": 33,
+            "message": "Array type using 'TagInterface[]' is forbidden. Use 'Array<TagInterface>' instead."
           },
           {
             "file": "src/user-modules/message.spec.ts",
@@ -79,22 +79,22 @@
             "message": "Array type using 'ContactInterface[]' is forbidden. Use 'Array<ContactInterface>' instead."
           },
           {
-            "file": "src/user-modules/room.ts",
-            "line": 1098,
-            "column": 60,
-            "message": "Array type using 'ContactInterface[]' is forbidden. Use 'Array<ContactInterface>' instead."
+            "file": "src/wechaty-builder.spec.ts",
+            "line": 50,
+            "column": 32,
+            "message": "Array type using 'any[]' is forbidden. Use 'Array<any>' instead."
           },
           {
             "file": "src/wechaty-mixins/puppet-mixin.ts",
             "line": 190,
-            "column": 28,
+            "column": 108,
             "message": "Array type using 'PUPPET.types.PuppetEventName[]' is forbidden. Use 'Array<PUPPET.types.PuppetEventName>' instead."
           },
           {
-            "file": "tests/fixtures/smoke-testing.ts",
-            "line": 32,
-            "column": 25,
-            "message": "Array type using 'Wechaty[]' is forbidden. Use 'Array<Wechaty>' instead."
+            "file": "tests/pre-push.spec.ts",
+            "line": 19,
+            "column": 37,
+            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
           }
         ]
       }
@@ -197,8 +197,14 @@
     },
     "consistent-type-definitions": {
       "interface": {
-        "count": 2,
+        "count": 3,
         "samples": [
+          {
+            "file": "src/config.ts",
+            "line": 38,
+            "column": 1,
+            "message": "Use `interface` instead of `type`."
+          },
           {
             "file": "tests/fixtures/docker/syntax-error.js",
             "line": 1,
@@ -218,7 +224,7 @@
         "samples": [
           {
             "file": "src/config.ts",
-            "line": 81,
+            "line": 78,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
@@ -349,8 +355,8 @@
         "count": 149,
         "samples": [
           {
-            "file": "src/config.ts",
-            "line": 26,
+            "file": "scripts/pre-push.ts",
+            "line": 3,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
@@ -413,7 +419,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 57,
+        "count": 60,
         "samples": [
           {
             "file": "bin/doctor.ts",
@@ -423,24 +429,24 @@
           },
           {
             "file": "examples/ding-dong-bot.ts",
-            "line": 110,
+            "line": 114,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "scripts/retry-unit-tests.ts",
-            "line": 41,
+            "line": 25,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "scripts/update-license.ts",
-            "line": 139,
+            "file": "scripts/sort-contributiveness.ts",
+            "line": 112,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/cli/service.ts",
+            "file": "src/cli/provider.ts",
             "line": 6,
             "column": 1,
             "message": "Expected a function expression."
@@ -470,9 +476,9 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "tests/node.spec.ts",
-            "line": 33,
-            "column": 3,
+            "file": "tests/pre-push.spec.ts",
+            "line": 19,
+            "column": 1,
             "message": "Expected a function expression."
           }
         ]
@@ -664,35 +670,35 @@
         ]
       },
       "4-space": {
-        "count": 116,
+        "count": 119,
         "samples": [
           {
-            "file": ".eslintrc.cjs",
-            "line": 2,
+            "file": "bin/clean-json.js",
+            "line": 10,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/cli/gateway.ts",
+            "file": "src/cli/friday.ts",
             "line": 3,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/io.ts",
-            "line": 28,
+            "file": "src/io.spec.ts",
+            "line": 27,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/pure-functions/guard-qr-code-value.ts",
-            "line": 23,
+            "file": "src/pure-functions/escape-regexp.ts",
+            "line": 21,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/sayable/payload-to-sayable.ts",
-            "line": 7,
+            "file": "src/sayable/mod.ts",
+            "line": 2,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -709,55 +715,55 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/wechaty-builder.spec.ts",
-            "line": 29,
+            "file": "src/wechaty-builder.ts",
+            "line": 23,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/wechaty-mixins/wechatify-user-module-mixin.spec.ts",
+            "file": "src/wechaty-mixins/wechatify-user-module-mixin.ts",
             "line": 4,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "tests/node.spec.ts",
-            "line": 22,
+            "file": "tests/pre-push.spec.ts",
+            "line": 3,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           }
         ]
       },
       "tab": {
-        "count": 116,
+        "count": 119,
         "samples": [
           {
-            "file": ".eslintrc.cjs",
-            "line": 2,
+            "file": "bin/clean-json.js",
+            "line": 10,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/cli/gateway.ts",
+            "file": "src/cli/friday.ts",
             "line": 3,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/io.ts",
-            "line": 28,
+            "file": "src/io.spec.ts",
+            "line": 27,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/pure-functions/guard-qr-code-value.ts",
-            "line": 23,
+            "file": "src/pure-functions/escape-regexp.ts",
+            "line": 21,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/sayable/payload-to-sayable.ts",
-            "line": 7,
+            "file": "src/sayable/mod.ts",
+            "line": 2,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -774,20 +780,20 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/wechaty-builder.spec.ts",
-            "line": 29,
+            "file": "src/wechaty-builder.ts",
+            "line": 23,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/wechaty-mixins/wechatify-user-module-mixin.spec.ts",
+            "file": "src/wechaty-mixins/wechatify-user-module-mixin.ts",
             "line": 4,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "tests/node.spec.ts",
-            "line": 22,
+            "file": "tests/pre-push.spec.ts",
+            "line": 3,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           }
@@ -796,66 +802,66 @@
     },
     "quotes": {
       "double": {
-        "count": 2287,
+        "count": 2485,
         "samples": [
           {
-            "file": ".eslintrc.cjs",
-            "line": 2,
-            "column": 3,
+            "file": "bin/clean-json.js",
+            "line": 3,
+            "column": 16,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/config.spec.ts",
-            "line": 92,
-            "column": 35,
+            "file": "src/cli/mod.ts",
+            "line": 3,
+            "column": 28,
             "message": "Strings must use doublequote."
           },
           {
             "file": "src/io.ts",
-            "line": 305,
-            "column": 29,
+            "line": 230,
+            "column": 11,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/raven.ts",
-            "line": 20,
-            "column": 27,
+            "file": "src/pure-functions/xml.ts",
+            "line": 87,
+            "column": 12,
             "message": "Strings must use doublequote."
           },
           {
             "file": "src/user-modules/contact.ts",
-            "line": 414,
-            "column": 29,
+            "line": 494,
+            "column": 28,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/user-modules/message.ts",
-            "line": 964,
+            "file": "src/user-modules/mini-program.ts",
+            "line": 47,
             "column": 28,
             "message": "Strings must use doublequote."
           },
           {
             "file": "src/user-modules/room.ts",
-            "line": 100,
-            "column": 17,
+            "line": 862,
+            "column": 25,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/wechaty-mixins/misc-mixin.ts",
-            "line": 69,
-            "column": 37,
+            "file": "src/wechaty-mixins/puppet-mixin.ts",
+            "line": 87,
+            "column": 23,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/wechaty/mod.ts",
-            "line": 10,
-            "column": 34,
+            "file": "src/wechaty/wechaty-base.ts",
+            "line": 22,
+            "column": 30,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "tests/node.spec.ts",
-            "line": 50,
-            "column": 51,
+            "file": "tests/pre-push.spec.ts",
+            "line": 92,
+            "column": 106,
             "message": "Strings must use doublequote."
           }
         ]
@@ -1076,66 +1082,66 @@
     },
     "semi": {
       "always": {
-        "count": 3401,
+        "count": 3527,
         "samples": [
           {
-            "file": ".eslintrc.cjs",
+            "file": "bin/clean-json.js",
             "line": 3,
-            "column": 2,
+            "column": 20,
             "message": "Missing semicolon."
           },
           {
-            "file": "src/config.ts",
-            "line": 141,
-            "column": 51,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "src/mods/mod.spec.ts",
-            "line": 9,
-            "column": 51,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "src/user-mixins/poolify.ts",
-            "line": 30,
-            "column": 39,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "src/user-modules/friendship.ts",
-            "line": 267,
+            "file": "src/config.spec.ts",
+            "line": 54,
             "column": 35,
             "message": "Missing semicolon."
           },
           {
+            "file": "src/io.ts",
+            "line": 542,
+            "column": 38,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "src/user-mixins/poolify.spec.ts",
+            "line": 41,
+            "column": 59,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "src/user-modules/friendship.ts",
+            "line": 162,
+            "column": 41,
+            "message": "Missing semicolon."
+          },
+          {
             "file": "src/user-modules/mod.ts",
-            "line": 79,
+            "line": 74,
             "column": 45,
             "message": "Missing semicolon."
           },
           {
             "file": "src/user-modules/room.ts",
-            "line": 272,
-            "column": 35,
+            "line": 332,
+            "column": 48,
             "message": "Missing semicolon."
           },
           {
-            "file": "src/wechaty-mixins/login-mixin.ts",
-            "line": 103,
-            "column": 30,
+            "file": "src/wechaty-mixins/mod.ts",
+            "line": 4,
+            "column": 61,
             "message": "Missing semicolon."
           },
           {
             "file": "src/wechaty/wechaty-base.spec.ts",
-            "line": 51,
-            "column": 62,
+            "line": 213,
+            "column": 3,
             "message": "Missing semicolon."
           },
           {
-            "file": "tests/node.spec.ts",
-            "line": 52,
-            "column": 20,
+            "file": "tests/pre-push.spec.ts",
+            "line": 94,
+            "column": 65,
             "message": "Missing semicolon."
           }
         ]

@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "96d58f23c7cc",
-  "analyzedCommit": "99cbeec9258ede81532f4949673acd2bdadb8184",
-  "analyzedCommitDate": "2026-10-17T14:13:23.000Z",
+  "analyzedCommit": "ec5a9e51a7c72b2d71d93167b627b9ed598e28a0",
+  "analyzedCommitDate": "2026-10-29T03:08:05.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -9,7 +9,7 @@
         "samples": []
       },
       "generic": {
-        "count": 19,
+        "count": 14,
         "samples": [
           {
             "file": "src/bezier.ts",
@@ -19,26 +19,38 @@
           },
           {
             "file": "src/signature_pad.ts",
-            "line": 89,
-            "column": 24,
-            "message": "Array type using 'Point[]' is forbidden. Use 'Array<Point>' instead."
+            "line": 66,
+            "column": 11,
+            "message": "Array type using 'BasicPoint[]' is forbidden. Use 'Array<BasicPoint>' instead."
           },
           {
             "file": "src/signature_pad.ts",
-            "line": 309,
+            "line": 91,
             "column": 18,
             "message": "Array type using 'PointGroup[]' is forbidden. Use 'Array<PointGroup>' instead."
           },
           {
             "file": "src/signature_pad.ts",
-            "line": 820,
+            "line": 311,
+            "column": 18,
+            "message": "Array type using 'PointGroup[]' is forbidden. Use 'Array<PointGroup>' instead."
+          },
+          {
+            "file": "src/signature_pad.ts",
+            "line": 821,
             "column": 18,
             "message": "Array type using 'PointGroup[]' is forbidden. Use 'Array<PointGroup>' instead."
           },
           {
             "file": "src/throttle.ts",
-            "line": 7,
-            "column": 25,
+            "line": 5,
+            "column": 17,
+            "message": "Array type using 'any[]' is forbidden. Use 'Array<any>' instead."
+          },
+          {
+            "file": "src/throttle.ts",
+            "line": 12,
+            "column": 19,
             "message": "Array type using 'any[]' is forbidden. Use 'Array<any>' instead."
           },
           {
@@ -54,20 +66,8 @@
             "message": "Array type using 'PointGroup[]' is forbidden. Use 'Array<PointGroup>' instead."
           },
           {
-            "file": "tests/imports.test.ts",
-            "line": 7,
-            "column": 16,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
-          },
-          {
             "file": "tests/signature_pad.test.ts",
-            "line": 14,
-            "column": 18,
-            "message": "Array type using 'CanvasRenderingContext2DEvent[]' is forbidden. Use 'Array<CanvasRenderingContext2DEvent>' instead."
-          },
-          {
-            "file": "tests/signature_pad.test.ts",
-            "line": 18,
+            "line": 11,
             "column": 21,
             "message": "Array type using 'PointGroup[]' is forbidden. Use 'Array<PointGroup>' instead."
           }
@@ -155,25 +155,24 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 2,
+        "count": 0,
+        "samples": []
+      },
+      "no-type-imports": {
+        "count": 5,
         "samples": [
           {
             "file": "src/bezier.ts",
             "line": 1,
-            "column": 1,
-            "message": "Imports BasicPoint are only used as type."
+            "column": 17,
+            "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "src/signature_pad.ts",
             "line": 13,
-            "column": 1,
-            "message": "Imports BasicPoint are only used as type."
-          }
-        ]
-      },
-      "no-type-imports": {
-        "count": 4,
-        "samples": [
+            "column": 17,
+            "message": "Use an `import` instead of an `import type`."
+          },
           {
             "file": "tests/fixtures/face.ts",
             "line": 1,
@@ -188,13 +187,7 @@
           },
           {
             "file": "tests/signature_pad.test.ts",
-            "line": 2,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "tests/signature_pad.test.ts",
-            "line": 3,
+            "line": 4,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           }
@@ -203,7 +196,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 13,
+        "count": 10,
         "samples": [
           {
             "file": "docs/js/app.js",
@@ -214,6 +207,12 @@
           {
             "file": "docs/js/app.js",
             "line": 32,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "docs/js/app.js",
+            "line": 70,
             "column": 1,
             "message": "Expected a function expression."
           },
@@ -230,45 +229,39 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "eslint.config.js",
-            "line": 25,
-            "column": 9,
+            "file": "src/throttle.ts",
+            "line": 4,
+            "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "tests/bezier.test.ts",
-            "line": 4,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "tests/imports.test.ts",
-            "line": 5,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "tests/imports.test.ts",
-            "line": 19,
+            "line": 6,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "tests/signature_pad.test.ts",
-            "line": 806,
+            "line": 36,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "tests/signature_pad.test.ts",
+            "line": 760,
             "column": 3,
             "message": "Expected a function expression."
           },
           {
             "file": "tests/signature_pad.test.ts",
-            "line": 952,
+            "line": 906,
             "column": 7,
             "message": "Expected a function expression."
           }
         ]
       },
       "declaration": {
-        "count": 4,
+        "count": 3,
         "samples": [
           {
             "file": "src/throttle.ts",
@@ -277,20 +270,14 @@
             "message": "Expected a function declaration."
           },
           {
-            "file": "tests/imports.test.ts",
-            "line": 46,
-            "column": 13,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "tests/imports.test.ts",
-            "line": 66,
-            "column": 13,
+            "file": "tests/setup.ts",
+            "line": 62,
+            "column": 7,
             "message": "Expected a function declaration."
           },
           {
             "file": "tests/signature_pad.test.ts",
-            "line": 925,
+            "line": 879,
             "column": 9,
             "message": "Expected a function declaration."
           }
@@ -303,7 +290,7 @@
         "samples": [
           {
             "file": "eslint.config.js",
-            "line": 49,
+            "line": 6,
             "column": 8,
             "message": "Prefer named exports"
           },
@@ -369,14 +356,14 @@
           },
           {
             "file": "src/bezier.ts",
-            "line": 105,
+            "line": 119,
             "column": 1,
             "message": "Expected 2-space indentation, but file uses 9-space indentation."
           }
         ]
       },
       "4-space": {
-        "count": 17,
+        "count": 16,
         "samples": [
           {
             "file": "docs/.eslintrc.js",
@@ -391,8 +378,8 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "prettier.config.js",
-            "line": 4,
+            "file": "eslint.config.js",
+            "line": 7,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -409,14 +396,14 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/throttle.ts",
-            "line": 5,
+            "file": "src/signature_pad.ts",
+            "line": 20,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "tests/fixtures/face.ts",
-            "line": 4,
+            "file": "tests/bezier.test.ts",
+            "line": 7,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -428,20 +415,20 @@
           },
           {
             "file": "tests/point.test.ts",
-            "line": 4,
+            "line": 6,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "tests/utils/pointer-event-polyfill.ts",
-            "line": 11,
+            "file": "tests/signature_pad.test.ts",
+            "line": 12,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           }
         ]
       },
       "tab": {
-        "count": 17,
+        "count": 16,
         "samples": [
           {
             "file": "docs/.eslintrc.js",
@@ -456,8 +443,8 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "prettier.config.js",
-            "line": 4,
+            "file": "eslint.config.js",
+            "line": 7,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -474,14 +461,14 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/throttle.ts",
-            "line": 5,
+            "file": "src/signature_pad.ts",
+            "line": 20,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "tests/fixtures/face.ts",
-            "line": 4,
+            "file": "tests/bezier.test.ts",
+            "line": 7,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -493,13 +480,13 @@
           },
           {
             "file": "tests/point.test.ts",
-            "line": 4,
+            "line": 6,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "tests/utils/pointer-event-polyfill.ts",
-            "line": 11,
+            "file": "tests/signature_pad.test.ts",
+            "line": 12,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           }
@@ -508,7 +495,7 @@
     },
     "quotes": {
       "double": {
-        "count": 420,
+        "count": 406,
         "samples": [
           {
             "file": "docs/js/app.js",
@@ -517,63 +504,63 @@
             "message": "Strings must use doublequote."
           },
           {
-            "file": "prettier.config.js",
-            "line": 9,
-            "column": 18,
+            "file": "src/signature_pad.ts",
+            "line": 193,
+            "column": 27,
             "message": "Strings must use doublequote."
           },
           {
             "file": "src/signature_pad.ts",
-            "line": 512,
-            "column": 18,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "src/signature_pad.ts",
-            "line": 928,
-            "column": 29,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "tests/imports.test.ts",
-            "line": 24,
-            "column": 45,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "tests/signature_pad.test.ts",
-            "line": 130,
-            "column": 6,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "tests/signature_pad.test.ts",
-            "line": 314,
+            "line": 549,
             "column": 26,
             "message": "Strings must use doublequote."
           },
           {
+            "file": "src/signature_pad.ts",
+            "line": 943,
+            "column": 29,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "tests/point.test.ts",
+            "line": 74,
+            "column": 10,
+            "message": "Strings must use doublequote."
+          },
+          {
             "file": "tests/signature_pad.test.ts",
-            "line": 479,
+            "line": 90,
             "column": 24,
             "message": "Strings must use doublequote."
           },
           {
             "file": "tests/signature_pad.test.ts",
-            "line": 817,
-            "column": 42,
+            "line": 275,
+            "column": 6,
             "message": "Strings must use doublequote."
           },
           {
             "file": "tests/signature_pad.test.ts",
-            "line": 1062,
+            "line": 458,
+            "column": 24,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "tests/signature_pad.test.ts",
+            "line": 776,
+            "column": 54,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "tests/signature_pad.test.ts",
+            "line": 1017,
             "column": 33,
             "message": "Strings must use doublequote."
           }
         ]
       },
       "single": {
-        "count": 63,
+        "count": 62,
         "samples": [
           {
             "file": "docs/js/app.js",
@@ -595,14 +582,14 @@
           },
           {
             "file": "docs/js/app.js",
-            "line": 102,
-            "column": 31,
+            "line": 90,
+            "column": 38,
             "message": "Strings must use singlequote."
           },
           {
             "file": "docs/js/app.js",
-            "line": 147,
-            "column": 32,
+            "line": 139,
+            "column": 36,
             "message": "Strings must use singlequote."
           },
           {
@@ -618,20 +605,20 @@
             "message": "Strings must use singlequote."
           },
           {
-            "file": "eslint.config.js",
-            "line": 1,
-            "column": 21,
+            "file": "docs/js/app.js",
+            "line": 194,
+            "column": 36,
             "message": "Strings must use singlequote."
           },
           {
             "file": "tests/point.test.ts",
-            "line": 55,
+            "line": 57,
             "column": 6,
             "message": "Strings must use singlequote."
           },
           {
             "file": "tests/signature_pad.test.ts",
-            "line": 1021,
+            "line": 976,
             "column": 6,
             "message": "Strings must use singlequote."
           }
@@ -699,7 +686,7 @@
         ]
       },
       "never": {
-        "count": 1065,
+        "count": 1067,
         "samples": [
           {
             "file": "docs/.eslintrc.js",
@@ -708,57 +695,57 @@
             "message": "Extra semicolon."
           },
           {
-            "file": "eslint.config.js",
-            "line": 26,
-            "column": 59,
+            "file": "prettier.config.js",
+            "line": 12,
+            "column": 2,
             "message": "Extra semicolon."
           },
           {
             "file": "src/signature_pad.ts",
-            "line": 152,
-            "column": 25,
+            "line": 145,
+            "column": 39,
             "message": "Extra semicolon."
           },
           {
             "file": "src/signature_pad.ts",
-            "line": 550,
-            "column": 11,
+            "line": 534,
+            "column": 77,
             "message": "Extra semicolon."
           },
           {
             "file": "src/signature_pad.ts",
-            "line": 869,
-            "column": 43,
+            "line": 855,
+            "column": 39,
             "message": "Extra semicolon."
           },
           {
             "file": "tests/bezier.test.ts",
-            "line": 63,
-            "column": 52,
+            "line": 54,
+            "column": 44,
             "message": "Extra semicolon."
           },
           {
             "file": "tests/signature_pad.test.ts",
-            "line": 87,
-            "column": 6,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "tests/signature_pad.test.ts",
-            "line": 347,
+            "line": 1,
             "column": 70,
             "message": "Extra semicolon."
           },
           {
             "file": "tests/signature_pad.test.ts",
-            "line": 844,
-            "column": 5,
+            "line": 255,
+            "column": 41,
             "message": "Extra semicolon."
           },
           {
-            "file": "tests/utils/pointer-event-polyfill.ts",
-            "line": 36,
-            "column": 44,
+            "file": "tests/signature_pad.test.ts",
+            "line": 719,
+            "column": 6,
+            "message": "Extra semicolon."
+          },
+          {
+            "file": "tests/signature_pad.test.ts",
+            "line": 1017,
+            "column": 56,
             "message": "Extra semicolon."
           }
         ]

@@ -1,7 +1,7 @@
 {
   "analyzedVersion": "96d58f23c7cc",
-  "analyzedCommit": "776b0f3c8b5903e10ecf53e67ebad6be0413cfa6",
-  "analyzedCommitDate": "2026-09-24T15:15:52.000Z",
+  "analyzedCommit": "1386cc4014b0627b1805c215adad75b3f3e9f9b0",
+  "analyzedCommitDate": "2026-11-16T03:26:05.000Z",
   "checks": {
     "array-type": {
       "array": {
@@ -70,7 +70,7 @@
         ]
       },
       "generic": {
-        "count": 60,
+        "count": 76,
         "samples": [
           {
             "file": "src/cli.mts",
@@ -80,21 +80,27 @@
           },
           {
             "file": "src/context.ts",
-            "line": 877,
-            "column": 35,
-            "message": "Array type using 'readonly string[]' is forbidden. Use 'ReadonlyArray<string>' instead."
+            "line": 1340,
+            "column": 27,
+            "message": "Array type using 'readonly tg.BotCommand[]' is forbidden. Use 'ReadonlyArray<tg.BotCommand>' instead."
           },
           {
-            "file": "src/core/helpers/args.ts",
-            "line": 23,
-            "column": 15,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
-          },
-          {
-            "file": "src/core/helpers/formatting.ts",
-            "line": 40,
+            "file": "src/core/helpers/check.ts",
+            "line": 69,
             "column": 51,
-            "message": "Array type using 'readonly T[]' is forbidden. Use 'ReadonlyArray<T>' instead."
+            "message": "Array type using 'E[]' is forbidden. Use 'Array<E>' instead."
+          },
+          {
+            "file": "src/core/network/body.ts",
+            "line": 184,
+            "column": 42,
+            "message": "Array type using 'readonly Segment[]' is forbidden. Use 'ReadonlyArray<Segment>' instead."
+          },
+          {
+            "file": "src/core/network/payload.ts",
+            "line": 76,
+            "column": 16,
+            "message": "Array type using 'Attachment[]' is forbidden. Use 'Array<Attachment>' instead."
           },
           {
             "file": "src/markup.ts",
@@ -104,27 +110,21 @@
           },
           {
             "file": "src/markup.ts",
-            "line": 108,
-            "column": 46,
+            "line": 113,
+            "column": 18,
             "message": "Array type using 'B[]' is forbidden. Use 'Array<B>' instead."
           },
           {
-            "file": "src/markup.ts",
-            "line": 126,
-            "column": 47,
-            "message": "Array type using 'B[]' is forbidden. Use 'Array<B>' instead."
-          },
-          {
-            "file": "src/telegraf.ts",
-            "line": 227,
-            "column": 40,
-            "message": "Array type using 'tt.UpdateType[]' is forbidden. Use 'Array<tt.UpdateType>' instead."
+            "file": "src/reactions.ts",
+            "line": 26,
+            "column": 26,
+            "message": "Array type using 'tg.ReactionType[]' is forbidden. Use 'Array<tg.ReactionType>' instead."
           },
           {
             "file": "src/telegram.ts",
-            "line": 550,
+            "line": 484,
             "column": 14,
-            "message": "Array type using 'readonly tg.InlineQueryResult[]' is forbidden. Use 'ReadonlyArray<tg.InlineQueryResult>' instead."
+            "message": "Array type using 'readonly string[]' is forbidden. Use 'ReadonlyArray<string>' instead."
           },
           {
             "file": "src/telegram.ts",
@@ -141,12 +141,42 @@
         "samples": []
       },
       "type-annotation": {
-        "count": 6,
+        "count": 14,
         "samples": [
           {
+            "file": "src/core/network/body.ts",
+            "line": 28,
+            "column": 36,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
             "file": "src/core/network/client.ts",
-            "line": 20,
+            "line": 25,
             "column": 47,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "src/core/network/file-literals.ts",
+            "line": 98,
+            "column": 25,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "src/core/network/file-literals.ts",
+            "line": 114,
+            "column": 26,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "src/core/network/payload.ts",
+            "line": 80,
+            "column": 28,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          },
+          {
+            "file": "src/core/network/payload.ts",
+            "line": 249,
+            "column": 28,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
@@ -159,12 +189,6 @@
             "file": "src/scenes/stage.ts",
             "line": 44,
             "column": 44,
-            "message": "The generic type arguments should be specified as part of the type annotation."
-          },
-          {
-            "file": "src/session.ts",
-            "line": 60,
-            "column": 24,
             "message": "The generic type arguments should be specified as part of the type annotation."
           },
           {
@@ -184,7 +208,7 @@
     },
     "consistent-indexed-object-style": {
       "record": {
-        "count": 5,
+        "count": 4,
         "samples": [
           {
             "file": "src/core/helpers/args.ts",
@@ -205,12 +229,6 @@
             "message": "A record is preferred over an index signature."
           },
           {
-            "file": "src/core/network/multipart-stream.ts",
-            "line": 6,
-            "column": 14,
-            "message": "A record is preferred over an index signature."
-          },
-          {
             "file": "src/session.ts",
             "line": 50,
             "column": 23,
@@ -219,7 +237,7 @@
         ]
       },
       "index-signature": {
-        "count": 15,
+        "count": 36,
         "samples": [
           {
             "file": "src/composer.ts",
@@ -228,27 +246,9 @@
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "src/context.ts",
-            "line": 40,
-            "column": 19,
-            "message": "An index signature is preferred over a record."
-          },
-          {
             "file": "src/core/helpers/check.ts",
-            "line": 8,
-            "column": 11,
-            "message": "An index signature is preferred over a record."
-          },
-          {
-            "file": "src/core/helpers/check.ts",
-            "line": 54,
-            "column": 53,
-            "message": "An index signature is preferred over a record."
-          },
-          {
-            "file": "src/core/helpers/deunionize.ts",
-            "line": 5,
-            "column": 23,
+            "line": 30,
+            "column": 15,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -258,21 +258,39 @@
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "src/core/helpers/util.ts",
-            "line": 53,
-            "column": 63,
+            "file": "src/core/network/fetch-client.ts",
+            "line": 34,
+            "column": 13,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "src/core/network/client.ts",
-            "line": 57,
-            "column": 27,
+            "file": "src/core/network/fetch-client.ts",
+            "line": 247,
+            "column": 11,
             "message": "An index signature is preferred over a record."
           },
           {
-            "file": "src/core/network/client.ts",
-            "line": 79,
-            "column": 33,
+            "file": "src/core/network/file-literals.ts",
+            "line": 150,
+            "column": 12,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "src/core/network/file-literals.ts",
+            "line": 535,
+            "column": 12,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "src/core/network/payload.ts",
+            "line": 112,
+            "column": 32,
+            "message": "An index signature is preferred over a record."
+          },
+          {
+            "file": "src/core/network/payload.ts",
+            "line": 205,
+            "column": 19,
             "message": "An index signature is preferred over a record."
           },
           {
@@ -309,7 +327,7 @@
         ]
       },
       "type": {
-        "count": 30,
+        "count": 59,
         "samples": [
           {
             "file": "src/composer.ts",
@@ -318,27 +336,39 @@
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "src/core/helpers/check.ts",
-            "line": 1,
+            "file": "src/core/network/body.ts",
+            "line": 81,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "src/core/network/error.ts",
+            "line": 3,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "src/core/network/client.ts",
-            "line": 52,
-            "column": 10,
+            "file": "src/core/network/payload.ts",
+            "line": 17,
+            "column": 8,
+            "message": "Use `type` instead of `interface`."
+          },
+          {
+            "file": "src/core/types/platform.ts",
+            "line": 44,
+            "column": 3,
             "message": "Use `type` instead of `interface`."
           },
           {
             "file": "src/core/types/typegram.ts",
-            "line": 20,
-            "column": 1,
+            "line": 43,
+            "column": 3,
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "src/markup.ts",
-            "line": 107,
-            "column": 1,
+            "file": "src/core/types/typegram.ts",
+            "line": 81,
+            "column": 3,
             "message": "Use `type` instead of `interface`."
           },
           {
@@ -348,20 +378,8 @@
             "message": "Use `type` instead of `interface`."
           },
           {
-            "file": "src/scenes/context.ts",
-            "line": 27,
-            "column": 8,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
             "file": "src/session.ts",
             "line": 7,
-            "column": 8,
-            "message": "Use `type` instead of `interface`."
-          },
-          {
-            "file": "src/session.ts",
-            "line": 30,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
@@ -376,7 +394,7 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 73,
+        "count": 72,
         "samples": [
           {
             "file": "src/button.ts",
@@ -441,7 +459,7 @@
         ]
       },
       "no-type-imports": {
-        "count": 7,
+        "count": 25,
         "samples": [
           {
             "file": "src/cli.mts",
@@ -451,26 +469,38 @@
           },
           {
             "file": "src/cli.mts",
-            "line": 8,
-            "column": 1,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "src/cli.mts",
-            "line": 9,
-            "column": 20,
-            "message": "Use an `import` instead of an `import type`."
-          },
-          {
-            "file": "src/cli.mts",
             "line": 9,
             "column": 34,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "src/composer.ts",
-            "line": 13,
-            "column": 10,
+            "file": "src/core/network/body.ts",
+            "line": 5,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "src/core/network/client.ts",
+            "line": 11,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "src/core/network/fetch-client.ts",
+            "line": 6,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "src/core/network/file-literals.ts",
+            "line": 10,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "src/core/network/payload.ts",
+            "line": 8,
+            "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
@@ -484,13 +514,19 @@
             "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
+          },
+          {
+            "file": "src/input.ts",
+            "line": 2,
+            "column": 1,
+            "message": "Use an `import` instead of an `import type`."
           }
         ]
       }
     },
     "func-style": {
       "expression": {
-        "count": 62,
+        "count": 145,
         "samples": [
           {
             "file": "src/button.ts",
@@ -499,63 +535,63 @@
             "message": "Expected a function expression."
           },
           {
-            "file": "src/button.ts",
-            "line": 94,
+            "file": "src/cli.mts",
+            "line": 60,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/button.ts",
-            "line": 154,
-            "column": 8,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/composer.ts",
-            "line": 963,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/context.ts",
-            "line": 1637,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "src/core/helpers/deunionize.ts",
-            "line": 24,
+            "file": "src/core/helpers/check.ts",
+            "line": 69,
             "column": 8,
             "message": "Expected a function expression."
           },
           {
             "file": "src/core/network/client.ts",
-            "line": 123,
+            "line": 215,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "src/core/network/file-literals.ts",
+            "line": 293,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "src/core/network/file-literals.ts",
+            "line": 650,
+            "column": 1,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "src/core/network/payload.ts",
+            "line": 232,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
             "file": "src/future.ts",
-            "line": 7,
+            "line": 187,
+            "column": 8,
+            "message": "Expected a function expression."
+          },
+          {
+            "file": "test/client-fetch.js",
+            "line": 22,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/session.ts",
-            "line": 165,
-            "column": 1,
-            "message": "Expected a function expression."
-          },
-          {
-            "file": "test/telegraf.js",
-            "line": 4,
+            "file": "test/warning.js",
+            "line": 5,
             "column": 1,
             "message": "Expected a function expression."
           }
         ]
       },
       "declaration": {
-        "count": 34,
+        "count": 113,
         "samples": [
           {
             "file": "src/cli.mts",
@@ -564,56 +600,56 @@
             "message": "Expected a function declaration."
           },
           {
-            "file": "src/core/helpers/formatting.ts",
+            "file": "src/core/network/fetch-client.ts",
+            "line": 193,
+            "column": 9,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "src/filters.ts",
             "line": 63,
             "column": 14,
             "message": "Expected a function declaration."
           },
           {
-            "file": "src/filters.ts",
-            "line": 37,
-            "column": 14,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "src/filters.ts",
-            "line": 92,
-            "column": 14,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "src/format.ts",
-            "line": 93,
-            "column": 14,
-            "message": "Expected a function declaration."
-          },
-          {
             "file": "src/input.ts",
-            "line": 25,
+            "line": 78,
             "column": 14,
             "message": "Expected a function declaration."
           },
           {
-            "file": "src/reactions.ts",
-            "line": 14,
+            "file": "test/body.js",
+            "line": 6,
             "column": 7,
             "message": "Expected a function declaration."
           },
           {
-            "file": "test/_helpers.js",
-            "line": 53,
-            "column": 7,
+            "file": "test/client-fetch.js",
+            "line": 247,
+            "column": 11,
             "message": "Expected a function declaration."
           },
           {
-            "file": "test/_helpers.js",
-            "line": 102,
-            "column": 7,
+            "file": "test/fetch-client.js",
+            "line": 109,
+            "column": 9,
             "message": "Expected a function declaration."
           },
           {
-            "file": "test/client.js",
-            "line": 48,
+            "file": "test/file-literals.js",
+            "line": 87,
+            "column": 9,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "test/input-file.js",
+            "line": 580,
+            "column": 9,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "test/telegraf.js",
+            "line": 242,
             "column": 9,
             "message": "Expected a function declaration."
           }
@@ -622,7 +658,7 @@
     },
     "import-export-preference": {
       "named": {
-        "count": 10,
+        "count": 9,
         "samples": [
           {
             "file": "src/composer.ts",
@@ -632,25 +668,19 @@
           },
           {
             "file": "src/context.ts",
-            "line": 1512,
+            "line": 1509,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
             "file": "src/core/network/client.ts",
-            "line": 430,
+            "line": 442,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
             "file": "src/core/network/error.ts",
             "line": 29,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "src/core/network/multipart-stream.ts",
-            "line": 102,
             "column": 8,
             "message": "Prefer named exports"
           },
@@ -687,7 +717,7 @@
         ]
       },
       "default": {
-        "count": 8,
+        "count": 9,
         "samples": [
           {
             "file": "src/core/helpers/args.ts",
@@ -703,7 +733,13 @@
           },
           {
             "file": "src/core/network/polling.ts",
-            "line": 15,
+            "line": 47,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "src/core/network/warning.ts",
+            "line": 10,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -746,7 +782,7 @@
         "samples": []
       },
       "4-space": {
-        "count": 43,
+        "count": 57,
         "samples": [
           {
             "file": "src/button.ts",
@@ -755,20 +791,20 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/core/helpers/check.ts",
+            "file": "src/core/helpers/compact.ts",
             "line": 2,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/core/helpers/util.ts",
-            "line": 10,
+            "file": "src/core/network/error.ts",
+            "line": 4,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/core/network/webhook.ts",
-            "line": 7,
+            "file": "src/core/types/platform.ts",
+            "line": 11,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -779,39 +815,39 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/scenes/base.ts",
-            "line": 8,
+            "file": "src/scenes/index.ts",
+            "line": 9,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/scenes/wizard/index.ts",
+            "file": "src/telegram-types.ts",
+            "line": 5,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "test/client-requests.js",
+            "line": 21,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "test/input-file.js",
             "line": 10,
             "column": 1,
-            "message": "Expected 4-space indentation, but file uses 6-space indentation."
-          },
-          {
-            "file": "test/_helpers.js",
-            "line": 7,
-            "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "test/composer.js",
+            "file": "test/warning.js",
             "line": 6,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "test/telegraf.js",
-            "line": 5,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           }
         ]
       },
       "tab": {
-        "count": 43,
+        "count": 57,
         "samples": [
           {
             "file": "src/button.ts",
@@ -820,20 +856,20 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/core/helpers/check.ts",
+            "file": "src/core/helpers/compact.ts",
             "line": 2,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/core/helpers/util.ts",
-            "line": 10,
+            "file": "src/core/network/error.ts",
+            "line": 4,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/core/network/webhook.ts",
-            "line": 7,
+            "file": "src/core/types/platform.ts",
+            "line": 11,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -844,32 +880,32 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/scenes/base.ts",
-            "line": 8,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "src/scenes/wizard/index.ts",
+            "file": "src/scenes/index.ts",
             "line": 9,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "test/_helpers.js",
-            "line": 7,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "test/composer.js",
-            "line": 6,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "test/telegraf.js",
+            "file": "src/telegram-types.ts",
             "line": 5,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "test/client-requests.js",
+            "line": 21,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "test/input-file.js",
+            "line": 10,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "test/warning.js",
+            "line": 6,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           }
@@ -878,7 +914,7 @@
     },
     "quotes": {
       "double": {
-        "count": 1647,
+        "count": 3424,
         "samples": [
           {
             "file": "src/button.ts",
@@ -887,63 +923,63 @@
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/context.ts",
-            "line": 192,
-            "column": 27,
+            "file": "src/core/helpers/formatting.ts",
+            "line": 2,
+            "column": 37,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/context.ts",
-            "line": 1599,
-            "column": 16,
+            "file": "src/format.ts",
+            "line": 80,
+            "column": 7,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/filters.ts",
-            "line": 84,
-            "column": 11,
+            "file": "src/telegram.ts",
+            "line": 81,
+            "column": 25,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/scenes/index.ts",
-            "line": 13,
-            "column": 8,
+            "file": "test/client-errors.js",
+            "line": 52,
+            "column": 13,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/telegram-types.ts",
-            "line": 129,
-            "column": 53,
+            "file": "test/client-requests.js",
+            "line": 438,
+            "column": 30,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/types.ts",
-            "line": 1,
-            "column": 20,
+            "file": "test/fetch-client.js",
+            "line": 30,
+            "column": 25,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "test/composer.js",
-            "line": 329,
-            "column": 6,
+            "file": "test/file-literals.js",
+            "line": 577,
+            "column": 7,
             "message": "Strings must use doublequote."
           },
           {
             "file": "test/markup.js",
-            "line": 45,
-            "column": 54,
+            "line": 29,
+            "column": 6,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "test/telegraf.js",
-            "line": 273,
-            "column": 17,
+            "file": "test/warning.js",
+            "line": 63,
+            "column": 26,
             "message": "Strings must use doublequote."
           }
         ]
       },
       "single": {
-        "count": 75,
+        "count": 26,
         "samples": [
           {
             "file": "src/core/helpers/args.ts",
@@ -952,8 +988,32 @@
             "message": "Strings must use singlequote."
           },
           {
+            "file": "src/core/network/file-literals.ts",
+            "line": 555,
+            "column": 15,
+            "message": "Strings must use singlequote."
+          },
+          {
             "file": "test/args.js",
-            "line": 31,
+            "line": 16,
+            "column": 16,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "test/args.js",
+            "line": 26,
+            "column": 16,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "test/args.js",
+            "line": 41,
+            "column": 16,
+            "message": "Strings must use singlequote."
+          },
+          {
+            "file": "test/args.js",
+            "line": 65,
             "column": 16,
             "message": "Strings must use singlequote."
           },
@@ -964,45 +1024,21 @@
             "message": "Strings must use singlequote."
           },
           {
-            "file": "test/client.js",
-            "line": 22,
-            "column": 30,
+            "file": "test/args.js",
+            "line": 80,
+            "column": 17,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "test/client.js",
-            "line": 40,
-            "column": 24,
+            "file": "test/input-file.js",
+            "line": 764,
+            "column": 14,
             "message": "Strings must use singlequote."
           },
           {
-            "file": "test/client.js",
-            "line": 57,
-            "column": 6,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "test/client.js",
-            "line": 67,
-            "column": 19,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "test/client.js",
-            "line": 85,
-            "column": 30,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "test/client.js",
-            "line": 104,
-            "column": 24,
-            "message": "Strings must use singlequote."
-          },
-          {
-            "file": "test/client.js",
-            "line": 117,
-            "column": 20,
+            "file": "test/input-file.js",
+            "line": 786,
+            "column": 16,
             "message": "Strings must use singlequote."
           }
         ]
@@ -1058,7 +1094,7 @@
     },
     "semi": {
       "always": {
-        "count": 2405,
+        "count": 5228,
         "samples": [
           {
             "file": "src/button.ts",
@@ -1068,124 +1104,63 @@
           },
           {
             "file": "src/context.ts",
-            "line": 2,
-            "column": 39,
+            "line": 1648,
+            "column": 35,
             "message": "Missing semicolon."
           },
           {
-            "file": "src/context.ts",
-            "line": 1411,
-            "column": 46,
-            "message": "Missing semicolon."
-          },
-          {
-            "file": "src/core/network/client.ts",
-            "line": 426,
+            "file": "src/core/network/file-literals.ts",
+            "line": 583,
             "column": 23,
             "message": "Missing semicolon."
           },
           {
-            "file": "src/input.ts",
-            "line": 33,
-            "column": 118,
+            "file": "src/scenes/context.ts",
+            "line": 3,
+            "column": 33,
             "message": "Missing semicolon."
           },
           {
-            "file": "src/session.ts",
-            "line": 147,
+            "file": "test/args.js",
+            "line": 94,
             "column": 66,
             "message": "Missing semicolon."
           },
           {
-            "file": "src/telegram.ts",
-            "line": 873,
-            "column": 7,
+            "file": "test/client-fetch.js",
+            "line": 515,
+            "column": 5,
             "message": "Missing semicolon."
           },
           {
             "file": "test/composer.js",
-            "line": 342,
+            "line": 233,
             "column": 30,
             "message": "Missing semicolon."
           },
           {
-            "file": "test/markup.js",
-            "line": 62,
-            "column": 3,
+            "file": "test/fetch-client.js",
+            "line": 712,
+            "column": 50,
             "message": "Missing semicolon."
           },
           {
-            "file": "test/telegraf.js",
-            "line": 276,
-            "column": 5,
+            "file": "test/input-file.js",
+            "line": 819,
+            "column": 29,
+            "message": "Missing semicolon."
+          },
+          {
+            "file": "test/warning.js",
+            "line": 64,
+            "column": 27,
             "message": "Missing semicolon."
           }
         ]
       },
       "never": {
-        "count": 66,
-        "samples": [
-          {
-            "file": "test/client.js",
-            "line": 1,
-            "column": 28,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "test/client.js",
-            "line": 12,
-            "column": 19,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "test/client.js",
-            "line": 25,
-            "column": 58,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "test/client.js",
-            "line": 39,
-            "column": 28,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "test/client.js",
-            "line": 53,
-            "column": 5,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "test/client.js",
-            "line": 70,
-            "column": 4,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "test/client.js",
-            "line": 82,
-            "column": 26,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "test/client.js",
-            "line": 93,
-            "column": 26,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "test/client.js",
-            "line": 105,
-            "column": 47,
-            "message": "Extra semicolon."
-          },
-          {
-            "file": "test/client.js",
-            "line": 121,
-            "column": 4,
-            "message": "Extra semicolon."
-          }
-        ]
+        "count": 0,
+        "samples": []
       }
     }
   }

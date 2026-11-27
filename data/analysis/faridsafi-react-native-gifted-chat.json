@@ -1,16 +1,22 @@
 {
   "analyzedVersion": "96d58f23c7cc",
-  "analyzedCommit": "8f4d214087c03a27e5ee81cc7a3e51cf604610da",
-  "analyzedCommitDate": "2026-11-06T15:08:27.000Z",
+  "analyzedCommit": "a512f0f50104d05a3815c0432a1d5a687c414df6",
+  "analyzedCommitDate": "2026-11-20T12:15:07.000Z",
   "checks": {
     "array-type": {
       "array": {
-        "count": 4,
+        "count": 5,
         "samples": [
           {
             "file": "example/app/(tabs)/explore.tsx",
             "line": 13,
             "column": 17,
+            "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
+          },
+          {
+            "file": "example/components/chat-examples/AlignedTopExample.tsx",
+            "line": 9,
+            "column": 20,
             "message": "Array type using 'Array<T>' is forbidden. Use 'T[]' instead."
           },
           {
@@ -34,60 +40,60 @@
         ]
       },
       "generic": {
-        "count": 82,
+        "count": 87,
         "samples": [
           {
-            "file": "example/components/chat-examples/BasicExample.tsx",
-            "line": 13,
+            "file": "example/components/chat-examples/AlignedTopExample.tsx",
+            "line": 17,
+            "column": 25,
+            "message": "Array type using 'IMessage[]' is forbidden. Use 'Array<IMessage>' instead."
+          },
+          {
+            "file": "example/components/chat-examples/DayAnimatedExample.tsx",
+            "line": 57,
             "column": 44,
             "message": "Array type using 'IMessage[]' is forbidden. Use 'Array<IMessage>' instead."
           },
           {
-            "file": "example/components/chat-examples/LinksExample.tsx",
-            "line": 93,
+            "file": "example/components/chat-examples/ReplyExample.tsx",
+            "line": 14,
             "column": 44,
-            "message": "Array type using 'IMessage[]' is forbidden. Use 'Array<IMessage>' instead."
+            "message": "Array type using 'IChatMessage[]' is forbidden. Use 'Array<IChatMessage>' instead."
           },
           {
-            "file": "example/components/chat-examples/SlackExample.tsx",
-            "line": 10,
-            "column": 44,
-            "message": "Array type using 'IMessage[]' is forbidden. Use 'Array<IMessage>' instead."
-          },
-          {
-            "file": "example/example-expo/data/earlierMessages.ts",
-            "line": 6,
+            "file": "example/example-expo/CustomActions.tsx",
+            "line": 86,
             "column": 20,
-            "message": "Array type using 'IMessage[]' is forbidden. Use 'Array<IMessage>' instead."
+            "message": "Array type using 'T[]' is forbidden. Use 'Array<T>' instead."
           },
           {
             "file": "expoSnack/ExpoSnack.tsx",
-            "line": 320,
+            "line": 305,
             "column": 21,
             "message": "Array type using 'IMessage[]' is forbidden. Use 'Array<IMessage>' instead."
           },
           {
             "file": "src/GiftedChat/index.tsx",
-            "line": 208,
+            "line": 209,
             "column": 26,
             "message": "Array type using 'TMessage[]' is forbidden. Use 'Array<TMessage>' instead."
           },
           {
-            "file": "src/MessagesContainer/types.ts",
-            "line": 80,
-            "column": 28,
+            "file": "src/Models.ts",
+            "line": 26,
+            "column": 11,
             "message": "Array type using 'Reply[]' is forbidden. Use 'Array<Reply>' instead."
           },
           {
-            "file": "src/Reactions/types.ts",
-            "line": 24,
-            "column": 11,
-            "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead."
+            "file": "src/__tests__/GiftedChat.test.tsx",
+            "line": 84,
+            "column": 44,
+            "message": "Array type using 'any[]' is forbidden. Use 'Array<any>' instead."
           },
           {
             "file": "src/linkParser.tsx",
-            "line": 111,
-            "column": 19,
+            "line": 110,
+            "column": 47,
             "message": "Array type using 'ParsedLink[]' is forbidden. Use 'Array<ParsedLink>' instead."
           },
           {
@@ -105,8 +111,15 @@
         "samples": []
       },
       "type-annotation": {
-        "count": 0,
-        "samples": []
+        "count": 1,
+        "samples": [
+          {
+            "file": "src/__tests__/MessagesContainerAlignedTop.test.tsx",
+            "line": 11,
+            "column": 38,
+            "message": "The generic type arguments should be specified as part of the type annotation."
+          }
+        ]
       }
     },
     "consistent-indexed-object-style": {
@@ -115,14 +128,14 @@
         "samples": [
           {
             "file": "src/MessagesContainer/types.ts",
-            "line": 105,
+            "line": 116,
             "column": 31,
             "message": "A record is preferred over an index signature."
           }
         ]
       },
       "index-signature": {
-        "count": 8,
+        "count": 9,
         "samples": [
           {
             "file": "example/components/chat-examples/reactions/FullEmojiPicker.tsx",
@@ -161,6 +174,12 @@
             "message": "An index signature is preferred over a record."
           },
           {
+            "file": "src/__tests__/MessagesContainerAlignedTop.test.tsx",
+            "line": 40,
+            "column": 42,
+            "message": "An index signature is preferred over a record."
+          },
+          {
             "file": "src/maintenanceNotice.ts",
             "line": 12,
             "column": 32,
@@ -187,14 +206,14 @@
           },
           {
             "file": "src/MessagesContainer/types.ts",
-            "line": 105,
+            "line": 116,
             "column": 8,
             "message": "Use `interface` instead of `type`."
           }
         ]
       },
       "type": {
-        "count": 66,
+        "count": 67,
         "samples": [
           {
             "file": "example/components/chat-examples/ReactionsExample.tsx",
@@ -210,7 +229,7 @@
           },
           {
             "file": "expoSnack/ExpoSnack.tsx",
-            "line": 423,
+            "line": 545,
             "column": 1,
             "message": "Use `type` instead of `interface`."
           },
@@ -240,7 +259,7 @@
           },
           {
             "file": "src/Reactions/types.ts",
-            "line": 44,
+            "line": 21,
             "column": 8,
             "message": "Use `type` instead of `interface`."
           },
@@ -261,35 +280,35 @@
     },
     "consistent-type-imports": {
       "type-imports": {
-        "count": 173,
+        "count": 171,
         "samples": [
           {
-            "file": "example/components/chat-examples/BasicExample.tsx",
+            "file": "example/components/chat-examples/AlignedTopExample.tsx",
             "line": 3,
             "column": 1,
-            "message": "Imports IMessage are only used as type."
+            "message": "Imports BubbleProps and IMessage are only used as type."
           },
           {
             "file": "example/example-expo/CustomActions.tsx",
-            "line": 2,
+            "line": 13,
             "column": 1,
-            "message": "Imports StyleProp, ViewStyle, and TextStyle are only used as type."
+            "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
             "file": "src/Bubble/index.tsx",
-            "line": 22,
+            "line": 29,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
           {
             "file": "src/GiftedChat/index.tsx",
-            "line": 15,
+            "line": 29,
             "column": 1,
-            "message": "Imports ActionSheetProviderRef are only used as type."
+            "message": "Imports AnimatedList are only used as type."
           },
           {
             "file": "src/GiftedChat/types.ts",
-            "line": 29,
+            "line": 31,
             "column": 1,
             "message": "All imports in the declaration are only used as types. Use `import type`."
           },
@@ -326,7 +345,7 @@
         ]
       },
       "no-type-imports": {
-        "count": 10,
+        "count": 12,
         "samples": [
           {
             "file": "example/components/external-link.tsx",
@@ -335,15 +354,15 @@
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "example/components/parallax-scroll-view.tsx",
+            "file": "example/components/haptic-tab.tsx",
             "line": 1,
             "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "example/components/themed-text.tsx",
+            "file": "example/components/parallax-scroll-view.tsx",
             "line": 1,
-            "column": 28,
+            "column": 1,
             "message": "Use an `import` instead of an `import type`."
           },
           {
@@ -355,19 +374,19 @@
           {
             "file": "example/components/ui/icon-symbol.tsx",
             "line": 4,
-            "column": 28,
+            "column": 10,
             "message": "Use an `import` instead of an `import type`."
           },
           {
             "file": "example/components/ui/icon-symbol.tsx",
             "line": 4,
-            "column": 44,
+            "column": 27,
             "message": "Use an `import` instead of an `import type`."
           },
           {
-            "file": "example/example-expo/CustomView/index.tsx",
-            "line": 9,
-            "column": 1,
+            "file": "example/components/ui/icon-symbol.tsx",
+            "line": 4,
+            "column": 43,
             "message": "Use an `import` instead of an `import type`."
           },
           {
@@ -393,7 +412,7 @@
     },
     "func-style": {
       "expression": {
-        "count": 56,
+        "count": 57,
         "samples": [
           {
             "file": "example/components/external-link.tsx",
@@ -415,14 +434,14 @@
           },
           {
             "file": "expoSnack/ExpoSnack.tsx",
-            "line": 260,
+            "line": 594,
             "column": 1,
             "message": "Expected a function expression."
           },
           {
-            "file": "src/GiftedAvatar.tsx",
-            "line": 50,
-            "column": 8,
+            "file": "src/GiftedChat/index.tsx",
+            "line": 38,
+            "column": 1,
             "message": "Expected a function expression."
           },
           {
@@ -458,7 +477,7 @@
         ]
       },
       "declaration": {
-        "count": 62,
+        "count": 67,
         "samples": [
           {
             "file": "example/components/chat-examples/DayAnimatedExample.tsx",
@@ -474,38 +493,38 @@
           },
           {
             "file": "example/example-gifted-chat/src/customComponents.tsx",
-            "line": 18,
+            "line": 26,
             "column": 14,
             "message": "Expected a function declaration."
           },
           {
-            "file": "example/example-slack-message/src/SlackBubble.tsx",
-            "line": 62,
+            "file": "example/scripts/reset-project.js",
+            "line": 48,
             "column": 7,
             "message": "Expected a function declaration."
           },
           {
             "file": "expoSnack/ExpoSnack.tsx",
-            "line": 448,
-            "column": 9,
-            "message": "Expected a function declaration."
-          },
-          {
-            "file": "src/Message/index.tsx",
-            "line": 27,
+            "line": 508,
             "column": 7,
             "message": "Expected a function declaration."
           },
           {
-            "file": "src/MessagesContainer/components/dayLayout.ts",
-            "line": 40,
-            "column": 14,
+            "file": "src/MessagesContainer/components/Item/index.tsx",
+            "line": 13,
+            "column": 7,
             "message": "Expected a function declaration."
           },
           {
-            "file": "src/Reactions/MessageReactions.tsx",
-            "line": 8,
-            "column": 14,
+            "file": "src/MessagesContainer/index.tsx",
+            "line": 394,
+            "column": 15,
+            "message": "Expected a function declaration."
+          },
+          {
+            "file": "src/TypingIndicator/index.tsx",
+            "line": 18,
+            "column": 7,
             "message": "Expected a function declaration."
           },
           {
@@ -525,7 +544,7 @@
     },
     "import-export-preference": {
       "named": {
-        "count": 44,
+        "count": 46,
         "samples": [
           {
             "file": "eslint.config.js",
@@ -540,32 +559,32 @@
             "message": "Prefer named exports"
           },
           {
-            "file": "example/app/chat/reactions.tsx",
+            "file": "example/app/chat/links.tsx",
             "line": 3,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "example/components/chat-examples/BasicExample.tsx",
-            "line": 12,
+            "file": "example/components/chat-examples/AlignedTopExample.tsx",
+            "line": 38,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "example/components/chat-examples/ReplyExample.tsx",
+            "file": "example/components/chat-examples/ReactionsExample.tsx",
+            "line": 16,
+            "column": 8,
+            "message": "Prefer named exports"
+          },
+          {
+            "file": "example/example-expo/AccessoryBar.tsx",
             "line": 13,
             "column": 8,
             "message": "Prefer named exports"
           },
           {
-            "file": "example/example-expo/CustomActions.tsx",
-            "line": 132,
-            "column": 8,
-            "message": "Prefer named exports"
-          },
-          {
-            "file": "example/example-expo/data/messages.ts",
-            "line": 193,
+            "file": "example/example-expo/data/earlierMessages.ts",
+            "line": 6,
             "column": 8,
             "message": "Prefer named exports"
           },
@@ -590,7 +609,7 @@
         ]
       },
       "default": {
-        "count": 21,
+        "count": 23,
         "samples": [
           {
             "file": "example/components/external-link.tsx",
@@ -605,8 +624,8 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "example/components/ui/icon-symbol.ios.tsx",
-            "line": 4,
+            "file": "example/components/ui/icon-symbol.tsx",
+            "line": 28,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -617,32 +636,32 @@
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "example/hooks/useKeyboardVerticalOffset.ts",
-            "line": 15,
-            "column": 1,
-            "message": "Prefer default export on a file with single export."
-          },
-          {
-            "file": "src/Color.ts",
+            "file": "example/utils/styleUtils.ts",
             "line": 1,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/MessageAudio.tsx",
+            "file": "src/GiftedChat/index.tsx",
+            "line": 411,
+            "column": 1,
+            "message": "Prefer default export on a file with single export."
+          },
+          {
+            "file": "src/MessagesContainer/components/DayAnimated/useScrollGatedOpacity.ts",
             "line": 15,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/Reactions/MessageReactions.tsx",
-            "line": 8,
+            "file": "src/Reactions/ReactionPicker.tsx",
+            "line": 24,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
           {
-            "file": "src/__tests__/data.ts",
-            "line": 3,
+            "file": "src/hooks/useColorScheme.ts",
+            "line": 10,
             "column": 1,
             "message": "Prefer default export on a file with single export."
           },
@@ -661,7 +680,7 @@
         "samples": []
       },
       "4-space": {
-        "count": 140,
+        "count": 144,
         "samples": [
           {
             "file": "babel.config.cjs",
@@ -682,38 +701,38 @@
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "example/hooks/useKeyboardVerticalOffset.ts",
-            "line": 17,
+            "file": "example/metro.config.js",
+            "line": 14,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/Day/index.tsx",
+            "file": "src/Day/styles.ts",
+            "line": 5,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "src/MessageText.tsx",
             "line": 3,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/MessageReply.tsx",
+            "file": "src/Reactions/ReactionPicker.tsx",
             "line": 3,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
           {
-            "file": "src/Reactions/MessageReactions.tsx",
-            "line": 9,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "src/__tests__/Composer.test.tsx",
-            "line": 7,
-            "column": 1,
-            "message": "Expected 4-space indentation, but file uses 2-space indentation."
-          },
-          {
-            "file": "src/__tests__/Time.test.tsx",
+            "file": "src/__tests__/Day.test.tsx",
             "line": 8,
+            "column": 1,
+            "message": "Expected 4-space indentation, but file uses 2-space indentation."
+          },
+          {
+            "file": "src/__tests__/data.ts",
+            "line": 4,
             "column": 1,
             "message": "Expected 4-space indentation, but file uses 2-space indentation."
           },
@@ -726,7 +745,7 @@
         ]
       },
       "tab": {
-        "count": 140,
+        "count": 144,
         "samples": [
           {
             "file": "babel.config.cjs",
@@ -747,38 +766,38 @@
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "example/hooks/useKeyboardVerticalOffset.ts",
-            "line": 17,
+            "file": "example/metro.config.js",
+            "line": 14,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/Day/index.tsx",
+            "file": "src/Day/styles.ts",
+            "line": 5,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "src/MessageText.tsx",
             "line": 3,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/MessageReply.tsx",
+            "file": "src/Reactions/ReactionPicker.tsx",
             "line": 3,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
           {
-            "file": "src/Reactions/MessageReactions.tsx",
-            "line": 9,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "src/__tests__/Composer.test.tsx",
-            "line": 7,
-            "column": 1,
-            "message": "Expected tabs for indentation, but found spaces."
-          },
-          {
-            "file": "src/__tests__/Time.test.tsx",
+            "file": "src/__tests__/Day.test.tsx",
             "line": 8,
+            "column": 1,
+            "message": "Expected tabs for indentation, but found spaces."
+          },
+          {
+            "file": "src/__tests__/data.ts",
+            "line": 4,
             "column": 1,
             "message": "Expected tabs for indentation, but found spaces."
           },
@@ -793,7 +812,7 @@
     },
     "quotes": {
       "double": {
-        "count": 2318,
+        "count": 2438,
         "samples": [
           {
             "file": "babel.config.cjs",
@@ -803,55 +822,55 @@
           },
           {
             "file": "eslint.config.js",
-            "line": 283,
-            "column": 7,
+            "line": 298,
+            "column": 36,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "example/components/chat-examples/LinksExample.tsx",
-            "line": 2,
-            "column": 49,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "example/eslint.config.js",
-            "line": 12,
-            "column": 65,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "example/example-expo/data/messages.ts",
-            "line": 70,
-            "column": 18,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "expoSnack/ExpoSnack.tsx",
-            "line": 174,
-            "column": 11,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "src/GiftedChat/index.tsx",
-            "line": 14,
-            "column": 8,
-            "message": "Strings must use doublequote."
-          },
-          {
-            "file": "src/MessagesContainer/index.tsx",
-            "line": 19,
+            "file": "example/components/chat-examples/BasicExample.tsx",
+            "line": 74,
             "column": 20,
             "message": "Strings must use doublequote."
           },
           {
-            "file": "src/__tests__/Message.test.tsx",
-            "line": 15,
-            "column": 17,
+            "file": "example/constants/theme.ts",
+            "line": 43,
+            "column": 12,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "example/example-expo/data/messages.ts",
+            "line": 54,
+            "column": 11,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "expoSnack/ExpoSnack.tsx",
+            "line": 213,
+            "column": 15,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "src/GiftedChat/index.tsx",
+            "line": 189,
+            "column": 42,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "src/Models.ts",
+            "line": 1,
+            "column": 38,
+            "message": "Strings must use doublequote."
+          },
+          {
+            "file": "src/__tests__/MessageText.test.tsx",
+            "line": 1,
+            "column": 19,
             "message": "Strings must use doublequote."
           },
           {
             "file": "tests/setup.ts",
-            "line": 27,
+            "line": 37,
             "column": 11,
             "message": "Strings must use doublequote."
           }
@@ -910,7 +929,7 @@
           },
           {
             "file": "src/MessagesContainer/index.tsx",
-            "line": 25,
+            "line": 35,
             "column": 9,
             "message": "Must never use destructuring props assignment"
           },
@@ -933,7 +952,7 @@
         "samples": [
           {
             "file": "example/components/haptic-tab.tsx",
-            "line": 14,
+            "line": 15,
             "column": 9,
             "message": "Must use destructuring props assignment"
           },
@@ -969,13 +988,13 @@
           },
           {
             "file": "src/GiftedChat/index.tsx",
-            "line": 87,
+            "line": 88,
             "column": 6,
             "message": "Must use destructuring props assignment"
           },
           {
             "file": "src/GiftedChat/index.tsx",
-            "line": 237,
+            "line": 238,
             "column": 11,
             "message": "Must use destructuring props assignment"
           },
@@ -987,7 +1006,7 @@
           },
           {
             "file": "src/MessagesContainer/index.tsx",
-            "line": 486,
+            "line": 519,
             "column": 31,
             "message": "Must use destructuring props assignment"
           }
@@ -1034,13 +1053,13 @@
           },
           {
             "file": "src/GiftedChat/index.tsx",
-            "line": 91,
+            "line": 92,
             "column": 62,
             "message": "Must use destructuring props assignment"
           },
           {
             "file": "src/GiftedChat/index.tsx",
-            "line": 240,
+            "line": 241,
             "column": 18,
             "message": "Must use destructuring props assignment"
           },
@@ -1063,7 +1082,7 @@
         "samples": [
           {
             "file": "example/components/haptic-tab.tsx",
-            "line": 14,
+            "line": 15,
             "column": 9,
             "message": "Must use destructuring props assignment"
           },
@@ -1099,13 +1118,13 @@
           },
           {
             "file": "src/GiftedChat/index.tsx",
-            "line": 87,
+            "line": 88,
             "column": 6,
             "message": "Must use destructuring props assignment"
           },
           {
             "file": "src/GiftedChat/index.tsx",
-            "line": 237,
+            "line": 238,
             "column": 11,
             "message": "Must use destructuring props assignment"
           },
@@ -1117,7 +1136,7 @@
           },
           {
             "file": "src/MessagesContainer/index.tsx",
-            "line": 486,
+            "line": 519,
             "column": 31,
             "message": "Must use destructuring props assignment"
           }
@@ -1191,7 +1210,7 @@
         ]
       },
       "arrow-function": {
-        "count": 42,
+        "count": 43,
         "samples": [
           {
             "file": "example/app/(tabs)/_layout.tsx",
@@ -1206,14 +1225,14 @@
             "message": "Function component is not an arrow function"
           },
           {
-            "file": "example/components/chat-examples/ReactionsExample.tsx",
-            "line": 16,
+            "file": "example/components/chat-examples/DayAnimatedExample.tsx",
+            "line": 44,
             "column": 16,
             "message": "Function component is not an arrow function"
           },
           {
-            "file": "example/components/hello-wave.tsx",
-            "line": 3,
+            "file": "example/components/haptic-tab.tsx",
+            "line": 6,
             "column": 8,
             "message": "Function component is not an arrow function"
           },
@@ -1225,8 +1244,8 @@
           },
           {
             "file": "expoSnack/ExpoSnack.tsx",
-            "line": 688,
-            "column": 16,
+            "line": 594,
+            "column": 1,
             "message": "Function component is not an arrow function"
           },
           {
@@ -1262,7 +1281,7 @@
         "samples": []
       },
       "always": {
-        "count": 26,
+        "count": 28,
         "samples": [
           {
             "file": "example/app/modal.tsx",
@@ -1284,21 +1303,15 @@
           },
           {
             "file": "example/example-gifted-chat/src/Chats.tsx",
-            "line": 43,
+            "line": 45,
             "column": 7,
-            "message": "Value must be set for boolean attribute `isScrollToBottomEnabled`"
-          },
-          {
-            "file": "example/example-gifted-chat/src/Chats.tsx",
-            "line": 59,
-            "column": 7,
-            "message": "Value must be set for boolean attribute `isCustomViewBottom`"
+            "message": "Value must be set for boolean attribute `isAvatarOnTop`"
           },
           {
             "file": "src/Composer.tsx",
-            "line": 79,
+            "line": 72,
             "column": 9,
-            "message": "Value must be set for boolean attribute `multiline`"
+            "message": "Value must be set for boolean attribute `accessible`"
           },
           {
             "file": "src/MessageImage.tsx",
@@ -1308,20 +1321,26 @@
           },
           {
             "file": "src/Reactions/ReactionPicker.tsx",
-            "line": 71,
+            "line": 75,
             "column": 7,
-            "message": "Value must be set for boolean attribute `transparent`"
+            "message": "Value must be set for boolean attribute `statusBarTranslucent`"
           },
           {
-            "file": "src/__tests__/LoadEarlier.test.tsx",
-            "line": 7,
-            "column": 50,
-            "message": "Value must be set for boolean attribute `isAvailable`"
+            "file": "src/__tests__/Message.test.tsx",
+            "line": 41,
+            "column": 9,
+            "message": "Value must be set for boolean attribute `isUserAvatarVisible`"
+          },
+          {
+            "file": "src/__tests__/MessagesContainerAlignedTop.test.tsx",
+            "line": 78,
+            "column": 62,
+            "message": "Value must be set for boolean attribute `isAlignedTop`"
           },
           {
             "file": "src/__tests__/Send.test.tsx",
             "line": 13,
-            "column": 37,
+            "column": 43,
             "message": "Value must be set for boolean attribute `isSendButtonAlwaysVisible`"
           }
         ]
@@ -1367,19 +1386,19 @@
           },
           {
             "file": "src/MessagesContainer/components/DayAnimated/index.tsx",
-            "line": 155,
+            "line": 154,
             "column": 5,
             "message": "Prefer React.Fragment over fragment shorthand"
           },
           {
             "file": "src/MessagesContainer/index.tsx",
-            "line": 460,
+            "line": 487,
             "column": 46,
             "message": "Prefer React.Fragment over fragment shorthand"
           },
           {
             "file": "src/MessagesContainer/index.tsx",
-            "line": 463,
+            "line": 490,
             "column": 24,
             "message": "Prefer React.Fragment over fragment shorthand"
           }
@@ -1388,7 +1407,7 @@
     },
     "semi": {
       "always": {
-        "count": 2493,
+        "count": 2618,
         "samples": [
           {
             "file": "babel.config.cjs",
@@ -1398,8 +1417,8 @@
           },
           {
             "file": "example/components/chat-examples/reactions/EmojiReactionPicker.tsx",
-            "line": 76,
-            "column": 58,
+            "line": 1,
+            "column": 51,
             "message": "Missing semicolon."
           },
           {
@@ -1410,43 +1429,43 @@
           },
           {
             "file": "expoSnack/ExpoSnack.tsx",
-            "line": 476,
-            "column": 4,
+            "line": 565,
+            "column": 6,
             "message": "Missing semicolon."
           },
           {
             "file": "src/GiftedAvatar.tsx",
-            "line": 9,
-            "column": 29,
+            "line": 131,
+            "column": 14,
             "message": "Missing semicolon."
           },
           {
-            "file": "src/MessageAudio.tsx",
-            "line": 1,
-            "column": 39,
+            "file": "src/MessageImage.tsx",
+            "line": 147,
+            "column": 9,
             "message": "Missing semicolon."
           },
           {
             "file": "src/MessagesContainer/index.tsx",
-            "line": 105,
-            "column": 7,
+            "line": 297,
+            "column": 6,
             "message": "Missing semicolon."
           },
           {
-            "file": "src/TypingIndicator/index.tsx",
-            "line": 2,
-            "column": 36,
+            "file": "src/__tests__/Avatar.test.tsx",
+            "line": 18,
+            "column": 3,
             "message": "Missing semicolon."
           },
           {
             "file": "src/__tests__/maintenanceNotice.test.ts",
-            "line": 46,
-            "column": 5,
+            "line": 40,
+            "column": 37,
             "message": "Missing semicolon."
           },
           {
             "file": "tests/setup.ts",
-            "line": 28,
+            "line": 38,
             "column": 2,
             "message": "Missing semicolon."
           }
